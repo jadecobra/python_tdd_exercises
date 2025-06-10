@@ -261,7 +261,7 @@ refactor: make it better
         # return not p not or not q
         return not p and not q
 
-  green again, I remove the other statements
+  still green, I remove the other statements
 
   .. code-block:: python
 
@@ -438,9 +438,9 @@ refactor: make it better
     def logical_equality(p, q):
         return (p or not q) and (not p or q)
 
-  all the tests are still passing.
+  the test is still passing.
 
-* The 2 cases where :ref:`True<test_what_is_true>` is the result are cases where ``p`` and ``q`` are the same, which means I can write a simpler `return statement`_
+* The 2 cases that return :ref:`True<test_what_is_true>` are when ``p`` and ``q`` are the same, which means I can write a simpler `return statement`_
 
   .. code-block:: python
 
