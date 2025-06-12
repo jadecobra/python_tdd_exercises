@@ -111,7 +111,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertEqual(a_dictionary.get('key', 'default'), 'value')
         self.assertEqual(a_dictionary.get(0, 'default'), 'default')
 
-    def test_items_returns_key_value_pairs_from_a_dictionary(self):
+    def test_items_returns_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
@@ -119,7 +119,7 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.keys()), ['key'])
 
-    def test_pop_removes_key_and_returns_value_from_a_dictionary(self):
+    def test_pop_removes_key_and_returns_its_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
@@ -127,7 +127,7 @@ class TestDictionaries(unittest.TestCase):
         with self.assertRaises(KeyError):
             a_dictionary.pop(0)
 
-    def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
+    def test_popitem_removes_and_returns_last_key_value_pair_from_a_list(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -157,7 +157,7 @@ class TestDictionaries(unittest.TestCase):
             {
                 'key': 'new value',
                 'key1': 'value1',
-                'another_key': 'another value',
+                'another_key': 'another value'
             }
         )
 
@@ -168,7 +168,10 @@ class TestDictionaries(unittest.TestCase):
     def test_key_error(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary['key'], 'value')
-        self.assertIsNone(a_dictionary.get('this_key_does_not_exist', None))
+        self.assertEqual(
+            a_dictionary.get('this_key_does_not_exist', 'default'),
+            'default'
+        )
 
         with self.assertRaises(KeyError):
             a_dictionary['this_key_does_not_exist']
@@ -176,6 +179,7 @@ class TestDictionaries(unittest.TestCase):
             {}.popitem()
         with self.assertRaises(KeyError):
             a_dictionary.pop('this_key_does_not_exist')
+
 
 
 # Exceptions Encountered

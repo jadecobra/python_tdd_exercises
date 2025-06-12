@@ -16,7 +16,10 @@ truth table: test_truth_table_tests
 requirements
 *********************************************************************************
 
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
+* :ref:`Binary Operations part 1<truth table: Binary Operations part 1>`
+* :ref:`Binary Operations part 2<truth table: Binary Operations part 2>`
+* :ref:`Binary Operations part 3<truth table: Binary Operations part 3>`
+* :ref:`Binary Operations part 4<truth table: Binary Operations part 4>`
 
 ----
 
@@ -27,7 +30,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_truth_table.py``
-* then delete all the test in ``truth_table.py``, which gives me a list of :ref:`AttributeErrors<AttributeError>` I start with the last one
+* then delete all the tests in ``truth_table.py``, which gives me a list of :ref:`AttributeErrors<AttributeError>` I start with the last one
 
   .. code-block:: python
 
@@ -55,7 +58,7 @@ green: make it pass
 
     tautology = None
 
-  which gives me :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -126,7 +129,7 @@ green: make it pass
 
     AssertionError: False is not true
 
-  this test expects :ref:`False<test_what_is_false>` sometimes and :ref:`True<test_what_is_true>` other times. I return the inputs instead
+  this test expects :ref:`False<test_what_is_false>` sometimes and :ref:`True<test_what_is_true>` other times. I return the inputs to see the difference between them and the output
 
   .. code-block:: python
 
@@ -191,7 +194,7 @@ green: make it pass
 
     AssertionError: (True, True) is not false
 
-  I do not know how the input relates to the output so I add an `if statement`_
+  I add an `if statement`_
 
   .. code-block:: python
 
@@ -213,6 +216,8 @@ green: make it pass
         if (x, y) == (True, True): return False
         if (x, y) == (False, True): return False
         return x, y
+
+  ``y`` is :ref:`True<test_what_is_true>` in 2 cases
 
 * I get :ref:`AttributeError`
 
@@ -255,6 +260,8 @@ green: make it pass
         if (x, y) == (True, True): return False
         if (x, y) == (True, False): return False
         return x, y
+
+  ``x`` is :ref:`True<test_what_is_true>` in 2 cases
 
 * the terminal shows :ref:`AttributeError`
 
@@ -575,7 +582,7 @@ green: make it pass
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`
+  I add an `if statement`_
 
   .. code-block:: python
 
