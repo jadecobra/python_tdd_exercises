@@ -4,7 +4,7 @@
 functions
 #################################################################################
 
-A ``function`` is a callable_ unit/block of code. It is a way to write statements that can be used to accomplish a task at a different time from when they are written. Using :ref:`functions` makes the code smaller and easier to read, test, reuse, maintain and improve.
+A :ref:`function <test_functions>` is a unit or block of code that is callable_. I can write statements that I can used to do something and call it at different time from when I write it. They can make code smaller and easier to read, test, reuse, maintain and improve.
 
 Programming involves providing a process with input data and the process returning output data
 
@@ -12,7 +12,7 @@ Programming involves providing a process with input data and the process returni
 
     argument -> program -> output_data
 
-Which is like mathematics where a :ref:`function<functions>` is represented as ``f`` with inputs ``x`` and an output of ``y``
+I think of it mathematically as mapping a :ref:`function<test_functions>` ``f`` with inputs ``x`` and an output of ``y``
 
 .. math::
 
@@ -24,7 +24,7 @@ in other words
 
   program(argument) -> output_data
 
-``program`` is the ``function`` that processes ``argument`` to return ``output_data``
+``program`` is the :ref:`function <test_functions>` that processes ``argument`` to return ``output_data``
 
 ``functions`` are defined using the def_ keyword, a name, parentheses and a colon at the end
 
@@ -35,8 +35,6 @@ The following tests cover different ways to make a function
   :maxdepth: 1
 
   test_functions
-  test_singleton_functions<test_singleton_functions>
-  test_passthrough_functions<test_passthrough_functions>
   test_functions_w_positional_arguments<test_functions_w_positional_arguments>
   test_functions_w_keyword_arguments<test_functions_w_keyword_arguments>
   test_functions_w_positional_and_keyword_arguments<test_functions_w_positional_and_keyword>
