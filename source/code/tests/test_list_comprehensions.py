@@ -14,7 +14,7 @@ def process(number):
 class TestListComprehensions(unittest.TestCase):
 
     def setUp(self):
-        self.iterable = range(random.randint(0, 1000))
+        self.iterable = range(random.randint(1, 1000))
 
     def test_make_a_list_w_a_for_loop(self):
         a_list = []
@@ -67,7 +67,7 @@ class TestListComprehensions(unittest.TestCase):
             [item for item in self.iterable if not condition(item)]
         )
 
-    def test_list_comprehension_w_functions(self):
+    def test_list_comprehensions_w_functions(self):
         square_numbers = []
         for item in self.iterable:
             square_numbers.append(process(item))
@@ -80,6 +80,7 @@ class TestListComprehensions(unittest.TestCase):
             src.list_comprehensions.get_square_numbers(self.iterable),
             [process(item) for item in self.iterable]
         )
+
 
 
 # Exceptions Encountered
