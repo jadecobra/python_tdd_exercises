@@ -10,7 +10,7 @@ dictionaries
 
 ----
 
-A `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ also known as a Mapping contains key-value pairs, the values can be any any Python :ref:`object<classes>` but not the keys.
+A `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ also known as a Mapping contains key-value pairs, the values can be any Python :ref:`object<classes>` but not the keys.
 
 I think this is the most important data structure to know as it can hold all the other data structures and in your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python
 
@@ -410,7 +410,7 @@ the test passes. I cannot use a `dictionary <https://docs.python.org/3/tutorial/
 test_attributes_and_methods_of_dictionaries
 *********************************************************************************
 
-I can use the the dir_ :ref:`function<functions>` to look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I can use the dir_ :ref:`function<functions>` to look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 red: make it fail
 #################################################################################

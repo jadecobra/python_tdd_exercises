@@ -195,7 +195,7 @@ the test passes
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I can use the the dir_ :ref:`function<functions>` to look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I can use the dir_ :ref:`function<functions>` to look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 red: make it fail
 #################################################################################
