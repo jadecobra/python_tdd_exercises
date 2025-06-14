@@ -9,6 +9,9 @@ class TestDictionaries(unittest.TestCase):
     def test_make_a_dictionary_w_curly_braces(self):
         self.assertEqual({'key': 'value'}, dict(key='value'))
 
+    def test_make_a_dictionary_w_none_as_keys(self):
+        self.assertEqual({None: 'boom'}, {None: 'boom'})
+
     def test_make_a_dictionary_w_booleans_as_keys(self):
         self.assertEqual({False: 'boom'}, {False: 'boom'})
         self.assertEqual({True: 'bap'}, {True: 'bap'})
@@ -19,8 +22,8 @@ class TestDictionaries(unittest.TestCase):
 
     def test_make_a_dictionary_w_tuples_as_keys(self):
         self.assertEqual(
-            {(0, 1): 'value'},
-            {(0, 1): 'value'}
+            {(0, 1): 'boom'},
+            {(0, 1): 'boom'}
         )
 
     def test_make_a_dictionary_w_lists_as_keys(self):
@@ -127,7 +130,7 @@ class TestDictionaries(unittest.TestCase):
         with self.assertRaises(KeyError):
             a_dictionary.pop(0)
 
-    def test_popitem_removes_and_returns_last_key_value_pair_from_a_list(self):
+    def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
             'key2': 'value2',
@@ -157,7 +160,7 @@ class TestDictionaries(unittest.TestCase):
             {
                 'key': 'new value',
                 'key1': 'value1',
-                'another_key': 'another value'
+                'another_key': 'another value',
             }
         )
 
@@ -169,21 +172,19 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary['key'], 'value')
         self.assertEqual(
-            a_dictionary.get('this_key_does_not_exist', 'default'),
+            a_dictionary.get('key_not_in_dictionary', 'default'),
             'default'
         )
 
         with self.assertRaises(KeyError):
-            a_dictionary['this_key_does_not_exist']
+            a_dictionary['key_not_in_dictionary']
         with self.assertRaises(KeyError):
             {}.popitem()
         with self.assertRaises(KeyError):
-            a_dictionary.pop('this_key_does_not_exist')
-
+            a_dictionary.pop('key_not_in_dictionary')
 
 
 # Exceptions Encountered
 # AssertionError
 # TypeError
-# NameError
 # KeyError

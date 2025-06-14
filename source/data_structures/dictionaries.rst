@@ -1890,13 +1890,13 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(a_dictionary['key'], 'value')
-    self.assertEqual(a_dictionary['this_key_does_not_exist'], 'value')
+    self.assertEqual(a_dictionary['key_not_in_dictionary'], 'value')
 
   the terminal shows `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
 
   .. code-block:: python
 
-    KeyError: 'this_key_does_not_exist'
+    KeyError: 'key_not_in_dictionary'
 
   I change the assertEqual_ to assertRaises_
 
@@ -1905,7 +1905,7 @@ refactor: make it better
     self.assertEqual(a_dictionary['key'], 'value')
 
     with self.assertRaises(KeyError):
-        a_dictionary['this_key_does_not_exist']
+        a_dictionary['key_not_in_dictionary']
 
   the test passes
 
@@ -1914,7 +1914,7 @@ refactor: make it better
   .. code-block::
 
     with self.assertRaises(KeyError):
-        a_dictionary['this_key_does_not_exist']
+        a_dictionary['key_not_in_dictionary']
     {}.popitem()
 
   the terminal shows `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
@@ -1928,7 +1928,7 @@ refactor: make it better
   .. code-block:: python
 
     with self.assertRaises(KeyError):
-        a_dictionary['this_key_does_not_exist']
+        a_dictionary['key_not_in_dictionary']
     with self.assertRaises(KeyError):
         {}.popitem()
 
@@ -1938,13 +1938,13 @@ refactor: make it better
 
     with self.assertRaises(KeyError):
         {}.popitem()
-    a_dictionary.pop('this_key_does_not_exist')
+    a_dictionary.pop('key_not_in_dictionary')
 
   the terminal shows `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
 
   .. code-blocK:: python
 
-    KeyError: 'this_key_does_not_exist'
+    KeyError: 'key_not_in_dictionary'
 
   I add assertRaises_
 
@@ -1953,18 +1953,18 @@ refactor: make it better
     with self.assertRaises(KeyError):
         {}.popitem()
     with self.assertRaises(KeyError):
-        a_dictionary.pop('this_key_does_not_exist')
+        a_dictionary.pop('key_not_in_dictionary')
 
 * I can use the get_ :ref:`method<functions>` to avoid the `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ when the key does not exist in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block:: python
 
     with self.assertRaises(KeyError):
-        a_dictionary.pop('this_key_does_not_exist')
+        a_dictionary.pop('key_not_in_dictionary')
 
 
     self.assertEqual(
-        a_dictionary.get('this_key_does_not_exist'),
+        a_dictionary.get('key_not_in_dictionary'),
         'value'
     )
 
@@ -1979,9 +1979,9 @@ refactor: make it better
   .. code-block:: python
 
     with self.assertRaises(KeyError):
-        a_dictionary.pop('this_key_does_not_exist')
+        a_dictionary.pop('key_not_in_dictionary')
 
-    self.assertIsNone(a_dictionary.get('this_key_does_not_exist'))
+    self.assertIsNone(a_dictionary.get('key_not_in_dictionary'))
 
   the test is green again
 
