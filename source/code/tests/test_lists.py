@@ -87,7 +87,7 @@ class TestLists(unittest.TestCase):
         a_list = [0, 2, 1, 2, 3, 2]
         self.assertEqual(a_list.count(0), 1)
         self.assertEqual(a_list.count(2), 3)
-        self.assertEqual(a_list.count(9), 0)
+        self.assertEqual(a_list.count('not in list'), 0)
 
     def test_extend_makes_a_list_longer(self):
         a_list = [0, 1, 2, 3]
@@ -106,8 +106,8 @@ class TestLists(unittest.TestCase):
 
     def test_insert_places_item_at_given_index_in_a_list(self):
         a_list = [0, 1, 2, 3]
-        self.assertIsNone(a_list.insert(0, 1))
-        self.assertEqual(a_list, [1, 0, 1, 2, 3])
+        self.assertIsNone(a_list.insert(0, -1))
+        self.assertEqual(a_list, [-1, 0, 1, 2, 3])
 
     def test_pop_removes_and_returns_last_item_in_a_list(self):
         a_list = [0, 1, 2, 3]
@@ -115,9 +115,9 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list, [0, 1, 2])
 
     def test_remove_first_instance_of_item_in_a_list(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-        self.assertIsNone(a_list.remove(2))
-        self.assertEqual(a_list, [0, 1, 2, 3, 2])
+        a_list = [0, 1, 0, 2, 0, 3, 0]
+        self.assertIsNone(a_list.remove(0))
+        self.assertEqual(a_list, [1, 0, 2, 0, 3, 0])
 
     def test_reverse_a_list(self):
         a_list = [0, 1, 2, 3]
@@ -125,11 +125,11 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list, [3, 2, 1, 0])
 
     def test_sort_a_list(self):
-        a_list = [0, 2, 1, 2, 3, 2]
+        a_list = [0, 1, 0, 2, 0, 3]
         self.assertIsNone(a_list.sort())
-        self.assertEqual(a_list, [0, 1, 2, 2, 2, 3])
+        self.assertEqual(a_list, [0, 0, 0, 1, 2, 3])
 
-    def test_view_items_in_a_list(self):
+    def test_get_items_from_a_list(self):
         a_list = ['1st', '2nd', '3rd', '... last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[-4], '1st')
@@ -141,11 +141,11 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[-1], '... last')
 
     def test_view_parts_of_a_list(self):
-        a_list = ['1st', '2nd', '3rd', '... last']
-        self.assertEqual(a_list[0:2], ['1st', '2nd'])
-        self.assertEqual(a_list[0:3], ['1st', '2nd', '3rd'])
-        self.assertEqual(a_list[1:4], ['2nd', '3rd', '... last'])
-        self.assertEqual(a_list[1:3], ['2nd', '3rd'])
+        a_list = ['a', 'b', 'c', 'd']
+        self.assertEqual(a_list[0:2], ['a', 'b'])
+        self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
+        self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
+        self.assertEqual(a_list[1:3], ['b', 'c'])
 
     def test_index_error(self):
         a_list = ['a', 'b', 'c', 'd']
