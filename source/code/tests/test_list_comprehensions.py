@@ -3,12 +3,12 @@ import src.list_comprehensions
 import unittest
 
 
-def condition(number):
-    return number % 2 == 0
-
-
 def process(number):
     return number * number
+
+
+def condition(number):
+    return number % 2 == 0
 
 
 class TestListComprehensions(unittest.TestCase):
@@ -55,7 +55,7 @@ class TestListComprehensions(unittest.TestCase):
     def test_list_comprehensions_w_conditions_ii(self):
         odd_numbers = []
         for item in self.iterable:
-            if not condition(item):
+            if item % 2 != 0:
                 odd_numbers.append(item)
 
         self.assertEqual(
@@ -77,10 +77,9 @@ class TestListComprehensions(unittest.TestCase):
             [process(item) for item in self.iterable]
         )
         self.assertEqual(
-            src.list_comprehensions.get_square_numbers(self.iterable),
+            src.list_comprehensions.square(self.iterable),
             [process(item) for item in self.iterable]
         )
-
 
 
 # Exceptions Encountered

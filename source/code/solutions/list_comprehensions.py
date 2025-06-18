@@ -9,13 +9,13 @@ def list_comprehension(iterable):
     return [item for item in iterable]
 
 
-def is_even(number):
-    return number % 2 == 0
-
-
 def get_even_numbers(iterable):
-    return [item for item in iterable if is_even(item)]
+    return [item for item in iterable if item % 2 == 0]
 
 
 def get_odd_numbers(iterable):
-    return [item for item in iterable if not is_even(item)]
+    return [item for item in iterable if item % 2 != 0]
+
+
+def square(iterable):
+    return [item*item for item in iterable]
