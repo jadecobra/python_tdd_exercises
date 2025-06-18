@@ -30,7 +30,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_truth_table.py``
-* then delete all the tests in ``truth_table.py``, which gives me a list of :ref:`AttributeErrors<AttributeError>` I start with the last one
+* then delete all the tests in ``truth_table.py``, which gives 20 failures, I start with the last one
 
   .. code-block:: python
 
@@ -97,13 +97,13 @@ green: make it pass
     def tautology(x, y):
         return True
 
-* I have another :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
-  I add a :ref:`function<functions>`
+  I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
 
     AssertionError: False is not true
 
-  this test expects :ref:`False<test_what_is_false>` sometimes and :ref:`True<test_what_is_true>` other times. I return the inputs to see the difference between them and the output
+  I return the inputs to see the difference between them and the expected output
 
   .. code-block:: python
 
@@ -175,7 +175,7 @@ green: make it pass
     def project_first(x, y):
         return x
 
-* there is another :ref:`AttributeError`
+* another :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -219,7 +219,7 @@ green: make it pass
 
   ``y`` is :ref:`True<test_what_is_true>` in 2 cases
 
-* I get :ref:`AttributeError`
+* :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -311,7 +311,7 @@ green: make it pass
 
     AssertionError: (False, False) is not false
 
-  another `if statement`_
+  I add an `if statement`_ for it
 
   .. code-block:: python
 
@@ -381,7 +381,7 @@ green: make it pass
 
     AssertionError: (True, False) is not false
 
-  another `if statement`_
+  I add another `if statement`_
 
   .. code-block:: python
 
@@ -396,7 +396,7 @@ green: make it pass
 
     AssertionError: (False, True) is not false
 
-  I add another `if statement`_
+  I add an `if statement`_
 
   .. code-block:: python
 
@@ -406,7 +406,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-* I get :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -434,7 +434,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-* on to the next :ref:`AttributeError`
+* :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -504,7 +504,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* the next :ref:`AttributeError`
+* :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -563,7 +563,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* I get another :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -605,7 +605,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* next :ref:`AttributeError`
+* :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -664,7 +664,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* next :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -692,7 +692,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-* I get :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -740,7 +740,7 @@ green: make it pass
 
     AssertionError: (False, True) is not false
 
-  I add another `if statement`
+  I add an `if statement`_
 
   .. code-block:: python
 
@@ -800,7 +800,7 @@ green: make it pass
 
     AssertionError: True is not false
 
-  ah, it expects the opposite. I add "not_" to the `return statement`_
+  I add "not_" to the `return statement`_
 
   .. code-block:: python
 
@@ -815,6 +815,19 @@ green: make it pass
     AttributeError: module 'src.truth_table' has no attribute 'logical_identity'. Did you mean: 'logical_equality'?
 
   I add a :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def logical_identity(x):
+        return not x
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  I remove "not_"
 
   .. code-block:: python
 
@@ -861,7 +874,7 @@ green: make it pass
     def logical_true():
         return True
 
-* another :ref:`AttributeError`
+* the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -882,7 +895,9 @@ refactor: make it better
 
 Since all the tests are passing, I can refactor the :ref:`functions<functions>` to make them simpler
 
-* :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in every case, I can use a simple `return statement`_
+* :ref:`logical_false<test_logical_false>`, :ref:`logical_true<test_logical_true>`, :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>` are already simple
+
+* :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in 4 cases and with 2 inputs there are only 4 cases. I  add a `return statement`_
 
   .. code-block:: python
 
@@ -901,7 +916,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def contradiction(x, y):
         return False
 
-* I use a one line `return statement`_ for :ref:`converse_implication<test_converse_implication>` to return the opposite of the `if statement`_, there is only one case that returns :ref:`False<test_what_is_false>`
+* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the `if statement`_, for the 3 cases that return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -917,7 +932,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def converse_implication(x, y):
         return (x, y) != (False, True)
 
-* :ref:`converse_non_implication<test_converse_non_implication>` has only one case that returns :ref:`True<test_what_is_true>`, I use that
+* :ref:`converse_non_implication<test_converse_non_implication>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
 
   .. code-block:: python
 
@@ -935,33 +950,26 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def converse_non_implication(x, y):
         return (x, y) == (False, True)
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two `if statements`_ I try to combine them
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two `if statements`_ I can put them together
 
   .. code-block:: python
 
     def exclusive_disjunction(x, y):
-        return (x, y) != (True, True) or (x, y) != (False, False)
+        if (x, y) == (True, True) or (x, y) == (False, False): return False
         if (x, y) == (True, True): return False
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-  Oops! It looks like I cannot do that since this statement is the opposite of the combination of the 2 `if statements`_, I change "or_" to and_
+  the test is still green. I remove the other `if statements`_ then return the :ref:`logical negation<test_logical_negation>`
 
   .. code-block:: python
 
     def exclusive_disjunction(x, y):
         return (x, y) != (True, True) and (x, y) != (False, False)
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, False): return False
+        if (x, y) == (True, True) or (x, y) == (False, False): return False
         return x, y
 
-  the test is green again, I remove the other statements
+  the test is still green again, I remove the other statements
 
   .. code-block:: python
 
@@ -993,7 +1001,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def logical_disjunction(x, y):
         return (x, y) != (False, False)
 
-* :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I put their opposites together
+* :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I use what I know from :ref:`Exclusive Disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
 
@@ -1002,7 +1010,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
   the terminal still shows green
 
-* I use the opposite of the condition in the `if statement`_ for :ref:`logical_nand<test_logical_nand>`
+* :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
@@ -1018,32 +1026,58 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def logical_nor(x, y):
         return (x, y) == (False, False)
 
-* :ref:`material_non_implication<test_material_non_implication>` and :ref:`material_implication<test_material_implication>`
+* :ref:`material_implication<test_material_implication>` has only case that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
     def material_non_implication(x, y):
         return (x, y) == (True, False)
 
+* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
 
     def material_implication(x, y):
         return (x, y) != (True, False)
 
-* ``x`` is :ref:`True<test_what_is_true>` in both cases of :ref:`negate_first<test_negate_first>` that return :ref:`False<test_what_is_false>`
+* ``x`` is :ref:`True<test_what_is_true>` in both cases of :ref:`negate_first<test_negate_first>` that return :ref:`False<test_what_is_false>`, I add an `if statement`_ to show this
+
+  .. code-block:: python
+
+    def negate_first(x, y):
+        if x == True: return False
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
+        return x, y
+
+  the test is still green.  I add a `return statement`_
+
+  .. code-block:: python
+
+    def negate_first(x, y):
+        return x != True
+        if x == True: return False
+        return x, y
+
+  still green, I remove the other statements
 
   .. code-block:: python
 
     def negate_first(x, y):
         return x != True
 
-* ``y`` is :ref:`True<test_what_is_true>` in both cases of :ref:`negate_second<test_negate_second>` that return :ref:`False<test_what_is_false>`
+* ``y`` is :ref:`True<test_what_is_true>` in the 2 cases that return :ref:`False<test_what_is_false>` in :ref:`negate_second<test_negate_second>`. I add a `return statement`_ like the one from :ref:`Negate First<test_negate_first>`
 
   .. code-block:: python
 
     def negate_second(x, y):
         return y != True
 
-  I change the `return statement`_
+  still green
+
+* :ref:`project_second<test_project_second>`, :ref:`project_first<test_project_first>` and :ref:`tautology<test_tautology>` are already simple
+
+* I change the `return statement`_ in :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
 
@@ -1051,7 +1085,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
         return not y == True
         return y != True
 
-  since ``not y`` is equal to :ref:`True<test_what_is_true>` I can remove the duplication
+  when ``not y`` is :ref:`True<test_what_is_true>` this statement will be a duplication - ``True == True``, I remove the second part of the statement
 
   .. code-block:: python
 
@@ -1101,21 +1135,44 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
   the test is green again, I will use "or_" when I see ``!=``
 
-* I use this with :ref:`logical_nor<test_logical_nor>`
+* I do it with :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
 
     def logical_nor(x, y):
         return not x and not y
 
-  which factors to
+  then rewrite the `return statement`_ in terms of "not_" since it happens 2 times
+
+  .. code-block:: python
+
+    def logical_nor(x, y):
+        return not x not or not y
+        return not x and not y
+
+  the terminal shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  I comment the line out then factor out "not_"
+
+  .. code-block:: python
+
+    def logical_nor(x, y):
+        return not (x or y)
+        # return not x not or not y
+        return not x and not y
+
+  the terminal still shows green. I remove the other statements
 
   .. code-block:: python
 
     def logical_nor(x, y):
         return not (x or y)
 
-* :ref:`logical_nand<test_logical_nand>`
+* I add a `return statement`_ for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
 
@@ -1129,7 +1186,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def logical_nand(x, y):
         return not (x and y)
 
-* I do it with :ref:`logical_equality<test_logical_equality>`
+* :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
 
@@ -1137,15 +1194,18 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
         return (not x or y) and (x or not y)
         return (x, y) != (True, False) and (x, y) != (False, True)
 
-  the tests are all still passing, I remove the other statement
+  the test is still green, I remove the other statement
 
-* :ref:`logical_disjunction<test_logical_disjunction>` and :ref:`logical_conjunction<test_logical_conjunction>`
+* :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
 
     def logical_disjunction(x, y):
         return x or y
 
+* :ref:`logical_conjunction<test_logical_conjunction>`
+
+  .. code-block:: python
 
     def logical_conjunction(x, y):
         return x and y
@@ -1168,13 +1228,16 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
   the test is still green. I remove the other statement
 
-* :ref:`converse_non_implication<test_converse_non_implication>` and :ref:`converse_implication<test_converse_implication>`
+* :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
 
     def converse_non_implication(x, y):
         return not x and y
 
+* :ref:`converse_implication<test_converse_implication>`
+
+  .. code-block:: python
 
     def converse_implication(x, y):
         return x or not y
@@ -1187,12 +1250,12 @@ review
 
 I ran tests for the operations of the `Truth Table`_ involving booleans_ which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
-* :ref:`Logical False<test_logical_false>` always returns :ref:`False<test_what_is_false>` it is a nullary operation, it does not take input
-* :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>` is also nullary
-* :ref:`Logical Identity<test_logical_identity>` returns what it receives and only takes one input, it is a unary operation
-* :ref:`Logical Negation<test_logical_negation>` returns the negation of its input, it is also unary
+* :ref:`Logical False<test_logical_false>` always returns :ref:`False<test_what_is_false>` it is a :ref:`nullary operation<Nullary Operations>`, it does not take input
+* :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>` is also :ref:`nullary<Nullary Operations>`
+* :ref:`Logical Identity<test_logical_identity>` returns what it receives and only takes one input, it is a :ref:`unary operation<Unary Operations>`
+* :ref:`Logical Negation<test_logical_negation>` returns the negation of its input, it is also :ref:`unary<Unary Operations>`
 
-:ref:`Contradiction<test_contradiction>` to :ref:`Tautology<test_tautology>` are binary operations which take in 2 inputs, in this case I named them ``x`` and ``y``
+:ref:`Contradiction<test_contradiction>` to :ref:`Tautology<test_tautology>` are binary operations which take in 2 inputs, in this case I named the first one ``x`` and the second one ``y``
 
 * :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
 * :ref:`Converse Implication<test_converse_implication>` returns ``x or not y``
@@ -1213,8 +1276,6 @@ I ran tests for the operations of the `Truth Table`_ involving booleans_ which c
 
 As a reminder
 
-* "not_ or_" is "and_"
-* "not_ and_" is "or_"
 * not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
 * not_ :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
 * :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
