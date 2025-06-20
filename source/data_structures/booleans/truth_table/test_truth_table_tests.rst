@@ -30,7 +30,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_truth_table.py``
-* then delete all the tests in ``truth_table.py``, which gives 20 failures, I start with the last one
+* then delete all the tests in ``truth_table.py``, which gives 20 failures. I start with the last one
 
   .. code-block:: python
 
@@ -77,7 +77,7 @@ green: make it pass
 
     TypeError: tautology() takes 0 positional arguments but 2 were given
 
-  I add input arguments in the :ref:`function<functions>` definition
+  I add input arguments to the :ref:`function<functions>` definition
 
   .. code-block:: python
 
@@ -97,13 +97,13 @@ green: make it pass
     def tautology(x, y):
         return True
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -149,13 +149,13 @@ green: make it pass
     def project_second(x, y):
         return y
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'project_first'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -175,13 +175,13 @@ green: make it pass
     def project_first(x, y):
         return x
 
-* another :ref:`AttributeError`
+  another :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -219,13 +219,13 @@ green: make it pass
 
   ``y`` is :ref:`True<test_what_is_true>` in 2 cases
 
-* :ref:`AttributeError`
+  :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
-  I add a definition for it
+* I add a definition for it
 
   .. code-block:: python
 
@@ -263,13 +263,13 @@ green: make it pass
 
   ``x`` is :ref:`True<test_what_is_true>` in 2 cases
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -321,13 +321,13 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -348,13 +348,13 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-* I get :ref:`AttributeError`
+  I get :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nor'
 
-  I add a definition for it
+* I add the :ref:`function<functions>` definition for it
 
   .. code-block:: python
 
@@ -406,14 +406,14 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_nor'?
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -434,13 +434,13 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-* :ref:`AttributeError`
+  :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_equality'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -476,14 +476,14 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-* another :ref:`AttributeError`
+  another :ref:`AttributeError`
 
   .. code-block:: python
     :force:
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -504,14 +504,14 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* :ref:`AttributeError`
+  :ref:`AttributeError`
 
   .. code-block:: python
     :force:
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_disjunction'?
 
-  I add it
+* I add it
 
   .. code-block:: python
 
@@ -563,7 +563,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -605,14 +605,14 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* :ref:`AttributeError`
+  :ref:`AttributeError`
 
   .. code-block:: python
     :force:
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'. Did you mean: 'material_non_implication'?
 
-  I add the :ref:`function<functions>`
+* I add the definition for it
 
   .. code-block:: python
 
@@ -664,14 +664,14 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -692,13 +692,13 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
     AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -767,14 +767,14 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_negation'. Did you mean: 'logical_conjunction'?
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -807,7 +807,7 @@ green: make it pass
     def logical_negation(x):
         return not x
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -834,7 +834,7 @@ green: make it pass
     def logical_identity(x):
         return x
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -874,14 +874,14 @@ green: make it pass
     def logical_true():
         return True
 
-* the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_nand'?
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
