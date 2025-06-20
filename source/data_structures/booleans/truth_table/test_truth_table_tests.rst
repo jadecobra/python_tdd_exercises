@@ -217,9 +217,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  ``y`` is :ref:`True<test_what_is_true>` in 2 cases
-
-  :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -260,8 +258,6 @@ green: make it pass
         if (x, y) == (True, True): return False
         if (x, y) == (True, False): return False
         return x, y
-
-  ``x`` is :ref:`True<test_what_is_true>` in 2 cases
 
   the terminal shows :ref:`AttributeError`
 
@@ -434,7 +430,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -504,14 +500,14 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-  :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_disjunction'?
 
-* I add it
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -569,7 +565,7 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction
 
-  I add a :ref:`function<functions>` for it
+* I add a :ref:`function<functions>` for it
 
   .. code-block:: python
 
@@ -605,7 +601,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-  :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -969,7 +965,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
         if (x, y) == (True, True) or (x, y) == (False, False): return False
         return x, y
 
-  the test is still green again, I remove the other statements
+  the test is still green, I remove the other statements
 
   .. code-block:: python
 
@@ -1001,7 +997,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def logical_disjunction(x, y):
         return (x, y) != (False, False)
 
-* :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I use what I know from :ref:`Exclusive Disjunction<test_exclusive_disjunction>`
+* :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
 
@@ -1066,7 +1062,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def negate_first(x, y):
         return x != True
 
-* ``y`` is :ref:`True<test_what_is_true>` in the 2 cases that return :ref:`False<test_what_is_false>` in :ref:`negate_second<test_negate_second>`. I add a `return statement`_ like the one from :ref:`Negate First<test_negate_first>`
+* ``y`` is :ref:`True<test_what_is_true>` in the 2 cases that return :ref:`False<test_what_is_false>` in :ref:`negate_second<test_negate_second>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
 
@@ -1126,14 +1122,14 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
 
     AssertionError: False is not true
 
-  I change "and_" to
+  I change "and_" to "or_"
 
   .. code-block:: python
 
     def material_implication(x, y):
         return not x or y
 
-  the test is green again, I will use "or_" when I see ``!=``
+  the test is green again, I will use "or_" the next time I see ``!=``
 
 * I do it with :ref:`logical_nor<test_logical_nor>`
 
@@ -1179,7 +1175,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def logical_nand(x, y):
         return not x or not y
 
-  still green and it factors to
+  still green and it factors out to
 
   .. code-block:: python
 
@@ -1210,7 +1206,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def logical_conjunction(x, y):
         return x and y
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has 2 conditions
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
 
@@ -1248,39 +1244,36 @@ all the tests are still passing
 review
 *********************************************************************************
 
-I ran tests for the operations of the `Truth Table`_ involving booleans_ which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+I ran tests for the operations of the `Truth Table`_ from mathematics with booleans_ which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
-* :ref:`Logical False<test_logical_false>` always returns :ref:`False<test_what_is_false>` it is a :ref:`nullary operation<Nullary Operations>`, it does not take input
-* :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>` is also :ref:`nullary<Nullary Operations>`
-* :ref:`Logical Identity<test_logical_identity>` returns what it receives and only takes one input, it is a :ref:`unary operation<Unary Operations>`
-* :ref:`Logical Negation<test_logical_negation>` returns the negation of its input, it is also :ref:`unary<Unary Operations>`
+* there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input
 
-:ref:`Contradiction<test_contradiction>` to :ref:`Tautology<test_tautology>` are binary operations which take in 2 inputs, in this case I named the first one ``x`` and the second one ``y``
+  - :ref:`Logical False<test_logical_false>` always returns :ref:`False<test_what_is_false>`
+  - :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>`
 
-* :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
-* :ref:`Converse Implication<test_converse_implication>` returns ``x or not y``
-* :ref:`Converse NonImplication<test_converse_non_implication>` returns ``not x and y``
-* :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns ``not (x and y) and (x or y)``
-* :ref:`Logical Conjunction<test_logical_conjunction>` returns ``x and y``
-* :ref:`Logical Disjunction<test_logical_disjunction>` returns ``x or y``
-* :ref:`Logical Equality<test_logical_equality>` returns ``(not x or y) and (x or not y)``
-* :ref:`Logical NAND<test_logical_nand>` returns ``not (x and y)``
-* :ref:`Logical NOR<test_logical_nor>` returns ``not (x or y)``
-* :ref:`Material Implication<test_material_implication>` returns ``not x or y``
-* :ref:`Material NonImplication <test_material_non_implication>` returns ``x and not y``
-* :ref:`Negate First<test_negate_first>` always returns ``not x``
-* :ref:`Negate Second<test_negate_second>` always returns ``not y``
-* :ref:`Project First<test_project_first>` always returns ``x``
-* :ref:`Project Second<test_project_second>` always returns ``y``
-* :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`
+* there are 2 :ref:`unary operations<Unary Operations>`, they take one input
 
-As a reminder
+  - :ref:`Logical Identity<test_logical_identity>` returns its input
+  - :ref:`Logical Negation<test_logical_negation>` returns the negation of its input
 
-* not_ :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
-* not_ :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
-* :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`
-* :ref:`True<test_what_is_true>` is :ref:`True<test_what_is_true>`
-* :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are booleans_
+* there are 16 binary operations they each take 2 inputs, in this case I named the first input ``x`` and the second one ``y``
+
+  - :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
+  - :ref:`Converse Implication<test_converse_implication>` returns ``x or not y``
+  - :ref:`Converse NonImplication<test_converse_non_implication>` returns ``not x and y``
+  - :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns ``not (x and y) and (x or y)``
+  - :ref:`Logical Conjunction<test_logical_conjunction>` returns ``x and y``
+  - :ref:`Logical Disjunction<test_logical_disjunction>` returns ``x or y``
+  - :ref:`Logical Equality<test_logical_equality>` returns ``(not x or y) and (x or not y)``
+  - :ref:`Logical NAND<test_logical_nand>` returns ``not (x and y)``
+  - :ref:`Logical NOR<test_logical_nor>` returns ``not (x or y)``
+  - :ref:`Material Implication<test_material_implication>` returns ``not x or y``
+  - :ref:`Material NonImplication <test_material_non_implication>` returns ``x and not y``
+  - :ref:`Negate First<test_negate_first>` always returns ``not x``
+  - :ref:`Negate Second<test_negate_second>` always returns ``not y``
+  - :ref:`Project First<test_project_first>` always returns ``x``
+  - :ref:`Project Second<test_project_second>` always returns ``y``
+  - :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`
 
 Would you like to :doc:`test lists?</data_structures/lists/lists>`
 
