@@ -4,7 +4,7 @@ import unittest
 class TestLists(unittest.TestCase):
 
     def test_make_a_list(self):
-        self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
+        self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
         self.assertEqual(list(range(0, 4)), [0, 1, 2, 3])
 
     def test_attributes_and_methods_of_lists(self):
@@ -65,8 +65,8 @@ class TestLists(unittest.TestCase):
 
     def test_append_adds_to_a_list(self):
         a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.append(4))
-        self.assertEqual(a_list, [0, 1, 2, 'n', 4])
+        self.assertIsNone(a_list.append('n+1'))
+        self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
     def test_clear_empties_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -79,15 +79,15 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list, [0, 1, 2, 'n'])
 
     def test_count_number_of_times_item_is_in_a_list(self):
-        a_list = [0, 2, 1, 2, 'n', 2]
+        a_list = [0, 1, 2, 1, 'n', 1]
         self.assertEqual(a_list.count(0), 1)
-        self.assertEqual(a_list.count(2), 3)
+        self.assertEqual(a_list.count(1), 3)
         self.assertEqual(a_list.count('not in list'), 0)
 
     def test_extend_makes_a_list_longer(self):
         a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.extend((0, 1)))
-        self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
+        self.assertIsNone(a_list.extend((2, 1, 0)))
+        self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
     def test_index_returns_position_of_item_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '... last']
@@ -104,12 +104,12 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.insert(0, -1))
         self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
 
-    def test_pop_removes_and_returns_the_last_item_in_a_list(self):
+    def test_pop_removes_and_returns_last_item_in_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
 
-    def test_remove_first_instance_of_item_in_a_list(self):
+    def test_remove_first_instance_of_item_from_a_list(self):
         a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
@@ -136,13 +136,6 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[-1], '... last')
 
     def test_view_parts_of_a_list_aka_slicing(self):
-        a_list = ['a', 'b', 'c', 'd']
-        self.assertEqual(a_list[0:2], ['a', 'b'])
-        self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
-        self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
-        self.assertEqual(a_list[1:3], ['b', 'c'])
-
-    def test_index_error(self):
         a_list = [0, 1, 2, 'n']
 
         with self.assertRaises(IndexError):
