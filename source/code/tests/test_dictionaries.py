@@ -111,8 +111,8 @@ class TestDictionaries(unittest.TestCase):
 
     def test_get_a_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.get('key', 'default'), 'value')
         self.assertEqual(a_dictionary.get(0, 'default'), 'default')
+        self.assertEqual(a_dictionary.get('key', 'default'), 'value')
 
     def test_items_returns_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {'key': 'value'}
@@ -172,16 +172,16 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary['key'], 'value')
         self.assertEqual(
-            a_dictionary.get('key_not_in_dictionary', 'default'),
+            a_dictionary.get('not_in_dictionary', 'default'),
             'default'
         )
 
         with self.assertRaises(KeyError):
-            a_dictionary['key_not_in_dictionary']
+            a_dictionary['not_in_dictionary']
+        with self.assertRaises(KeyError):
+            a_dictionary.pop('not_in_dictionary')
         with self.assertRaises(KeyError):
             {}.popitem()
-        with self.assertRaises(KeyError):
-            a_dictionary.pop('key_not_in_dictionary')
 
 
 # Exceptions Encountered
