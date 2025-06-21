@@ -3,13 +3,8 @@ import unittest
 
 class TestLists(unittest.TestCase):
 
-    def test_make_a_list_w_list_constructor(self):
+    def test_make_a_list(self):
         self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
-
-    def test_make_a_list_w_square_brackets(self):
-        self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
-
-    def test_make_a_list_w_an_iterable(self):
         self.assertEqual(list(range(0, 4)), [0, 1, 2, 3])
 
     def test_attributes_and_methods_of_lists(self):
@@ -69,30 +64,30 @@ class TestLists(unittest.TestCase):
         )
 
     def test_append_adds_to_a_list(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.append(4))
-        self.assertEqual(a_list, [0, 1, 2, 3, 4])
+        self.assertEqual(a_list, [0, 1, 2, 'n', 4])
 
     def test_clear_empties_a_list(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.clear())
         self.assertEqual(a_list, [])
 
     def test_copy_a_list(self):
-        a_list = [0, 1, 2, 3]
-        self.assertEqual(a_list.copy(), [0, 1, 2, 3])
-        self.assertEqual(a_list, [0, 1, 2, 3])
+        a_list = [0, 1, 2, 'n']
+        self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+        self.assertEqual(a_list, [0, 1, 2, 'n'])
 
     def test_count_number_of_times_item_is_in_a_list(self):
-        a_list = [0, 2, 1, 2, 3, 2]
+        a_list = [0, 2, 1, 2, 'n', 2]
         self.assertEqual(a_list.count(0), 1)
         self.assertEqual(a_list.count(2), 3)
         self.assertEqual(a_list.count('not in list'), 0)
 
     def test_extend_makes_a_list_longer(self):
-        a_list = [0, 1, 2, 3]
-        self.assertIsNone(a_list.extend((4, 5, 6, 7)))
-        self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7])
+        a_list = [0, 1, 2, 'n']
+        self.assertIsNone(a_list.extend((0, 1)))
+        self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
 
     def test_index_returns_position_of_item_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '... last']
@@ -105,24 +100,24 @@ class TestLists(unittest.TestCase):
             a_list.index(0)
 
     def test_insert_places_item_at_given_index_in_a_list(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert(0, -1))
-        self.assertEqual(a_list, [-1, 0, 1, 2, 3])
+        self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
 
-    def test_pop_removes_and_returns_last_item_in_a_list(self):
-        a_list = [0, 1, 2, 3]
-        self.assertEqual(a_list.pop(), 3)
+    def test_pop_removes_and_returns_the_last_item_in_a_list(self):
+        a_list = [0, 1, 2, 'n']
+        self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
 
     def test_remove_first_instance_of_item_in_a_list(self):
-        a_list = [0, 1, 0, 2, 0, 3, 0]
+        a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
-        self.assertEqual(a_list, [1, 0, 2, 0, 3, 0])
+        self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
     def test_reverse_a_list(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.reverse())
-        self.assertEqual(a_list, [3, 2, 1, 0])
+        self.assertEqual(a_list, ['n', 2, 1, 0])
 
     def test_sort_a_list(self):
         a_list = [0, 1, 0, 2, 0, 3]
@@ -140,7 +135,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[3], '... last')
         self.assertEqual(a_list[-1], '... last')
 
-    def test_view_parts_of_a_list(self):
+    def test_view_parts_of_a_list_aka_slicing(self):
         a_list = ['a', 'b', 'c', 'd']
         self.assertEqual(a_list[0:2], ['a', 'b'])
         self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
@@ -148,7 +143,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[1:3], ['b', 'c'])
 
     def test_index_error(self):
-        a_list = ['a', 'b', 'c', 'd']
+        a_list = [0, 1, 2, 'n']
 
         with self.assertRaises(IndexError):
             a_list[4]
