@@ -152,10 +152,6 @@ class TestLists(unittest.TestCase):
             [].pop()
 
 
-
-
-
-
 # Exceptions Encountered
 # AssertionError
 # TypeError
