@@ -8,12 +8,12 @@ class TestFunctions(unittest.TestCase):
         self.assertIsNone(src.functions.function_w_pass())
 
     def test_make_a_function_w_return(self):
-        self.assertIsNone(src.functions.function_w_none())
+        self.assertIsNone(src.functions.function_w_return())
 
     def test_make_a_function_w_return_none(self):
         self.assertIsNone(src.functions.function_w_return_none())
 
-    def test_singleton_functions(self):
+    def test_singleton_function(self):
         self.assertEqual(
             src.functions.singleton(),
             'the same thing'
@@ -30,8 +30,9 @@ class TestFunctions(unittest.TestCase):
         )
 
     def test_passthrough_functions(self):
-        self.assertEqual(src.functions.passthrough(None), None)
+        self.assertIsNone(src.functions.passthrough(None))
         self.assertEqual(src.functions.passthrough(object), object)
+
 
 
 # Exceptions Encountered

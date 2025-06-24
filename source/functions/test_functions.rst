@@ -354,3 +354,6 @@ Would you like to :ref:`test singleton functions?<test_singleton_functions>`
 ----
 
 :doc:`/code/code_functions`
+
+
+# rename singleton

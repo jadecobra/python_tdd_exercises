@@ -2,7 +2,7 @@ def function_w_pass():
     pass
 
 
-def function_w_none():
+def function_w_return():
     return
 
 
