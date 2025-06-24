@@ -781,7 +781,7 @@ green: make it pass
 
   .. code-block:: python
 
-    TypeError: logical_negation() missing 1 required positional argument: 'x'
+    TypeError: logical_negation() missing 1 required positional argument: 'y'
 
   I change the signature
 
