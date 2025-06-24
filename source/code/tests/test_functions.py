@@ -13,19 +13,19 @@ class TestFunctions(unittest.TestCase):
     def test_make_a_function_w_return_none(self):
         self.assertIsNone(src.functions.function_w_return_none())
 
-    def test_singleton_function(self):
+    def test_constant_function(self):
         self.assertEqual(
-            src.functions.singleton(),
+            src.functions.constant(),
             'the same thing'
         )
 
-    def test_singleton_functions_w_inputs(self):
+    def test_constant_functions_w_inputs(self):
         self.assertEqual(
-            src.functions.singleton_w_inputs('Bob', 'James'),
+            src.functions.constant_w_inputs('Bob', 'James'),
             'the same thing'
         )
         self.assertEqual(
-            src.functions.singleton_w_inputs('a', 1, 'c', 3),
+            src.functions.constant_w_inputs('a', 1, 'c', 3),
             'the same thing'
         )
 

@@ -356,7 +356,7 @@ From the tests I know that
 * I can use ``*name`` to represent any number of positional arguments
 * that positional arguments are represented as tuples_ with parentheses - ``()``
 * that passthrough :ref:`functions` return what they receive as input
-* that singleton :ref:`functions` return the same thing every time they are called
+* that constant :ref:`functions` return the same thing every time they are called
 * :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default
 

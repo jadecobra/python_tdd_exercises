@@ -211,7 +211,7 @@ test_functions
 *********************************************************************************
 
 #. :ref:`test_functions`
-#. :ref:`test_singleton_functions<test_singleton_functions>`
+#. :ref:`test_constant_functions<test_constant_functions>`
 #. :ref:`test_passthrough_functions<test_passthrough_functions>`
 #. :ref:`test_functions_w_positional_arguments<test_functions_w_positional_arguments>`
 #. :ref:`test_functions_w_keyword_arguments<test_functions_w_keyword_arguments>`

@@ -150,10 +150,10 @@ from the `Zen of Python`_: ``Explicit is better than implicit.`` I add a :ref:`f
 and the terminal shows passing tests.
 
 *********************************************************************************
-test_singleton_functions
+test_constant_functions
 *********************************************************************************
 
-Singleton :ref:`functions` always return the same thing when called
+constant :ref:`functions` always return the same thing when called
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -162,8 +162,8 @@ I add a test to ``test_functions.py``
 
 .. code-block:: python
 
-    def test_singleton_functions(self):
-        self.assertEqual(functions.singleton(), 'my_first_name')
+    def test_constant_functions(self):
+        self.assertEqual(functions.constant(), 'my_first_name')
 
 the terminal shows :ref:`AttributeError`
 
@@ -174,29 +174,29 @@ I change the :ref:`function<functions>` to make it pass
 
 .. code-block:: python
 
-  def singleton():
+  def constant():
       return 'my_first_name'
 
 ----
 
 *********************************************************************************
-test_singleton_functions_w_inputs
+test_constant_functions_w_inputs
 *********************************************************************************
 
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new test that checks if a singleton that takes inputs returns the same value regardless of the inputs
+I add a new test that checks if a constant that takes inputs returns the same value regardless of the inputs
 
 .. code-block:: python
 
-  def test_singleton_functions_w_inputs(self):
+  def test_constant_functions_w_inputs(self):
       self.assertEqual(
-          functions.singleton_w_inputs('Bob', 'James', 'Frank'),
+          functions.constant_w_inputs('Bob', 'James', 'Frank'),
           'joe'
       )
       self.assertEqual(
-          functions.singleton_w_inputs('a', 2, 'c', 3),
+          functions.constant_w_inputs('a', 2, 'c', 3),
           'joe'
       )
 
@@ -205,11 +205,11 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-and I add a :ref:`function <functions>` for ``singleton_w_inputs`` to ``functions.py``
+and I add a :ref:`function <functions>` for ``constant_w_inputs`` to ``functions.py``
 
 .. code-block:: python
 
-  def singleton_w_inputs(*args):
+  def constant_w_inputs(*args):
       return 'joe'
 
 the terminal shows passing tests
@@ -345,15 +345,15 @@ The 3 ways I have defined :ref:`functions` so far have the exact same outcome, t
 Here is what I know so far from the tests
 
 * :ref:`passthrough functions<test_passthrough_functions>` return their input
-* :ref:`singleton functions<test_singleton_functions>` always return the same thing
+* :ref:`constant functions<test_constant_functions>` always return the same thing
 * :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default
 
-Would you like to :ref:`test singleton functions?<test_singleton_functions>`
+Would you like to :ref:`test constant functions?<test_constant_functions>`
 
 ----
 
 :doc:`/code/code_functions`
 
 
-# rename singleton
+# rename constant

@@ -10,12 +10,12 @@ def function_w_return_none():
     return None
 
 
-def singleton():
+def constant():
     return 'the same thing'
 
 
-def singleton_w_inputs(*args):
-    return singleton()
+def constant_w_inputs(*args):
+    return constant()
 
 
 def passthrough(argument):
