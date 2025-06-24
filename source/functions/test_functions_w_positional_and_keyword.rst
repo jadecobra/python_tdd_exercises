@@ -355,7 +355,7 @@ From the tests I know that
 * that keyword arguments are represented as :ref:`dictionaries`  with curly braces - ``{}``
 * I can use ``*name`` to represent any number of positional arguments
 * that positional arguments are represented as tuples_ with parentheses - ``()``
-* that passthrough :ref:`functions` return what they receive as input
+* that identity :ref:`functions` return what they receive as input
 * that constant :ref:`functions` return the same thing every time they are called
 * :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default

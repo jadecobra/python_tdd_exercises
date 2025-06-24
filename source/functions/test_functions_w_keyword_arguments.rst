@@ -27,7 +27,7 @@ I add a new test to ``test_functions.py``
 
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 first_name='my_first_name',
                 last_name='my_last_name'
             ),
@@ -43,33 +43,33 @@ green: make it pass
 
   .. code-block:: python
 
-    def passthrough_w_keyword_arguments():
+    def identity_w_keyword_arguments():
         return None
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: passthrough_w_keyword_arguments() got an unexpected keyword argument 'first_name'
+    TypeError: identity_w_keyword_arguments() got an unexpected keyword argument 'first_name'
 
 * I make the :ref:`function<functions>` signature to make it take a positional argument
 
   .. code-block:: python
 
-    def passthrough_w_keyword_arguments(first_name):
+    def identity_w_keyword_arguments(first_name):
         return None
 
   the terminal shows :ref:`TypeError` with a different message
 
   .. code-block:: python
 
-    TypeError: passthrough_w_keyword_arguments() got an unexpected keyword argument 'last_name'
+    TypeError: identity_w_keyword_arguments() got an unexpected keyword argument 'last_name'
 
 * I make the :ref:`function<functions>` signature to take in another positional argument
 
   .. code-block:: python
 
-    def passthrough_w_keyword_arguments(first_name, last_name):
+    def identity_w_keyword_arguments(first_name, last_name):
         return None
 
   the terminal shows :ref:`AssertionError`
@@ -77,7 +77,7 @@ green: make it pass
 
   .. code-block:: python
 
-      def passthrough_w_keyword_arguments(first_name, last_name):
+      def identity_w_keyword_arguments(first_name, last_name):
           return first_name, last_name
 
   Eureka! the terminal shows passing tests
@@ -85,20 +85,20 @@ green: make it pass
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* So far ``passthrough_w_keyword_arguments`` looks the same as ``passthrough_w_positional_arguments`` did when it took in 2 positional arguments, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an assertion that puts the input data out of order to see if there is a difference
+* So far ``identity_w_keyword_arguments`` looks the same as ``identity_w_positional_arguments`` did when it took in 2 positional arguments, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an assertion that puts the input data out of order to see if there is a difference
 
   .. code-block:: python
 
       def test_functions_w_keyword_arguments(self):
           self.assertEqual(
-              functions.passthrough_w_keyword_arguments(
+              functions.identity_w_keyword_arguments(
                   first_name='my_first_name',
                   last_name='my_last_name'
               ),
               ('my_first_name', 'my_last_name')
           )
           self.assertEqual(
-              functions.passthrough_w_keyword_arguments(
+              functions.identity_w_keyword_arguments(
                   last_name='my_last_name',
                   first_name='my_first_name'
               ),
@@ -113,21 +113,21 @@ refactor: make it better
 
       def test_functions_w_keyword_arguments(self):
           self.assertEqual(
-              functions.passthrough_w_keyword_arguments(
+              functions.identity_w_keyword_arguments(
                   first_name='my_first_name',
                   last_name='my_last_name'
               ),
               ('my_first_name', 'my_last_name')
           )
           self.assertEqual(
-              functions.passthrough_w_keyword_arguments(
+              functions.identity_w_keyword_arguments(
                   last_name='my_last_name',
                   first_name='my_first_name'
               ),
               ('my_first_name', 'my_last_name')
           )
           self.assertEqual(
-              functions.passthrough_w_keyword_arguments(
+              functions.identity_w_keyword_arguments(
                   a=1, b=2, c=3, d=4
               ),
               {}
@@ -135,11 +135,11 @@ refactor: make it better
 
   the terminal shows :ref:`TypeError`
 
-* I make the signature of ``passthrough_w_keyword_arguments`` take any number of keyword arguments
+* I make the signature of ``identity_w_keyword_arguments`` take any number of keyword arguments
 
   .. code-block:: python
 
-    def passthrough_w_keyword_arguments(**keyword_arguments):
+    def identity_w_keyword_arguments(**keyword_arguments):
         return keyword_arguments
 
   the terminal shows :ref:`AssertionError` for the previous test that was passing. I have introduced a regression - the new code has caused an old passing test to fail.
@@ -150,7 +150,7 @@ refactor: make it better
 
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 first_name='my_first_name',
                 last_name='my_last_name'
             ),
@@ -168,7 +168,7 @@ refactor: make it better
 
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 first_name='my_first_name',
                 last_name='my_last_name'
             ),
@@ -178,7 +178,7 @@ refactor: make it better
             }
         )
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 last_name='my_last_name',
                 first_name='my_first_name'
             ),
@@ -196,7 +196,7 @@ refactor: make it better
 
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 first_name='my_first_name',
                 last_name='my_last_name'
             ),
@@ -206,7 +206,7 @@ refactor: make it better
             }
         )
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 last_name='my_last_name',
                 first_name='my_first_name'
             ),
@@ -216,7 +216,7 @@ refactor: make it better
             }
         )
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
               a=1, b=2, c=3, d=4
             ),
             {'a': 1, 'b': 2, 'c': 3, 'd': 4}
@@ -230,7 +230,7 @@ refactor: make it better
 
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 first_name='my_first_name',
                 last_name='my_last_name'
             ),
@@ -240,7 +240,7 @@ refactor: make it better
             }
         )
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 last_name='my_last_name',
                 first_name='my_first_name'
             ),
@@ -250,13 +250,13 @@ refactor: make it better
             }
         )
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 a=1, b=2, c=3, d=4
             ),
             {'a': 1, 'b': 2, 'c': 3, 'd': 4}
         )
         self.assertEqual(
-            functions.passthrough_w_keyword_arguments(
+            functions.identity_w_keyword_arguments(
                 a_boolean=bool,
                 an_integer=int,
                 a_float=float,
@@ -274,7 +274,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        functions.passthrough_w_keyword_arguments(
+        functions.identity_w_keyword_arguments(
             a_boolean=bool,
             an_integer=int,
             a_float=float,
@@ -310,7 +310,7 @@ From the tests I know
 * that keyword arguments are represented as :ref:`dictionaries`  with curly braces - ``{}``
 * I can use ``*name`` to represent any number of positional arguments
 * that positional arguments are represented as tuples_ with parentheses - ``()``
-* that passthrough :ref:`functions` return what they receive as input
+* that identity :ref:`functions` return what they receive as input
 * that constant :ref:`functions` return the same thing every time they are called
 * :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default

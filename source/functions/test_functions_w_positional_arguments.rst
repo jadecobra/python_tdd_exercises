@@ -22,7 +22,7 @@ I can define a :ref:`function<functions>` to take in more than one input, For in
 
     def test_functions_w_positional_arguments(self):
         self.assertEqual(
-            functions.passthrough_w_positional_arguments(
+            functions.identity_w_positional_arguments(
                 'my_first_name', 'my_last_name'
             ),
             ('my_first_name', 'my_last_name')
@@ -33,29 +33,29 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add the solution I know works from ``test_passthrough_functions`` ``functions.py``
+* I add the solution I know works from ``test_identity_functions`` ``functions.py``
 
   .. code-block:: python
 
-    def passthrough_w_positional_arguments(argument):
+    def identity_w_positional_arguments(argument):
         return argument
 
   the terminal shows :ref:`TypeError`
-* I make the signature of ``passthrough_w_positional_arguments`` to take in more than one argument
+* I make the signature of ``identity_w_positional_arguments`` to take in more than one argument
 
   .. code-block:: python
 
-    def passthrough_w_positional_arguments(
+    def identity_w_positional_arguments(
         argument, second_argument
     ):
         return argument
 
   the terminal shows :ref:`AssertionError`
-* I make ``passthrough_w_positional_arguments`` return the 2 arguments it receives
+* I make ``identity_w_positional_arguments`` return the 2 arguments it receives
 
   .. code-block:: python
 
-    def passthrough_w_positional_arguments(
+    def identity_w_positional_arguments(
         argument, second_argument
     ):
         return argument, second_argument
@@ -68,29 +68,29 @@ refactor: make it better
 How can I make this better?
 
 * I called the first argument ``argument`` and the second argument ``second_argument``. Technically, both arguments are input data, so I need a better name that is more descriptive
-* I make the signature of ``passthrough_w_positional_arguments`` to use more descriptive names
+* I make the signature of ``identity_w_positional_arguments`` to use more descriptive names
 
   .. code-block:: python
 
-    def passthrough_w_positional_arguments(
+    def identity_w_positional_arguments(
         first_argument, second_argument
     ):
         return first_argument, second_argument
 
   I still have passing tests
-* I add another test to ensure that ``passthrough_w_positional_arguments`` outputs data in the order given
+* I add another test to ensure that ``identity_w_positional_arguments`` outputs data in the order given
 
   .. code-block:: python
 
       def test_functions_w_positional_arguments(self):
           self.assertEqual(
-              functions.passthrough_w_positional_arguments(
+              functions.identity_w_positional_arguments(
                   'my_first_name', 'my_last_name'
               ),
               ('my_first_name', 'my_last_name')
           )
           self.assertEqual(
-              functions.passthrough_w_positional_arguments(
+              functions.identity_w_positional_arguments(
                   'my_last_name', 'my_first_name'
               ),
               ('my_first_name', 'my_last_name')
@@ -103,13 +103,13 @@ How can I make this better?
 
       def test_functions_w_positional_arguments(self):
           self.assertEqual(
-              functions.passthrough_w_positional_arguments(
+              functions.identity_w_positional_arguments(
                   'my_first_name', 'my_last_name'
               ),
               ('my_first_name', 'my_last_name')
           )
           self.assertEqual(
-              functions.passthrough_w_positional_arguments(
+              functions.identity_w_positional_arguments(
                   'my_last_name', 'my_first_name'
               ),
               ('my_last_name', 'my_first_name')
@@ -123,25 +123,25 @@ How can I make this better?
 
       def test_functions_w_positional_arguments(self):
           self.assertEqual(
-              functions.passthrough_w_positional_arguments(
+              functions.identity_w_positional_arguments(
                   'my_first_name', 'my_last_name'
               ),
               ('my_first_name', 'my_last_name')
           )
           self.assertEqual(
-              functions.passthrough_w_positional_arguments(
+              functions.identity_w_positional_arguments(
                   'my_last_name', 'my_first_name'
               ),
               ('my_last_name', 'my_first_name')
           )
           self.assertEqual(
-              functions.passthrough_w_positional_arguments(
+              functions.identity_w_positional_arguments(
                   0, 1, 2, 3
               ),
               (0, 1, 2, 3)
           )
           self.assertEqual(
-              functions.passthrough_w_positional_arguments(
+              functions.identity_w_positional_arguments(
                   bool, int, float, str, tuple, list, set, dict
               ),
               (bool, int, float, str, tuple, list, set, dict)
@@ -152,7 +152,7 @@ How can I make this better?
 
   .. code-block:: python
 
-    def passthrough_w_positional_arguments(*arguments):
+    def identity_w_positional_arguments(*arguments):
         return arguments
 
   the terminal shows passing tests
@@ -165,7 +165,7 @@ From the tests I know
 
 * I can use ``*name`` to represent any number of positional arguments
 * that positional arguments are represented as tuples_ with parentheses - ``()``
-* that passthrough :ref:`functions` return what they receive as input
+* that identity :ref:`functions` return what they receive as input
 * that constant :ref:`functions` return the same thing every time they are called
 * :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default

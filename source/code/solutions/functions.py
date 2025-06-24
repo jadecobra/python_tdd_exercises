@@ -18,5 +18,5 @@ def constant_w_inputs(*args):
     return constant()
 
 
-def passthrough(argument):
+def identity(argument):
     return argument

@@ -217,10 +217,10 @@ the terminal shows passing tests
 ----
 
 *********************************************************************************
-test_passthrough_functions
+test_identity_functions
 *********************************************************************************
 
-Passthrough :ref:`functions` return their input as output
+identity :ref:`functions` return their input as output
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -229,8 +229,8 @@ I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
 
 .. code-block:: python
 
-    def test_passthrough_functions(self):
-        self.assertEqual(functions.passthrough(False), False)
+    def test_identity_functions(self):
+        self.assertEqual(functions.identity(False), False)
 
 the terminal shows :ref:`AttributeError`
 
@@ -241,16 +241,16 @@ green: make it pass
 
   .. code-block:: python
 
-    def passthrough():
+    def identity():
         return None
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: passthrough() takes 0 positional arguments but 1 was given
+    TypeError: identity() takes 0 positional arguments but 1 was given
 
-  because the definition for ``passthrough`` does not allow inputs and the test sends :ref:`False<test_what_is_false>` as input
+  because the definition for ``identity`` does not allow inputs and the test sends :ref:`False<test_what_is_false>` as input
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -262,11 +262,11 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then I make ``passthrough`` in ``functions.py`` to take 1 positional argument
+* then I make ``identity`` in ``functions.py`` to take 1 positional argument
 
   .. code-block:: python
 
-    def passthrough(argument):
+    def identity(argument):
         return None
 
   and the terminal shows :ref:`AssertionError`
@@ -275,13 +275,13 @@ green: make it pass
 
     AssertionError: None != False
 
-  because the result of calling ``functions.passthrough`` with :ref:`False<test_what_is_false>` as input is :ref:`None` which is not equal to the expected result (:ref:`False<test_what_is_false>`)
+  because the result of calling ``functions.identity`` with :ref:`False<test_what_is_false>` as input is :ref:`None` which is not equal to the expected result (:ref:`False<test_what_is_false>`)
 
-* I change the definition of ``passthrough`` to make the test pass
+* I change the definition of ``identity`` to make the test pass
 
   .. code-block:: python
 
-    def passthrough(argument):
+    def identity(argument):
         return False
 
   the terminal shows passing tests. I am genius!
@@ -289,15 +289,15 @@ green: make it pass
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-Wait a minute! Something is not quite right here. The definition for a passthrough :ref:`function<functions>` was that it returned the same thing it was given, the test passes when :ref:`False<test_what_is_false>` is given as input, will it still pass when another value is given or will it always return :ref:`False<test_what_is_false>`? Time to write a test
+Wait a minute! Something is not quite right here. The definition for a identity :ref:`function<functions>` was that it returned the same thing it was given, the test passes when :ref:`False<test_what_is_false>` is given as input, will it still pass when another value is given or will it always return :ref:`False<test_what_is_false>`? Time to write a test
 
-* I add a new assertion to ``test_passthrough_functions``
+* I add a new assertion to ``test_identity_functions``
 
   .. code-block:: python
 
-    def test_passthrough_functions(self):
-        self.assertEqual(functions.passthrough(False), False)
-        self.assertEqual(functions.passthrough(True), True)
+    def test_identity_functions(self):
+        self.assertEqual(functions.identity(False), False)
+        self.assertEqual(functions.identity(True), True)
 
   the terminal shows :ref:`AssertionError`
 
@@ -307,31 +307,31 @@ Wait a minute! Something is not quite right here. The definition for a passthrou
 
   the :ref:`function<functions>` returns :ref:`False<test_what_is_false>` instead of :ref:`True<test_what_is_true>` in the second case, I am not all the way genius, yet
 
-* I change the definition of ``passthrough`` in ``functions.py``
+* I change the definition of ``identity`` in ``functions.py``
 
   .. code-block:: python
 
-    def passthrough(argument):
+    def identity(argument):
         return argument
 
-  the terminal shows passing tests. I have more confidence that the passthrough :ref:`function<functions>` will return its input.
+  the terminal shows passing tests. I have more confidence that the identity :ref:`function<functions>` will return its input.
 
 * I add more tests for good measure using the other Python data structures
 
   .. code-block:: python
 
-    def test_passthrough_functions(self):
-        self.assertEqual(functions.passthrough(False), False)
-        self.assertEqual(functions.passthrough(True), True)
-        self.assertEqual(functions.passthrough(None), False)
-        self.assertEqual(functions.passthrough(int), False)
-        self.assertEqual(functions.passthrough(str), False)
-        self.assertEqual(functions.passthrough(tuple), False)
-        self.assertEqual(functions.passthrough(list), False)
-        self.assertEqual(functions.passthrough(set), False)
-        self.assertEqual(functions.passthrough(dict), False)
+    def test_identity_functions(self):
+        self.assertEqual(functions.identity(False), False)
+        self.assertEqual(functions.identity(True), True)
+        self.assertEqual(functions.identity(None), False)
+        self.assertEqual(functions.identity(int), False)
+        self.assertEqual(functions.identity(str), False)
+        self.assertEqual(functions.identity(tuple), False)
+        self.assertEqual(functions.identity(list), False)
+        self.assertEqual(functions.identity(set), False)
+        self.assertEqual(functions.identity(dict), False)
 
-  the terminal shows :ref:`AssertionError` for each line until I make the input match the output, proving that the passthrough :ref:`function<functions>` I have defined returns the input it is given. Hooray! I am genius again
+  the terminal shows :ref:`AssertionError` for each line until I make the input match the output, proving that the identity :ref:`function<functions>` I have defined returns the input it is given. Hooray! I am genius again
 
 ----
 
@@ -344,7 +344,7 @@ The 3 ways I have defined :ref:`functions` so far have the exact same outcome, t
 
 Here is what I know so far from the tests
 
-* :ref:`passthrough functions<test_passthrough_functions>` return their input
+* :ref:`identity functions<test_identity_functions>` return their input
 * :ref:`constant functions<test_constant_functions>` always return the same thing
 * :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default

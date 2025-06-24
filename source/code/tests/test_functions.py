@@ -29,9 +29,9 @@ class TestFunctions(unittest.TestCase):
             'the same thing'
         )
 
-    def test_passthrough_functions(self):
-        self.assertIsNone(src.functions.passthrough(None))
-        self.assertEqual(src.functions.passthrough(object), object)
+    def test_identity_functions(self):
+        self.assertIsNone(src.functions.identity(None))
+        self.assertEqual(src.functions.identity(object), object)
 
 
 

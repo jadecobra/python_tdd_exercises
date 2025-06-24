@@ -266,7 +266,7 @@ there is a failure for the line that passed before. The expectation of the test 
   def logical_identity(argument):
       return argument
 
-and the terminal shows passing tests. ``logical_identity`` is a :ref:`passthrough function<test_passthrough_functions>`, it returns its input as output.
+and the terminal shows passing tests. ``logical_identity`` returns its input as output.
 
 ----
 
