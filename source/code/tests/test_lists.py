@@ -109,7 +109,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
 
-    def test_remove_first_instance_of_item_from_a_list(self):
+    def test_remove_first_instance_of_item_in_a_list (self):
         a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
@@ -129,7 +129,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[-4], '1st')
         self.assertEqual(a_list[2], '3rd')
-        self.assertEqual(a_list[-2], '3rd')
+        self.assertEqual(a_list[2], '3rd')
         self.assertEqual(a_list[1], '2nd')
         self.assertEqual(a_list[-3], '2nd')
         self.assertEqual(a_list[3], '... last')
@@ -137,13 +137,23 @@ class TestLists(unittest.TestCase):
 
     def test_view_parts_of_a_list_aka_slicing(self):
         a_list = [0, 1, 2, 'n']
+        self.assertEqual(a_list[0:2], [0, 1])
+        self.assertEqual(a_list[1:4], [1, 2, 'n'])
+        self.assertEqual(a_list[0:3], [0, 1, 2])
+        self.assertEqual(a_list[1:3], [1, 2])
 
+    def test_index_error(self):
+        a_list = [0, 1, 2, 'n']
         with self.assertRaises(IndexError):
             a_list[4]
         with self.assertRaises(IndexError):
             a_list[-5]
         with self.assertRaises(IndexError):
             [].pop()
+
+
+
+
 
 
 # Exceptions Encountered
