@@ -9,20 +9,23 @@ class TestDictionaries(unittest.TestCase):
     def test_make_a_dictionary_w_none_as_a_key(self):
         self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-    def test_make_a_dictionary_w_booleans_as_keys(self):
+    def test_make_a_dictionary_w_a_booleans_as_a_key(self):
         self.assertEqual(
             {False: 'boom', True: 'bap'},
             {False: 'boom', True: 'bap'}
         )
 
-    def test_make_a_dictionary_w_numbers_as_keys(self):
+    def test_make_a_dictionary_w_a_number_as_a_key(self):
         self.assertEqual(
             {0: 'boom', 0.1: 'bap'},
             {0: 'boom', 0.1: 'bap'}
         )
 
     def test_make_a_dictionary_w_a_tuple_as_a_key(self):
-        self.assertEqual({(0, 1): 'boom'}, {(0, 1): 'boom'})
+        self.assertEqual(
+            {(0, 1): 'boom'},
+            {(0, 1): 'boom'}
+        )
 
     def test_make_a_dictionary_w_a_list_as_a_key(self):
         with self.assertRaises(TypeError):
@@ -37,7 +40,7 @@ class TestDictionaries(unittest.TestCase):
         with self.assertRaises(TypeError):
             {a_dictionary: 'BOOM!'}
 
-    def test_attributes_and_methods_of_dictionaries(self):
+    def test_attributes_and_methods_of_a_dictionary(self):
         self.maxDiff = None
         self.assertEqual(
             dir(dict),
@@ -101,7 +104,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertEqual(a_dictionary.copy(), {'key': 'value'})
         self.assertEqual(a_dictionary, {'key': 'value'})
 
-    def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
+    def test_fromkeys_makes_a_dictionary_from_an_iterable_w_a_default_value(self):
         self.assertEqual(
             dict.fromkeys((0, 1), 'default'),
             {0: 'default', 1: 'default'}
@@ -120,7 +123,7 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
         self.assertEqual(list(a_dictionary.keys()), ['key'])
 
-    def test_pop_removes_a_key_and_returns_its_value_from_a_dictionary(self):
+    def test_pop_removes_key_and_returns_its_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
@@ -149,11 +152,11 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
         self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
         self.assertIsNone(a_dictionary.update(another_key='another value'))
-        self.assertIsNone(a_dictionary.update(key='new value'))
+        self.assertIsNone(a_dictionary.update(key='updated value'))
         self.assertEqual(
             a_dictionary,
             {
-                'key': 'new value',
+                'key': 'updated value',
                 'key1': 'value1',
                 'another_key': 'another value',
             }
@@ -179,5 +182,4 @@ class TestDictionaries(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 # TypeError
-# NameError
 # KeyError
