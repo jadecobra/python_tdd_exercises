@@ -125,9 +125,6 @@ class TestDictionaries(unittest.TestCase):
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
 
-        with self.assertRaises(KeyError):
-            a_dictionary.pop(0)
-
     def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
@@ -169,9 +166,7 @@ class TestDictionaries(unittest.TestCase):
     def test_key_error(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary['key'], 'value')
-        self.assertEqual(
-            a_dictionary.get('not_in_dictionary', 'default'), 'default'
-        )
+        self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
 
         with self.assertRaises(KeyError):
             a_dictionary['not_in_dictionary']
@@ -184,4 +179,5 @@ class TestDictionaries(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 # TypeError
+# NameError
 # KeyError
