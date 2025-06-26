@@ -30,7 +30,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_truth_table.py``
-* then delete all the tests in ``truth_table.py``, which gives 20 failures. I start with the last one
+* then delete all the tests in ``truth_table.py`` and the terminal shows 20 failures, I start with the last one
 
   .. code-block:: python
 
@@ -250,7 +250,7 @@ green: make it pass
 
     AssertionError: (True, False) is not false
 
-  I add an `if statement`_ for it
+  I add an `if statement`_
 
   .. code-block:: python
 
@@ -307,7 +307,7 @@ green: make it pass
 
     AssertionError: (False, False) is not false
 
-  I add an `if statement`_ for it
+  I add an `if statement`_ for the case
 
   .. code-block:: python
 
@@ -350,7 +350,7 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nor'
 
-* I add the :ref:`function<functions>` definition for it
+* I add the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -472,7 +472,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  another :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -534,7 +534,7 @@ green: make it pass
 
     AssertionError: (False, True) is not false
 
-  I add another `if statement`_
+  I add an `if statement`_
 
   .. code-block:: python
 
@@ -549,7 +549,7 @@ green: make it pass
 
     AssertionError: (False, False) is not false
 
-  I add an `if statement`_
+  I add another `if statement`_
 
   .. code-block:: python
 
@@ -608,7 +608,7 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'. Did you mean: 'material_non_implication'?
 
-* I add the definition for it
+* I add the definition for the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -889,11 +889,11 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-Since all the tests are passing, I can refactor the :ref:`functions<functions>` to make them simpler
+I can refactor the :ref:`functions<functions>` to make them simpler since all the tests are passing
 
 * :ref:`logical_false<test_logical_false>`, :ref:`logical_true<test_logical_true>`, :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>` are already simple
 
-* :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in 4 cases and with 2 inputs there are only 4 cases. I  add a `return statement`_
+* :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in 4 cases, with 2 inputs there are only 4 cases. I  add a `return statement`_
 
   .. code-block:: python
 
@@ -905,7 +905,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
         if (x, y) == (False, False): return False
         return x, y
 
-  the test is still green. I remove the other statements
+  the test is still green. I remove the other lines
 
   .. code-block:: python
 
@@ -939,14 +939,14 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal still shows green and I remove the other statements
+  the terminal still shows green and I remove the other lines
 
   .. code-block:: python
 
     def converse_non_implication(x, y):
         return (x, y) == (False, True)
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two `if statements`_ I can put them together
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two `if statements`_ I can put them together as one
 
   .. code-block:: python
 
@@ -965,7 +965,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
         if (x, y) == (True, True) or (x, y) == (False, False): return False
         return x, y
 
-  the test is still green, I remove the other statements
+  the test is still green, I remove the other lines
 
   .. code-block:: python
 
@@ -1022,7 +1022,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def logical_nor(x, y):
         return (x, y) == (False, False)
 
-* :ref:`material_implication<test_material_implication>` has only case that returns :ref:`False<test_what_is_false>`
+* :ref:`material_implication<test_material_implication>` has only one case that returns :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 
@@ -1129,7 +1129,7 @@ Since all the tests are passing, I can refactor the :ref:`functions<functions>` 
     def material_implication(x, y):
         return not x or y
 
-  the test is green again, I will use "or_" the next time I see ``!=``
+  the test is green again, I will use "or_" the next time I see ``!=`` in these tests
 
 * I do it with :ref:`logical_nor<test_logical_nor>`
 
@@ -1244,9 +1244,9 @@ all the tests are still passing
 review
 *********************************************************************************
 
-I ran tests for the operations of the `Truth Table`_ from mathematics with booleans_ which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+I ran tests using booleans_ which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
 
-* there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input
+* there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input and are constant
 
   - :ref:`Logical False<test_logical_false>` always returns :ref:`False<test_what_is_false>`
   - :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>`
@@ -1256,7 +1256,7 @@ I ran tests for the operations of the `Truth Table`_ from mathematics with boole
   - :ref:`Logical Identity<test_logical_identity>` returns its input
   - :ref:`Logical Negation<test_logical_negation>` returns the negation of its input
 
-* there are 16 binary operations they each take 2 inputs, in this case I named the first input ``x`` and the second one ``y``
+* there are 16 binary operations, they each take 2 inputs, in this case I named the second input ``y`` and the first one ``x``
 
   - :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
   - :ref:`Converse Implication<test_converse_implication>` returns ``x or not y``
