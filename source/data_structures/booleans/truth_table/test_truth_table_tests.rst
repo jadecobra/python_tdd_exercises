@@ -16,9 +16,6 @@ truth table: test_truth_table_tests
 requirements
 *********************************************************************************
 
-* :ref:`Binary Operations part 1<truth table: Binary Operations part 1>`
-* :ref:`Binary Operations part 2<truth table: Binary Operations part 2>`
-* :ref:`Binary Operations part 3<truth table: Binary Operations part 3>`
 * :ref:`Binary Operations part 4<truth table: Binary Operations part 4>`
 
 ----
@@ -52,7 +49,7 @@ green: make it pass
 
     NameError: name 'tautology' is not defined
 
-  I point it to :ref:`None`
+  I point the name to :ref:`None`
 
   .. code-block:: python
 
@@ -129,7 +126,7 @@ green: make it pass
 
     AssertionError: False is not true
 
-  I return the inputs to see the difference between them and the expected output
+  I want to see the difference between the inputs and the expected output
 
   .. code-block:: python
 
@@ -175,7 +172,7 @@ green: make it pass
     def project_first(x, y):
         return x
 
-  another :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -307,7 +304,7 @@ green: make it pass
 
     AssertionError: (False, False) is not false
 
-  I add an `if statement`_ for the case
+  I add an `if statement`_
 
   .. code-block:: python
 
