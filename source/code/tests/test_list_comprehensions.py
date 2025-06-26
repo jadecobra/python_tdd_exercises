@@ -14,7 +14,7 @@ def condition(number):
 class TestListComprehensions(unittest.TestCase):
 
     def setUp(self):
-        self.iterable = range(random.randint(1, 1000))
+        self.iterable = range(0, random.randint(1, 1000))
 
     def test_make_a_list_w_a_for_loop(self):
         a_list = []
@@ -27,7 +27,7 @@ class TestListComprehensions(unittest.TestCase):
             list(self.iterable)
         )
 
-    def test_make_a_list_w_list_comprehensions(self):
+    def test_make_a_list_w_a_list_comprehension(self):
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
             [item for item in self.iterable]
@@ -37,11 +37,14 @@ class TestListComprehensions(unittest.TestCase):
             [item for item in self.iterable]
         )
 
-    def test_list_comprehensions_w_conditions_i(self):
+    def test_list_comprehensions_w_conditions(self):
         even_numbers = []
+        odd_numbers = []
         for item in self.iterable:
             if condition(item):
                 even_numbers.append(item)
+            else:
+                odd_numbers.append(item)
 
         self.assertEqual(
             even_numbers,
@@ -51,13 +54,6 @@ class TestListComprehensions(unittest.TestCase):
             src.list_comprehensions.get_even_numbers(self.iterable),
             [item for item in self.iterable if condition(item)]
         )
-
-    def test_list_comprehensions_w_conditions_ii(self):
-        odd_numbers = []
-        for item in self.iterable:
-            if item % 2 != 0:
-                odd_numbers.append(item)
-
         self.assertEqual(
             odd_numbers,
             [item for item in self.iterable if not condition(item)]
@@ -68,12 +64,12 @@ class TestListComprehensions(unittest.TestCase):
         )
 
     def test_list_comprehensions_w_functions(self):
-        square_numbers = []
+        squares = []
         for item in self.iterable:
-            square_numbers.append(process(item))
+            squares.append(process(item))
 
         self.assertEqual(
-            square_numbers,
+            squares,
             [process(item) for item in self.iterable]
         )
         self.assertEqual(
