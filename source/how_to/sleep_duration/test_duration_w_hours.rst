@@ -102,7 +102,7 @@ green: make it pass
 
   .. code-block:: python
 
-    NameError: name 'ssrc' is not defined
+    NameError: name 'src' is not defined
 
   and I add it as an exception encountered
 

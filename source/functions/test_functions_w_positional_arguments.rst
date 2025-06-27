@@ -11,12 +11,19 @@ functions: test_functions_w_positional_arguments
 
 ----
 
+*********************************************************************************
+requirements
+*********************************************************************************
+
+* :ref:`test functions<test_functions>`
+
+----
 
 *********************************************************************************
 test_functions_w_positional_arguments
 *********************************************************************************
 
-I can define a :ref:`function<functions>` to take in more than one input, For instance if I am writing a :ref:`function<functions>` to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the :ref:`function<functions>` has to be able to take the 2 numbers it performs operations on. I add a new test to ``test_functions.py``
+I can define a :ref:`function<functions>` to take in more than one input. For instance if I am writing a :ref:`function<functions>` to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the :ref:`function<functions>` has to be able to take the 2 numbers it performs operations on. I add a new test to ``test_functions.py``
 
 .. code-block:: python
 
@@ -33,7 +40,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add the solution I know works from ``test_identity_functions`` ``functions.py``
+* I add an :ref:`identity function<test_identity_functions>` to  ``functions.py``
 
   .. code-block:: python
 
@@ -41,7 +48,7 @@ green: make it pass
         return argument
 
   the terminal shows :ref:`TypeError`
-* I make the signature of ``identity_w_positional_arguments`` to take in more than one argument
+* I change the signature of ``identity_w_positional_arguments`` to take in more than one argument
 
   .. code-block:: python
 
