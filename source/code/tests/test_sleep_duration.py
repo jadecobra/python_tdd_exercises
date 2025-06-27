@@ -1,6 +1,6 @@
 import datetime
 import random
-import sleep_duration
+import src.sleep_duration
 import unittest
 
 def random_number(start, end, digits=2):
@@ -19,7 +19,7 @@ def get_random_timestamp():
 def random_timestamp():
     result = get_random_timestamp()
     try:
-        sleep_duration.get_datetime(result)
+        src.sleep_duration.get_datetime(result)
     except ValueError:
         return random_timestamp()
     else:
@@ -37,7 +37,7 @@ class TestSleepDuration(unittest.TestCase):
             ' is earlier than '
             f'sleep_time: "{sleep_time}"'
         ):
-            sleep_duration.duration(
+            src.sleep_duration.duration(
                 sleep_time=sleep_time,
                 wake_time=wake_time
             )
@@ -45,7 +45,7 @@ class TestSleepDuration(unittest.TestCase):
     def test_get_datetime(self):
         timestamp = random_timestamp()
         self.assertEqual(
-            sleep_duration.get_datetime(
+            src.sleep_duration.get_datetime(
                 timestamp
             ),
             datetime.datetime.strptime(
@@ -66,15 +66,15 @@ class TestSleepDuration(unittest.TestCase):
             wake_time = random_timestamp()
         else:
             self.assertEqual(
-                sleep_duration.duration(
+                src.sleep_duration.duration(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),
                 str(
-                    sleep_duration.get_datetime(
+                    src.sleep_duration.get_datetime(
                         wake_time
                     )
-                  - sleep_duration.get_datetime(
+                  - src.sleep_duration.get_datetime(
                         sleep_time
                     )
                 )

@@ -94,7 +94,7 @@ green: make it pass
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration,
+        src.sleep_duration,
         None
     )
 
@@ -102,7 +102,7 @@ green: make it pass
 
   .. code-block:: python
 
-    NameError: name 'sleep_duration' is not defined
+    NameError: name 'ssrc' is not defined
 
   and I add it as an exception encountered
 
@@ -117,7 +117,7 @@ green: make it pass
 
   .. code-block:: python
 
-    import sleep_duration
+    import src.sleep_duration
     import unittest
 
 
@@ -128,14 +128,14 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: <module 'sleep_duration' from '/workspace[46 chars].py'> != None
+    AssertionError: <module 'src.sleep_duration' from '/workspace[46 chars].py'> != None
 
 * I add a reference to something in the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration,
+        src.sleep_duration.duration,
         None
     )
 
@@ -143,7 +143,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AttributeError: module 'sleep_duration' has no attribute 'duration'
+    AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
   I add the error to the list of Exceptions_ encountered
 
@@ -176,7 +176,7 @@ green: make it pass
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(),
+        src.sleep_duration.duration(),
         None
     )
 
@@ -198,7 +198,7 @@ green: make it pass
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time='08:00'
         ),
         None
@@ -222,7 +222,7 @@ green: make it pass
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time='08:00',
             sleep_time='07:00'
         ),
@@ -247,7 +247,7 @@ green: make it pass
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time='08:00',
             sleep_time='07:00'
         ),
@@ -283,7 +283,7 @@ refactor: make it better
         sleep_time = '07:00'
 
         self.assertEqual(
-            sleep_duration.duration(
+            src.sleep_duration.duration(
                 wake_time=wake_time,
                 sleep_time=sleep_time
             ),
@@ -341,7 +341,7 @@ refactor: make it better
   .. code-block:: python
 
     import random
-    import sleep_duration
+    import src.sleep_duration
     import unittest
 
   then add variables for random hours in a day
@@ -393,7 +393,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
@@ -411,7 +411,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
@@ -522,7 +522,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
@@ -609,7 +609,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
@@ -697,7 +697,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
@@ -733,7 +733,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),

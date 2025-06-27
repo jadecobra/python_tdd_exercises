@@ -36,7 +36,7 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
           wake_time = random_timestamp()
 
       self.assertEqual(
-          sleep_duration.duration(
+          src.sleep_duration.duration(
               sleep_time=sleep_time,
               wake_time=wake_time
           ),
@@ -76,7 +76,7 @@ green: make it pass
             ' is earlier than '
             f'sleep_time: "{sleep_time}"'
         ):
-            sleep_duration.duration(
+            src.sleep_duration.duration(
                 sleep_time=sleep_time,
                 wake_time=wake_time
             )
@@ -168,7 +168,7 @@ green: make it pass
         duration_minutes = difference % 60
 
         self.assertEqual(
-            sleep_duration.duration(
+            src.sleep_duration.duration(
                 sleep_time=sleep_time,
                 wake_time=wake_time
             ),
@@ -199,7 +199,7 @@ refactor: make it better
                 ' is earlier than '
                 f'sleep_time: "{sleep_time}"'
             ):
-                sleep_duration.duration(
+                src.sleep_duration.duration(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 )
@@ -222,7 +222,7 @@ refactor: make it better
         duration_minutes = difference % 60
 
         self.assertEqual(
-            sleep_duration.duration(
+            src.sleep_duration.duration(
                 sleep_time=sleep_time,
                 wake_time=wake_time
             ),
@@ -290,7 +290,7 @@ refactor: make it better
                 ' is earlier than '
                 f'sleep_time: "{sleep_time}"'
             ):
-                sleep_duration.duration(
+                src.sleep_duration.duration(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 )
@@ -313,7 +313,7 @@ refactor: make it better
             duration_minutes = difference % 60
 
             self.assertEqual(
-                sleep_duration.duration(
+                src.sleep_duration.duration(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),
@@ -372,14 +372,14 @@ refactor: make it better
                 ' is earlier than '
                 f'sleep_time: "{sleep_time}"'
             ):
-                sleep_duration.duration(
+                src.sleep_duration.duration(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 )
             wake_time = random_timestamp()
         else:
             self.assertEqual(
-                sleep_duration.duration(
+                src.sleep_duration.duration(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),
@@ -404,7 +404,7 @@ refactor: make it better
             ' is earlier than '
             f'sleep_time: "{sleep_time}"'
         ):
-            sleep_duration.duration(
+            src.sleep_duration.duration(
                 sleep_time=sleep_time,
                 wake_time=wake_time
             )
@@ -429,7 +429,7 @@ refactor: make it better
             wake_time = random_timestamp()
         else:
             self.assertEqual(
-                sleep_duration.duration(
+                src.sleep_duration.duration(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),

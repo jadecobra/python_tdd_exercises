@@ -15,7 +15,7 @@ This is part 4 of a program that calculates the difference between a given wake 
 
 .. contents:: table of contents
   :local:
-  :depth: 2
+  :depth: 1
 
 ----
 
@@ -52,7 +52,7 @@ red: make it fail
             wake_time = random_timestamp_a()
         else:
             self.assertEqual(
-                sleep_duration.duration(
+                src.sleep_duration.duration(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),
@@ -132,7 +132,7 @@ green: make it pass
             wake_time = random_timestamp_a()
         else:
             self.assertEqual(
-                sleep_duration.duration_a(
+                src.sleep_duration.duration_a(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),
@@ -146,7 +146,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AttributeError: module 'sleep_duration' has no attribute 'duration_a'...
+    AttributeError: module 'src.sleep_duration' has no attribute 'duration_a'...
 
 * I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one. I change the ``else`` block to return :ref:`None`
 
@@ -186,7 +186,7 @@ green: make it pass
             wake_time = random_timestamp_a()
         else:
             self.assertEqual(
-                sleep_duration.duration_a(
+                src.sleep_duration.duration_a(
                     wake_time=wake_time,
                     sleep_time=sleep_time
                 ),
@@ -269,7 +269,7 @@ I add an `import statement`_ for the datetime_ module
 
   import datetime
   import random
-  import sleep_duration
+  import src.sleep_duration
   import unittest
   ...
 
@@ -420,7 +420,7 @@ refactor: make it better
             wake_time = random_timestamp_a()
         else:
             self.assertEqual(
-                sleep_duration.duration_a(
+                src.sleep_duration.duration_a(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),
@@ -523,13 +523,13 @@ test_get_datetime
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I want a test for the ``get_datetime`` :ref:`function<functions>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<functions>`
+I want a test for the ``get_datetime`` :ref:`function<functions>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``src.sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<functions>`
 
 .. code-block:: python
 
   def test_get_datetime(self):
       self.assertEqual(
-          sleep_duration.get_datetime(
+          src.sleep_duration.get_datetime(
               "21/11/06 16:30"
           ),
           datetime.datetime(
@@ -543,7 +543,7 @@ I change the expectation to use `datetime.datetime.strptime`_
 
   def test_get_datetime(self):
       self.assertEqual(
-          sleep_duration.get_datetime(
+          src.sleep_duration.get_datetime(
               "2006/11/21 16:30"
           ),
           datetime.datetime.strptime(
@@ -559,7 +559,7 @@ then add a variable for a random timestamp
   def test_get_datetime(self):
       timestamp = random_timestamp_a()
       self.assertEqual(
-          sleep_duration.get_datetime(
+          src.sleep_duration.get_datetime(
               timestamp
           ),
           datetime.datetime.strptime(
@@ -587,7 +587,7 @@ I add the variable to the expectation
   def test_get_datetime(self):
       timestamp = random_timestamp_a()
       self.assertEqual(
-          sleep_duration.get_datetime(
+          src.sleep_duration.get_datetime(
               timestamp
           ),
           datetime.datetime.strptime(
@@ -601,7 +601,7 @@ and the terminal shows green again
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-I change the calls to `datetime.datetime.strptime`_ to ``sleep_duration.get_datetime``
+I change the calls to `datetime.datetime.strptime`_ to ``src.sleep_duration.get_datetime``
 
 .. code-block:: python
 
@@ -617,15 +617,15 @@ I change the calls to `datetime.datetime.strptime`_ to ``sleep_duration.get_date
           wake_time = random_timestamp_a()
       else:
           self.assertEqual(
-              sleep_duration.duration_a(
+              src.sleep_duration.duration_a(
                   sleep_time=sleep_time,
                   wake_time=wake_time
               ),
               (
-                  sleep_duration.get_datetime(
+                  src.sleep_duration.get_datetime(
                       wake_time
                   ),
-                  sleep_duration.get_datetime(
+                  src.sleep_duration.get_datetime(
                       sleep_time
                   )
               )
@@ -651,15 +651,15 @@ and the test is still green
             wake_time = random_timestamp_a()
         else:
             self.assertEqual(
-                sleep_duration.duration_a(
+                src.sleep_duration.duration_a(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),
                 (
-                    sleep_duration.get_datetime(
+                    src.sleep_duration.get_datetime(
                         wake_time
                     )
-                  - sleep_duration.get_datetime(
+                  - src.sleep_duration.get_datetime(
                         sleep_time
                     )
                 )
@@ -709,15 +709,15 @@ and the test is still green
             wake_time = random_timestamp_a()
         else:
             self.assertEqual(
-                sleep_duration.duration_a(
+                src.sleep_duration.duration_a(
                     sleep_time=sleep_time,
                     wake_time=wake_time
                 ),
                 str(
-                    sleep_duration.get_datetime(
+                    src.sleep_duration.get_datetime(
                         wake_time
                     )
-                  - sleep_duration.get_datetime(
+                  - src.sleep_duration.get_datetime(
                         sleep_time
                     )
                 )
@@ -756,7 +756,7 @@ and the test is still green
 
   .. code-block:: python
 
-    AttributeError: module 'sleep_duration' has no attribute 'duration'...
+    AttributeError: module 'src.sleep_duration' has no attribute 'duration'...
 
 * I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` which leaves me with ValueError_
 
@@ -817,7 +817,7 @@ and the test is still green
     def random_timestamp():
         result = get_random_timestamp()
         try:
-            sleep_duration.get_datetime(result)
+            src.sleep_duration.get_datetime(result)
         except ValueError:
             return random_timestamp()
         else:
@@ -826,7 +826,7 @@ and the test is still green
   The new ``random_timestamp`` :ref:`function<functions>` does the following
 
   - generates a random timestamp by calling ``get_random_timestamp``
-  - checks if the timestamp is good by calling ``sleep_duration.get_datetime``
+  - checks if the timestamp is good by calling ``src.sleep_duration.get_datetime``
   - if the timestamp is good, the :ref:`function<functions>` returns it
   - if the timestamp is bad, it raises ValueError_ and repeats the process by calling itself
 

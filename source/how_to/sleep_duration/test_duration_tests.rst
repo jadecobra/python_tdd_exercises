@@ -30,7 +30,7 @@ red: make it fail
 
   .. code-block:: python
 
-    AttributeError: module 'sleep_duration' has no attribute 'get_datetime'
+    AttributeError: module 'src.sleep_duration' has no attribute 'get_datetime'
 
 *********************************************************************************
 green: make it pass
@@ -184,7 +184,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AttributeError: module 'sleep_duration' has no attribute 'duration'
+    AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
 * I add the name below ``get_datetime``
 

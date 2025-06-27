@@ -43,7 +43,7 @@ red: make it fail
     )
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
@@ -55,7 +55,7 @@ red: make it fail
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
@@ -105,7 +105,7 @@ red: make it fail
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
@@ -205,7 +205,7 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
 
   def test_duration_calculation(self):
       self.assertEqual(
-          sleep_duration.duration(
+          src.sleep_duration.duration(
               wake_time='03:30',
               sleep_time='02:59'
           ),
@@ -459,7 +459,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
   .. code-block:: python
 
     self.assertEqual(
-        sleep_duration.duration(
+        src.sleep_duration.duration(
             wake_time=wake_time,
             sleep_time=sleep_time
         ),
