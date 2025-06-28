@@ -7,7 +7,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(list(), [])
         self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-    def test_attributes_and_methods_of_a_list(self):
+    def test_attributes_and_methods_of_lists(self):
         self.maxDiff = None
         self.assertEqual(
             dir(list),
@@ -106,7 +106,7 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.insert(3, 1.5))
         self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
-    def test_pop_removes_and_returns_last_item_in_a_list(self):
+    def test_pop_removes_and_returns_last_item_from_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
@@ -123,7 +123,11 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.reverse())
         self.assertEqual(a_list, ['n', 2, 1, 0])
 
-    def test_sort_a_list(self):
+    def test_sort(self):
+        a_list = [0, 1, 2, 'n']
+        with self.assertRaises(TypeError):
+            a_list.sort()
+
         a_list = [0, 1, 0, 2, 0, 3]
         self.assertIsNone(a_list.sort())
         self.assertEqual(a_list, [0, 0, 0, 1, 2, 3])
@@ -138,6 +142,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[-3], '2nd')
         self.assertEqual(a_list[3], '...last')
         self.assertEqual(a_list[-1], '...last')
+
         a_list[-1] = '4th'
         self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
