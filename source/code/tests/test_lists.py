@@ -4,9 +4,10 @@ import unittest
 class TestLists(unittest.TestCase):
 
     def test_make_a_list(self):
+        self.assertEqual(list(), [])
         self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-    def test_attributes_and_methods_of_lists(self):
+    def test_attributes_and_methods_of_a_list(self):
         self.maxDiff = None
         self.assertEqual(
             dir(list),
@@ -102,11 +103,15 @@ class TestLists(unittest.TestCase):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert(0, -1))
         self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+        self.assertIsNone(a_list.insert(3, 1.5))
+        self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
     def test_pop_removes_and_returns_last_item_in_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
+        self.assertEqual(a_list.pop(), 2)
+        self.assertEqual(a_list, [0, 1])
 
     def test_remove_first_instance_of_item_from_a_list(self):
         a_list = [0, 1, 0, 2, 0, 'n']
@@ -133,13 +138,15 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[-3], '2nd')
         self.assertEqual(a_list[3], '...last')
         self.assertEqual(a_list[-1], '...last')
+        a_list[-1] = '4th'
+        self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
     def test_view_parts_of_a_list_aka_slicing(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertEqual(a_list[0:2], [0, 1])
-        self.assertEqual(a_list[1:4], [1, 2, 'n'])
-        self.assertEqual(a_list[0:3], [0, 1, 2])
-        self.assertEqual(a_list[1:3], [1, 2])
+        a_list = ['a', 'b', 'c', 'd']
+        self.assertEqual(a_list[0:2], ['a', 'b'])
+        self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
+        self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
+        self.assertEqual(a_list[1:3], ['b', 'c'])
 
     def test_index_error(self):
         a_list = ['a', 'b', 'c', 'd']
