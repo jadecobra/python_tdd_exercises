@@ -26,7 +26,7 @@ I can also define :ref:`functions` to take both positional arguments and keyword
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
         functions.takes_positional_and_keyword_arguments(
-            last_name='my_last_name', 'my_first_name'
+            last_name='last_name', 'first_name'
         ),
         {}
       )
@@ -52,7 +52,7 @@ green: make it pass
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             functions.takes_positional_and_keyword_arguments(
-                'my_first_name', last_name='my_last_name'
+                'first_name', last_name='last_name'
             ),
             {}
         )
@@ -115,9 +115,9 @@ green: make it pass
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
           functions.takes_positional_and_keyword_arguments(
-                  'my_first_name', last_name='my_last_name'
+                  'first_name', last_name='last_name'
               ),
-              ('my_first_name', 'my_last_name')
+              ('first_name', 'last_name')
           )
 
   the terminal shows passing tests
@@ -153,15 +153,15 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
               functions.takes_positional_and_keyword_arguments(
-                  'my_first_name', last_name='my_last_name'
+                  'first_name', last_name='last_name'
               ),
-              ('my_first_name', 'my_last_name')
+              ('first_name', 'last_name')
           )
           self.assertEqual(
               functions.takes_positional_and_keyword_arguments(
-                  'my_first_name', 'my_last_name'
+                  'first_name', 'last_name'
               ),
-              ('my_first_name', 'my_last_name')
+              ('first_name', 'last_name')
           )
 
   all the tests are still passing. The problem here is without the names the program is going to take the input data in the order I provide it so it is better to be explicit with the names, from the `Zen of Python`_ : ``Explicit is better than implicit.``
@@ -172,15 +172,15 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             functions.takes_positional_and_keyword_arguments(
-                'my_first_name', last_name='my_last_name'
+                'first_name', last_name='last_name'
             ),
-            ('my_first_name', 'my_last_name')
+            ('first_name', 'last_name')
         )
         self.assertEqual(
             functions.takes_positional_and_keyword_arguments(
-                'my_first_name', 'my_last_name'
+                'first_name', 'last_name'
             ),
-            ('my_first_name', 'my_last_name')
+            ('first_name', 'last_name')
         )
         self.assertEqual(
             functions.takes_positional_and_keyword_arguments(),
@@ -209,7 +209,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
   .. code-block:: python
 
-    E   AssertionError: Tuples differ: (('my_first_name',), {'last_name': 'my_last_name'}) != ('my_first_name', 'my_last_name')
+    E   AssertionError: Tuples differ: (('first_name',), {'last_name': 'last_name'}) != ('first_name', 'last_name')
 
 * I comment out the other assertions so I can focus on the failing test
 
@@ -218,15 +218,15 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
             functions.takes_positional_and_keyword_arguments(
-              'my_first_name', last_name='my_last_name'
+              'first_name', last_name='last_name'
             ),
-            ('my_first_name', 'my_last_name')
+            ('first_name', 'last_name')
           )
           # self.assertEqual(
           #    functions.takes_positional_and_keyword_arguments(
-          #        'my_first_name', 'my_last_name'
+          #        'first_name', 'last_name'
           #    ),
-          #    (('my_first_name', 'last_name'), {})
+          #    (('first_name', 'last_name'), {})
           # )
           # self.assertEqual(
           #     functions.takes_positional_and_keyword_arguments(),
@@ -248,9 +248,9 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
     self.assertEqual(
         functions.takes_positional_and_keyword_arguments(
-            'my_first_name', last_name='my_last_name'
+            'first_name', last_name='last_name'
         ),
-        (('my_first_name',), {'last_name': 'my_last_name'})
+        (('first_name',), {'last_name': 'last_name'})
     )
 
   the terminal shows tests passing, with the positional argument in parentheses and the keyword argument in curly braces
@@ -260,16 +260,16 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
     self.assertEqual(
         functions.takes_positional_and_keyword_arguments(
-            'my_first_name', 'my_last_name'
+            'first_name', 'last_name'
         ),
-        (('my_first_name', 'last_name'), {})
+        (('first_name', 'last_name'), {})
     )
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    E    AssertionError: Tuples differ: (('my_first_name', 'my_last_name'), {}) != (('my_first_name', 'last_name'), {})
+    E    AssertionError: Tuples differ: (('first_name', 'last_name'), {}) != (('first_name', 'last_name'), {})
 
 * I make the test pass with both positional arguments in parentheses and empty curly braces since there are no keyword arguments
 
@@ -277,9 +277,9 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
       self.assertEqual(
           functions.takes_positional_and_keyword_arguments(
-              'my_first_name', 'my_last_name'
+              'first_name', 'last_name'
           ),
-          (('my_first_name', 'my_last_name'), {})
+          (('first_name', 'last_name'), {})
       )
 
   and the terminal shows passing tests

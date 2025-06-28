@@ -99,6 +99,7 @@
 .. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
 .. _standard output (stdout): https://en.wikipedia.org/wiki/Standard_streams#Standard_output_(stdout)
+.. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str

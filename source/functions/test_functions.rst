@@ -163,7 +163,7 @@ I add a test to ``test_functions.py``
 .. code-block:: python
 
     def test_constant_functions(self):
-        self.assertEqual(functions.constant(), 'my_first_name')
+        self.assertEqual(functions.constant(), 'first_name')
 
 the terminal shows :ref:`AttributeError`
 
@@ -175,7 +175,7 @@ I change the :ref:`function<functions>` to make it pass
 .. code-block:: python
 
   def constant():
-      return 'my_first_name'
+      return 'first_name'
 
 ----
 
@@ -335,19 +335,211 @@ Wait a minute! Something is not quite right here. The definition for a identity 
 
 ----
 
+*********************************************************************************
+test_functions_w_positional_arguments
+*********************************************************************************
+
+I can make a :ref:`function<functions>` take more than one input
+
+.. code-block:: python
+
+    def test_functions_w_positional_arguments(self):
+        self.assertEqual(
+            functions.identity_w_positional_arguments(
+                'first_name', 'last_name'
+            ),
+            ('first_name', 'last_name')
+        )
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: python
+
+  AttributeError: module 'src.functions' has no attribute 'identity_w_positional_arguments'
+
+green: make it pass
+---------------------------------------------------------------------------------
+
+* I add a :ref:`function<functions>` to  ``functions.py``
+
+  .. code-block:: python
+
+    def identity_w_positional_arguments(argument):
+        return argument
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: identity_w_positional_arguments() takes 1 positional argument but 2 were given
+
+  I make the :ref:`function<functions>` take more than one argument
+
+  .. code-block:: python
+
+    def identity_w_positional_arguments(
+        argument, second
+    ):
+        return argument
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None != ('first', 'second')
+
+  I make it return the 2 arguments it receives
+
+  .. code-block:: python
+
+    def identity_w_positional_arguments(
+        argument, second
+    ):
+        return argument, second
+
+  the test passes
+
+refactor: make it better
+---------------------------------------------------------------------------------
+
+How can I make this better?
+
+* I change the name of the first argument to be more descriptive
+
+  .. code-block:: python
+
+    def identity_w_positional_arguments(
+            first, second
+        ):
+        return first, second
+
+  I still have passing tests
+
+* I add another assertion to make sure that ``identity_w_positional_arguments`` outputs data in the order given
+
+  .. code-block:: python
+
+      def test_functions_w_positional_arguments(self):
+          self.assertEqual(
+              functions.identity_w_positional_arguments(
+                  'first_name', 'last_name'
+              ),
+              ('first_name', 'last_name')
+          )
+          self.assertEqual(
+              functions.identity_w_positional_arguments(
+                  'last_name', 'first_name'
+              ),
+              ('first_name', 'last_name')
+          )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('last_name', 'first_name') != ('first_name', 'last_name')
+
+* I change the test so it has the right output
+
+  .. code-block:: python
+
+      def test_functions_w_positional_arguments(self):
+          self.assertEqual(
+              functions.identity_w_positional_arguments(
+                  'first_name', 'last_name'
+              ),
+              ('first_name', 'last_name')
+          )
+          self.assertEqual(
+              functions.identity_w_positional_arguments(
+                  'last_name', 'first_name'
+              ),
+              ('last_name', 'first_name')
+          )
+
+  the terminal shows passing
+
+* the :ref:`function<functions>` currently takes in 2 positional arguments.
+
+*********************************************************************************
+test_functions_w_unknown_positional_arguments
+*********************************************************************************
+
+* There are scenarios where a :ref:`function<functions>` needs to take in more arguments, like when I do not know the number of positional arguments that will be passed to the function, I add a test for the case where the number of positional arguments received is not known
+
+  .. code-block:: python
+
+    def test_functions_w_unknown_arguments(self):
+        self.assertEqual(
+            src.functions.identity_w_unknown_arguments(
+                0, 1, 2, 3
+            ),
+            (0, 1, 2, 3)
+        )
+
+  the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions' has no attribute 'identity_w_unknown_arguments'. Did you mean: 'identity_w_positional_arguments'?
+
+  I add the function with a `starred expression`_ like I did in :ref:`test_constant_functions`, to allow it take in any number of arguments
+
+  .. code-block:: python
+
+    def identity_w_unknown_arguments(*arguments):
+        return arguments
+
+  the test passes
+
+* I add another assertion to show that this :ref:`function<functions>` never needs to know the number of inputs it is receiving
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.functions.identity_w_unknown_arguments(
+            0, 1, 2, 3
+        ),
+        (0, 1, 2, 3)
+    )
+    self.assertEqual(
+        src.functions.identity_w_unknown_arguments(
+            None, bool, int, float, str, tuple, list, set, dict
+        ),
+        None
+    )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: (None, <class 'bool'>, <class 'int'>, <cl[87 chars]ct'>) != None
+
+  I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.functions.identity_w_unknown_arguments(
+            None, bool, int, float, str, tuple, list, set, dict
+        ),
+        (None, bool, int, float, str, tuple, list, set, dict)
+    )
+
+  the test is green again
 
 *********************************************************************************
 review
 *********************************************************************************
 
-The 3 ways I have defined :ref:`functions` so far have the exact same outcome, they all ``return None``. If ``Explicit is better than implicit.`` then I prefer to use ``return None`` telling anyone who reads the code exactly what the :ref:`function<functions>` returns.
+the tests show that
 
-Here is what I know so far from the tests
-
+* I can use ``*name`` to represent any number of positional arguments
+* positional arguments are represented as tuples_ with parentheses - ``()``
 * :ref:`identity functions<test_identity_functions>` return their input
 * :ref:`constant functions<test_constant_functions>` always return the same thing
-* :ref:`functions` are defined using the def_ keyword
 * :ref:`functions` return :ref:`None` by default
+* :ref:`functions` are defined using the def_ keyword
 
 Would you like to :ref:`test constant functions?<test_constant_functions>`
 

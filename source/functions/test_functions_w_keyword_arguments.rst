@@ -28,10 +28,10 @@ I add a new test to ``test_functions.py``
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             functions.identity_w_keyword_arguments(
-                first_name='my_first_name',
-                last_name='my_last_name'
+                first_name='first_name',
+                last_name='last_name'
             ),
-            ('my_first_name', 'my_last_name')
+            ('first_name', 'last_name')
         )
 
 the terminal shows :ref:`AttributeError`
@@ -92,17 +92,17 @@ refactor: make it better
       def test_functions_w_keyword_arguments(self):
           self.assertEqual(
               functions.identity_w_keyword_arguments(
-                  first_name='my_first_name',
-                  last_name='my_last_name'
+                  first_name='first_name',
+                  last_name='last_name'
               ),
-              ('my_first_name', 'my_last_name')
+              ('first_name', 'last_name')
           )
           self.assertEqual(
               functions.identity_w_keyword_arguments(
-                  last_name='my_last_name',
-                  first_name='my_first_name'
+                  last_name='last_name',
+                  first_name='first_name'
               ),
-              ('my_first_name', 'my_last_name')
+              ('first_name', 'last_name')
           )
 
   the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, makes sure the :ref:`function<functions>` always shows output in the right order regardless of the order in which the input data is given
@@ -114,17 +114,17 @@ refactor: make it better
       def test_functions_w_keyword_arguments(self):
           self.assertEqual(
               functions.identity_w_keyword_arguments(
-                  first_name='my_first_name',
-                  last_name='my_last_name'
+                  first_name='first_name',
+                  last_name='last_name'
               ),
-              ('my_first_name', 'my_last_name')
+              ('first_name', 'last_name')
           )
           self.assertEqual(
               functions.identity_w_keyword_arguments(
-                  last_name='my_last_name',
-                  first_name='my_first_name'
+                  last_name='last_name',
+                  first_name='first_name'
               ),
-              ('my_first_name', 'my_last_name')
+              ('first_name', 'last_name')
           )
           self.assertEqual(
               functions.identity_w_keyword_arguments(
@@ -151,12 +151,12 @@ refactor: make it better
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             functions.identity_w_keyword_arguments(
-                first_name='my_first_name',
-                last_name='my_last_name'
+                first_name='first_name',
+                last_name='last_name'
             ),
             {
-                'first_name': 'my_first_name',
-                'last_name': 'my_last_name'
+                'first_name': 'first_name',
+                'last_name': 'last_name'
             }
         )
 
@@ -169,22 +169,22 @@ refactor: make it better
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             functions.identity_w_keyword_arguments(
-                first_name='my_first_name',
-                last_name='my_last_name'
+                first_name='first_name',
+                last_name='last_name'
             ),
             {
-                'first_name': 'my_first_name',
-                'last_name': 'my_last_name'
+                'first_name': 'first_name',
+                'last_name': 'last_name'
             }
         )
         self.assertEqual(
             functions.identity_w_keyword_arguments(
-                last_name='my_last_name',
-                first_name='my_first_name'
+                last_name='last_name',
+                first_name='first_name'
             ),
             {
-                'first_name': 'my_first_name',
-                'last_name': 'my_last_name'
+                'first_name': 'first_name',
+                'last_name': 'last_name'
             }
         )
 
@@ -197,22 +197,22 @@ refactor: make it better
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             functions.identity_w_keyword_arguments(
-                first_name='my_first_name',
-                last_name='my_last_name'
+                first_name='first_name',
+                last_name='last_name'
             ),
             {
-                'first_name': 'my_first_name',
-                'last_name': 'my_last_name'
+                'first_name': 'first_name',
+                'last_name': 'last_name'
             }
         )
         self.assertEqual(
             functions.identity_w_keyword_arguments(
-                last_name='my_last_name',
-                first_name='my_first_name'
+                last_name='last_name',
+                first_name='first_name'
             ),
             {
-                'first_name': 'my_first_name',
-                'last_name': 'my_last_name'
+                'first_name': 'first_name',
+                'last_name': 'last_name'
             }
         )
         self.assertEqual(
@@ -231,22 +231,22 @@ refactor: make it better
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             functions.identity_w_keyword_arguments(
-                first_name='my_first_name',
-                last_name='my_last_name'
+                first_name='first_name',
+                last_name='last_name'
             ),
             {
-                'first_name': 'my_first_name',
-                'last_name': 'my_last_name'
+                'first_name': 'first_name',
+                'last_name': 'last_name'
             }
         )
         self.assertEqual(
             functions.identity_w_keyword_arguments(
-                last_name='my_last_name',
-                first_name='my_first_name'
+                last_name='last_name',
+                first_name='first_name'
             ),
             {
-                'first_name': 'my_first_name',
-                'last_name': 'my_last_name'
+                'first_name': 'first_name',
+                'last_name': 'last_name'
             }
         )
         self.assertEqual(
