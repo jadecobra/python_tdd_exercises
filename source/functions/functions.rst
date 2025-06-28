@@ -35,7 +35,6 @@ The following tests cover different ways to make a function
   :maxdepth: 1
 
   test_functions
-  test_functions_w_positional_arguments<test_functions_w_positional_arguments>
   test_functions_w_keyword_arguments<test_functions_w_keyword_arguments>
   test_functions_w_positional_and_keyword_arguments<test_functions_w_positional_and_keyword>
 
