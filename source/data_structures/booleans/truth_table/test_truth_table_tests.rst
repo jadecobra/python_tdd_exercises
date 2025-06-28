@@ -1082,7 +1082,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         return not y == True
         return y != True
 
-  when ``not y`` is :ref:`True<test_what_is_true>` this statement will be a duplication - ``True == True``, I remove the second part of the statement
+  when ``not y`` is :ref:`True<test_what_is_true>` it means the statement will be ``True == True`` which is a duplication. I remove the second part of the statement
 
   .. code-block:: python
 

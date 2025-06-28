@@ -23,7 +23,7 @@ requirements
 test_functions_w_positional_arguments
 *********************************************************************************
 
-I can define a :ref:`function<functions>` to take in more than one input. For instance if I am writing a :ref:`function<functions>` to perform operations on 2 numbers as I do in :doc:`/how_to/calculator` , the :ref:`function<functions>` has to be able to take the 2 numbers it performs operations on. I add a new test to ``test_functions.py``
+I can make a :ref:`function<functions>` take more than one input
 
 .. code-block:: python
 
@@ -37,10 +37,14 @@ I can define a :ref:`function<functions>` to take in more than one input. For in
 
 the terminal shows :ref:`AttributeError`
 
+.. code-block:: python
+
+
+
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add an :ref:`identity function<test_identity_functions>` to  ``functions.py``
+* I add a :ref:`function<functions>` to  ``functions.py``
 
   .. code-block:: python
 
@@ -48,7 +52,12 @@ green: make it pass
         return argument
 
   the terminal shows :ref:`TypeError`
-* I change the signature of ``identity_w_positional_arguments`` to take in more than one argument
+
+  .. code-block:: python
+
+
+
+  I make the :ref:`function<functions>` take more than one argument
 
   .. code-block:: python
 
@@ -58,7 +67,12 @@ green: make it pass
         return argument
 
   the terminal shows :ref:`AssertionError`
-* I make ``identity_w_positional_arguments`` return the 2 arguments it receives
+
+  .. code-block:: python
+
+
+
+  I make it return the 2 arguments it receives
 
   .. code-block:: python
 
@@ -67,15 +81,14 @@ green: make it pass
     ):
         return argument, second_argument
 
-  the terminal shows passing tests
+  the test passes
 
 refactor: make it better
 ---------------------------------------------------------------------------------
 
 How can I make this better?
 
-* I called the first argument ``argument`` and the second argument ``second_argument``. Technically, both arguments are input data, so I need a better name that is more descriptive
-* I make the signature of ``identity_w_positional_arguments`` to use more descriptive names
+* I change the name of the first argument to be more descriptive
 
   .. code-block:: python
 
@@ -85,7 +98,8 @@ How can I make this better?
         return first_argument, second_argument
 
   I still have passing tests
-* I add another test to ensure that ``identity_w_positional_arguments`` outputs data in the order given
+
+* I add another test to make sure that ``identity_w_positional_arguments`` outputs data in the order given
 
   .. code-block:: python
 

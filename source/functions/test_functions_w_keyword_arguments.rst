@@ -12,7 +12,7 @@ functions: test_functions_w_keyword_arguments
 
 There is an inherent problem with using positional arguments in functions. It requires the inputs to always be supplied in the right order. If the program is dependent on that order, then it will behave in an unintended way when it receives input out of order.
 
-To ensure the :ref:`function<functions>` behaves right regardless of what order the user provides the input I can use Keyword Arguments
+To make sure the :ref:`function<functions>` behaves right regardless of what order the user provides the input I can use Keyword Arguments
 
 *********************************************************************************
 test_functions_w_keyword_arguments
@@ -105,7 +105,7 @@ refactor: make it better
               ('my_first_name', 'my_last_name')
           )
 
-  the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, ensures the :ref:`function<functions>` always shows output in the right order regardless of the order in which the input data is given
+  the terminal shows passing tests. Unlike in ``test_functions_w_positional_arguments`` using the name when passing inputs, makes sure the :ref:`function<functions>` always shows output in the right order regardless of the order in which the input data is given
 
 * The :ref:`function<functions>` currently only takes in 2 keyword arguments. What if I want a :ref:`function<functions>` that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``. I add an assertion
 
