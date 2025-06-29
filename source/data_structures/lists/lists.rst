@@ -578,27 +578,38 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I add the value and change the assert_ :ref:`method<functions>`
+I add the value
 
 .. code-block:: python
 
-  def test_count(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertEqual(a_list.count(0), 1)
+  self.assertIsNone(a_list.count(0), 1)
 
-the test passes. It looks like the count_ :ref:`method<functions>` returns the number of times an item appears
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 1 is not None : 1
+
+I change the assert_ :ref:`method<functions>`
+
+.. code-block:: python
+
+  a_list = [0, 1, 2, 'n']
+  self.assertEqual(a_list.count(0), 1)
+
+the test passes
 
 refactor: make it better
 #################################################################################
 
-* I change the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ then add another assert_ call to be sure
+* It looks like the count_ :ref:`method<functions>` returns the number of times an item appears, I change the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ then add another assert_ call to be sure
 
   .. code-block:: python
 
     def test_count(self):
-        a_list = [0, 2, 1, 2, 3, 2]
+        a_list = [0, 1, 2, 1, 'n', 1]
         self.assertEqual(a_list.count(0), 1)
-        self.assertEqual(a_list.count(2), 1)
+        self.assertEqual(a_list.count(1), 1)
 
   the terminal shows :ref:`AssertionError`
 
@@ -610,7 +621,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list.count(2), 3)
+    self.assertEqual(a_list.count(1), 3)
 
   the test passes
 
@@ -618,21 +629,20 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list.count(0), 1)
     self.assertEqual(a_list.count(2), 3)
-    self.assertEqual(a_list.count(9), 1)
+    self.assertEqual(a_list.count('not in list'), 3)
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 0 != 1
+    AssertionError: 0 != 3
 
   The count_ method returns ``0`` when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the value
 
   .. code-block:: python
 
-    self.assertEqual(a_list.count(9), 0)
+    self.assertEqual(a_list.count('not in list'), 0)
 
   the test passes
 
