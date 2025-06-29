@@ -1727,7 +1727,42 @@ refactor: make it better
 
   all tests are still passing
 
+----
 
+*********************************************************************************
+test_set_items_in_a_list
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add another test
+
+.. code-block:: python
+
+  def test_set_items_in_a_list(self):
+      a_list = ['1st', '2nd', '3rd', '...last']
+      a_list[-1] = '4th'
+      self.assertEqual(a_list, ['1st', '2nd', '3rd', '...last'])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
+
+I can use the index of an item to change its value in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
+green: make it pass
+#################################################################################
+
+I change the expectation to match the terminal
+
+.. code-block:: python
+
+  self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
+
+the test passes
 
 ----
 
