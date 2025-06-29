@@ -22,4 +22,4 @@ def get_odd_numbers(iterable):
 
 
 def square(iterable):
-    return [item*item for item in iterable]
+    return [item**2 for item in iterable]

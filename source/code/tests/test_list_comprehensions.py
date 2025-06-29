@@ -4,7 +4,7 @@ import unittest
 
 
 def process(number):
-    return number * number
+    return number ** 2
 
 
 def condition(number):
@@ -27,7 +27,7 @@ class TestListComprehensions(unittest.TestCase):
             list(self.iterable)
         )
 
-    def test_make_a_list_w_list_comprehensions(self):
+    def test_make_a_list_w_a_list_comprehension(self):
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
             [item for item in self.iterable]
@@ -37,7 +37,7 @@ class TestListComprehensions(unittest.TestCase):
             [item for item in self.iterable]
         )
 
-    def test_list_comprehensions_w_conditions(self):
+    def test_list_comprehension_w_conditions(self):
         even_numbers = []
         odd_numbers = []
         for item in self.iterable:
@@ -75,6 +75,24 @@ class TestListComprehensions(unittest.TestCase):
         self.assertEqual(
             src.list_comprehensions.square(self.iterable),
             [process(item) for item in self.iterable]
+        )
+
+    def test_list_comprehensions_w_functions_and_conditions(self):
+        even_squares = []
+        odd_squares = []
+        for item in self.iterable:
+            if condition(item):
+                even_squares.append(process(item))
+            else:
+                odd_squares.append(process(item))
+
+        self.assertEqual(
+            even_squares,
+            [process(item) for item in self.iterable if condition(item)]
+        )
+        self.assertEqual(
+            odd_squares,
+            [process(item) for item in self.iterable if not condition(item)]
         )
 
 

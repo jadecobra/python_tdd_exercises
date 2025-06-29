@@ -11,7 +11,6 @@ functions: test_functions_w_positional_and_keyword_arguments
 
 ----
 
-
 *********************************************************************************
 test_functions_w_positional_and_keyword_arguments
 *********************************************************************************

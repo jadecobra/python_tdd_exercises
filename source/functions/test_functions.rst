@@ -10,13 +10,12 @@ test_functions
 
 ----
 
-
 *********************************************************************************
 test_functions_w_pass
 *********************************************************************************
 
 red: make it fail
-################################################################################
+#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``functions`` as the name of the project
 
@@ -65,9 +64,9 @@ red: make it fail
     # NameError
 
 green: make it pass
-################################################################################
+#################################################################################
 
-* I make a file called ``functions.py`` in the project folder and the terminal shows :ref:`AttributeError`\ , which I add to the list of Exceptions_ encountered
+* I make a file called ``functions.py`` in the project folder and the terminal shows :ref:`AttributeError` , which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -97,7 +96,7 @@ test_functions_w_return
 *********************************************************************************
 
 red: make it fail
-################################################################################
+#################################################################################
 
 I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check that :ref:`functions` always return :ref:`None`
 
@@ -109,7 +108,7 @@ I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check 
 the terminal shows :ref:`AttributeError`
 
 green: make it fail
-################################################################################
+#################################################################################
 
 I add a new :ref:`function<functions>` to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
 
@@ -152,6 +151,8 @@ from the `Zen of Python`_: ``Explicit is better than implicit.`` I add a :ref:`f
 
 and the terminal shows passing tests.
 
+----
+
 *********************************************************************************
 test_constant_functions
 *********************************************************************************
@@ -159,7 +160,7 @@ test_constant_functions
 constant :ref:`functions` always return the same thing when called
 
 red: make it fail
-################################################################################
+#################################################################################
 
 I add a test to ``test_functions.py``
 
@@ -171,7 +172,7 @@ I add a test to ``test_functions.py``
 the terminal shows :ref:`AttributeError`
 
 green: make it pass
-################################################################################
+#################################################################################
 
 I change the :ref:`function<functions>` to make it pass
 
@@ -180,40 +181,38 @@ I change the :ref:`function<functions>` to make it pass
   def constant():
       return 'first_name'
 
-----
-
 *********************************************************************************
 test_constant_functions_w_inputs
 *********************************************************************************
 
 red: make it fail
-################################################################################
+#################################################################################
 
-I add a new test that checks if a constant that takes inputs returns the same value regardless of the inputs
+I add a new test for a :ref:`constant function<test_constant_functions>` that takes input
 
 .. code-block:: python
 
   def test_constant_functions_w_inputs(self):
       self.assertEqual(
-          functions.constant_w_inputs('Bob', 'James', 'Frank'),
-          'joe'
+          src.functions.constant_w_inputs('Bob', 'James', 'Frank'),
+          src.functions.constant()
       )
       self.assertEqual(
           functions.constant_w_inputs('a', 2, 'c', 3),
-          'joe'
+          src.functions.constant()
       )
 
 the terminal shows :ref:`AttributeError`
 
 green: make it pass
-################################################################################
+#################################################################################
 
-and I add a :ref:`function <functions>` for ``constant_w_inputs`` to ``functions.py``
+and I add a definition for it
 
 .. code-block:: python
 
-  def constant_w_inputs(*args):
-      return 'joe'
+  def constant_w_inputs(*arguments):
+      return constant()
 
 the terminal shows passing tests
 
@@ -348,7 +347,7 @@ I can make a :ref:`function<functions>` take more than one input
 
     def test_functions_w_positional_arguments(self):
         self.assertEqual(
-            functions.identity_w_positional_arguments(
+            functions.function_w_positional_arguments(
                 'first_name', 'last_name'
             ),
             ('first_name', 'last_name')
@@ -358,7 +357,7 @@ the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
-  AttributeError: module 'src.functions' has no attribute 'identity_w_positional_arguments'
+  AttributeError: module 'src.functions' has no attribute 'function_w_positional_arguments'
 
 green: make it pass
 ################################################################################
@@ -367,20 +366,20 @@ green: make it pass
 
   .. code-block:: python
 
-    def identity_w_positional_arguments(argument):
+    def function_w_positional_arguments(argument):
         return argument
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: identity_w_positional_arguments() takes 1 positional argument but 2 were given
+    TypeError: function_w_positional_arguments() takes 1 positional argument but 2 were given
 
   I make the :ref:`function<functions>` take more than one argument
 
   .. code-block:: python
 
-    def identity_w_positional_arguments(
+    def function_w_positional_arguments(
         argument, second
     ):
         return argument
@@ -395,7 +394,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def identity_w_positional_arguments(
+    def function_w_positional_arguments(
         argument, second
     ):
         return argument, second
@@ -411,26 +410,26 @@ How can I make this better?
 
   .. code-block:: python
 
-    def identity_w_positional_arguments(
+    def function_w_positional_arguments(
             first, second
         ):
         return first, second
 
   I still have passing tests
 
-* I add another assertion to make sure that ``identity_w_positional_arguments`` outputs data in the order given
+* I add another assertion to make sure that ``function_w_positional_arguments`` outputs data in the order given
 
   .. code-block:: python
 
       def test_functions_w_positional_arguments(self):
           self.assertEqual(
-              functions.identity_w_positional_arguments(
+              functions.function_w_positional_arguments(
                   'first_name', 'last_name'
               ),
               ('first_name', 'last_name')
           )
           self.assertEqual(
-              functions.identity_w_positional_arguments(
+              functions.function_w_positional_arguments(
                   'last_name', 'first_name'
               ),
               ('first_name', 'last_name')
@@ -448,13 +447,13 @@ How can I make this better?
 
       def test_functions_w_positional_arguments(self):
           self.assertEqual(
-              functions.identity_w_positional_arguments(
+              functions.function_w_positional_arguments(
                   'first_name', 'last_name'
               ),
               ('first_name', 'last_name')
           )
           self.assertEqual(
-              functions.identity_w_positional_arguments(
+              functions.function_w_positional_arguments(
                   'last_name', 'first_name'
               ),
               ('last_name', 'first_name')
@@ -474,7 +473,7 @@ test_functions_w_unknown_positional_arguments
 
     def test_functions_w_unknown_positional_arguments(self):
         self.assertEqual(
-            src.functions.identity_w_unknown_positional_arguments(
+            src.functions.function_w_unknown_positional_arguments(
                 0, 1, 2, 3
             ),
             (0, 1, 2, 3)
@@ -485,13 +484,13 @@ test_functions_w_unknown_positional_arguments
   .. code-block:: python
     :force:
 
-    AttributeError: module 'src.functions' has no attribute 'identity_w_unknown_positional_arguments'. Did you mean: 'identity_w_positional_arguments'?
+    AttributeError: module 'src.functions' has no attribute 'function_w_unknown_positional_arguments'. Did you mean: 'function_w_positional_arguments'?
 
   I add the function with a `starred expression`_ like I did in :ref:`test_constant_functions`, to allow it take in any number of arguments
 
   .. code-block:: python
 
-    def identity_w_unknown_positional_arguments(*arguments):
+    def function_w_unknown_positional_arguments(*arguments):
         return arguments
 
   the test passes
@@ -501,13 +500,13 @@ test_functions_w_unknown_positional_arguments
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.identity_w_unknown_positional_arguments(
+        src.functions.function_w_unknown_positional_arguments(
             0, 1, 2, 3
         ),
         (0, 1, 2, 3)
     )
     self.assertEqual(
-        src.functions.identity_w_unknown_positional_arguments(
+        src.functions.function_w_unknown_positional_arguments(
             None, bool, int, float, str, tuple, list, set, dict
         ),
         None
@@ -525,7 +524,7 @@ test_functions_w_unknown_positional_arguments
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.identity_w_unknown_positional_arguments(
+        src.functions.function_w_unknown_positional_arguments(
             None, bool, int, float, str, tuple, list, set, dict
         ),
         (None, bool, int, float, str, tuple, list, set, dict)
@@ -552,7 +551,7 @@ I add a new test to ``test_functions.py``
 
   def test_functions_w_keyword_arguments(self):
       self.assertEqual(
-          src.functions.identity_w_keyword_arguments(
+          src.functions.function_w_keyword_arguments(
               first_name='first_name',
               last_name='last_name',
           ),
@@ -564,7 +563,7 @@ the terminal shows :ref:`AttributeError`
 .. code-block:: python
   :force:
 
-  AttributeError: module 'src.functions' has no attribute 'identity_w_keyword_arguments'. Did you mean: 'identity_w_unknown_positional_arguments'?
+  AttributeError: module 'src.functions' has no attribute 'function_w_keyword_arguments'. Did you mean: 'function_w_unknown_positional_arguments'?
 
 green: make it pass
 ################################################################################
@@ -573,33 +572,33 @@ green: make it pass
 
   .. code-block:: python
 
-    def identity_w_keyword_arguments():
+    def function_w_keyword_arguments():
         return None
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: identity_w_keyword_arguments() got an unexpected keyword argument 'first_name'
+    TypeError: function_w_keyword_arguments() got an unexpected keyword argument 'first_name'
 
   I add the argument to the defintion
 
   .. code-block:: python
 
-    def identity_w_keyword_arguments(first_name):
+    def function_w_keyword_arguments(first_name):
         return None
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: identity_w_keyword_arguments() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
+    TypeError: function_w_keyword_arguments() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
 
   I add the argument
 
   .. code-block:: python
 
-    def identity_w_keyword_arguments(first_name, last_name):
+    def function_w_keyword_arguments(first_name, last_name):
         return None
 
   the terminal shows :ref:`AssertionError`
@@ -610,7 +609,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def identity_w_keyword_arguments(first_name, last_name):
+    def function_w_keyword_arguments(first_name, last_name):
         return ('first_name', 'last_name')
 
   the test passes
@@ -618,20 +617,20 @@ green: make it pass
 refactor: make it better
 ################################################################################
 
-* So far ``identity_w_keyword_arguments`` looks the same as ``identity_w_positional_arguments``, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an assertion that puts the input data out of order to see if there is a difference
+* So far ``function_w_keyword_arguments`` looks the same as ``function_w_positional_arguments``, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an assertion that puts the input data out of order to see if there is a difference
 
   .. code-block:: python
 
       def test_functions_w_keyword_arguments(self):
           self.assertEqual(
-              functions.identity_w_keyword_arguments(
+              functions.function_w_keyword_arguments(
                   first_name='first_name',
                   last_name='last_name'
               ),
               ('first_name', 'last_name')
           )
           self.assertEqual(
-              src.functions.identity_w_keyword_arguments(
+              src.functions.function_w_keyword_arguments(
                   last_name='last_name',
                   first_name='first_name',
               ),
@@ -649,7 +648,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.identity_w_keyword_arguments(
+        src.functions.function_w_keyword_arguments(
             last_name='last_name',
             first_name='first_name',
         ),
@@ -670,7 +669,7 @@ test_functions_w_unknown_keyword_arguments
 
     def test_functions_w_unknown_keyword_arguments(self):
         self.assertEqual(
-            src.functions.identity_w_unknown_keyword_arguments(
+            src.functions.function_w_unknown_keyword_arguments(
                 a=1, b=2, c=3, d=4
             ),
             None
@@ -680,26 +679,26 @@ test_functions_w_unknown_keyword_arguments
 
   .. code-block:: python
 
-    AttributeError: module 'src.functions' has no attribute 'identity_w_unknown_keyword_arguments'. Did you mean: 'identity_w_keyword_arguments'?
+    AttributeError: module 'src.functions' has no attribute 'function_w_unknown_keyword_arguments'. Did you mean: 'function_w_keyword_arguments'?
 
   I add a :ref:`function<functions>` using a `starred expression`_
 
   .. code-block:: python
 
-    def identity_w_unknown_keyword_arguments(*arguments):
+    def function_w_unknown_keyword_arguments(*arguments):
         return arguments
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: identity_w_unknown_keyword_arguments() got an unexpected keyword argument 'a'
+    TypeError: function_w_unknown_keyword_arguments() got an unexpected keyword argument 'a'
 
   the `starred expression`_ for keyword arguments is different, I change the :ref:`function<functions>`
 
   .. code-block:: python
 
-    def identity_w_unknown_keyword_arguments(**keyword_arguments):
+    def function_w_unknown_keyword_arguments(**keyword_arguments):
         return keyword_arguments
 
   the terminal shows :ref:`AssertionError`
@@ -714,7 +713,7 @@ test_functions_w_unknown_keyword_arguments
 
     def test_functions_w_unknown_keyword_arguments(self):
         self.assertEqual(
-            src.functions.identity_w_unknown_keyword_arguments(
+            src.functions.function_w_unknown_keyword_arguments(
                 a=1, b=2, c=3, d=4
             ),
             {'a': 1, 'b': 2, 'c': 3, 'd': 4}
@@ -727,13 +726,13 @@ test_functions_w_unknown_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.identity_w_unknown_keyword_arguments(
+        src.functions.function_w_unknown_keyword_arguments(
             a=1, b=2, c=3, d=4
         ),
         {'a': 1, 'b': 2, 'c': 3, 'd': 4}
     )
     self.assertEqual(
-        src.functions.identity_w_unknown_keyword_arguments(
+        src.functions.function_w_unknown_keyword_arguments(
             none=None,
             a_boolean=bool,
             an_integer=int,
@@ -758,7 +757,7 @@ test_functions_w_unknown_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.identity_w_unknown_keyword_arguments(
+        src.functions.function_w_unknown_keyword_arguments(
             none=None,
             a_boolean=bool,
             an_integer=int,
@@ -801,7 +800,7 @@ the tests show that
 * :ref:`functions` return :ref:`None` by default
 * :ref:`functions` are defined using the def_ keyword
 
-Would you like to :ref:`test functions with keyword arguments?<functions: test_functions_w_keyword_arguments>`
+Would you like to :ref:`test functions with positional and keyword arguments?<functions: test_functions_w_positional_and_keyword_arguments>`
 
 ----
 
