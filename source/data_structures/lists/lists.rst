@@ -988,7 +988,7 @@ refactor: make it better
         self.assertEqual(a_list.index('1st'), 0)
         self.assertEqual(a_list.index('3rd'), 2)
         self.assertEqual(a_list.index('2nd'), 1)
-        self.assertEqual(a_list.index('...last'), 1)
+        self.assertEqual(a_list.index('...last'), 3)
 
         with self.assertRaises(ValueError):
             a_list.index('not in list')
@@ -1045,7 +1045,7 @@ the test is green. The insert_ :ref:`method<functions>` returns :ref:`None`
 refactor: make it better
 #################################################################################
 
-* I add an assertion to find out what changed in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add an assertion to find out what it did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
@@ -1056,15 +1056,63 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [1, 0, 1, 2, 3] != [0, 1, 2, 'n']
+    AssertionError: Lists differ: [1, 0, 1, 2, 'n'] != [0, 1, 2, 'n']
 
   I add the new value to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
-    self.assertEqual(a_list, [1, 0, 1, 2, 3])
+    self.assertEqual(a_list, [1, 0, 1, 2, 'n'])
 
-  the test passes. The insert_ method places the second input given at the index given as the first input
+  the test passes. The insert_ :ref:`method<functions>` places the second input given at the index given as the first input
+
+* I change the second input in the call to be sure
+
+  .. code-block:: python
+
+    self.assertIsNone(a_list.insert(0, -1))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [-1, 0, 1, 2, 'n'] != [1, 0, 1, 2, 'n']
+
+  I change the value to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+
+  the test is green again
+
+* I add another assertion with a call to the insert_ :ref:`method<functions>`
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+    self.assertIsNone(a_list.insert(3, 1.5))
+
+  the terminal shows green. I add an assertion to see what it did to the list
+
+  .. code-block:: python
+
+    self.assertIsNone(a_list.insert(3, 1.5))
+    self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [-1, 0, 1, 1.5, 2, 'n'] != [-1, 0, 1, 2, 'n']
+
+  I add the value to the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
+
+  the test passes
 
 * I rename the test
 
@@ -1072,8 +1120,10 @@ refactor: make it better
 
     def test_insert_places_item_at_given_index_in_a_list(self):
         a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.insert(0, 1))
-        self.assertEqual(a_list, [1, 0, 1, 2, 3])
+        self.assertIsNone(a_list.insert(0, -1))
+        self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+        self.assertIsNone(a_list.insert(3, 1.5))
+        self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
 * I remove insert_ from the TODO list
 
