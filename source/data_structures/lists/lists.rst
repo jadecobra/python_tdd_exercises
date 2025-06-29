@@ -391,7 +391,7 @@ the terminal shows green. The `clear <https://docs.python.org/3/tutorial/datastr
 red: make it fail
 #################################################################################
 
-I want to know what the :ref:`method<functions>` does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+We can guess what this :ref:`method<functions>` does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I add an assertion to show it
 
 .. code-block:: python
 
@@ -403,6 +403,8 @@ the terminal shows :ref:`AssertionError`
 .. code-block:: python
 
   AssertionError: Lists differ: [] != [0, 1, 2, 'n']
+
+it is now empty
 
 green: make it pass
 #################################################################################
