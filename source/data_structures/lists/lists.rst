@@ -469,13 +469,25 @@ the `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list
 green: make it pass
 #################################################################################
 
-I add the value and change the assert_ :ref:`method<functions>`
+I add the value to the assertion
 
 .. code-block:: python
 
-  def test_copy(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+  a_list = [0, 1, 2, 'n']
+  self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: [0, 1, 2, 'n'] is not None : [0, 1, 2, 'n']
+
+the :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the assert_ :ref:`method<functions>`
+
+.. code-block:: python
+
+  a_list = [0, 1, 2, 'n']
+  self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
 
 the test passes
 
@@ -487,9 +499,21 @@ I add another assertion to see what happened to the original `list <https://docs
 .. code-block:: python
 
   self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+  self.assertEqual(a_list, [])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 2, 'n'] != []
+
+it stayed the same. I add the values
+
+.. code-block:: python
+
   self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-the terminal still shows green, the original `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is still the same. I change the name of the test
+the test passes and I change the name of the test
 
 .. code-block:: python
 
@@ -498,7 +522,7 @@ the terminal still shows green, the original `list <https://docs.python.org/3/li
       self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
       self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-the test is still green, I remove `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
+I remove `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
 
 .. code-block:: python
 
