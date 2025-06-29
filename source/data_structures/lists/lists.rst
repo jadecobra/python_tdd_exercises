@@ -1926,42 +1926,62 @@ green: make it pass
         a_list = ['a', 'b', 'c', 'd']
 
         with self.assertRaises(IndexError):
-            a_list[5]
+            a_list[4]
 
   the test passes
 
 refactor: make it better
 #################################################################################
 
-I add one more line to test indexing with a negative number that is outside the range of numbers that can be used to index the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add another assertion to test indexing with a negative number that is outside the range of numbers that can be used to index the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_index_error(self):
-      a_list = ['a', 'b', 'c', 'd']
+    with self.assertRaises(IndexError):
+        a_list[4]
+    a_list[-5]
 
-      with self.assertRaises(IndexError):
-          a_list[5]
-      a_list[-5]
+  the terminal shows IndexError_
 
-the terminal shows IndexError_
+  .. code-block:: python
 
-.. code-block:: python
+    IndexError: list index out of range
 
-  IndexError: list index out of range
+  I add another assertRaises_
 
-I add another assertRaises_
+  .. code-block:: python
 
-.. code-block:: python
+    with self.assertRaises(IndexError):
+        a_list[4]
+    with self.assertRaises(IndexError):
+        a_list[-5]
 
-  def test_index_error(self):
-      a_list = ['a', 'b', 'c', 'd']
-      with self.assertRaises(IndexError):
-          a_list[5]
-      with self.assertRaises(IndexError):
-          a_list[-5]
+  the test passes
 
-the test passes
+* IndexError_ is also raised with the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` when the the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is empty
+
+  .. code-block:: python
+
+    with self.assertRaises(IndexError):
+        a_list[-5]
+    [].pop()
+
+  the terminal shows IndexError_
+
+  .. code-block:: python
+
+    IndexError: pop from empty list
+
+  I add assertRaises_
+
+  .. code-block:: python
+
+    with self.assertRaises(IndexError):
+        a_list[-5]
+    with self.assertRaises(IndexError):
+        [].pop()
+
+  the terminal shows green
 
 ----
 

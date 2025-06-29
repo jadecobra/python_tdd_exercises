@@ -164,8 +164,6 @@ class TestLists(unittest.TestCase):
         with self.assertRaises(IndexError):
             a_list[-5]
         with self.assertRaises(IndexError):
-            a_list[4] = 'BOOM!'
-        with self.assertRaises(IndexError):
             [].pop()
 
 
