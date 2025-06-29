@@ -825,7 +825,13 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: 0 is not None
 
-I add the expectation and change the assert_ :ref:`method<functions>`
+I add the expectation
+
+.. code-block:: python
+
+  AssertionError: 0 is not None : 0
+
+I change the assertion
 
 .. code-block:: python
 
@@ -838,12 +844,12 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I change the values in ``a_list``
+* I cannot tell from the test if the :ref:`method<functions>` is returning the same value I give it, I change the values in ``a_list`` to check
 
   .. code-block:: python
 
     def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '... last']
+        a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list.index(0), 0)
 
   the terminal shows ValueError_
@@ -852,7 +858,7 @@ refactor: make it better
 
     ValueError: 0 is not in list
 
-  I add the error to the list of Exceptions_ encountered
+  I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -861,30 +867,54 @@ refactor: make it better
     # TypeError
     # ValueError
 
-  I add assertRaises_ to handle the Exception_ and remove assertEqual_
+  I remove the things around the call and change the value to be more descriptive
+
+  .. code-block:: python
+
+    a_list.index('not in list')
+
+  the terminal still shows ValueError_
+
+  .. code-block:: python
+
+    ValueError: 'not in list' is not in list
+
+  I add assertRaises_ to handle the Exception_
 
   .. code-block:: python
 
     def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '... last']
+        a_list = ['1st', '2nd', '3rd', '...last']
 
         with self.assertRaises(ValueError):
-            a_list.index(0)
+            a_list.index('not in list')
 
-  the test is green again
+  the test is green again. The index_ :ref:`method<functions>` raises ValueError_ when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 * I add a new assertion for the index_ :ref:`method<functions>`
 
   .. code-block:: python
 
     def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '... last']
-        self.assertEqual(a_list.index('1st'), 0)
+        a_list = ['1st', '2nd', '3rd', '...last']
+        self.assertEqual(a_list.index('1st'), '1st')
 
         with self.assertRaises(ValueError):
-            a_list.index(0)
+            a_list.index('not in list')
 
-  the test is still green
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0 != '1st'
+
+  I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_list.index('1st'), 0)
+
+  the test passes
 
 * I add another assertion
 
@@ -907,18 +937,18 @@ refactor: make it better
 
   the test passes
 
-* I add another call to assertEqual_
+* I add another assertion
 
   .. code-block:: python
 
     self.assertEqual(a_list.index('3rd'), 2)
-    self.assertEqual(a_list.index('2nd'), 0)
+    self.assertEqual(a_list.index('2nd'), 2)
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 1 != 0
+    AssertionError: 1 != 2
 
   I change the value to match
 
@@ -933,35 +963,35 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(a_list.index('2nd'), 1)
-    self.assertEqual(a_list.index('... last'), 0)
+    self.assertEqual(a_list.index('...last'), 1)
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: 3 != 0
+    AssertionError: 3 != 1
 
   I change the value in the test to match the one in the terminal
 
   .. code-block:: python
 
-    self.assertEqual(a_list.index('... last'), 3)
+    self.assertEqual(a_list.index('...last'), 3)
 
-  the test passes. Python uses `zero-based indexing`_ which means the first item has an index of  ``0`` and the last item has an index of the length of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ minus ``1``
+  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ minus ``1``
 
 * I rename the test
 
   .. code-block:: python
 
     def test_index_returns_position_of_item_in_a_list(self):
-        a_list = ['1st', '2nd', '3rd', '... last']
+        a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list.index('1st'), 0)
         self.assertEqual(a_list.index('3rd'), 2)
         self.assertEqual(a_list.index('2nd'), 1)
-        self.assertEqual(a_list.index('... last'), 3)
+        self.assertEqual(a_list.index('...last'), 1)
 
         with self.assertRaises(ValueError):
-            a_list.index(0)
+            a_list.index('not in list')
 
 * I also remove index_ from the TODO list
 
@@ -1391,7 +1421,7 @@ I add a failing test
 .. code-block:: python
 
   def test_view_items_in_a_list(self):
-      a_list = ['1st', '2nd', '3rd', '... last']
+      a_list = ['1st', '2nd', '3rd', '...last']
       self.assertEqual(a_list[0], '')
 
 the terminal shows :ref:`AssertionError`
@@ -1421,7 +1451,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_view_items_in_a_list(self):
-        a_list = ['1st', '2nd', '3rd', '... last']
+        a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[-4], '')
 
@@ -1532,13 +1562,13 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: '... last' != ''
+    AssertionError: '...last' != ''
 
   I change the value
 
   .. code-block:: python
 
-    self.assertEqual(a_list[3], '... last')
+    self.assertEqual(a_list[3], '...last')
 
   the test passes
 
@@ -1546,20 +1576,20 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list[3], '... last')
+    self.assertEqual(a_list[3], '...last')
     self.assertEqual(a_list[-1], '')
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: '... last' != ''
+    AssertionError: '...last' != ''
 
   I make the values match
 
   .. code-block:: python
 
-    self.assertEqual(a_list[-1], '... last')
+    self.assertEqual(a_list[-1], '...last')
 
   all tests are still passing
 
@@ -1580,7 +1610,7 @@ I add another test
       ...
 
   def test_view_parts_of_a_list(self):
-      a_list = ['1st', '2nd', '3rd', '... last']
+      a_list = ['1st', '2nd', '3rd', '...last']
       self.assertEqual(a_list[0:2], [])
 
 the terminal shows :ref:`AssertionError`
@@ -1637,13 +1667,13 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['2nd', '3rd', '... last'] != ['2nd', '3rd']
+    AssertionError: Lists differ: ['2nd', '3rd', '...last'] != ['2nd', '3rd']
 
   I change the expectation
 
   .. code-block:: python
 
-    self.assertEqual(a_list[1:4], ['2nd', '3rd', '... last'])
+    self.assertEqual(a_list[1:4], ['2nd', '3rd', '...last'])
 
   the test is green again
 
@@ -1651,14 +1681,14 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list[1:4], ['2nd', '3rd', '... last'])
-        self.assertEqual(a_list[1:3], ['2nd', '3rd', '... last'])
+    self.assertEqual(a_list[1:4], ['2nd', '3rd', '...last'])
+        self.assertEqual(a_list[1:3], ['2nd', '3rd', '...last'])
 
   I get :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['2nd', '3rd'] != ['2nd', '3rd', '... last']
+    AssertionError: Lists differ: ['2nd', '3rd'] != ['2nd', '3rd', '...last']
 
   I change the expectation
 
