@@ -1542,10 +1542,10 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_view_items_in_a_list
+test_get_items_from_a_list
 *********************************************************************************
 
-I can provide the index of an item I want to see in ``[]`` to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I can provide the index of an item I want to see in square brackets(``[]``) to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 red: make it fail
 #################################################################################
@@ -1554,7 +1554,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_view_items_in_a_list(self):
+  def test_get_items_from_a_list(self):
       a_list = ['1st', '2nd', '3rd', '...last']
       self.assertEqual(a_list[0], '')
 
@@ -1580,11 +1580,11 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another line, this time with a negative number
+* I can also use negative numbers. The last item has an index of ``-1`` and the first item has an index of negative the length of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
-    def test_view_items_in_a_list(self):
+    def test_get_items_from_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[-4], '')
@@ -1603,7 +1603,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assert_ statement
+* I add another assertion statement
 
   .. code-block:: python
 
@@ -1727,6 +1727,8 @@ refactor: make it better
 
   all tests are still passing
 
+
+
 ----
 
 *********************************************************************************
@@ -1740,7 +1742,7 @@ I add another test
 
 .. code-block:: python
 
-  def test_view_items_in_a_list(self):
+  def test_get_items_from_a_list(self):
       ...
 
   def test_view_parts_of_a_list(self):

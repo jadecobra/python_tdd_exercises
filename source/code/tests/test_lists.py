@@ -125,10 +125,9 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.reverse())
         self.assertEqual(a_list, ['n', 2, 1, 0])
 
-    def test_sort(self):
-        a_list = [0, 1, 2, 'n']
+    def test_sort_a_list(self):
         with self.assertRaises(TypeError):
-            a_list.sort()
+            [0, 1, 2, 'n'].sort()
 
         a_list = [0, 1, -1, 2, -2, 3, -3]
         self.assertIsNone(a_list.sort())
