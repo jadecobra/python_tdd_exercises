@@ -410,7 +410,7 @@ the test passes. I cannot use a `dictionary <https://docs.python.org/3/tutorial/
 test_attributes_and_methods_of_dictionaries
 *********************************************************************************
 
-I can use the dir_ :ref:`function<functions>` to look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 red: make it fail
 #################################################################################

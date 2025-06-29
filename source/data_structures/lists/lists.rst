@@ -68,126 +68,68 @@ I change ``test_failure`` to ``test_make_a_list``
   class TestLists(unittest.TestCase):
 
       def test_make_a_list_w_list_constructor(self):
-          self.assertEqual(list(0, 1, 2, 3), None)
-
-the terminal shows :ref:`TypeError`
-
-.. code-block:: python
-
-  TypeError: list expected at most 1 argument, got 4
-
-* :ref:`TypeError` is raised because the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ expects one argument but I gave four in the test
-* An iterable_ is an object with items I can go over one by one in a loop - tuples_, `lists <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_, sets_ and :ref:`dictionaries` are iterable_
-
-green: make it pass
-#################################################################################
-
-* I add the error to the list of Exceptions_ encountered
-
-  .. code-block:: python
-
-    # Exceptions Encountered
-    # AssertionError
-    # TypeError
-
-* I change the values provided to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ to a tuple_ by placing them in parentheses
-
-  .. code-block:: python
-
-    def test_make_a_list_w_list_constructor(self):
-        self.assertEqual(list((0, 1, 2, 3)), None)
-
-  and get :ref:`AssertionError` in the terminal
-
-  .. code-block:: python
-
-    AssertionError: [0, 1, 2, 3] != None
-
-  when I change the right side to match the values on the left from the terminal
-
-  .. code-block:: python
-
-    def test_make_a_list_w_list_constructor(self):
-        self.assertEqual(list((0, 1, 2, 3)), [0, 1, 2, 3])
-
-  the test passes
-
----
-
-*********************************************************************************
-test_make_a_list_w_square_brackets
-*********************************************************************************
-
-I can make a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and the passing test shows I can make one with ``[]``.
-
-red: make it fail
-#################################################################################
-
-I add a test
-
-.. code-block:: python
-
-  def test_make_a_list_w_list_constructor(self):
-      ...
-
-  def test_make_a_list_w_square_brackets(self):
-      self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 4)))
-
-the terminal shows :ref:`AssertionError` for the last value
-
-.. code-block:: python
-
-  AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 4]
-
-green: make it pass
-#################################################################################
-
-I change the value to match the expectation
-
-.. code-block:: python
-
-  def test_make_a_list_w_square_brackets(self):
-      self.assertEqual([0, 1, 2, 3], list((0, 1, 2, 3)))
-
-the test passes. Making a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with square brackets uses less characters than with the constructor_
-
-----
-
-*********************************************************************************
-test_make_a_list_from_an_iterable
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-I add another test
-
-.. code-block:: python
-
-  def test_make_a_list_w_square_brackets(self):
-      ...
-
-  def test_make_a_list_from_an_iterable(self):
-      self.assertEqual(range(4), [0, 1, 2, 3])
+          self.assertEqual(list(), None)
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: range(0, 4) != [0, 1, 2, 3]
+  AssertionError: [] != None
 
 green: make it pass
 #################################################################################
 
-``range(x)`` makes a range_ object_ which is an iterable_ of numbers that go from a default of ``0`` to the given number minus ``1``, in this case it will be ``0`` to ``3``
-
-I use it as input to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
+I change the expectation
 
 .. code-block:: python
 
-  self.assertEqual(list(iterable), [0, 1, 2, 3])
+  self.assertEqual(list(), [])
 
-the test passes
+the test passes. This is how to make an empty `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
+refactor: make it better
+#################################################################################
+
+I add another assertion, this time with input in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
+
+.. code-block:: python
+
+  self.assertEqual(list(), [])
+  self.assertEqual(list(0), [])
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: 'int' object is not iterable
+
+I add the error to the list of Exceptions_ encountered
+
+.. code-block:: python
+
+  # Exceptions Encountered
+  # AssertionError
+  # TypeError
+
+I change the input to a tuple_
+
+.. code-block:: python
+
+  self.assertEqual(list((0, 1, 2, 'n')), [])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 2, 'n'] != []
+
+I change the expectation to match
+
+.. code-block:: python
+
+  self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
+
+the test passes. The tests show I can make a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and square brackets - ``[]``, which uses less characters than the constructor_
 
 ----
 
@@ -195,7 +137,7 @@ the test passes
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I can use the dir_ :ref:`function<functions>` to look at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I can use the dir_ :ref:`function<functions>` to see at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 red: make it fail
 #################################################################################
