@@ -1389,18 +1389,18 @@ I add the next test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.reverse())
 
-the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what has changed in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what it did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
   self.assertIsNone(a_list.reverse())
   self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-the terminal show :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [3, 2, 1, 0] != [0, 1, 2, 'n']
+  AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
 
 the :ref:`method<functions>` reverses the order of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
@@ -1411,7 +1411,7 @@ I change the expectation
 
 .. code-block:: python
 
-  self.assertEqual(a_list, [3, 2, 1, 0])
+  self.assertEqual(a_list, ['n', 2, 1, 0])
 
 the test passes
 
@@ -1425,9 +1425,9 @@ refactor: make it better
     def test_reverse_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.reverse())
-        self.assertEqual(a_list, [3, 2, 1, 0])
+        self.assertEqual(a_list, ['n', 2, 1, 0])
 
-* I remove the :ref:`method<functions>` from the TODO list
+* I remove the name from the TODO list
 
   .. code-block:: python
 
