@@ -1450,54 +1450,92 @@ I add a test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.sort())
 
-the terminal still shows green. sort_ returns :ref:`None` when called, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+the terminal shows :ref:`TypeError`
 
 .. code-block:: python
 
-  def test_sort(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.sort())
-      self.assertEqual(a_list, [0, 1, 2, 'n'])
+  TypeError: '<' not supported between instances of 'str' and 'int'
 
-the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is still the same. I change the values in ``a_list`` to see if it makes a difference
-
-.. code-block:: python
-
-    def test_sort(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-
-I get :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: Lists differ: [0, 1, 2, 2, 2, 3] != [0, 1, 2, 'n']
-
-the sort_ :ref:`method<functions>` arranges the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ in ascending order by default
+I have to change ``'n'`` to a number or change the other numbers to a string_
 
 green: make it pass
 #################################################################################
 
-I change the values to match
+I remove the things around the call then add assertRaises_
 
 .. code-block:: python
 
-  self.assertEqual(a_list, [0, 1, 2, 2, 2, 3])
+  def test_sort(self):
+      with self.assertRaises(TypeError):
+          [0, 1, 2, 'n'].sort()
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
+* I add another assertion
+
+  .. code-block:: python
+
+    def test_sort(self):
+        with self.assertRaises(TypeError):
+            [0, 1, 2, 'n'].sort()
+
+        a_list = [0, 1, 2, 3]
+        self.assertIsNone(a_list.sort())
+
+
+  the terminal still shows green. sort_ returns :ref:`None` when called. I add another assertion to see what it did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+
+  .. code-block:: python
+
+    self.assertIsNone(a_list.sort())
+    self.assertEqual(a_list, [])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2, 3] != []
+
+  the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is still the same. I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2, 3])
+
+  the test passes. The name of the :ref:`method<functions>` is sort_ and the ``a_list`` is already sorted. I change it to see what would happen when it is not sorted
+
+  .. code-block:: python
+
+    a_list = [0, 1, -1, 2, -2, 3, -3]
+
+  I get :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
+
+  the sort_ :ref:`method<functions>` arranges the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ in ascending order by default. I change the values to match
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
+
+  the test passes
+
 * I change the name of the test
 
   .. code-block:: python
 
     def test_sort_a_list(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-        self.assertIsNone(a_list.sort())
-        self.assertEqual(a_list, [0, 1, 2, 2, 2, 3])
+        with self.assertRaises(TypeError):
+            [0, 1, 2, 'n'].sort()
 
-  still green
+        a_list = [0, 1, -1, 2, -2, 3, -3]
+        self.assertIsNone(a_list.sort())
+        self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
 * I remove sort_ from the TODO list
 

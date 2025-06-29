@@ -120,7 +120,7 @@ class TestLists(unittest.TestCase):
         with self.assertRaises(ValueError):
             a_list.remove('not in list')
 
-    def test_reverse(self):
+    def test_reverse_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.reverse())
         self.assertEqual(a_list, ['n', 2, 1, 0])
