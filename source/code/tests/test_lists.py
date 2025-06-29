@@ -149,7 +149,7 @@ class TestLists(unittest.TestCase):
         a_list[-1] = '4th'
         self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
-    def test_view_parts_of_a_list(self):
+    def test_view_parts_of_a_list_aka_slicing(self):
         a_list = ['a', 'b', 'c', 'd']
         self.assertEqual(a_list[0:2], ['a', 'b'])
         self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
@@ -163,6 +163,8 @@ class TestLists(unittest.TestCase):
             a_list[4]
         with self.assertRaises(IndexError):
             a_list[-5]
+        with self.assertRaises(IndexError):
+            a_list[4] = 'BOOM!'
         with self.assertRaises(IndexError):
             [].pop()
 

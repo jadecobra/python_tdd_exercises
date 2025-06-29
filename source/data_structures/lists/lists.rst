@@ -1767,7 +1767,7 @@ the test passes
 ----
 
 *********************************************************************************
-test_view_parts_of_a_list
+test_view_parts_of_a_list_aka_slicing
 *********************************************************************************
 
 red: make it fail
@@ -1777,18 +1777,18 @@ I add another test
 
 .. code-block:: python
 
-  def test_get_items_from_a_list(self):
+  def test_set_items_in_a_list(self):
       ...
 
   def test_view_parts_of_a_list(self):
-      a_list = ['1st', '2nd', '3rd', '...last']
+      a_list = ['a', 'b', 'c', 'd']
       self.assertEqual(a_list[0:2], [])
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: ['1st', '2nd'] != []
+  AssertionError: Lists differ: ['a', 'b'] != []
 
 viewing parts of a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is like indexing, it takes two values in square brackets ``[]``, seperated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
 
@@ -1799,7 +1799,7 @@ I change the values to match
 
 .. code-block:: python
 
-  self.assertEqual(a_list[0:2], ['1st', '2nd'])
+  self.assertEqual(a_list[0:2], ['a', 'b'])
 
 the test passes
 
@@ -1810,20 +1810,20 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list[0:2], ['1st', '2nd'])
-    self.assertEqual(a_list[0:3], ['1st', '2nd'])
+    self.assertEqual(a_list[0:2], ['a', 'b'])
+    self.assertEqual(a_list[1:4], [])
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['1st', '2nd', '3rd'] != ['1st', '2nd']
+    AssertionError: Lists differ: ['b', 'c', 'd'] != []
 
-  I add the missing value
+  I add the missing values
 
   .. code-block:: python
 
-    self.assertEqual(a_list[0:3], ['1st', '2nd', '3rd'])
+    self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
 
   the test passes
 
@@ -1831,20 +1831,20 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list[0:3], ['1st', '2nd', '3rd'])
-    self.assertEqual(a_list[1:4], ['2nd', '3rd'])
+    self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
+    self.assertEqual(a_list[0:3], [])
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['2nd', '3rd', '...last'] != ['2nd', '3rd']
+    AssertionError: Lists differ: ['a', 'b', 'c'] != []
 
   I change the expectation
 
   .. code-block:: python
 
-    self.assertEqual(a_list[1:4], ['2nd', '3rd', '...last'])
+    self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
 
   the test is green again
 
@@ -1852,22 +1852,33 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list[1:4], ['2nd', '3rd', '...last'])
-        self.assertEqual(a_list[1:3], ['2nd', '3rd', '...last'])
+    self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
+    self.assertEqual(a_list[1:3], [])
 
   I get :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['2nd', '3rd'] != ['2nd', '3rd', '...last']
+    AssertionError: Lists differ: ['b', 'c'] != []
 
   I change the expectation
 
   .. code-block:: python
 
-    self.assertEqual(a_list[1:3], ['2nd', '3rd'])
+    self.assertEqual(a_list[1:3], ['b', 'c'])
 
   the test is green again
+
+* This is also called slicing, I change the name of the test
+
+  .. code-block:: python
+
+    def test_view_parts_of_a_list_aka_slicing(self):
+        a_list = ['a', 'b', 'c', 'd']
+        self.assertEqual(a_list[0:2], ['a', 'b'])
+        self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
+        self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
+        self.assertEqual(a_list[1:3], ['b', 'c'])
 
 ----
 
@@ -1875,7 +1886,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-IndexError_ is raised when I try to get an item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ but use a number that is greater than range of indexes for it
+ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_in_a_list` and :ref:`test_index_returns_position_of_item_in_a_list`, there is another Exception_ that is important to know, the IndexError_ is raised when I try to get an item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ but use a number that is NOT in the range of indexes for it
 
 red: make it fail
 #################################################################################
