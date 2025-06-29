@@ -1158,31 +1158,42 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 3 is not None
+  AssertionError: 'n' is not None
 
-The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+it looks like the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 green: make it pass
 #################################################################################
 
-I change the assert_ :ref:`method<functions>` then add the value from the terminal
+I add the expectation
 
 .. code-block:: python
 
-  def test_pop(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertEqual(a_list.pop(), 3)
+  self.assertIsNone(a_list.pop(), 'n')
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 'n' is not None : n
+
+I change the assertion
+
+.. code-block:: python
+
+  a_list = [0, 1, 2, 'n']
+  self.assertEqual(a_list.pop(), 'n')
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* I add an assertion to see what the :ref:`method<functions>` does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add an assertion to see what the :ref:`method<functions>` did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
-    self.assertEqual(a_list.pop(), 3)
+    self.assertEqual(a_list.pop(), 'n')
     self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal shows :ref:`AssertionError`
@@ -1191,7 +1202,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 'n']
 
-  The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` removes and returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the values in the test to match
+  I change the values in the test to match
 
   .. code-block:: python
 
@@ -1199,14 +1210,37 @@ refactor: make it better
 
   the test passes
 
+* I add another assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2])
+    self.assertEqual(a_list.pop(), 'n')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 2 != 'n'
+
+  I change the value in the test
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [0, 1, 2])
+    self.assertEqual(a_list.pop(), 2)
+
+  the test passes. The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` removes and returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
+
 * I rename the test
 
   .. code-block:: python
 
-    def test_pop_removes_and_returns_last_item_in_a_list(self):
+    def test_pop_removes_and_returns_the_last_item_in_a_list(self):
         a_list = [0, 1, 2, 'n']
-        self.assertEqual(a_list.pop(), 3)
+        self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
+        self.assertEqual(a_list.pop(), 2)
 
 * I remove `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
 
