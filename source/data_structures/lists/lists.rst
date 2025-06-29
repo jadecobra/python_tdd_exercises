@@ -1265,66 +1265,78 @@ time for the next :ref:`method<functions>`
 
   def test_remove(self):
       a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.remove(2))
+      self.assertIsNone(a_list.remove())
 
-the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`None`. I want to know if the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ has changed
-
-.. code-block:: python
-
-  self.assertIsNone(a_list.remove(2))
-  self.assertEqual(a_list, [0, 1, 2, 'n'])
-
-the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`TypeError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 'n']
-
-the :ref:`method<functions>` removes the item given from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+  TypeError: list.remove() takes exactly one argument (0 given)
 
 green: make it pass
 #################################################################################
 
-I change the expectation in the assert_ statement
+I add a value to the call
 
 .. code-block:: python
 
-  self.assertEqual(a_list, [0, 1, 3])
+  self.assertIsNone(a_list.remove(0))
 
-the test passes
+the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`None`
 
 refactor: make it better
 #################################################################################
+
+* I add an assertion to see what remove_ did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+
+  .. code-block:: python
+
+    self.assertIsNone(a_list.remove(0))
+    self.assertEqual(a_list, [0, 1, 2, 'n'])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
+
+  the :ref:`method<functions>` removes the item given from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, [1, 2, 'n'])
+
+  the test passes
 
 * I change the values in ``a_list`` to see what would happen if an item shows up more than once in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
     def test_remove(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-        self.assertIsNone(a_list.remove(2))
-        self.assertEqual(a_list, [0, 1, 3])
+        a_list = [0, 1, 0, 2, 0, 'n']
+        self.assertIsNone(a_list.remove(0))
+        self.assertEqual(a_list, [1, 2, 'n'])
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3, 2] != [0, 1, 3]
+    AssertionError: Lists differ: [1, 0, 2, 0, 'n'] != [1, 2, 'n']
 
-  the :ref:`method<functions>` removes the first occurrence of a given item from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the test to match
+  the :ref:`method<functions>` removes the first instance of the given item from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the values to match
 
   .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2, 3, 2])
+    self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
   the test passes
 
-* I want to know what happens if the item does not exist in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I want to know what happens if the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
   .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2, 3, 2])
-    self.assertIsNone(a_list.remove(4))
+        self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
+        self.assertIsNone(a_list.remove('not in list'))
 
   the terminal shows ValueError_
 
@@ -1332,12 +1344,12 @@ refactor: make it better
 
     ValueError: list.remove(x): x not in list
 
-  I add assertRaises_ and remove the call to assertIsNone_
+  I remove the things around the call then add assertRaises_
 
   .. code-block:: python
 
     with self.assertRaises(ValueError):
-        a_list.remove(4)
+        a_list.remove('not in list')
 
   the test passes
 
@@ -1345,13 +1357,13 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_remove_first_instance_of_item_from_a_list(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-        self.assertIsNone(a_list.remove(2))
-        self.assertEqual(a_list, [0, 1, 2, 3, 2])
+    def test_remove_first_instance_of_item_in_a_list(self):
+        a_list = [0, 1, 0, 2, 0, 'n']
+        self.assertIsNone(a_list.remove(0))
+        self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
         with self.assertRaises(ValueError):
-            a_list.remove(4)
+            a_list.remove('not in list')
 
 * I take out remove_ from the TODO list
 
