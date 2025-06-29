@@ -455,7 +455,7 @@ the terminal shows the entire difference between the two :ref:`lists`. I copy an
 
 .. note::
 
-  Your results can be different because of your version of Python
+  your results can be different because of your Python version
 
 .. code-block:: python
 

@@ -115,6 +115,7 @@ I change the input to a tuple_
 
 .. code-block:: python
 
+  self.assertEqual(list(), [])
   self.assertEqual(list((0, 1, 2, 'n')), [])
 
 the terminal shows :ref:`AssertionError`
@@ -146,10 +147,10 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_make_a_list_w_an_iterable(self):
-      ...
+    def test_make_a_list(self):
+        ...
 
-  def test_attributes_and_methods_of_lists(self):
+    def test_attributes_and_methods_of_lists(self):
       self.assertEqual(
           dir(list),
           []
@@ -161,7 +162,7 @@ the terminal shows :ref:`AssertionError`
 
     AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
 
-the terminal also shows a recommendation on how to see the differences between ``dir(list)`` and ``[]``
+there is also a note on how to see the full difference between ``dir(list)`` and ``[]``
 
   .. code-block:: python
 
@@ -183,13 +184,11 @@ green: make it pass
             []
         )
 
-  the terminal shows a long list of items
-
-* I copy and paste the items from the terminal and remove the extra characters
+  the terminal shows a long list of items. I copy and paste them from the terminal and remove the extra characters with find and replace
 
   .. note::
 
-    Your results can be different because of your version of Python
+    your results can be different because of your Python version
 
   .. code-block:: python
 
@@ -249,9 +248,7 @@ green: make it pass
             ]
         )
 
-  the terminal shows passing tests. We can ignore anything with double underscores (__) for now
-
-* I copy and paste the :ref:`methods<functions>` to make a TODO list for tests to add
+  the terminal shows passing tests. I ignore the names with double underscores (__) for now, then copy and paste the other names to make a TODO list for the next tests
 
   .. code-block:: python
 
@@ -288,7 +285,7 @@ I add a test for the append_ :ref:`method<functions>`
         ...
 
     def test_append(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.append())
 
 the terminal shows :ref:`TypeError`
@@ -297,8 +294,6 @@ the terminal shows :ref:`TypeError`
 
   TypeError: list.append() takes exactly one argument (0 given)
 
-the append_ :ref:`method<functions>` returns :ref:`None` when it is called
-
 green: make it pass
 #################################################################################
 
@@ -306,40 +301,58 @@ I add input
 
 .. code-block:: python
 
-  self.assertIsNone(a_list.append(4))
+  self.assertIsNone(a_list.append(0))
 
-the terminal shows green
+the terminal shows green, the append_ :ref:`method<functions>` returns :ref:`None` when it is called
 
 refactor: make it better
 #################################################################################
 
-I add another assert_ to find out what happens to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I add another assertion to see what append_ did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
 .. code-block:: python
 
-  self.assertIsNone(a_list.append(4))
-  self.assertEqual(a_list, [0, 1, 2, 3])
+  self.assertIsNone(a_list.append(0))
+  self.assertEqual(a_list, [0, 1, 2, 'n'])
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
+  AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
 
-the values in ``a_list`` change after the append_ :ref:`method<functions>` is called. I change the values in the test to match the values in the terminal
+the :ref:`method<functions>` added a value. I change the values in the test to match the values in the terminal
 
 .. code-block:: python
 
-  self.assertEqual(a_list, [0, 1, 2, 3, 4])
+  self.assertEqual(a_list, [0, 1, 2, 'n', 0])
 
-the test passes, then I rename the test
+the test passes. I change the value given to append_ for fun
+
+.. code-block:: python
+
+  self.assertIsNone(a_list.append('n+1'))
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 2, 'n', 'n+1'] != [0, 1, 2, 'n', 0]
+
+I change the expectation to match
+
+.. code-block:: python
+
+  self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
+
+the test passes and I rename the test
 
 .. code-block:: python
 
   def test_append_adds_to_a_list(self):
-      a_list = [0, 1, 2, 3]
-      self.assertIsNone(a_list.append(4))
-      self.assertEqual(a_list, [0, 1, 2, 3, 4])
+      a_list = [0, 1, 2, 'n']
+      self.assertIsNone(a_list.append('n+1'))
+      self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
 I remove append_ from the TODO list
 
@@ -370,7 +383,7 @@ I add a test for the `clear <https://docs.python.org/3/tutorial/datastructures.h
       ...
 
   def test_clear(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.clear())
 
 the terminal shows green. The `clear <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns :ref:`None` when it is called
@@ -383,13 +396,13 @@ I want to know what the :ref:`method<functions>` does to the `list <https://docs
 .. code-block:: python
 
   self.assertIsNone(a_list.clear())
-  self.assertEqual(a_list, [0, 1, 2, 3])
+  self.assertEqual(a_list, [0, 1, 2, 'n'])
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [] != [0, 1, 2, 3]
+  AssertionError: Lists differ: [] != [0, 1, 2, 'n']
 
 green: make it pass
 #################################################################################
@@ -405,7 +418,7 @@ the test passes. I change the name of the test to be more descriptive
 .. code-block:: python
 
   def test_clear_empties_a_list(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.clear())
       self.assertEqual(a_list, [])
 
@@ -440,14 +453,14 @@ I add another test
       ...
 
   def test_copy(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.copy())
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: [0, 1, 2, 3] is not None
+  AssertionError: [0, 1, 2, 'n'] is not None
 
 the `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
@@ -459,8 +472,8 @@ I add the value and change the assert_ :ref:`method<functions>`
 .. code-block:: python
 
   def test_copy(self):
-      a_list = [0, 1, 2, 3]
-      self.assertEqual(a_list.copy(), [0, 1, 2, 3])
+      a_list = [0, 1, 2, 'n']
+      self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
 
 the test passes
 
@@ -471,17 +484,17 @@ I add another assertion to see what happened to the original `list <https://docs
 
 .. code-block:: python
 
-  self.assertEqual(a_list.copy(), [0, 1, 2, 3])
-  self.assertEqual(a_list, [0, 1, 2, 3])
+  self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+  self.assertEqual(a_list, [0, 1, 2, 'n'])
 
 the terminal still shows green, the original `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is still the same. I change the name of the test
 
 .. code-block:: python
 
   def test_copy_a_list(self):
-      a_list = [0, 1, 2, 3]
-      self.assertEqual(a_list.copy(), [0, 1, 2, 3])
-      self.assertEqual(a_list, [0, 1, 2, 3])
+      a_list = [0, 1, 2, 'n']
+      self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+      self.assertEqual(a_list, [0, 1, 2, 'n'])
 
 the test is still green, I remove `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
 
@@ -510,7 +523,7 @@ I add a test for the next :ref:`method<functions>`
 .. code-block:: python
 
   def test_count(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.count())
 
 the terminal shows :ref:`TypeError`
@@ -527,7 +540,7 @@ I pass a value to the call
 .. code-block:: python
 
   def test_count(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.count(0))
 
 the terminal shows :ref:`AssertionError`
@@ -544,7 +557,7 @@ I add the value and change the assert_ :ref:`method<functions>`
 .. code-block:: python
 
   def test_count(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertEqual(a_list.count(0), 1)
 
 the test passes. It looks like the count_ :ref:`method<functions>` returns the number of times an item appears
@@ -636,7 +649,7 @@ time for another test
       ...
 
   def test_extend(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.extend())
 
 the terminal shows :ref:`TypeError`
@@ -676,13 +689,13 @@ refactor: make it better
   .. code-block:: python
 
     self.assertIsNone(a_list.extend((0, 1, 2, 3)))
-    self.assertEqual(a_list, [0, 1, 2, 3])
+    self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3, 0, 1, 2, 3] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [0, 1, 2, 3, 0, 1, 2, 3] != [0, 1, 2, 'n']
 
   I change the values in the test to match
 
@@ -697,7 +710,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_extend(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.extend((4, 5, 6, 7)))
         self.assertEqual(a_list, [0, 1, 2, 3, 0, 1, 2, 3])
 
@@ -720,7 +733,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_extend_makes_a_list_longer(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.extend((4, 5, 6, 7)))
         self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7])
 
@@ -754,7 +767,7 @@ I add a test for the index_ :ref:`method<functions>`
       ...
 
   def test_index(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.index())
 
 the terminal shows :ref:`TypeError`
@@ -771,7 +784,7 @@ I add a value to the call
 .. code-block:: python
 
   def test_index(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.index(0))
 
 the terminal shows :ref:`AssertionError`
@@ -785,7 +798,7 @@ I add the expectation and change the assert_ :ref:`method<functions>`
 .. code-block:: python
 
   def test_index(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertEqual(a_list.index(0), 0)
 
 the test passes
@@ -945,7 +958,7 @@ I add a test for the next :ref:`method<functions>`
         ...
 
     def test_insert(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert())
 
 the terminal shows :ref:`TypeError`
@@ -962,7 +975,7 @@ I pass two values to the :ref:`method<functions>`
 .. code-block:: python
 
   def test_insert(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.insert(0, 1))
 
 the test is green. The insert_ :ref:`method<functions>` returns :ref:`None`
@@ -975,13 +988,13 @@ refactor: make it better
   .. code-block:: python
 
     self.assertIsNone(a_list.insert(0, 1))
-    self.assertEqual(a_list, [0, 1, 2, 3])
+    self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [1, 0, 1, 2, 3] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [1, 0, 1, 2, 3] != [0, 1, 2, 'n']
 
   I add the new value to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
@@ -996,7 +1009,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_insert_places_item_at_given_index_in_a_list(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert(0, 1))
         self.assertEqual(a_list, [1, 0, 1, 2, 3])
 
@@ -1026,7 +1039,7 @@ I add a new test
       ...
 
   def test_pop(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.pop())
 
 the terminal shows :ref:`AssertionError`
@@ -1045,7 +1058,7 @@ I change the assert_ :ref:`method<functions>` then add the value from the termin
 .. code-block:: python
 
   def test_pop(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertEqual(a_list.pop(), 3)
 
 the test passes
@@ -1058,13 +1071,13 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(a_list.pop(), 3)
-    self.assertEqual(a_list, [0, 1, 2, 3])
+    self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 'n']
 
   The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` removes and returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the values in the test to match
 
@@ -1079,7 +1092,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_pop_removes_and_returns_last_item_in_a_list(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertEqual(a_list.pop(), 3)
         self.assertEqual(a_list, [0, 1, 2])
 
@@ -1105,7 +1118,7 @@ time for the next :ref:`method<functions>`
 .. code-block:: python
 
   def test_remove(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.remove(2))
 
 the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`None`. I want to know if the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ has changed
@@ -1113,13 +1126,13 @@ the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`Non
 .. code-block:: python
 
   self.assertIsNone(a_list.remove(2))
-  self.assertEqual(a_list, [0, 1, 2, 3])
+  self.assertEqual(a_list, [0, 1, 2, 'n'])
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 3]
+  AssertionError: Lists differ: [0, 1, 3] != [0, 1, 2, 'n']
 
 the :ref:`method<functions>` removes the item given from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
@@ -1215,7 +1228,7 @@ I add the next test
 .. code-block:: python
 
   def test_reverse(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.reverse())
 
 the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what has changed in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
@@ -1223,13 +1236,13 @@ the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I a
 .. code-block:: python
 
   self.assertIsNone(a_list.reverse())
-  self.assertEqual(a_list, [0, 1, 2, 3])
+  self.assertEqual(a_list, [0, 1, 2, 'n'])
 
 the terminal show :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [3, 2, 1, 0] != [0, 1, 2, 3]
+  AssertionError: Lists differ: [3, 2, 1, 0] != [0, 1, 2, 'n']
 
 the :ref:`method<functions>` reverses the order of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
 
@@ -1252,7 +1265,7 @@ refactor: make it better
   .. code-block:: python
 
     def test_reverse_a_list(self):
-        a_list = [0, 1, 2, 3]
+        a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.reverse())
         self.assertEqual(a_list, [3, 2, 1, 0])
 
@@ -1276,7 +1289,7 @@ I add a test
 .. code-block:: python
 
   def test_sort(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.sort())
 
 the terminal still shows green. sort_ returns :ref:`None` when called, what does it do to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
@@ -1284,9 +1297,9 @@ the terminal still shows green. sort_ returns :ref:`None` when called, what does
 .. code-block:: python
 
   def test_sort(self):
-      a_list = [0, 1, 2, 3]
+      a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.sort())
-      self.assertEqual(a_list, [0, 1, 2, 3])
+      self.assertEqual(a_list, [0, 1, 2, 'n'])
 
 the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is still the same. I change the values in ``a_list`` to see if it makes a difference
 
@@ -1299,7 +1312,7 @@ I get :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 2, 2, 3] != [0, 1, 2, 3]
+  AssertionError: Lists differ: [0, 1, 2, 2, 2, 3] != [0, 1, 2, 'n']
 
 the sort_ :ref:`method<functions>` arranges the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ in ascending order by default
 
