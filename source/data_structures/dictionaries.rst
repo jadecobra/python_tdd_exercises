@@ -2004,7 +2004,7 @@ refactor: make it better
 
     AssertionError: {'key': 'updated value', 'new_key': 'new value'} != {'key': 'value', 'new_key': 'new value'}
 
-  I change the expectation to match
+  the update_ :ref:`method<functions>` changes the value for a key that is already in a dictionary_. I change the expectation to match. I change the expectation to match
 
   .. code-block:: python
 
@@ -2022,92 +2022,24 @@ refactor: make it better
 
   .. code-block:: python
 
-
-
-
-* I check the Python documentation for the update_ :ref:`method<functions>` and see that it takes a dictionary_ as input. I add one to the call
-
-  .. code-block:: python
-
-    def test_update(self):
-        a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
-        self.assertEqual(a_dictionary, {'key': 'value'})
+    self.assertIsNone(a_dictionary.update({'another_key': 'another_value'}))
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: {'key': 'value', 'key1': 'value1'} != {'key': 'value'}
+    AssertionError: {'key': 'updated value', 'new_key': 'new value', 'another_key': 'another_value'} != {'key': 'updated value', 'new_key': 'new value'}
 
-  the update_ :ref:`method<functions>` adds the key-value pairs from the given dictionary_ to the existing one
-
-* I change the expectation to match the values from the terminal
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
-    self.assertEqual(
-        a_dictionary,
-        {
-            'key': 'value',
-            'key1': 'value1'
-        }
-    )
-
-  the test passes
-
-* I add another assertion
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
-    self.assertIsNone(a_dictionary.update(another_key='another value'))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: {'key': 'value', 'key1': 'value1', 'another_key': 'another value'} != {'key': 'value', 'key1': 'value1'}
-
-  the update_ :ref:`method<functions>` accepts keyword arguments. I change the values to match
+  the update_ :ref:`method<functions>` adds the key-value pairs from the given dictionary_ to the existing one. I change the expectation to match
 
   .. code-block:: python
 
     self.assertEqual(
         a_dictionary,
         {
-            'key': 'value',
-            'key1': 'value1',
-            'another_key': 'another value'
-        }
-    )
-
-  the test passes
-
-* I want to know what would happen if the key is already in the dictionary_
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.update(another_key='another value'))
-    self.assertIsNone(a_dictionary.update(key='new value'))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: {'key': 'new value', 'key1': 'value1', 'another_key': 'another value'} != {'key': 'value', 'key1': 'value1', 'another_key': 'another value'}
-
-  the update_ :ref:`method<functions>` changes the value for a key that is already in a dictionary_. I change the expectation to match
-
-  .. code-block:: python
-
-    self.assertEqual(
-        a_dictionary,
-        {
-            'key': 'new value',
-            'key1': 'value1',
-            'another_key': 'another value'
+            'key': 'updated value',
+            'new_key': 'new value',
+            'another_key': 'another_value',
         }
     )
 
@@ -2119,15 +2051,15 @@ refactor: make it better
 
     def test_update_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
-        self.assertIsNone(a_dictionary.update(another_key='another value'))
-        self.assertIsNone(a_dictionary.update(key='new value'))
+        self.assertIsNone(a_dictionary.update(new_key='new value'))
+        self.assertIsNone(a_dictionary.update(key='updated value'))
+        self.assertIsNone(a_dictionary.update({'another_key': 'another_value'}))
         self.assertEqual(
             a_dictionary,
             {
-                'key': 'new value',
-                'key1': 'value1',
-                'another_key': 'another value'
+                'key': 'updated value',
+                'new_key': 'new value',
+                'another_key': 'another_value',
             }
         )
 

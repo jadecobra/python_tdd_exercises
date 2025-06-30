@@ -164,15 +164,15 @@ class TestDictionaries(unittest.TestCase):
 
     def test_update_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.update({'key1': 'value1'}))
-        self.assertIsNone(a_dictionary.update(keyN='valueN'))
+        self.assertIsNone(a_dictionary.update(new_key='new value'))
         self.assertIsNone(a_dictionary.update(key='updated value'))
+        self.assertIsNone(a_dictionary.update({'another_key': 'another_value'}))
         self.assertEqual(
             a_dictionary,
             {
                 'key': 'updated value',
-                'key1': 'value1',
-                'keyN': 'valueN',
+                'new_key': 'new value',
+                'another_key': 'another_value',
             }
         )
 
