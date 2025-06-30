@@ -730,7 +730,7 @@ refactor: make it better
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<functions>` that does not exist in ``person.py``. I change the call to the ``this_year()`` :ref:`function<functions>` to the `return statement`_ from ``test_person.py``
+  because I called a :ref:`function<functions>` that is NOT in ``person.py``. I change the call to the ``this_year()`` :ref:`function<functions>` to the `return statement`_ from ``test_person.py``
 
   .. code-block:: python
 

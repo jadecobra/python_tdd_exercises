@@ -16,7 +16,7 @@ AttributeError
 
 ----
 
-The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that does not exist in an :ref:`object<classes>` that does exist. An attribute is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color.
+The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists. An attribute is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color.
 
 ----
 
@@ -65,7 +65,7 @@ red: make it fail
         def test_attribute_error_w_variables(self):
             src.attribute_error.variable_00
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable does not exist and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 

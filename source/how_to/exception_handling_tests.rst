@@ -166,7 +166,7 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'does_not_exist'
 
-  because I tried to get something that does not exist from something that exists
+  because I tried to get something that is not in something that exists
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -456,7 +456,7 @@ red: make it fail
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['key']
 
-  the terminal shows green and when I use a key that does not exist
+  the terminal shows green, when I use a key that is in the :ref:`dictionary<dictionaries>`
 
   .. code-block:: python
 

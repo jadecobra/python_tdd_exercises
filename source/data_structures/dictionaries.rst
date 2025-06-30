@@ -1931,7 +1931,7 @@ refactor: make it better
 
   the test passes
 
-* I want to know what would happen if the key already exists in the dictionary_
+* I want to know what would happen if the key is already in the dictionary_
 
   .. code-block:: python
 
@@ -1944,7 +1944,7 @@ refactor: make it better
 
     AssertionError: {'key': 'new value', 'key1': 'value1', 'another_key': 'another value'} != {'key': 'value', 'key1': 'value1', 'another_key': 'another value'}
 
-  the update_ :ref:`method<functions>` changes the value for an existing key in a dictionary_. I change the expectation to match
+  the update_ :ref:`method<functions>` changes the value for a key that is already in a dictionary_. I change the expectation to match
 
   .. code-block:: python
 
@@ -2176,7 +2176,7 @@ refactor: make it better
     with self.assertRaises(KeyError):
         {}.popitem()
 
-* I also get :ref:`KeyError<test_key_error>` when I call :ref:`pop <test_pop_removes_given_key_from_a_dictionary>` with a key that does not exist in the dictionary_
+* I also get :ref:`KeyError<test_key_error>` when I call :ref:`pop <test_pop_removes_given_key_from_a_dictionary>` with a key that is not in the dictionary_
 
   .. code-block:: python
 
@@ -2199,7 +2199,7 @@ refactor: make it better
     with self.assertRaises(KeyError):
         a_dictionary.pop('key_not_in_dictionary')
 
-* I can use the get_ :ref:`method<functions>` to avoid the :ref:`KeyError<test_key_error>` when the key does not exist in a dictionary_
+* I can use the get_ :ref:`method<functions>` to avoid the :ref:`KeyError<test_key_error>` when the key is not in a dictionary_
 
   .. code-block:: python
 
