@@ -150,7 +150,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertEqual(a_dictionary, {'key1': 'value1'})
         self.assertEqual(a_dictionary.popitem(), ('key1', 'value1'))
 
-    def test_setdefault_adds_key_with_a_default_value_to_a_dictionary(self):
+    def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.setdefault(0, 'default'), 'default')
         self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')

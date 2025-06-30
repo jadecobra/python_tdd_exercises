@@ -1707,7 +1707,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assertion to see what changed in the dictionary_
+* I add an assertion to see what it did to the dictionary_
 
   .. code-block:: python
 
@@ -1736,10 +1736,12 @@ refactor: make it better
 
   the test passes
 
-* I add another test to see what happens when the key is already in the dictionary_
+* I change the name of the value given for fun
 
   .. code-block:: python
 
+    a_dictionary = {'key': 'value'}
+    self.assertIsNone(a_dictionary.setdefault('new_key'))
     self.assertEqual(
         a_dictionary,
         {
@@ -1747,6 +1749,32 @@ refactor: make it better
             0: None,
         }
     )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value', 'new_key': None} != {'key': 'value', 0: None}
+
+  I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary,
+        {
+            'key': 'value',
+            'new_key': None,
+        }
+    )
+
+  the test is green again
+
+* I add an assertion to see what happens when the key is already in the dictionary_
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.setdefault('new_key'))
     self.assertIsNone(a_dictionary.setdefault('key'))
 
   the terminal shows :ref:`AssertionError`
@@ -1755,7 +1783,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None
 
-  setdefault_ returns the value for the key in a dictionary_ when the key already exists
+  setdefault_ returns the value for a key in a dictionary_ when the key is in the dictionary_
 
 * I paste the value from the terminal then change the assertion to assertEqual_
 
