@@ -1083,8 +1083,8 @@ refactor: make it better
 
     def test_get_a_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.get('key'), 'value')
-        self.assertIsNone(a_dictionary.get(0))
+        self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
+        self.assertEqual(a_dictionary.get('key', 'default'), 'value')
 
   the test is still green
 
