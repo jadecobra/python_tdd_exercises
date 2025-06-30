@@ -1141,7 +1141,7 @@ the terminal shows NameError_
 
   NameError: name 'dict_items' is not defined
 
-this new object contains a :ref:`list<lists>`, I will use it as the expectation instead
+this new :ref:`object<classes>` contains a :ref:`list<lists>`, I will use it as the expectation instead
 
 .. code-block:: python
 
@@ -1232,104 +1232,17 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_pop_removes_key_and_returns_its_value_from_a_dictionary
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-I add a test for the next :ref:`method<functions>`
-
-.. code-block:: python
-
-  def test_get_a_value_from_a_dictionary(self):
-      ...
-
-  def test_items(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.items())
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: dict_items([('key', 'value')]) is not None
-
-the items_ :ref:`methods<functions>` returns a ``dict_items`` object_ that contains the keys and values of the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
-
-green: make it pass
-#################################################################################
-
-I copy and paste the value from the terminal
-
-.. code-block:: python
-
-  self.assertIsNone(a_dictionary.items(), dict_items([('key', 'value')]))
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  NameError: name 'dict_items' is not defined
-
-the ``dict_items`` object has a :ref:`list<lists>` that contains a tuple_, I use that
-
-.. code-block:: python
-
-  self.assertIsNone(a_dictionary.items(), [('key', 'value')])
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
-
-I change the assertion and wrap the call in the :ref:`list<lists>` constructor
-
-.. code-block:: python
-
-  self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
-
-the test passes
-
-refactor: make it better
-#################################################################################
-
-* I rename the test
-
-  .. code-block:: python
-
-    def test_pop_removes_key_and_returns_its_value_from_a_dictionary(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
-
-  the test is still green
-
-* I remove items_ from the TODO list
-
-  .. code-block:: python
-
-    'keys',
-    'pop',
-    'popitem',
-    'setdefault',
-    'update',
-    'values'
-
-----
-
-*********************************************************************************
 test_keys_of_a_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add the next test
+I add a a test
 
 .. code-block:: python
 
-  def test_pop_removes_key_and_returns_its_value_from_a_dictionary(self):
+  def test_items_returns_key_value_pairs_of_a_dictionary(self):
       ...
 
   def test_keys(self):
@@ -1342,18 +1255,16 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_keys(['key']) is not None
 
-this is like :ref:`test_pop_removes_key_and_returns_its_value_from_a_dictionary`
+this looks like the error in :ref:`test_items_returns_key_value_pairs_of_a_dictionary`
 
 green: make it pass
 #################################################################################
 
-I copy and paste the values from the terminal then change the assertion
+I copy the value from the terminal and paste it as the expectation
 
 .. code-block:: python
 
-  def test_keys(self):
-      a_dictionary = {'key': 'value'}
-      self.assertEqual(a_dictionary.keys(), dict_keys(['key']))
+  self.assertIsNone(a_dictionary.keys(), dict_keys(['key']))
 
 the terminal shows NameError_
 
@@ -1361,26 +1272,76 @@ the terminal shows NameError_
 
   NameError: name 'dict_keys' is not defined
 
-the keys_ :ref:`method<functions>` returns ``dict_keys`` object_ that has the keys of the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to a :ref:`list<lists>` and use the :ref:`list<lists>` constructor_ to wrap the call
+the ``dict_keys`` :ref:`object<classes>` contains a :ref:`list<lists>`, I will use it as the expectation instead
 
 .. code-block:: python
 
-  self.assertEqual(list(a_dictionary.keys()), ['key'])
+  self.assertIsNone(a_dictionary.keys(), ['key'])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: dict_keys(['key']) is not None : ['key']
+
+I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list<lists>` constructor_
+
+.. code-block:: python
+
+  self.assertIsNone(list(a_dictionary.keys()), ['key'])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: ['key'] is not None : ['key']
+
+I change assertIsNone_ to assertEqual_
+
+.. code-block:: python
+
+  self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* I rename the test
+* I add another key-value pair to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to see what the keys_ :ref:`method<functions>` returns when there are multiple
+
+  .. code-block:: python
+
+    def test_keys(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(list(a_dictionary.keys()), ['key'])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: ['key1', 'keyN'] != ['key']
+
+  I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(list(a_dictionary.keys()), ['key1', 'keyN'])
+
+  the test passes
+
+* I change the name of the test
 
   .. code-block:: python
 
     def test_keys_of_a_dictionary(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(list(a_dictionary.keys()), ['key'])
-
-  the test is still green
+        a_dictionary = {
+            'key1': 'value1',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(list(a_dictionary.keys()), ['key1', 'keyN'])
 
 * I remove keys_ from the TODO list
 
