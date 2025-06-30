@@ -187,7 +187,7 @@ test_dictionaries
 #. :ref:`test_make_a_dictionary_w_dict_constructor`
 #. :ref:`test_make_a_dictionary_w_curly_braces`
 #. :ref:`test_make_a_dictionary_w_numbers_as_keys`
-#. :ref:`test_make_a_dictionary_w_booleans_as_keys`
+#. :ref:`test_make_a_dictionary_w_a_boolean_as_a_key`
 #. :ref:`test_make_a_dictionary_w_tuples_as_keys`
 #. :ref:`test_make_a_dictionary_w_lists_as_keys`
 #. :ref:`test_make_a_dictionary_w_sets_as_keys`

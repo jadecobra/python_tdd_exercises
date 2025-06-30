@@ -157,7 +157,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the ``'bap'`` to ``'boom'``
+I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
 
@@ -168,60 +168,66 @@ the test passes. I can use :ref:`None` as a key in a `dictionary <https://docs.p
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_booleans_as_keys
+test_make_a_dictionary_w_a_boolean_as_a_key
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a test where I use booleans_ as keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+I add a test where I use a boolean_ as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 .. code-block:: python
 
-    def test_make_a_dictionary(self):
+    def test_make_a_dictionary_w_none_as_a_key(self):
         ...
 
-    def test_make_a_dictionary_w_booleans_as_keys(self):
-        self.assertEqual({False: 'boom'}, {'False': 'boom'})
+    def test_make_a_dictionary_w_a_boolean_as_a_key(self):
+        self.assertEqual({False: 'boom'}, {False: 'bap'})
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {False: 'boom'} != {'False': 'boom'}
+  AssertionError: {False: 'boom'} != {False: 'bap'}
 
 green: make it pass
 #################################################################################
 
-I match the keys
+I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
 
   self.assertEqual({False: 'boom'}, {False: 'boom'})
 
-I can use :ref:`False<test_what_is_false>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+the tests passes. I can use :ref:`False<test_what_is_false>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 refactor: make it better
 #################################################################################
 
-I add another assertion
+I add :ref:`True<test_what_is_true>` as a key
 
 .. code-block:: python
 
-  self.assertEqual({False: 'boom'}, {False: 'boom'})
-  self.assertEqual({True: 'bap'}, {'True': 'bap'})
+  def test_make_a_dictionary_w_a_boolean_as_a_key(self):
+      self.assertEqual(
+          {False: 'boom', True: 'bap'},
+          {False: 'boom'}
+      )
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {True: 'bap'} != {'True': 'bap'}
+  AssertionError: {False: 'boom', True: 'bap'} != {False: 'boom'}
 
-I change the expectation
+I add the new key-value pair to the expectation
 
 .. code-block:: python
 
-  self.assertEqual({True: 'bap'}, {True: 'bap'})
+  self.assertEqual(
+      {False: 'boom', True: 'bap'},
+      {False: 'boom', True: 'bap'}
+  )
 
 the test passes. I can use a boolean_ as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
@@ -238,7 +244,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_booleans_as_keys(self):
+  def test_make_a_dictionary_w_a_boolean_as_a_key(self):
       ...
 
   def test_make_a_dictionary_w_numbers_as_keys(self):
@@ -300,7 +306,7 @@ I add a test for tuples_
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_booleans_as_keys(self):
+  def test_make_a_dictionary_w_a_boolean_as_a_key(self):
       ...
 
   def test_make_a_dictionary_w_tuples_as_keys(self):
