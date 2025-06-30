@@ -2114,7 +2114,7 @@ the terminal shows NameError_
 
   NameError: name 'dict_values' is not defined
 
-I use the list_ in the ``dict_values`` object_
+I use the :ref:`list<lists>` in the ``dict_values`` object_
 
 .. code-block:: python
 

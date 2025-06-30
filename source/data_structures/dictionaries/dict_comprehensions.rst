@@ -4,9 +4,6 @@
 dictionaries: dict comprehensions
 #################################################################################
 
-
-----
-
 .. contents:: table of contents
   :local:
   :depth: 1

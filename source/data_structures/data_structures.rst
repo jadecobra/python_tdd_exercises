@@ -4,7 +4,7 @@
 data structures
 #################################################################################
 
-The following tests cover a few data structures in python
+The following Python data structures are tested here
 
 .. toctree::
   :titlesonly:
