@@ -1,4 +1,7 @@
 .. include:: ../../links.rst
+
+.. _clear: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _copy: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _list: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
 
@@ -377,7 +380,7 @@ I remove append_ from the TODO list
 test_clear_empties_a_list
 *********************************************************************************
 
-I add a test for the `clear <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>`
+I add a test for the clear_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -388,7 +391,7 @@ I add a test for the `clear <https://docs.python.org/3/tutorial/datastructures.h
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.clear())
 
-the terminal shows green. The `clear <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns :ref:`None` when it is called
+the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when it is called
 
 red: make it fail
 #################################################################################
@@ -426,7 +429,7 @@ the test passes. I change the name of the test to be more descriptive
       self.assertIsNone(a_list.clear())
       self.assertEqual(a_list, [])
 
-I remove `clear <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
+I remove clear_ from the TODO list
 
 .. code-block:: python
 
@@ -466,7 +469,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 'n'] is not None
 
-the `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns a copy of the list_
+the copy_ :ref:`method<functions>` returns a copy of the list_
 
 green: make it pass
 #################################################################################
@@ -524,7 +527,7 @@ the test passes and I change the name of the test
       self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
       self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-I remove `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
+I remove copy_ from the TODO list
 
 .. code-block:: python
 

@@ -1,6 +1,10 @@
 .. include:: ../links.rst
+
+.. _clear: https://docs.python.org/3/library/stdtypes.html#dict.clear
+.. _copy: https://docs.python.org/3/library/stdtypes.html#dict.copy
 .. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
-.. _dictionary: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
+.. _popitem: https://docs.python.org/3/library/stdtypes.html#dict.popitem
+.. _dictionary: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 
 #################################################################################
 dictionaries
@@ -12,7 +16,7 @@ dictionaries
 
 ----
 
-A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python :ref:`object<classes>` but not the keys. I think this is the most important data structure to know as it can hold all the other data structures. In your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python
+A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python :ref:`object<classes>` but not the keys. I think this is the most important data structure to know as it can hold all the other data structures. In your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ in Python
 
 *********************************************************************************
 requirements
@@ -201,7 +205,7 @@ I change ``'bap'`` to ``'boom'``
 
   self.assertEqual({False: 'boom'}, {False: 'boom'})
 
-the tests passes. I can use :ref:`False<test_what_is_false>` as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+the tests passes. I can use :ref:`False<test_what_is_false>` as a key in a dictionary_
 
 refactor: make it better
 #################################################################################
@@ -231,7 +235,7 @@ I add the new key-value pair to the expectation
       {False: 'boom', True: 'bap'}
   )
 
-the test passes. I can use a boolean_ as a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+the test passes. I can use a boolean_ as a key in a dictionary_
 
 ----
 
@@ -619,9 +623,9 @@ red: make it fail
           a_dictionary = {'key': 'value'}
           self.assertIsNone(a_dictionary.clear())
 
-  the terminal shows green. The `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ :ref:`method<functions>` returns :ref:`None`
+  the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None`
 
-* I add an assertion to see what it did to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add an assertion to see what it did to the dictionary_
 
   .. code-block:: python
 
@@ -634,7 +638,7 @@ red: make it fail
 
     AssertionError: {} != {'key': 'value'}
 
-  the `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ :ref:`method<functions>` emptied the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+  the clear_ :ref:`method<functions>` emptied the dictionary_
 
 green: make it pass
 #################################################################################
@@ -659,7 +663,7 @@ refactor: make it better
         self.assertIsNone(a_dictionary.clear())
         self.assertEqual(a_dictionary, {})
 
-* I remove `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ from the TODO list
+* I remove clear_ from the TODO list
 
   .. code-block:: python
 
@@ -700,7 +704,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {'key': 'value'} is not None
 
-this :ref:`method<functions>` returns a copy of the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+this :ref:`method<functions>` returns a copy of the dictionary_
 
 green: make it pass
 #################################################################################
@@ -728,7 +732,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what happens to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ after the call
+* I add another assertion to see what happens to the dictionary_ after the call
 
   .. code-block:: python
 
@@ -758,7 +762,7 @@ refactor: make it better
         self.assertEqual(a_dictionary.copy(), {'key': 'value'})
         self.assertEqual(a_dictionary, {'key': 'value'})
 
-* I remove `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_ from the TODO list
+* I remove copy_ from the TODO list
 
   .. code-block:: python
 
@@ -825,7 +829,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {0: None, 1: None} is not None
 
-the fromkeys_ :ref:`method<functions>` returns a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ that uses the values in the iterable_ as keys with default values of :ref:`None`. I add the expected values
+the fromkeys_ :ref:`method<functions>` returns a dictionary_ that uses the values in the iterable_ as keys with default values of :ref:`None`. I add the expected values
 
 .. code-block:: python
 
@@ -854,7 +858,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assert_ statement to see what happens to the first `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ in the test
+* I add an assert_ statement to see what happens to the first dictionary_ in the test
 
   .. code-block:: python
 
@@ -870,7 +874,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} != {}
 
-  the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ did not change
+  the dictionary_ did not change
 
 * I remove the assertion then change the call to use the dict_ :ref:`class<classes>`
 
@@ -893,7 +897,7 @@ refactor: make it better
             {0: None, 1: None}
         )
 
-* the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ the fromkeys_ :ref:`method<functions>` returns has :ref:`None` as a default value, I write it explicitly in the test
+* the dictionary_ the fromkeys_ :ref:`method<functions>` returns has :ref:`None` as a default value, I write it explicitly in the test
 
   .. code-block:: python
 
@@ -991,7 +995,7 @@ the terminal shows green
 refactor: make it better
 #################################################################################
 
-* I add another assertion, this time with something from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add another assertion, this time with something from the dictionary_
 
   .. code-block:: python
 
@@ -1004,7 +1008,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None
 
-  it looks like the get_ :ref:`method<functions>` has a condition where it returns the value for the key it is given from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ if it is there or returns :ref:`None` if the key is not there. I add the expected value
+  it looks like the get_ :ref:`method<functions>` has a condition where it returns the value for the key it is given from the dictionary_ if it is there or returns :ref:`None` if the key is not there. I add the expected value
 
   .. code-block:: python
 
@@ -1077,7 +1081,7 @@ refactor: make it better
 
     self.assertEqual(a_dictionary.get('key', 'default'), 'value')
 
-  the test is still green. The get_ :ref:`method<functions>` returns the value for a given key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ or returns a default value if the key is not there
+  the test is still green. The get_ :ref:`method<functions>` returns the value for a given key in a dictionary_ or returns a default value if the key is not there
 
 * I change the name of the test
 
@@ -1173,12 +1177,12 @@ I change the assertion
 
   self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
-the test passes. It looks like the items_ :ref:`method<functions>` returns the key-value pairs of a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ as tuples_ in a :ref:`list<lists>`
+the test passes. It looks like the items_ :ref:`method<functions>` returns the key-value pairs of a dictionary_ as tuples_ in a :ref:`list<lists>`
 
 refactor: make it better
 #################################################################################
 
-* I add another key-value pair to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add another key-value pair to the dictionary_
 
   .. code-block:: python
 
@@ -1309,7 +1313,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another key-value pair to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to see what the keys_ :ref:`method<functions>` returns when there are multiple
+* I add another key-value pair to the dictionary_ to see what the keys_ :ref:`method<functions>` returns when there are multiple
 
   .. code-block:: python
 
@@ -1429,7 +1433,7 @@ green: make it pass
     with self.assertRaises(KeyError):
         a_dictionary.pop('not in dictionary')
 
-  the test passes, calling the pop_ :ref:`method<functions>` with a key that is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ raises a :ref:`KeyError <test_key_error>`
+  the test passes, calling the pop_ :ref:`method<functions>` with a key that is not in the dictionary_ raises a :ref:`KeyError <test_key_error>`
 
 refactor: make it better
 #################################################################################
@@ -1450,7 +1454,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None
 
-  the pop_ :ref:`method<functions>` returns the value of the given key from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I add the expectation
+  the pop_ :ref:`method<functions>` returns the value of the given key from the dictionary_. I add the expectation
 
   .. code-block:: python
 
@@ -1470,7 +1474,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion to see what the :ref:`method<functions>` did to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add another assertion to see what the :ref:`method<functions>` did to the dictionary_
 
   .. code-block:: python
 
@@ -1483,7 +1487,7 @@ refactor: make it better
 
     AssertionError: {} != {'key': 'value'}
 
-  pop_ :ref:`method<functions>` removes the key-value pair and returns the value of the given key from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to match
+  pop_ :ref:`method<functions>` removes the key-value pair and returns the value of the given key from the dictionary_. I change the expectation to match
 
   .. code-block:: python
 
@@ -1538,7 +1542,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: ('key', 'value') is not None
 
-the `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ :ref:`method<functions>` returns the key-value pair as a tuple_
+the popitem_ :ref:`method<functions>` returns the key-value pair as a tuple_
 
 green: make it pass
 #################################################################################
@@ -1555,7 +1559,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I want to know what the `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ :ref:`method<functions>` does to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I want to know what the popitem_ :ref:`method<functions>` does to the dictionary_
 
   .. code-block:: python
 
@@ -1568,7 +1572,7 @@ refactor: make it better
 
     AssertionError: {} != {'key': 'value'}
 
-  `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ removes and returns the key-value pair given from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+  popitem_ removes and returns the key-value pair given from the dictionary_
 
 * I change the value
 
@@ -1602,7 +1606,7 @@ refactor: make it better
 
   the test passes
 
-* this operation does not take input, I change the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to see how it behaves
+* this operation does not take input, I change the dictionary_ to see how it behaves
 
   .. code-block:: python
 
@@ -1653,7 +1657,7 @@ refactor: make it better
         ('key1', 'value1')
     )
 
-  `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ returns the last key-value pair in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+  popitem_ returns the last key-value pair in the dictionary_
 
 * I add another call to the :ref:`method<functions>` that should fail
 
@@ -1707,7 +1711,7 @@ refactor: make it better
         with self.assertRaises(KeyError):
             a_dictionary.popitem()
 
-* I remove `popitem <https://docs.python.org/3/library/stdtypes.html#dict.popitem>`_ from the TODO list
+* I remove popitem_ from the TODO list
 
   .. code-block:: python
 
@@ -1752,7 +1756,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assertion to see what changed in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add an assertion to see what changed in the dictionary_
 
   .. code-block:: python
 
@@ -1765,7 +1769,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value', 0: None} != {'key': 'value'}
 
-  setdefault_ adds the given key to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ with a default value of :ref:`None` and returns the default value
+  setdefault_ adds the given key to the dictionary_ with a default value of :ref:`None` and returns the default value
 
 * I change the expectation to match
 
@@ -1781,7 +1785,7 @@ refactor: make it better
 
   the test passes
 
-* I add another test to see what happens when the key is already in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add another test to see what happens when the key is already in the dictionary_
 
   .. code-block:: python
 
@@ -1800,7 +1804,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None
 
-  setdefault_ returns the value for the key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ when the key already exists
+  setdefault_ returns the value for the key in a dictionary_ when the key already exists
 
 * I paste the value from the terminal then change the assertion to assertEqual_
 
@@ -1858,7 +1862,7 @@ red: make it fail
 
   the test is green. The update_ :ref:`method<functions>` returns :ref:`None`
 
-* I add an assertion to see what it does to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add an assertion to see what it does to the dictionary_
 
   .. code-block:: python
 
@@ -1872,7 +1876,7 @@ red: make it fail
 
     AssertionError: {'key': 'value'} != {}
 
-  the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ stayed the same, the test has to get better
+  the dictionary_ stayed the same, the test has to get better
 
 green: make it pass
 #################################################################################
@@ -1888,7 +1892,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I check the Python documentation for the update_ :ref:`method<functions>` and see that it takes a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ as input. I add one to the call
+* I check the Python documentation for the update_ :ref:`method<functions>` and see that it takes a dictionary_ as input. I add one to the call
 
   .. code-block:: python
 
@@ -1903,7 +1907,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value', 'key1': 'value1'} != {'key': 'value'}
 
-  the update_ :ref:`method<functions>` adds the key-value pairs from the given `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ to the existing one
+  the update_ :ref:`method<functions>` adds the key-value pairs from the given dictionary_ to the existing one
 
 * I change the expectation to match the values from the terminal
 
@@ -1948,7 +1952,7 @@ refactor: make it better
 
   the test passes
 
-* I want to know what would happen if the key already exists in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I want to know what would happen if the key already exists in the dictionary_
 
   .. code-block:: python
 
@@ -1961,7 +1965,7 @@ refactor: make it better
 
     AssertionError: {'key': 'new value', 'key1': 'value1', 'another_key': 'another value'} != {'key': 'value', 'key1': 'value1', 'another_key': 'another value'}
 
-  the update_ :ref:`method<functions>` changes the value for an existing key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to match
+  the update_ :ref:`method<functions>` changes the value for an existing key in a dictionary_. I change the expectation to match
 
   .. code-block:: python
 
@@ -2057,7 +2061,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add more keys and values to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add more keys and values to the dictionary_
 
   .. code-block:: python
 
@@ -2130,7 +2134,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: 'value' != ''
 
-I can get the value for a key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ by giving it in ``[]``, this is like :ref:`viewing items in a list <test_get_items_from_a_list>`
+I can get the value for a key in a dictionary_ by giving it in ``[]``, this is like :ref:`viewing items in a list <test_get_items_from_a_list>`
 
 green: make it pass
 #################################################################################
@@ -2153,7 +2157,7 @@ refactor: make it better
     self.assertEqual(a_dictionary['key'], 'value')
     self.assertEqual(a_dictionary['key_not_in_dictionary'], 'value')
 
-  the terminal shows `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
+  the terminal shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -2170,7 +2174,7 @@ refactor: make it better
 
   the test passes
 
-* I know from :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary` that I get `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_  when I call the :ref:`method<functions>` on an empty `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I know from :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary` that I get :ref:`KeyError<test_key_error>`  when I call the :ref:`method<functions>` on an empty dictionary_
 
   .. code-block::
 
@@ -2178,7 +2182,7 @@ refactor: make it better
         a_dictionary['key_not_in_dictionary']
     {}.popitem()
 
-  the terminal shows `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
+  the terminal shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -2193,7 +2197,7 @@ refactor: make it better
     with self.assertRaises(KeyError):
         {}.popitem()
 
-* I also get `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ when I call :ref:`pop <test_pop_removes_given_key_from_a_dictionary>` with a key that does not exist in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I also get :ref:`KeyError<test_key_error>` when I call :ref:`pop <test_pop_removes_given_key_from_a_dictionary>` with a key that does not exist in the dictionary_
 
   .. code-block:: python
 
@@ -2201,7 +2205,7 @@ refactor: make it better
         {}.popitem()
     a_dictionary.pop('key_not_in_dictionary')
 
-  the terminal shows `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_
+  the terminal shows :ref:`KeyError<test_key_error>`
 
   .. code-blocK:: python
 
@@ -2216,7 +2220,7 @@ refactor: make it better
     with self.assertRaises(KeyError):
         a_dictionary.pop('key_not_in_dictionary')
 
-* I can use the get_ :ref:`method<functions>` to avoid the `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ when the key does not exist in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I can use the get_ :ref:`method<functions>` to avoid the :ref:`KeyError<test_key_error>` when the key does not exist in a dictionary_
 
   .. code-block:: python
 
