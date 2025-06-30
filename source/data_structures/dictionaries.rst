@@ -429,7 +429,7 @@ the test is green again. I cannot use a set_ as a key in a `dictionary <https://
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_dictionaries_as_keys
+test_make_a_dictionary_w_a_dictionary_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -442,7 +442,7 @@ I add a new test
   def test_make_a_dictionary_w_a_set_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_dictionaries_as_keys(self):
+  def test_make_a_dictionary_w_a_dictionary_as_a_key(self):
       a_dictionary = {'key': 'value'}
       {a_dictionary: 'BOOM!'}
 
@@ -455,14 +455,14 @@ the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-I add assertRaises
+I add assertRaises_
 
 .. code-block:: python
 
-    def test_make_a_dictionary_w_dictionaries_as_keys(self):
-        a_dictionary = {'key': 'value'}
-        with self.assertRaises(TypeError):
-            {a_dictionary: 'BOOM!'}
+  def test_make_a_dictionary_w_a_dictionary_as_a_key(self):
+      a_dictionary = {'key': 'value'}
+      with self.assertRaises(TypeError):
+          {a_dictionary: 'BOOM!'}
 
 the test passes. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, set_ or :ref:`list <lists>` as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ they are not hashable_
 
@@ -472,12 +472,10 @@ the test passes. I cannot use a `dictionary <https://docs.python.org/3/tutorial/
 test_attributes_and_methods_of_dictionaries
 *********************************************************************************
 
-I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
-
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 .. code-block:: python
 

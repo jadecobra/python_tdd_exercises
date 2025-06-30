@@ -191,7 +191,7 @@ test_dictionaries
 #. :ref:`test_make_a_dictionary_w_a_tuple_as_a_key`
 #. :ref:`test_make_a_dictionary_w_a_list_as_a_key`
 #. :ref:`test_make_a_dictionary_w_a_set_as_a_key`
-#. :ref:`test_make_a_dictionary_w_dictionaries_as_keys`
+#. :ref:`test_make_a_dictionary_w_a_dictionary_as_a_key`
 #. :ref:`test_attributes_and_methods_of_dictionaries`
 #. :ref:`test_clear_empties_a_dictionary`
 #. :ref:`test_copy_a_dictionary`
