@@ -1547,19 +1547,30 @@ the popitem_ :ref:`method<functions>` returns the key-value pair as a tuple_
 green: make it pass
 #################################################################################
 
-I change the assertion and paste the value from the terminal
+I add the value from the terminal as an expectation
 
 .. code-block:: python
 
-    a_dictionary = {'key': 'value'}
-    self.assertEqual(a_dictionary.popitem(), ('key', 'value'))
+  self.assertIsNone(a_dictionary.popitem(), ('key', 'value'))
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: ('key', 'value') is not None : ('key', 'value')
+
+I change the assertion
+
+.. code-block:: python
+
+  self.assertEqual(a_dictionary.popitem(), ('key', 'value'))
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* I want to know what the popitem_ :ref:`method<functions>` does to the dictionary_
+* I want to know what the popitem_ :ref:`method<functions>` did to the dictionary_
 
   .. code-block:: python
 
@@ -1572,7 +1583,7 @@ refactor: make it better
 
     AssertionError: {} != {'key': 'value'}
 
-  popitem_ removes and returns the key-value pair given from the dictionary_
+  popitem_ removes and returns the key-value pair from the dictionary_
 
 * I change the value
 
@@ -1582,59 +1593,32 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion
-
-  .. code-block:: python
-
-    self.assertEqual(a_dictionary, {})
-    self.assertEqual(a_dictionary.popitem(), None)
-
-  the terminal shows :ref:`KeyError <test_key_error>`
-
-  .. code-block:: python
-
-    KeyError: 'popitem(): dictionary is empty'
-
-  I change the assertion to assertRaises_
-
-  .. code-block:: python
-
-    self.assertEqual(a_dictionary, {})
-
-    with self.assertRaises(KeyError):
-        a_dictionary.popitem()
-
-  the test passes
-
-* this operation does not take input, I change the dictionary_ to see how it behaves
+* this operation does not take input, I change the dictionary_ to see how it responds
 
   .. code-block:: python
 
     a_dictionary = {
         'key1': 'value1',
-        'key2': 'value2'
+        'keyN': 'valueN',
     }
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('key2', 'value2') != ('key', 'value')
+    AssertionError: Tuples differ: ('keyN', 'valueN') != ('key', 'value')
 
   I change the expectation to match
 
   .. code-block:: python
 
-    self.assertEqual(
-        a_dictionary.popitem(),
-        ('key2', 'value2')
-    )
+    self.assertEqual(a_dictionary.popitem(), ('keyN', 'valueN'))
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: {'key1': 'value1'} != {}
+    AssertionError: {'key1': 'value1'} != {'key': 'value'}
 
   I change the value to match
 
@@ -1642,52 +1626,28 @@ refactor: make it better
 
     self.assertEqual(a_dictionary, {'key1': 'value1'})
 
+  the test passes
+
+* I add another call to the :ref:`method<functions>`
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary, {'key1': 'value1'})
+    self.assertEqual(a_dictionary.popitem(), ('keyN', 'valueN'))
+
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: KeyError not raised
+    AssertionError: Tuples differ: ('key1', 'value1') != ('keyN', 'valueN')
 
-  I change the assertRaises_ to assertEqual_
-
-  .. code-block:: python
-
-    self.assertEqual(
-        a_dictionary.popitem(),
-        ('key1', 'value1')
-    )
-
-  popitem_ returns the last key-value pair in the dictionary_
-
-* I add another call to the :ref:`method<functions>` that should fail
+  I change the expectation
 
   .. code-block:: python
 
-    self.assertEqual(
-        a_dictionary.popitem(),
-        ('key1', 'value1')
-    )
-    a_dictionary.popitem()
+    self.assertEqual(a_dictionary.popitem(), ('key1', 'value1'))
 
-  the terminal shows :ref:`KeyError <test_key_error>`
-
-  .. code-block:: python
-
-    KeyError: 'popitem(): dictionary is empty'
-
-  I add assertRaises_
-
-  .. code-block:: python
-
-    self.assertEqual(
-        a_dictionary.popitem(),
-        ('key1', 'value1')
-    )
-
-    with self.assertRaises(KeyError):
-        a_dictionary.popitem()
-
-  the test passes
+  the test passes. popitem_ removes and returns the last key-value pair from a dictionary_
 
 * I change the name of the test
 
@@ -1696,20 +1656,11 @@ refactor: make it better
     def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'key2': 'value2'
+            'keyN': 'valueN',
         }
-        self.assertEqual(
-            a_dictionary.popitem(),
-            ('key2', 'value2')
-        )
+        self.assertEqual(a_dictionary.popitem(), ('keyN', 'valueN'))
         self.assertEqual(a_dictionary, {'key1': 'value1'})
-        self.assertEqual(
-            a_dictionary.popitem(),
-            ('key1', 'value1')
-        )
-
-        with self.assertRaises(KeyError):
-            a_dictionary.popitem()
+        self.assertEqual(a_dictionary.popitem(), ('key1', 'value1'))
 
 * I remove popitem_ from the TODO list
 
