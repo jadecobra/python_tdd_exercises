@@ -391,7 +391,7 @@ the test passes. I cannot make a `dictionary <https://docs.python.org/3/tutorial
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_sets_as_keys
+test_make_a_dictionary_w_a_set_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -401,7 +401,10 @@ I try the same thing with a set_ as a key
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_sets_as_keys(self):
+  def test_make_a_dictionary_w_a_list_as_a_key(self):
+      ...
+
+  def test_make_a_dictionary_w_a_set_as_a_key(self):
       {{3, 2, 1}: 'BOOM!'}
 
 the terminal shows :ref:`TypeError`
@@ -417,7 +420,7 @@ I add assertRaises_
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_sets_as_keys(self):
+  def test_make_a_dictionary_w_a_set_as_a_key(self):
       with self.assertRaises(TypeError):
           {{3, 2, 1}: 'BOOM!'}
 
@@ -436,7 +439,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_sets_as_keys(self):
+  def test_make_a_dictionary_w_a_set_as_a_key(self):
       ...
 
   def test_make_a_dictionary_w_dictionaries_as_keys(self):
