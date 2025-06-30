@@ -2085,7 +2085,7 @@ I add a test for the last :ref:`method<functions>`
 .. code-block:: python
 
   def test_update_a_dictionary(self):
-        ...
+      ...
 
   def test_values(self):
       a_dictionary = {'key': 'value'}
@@ -2102,11 +2102,34 @@ this is like :ref:`test_items_returns_key_value_pairs_of_a_dictionary` and  :ref
 green: make it pass
 #################################################################################
 
-I change the assertIsNone_ to assertEqual_ and change the expectation to a list
+I add the expected value
 
 .. code-block:: python
 
-  a_dictionary = {'key': 'value'}
+  self.assertIsNone(a_dictionary.values, dict_values(['value']))
+
+the terminal shows NameError_
+
+.. code-block:: python
+
+  NameError: name 'dict_values' is not defined
+
+I use the list_ in the ``dict_values`` object_
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.values(), ['value'])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: dict_values(['value']) is not None : ['value']
+
+I change the assertIsNone_ to assertEqual_
+
+.. code-block:: python
+
   self.assertEqual(a_dictionary.values(), ['value'])
 
 the terminal shows :ref:`AssertionError`
@@ -2115,7 +2138,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_values(['value']) != ['value']
 
-I wrap the call in the :ref:`list<lists>` constructor_
+I pass the call to the :ref:`list<lists>` constructor_
 
 .. code-block:: python
 
@@ -2126,30 +2149,29 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add more keys and values to the dictionary_
+* I change the dictionary_
 
   .. code-block:: python
 
-    def test_values(self):
-        a_dictionary = {
-            'a_key': 'a value',
-            'another_key': 'another value',
-        }
+    a_dictionary = {
+        'key1': 'value1',
+        'keyN': 'valueN',
+    }
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['a value', 'another value'] != ['value']
+    AssertionError: Lists differ: ['value1', 'valueN'] != ['value']
 
-  I change the values
+  I change the values in the expectation
 
   .. code-block:: python
 
-    self.assertEqual(
-        list(a_dictionary.values()),
-        ['a value', 'another value']
-    )
+        self.assertEqual(
+            list(a_dictionary.values()),
+            ['value1', 'valueN']
+        )
 
   the test passes
 
@@ -2159,15 +2181,13 @@ refactor: make it better
 
     def test_values_of_a_dictionary(self):
         a_dictionary = {
-            'a_key': 'a value',
-            'another_key': 'another value',
+            'key1': 'value1',
+            'keyN': 'valueN',
         }
         self.assertEqual(
             list(a_dictionary.values()),
-            ['a value', 'another value']
+            ['value1', 'valueN']
         )
-
-  the test passes
 
 * I remove values_ from the TODO list
 

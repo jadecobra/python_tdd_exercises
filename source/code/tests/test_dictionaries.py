@@ -131,7 +131,10 @@ class TestDictionaries(unittest.TestCase):
             'key1': 'value1',
             'keyN': 'valueN',
         }
-        self.assertEqual(list(a_dictionary.keys()), ['key1', 'keyN'])
+        self.assertEqual(
+            list(a_dictionary.keys()),
+            ['key1', 'keyN']
+        )
 
     def test_pop_removes_given_key_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
@@ -177,8 +180,14 @@ class TestDictionaries(unittest.TestCase):
         )
 
     def test_values_of_a_dictionary(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(list(a_dictionary.values()), ['value'])
+        a_dictionary = {
+            'key1': 'value1',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(
+            list(a_dictionary.values()),
+            ['value1', 'valueN']
+        )
 
     def test_key_error(self):
         a_dictionary = {'key': 'value'}
