@@ -152,13 +152,13 @@ class TestDictionaries(unittest.TestCase):
 
     def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.setdefault(0, 'default'), 'default')
+        self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
         self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
         self.assertEqual(
             a_dictionary,
             {
                 'key': 'value',
-                0: 'default',
+                'new_key': 'default',
             }
         )
 

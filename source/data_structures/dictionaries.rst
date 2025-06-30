@@ -1736,7 +1736,7 @@ refactor: make it better
 
   the test passes
 
-* I change the name of the value given for fun
+* I change the name of the value given
 
   .. code-block:: python
 
@@ -1783,17 +1783,89 @@ refactor: make it better
 
     AssertionError: 'value' is not None
 
-  setdefault_ returns the value for a key in a dictionary_ when the key is in the dictionary_
+  setdefault_ returns the value for a key in a dictionary_ when the key is in the dictionary_. I add the value to the assertion
 
-* I paste the value from the terminal then change the assertion to assertEqual_
+  .. code-block:: Python
+
+    self.assertIsNone(a_dictionary.setdefault('key'), 'value')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'value' is not None : value
+
+  I change the assertion to assertEqual_
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.setdefault('key'), 'value')
+
+  the test passes
+
+* It looks like setdefault_ has a condition where it sets a default value when the key is not in the dictionary_ and returns the value when the key is in it. I change the first assertion to find out
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.setdefault('new_key', None))
+
+  the terminal still shows green. I change the given default value expecting a failure
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.setdefault('new_key', 'default'))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'default' is not None
+
+  I add the expected value
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.setdefault('new_key', 'default'), 'default')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'default' is not None : default
+
+  I change the assert_ :ref:`method<functions>`
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value', 'new_key': 'default'} != {'key': 'value', 'new_key': None}
+
+  I change the expectation to match
 
   .. code-block:: python
 
     self.assertEqual(
-        a_dictionary.setdefault('key'), 'value'
+        a_dictionary,
+        {
+            'key': 'value',
+            'new_key': 'default',
+        }
     )
 
   the test passes
+
+* I try the same thing with the second assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
+
+  the terminal still shows green. setdefault_ adds a given key to the dictionary_ with a given default value and returns the default value if the key is not in the dictionary. It returns the value for a key that is already in the dictionary_
 
 * I rename the test
 
@@ -1801,19 +1873,15 @@ refactor: make it better
 
     def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.setdefault(0))
+        self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
+        self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
         self.assertEqual(
             a_dictionary,
             {
                 'key': 'value',
-                0: None,
+                'new_key': 'default',
             }
         )
-        self.assertEqual(
-            a_dictionary.setdefault('key'), 'value'
-        )
-
-  the test is still green
 
 * I remove setdefault_ from the TODO list
 
