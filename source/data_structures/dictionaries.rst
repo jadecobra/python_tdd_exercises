@@ -130,45 +130,40 @@ refactor: make it better
 
     self.assertEqual(dict(key='value'), {'key': 'value'})
 
-  the test passes
+  the terminal shows green again. This test uses strings_ as keys
 
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_curly_braces
+test_make_a_dictionary_w_none_as_a_key
 *********************************************************************************
-
-I can make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the `dict <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ constructor_ and the passing test shows I can make one with ``{}``.
 
 red: make it fail
 #################################################################################
 
-I add a test
+I add a test where I use :ref:`None` as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 .. code-block:: python
 
-    def test_make_a_dictionary_w_dict_constructor(self):
-        ...
-
-    def test_make_a_dictionary_w_curly_braces(self):
-        self.assertEqual({'key': 'value'}, dict(key='key'))
+  def test_make_a_dictionary_w_none_as_a_key(self):
+      self.assertEqual({None: 'boom'}, {None: 'bap'})
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {'key': 'value'} != {'key': 'key'}
+  AssertionError: {None: 'boom'} != {None: 'bap'}
 
 green: make it pass
 #################################################################################
 
-I make the values match
+I change the ``'bap'`` to ``'boom'``
 
 .. code-block:: python
 
-  self.assertEqual({'key': 'value'}, dict(key='value'))
+  self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-the test
+the test passes. I can use :ref:`None` as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ----
 
@@ -176,16 +171,14 @@ the test
 test_make_a_dictionary_w_booleans_as_keys
 *********************************************************************************
 
-I wonder if it is possible to use :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys
-
 red: make it fail
 #################################################################################
 
-I add a test
+I add a test where I use booleans_ as keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 .. code-block:: python
 
-    def test_make_a_dictionary_w_curly_braces(self):
+    def test_make_a_dictionary(self):
         ...
 
     def test_make_a_dictionary_w_booleans_as_keys(self):
