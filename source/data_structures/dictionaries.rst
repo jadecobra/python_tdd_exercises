@@ -1356,13 +1356,13 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_pop_removes_and_returns_key_w_value_from_a_dictionary
+test_pop_removes_given_key_from_a_dictionary
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a test for the next :ref:`method<functions>`
+I wonder if the next :ref:`method<functions>` is the same as the one in :ref:`test_pop_removes_and_returns_the_last_item_in_a_list`, I add a test for it
 
 .. code-block:: python
 
@@ -1379,34 +1379,55 @@ the terminal shows :ref:`TypeError`
 
   TypeError: pop expected at least 1 argument, got 0
 
+this `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` is different from the one in :ref:`lists`
+
 green: make it pass
 #################################################################################
 
-I pass a value to the call
+* I pass a value to the call
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_pop(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.pop(0))
+    self.assertIsNone(a_dictionary.pop(0))
 
-the terminal shows :ref:`KeyError <test_key_error>`
+  the terminal shows :ref:`KeyError<test_key_error>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  KeyError: 0
+    KeyError: 0
 
-I change the assertion to assertRaises_
+* I add it to the list of Exceptions_ encountered
 
-.. code-block:: python
+  .. code-block:: python
 
-  def test_pop(self):
-      a_dictionary = {'key': 'value'}
+    # Exceptions Encountered
+    # AssertionError
+    # TypeError
+    # KeyError
 
-      with self.assertRaises(KeyError):
-          a_dictionary.pop(0)
+* I remove the things around the call and change the value given to be more descriptive
 
-calling the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` with a key that is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ raises a :ref:`KeyError <test_key_error>`
+  .. code-block:: python
+
+    a_dictionary = {'key': 'value'}
+    a_dictionary.pop('not in dictionary')
+
+  the terminal shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: 'not in dictionary'
+
+  I add assertRaises_
+
+  .. code-block:: python
+
+    a_dictionary = {'key': 'value'}
+
+    with self.assertRaises(KeyError):
+        a_dictionary.pop('not in dictionary')
+
+  the test passes, calling the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` with a key that is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ raises a :ref:`KeyError <test_key_error>`
 
 refactor: make it better
 #################################################################################
@@ -1415,31 +1436,39 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_pop(self):
-        a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.pop('key'))
+    a_dictionary = {'key': 'value'}
+    self.assertIsNone(a_dictionary.pop('key'))
 
-        with self.assertRaises(KeyError):
-            a_dictionary.pop(0)
+    with self.assertRaises(KeyError):
+        a_dictionary.pop('not in dictionary')
 
-  the terminal shows :ref:`AssertionError`
+    the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 'value' is not None
 
-  the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` returns the value from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ for the key it is given
-
-* I change the assertion to assertEqual_ and paste the value from the terminal
+  the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` returns the value of the given key from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I add the expectation
 
   .. code-block:: python
 
-    a_dictionary = {'key': 'value'}
+    self.assertIsNone(a_dictionary.pop('key'), 'value')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'value' is not None : value
+
+  I change the assertion to assertEqual_
+
+  .. code-block:: python
+
     self.assertEqual(a_dictionary.pop('key'), 'value')
 
   the test passes
 
-* I add another assertion to see what happens to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add another assertion to see what the :ref:`method<functions>` did to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block:: python
 
@@ -1452,9 +1481,7 @@ refactor: make it better
 
     AssertionError: {} != {'key': 'value'}
 
-  `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` removes the key-value pair and returns the value from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ for the key it is given
-
-* I change the value expectation to match
+  `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` removes the key-value pair and returns the value of the given key from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to match
 
   .. code-block:: python
 
@@ -1466,13 +1493,13 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_pop_removes_and_returns_key_w_value_from_a_dictionary(self):
+    def test_pop_removes_given_key_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
 
         with self.assertRaises(KeyError):
-            a_dictionary.pop(0)
+            a_dictionary.pop('not in dictionary')
 
   the test is still passings
 
@@ -1498,7 +1525,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_pop_removes_and_returns_key_w_value_from_a_dictionary(self):
+  def test_pop_removes_given_key_from_a_dictionary(self):
       ...
 
   def test_pop_item(self):
@@ -2001,7 +2028,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_values(['value']) is not None
 
-this is like :ref:`test_pop_removes_key_and_returns_its_value_from_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
+this is like :ref:`test_items_returns_key_value_pairs_of_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
 
 green: make it pass
 #################################################################################
@@ -2080,6 +2107,8 @@ refactor: make it better
 *********************************************************************************
 test_key_error
 *********************************************************************************
+
+https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError
 
 red: make it fail
 #################################################################################
@@ -2164,7 +2193,7 @@ refactor: make it better
     with self.assertRaises(KeyError):
         {}.popitem()
 
-* I also get `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ when I call :ref:`pop <test_pop_removes_and_returns_key_w_value_from_a_dictionary>` with a key that does not exist in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I also get `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ when I call :ref:`pop <test_pop_removes_given_key_from_a_dictionary>` with a key that does not exist in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block:: python
 

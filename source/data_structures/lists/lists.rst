@@ -1137,7 +1137,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_pop_removes_and_returns_last_item_in_a_list
+test_pop_removes_and_returns_the_last_item_in_a_list
 *********************************************************************************
 
 red: make it fail

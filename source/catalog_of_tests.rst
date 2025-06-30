@@ -163,7 +163,7 @@ test_lists
 #. :ref:`test_extend_makes_a_list_longer`
 #. :ref:`test_index_returns_position_of_item_in_a_list`
 #. :ref:`test_insert_places_item_at_given_index_in_a_list`
-#. :ref:`test_pop_removes_and_returns_last_item_in_a_list`
+#. :ref:`test_pop_removes_and_returns_the_last_item_in_a_list`
 #. :ref:`test_remove_first_instance_of_item_from_a_list`
 #. :ref:`test_reverse_a_list`
 #. :ref:`test_sort_a_list`
@@ -199,7 +199,7 @@ test_dictionaries
 #. :ref:`test_get_a_value_from_a_dictionary`
 #. :ref:`test_pop_removes_key_and_returns_its_value_from_a_dictionary`
 #. :ref:`test_keys_of_a_dictionary`
-#. :ref:`test_pop_removes_and_returns_key_w_value_from_a_dictionary`
+#. :ref:`test_pop_removes_given_key_from_a_dictionary`
 #. :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary`
 #. :ref:`test_setdefault_adds_key_w_a_default_value_to_a_dictionary`
 #. :ref:`test_update_a_dictionary`

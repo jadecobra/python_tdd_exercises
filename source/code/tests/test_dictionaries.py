@@ -127,13 +127,19 @@ class TestDictionaries(unittest.TestCase):
         )
 
     def test_keys_of_a_dictionary(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(list(a_dictionary.keys()), ['key'])
+        a_dictionary = {
+            'key1': 'value1',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(list(a_dictionary.keys()), ['key1', 'keyN'])
 
     def test_pop_removes_given_key_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
+
+        with self.assertRaises(KeyError):
+            a_dictionary.pop('not in dictionary')
 
     def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
