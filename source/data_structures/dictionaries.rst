@@ -482,7 +482,9 @@ I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attri
   def test_attributes_and_methods_of_dictionaries(self):
       self.assertEqual(
           dir(dict),
-          []
+          [
+
+          ]
       )
 
 the terminal shows :ref:`AssertionError`
@@ -500,7 +502,7 @@ It also gives me a message to view the entire difference between the two :ref:`l
 green: make it pass
 #################################################################################
 
-I add `unittest.TestCase.maxDiff`_
+I move the terminal to right side of the screen so I can see the entire difference, then add `unittest.TestCase.maxDiff`_
 
 .. code-block:: python
 
@@ -508,10 +510,12 @@ I add `unittest.TestCase.maxDiff`_
       self.maxDiff = None
       self.assertEqual(
           dir(dict),
-          []
+          [
+
+          ]
       )
 
-the terminal shows the entire difference between the two :ref:`lists`. I copy and paste the expected values from the terminal
+the terminal shows the entire difference between the two :ref:`lists`. I copy and paste the expected values from the terminal and use find and replace to remove the characters that are not necessary
 
 .. note::
 
@@ -573,7 +577,7 @@ the terminal shows the entire difference between the two :ref:`lists`. I copy an
           ]
       )
 
-the test passes. I make a TODO list with the names that do not have double underscores (__)
+the test passes and I move the terminal back to the bottom. I copy the names that do not have double underscores (__) to make a TODO list for the next set of tests
 
 .. code-block:: python
 
