@@ -603,36 +603,36 @@ the test passes and I move the terminal back to the bottom. I copy the names tha
 test_clear_empties_a_dictionary
 *********************************************************************************
 
-I add a test for the :ref:`method<functions>`
-
-.. code-block:: python
-
-    def test_attributes_and_methods_of_dictionaries(self):
-        ...
-
-    def test_clear(self):
-        a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.clear())
-
-the terminal shows green. The `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ :ref:`method<functions>` returns :ref:`None`
-
 red: make it fail
 #################################################################################
 
-I add an assertion to see what changed in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+* I add a test for the :ref:`method<functions>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertIsNone(a_dictionary.clear())
-  self.assertEqual(a_dictionary, {'key': 'value'})
+      def test_attributes_and_methods_of_dictionaries(self):
+          ...
 
-the terminal shows :ref:`AssertionError`
+      def test_clear(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.clear())
 
-.. code-block:: python
+  the terminal shows green. The `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ :ref:`method<functions>` returns :ref:`None`
 
-  AssertionError: {} != {'key': 'value'}
+* I add an assertion to see what it did to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
-the `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ :ref:`method<functions>` empties the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.clear())
+    self.assertEqual(a_dictionary, {'key': 'value'})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {} != {'key': 'value'}
+
+  the `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ :ref:`method<functions>` emptied the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 green: make it pass
 #################################################################################
@@ -643,7 +643,7 @@ I change the values to match
 
   self.assertEqual(a_dictionary, {})
 
-the test passes. ``{}`` is how Python represents an empty `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -656,8 +656,6 @@ refactor: make it better
         a_dictionary = {'key': 'value'}
         self.assertIsNone(a_dictionary.clear())
         self.assertEqual(a_dictionary, {})
-
-  the test is still passing
 
 * I remove `clear <https://docs.python.org/3/library/stdtypes.html#dict.clear>`_ from the TODO list
 
