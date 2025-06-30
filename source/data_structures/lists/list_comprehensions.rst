@@ -1,5 +1,8 @@
 .. include:: ../../links.rst
 
+.. _list comprehension: https://docs.python.org/3/glossary.html#term-list-comprehension
+.. _list comprehensions: https://docs.python.org/3/glossary.html#term-list-comprehension
+
 #################################################################################
 lists: list comprehensions
 #################################################################################
@@ -16,7 +19,7 @@ lists: list comprehensions
 
 ----
 
-`List Comprehensions <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#list-comprehensions>`_ are a simple to make a :ref:`list <lists>` from an iterable_, by going over every item and performing operations with one line
+`List Comprehensions`_ are a simple to make a :ref:`list <lists>` from an iterable_, by going over every item and performing operations with one line
 
 *********************************************************************************
 requirements
@@ -65,7 +68,7 @@ I change ``test_failure`` to ``test_make_a_list_w_a_for_loop``
 
     def test_make_a_list_w_a_for_loop(self):
         a_list = []
-        iterable = range(10)
+        iterable = range(0, 4)
 
         for item in iterable:
             a_list.append(item)
@@ -76,30 +79,41 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+  AssertionError: Lists differ: [0, 1, 2, 3] != []
+
+the list is no longer empty after calling the append_ :ref:`method<functions>` in the `for loop`_ which goes over every item in the iterable_
 
 green: make it pass
 #################################################################################
 
-I copy the value from the terminal and use it as the expectation
+I change the expectation to match the values in the terminal
 
 .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    self.assertEqual(a_list, [0, 1, 2, 3])
 
-the test passes, the list is no longer empty after calling the append_ :ref:`method<functions>` in the `for loop`_ which goes over every item in the iterable_
+the test passes
 
 refactor: make it better
 #################################################################################
 
-* I add another assert_ statement
+* I add another assertion to show that this could have been achieved with the :ref:`list<lists>` constructor_
 
   .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    self.assertEqual(a_list, [0, 1, 2, 3])
+    self.assertEqual(a_list, list(iterable))
+
+  the test is still green. Why use a `for loop`_ when you can use the :ref:`list<lists>` constructor_ to get the same thing? I will show this in a little bit
+
+* but first for some practice with the `for loop`_ I add another assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, list(iterable))
     self.assertEqual(
         src.list_comprehensions.for_loop(iterable),
-        a_list
+        [0, 1, 2, 3]
     )
 
   the terminal shows NameError_
@@ -108,7 +122,7 @@ refactor: make it better
 
     NameError: name 'src' is not defined
 
-  I add it to the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -116,7 +130,7 @@ refactor: make it better
     # AssertionError
     # NameError
 
-  then I add an `import statement`_
+* I add an `import statement`_
 
   .. code-block:: python
 
@@ -129,7 +143,7 @@ refactor: make it better
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'for_loop'
 
-  I add the error to the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -138,60 +152,88 @@ refactor: make it better
     # NameError
     # AttributeError
 
-  I add a :ref:`function<functions>` definition to ``list_comprehensions.py``
+* I add a :ref:`function<functions>` to ``list_comprehensions.py``
 
   .. code-block:: python
 
-    def for_loop():
-        return None
+    def for_loop(iterable):
+        return [0, 1, 2, 3]
 
-  and the terminal shows :ref:`TypeError`
+  the test passes
 
-  .. code-block:: python
-
-    TypeError: for_loop() takes 0 positional arguments but 1 was given
-
-  I add the error to the list of Exceptions_ encountered
+* I need a better test, this one breaks if I change the values in the range_ :ref:`object<classes>`
 
   .. code-block:: python
 
-    # Exceptions Encountered
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-
-  then I change the signature of the :ref:`function<functions>` to take input
-
-  .. code-block:: python
-
-    def for_loop(argument):
-        return None
+    iterable = range(0, 5)
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
-  I add a `for loop`_ to the :ref:`function<functions>`
+* I undo the change then import the random_ :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
-    def for_loop(argument):
-        result = []
-        for item in argument:
-            result.append(item)
-        return result
+    import random
+    import src.list_comprehensions
+    import unittest
 
-  the test passes
+* I change the values given to the range_ :ref:`object<classes>`
 
-  - ``result = []`` makes an empty :ref:`list<lists>`
-  - ``for item in argument:`` loops over the items of ``argument``
-  - ``result.append(item)`` adds each item from ``argument`` to ``result``
-  - ``return result`` returns ``result`` after the loop completes
+  .. code-block:: python
 
-* I change the input name from ``argument`` to ``iterable`` to make it clearer
+    iterable = range(0, random.randint(2, 1000))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2158 chars] 464] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2283 chars] 489] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2118 chars] 456] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[773 chars] 187] != [0, 1, 2, 3]
+
+  the values change every time the test runs because I am using random integers_
+
+* I change the expectation in the first assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, list(iterable))
+    self.assertEqual(a_list, list(iterable))
+
+  the test passes. Since it is a duplication I remove the line
+
+* I change the expectation of the second assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_list, list(iterable))
+    self.assertEqual(
+        src.list_comprehensions.for_loop(iterable),
+        list(iterable)
+    )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[1393 chars] 311]
+    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[3743 chars] 781]
+    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2208 chars] 474]
+    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[4778 chars] 988]
+
+  I change the `return statement`_ in the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def for_loop(iterable):
+        return list(iterable)
+
+  the test passes, but I want to practice writing a `for loop`_, I change the :ref:`function`
 
   .. code-block:: python
 
@@ -201,9 +243,7 @@ refactor: make it better
             result.append(item)
         return result
 
-  all tests are still passing
-
-I can make a :ref:`list <lists>` from an iterable_ by using a `for loop`_ or the :ref:`list <lists>` constructor
+  the test is green, this is not yet better than using the :ref:`list<lists>` constructor, there is another way
 
 ----
 
@@ -218,9 +258,11 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_make_a_list_w_list_comprehensions(self):
-      iterable = range(10)
+  def test_make_a_list_w_a_for_loop(self):
+      ...
 
+  def test_make_a_list_w_list_comprehensions(self):
+      iterable = range(0, random.randint(2, 1000))
       self.assertEqual(
           src.list_comprehensions.for_loop(iterable),
           []
@@ -230,18 +272,21 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[413 chars] 113] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[3178 chars] 666] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[568 chars] 144] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[3253 chars] 681] != []
 
 green: make it pass
 #################################################################################
 
-I make the values in the test match the terminal
+I use the :ref:`list<constructor>`
 
 .. code-block:: python
 
   self.assertEqual(
       src.list_comprehensions.for_loop(iterable),
-      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+      list(iterable)
   )
 
 the test passes
@@ -249,70 +294,109 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I change the expectation to use a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
-
-.. code-block:: python
-
-  self.assertEqual(
-      src.list_comprehensions.for_loop(iterable),
-      # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-      [item for item in iterable]
-  )
-
-the terminal still shows green. I remove the comment then add another assert_ statement
-
-.. code-block:: python
-
-  self.assertEqual(
-      src.list_comprehensions.for_loop(iterable),
-      [item for item in iterable]
-  )
-  self.assertEqual(
-      src.list_comprehensions.list_comprehension(iterable),
-      src.list_comprehensions.for_loop(iterable)
-  )
-
-the terminal shows :ref:`AttributeError`
-
-.. code-block:: python
-
-  AttributeError: module 'src.list_comprehensions' has no attribute 'list_comprehension'
-
-I add a :ref:`function<functions>` that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to `list_comprehensions.py`
+* I can do the same thing with a `list comprehension`_
 
   .. code-block:: python
 
-    def for_loop(iterable):
-        result = []
-        for item in iterable:
-            result.append(item)
-        return result
+    self.assertEqual(
+        src.list_comprehensions.for_loop(iterable),
+        # list(iterable)
+        [item for item in iterable]
+    )
+
+  the terminal still shows green. I remove the comment then add another assertion for practice
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.list_comprehensions.for_loop(iterable),
+        [item for item in iterable]
+    )
+    self.assertEqual(
+        src.list_comprehensions.list_comprehension(iterable),
+        [item for item in iterable]
+    )
+
+  the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.list_comprehensions' has no attribute 'list_comprehension'
+
+  I add the :ref:`function<functions>`
+
+    .. code-block:: python
+
+      def for_loop(iterable):
+          ...
 
 
-    def list_comprehension(iterable):
-        return [item for item in iterable]
+      def list_comprehension(iterable):
+          return [item for item in iterable]
 
-the test is green again. I made 2 :ref:`functions<functions>`, one that uses a `for loop`_ and another that uses a `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ to do the same thing difference between
+  the test passes
 
-.. code-block:: python
+* I made the same variable twice for the iterable_, I will move it to the setUp_ :ref:`method<functions>` to remove duplication
 
-    a_list = []
-    for item in iterable:
-        a_list.append()
+  .. code-block:: python
 
-and
+    def setUp(self):
+        self.iterable = range(0, random.randint(2, 1000))
 
-.. code-block:: python
+  then use it in :ref:`test_make_a_list_w_a_for_loop`
 
-    [item for item in iterable]
+  .. code-block:: python
 
-the difference between them is that in the first case I have to
+    def test_make_a_list_w_a_for_loop(self):
+        a_list = []
+        for item in self.iterable:
+            a_list.append(item)
 
-* make a :ref:`list<lists>`
-* loop through the iterable_
-* do the operation I want on the item of the iterable_
+        self.assertEqual(a_list, list(self.iterable))
+        self.assertEqual(
+            src.list_comprehensions.for_loop(self.iterable),
+            list(self.iterable)
+        )
 
-When I use `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I get the same result with one line that covers all the steps
+  the test is still green. I do the same with :ref:`test_make_a_list_w_list_comprehensions`
+
+  .. code-block:: python
+
+    def test_make_a_list_w_list_comprehensions(self):
+        self.assertEqual(
+            src.list_comprehensions.for_loop(self.iterable),
+            [item for item in self.iterable]
+        )
+        self.assertEqual(
+            src.list_comprehensions.list_comprehension(self.iterable),
+            [item for item in self.iterable]
+        )
+
+  the terminal still shows green
+
+* I made 2 :ref:`functions<functions>` - one that uses a `for loop`_ and another that uses a `list comprehension`_ to do the same thing difference between
+
+  .. code-block:: python
+
+      a_list = []
+      for item in iterable:
+          a_list.append()
+
+  and
+
+  .. code-block:: python
+
+      [item for item in iterable]
+
+  the difference between them is that in the first case I have to
+
+  * make a :ref:`list<lists>`
+  * loop through the iterable_
+  * do the operation I want on the item of the iterable_
+
+  When I use `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I get the same result with one line that covers all those steps
+
+
 
 ----
 
@@ -378,7 +462,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 2, 4, 6, 8]
 
-  the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_ is missing the condition, I add it
+  the `list comprehension`_ is missing the condition, I add it
 
   .. code-block:: python
 
@@ -466,7 +550,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [1, 3, 5, 7, 9]
 
-I add the condition to the `list comprehension <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
+I add the condition to the `list comprehension`_
 
 .. code-block:: python
 
