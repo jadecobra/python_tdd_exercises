@@ -20,5 +20,5 @@ exceptions review
 * What causes NameError_?
 * What is the difference between :ref:`AttributeError` and NameError_?
 * What causes :ref:`TypeError`?
-* What data structure has IndexError_?
+* What data structure has :ref:`IndexError<test_index_error>`?
 * What data structure has :ref:`KeyError <test_key_error>`?

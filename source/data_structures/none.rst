@@ -1389,7 +1389,7 @@ refactor: make it better
         self.assertIsNotNone({'key': 'value'})
         self.assertNotIsInstance({}, dict)
 
-  dict_ is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal shows :ref:`AssertionError`
+  :ref:`dict<dictionaries>` is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 

@@ -1,4 +1,6 @@
 .. include:: ../../links.rst
+.. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _list: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
 
 #################################################################################
 lists
@@ -16,10 +18,10 @@ lists
 
 ----
 
-A `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is an :ref:`object<classes>` that can hold other objects_
+A list_ is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``
-* they can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
+* they can be made with the list_ constructor_
 * they can be changed by performing an operation, this means they are mutable
 
 *********************************************************************************
@@ -85,12 +87,12 @@ I change the expectation
 
   self.assertEqual(list(), [])
 
-the test passes. This is how to make an empty `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the test passes. This is how to make an empty list_
 
 refactor: make it better
 #################################################################################
 
-I add another assertion, this time with input in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
+I add another assertion, this time with input in the list_ constructor_
 
 .. code-block:: python
 
@@ -130,7 +132,7 @@ I change the expectation to match
 
   self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-the test passes. The tests show I can make a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_ and square brackets - ``[]``, which uses less characters than the constructor_
+the test passes. The tests show I can make a list_ with the list_ constructor_ and square brackets - ``[]``, which uses less characters than the constructor_
 
 ----
 
@@ -138,7 +140,7 @@ the test passes. The tests show I can make a `list <https://docs.python.org/3/li
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I can use the dir_ :ref:`function<functions>` to see at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I can use the dir_ :ref:`function<functions>` to see at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of list_
 
 red: make it fail
 #################################################################################
@@ -308,7 +310,7 @@ the terminal shows green, the append_ :ref:`method<functions>` returns :ref:`Non
 refactor: make it better
 #################################################################################
 
-I add another assertion to see what append_ did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I add another assertion to see what append_ did to the list_
 
 .. code-block:: python
 
@@ -391,7 +393,7 @@ the terminal shows green. The `clear <https://docs.python.org/3/tutorial/datastr
 red: make it fail
 #################################################################################
 
-We can guess what this :ref:`method<functions>` does to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I add an assertion to show it
+We can guess what this :ref:`method<functions>` does to the list_. I add an assertion to show it
 
 .. code-block:: python
 
@@ -464,7 +466,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 'n'] is not None
 
-the `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the `copy <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns a copy of the list_
 
 green: make it pass
 #################################################################################
@@ -482,7 +484,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 'n'] is not None : [0, 1, 2, 'n']
 
-the :ref:`method<functions>` returns a copy of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the assert_ :ref:`method<functions>`
+the :ref:`method<functions>` returns a copy of the list_. I change the assert_ :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -494,7 +496,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I add another assertion to see what happened to the original `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I add another assertion to see what happened to the original list_
 
 .. code-block:: python
 
@@ -602,7 +604,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* It looks like the count_ :ref:`method<functions>` returns the number of times an item appears, I change the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ then add another assert_ call to be sure
+* It looks like the count_ :ref:`method<functions>` returns the number of times an item appears, I change the list_ then add another assert_ call to be sure
 
   .. code-block:: python
 
@@ -625,7 +627,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion to see what happens when I try to count an item that is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add another assertion to see what happens when I try to count an item that is not in the list_
 
   .. code-block:: python
 
@@ -638,7 +640,7 @@ refactor: make it better
 
     AssertionError: 0 != 3
 
-  The count_ method returns ``0`` when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the value
+  The count_ method returns ``0`` when the item is not in the list_. I change the value
 
   .. code-block:: python
 
@@ -720,7 +722,7 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what changed in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add another assertion to see what changed in the list_
 
   .. code-block:: python
 
@@ -889,7 +891,7 @@ refactor: make it better
         with self.assertRaises(ValueError):
             a_list.index('not in list')
 
-  the test is green again. The index_ :ref:`method<functions>` raises ValueError_ when the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+  the test is green again. The index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_
 
 * I add a new assertion for the index_ :ref:`method<functions>`
 
@@ -977,7 +979,7 @@ refactor: make it better
 
     self.assertEqual(a_list.index('...last'), 3)
 
-  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ minus ``1``
+  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the the list_. Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
 
 * I rename the test
 
@@ -1045,7 +1047,7 @@ the test is green. The insert_ :ref:`method<functions>` returns :ref:`None`
 refactor: make it better
 #################################################################################
 
-* I add an assertion to find out what it did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add an assertion to find out what it did to the list_
 
   .. code-block:: python
 
@@ -1058,7 +1060,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [1, 0, 1, 2, 'n'] != [0, 1, 2, 'n']
 
-  I add the new value to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+  I add the new value to the list_
 
   .. code-block:: python
 
@@ -1160,7 +1162,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: 'n' is not None
 
-it looks like the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+it looks like the pop_ :ref:`method<functions>` returns the last item in the list_
 
 green: make it pass
 #################################################################################
@@ -1189,7 +1191,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assertion to see what the :ref:`method<functions>` did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add an assertion to see what the :ref:`method<functions>` did to the list_
 
   .. code-block:: python
 
@@ -1230,7 +1232,7 @@ refactor: make it better
     self.assertEqual(a_list, [0, 1, 2])
     self.assertEqual(a_list.pop(), 2)
 
-  the test passes. The `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` removes and returns the last item in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_.
+  the test passes. The pop_ :ref:`method<functions>` removes and returns the last item in the list_.
 
 * I rename the test
 
@@ -1242,7 +1244,7 @@ refactor: make it better
         self.assertEqual(a_list, [0, 1, 2])
         self.assertEqual(a_list.pop(), 2)
 
-* I remove `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ from the TODO list
+* I remove pop_ from the TODO list
 
   .. code-block:: python
 
@@ -1287,7 +1289,7 @@ the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`Non
 refactor: make it better
 #################################################################################
 
-* I add an assertion to see what remove_ did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add an assertion to see what remove_ did to the list_
 
   .. code-block:: python
 
@@ -1300,7 +1302,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
-  the :ref:`method<functions>` removes the item given from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the expectation
+  the :ref:`method<functions>` removes the item given from the list_. I change the expectation
 
   .. code-block:: python
 
@@ -1308,7 +1310,7 @@ refactor: make it better
 
   the test passes
 
-* I change the values in ``a_list`` to see what would happen if an item shows up more than once in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I change the values in ``a_list`` to see what would happen if an item shows up more than once in the list_
 
   .. code-block:: python
 
@@ -1323,7 +1325,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [1, 0, 2, 0, 'n'] != [1, 2, 'n']
 
-  the :ref:`method<functions>` removes the first instance of the given item from the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the values to match
+  the :ref:`method<functions>` removes the first instance of the given item from the list_. I change the values to match
 
   .. code-block:: python
 
@@ -1331,7 +1333,7 @@ refactor: make it better
 
   the test passes
 
-* I want to know what happens if the item is not in the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I want to know what happens if the item is not in the list_
 
   .. code-block:: python
 
@@ -1357,7 +1359,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_remove_first_instance_of_item_in_a_list(self):
+    def test_remove_first_instance_of_item_from_a_list(self):
         a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
@@ -1389,7 +1391,7 @@ I add the next test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.reverse())
 
-the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what it did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what it did to the list_
 
 .. code-block:: python
 
@@ -1402,7 +1404,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
 
-the :ref:`method<functions>` reverses the order of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+the :ref:`method<functions>` reverses the order of the list_
 
 green: make it pass
 #################################################################################
@@ -1486,7 +1488,7 @@ refactor: make it better
         self.assertIsNone(a_list.sort())
 
 
-  the terminal still shows green. sort_ returns :ref:`None` when called. I add another assertion to see what it did to the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_?
+  the terminal still shows green. sort_ returns :ref:`None` when called. I add another assertion to see what it did to the list_?
 
   .. code-block:: python
 
@@ -1499,7 +1501,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-  the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is still the same. I change the expectation
+  the list_ is still the same. I change the expectation
 
   .. code-block:: python
 
@@ -1517,7 +1519,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
-  the sort_ :ref:`method<functions>` arranges the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ in ascending order by default. I change the values to match
+  the sort_ :ref:`method<functions>` arranges the list_ in ascending order by default. I change the values to match
 
   .. code-block:: python
 
@@ -1545,7 +1547,7 @@ refactor: make it better
 test_get_items_from_a_list
 *********************************************************************************
 
-I can provide the index of an item I want to see in square brackets(``[]``) to a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I can provide the index of an item I want to see in square brackets(``[]``) to a list_
 
 red: make it fail
 #################################################################################
@@ -1580,7 +1582,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I can also use negative numbers. The last item has an index of ``-1`` and the first item has an index of negative the length of the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I can also use negative numbers. The last item has an index of ``-1`` and the first item has an index of negative the length of the list_
 
   .. code-block:: python
 
@@ -1751,7 +1753,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
 
-I can use the index of an item to change its value in a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+I can use the index of an item to change its value in a list_
 
 green: make it pass
 #################################################################################
@@ -1790,7 +1792,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['a', 'b'] != []
 
-viewing parts of a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is like indexing, it takes two values in square brackets ``[]``, seperated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
+viewing parts of a list_ is like indexing, it takes two values in square brackets ``[]``, seperated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
 
 green: make it pass
 #################################################################################
@@ -1886,7 +1888,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_in_a_list` and :ref:`test_index_returns_position_of_item_in_a_list`, there is another Exception_ that is important to know, the IndexError_ is raised when I try to get an item from a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ but use a number that is NOT in the range of indexes for it
+ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_position_of_item_in_a_list`, there is another Exception_ that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a list_ but use a number that is NOT in the range of indexes for it
 
 red: make it fail
 #################################################################################
@@ -1899,7 +1901,7 @@ I add a failing test to show this
       a_list = ['a', 'b', 'c', 'd']
       a_list[4]
 
-the terminal shows IndexError_
+the terminal shows :ref:`IndexError<test_index_error>`
 
 .. code-block:: python
 
@@ -1908,7 +1910,7 @@ the terminal shows IndexError_
 green: make it pass
 #################################################################################
 
-* I add IndexError_ to the list of Exceptions_ encountered
+* I add :ref:`IndexError<test_index_error>` to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -1933,7 +1935,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I add another assertion to test indexing with a negative number that is outside the range of numbers that can be used to index the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_
+* I add another assertion to test indexing with a negative number that is outside the range of numbers that can be used to index the list_
 
   .. code-block:: python
 
@@ -1941,7 +1943,7 @@ refactor: make it better
         a_list[4]
     a_list[-5]
 
-  the terminal shows IndexError_
+  the terminal shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
 
@@ -1958,7 +1960,7 @@ refactor: make it better
 
   the test passes
 
-* IndexError_ is also raised with the `pop <https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists>`_ :ref:`method<functions>` when the the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ is empty
+* :ref:`IndexError<test_index_error>` is also raised with the pop_ :ref:`method<functions>` when the the list_ is empty
 
   .. code-block:: python
 
@@ -1966,7 +1968,7 @@ refactor: make it better
         a_list[-5]
     [].pop()
 
-  the terminal shows IndexError_
+  the terminal shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
 
@@ -1992,7 +1994,7 @@ review
 I ran tests for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 
 * they are represented with ``[]``
-* they can be made with the `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_ constructor_
+* they can be made with the list_ constructor_
 * they can hold any :ref:`object<classes>`
 * they can be changed by performing an operation, this means they are mutable
 

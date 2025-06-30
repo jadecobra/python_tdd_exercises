@@ -1,4 +1,6 @@
 .. include:: ../links.rst
+.. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
+.. _dictionary: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 
 #################################################################################
 dictionaries
@@ -10,7 +12,7 @@ dictionaries
 
 ----
 
-A `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ also known as a Mapping contains key-value pairs, the values can be any Python :ref:`object<classes>` but not the keys. I think this is the most important data structure to know as it can hold all the other data structures. In your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python
+A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python :ref:`object<classes>` but not the keys. I think this is the most important data structure to know as it can hold all the other data structures. In your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python
 
 *********************************************************************************
 requirements
@@ -72,7 +74,7 @@ I copy the value from the terminal and paste it to replace :ref:`None`
 
   self.assertEqual(dict(), {})
 
-this is how to make an empty dictionary. I can make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the dict_ constructor_ or curly braces(``{}``)
+this is how to make an empty dictionary. I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``)
 
 refactor: make it better
 #################################################################################
@@ -141,7 +143,7 @@ test_make_a_dictionary_w_none_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test where I use :ref:`None` as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+I add a test where I use :ref:`None` as a key in a dictionary_
 
 .. code-block:: python
 
@@ -163,7 +165,7 @@ I change ``'bap'`` to ``'boom'``
 
   self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-the test passes. I can use :ref:`None` as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+the test passes. I can use :ref:`None` as a key in a dictionary_
 
 ----
 
@@ -174,7 +176,7 @@ test_make_a_dictionary_w_a_boolean_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test where I use a boolean_ as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+I add a test where I use a boolean_ as a key in a dictionary_
 
 .. code-block:: python
 
@@ -265,7 +267,7 @@ I change ``'bap'`` to ``'boom'``
 
   self.assertEqual({0: 'boom'}, {0: 'boom'})
 
-the test passes. I can use an integer_ as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+the test passes. I can use an integer_ as a key in a dictionary_
 
 refactor: make it better
 #################################################################################
@@ -295,7 +297,7 @@ I add the new key-value pair to the expectation
       {0: 'boom', 0.1: 'bap'}
   )
 
-the test passes. I can use integers_ and floats_ as keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+the test passes. I can use integers_ and floats_ as keys in a dictionary_
 
 ----
 
@@ -337,7 +339,7 @@ I change ``'bap'`` to ``'boom'``
       {(0, 1): 'boom'}
   )
 
-the test passes. I can use a tuple_ as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+the test passes. I can use a tuple_ as a key in a dictionary_
 
 ----
 
@@ -366,12 +368,12 @@ the terminal shows :ref:`TypeError`
 
   TypeError: unhashable type: 'list'
 
-only hashable_ objects_ can be used as keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+only hashable_ objects_ can be used as keys in a dictionary_
 
 green: make it pass
 #################################################################################
 
-I remove the things around the new `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ then change the key for fun
+I remove the things around the new dictionary_ then change the key for fun
 
 .. code-block:: python
 
@@ -386,7 +388,7 @@ I add assertRaises_
       with self.assertRaises(TypeError):
           {[3, 2, 1]: 'BOOM!'}
 
-the test passes. I cannot make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as a key
+the test passes. I cannot make a dictionary_ with a :ref:`list <lists>` as a key
 
 ----
 
@@ -424,7 +426,7 @@ I add assertRaises_
       with self.assertRaises(TypeError):
           {{3, 2, 1}: 'BOOM!'}
 
-the test is green again. I cannot use a set_ as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+the test is green again. I cannot use a set_ as a key in a dictionary_
 
 ----
 
@@ -464,7 +466,7 @@ I add assertRaises_
       with self.assertRaises(TypeError):
           {a_dictionary: 'BOOM!'}
 
-the test passes. I cannot use a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_, set_ or :ref:`list <lists>` as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ they are not hashable_
+the test passes. I cannot use a dictionary_, set_ or :ref:`list <lists>` as a key in a dictionary_ they are not hashable_
 
 ----
 
@@ -1379,7 +1381,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: pop expected at least 1 argument, got 0
 
-this `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` is different from the one in :ref:`lists`
+this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
 green: make it pass
 #################################################################################
@@ -1427,7 +1429,7 @@ green: make it pass
     with self.assertRaises(KeyError):
         a_dictionary.pop('not in dictionary')
 
-  the test passes, calling the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` with a key that is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ raises a :ref:`KeyError <test_key_error>`
+  the test passes, calling the pop_ :ref:`method<functions>` with a key that is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ raises a :ref:`KeyError <test_key_error>`
 
 refactor: make it better
 #################################################################################
@@ -1442,13 +1444,13 @@ refactor: make it better
     with self.assertRaises(KeyError):
         a_dictionary.pop('not in dictionary')
 
-    the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 'value' is not None
 
-  the `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` returns the value of the given key from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I add the expectation
+  the pop_ :ref:`method<functions>` returns the value of the given key from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I add the expectation
 
   .. code-block:: python
 
@@ -1481,7 +1483,7 @@ refactor: make it better
 
     AssertionError: {} != {'key': 'value'}
 
-  `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ :ref:`method<functions>` removes the key-value pair and returns the value of the given key from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to match
+  pop_ :ref:`method<functions>` removes the key-value pair and returns the value of the given key from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I change the expectation to match
 
   .. code-block:: python
 
@@ -1501,9 +1503,7 @@ refactor: make it better
         with self.assertRaises(KeyError):
             a_dictionary.pop('not in dictionary')
 
-  the test is still passings
-
-* I remove `pop <https://docs.python.org/3/library/stdtypes.html#dict.pop>`_ from the TODO list
+* I remove pop_ from the TODO list
 
   .. code-block:: python
 

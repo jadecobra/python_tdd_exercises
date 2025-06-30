@@ -331,7 +331,7 @@ red: make it fail
         a_list = [1, 2, 3, 'n']
         a_list[4]
 
-  the terminal shows IndexError_
+  the terminal shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
 
@@ -393,7 +393,7 @@ green: make it pass
             a_list[4]
         a_list[-5]
 
-  the terminal shows IndexError_
+  the terminal shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
 
@@ -647,7 +647,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal still shows a passing test, even though Exception_ is not IndexError_, it looks like the assertRaises_ exits after the first line that causes IndexError_. When I move the `raise statement`_ above it
+  the terminal still shows a passing test, even though Exception_ is not :ref:`IndexError<test_index_error>`, it looks like the assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>`. When I move the `raise statement`_ above it
 
   .. code-block:: python
 
@@ -664,7 +664,7 @@ refactor: make it better
 
     Exception
 
-  because it is not IndexError_
+  because it is not :ref:`IndexError<test_index_error>`
 
 * as a rule of thumb I write one line of code for one :ref:`how to test that an Exception is raised` to know which line caused which error
 
@@ -690,7 +690,7 @@ I have a way to catch Exceptions_ in tests and ran into the following
 * NameError_
 * :ref:`AttributeError`
 * :ref:`TypeError`
-* IndexError_
+* :ref:`IndexError<test_index_error>`
 * :ref:`KeyError <test_key_error>`
 * ZeroDivisionError_
 
