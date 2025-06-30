@@ -2197,12 +2197,12 @@ refactor: make it better
 test_key_error
 *********************************************************************************
 
-https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError
+The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important Exception_ to know when working with a dictionary_
 
 red: make it fail
 #################################################################################
 
-I add a test
+I add a test for getting the value of a key that is in a dictionary_
 
 .. code-block:: python
 
@@ -2240,7 +2240,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(a_dictionary['key'], 'value')
-    self.assertEqual(a_dictionary['key_not_in_dictionary'], 'value')
+    self.assertEqual(a_dictionary['not_in_dictionary'])
 
   the terminal shows :ref:`KeyError<test_key_error>`
 
@@ -2255,16 +2255,62 @@ refactor: make it better
     self.assertEqual(a_dictionary['key'], 'value')
 
     with self.assertRaises(KeyError):
-        a_dictionary['key_not_in_dictionary']
+        a_dictionary['not_in_dictionary']
 
   the test passes
 
-* I know from :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary` that I get :ref:`KeyError<test_key_error>`  when I call the :ref:`method<functions>` on an empty dictionary_
+* I add an assertion to show that I can use the get_ :ref:`method<functions>` if I do not want to get :ref:`KeyError<test_key_error>` with a key that is not in a dictionary_
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary['key'], 'value')
+    self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'value')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'default' != 'value'
+
+  I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
+
+  the test passes
+
+* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` with a key that was not in the dictionary_, I add an assertion for it
+
+  .. code-block:: python
+
+    with self.assertRaises(KeyError):
+        a_dictionary['not_in_dictionary']
+    a_dictionary.pop('not_in_dictionary')
+
+  the terminal shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: 'not_in_dictionary'
+
+  I add assertRaises_
+
+  .. code-block:: python
+
+    with self.assertRaises(KeyError):
+        a_dictionary['not_in_dictionary']
+    with self.assertRaises(KeyError):
+        a_dictionary.pop('not_in_dictionary')
+
+  the test passes
+
+* The popitem_ :ref:`method<functions>` also raises :ref:`KeyError<test_key_error>` when called on an empty dictionary_
 
   .. code-block::
 
     with self.assertRaises(KeyError):
-        a_dictionary['key_not_in_dictionary']
+        a_dictionary.pop('not_in_dictionary')
     {}.popitem()
 
   the terminal shows :ref:`KeyError<test_key_error>`
@@ -2278,62 +2324,9 @@ refactor: make it better
   .. code-block:: python
 
     with self.assertRaises(KeyError):
-        a_dictionary['key_not_in_dictionary']
+        a_dictionary.pop('not_in_dictionary')
     with self.assertRaises(KeyError):
         {}.popitem()
-
-* I also get :ref:`KeyError<test_key_error>` when I call :ref:`pop <test_pop_removes_given_key_from_a_dictionary>` with a key that is not in the dictionary_
-
-  .. code-block:: python
-
-    with self.assertRaises(KeyError):
-        {}.popitem()
-    a_dictionary.pop('key_not_in_dictionary')
-
-  the terminal shows :ref:`KeyError<test_key_error>`
-
-  .. code-blocK:: python
-
-    KeyError: 'key_not_in_dictionary'
-
-  I add assertRaises_
-
-  .. code-block:: python
-
-    with self.assertRaises(KeyError):
-        {}.popitem()
-    with self.assertRaises(KeyError):
-        a_dictionary.pop('key_not_in_dictionary')
-
-* I can use the get_ :ref:`method<functions>` to avoid the :ref:`KeyError<test_key_error>` when the key is not in a dictionary_
-
-  .. code-block:: python
-
-    with self.assertRaises(KeyError):
-        a_dictionary.pop('key_not_in_dictionary')
-
-
-    self.assertEqual(
-        a_dictionary.get('key_not_in_dictionary'),
-        'value'
-    )
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: None != 'value'
-
-  I remove the expected value and change assertEqual_ to assertIsNone_
-
-  .. code-block:: python
-
-    with self.assertRaises(KeyError):
-        a_dictionary.pop('key_not_in_dictionary')
-
-    self.assertIsNone(a_dictionary.get('key_not_in_dictionary'))
-
-  the test is green again
 
 ----
 
