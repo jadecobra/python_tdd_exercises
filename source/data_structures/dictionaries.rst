@@ -811,28 +811,41 @@ the terminal shows :ref:`TypeError`
 
   TypeError: 'int' object is not iterable
 
-I change the value passed in to a tuple_
+I change the value passed to a tuple_
 
 .. code-block:: python
 
-  self.assertIsNone(a_dictionary.fromkeys((0, 1, 2, 3)))
+  self.assertIsNone(a_dictionary.fromkeys((0, 1)))
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {0: None, 1: None, 2: None, 3: None} is not None
+  AssertionError: {0: None, 1: None} is not None
 
-the `fromkeys <https://docs.python.org/3/library/stdtypes.html#dict.fromkeys>` :ref:`method<functions>` returns a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ that uses the iterable_ given as keys with default values of :ref:`None`. I change the assertion then add the expected values
+the fromkeys_ :ref:`method<functions>` returns a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ that uses the values in the iterable_ as keys with default values of :ref:`None`. I add the expected values
 
 .. code-block:: python
 
-  def test_fromkeys(self):
-      a_dictionary = {'key': 'value'}
-      self.assertEqual(
-          a_dictionary.fromkeys((0, 1, 2, 3)),
-          {0: None, 1: None, 2: None, 3: None}
-      )
+  self.assertIsNone(
+      a_dictionary.fromkeys((0, 1)),
+      {0: None, 1: None}
+  )
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
+
+I change the assertion
+
+.. code-block:: python
+
+  self.assertEqual(
+      a_dictionary.fromkeys((0, 1)),
+      {0: None, 1: None}
+  )
 
 the test passes
 
@@ -857,33 +870,61 @@ refactor: make it better
 
   the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ did not change
 
-* I remove it and the assertion
+* I remove the assertion then change the call to use the dict_ :ref:`class<classes>`
+
+  .. code-block:: python
+
+    def test_fromkeys(self):
+        a_dictionary = {'key': 'value'}
+        self.assertEqual(
+            dict.fromkeys((0, 1)),
+            {0: None, 1: None}
+        )
+
+  the test is still green. I remove ``a_dictionary`` since it is not used
 
   .. code-block:: python
 
     def test_fromkeys(self):
         self.assertEqual(
-            a_dictionary.fromkeys((0, 1, 2, 3)),
-            {0: None, 1: None, 2: None, 3: None}
+            dict.fromkeys((0, 1)),
+            {0: None, 1: None}
         )
 
-  the terminal shows NameError_
+* the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ the fromkeys_ :ref:`method<functions>` returns has :ref:`None` as a default value, I write it explicitly in the test
 
   .. code-block:: python
 
-    NameError: name 'a_dictionary' is not defined
+    self.assertEqual(
+        dict.fromkeys((0, 1), None),
+        {0: None, 1: None}
+    )
 
-  I change the call to use the `dict <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ constructor_
+  the terminal still shows green. I change it to see if I get a failure
 
   .. code-block:: python
 
-    def test_fromkeys(self):
-        self.assertEqual(
-            dict.fromkeys((0, 1, 2, 3)),
-            {0: None, 1: None, 2: None, 3: None}
-        )
+    self.assertEqual(
+        dict.fromkeys((0, 1), 'default'),
+        {0: None, 1: None}
+    )
 
-  the test passes
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {0: 'default', 1: 'default'} != {0: None, 1: None}
+
+  I change the values to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        dict.fromkeys((0, 1), 'default'),
+        {0: 'default', 1: 'default'}
+    )
+
+  the test is green again
 
 * I rename the test
 
@@ -891,11 +932,9 @@ refactor: make it better
 
     def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
         self.assertEqual(
-            dict.fromkeys((0, 1, 2, 3)),
-            {0: None, 1: None, 2: None, 3: None}
+            dict.fromkeys((0, 1), 'default'),
+            {0: 'default', 1: 'default'}
         )
-
-  still green
 
 * I remove fromkeys_ from the TODO list
 
