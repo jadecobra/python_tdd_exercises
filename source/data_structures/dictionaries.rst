@@ -1903,18 +1903,20 @@ red: make it fail
 
   .. code-block:: python
 
+    def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
+        ...
+
     def test_update(self):
         a_dictionary = {'key': 'value'}
         self.assertIsNone(a_dictionary.update())
 
   the test is green. The update_ :ref:`method<functions>` returns :ref:`None`
 
-* I add an assertion to see what it does to the dictionary_
+* I add an assertion to see what it did to the dictionary_
 
   .. code-block:: python
 
-        self.assertIsNone(a_dictionary.update())
-
+    self.assertIsNone(a_dictionary.update())
     self.assertEqual(a_dictionary, {})
 
   the terminal shows :ref:`AssertionError`
@@ -1923,7 +1925,7 @@ red: make it fail
 
     AssertionError: {'key': 'value'} != {}
 
-  the dictionary_ stayed the same, the test has to get better
+  the dictionary_ stayed the same
 
 green: make it pass
 #################################################################################
@@ -1938,6 +1940,90 @@ the test passes
 
 refactor: make it better
 #################################################################################
+
+* I add a value to the call to see what would happen
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.update(0))
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'int' object is not iterable
+
+  I change the value to a tuple_
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.update((0, 1)))
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: cannot convert dictionary update sequence element #0 to a sequence
+
+  I had this same error message in :ref:`test_make_a_dictionary`. I try a keyword argument
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.update(new_key='new value'))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value', 'new_key': 'new value'} != {'key': 'value'}
+
+  I add the new key-value pair to the assertion
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary,
+        {
+            'key': 'value',
+            'new_key': 'new value'
+        }
+    )
+
+  the test passes
+
+* I add an assertion to see what would happen if I give a key that is already in the dictionary_
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.update(new_key='new value'))
+    self.assertIsNone(a_dictionary.update(key='updated value'))
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'updated value', 'new_key': 'new value'} != {'key': 'value', 'new_key': 'new value'}
+
+  I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary,
+        {
+            'key': 'updated value',
+            'new_key': 'new value'
+        }
+    )
+
+  the test passes
+
+* since the update_ :ref:`method<functions>` takes keyword arguments it means I should be able to give it a dictionary_ as input. I add another assertion
+
+  .. code-block:: python
+
+
+
 
 * I check the Python documentation for the update_ :ref:`method<functions>` and see that it takes a dictionary_ as input. I add one to the call
 
