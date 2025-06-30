@@ -152,9 +152,7 @@ test_truth_table
 test_lists
 *********************************************************************************
 
-#. :ref:`test_make_a_list_w_list_constructor`
-#. :ref:`test_make_a_list_w_square_brackets`
-#. :ref:`test_make_a_list_from_an_iterable`
+#. :ref:`test_make_a_list`
 #. :ref:`test_attributes_and_methods_of_lists`
 #. :ref:`test_append_adds_to_a_list`
 #. :ref:`test_clear_empties_a_list`
@@ -168,7 +166,7 @@ test_lists
 #. :ref:`test_reverse_a_list`
 #. :ref:`test_sort_a_list`
 #. :ref:`test_get_items_from_a_list`
-#. :ref:`test_view_parts_of_a_list`
+#. :ref:`test_view_parts_of_a_list_aka_slicing`
 #. :ref:`test_index_error`
 
 *********************************************************************************
