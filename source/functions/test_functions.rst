@@ -658,7 +658,7 @@ refactor: make it better
   the test passes. Keyword Arguments allow the input to be passed in any order
 
 
-
+# ADD examples with dictionary as input
 
 ----
 
@@ -785,6 +785,8 @@ test_functions_w_unknown_keyword_arguments
     )
 
   the test passes
+
+# ADD examples with dictionary as input
 
 ----
 
