@@ -234,7 +234,7 @@ the test passes. I can use a boolean_ as a key in a `dictionary <https://docs.py
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_numbers_as_keys
+test_make_a_dictionary_w_a_number_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -247,49 +247,53 @@ I add a failing test
   def test_make_a_dictionary_w_a_boolean_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_numbers_as_keys(self):
-      self.assertEqual({0: 'boom'}, {'zero': 'boom'})
+  def test_make_a_dictionary_w_a_number_as_a_key(self):
+      self.assertEqual({0: 'boom'}, {0: 'bap'})
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {0: 'boom'} != {'zero': 'boom'}
+  AssertionError: {0: 'boom'} != {0: 'bap'}
 
 green: make it pass
 #################################################################################
 
-I change the key in the exception
-
-.. code-block:: python
-
-  def test_make_a_dictionary_w_numbers_as_keys(self):
-      self.assertEqual({0: 'boom'}, {0: 'boom'})
-
-
-the test passes. I can use integers_ keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
-
-refactor: make it better
-#################################################################################
-
-I add an assertion for floats_
+I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
 
   self.assertEqual({0: 'boom'}, {0: 'boom'})
-  self.assertEqual({0.1: 'bap'}, {'0.1': 'bap'})
+
+the test passes. I can use an integer_ as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
+
+refactor: make it better
+#################################################################################
+
+I add a float_ as a key
+
+.. code-block:: python
+
+  def test_make_a_dictionary_w_a_number_as_a_key(self):
+      self.assertEqual(
+          {0: 'boom', 0.1: 'bap'},
+          {0: 'boom'}
+      )
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {0.1: 'bap'} != {'0.1': 'bap'}
+  AssertionError: {0: 'boom', 0.1: 'bap'} != {0: 'boom'}
 
-I make the keys match
+I add the new key-value pair to the expectation
 
 .. code-block:: python
 
-  self.assertEqual({0.1: 'bap'}, {0.1: 'bap'})
+  self.assertEqual(
+      {0: 'boom', 0.1: 'bap'},
+      {0: 'boom', 0.1: 'bap'}
+  )
 
 the test passes. I can use integers_ and floats_ as keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
