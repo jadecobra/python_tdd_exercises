@@ -16,7 +16,7 @@ Here are the tests and solutions in the book
   AttributeError<code/code_attribute_error>
   booleans<code/code_booleans>
   classes<code/code_classes>
-  dictionaries<code/code_dict_comprehensions>
+  dict comprehensions<code/code_dict_comprehensions>
   dictionaries<code/code_dictionaries>
   how to test/handle exceptions<code/code_exception_handling>
   functions<code/code_functions>

@@ -4,11 +4,14 @@
     "cSpell.words": [
         "_bash",
         "bloggs",
+        "fromkeys",
         "HOWTOs",
         "Itegboje",
+        "popitem",
         "pycache",
         "pytest",
         "randint",
+        "setdefault",
         "timedelta"
     ],
     "makefile.configureOnOpen": false,
