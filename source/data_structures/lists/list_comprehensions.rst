@@ -394,17 +394,15 @@ refactor: make it better
   * loop through the iterable_
   * do the operation I want on the item of the iterable_
 
-  When I use `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I get the same result with one line that covers all those steps
-
-
+  When I use `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I get the same result with one line that covers all those steps, but so far none of this is better than using the :ref:`list<lists>` constructor_
 
 ----
 
 ****************************************************************************************
-test_list_comprehensions_w_conditions_i
+test_list_comprehensions_w_conditions
 ****************************************************************************************
 
-There is more I can do with `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I can add conditions when I perform an operation
+What if I had to build a list from an iterable but based on a condition? This is where a `for loop`_ or a `list comprehension`_ works better
 
 red: make it fail
 #################################################################################
@@ -413,75 +411,63 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_list_comprehensions_w_conditions_i(self):
-      iterable = range(10)
-
+  def test_list_comprehensions_w_conditions(self):
       even_numbers = []
-      for item in iterable:
+      for item in self.iterable:
           if item % 2 == 0:
               even_numbers.append(item)
 
-      self.assertEqual(even_numbers, [])
+      self.assertEqual(even_numbers, list(self.iterable))
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 2, 4, 6, 8] != []
+  AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[2375 chars] 990] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[4800 chars] 991]
+  AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[680 chars] 312] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[1410 chars] 313]
+  AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[137 chars], 94] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[320 chars], 94]
+  AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[670 chars] 308] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[1390 chars] 309]
 
 * ``if item % 2 == 0:`` checks if the item in ``iterable`` leaves a remainder of ``0`` when divided by ``2``
-* ``%`` is the modulo_ operator, it divides the number on the left by the number on the right and returns a remainder
+* ``%`` is the modulo_ operator, it divides the number on the left by the number on the right and returns a remainder, it is covered more in :ref:`test_modulo_operator`
 
 green: make it pass
 #################################################################################
 
-I copy the values from the terminal and paste in the test
+I change the expectation to use a `list comprehension`_
 
 .. code-block:: python
 
-  self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
+  self.assertEqual(
+      even_numbers,
+      [item for item in self.iterable]
+  )
+
+the terminal still shows :ref:`AssertionError`, I add the condition
+
+.. code-block:: python
+
+  self.assertEqual(
+      even_numbers,
+      [item for item in self.iterable if item % 2 == 0]
+  )
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* I add another assert_ statement
-
-  .. code-block:: python
-
-    self.assertEqual(even_numbers, [0, 2, 4, 6, 8])
-    self.assertEqual(
-        [item for item in iterable],
-        even_numbers
-    )
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 2, 4, 6, 8]
-
-  the `list comprehension`_ is missing the condition, I add it
+* I add another assertion for practice
 
   .. code-block:: python
 
     self.assertEqual(
-        [item for item in iterable if item % 2 == 0],
-        even_numbers
-    )
-
-  the test passes, I add another assert_ statement
-
-  .. code-block:: python
-
-    self.assertEqual(
-        [item for item in iterable if item % 2 == 0],
-        even_numbers
+        even_numbers,
+        [item for item in self.iterable if item % 2 == 0]
     )
     self.assertEqual(
-        src.list_comprehensions.get_even_numbers(iterable),
-        even_numbers
+        src.list_comprehensions.get_even_numbers(self.iterable),
+        [item for item in self.iterable if item % 2 == 0]
     )
 
   the terminal shows :ref:`AttributeError`
@@ -495,168 +481,293 @@ refactor: make it better
   .. code-block:: python
 
     def list_comprehension(iterable):
-        return [item for item in iterable]
+        ...
+
 
     def get_even_numbers(iterable):
         return [item for item in iterable if item % 2 == 0]
 
   the test passes
 
-----
+* I wrote the same condition in the test 3 times. I add a :ref:`function<functions>` for it
 
-****************************************************************************************
-test_list_comprehensions_w_conditions_ii
-****************************************************************************************
+  .. code-block:: python
 
-I add another test
-
-.. code-block:: python
-
-  def test_list_comprehensions_w_conditions_ii(self):
-      iterable = range(10)
-
-      odd_numbers = []
-      for item in iterable:
-          if item % 2 != 0:
-              odd_numbers.append(item)
-
-      self.assertEqual(odd_numbers, [])
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: Lists differ: [1, 3, 5, 7, 9] != []
-
-I change the expectation to match
-
-.. code-block:: python
-
-  self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
-
-the test passes. I add another assert_ statement
-
-.. code-block:: python
-
-  self.assertEqual(odd_numbers, [1, 3, 5, 7, 9])
-  self.assertEqual(
-      [item for item in iterable],
-      odd_numbers
-  )
-
-the terminal shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [1, 3, 5, 7, 9]
-
-I add the condition to the `list comprehension`_
-
-.. code-block:: python
-
-  self.assertEqual(
-      [item for item in iterable if item % 2 != 0],
-      odd_numbers
-  )
-
-the test passes and I add another assert_ statement
-
-.. code-block:: python
-
-  self.assertEqual(
-      [item for item in iterable if item % 2 != 0],
-      odd_numbers
-  )
-  self.assertEqual(
-      src.list_comprehensions.get_odd_numbers(iterable),
-      odd_numbers
-  )
-
-the terminal shows :ref:`AttributeError`
-
-.. code-block:: python
-  :force:
-
-  AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
-
-I add the :ref:`function<functions>`
-
-.. code-block:: python
-
-  def get_even_numbers(iterable):
-      return [item for item in iterable if item % 2 == 0]
+    import unittest
 
 
-  def get_odd_numbers(iterable):
-      return [item for item in iterable if item % 2 != 0]
+    def condition(number):
+        return number % 2 == 0
 
-----
+  I change the condition in the test
 
-I used the same iterable_ for every test, I can remove the repetition by using the setUp_ :ref:`method<functions>`
+  .. code-block:: python
 
-.. code-block:: python
-
-  class TestListComprehensions(unittest.TestCase):
-
-      def setUp(self):
-          self.iterable = range(10)
-
-then change all the references to the variable
-
-.. code-block:: python
-
-    def test_make_a_list_w_a_for_loop(self):
-        a_list = []
-        for item in self.iterable:
-            a_list.append(item)
-
-        self.assertEqual(a_list, list(self.iterable))
-        self.assertEqual(
-            src.list_comprehensions.for_loop(self.iterable),
-            a_list
-        )
-
-    def test_make_a_list_w_list_comprehensions(self):
-        self.assertEqual(
-            src.list_comprehensions.for_loop(self.iterable),
-            [item for item in self.iterable]
-        )
-        self.assertEqual(
-            src.list_comprehensions.list_comprehension(self.iterable),
-            src.list_comprehensions.for_loop(self.iterable)
-        )
-
-    def test_list_comprehensions_w_conditions_i(self):
+    def test_list_comprehensions_w_conditions(self):
         even_numbers = []
         for item in self.iterable:
-            if item % 2 == 0:
+            # if item % 2 == 0:
+            if condition(item):
                 even_numbers.append(item)
 
-        self.assertEqual(
-            [item for item in self.iterable if item % 2 == 0],
-            even_numbers
-        )
-        self.assertEqual(
-            src.list_comprehensions.get_even_numbers(self.iterable),
-            even_numbers
-        )
+  the terminal still shows green. I remove the commented line and do the same thing in the first assertion
 
-    def test_list_comprehensions_w_conditions_ii(self):
-        odd_numbers = []
+  .. code-block:: python
+
+    self.assertEqual(
+        even_numbers,
+        # [item for item in self.iterable if item % 2 == 0]
+        [item for item in self.iterable if condition(item)]
+    )
+
+  still green. I do it again with the next one
+
+  .. code-block:: python
+
+    self.assertEqual(
+        even_numbers,
+        [item for item in self.iterable if condition(item)]
+    )
+    self.assertEqual(
+        src.list_comprehensions.get_even_numbers(self.iterable),
+        # [item for item in self.iterable if item % 2 == 0]
+        [item for item in self.iterable if condition(item)]
+    )
+
+  the terminal still shows green
+
+* I add a new empty list
+
+  .. code-block:: python
+
+    even_numbers = []
+    odd_numbers = []
+
+  then add an else_ clause in the `for loop`_
+
+  .. code-block:: python
+
+    for item in self.iterable:
+        if condition(item):
+            even_numbers.append(item)
+        else:
+            odd_numbers.append(item)
+
+  I add an assertion
+
+  .. code-block:: python
+
+    self.assertEqual(
+        src.list_comprehensions.get_even_numbers(self.iterable),
+        [item for item in self.iterable if condition(item)]
+    )
+    self.assertEqual(
+        odd_numbers,
+        [item for item in self.iterable]
+    )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23[333 chars] 173] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[713 chars] 173]
+    AssertionError: Lists differ: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23[1723 chars] 729] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[3493 chars] 729]
+    AssertionError: Lists differ: [1, 3] != [0, 1, 2, 3, 4]
+    AssertionError: Lists differ: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23[1958 chars] 823] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[3963 chars] 823]
+
+  I add the condition to the assertion
+
+  .. code-block:: python
+
+    self.assertEqual(
+        odd_numbers,
+        [item for item in self.iterable if not condition(item)]
+    )
+
+  the test passes. I add another assertion
+
+  .. code-block:: python
+
+    self.assertEqual(
+        odd_numbers,
+        [item for item in self.iterable if not condition(item)]
+    )
+    self.assertEqual(
+        src.list_comprehensions.get_odd_numbers(self.iterable),
+        [item for item in self.iterable if not condition(item)]
+    )
+
+  the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+    :force:
+
+    AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
+
+  I add the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def get_even_numbers(iterable):
+        ...
+
+
+    def get_odd_numbers(iterable):
+        return [item for item in iterable if item % 2 != 0]
+
+  the test passes
+
+* ``condition`` is not a descriptive name in this case, I am only using it to show that you can use any condition you want with the `list comprehension`_. I can add a function for the conditions in ``list_comprehensions.py`` and use a descriptive name
+
+  .. code-block:: python
+
+    def list_comprehension(iterable):
+        ...
+
+
+    def is_even(number):
+        return number % 2 == 0
+
+  then reference it in ``get_even_numbers``
+
+  .. code-block:: python
+
+    def is_even(number):
+        ...
+
+
+    def get_even_numbers(iterable):
+        return [item for item in iterable if is_even(item)]
+        return [item for item in iterable if item % 2 == 0]
+
+  the test is still passing. I remove the second `return statement`_ and use the new :ref:`function<functions>` in ``get_odd_numbers``
+
+  .. code-block:: python
+
+    def get_even_numbers(iterable):
+        ...
+
+
+    def get_odd_numbers(iterable):
+        return [item for item in iterable if not is_even(item)]
+        return [item for item in iterable if item % 2 != 0]
+
+  the terminal still shows green, I remove the second `return statement`+
+
+----
+
+*********************************************************************************
+test_list_comprehension_w_functions
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a test to show I can perform operations in a `list comprehension`_
+
+.. code-block:: python
+
+  def test_list_comprehension_w_functions(self):
+      squares = []
+      for item in self.iterable:
+          squares.append(item*item)
+
+      self.assertEqual(
+          squares,
+          [item for item in self.iterable]
+      )
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 1[2036 chars]1124] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1[1432 chars] 318]
+  AssertionError: Lists differ: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 1[1775 chars]8961] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1[1247 chars] 281]
+  AssertionError: Lists differ: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 1[6028 chars]7489] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1[3927 chars] 817]
+  AssertionError: Lists differ: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 1[1852 chars]5264] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1[1302 chars] 292]
+
+green: make it pass
+#################################################################################
+
+I add the calculation to the `list comprehension`_
+
+.. code-block:: python
+
+  self.assertEqual(
+      squares,
+      [item*item for item in self.iterable]
+  )
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+* I add another assertion
+
+  .. code-block:: python
+
+    self.assertEqual(
+        squares,
+        [item*item for item in self.iterable]
+    )
+    self.assertEqual(
+        src.list_comprehensions.square(self.iterable),
+        [item*item for item in self.iterable]
+    )
+
+  the terminal shows :ref:`AttributeError`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.list_comprehensions' has no attribute 'square'
+
+  I add the :ref:`function<functions>`
+
+  .. code-block:: python
+
+    def get_odd_numbers(iterable):
+        ...
+
+
+    def square(iterable):
+        return [item**2 for item in iterable]
+
+  the test passes
+
+* I add a :ref:`function<functions>` for the calculation I did 3 times in this test
+
+  .. code-block:: python
+
+    import unittest
+
+
+    def process(number):
+        return number ** 2
+
+  I reference the new :ref:`function<functions>` in the test
+
+  .. code-block:: python
+
+    def test_list_comprehension_w_functions(self):
+        squares = []
         for item in self.iterable:
-            if item % 2 != 0:
-                odd_numbers.append(item)
+            # squares.append(item*item)
+            squares.append(process(item))
 
         self.assertEqual(
-            [item for item in self.iterable if item % 2 != 0],
-            odd_numbers
+            squares,
+            # [item*item for item in self.iterable]
+            [process(item) for item in self.iterable]
         )
         self.assertEqual(
-            src.list_comprehensions.get_odd_numbers(self.iterable),
-            odd_numbers
+            src.list_comprehensions.square(self.iterable),
+            # [item*item for item in self.iterable]
+            [process(item) for item in self.iterable]
         )
 
-the terminal shows all tests are still passing
+  the terminal still shows green. I remove the commented lines
+
 
 ----
 
