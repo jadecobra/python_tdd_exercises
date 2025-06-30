@@ -85,8 +85,8 @@ table of contents
   exceptions/exceptions
   data_structures/data_structures
   data_structures/booleans/truth_table/truth_table
-  functions/functions
-  classes/classes
+  functions
+  classes
   catalog of tests<catalog_of_tests>
   tests and solutions<catalog_of_code>
   learning_models

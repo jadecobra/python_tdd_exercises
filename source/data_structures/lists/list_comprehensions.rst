@@ -233,7 +233,7 @@ refactor: make it better
     def for_loop(iterable):
         return list(iterable)
 
-  the test passes, but I want to practice writing a `for loop`_, I change the :ref:`function`
+  the test passes, but I want to practice writing a `for loop`_, I change the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -280,7 +280,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I use the :ref:`list<constructor>`
+I use the :ref:`list<lists>` constructor_
 
 .. code-block:: python
 
