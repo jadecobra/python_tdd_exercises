@@ -15,8 +15,8 @@ Here are the tests and solutions in the book
   AssertionError<code/code_assertion_error>
   AttributeError<code/code_attribute_error>
   booleans<code/code_booleans>
-  how to  make a calculator<code/code_calculator>
   classes<code/code_classes>
+  dictionaries<code/code_dict_comprehensions>
   dictionaries<code/code_dictionaries>
   how to test/handle exceptions<code/code_exception_handling>
   functions<code/code_functions>
@@ -25,6 +25,7 @@ Here are the tests and solutions in the book
   ModuleNotFoundError<code/code_module_not_found_error>
   None<code/code_none>
   how to pass values<code/code_pass_values>
+  how to make a calculator<code/code_calculator>
   how to make a person<code/code_person_factory>
   how to measure sleep duration<code/code_sleep_duration>
   truth table<code/code_truth_table>

@@ -116,7 +116,7 @@ green: make it pass
   and the test is green again
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time``
-* then change the call in the assertion  to a different :ref:`function<functions>`
+* then change the call in the assertion to a different :ref:`function<functions>`
 
   .. code-block:: python
 

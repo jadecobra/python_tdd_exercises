@@ -85,7 +85,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_first(True, False))
         self.assertTrue(src.truth_table.negate_first(False, True))
 
-  the terminal  shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

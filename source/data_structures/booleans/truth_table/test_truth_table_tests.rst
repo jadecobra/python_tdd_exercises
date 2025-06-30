@@ -894,7 +894,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
 
 * :ref:`logical_false<test_logical_false>`, :ref:`logical_true<test_logical_true>`, :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>` are already simple
 
-* :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in 4 cases, with 2 inputs there are only 4 cases. I  add a `return statement`_
+* :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in 4 cases, with 2 inputs there are only 4 cases. I add a `return statement`_
 
   .. code-block:: python
 

@@ -117,7 +117,7 @@ how to manually make a python test driven development environment
 
       New-Item tests/__init__.py
 
-  I add  one more empty file in the ``tests`` directory for the actual test
+  I add one more empty file in the ``tests`` directory for the actual test
 
   .. code-block:: shell
 
