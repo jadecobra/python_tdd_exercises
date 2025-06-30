@@ -300,44 +300,44 @@ the test passes. I can use integers_ and floats_ as keys in a `dictionary <https
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_tuples_as_keys
+test_make_a_dictionary_w_a_tuple_as_a_key
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a test for tuples_
+I add a test for a tuple_ as a key
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_boolean_as_a_key(self):
+  def test_make_a_dictionary_w_a_number_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_tuples_as_keys(self):
+  def test_make_a_dictionary_w_a_tuple_as_a_key(self):
       self.assertEqual(
-          {(0, 1): 'value'},
-          {(0, 1): 'key'}
+          {(0, 1): 'boom'},
+          {(0, 1): 'bap'}
       )
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {(0, 1): 'value'} != {(0, 1): 'key'}
+  AssertionError: {(0, 1): 'boom'} != {(0, 1): 'bap'}
 
 green: make it pass
 #################################################################################
 
-I make the values match
+I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
 
   self.assertEqual(
-      {(0, 1): 'value'},
-      {(0, 1): 'value'}
+      {(0, 1): 'boom'},
+      {(0, 1): 'boom'}
   )
 
-the test passes
+the test passes. I can use a tuple_ as a key in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 ----
 
@@ -352,7 +352,7 @@ I add another test
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_tuples_as_keys(self):
+  def test_make_a_dictionary_w_a_tuple_as_a_key(self):
       ...
 
   def test_make_a_dictionary_w_lists_as_keys(self):
