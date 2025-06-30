@@ -1,4 +1,4 @@
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _clear: https://docs.python.org/3/library/stdtypes.html#dict.clear
 .. _copy: https://docs.python.org/3/library/stdtypes.html#dict.copy
