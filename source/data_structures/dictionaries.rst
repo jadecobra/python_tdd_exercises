@@ -342,7 +342,7 @@ the test passes. I can use a tuple_ as a key in a `dictionary <https://docs.pyth
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_lists_as_keys
+test_make_a_dictionary_w_a_list_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -355,10 +355,9 @@ I add another test
   def test_make_a_dictionary_w_a_tuple_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_lists_as_keys(self):
+  def test_make_a_dictionary_w_a_list_as_a_key(self):
       self.assertEqual(
-          {[3, 2, 1]: 'BOOM!'},
-          {[3, 2, 1]: 'bap'}
+          {[0, 1]: 'boom'}
       )
 
 the terminal shows :ref:`TypeError`
@@ -367,28 +366,27 @@ the terminal shows :ref:`TypeError`
 
   TypeError: unhashable type: 'list'
 
-only hashable_ objects_ can be used as `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ keys and :ref:`lists` are not hashable_
-
-I add :ref:`TypeError` to the list of Exceptions_ encountered
-
-.. code-block:: python
-
-  # Exceptions Encountered
-  # AssertionError
-  # TypeError
+only hashable_ objects_ can be used as keys in a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_
 
 green: make it pass
 #################################################################################
 
-I change the assertEqual_ to assertRaises_
+I remove the things around the new `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ then change the key for fun
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_lists_as_keys(self):
+  def test_make_a_dictionary_w_a_list_as_a_key(self):
+      {[3, 2, 1]: 'BOOM!'}
+
+I add assertRaises_
+
+.. code-block:: python
+
+  def test_make_a_dictionary_w_a_list_as_a_key(self):
       with self.assertRaises(TypeError):
           {[3, 2, 1]: 'BOOM!'}
 
-see :doc:`/how_to/exception_handling_tests` for more details on why that worked. I cannot make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as a key
+the test passes. I cannot make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with a :ref:`list <lists>` as a key
 
 ----
 

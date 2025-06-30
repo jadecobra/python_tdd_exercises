@@ -189,7 +189,7 @@ test_dictionaries
 #. :ref:`test_make_a_dictionary_w_a_number_as_a_key`
 #. :ref:`test_make_a_dictionary_w_a_boolean_as_a_key`
 #. :ref:`test_make_a_dictionary_w_a_tuple_as_a_key`
-#. :ref:`test_make_a_dictionary_w_lists_as_keys`
+#. :ref:`test_make_a_dictionary_w_a_list_as_a_key`
 #. :ref:`test_make_a_dictionary_w_sets_as_keys`
 #. :ref:`test_make_a_dictionary_w_dictionaries_as_keys`
 #. :ref:`test_attributes_and_methods_of_dictionaries`
