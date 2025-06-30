@@ -143,7 +143,7 @@ the test passes. The tests show I can make a list_ with the list_ constructor_ a
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I can use the dir_ :ref:`function<functions>` to see at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of list_
+I can use the dir_ :ref:`function<functions>` to see at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
 
 red: make it fail
 #################################################################################
@@ -158,7 +158,9 @@ I add a failing test
     def test_attributes_and_methods_of_lists(self):
       self.assertEqual(
           dir(list),
-          []
+          [
+
+          ]
       )
 
 the terminal shows :ref:`AssertionError`
@@ -167,7 +169,7 @@ the terminal shows :ref:`AssertionError`
 
     AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
 
-there is also a note on how to see the full difference between ``dir(list)`` and ``[]``
+there is also a note on how to see the full difference between ``dir(list)`` and my empty list
 
   .. code-block:: python
 
@@ -178,7 +180,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 green: make it pass
 #################################################################################
 
-* I add ``self.maxDiff`` to the test
+* I move the terminal to the right then add ``self.maxDiff`` to the test
 
   .. code-block:: python
 
@@ -186,7 +188,9 @@ green: make it pass
         self.maxDiff = None
         self.assertEqual(
             dir(list),
-            []
+            [
+
+            ]
         )
 
   the terminal shows a long list of items. I copy and paste them from the terminal and remove the extra characters with find and replace
@@ -253,7 +257,7 @@ green: make it pass
             ]
         )
 
-  the terminal shows passing tests. I ignore the names with double underscores (__) for now, then copy and paste the other names to make a TODO list for the next tests
+  the terminal shows passing tests and I move it back to the bottom. I ignore the names with double underscores (__) for now, then copy and paste the other names to make a TODO list for the next tests
 
   .. code-block:: python
 
@@ -313,66 +317,70 @@ the terminal shows green, the append_ :ref:`method<functions>` returns :ref:`Non
 refactor: make it better
 #################################################################################
 
-I add another assertion to see what append_ did to the list_
+* I add another assertion to see what append_ did to the list_
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertIsNone(a_list.append(0))
-  self.assertEqual(a_list, [0, 1, 2, 'n'])
+    self.assertIsNone(a_list.append(0))
+    self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
+    AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
 
-the :ref:`method<functions>` added a value. I change the values in the test to match the values in the terminal
+  the :ref:`method<functions>` added a value. I change the values in the test to match the values in the terminal
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(a_list, [0, 1, 2, 'n', 0])
+    self.assertEqual(a_list, [0, 1, 2, 'n', 0])
 
-the test passes. I change the value given to append_ for fun
+  the test passes
 
-.. code-block:: python
+* I change the value given to append_ for fun
 
-  self.assertIsNone(a_list.append('n+1'))
+  .. code-block:: python
 
-the terminal shows :ref:`AssertionError`
+    self.assertIsNone(a_list.append('n+1'))
 
-.. code-block:: python
+  the terminal shows :ref:`AssertionError`
 
-  AssertionError: Lists differ: [0, 1, 2, 'n', 'n+1'] != [0, 1, 2, 'n', 0]
+  .. code-block:: python
 
-I change the expectation to match
+    AssertionError: Lists differ: [0, 1, 2, 'n', 'n+1'] != [0, 1, 2, 'n', 0]
 
-.. code-block:: python
+  I change the expectation to match
 
-  self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
+  .. code-block:: python
 
-the test passes and I rename the test
+    self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
-.. code-block:: python
+  the test passes
 
-  def test_append_adds_to_a_list(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.append('n+1'))
-      self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
+* I rename the test
 
-I remove append_ from the TODO list
+  .. code-block:: python
 
-.. code-block:: python
+    def test_append_adds_to_a_list(self):
+        a_list = [0, 1, 2, 'n']
+        self.assertIsNone(a_list.append('n+1'))
+        self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
-  'clear',
-  'copy',
-  'count',
-  'extend',
-  'index',
-  'insert',
-  'pop',
-  'remove',
-  'reverse',
-  'sort'
+* I remove append_ from the TODO list
+
+  .. code-block:: python
+
+    'clear',
+    'copy',
+    'count',
+    'extend',
+    'index',
+    'insert',
+    'pop',
+    'remove',
+    'reverse',
+    'sort'
 
 ----
 
@@ -420,28 +428,33 @@ I change the values to match
 
   self.assertEqual(a_list, [])
 
-the test passes. I change the name of the test to be more descriptive
+the test passes
 
-.. code-block:: python
+refactor: make it better
+#################################################################################
 
-  def test_clear_empties_a_list(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.clear())
-      self.assertEqual(a_list, [])
+* I change the name of the test to be more descriptive
 
-I remove clear_ from the TODO list
+  .. code-block:: python
 
-.. code-block:: python
+    def test_clear_empties_a_list(self):
+        a_list = [0, 1, 2, 'n']
+        self.assertIsNone(a_list.clear())
+        self.assertEqual(a_list, [])
 
-  'copy',
-  'count',
-  'extend',
-  'index',
-  'insert',
-  'pop',
-  'remove',
-  'reverse',
-  'sort'
+* I remove clear_ from the TODO list
+
+  .. code-block:: python
+
+    'copy',
+    'count',
+    'extend',
+    'index',
+    'insert',
+    'pop',
+    'remove',
+    'reverse',
+    'sort'
 
 ----
 
@@ -452,7 +465,7 @@ test_copy_a_list
 red: make it fail
 #################################################################################
 
-I add another test
+I add another test, I think we can also guess what this one does
 
 .. code-block:: python
 
@@ -469,7 +482,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 'n'] is not None
 
-the copy_ :ref:`method<functions>` returns a copy of the list_
+the :ref:`method<functions>` returns a copy of the list_
 
 green: make it pass
 #################################################################################
@@ -499,46 +512,48 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I add another assertion to see what happened to the original list_
+* I add another assertion to see what happened to the original list_
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
-  self.assertEqual(a_list, [])
+    self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+    self.assertEqual(a_list, [])
 
-the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 'n'] != []
+    AssertionError: Lists differ: [0, 1, 2, 'n'] != []
 
-it stayed the same. I add the values
+  it stayed the same. I add the values
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(a_list, [0, 1, 2, 'n'])
+    self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-the test passes and I change the name of the test
+  the test passes
 
-.. code-block:: python
+* I change the name of the test
 
-  def test_copy_a_list(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
-      self.assertEqual(a_list, [0, 1, 2, 'n'])
+  .. code-block:: python
 
-I remove copy_ from the TODO list
+    def test_copy_a_list(self):
+        a_list = [0, 1, 2, 'n']
+        self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+        self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-.. code-block:: python
+* I remove copy_ from the TODO list
 
-  'count',
-  'extend',
-  'index',
-  'insert',
-  'pop',
-  'remove',
-  'reverse',
-  'sort'
+  .. code-block:: python
+
+    'count',
+    'extend',
+    'index',
+    'insert',
+    'pop',
+    'remove',
+    'reverse',
+    'sort'
 
 ----
 
@@ -562,9 +577,6 @@ the terminal shows :ref:`TypeError`
 .. code-block:: python
 
   TypeError: list.count() takes exactly one argument (0 given)
-
-red: make it fail
-#################################################################################
 
 I pass a value to the call
 
@@ -607,7 +619,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* It looks like the count_ :ref:`method<functions>` returns the number of times an item appears, I change the list_ then add another assert_ call to be sure
+* It looks like the count_ :ref:`method<functions>` returns the number of times an item is in a list_. I change the list_ then add another assert_ call to be sure
 
   .. code-block:: python
 
@@ -725,7 +737,7 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what changed in the list_
+* I add another assertion to see what it did to the list_
 
   .. code-block:: python
 
@@ -744,7 +756,9 @@ refactor: make it better
 
     self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
 
-  the test passes. I change the values given to the extend_ :ref:`method<functions>` for fun
+  the test passes
+
+* I change the values given to the extend_ :ref:`method<functions>` for fun
 
   .. code-block:: python
 
@@ -763,7 +777,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7])
+    self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
   the test is green again
 
@@ -863,7 +877,9 @@ refactor: make it better
 
     ValueError: 0 is not in list
 
-  I add it to the list of Exceptions_ encountered
+  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_.
+
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -872,19 +888,19 @@ refactor: make it better
     # TypeError
     # ValueError
 
-  I remove the things around the call and change the value to be more descriptive
+* I remove the things around the call and change the value to be more descriptive
 
   .. code-block:: python
 
     a_list.index('not in list')
 
-  the terminal still shows ValueError_
+  the terminal shows ValueError_
 
   .. code-block:: python
 
     ValueError: 'not in list' is not in list
 
-  I add assertRaises_ to handle the Exception_
+* I add assertRaises_ to handle the Exception_
 
   .. code-block:: python
 
@@ -894,7 +910,7 @@ refactor: make it better
         with self.assertRaises(ValueError):
             a_list.index('not in list')
 
-  the test is green again. The index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_
+  the test is green again
 
 * I add a new assertion for the index_ :ref:`method<functions>`
 
@@ -976,7 +992,7 @@ refactor: make it better
 
     AssertionError: 3 != 1
 
-  I change the value in the test to match the one in the terminal
+  I change the value to match the terminal
 
   .. code-block:: python
 
@@ -1730,7 +1746,7 @@ refactor: make it better
 
     self.assertEqual(a_list[-1], '...last')
 
-  all tests are still passing
+  the test passes
 
 ----
 

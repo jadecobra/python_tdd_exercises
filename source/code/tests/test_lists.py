@@ -101,10 +101,10 @@ class TestLists(unittest.TestCase):
 
     def test_insert_places_item_at_given_index_in_a_list(self):
         a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.insert(0, 1))
-        self.assertEqual(a_list, [1, 0, 1, 2, 'n'])
+        self.assertIsNone(a_list.insert(0, -1))
+        self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
         self.assertIsNone(a_list.insert(3, 1.5))
-        self.assertEqual(a_list, [1, 0, 1, 1.5, 2, 'n'])
+        self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
     def test_pop_removes_and_returns_the_last_item_in_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -170,6 +170,5 @@ class TestLists(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 # TypeError
-# NameError
-# IndentationError
+# ValueError
 # IndexError
