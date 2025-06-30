@@ -10,9 +10,7 @@ dictionaries
 
 ----
 
-A `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ also known as a Mapping contains key-value pairs, the values can be any Python :ref:`object<classes>` but not the keys.
-
-I think this is the most important data structure to know as it can hold all the other data structures and in your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python
+A `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ also known as a Mapping contains key-value pairs, the values can be any Python :ref:`object<classes>` but not the keys. I think this is the most important data structure to know as it can hold all the other data structures. In your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ in Python
 
 *********************************************************************************
 requirements
@@ -44,7 +42,7 @@ requirements
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_dict_constructor
+test_make_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -56,14 +54,14 @@ I change ``test_failure``
 
   class TestDictionaries(unittest.TestCase):
 
-      def test_make_a_dictionary_w_dict_constructor(self):
-          self.assertEqual(dict(key='value'), None)
+      def test_make_a_dictionary(self):
+          self.assertEqual(dict(), None)
 
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: {'key': 'value'} != None
+  AssertionError: {} != None
 
 green: make it pass
 #################################################################################
@@ -72,9 +70,69 @@ I copy the value from the terminal and paste it to replace :ref:`None`
 
 .. code-block:: python
 
-  self.assertEqual(dict(key='value'), {'key': 'value'})
+  self.assertEqual(dict(), {})
 
-the test passes
+this is how to make an empty dictionary. I can make a `dictionary <https://docs.python.org/3/tutorial/datastructures.html#dictionaries>`_ with the dict_ constructor_ or curly braces(``{}``)
+
+refactor: make it better
+#################################################################################
+
+* I add another assertion, this time with input
+
+  .. code-block:: python
+
+    self.assertEqual(dict(), {})
+    self.assertEqual(dict(0), {})
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: 'int' object is not iterable
+
+* I add the error to the list of Exceptions_ encountered
+
+  .. code-block:: python
+
+    # Exceptions Encountered
+    # AssertionError
+    # TypeError
+
+* I change the value to an iterable_
+
+  .. code-block:: python
+
+    self.assertEqual(dict(), {})
+    self.assertEqual(dict((0, 1)), {})
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: cannot convert dictionary update sequence element #0 to a sequence
+
+* I try a keyword argument instead
+
+  .. code-block:: python
+
+    self.assertEqual(dict(), {})
+    self.assertEqual(dict(key='value'), {})
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: {'key': 'value'} != {}
+
+  I change the expectation to match the values in the terminal
+
+  .. code-block:: python
+
+    self.assertEqual(dict(key='value'), {'key': 'value'})
+
+  the test passes
+
+----
 
 *********************************************************************************
 test_make_a_dictionary_w_curly_braces
