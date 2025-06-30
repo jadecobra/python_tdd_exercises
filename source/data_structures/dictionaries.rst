@@ -686,9 +686,7 @@ I add a test for the next :ref:`method<functions>`
 .. code-block:: python
 
   def test_clear_empties_a_dictionary(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.clear())
-      self.assertEqual(a_dictionary, {})
+      ...
 
   def test_copy(self):
       a_dictionary = {'key': 'value'}
@@ -700,19 +698,28 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {'key': 'value'} is not None
 
-the `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_ :ref:`method<functions>` returns a copy of the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
-
+this :ref:`method<functions>` returns a copy of the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 green: make it pass
 #################################################################################
 
-I change the assert_ :ref:`method<functions>` then add the expected value
+I add the value to the assertion
 
 .. code-block:: python
 
-  def test_copy(self):
-      a_dictionary = {'key': 'value'}
-      self.assertEqual(a_dictionary.copy(), {'key': 'value'})
+  self.assertIsNone(a_dictionary.copy(), {'key': 'value'})
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: {'key': 'value'} is not None : {'key': 'value'}
+
+I change the assert_ :ref:`method<functions>`
+
+.. code-block:: python
+
+  self.assertEqual(a_dictionary.copy(), {'key': 'value'})
 
 the test passes
 
@@ -748,8 +755,6 @@ refactor: make it better
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.copy(), {'key': 'value'})
         self.assertEqual(a_dictionary, {'key': 'value'})
-
-  the test is still green
 
 * I remove `copy <https://docs.python.org/3/library/stdtypes.html#dict.copy>`_ from the TODO list
 
