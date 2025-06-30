@@ -952,7 +952,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_get_value_of_key_from_a_dictionary
+test_get_a_value_from_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -978,10 +978,22 @@ the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-* I add a value to the call
+I add a value to the call
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.get(0))
+
+the terminal shows green
+
+refactor: make it better
+#################################################################################
+
+* I add another assertion, this time with something from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
   .. code-block:: python
 
+    self.assertIsNone(a_dictionary.get(0))
     self.assertIsNone(a_dictionary.get('key'))
 
   the terminal shows :ref:`AssertionError`
@@ -990,62 +1002,86 @@ green: make it pass
 
     AssertionError: 'value' is not None
 
-  the get_ :ref:`method<functions>` returns the value for the key it is given from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+  it looks like the get_ :ref:`method<functions>` has a condition where it returns the value for the key it is given from the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ if it is there or returns :ref:`None` if the key is not there. I add the expected value
 
-* I change the assertion then add the expected value
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.get('key'), 'value')
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'value' is not None : value
+
+  I change the assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.get('key'), 'value')
+
+  the test passes
+
+* I change the key in the first assertion for fun
 
   .. code-block:: python
 
     def test_get(self):
         a_dictionary = {'key': 'value'}
+        self.assertIsNone(a_dictionary.get('not_in_dictionary'))
         self.assertEqual(a_dictionary.get('key'), 'value')
 
-  the test passes
-
-refactor: make it better
-#################################################################################
-
-* I add an assertion to see if the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ changed
+  the test is still green. I add a parameter to see if I can set a default value
 
   .. code-block:: python
 
-    self.assertEqual(a_dictionary.get('key'), 'value')
-    self.assertEqual(a_dictionary, {})
+    self.assertIsNone(a_dictionary.get('not_in_dictionary', None))
+
+  the test is still passing. I change the value to see if I get an error
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.get('not_in_dictionary', 'default'))
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: {'key': 'value'} != {}
+    AssertionError: 'default' is not None
 
-  it stayed the same
-
-* I remove the new statement, I want to see what happens when I give the get_ :ref:`method<functions>` a key that is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+  I add the expectation
 
   .. code-block:: python
 
-    self.assertEqual(a_dictionary.get('key'), 'value')
-    self.assertEqual(a_dictionary.get(0), {})
+    self.assertIsNone(a_dictionary.get('not_in_dictionary', 'default'), 'default')
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: None != {}
+    AssertionError: 'default' is not None : default
 
-  the get_ :ref:`method<functions>` returns :ref:`None` when the given key is not in the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_. I remove the expectation and change the assertion
+  I change the assertion
 
   .. code-block:: python
 
-    self.assertIsNone(a_dictionary.get(0))
+    self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
 
-  the test passes
+  the test is green again
+
+* I do the same thing with the second assertion
+
+  .. code-block:: python
+
+    self.assertEqual(a_dictionary.get('key', 'default'), 'value')
+
+  the test is still green. The get_ :ref:`method<functions>` returns the value for a given key in a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ or returns a default value if the key is not there
 
 * I change the name of the test
 
   .. code-block:: python
 
-    def test_get_value_of_key_from_a_dictionary(self):
+    def test_get_a_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.get('key'), 'value')
         self.assertIsNone(a_dictionary.get(0))
@@ -1077,7 +1113,7 @@ I add a test for the next :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_get_value_of_key_from_a_dictionary(self):
+  def test_get_a_value_from_a_dictionary(self):
       ...
 
   def test_items(self):
