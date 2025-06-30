@@ -1103,6 +1103,135 @@ refactor: make it better
 ----
 
 *********************************************************************************
+test_items_returns_key_value_pairs_of_a_dictionary
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a a test
+
+.. code-block:: python
+
+  def test_get_a_value_from_a_dictionary(self):
+      ...
+
+  def test_items(self):
+      a_dictionary = {'key': 'value'}
+      self.assertIsNone(a_dictionary.items())
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: dict_items([('key', 'value')]) is not None
+
+green: make it pass
+#################################################################################
+
+I copy the value from the terminal and paste as the expectation
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.items(), dict_items([('key', 'value')]))
+
+the terminal shows NameError_
+
+.. code-block:: python
+
+  NameError: name 'dict_items' is not defined
+
+this new object contains a :ref:`list<lists>`, I will use it as the expectation instead
+
+.. code-block:: python
+
+  self.assertIsNone(a_dictionary.items(), [('key', 'value')])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
+
+I pass the call to the items_ :ref:`method<functions>` to the :ref:`list<lists>` constructor_
+
+.. code-block:: python
+
+  self.assertIsNone(list(a_dictionary.items()), [('key', 'value')])
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: [('key', 'value')] is not None : [('key', 'value')]
+
+I change the assertion
+
+.. code-block:: python
+
+  self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+
+the test passes. It looks like the items_ :ref:`method<functions>` returns the key-value pairs of a `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ as tuples_ in a :ref:`list<lists>`
+
+refactor: make it better
+#################################################################################
+
+* I add another key-value pair to the `dictionary <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+
+  .. code-block:: python
+
+    def test_items(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [('key1', 'value1'), ('keyN', 'valueN')] != [('key', 'value')]
+
+  I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        list(a_dictionary.items()),
+        [('key1', 'value1'), ('keyN', 'valueN')]
+    )
+
+  the test passes
+
+* I change the name of the test
+
+  .. code-block:: python
+
+    def test_items_returns_key_value_pairs_of_a_dictionary(self):
+        a_dictionary = {
+            'key1': 'value1',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(
+            list(a_dictionary.items()),
+            [('key1', 'value1'), ('keyN', 'valueN')]
+        )
+
+* I remove items_ from the TODO list
+
+  .. code-block:: python
+
+    'keys',
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
+
+----
+
+*********************************************************************************
 test_pop_removes_key_and_returns_its_value_from_a_dictionary
 *********************************************************************************
 

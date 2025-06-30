@@ -107,7 +107,7 @@ I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check 
 
 the terminal shows :ref:`AttributeError`
 
-green: make it fail
+green: make it pass
 #################################################################################
 
 I add a new :ref:`function<functions>` to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_

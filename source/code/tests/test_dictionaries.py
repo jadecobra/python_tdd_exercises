@@ -117,8 +117,14 @@ class TestDictionaries(unittest.TestCase):
         self.assertEqual(a_dictionary.get('key', 'default'), 'value')
 
     def test_items_returns_key_value_pairs_of_a_dictionary(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+        a_dictionary = {
+            'key1': 'value1',
+            'keyN': 'valueN',
+        }
+        self.assertEqual(
+            list(a_dictionary.items()),
+            [('key1', 'value1'), ('keyN', 'valueN')]
+        )
 
     def test_keys_of_a_dictionary(self):
         a_dictionary = {'key': 'value'}
