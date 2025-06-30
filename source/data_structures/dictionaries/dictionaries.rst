@@ -2342,7 +2342,7 @@ I ran tests for `dictionaries <https://docs.python.org/3/library/stdtypes.html#m
 * they can be represented with ``{}``
 * they can be made with the `dict <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ constructor_
 
-Would you like to test :ref:`functions?<functions>`
+Would you like to :ref:`test diict comprehensions?<dictionaries: dict comprehensions>`
 
 ----
 

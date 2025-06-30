@@ -591,7 +591,7 @@ I also ran into the following Exceptions_
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-Would you like to test :ref:`dictionaries`?
+Would you like to test :ref:`functions`?
 
 ----
 

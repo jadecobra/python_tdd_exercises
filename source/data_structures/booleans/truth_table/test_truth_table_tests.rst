@@ -1276,7 +1276,7 @@ I ran tests using booleans_ which can be :ref:`True<test_what_is_true>` or :ref:
   - :ref:`Project Second<test_project_second>` always returns ``y``
   - :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`
 
-Would you like to :doc:`test lists?</data_structures/lists/lists>`
+Would you like to :ref:`test lists?<lists>`
 
 ----
 
