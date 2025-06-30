@@ -8,7 +8,7 @@ The following Python data structures are tested here
 
 .. toctree::
   :titlesonly:
-  :maxdepth: 3
+  :maxdepth: 1
 
   none
   booleans/booleans
