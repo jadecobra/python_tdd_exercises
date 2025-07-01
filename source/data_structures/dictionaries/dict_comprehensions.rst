@@ -10,7 +10,7 @@ dictionaries: dict comprehensions
 
 ----
 
-Dict Comprehensions are a simple to make a :ref:`dictionary<dictionaries>` from an iterable_, by going over every item and performing operations with one line, they are like :ref:`list comprehensions<lists: dict_comprehensions>`
+Dict Comprehensions are a simple to make a :ref:`dictionary<dictionaries>` from an iterable_, by going over every item and performing operations with one line, they are like :ref:`list comprehensions<lists: list comprehensions>`
 
 *********************************************************************************
 requirements
