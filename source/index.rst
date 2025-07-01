@@ -84,7 +84,8 @@ table of contents
   conventions
   exceptions/index
   data_structures/index
-  data_structures/booleans/truth_table/index
+  data_structures/booleans/index
+  truth table<data_structures/booleans/truth_table/index>
   functions
   classes
   catalog of tests<catalog_of_tests>

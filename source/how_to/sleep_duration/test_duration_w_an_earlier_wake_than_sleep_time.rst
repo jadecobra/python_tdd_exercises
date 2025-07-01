@@ -87,7 +87,7 @@ green: make it pass
 
     AssertionError: ValueError not raised
 
-  I add a :doc:`condition</data_structures/booleans/booleans>` to the ``duration`` :ref:`function<functions>` to raise the ValueError_
+  I add a condition to the ``duration`` :ref:`function<functions>` to raise the ValueError_
 
   .. code-block:: python
 
