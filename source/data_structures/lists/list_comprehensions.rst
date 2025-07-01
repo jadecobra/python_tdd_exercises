@@ -429,7 +429,7 @@ the terminal shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[670 chars] 308] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[1390 chars] 309]
 
 * ``if item % 2 == 0:`` checks if the item in ``iterable`` leaves a remainder of ``0`` when divided by ``2``
-* ``%`` is the modulo_ operator, it divides the number on the left by the number on the right and returns a remainder, it is covered more in :ref:`test_modulo_operator`
+* ``%`` is the modulo_ operator, it divides the number on the left by the number on the right and returns a remainder, it is covered in :ref:`test_the_modulo_operation`
 
 green: make it pass
 #################################################################################
@@ -768,6 +768,87 @@ refactor: make it better
 
   the terminal still shows green. I remove the commented lines
 
+----
+
+*********************************************************************************
+test_list_comprehensions_w_functions_and_conditions
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+I add a failing test
+
+.. code-block:: python
+
+  def test_list_comprehension_w_functions_and_conditions(self):
+      even_squares = []
+      odd_squares = []
+      for item in self.iterable:
+          if condition(item):
+              even_numbers.append(process(item))
+          else:
+              odd_numbers.append(process(item))
+
+      self.assertEqual(
+          even_squares,
+          [item for item in self.iterable]
+      )
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+AssertionError: Lists differ: [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 4[3142 chars]9316] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[4120 chars] 855]
+AssertionError: Lists differ: [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 4[2750 chars]1536] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[3630 chars] 757]
+AssertionError: Lists differ: [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 4[2574 chars]6944] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[3405 chars] 712]
+AssertionError: Lists differ: [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 4[1934 chars]4704] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[2605 chars] 552]
+
+green: make it pass
+#################################################################################
+
+I add a call to ``process`` and ``condition``
+
+.. code-block:: python
+
+  self.assertEqual(
+      even_squares,
+      [process(item) for item in self.iterable if condition(item)]
+  )
+
+the test passes
+
+refactor: make it better
+#################################################################################
+
+I add an assertion for ``odd_squares``
+
+.. code-block:: python
+
+  self.assertEqual(
+      odd_squares,
+      [item for item in self.iterable]
+  )
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [1, 9, 25, 49, 81, 121, 169, 225, 289, 361[1978 chars]6969] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[2668 chars] 564]
+  AssertionError: Lists differ: [1, 9, 25, 49, 81, 121, 169, 225, 289, 361[356 chars]8225] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[523 chars] 135]
+  AssertionError: Lists differ: [1, 9, 25, 49, 81, 121, 169, 225, 289, 361[629 chars]5369] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[918 chars] 214]
+  AssertionError: Lists differ: [1, 9, 25, 49, 81, 121, 169, 225, 289, 361, 441] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+
+I add the calls
+
+.. code-block:: python
+
+  self.assertEqual(
+      odd_squares,
+      [process(item) for item in self.iterable if not condition(item)]
+  )
+
+the test passes
 
 ----
 
