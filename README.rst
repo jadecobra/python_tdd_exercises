@@ -88,7 +88,7 @@ table of contents
   * `tests and solutions <catalog_of_code>`
   * `learning_models`
   * `dot_notation`
-  * `review`
+  * :doc:`review <source/review>`
 
 *********************************************************************************
 music
@@ -96,6 +96,5 @@ music
 
 Here is a playlist I like to listen to when programming
 
-
-`BEATstrumentals on Apple Music <https://music.apple.com/us/playlist/beatstrumentals/pl.f54198ad42404535be13eabf3835fb22>`_
-`BEATstrumentals on Spotify <https://open.spotify.com/playlist/1uJ4BgylqE1PJ6Ua14laJf?utm_source=generator>`_
+* `BEATstrumentals on Apple Music <https://music.apple.com/us/playlist/beatstrumentals/pl.f54198ad42404535be13eabf3835fb22>`_
+* `BEATstrumentals on Spotify <https://open.spotify.com/playlist/1uJ4BgylqE1PJ6Ua14laJf?utm_source=generator>`_
