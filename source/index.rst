@@ -71,7 +71,7 @@ howtos
   how_to/make_person
   how_to/exception_handling_tests
   how_to/exception_handling_programs
-  how_to/sleep_duration/sleep_duration
+  how_to/sleep_duration/index
 
 *********************************************************************************
 table of contents
@@ -82,9 +82,9 @@ table of contents
   :titlesonly:
 
   conventions
-  exceptions/exceptions
-  data_structures/data_structures
-  data_structures/booleans/truth_table/truth_table
+  exceptions/index
+  data_structures/index
+  data_structures/booleans/truth_table/index
   functions
   classes
   catalog of tests<catalog_of_tests>

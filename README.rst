@@ -68,17 +68,17 @@ howtos
 table of contents
 *********************************************************************************
 
-  * `conventions https://www.pumpingpython.com/conventions.html`_
-  * `errors <https://www.pumpingpython.com/exceptions/exceptions.html>`_
-  * `data_structures <https://www.pumpingpython.com/data_structures/>`_
-  * `truth_table <https://www.pumpingpython.com/data_structures/booleans/truth_table/truth_table.html>`_
-  * `functions <https://www.pumpingpython.com/functions.html>`_
-  * `classes <https://www.pumpingpython.com/classes.html>`_
-  * `catalog of tests <https://www.pumpingpython.com/catalog_of_tests.html>`_
-  * `tests and solutions <https://www.pumpingpython.com/catalog_of_code.html>`_
-  * `learning_models <https://www.pumpingpython.com/learning_models.html>`
-  * `dot_notation <https://www.pumpingpython.com/dot_notation.html>`_
-  * `review <https://www.pumpingpython.com/review.html>`_
+* `conventions <https://www.pumpingpython.com/conventions.html>`_
+* `errors <https://www.pumpingpython.com/exceptions/exceptions.html>`_
+* `data_structures <https://www.pumpingpython.com/data_structures/>`_
+* `truth_table <https://www.pumpingpython.com/data_structures/booleans/truth_table/truth_table.html>`_
+* `functions <https://www.pumpingpython.com/functions.html>`_
+* `classes <https://www.pumpingpython.com/classes.html>`_
+* `catalog of tests <https://www.pumpingpython.com/catalog_of_tests.html>`_
+* `tests and solutions <https://www.pumpingpython.com/catalog_of_code.html>`_
+* `learning_models <https://www.pumpingpython.com/learning_models.html>`_
+* `dot_notation <https://www.pumpingpython.com/dot_notation.html>`_
+* `review <https://www.pumpingpython.com/review.html>`_
 
 *********************************************************************************
 music
