@@ -860,15 +860,8 @@ From the tests I can make a :ref:`list<lists>` from an iterable_ by using
 
 * a `for loop`_ loop
 * the :ref:`list <lists>` constructor_
-* `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
-
-I also ran into the following Exceptions_
-
-* :ref:`AssertionError`
-* NameError_
-* :ref:`ModuleNotFoundError`
-* :ref:`AttributeError`
-* :ref:`TypeError`
+* and `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
+* I can use :ref:`functions` and conditions with `list comprehensions` to make a list with one line
 
 Would you like to test :ref:`dictionaries`?
 
