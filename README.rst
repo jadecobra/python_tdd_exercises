@@ -1,4 +1,5 @@
-.. include:: /links.rst
+.. include:: source/links.rst
+
 
 #################################################################################
 pumping python: how I solve problems with test driven development
@@ -77,21 +78,17 @@ howtos
 table of contents
 *********************************************************************************
 
-.. toctree::
-  :maxdepth: 2
-  :titlesonly:
-
-  conventions
-  exceptions/exceptions
-  data_structures/data_structures
-  data_structures/booleans/truth_table/truth_table
-  functions
-  classes
-  catalog of tests<catalog_of_tests>
-  tests and solutions<catalog_of_code>
-  learning_models
-  dot_notation
-  review
+  * `conventions`
+  * `exceptions/exceptions`
+  * `data_structures/data_structures`
+  * `data_structures/booleans/truth_table/truth_table`
+  * `functions`
+  * `classes`
+  * `catalog of tests <catalog_of_tests>`
+  * `tests and solutions <catalog_of_code>`
+  * `learning_models`
+  * `dot_notation`
+  * `review`
 
 *********************************************************************************
 music
@@ -99,23 +96,6 @@ music
 
 Here is a playlist I like to listen to when programming
 
-.. raw:: html
 
-  <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" width="560" height="315" style="width:560;max-width:660px;overflow:hidden;border-radius:12px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/beatstrumentals/pl.f54198ad42404535be13eabf3835fb22"></iframe>
-
-----
-
-.. raw:: html
-
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1uJ4BgylqE1PJ6Ua14laJf?utm_source=generator" width="560" height="375" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-----
-
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=IFHOPos8_ubUVe8y&amp;list=PLWuEDVEvwXgqQZ-TPhLgmQSD7NsNlK_OW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-----
-
-:ref:`search <search>`
+`BEATstrumentals on Apple Music <https://music.apple.com/us/playlist/beatstrumentals/pl.f54198ad42404535be13eabf3835fb22>`_
+`BEATstrumentals on Spotify <https://open.spotify.com/playlist/1uJ4BgylqE1PJ6Ua14laJf?utm_source=generator>`_
