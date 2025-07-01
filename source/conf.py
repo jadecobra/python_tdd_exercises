@@ -24,8 +24,14 @@ html_theme_options = {
         ("videos", "https://www.youtube.com/@JacobItegboje"),
     ]
 }
+# html_sidebars = {
+#     "**": [
+#         # "util/searchbox.html",
+#         # "globaltoc.html",
+#     ]
+# }
 
-extensions = ['sphinx.ext.autosectionlabel']
+extensions = ['sphinx.ext.autosectionlabel', 'sphinx_sitemap']
 
 # -- Options for ePub output -------------------------------------------------
 epub_theme = 'epub'
@@ -40,12 +46,6 @@ latex_theme = 'howto' # 'manual'
 
 text_sectionchars = '#*=-~"+`'
 
-# html_logo = "_static/DRY_html_logo.png"
-# html_theme = 'alabaster'
-# html_sidebars = {
-#     "**": [
-#         # "util/searchbox.html",
-#         # "globaltoc.html",
-#     ]
-# }
+# -- MISC
+
 # autosectionlabel_prefix_document = True
