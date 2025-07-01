@@ -1368,7 +1368,7 @@ test_pop_removes_given_key_from_a_dictionary
 red: make it fail
 #################################################################################
 
-I wonder if the next :ref:`method<functions>` is the same as the one in :ref:`test_pop_removes_and_returns_the_last_item_in_a_list`, I add a test for it
+I wonder if the next :ref:`method<functions>` is the same as the one in :ref:`test_pop_removes_and_returns_the_last_item_from_a_list`, I add a test for it
 
 .. code-block:: python
 

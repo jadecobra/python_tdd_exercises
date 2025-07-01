@@ -72,7 +72,7 @@ I change ``test_failure`` to ``test_make_a_list``
 
   class TestLists(unittest.TestCase):
 
-      def test_make_a_list_w_list_constructor(self):
+      def test_make_a_list(self):
           self.assertEqual(list(), None)
 
 the terminal shows :ref:`AssertionError`
@@ -1158,7 +1158,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_pop_removes_and_returns_the_last_item_in_a_list
+test_pop_removes_and_returns_the_last_item_from_a_list
 *********************************************************************************
 
 red: make it fail
@@ -1257,7 +1257,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_pop_removes_and_returns_the_last_item_in_a_list(self):
+    def test_pop_removes_and_returns_the_last_item_from_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
