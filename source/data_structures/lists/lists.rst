@@ -619,7 +619,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* It looks like the count_ :ref:`method<functions>` returns the number of times an item is in a list_. I change the list_ then add another assert_ call to be sure
+* It looks like the count_ :ref:`method<functions>` returns the number of times an item is in a list_. I change the list_ then add another assertion to be sure
 
   .. code-block:: python
 
@@ -655,7 +655,7 @@ refactor: make it better
 
     AssertionError: 0 != 3
 
-  The count_ method returns ``0`` when the item is not in the list_. I change the value
+  The count_ method returns ``0`` when the item is not in the list_. I change the value to match
 
   .. code-block:: python
 
@@ -877,7 +877,7 @@ refactor: make it better
 
     ValueError: 0 is not in list
 
-  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_.
+  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_
 
 * I add it to the list of Exceptions_ encountered
 
@@ -1085,7 +1085,7 @@ refactor: make it better
 
     self.assertEqual(a_list, [1, 0, 1, 2, 'n'])
 
-  the test passes. The insert_ :ref:`method<functions>` places the second input given at the index given as the first input
+  the test passes. It looks like the insert_ :ref:`method<functions>` places the second input given at the index given as the first input
 
 * I change the second input in the call to be sure
 
@@ -1251,7 +1251,7 @@ refactor: make it better
     self.assertEqual(a_list, [0, 1, 2])
     self.assertEqual(a_list.pop(), 2)
 
-  the test passes. The pop_ :ref:`method<functions>` removes and returns the last item in the list_.
+  the test passes. The pop_ :ref:`method<functions>` removes and returns the last item in the list_
 
 * I rename the test
 
