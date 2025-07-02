@@ -1507,7 +1507,7 @@ refactor: make it better
         self.assertIsNone(a_list.sort())
 
 
-  the terminal still shows green. sort_ returns :ref:`None` when called. I add another assertion to see what it did to the list_?
+  the terminal still shows green. sort_ returns :ref:`None` when called. I add another assertion to see what it did to the list_
 
   .. code-block:: python
 
@@ -1811,7 +1811,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['a', 'b'] != []
 
-viewing parts of a list_ is like indexing, it takes two values in square brackets ``[]``, seperated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
+viewing parts of a list_ is like indexing, it takes two values in square brackets(``[]``), separated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
 
 green: make it pass
 #################################################################################
@@ -1869,7 +1869,7 @@ refactor: make it better
 
   the test is green again
 
-* One more assert_ statement for good measure
+* One more assert_ method for good measure
 
   .. code-block:: python
 

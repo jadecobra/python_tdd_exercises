@@ -858,7 +858,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assert_ statement to see what happens to the first dictionary_ in the test
+* I add an assert_ method to see what happens to the first dictionary_ in the test
 
   .. code-block:: python
 

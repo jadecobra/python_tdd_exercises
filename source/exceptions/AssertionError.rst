@@ -28,7 +28,7 @@ which is like
 
   assert True is False
 
-When building a program I can use assert_ statements to make sure something is :ref:`True<test_what_is_true>` before it continues, I can also use them to test how the program behaves, for example when it is given inputs, which can help catch things that break previous tested behavior when added. They also help me answer 2 questions
+When building a program I can use assert_ methods to make sure something is :ref:`True<test_what_is_true>` before it continues, I can also use them to test how the program behaves, for example when it is given inputs, which can help catch things that break previous tested behavior when added. They also help me answer 2 questions
 
 * what is the same?
 * what is different?
