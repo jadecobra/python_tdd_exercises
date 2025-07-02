@@ -1,0 +1,22 @@
+.. include:: ../links.rst
+
+#################################################################################
+data structures
+#################################################################################
+
+The following Python data structures are tested here
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 1
+
+  none
+  booleans/index
+  booleans/truth_table/index
+  lists/lists
+  lists/list_comprehensions
+  dictionaries/dictionaries
+
+----
+
+:doc:`/code/code_sleep_duration`

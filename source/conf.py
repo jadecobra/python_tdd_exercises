@@ -20,6 +20,7 @@ html_logo = "_static/dry_favicon_16x16.png"
 html_favicon = '_static/dry_favicon_16x16.png'
 html_theme = 'press'
 html_static_path = ['_static']
+html_extra_path = ['robots.txt']
 html_theme_options = {
     "external_links": [
         ("videos", "https://www.youtube.com/@JacobItegboje"),

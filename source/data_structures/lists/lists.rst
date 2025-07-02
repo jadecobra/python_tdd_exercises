@@ -25,7 +25,7 @@ A list_ is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``
 * they can be made with the list_ constructor_
-* they can be changed by performing an operation, this means they are mutable
+* they can be changed by performing an operation
 
 *********************************************************************************
 requirements
@@ -90,12 +90,12 @@ I change the expectation
 
   self.assertEqual(list(), [])
 
-the test passes. This is how to make an empty list_
+the test passes, this is how to make an empty list_
 
 refactor: make it better
 #################################################################################
 
-I add another assertion, this time with input in the list_ constructor_
+I add another assertion, this time with input to the list_ constructor_
 
 .. code-block:: python
 
@@ -143,7 +143,7 @@ the test passes. The tests show I can make a list_ with the list_ constructor_ a
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I can use the dir_ :ref:`function<functions>` to see at the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
+I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
 
 red: make it fail
 #################################################################################
@@ -2015,7 +2015,7 @@ I ran tests for `lists <https://docs.python.org/3/tutorial/datastructures.html?h
 * they are represented with ``[]``
 * they can be made with the list_ constructor_
 * they can hold any :ref:`object<classes>`
-* they can be changed by performing an operation, this means they are mutable
+* they can be changed by performing an operation
 
 Would you like to :ref:`test list comprehensions?<lists: list comprehensions>`
 
