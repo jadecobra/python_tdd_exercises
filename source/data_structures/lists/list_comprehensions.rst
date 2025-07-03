@@ -657,7 +657,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_list_comprehension_w_functions
+test_list_comprehensions_w_functions
 *********************************************************************************
 
 red: make it fail
@@ -667,7 +667,7 @@ I add a test to show I can perform operations in a `list comprehension`_
 
 .. code-block:: python
 
-  def test_list_comprehension_w_functions(self):
+  def test_list_comprehensions_w_functions(self):
       squares = []
       for item in self.iterable:
           squares.append(item*item)
@@ -749,7 +749,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_list_comprehension_w_functions(self):
+    def test_list_comprehensions_w_functions(self):
         squares = []
         for item in self.iterable:
             # squares.append(item*item)
@@ -781,7 +781,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_list_comprehension_w_functions_and_conditions(self):
+  def test_list_comprehensions_w_functions_and_conditions(self):
       even_squares = []
       odd_squares = []
       for item in self.iterable:
