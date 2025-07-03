@@ -18,7 +18,7 @@ class TestPerson(unittest.TestCase):
             this_year()-120, this_year()
         )
 
-    def test_function_w_keyword_arguments(self):
+    def test_takes_keyword_arguments(self):
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public',
         ))

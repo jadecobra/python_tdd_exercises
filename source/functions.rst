@@ -376,7 +376,7 @@ I can make a :ref:`function<functions>` take more than one input
 
     def test_functions_w_positional_arguments(self):
         self.assertEqual(
-            functions.function_w_positional_arguments(
+            functions.take_positional_arguments(
                 'first_name', 'last_name'
             ),
             ('first_name', 'last_name')
@@ -386,7 +386,7 @@ the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
-  AttributeError: module 'src.functions' has no attribute 'function_w_positional_arguments'
+  AttributeError: module 'src.functions' has no attribute 'take_positional_arguments'
 
 green: make it pass
 ################################################################################
@@ -395,20 +395,20 @@ green: make it pass
 
   .. code-block:: python
 
-    def function_w_positional_arguments(argument):
+    def take_positional_arguments(argument):
         return argument
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: function_w_positional_arguments() takes 1 positional argument but 2 were given
+    TypeError: take_positional_arguments() takes 1 positional argument but 2 were given
 
   I make the :ref:`function<functions>` take more than one argument
 
   .. code-block:: python
 
-    def function_w_positional_arguments(
+    def take_positional_arguments(
         argument, second
     ):
         return argument
@@ -423,7 +423,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def function_w_positional_arguments(
+    def take_positional_arguments(
         argument, second
     ):
         return argument, second
@@ -439,26 +439,26 @@ How can I make this better?
 
   .. code-block:: python
 
-    def function_w_positional_arguments(
+    def take_positional_arguments(
             first, second
         ):
         return first, second
 
   I still have passing tests
 
-* I add another assertion to make sure that ``function_w_positional_arguments`` outputs data in the order given
+* I add another assertion to make sure that ``take_positional_arguments`` outputs data in the order given
 
   .. code-block:: python
 
       def test_functions_w_positional_arguments(self):
           self.assertEqual(
-              functions.function_w_positional_arguments(
+              functions.take_positional_arguments(
                   'first_name', 'last_name'
               ),
               ('first_name', 'last_name')
           )
           self.assertEqual(
-              functions.function_w_positional_arguments(
+              functions.take_positional_arguments(
                   'last_name', 'first_name'
               ),
               ('first_name', 'last_name')
@@ -476,13 +476,13 @@ How can I make this better?
 
       def test_functions_w_positional_arguments(self):
           self.assertEqual(
-              functions.function_w_positional_arguments(
+              functions.take_positional_arguments(
                   'first_name', 'last_name'
               ),
               ('first_name', 'last_name')
           )
           self.assertEqual(
-              functions.function_w_positional_arguments(
+              functions.take_positional_arguments(
                   'last_name', 'first_name'
               ),
               ('last_name', 'first_name')
@@ -502,7 +502,7 @@ test_functions_w_unknown_positional_arguments
 
     def test_functions_w_unknown_positional_arguments(self):
         self.assertEqual(
-            src.functions.function_w_unknown_positional_arguments(
+            src.functions.take_unknown_positional_arguments(
                 0, 1, 2, 3
             ),
             (0, 1, 2, 3)
@@ -513,13 +513,13 @@ test_functions_w_unknown_positional_arguments
   .. code-block:: python
     :force:
 
-    AttributeError: module 'src.functions' has no attribute 'function_w_unknown_positional_arguments'. Did you mean: 'function_w_positional_arguments'?
+    AttributeError: module 'src.functions' has no attribute 'take_unknown_positional_arguments'. Did you mean: 'take_positional_arguments'?
 
   I add the function with a `starred expression`_ like I did in :ref:`test_constant_functions`, to allow it take in any number of arguments
 
   .. code-block:: python
 
-    def function_w_unknown_positional_arguments(*arguments):
+    def take_unknown_positional_arguments(*arguments):
         return arguments
 
   the test passes
@@ -529,13 +529,13 @@ test_functions_w_unknown_positional_arguments
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.function_w_unknown_positional_arguments(
+        src.functions.take_unknown_positional_arguments(
             0, 1, 2, 3
         ),
         (0, 1, 2, 3)
     )
     self.assertEqual(
-        src.functions.function_w_unknown_positional_arguments(
+        src.functions.take_unknown_positional_arguments(
             None, bool, int, float, str, tuple, list, set, dict
         ),
         None
@@ -553,7 +553,7 @@ test_functions_w_unknown_positional_arguments
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.function_w_unknown_positional_arguments(
+        src.functions.take_unknown_positional_arguments(
             None, bool, int, float, str, tuple, list, set, dict
         ),
         (None, bool, int, float, str, tuple, list, set, dict)
@@ -580,7 +580,7 @@ I add a new test to ``test_functions.py``
 
   def test_functions_w_keyword_arguments(self):
       self.assertEqual(
-          src.functions.function_w_keyword_arguments(
+          src.functions.take_keyword_arguments(
               first_name='first_name',
               last_name='last_name',
           ),
@@ -592,7 +592,7 @@ the terminal shows :ref:`AttributeError`
 .. code-block:: python
   :force:
 
-  AttributeError: module 'src.functions' has no attribute 'function_w_keyword_arguments'. Did you mean: 'function_w_unknown_positional_arguments'?
+  AttributeError: module 'src.functions' has no attribute 'take_keyword_arguments'. Did you mean: 'take_unknown_positional_arguments'?
 
 green: make it pass
 ################################################################################
@@ -601,20 +601,20 @@ green: make it pass
 
   .. code-block:: python
 
-    def function_w_keyword_arguments():
+    def take_keyword_arguments():
         return None
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: function_w_keyword_arguments() got an unexpected keyword argument 'first_name'
+    TypeError: take_keyword_arguments() got an unexpected keyword argument 'first_name'
 
   I add the argument to the defintion
 
   .. code-block:: python
 
-    def function_w_keyword_arguments(first_name):
+    def take_keyword_arguments(first_name):
         return None
 
   the terminal shows :ref:`TypeError`
@@ -622,13 +622,13 @@ green: make it pass
   .. code-block:: python
     :force:
 
-    TypeError: function_w_keyword_arguments() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
+    TypeError: take_keyword_arguments() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
 
   I add the argument
 
   .. code-block:: python
 
-    def function_w_keyword_arguments(first_name, last_name):
+    def take_keyword_arguments(first_name, last_name):
         return None
 
   the terminal shows :ref:`AssertionError`
@@ -639,7 +639,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def function_w_keyword_arguments(first_name, last_name):
+    def take_keyword_arguments(first_name, last_name):
         return ('first_name', 'last_name')
 
   the test passes
@@ -647,20 +647,20 @@ green: make it pass
 refactor: make it better
 ################################################################################
 
-* So far ``function_w_keyword_arguments`` looks the same as ``function_w_positional_arguments``, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an assertion that puts the input data out of order to see if there is a difference
+* So far ``take_keyword_arguments`` looks the same as ``take_positional_arguments``, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an assertion that puts the input data out of order to see if there is a difference
 
   .. code-block:: python
 
       def test_functions_w_keyword_arguments(self):
           self.assertEqual(
-              functions.function_w_keyword_arguments(
+              functions.take_keyword_arguments(
                   first_name='first_name',
                   last_name='last_name'
               ),
               ('first_name', 'last_name')
           )
           self.assertEqual(
-              src.functions.function_w_keyword_arguments(
+              src.functions.take_keyword_arguments(
                   last_name='last_name',
                   first_name='first_name',
               ),
@@ -678,7 +678,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.function_w_keyword_arguments(
+        src.functions.take_keyword_arguments(
             last_name='last_name',
             first_name='first_name',
         ),
@@ -702,7 +702,7 @@ test_functions_w_unknown_keyword_arguments
 
     def test_functions_w_unknown_keyword_arguments(self):
         self.assertEqual(
-            src.functions.function_w_unknown_keyword_arguments(
+            src.functions.take_unknown_keyword_arguments(
                 a=1, b=2, c=3, d=4
             ),
             None
@@ -713,26 +713,26 @@ test_functions_w_unknown_keyword_arguments
   .. code-block:: python
     :force:
 
-    AttributeError: module 'src.functions' has no attribute 'function_w_unknown_keyword_arguments'. Did you mean: 'function_w_keyword_arguments'?
+    AttributeError: module 'src.functions' has no attribute 'take_unknown_keyword_arguments'. Did you mean: 'take_keyword_arguments'?
 
   I add a :ref:`function<functions>` using a `starred expression`_
 
   .. code-block:: python
 
-    def function_w_unknown_keyword_arguments(*arguments):
+    def take_unknown_keyword_arguments(*arguments):
         return arguments
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: function_w_unknown_keyword_arguments() got an unexpected keyword argument 'a'
+    TypeError: take_unknown_keyword_arguments() got an unexpected keyword argument 'a'
 
   the `starred expression`_ for keyword arguments is different, I change the :ref:`function<functions>`
 
   .. code-block:: python
 
-    def function_w_unknown_keyword_arguments(**keyword_arguments):
+    def take_unknown_keyword_arguments(**keyword_arguments):
         return keyword_arguments
 
   the terminal shows :ref:`AssertionError`
@@ -747,7 +747,7 @@ test_functions_w_unknown_keyword_arguments
 
     def test_functions_w_unknown_keyword_arguments(self):
         self.assertEqual(
-            src.functions.function_w_unknown_keyword_arguments(
+            src.functions.take_unknown_keyword_arguments(
                 a=1, b=2, c=3, d=4
             ),
             {'a': 1, 'b': 2, 'c': 3, 'd': 4}
@@ -760,13 +760,13 @@ test_functions_w_unknown_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.function_w_unknown_keyword_arguments(
+        src.functions.take_unknown_keyword_arguments(
             a=1, b=2, c=3, d=4
         ),
         {'a': 1, 'b': 2, 'c': 3, 'd': 4}
     )
     self.assertEqual(
-        src.functions.function_w_unknown_keyword_arguments(
+        src.functions.take_unknown_keyword_arguments(
             none=None,
             a_boolean=bool,
             an_integer=int,
@@ -792,7 +792,7 @@ test_functions_w_unknown_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(
-        src.functions.function_w_unknown_keyword_arguments(
+        src.functions.take_unknown_keyword_arguments(
             none=None,
             a_boolean=bool,
             an_integer=int,
@@ -835,7 +835,7 @@ I can also define :ref:`functions` to take both positional arguments and keyword
 
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
-        functions.takes_positional_and_keyword_arguments(
+        functions.take_positional_and_keyword_arguments(
             last_name='last_name', 'first_name'
         ),
         {}
@@ -861,7 +861,7 @@ green: make it pass
 
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
-            functions.takes_positional_and_keyword_arguments(
+            functions.take_positional_and_keyword_arguments(
                 'first_name', last_name='last_name'
             ),
             {}
@@ -872,41 +872,41 @@ green: make it pass
 
   .. code-block:: python
 
-    def takes_positional_and_keyword_arguments():
+    def take_positional_and_keyword_arguments():
         return None
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: takes_positional_and_keyword_arguments() got an unexpected keyword argument 'last_name'
+    TypeError: take_positional_and_keyword_arguments() got an unexpected keyword argument 'last_name'
 
 * I make the :ref:`function<functions>` signature to take in an argument
 
   .. code-block:: python
 
-    def takes_positional_and_keyword_arguments(last_name):
+    def take_positional_and_keyword_arguments(last_name):
         return None
 
   the terminal shows another :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: takes_positional_and_keyword_arguments() got multiple values for argument 'last_name'
+    TypeError: take_positional_and_keyword_arguments() got multiple values for argument 'last_name'
 
 * I add another argument to the :ref:`function<functions>` signature
 
   .. code-block:: python
 
-    def takes_positional_and_keyword_arguments(last_name, first_name):
+    def take_positional_and_keyword_arguments(last_name, first_name):
         return None
 
-  the terminal shows the same error even though I have 2 different arguments. I need a way to let the ``takes_positional_and_keyword_arguments`` know which argument is positional and which is a keyword argument
+  the terminal shows the same error even though I have 2 different arguments. I need a way to let the ``take_positional_and_keyword_arguments`` know which argument is positional and which is a keyword argument
 * I reorder the arguments in the signature
 
   .. code-block:: python
 
-    def takes_positional_and_keyword_arguments(first_name, last_name):
+    def take_positional_and_keyword_arguments(first_name, last_name):
         return None
 
   the terminal shows :ref:`AssertionError`
@@ -914,7 +914,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def takes_positional_and_keyword_arguments(first_name, last_name):
+    def take_positional_and_keyword_arguments(first_name, last_name):
         return first_name, last_name
 
   the terminal changes the :ref:`AssertionError` with the values I just added
@@ -924,7 +924,7 @@ green: make it pass
 
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
-          functions.takes_positional_and_keyword_arguments(
+          functions.take_positional_and_keyword_arguments(
                   'first_name', last_name='last_name'
               ),
               ('first_name', 'last_name')
@@ -938,11 +938,11 @@ refactor: make it better
 
 Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the :ref:`function<functions>` to fail when I send in values to find out
 
-* I make the signature of ``takes_positional_and_keyword_arguments`` to have a default value for the keyword argument
+* I make the signature of ``take_positional_and_keyword_arguments`` to have a default value for the keyword argument
 
   .. code-block:: python
 
-    def takes_positional_and_keyword_arguments(first_name, last_name=None):
+    def take_positional_and_keyword_arguments(first_name, last_name=None):
         return first_name, last_name
 
   all tests are still passing
@@ -951,7 +951,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
   .. code-block:: python
 
-    def takes_positional_and_keyword_arguments(first_name=None, last_name=None):
+    def take_positional_and_keyword_arguments(first_name=None, last_name=None):
         return first_name, last_name
 
   I still have passing tests. It looks like Python lets us use default arguments with no issues, and I can provide keyword arguments positionally without using the name.
@@ -962,13 +962,13 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
-              functions.takes_positional_and_keyword_arguments(
+              functions.take_positional_and_keyword_arguments(
                   'first_name', last_name='last_name'
               ),
               ('first_name', 'last_name')
           )
           self.assertEqual(
-              functions.takes_positional_and_keyword_arguments(
+              functions.take_positional_and_keyword_arguments(
                   'first_name', 'last_name'
               ),
               ('first_name', 'last_name')
@@ -981,23 +981,23 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
-            functions.takes_positional_and_keyword_arguments(
+            functions.take_positional_and_keyword_arguments(
                 'first_name', last_name='last_name'
             ),
             ('first_name', 'last_name')
         )
         self.assertEqual(
-            functions.takes_positional_and_keyword_arguments(
+            functions.take_positional_and_keyword_arguments(
                 'first_name', 'last_name'
             ),
             ('first_name', 'last_name')
         )
         self.assertEqual(
-            functions.takes_positional_and_keyword_arguments(),
+            functions.take_positional_and_keyword_arguments(),
             (None, None)
         )
         self.assertEqual(
-            functions.takes_positional_and_keyword_arguments(
+            functions.take_positional_and_keyword_arguments(
                 bool, int, float, str, tuple, list, set, dict,
                 a_boolean=bool, an_integer=int, a_float=float,
                 a_string=str, a_tuple=tuple, a_list=list,
@@ -1012,7 +1012,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
   .. code-block:: python
 
-    def takes_positional_and_keyword_arguments(*args, **kwargs):
+    def take_positional_and_keyword_arguments(*args, **kwargs):
         return args, kwargs
 
   the terminal shows :ref:`AssertionError` for a previous passing test. I have introduced a regression
@@ -1027,23 +1027,23 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
-            functions.takes_positional_and_keyword_arguments(
+            functions.take_positional_and_keyword_arguments(
               'first_name', last_name='last_name'
             ),
             ('first_name', 'last_name')
           )
           # self.assertEqual(
-          #    functions.takes_positional_and_keyword_arguments(
+          #    functions.take_positional_and_keyword_arguments(
           #        'first_name', 'last_name'
           #    ),
           #    (('first_name', 'last_name'), {})
           # )
           # self.assertEqual(
-          #     functions.takes_positional_and_keyword_arguments(),
+          #     functions.take_positional_and_keyword_arguments(),
           #     (None, None)
           # )
           # self.assertEqual(
-          #    functions.takes_positional_and_keyword_arguments(
+          #    functions.take_positional_and_keyword_arguments(
           #        bool, int, float, str, tuple, list, set, dict,
           #        a_boolean=bool, an_integer=int, a_float=float,
           #        a_string=str, a_tuple=tuple, a_list=list,
@@ -1057,7 +1057,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
   .. code-block:: python
 
     self.assertEqual(
-        functions.takes_positional_and_keyword_arguments(
+        functions.take_positional_and_keyword_arguments(
             'first_name', last_name='last_name'
         ),
         (('first_name',), {'last_name': 'last_name'})
@@ -1069,7 +1069,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
   .. code-block:: python
 
     self.assertEqual(
-        functions.takes_positional_and_keyword_arguments(
+        functions.take_positional_and_keyword_arguments(
             'first_name', 'last_name'
         ),
         (('first_name', 'last_name'), {})
@@ -1086,7 +1086,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
   .. code-block:: python
 
       self.assertEqual(
-          functions.takes_positional_and_keyword_arguments(
+          functions.take_positional_and_keyword_arguments(
               'first_name', 'last_name'
           ),
           (('first_name', 'last_name'), {})
@@ -1099,7 +1099,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
   .. code-block:: python
 
       self.assertEqual(
-          functions.takes_positional_and_keyword_arguments(),
+          functions.take_positional_and_keyword_arguments(),
           (None, None)
       )
 
@@ -1114,7 +1114,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
   .. code-block:: python
 
     self.assertEqual(
-        functions.takes_positional_and_keyword_arguments(),
+        functions.take_positional_and_keyword_arguments(),
         ((), {})
     )
 
@@ -1129,7 +1129,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
   .. code-block:: python
 
       self.assertEqual(
-          functions.takes_positional_and_keyword_arguments(
+          functions.take_positional_and_keyword_arguments(
               bool, int, float, str, tuple, list, set, dict,
               a_boolean=bool, an_integer=int, a_float=float,
               a_string=str, a_tuple=tuple, a_list=list,

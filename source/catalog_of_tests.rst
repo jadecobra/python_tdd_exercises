@@ -40,7 +40,7 @@ test_telephone
 test_person_factory
 *********************************************************************************
 
-#. :ref:`test_function_w_keyword_arguments`
+#. :ref:`test_takes_keyword_arguments`
 #. :ref:`test_function_w_default_keyword_arguments`
 
 *********************************************************************************
@@ -209,12 +209,18 @@ test_dictionaries
 test_functions
 *********************************************************************************
 
-#. :ref:`test_functions`
-#. :ref:`test_constant_functions<test_constant_functions>`
-#. :ref:`test_identity_functions<test_identity_functions>`
-#. :ref:`test_functions_w_positional_arguments<test_functions_w_positional_arguments>`
-#. :ref:`test_functions_w_keyword_arguments<test_functions_w_keyword_arguments>`
-#. :ref:`test_functions_w_positional_and_keyword_arguments<test_functions_w_positional_and_keyword_arguments>`
+#. :ref:`test_functions_w_pass`
+#. :ref:`test_functions_w_return`
+#. :ref:`test_functions_w_return_none`
+#. :ref:`test_constant_functions`
+#. :ref:`test_constant_functions_w_inputs`
+#. :ref:`test_identity_functions`
+#. :ref:`test_functions_w_positional_arguments`
+#. :ref:`test_functions_w_unknown_positional_arguments`
+#. :ref:`test_functions_w_keyword_arguments`
+#. :ref:`test_functions_w_unknown_keyword_arguments`
+#. :ref:`test_functions_w_positional_and_keyword_arguments`
+#. :ref:`test_functions_w_unknown_positional_and_keyword_arguments`
 
 *********************************************************************************
 test_classes
