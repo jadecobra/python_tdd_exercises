@@ -226,5 +226,5 @@ test_functions
 test_classes
 *********************************************************************************
 
-#. :ref:`test_classes_w_initializers`
+#. :ref:`test_make_a_class_w_initializers`
 #. :ref:`test_classes_attributes_methods`
