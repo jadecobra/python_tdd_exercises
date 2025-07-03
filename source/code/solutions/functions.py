@@ -14,7 +14,7 @@ def constant():
     return 'the same thing'
 
 
-def constant_w_inputs(*args):
+def constant_w_inputs(*arguments):
     return constant()
 
 
@@ -22,19 +22,25 @@ def identity(argument):
     return argument
 
 
-def function_w_positional_arguments(
-        first, second
-    ):
+def takes_positional_arguments(first, second):
     return first, second
 
 
-def function_w_unknown_positional_arguments(*arguments):
+def takes_unknown_positional_arguments(*arguments):
     return arguments
 
 
-def function_w_keyword_arguments(first_name, last_name):
-    return ('first_name', 'last_name')
+def takes_keyword_arguments(first_name, last_name):
+    return first_name, last_name
 
 
-def function_w_unknown_keyword_arguments(**keyword_arguments):
+def takes_unknown_keyword_arguments(**keyword_arguments):
     return keyword_arguments
+
+
+def takes_positional_and_keyword_arguments(first_name, last_name='Doe'):
+    return first_name, last_name
+
+
+def takes_unknown_positional_and_keyword_arguments(*arguments, **keyword_arguments):
+    return arguments, keyword_arguments
