@@ -15,7 +15,7 @@ The following Python data structures are tested here
   booleans/truth_table/index
   lists/lists
   lists/list_comprehensions
-  dictionaries/dictionaries
+  dictionaries
 
 ----
 

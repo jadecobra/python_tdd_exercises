@@ -142,7 +142,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertEqual(a_dictionary, {})
 
         with self.assertRaises(KeyError):
-            a_dictionary.pop('not in dictionary')
+            a_dictionary.pop('not_in_dictionary')
 
     def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
@@ -169,13 +169,13 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
         self.assertIsNone(a_dictionary.update(new_key='new value'))
         self.assertIsNone(a_dictionary.update(key='updated value'))
-        self.assertIsNone(a_dictionary.update({'another_key': 'another_value'}))
+        self.assertIsNone(a_dictionary.update({'another_key': 'another value'}))
         self.assertEqual(
             a_dictionary,
             {
                 'key': 'updated value',
                 'new_key': 'new value',
-                'another_key': 'another_value',
+                'another_key': 'another value',
             }
         )
 
