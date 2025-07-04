@@ -1,17 +1,3 @@
-.. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
-.. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
-.. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
-.. _conditional expressions: https://docs.python.org/3/reference/expressions.html#conditional-expressions
-.. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
-.. _if statement: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
-.. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
-.. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
-.. _return statements: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
-.. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
-.. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
-.. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
-.. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
-
 .. _and: https://docs.python.org/3/reference/expressions.html#and
 .. _append: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _arithmetic: https://en.wikipedia.org/wiki/Arithmetic
@@ -26,6 +12,8 @@
 .. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
+.. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+.. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _bash: https://www.gnu.org/software/bash/
 .. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _boolean: https://docs.python.org/3/library/functions.html#bool
@@ -35,6 +23,8 @@
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
 .. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
+.. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
+.. _conditional expressions: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _constructor: https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
 .. _count: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
@@ -57,6 +47,9 @@
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable>
 .. _history: https://man7.org/linux/man-pages/man3/history.3.html
+.. _if statement: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
+.. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
+.. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _insert: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
@@ -75,7 +68,6 @@
 .. _pip: https://pypi.org/project/pip/
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
-.. _python koans:
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _python package manager: https://pypi.org/project/pip/
 .. _python packages: https://docs.python.org/3/glossary.html#term-regular-package
@@ -88,6 +80,8 @@
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
 .. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
 .. _remove: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
+.. _return statements: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _reverse: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _sort: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
@@ -103,7 +97,10 @@
 .. _string: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _string interpolation: https://peps.python.org/pep-0498/
 .. _strings: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+.. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
+.. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _touch: https://man7.org/linux/man-pages/man1/touch.1.html
+.. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _tuples: https://docs.python.org/3/library/stdtypes.html#tuples
 .. _type: https://docs.python.org/3/glossary.html#term-type
@@ -128,6 +125,7 @@
 .. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
+.. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
 .. _zsh: https://zsh.sourceforge.io
 
