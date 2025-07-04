@@ -721,7 +721,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {'key': 'value'} is not None : {'key': 'value'}
 
-I change the assert_ :ref:`method<functions>`
+I change the assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -844,7 +844,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
 
-I change the assertion
+I change the assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -1020,7 +1020,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None : value
 
-  I change the assertion
+  I change the assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -1067,7 +1067,7 @@ refactor: make it better
 
     AssertionError: 'default' is not None : default
 
-  I change the assertion
+  I change the assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -1171,7 +1171,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [('key', 'value')] is not None : [('key', 'value')]
 
-I change the assertion
+I change the assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -1368,7 +1368,7 @@ test_pop_removes_given_key_from_a_dictionary
 red: make it fail
 #################################################################################
 
-I wonder if the next :ref:`method<functions>` is the same as the one in :ref:`test_pop_removes_and_returns_the_last_item_from_a_list`, I add a test for it
+I wonder if the next :ref:`method<functions>` is the same as the one in :ref:`test_pop_removes_and_returns_last_item_from_a_list`, I add a test for it
 
 .. code-block:: python
 
@@ -1466,7 +1466,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None : value
 
-  I change the assertion to assertEqual_
+  I change the assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -1559,7 +1559,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: ('key', 'value') is not None : ('key', 'value')
 
-I change the assertion
+I change the assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -1795,7 +1795,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None : value
 
-  I change the assertion to assertEqual_
+  I change the assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -1833,7 +1833,7 @@ refactor: make it better
 
     AssertionError: 'default' is not None : default
 
-  I change the assert_ :ref:`method<functions>`
+  I change the assertIsNone_ to assertEqual_
 
   .. code-block:: python
 

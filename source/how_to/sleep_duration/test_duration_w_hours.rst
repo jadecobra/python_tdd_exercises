@@ -553,7 +553,7 @@ refactor: make it better
 
   and the terminal shows green again
 
-* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :doc:`the chapter on lists </data_structures/lists/lists>` I know I can get it by using its index, Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a variable to ``test_string_splitting``
+* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_position_of_item_in_a_list>` I know I can get it by using its index, Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a variable to ``test_string_splitting``
 
   .. code-block:: python
 
