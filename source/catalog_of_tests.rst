@@ -226,5 +226,11 @@ test_functions
 test_classes
 *********************************************************************************
 
-#. :ref:`test_make_a_class_w_initializers`
-#. :ref:`test_classes_attributes_methods`
+#. :ref:`test_make_a_class_w_pass`
+#. :ref:`test_make_a_class_w_parentheses`
+#. :ref:`test_make_a_class_w_object`
+#. :ref:`test_make_a_class_w_attributes`
+#. :ref:`test_make_a_class_w_methods`
+#. :ref:`test_make_a_class_w_attributes_and_methods`
+#. :ref:`test_attributes_and_methods_of_objects`
+#. :ref:`test_make_a_class_w_initializer`
