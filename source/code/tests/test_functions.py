@@ -4,13 +4,13 @@ import unittest
 
 class TestFunctions(unittest.TestCase):
 
-    def test_function_w_pass(self):
+    def test_make_a_function_w_pass(self):
         self.assertIsNone(src.functions.function_w_pass())
 
-    def test_function_w_return(self):
+    def test_make_a_function_w_return(self):
         self.assertIsNone(src.functions.function_w_return())
 
-    def test_function_w_return_none(self):
+    def test_make_a_function_w_return(self):
         self.assertIsNone(src.functions.function_w_return_none())
 
     def test_constant_function(self):
@@ -25,11 +25,11 @@ class TestFunctions(unittest.TestCase):
             src.functions.constant()
         )
         self.assertEqual(
-            src.functions.constant_w_inputs('a', 1, 'c', 3),
+            src.functions.constant_w_inputs('a', 1, 'b', 3),
             src.functions.constant()
         )
 
-    def test_identity_function(self):
+    def test_identity_functions(self):
         self.assertIsNone(src.functions.identity(None))
         self.assertEqual(src.functions.identity(object), object)
 
@@ -47,7 +47,7 @@ class TestFunctions(unittest.TestCase):
             ('last_name', 'first_name')
         )
 
-    def test_function_w_unknown_positional_arguments(self):
+    def test_functions_w_unknown_positional_arguments(self):
         self.assertEqual(
             src.functions.takes_unknown_positional_arguments(
                 0, 1, 2, 3
@@ -61,7 +61,7 @@ class TestFunctions(unittest.TestCase):
             (None, bool, int, float, str, tuple, list, set, dict)
         )
 
-    def test_function_w_keyword_arguments(self):
+    def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.takes_keyword_arguments(
                 first_name='first_name',
@@ -83,12 +83,12 @@ class TestFunctions(unittest.TestCase):
             ('last_name', 'first_name')
         )
 
-    def test_function_w_unknown_arguments(self):
+    def test_functions_w_unknown_keyword_arguments(self):
         self.assertEqual(
             src.functions.takes_unknown_keyword_arguments(
                 a=1, b=2, c=3, d=4
             ),
-            {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+            {'a': 1, 'b': 2, 'c':3, 'd': 4}
         )
         self.assertEqual(
             src.functions.takes_unknown_keyword_arguments(
@@ -118,7 +118,7 @@ class TestFunctions(unittest.TestCase):
     def test_function_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             src.functions.takes_positional_and_keyword_arguments(
-                'first_name', last_name='last_name',
+                'first_name', last_name='last_name'
             ),
             ('first_name', 'last_name')
         )
@@ -137,11 +137,11 @@ class TestFunctions(unittest.TestCase):
             ),
             (
                 (None, bool, int, float, str, tuple, list, set, dict),
-                {
-                    'a_boolean': bool, 'a_dictionary': dict, 'a_float': float, 'a_list': list,
-                    'a_set': set, 'a_string': str, 'a_tuple': tuple, 'an_integer': int,
-                    'none': None
-                }
+                dict(
+                    none=None, a_boolean=bool, an_integer=int, a_float=float,
+                    a_string=str, a_tuple=tuple, a_list=list, a_set=set,
+                    a_dictionary=dict
+                )
             )
         )
 
@@ -150,5 +150,4 @@ class TestFunctions(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
-# TypeError
 # SyntaxError
