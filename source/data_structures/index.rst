@@ -13,7 +13,7 @@ The following Python data structures are tested here
   none
   booleans/index
   booleans/truth_table/index
-  lists/lists
+  lists/index
   lists/list_comprehensions
   dictionaries
 
