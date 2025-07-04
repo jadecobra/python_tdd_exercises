@@ -165,7 +165,7 @@ test_lists
 #. :ref:`test_remove_first_instance_of_item_from_a_list`
 #. :ref:`test_reverse_a_list`
 #. :ref:`test_sort_a_list`
-#. :ref:`test_get_items_from_a_list`
+#. :ref:`test_get_items_from_a_list_aka_indexing`
 #. :ref:`test_view_parts_of_a_list_aka_slicing`
 #. :ref:`test_index_error`
 

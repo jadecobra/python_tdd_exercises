@@ -133,7 +133,7 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.sort())
         self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
-    def test_get_items_from_a_list(self):
+    def test_get_items_from_a_list_aka_indexing(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[-4], '1st')

@@ -135,7 +135,7 @@ I change the expectation to match
 
   self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-the test passes. The tests show I can make a list_ with the list_ constructor_ and square brackets - ``[]``, which uses less characters than the constructor_
+the test passes. The tests show I can make a list_ with the list_ constructor_ and square brackets(``[]``), which uses less characters than the constructor_
 
 ----
 
@@ -165,15 +165,15 @@ I add a failing test
 
 the terminal shows :ref:`AssertionError`
 
-  .. code-block::python
+.. code-block::python
 
-    AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
+  AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
 
 there is also a note on how to see the full difference between ``dir(list)`` and my empty list
 
-  .. code-block:: python
+.. code-block:: python
 
-    Diff is 748 characters long. Set self.maxDiff to None to see it
+  Diff is 748 characters long. Set self.maxDiff to None to see it
 
 `unittest.TestCase.maxDiff`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal, when it is set to :ref:`None` it shows all the differences
 
@@ -193,7 +193,7 @@ green: make it pass
             ]
         )
 
-  the terminal shows a long list of items. I copy and paste them from the terminal and remove the extra characters with find and replace
+  the terminal shows a long list of items. I copy and paste them from the terminal and use find and replace to remove the extra characters
 
   .. note::
 
@@ -207,42 +207,7 @@ green: make it pass
             dir(list),
             [
                 '__add__',
-                '__class__',
-                '__class_getitem__',
-                '__contains__',
-                '__delattr__',
-                '__delitem__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getitem__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__iadd__',
-                '__imul__',
-                '__init__',
-                '__init_subclass__',
-                '__iter__',
-                '__le__',
-                '__len__',
-                '__lt__',
-                '__mul__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__reversed__',
-                '__rmul__',
-                '__setattr__',
-                '__setitem__',
-                '__sizeof__',
-                '__str__',
-                '__subclasshook__',
+                ...
                 'append',
                 'clear',
                 'copy',
@@ -404,7 +369,7 @@ the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None
 red: make it fail
 #################################################################################
 
-We can guess what this :ref:`method<functions>` does to the list_. I add an assertion to show it
+I add an assertion to show what it did to the list_
 
 .. code-block:: python
 
@@ -465,7 +430,7 @@ test_copy_a_list
 red: make it fail
 #################################################################################
 
-I add another test, I think we can also guess what this one does
+I add another test, I think we can guess what this one does
 
 .. code-block:: python
 
@@ -619,7 +584,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* It looks like the count_ :ref:`method<functions>` returns the number of times an item is in a list_. I change the list_ then add another assertion to be sure
+* It looks like the count_ :ref:`method<functions>` returns the number of times an item is in a list_. I change it then add another assertion to be sure
 
   .. code-block:: python
 
@@ -741,8 +706,8 @@ refactor: make it better
 
   .. code-block:: python
 
-      self.assertIsNone(a_list.extend((0, 1)))
-      self.assertEqual(a_list, [0, 1, 2, 'n'])
+    self.assertIsNone(a_list.extend((0, 1)))
+    self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal shows :ref:`AssertionError`
 
@@ -863,7 +828,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I cannot tell from the test if the :ref:`method<functions>` is returning the same value I give it, I change the values in ``a_list`` to check
+* I change the values in ``a_list`` to see if the :ref:`method<functions>` is returning the same value I give it
 
   .. code-block:: python
 
@@ -1352,12 +1317,12 @@ refactor: make it better
 
   the test passes
 
-* I want to know what happens if the item is not in the list_
+* I want to know what happens when the item is not in the list_
 
   .. code-block:: python
 
-        self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
-        self.assertIsNone(a_list.remove('not in list'))
+    self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
+    self.assertIsNone(a_list.remove('not in list'))
 
   the terminal shows ValueError_
 
@@ -1507,7 +1472,7 @@ refactor: make it better
         self.assertIsNone(a_list.sort())
 
 
-  the terminal still shows green. sort_ returns :ref:`None` when called. I add another assertion to see what it did to the list_
+  the terminal still shows green, sort_ returns :ref:`None` when called. I add another assertion to see what it did to the list_
 
   .. code-block:: python
 
@@ -1526,7 +1491,7 @@ refactor: make it better
 
     self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<functions>` is sort_ and the ``a_list`` is already sorted. I change it to see what would happen when it is not sorted
+  the test passes. The name of the :ref:`method<functions>` is sort_ and the list_ is already sorted. I change it to see what would happen when it is not sorted
 
   .. code-block:: python
 
@@ -1538,7 +1503,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
-  the sort_ :ref:`method<functions>` arranges the list_ in ascending order by default. I change the values to match
+  the sort_ :ref:`method<functions>` arranges the list_ in ascending order. I change the values to match
 
   .. code-block:: python
 
@@ -1563,7 +1528,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_get_items_from_a_list
+test_get_items_from_a_list_aka_indexing
 *********************************************************************************
 
 I can provide the index of an item I want to see in square brackets(``[]``) to a list_
@@ -1585,7 +1550,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: '1st' != ''
 
-Python starts indexing at ``0`` as shown in :ref:`test_index_returns_position_of_item_in_a_list`
+the first item has an index of ``0`` as shown in :ref:`test_index_returns_position_of_item_in_a_list`
 
 green: make it pass
 #################################################################################
@@ -1624,7 +1589,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion statement
+* I add another assertion
 
   .. code-block:: python
 
@@ -1645,7 +1610,7 @@ refactor: make it better
 
   the terminal shows green again
 
-* I add another line with a negative number
+* I add another assertion
 
   .. code-block:: python
 
@@ -1746,7 +1711,22 @@ refactor: make it better
 
     self.assertEqual(a_list[-1], '...last')
 
-  the test passes
+  the test passes. This is also called indexing
+
+* I change the name of the test
+
+  .. code-block:: python
+
+    def test_get_items_from_a_list_aka_indexing(self):
+        a_list = ['1st', '2nd', '3rd', '...last']
+        self.assertEqual(a_list[0], '1st')
+        self.assertEqual(a_list[-4], '1st')
+        self.assertEqual(a_list[2], '3rd')
+        self.assertEqual(a_list[-2], '3rd')
+        self.assertEqual(a_list[1], '2nd')
+        self.assertEqual(a_list[-3], '2nd')
+        self.assertEqual(a_list[3], '...last')
+        self.assertEqual(a_list[-1], '...last')
 
 ----
 
