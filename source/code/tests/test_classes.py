@@ -47,6 +47,11 @@ class TestClasses(unittest.TestCase):
             'you called a method'
         )
 
+    def test_make_a_class_w_initializer(self):
+        self.assertEqual(src.classes.Boy().sex, 'M')
+        self.assertEqual(src.classes.Girl(sex='F').sex, 'F')
+        self.assertEqual(src.classes.Other(sex='?').sex, '?')
+
     def test_attributes_and_methods_of_objects(self):
         self.assertEqual(
             dir(src.classes.WithAttributesAndMethods),
@@ -84,11 +89,6 @@ class TestClasses(unittest.TestCase):
                 'method'
             ]
         )
-
-    def test_make_a_class_w_initializer(self):
-        self.assertEqual(src.classes.Boy().sex, 'M')
-        self.assertEqual(src.classes.Girl(sex='F').sex, 'F')
-        self.assertEqual(src.classes.Other(sex='?').sex, '?')
 
 
 # Exceptions Encountered

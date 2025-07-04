@@ -232,5 +232,5 @@ test_classes
 #. :ref:`test_make_a_class_w_attributes`
 #. :ref:`test_make_a_class_w_methods`
 #. :ref:`test_make_a_class_w_attributes_and_methods`
-#. :ref:`test_attributes_and_methods_of_objects`
 #. :ref:`test_make_a_class_w_initializer`
+#. :ref:`test_attributes_and_methods_of_objects`
