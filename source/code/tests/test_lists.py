@@ -99,7 +99,7 @@ class TestLists(unittest.TestCase):
         with self.assertRaises(ValueError):
             a_list.index('not in list')
 
-    def test_insert_places_item_at_index_given_in_a_list(self):
+    def test_insert_places_item_at_given_index_in_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert(0, -1))
         self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
@@ -111,6 +111,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
         self.assertEqual(a_list.pop(), 2)
+        self.assertEqual(a_list, [0, 1])
 
     def test_remove_first_instance_of_item_from_a_list(self):
         a_list = [0, 1, 0, 2, 0, 'n']
