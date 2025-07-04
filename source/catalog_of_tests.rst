@@ -161,11 +161,11 @@ test_lists
 #. :ref:`test_extend_makes_a_list_longer`
 #. :ref:`test_index_returns_position_of_item_in_a_list`
 #. :ref:`test_insert_places_item_at_given_index_in_a_list`
-#. :ref:`test_pop_removes_and_returns_the_last_item_from_a_list`
+#. :ref:`test_pop_removes_and_returns_last_item_from_a_list`
 #. :ref:`test_remove_first_instance_of_item_from_a_list`
 #. :ref:`test_reverse_a_list`
 #. :ref:`test_sort_a_list`
-#. :ref:`test_get_items_from_a_list_aka_indexing`
+#. :ref:`test_get_items_from_a_list`
 #. :ref:`test_view_parts_of_a_list_aka_slicing`
 #. :ref:`test_index_error`
 

@@ -106,7 +106,7 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.insert(3, 1.5))
         self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
-    def test_pop_removes_and_returns_the_last_item_from_a_list(self):
+    def test_pop_removes_and_returns_last_item_in_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertEqual(a_list.pop(), 'n')
         self.assertEqual(a_list, [0, 1, 2])
@@ -133,7 +133,7 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.sort())
         self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
-    def test_get_items_from_a_list_aka_indexing(self):
+    def test_get_items_from_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[-4], '1st')
