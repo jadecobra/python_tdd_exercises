@@ -107,19 +107,20 @@ class TestDictionaries(unittest.TestCase):
 
     def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
         self.assertEqual(
-            dict.fromkeys((0, 1), 'default'),
-            {0: 'default', 1: 'default'}
+            dict.fromkeys((0, 1, 2, 'n'), 'default'),
+            {0: 'default', 1: 'default', 2: 'default', 'n': 'default'}
         )
 
     def test_get_a_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
         self.assertEqual(a_dictionary.get('key', 'default'), 'value')
+        self.assertEqual(a_dictionary, {'key': 'value'})
 
-    def test_items_returns_key_value_pairs_from_a_dictionary(self):
+    def test_items_returns_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN'
+            'keyN': 'valueN',
         }
         self.assertEqual(
             list(a_dictionary.items()),
@@ -134,7 +135,10 @@ class TestDictionaries(unittest.TestCase):
             'key1': 'value1',
             'keyN': 'valueN',
         }
-        self.assertEqual(list(a_dictionary.keys()), ['key1', 'keyN'])
+        self.assertEqual(
+            list(a_dictionary.keys()),
+            ['key1', 'keyN']
+        )
 
     def test_pop_removes_key_and_returns_value_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
