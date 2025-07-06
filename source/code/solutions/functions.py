@@ -1,12 +1,12 @@
-def function_w_pass():
+def w_pass():
     pass
 
 
-def function_w_return():
+def w_return():
     return
 
 
-def function_w_return_none():
+def w_return_none():
     return None
 
 
@@ -14,33 +14,29 @@ def constant():
     return 'the same thing'
 
 
-def constant_w_inputs(*arguments):
-    return constant()
-
-
 def identity(argument):
     return argument
 
 
-def takes_positional_arguments(first, second):
+def w_positional_arguments(first, second):
     return first, second
 
 
-def takes_unknown_positional_arguments(*arguments):
+def w_unknown_positional_arguments(*arguments):
     return arguments
 
 
-def takes_keyword_arguments(first_name, last_name):
-    return first_name, last_name
+def w_keyword_arguments(first, second):
+    return first, second
 
 
-def takes_unknown_keyword_arguments(**keyword_arguments):
+def w_unknown_keyword_arguments(**keyword_arguments):
     return keyword_arguments
 
 
-def takes_positional_and_keyword_arguments(first_name, last_name='Doe'):
-    return first_name, last_name
+def w_positional_and_keyword_arguments(first_name, last_name='Doe', sex='M'):
+    return first_name, last_name, sex
 
 
-def takes_unknown_positional_and_keyword_arguments(*arguments, **keyword_arguments):
+def w_unknown_positional_and_keyword_arguments(*arguments, **keyword_arguments):
     return arguments, keyword_arguments
