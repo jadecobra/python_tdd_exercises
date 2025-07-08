@@ -20,37 +20,29 @@ class TestClasses(unittest.TestCase):
         self.assertEqual(src.classes.WithAttributes.attribute_d, 'attribute_d')
 
     def test_make_a_class_w_methods(self):
-        self.assertEqual(
-            src.classes.WithMethods.method_a(),
-            'You called method_a'
-        )
-        self.assertEqual(
-            src.classes.WithMethods.method_b(),
-            'You called method_b'
-        )
-        self.assertEqual(
-            src.classes.WithMethods.method_c(),
-            'You called method_c'
-        )
-        self.assertEqual(
-            src.classes.WithMethods.method_d(),
-            'You called method_d'
-        )
+        self.assertEqual(src.classes.WithMethods.method_a(), 'You called method_a')
+        self.assertEqual(src.classes.WithMethods.method_b(), 'You called method_b')
+        self.assertEqual(src.classes.WithMethods.method_c(), 'You called method_c')
+        self.assertEqual(src.classes.WithMethods.method_d(), 'You called method_d')
 
     def test_make_a_class_w_attributes_and_methods(self):
         self.assertEqual(
-            src.classes.WithAttributesAndMethods.attribute,
-            'attribute'
+            src.classes.WithAttributesAndMethods.attribute, 'attribute'
         )
         self.assertEqual(
-            src.classes.WithAttributesAndMethods.method(),
-            'you called a method'
+            src.classes.WithAttributesAndMethods.method(), 'You called method'
         )
 
     def test_make_a_class_w_initializer(self):
         self.assertEqual(src.classes.Boy().sex, 'M')
         self.assertEqual(src.classes.Girl(sex='F').sex, 'F')
         self.assertEqual(src.classes.Other(sex='?').sex, '?')
+        boy = src.classes.Human(sex='M')
+        self.assertEqual(boy.sex, 'M')
+        girl = src.classes.Human(sex='F')
+        self.assertEqual(girl.sex, 'F')
+        other = src.classes.Human(sex='?')
+        self.assertEqual(other.sex, '?')
 
     def test_attributes_and_methods_of_objects(self):
         self.assertEqual(
@@ -95,3 +87,4 @@ class TestClasses(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
+# TypeError
