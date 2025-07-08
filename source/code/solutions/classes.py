@@ -1,16 +1,12 @@
 class WithPass:
-
     pass
 
 
-
 class WithParentheses():
-
     pass
 
 
 class WithObject(object):
-
     pass
 
 
@@ -37,13 +33,12 @@ class WithMethods(object):
         return 'You called method_d'
 
 
-
 class WithAttributesAndMethods(object):
 
     attribute = 'attribute'
 
     def method():
-        return 'you called a method'
+        return 'You called method'
 
 
 class Human(object):
@@ -53,9 +48,5 @@ class Human(object):
 
 
 class Boy(Human): pass
-
-
 class Girl(Human): pass
-
-
 class Other(Human): pass
