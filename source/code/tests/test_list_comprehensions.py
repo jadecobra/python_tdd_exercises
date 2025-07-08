@@ -64,12 +64,12 @@ class TestListComprehensions(unittest.TestCase):
         )
 
     def test_list_comprehensions_w_functions(self):
-        squares = []
+        square_numbers = []
         for item in self.iterable:
-            squares.append(process(item))
+            square_numbers.append(process(item))
 
         self.assertEqual(
-            squares,
+            square_numbers,
             [process(item) for item in self.iterable]
         )
         self.assertEqual(
