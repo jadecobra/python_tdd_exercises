@@ -33,16 +33,24 @@ class TestClasses(unittest.TestCase):
             src.classes.WithAttributesAndMethods.method(), 'You called method'
         )
 
-    def test_make_a_class_w_initializer(self):
-        self.assertEqual(src.classes.Boy().sex, 'M')
-        self.assertEqual(src.classes.Girl(sex='F').sex, 'F')
-        self.assertEqual(src.classes.Other(sex='?').sex, '?')
-        boy = src.classes.Human(sex='M')
-        self.assertEqual(boy.sex, 'M')
-        girl = src.classes.Human(sex='F')
-        self.assertEqual(girl.sex, 'F')
-        other = src.classes.Human(sex='?')
-        self.assertEqual(other.sex, '?')
+    def test_make_a_class_w_an_initializer(self):
+        boy_a = src.classes.Human()
+        boy_b = src.classes.Boy()
+        girl_a = src.classes.Human(sex='F')
+        girl_b = src.classes.Girl(sex='F')
+        other_a = src.classes.Human(sex='?')
+        other_b = src.classes.Human(sex='?')
+
+        self.assertEqual(boy_a.sex, 'M')
+        self.assertEqual(boy_b.sex, boy_a.sex)
+        self.assertEqual(girl_a.sex, 'F')
+        self.assertEqual(girl_b.sex, girl_a.sex)
+        self.assertEqual(other_a.sex, '?')
+        self.assertEqual(other_b.sex, other_a.sex)
+
+        self.assertNotEqual(boy_a, boy_b)
+        self.assertNotIsInstance(boy_a, src.classes.Boy)
+        self.assertIsInstance(boy_b, src.classes.Human)
 
     def test_attributes_and_methods_of_objects(self):
         self.assertEqual(
@@ -87,4 +95,3 @@ class TestClasses(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
-# TypeError

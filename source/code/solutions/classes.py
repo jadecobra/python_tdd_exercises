@@ -23,6 +23,7 @@ class WithMethods(object):
     def method_a():
         return 'You called method_a'
 
+
     def method_b():
         return 'You called method_b'
 
@@ -48,5 +49,9 @@ class Human(object):
 
 
 class Boy(Human): pass
+
+
 class Girl(Human): pass
-class Other(Human): pass
+
+
+class Other(Boy): pass
