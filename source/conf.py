@@ -33,7 +33,12 @@ html_theme_options = {
 #     ]
 # }
 
-extensions = ['sphinx.ext.autosectionlabel', 'sphinx_sitemap']
+extensions = [
+    'sphinx.ext.autosectionlabel',
+    'sphinx_sitemap',
+    'sphinx.ext.intersphinx',
+]
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 # -- Options for ePub output -------------------------------------------------
 epub_theme = 'epub'

@@ -15,7 +15,6 @@
 .. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _bash: https://www.gnu.org/software/bash/
-.. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _boolean: https://docs.python.org/3/library/functions.html#bool
 .. _booleans: https://docs.python.org/3/library/functions.html#bool
 .. _callable: https://docs.python.org/3/glossary.html#term-callable

@@ -178,13 +178,13 @@ refactor: make it better
         self.assertIsNotNone(True)
         self.assertNotIsInstance(False, bool)
 
-  I use the assertNotIsInstance_ :ref:`method<functions>` to test if :ref:`False<test_what_is_false>` is NOT an instance of the bool_ :ref:`class<classes>` which is for booleans_. The terminal shows :ref:`AssertionError`
+  I use the assertNotIsInstance_ :ref:`method<functions>` to test if :ref:`False<test_what_is_false>` is NOT an instance of the :py:class:`bool` :ref:`class<classes>` which is for booleans_. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a boolean_. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is an instance of the bool_ :ref:`class<classes>`
+  :ref:`False<test_what_is_false>` is a boolean_. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is an instance of the :py:class:`bool` :ref:`class<classes>`
 
   .. code-block:: python
 

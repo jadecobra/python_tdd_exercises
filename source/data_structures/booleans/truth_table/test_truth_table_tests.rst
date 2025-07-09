@@ -1245,7 +1245,7 @@ all the tests are still passing
 review
 *********************************************************************************
 
-I ran tests using booleans_ which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
+I ran tests using :py:class:`booleans<bool>` which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
 
 * there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input and are constant
 

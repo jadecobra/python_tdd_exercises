@@ -144,7 +144,7 @@ refactor: make it better
             return True
         return False
 
-  the test is still green. I remove the other `if statements`_ then use bool_ with not_
+  the test is still green. I remove the other `if statements`_ then use :py:class:`bool` with not_
 
   .. code-block:: python
 

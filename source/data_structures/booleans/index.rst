@@ -16,7 +16,7 @@ booleans
 
 ----
 
-There are 2 booleans_ - True_ and False_
+There are 2 :py:class:`booleans<bool>` - True_ and False_
 
 *********************************************************************************
 test_what_is_false
@@ -47,7 +47,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
-* and change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of the boolean_ :ref:`class <classes>`
+* and change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of :py:class:`bool`
 
   .. code-block:: python
 

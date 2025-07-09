@@ -180,7 +180,7 @@ test_make_a_dictionary_w_a_boolean_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test where I use a boolean_ as a key in a dictionary_
+I add a test where I use a :py:class:`boolean<bool>`  as a key in a dictionary_
 
 .. code-block:: python
 
@@ -235,7 +235,7 @@ I add the new key-value pair to the expectation
       {False: 'boom', True: 'bap'}
   )
 
-the test passes. I can use a boolean_ as a key in a dictionary_
+the test passes. I can use a :py:class:`boolean<bool>`as a key in a dictionary_
 
 ----
 

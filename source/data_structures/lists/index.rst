@@ -21,6 +21,8 @@ lists
 
 ----
 
+:py:class:`dictionary<dict>`
+
 A list_ is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``
