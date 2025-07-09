@@ -90,7 +90,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
     def test_index_returns_position_of_item_in_a_list(self):
-        a_list = ['1st', '2nd', '3rd', '...last']
+        a_list = ['1st', '2nd', '3rd', '...last', '1st']
         self.assertEqual(a_list.index('1st'), 0)
         self.assertEqual(a_list.index('3rd'), 2)
         self.assertEqual(a_list.index('2nd'), 1)

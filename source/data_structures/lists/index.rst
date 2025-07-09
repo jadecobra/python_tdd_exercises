@@ -90,7 +90,7 @@ I change the expectation
 
   self.assertEqual(list(), [])
 
-the test passes, this is how to make an empty list_
+the test passes. This is how to make an empty list_
 
 refactor: make it better
 #################################################################################
@@ -152,16 +152,16 @@ I add a failing test
 
 .. code-block:: python
 
-    def test_make_a_list(self):
-        ...
+  def test_make_a_list(self):
+      ...
 
-    def test_attributes_and_methods_of_lists(self):
-      self.assertEqual(
-          dir(list),
-          [
+  def test_attributes_and_methods_of_lists(self):
+    self.assertEqual(
+        dir(list),
+        [
 
-          ]
-      )
+        ]
+    )
 
 the terminal shows :ref:`AssertionError`
 
