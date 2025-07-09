@@ -134,7 +134,7 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.sort())
         self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
-    def test_get_items_from_a_list_aka_indexing(self):
+    def test_get_items_from_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[-4], '1st')
@@ -164,6 +164,8 @@ class TestLists(unittest.TestCase):
             a_list[4]
         with self.assertRaises(IndexError):
             a_list[-5]
+        with self.assertRaises(IndexError):
+            [][-1]
         with self.assertRaises(IndexError):
             [].pop()
 
