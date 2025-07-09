@@ -165,9 +165,9 @@ class TestLists(unittest.TestCase):
         with self.assertRaises(IndexError):
             a_list[-5]
         with self.assertRaises(IndexError):
-            [][-1]
-        with self.assertRaises(IndexError):
             [].pop()
+        with self.assertRaises(IndexError):
+            [][-1]
 
 
 # Exceptions Encountered
