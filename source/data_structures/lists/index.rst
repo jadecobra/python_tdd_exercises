@@ -22,6 +22,9 @@ lists
 ----
 
 :py:class:`dictionary<dict>`
+:py:class:`object`
+:py:mod:`zipfile`
+
 
 A list_ is an :ref:`object<classes>` that can hold other objects_
 
@@ -100,6 +103,7 @@ refactor: make it better
 I add another assertion, this time with input to the list_ constructor_
 
 .. code-block:: python
+  :emphasize-lines: 2
 
   self.assertEqual(list(), [])
   self.assertEqual(list(0), [])
@@ -145,7 +149,7 @@ the test passes. The tests show I can make a list_ with the list_ constructor_ a
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
+I can use the :py:func:`dir` :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
 
 red: make it fail
 #################################################################################
@@ -185,6 +189,7 @@ green: make it pass
 * I move the terminal to the right then add ``self.maxDiff`` to the test
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def test_attributes_and_methods_of_lists(self):
         self.maxDiff = None

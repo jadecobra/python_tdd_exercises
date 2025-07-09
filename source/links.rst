@@ -15,8 +15,6 @@
 .. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _bash: https://www.gnu.org/software/bash/
-.. _boolean: https://docs.python.org/3/library/functions.html#bool
-.. _booleans: https://docs.python.org/3/library/functions.html#bool
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
@@ -31,12 +29,9 @@
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
-.. _dir: https://docs.python.org/3/library/functions.html?highlight=dir#dir
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _extend: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _float: https://docs.python.org/3/library/functions.html#float
-.. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
 .. _fromkeys: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys

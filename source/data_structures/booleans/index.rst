@@ -251,7 +251,7 @@ I want to test the other Python basic data types_ to see if any of them are Fals
 
 * is :ref:`None` False_ or True_?
 * is an integer_ False_ or True_?
-* is a float_ False_ or True_?
+* is a :py:class:`float` False_ or True_?
 * is a string_ False_ or True_?
 * is a tuple_ False_ or True_?
 * is a :ref:`list <lists>` False_ or True_?
@@ -575,7 +575,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-  I can make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
+  I can make the new notes simpler because :py:class:`floats<float>` and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
 
   .. code-block:: python
 

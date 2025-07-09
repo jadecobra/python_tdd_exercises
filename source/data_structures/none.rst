@@ -578,7 +578,7 @@ refactor: make it better
         self.assertIsNotNone(0.1)
         self.assertNotIsInstance(-0.1, float)
 
-  float_ is the :ref:`class<classes>` for floating point numbers, the terminal shows :ref:`AssertionError`
+  :py:class:`float` is the :ref:`class<classes>` for floating point numbers, the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 

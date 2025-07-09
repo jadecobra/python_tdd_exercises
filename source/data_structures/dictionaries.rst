@@ -276,7 +276,7 @@ the test passes. I can use an integer_ as a key in a dictionary_
 refactor: make it better
 #################################################################################
 
-I add a float_ as a key
+I add a :py:class:`float` as a key
 
 .. code-block:: python
 
@@ -301,7 +301,7 @@ I add the new key-value pair to the expectation
       {0: 'boom', 0.1: 'bap'}
   )
 
-the test passes. I can use integers_ and floats_ as keys in a dictionary_
+the test passes. I can use integers_ and :py:class:`floats<float>` as keys in a dictionary_
 
 ----
 
@@ -481,7 +481,7 @@ test_attributes_and_methods_of_dictionaries
 red: make it fail
 #################################################################################
 
-I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I add a new test with the :py:func:`dir` :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 .. code-block:: python
 
@@ -2338,7 +2338,7 @@ I ran tests for `dictionaries <https://docs.python.org/3/library/stdtypes.html#m
 
 * they contain key-value pairs
 * any :ref:`object<classes>` can be used as values
-* strings_, :ref:`booleans`, integers_, floats_ and tuples_ can be used as keys
+* strings_, :ref:`booleans`, integers_, :py:class:`floats<float>` and tuples_ can be used as keys
 * they can be represented with ``{}``
 * they can be made with the `dict <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ constructor_
 
