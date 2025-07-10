@@ -25,7 +25,7 @@ A list_ is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``
 * they can be made with the list_ constructor_
-* they can be changed by performing an operation
+* they can be changed by performing an operation, this means they are mutable
 
 *********************************************************************************
 requirements
@@ -120,6 +120,7 @@ I add the error to the list of Exceptions_ encountered
 I change the input to a tuple_
 
 .. code-block:: python
+  :emphasize-lines: 2
 
   self.assertEqual(list(), [])
   self.assertEqual(list((0, 1, 2, 'n')), [])
