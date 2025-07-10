@@ -21,11 +21,6 @@ lists
 
 ----
 
-:py:class:`dictionary<dict>`
-:py:class:`object`
-:py:mod:`zipfile`
-
-
 A list_ is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``

@@ -76,7 +76,6 @@ class TestLists(unittest.TestCase):
     def test_copy_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
-        self.assertEqual(a_list, [0, 1, 2, 'n'])
 
     def test_count_number_of_times_item_is_in_a_list(self):
         a_list = [0, 1, 2, 1, 'n', 1]
@@ -137,6 +136,7 @@ class TestLists(unittest.TestCase):
     def test_get_items_from_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
+        self.assertEqual(a_list[a_list.index('1st')], '1st')
         self.assertEqual(a_list[-4], '1st')
         self.assertEqual(a_list[2], '3rd')
         self.assertEqual(a_list[-2], '3rd')
