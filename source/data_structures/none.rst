@@ -169,7 +169,7 @@ refactor: make it better
 
   and the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a boolean_
+* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a :ref:`boolean<booleans>`
 
   .. code-block:: python
 
@@ -178,13 +178,13 @@ refactor: make it better
         self.assertIsNotNone(True)
         self.assertNotIsInstance(False, bool)
 
-  I use the assertNotIsInstance_ :ref:`method<functions>` to test if :ref:`False<test_what_is_false>` is NOT an instance of the :py:class:`bool` :ref:`class<classes>` which is for booleans_. The terminal shows :ref:`AssertionError`
+  I use the assertNotIsInstance_ :ref:`method<functions>` to test if :ref:`False<test_what_is_false>` is NOT an instance of the :ref:`bool<booleans>` :ref:`class<classes>`. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a boolean_. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is an instance of the :py:class:`bool` :ref:`class<classes>`
+  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is an instance of the :py:class:`bool` :ref:`class<classes>`
 
   .. code-block:: python
 
@@ -209,7 +209,7 @@ refactor: make it better
 
     AssertionError: True is an instance of <class 'bool'>
 
-  :ref:`True<test_what_is_true>` is a boolean_. I use the assertIsInstance_ :ref:`method<functions>`
+  :ref:`True<test_what_is_true>` is a :ref:`boolean<booleans>`. I use the assertIsInstance_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -238,7 +238,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'bool'>
 
-  :ref:`None` is NOT a boolean_. I change the :ref:`method<functions>`
+  :ref:`None` is NOT a :ref:`boolean<booleans>`. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
