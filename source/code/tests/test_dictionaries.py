@@ -30,7 +30,7 @@ class TestDictionaries(unittest.TestCase):
 
     def test_make_a_dictionary_w_a_list_as_a_key(self):
         with self.assertRaises(TypeError):
-            {[3, 1, 1]: 'BOOM!'}
+            {[3, 2, 1]: 'BOOM!'}
 
     def test_make_a_dictionary_w_a_set_as_a_key(self):
         with self.assertRaises(TypeError):
