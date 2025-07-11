@@ -486,7 +486,7 @@ test_is_none_a_float
 red: make it fail
 #################################################################################
 
-I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a float_
+I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :py:class:`float`
 
 .. code-block:: python
 

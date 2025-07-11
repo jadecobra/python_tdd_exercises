@@ -448,7 +448,7 @@ test_passing_a_float
 red: make it fail
 #################################################################################
 
-I add a test for a float_
+I add a test for a :py:class:`float`
 
 .. code-block:: python
 
