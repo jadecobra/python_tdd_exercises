@@ -13,7 +13,7 @@ class TestFunctions(unittest.TestCase):
     def test_make_a_function_w_return_none(self):
         self.assertIsNone(src.functions.w_return_none())
 
-    def test_constant_functions(self):
+    def test_constant_function(self):
         self.assertEqual(
             src.functions.constant(),
             'the same thing'
@@ -35,69 +35,75 @@ class TestFunctions(unittest.TestCase):
 
     def test_functions_w_unknown_positional_arguments(self):
         self.assertEqual(
-            src.functions.w_unknown_positional_arguments(0, 1, 2, 3),
-            (0, 1, 2, 3)
+            src.functions.w_unknown_positional_arguments(
+                0, 1, 2, 3
+            ),
+            4
         )
         self.assertEqual(
             src.functions.w_unknown_positional_arguments(
                 None, bool, int, float, str, tuple, list, set, dict
             ),
-            (None, bool, int, float, str, tuple, list, set, dict)
+            9
         )
 
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
-            src.functions.w_keyword_arguments(x='first', y='second'),
+            src.functions.w_keyword_arguments(
+                x='first', y='second',
+            ),
             ('first', 'second')
         )
         self.assertEqual(
-            src.functions.w_keyword_arguments(y='second', x='first'),
+            src.functions.w_keyword_arguments(
+                y='second', x='first'
+            ),
             ('first', 'second')
         )
         self.assertEqual(
-            src.functions.w_keyword_arguments('second', 'first'),
+            src.functions.w_keyword_arguments(
+                'second', 'first'
+            ),
             ('second', 'first')
         )
 
     def test_functions_w_unknown_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_unknown_keyword_arguments(
-                a=1, b=2, c=3, d=4
+                a=0, b=1, c=2, d=4
             ),
-            {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+            4
         )
         self.assertEqual(
             src.functions.w_unknown_keyword_arguments(
                 none=None, a_boolean=bool, an_integer=int,
                 a_float=float, a_string=str, a_tuple=tuple,
-                a_list=list, a_set=set, a_dictionary=dict,
+                a_list=list, a_set=set, a_dictionary=dict
             ),
-            dict(
-                a_boolean=bool, a_dictionary=dict, a_float=float,
-                a_list=list, a_set=set, a_string=str, a_tuple=tuple,
-                an_integer=int, none=None,
-            )
+            9
         )
 
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_positional_and_keyword_arguments(
-                'first', y='second'
+                'first_name', last_name='last_name'
             ),
-            ('first', 'second')
-        )
-        self.assertEqual(
-            src.functions.w_positional_and_keyword_arguments('first_name'),
-            ('first_name', 'Doe')
+            ('first_name', 'last_name')
         )
         self.assertEqual(
             src.functions.w_positional_and_keyword_arguments(
-                'second', 'first'
+                'John'
             ),
-            ('second', 'first')
+            ('John', 'Doe')
         )
 
-    def test_functions_unknown_positional_and_keyword_arguments(self):
+    def test_functions_w_unknown_positional_and_keyword_arguments(self):
+        self.assertEqual(
+            src.functions.w_unknown_positional_and_keyword_arguments(
+                0, 1, 2, 3, a=0, b=1, c=2, d=3
+            ),
+            ((0, 1, 2, 3), {'a': 0, 'b': 1, 'c': 2, 'd': 3})
+        )
         self.assertEqual(
             src.functions.w_unknown_positional_and_keyword_arguments(
                 None, bool, int, float, str, tuple, list, set, dict,
@@ -110,12 +116,11 @@ class TestFunctions(unittest.TestCase):
                     None, bool, int, float, str, tuple, list,
                     set, dict
                 ),
-                {
-                    'a_boolean': bool, 'a_dictionary': dict,
-                    'a_float': float, 'a_list': list, 'a_set': set,
-                    'a_string': str, 'a_tuple': tuple,
-                    'an_integer': int, 'none': None
-                }
+                dict(
+                    a_boolean=bool, a_dictionary=dict, a_float=float,
+                    a_list=list, a_set=set, a_string=str,
+                    a_tuple=tuple, an_integer=int, none=None
+                )
             )
         )
 
