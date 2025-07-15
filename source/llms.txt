@@ -2,18 +2,114 @@
 
 > Generated documentation
 
-## En
+## Catalog_of_code.html
 
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/catalog_of_code.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/catalog_of_tests.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/code/code_classes.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/code/code_dictionaries.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/code/code_functions.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/code/code_lists.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/data_structures/index.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/data_structures/lists/index.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/index.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/genindex.html)
-- [Page not found · GitHub Pages](https://www.pumpingpython.com/en/search.html)
+- [catalog of code](https://www.pumpingpython.com/catalog_of_code.html)
+
+## Catalog_of_tests.html
+
+- [catalog of tests](https://www.pumpingpython.com/catalog_of_tests.html)
+
+## Classes.html
+
+- [classes](https://www.pumpingpython.com/classes.html)
+
+## Code
+
+- [AssertionError: tests](https://www.pumpingpython.com/code/code_assertion_error.html)
+- [AttributeError: tests and solutions](https://www.pumpingpython.com/code/code_attribute_error.html)
+- [data structures: Booleans: tests](https://www.pumpingpython.com/code/code_booleans.html)
+- [how to make a calculator: tests and solutions](https://www.pumpingpython.com/code/code_calculator.html)
+- [classes: tests and solutions](https://www.pumpingpython.com/code/code_classes.html)
+- [data structures: Dictionaries: tests](https://www.pumpingpython.com/code/code_dictionaries.html)
+- [how to handle Exceptions: tests and solutions](https://www.pumpingpython.com/code/code_exception_handling.html)
+- [functions: tests and solutions](https://www.pumpingpython.com/code/code_functions.html)
+- [data structures: List Comprehensions: tests and solutions](https://www.pumpingpython.com/code/code_list_comprehensions.html)
+- [data structures: Lists: tests](https://www.pumpingpython.com/code/code_lists.html)
+- [ModuleNotFoundError: test](https://www.pumpingpython.com/code/code_module_not_found_error.html)
+- [data structures: None: tests](https://www.pumpingpython.com/code/code_none.html)
+- [how to pass values: tests and solution](https://www.pumpingpython.com/code/code_pass_values.html)
+- [how to make a person: tests and solution](https://www.pumpingpython.com/code/code_person_factory.html)
+- [how to measure sleep duration: tests and solution](https://www.pumpingpython.com/code/code_sleep_duration.html)
+- [truth table: tests and solutions](https://www.pumpingpython.com/code/code_truth_table.html)
+- [Type Error: tests and solution](https://www.pumpingpython.com/code/code_type_error.html)
+- [makePythonTdd.ps1](https://www.pumpingpython.com/code/make_tdd/code_make_python_tdd_ps1.html)
+- [makePythonTdd.sh](https://www.pumpingpython.com/code/make_tdd/code_make_python_tdd_sh.html)
+
+## Conventions.html
+
+- [conventions](https://www.pumpingpython.com/conventions.html)
+
+## Data_structures
+
+- [booleans](https://www.pumpingpython.com/data_structures/booleans/index.html)
+- [truth table: Nullary and Unary Operations](https://www.pumpingpython.com/data_structures/booleans/truth_table/01_nullary_unary_operations.html)
+- [truth table: Binary Operations part 1](https://www.pumpingpython.com/data_structures/booleans/truth_table/02_binary_operations_1.html)
+- [truth table: Binary Operations part 2](https://www.pumpingpython.com/data_structures/booleans/truth_table/03_binary_operations_2.html)
+- [truth table: Binary Operations part 3](https://www.pumpingpython.com/data_structures/booleans/truth_table/04_binary_operations_3.html)
+- [truth table: Binary Operations part 4](https://www.pumpingpython.com/data_structures/booleans/truth_table/05_binary_operations_4.html)
+- [booleans: truth table](https://www.pumpingpython.com/data_structures/booleans/truth_table/index.html)
+- [truth table: test_truth_table_tests](https://www.pumpingpython.com/data_structures/booleans/truth_table/test_truth_table_tests.html)
+- [dictionaries](https://www.pumpingpython.com/data_structures/dictionaries.html)
+- [data structures](https://www.pumpingpython.com/data_structures/index.html)
+- [lists](https://www.pumpingpython.com/data_structures/lists/index.html)
+- [lists: list comprehensions](https://www.pumpingpython.com/data_structures/lists/list_comprehensions.html)
+- [None](https://www.pumpingpython.com/data_structures/none.html)
+
+## Dot_notation.html
+
+- [dot notation](https://www.pumpingpython.com/dot_notation.html)
+
+## Exceptions
+
+- [AssertionError](https://www.pumpingpython.com/exceptions/AssertionError.html)
+- [AttributeError](https://www.pumpingpython.com/exceptions/AttributeError.html)
+- [ModuleNotFoundError](https://www.pumpingpython.com/exceptions/ModuleNotFoundError.html)
+- [TypeError](https://www.pumpingpython.com/exceptions/TypeError.html)
+- [errors](https://www.pumpingpython.com/exceptions/index.html)
+
+## Functions.html
+
+- [functions](https://www.pumpingpython.com/functions.html)
+
+## How_to
+
+- [how to make a calculator](https://www.pumpingpython.com/how_to/calculator.html)
+- [how to handle Exceptions in programs](https://www.pumpingpython.com/how_to/exception_handling_programs.html)
+- [how to test that an Exception is raised](https://www.pumpingpython.com/how_to/exception_handling_tests.html)
+- [how to make a person](https://www.pumpingpython.com/how_to/make_person.html)
+- [how to make a python test driven development environment](https://www.pumpingpython.com/how_to/make_tdd_environment.html)
+- [how to pass values](https://www.pumpingpython.com/how_to/pass_values.html)
+- [how I setup my Integrated Development Environment (IDE)](https://www.pumpingpython.com/how_to/setup_my_ide.html)
+- [how to measure sleep duration](https://www.pumpingpython.com/how_to/sleep_duration/index.html)
+- [how to measure sleep duration: test_duration_tests](https://www.pumpingpython.com/how_to/sleep_duration/test_duration_tests.html)
+- [how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time](https://www.pumpingpython.com/how_to/sleep_duration/test_duration_w_an_earlier_wake_than_sleep_time.html)
+- [how to measure sleep duration: test_duration_w_date_and_time](https://www.pumpingpython.com/how_to/sleep_duration/test_duration_w_date_and_time.html)
+- [how to measure sleep duration: test_duration_w_hours](https://www.pumpingpython.com/how_to/sleep_duration/test_duration_w_hours.html)
+- [how to measure sleep duration: test_duration_w_hours_and_minutes](https://www.pumpingpython.com/how_to/sleep_duration/test_duration_w_hours_and_minutes.html)
+
+## Index.html
+
+- [pumping python: how I solve problems with test driven development](https://www.pumpingpython.com/index.html)
+
+## Learning_models.html
+
+- [can we measure learning?](https://www.pumpingpython.com/learning_models.html)
+
+## Links.html
+
+- [<no title>](https://www.pumpingpython.com/links.html)
+
+## Review.html
+
+- [pumping python review](https://www.pumpingpython.com/review.html)
+
+## Genindex.html
+
+- [Index](https://www.pumpingpython.com/genindex.html)
+
+## Search.html
+
+- [Search](https://www.pumpingpython.com/search.html)
 
 
