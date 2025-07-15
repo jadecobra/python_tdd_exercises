@@ -38,6 +38,7 @@ extensions = [
     'sphinx_sitemap',
     'sphinx.ext.intersphinx',
 ]
+sitemap_url_scheme = "{link}"
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 # -- Options for ePub output -------------------------------------------------
