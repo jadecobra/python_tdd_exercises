@@ -117,6 +117,9 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
+        with self.assertRaises(ValueError):
+            a_list.remove('not in list')
+
     def test_reverse_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.reverse())
@@ -153,8 +156,8 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
         self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
         self.assertEqual(a_list[1:3], ['b', 'c'])
-        self.assertEqual(a_list[2:], ['c', 'd'])
         self.assertEqual(a_list[:2], ['a', 'b'])
+        self.assertEqual(a_list[2:], ['c', 'd'])
 
     def test_index_error(self):
         a_list = ['a', 'b', 'c', 'd']
