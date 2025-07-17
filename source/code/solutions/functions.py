@@ -38,5 +38,5 @@ def w_positional_and_keyword_arguments(first_name, last_name='Doe'):
     return first_name, last_name
 
 
-def w_unknown_positional_and_keyword_arguments(*arguments, **keyword_arguments):
+def w_unknown_arguments(*arguments, **keyword_arguments):
     return arguments, keyword_arguments

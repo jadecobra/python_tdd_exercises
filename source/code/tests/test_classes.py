@@ -8,19 +8,14 @@ class TestClasses(unittest.TestCase):
         self.assertIsInstance(src.classes.WithPass, object)
 
     def test_make_a_class_w_parentheses(self):
-        self.assertIsInstance(
-            src.classes.WithParentheses, object
-        )
+        self.assertIsInstance(src.classes.WithParentheses, object)
 
     def test_make_a_class_w_object(self):
-        self.assertIsInstance(
-            src.classes.WithObject, object
-        )
+        self.assertIsInstance(src.classes.WithObject, object)
 
     def test_make_a_class_w_attributes(self):
         self.assertEqual(
-            src.classes.WithAttributes.attribute,
-            'attribute'
+            src.classes.WithAttributes.attribute, 'attribute'
         )
 
     def test_make_a_class_w_methods(self):
@@ -39,7 +34,7 @@ class TestClasses(unittest.TestCase):
             'You called method'
         )
 
-    def test_make_a_class_w_an_initializer(self):
+    def test_make_a_class_w_initializer(self):
         boy_a = src.classes.Human()
         boy_b = src.classes.Boy()
         self.assertEqual(boy_b.sex, 'M')
