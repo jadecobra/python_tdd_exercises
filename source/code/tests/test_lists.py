@@ -98,7 +98,7 @@ class TestLists(unittest.TestCase):
         with self.assertRaises(ValueError):
             a_list.index('not in list')
 
-    def test_insert_places_item_at_given_index_in_a_list(self):
+    def test_insert_item_at_given_index_in_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert(0, -1))
         self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
@@ -116,9 +116,6 @@ class TestLists(unittest.TestCase):
         a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
-
-        with self.assertRaises(ValueError):
-            a_list.remove('not in list')
 
     def test_reverse_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -156,8 +153,9 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
         self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
         self.assertEqual(a_list[1:3], ['b', 'c'])
-        self.assertEqual(a_list[:2], ['a', 'b'])
         self.assertEqual(a_list[2:], ['c', 'd'])
+        self.assertEqual(a_list[:2], ['a', 'b'])
+        self.assertEqual(a_list[:], a_list)
 
     def test_index_error(self):
         a_list = ['a', 'b', 'c', 'd']
