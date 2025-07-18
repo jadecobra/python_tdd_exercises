@@ -37,7 +37,7 @@ class TestListComprehensions(unittest.TestCase):
             [item for item in self.iterable]
         )
 
-    def test_list_comprehension_w_conditions(self):
+    def test_list_comprehensions_w_conditions(self):
         even_numbers = []
         odd_numbers = []
         for item in self.iterable:
@@ -78,8 +78,7 @@ class TestListComprehensions(unittest.TestCase):
         )
 
     def test_list_comprehensions_w_functions_and_conditions(self):
-        even_squares = []
-        odd_squares = []
+        even_squares, odd_squares = [], []
         for item in self.iterable:
             if condition(item):
                 even_squares.append(process(item))
