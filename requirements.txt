@@ -2,4 +2,3 @@ sniffer
 sphinx
 sphinx_press_theme
 sphinx-sitemap
-sphinxcontrib-googleanalytics

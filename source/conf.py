@@ -28,6 +28,7 @@ html_theme_options = {
         ("videos", "https://www.youtube.com/@JacobItegboje"),
     ]
 }
+templates_path = ['_templates']
 # html_sidebars = {
 #     "**": [
 #         # "util/searchbox.html",
@@ -40,9 +41,6 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.githubpages',
 ]
-if os.getenv('GITHUB_ACTIONS'):
-    extensions.append('sphinxcontrib.googleanalytics')
-    googleanalytics_id = 'G-0VPJ6HXTE8'
 
 sitemap_url_scheme = "{link}"
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
