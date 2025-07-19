@@ -1,0 +1,14 @@
+{% extends "!layout.html" %}
+
+{%- block extrahead %}
+    {{ super() }}
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4496cd87-b06e-4d8a-bd19-dc3bc87191e3" type="text/javascript" async></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VPJ6HXTE8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0VPJ6HXTE8');
+    </script>
+{% endblock %}
