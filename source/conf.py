@@ -1,3 +1,5 @@
+import os
+
 project = 'pumping python'
 copyright = '2023, JadeCobra LLC'
 author = 'Jacob Itegboje'
@@ -32,12 +34,16 @@ html_theme_options = {
 #         # "globaltoc.html",
 #     ]
 # }
-
 extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx_sitemap',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.githubpages',
 ]
+if os.getenv('GITHUB_ACTIONS'):
+    extensions.append('sphinxcontrib.googleanalytics')
+    googleanalytics_id = 'G-0VPJ6HXTE8'
+
 sitemap_url_scheme = "{link}"
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
