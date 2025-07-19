@@ -22,16 +22,8 @@ def w_positional_arguments(x, y):
     return x, y
 
 
-def w_unknown_positional_arguments(*arguments):
-    return len(arguments)
-
-
 def w_keyword_arguments(x, y):
     return x, y
-
-
-def w_unknown_keyword_arguments(**keyword_arguments):
-    return len(keyword_arguments)
 
 
 def w_positional_and_keyword_arguments(first_name, last_name='Doe'):
