@@ -92,6 +92,20 @@ class TestClasses(unittest.TestCase):
             ]
         )
 
+    def test_counter(self):
+        counter1 = src.classes.Counter()
+        counter2 = src.classes.Counter()
+        counter1.increment()
+        print(counter1.get_value())
+
+        counter2.increment()
+        counter2.increment()
+        print(counter2.get_value())
+
+        print(counter1.get_value)
+
+
+
 
 # Exceptions Encountered
 # AssertionError

@@ -1,5 +1,3 @@
-import os
-
 project = 'pumping python'
 copyright = '2023, JadeCobra LLC'
 author = 'Jacob Itegboje'
@@ -9,41 +7,42 @@ exclude_patterns = [
     'build',
     'notes',
     '.venv',
-    'code/code_tree.rst'
+    'code/code_tree.rst',
+]
+
+extensions = [
+    'sphinx.ext.autosectionlabel',
+    'sphinx_sitemap',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.githubpages',
+    'notfound.extension',
 ]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+html_extra_path = ['robots.txt', 'llms.txt']
+html_baseurl = 'https://www.pumpingpython.com/'
+html_favicon = '_static/dry_favicon_16x16.png'
+html_logo = "_static/dry_favicon_16x16.png"
+html_theme = 'press'
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
-html_baseurl = 'https://www.pumpingpython.com/'
-html_logo = "_static/dry_favicon_16x16.png"
-html_favicon = '_static/dry_favicon_16x16.png'
-html_theme = 'press'
 html_static_path = ['_static']
-html_extra_path = ['robots.txt', 'llms.txt']
 html_theme_options = {
     "external_links": [
         ("videos", "https://www.youtube.com/@JacobItegboje"),
     ]
 }
 templates_path = ['_templates']
-# html_sidebars = {
-#     "**": [
-#         # "util/searchbox.html",
-#         # "globaltoc.html",
-#     ]
-# }
-extensions = [
-    'sphinx.ext.autosectionlabel',
-    'sphinx_sitemap',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.githubpages',
-]
 
-sitemap_url_scheme = "{link}"
+sitemap_url_scheme = '{link}'
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
+
+notfound_context = {
+    'title': 'OOPS! Page not Found',
+    'body': '<h1>Page not Found</h1>\n\nBRMPH?!...the page you are trying to reach cannot be found. Do you want to try the <a href=https://www.pumpingpython.com/>homepage</a> instead?'
+}
 
 # -- Options for ePub output -------------------------------------------------
 epub_theme = 'epub'
@@ -56,8 +55,5 @@ latex_show_pagerefs = True
 latex_show_urls = 'inline'
 latex_theme = 'howto' # 'manual'
 
+# -- Section Header Options ----------------------------------------------------
 text_sectionchars = '#*=-~"+`'
-
-# -- MISC
-
-# autosectionlabel_prefix_document = True

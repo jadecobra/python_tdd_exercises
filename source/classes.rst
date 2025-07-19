@@ -16,6 +16,14 @@ classes
 requirements
 *********************************************************************************
 
+- build on how to make a person
+- add get_full_name
+- add introduce_self with funny line
+- test adding email to 4 people generated from factory
+- test adding updating birthday
+- replace with class, move functions to methods
+  - compare functions solution to class solution
+  - introduce_self calls get_full_name
 
 *********************************************************************************
 how to make a class in Python
