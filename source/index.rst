@@ -1,3 +1,8 @@
+.. meta::
+  :description: Pumping Python is a collection of `Test Driven Development`_ exercises to help you get started writing usable Python code right away
+  :keywords: python programming, test-driven development (TDD), problem-solving, coding tutorials, learn python, python challenges, programming basics, software development, python learning resources, coding practice, pumping python, jacob itegboje
+
+
 .. include:: /links.rst
 
 #################################################################################

@@ -1,3 +1,8 @@
 User-agent: *
+Disallow: /_static/
+Disallow: /_sources/
+Disallow: /_images/
+
+Allow: /
 
 Sitemap: https://www.pumpingpython.com/sitemap.xml
