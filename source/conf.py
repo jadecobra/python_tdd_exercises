@@ -38,10 +38,11 @@ html_theme_options = {
 sitemap_url_scheme = '{link}'
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
-notfound_context = {
-    'title': 'OOPS! Page not Found',
-    'body': '<h1>Page not Found</h1>\n\nBRMPH?!...the page you are trying to reach cannot be found. Do you want to try the <a href=https://www.pumpingpython.com/>homepage</a> instead?'
-}
+# notfound_context = {
+#     'title': 'OOPS! Page not Found',
+#     'body': '<h1>Page not Found</h1>\n\nBRMPH?!...the page you are trying to reach cannot be found. Do you want to try the <a href=https://www.pumpingpython.com/>homepage</a> instead?'
+# }
+# notfound_template = 'layout.html'
 
 # -- Options for ePub output -------------------------------------------------
 epub_theme = 'epub'
