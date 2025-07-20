@@ -176,4 +176,6 @@ class TestPerson(unittest.TestCase):
 # SyntaxError
 
 
-# use loop for instance test before abstraction to random_factory_person and random_class_person
+# what is the cost to create multiple people with the factory vs class
+# use loop for instance test before abstraction to random_factory_person
+# use loop for instance test before abstraction to random_class_person

@@ -137,7 +137,6 @@ class TestLists(unittest.TestCase):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[a_list.index('1st')], '1st')
-        self.assertEqual(a_list[-4], '1st')
         self.assertEqual(a_list[2], '3rd')
         self.assertEqual(a_list[-2], '3rd')
         self.assertEqual(a_list[1], '2nd')
@@ -150,15 +149,15 @@ class TestLists(unittest.TestCase):
         a_list[-1] = '4th'
         self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
-    def test_view_parts_of_a_list_aka_slicing(self):
+    def test_view_parts_of_a_list(self):
         a_list = ['a', 'b', 'c', 'd']
         self.assertEqual(a_list[0:2], ['a', 'b'])
+        self.assertEqual(a_list[:2], ['a', 'b'])
         self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
         self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
         self.assertEqual(a_list[1:3], ['b', 'c'])
-        self.assertEqual(a_list[:2], ['a', 'b'])
         self.assertEqual(a_list[2:], ['c', 'd'])
-        self.assertEqual(a_list[:], a_list)
+        self.assertEqual(a_list[:], a_list.copy())
 
     def test_index_error(self):
         a_list = ['a', 'b', 'c', 'd']

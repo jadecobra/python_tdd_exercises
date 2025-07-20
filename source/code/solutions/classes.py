@@ -1,68 +1,66 @@
-class WithPass:
-    pass
+import datetime
 
 
-class WithParentheses():
-    pass
+def factory(
+        first_name, last_name='doe',
+        sex='M', year_of_birth=None
+    ):
+    return {
+        'first_name': first_name,
+        'last_name': last_name,
+        'sex': sex,
+        'age': datetime.datetime.today().year - year_of_birth,
+    }
 
 
-class WithObject(object):
-    pass
+def introduce(person):
+    return f'Hi! My name is {person.get("first_name").title()} {person.get("last_name").title()}, I am {person.get("age")} years old'
 
 
-class WithAttributes(object):
-
-    attribute = 'attribute'
-
-
-class WithMethods(object):
-
-    def method():
-        return 'You called method'
+def update_birthday(person, birthday):
+    person.update(birthday='June 2nd')
+    return person
 
 
-class WithAttributesAndMethods(object):
 
-    attribute = 'attribute'
+class Person(object):
 
-    def method():
-        return 'You called method'
-
-
-class Human(object):
-
-    def __init__(self, sex='M'):
+    def __init__(self, first_name, last_name='doe', year_of_birth=datetime.datetime.today().year, sex='M'):
+        self.first_name = first_name
+        self.last_name = last_name
         self.sex = sex
+        self.year_of_birth = year_of_birth
 
+    @staticmethod
+    def today():
+        return datetime.datetime.today()
 
-class Boy(Human): pass
+    def get_age(self):
+        return self.today().year - self.year_of_birth
 
+    def introduce(self):
+        return f'Hi! My name is {self.first_name.title()} {self.last_name.title()}, I am {self.get_age()} years old'
 
-class Girl(Human): pass
+    def add_birthday(self, birthday=None):
+        if not birthday:
+            day = self.today().day
+            month = self.today().day
+            self.birthday = f'{day}/{month}'
+        else:
+            self.birthday = birthday
 
+    def get_birthday(self):
+        try:
+            return self.birthday
+        except AttributeError:
+            self.add_birthday()
+            return self.birthday
 
-class Other(Human): pass
-
-
-class Counter:
-    def __init__(self):
-        self.value = 0 # This is the "shared variable" for *this specific counter*
-
-    def increment(self):
-        self.value += 1
-
-    def get_value(self):
-        return self.value
-
-# Now, you can create *multiple independent counters*
-counter1 = Counter()
-counter2 = Counter()
-
-counter1.increment()
-print(counter1.get_value()) # Output: 1
-
-counter2.increment()
-counter2.increment()
-print(counter2.get_value()) # Output: 2
-
-print(counter1.get_value()) # Output: 1 (counter1's value is distinct from counter2's)
+    def to_dict(self):
+        return dict(
+            first_name=self.first_name,
+            last_name=self.last_name,
+            age=self.get_age(),
+            birthday=self.get_birthday(),
+            sex=self.sex,
+        )
