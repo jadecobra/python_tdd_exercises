@@ -11,7 +11,7 @@ def rst_files(filename):
 def run_tests(*args):
     # clear_directory = subprocess.run('rm -rf build/html build/doctree', shell=True).returncode == 0
     clear_directory = True
-    build = subprocess.run('make html', shell=True).returncode == 0
+    build = subprocess.run('make clean html', shell=True).returncode == 0
     # pdf = subprocess.run('make latexpdf', shell=True).returncode == 0
     if clear_directory and build:
         return True
