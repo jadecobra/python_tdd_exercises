@@ -1,62 +1,133 @@
-import src.classes
+import datetime
+import random
+import src.person
 import unittest
 
 
-class TestClasses(unittest.TestCase):
+def this_year():
+    return datetime.datetime.now().year
 
-    def test_make_a_class_w_pass(self):
-        self.assertIsInstance(src.classes.WithPass, object)
 
-    def test_make_a_class_w_parentheses(self):
-        self.assertIsInstance(src.classes.WithParentheses, object)
+class TestPerson(unittest.TestCase):
 
-    def test_make_a_class_w_object(self):
-        self.assertIsInstance(src.classes.WithObject, object)
-
-    def test_make_a_class_w_attributes(self):
-        self.assertEqual(
-            src.classes.WithAttributes.attribute, 'attribute'
+    def setUp(self):
+        self.random_first_name = random.choice((
+            'jane', 'joe', 'john', 'person',
+        ))
+        self.random_last_name = random.choice((
+            'doe', 'smith', 'blow', 'public',
+        ))
+        self.random_year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
+        self.random_sex = random.choice(('F', 'M'))
+        self.random_factory_person = src.person.factory(
+            first_name=self.random_first_name,
+            last_name=self.random_last_name,
+            year_of_birth=self.random_year_of_birth,
+            sex=self.random_sex,
+        )
+        self.random_class_person = src.person.Person(
+            first_name=self.random_first_name,
+            last_name=self.random_last_name,
+            year_of_birth=self.random_year_of_birth,
+            sex=self.random_sex,
         )
 
-    def test_make_a_class_w_methods(self):
+    def test_takes_keyword_arguments(self):
         self.assertEqual(
-            src.classes.WithMethods.method(),
-            'You called method'
+            src.person.factory(
+                first_name=self.random_first_name,
+                last_name=self.random_last_name,
+                sex=self.random_sex,
+                year_of_birth=self.random_year_of_birth,
+            ),
+            dict(
+                first_name=self.random_first_name,
+                last_name=self.random_last_name,
+                sex=self.random_sex,
+                age=this_year()-self.random_year_of_birth,
+            )
         )
 
-    def test_make_a_class_w_attributes_and_methods(self):
+    def test_function_w_default_keyword_arguments(self):
         self.assertEqual(
-            src.classes.WithAttributesAndMethods.attribute,
-            'attribute'
+            src.person.factory(
+                first_name=self.random_first_name,
+                year_of_birth=self.random_year_of_birth,
+            ),
+            dict(
+                first_name=self.random_first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year()-self.random_year_of_birth,
+            )
         )
+
+    def test_introduce(self):
         self.assertEqual(
-            src.classes.WithAttributesAndMethods.method(),
-            'You called method'
+            src.person.introduce(self.random_factory_person),
+            f'Hi! My name is {self.random_factory_person.get("first_name").title()} {self.random_factory_person.get("last_name").title()}, I am {self.random_factory_person.get("age")} years old'
         )
 
-    def test_make_a_class_w_initializer(self):
-        boy_a = src.classes.Human()
-        boy_b = src.classes.Boy()
-        self.assertEqual(boy_b.sex, 'M')
-        self.assertEqual(boy_b.sex, boy_a.sex)
+    def test_update_birthday(self):
+        with self.assertRaises(KeyError):
+            self.random_factory_person['birthday']
 
-        girl_a = src.classes.Human('F')
-        girl_b = src.classes.Girl('F')
-        self.assertEqual(girl_b.sex, 'F')
-        self.assertEqual(girl_b.sex, girl_a.sex)
+        self.assertEqual(
+            src.person.update_birthday(
+                self.random_factory_person, 'June 2nd'
+            ),
+            {
+                'age': self.random_factory_person.get('age'),
+                'birthday': self.random_factory_person.get('birthday'),
+                'first_name': self.random_first_name,
+                'last_name': self.random_last_name,
+                'sex': self.random_sex,
+            }
+        )
 
-        other_a = src.classes.Human('?')
-        other_b = src.classes.Other('?')
-        self.assertEqual(other_b.sex, '?')
-        self.assertEqual(other_b.sex, other_a.sex)
+    def test_person_class(self):
+        self.assertEqual(self.random_class_person.first_name, self.random_first_name)
+        self.assertEqual(self.random_class_person.last_name, self.random_last_name)
+        self.assertEqual(self.random_class_person.sex, self.random_sex)
+        self.assertEqual(
+            self.random_class_person.get_age(),
+            this_year()-self.random_year_of_birth
+        )
 
-        self.assertNotEqual(boy_a, boy_b)
-        self.assertNotIsInstance(boy_a, src.classes.Boy)
-        self.assertIsInstance(boy_b, src.classes.Human)
+    def test_person_introduces(self):
+        self.assertEqual(
+            self.random_class_person.introduce(),
+            f'Hi! My name is {self.random_first_name.title()} {self.random_last_name.title()}, I am {this_year()-self.random_year_of_birth} years old'
+        )
+
+    def test_person_has_birthday(self):
+        with self.assertRaises(AttributeError):
+            self.random_class_person.birthday
+
+        birthday = '06/02'
+        self.random_class_person.add_birthday(birthday)
+        self.assertEqual(
+            self.random_class_person.get_birthday(),
+            birthday
+        )
+
+    def test_person_dictionary(self):
+        self.assertEqual(
+            self.random_class_person.to_dict(),
+            {
+                'age': this_year()-self.random_year_of_birth,
+                'birthday': '20/20',
+                'first_name': self.random_first_name,
+                'last_name': self.random_last_name,
+                'sex': self.random_sex,
+            }
+        )
 
     def test_attributes_and_methods_of_classes(self):
         self.assertEqual(
-            dir(src.classes.WithAttributesAndMethods),
+            dir(src.person.Person),
             [
                 '__class__',
                 '__delattr__',
@@ -87,27 +158,22 @@ class TestClasses(unittest.TestCase):
                 '__str__',
                 '__subclasshook__',
                 '__weakref__',
-                'attribute',
-                'method'
+                'add_birthday',
+                'get_age',
+                'get_birthday',
+                'introduce',
+                'to_dict',
+                'today',
             ]
         )
-
-    def test_counter(self):
-        counter1 = src.classes.Counter()
-        counter2 = src.classes.Counter()
-        counter1.increment()
-        print(counter1.get_value())
-
-        counter2.increment()
-        counter2.increment()
-        print(counter2.get_value())
-
-        print(counter1.get_value)
-
-
 
 
 # Exceptions Encountered
 # AssertionError
 # NameError
 # AttributeError
+# TypeError
+# SyntaxError
+
+
+# use loop for instance test before abstraction to random_factory_person and random_class_person
