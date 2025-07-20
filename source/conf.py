@@ -29,7 +29,7 @@ html_theme = 'press'
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
 html_static_path = ['_static']
-html_css_files = ['custom_google_cse.css']
+# html_css_files = ['custom_google_cse.css']
 html_theme_options = {
     'external_links': [
         ("videos", "https://www.youtube.com/@JacobItegboje"),
