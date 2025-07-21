@@ -38,8 +38,7 @@ class TestListComprehensions(unittest.TestCase):
         )
 
     def test_list_comprehensions_w_conditions(self):
-        even_numbers = []
-        odd_numbers = []
+        even_numbers, odd_numbers = [], []
         for item in self.iterable:
             if condition(item):
                 even_numbers.append(item)
