@@ -5,10 +5,7 @@
 .. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _list: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
 
-.. danger::
-
-  DANGER WILL ROBINSON! This chapter is still UNDER CONSTRUCTION.
-   It is DEFINITELY full of mistakes and may be completely different when I am done editing it though most of the code should work
+.. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
 #################################################################################
 lists

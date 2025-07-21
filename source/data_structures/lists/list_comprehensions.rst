@@ -3,10 +3,7 @@
 .. _list comprehension: https://docs.python.org/3/glossary.html#term-list-comprehension
 .. _list comprehensions: https://docs.python.org/3/glossary.html#term-list-comprehension
 
-.. danger::
-
-  DANGER WILL ROBINSON! This chapter is still UNDER CONSTRUCTION.
-   It is DEFINITELY full of mistakes and may be completely different when I am done editing it though most of the code should work
+.. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
 #################################################################################
 lists: list comprehensions
