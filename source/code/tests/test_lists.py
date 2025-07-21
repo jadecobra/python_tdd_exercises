@@ -137,6 +137,7 @@ class TestLists(unittest.TestCase):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[a_list.index('1st')], '1st')
+        self.assertEqual(a_list[-4], '1st')
         self.assertEqual(a_list[2], '3rd')
         self.assertEqual(a_list[-2], '3rd')
         self.assertEqual(a_list[1], '2nd')
