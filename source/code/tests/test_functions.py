@@ -42,7 +42,7 @@ class TestFunctions(unittest.TestCase):
         )
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                y='second', x='first',
+                y='second', x='first'
             ),
             ('first', 'second')
         )
@@ -54,37 +54,41 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_positional_and_keyword_arguments(
-                'John', last_name='Doe',
+                'john', last_name='doe'
             ),
-            ('John', 'Doe')
+            ('john', 'doe')
         )
         self.assertEqual(
             src.functions.w_positional_and_keyword_arguments(
-                'John'
+                'jane',
             ),
-            ('John', 'Doe')
+            ('jane', 'doe')
         )
 
     def test_functions_w_unknown_arguments(self):
         self.assertEqual(
             src.functions.w_unknown_arguments(
-                0, 1, 2, 3, a=4, b=5, c=6, d=7
+                1, 2, 3, 4, a=5, b=6, c=7, d=8
             ),
-            ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+            ((1, 2, 3, 4), {'a': 5, 'b': 6, 'c': 7, 'd': 8})
         )
         self.assertEqual(
             src.functions.w_unknown_arguments(
                 None, bool, int, float, str, tuple, list, set, dict,
-                none=None, a_boolean=bool, an_integer=int,
-                a_float=float, a_string=str, a_tuple=tuple,
-                a_list=list, a_set=set, a_dictionary=dict,
+                none=None, a_boolean=bool, an_integer=int, a_float=float,
+                a_string=str, a_list=list, a_set=set, a_dictionary=dict
             ),
             (
                 (None, bool, int, float, str, tuple, list, set, dict),
                 dict(
-                    a_boolean=bool, a_dictionary=dict, a_float=float,
-                    a_list=list, a_set=set, a_string=str,
-                    a_tuple=tuple, an_integer=int, none=None,
+                    a_boolean=bool,
+                    a_dictionary=dict,
+                    a_float=float,
+                    a_list=list,
+                    a_set=set,
+                    a_string=str,
+                    an_integer=int,
+                    non=None,
                 )
             )
         )
