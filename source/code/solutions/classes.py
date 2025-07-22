@@ -38,4 +38,8 @@ class Person(object):
         return datetime.datetime.today().year - self.year_of_birth
 
     def introduce(self):
-        return f'Hi! My name is {self.first_name} {self.last_name} and I am {self.get_age()} years old'
+        return (
+            f'Hi! My name is {self.first_name} '
+            f'{self.last_name} and '
+            f'I am {self.get_age()} years old'
+        )
