@@ -1,3 +1,7 @@
+.. meta::
+  :description: this chapter covers Lists (a data structure that can hold any python objects) and its methods
+  :keywords: python programming, test-driven development (TDD), problem-solving, coding tutorials, learn python, python challenges, programming basics, software development, python learning resources, coding practice, pumping python, jacob itegboje
+
 .. include:: ../../links.rst
 
 .. _clear: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
