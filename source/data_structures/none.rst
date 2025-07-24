@@ -1,3 +1,7 @@
+.. meta::
+  :description: this chapter covers None, what it is and what it is not
+  :keywords: python programming, test-driven development (TDD), problem-solving, coding tutorials, learn python, python challenges, programming basics, software development, python learning resources, coding practice, pumping python, jacob itegboje
+
 .. include:: ../links.rst
 
 #################################################################################

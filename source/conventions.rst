@@ -1,10 +1,8 @@
-.. _conventions:
+.. include:: /links.rst
 
 #################################################################################
 conventions
 #################################################################################
-
-----
 
 .. contents:: table of contents
   :local:
@@ -35,7 +33,7 @@ names
 
     variable_name = None
 
-for more details see `PEP8: Naming Conventions<https://peps.python.org/pep-0008/#naming-conventions>`_
+for more details see `PEP8: Naming Conventions <https://peps.python.org/pep-0008/#naming-conventions>`_
 
 .. _conventions_comments:
 
@@ -132,10 +130,10 @@ Sets are represented with curly braces/brackets
 .. _conventions_dictionaries:
 
 *********************************************************************************
-dictionaries
+dictionaries/mappings
 *********************************************************************************
 
-Dictionaries/Mappings are also represented with curly braces/brackets but have key/value pairs
+:ref:`Dictionaries/Mappings<dictionaries>` are also represented with curly braces/brackets but have key/value pairs
 
 .. code-block:: python
 
@@ -147,5 +145,3 @@ Dictionaries/Mappings are also represented with curly braces/brackets but have k
       'list': [1, 2.5, 'three', (4, "five")]
       'set': {1, 2.5, 'three', (4, 'five')}
   }
-
-----
