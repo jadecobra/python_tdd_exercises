@@ -26,7 +26,7 @@ A :py:class:`list` is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``
 * they can be made with the :py:class:`list` constructor_
-* they can be changed by performing an operation, this means they are mutable
+* they can be changed by performing an operation - they are mutable
 
 *********************************************************************************
 requirements
@@ -657,7 +657,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_extend_makes_a_list_longer
+test_extend_adds_items_from_an_iterable_to_a_list
 *********************************************************************************
 
 red: make it fail
@@ -754,7 +754,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_extend_makes_a_list_longer(self):
+    def test_extend_adds_items_from_an_iterable_to_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.extend((2, 1, 0)))
         self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
@@ -773,7 +773,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_index_returns_position_of_item_in_a_list
+test_index_returns_first_position_of_item_in_a_list
 *********************************************************************************
 
 red: make it fail
@@ -783,7 +783,7 @@ I add a test for the index_ :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_extend_makes_a_list_longer(self):
+  def test_extend_adds_items_from_an_iterable_to_a_list(self):
       ...
 
   def test_index(self):
@@ -973,7 +973,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_index_returns_position_of_item_in_a_list(self):
+    def test_index_returns_first_position_of_item_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list.index('1st'), 0)
         self.assertEqual(a_list.index('3rd'), 2)
@@ -996,7 +996,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_insert_places_item_at_given_index_in_a_list
+test_insert_item_at_given_index_in_a_list
 *********************************************************************************
 
 red: make it fail
@@ -1006,7 +1006,7 @@ I add a test for the next :ref:`method<functions>`
 
 .. code-block:: python
 
-    def test_index_returns_position_of_item_in_a_list(self):
+    def test_index_returns_first_position_of_item_in_a_list(self):
         ...
 
     def test_insert(self):
@@ -1108,7 +1108,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_insert_places_item_at_given_index_in_a_list(self):
+    def test_insert_item_at_given_index_in_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert(0, -1))
         self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
@@ -1137,7 +1137,7 @@ I add a new test
 
 .. code-block:: python
 
-  def test_insert_places_item_at_given_index_in_a_list(self):
+  def test_insert_item_at_given_index_in_a_list(self):
       ...
 
   def test_pop(self):
@@ -1554,7 +1554,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: '1st' != ''
 
-the first item has an index of ``0`` as shown in :ref:`test_index_returns_position_of_item_in_a_list`
+the first item has an index of ``0`` as shown in :ref:`test_index_returns_first_position_of_item_in_a_list`
 
 green: make it pass
 #################################################################################
@@ -1876,7 +1876,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_position_of_item_in_a_list`, there is another Exception_ that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a :py:class:`list` but use a number that is NOT in the range of indexes for it
+ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_first_position_of_item_in_a_list`, there is another Exception_ that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a :py:class:`list` but use a number that is NOT in the range of indexes for it
 
 red: make it fail
 #################################################################################

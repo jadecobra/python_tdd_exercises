@@ -158,14 +158,15 @@ test_lists
 #. :ref:`test_clear_empties_a_list`
 #. :ref:`test_copy_a_list`
 #. :ref:`test_count_number_of_times_item_is_in_a_list`
-#. :ref:`test_extend_makes_a_list_longer`
-#. :ref:`test_index_returns_position_of_item_in_a_list`
-#. :ref:`test_insert_places_item_at_given_index_in_a_list`
+#. :ref:`test_extend_adds_items_from_an_iterable_to_a_list`
+#. :ref:`test_index_returns_first_position_of_item_in_a_list`
+#. :ref:`test_insert_item_at_given_index_in_a_list`
 #. :ref:`test_pop_removes_and_returns_last_item_from_a_list`
 #. :ref:`test_remove_first_instance_of_item_from_a_list`
 #. :ref:`test_reverse_a_list`
 #. :ref:`test_sort_a_list`
 #. :ref:`test_get_items_from_a_list`
+#. :ref:`test_set_items_in_a_list`
 #. :ref:`test_view_parts_of_a_list_aka_slicing`
 #. :ref:`test_index_error`
 
