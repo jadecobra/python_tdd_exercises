@@ -273,7 +273,7 @@ I change ``'bap'`` to ``'boom'``
 
   self.assertEqual({0: 'boom'}, {0: 'boom'})
 
-the test passes. I can use an integer_ as a key in a dictionary_
+the test passes. I can use an :py:class:`integer<int>` as a key in a dictionary_
 
 refactor: make it better
 #################################################################################
@@ -303,7 +303,7 @@ I add the new key-value pair to the expectation
       {0: 'boom', 0.1: 'bap'}
   )
 
-the test passes. I can use integers_ and :py:class:`floats<float>` as keys in a dictionary_
+the test passes. I can use :py:class:`integers<int>` and :py:class:`floats<float>` as keys in a dictionary_
 
 ----
 
@@ -314,7 +314,7 @@ test_make_a_dictionary_w_a_tuple_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test for a tuple_ as a key
+I add a test for a :py:class:`tuple` as a key
 
 .. code-block:: python
 
@@ -345,7 +345,7 @@ I change ``'bap'`` to ``'boom'``
       {(0, 1): 'boom'}
   )
 
-the test passes. I can use a tuple_ as a key in a dictionary_
+the test passes. I can use a :py:class:`tuple` as a key in a dictionary_
 
 ----
 
@@ -819,7 +819,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: 'int' object is not iterable
 
-I change the value passed to a tuple_
+I change the value passed to a :py:class:`tuple`
 
 .. code-block:: python
 
@@ -1179,7 +1179,7 @@ I change the assertIsNone_ to assertEqual_
 
   self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
-the test passes. It looks like the items_ :ref:`method<functions>` returns the key-value pairs of a dictionary_ as tuples_ in a :ref:`list<lists>`
+the test passes. It looks like the items_ :ref:`method<functions>` returns the key-value pairs of a dictionary_ as :py:class:`tuples<tuple>` in a :ref:`list<lists>`
 
 refactor: make it better
 #################################################################################
@@ -1544,7 +1544,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: ('key', 'value') is not None
 
-the popitem_ :ref:`method<functions>` returns the key-value pair as a tuple_
+the popitem_ :ref:`method<functions>` returns the key-value pair as a :py:class:`tuple`
 
 green: make it pass
 #################################################################################
@@ -1955,7 +1955,7 @@ refactor: make it better
 
     TypeError: 'int' object is not iterable
 
-  I change the value to a tuple_
+  I change the value to a :py:class:`tuple`
 
   .. code-block:: python
 
@@ -2340,7 +2340,7 @@ I ran tests for `dictionaries <https://docs.python.org/3/library/stdtypes.html#m
 
 * they contain key-value pairs
 * any :ref:`object<classes>` can be used as values
-* strings_, :ref:`booleans`, integers_, :py:class:`floats<float>` and tuples_ can be used as keys
+* strings_, :ref:`booleans`, integers_, :py:class:`floats<float>` and :py:class:`tuples<tuple>` can be used as keys
 * they can be represented with ``{}``
 * they can be made with the `dict <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ constructor_
 

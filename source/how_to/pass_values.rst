@@ -410,7 +410,7 @@ green: make it pass
 test_passing_an_integer
 *********************************************************************************
 
-I also add a test for an integer_
+I also add a test for an :py:class:`integer<int>`
 
 .. code-block:: python
 
@@ -486,7 +486,7 @@ test_passing_a_tuple
 red: make it fail
 #################################################################################
 
-I add a test for a tuple_
+I add a test for a :py:class:`tuple`
 
 .. code-block:: python
 

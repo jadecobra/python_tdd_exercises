@@ -22,6 +22,8 @@ lists
 
 ----
 
+:py:class:`int`
+
 A :py:class:`list` is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``
@@ -118,7 +120,7 @@ I add the error to the list of Exceptions_ encountered
   # AssertionError
   # TypeError
 
-I change the input to a tuple_
+I change the input to a :py:class:`tuple`
 
 .. code-block:: python
   :emphasize-lines: 2

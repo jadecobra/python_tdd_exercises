@@ -1184,7 +1184,7 @@ the tests show that
 * I can use ``**kwargs`` to represent any number of keyword arguments
 * keyword arguments are represented as :ref:`dictionaries`
 * I can use ``*args`` to represent any number of positional arguments
-* positional arguments are represented as tuples_
+* positional arguments are represented as :py:class:`tuples<tuple>`
 * :ref:`identity functions<test_identity_functions>` return their input
 * :ref:`constant functions<test_constant_functions>` always return the same thing
 * :ref:`functions` return :ref:`None` by default
