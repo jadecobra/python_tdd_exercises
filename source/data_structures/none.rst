@@ -358,7 +358,7 @@ refactor: make it better
         self.assertIsNotNone(1)
         self.assertNotIsInstance(-1, int)
 
-  :py:class:`int` is the :ref:`class<classes>` for integers_, the terminal shows :ref:`AssertionError`
+  :py:class:`int` is the :ref:`class<classes>` for :py:class:`integers<int>`, the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 

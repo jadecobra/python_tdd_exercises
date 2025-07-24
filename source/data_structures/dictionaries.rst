@@ -1,4 +1,4 @@
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 .. _clear: https://docs.python.org/3/library/stdtypes.html#dict.clear
 .. _copy: https://docs.python.org/3/library/stdtypes.html#dict.copy
@@ -2340,7 +2340,7 @@ I ran tests for `dictionaries <https://docs.python.org/3/library/stdtypes.html#m
 
 * they contain key-value pairs
 * any :ref:`object<classes>` can be used as values
-* strings_, :ref:`booleans`, integers_, :py:class:`floats<float>` and :py:class:`tuples<tuple>` can be used as keys
+* strings_, :ref:`booleans`, :py:class:`integers<int>`, :py:class:`floats<float>` and :py:class:`tuples<tuple>` can be used as keys
 * they can be represented with ``{}``
 * they can be made with the `dict <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ constructor_
 
