@@ -1,3 +1,7 @@
+.. meta::
+  :description: Master Python dictionaries with TDD! Learn key-value pairs, methods, and testing techniques in this hands-on guide. Start coding now!
+  :keywords: Jacob Itegboje, Python dictionaries, Test-Driven Development, Python programming, data structures, unit testing, Python tutorial, coding guide
+
 .. include:: ../links.rst
 
 .. _clear: https://docs.python.org/3/library/stdtypes.html#dict.clear

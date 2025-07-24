@@ -1,3 +1,7 @@
+.. meta::
+  :description: Learn binary operations in Python with Jacob Itegboje's Truth Table tutorial. Test logical functions like XOR and implication. Code now!
+  :keywords: Jacob Itegboje, truth table, binary operations, Python programming, logical operations, XOR, Boolean logic, coding tutorials
+
 .. include:: ../../../links.rst
 
 .. _binary_operations_iii:

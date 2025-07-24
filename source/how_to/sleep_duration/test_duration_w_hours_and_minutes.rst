@@ -1,3 +1,7 @@
+.. meta::
+  :description: Master calculating sleep duration in hours and minutes with Python's Test-Driven Development. Learn floor division, modulo, and refactor for precise time functions.
+  :keywords: Jacob Itegboje, Python sleep duration, calculate time hours minutes, Python TDD time, Python floor division, Python modulo operator, timestamp conversion Python, Python time calculation
+
 .. include:: ../../links.rst
 
 

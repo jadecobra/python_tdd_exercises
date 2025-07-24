@@ -1,3 +1,7 @@
+.. meta::
+  :description: Learn to pass Python sleep duration tests with TDD! Master datetime string parsing, handle various exceptions, and refine your time difference calculations.
+  :keywords: Jacob Itegboje, Python sleep duration tests, TDD exception handling Python, Python datetime strptime, time difference calculation, Python error resolution, Python unit testing time, sleep duration TDD Python
+
 .. include:: ../../links.rst
 
 

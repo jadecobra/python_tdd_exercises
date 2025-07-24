@@ -1,3 +1,7 @@
+.. meta::
+  :description: Optimize your Python workflow with this Visual Studio Code setup guide! Learn IDE configurations for TDD and discover essential extensions for efficient coding.
+  :keywords: Jacob Itegboje, Visual Studio Code Python setup, Python IDE configuration, TDD environment VS Code, VS Code extensions Python, Python development setup, configure VS Code Python, Python coding environment
+
 .. include:: ../links.rst
 
 #################################################################################

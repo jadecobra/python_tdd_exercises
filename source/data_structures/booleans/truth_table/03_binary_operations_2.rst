@@ -1,3 +1,7 @@
+  .. meta::
+  :description: Dive into Python binary operations with Jacob Itegboje's Truth Table guide. Learn to test logical functions like NAND and OR. Code now!
+  :keywords: Jacob Itegboje, truth table, binary operations, Python programming, logical NAND, logical disjunction, Boolean logic, coding tutorials
+
 .. include:: ../../../links.rst
 
 .. _binary_operations_ii:

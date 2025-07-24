@@ -1,3 +1,7 @@
+.. meta::
+  :description: Learn to calculate sleep duration in hours using Python's Test-Driven Development. Master converting string inputs to numbers and handle common coding errors efficiently.
+  :keywords: Jacob Itegboje, Python sleep duration calculation, TDD time difference Python, Python string to int conversion, measure sleep hours, Python time calculation, Python error handling TDD, sleep time difference Python
+
 .. include:: ../../links.rst
 
 

@@ -1,3 +1,7 @@
+.. meta::
+  :description: Learn to calculate sleep duration with date and time in Python! Master the datetime module, strptime, and TDD for accurate timestamp difference calculations.
+  :keywords: Jacob Itegboje, Python sleep duration, Python datetime module, calculate time with date Python, strptime Python, TDD time calculation, Python timestamp difference, sleep duration calculator
+
 .. include:: ../../links.rst
 
 

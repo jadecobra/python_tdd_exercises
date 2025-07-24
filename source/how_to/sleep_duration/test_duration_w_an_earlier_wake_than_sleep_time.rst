@@ -1,3 +1,7 @@
+.. meta::
+  :description: Handle earlier wake times in Python sleep duration calculations with TDD! Learn to use assertRaisesRegex for ValueError and refactor for robust time validation.
+  :keywords: Jacob Itegboje, Python sleep duration, earlier wake time Python, TDD exception handling, Python ValueError, assertRaisesRegex Python, Python time validation, refactoring Python tests
+
 .. include:: ../../links.rst
 
 

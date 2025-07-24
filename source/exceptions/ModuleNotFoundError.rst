@@ -1,3 +1,7 @@
+.. meta::
+  :description: Resolve Python ModuleNotFoundError with this TDD guide! Understand why import errors occur and learn how to fix them by correctly structuring your project files.
+  :keywords: Jacob Itegboje, Python ModuleNotFoundError, Python import error, resolve ModuleNotFoundError, Python module not found, Python TDD module, Python import issues, Python module resolution
+
 .. include:: ../links.rst
 
 #################################################################################

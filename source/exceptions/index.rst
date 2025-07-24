@@ -1,3 +1,7 @@
+.. meta::
+  :description: Explore common Python exceptions and master effective error handling techniques. This guide covers ModuleNotFoundError, TypeError, and more to build robust programs.
+  :keywords: Jacob Itegboje, Python exceptions, Python error handling, common Python errors, Python exception types, Python debugging, try except Python, Python programming errors
+
 .. include:: ../links.rst
 
 #################################################################################

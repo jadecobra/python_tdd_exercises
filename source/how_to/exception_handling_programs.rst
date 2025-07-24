@@ -1,3 +1,7 @@
+.. meta::
+  :description: Master Python exception handling in programs using TDD! Learn try...except...else and unittest.TestCase.assertRaisesRegex for robust, error-resistant code.
+  :keywords: Jacob Itegboje, Python exception handling, try except else Python, Python program error handling, unittest assertRaisesRegex, Test Driven Development Python, Python error management, robust Python code
+
 .. include:: ../links.rst
 
 #################################################################################
@@ -17,7 +21,6 @@ This is a continuation of :doc:`exception_handling_tests`
   :depth: 1
 
 ----
-
 
 *********************************************************************************
 test_catching_exceptions_w_messages

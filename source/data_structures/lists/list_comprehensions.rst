@@ -1,3 +1,7 @@
+.. meta::
+  :description: Master Python list comprehensions with this hands-on TDD tutorial. Learn to create lists efficiently with code examples. Start coding now!
+  :keywords: Jacob Itegboje, Python list comprehensions, test-driven development, Python programming, coding tutorials, data structures, Python for beginners
+
 .. include:: ../../links.rst
 
 .. _list comprehension: https://docs.python.org/3/glossary.html#term-list-comprehension

@@ -1,3 +1,7 @@
+.. meta::
+  :description: Learn to pass values in Python with this TDD-driven guide! Master f-strings for various data types and handle common exceptions for robust code.
+  :keywords: Jacob Itegboje, Python pass values, Python f-strings, Python data types, Python TDD tutorial, Python function arguments, string interpolation Python, Python value handling
+
 .. include:: ../links.rst
 
 #################################################################################

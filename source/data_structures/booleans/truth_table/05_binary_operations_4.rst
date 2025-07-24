@@ -1,3 +1,7 @@
+.. meta::
+  :description: Master binary operations with Python in this Truth Table tutorial by Jacob Itegboje. Learn to test logical functions. Start coding now!
+  :keywords: Jacob Itegboje, truth table, binary operations, Python programming, logical operations, coding tutorials, Boolean logic, software testing
+
 .. include:: ../../../links.rst
 
 .. _binary_operations_iv:

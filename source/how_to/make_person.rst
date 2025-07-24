@@ -1,3 +1,7 @@
+.. meta::
+  :description: Learn Python Test-Driven Development by building a 'person' factory function. Master keyword arguments, dictionary creation, random testing, and refactoring techniques.
+  :keywords: Jacob Itegboje, Python factory function, Python TDD tutorial, Python dictionary generation, Python keyword arguments, unittest Python, Python object creation, Test Driven Development project
+
 .. include:: ../links.rst
 
 #################################################################################
