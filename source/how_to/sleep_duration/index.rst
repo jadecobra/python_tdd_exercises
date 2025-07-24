@@ -1,4 +1,4 @@
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 #################################################################################
 how to measure sleep duration

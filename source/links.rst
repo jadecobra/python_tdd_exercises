@@ -45,10 +45,7 @@
 .. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _int: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _insert: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _integer: https://docs.python.org/3/library/functions.html?highlight=int#int
-.. _integers: https://docs.python.org/3/library/functions.html?highlight=int#int
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys

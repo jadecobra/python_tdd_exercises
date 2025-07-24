@@ -364,7 +364,7 @@ refactor: make it better
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  ``-1`` is an :py:class:`integer<int>` for the positive integers_. I make the test pass
+  ``-1`` is an :py:class:`integer<int>` for the positive :py:class:`integers<int>`. I make the test pass
 
   .. code-block:: python
 
@@ -391,7 +391,7 @@ refactor: make it better
 
     AssertionError: 0 is an instance of <class 'int'>
 
-  ``0`` is an integer_. I change the :ref:`method<functions>`
+  ``0`` is an :py:class:`integer<int>`. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -422,7 +422,7 @@ refactor: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` is for the positive integers_. I change the :ref:`method<functions>`
+  ``1`` is for the positive :py:class:`integers<int>`. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
