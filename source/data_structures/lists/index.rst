@@ -3,7 +3,6 @@
 .. _clear: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _copy: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _list: https://docs.python.org/3/library/stdtypes.html?highlight=list#list
 
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
@@ -23,10 +22,10 @@ lists
 
 ----
 
-A list_ is an :ref:`object<classes>` that can hold other objects_
+A :py:class:`list` is an :ref:`object<classes>` that can hold other objects_
 
 * they are represented with ``[]``
-* they can be made with the list_ constructor_
+* they can be made with the :py:class:`list` constructor_
 * they can be changed by performing an operation, this means they are mutable
 
 *********************************************************************************
@@ -97,7 +96,7 @@ the test passes. This is how to make an empty list_
 refactor: make it better
 #################################################################################
 
-I add another assertion, this time with input to the list_ constructor_
+I add another assertion, this time with input to the :py:class:`list` constructor_
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -139,7 +138,7 @@ I change the expectation to match
 
   self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-the test passes. The tests show I can make a list_ with the list_ constructor_ and square brackets(``[]``), which uses less characters than the constructor_
+the test passes. The tests show I can make a :py:class:`list` with the :py:class:`list` constructor_ and square brackets(``[]``), which uses less characters than the constructor_
 
 ----
 
@@ -968,7 +967,7 @@ refactor: make it better
 
     self.assertEqual(a_list.index('...last'), 3)
 
-  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the the list_. Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
+  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the the list_. Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the :py:class:`list` minus ``1``
 
 * I rename the test
 
@@ -1490,13 +1489,13 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-  the list_ is still the same. I change the expectation
+  the :py:class:`list` is still the same. I change the expectation
 
   .. code-block:: python
 
     self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<functions>` is sort_ and the list_ is already sorted. I change it to see what would happen when it is not sorted
+  the test passes. The name of the :ref:`method<functions>` is sort_ and the :py:class:`list` is already sorted. I change it to see what would happen when it is not sorted
 
   .. code-block:: python
 
@@ -1508,7 +1507,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
-  the sort_ :ref:`method<functions>` arranges the list_ in ascending order. I change the values to match
+  the sort_ :ref:`method<functions>` arranges the :py:class:`list` in ascending order. I change the values to match
 
   .. code-block:: python
 
@@ -1781,7 +1780,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['a', 'b'] != []
 
-viewing parts of a list_ is like indexing, it takes two values in square brackets(``[]``), separated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
+viewing parts of a :py:class:`list` is like indexing, it takes two values in square brackets(``[]``), separated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
 
 green: make it pass
 #################################################################################
@@ -1877,7 +1876,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_position_of_item_in_a_list`, there is another Exception_ that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a list_ but use a number that is NOT in the range of indexes for it
+ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_position_of_item_in_a_list`, there is another Exception_ that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a :py:class:`list` but use a number that is NOT in the range of indexes for it
 
 red: make it fail
 #################################################################################
@@ -1949,7 +1948,7 @@ refactor: make it better
 
   the test passes
 
-* :ref:`IndexError<test_index_error>` is also raised with the pop_ :ref:`method<functions>` when the the list_ is empty
+* :ref:`IndexError<test_index_error>` is also raised with the pop_ :ref:`method<functions>` when the the :py:class:`list` is empty
 
   .. code-block:: python
 
@@ -1983,7 +1982,7 @@ review
 I ran tests for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 
 * they are represented with ``[]``
-* they can be made with the list_ constructor_
+* they can be made with the :py:class:`list` constructor_
 * they can hold any :ref:`object<classes>`
 * they can be changed by performing an operation
 
