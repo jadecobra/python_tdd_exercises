@@ -253,7 +253,7 @@ I want to test the other Python basic data types_ to see if any of them are Fals
 * is an :py:class:`integer<int>` False_ or True_?
 * is a :py:class:`float` False_ or True_?
 * is a string_ False_ or True_?
-* is a :py:class:`tuple` False_ or True_?
+* is a tuple_ False_ or True_?
 * is a :ref:`list <lists>` False_ or True_?
 * is a set_ False_ or True_?
 * is a :ref:`dictionary <dictionaries>` False_ or True_?
@@ -721,7 +721,7 @@ The terminal shows :ref:`AssertionError`
 
   AssertionError: () is not true
 
-the empty :py:class:`tuple` is not True_
+the empty tuple_ is not True_
 
 green: make it pass
 #################################################################################

@@ -318,7 +318,7 @@ test_make_a_dictionary_w_a_tuple_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test for a :py:class:`tuple` as a key
+I add a test for a tuple_ as a key
 
 .. code-block:: python
 
@@ -349,7 +349,7 @@ I change ``'bap'`` to ``'boom'``
       {(0, 1): 'boom'}
   )
 
-the test passes. I can use a :py:class:`tuple` as a key in a dictionary_
+the test passes. I can use a tuple_ as a key in a dictionary_
 
 ----
 
@@ -823,7 +823,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: 'int' object is not iterable
 
-I change the value passed to a :py:class:`tuple`
+I change the value passed to a tuple_
 
 .. code-block:: python
 
@@ -1548,7 +1548,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: ('key', 'value') is not None
 
-the popitem_ :ref:`method<functions>` returns the key-value pair as a :py:class:`tuple`
+the popitem_ :ref:`method<functions>` returns the key-value pair as a tuple_
 
 green: make it pass
 #################################################################################
@@ -1959,7 +1959,7 @@ refactor: make it better
 
     TypeError: 'int' object is not iterable
 
-  I change the value to a :py:class:`tuple`
+  I change the value to a tuple_
 
   .. code-block:: python
 

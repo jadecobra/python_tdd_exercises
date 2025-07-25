@@ -876,7 +876,7 @@ test_is_none_a_tuple
 red: make it fail
 #################################################################################
 
-I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :py:class:`tuple`
+I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a tuple_
 
 .. code-block:: python
 
@@ -947,7 +947,7 @@ refactor: make it better
 
     AssertionError: () is an instance of <class 'tuple'>
 
-  ``()`` is the empty :py:class:`tuple`. I change the :ref:`method<functions>`
+  ``()`` is the empty tuple_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -974,7 +974,7 @@ refactor: make it better
 
     AssertionError: (1, 2, 3, 'n') is an instance of <class 'tuple'>
 
-  ``(1, 2, 3, 'n')`` is a :py:class:`tuple`. I change the :ref:`method<functions>`
+  ``(1, 2, 3, 'n')`` is a tuple_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 

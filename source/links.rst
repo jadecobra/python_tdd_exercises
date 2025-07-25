@@ -92,6 +92,7 @@
 .. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _touch: https://man7.org/linux/man-pages/man1/touch.1.html
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
+.. _tuple: https://docs.python.org/3/library/stdtypes.html#tuple
 .. _type: https://docs.python.org/3/glossary.html#term-type
 .. _types: https://docs.python.org/3/glossary.html#term-type
 .. _unittest: https://docs.python.org/3/library/unittest.html

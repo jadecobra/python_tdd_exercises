@@ -123,7 +123,7 @@ I add the error to the list of Exceptions_ encountered
   # AssertionError
   # TypeError
 
-I change the input to a :py:class:`tuple`
+I change the input to a tuple_
 
 .. code-block:: python
   :emphasize-lines: 2

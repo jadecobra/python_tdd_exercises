@@ -490,7 +490,7 @@ test_passing_a_tuple
 red: make it fail
 #################################################################################
 
-I add a test for a :py:class:`tuple`
+I add a test for a tuple_
 
 .. code-block:: python
 
