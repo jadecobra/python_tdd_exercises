@@ -7,6 +7,7 @@
 .. _clear: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _copy: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _list: https://docs.python.org/3/library/stdtypes.html#list
 
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
@@ -26,10 +27,10 @@ lists
 
 ----
 
-A :py:class:`list` is an :ref:`object<classes>` that can hold any objects_
+A list_ is an :ref:`object<classes>` that can hold any objects_
 
 * they are represented with ``[]``
-* they can be made with the :py:class:`list` constructor_
+* they can be made with the list_ constructor_
 * they can be changed by performing an operation - they are mutable
 
 *********************************************************************************
@@ -95,12 +96,12 @@ I change the expectation
 
   self.assertEqual(list(), [])
 
-the test passes. This is how to make an empty :py:class:`list`
+the test passes. This is how to make an empty list_
 
 refactor: make it better
 #################################################################################
 
-I add another assertion, this time with input to the :py:class:`list` constructor_
+I add another assertion, this time with input to the list_ constructor_
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -142,7 +143,7 @@ I change the expectation to match
 
   self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-the test passes. The tests show I can make a :py:class:`list` with the constructor_ and square brackets(``[]``), which uses less characters
+the test passes. The tests show I can make a list_ with the constructor_ and square brackets(``[]``), which uses less characters
 
 ----
 
@@ -290,7 +291,7 @@ the terminal shows green, the append_ :ref:`method<functions>` returns :ref:`Non
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what append_ did to the :py:class:`list`
+* I add another assertion to see what append_ did to the list_
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -379,7 +380,7 @@ the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None
 red: make it fail
 #################################################################################
 
-I add an assertion to show what it did to the :py:class:`list`
+I add an assertion to show what it did to the list_
 
 .. code-block:: python
 
@@ -458,7 +459,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 'n'] is not None
 
-the :ref:`method<functions>` returns a copy of the :py:class:`list`
+the :ref:`method<functions>` returns a copy of the list_
 
 green: make it pass
 #################################################################################
@@ -477,7 +478,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 'n'] is not None : [0, 1, 2, 'n']
 
-the :ref:`method<functions>` returns a copy of the :py:class:`list`. I change assertIsNone_ to assertEqual_
+the :ref:`method<functions>` returns a copy of the list_. I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -490,7 +491,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what happened to the original :py:class:`list`
+* I add another assertion to see what happened to the original list_
 
   .. code-block:: python
 
@@ -598,7 +599,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* It looks like the count_ :ref:`method<functions>` returns the number of times an item is in a :py:class:`list`. I change it then add another assertion to be sure
+* It looks like the count_ :ref:`method<functions>` returns the number of times an item is in a list_. I change it then add another assertion to be sure
 
   .. code-block:: python
     :emphasize-lines: 2, 4
@@ -622,7 +623,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion to see what happens when I try to count an item that is not in the :py:class:`list`
+* I add another assertion to see what happens when I try to count an item that is not in the list_
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -636,7 +637,7 @@ refactor: make it better
 
     AssertionError: 0 != 3
 
-  The count_ method returns ``0`` when the item is not in the :py:class:`list`. I change the value to match
+  The count_ method returns ``0`` when the item is not in the list_. I change the value to match
 
   .. code-block:: python
 
@@ -719,7 +720,7 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what it did to the :py:class:`list`
+* I add another assertion to see what it did to the list_
 
   .. code-block:: python
 
@@ -848,7 +849,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* it does not tell me if the :ref:`method<functions>` is returning the same value I give it, so I change the :py:class:`list`
+* it does not tell me if the :ref:`method<functions>` is returning the same value I give it, so I change the list_
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -863,7 +864,7 @@ refactor: make it better
 
     ValueError: 0 is not in list
 
-  the index_ :ref:`method<functions>` raises :py:exc:`ValueError` when the item is not in the :py:class:`list`
+  the index_ :ref:`method<functions>` raises :py:exc:`ValueError` when the item is not in the list_
 
 * I add it to the list of Exceptions_ encountered
 
@@ -984,7 +985,7 @@ refactor: make it better
 
     self.assertEqual(a_list.index('...last'), 3)
 
-  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the the :py:class:`list`. Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the :py:class:`list` minus ``1``
+  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the the list_. Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
 
 * I rename the test
 
@@ -1052,7 +1053,7 @@ the test is green. The insert_ :ref:`method<functions>` returns :ref:`None`
 refactor: make it better
 #################################################################################
 
-* I add an assertion to find out what it did to the :py:class:`list`
+* I add an assertion to find out what it did to the list_
 
   .. code-block:: python
 
@@ -1065,7 +1066,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [1, 0, 1, 2, 'n'] != [0, 1, 2, 'n']
 
-  I add the new value to the :py:class:`list`
+  I add the new value to the list_
 
   .. code-block:: python
 
@@ -1167,7 +1168,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: 'n' is not None
 
-it looks like the pop_ :ref:`method<functions>` returns the last item in the :py:class:`list`
+it looks like the pop_ :ref:`method<functions>` returns the last item in the list_
 
 green: make it pass
 #################################################################################
@@ -1196,7 +1197,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assertion to see what the :ref:`method<functions>` did to the :py:class:`list`
+* I add an assertion to see what the :ref:`method<functions>` did to the list_
 
   .. code-block:: python
 
@@ -1237,7 +1238,7 @@ refactor: make it better
     self.assertEqual(a_list, [0, 1, 2])
     self.assertEqual(a_list.pop(), 2)
 
-  the test passes. The pop_ :ref:`method<functions>` removes and returns the last item in the :py:class:`list`
+  the test passes. The pop_ :ref:`method<functions>` removes and returns the last item in the list_
 
 * I rename the test
 
@@ -1294,7 +1295,7 @@ the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`Non
 refactor: make it better
 #################################################################################
 
-* I add an assertion to see what remove_ did to the :py:class:`list`
+* I add an assertion to see what remove_ did to the list_
 
   .. code-block:: python
 
@@ -1307,7 +1308,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
-  the :ref:`method<functions>` removes the item given from the :py:class:`list`. I change the expectation
+  the :ref:`method<functions>` removes the item given from the list_. I change the expectation
 
   .. code-block:: python
 
@@ -1315,7 +1316,7 @@ refactor: make it better
 
   the test passes
 
-* I change the values in ``a_list`` to see what would happen if an item shows up more than once in the :py:class:`list`
+* I change the values in ``a_list`` to see what would happen if an item shows up more than once in the list_
 
   .. code-block:: python
 
@@ -1330,7 +1331,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [1, 0, 2, 0, 'n'] != [1, 2, 'n']
 
-  the :ref:`method<functions>` removes the first instance of the given item from the :py:class:`list`. I change the values to match
+  the :ref:`method<functions>` removes the first instance of the given item from the list_. I change the values to match
 
   .. code-block:: python
 
@@ -1338,7 +1339,7 @@ refactor: make it better
 
   the test passes
 
-* I want to know what happens when the item is not in the :py:class:`list`
+* I want to know what happens when the item is not in the list_
 
   .. code-block:: python
 
@@ -1396,7 +1397,7 @@ I add the next test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.reverse())
 
-the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what it did to the :py:class:`list`
+the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what it did to the list_
 
 .. code-block:: python
 
@@ -1409,7 +1410,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
 
-the :ref:`method<functions>` reverses the order of the :py:class:`list`
+the :ref:`method<functions>` reverses the order of the list_
 
 green: make it pass
 #################################################################################
@@ -1493,7 +1494,7 @@ refactor: make it better
         self.assertIsNone(a_list.sort())
 
 
-  the terminal still shows green, sort_ returns :ref:`None` when called. I add another assertion to see what it did to the :py:class:`list`
+  the terminal still shows green, sort_ returns :ref:`None` when called. I add another assertion to see what it did to the list_
 
   .. code-block:: python
 
@@ -1506,13 +1507,13 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-  the :py:class:`list` is still the same. I change the expectation
+  the list_ is still the same. I change the expectation
 
   .. code-block:: python
 
     self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<functions>` is sort_ and the :py:class:`list` is already sorted. I change it to see what would happen when it is not sorted
+  the test passes. The name of the :ref:`method<functions>` is sort_ and the list_ is already sorted. I change it to see what would happen when it is not sorted
 
   .. code-block:: python
 
@@ -1524,7 +1525,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
-  the sort_ :ref:`method<functions>` arranges the :py:class:`list` in ascending order. I change the values to match
+  the sort_ :ref:`method<functions>` arranges the list_ in ascending order. I change the values to match
 
   .. code-block:: python
 
@@ -1552,7 +1553,7 @@ refactor: make it better
 test_get_items_from_a_list
 *********************************************************************************
 
-I can provide the index of an item I want to see in square brackets(``[]``) to a :py:class:`list`
+I can provide the index of an item I want to see in square brackets(``[]``) to a list_
 
 red: make it fail
 #################################################################################
@@ -1587,7 +1588,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I can also use negative numbers. The last item has an index of ``-1`` and the first item has an index of negative the length of the :py:class:`list`
+* I can also use negative numbers. The last item has an index of ``-1`` and the first item has an index of negative the length of the list_
 
   .. code-block:: python
 
@@ -1758,7 +1759,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
 
-I can use the index of an item to change its value in a :py:class:`list`
+I can use the index of an item to change its value in a list_
 
 green: make it pass
 #################################################################################
@@ -1797,7 +1798,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['a', 'b'] != []
 
-viewing parts of a :py:class:`list` is like indexing, it takes two values in square brackets(``[]``), separated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
+viewing parts of a list_ is like indexing, it takes two values in square brackets(``[]``), separated by a ``:``, the first value is the starting index you want and the second value is the ending index plus ``1``
 
 green: make it pass
 #################################################################################
@@ -1893,7 +1894,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-:py:exc:`ValueError` was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_first_position_of_item_in_a_list`, there is another :py:exc:`Exception`that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a :py:class:`list` but use a number that is NOT in the range of indexes for it
+:py:exc:`ValueError` was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_first_position_of_item_in_a_list`, there is another :py:exc:`Exception`that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a list_ but use a number that is NOT in the range of indexes for it
 
 red: make it fail
 #################################################################################
@@ -1940,7 +1941,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I add another assertion to test indexing with a negative number that is outside the range of numbers that can be used to index the :py:class:`list`
+* I add another assertion to test indexing with a negative number that is outside the range of numbers that can be used to index the list_
 
   .. code-block:: python
 
@@ -1965,7 +1966,7 @@ refactor: make it better
 
   the test passes
 
-* :ref:`IndexError<test_index_error>` is also raised with the pop_ :ref:`method<functions>` when the the :py:class:`list` is empty
+* :ref:`IndexError<test_index_error>` is also raised with the pop_ :ref:`method<functions>` when the the list_ is empty
 
   .. code-block:: python
 
@@ -1999,7 +2000,7 @@ review
 I ran tests for `lists <https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20remove#more-on-lists>`_
 
 * they are represented with ``[]``
-* they can be made with the :py:class:`list` constructor_
+* they can be made with the list_ constructor_
 * they can hold any :ref:`object<classes>`
 * they can be changed by performing an operation
 
