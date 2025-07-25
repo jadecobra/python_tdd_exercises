@@ -26,9 +26,7 @@ lists
 
 ----
 
-:py:class:`int`
-
-A :py:class:`list` is an :ref:`object<classes>` that can hold other objects_
+A :py:class:`list` is an :ref:`object<classes>` that can hold any objects_
 
 * they are represented with ``[]``
 * they can be made with the :py:class:`list` constructor_
@@ -144,7 +142,7 @@ I change the expectation to match
 
   self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-the test passes. The tests show I can make a :py:class:`list` with the :py:class:`list` constructor_ and square brackets(``[]``), which uses less characters than the constructor_
+the test passes. The tests show I can make a :py:class:`list` with the constructor_ and square brackets(``[]``), which uses less characters
 
 ----
 
@@ -184,7 +182,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   Diff is 748 characters long. Set self.maxDiff to None to see it
 
-`unittest.TestCase.maxDiff`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal, when it is set to :ref:`None` it shows all the differences
+`unittest.TestCase.maxDiff`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal, when it is set to :ref:`None` it shows the entire difference
 
 green: make it pass
 #################################################################################
@@ -232,7 +230,7 @@ green: make it pass
             ]
         )
 
-  the terminal shows passing tests and I move it back to the bottom. I ignore the names with double underscores (__) for now, then copy and paste the other names to make a TODO list for the next tests
+  the terminal shows passing tests and I move it back to the bottom. I ignore the names with double underscores (__) for now, then copy and paste the other names to make a TODO list
 
   .. code-block:: python
 
@@ -281,13 +279,13 @@ the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-I add input
+I add ``0`` as input
 
 .. code-block:: python
 
   self.assertIsNone(a_list.append(0))
 
-the terminal shows green, the append_ :ref:`method<functions>` returns :ref:`None` when it is called
+the terminal shows green, the append_ :ref:`method<functions>` returns :ref:`None` when called
 
 refactor: make it better
 #################################################################################
@@ -295,6 +293,7 @@ refactor: make it better
 * I add another assertion to see what append_ did to the :py:class:`list`
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     self.assertIsNone(a_list.append(0))
     self.assertEqual(a_list, [0, 1, 2, 'n'])
@@ -336,6 +335,7 @@ refactor: make it better
 * I rename the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_append_adds_to_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -411,6 +411,7 @@ refactor: make it better
 * I change the name of the test to be more descriptive
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_clear_empties_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -465,6 +466,7 @@ green: make it pass
 I add the value to the assertion
 
 .. code-block:: python
+    :emphasize-lines: 2
 
   a_list = [0, 1, 2, 'n']
   self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
@@ -478,6 +480,7 @@ the terminal shows :ref:`AssertionError`
 the :ref:`method<functions>` returns a copy of the :py:class:`list`. I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
+  :emphasize-lines: 2
 
   a_list = [0, 1, 2, 'n']
   self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
@@ -556,6 +559,7 @@ the terminal shows :ref:`TypeError`
 I pass a value to the call
 
 .. code-block:: python
+  :emphasize-lines: 3
 
   def test_count(self):
       a_list = [0, 1, 2, 'n']
@@ -582,7 +586,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: 1 is not None : 1
 
-I change the assertIsNone_ to assertEqual_
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -597,6 +601,7 @@ refactor: make it better
 * It looks like the count_ :ref:`method<functions>` returns the number of times an item is in a :py:class:`list`. I change it then add another assertion to be sure
 
   .. code-block:: python
+    :emphasize-lines: 2, 4
 
     def test_count(self):
         a_list = [0, 1, 2, 1, 'n', 1]
@@ -620,6 +625,7 @@ refactor: make it better
 * I add another assertion to see what happens when I try to count an item that is not in the :py:class:`list`
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     self.assertEqual(a_list.count(2), 3)
     self.assertEqual(a_list.count('not in list'), 3)
@@ -641,6 +647,7 @@ refactor: make it better
 * I rename the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_count_number_of_times_item_is_in_a_list(self):
         a_list = [0, 2, 1, 2, 3, 2]
@@ -736,6 +743,7 @@ refactor: make it better
 * I change the values given to the extend_ :ref:`method<functions>` for fun
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     def test_extend(self):
         a_list = [0, 1, 2, 'n']
@@ -759,6 +767,7 @@ refactor: make it better
 * I change the name of the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_extend_adds_items_from_an_iterable_to_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -808,6 +817,7 @@ green: make it pass
 I add a value to the call
 
 .. code-block:: python
+    :emphasize-lines: 3
 
   def test_index(self):
       a_list = [0, 1, 2, 'n']
@@ -825,7 +835,7 @@ I add the expectation
 
   AssertionError: 0 is not None : 0
 
-I change the assertIsNone_ to assertEqual_
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -838,9 +848,10 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I change the values in ``a_list`` to see if the :ref:`method<functions>` is returning the same value I give it
+* it does not tell me if the :ref:`method<functions>` is returning the same value I give it, so I change the :py:class:`list`
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def test_index(self):
         a_list = ['1st', '2nd', '3rd', '...last']
@@ -853,6 +864,8 @@ refactor: make it better
     ValueError: 0 is not in list
 
   the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the :py:class:`list`
+
+  :py:exc:`ValueError`
 
 * I add it to the list of Exceptions_ encountered
 
@@ -1173,7 +1186,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: 'n' is not None : n
 
-I change the assertIsNone_ to assertEqual_
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 

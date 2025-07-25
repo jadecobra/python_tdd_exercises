@@ -727,7 +727,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {'key': 'value'} is not None : {'key': 'value'}
 
-I change the assertIsNone_ to assertEqual_
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -850,7 +850,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
 
-I change the assertIsNone_ to assertEqual_
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -1026,7 +1026,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None : value
 
-  I change the assertIsNone_ to assertEqual_
+  I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -1073,7 +1073,7 @@ refactor: make it better
 
     AssertionError: 'default' is not None : default
 
-  I change the assertIsNone_ to assertEqual_
+  I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -1177,7 +1177,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [('key', 'value')] is not None : [('key', 'value')]
 
-I change the assertIsNone_ to assertEqual_
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -1472,7 +1472,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None : value
 
-  I change the assertIsNone_ to assertEqual_
+  I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -1565,7 +1565,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: ('key', 'value') is not None : ('key', 'value')
 
-I change the assertIsNone_ to assertEqual_
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
@@ -1801,7 +1801,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None : value
 
-  I change the assertIsNone_ to assertEqual_
+  I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -1839,7 +1839,7 @@ refactor: make it better
 
     AssertionError: 'default' is not None : default
 
-  I change the assertIsNone_ to assertEqual_
+  I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
 
@@ -2132,7 +2132,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_values(['value']) is not None : ['value']
 
-I change the assertIsNone_ to assertEqual_
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
