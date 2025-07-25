@@ -178,7 +178,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ################################################################################
 
-from the `Zen of Python`_: ``Explicit is better than implicit.`` I add a :ref:`function<functions>` definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
+from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit.`` I add a :ref:`function<functions>` definition to ``functions.py`` this time with an explicit ``return`` statement showing the value returned
 
 .. code-block:: python
 
@@ -981,7 +981,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
               ('first_name', 'last_name')
           )
 
-  all the tests are still passing. The problem here is without the names the program is going to take the input data in the order I provide it so it is better to be explicit with the names, from the `Zen of Python`_ : ``Explicit is better than implicit.``
+  all the tests are still passing. The problem here is without the names the program is going to take the input data in the order I provide it so it is better to be explicit with the names, from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit.``
 * I add 2 tests, this time for an unknown number of positional and keyword arguments
 
   .. code-block:: python
