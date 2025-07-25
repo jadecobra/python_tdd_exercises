@@ -87,7 +87,7 @@ red: make it fail
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is ``reality`` - ``src.calculator.add(0, 1)``, and the other is my ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
 
-  but the terminal shows NameError_
+  but the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -140,7 +140,7 @@ green: make it pass
 
     add
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -438,7 +438,7 @@ green: make it pass
 
     subtract
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -670,7 +670,7 @@ green: make it pass
       def a_random_number():
           return random.randint(-1, 1)
 
-  and when ``y`` is randomly ``0`` the terminal shows a ZeroDivisionError_
+  and when ``y`` is randomly ``0`` the terminal shows a :py:exc:`ZeroDivisionError`
 
   .. code-block:: python
 
@@ -680,7 +680,7 @@ green: make it pass
     >    return x / y
     E    ZeroDivisionError: division by zero
 
-  dividing by ``0`` is not defined in mathematics and raises an Exception_ in Python
+  dividing by ``0`` is not defined in mathematics and raises an :py:exc:`Exception`in Python
 
 * I add it to the list of Exceptions_ encountered
 
@@ -701,7 +701,7 @@ how to test that an Exception is raised
 red: make it fail
 #################################################################################
 
-I add a line to raise the ZeroDivisionError_ and comment out the code that randomly fails
+I add a line to raise the :py:exc:`ZeroDivisionError` and comment out the code that randomly fails
 
 .. code-block:: python
 
@@ -723,13 +723,13 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-Exceptions_ like ZeroDivisionError_ break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests` for more
+Exceptions_ like :py:exc:`ZeroDivisionError` break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests` for more
 
 
 green: make it pass
 #################################################################################
 
-* I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
+* I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a :py:exc:`ZeroDivisionError` is raised when I try to divide a number by ``0``
 
   .. code-block:: python
 
@@ -742,7 +742,7 @@ green: make it pass
         #   self.x/self.y
         # )
 
-  because I used the wrong Exception_ the terminal still shows a ZeroDivisionError_
+  because I used the wrong :py:exc:`Exception`the terminal still shows a :py:exc:`ZeroDivisionError`
 
   .. code-block:: python
 
@@ -755,7 +755,7 @@ green: make it pass
     with self.assertRaises(ZeroDivisionError):
         src.calculator.divide(self.x, 0)
 
-  the test passes, showing that the code raises the Exception_
+  the test passes, showing that the code raises the :py:exc:`Exception`
 
 
 refactor: make it better
@@ -803,13 +803,13 @@ refactor: make it better
                 self.x/self.y
             )
 
-  when ``self.y`` is randomly ``0``, the terminal shows a ZeroDivisionError_
+  when ``self.y`` is randomly ``0``, the terminal shows a :py:exc:`ZeroDivisionError`
 
   .. code-block:: python
 
     ZeroDivisionError: division by zero
 
-* I add an assertRaises_ block to catch the Exception_ in the `while statement`_ and remove the previous statement from the test because it is now part of the loop
+* I add an assertRaises_ block to catch the :py:exc:`Exception`in the `while statement`_ and remove the previous statement from the test because it is now part of the loop
 
   .. code-block:: python
 
@@ -866,7 +866,7 @@ green: make it pass
 
     subtract
 
-  and get NameError_
+  and get :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -1062,10 +1062,10 @@ I wrote the following tests for a program that performs the arithmetic_ operatio
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
-* NameError_
+* :py:exc:`NameError`
 * :ref:`AttributeError`
 * :ref:`TypeError`
-* ZeroDivisionError_
+* :py:exc:`ZeroDivisionError`
 
 Would you like to test :doc:`passing values?</how_to/pass_values>`
 

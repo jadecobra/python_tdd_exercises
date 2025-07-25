@@ -466,7 +466,7 @@ green: make it pass
 I add the value to the assertion
 
 .. code-block:: python
-    :emphasize-lines: 2
+  :emphasize-lines: 2
 
   a_list = [0, 1, 2, 'n']
   self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
@@ -817,7 +817,7 @@ green: make it pass
 I add a value to the call
 
 .. code-block:: python
-    :emphasize-lines: 3
+  :emphasize-lines: 3
 
   def test_index(self):
       a_list = [0, 1, 2, 'n']
@@ -857,15 +857,13 @@ refactor: make it better
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list.index(0), 0)
 
-  the terminal shows ValueError_
+  the terminal shows :py:exc:`ValueError`
 
   .. code-block:: python
 
     ValueError: 0 is not in list
 
-  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the :py:class:`list`
-
-  :py:exc:`ValueError`
+  the index_ :ref:`method<functions>` raises :py:exc:`ValueError` when the item is not in the :py:class:`list`
 
 * I add it to the list of Exceptions_ encountered
 
@@ -882,13 +880,13 @@ refactor: make it better
 
     a_list.index('not in list')
 
-  the terminal shows ValueError_
+  the terminal shows :py:exc:`ValueError`
 
   .. code-block:: python
 
     ValueError: 'not in list' is not in list
 
-* I add assertRaises_ to handle the Exception_
+* I add assertRaises_ to handle the :py:exc:`Exception`
 
   .. code-block:: python
 
@@ -1347,7 +1345,7 @@ refactor: make it better
     self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
     self.assertIsNone(a_list.remove('not in list'))
 
-  the terminal shows ValueError_
+  the terminal shows :py:exc:`ValueError`
 
   .. code-block:: python
 
@@ -1895,7 +1893,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_first_position_of_item_in_a_list`, there is another Exception_ that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a :py:class:`list` but use a number that is NOT in the range of indexes for it
+:py:exc:`ValueError` was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_first_position_of_item_in_a_list`, there is another :py:exc:`Exception`that is important to know, the :ref:`IndexError<test_index_error>` is raised when I try to get an item from a :py:class:`list` but use a number that is NOT in the range of indexes for it
 
 red: make it fail
 #################################################################################

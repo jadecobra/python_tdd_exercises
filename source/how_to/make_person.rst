@@ -63,7 +63,7 @@ red: make it fail
                 None
             )
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -224,7 +224,7 @@ green: make it pass
             None
         )
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -728,7 +728,7 @@ refactor: make it better
             'age': this_year() - year_of_birth,
         }
 
-  and get NameError_
+  and get :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -749,7 +749,7 @@ refactor: make it better
             'age': datetime.datetime.now().year - year_of_birth,
         }
 
-  and the terminal shows another NameError_
+  and the terminal shows another :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -916,7 +916,7 @@ red: make it fail
         )
         ...
 
-  to get NameError_
+  to get :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -961,7 +961,7 @@ green: make it pass
         ):
         ...
 
-  and the terminal shows a SyntaxError_
+  and the terminal shows a :py:exc:`SyntaxError`
 
   .. code-block:: python
 
@@ -988,7 +988,7 @@ green: make it pass
         ):
         ...
 
-  and get another SyntaxError_
+  and get another :py:exc:`SyntaxError`
 
   .. code-block:: python
 
@@ -1004,7 +1004,7 @@ green: make it pass
         ):
         ...
 
-  and the terminal shows NameError_
+  and the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -1075,7 +1075,7 @@ green: make it pass
         )
         ...
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -1098,7 +1098,7 @@ green: make it pass
         }
     )
 
-  and get the same NameError_
+  and get the same :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -1370,7 +1370,7 @@ green: make it pass
 
     factory
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -1630,7 +1630,7 @@ green: make it pass
         ):
         ...
 
-  and get a SyntaxError_
+  and get a :py:exc:`SyntaxError`
 
 * When I add a default value for ``sex``
 
@@ -1642,7 +1642,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows the same SyntaxError_
+  the terminal shows the same :py:exc:`SyntaxError`
 
   .. code-block:: python
 
@@ -1708,10 +1708,10 @@ I ran tests to make a :ref:`function<functions>` that takes in keyword arguments
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
-* NameError_
+* :py:exc:`NameError`
 * :ref:`AttributeError`
 * :ref:`TypeError`
-* SyntaxError_
+* :py:exc:`SyntaxError`
 
 Would you like to know :doc:`how to test that an Exception is raised?</how_to/exception_handling_tests>`
 

@@ -548,7 +548,7 @@ refactor: make it better
         return not not p not and not q
         return not (not p and q)
 
-  the terminal shows SyntaxError_
+  the terminal shows :py:exc:`SyntaxError`
 
   .. code-block:: python
 

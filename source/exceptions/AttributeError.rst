@@ -88,7 +88,7 @@ green: make it pass
 
     variable_00
 
-  which gives me NameError_
+  which gives me :py:exc:`NameError`
 
   .. code-block::
 
@@ -136,7 +136,7 @@ refactor: make it better
     variable_00 = None
     variable_01
 
-  and get NameError_
+  and get :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -438,7 +438,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  and the terminal still shows the same exception_ because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
+  and the terminal still shows the same :py:exc:`Exception`because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
 
 * I change the def_ keyword to the :ref:`class <classes>` keyword
 
@@ -449,7 +449,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  and the terminal shows SyntaxError_
+  and the terminal shows :py:exc:`SyntaxError`
 
   .. code-block:: python
 
@@ -746,9 +746,9 @@ I ran tests for the `AttributeError <https://docs.python.org/3/library/exception
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
-* NameError_
+* :py:exc:`NameError`
 * :ref:`TypeError`
-* SyntaxError_
+* :py:exc:`SyntaxError`
 
 Would you like to test the :ref:`TypeError?<TypeError>`
 

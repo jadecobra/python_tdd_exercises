@@ -52,7 +52,7 @@ green: make it pass
 
     raise_exception
 
-  and get NameError_
+  and get :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -79,7 +79,7 @@ green: make it pass
 
   the test passes
 
-* I want the :ref:`function<functions>` to raise an Exception_ when it is called
+* I want the :ref:`function<functions>` to raise an :py:exc:`Exception`when it is called
 
   .. code-block:: python
 
@@ -102,7 +102,7 @@ green: make it pass
 
   and the test is green
 
-* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the Exception_ it is given, with the message it is given, it uses `Regular Expressions`_ for this
+* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the :py:exc:`Exception`it is given, with the message it is given, it uses `Regular Expressions`_ for this
 
   .. code-block:: python
 
@@ -118,7 +118,7 @@ green: make it pass
 
     AssertionError: "BOOM!" does not match ""
 
-* the Exception_ is right, the message is not. I add it
+* the :py:exc:`Exception`is right, the message is not. I add it
 
   .. code-block:: python
 
@@ -168,7 +168,7 @@ green: make it pass
 
     an_exception_handler
 
-  I get NameError_
+  I get :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -230,7 +230,7 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
-I want ``an_exception_handler`` to process its input and return ``failed`` when an Exception_ happens or ``success`` when it does not.
+I want ``an_exception_handler`` to process its input and return ``failed`` when an :py:exc:`Exception`happens or ``success`` when it does not.
 
 red: make it fail
 #################################################################################
@@ -270,7 +270,7 @@ green: make it pass
     def an_exception_handler(argument):
         return 'failed'
 
-  and the terminal shows NameError_
+  and the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -347,7 +347,7 @@ green: make it pass
 
       AssertionError: None != 'succeeded'
 
-  - the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an Exception_ with a message
+  - the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an :py:exc:`Exception`with a message
 
     .. code-block:: python
 
@@ -398,7 +398,7 @@ how to use try...except...else
 
   and the terminal shows passing tests.
 
-  The `try statement`_ is used to catch/handle exceptions_ in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
+  The `try statement`_ is used to catch/handle exceptions_ in Python. It allows the program to make a decision when it runs into an :py:exc:`Exception`. I think of it as
 
   - ``try`` running **this**
   - ``except Exception`` - when running **this** raises ``Exception``, run the code in this block
@@ -410,7 +410,7 @@ how to use try...except...else
   - ``except Exception`` - when **calling** ``a_function()`` raises ``Exception`` return ``'failed'``
   - ``else`` - when **calling** ``a_function()`` does NOT raise ``Exception`` return ``'succeeded'``
 
-* I can be more specific with the Exception_ in the ``except`` block, for example
+* I can be more specific with the :py:exc:`Exception`in the ``except`` block, for example
 
   .. code-block:: python
 
@@ -428,7 +428,7 @@ how to use try...except...else
 
     Exception: 'BOOM!'
 
-  because Exception_ is not :ref:`ModuleNotFoundError`, the `try statement`_ will only catch the Exception_ given in the ``except`` block and its children, all others will be raised
+  because :py:exc:`Exception`is not :ref:`ModuleNotFoundError`, the `try statement`_ will only catch the :py:exc:`Exception`given in the ``except`` block and its children, all others will be raised
 
 * I change it back to what works
 

@@ -254,7 +254,7 @@ refactor: make it better
         return not p not or not q
         return not p and not q
 
-  the terminal shows SyntaxError_
+  the terminal shows :py:exc:`SyntaxError`
 
   .. code-block:: python
 
@@ -417,7 +417,7 @@ refactor: make it better
         return (not not p not and not q) not or (not p not and not not q)
         return not ((not p and q) or (p and not q):)
 
-  the terminal shows SyntaxError_
+  the terminal shows :py:exc:`SyntaxError`
 
   .. code-block:: python
 
@@ -570,7 +570,7 @@ refactor: make it better
         return not p not and not not q
         return not (p and not q)
 
-  the terminal shows SyntaxError_
+  the terminal shows :py:exc:`SyntaxError`
 
   .. code-block:: python
 

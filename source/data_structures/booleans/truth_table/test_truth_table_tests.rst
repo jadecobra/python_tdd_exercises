@@ -51,7 +51,7 @@ green: make it pass
 
     tautology
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -1151,7 +1151,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         return not x not or not y
         return not x and not y
 
-  the terminal shows SyntaxError_
+  the terminal shows :py:exc:`SyntaxError`
 
   .. code-block:: python
 

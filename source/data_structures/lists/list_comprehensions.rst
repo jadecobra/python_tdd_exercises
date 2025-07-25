@@ -122,7 +122,7 @@ refactor: make it better
         [0, 1, 2, 3]
     )
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 

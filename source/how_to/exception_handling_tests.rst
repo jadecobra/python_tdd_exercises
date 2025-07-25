@@ -20,11 +20,11 @@ how to test that an Exception is raised
 
 ----
 
-When an error happens in Python, an Exception_ is raised to break execution of the program, this means nothing past the line that caused it will run.
+When an error happens in Python, an :py:exc:`Exception`is raised to break execution of the program, this means nothing past the line that caused it will run.
 
 It is useful because there is a problem to be solved to continue as expected, it can be a pain when it causes the program to stop early. What if I want it to run even with errors? I might want to give messages to the user who does not care about or understand the details of the error.
 
-Exception_ Handling is a way to deal with this, it allows programs to make decisions when one happens.
+:py:exc:`Exception`Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
 *********************************************************************************
 test_catching_module_not_found_error_in_tests
@@ -81,7 +81,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle it in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code in its context raises the Exception_ it is given
+* I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle it in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code in its context raises the :py:exc:`Exception`it is given
 
   .. code-block:: python
 
@@ -107,7 +107,7 @@ red: make it fail
     def test_catching_name_error_in_tests(self):
         does_not_exist
 
-  and the terminal shows NameError_
+  and the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -151,7 +151,7 @@ red: make it fail
     def test_catching_attribute_error_in_tests(self):
         src.exceptions.does_not_exist
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -223,7 +223,7 @@ red: make it fail
 
     function_name
 
-  and the terminal shows NameError_
+  and the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -513,7 +513,7 @@ red: make it fail
     def test_catching_zero_division_error_in_tests(self):
         1 / 0
 
-  any number divided by ``0`` and the terminal shows a ZeroDivisionError_
+  any number divided by ``0`` and the terminal shows a :py:exc:`ZeroDivisionError`
 
   .. code-block:: python
 
@@ -562,13 +562,13 @@ red: make it fail
     def test_catching_exceptions_in_tests(self):
         raise Exception
 
-  the terminal shows Exception_ which is the mother of the Exceptions_ encountered so far, they inherit from it
+  the terminal shows :py:exc:`Exception`which is the mother of the Exceptions_ encountered so far, they inherit from it
 
   .. code-block:: python
 
     Exception
 
-* I can use the `raise statement`_ to cause any Exception_
+* I can use the `raise statement`_ to cause any :py:exc:`Exception`
 
   .. code-block:: python
 
@@ -594,12 +594,12 @@ when I add the assertRaises_ :ref:`method<functions>` to the test
 
 the terminal shows all tests are passing.
 
-To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the Exception_ it is given.
+To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the :py:exc:`Exception`it is given.
 
 refactor: make it better
 #################################################################################
 
-* I can use Exception_ to catch any of the Exceptions_ that inherit from it, its children if you will
+* I can use :py:exc:`Exception`to catch any of the Exceptions_ that inherit from it, its children if you will
 
   .. code-block:: python
 
@@ -612,7 +612,7 @@ refactor: make it better
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using Exception_ to catch its children, is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the `Zen of python`_: ``Explicit is better than implicit``
+  all the tests are still green. The problem with using :py:exc:`Exception`to catch its children, is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the `Zen of python`_: ``Explicit is better than implicit``
 
 * I cannot use siblings or cousins to catch other Exceptions_
 
@@ -651,7 +651,7 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal still shows a passing test, even though Exception_ is not :ref:`IndexError<test_index_error>`, it looks like the assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>`. When I move the `raise statement`_ above it
+  the terminal still shows a passing test, even though :py:exc:`Exception`is not :ref:`IndexError<test_index_error>`, it looks like the assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>`. When I move the `raise statement`_ above it
 
   .. code-block:: python
 
@@ -662,7 +662,7 @@ refactor: make it better
             a_list[4]
             a_list[-5]
 
-  the terminal shows Exception_
+  the terminal shows :py:exc:`Exception`
 
   .. code-block:: python
 
@@ -691,12 +691,12 @@ I have a way to catch Exceptions_ in tests and ran into the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
-* NameError_
+* :py:exc:`NameError`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError <test_key_error>`
-* ZeroDivisionError_
+* :py:exc:`ZeroDivisionError`
 
 Would you like to test :doc:`handling Exceptions in programs?</how_to/exception_handling_programs>`
 

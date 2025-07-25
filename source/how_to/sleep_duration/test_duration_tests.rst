@@ -53,7 +53,7 @@ green: make it pass
 
     get_datetime
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ green: make it pass
     def get_datetime(argument):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  and the terminal shows NameError_
+  and the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -198,7 +198,7 @@ green: make it pass
 
     duration
 
-  and get NameError_
+  and get :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -266,14 +266,14 @@ green: make it pass
 
   it looks like the ``duration`` :ref:`function<functions>` has to make a decision based on its inputs
 
-* I change the `return statement`_ to raise ValueError_ with the inputs or return the inputs to see the difference between them and the expected output
+* I change the `return statement`_ to raise :py:exc:`ValueError` with the inputs or return the inputs to see the difference between them and the expected output
 
   .. code-block:: python
 
     def duration(sleep_time, wake_time):
         raise ValueError(sleep_time, wake_time)
 
-* When I raise ValueError_ in ``duration`` I get another :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
+* When I raise :py:exc:`ValueError` in ``duration`` I get another :ref:`AssertionError` because the message in the :py:exc:`ValueError` does not match the expectation of the test
 
   .. code-block:: python
 
@@ -282,7 +282,7 @@ green: make it pass
     AssertionError: "wake_time: "5602/08/29 05:06" is earlier than sleep_time: "8373/05/08 05:29"" does not match "('8373/05/08 05:29', '5602/08/29 05:06')"
     AssertionError: "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
 
-  this tells me that the test expects a message with the ValueError_, or I get ValueError_ that looks like this
+  this tells me that the test expects a message with the :py:exc:`ValueError`, or I get :py:exc:`ValueError` that looks like this
 
   .. code-block:: python
 
@@ -291,9 +291,9 @@ green: make it pass
     ValueError: ('6471/03/10 05:04', '7883/06/01 02:38')
     ValueError: ('7370/08/12 21:34', '7937/03/27 01:58')
 
-  which does not tell me anything so I comment it out to get the other message I got with the :ref:`AssertionError`, I can raise ValueError_ again or try to return the inputs
+  which does not tell me anything so I comment it out to get the other message I got with the :ref:`AssertionError`, I can raise :py:exc:`ValueError` again or try to return the inputs
 
-* When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal to change the message of the ValueError_
+* When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal to change the message of the :py:exc:`ValueError`
 
   .. code-block:: python
 
@@ -302,7 +302,7 @@ green: make it pass
             "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
         )
 
-  and get a SyntaxError_ with this message
+  and get a :py:exc:`SyntaxError` with this message
 
   .. code-block:: python
     :force:
@@ -336,7 +336,7 @@ green: make it pass
             'sleep_time: "8720/08/18 01:02"'
         )
 
-  and get another :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
+  and get another :ref:`AssertionError` because the timestamps in the :py:exc:`ValueError` message are not the same
 
   .. code-block:: python
 
@@ -345,7 +345,7 @@ green: make it pass
     AssertionError: "wake_time: "3208/04/09 09:10" is earlier than sleep_time: "3957/12/23 22:44"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "7169/09/04 15:18" is earlier than sleep_time: "9367/03/02 03:17"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
 
-  or ValueError_
+  or :py:exc:`ValueError`
 
   .. code-block:: python
 
@@ -363,7 +363,7 @@ green: make it pass
         #    'sleep_time: "8720/08/18 01:02"'
         # )
 
-  and get the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
+  and get the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the :py:exc:`ValueError` messages do not match
 
 * I :doc:`interpolate</how_to/pass_values>` ``wake_time`` and ``sleep_time`` in the message
 
@@ -377,7 +377,7 @@ green: make it pass
             f'sleep_time: "{sleep_time}"'
         )
 
-  and get ValueError_
+  and get :py:exc:`ValueError`
 
   .. code-block:: python
 
@@ -386,7 +386,7 @@ green: make it pass
     ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
     ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it raises ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of Exceptions_ encountered
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it raises :py:exc:`ValueError` only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -397,7 +397,7 @@ green: make it pass
     # SyntaxError
     # ValueError
 
-  then add a condition based on the message from the ValueError_
+  then add a condition based on the message from the :py:exc:`ValueError`
 
   .. code-block:: python
 
@@ -543,11 +543,11 @@ review
 The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these Exceptions_ from the terminal
 
 * :ref:`AttributeError`
-* NameError_
+* :py:exc:`NameError`
 * :ref:`TypeError`
 * :ref:`AssertionError`
-* SyntaxError_
-* ValueError_
+* :py:exc:`SyntaxError`
+* :py:exc:`ValueError`
 
 ----
 

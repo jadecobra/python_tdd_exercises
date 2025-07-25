@@ -87,7 +87,7 @@ red: make it fail
         def test_functions_w_pass(self):
             self.assertIsNone(src.functions.function_w_pass())
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -848,7 +848,7 @@ I can also define :ref:`functions` to take both positional arguments and keyword
         {}
       )
 
-the terminal shows a SyntaxError_ because I put a positional argument after a keyword argument. I add the error to the list of Exceptions_ encountered
+the terminal shows a :py:exc:`SyntaxError` because I put a positional argument after a keyword argument. I add the error to the list of Exceptions_ encountered
 
 .. code-block:: python
 

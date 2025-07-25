@@ -1147,7 +1147,7 @@ I copy the value from the terminal and paste as the expectation
 
   self.assertIsNone(a_dictionary.items(), dict_items([('key', 'value')]))
 
-the terminal shows NameError_
+the terminal shows :py:exc:`NameError`
 
 .. code-block:: python
 
@@ -1278,7 +1278,7 @@ I copy the value from the terminal and paste it as the expectation
 
   self.assertIsNone(a_dictionary.keys(), dict_keys(['key']))
 
-the terminal shows NameError_
+the terminal shows :py:exc:`NameError`
 
 .. code-block:: python
 
@@ -2114,7 +2114,7 @@ I add the expected value
 
   self.assertIsNone(a_dictionary.values, dict_values(['value']))
 
-the terminal shows NameError_
+the terminal shows :py:exc:`NameError`
 
 .. code-block:: python
 
@@ -2203,7 +2203,7 @@ refactor: make it better
 test_key_error
 *********************************************************************************
 
-The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important Exception_ to know when working with a dictionary_
+The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :py:exc:`Exception`to know when working with a dictionary_
 
 red: make it fail
 #################################################################################

@@ -17,8 +17,8 @@ exceptions review
 * What causes :ref:`AssertionError`?
 * What causes :ref:`AttributeError`?
 * What causes :ref:`ModuleNotFoundError`?
-* What causes NameError_?
-* What is the difference between :ref:`AttributeError` and NameError_?
+* What causes :py:exc:`NameError`?
+* What is the difference between :ref:`AttributeError` and :py:exc:`NameError`?
 * What causes :ref:`TypeError`?
 * What data structure has :ref:`IndexError<test_index_error>`?
 * What data structure has :ref:`KeyError <test_key_error>`?

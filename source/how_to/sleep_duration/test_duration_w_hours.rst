@@ -102,7 +102,7 @@ green: make it pass
         None
     )
 
-  which gives me NameError_
+  which gives me :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ green: make it pass
 
     duration
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -842,7 +842,7 @@ I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * :ref:`TypeError`
-* NameError_
+* :py:exc:`NameError`
 * :ref:`AttributeError`
 
 Would you like to :ref:`test duration with hours and minutes? <how to measure sleep duration: test_duration_w_hours_and_minutes>`

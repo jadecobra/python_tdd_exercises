@@ -1,4 +1,4 @@
-  .. meta::
+.. meta::
   :description: Dive into Python binary operations with Jacob Itegboje's Truth Table guide. Learn to test logical functions like NAND and OR. Code now!
   :keywords: Jacob Itegboje, truth table, binary operations, Python programming, logical NAND, logical disjunction, Boolean logic, coding tutorials
 
@@ -558,7 +558,7 @@ refactor: make it better
         return not not p not and not not q:
         return not (not p and not q):
 
-  the terminal shows SyntaxError_
+  the terminal shows :py:exc:`SyntaxError`
 
   .. code-block:: python
 

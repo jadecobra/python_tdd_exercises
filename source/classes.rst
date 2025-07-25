@@ -78,7 +78,7 @@ green: make it pass
 
     ClassWithPass
 
-  and the terminal shows NameError_ because ``ClassWithPass`` is not defined anywhere
+  and the terminal shows :py:exc:`NameError` because ``ClassWithPass`` is not defined anywhere
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -102,7 +102,7 @@ green: make it pass
 
     class ClassWithPass:
 
-  the terminal shows IndentationError_ because I declared a class without adding any indented text
+  the terminal shows :py:exc:`IndentationError` because I declared a class without adding any indented text
 * I add the new error to the list of Exceptions_ encountered
 
   .. code-block:: python
@@ -395,7 +395,7 @@ green: make it pass
 
         method_a
 
-  the terminal shows NameError_ because there is no definition for ``method_a``
+  the terminal shows :py:exc:`NameError` because there is no definition for ``method_a``
 
 
 * I define ``method_a`` as an attribute by pointing it to :ref:`None`
@@ -617,7 +617,7 @@ green: make it pass
 
         sex
 
-  the terminal produces NameError_
+  the terminal produces :py:exc:`NameError`
 
 
 * I add a definition for the ``sex`` attribute

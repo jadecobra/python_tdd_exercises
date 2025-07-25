@@ -63,7 +63,7 @@ red: make it fail
                 "I received: hello"
             )
 
-  the terminal shows NameError_
+  the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ green: make it pass
 
     text
 
-  and the terminal shows NameError_
+  and the terminal shows :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -630,7 +630,7 @@ green: make it pass
 
     text
 
-  and get NameError_
+  and get :py:exc:`NameError`
 
   .. code-block:: python
 
@@ -742,7 +742,7 @@ Here are the tests I ran to see what happens when I pass Python :ref:`data struc
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
-* NameError_
+* :py:exc:`NameError`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
