@@ -98,6 +98,7 @@ table of contents
   learning_models
   dot_notation
   review
+  reviews
 
 *********************************************************************************
 music

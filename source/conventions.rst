@@ -37,7 +37,7 @@ names
 
     variable_name = None
 
-for more details see :PEP:`Python Style Guide <8>`
+for more details see the :PEP:`Python Style Guide <8>`
 
 .. _conventions_comments:
 
