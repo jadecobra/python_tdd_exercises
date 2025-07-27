@@ -155,9 +155,9 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[0:2], ['a', 'b'])
         self.assertEqual(a_list[:2], ['a', 'b'])
         self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
+        self.assertEqual(a_list[1:], ['b', 'c', 'd'])
         self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
         self.assertEqual(a_list[1:3], ['b', 'c'])
-        self.assertEqual(a_list[2:], ['c', 'd'])
         self.assertEqual(a_list[:], a_list.copy())
 
     def test_index_error(self):
