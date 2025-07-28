@@ -33,7 +33,7 @@ names
   .. code-block:: python
 
     def function_name(argument_1, argument_2, keyword_argument=None):
-    ...
+        ...
 
     variable_name = None
 
@@ -101,7 +101,7 @@ Quotes represent strings_ and can be single, double, triple single or triple dou
 tuples
 *********************************************************************************
 
-A tuple is a sequence or container of data that cannot be changed later, it is immutable and represented with parentheses/brackets for example
+A tuple_ is a sequence or container of objects_ that cannot be changed later, it is immutable and represented with parentheses/brackets for example
 
 .. code-block:: python
 
@@ -113,7 +113,7 @@ A tuple is a sequence or container of data that cannot be changed later, it is i
 lists
 *********************************************************************************
 
-A list/array is a sequence or container of data that can be changed after it is defined, it is mutable and represented with square brackets for example
+A :ref:`list/array<lists>` is a sequence or container of objects_ that can be changed after it is defined, it is mutable and represented with square brackets for example
 
 .. code-block:: python
 
@@ -125,7 +125,7 @@ A list/array is a sequence or container of data that can be changed after it is 
 sets
 *********************************************************************************
 
-Sets are represented with curly braces/brackets
+A set_ is a container of objects_ that have no duplicates, are represented with curly braces/brackets
 
 .. code-block:: python
 
