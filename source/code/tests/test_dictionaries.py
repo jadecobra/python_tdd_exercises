@@ -110,7 +110,7 @@ class TestDictionaries(unittest.TestCase):
             {0: 'default', 1: 'default'}
         )
 
-    def test_get_a_value_from_a_dictionary(self):
+    def test_get_a_value_for_a_key_in_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
         self.assertEqual(a_dictionary.get('key', 'default'), 'value')
@@ -154,7 +154,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertEqual(a_dictionary.popitem(), ('keyN', 'valueN'))
         self.assertEqual(a_dictionary, {'key1': 'value1'})
 
-    def test_setdefault_adds_key_to_a_dictionary(self):
+    def test_setdefault_adds_a_key_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
         self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
