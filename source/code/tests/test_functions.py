@@ -36,7 +36,7 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                x='first', y='second',
+                x='first', y='second'
             ),
             ('first', 'second')
         )
@@ -54,12 +54,14 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_positional_and_keyword_arguments(
-                'john', last_name='doe'
+                'john', last_name='smith',
             ),
-            ('john', 'doe')
+            ('john', 'smith')
         )
+
+    def test_functions_w_default_arguments(self):
         self.assertEqual(
-            src.functions.w_positional_and_keyword_arguments(
+            src.functions.w_default_arguments(
                 'jane',
             ),
             ('jane', 'doe')
@@ -76,19 +78,14 @@ class TestFunctions(unittest.TestCase):
             src.functions.w_unknown_arguments(
                 None, bool, int, float, str, tuple, list, set, dict,
                 none=None, a_boolean=bool, an_integer=int, a_float=float,
-                a_string=str, a_list=list, a_set=set, a_dictionary=dict
+                a_string=str, a_list=list, a_set=set, a_dictionary=dict,
             ),
             (
                 (None, bool, int, float, str, tuple, list, set, dict),
                 dict(
-                    a_boolean=bool,
-                    a_dictionary=dict,
-                    a_float=float,
-                    a_list=list,
-                    a_set=set,
-                    a_string=str,
-                    an_integer=int,
-                    non=None,
+                    a_boolean=bool, a_dictionary=dict, a_float=float,
+                    a_list=list, a_set=set, a_string=str, an_integer=int,
+                    none=None,
                 )
             )
         )
