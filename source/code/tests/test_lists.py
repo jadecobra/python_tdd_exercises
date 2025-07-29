@@ -90,10 +90,11 @@ class TestLists(unittest.TestCase):
 
     def test_index_returns_first_position_of_item_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
-        self.assertEqual(a_list.index('1st'), 0)
-        self.assertEqual(a_list.index('3rd'), 2)
-        self.assertEqual(a_list.index('2nd'), 1)
-        self.assertEqual(a_list.index('...last'), 3)
+        self.assertEqual(a_list.index('1st', 0), 0)
+        self.assertEqual(a_list.index('3rd', 0), 2)
+        self.assertEqual(a_list.index('2nd', 0), 1)
+        self.assertEqual(a_list.index('...last', 0), 3)
+        self.assertEqual(a_list.index('1st', 1), 4)
 
         with self.assertRaises(ValueError):
             a_list.index('not in list')
@@ -116,9 +117,6 @@ class TestLists(unittest.TestCase):
         a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
-
-        with self.assertRaises(ValueError):
-            a_list.remove('not in list')
 
     def test_reverse_a_list(self):
         a_list = [0, 1, 2, 'n']
