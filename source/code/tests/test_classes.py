@@ -72,24 +72,6 @@ class TestPerson(unittest.TestCase):
             f'and I am {self.random_factory_person.get("age")} years old'
         )
 
-    def test_factory_update_year_of_birth(self):
-        original_age = this_year() - self.random_year_of_birth
-        self.assertEqual(self.random_factory_person.get("age"), original_age)
-        with self.assertRaises(KeyError):
-            self.random_factory_person['year_of_birth']
-
-        new_year_of_birth = 1980
-        self.random_factory_person['year_of_birth'] = new_year_of_birth
-        self.assertEqual(self.random_factory_person.get("age"), original_age)
-
-        self.random_factory_person = src.person.update_year_of_birth(
-            self.random_factory_person, new_year_of_birth
-        )
-        self.assertEqual(
-            self.random_factory_person.get("age"),
-            this_year()-new_year_of_birth
-        )
-
     def test_person_class(self):
         self.assertEqual(
             self.random_classy_person.first_name,
@@ -99,7 +81,10 @@ class TestPerson(unittest.TestCase):
             self.random_classy_person.last_name,
             self.random_last_name
         )
-        self.assertEqual(self.random_classy_person.sex, self.random_sex)
+        self.assertEqual(
+            self.random_classy_person.sex,
+            self.random_sex
+        )
         self.assertEqual(
             self.random_classy_person.year_of_birth,
             self.random_year_of_birth
@@ -117,23 +102,83 @@ class TestPerson(unittest.TestCase):
             f'and I am {self.random_classy_person.get_age()} years old'
         )
 
+    def test_factory_update_year_of_birth(self):
+        original_age = this_year() - self.random_year_of_birth
+        self.assertEqual(self.random_factory_person.get('age'), original_age)
+        with self.assertRaises(KeyError):
+            self.random_factory_person['year_of_birth']
+
+        new_year_of_birth = 1980
+        self.random_factory_person['year_of_birth'] = new_year_of_birth
+        self.assertEqual(self.random_factory_person.get('age'), original_age)
+
+        self.random_factory_person = src.person.update_year_of_birth(
+            self.random_factory_person, new_year_of_birth
+        )
+        self.assertEqual(
+            self.random_factory_person.get('age'),
+            this_year()-new_year_of_birth
+        )
+
     def test_person_class_update_year_of_birth(self):
         new_year_of_birth = 1980
         self.random_classy_person.year_of_birth = new_year_of_birth
+
+        with self.assertRaises(AssertionError):
+            self.assertEqual(
+                self.random_classy_person.get_age(),
+                this_year()-self.random_year_of_birth
+            )
+
         self.assertEqual(
             self.random_classy_person.get_age(),
             this_year()-new_year_of_birth
         )
 
-    def test_person_class_as_a_dictionary(self):
+    def test_attributes_of_functions(self):
+        self.maxDiff = None
         self.assertEqual(
-            self.random_classy_person.__dict__,
-            {
-                'first_name': self.random_first_name,
-                'last_name': self.random_last_name,
-                'sex': self.random_sex,
-                'year_of_birth': self.random_year_of_birth,
-            }
+            dir(src.person.factory),
+            [
+                '__annotations__',
+                '__builtins__',
+                '__call__',
+                '__class__',
+                '__closure__',
+                '__code__',
+                '__defaults__',
+                '__delattr__',
+                '__dict__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__format__',
+                '__ge__',
+                '__get__',
+                '__getattribute__',
+                '__getstate__',
+                '__globals__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__kwdefaults__',
+                '__le__',
+                '__lt__',
+                '__module__',
+                '__name__',
+                '__ne__',
+                '__new__',
+                '__qualname__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__setattr__',
+                '__sizeof__',
+                '__str__',
+                '__subclasshook__',
+                '__type_params__'
+            ]
         )
 
     def test_attributes_and_methods_of_classes(self):
