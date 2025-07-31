@@ -14,6 +14,10 @@ def random_year():
     )
 
 
+def get_age(year_of_birth):
+    return this_year() - year_of_birth
+
+
 class TestPerson(unittest.TestCase):
 
     def setUp(self):
@@ -25,7 +29,7 @@ class TestPerson(unittest.TestCase):
         ))
         self.random_year_of_birth = random_year()
         self.new_year_of_birth = random_year()
-        self.age = this_year() - self.random_year_of_birth
+        self.age = get_age(self.random_year_of_birth)
         self.random_sex = random.choice(('F', 'M'))
         self.random_factory_person = src.person.factory(
             first_name=self.random_first_name,
@@ -121,7 +125,7 @@ class TestPerson(unittest.TestCase):
         )
         self.assertEqual(
             self.random_factory_person.get('age'),
-            this_year()-self.new_year_of_birth
+            get_age(self.new_year_of_birth)
         )
 
     def test_person_class_update_year_of_birth(self):
@@ -132,7 +136,7 @@ class TestPerson(unittest.TestCase):
         self.random_classy_person.year_of_birth = self.new_year_of_birth
         self.assertEqual(
             self.random_classy_person.get_age(),
-            this_year()- self.new_year_of_birth
+            get_age(self.new_year_of_birth)
         )
 
     def test_attributes_and_methods_of_person_function(self):
