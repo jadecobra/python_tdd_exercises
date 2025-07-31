@@ -8,6 +8,12 @@ def this_year():
     return datetime.datetime.now().year
 
 
+def random_year():
+    return random.randint(
+        this_year()-120, this_year()
+    )
+
+
 class TestPerson(unittest.TestCase):
 
     def setUp(self):
@@ -17,9 +23,8 @@ class TestPerson(unittest.TestCase):
         self.random_last_name = random.choice((
             'doe', 'smith', 'blow', 'public',
         ))
-        self.random_year_of_birth = random.randint(
-            this_year()-120, this_year()
-        )
+        self.random_year_of_birth = random_year()
+        self.new_year_of_birth = random_year()
         self.age = this_year() - self.random_year_of_birth
         self.random_sex = random.choice(('F', 'M'))
         self.random_factory_person = src.person.factory(
@@ -106,30 +111,28 @@ class TestPerson(unittest.TestCase):
         with self.assertRaises(KeyError):
             self.random_factory_person['year_of_birth']
 
-        new_year_of_birth = 1981
-        self.random_factory_person['year_of_birth'] = new_year_of_birth
+        self.random_factory_person['year_of_birth'] = self.new_year_of_birth
         self.assertEqual(
             self.random_factory_person.get('age'), self.age
         )
 
         self.random_factory_person = src.person.update_year_of_birth(
-            self.random_factory_person, new_year_of_birth
+            self.random_factory_person, self.new_year_of_birth
         )
         self.assertEqual(
             self.random_factory_person.get('age'),
-            this_year()-new_year_of_birth
+            this_year()-self.new_year_of_birth
         )
 
     def test_person_class_update_year_of_birth(self):
-        new_year_of_birth = 1981
         self.assertEqual(
             self.random_classy_person.get_age(),
             self.age
         )
-        self.random_classy_person.year_of_birth = new_year_of_birth
+        self.random_classy_person.year_of_birth = self.new_year_of_birth
         self.assertEqual(
             self.random_classy_person.get_age(),
-            this_year()- new_year_of_birth
+            this_year()- self.new_year_of_birth
         )
 
     def test_attributes_and_methods_of_person_function(self):
