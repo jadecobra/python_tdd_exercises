@@ -3,7 +3,7 @@ import unittest
 
 class TestLists(unittest.TestCase):
 
-    def test_make_a_list(self):
+    def test_making_a_list(self):
         self.assertEqual(list(), [])
         self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
@@ -117,6 +117,9 @@ class TestLists(unittest.TestCase):
         a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
+
+        with self.assertRaises(ValueError):
+            a_list.remove('not in list')
 
     def test_reverse_a_list(self):
         a_list = [0, 1, 2, 'n']
