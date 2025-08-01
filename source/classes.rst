@@ -31,7 +31,7 @@ how to make a class in Python
 ----
 
 *********************************************************************************
-test_make_a_class_w_pass
+test_making_a_class_w_pass
 *********************************************************************************
 
 red: make it fail
@@ -47,7 +47,7 @@ I make a new file called ``test_classes.py`` in the ``tests`` directory
 
   class TestClasses(unittest.TestCase):
 
-      def test_make_a_class_w_pass(self):
+      def test_making_a_class_w_pass(self):
           self.assertIsInstance(classes.ClassWithPass(), object)
 
 the terminal shows :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
@@ -139,7 +139,7 @@ Here is a quick review of what has happened so far
 
 
 *********************************************************************************
-test_make_a_class_w_parentheses
+test_making_a_class_w_parentheses
 *********************************************************************************
 
 red: make it fail
@@ -149,7 +149,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
 
 .. code-block:: python
 
-  def test_make_a_class_w_parentheses(self):
+  def test_making_a_class_w_parentheses(self):
       self.assertIsInstance(classes.ClassWithParentheses(), object)
 
 the terminal shows :ref:`AttributeError`
@@ -190,7 +190,7 @@ green: make it pass
 
 
 *********************************************************************************
-test_make_a_class_w_object
+test_making_a_class_w_object
 *********************************************************************************
 
 In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new objects_ that inherit from existing objects_.
@@ -206,7 +206,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
 
-  def test_make_a_class_w_object(self):
+  def test_making_a_class_w_object(self):
       self.assertIsInstance(classes.ClassWithObject(), object)
 
 and the terminal shows :ref:`AttributeError`
@@ -238,7 +238,7 @@ green: make it pass
   and the terminal still shows passing tests
 
 *********************************************************************************
-test_make_a_class_w_attributes
+test_making_a_class_w_attributes
 *********************************************************************************
 
 I now add some tests for attributes since I know how to define a class for attributes
@@ -251,7 +251,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_make_a_class_w_attributes(self):
+    def test_making_a_class_w_attributes(self):
         self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
   the terminal shows :ref:`AttributeError`
@@ -309,11 +309,11 @@ refactor: make it better
 red: make it fail
 ---------------------------------------------------------------------------------
 
-Let us add more tests with the other Python data structures to ``test_make_a_class_w_attributes``
+Let us add more tests with the other Python data structures to ``test_making_a_class_w_attributes``
 
 .. code-block:: python
 
-  def test_make_a_class_w_attributes(self):
+  def test_making_a_class_w_attributes(self):
       self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
       self.assertEqual(classes.ClassWithAttributes.an_integer, int)
       self.assertEqual(classes.ClassWithAttributes.a_float, float)
@@ -350,7 +350,7 @@ and the terminal shows all tests pass
 
 
 *********************************************************************************
-test_make_a_class_w_methods
+test_making_a_class_w_methods
 *********************************************************************************
 
 I can also define classes with :ref:`methods<functions>` which are :ref:`function<functions>` definitions that belong to the class
@@ -362,7 +362,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
 .. code-block:: python
 
-  def test_make_a_class_w_methods(self):
+  def test_making_a_class_w_methods(self):
       self.assertEqual(
           classes.ClassWithMethods.method_a(),
           'You called MethodA'
@@ -433,11 +433,11 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I can "make this better" by adding a few more tests to ``test_make_a_class_w_methods`` for fun
+* I can "make this better" by adding a few more tests to ``test_making_a_class_w_methods`` for fun
 
   .. code-block:: python
 
-    def test_make_a_class_w_methods(self):
+    def test_making_a_class_w_methods(self):
         self.assertEqual(
             classes.ClassWithMethods.method_a(),
             'You called MethodA'
@@ -463,7 +463,7 @@ refactor: make it better
 
 
 *********************************************************************************
-test_make_a_class_w_attributes_and_methods
+test_making_a_class_w_attributes_and_methods
 *********************************************************************************
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
@@ -475,7 +475,7 @@ I add another test for a class that has both attributes and methods
 
 .. code-block:: python
 
-  def test_make_a_class_w_attributes_and_methods(self):
+  def test_making_a_class_w_attributes_and_methods(self):
       self.assertEqual(
           classes.ClassWithAttributesAndMethods.attribute,
           'attribute'
@@ -575,7 +575,7 @@ and it passes, the last 2 values in the list are ``attribute`` and ``method`` wh
 ----
 
 *********************************************************************************
-test_make_a_class_w_initializer
+test_making_a_class_w_initializer
 *********************************************************************************
 
 When making a new class, we can define an initializer which is a :ref:`method<functions>` that can receive inputs to be used to customize instances/copies of the class
@@ -588,7 +588,7 @@ I add a failing test to ``test_classes.py``
 
 .. code-block:: python
 
-  def test_make_a_class_w_initializers(self):
+  def test_making_a_class_w_initializers(self):
       self.assertEqual(classes.Boy().sex, 'M')
 
 the terminal shows :ref:`AttributeError`
@@ -635,11 +635,11 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I add another assertion to ``test_make_a_class_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
+* I add another assertion to ``test_making_a_class_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
 
   .. code-block:: python
 
-    def test_make_a_class_w_initializers(self):
+    def test_making_a_class_w_initializers(self):
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
@@ -695,7 +695,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_make_a_class_w_initializers(self):
+    def test_making_a_class_w_initializers(self):
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')

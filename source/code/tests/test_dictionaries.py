@@ -3,40 +3,40 @@ import unittest
 
 class TestDictionaries(unittest.TestCase):
 
-    def test_make_a_dictionary(self):
+    def test_making_a_dictionary(self):
         self.assertEqual(dict(), {})
         self.assertEqual(dict(key='value'), {'key': 'value'})
 
-    def test_make_a_dictionary_w_none_as_a_key(self):
+    def test_making_a_dictionary_w_none_as_a_key(self):
         self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-    def test_make_a_dictionary_w_a_boolean_as_a_key(self):
+    def test_making_a_dictionary_w_a_boolean_as_a_key(self):
         self.assertEqual(
             {False: 'boom', True: 'bap'},
             {False: 'boom', True: 'bap'}
         )
 
-    def test_make_a_dictionary_w_a_number_as_a_key(self):
+    def test_making_a_dictionary_w_a_number_as_a_key(self):
         self.assertEqual(
             {0: 'boom', 0.1: 'bap'},
             {0: 'boom', 0.1: 'bap'}
         )
 
-    def test_make_a_dictionary_w_a_tuple_as_a_key(self):
+    def test_making_a_dictionary_w_a_tuple_as_a_key(self):
         self.assertEqual(
             {(0, 1): 'boom'},
             {(0, 1): 'boom'}
         )
 
-    def test_make_a_dictionary_w_a_list_as_a_key(self):
+    def test_making_a_dictionary_w_a_list_as_a_key(self):
         with self.assertRaises(TypeError):
             {[3, 2, 1]: 'BOOM!'}
 
-    def test_make_a_dictionary_w_a_set_as_a_key(self):
+    def test_making_a_dictionary_w_a_set_as_a_key(self):
         with self.assertRaises(TypeError):
             {{3, 2, 1}: 'BOOM!'}
 
-    def test_make_a_dictionary_w_a_dictionary_as_a_key(self):
+    def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
         a_dictionary = {'key': 'value'}
         with self.assertRaises(TypeError):
             {a_dictionary: 'BOOM!'}

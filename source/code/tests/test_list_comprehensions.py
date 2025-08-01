@@ -16,7 +16,7 @@ class TestListComprehensions(unittest.TestCase):
     def setUp(self):
         self.iterable = range(0, random.randint(2, 1000))
 
-    def test_make_a_list_w_a_for_loop(self):
+    def test_making_a_list_w_a_for_loop(self):
         a_list = []
         for item in self.iterable:
             a_list.append(item)
@@ -27,7 +27,7 @@ class TestListComprehensions(unittest.TestCase):
             list(self.iterable)
         )
 
-    def test_make_a_list_w_a_list_comprehension(self):
+    def test_making_a_list_w_a_list_comprehension(self):
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
             [item for item in self.iterable]

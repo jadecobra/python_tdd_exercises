@@ -63,13 +63,13 @@ requirements
 ----
 
 *********************************************************************************
-test_make_a_list
+test_making_a_list
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I change ``test_failure`` to ``test_make_a_list``
+I change ``test_failure`` to ``test_making_a_list``
 
 .. code-block:: python
 
@@ -78,7 +78,7 @@ I change ``test_failure`` to ``test_make_a_list``
 
   class TestLists(unittest.TestCase):
 
-      def test_make_a_list(self):
+      def test_making_a_list(self):
           self.assertEqual(list(), None)
 
 the terminal shows :ref:`AssertionError`
@@ -160,7 +160,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_make_a_list(self):
+  def test_making_a_list(self):
       ...
 
   def test_attributes_and_methods_of_lists(self):

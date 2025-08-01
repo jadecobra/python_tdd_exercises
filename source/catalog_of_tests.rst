@@ -152,7 +152,7 @@ test_truth_table
 test_lists
 *********************************************************************************
 
-#. :ref:`test_make_a_list`
+#. :ref:`test_making_a_list`
 #. :ref:`test_attributes_and_methods_of_lists`
 #. :ref:`test_append_adds_to_a_list`
 #. :ref:`test_clear_empties_a_list`
@@ -174,8 +174,8 @@ test_lists
 test_list_comprehensions
 *********************************************************************************
 
-#. :ref:`test_make_a_list_w_a_for_loop`
-#. :ref:`test_make_a_list_w_list_comprehensions`
+#. :ref:`test_making_a_list_w_a_for_loop`
+#. :ref:`test_making_a_list_w_list_comprehensions`
 #. :ref:`test_list_comprehensions_w_conditions`
 #. :ref:`test_list_comprehensions_w_functions`
 #. :ref:`test_list_comprehensions_w_functions_and_conditions`
@@ -184,14 +184,14 @@ test_list_comprehensions
 test_dictionaries
 *********************************************************************************
 
-#. :ref:`test_make_a_dictionary`
-#. :ref:`test_make_a_dictionary_w_none_as_a_key`
-#. :ref:`test_make_a_dictionary_w_a_boolean_as_a_key`
-#. :ref:`test_make_a_dictionary_w_a_number_as_a_key`
-#. :ref:`test_make_a_dictionary_w_a_tuple_as_a_key`
-#. :ref:`test_make_a_dictionary_w_a_list_as_a_key`
-#. :ref:`test_make_a_dictionary_w_a_set_as_a_key`
-#. :ref:`test_make_a_dictionary_w_a_dictionary_as_a_key`
+#. :ref:`test_making_a_dictionary`
+#. :ref:`test_making_a_dictionary_w_none_as_a_key`
+#. :ref:`test_making_a_dictionary_w_a_boolean_as_a_key`
+#. :ref:`test_making_a_dictionary_w_a_number_as_a_key`
+#. :ref:`test_making_a_dictionary_w_a_tuple_as_a_key`
+#. :ref:`test_making_a_dictionary_w_a_list_as_a_key`
+#. :ref:`test_making_a_dictionary_w_a_set_as_a_key`
+#. :ref:`test_making_a_dictionary_w_a_dictionary_as_a_key`
 #. :ref:`test_attributes_and_methods_of_dictionaries`
 #. :ref:`test_clear_empties_a_dictionary`
 #. :ref:`test_copy_a_dictionary`
@@ -227,11 +227,11 @@ test_functions
 test_classes
 *********************************************************************************
 
-#. :ref:`test_make_a_class_w_pass`
-#. :ref:`test_make_a_class_w_parentheses`
-#. :ref:`test_make_a_class_w_object`
-#. :ref:`test_make_a_class_w_attributes`
-#. :ref:`test_make_a_class_w_methods`
-#. :ref:`test_make_a_class_w_attributes_and_methods`
-#. :ref:`test_make_a_class_w_initializer`
+#. :ref:`test_making_a_class_w_pass`
+#. :ref:`test_making_a_class_w_parentheses`
+#. :ref:`test_making_a_class_w_object`
+#. :ref:`test_making_a_class_w_attributes`
+#. :ref:`test_making_a_class_w_methods`
+#. :ref:`test_making_a_class_w_attributes_and_methods`
+#. :ref:`test_making_a_class_w_initializer`
 #. :ref:`test_attributes_and_methods_of_objects`

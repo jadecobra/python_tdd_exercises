@@ -57,13 +57,13 @@ requirements
 ----
 
 *********************************************************************************
-test_make_a_list_w_a_for_loop
+test_making_a_list_w_a_for_loop
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I change ``test_failure`` to ``test_make_a_list_w_a_for_loop``
+I change ``test_failure`` to ``test_making_a_list_w_a_for_loop``
 
 .. code-block:: python
 
@@ -72,7 +72,7 @@ I change ``test_failure`` to ``test_make_a_list_w_a_for_loop``
 
   class TestListComprehensions(unittest.TestCase):
 
-    def test_make_a_list_w_a_for_loop(self):
+    def test_making_a_list_w_a_for_loop(self):
         a_list = []
         iterable = range(0, 4)
 
@@ -254,7 +254,7 @@ refactor: make it better
 ----
 
 ****************************************************************************************
-test_make_a_list_w_list_comprehensions
+test_making_a_list_w_list_comprehensions
 ****************************************************************************************
 
 red: make it fail
@@ -264,10 +264,10 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_make_a_list_w_a_for_loop(self):
+  def test_making_a_list_w_a_for_loop(self):
       ...
 
-  def test_make_a_list_w_list_comprehensions(self):
+  def test_making_a_list_w_list_comprehensions(self):
       iterable = range(0, random.randint(2, 1000))
       self.assertEqual(
           src.list_comprehensions.for_loop(iterable),
@@ -349,11 +349,11 @@ refactor: make it better
     def setUp(self):
         self.iterable = range(0, random.randint(2, 1000))
 
-  then use it in :ref:`test_make_a_list_w_a_for_loop`
+  then use it in :ref:`test_making_a_list_w_a_for_loop`
 
   .. code-block:: python
 
-    def test_make_a_list_w_a_for_loop(self):
+    def test_making_a_list_w_a_for_loop(self):
         a_list = []
         for item in self.iterable:
             a_list.append(item)
@@ -364,11 +364,11 @@ refactor: make it better
             list(self.iterable)
         )
 
-  the test is still green. I do the same with :ref:`test_make_a_list_w_list_comprehensions`
+  the test is still green. I do the same with :ref:`test_making_a_list_w_list_comprehensions`
 
   .. code-block:: python
 
-    def test_make_a_list_w_list_comprehensions(self):
+    def test_making_a_list_w_list_comprehensions(self):
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
             [item for item in self.iterable]

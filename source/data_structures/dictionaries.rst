@@ -54,7 +54,7 @@ requirements
 ----
 
 *********************************************************************************
-test_make_a_dictionary
+test_making_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -66,7 +66,7 @@ I change ``test_failure``
 
   class TestDictionaries(unittest.TestCase):
 
-      def test_make_a_dictionary(self):
+      def test_making_a_dictionary(self):
           self.assertEqual(dict(), None)
 
 the terminal shows :ref:`AssertionError`
@@ -147,7 +147,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_none_as_a_key
+test_making_a_dictionary_w_none_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -157,7 +157,7 @@ I add a test where I use :ref:`None` as a key in a dictionary_
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_none_as_a_key(self):
+  def test_making_a_dictionary_w_none_as_a_key(self):
       self.assertEqual({None: 'boom'}, {None: 'bap'})
 
 the terminal shows :ref:`AssertionError`
@@ -180,7 +180,7 @@ the test passes. I can use :ref:`None` as a key in a dictionary_
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_a_boolean_as_a_key
+test_making_a_dictionary_w_a_boolean_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -190,10 +190,10 @@ I add a test where I use a :ref:`boolean<booleans>` as a key in a dictionary_
 
 .. code-block:: python
 
-    def test_make_a_dictionary_w_none_as_a_key(self):
+    def test_making_a_dictionary_w_none_as_a_key(self):
         ...
 
-    def test_make_a_dictionary_w_a_boolean_as_a_key(self):
+    def test_making_a_dictionary_w_a_boolean_as_a_key(self):
         self.assertEqual({False: 'boom'}, {False: 'bap'})
 
 the terminal shows :ref:`AssertionError`
@@ -220,7 +220,7 @@ I add :ref:`True<test_what_is_true>` as a key
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_boolean_as_a_key(self):
+  def test_making_a_dictionary_w_a_boolean_as_a_key(self):
       self.assertEqual(
           {False: 'boom', True: 'bap'},
           {False: 'boom'}
@@ -246,7 +246,7 @@ the test passes. I can use a :ref:`boolean<booleans>` as a key in a dictionary_
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_a_number_as_a_key
+test_making_a_dictionary_w_a_number_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -256,10 +256,10 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_boolean_as_a_key(self):
+  def test_making_a_dictionary_w_a_boolean_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_a_number_as_a_key(self):
+  def test_making_a_dictionary_w_a_number_as_a_key(self):
       self.assertEqual({0: 'boom'}, {0: 'bap'})
 
 the terminal shows :ref:`AssertionError`
@@ -286,7 +286,7 @@ I add a :py:class:`float` as a key
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_number_as_a_key(self):
+  def test_making_a_dictionary_w_a_number_as_a_key(self):
       self.assertEqual(
           {0: 'boom', 0.1: 'bap'},
           {0: 'boom'}
@@ -312,7 +312,7 @@ the test passes. I can use :py:class:`integers<int>` and :py:class:`floats<float
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_a_tuple_as_a_key
+test_making_a_dictionary_w_a_tuple_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -322,10 +322,10 @@ I add a test for a tuple_ as a key
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_number_as_a_key(self):
+  def test_making_a_dictionary_w_a_number_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_a_tuple_as_a_key(self):
+  def test_making_a_dictionary_w_a_tuple_as_a_key(self):
       self.assertEqual(
           {(0, 1): 'boom'},
           {(0, 1): 'bap'}
@@ -354,7 +354,7 @@ the test passes. I can use a tuple_ as a key in a dictionary_
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_a_list_as_a_key
+test_making_a_dictionary_w_a_list_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -364,10 +364,10 @@ I add another test
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_tuple_as_a_key(self):
+  def test_making_a_dictionary_w_a_tuple_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_a_list_as_a_key(self):
+  def test_making_a_dictionary_w_a_list_as_a_key(self):
       self.assertEqual(
           {[0, 1]: 'boom'}
       )
@@ -387,14 +387,14 @@ I remove the things around the new dictionary_ then change the key for fun
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_list_as_a_key(self):
+  def test_making_a_dictionary_w_a_list_as_a_key(self):
       {[3, 2, 1]: 'BOOM!'}
 
 I add assertRaises_
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_list_as_a_key(self):
+  def test_making_a_dictionary_w_a_list_as_a_key(self):
       with self.assertRaises(TypeError):
           {[3, 2, 1]: 'BOOM!'}
 
@@ -403,7 +403,7 @@ the test passes. I cannot make a dictionary_ with a :ref:`list <lists>` as a key
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_a_set_as_a_key
+test_making_a_dictionary_w_a_set_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -413,10 +413,10 @@ I try the same thing with a set_ as a key
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_list_as_a_key(self):
+  def test_making_a_dictionary_w_a_list_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_a_set_as_a_key(self):
+  def test_making_a_dictionary_w_a_set_as_a_key(self):
       {{3, 2, 1}: 'BOOM!'}
 
 the terminal shows :ref:`TypeError`
@@ -432,7 +432,7 @@ I add assertRaises_
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_set_as_a_key(self):
+  def test_making_a_dictionary_w_a_set_as_a_key(self):
       with self.assertRaises(TypeError):
           {{3, 2, 1}: 'BOOM!'}
 
@@ -441,7 +441,7 @@ the test is green again. I cannot use a set_ as a key in a dictionary_
 ----
 
 *********************************************************************************
-test_make_a_dictionary_w_a_dictionary_as_a_key
+test_making_a_dictionary_w_a_dictionary_as_a_key
 *********************************************************************************
 
 red: make it fail
@@ -451,10 +451,10 @@ I add a new test
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_set_as_a_key(self):
+  def test_making_a_dictionary_w_a_set_as_a_key(self):
       ...
 
-  def test_make_a_dictionary_w_a_dictionary_as_a_key(self):
+  def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
       a_dictionary = {'key': 'value'}
       {a_dictionary: 'BOOM!'}
 
@@ -471,7 +471,7 @@ I add assertRaises_
 
 .. code-block:: python
 
-  def test_make_a_dictionary_w_a_dictionary_as_a_key(self):
+  def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
       a_dictionary = {'key': 'value'}
       with self.assertRaises(TypeError):
           {a_dictionary: 'BOOM!'}
@@ -1971,7 +1971,7 @@ refactor: make it better
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
-  I had this same error message in :ref:`test_make_a_dictionary`. I try a keyword argument
+  I had this same error message in :ref:`test_making_a_dictionary`. I try a keyword argument
 
   .. code-block:: python
 
