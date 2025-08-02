@@ -26,7 +26,7 @@ def w_keyword_arguments(x, y):
     return x, y
 
 
-def w_positional_and_keyword_arguments(first_name, last_name='doe'):
+def w_positional_and_keyword_arguments(first_name, last_name):
     return first_name, last_name
 
 
