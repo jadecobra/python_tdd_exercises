@@ -100,7 +100,7 @@ class TestDictionaries(unittest.TestCase):
         self.assertIsNone(a_dictionary.clear())
         self.assertEqual(a_dictionary, {})
 
-    def test_copying_a_dictionary(self):
+    def test_copy_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.copy(), {'key': 'value'})
 

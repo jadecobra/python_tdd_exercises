@@ -687,7 +687,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_copying_a_dictionary
+test_copy_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -763,7 +763,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_copying_a_dictionary(self):
+    def test_copy_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.copy(), {'key': 'value'})
         self.assertEqual(a_dictionary, {'key': 'value'})
@@ -795,7 +795,7 @@ I add a test
 
 .. code-block:: python
 
-  def test_copying_a_dictionary(self):
+  def test_copy_a_dictionary(self):
       ...
 
   def test_fromkeys(self):
