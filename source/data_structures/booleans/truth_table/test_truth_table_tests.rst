@@ -51,7 +51,7 @@ green: make it pass
 
     tautology
 
-  the terminal shows :py:exc:`NameError`
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -1151,7 +1151,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         return not x not or not y
         return not x and not y
 
-  the terminal shows :py:exc:`SyntaxError`
+  the terminal shows SyntaxError_
 
   .. code-block:: python
 
@@ -1249,7 +1249,7 @@ all the tests are still passing
 review
 *********************************************************************************
 
-I ran tests using :py:class:`booleans<bool>` which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
+I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
 
 * there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input and are constant
 

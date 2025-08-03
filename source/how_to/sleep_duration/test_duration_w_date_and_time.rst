@@ -75,7 +75,7 @@ red: make it fail
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which uses the :py:class:`int` constructor_ to change the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, which uses the int_ constructor_ to change the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
 
 
 *********************************************************************************
@@ -106,7 +106,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  I cannot use the :py:class:`int` constructor_ to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
+  I cannot use the int_ constructor_ to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
 
   .. code-block:: python
 
@@ -172,7 +172,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
-  because the test calls the ``get_difference`` :ref:`method<functions>` in the expectation which uses the :py:class:`int` constructor_
+  because the test calls the ``get_difference`` :ref:`method<functions>` in the expectation which uses the int_ constructor_
 
 * I change it to return ``wake_time`` and ``sleep_time``
 
@@ -258,7 +258,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
   def test_duration_w_date_and_time(self):
   ...
 
-and the terminal shows :py:exc:`NameError`
+and the terminal shows NameError_
 
 .. code-block:: python
 
@@ -470,7 +470,7 @@ refactor: make it better
                 )
             )
 
-  and the terminal shows :py:exc:`NameError`
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -884,7 +884,7 @@ I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
 * :ref:`TypeError`
-* :py:exc:`NameError`
+* NameError_
 * :ref:`AttributeError`
 * ValueError_
 

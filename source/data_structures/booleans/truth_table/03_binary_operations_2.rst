@@ -148,7 +148,7 @@ refactor: make it better
             return True
         return False
 
-  the test is still green. I remove the other `if statements`_ then use :py:class:`bool` with not_
+  the test is still green. I remove the other `if statements`_ then use bool_ with not_
 
   .. code-block:: python
 
@@ -558,7 +558,7 @@ refactor: make it better
         return not not p not and not not q:
         return not (not p and not q):
 
-  the terminal shows :py:exc:`SyntaxError`
+  the terminal shows SyntaxError_
 
   .. code-block:: python
 

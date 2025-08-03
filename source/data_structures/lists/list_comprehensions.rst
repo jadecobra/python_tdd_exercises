@@ -122,7 +122,7 @@ refactor: make it better
         [0, 1, 2, 3]
     )
 
-  the terminal shows :py:exc:`NameError`
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -202,7 +202,7 @@ refactor: make it better
     AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2118 chars] 456] != [0, 1, 2, 3]
     AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[773 chars] 187] != [0, 1, 2, 3]
 
-  the values change every time the test runs because I am using random :py:class:`integers<int>`
+  the values change every time the test runs because I am using random integers_
 
 * I change the expectation in the first assertion
 

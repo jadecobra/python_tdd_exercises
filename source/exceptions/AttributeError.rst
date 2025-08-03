@@ -88,7 +88,7 @@ green: make it pass
 
     variable_00
 
-  which gives me :py:exc:`NameError`
+  which gives me NameError_
 
   .. code-block::
 
@@ -136,7 +136,7 @@ refactor: make it better
     variable_00 = None
     variable_01
 
-  and get :py:exc:`NameError`
+  and get NameError_
 
   .. code-block:: python
 
@@ -449,7 +449,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  and the terminal shows :py:exc:`SyntaxError`
+  and the terminal shows SyntaxError_
 
   .. code-block:: python
 
@@ -746,9 +746,9 @@ I ran tests for the `AttributeError <https://docs.python.org/3/library/exception
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
-* :py:exc:`NameError`
+* NameError_
 * :ref:`TypeError`
-* :py:exc:`SyntaxError`
+* SyntaxError_
 
 Would you like to test the :ref:`TypeError?<TypeError>`
 

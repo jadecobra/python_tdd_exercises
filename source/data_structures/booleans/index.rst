@@ -1,5 +1,7 @@
 .. include:: ../../links.rst
 
+.. _booleans: https://docs.python.org/3/library/functions.html#bool
+
 #################################################################################
 booleans
 #################################################################################
@@ -16,7 +18,7 @@ booleans
 
 ----
 
-There are 2 :py:class:`booleans<bool>` - True_ and False_
+There are 2 booleans_ - True_ and False_
 
 *********************************************************************************
 test_what_is_false
@@ -47,7 +49,7 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the editor
 * then change ``True`` to ``False`` to make the test pass
-* and change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of :py:class:`bool`
+* and change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of bool_
 
   .. code-block:: python
 
@@ -250,8 +252,8 @@ refactor: make it better
 I want to test the other Python basic data types_ to see if any of them are False_ or True_
 
 * is :ref:`None` False_ or True_?
-* is an :py:class:`integer<int>` False_ or True_?
-* is a :py:class:`float` False_ or True_?
+* is an integer_ False_ or True_?
+* is a float_ False_ or True_?
 * is a string_ False_ or True_?
 * is a tuple_ False_ or True_?
 * is a :ref:`list <lists>` False_ or True_?
@@ -575,7 +577,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-  I can make the new notes simpler because :py:class:`floats<float>` and :py:class:`integers<int>` are numbers and ``0.0`` is the same as ``0`` even though they are different types_
+  I can make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
 
   .. code-block:: python
 

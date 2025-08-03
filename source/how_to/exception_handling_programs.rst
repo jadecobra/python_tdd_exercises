@@ -52,7 +52,7 @@ green: make it pass
 
     raise_exception
 
-  and get :py:exc:`NameError`
+  and get NameError_
 
   .. code-block:: python
 
@@ -168,7 +168,7 @@ green: make it pass
 
     an_exception_handler
 
-  I get :py:exc:`NameError`
+  I get NameError_
 
   .. code-block:: python
 
@@ -270,7 +270,7 @@ green: make it pass
     def an_exception_handler(argument):
         return 'failed'
 
-  and the terminal shows :py:exc:`NameError`
+  and the terminal shows NameError_
 
   .. code-block:: python
 

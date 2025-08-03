@@ -63,7 +63,7 @@ red: make it fail
                 "I received: hello"
             )
 
-  the terminal shows :py:exc:`NameError`
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ green: make it pass
 
     text
 
-  and the terminal shows :py:exc:`NameError`
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ green: make it pass
 test_passing_an_integer
 *********************************************************************************
 
-I also add a test for an :py:class:`integer<int>`
+I also add a test for an integer_
 
 .. code-block:: python
 
@@ -452,7 +452,7 @@ test_passing_a_float
 red: make it fail
 #################################################################################
 
-I add a test for a :py:class:`float`
+I add a test for a float_
 
 .. code-block:: python
 
@@ -630,7 +630,7 @@ green: make it pass
 
     text
 
-  and get :py:exc:`NameError`
+  and get NameError_
 
   .. code-block:: python
 
@@ -742,7 +742,7 @@ Here are the tests I ran to see what happens when I pass Python :ref:`data struc
 I also ran into the following Exceptions_
 
 * :ref:`AssertionError`
-* :py:exc:`NameError`
+* NameError_
 * :ref:`AttributeError`
 * :ref:`TypeError`
 

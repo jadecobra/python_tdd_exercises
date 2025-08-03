@@ -319,7 +319,7 @@ refactor: make it better
             if q == True:
                 return True
 
-  the test is still green. I remove the other `if statements`_ then change the first statement with :py:class:`bool`
+  the test is still green. I remove the other `if statements`_ then change the first statement with bool_
 
   .. code-block:: python
 
@@ -606,7 +606,7 @@ refactor: make it better
                 return True
         return False
 
-  the terminal still shows green. I remove the other statements then change the first line with :ref:`logical negation<test_logical_negation>` and :py:class:`bool`
+  the terminal still shows green. I remove the other statements then change the first line with :ref:`logical negation<test_logical_negation>` and bool_
 
   .. code-block:: python
 

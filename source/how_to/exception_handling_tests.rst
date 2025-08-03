@@ -107,7 +107,7 @@ red: make it fail
     def test_catching_name_error_in_tests(self):
         does_not_exist
 
-  and the terminal shows :py:exc:`NameError`
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -151,7 +151,7 @@ red: make it fail
     def test_catching_attribute_error_in_tests(self):
         src.exceptions.does_not_exist
 
-  the terminal shows :py:exc:`NameError`
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -223,7 +223,7 @@ red: make it fail
 
     function_name
 
-  and the terminal shows :py:exc:`NameError`
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -513,7 +513,7 @@ red: make it fail
     def test_catching_zero_division_error_in_tests(self):
         1 / 0
 
-  any number divided by ``0`` and the terminal shows a :py:exc:`ZeroDivisionError`
+  any number divided by ``0`` and the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -691,12 +691,12 @@ I have a way to catch Exceptions_ in tests and ran into the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
-* :py:exc:`NameError`
+* NameError_
 * :ref:`AttributeError`
 * :ref:`TypeError`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError <test_key_error>`
-* :py:exc:`ZeroDivisionError`
+* ZeroDivisionError_
 
 Would you like to test :doc:`handling Exceptions in programs?</how_to/exception_handling_programs>`
 

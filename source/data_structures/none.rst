@@ -188,7 +188,7 @@ refactor: make it better
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is an instance of the :py:class:`bool` :ref:`class<classes>`
+  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is an instance of the bool_ :ref:`class<classes>`
 
   .. code-block:: python
 
@@ -270,7 +270,7 @@ test_is_none_an_integer
 red: make it fail
 #################################################################################
 
-I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an :py:class:`integer<int>`
+I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an integer_
 
 .. code-block:: python
 
@@ -362,13 +362,13 @@ refactor: make it better
         self.assertIsNotNone(1)
         self.assertNotIsInstance(-1, int)
 
-  :py:class:`int` is the :ref:`class<classes>` for :py:class:`integers<int>`, the terminal shows :ref:`AssertionError`
+  int_ is the :ref:`class<classes>` for integers_, the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  ``-1`` is an :py:class:`integer<int>` for the positive :py:class:`integers<int>`. I make the test pass
+  ``-1`` is an integer_ for the positive integers_. I make the test pass
 
   .. code-block:: python
 
@@ -395,7 +395,7 @@ refactor: make it better
 
     AssertionError: 0 is an instance of <class 'int'>
 
-  ``0`` is an :py:class:`integer<int>`. I change the :ref:`method<functions>`
+  ``0`` is an integer_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -426,7 +426,7 @@ refactor: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` is for the positive :py:class:`integers<int>`. I change the :ref:`method<functions>`
+  ``1`` is for the positive integers_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -490,7 +490,7 @@ test_is_none_a_float
 red: make it fail
 #################################################################################
 
-I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :py:class:`float`
+I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a float_
 
 .. code-block:: python
 
@@ -582,7 +582,7 @@ refactor: make it better
         self.assertIsNotNone(0.1)
         self.assertNotIsInstance(-0.1, float)
 
-  :py:class:`float` is the :ref:`class<classes>` for floating point numbers, the terminal shows :ref:`AssertionError`
+  float_ is the :ref:`class<classes>` for floating point numbers, the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 

@@ -87,7 +87,7 @@ red: make it fail
         def test_functions_w_pass(self):
             self.assertIsNone(src.functions.function_w_pass())
 
-  the terminal shows :py:exc:`NameError`
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -848,7 +848,7 @@ I can also define :ref:`functions` to take both positional arguments and keyword
         {}
       )
 
-the terminal shows a :py:exc:`SyntaxError` because I put a positional argument after a keyword argument. I add the error to the list of Exceptions_ encountered
+the terminal shows a SyntaxError_ because I put a positional argument after a keyword argument. I add the error to the list of Exceptions_ encountered
 
 .. code-block:: python
 
@@ -1188,7 +1188,7 @@ the tests show that
 * I can use ``**kwargs`` to represent any number of keyword arguments
 * keyword arguments are represented as :ref:`dictionaries`
 * I can use ``*args`` to represent any number of positional arguments
-* positional arguments are represented as :py:class:`tuples<tuple>`
+* positional arguments are represented as tuples_
 * :ref:`identity functions<test_identity_functions>` return their input
 * :ref:`constant functions<test_constant_functions>` always return the same thing
 * :ref:`functions` return :ref:`None` by default

@@ -53,7 +53,7 @@ green: make it pass
 
     get_datetime
 
-  the terminal shows :py:exc:`NameError`
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ green: make it pass
     def get_datetime(argument):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  and the terminal shows :py:exc:`NameError`
+  and the terminal shows NameError_
 
   .. code-block:: python
 
@@ -198,7 +198,7 @@ green: make it pass
 
     duration
 
-  and get :py:exc:`NameError`
+  and get NameError_
 
   .. code-block:: python
 
@@ -302,7 +302,7 @@ green: make it pass
             "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
         )
 
-  and get a :py:exc:`SyntaxError` with this message
+  and get a SyntaxError_ with this message
 
   .. code-block:: python
     :force:
@@ -543,10 +543,10 @@ review
 The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these Exceptions_ from the terminal
 
 * :ref:`AttributeError`
-* :py:exc:`NameError`
+* NameError_
 * :ref:`TypeError`
 * :ref:`AssertionError`
-* :py:exc:`SyntaxError`
+* SyntaxError_
 * ValueError_
 
 ----

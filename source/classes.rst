@@ -78,7 +78,7 @@ green: make it pass
 
     ClassWithPass
 
-  and the terminal shows :py:exc:`NameError` because ``ClassWithPass`` is not defined anywhere
+  and the terminal shows NameError` because ``ClassWithPass`_is not defined anywhere
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -102,7 +102,7 @@ green: make it pass
 
     class ClassWithPass:
 
-  the terminal shows :py:exc:`IndentationError` because I declared a class without adding any indented text
+  the terminal shows IndentationError_ because I declared a class without adding any indented text
 * I add the new error to the list of Exceptions_ encountered
 
   .. code-block:: python
@@ -395,7 +395,7 @@ green: make it pass
 
         method_a
 
-  the terminal shows :py:exc:`NameError` because there is no definition for ``method_a``
+  the terminal shows NameError_ because there is no definition for ``method_a``
 
 
 * I define ``method_a`` as an attribute by pointing it to :ref:`None`
@@ -509,9 +509,9 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 test_attributes_and_methods_of_objects
 *********************************************************************************
 
-To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<classes>` I can call ``dir`` on the :ref:`object<classes>`.
+To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<classes>` I can call dir_ on the :ref:`object<classes>`.
 
-The ``dir`` :ref:`method<functions>` returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
+The dir_ :ref:`method<functions>` returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
 
 red: make it fail
 #################################################################################
@@ -617,7 +617,7 @@ green: make it pass
 
         sex
 
-  the terminal produces :py:exc:`NameError`
+  the terminal produces NameError_
 
 
 * I add a definition for the ``sex`` attribute

@@ -277,12 +277,12 @@ I change ``'bap'`` to ``'boom'``
 
   self.assertEqual({0: 'boom'}, {0: 'boom'})
 
-the test passes. I can use an :py:class:`integer<int>` as a key in a dictionary_
+the test passes. I can use an integer_ as a key in a dictionary_
 
 refactor: make it better
 #################################################################################
 
-I add a :py:class:`float` as a key
+I add a float_ as a key
 
 .. code-block:: python
 
@@ -307,7 +307,7 @@ I add the new key-value pair to the expectation
       {0: 'boom', 0.1: 'bap'}
   )
 
-the test passes. I can use :py:class:`integers<int>` and :py:class:`floats<float>` as keys in a dictionary_
+the test passes. I can use integers_ and floats_ as keys in a dictionary_
 
 ----
 
@@ -487,7 +487,7 @@ test_attributes_and_methods_of_dictionaries
 red: make it fail
 #################################################################################
 
-I add a new test with the :py:func:`dir` :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
 
 .. code-block:: python
 
@@ -1147,7 +1147,7 @@ I copy the value from the terminal and paste as the expectation
 
   self.assertIsNone(a_dictionary.items(), dict_items([('key', 'value')]))
 
-the terminal shows :py:exc:`NameError`
+the terminal shows NameError_
 
 .. code-block:: python
 
@@ -1183,7 +1183,7 @@ I change assertIsNone_ to assertEqual_
 
   self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
-the test passes. It looks like the items_ :ref:`method<functions>` returns the key-value pairs of a dictionary_ as :py:class:`tuples<tuple>` in a :ref:`list<lists>`
+the test passes. It looks like the items_ :ref:`method<functions>` returns the key-value pairs of a dictionary_ as tuples_ in a :ref:`list<lists>`
 
 refactor: make it better
 #################################################################################
@@ -1278,7 +1278,7 @@ I copy the value from the terminal and paste it as the expectation
 
   self.assertIsNone(a_dictionary.keys(), dict_keys(['key']))
 
-the terminal shows :py:exc:`NameError`
+the terminal shows NameError_
 
 .. code-block:: python
 
@@ -2114,7 +2114,7 @@ I add the expected value
 
   self.assertIsNone(a_dictionary.values, dict_values(['value']))
 
-the terminal shows :py:exc:`NameError`
+the terminal shows NameError_
 
 .. code-block:: python
 
@@ -2344,7 +2344,7 @@ I ran tests for `dictionaries <https://docs.python.org/3/library/stdtypes.html#m
 
 * they contain key-value pairs
 * any :ref:`object<classes>` can be used as values
-* strings_, :ref:`booleans`, :py:class:`integers<int>`, :py:class:`floats<float>` and :py:class:`tuples<tuple>` can be used as keys
+* strings_, :ref:`booleans`, integers_, floats_ and tuples_ can be used as keys
 * they can be represented with ``{}``
 * they can be made with the `dict <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ constructor_
 

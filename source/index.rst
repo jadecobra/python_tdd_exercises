@@ -34,7 +34,7 @@ who is this for?
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError <test_key_error>`
   - :ref:`ModuleNotFoundError`
-  - :py:exc:`NameError`
+  - NameError_
   - :ref:`TypeError`
   - ValueError_
 

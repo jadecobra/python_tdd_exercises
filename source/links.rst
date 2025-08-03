@@ -15,6 +15,7 @@
 .. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _bash: https://www.gnu.org/software/bash/
+.. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
@@ -29,9 +30,12 @@
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
+.. _dir: https://docs.python.org/3/library/functions.html#dir
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _extend: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _float: https://docs.python.org/3/library/functions.html#float
+.. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
 .. _fromkeys: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
@@ -45,6 +49,9 @@
 .. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _int: https://docs.python.org/3/library/functions.html#int
+.. _integer: https://docs.python.org/3/library/functions.html#int
+.. _integers: https://docs.python.org/3/library/functions.html#int
 .. _insert: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
@@ -94,6 +101,7 @@
 .. _touch: https://man7.org/linux/man-pages/man1/touch.1.html
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuple
+.. _tuples: https://docs.python.org/3/library/stdtypes.html#tuple
 .. _type: https://docs.python.org/3/glossary.html#term-type
 .. _types: https://docs.python.org/3/glossary.html#term-type
 .. _unittest: https://docs.python.org/3/library/unittest.html
@@ -122,6 +130,11 @@
 
 .. _Exception: https://docs.python.org/3/library/exceptions.html
 .. _Exceptions: https://docs.python.org/3/library/exceptions.html
+.. _NameError: https://docs.python.org/3/library/exceptions.html#NameError
+.. _IndentationError: https://docs.python.org/3/library/exceptions.html#IndentationError
+.. _SyntaxError: https://docs.python.org/3/library/exceptions.html#
+.. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html#ZeroDivisionError
+
 .. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
 .. _ValueError: https://docs.python.org/3/library/exceptions.html#ValueError
@@ -136,9 +149,11 @@
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
 .. _remove duplication: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 .. _I Do Not Repeat myself: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-.. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions
 .. _JSON: https://en.wikipedia.org/wiki/JSON
 .. _Linux: https://www.kernel.org/category/about.html
+.. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions
+.. _Logical Identity: https://en.wikipedia.org/wiki/Identity_function
+.. _Logical Negation: https://en.wikipedia.org/wiki/Negation
 .. _MacOS: https://www.apple.com/macos
 .. _Refactoring: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _Regular Expressions: https://en.wikipedia.org/wiki/Regular_expression
@@ -158,6 +173,3 @@
 .. _indent-rainbow: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
 .. _Black Formatter: https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter
 .. _Code Spell Checker: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
-
-.. _Logical Identity: https://en.wikipedia.org/wiki/Identity_function
-.. _Logical Negation: https://en.wikipedia.org/wiki/Negation

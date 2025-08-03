@@ -153,7 +153,7 @@ the test passes. I can make a list_ with the constructor_ or square brackets(``[
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I use the :py:func:`dir` :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
+I use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
 
 red: make it fail
 #################################################################################
@@ -2163,7 +2163,7 @@ refactor: make it better
         [].pop()
     [][-1]
 
-  the terminal shows :ref:`IndexError`
+  the terminal shows IndexError_
 
   .. code-block:: python
 
