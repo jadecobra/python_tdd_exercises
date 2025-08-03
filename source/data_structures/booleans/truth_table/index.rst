@@ -18,7 +18,7 @@ booleans: truth table
 
 Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with `if statements`_.
 
-These are exercises on writing `conditional expressions`_ in Python using the `Truth Table`_ from Mathematics
+These are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics
 
 *********************************************************************************
 truth table operations

@@ -49,7 +49,7 @@ red: make it fail
 
   then I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_sleep_duration.py:7`` to open it in the editor
 * and change ``True`` to ``False``
-* I also change the :ref:`class <classes>` name to CapWords to match Python convention
+* I also change the :ref:`class <classes>` name to CapWords to match Python_ convention
 
   .. code-block:: python
 
@@ -374,7 +374,7 @@ refactor: make it better
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the ``:02`` tells Python to always show the numbers as 2 digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal shows :ref:`AssertionError`
+  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -557,7 +557,7 @@ refactor: make it better
 
   and the terminal shows green again
 
-* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_first_position_of_item_in_a_list>` I know I can get it by using its index, Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a variable to ``test_string_splitting``
+* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_first_position_of_item_in_a_list>` I know I can get it by using its index, Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a variable to ``test_string_splitting``
 
   .. code-block:: python
 

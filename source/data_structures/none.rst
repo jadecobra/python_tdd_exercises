@@ -1343,7 +1343,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-wait a minute! Python uses ``{}`` for sets_, it also uses them for :ref:`dictionaries` with a difference.
+wait a minute! Python_ uses ``{}`` for sets_, it also uses them for :ref:`dictionaries` with a difference.
 
 green: make it pass
 #################################################################################

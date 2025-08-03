@@ -213,7 +213,7 @@ green: make it pass
 
   .. note::
 
-    your results can be different because of your Python version
+    your results can be different because of your Python_ version
 
   .. code-block:: python
 
@@ -975,7 +975,7 @@ refactor: make it better
 
     self.assertEqual(a_list.index('...last'), 3)
 
-  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the list_. Python uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
+  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the list_. Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
 
 * I want to know what would happen if I have the same item in the list_ more than once, so I add a duplicate item
 

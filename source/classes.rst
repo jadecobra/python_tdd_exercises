@@ -1,5 +1,7 @@
 .. include:: links.rst
 
+.. _class: https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
+
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
 #################################################################################
@@ -24,7 +26,7 @@ requirements
 how to make a class in Python
 *********************************************************************************
 
-* use the `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
+* use the class_ keyword
 * use ``TitleCase`` for the name
 * use a name that tells what the collection of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` does - this is hard to do and is something I am still learning
 
@@ -63,7 +65,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I make Python module called ``classes.py`` and the terminal shows :ref:`AttributeError` which I add to the list of Exceptions_ encountered
+* I make Python_ module called ``classes.py`` and the terminal shows :ref:`AttributeError` which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -96,7 +98,7 @@ green: make it pass
 
     ClassWithPass = None
 
-* and then redefine the variable as a class using thePython `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword
+* and then redefine the variable as a class using the Python_ class_ keyword
 
   .. code-block:: python
 
@@ -114,7 +116,7 @@ green: make it pass
     # NameError
     # IndentationError
 
-* Python has the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
+* Python_ has the pass_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
 
   .. code-block:: python
 
@@ -130,10 +132,10 @@ refactor: make it better
 
 Here is a quick review of what has happened so far
 
-* `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
+* pass_ is a placeholder
 * ``self.assertIsInstance`` is a `unittest.TestCase`_ :ref:`method<functions>` that checks if the first input to the :ref:`method<functions>` is an instance of the second input
 * the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an :ref:`object<classes>`
-* in Python everything is an :ref:`object<classes>` , which means if it is in Python there is a class definition for it somewhere or it inherits from a class
+* in Python_ everything is an :ref:`object<classes>` , which means if it is in Python_ there is a class definition for it somewhere or it inherits from a class
 
 ----
 
@@ -184,7 +186,7 @@ green: make it pass
 
   - I can define ``classes`` with parentheses
   - I can define ``classes`` without parentheses
-  - `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
+  - pass_ is a placeholder
 
 ----
 
@@ -309,7 +311,7 @@ refactor: make it better
 red: make it fail
 ---------------------------------------------------------------------------------
 
-Let us add more tests with the other Python data structures to ``test_making_a_class_w_attributes``
+Let us add more tests with the other Python_ data structures to ``test_making_a_class_w_attributes``
 
 .. code-block:: python
 
@@ -662,7 +664,7 @@ refactor: make it better
 
   - ``classes.Girl(sex='F')`` looks like a call to a :ref:`function<functions>`
   - I can define classes that take values by using an initializer
-  - An initializer is a class :ref:`method<functions>` that allows customization of instances/copies of a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+  - An initializer is a class :ref:`method<functions>` that allows customization of instances/copies of a class_
 
 * I add the initializer :ref:`method<functions>` called ``__init__`` to the ``Girl`` class
 
@@ -718,7 +720,7 @@ refactor: make it better
 
 * Wait a minute, I just repeated the same thing twice.
 
-  - I defined a `class <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ with a name
+  - I defined a class_ with a name
   - I defined an attribute called ``sex``
   - I defined an ``__init__`` :ref:`method<functions>` which takes in a ``sex`` keyword argument
 
@@ -763,7 +765,7 @@ refactor: make it better
             pass
 
 * I remove the ``sex`` attribute from the ``Boy`` class and the tests continue to pass
-* I remove the ``__init__`` method, then add the `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ placeholder
+* I remove the ``__init__`` method, then add the pass_ placeholder
 
   .. code-block:: python
 
@@ -854,7 +856,7 @@ the tests show
   - with parentheses stating what :ref:`object<classes>` the class inherits from
   - with parentheses without stating what :ref:`object<classes>` the class inherits from
   - without parentheses
-  - `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder
+  - pass_ is a placeholder
 
 * classes by default inherit from the :ref:`object<classes>` class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an :ref:`object<classes>`
 

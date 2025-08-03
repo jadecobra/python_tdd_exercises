@@ -19,7 +19,6 @@
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
-.. _class: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _conditional expressions: https://docs.python.org/3/reference/expressions.html#conditional-expressions
@@ -64,6 +63,7 @@
 .. _object: https://docs.python.org/3/glossary.html#term-object
 .. _objects: https://docs.python.org/3/glossary.html#term-object
 .. _or: https://docs.python.org/3/reference/expressions.html#or
+.. _pass: https://docs.python.org/3/tutorial/controlflow.html#pass-statements
 .. _pip: https://pypi.org/project/pip/
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
@@ -170,6 +170,7 @@
 .. _Windows: https://www.microsoft.com/en-us/windows
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 
+.. _Python: https://docs.python.org
 .. _PyCharm: https://www.jetbrains.com/pycharm/download
 .. _Sublime Text: https://www.sublimetext.com
 .. _Visual Studio Code: https://code.visualstudio.com/download

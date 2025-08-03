@@ -341,9 +341,9 @@ refactor: make it better
         else:
             return False
 
-  the test is still green, Python tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background, I remove the commented line
+  the test is still green, Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background, I remove the commented line
 
-* Python has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
+* Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
   .. code-block:: python
 

@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python Test Driven Development environment
+This is one way to make a `Python <https://docs.python.org>`_ Test Driven Development environment
 
 .. contents:: table of contents
   :local:
@@ -26,7 +26,7 @@ This is one way to make a Python Test Driven Development environment
 requirements
 *********************************************************************************
 
-* download and install `Python <https://www.python.org/downloads/>`_
+* `download and install Python <https://www.python.org/downloads/>`_
 * get an Integrated Development Environment (IDE). Here are a few options
 
   - `Visual Studio Code`_

@@ -20,7 +20,7 @@ ModuleNotFoundError
 
 ----
 
-``ModuleNotFoundError`` is raised when Python cannot find a module from an `import statement`_. A Python :ref:`module<ModuleNotFoundError>` has a filename that ends in ``.py``
+``ModuleNotFoundError`` is raised when Python_ cannot find a module from an `import statement`_. A Python_ :ref:`module<ModuleNotFoundError>` has a filename that ends in ``.py``
 
 *********************************************************************************
 test_module_not_found_error
@@ -67,7 +67,7 @@ red: make it fail
 
     ModuleNotFoundError: No module called 'src.module_00'
 
-  because Python cannot find ``module_00.py`` in the ``src`` folder
+  because Python_ cannot find ``module_00.py`` in the ``src`` folder
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -136,7 +136,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran a test for the `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_ and Python modules. Would you like to test the :ref:`AssertionError?<AssertionError>`
+I ran a test for the `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_ and Python_ modules. Would you like to test the :ref:`AssertionError?<AssertionError>`
 
 ----
 

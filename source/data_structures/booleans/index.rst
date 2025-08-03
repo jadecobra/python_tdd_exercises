@@ -249,7 +249,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-I want to test the other Python basic data types_ to see if any of them are False_ or True_
+I want to test the other Python_ basic data types_ to see if any of them are False_ or True_
 
 * is :ref:`None` False_ or True_?
 * is an integer_ False_ or True_?

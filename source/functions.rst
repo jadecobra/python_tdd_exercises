@@ -121,8 +121,8 @@ green: make it pass
   and we have a passing test
 
   * the test checks if the value of the call to ``functions.function_w_pass`` is :ref:`None`
-  * the :ref:`function<functions>` definition simply says `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ yet the test passes
-  * `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_ is a placeholder keyword which allows the :ref:`function<functions>` definition to follow Python syntax rules
+  * the :ref:`function<functions>` definition simply says pass_ yet the test passes
+  * pass_ is a placeholder keyword which allows the :ref:`function<functions>` definition to follow Python syntax rules
   * the test passes because in Python all :ref:`functions` return :ref:`None` by default, like the :ref:`function<functions>` has an invisible line that says ``return None``
 
 ----
@@ -146,7 +146,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a new :ref:`function<functions>` to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of `pass <https://docs.python.org/3/reference/lexical_analysis.html#keywords>`_
+I add a new :ref:`function<functions>` to ``functions.py`` to make the test pass, this time with a ``return`` statement instead of pass_
 
 .. code-block:: python
 

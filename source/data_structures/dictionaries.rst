@@ -22,7 +22,7 @@ dictionaries
 
 ----
 
-A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python :ref:`object<classes>` but not the keys. I think this is the most important data structure to know as it can hold all the other data structures. In your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ in Python
+A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>` but not the keys. I think this is the most important data structure to know as it can hold all the other data structures. In your programming journey you will come across JSON_ which you can read and write as `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ in Python
 
 *********************************************************************************
 requirements
@@ -531,7 +531,7 @@ the terminal shows the entire difference between the two :ref:`lists`. I copy an
 
 .. note::
 
-  your results can be different because of your Python version
+  your results can be different because of your Python_ version
 
 .. code-block:: python
 

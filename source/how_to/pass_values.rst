@@ -255,7 +255,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: "I received: <class 'object'>" != 'I received: object'
 
-object_ is the mother of all Python :ref:`classes<classes>`, they inherit from it by default
+object_ is the mother of all Python_ :ref:`classes<classes>`, they inherit from it by default
 
 green: make it pass
 #################################################################################
@@ -727,7 +727,7 @@ green: make it pass
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass Python :ref:`data structures` from a test to a program and place them in an `f-string`_
+Here are the tests I ran to see what happens when I pass Python_ :ref:`data structures` from a test to a program and place them in an `f-string`_
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_
