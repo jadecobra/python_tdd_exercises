@@ -514,7 +514,7 @@ It also gives me a message to view the entire difference between the two :ref:`l
 green: make it pass
 #################################################################################
 
-I move the terminal to right side of the screen so I can see the entire difference, then add `unittest.TestCase.maxDiff`_
+I move the terminal to right side of the screen so I can see the entire difference, then add `maxDiff`_
 
 .. code-block:: python
 
@@ -687,7 +687,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_copy_a_dictionary
+test_copying_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -763,7 +763,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_copy_a_dictionary(self):
+    def test_copying_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.copy(), {'key': 'value'})
         self.assertEqual(a_dictionary, {'key': 'value'})
@@ -795,7 +795,7 @@ I add a test
 
 .. code-block:: python
 
-  def test_copy_a_dictionary(self):
+  def test_copying_a_dictionary(self):
       ...
 
   def test_fromkeys(self):
@@ -2203,7 +2203,7 @@ refactor: make it better
 test_key_error
 *********************************************************************************
 
-The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :py:exc:`Exception`to know when working with a dictionary_
+The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important Exception_ to know when working with a dictionary_
 
 red: make it fail
 #################################################################################

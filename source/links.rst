@@ -49,6 +49,7 @@
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
+.. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://en.wikipedia.org/wiki/Modulo
 .. _not: https://docs.python.org/3/reference/expressions.html#not
@@ -119,9 +120,11 @@
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
 .. _zsh: https://zsh.sourceforge.io
 
+.. _Exception: https://docs.python.org/3/library/exceptions.html
 .. _Exceptions: https://docs.python.org/3/library/exceptions.html
 .. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
+.. _ValueError: https://docs.python.org/3/library/exceptions.html#ValueError
 
 .. _New-Item: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.4
 .. _Out-File: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.4

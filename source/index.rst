@@ -36,7 +36,7 @@ who is this for?
   - :ref:`ModuleNotFoundError`
   - :py:exc:`NameError`
   - :ref:`TypeError`
-  - :py:exc:`ValueError`
+  - ValueError_
 
 *********************************************************************************
 how can I use this?

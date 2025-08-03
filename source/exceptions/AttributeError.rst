@@ -438,7 +438,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  and the terminal still shows the same :py:exc:`Exception`because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
+  and the terminal still shows the same Exception_ because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
 
 * I change the def_ keyword to the :ref:`class <classes>` keyword
 

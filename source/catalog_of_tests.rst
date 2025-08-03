@@ -154,9 +154,9 @@ test_lists
 
 #. :ref:`test_making_a_list`
 #. :ref:`test_attributes_and_methods_of_lists`
-#. :ref:`test_append_adds_to_a_list`
+#. :ref:`test_append_adds_item_to_the_end_of_a_list`
 #. :ref:`test_clear_empties_a_list`
-#. :ref:`test_copy_a_list`
+#. :ref:`test_copying_a_list`
 #. :ref:`test_count_number_of_times_item_is_in_a_list`
 #. :ref:`test_extend_adds_items_from_an_iterable_to_a_list`
 #. :ref:`test_index_returns_first_position_of_item_in_a_list`
@@ -194,7 +194,7 @@ test_dictionaries
 #. :ref:`test_making_a_dictionary_w_a_dictionary_as_a_key`
 #. :ref:`test_attributes_and_methods_of_dictionaries`
 #. :ref:`test_clear_empties_a_dictionary`
-#. :ref:`test_copy_a_dictionary`
+#. :ref:`test_copying_a_dictionary`
 #. :ref:`test_fromkeys_makes_a_dictionary_from_an_iterable`
 #. :ref:`test_get_a_value_from_a_dictionary`
 #. :ref:`test_items_returns_key_value_pairs_of_a_dictionary`

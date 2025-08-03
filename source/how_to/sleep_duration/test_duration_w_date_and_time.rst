@@ -66,7 +66,7 @@ red: make it fail
                 )
             )
 
-  which gives me :py:exc:`ValueError`
+  which gives me ValueError_
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* then add an assertion in ``test_converting_strings_to_numbers`` to see if I can make the same :py:exc:`ValueError` happen again to make sure the problem is with converting the string to a number
+* then add an assertion in ``test_converting_strings_to_numbers`` to see if I can make the same ValueError_ happen again to make sure the problem is with converting the string to a number
 
   .. code-block:: python
 
@@ -100,13 +100,13 @@ green: make it pass
 
         int('1999/12/31 21')
 
-  the terminal shows :py:exc:`ValueError` with the same message from ``test_duration_w_date_and_time``
+  the terminal shows ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  I cannot use the :py:class:`int` constructor_ to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the :py:exc:`ValueError`
+  I cannot use the :py:class:`int` constructor_ to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
 
   .. code-block:: python
 
@@ -166,7 +166,7 @@ green: make it pass
         else:
             return None
 
-  and the terminal shows :py:exc:`ValueError`
+  and the terminal shows ValueError_
 
   .. code-block:: python
 
@@ -385,7 +385,7 @@ refactor: make it better
             )
         )
 
-  which gives me :py:exc:`ValueError`
+  which gives me ValueError_
 
   .. code-block:: python
 
@@ -762,7 +762,7 @@ and the test is still green
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'...
 
-* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` which leaves me with :py:exc:`ValueError`
+* I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` which leaves me with ValueError_
 
   .. code-block:: python
 
@@ -796,7 +796,7 @@ and the test is still green
             f'{random.randint(0,59):02}'
         )
 
-  and get a random :py:exc:`ValueError`
+  and get a random ValueError_
 
   .. code-block:: python
 
@@ -832,7 +832,7 @@ and the test is still green
   - generates a random timestamp by calling ``get_random_timestamp``
   - checks if the timestamp is good by calling ``src.sleep_duration.get_datetime``
   - if the timestamp is good, the :ref:`function<functions>` returns it
-  - if the timestamp is bad, it raises :py:exc:`ValueError` and repeats the process by calling itself
+  - if the timestamp is bad, it raises ValueError_ and repeats the process by calling itself
 
 * I can add another :ref:`function<functions>` to remove some repetition
 
@@ -878,7 +878,7 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_duration_w_date_and_time <how to measure sleep duration: test_duration_w_date_and_time>` where I used
 
   - `random.randint`_ and an :ref:`how to test that an Exception is raised` to generate timestamps with random dates and times that are :ref:`how to pass values` in strings for ``wake_time`` and ``sleep_time``
-  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises :py:exc:`ValueError` with a message and returns the right difference between the 2 when ``wake_time`` is later than or the same as ``sleep_time``
+  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises ValueError_ with a message and returns the right difference between the 2 when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also ran into the following Exceptions_
 
@@ -886,7 +886,7 @@ I also ran into the following Exceptions_
 * :ref:`TypeError`
 * :py:exc:`NameError`
 * :ref:`AttributeError`
-* :py:exc:`ValueError`
+* ValueError_
 
 Would you like to :ref:`write the solution without looking at test_sleep_duration.py? <how to measure sleep duration: test_duration_tests>`
 
