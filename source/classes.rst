@@ -860,7 +860,6 @@ the tests show
 
 .. admonition:: :PEP:`Zen of Python <20>`
 
-
   I prefer to use the explicit form of class definitions with the parent :ref:`object<classes>` in parentheses, from the :PEP:`Zen of Python <20>`:
   ``Explicit is better than implicit``
 

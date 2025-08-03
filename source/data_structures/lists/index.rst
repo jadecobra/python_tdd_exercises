@@ -10,8 +10,6 @@
 .. _list: https://docs.python.org/3/library/stdtypes.html#list
 .. _IndexError: https://docs.python.org/3/library/exceptions.html#IndexError
 
-.. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
-
 #################################################################################
 lists
 #################################################################################
