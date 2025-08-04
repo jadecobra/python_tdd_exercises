@@ -154,7 +154,7 @@ test_lists
 
 #. :ref:`test_making_a_list`
 #. :ref:`test_attributes_and_methods_of_lists`
-#. :ref:`test_append_adds_item_to_the_end_of_a_list`
+#. :ref:`test_append_adds_item_to_end_of_a_list`
 #. :ref:`test_clear_empties_a_list`
 #. :ref:`test_copy_a_list`
 #. :ref:`test_count_number_of_times_item_is_in_a_list`

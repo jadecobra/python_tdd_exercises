@@ -261,7 +261,7 @@ green: make it pass
 ----
 
 *********************************************************************************
-test_append_adds_item_to_the_end_of_a_list
+test_append_adds_item_to_end_of_a_list
 *********************************************************************************
 
 red: make it fail
@@ -345,7 +345,7 @@ refactor: make it better
   .. code-block:: python
     :emphasize-lines: 1
 
-    def test_append_adds_item_to_the_end_of_a_list(self):
+    def test_append_adds_item_to_end_of_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.append('n+1'))
         self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
@@ -375,7 +375,7 @@ I add a test for the clear_ :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_append_adds_item_to_the_end_of_a_list(self):
+  def test_append_adds_item_to_end_of_a_list(self):
       ...
 
   def test_clear(self):
