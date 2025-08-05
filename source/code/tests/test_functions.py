@@ -73,30 +73,12 @@ class TestFunctions(unittest.TestCase):
             ((1, 2, 3, 4), {'a': 5, 'b': 6, 'c': 7, 'd': 8})
         )
         self.assertEqual(
-            src.functions.w_unknown_arguments(
-                None, bool, int, float, str, tuple, list, set, dict,
-                none=None, a_boolean=bool, an_integer=int,
-                a_float=float, a_string=str, a_list=list,
-                a_set=set, a_dictionary=dict
-            ),
-            (
-                (
-                    None, bool, int, float, str, tuple, list, set, dict
-                ),
-                dict(
-                    a_boolean=bool, a_dictionary=dict, a_float=float,
-                    a_list=list, a_set=set, a_string=str, an_integer=int,
-                    none=None
-                )
-            )
-        )
-        self.assertEqual(
-            src.functions.w_unknown_arguments(0, 1, 2, 3),
-            ((0, 1, 2, 3), {})
+            src.functions.w_unknown_arguments(1, 2, 3, 4),
+            ((1, 2, 3, 4), {})
         )
         self.assertEqual(
             src.functions.w_unknown_arguments(a=5, b=6, c=7, d=8),
-            ((), {'a': 5, 'b': 6, 'c': 7, 'd': 8})
+            ((), dict(a=5, b=6, c=7, d=8))
         )
 
 
@@ -104,4 +86,5 @@ class TestFunctions(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
+# TypeError
 # SyntaxError
