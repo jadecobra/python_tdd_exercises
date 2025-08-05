@@ -657,7 +657,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_extend_adds_items_from_an_iterable_to_a_list
+test_extend_adds_items_from_an_iterable_to_end_of_a_list
 *********************************************************************************
 
 red: make it fail
@@ -757,7 +757,7 @@ refactor: make it better
   .. code-block:: python
     :emphasize-lines: 1
 
-    def test_extend_adds_items_from_an_iterable_to_a_list(self):
+    def test_extend_adds_items_from_an_iterable_to_end_of_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.extend((2, 1, 0)))
         self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
@@ -786,7 +786,7 @@ I add a test for the index_ :ref:`method<functions>`
 
 .. code-block:: python
 
-  def test_extend_adds_items_from_an_iterable_to_a_list(self):
+  def test_extend_adds_items_from_an_iterable_to_end_of_a_list(self):
       ...
 
   def test_index(self):
