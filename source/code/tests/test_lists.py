@@ -83,7 +83,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list.count(1), 3)
         self.assertEqual(a_list.count('not in list'), 0)
 
-    def test_extend_adds_items_from_an_iterable_to_a_list(self):
+    def test_extend_adds_items_from_an_iterable_to_end_of_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.extend((2, 1, 0)))
         self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
