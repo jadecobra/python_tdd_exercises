@@ -175,6 +175,7 @@ test_list_comprehensions
 *********************************************************************************
 
 #. :ref:`test_making_a_list_w_a_for_loop`
+#. :ref:`test_making_a_list_w_extend`
 #. :ref:`test_making_a_list_w_list_comprehensions`
 #. :ref:`test_list_comprehensions_w_conditions`
 #. :ref:`test_list_comprehensions_w_functions`

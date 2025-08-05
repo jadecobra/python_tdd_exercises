@@ -27,7 +27,15 @@ class TestListComprehensions(unittest.TestCase):
             list(self.iterable)
         )
 
-    def test_making_a_list_w_a_list_comprehension(self):
+    def test_making_a_list_w_extend(self):
+        a_list = []
+        self.assertIsNone(a_list.extend(self.iterable))
+        self.assertEqual(
+            a_list,
+            src.list_comprehensions.for_loop(self.iterable)
+        )
+
+    def test_make_a_list_w_a_list_comprehension(self):
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
             [item for item in self.iterable]
