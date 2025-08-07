@@ -134,7 +134,7 @@ class TestLists(unittest.TestCase):
         self.assertIsNone(a_list.sort())
         self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
-    def test_get_items_of_a_list(self):
+    def test_getting_items_of_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list[0], '1st')
         self.assertEqual(a_list[a_list.index('1st')], '1st')
@@ -146,12 +146,12 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list[3], '...last')
         self.assertEqual(a_list[-1], '...last')
 
-    def test_set_items_in_a_list(self):
+    def test_setting_items_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last']
         a_list[-1] = '4th'
         self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
-    def test_view_parts_of_a_list_aka_slicing(self):
+    def test_viewing_parts_of_a_list_aka_slicing(self):
         a_list = ['a', 'b', 'c', 'd']
         self.assertEqual(a_list[0:2], ['a', 'b'])
         self.assertEqual(a_list[:2], ['a', 'b'])

@@ -1835,7 +1835,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_set_items_in_a_list
+test_setting_items_in_a_list
 *********************************************************************************
 
 red: make it fail
@@ -1848,7 +1848,7 @@ I add another test
   def test_get_items_from_a_list(self):
       ...
 
-  def test_set_items_in_a_list(self):
+  def test_setting_items_in_a_list(self):
       a_list = ['1st', '2nd', '3rd', '...last']
       a_list[-1] = '4th'
       self.assertEqual(a_list, ['1st', '2nd', '3rd', '...last'])
@@ -1875,7 +1875,7 @@ the test passes
 ----
 
 *********************************************************************************
-test_view_parts_of_a_list_aka_slicing
+test_viewing_parts_of_a_list_aka_slicing
 *********************************************************************************
 
 red: make it fail
@@ -1885,7 +1885,7 @@ I add another test
 
 .. code-block:: python
 
-  def test_set_items_in_a_list(self):
+  def test_setting_items_in_a_list(self):
       ...
 
   def test_view_parts_of_a_list(self):
@@ -2039,7 +2039,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_view_parts_of_a_list_aka_slicing(self):
+    def test_viewing_parts_of_a_list_aka_slicing(self):
         a_list = ['a', 'b', 'c', 'd']
         self.assertEqual(a_list[0:2], ['a', 'b'])
         self.assertEqual(a_list[:2], ['a', 'b'])
