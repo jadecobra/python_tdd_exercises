@@ -2225,7 +2225,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: 'value' != ''
 
-I can get the value for a key in a dictionary_ by giving it in ``[]``, this is like :ref:`viewing items in a list <test_get_items_from_a_list>`
+I can get the value for a key in a dictionary_ by giving it in ``[]``, this is like :ref:`viewing items in a list <test_getting_items_of_a_list>`
 
 green: make it pass
 #################################################################################

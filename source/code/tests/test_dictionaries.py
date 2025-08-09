@@ -113,7 +113,7 @@ class TestDictionaries(unittest.TestCase):
     def test_get_a_value_for_a_key_in_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
-        self.assertEqual(a_dictionary.get('key', 'default'), 'value')
+        self.assertEqual(a_dictionary.get('key'), 'value')
 
     def test_items_returns_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {

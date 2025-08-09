@@ -26,7 +26,7 @@ lists
 
 ----
 
-A list_ is an :ref:`object<classes>` that can hold any objects_
+A list_ is a container :ref:`object<classes>` that can hold any objects_
 
 * they are represented with ``[]``
 * they can be made with the list_ constructor_
@@ -202,14 +202,7 @@ green: make it pass
             ]
         )
 
-  the terminal shows a long list of items. I copy and paste them from the terminal and get NameError_
-
-  .. code-block:: python
-
-
-
-
-  I use find and replace to remove the extra characters
+  the terminal shows a long list of items. I copy and paste them from the terminal and use find and replace to remove the extra characters
 
   .. note::
 
@@ -320,7 +313,7 @@ refactor: make it better
 
   the test passes
 
-* I change the value given to append_ for fun
+* I change the value given to append_
 
   .. code-block:: python
 
@@ -472,7 +465,7 @@ the :ref:`method<functions>` returns a copy of the list_
 green: make it pass
 #################################################################################
 
-I add the value to the assertion
+I add the list_ to the assertion
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -543,7 +536,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: list.count() takes exactly one argument (0 given)
 
-I pass a value to the call
+I add a value to the call
 
 .. code-block:: python
   :emphasize-lines: 3
@@ -585,7 +578,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* The count_ :ref:`method<functions>` returned the number of times the item is in the list_, I change it then add another assertion to test
+* The count_ :ref:`method<functions>` returned the number of times the item is in the list_, I change it then add another assertion
 
   .. code-block:: python
     :emphasize-lines: 2, 4
@@ -750,7 +743,7 @@ refactor: make it better
 
     self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
-  the test is green again
+  the test is green again, it looks like extend_ calls append_ for each item in the iterable
 
 * I change the name of the test
 
@@ -866,8 +859,11 @@ refactor: make it better
 * I remove the things around the call and change the value to be more descriptive
 
   .. code-block:: python
+    :emphasize-lines: 3
 
-    a_list.index('not in list')
+    def test_index(self):
+        a_list = ['1st', '2nd', '3rd', '...last']
+        a_list.index('not in list')
 
   the terminal shows ValueError_
 
@@ -977,9 +973,10 @@ refactor: make it better
 
   the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the list_. Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
 
-* I want to know what would happen if I have the same item in the list_ more than once, so I add a duplicate item
+* I want to know what would happen if I have the same item in the list_ more than once, so I add another item
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def test_index(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
@@ -1039,6 +1036,7 @@ refactor: make it better
 * I rename the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_index_returns_first_position_of_item_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
@@ -1083,7 +1081,7 @@ the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-I pass two values to the :ref:`method<functions>`
+I add two values to the call
 
 .. code-block:: python
 
@@ -1169,6 +1167,7 @@ refactor: make it better
 * I rename the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_insert_item_at_given_index_in_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -1306,6 +1305,7 @@ refactor: make it better
 * I rename the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_pop_removes_and_returns_last_item_from_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -1435,6 +1435,7 @@ refactor: make it better
 * I rename the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_remove_first_instance_of_item_from_a_list(self):
         a_list = [0, 1, 0, 2, 0, 'n']
@@ -1503,6 +1504,7 @@ refactor: make it better
 * I rename the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_reverse_a_list(self):
         a_list = [0, 1, 2, 'n']
@@ -1588,7 +1590,7 @@ refactor: make it better
 
     self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is already sorted. I change it to see what would happen when it is not sorted
+  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is already sorted, I change it to see what would happen when it is not sorted
 
   .. code-block:: python
 
@@ -1611,6 +1613,7 @@ refactor: make it better
 * I change the name of the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_sort_a_list(self):
         with self.assertRaises(TypeError):
@@ -1625,10 +1628,10 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_get_items_from_a_list
+test_getting_items_of_a_list
 *********************************************************************************
 
-I can provide the index of an item I want to see in square brackets(``[]``) to a list_
+When I want an item that is in a list_, I can use its index in square brackets(``[]``)
 
 red: make it fail
 #################################################################################
@@ -1640,7 +1643,7 @@ I add a failing test
   def test_sort_a_list(self):
       ...
 
-  def test_get_items_from_a_list(self):
+  def test_getting_items_of_a_list(self):
       a_list = ['1st', '2nd', '3rd', '...last']
       self.assertEqual(a_list[0], '')
 
@@ -1845,7 +1848,7 @@ I add another test
 
 .. code-block:: python
 
-  def test_get_items_from_a_list(self):
+  def test_getting_items_of_a_list(self):
       ...
 
   def test_setting_items_in_a_list(self):
@@ -1859,7 +1862,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
 
-I can use the index of an item to change its value in a list_, like assigning a value to a variable
+I can use the index of an item to change its value in a list_, like pointing a name to a value
 
 green: make it pass
 #################################################################################
@@ -1888,7 +1891,7 @@ I add another test
   def test_setting_items_in_a_list(self):
       ...
 
-  def test_view_parts_of_a_list(self):
+  def test_viewing_parts_of_a_list(self):
       a_list = ['a', 'b', 'c', 'd']
       self.assertEqual(a_list[0:2], [])
 
@@ -2038,6 +2041,7 @@ refactor: make it better
 * This is also called slicing, I change the name of the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def test_viewing_parts_of_a_list_aka_slicing(self):
         a_list = ['a', 'b', 'c', 'd']
@@ -2054,8 +2058,6 @@ refactor: make it better
 *********************************************************************************
 test_index_error
 *********************************************************************************
-
-ValueError_ was raised earlier in :ref:`test_remove_first_instance_of_item_from_a_list` and :ref:`test_index_returns_first_position_of_item_in_a_list`, there is another Exception_ that is important to know.
 
 The IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it
 
@@ -2090,9 +2092,10 @@ green: make it pass
     # ValueError
     # IndexError
 
-* I add assertRaises_ to handle the error
+* I add assertRaises_
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     def test_index_error(self):
         a_list = ['a', 'b', 'c', 'd']
@@ -2122,6 +2125,7 @@ refactor: make it better
   I add another assertRaises_
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     with self.assertRaises(IndexError):
         a_list[4]
@@ -2147,6 +2151,7 @@ refactor: make it better
   I add assertRaises_
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     with self.assertRaises(IndexError):
         a_list[-5]
@@ -2182,7 +2187,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests to show that I can make a list_ with the constructor_ or square brackets (``[]``), then tested the different :ref:`methods<functions>` from append_ to sort_
+I ran tests to show that I can make a list_ with the constructor_ or square brackets (``[]``), then tested the different :ref:`methods<functions>` from append_ to sort_, added tests for :ref:`getting items of a list<test_getting_items_of_a_list>`, :ref:`setting items in a list<test_setting_items_in_a_list>`, :ref:`slicing a list<test_viewing_parts_of_a_list_aka_slicing>` and the :ref:`IndexError<test_index_error>`
 
 Would you like to :ref:`test list comprehensions?<lists: list comprehensions>`
 
