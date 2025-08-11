@@ -1,6 +1,6 @@
 .. meta::
-  :description: Dive into Python binary operations with Jacob Itegboje's Truth Table guide. Learn to test logical functions like NAND and OR. Code now!
-  :keywords: Jacob Itegboje, truth table, binary operations, Python programming, logical NAND, logical disjunction, Boolean logic, coding tutorials
+  :description: Learn to build binary operations in Python with Test-Driven Development. This tutorial covers logical NAND, disjunction, and more. Watch the full tutorial!
+  :keywords: Jacob Itegboje, python truth table binary operations, test driven development python tutorial, python logical operations for beginners, how to implement logical NAND in python, python TDD example with unittest, learn python binary logic step by step, python logical disjunction implementation, what is tautology in python programming
 
 .. include:: ../../../links.rst
 

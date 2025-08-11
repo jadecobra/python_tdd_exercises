@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a Python calculator using Test Driven Development! Learn to implement operations, handle errors like ZeroDivisionError, and refactor for clean, robust code.
-  :keywords: Jacob Itegboje, Python calculator TDD, build calculator Python, Python unit testing, ZeroDivisionError Python, Python TDD example, refactoring Python TDD, Test Driven Development project
+  :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
+  :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator in python step-by-step, python test driven development with pytest, python programming projects for beginners
 
 .. include:: ../links.rst
 

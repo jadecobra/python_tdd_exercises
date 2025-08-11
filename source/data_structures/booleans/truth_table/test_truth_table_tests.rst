@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python truth tables with TDD! Learn boolean logic and testing for operations like AND, OR, NOT. Start coding now!
-  :keywords: Jacob Itegboje, Python truth table, boolean logic, Test-Driven Development, Python programming, logical operations, coding tutorial
+  :description: Master test-driven development in Python by learning to build and refactor logical functions from scratch. Watch the full tutorial to go from 20 failures to success.
+  :keywords: Jacob Itegboje, python test driven development tutorial, how to write logical functions in python, python tdd practical example, python truth table tests, refactoring python code, python unittest tutorial, learn tdd with python, python binary operations tutorial
 
 .. include:: ../../../links.rst
 

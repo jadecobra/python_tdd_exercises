@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn to pass values in Python with this TDD-driven guide! Master f-strings for various data types and handle common exceptions for robust code.
-  :keywords: Jacob Itegboje, Python pass values, Python f-strings, Python data types, Python TDD tutorial, Python function arguments, string interpolation Python, Python value handling
+  :description: Master TDD in Python to pass any data type, from strings to classes, and eliminate TypeError. Watch the full tutorial to fix errors in 15 minutes.
+  :keywords: Jacob Itegboje, python pass multiple data types to function, python tdd tutorial for beginners, TypeError: 'NoneType' is not callable fix, how to handle different data types as function arguments in python, python pass by reference vs value, python tdd practical example, python unit testing tutorial, python f-string formatting, python NameError resolution, python AttributeError fix
 
 .. include:: ../links.rst
 

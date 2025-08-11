@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn Python Test-Driven Development by building a 'person' factory function. Master keyword arguments, dictionary creation, random testing, and refactoring techniques.
-  :keywords: Jacob Itegboje, Python factory function, Python TDD tutorial, Python dictionary generation, Python keyword arguments, unittest Python, Python object creation, Test Driven Development project
+  :description: Learn to build a Python person dictionary with a factory function using TDD. This tutorial covers keyword arguments, default values, and exception handling.
+  :keywords: Jacob Itegboje, python dictionary from function, python factory function tutorial, python tdd with pytest, create person object in python, python function with default keyword arguments, python test driven development example, handling exceptions in python unit tests, python dictionary with random values
 
 .. include:: ../links.rst
 

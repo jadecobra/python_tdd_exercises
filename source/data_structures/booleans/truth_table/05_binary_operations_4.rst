@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master binary operations with Python in this Truth Table tutorial by Jacob Itegboje. Learn to test logical functions. Start coding now!
-  :keywords: Jacob Itegboje, truth table, binary operations, Python programming, logical operations, coding tutorials, Boolean logic, software testing
+  :description: Master Python truth tables by implementing binary operations like negation, NOR, and material implication. Learn to code these logical functions step-by-step. Watch the full tutorial.
+  :keywords: Jacob Itegboje, python truth table for binary operations, how to implement logical NOR in python, python material implication explained, python truth table for loop, python logical operations tutorial, truth table for negation in python, python binary operations tutorial, how to create a truth table in python with multiple inputs
 
 .. include:: ../../../links.rst
 

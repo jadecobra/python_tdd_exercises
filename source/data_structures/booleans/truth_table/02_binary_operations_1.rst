@@ -1,3 +1,7 @@
+.. meta::
+  :description: Master Python truth tables for binary operations. This guide simplifies 'if' statements with clear, step-by-step Python code examples. Watch the tutorial!
+  :keywords: Jacob Itegboje, python truth table for if statements, python truth table generator from expression, python logical operators truth table, python truth table for two variables, how to make a truth table in python, python contradiction function, python logical conjunction truth table
+
 .. include:: ../../../links.rst
 
 .. _binary_operations_i:

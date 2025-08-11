@@ -1,6 +1,6 @@
 .. meta::
-  :description: this chapter covers None, what it is and what it is not
-  :keywords: python programming, test-driven development (TDD), problem-solving, coding tutorials, learn python, python challenges, programming basics, software development, python learning resources, coding practice, pumping python, jacob itegboje
+  :description: Learn the difference between None and other Python data types. This guide explains how to check for None, and how it differs from 0 or an empty string.
+  :keywords: Jacob Itegboje, python NoneType what is it, python None vs 0 vs empty string, how to check for None in python, python function returns None best practices, python None vs False, python NoneType error debugging, what is the use of None in python, python unit testing None
 
 .. include:: ../links.rst
 

@@ -1,7 +1,6 @@
 .. meta::
-  :description: Master Test Driven Development with Python! Explore practical TDD exercises, learn best practices, and enhance your coding skills. Start building robust Python applications today!
-  :keywords: Jacob Itegboje, Python Test Driven Development, TDD Python exercises, learn TDD Python, Python unit testing, software testing Python, Red-Green-Refactor Python, TDD Python tutorial
-
+  :description: Learn Test-Driven Development in Python with hands-on exercises for beginners. Solve problems, handle exceptions, and master TDD. Watch the full tutorial now!
+  :keywords: Jacob Itegboje, python test driven development tutorial for beginners, how to solve problems with python tdd, python tdd exercises and solutions, learn test driven development with python examples, python unit testing for beginners, tdd python calculator example, how to handle exceptions in python tdd, what is test driven development in python
 
 .. include:: /links.rst
 

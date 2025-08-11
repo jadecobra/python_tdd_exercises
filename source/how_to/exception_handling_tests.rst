@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn to test Python exceptions with unittest.TestCase.assertRaises! Master verifying errors like TypeError and ZeroDivisionError in your Test-Driven Development workflow.
-  :keywords: Jacob Itegboje, Python exception testing, unittest assertRaises, Test Driven Development Python, Python error handling, Python unit testing exceptions, testing expected exceptions, ZeroDivisionError testing Python
+  :description: Stop silent Python test failures. Learn to use unittest's assertRaises to verify exceptions like ModuleNotFoundError and NameError are properly raised.
+  :keywords: Jacob Itegboje, python unittest assertraises, how to test for exceptions in python, python assert exception, python test specific exception raised, unittest assertraises example, python unit testing exceptions, python tdd exception handling, assertraises typeerror, assertraises keyerror
 
 .. include:: ../links.rst
 

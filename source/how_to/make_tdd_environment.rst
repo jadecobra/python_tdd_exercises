@@ -1,6 +1,6 @@
 .. meta::
-  :description: Set up your Python TDD environment with this comprehensive guide! Learn manual configuration, the Red-Green-Refactor cycle, and automate testing for efficient development.
-  :keywords: Jacob Itegboje, Python TDD environment setup, Test Driven Development Python, automate Python TDD, Python unittest setup, pytest-watch Python, RED GREEN REFACTOR Python, Python unit testing environment
+  :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with a single script in just 5 minutes.
+  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watch for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
 
 .. include:: ../links.rst
 

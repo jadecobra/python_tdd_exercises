@@ -1,6 +1,6 @@
 .. meta::
-  :description: Optimize your Python workflow with this Visual Studio Code setup guide! Learn IDE configurations for TDD and discover essential extensions for efficient coding.
-  :keywords: Jacob Itegboje, Visual Studio Code Python setup, Python IDE configuration, TDD environment VS Code, VS Code extensions Python, Python development setup, configure VS Code Python, Python coding environment
+  :description: Learn how to set up your VS Code for Python Test-Driven Development (TDD) with this step-by-step guide. Optimize your workflow and start writing cleaner code.
+  :keywords: Jacob Itegboje, how to set up vscode for python tdd, python tdd workflow in vscode, best vscode extensions for python tdd, python test driven development setup, vscode python testing configuration, python tdd tutorial for beginners, visual studio code python tdd guide, automate python tests in vscode
 
 .. include:: ../links.rst
 

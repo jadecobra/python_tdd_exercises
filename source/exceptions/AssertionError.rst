@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python AssertionError and unittest assert methods! Learn to use assertEqual, assertTrue, and more for robust Test-Driven Development in Python.
-  :keywords: Jacob Itegboje, Python AssertionError, unittest assert methods, Python TDD assertions, Python unit testing, assertEqual Python, assertIsNotNone Python, Python test failures
+  :description: Master Python's AssertionError for robust testing. Learn to use assert for debugging, handle exceptions, and see practical unittest examples. Watch the tutorial!
+  :keywords: Jacob Itegboje, python AssertionError example, how to handle AssertionError in Python, python unittest assert examples, python assert for debugging, python assert best practices, python custom AssertionError message, python testing with pytest and assert
 
 .. include:: ../links.rst
 
