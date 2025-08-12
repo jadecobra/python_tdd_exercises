@@ -192,8 +192,6 @@ green: make it pass
 
 * I add the name below ``get_datetime``
 
-  .. code-block::python
-
   .. code-block:: python
 
     duration

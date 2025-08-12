@@ -33,6 +33,7 @@
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _extend: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _find and replace: https://code.visualstudio.com/docs/editing/codebasics#_find-and-replace
 .. _float: https://docs.python.org/3/library/functions.html#float
 .. _floats: https://docs.python.org/3/library/functions.html#float
 .. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts

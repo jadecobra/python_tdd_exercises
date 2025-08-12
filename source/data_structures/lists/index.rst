@@ -8,6 +8,7 @@
 .. _copy: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _list: https://docs.python.org/3/library/stdtypes.html#list
+.. _lists: https://docs.python.org/3/library/stdtypes.html#list
 .. _IndexError: https://docs.python.org/3/library/exceptions.html#IndexError
 
 #################################################################################
@@ -173,11 +174,11 @@ I add a failing test
 
 the terminal shows :ref:`AssertionError`
 
-.. code-block::python
+.. code-block:: python
 
   AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
 
-there is also a note on how to see the full difference between ``dir(list)`` and my empty list
+there is also a note on how to see the full difference between ``dir(list)`` and my empty list_
 
 .. code-block:: python
 
@@ -188,7 +189,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 green: make it pass
 #################################################################################
 
-* I add ``self.maxDiff`` to the test then move the terminal to the right to see the whole difference between the lists
+* I add ``self.maxDiff`` to the test then move the terminal to the right
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -202,7 +203,7 @@ green: make it pass
             ]
         )
 
-  the terminal shows a long list of items. I copy and paste them from the terminal and use find and replace to remove the extra characters
+  the terminal shows a long list_ of items. I copy and paste them from the terminal then use `find and replace`_ to remove the extra characters
 
   .. note::
 
@@ -306,7 +307,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
 
-  the :ref:`method<functions>` added a value. I change the values in the test to match the values in the terminal
+  the :ref:`method<functions>` added a value. I change the expectation to match the values in the terminal
 
   .. code-block:: python
 
@@ -715,7 +716,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0, 1] != [0, 1, 2, 'n']
 
-  I change the values in the test to match
+  I change the expectation to match
 
   .. code-block:: python
 
@@ -816,6 +817,12 @@ I add the expectation
 
 .. code-block:: python
 
+  self.assertIsNone(a_list.index(0), 0)
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
   AssertionError: 0 is not None : 0
 
 I change assertIsNone_ to assertEqual_
@@ -832,7 +839,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* it does not tell me if the :ref:`method<functions>` is returning the same value I give it, so I change the list_
+* it does not tell me if the :ref:`method<functions>` returned the same value I gave, so I change the list_
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -847,9 +854,7 @@ refactor: make it better
 
     ValueError: 0 is not in list
 
-  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_
-
-* I add it to the list of Exceptions_ encountered
+  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_. I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -859,7 +864,7 @@ refactor: make it better
     # TypeError
     # ValueError
 
-* I remove the things around the call and change the value to be more descriptive
+  I remove the things around the call and change the value to be more descriptive
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -874,7 +879,7 @@ refactor: make it better
 
     ValueError: 'not in list' is not in list
 
-* I add assertRaises_ to handle the Exception_
+  I add assertRaises_ to handle the Exception_
 
   .. code-block:: python
     :emphasize-lines: 4,5
@@ -976,7 +981,7 @@ refactor: make it better
 
   the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the list_. Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
 
-* I want to know what would happen if I have the same item in the list_ more than once, so I add another item
+* I want to know what would happen if I have the same item in the list_ more than once, so I add a duplicate
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1122,7 +1127,7 @@ refactor: make it better
 
   the test passes. The insert_ :ref:`method<functions>` places the second input given at the index given as the first , it also moves the original items from that index and on in the list_ to the right
 
-* I get a failure when I change the second input in the call
+* I change the second input in the call
 
   .. code-block:: python
 
@@ -1134,7 +1139,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [-1, 0, 1, 2, 'n'] != [1, 0, 1, 2, 'n']
 
-  I change the value to match
+  I change the expectation to match
 
   .. code-block:: python
 
@@ -1389,7 +1394,7 @@ refactor: make it better
 
   the test passes
 
-* I change the values in ``a_list`` to see what would happen if an item shows up more than once in the list_
+* I change the values in the list_ to see what would happen if an item is in there more than once
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1551,7 +1556,7 @@ I have to change ``'n'`` to a number or change the other numbers to a string_
 green: make it pass
 #################################################################################
 
-I remove the things around the call, and the variable assignment since it is not used, then add assertRaises_
+I remove the things around the call, and the variable name since it is not used, then add assertRaises_
 
 .. code-block:: python
 
@@ -1590,13 +1595,13 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-  the list_ is still the same. I change the expectation
+  the list_ stayed the same. I change the expectation
 
   .. code-block:: python
 
     self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is already sorted, I change it to see what would happen when it is not sorted
+  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is sorted, I change it to see what would happen when it is not sorted
 
   .. code-block:: python
 
@@ -1608,7 +1613,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
-  the sort_ :ref:`method<functions>` arranges the list_ in ascending order. I change the values to match
+  the sort_ :ref:`method<functions>` arranged the list_ in ascending order. I change the values to match
 
   .. code-block:: python
 
@@ -1637,7 +1642,7 @@ refactor: make it better
 test_getting_items_of_a_list
 *********************************************************************************
 
-When I want an item that is in a list_, I can use its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``)
+When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``)
 
 red: make it fail
 #################################################################################
@@ -1675,7 +1680,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* This is the reverse of the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` :ref:`method<functions>` which takes in the item and returns its position, with this I provide the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
+* this is the reverse of the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` :ref:`method<functions>` which takes in the item and returns its position, in this case I provide the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
 
   .. code-block:: python
 
@@ -1778,7 +1783,7 @@ refactor: make it better
 
     self.assertEqual(a_list[1], '2nd')
 
-* I add another one
+* I add another
 
   .. code-block:: python
 
@@ -1850,7 +1855,7 @@ test_setting_items_in_a_list
 red: make it fail
 #################################################################################
 
-I add another test
+I add a test
 
 .. code-block:: python
 
@@ -1868,7 +1873,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
 
-I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item to change its value in a list_, like pointing a name to a value
+I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item to change its value in a list_, the way I point a name to a value
 
 green: make it pass
 #################################################################################
@@ -1916,7 +1921,7 @@ I change the values to match
 
   self.assertEqual(a_list[0:2], ['a', 'b'])
 
-the test passes. I give two values in square brackets(``[]``), separated by a ``:``, the first value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to start at, and the second value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to stop at plus ``1``
+the test passes. I give two values in square brackets(``[]``), separated by a ``:``, the first value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to start from, and the second value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to stop at plus ``1``
 
 refactor: make it better
 #################################################################################
@@ -1963,7 +1968,7 @@ refactor: make it better
 
   the test passes
 
-* I can skip the second number when it is bigger than the length of the list_
+* I can skip the second number when it is bigger than or the same as the length of the list_
 
   .. code-block:: python
 
@@ -2005,7 +2010,7 @@ refactor: make it better
 
   the test is green again
 
-* I add another one
+* I add another
 
   .. code-block:: python
 
@@ -2068,7 +2073,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it
+IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it. When I see this Exception_ I know the underlying data structure is a list_
 
 red: make it fail
 #################################################################################
@@ -2090,37 +2095,39 @@ the terminal shows IndexError_
 
   IndexError: list index out of range
 
+when I use an index that is the same as or greater than the length of the list_ I am pointing to something that is NOT in it
+
 green: make it pass
 #################################################################################
 
-* I add it to the list of Exceptions_ encountered
+I add it to the list of Exceptions_ encountered
 
-  .. code-block:: python
-    :emphasize-lines: 5
+.. code-block:: python
+  :emphasize-lines: 5
 
-    # Exceptions Encountered
-    # AssertionError
-    # TypeError
-    # ValueError
-    # IndexError
+  # Exceptions Encountered
+  # AssertionError
+  # TypeError
+  # ValueError
+  # IndexError
 
-* I add assertRaises_
+I add assertRaises_
 
-  .. code-block:: python
-    :emphasize-lines: 4,5
+.. code-block:: python
+  :emphasize-lines: 4,5
 
-    def test_index_error(self):
-        a_list = ['a', 'b', 'c', 'd']
+  def test_index_error(self):
+      a_list = ['a', 'b', 'c', 'd']
 
-        with self.assertRaises(IndexError):
-            a_list[4]
+      with self.assertRaises(IndexError):
+          a_list[4]
 
-  the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
 
-* the same thing happens when I use a negative number that points to something that is NOT in the list_
+* the same thing happens when I use a negative number that is lower than the length of the list_ as a negative number
 
   .. code-block:: python
 
@@ -2146,7 +2153,7 @@ refactor: make it better
 
   the test passes
 
-* IndexError_ is also raised with the pop_ :ref:`method<functions>` when the list_ is empty
+* IndexError_ is also raised when I call the pop_ :ref:`method<functions>` with an empty list_
 
   .. code-block:: python
 
@@ -2173,6 +2180,7 @@ refactor: make it better
   the terminal shows green. I cannot remove the last item from a list_ that has no items, this is like trying to get an item from a list_ that has no items
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     with self.assertRaises(IndexError):
         [].pop()
@@ -2191,7 +2199,7 @@ refactor: make it better
     with self.assertRaises(IndexError):
         [][-1]
 
-  the test passes, any :ref:`index<test_index_returns_first_position_of_item_in_a_list>` given to an empty list_ will raise an Exception_
+  the test passes. Any :ref:`index<test_index_returns_first_position_of_item_in_a_list>` given to an empty list_ will raise IndexError_
 
 ----
 
