@@ -20,7 +20,7 @@ how to test that an Exception is raised
 
 ----
 
-When an error happens in Python, an Exception_ is raised to break execution of the program, this means nothing past the line that caused it will run.
+When an error happens in Python_, an Exception_ is raised to break execution of the program, this means nothing past the line that caused it will run.
 
 It is useful because there is a problem to be solved to continue as expected, it can be a pain when it causes the program to stop early. What if I want it to run even with errors? I might want to give messages to the user who does not care about or understand the details of the error.
 

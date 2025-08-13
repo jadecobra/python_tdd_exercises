@@ -107,7 +107,7 @@ how to manually make a python test driven development environment
 
     mkdir tests
 
-  then an empty file called ``__init__.py`` in the ``tests`` folder to tell Python that it is a `python package`_, this will help it find the tests later
+  then an empty file called ``__init__.py`` in the ``tests`` folder to tell Python_ that it is a `python package`_, this will help it find the tests later
 
   .. code-block:: shell
 
@@ -147,7 +147,7 @@ how to manually make a python test driven development environment
          ╰──__init__.py
          ╰──test_magic.py
 
-  ``py`` at the end of a file name shows it is a Python :ref:`module<ModuleNotFoundError>`
+  ``py`` at the end of a file name shows it is a Python_ :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -184,14 +184,14 @@ red: make it fail
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
+    * ``class`` is the Python_ keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
     * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test. You can use any name as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods<functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_ which allows me use its :ref:`methods<functions>`
 
   - ``def test_failure``
 
-    * def_ is the Python keyword for making :ref:`methods (functions) <functions>`
+    * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`
     * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name as long as it starts with ``test_``
     * ``self`` is used to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension the `unittest.TestCase`_ class instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
@@ -257,8 +257,8 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``F`` indicates a failure
 * ``python3 -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
 
-  - ``python3`` is the major version of Python being used
-  - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
+  - ``python3`` is the major version of Python_ being used
+  - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
 
 * I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. Time to add :ref:`AssertionError` to the list
 
@@ -335,8 +335,8 @@ how to make a virtual environment
 
       python -m venv .venv
 
-  - ``python3`` is the major version of Python being used
-  - ``-m`` is an option passed to Python to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
+  - ``python3`` is the major version of Python_ being used
+  - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed
   - ``.venv`` is the name given, you can use any name
 
@@ -431,7 +431,7 @@ how to make a virtual environment
   - ``>`` is an operator that is used to send output from a program to the given file
   - ``|`` is an operator that is used to send output from the left as input to the right
   - `Out-File`_ writes input text to a given file
-  - `pytest-watch`_ is a Python program that automatically runs pytest_ when a Python file in the folder changes
+  - `pytest-watch`_ is a Python_ program that automatically runs pytest_ when a Python_ file in the folder changes
   - pytest_ is a `python package`_ like unittest_ that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name
 
@@ -702,7 +702,7 @@ how to automatically make a python test driven development environment on Window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python Test Driven Development Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computers.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ Test Driven Development Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 Would you like to test :doc:`making a calculator?</how_to/calculator>`
 

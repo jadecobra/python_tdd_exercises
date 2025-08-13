@@ -230,7 +230,7 @@ green: make it pass
 
 ----
 
-I want to see what happens when I pass other Python :ref:`data structures` to the program
+I want to see what happens when I pass other Python_ :ref:`data structures` to the program
 
 *********************************************************************************
 test_passing_a_class

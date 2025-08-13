@@ -26,7 +26,7 @@ names
 
     class AClassName(object):
 
-  you can use any case you like but TitleCase keeps things consistent
+  you can use any case you want but TitleCase keeps things consistent
 
 - variables (attributes) and :ref:`function (method)<functions>` names are in ``snake_case`` for example
 

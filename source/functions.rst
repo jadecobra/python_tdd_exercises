@@ -122,8 +122,8 @@ green: make it pass
 
   * the test checks if the value of the call to ``functions.function_w_pass`` is :ref:`None`
   * the :ref:`function<functions>` definition simply says pass_ yet the test passes
-  * pass_ is a placeholder keyword which allows the :ref:`function<functions>` definition to follow Python syntax rules
-  * the test passes because in Python all :ref:`functions` return :ref:`None` by default, like the :ref:`function<functions>` has an invisible line that says ``return None``
+  * pass_ is a placeholder keyword which allows the :ref:`function<functions>` definition to followsyntax rules
+  * the test passes because inall :ref:`functions` return :ref:`None` by default, as if the :ref:`function<functions>` has an invisible line that says ``return None``
 
 ----
 
@@ -155,7 +155,7 @@ I add a new :ref:`function<functions>` to ``functions.py`` to make the test pass
 
 the terminal shows this test also passes
 
-I defined 2 :ref:`functions` with different statements in their body but they both return the same result, because "in Python all :ref:`functions` return :ref:`None` by default, like the :ref:`function<functions>` has an invisible line that says ``return None``"
+I defined 2 :ref:`functions` with different statements in their body but they both return the same result, because "inall :ref:`functions` return :ref:`None` by default, like the :ref:`function<functions>` has an invisible line that says ``return None``"
 
 *********************************************************************************
 test_functions_w_return_none
@@ -354,7 +354,7 @@ Wait a minute! Something is not quite right here. The definition for a identity 
 
   the terminal shows passing tests. I have more confidence that the identity :ref:`function<functions>` will return its input.
 
-* I add more tests for good measure using the other Python data structures
+* I add more tests using the otherdata structures
 
   .. code-block:: python
 
@@ -961,7 +961,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
     def take_positional_and_keyword_arguments(first_name=None, last_name=None):
         return first_name, last_name
 
-  I still have passing tests. It looks like Python lets us use default arguments with no issues, and I can provide keyword arguments positionally without using the name.
+  I still have passing tests. It looks likelets us use default arguments with no issues, and I can provide keyword arguments positionally without using the name.
 
 * I add another test to ``test_functions_w_positional_and_keyword_arguments`` to show this
 

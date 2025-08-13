@@ -9,7 +9,7 @@ pumping python: how I solve problems with test driven development
 
 ----
 
-My name is Jacob Itegboje and this is a collection of `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ exercises that have helped me use Python for more than a decade.
+My name is Jacob Itegboje and this is a collection of `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ exercises that have helped me use Python_for more than a decade.
 `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal.
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example <https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring <https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk>`_, they both influenced the way I write programs.
@@ -18,10 +18,10 @@ I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `
 who is this for?
 *********************************************************************************
 
-* If you are interested in Python, this is for you
-* If you just started your journey, CONGRATULATIONS! You picked Python from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ out there, Celebrate it, this is for you
+* If you are interested in Python_, this is for you
+* If you just started your journey, CONGRATULATIONS! You picked Python_from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ out there, Celebrate it, this is for you
 * If you are new to `Test Driven Development <https://en.wikipedia.org/wiki/Test-driven_development>`_ in Python, this is for you
-* If you already use Python but do not know any of the `Exceptions <https://www.pumpingpython.com/how_to/exception_handling_tests.html>`_ below, this is for you
+* If you already use Python_ but do not know any of the `Exceptions <https://www.pumpingpython.com/how_to/exception_handling_tests.html>`_ below, this is for you
 
   - `AssertionError <https://www.pumpingpython.com/exceptions/AssertionError.html>`_
   - `AttributeError <https://www.pumpingpython.com/exceptions/AttributeError.html>`_

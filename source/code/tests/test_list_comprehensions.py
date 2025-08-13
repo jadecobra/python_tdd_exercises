@@ -34,7 +34,7 @@ class TestListComprehensions(unittest.TestCase):
             src.list_comprehensions.for_loop(self.iterable)
         )
 
-    def test_making_a_list_w_list_comprehension(self):
+    def test_making_a_list_w_a_list_comprehension(self):
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
             [item for item in self.iterable]
@@ -69,7 +69,7 @@ class TestListComprehensions(unittest.TestCase):
             [item for item in self.iterable if not condition(item)]
         )
 
-    def test_list_comprehensions_w_functions(self):
+    def test_list_comprehensions_w_processes(self):
         square_numbers = []
         for item in self.iterable:
             square_numbers.append(process(item))
@@ -83,7 +83,7 @@ class TestListComprehensions(unittest.TestCase):
             [process(item) for item in self.iterable]
         )
 
-    def test_list_comprehensions_w_functions_and_conditions(self):
+    def test_list_comprehensions_w_processes_and_conditions(self):
         even_squares, odd_squares = [], []
         for item in self.iterable:
             if condition(item):

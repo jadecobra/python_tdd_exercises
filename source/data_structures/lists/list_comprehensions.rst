@@ -103,7 +103,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion to show that this could have been achieved with the :ref:`list<lists>` constructor_
+* I add another assertion to show that I can do this with the :ref:`list<lists>` constructor_
 
   .. code-block:: python
 
