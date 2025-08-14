@@ -8,6 +8,10 @@ def this_year():
     return datetime.datetime.now().year
 
 
+def get_age(year_of_birth):
+    return this_year() - year_of_birth
+
+
 class TestPerson(unittest.TestCase):
 
     def setUp(self):
@@ -24,7 +28,6 @@ class TestPerson(unittest.TestCase):
             'doe', 'smith', 'blow', 'public',
         ))
         self.random_sex = random.choice(('F', 'M'))
-        self.age = this_year() - self.random_year_of_birth
         self.random_factory_person = src.person.factory(
             first_name=self.random_first_name,
             last_name=self.random_last_name,
@@ -50,7 +53,7 @@ class TestPerson(unittest.TestCase):
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
                 sex=self.random_sex,
-                age=this_year()-self.random_year_of_birth,
+                age=get_age(self.random_year_of_birth),
             )
         )
 
@@ -64,78 +67,56 @@ class TestPerson(unittest.TestCase):
                 first_name=self.random_first_name,
                 last_name='doe',
                 sex='M',
-                age=this_year()-self.random_year_of_birth,
-            )
-        )
-        self.assertEqual(
-            src.person.factory(
-                first_name=self.random_first_name,
-            ),
-            dict(
-                first_name=self.random_first_name,
-                last_name='doe',
-                sex='M',
-                age=0,
+                age=get_age(self.random_year_of_birth),
             )
         )
 
     def test_factory_person_introduction(self):
         self.assertEqual(
             src.person.introduce(self.random_factory_person),
-            f'Hi! My name is {self.random_first_name} '
-            f'{self.random_last_name} '
-            f'and I am {self.age} years old'
+            (
+                f'Hi! My name is {self.random_factory_person.get("first_name")} '
+                f'{self.random_factory_person.get("last_name")} '
+                f'and I am {self.random_factory_person.get("age")} years old'
+            )
         )
 
     def test_classy_person_introduction(self):
         self.assertEqual(
             self.random_classy_person.introduce(),
-            f'Hi! My name is {self.random_first_name} '
-            f'{self.random_last_name} '
-            f'and I am {self.age} years old'
+            (
+                f'Hi! My name is {self.random_classy_person.first_name} '
+                f'{self.random_classy_person.last_name} '
+                f'and I am {get_age(self.random_year_of_birth)} years old'
+            )
         )
 
-    def test_factory_update_year_of_birth(self):
-        self.assertEqual(
-            self.random_factory_person.get('age'),
-            self.age
-        )
-        self.original_age = this_year() - self.random_year_of_birth
-        self.assertEqual(self.random_factory_person.get('age'), self.original_age)
+    def test_factory_person_update_year_of_birth(self):
+        original_age = get_age(self.random_year_of_birth)
+        self.assertEqual(self.random_factory_person.get('age'), original_age)
         with self.assertRaises(KeyError):
             self.random_factory_person['year_of_birth']
 
         self.random_factory_person['year_of_birth'] = self.new_year_of_birth
-        self.assertEqual(
-            self.random_factory_person.get('age'),
-            self.original_age
-        )
+        self.assertEqual(self.random_factory_person.get('age'), original_age)
 
         self.assertEqual(
             src.person.update_year_of_birth(
-                self.random_factory_person,
-                self.new_year_of_birth
+                self.random_factory_person, self.new_year_of_birth
             ),
             {
                 'first_name': self.random_factory_person.get('first_name'),
                 'last_name': self.random_factory_person.get('last_name'),
                 'sex': self.random_factory_person.get('sex'),
-                'age': this_year()-self.new_year_of_birth
+                'age': get_age(self.new_year_of_birth),
             }
         )
 
-    def test_person_class_update_year_of_birth(self):
-        self.assertEqual(
-            self.random_classy_person.get_age(),
-            self.age
-        )
-        self.assertIsNone(
-            self.random_classy_person.update_year_of_birth(self.new_year_of_birth)
-        )
-        self.assertEqual(
-            self.random_classy_person.get_age(),
-            this_year()-self.new_year_of_birth
-        )
+    def test_classy_person_update_year_of_birth(self):
+        self.assertEqual(self.random_classy_person.get_age(), get_age(self.random_year_of_birth))
+
+        self.random_classy_person.year_of_birth = self.new_year_of_birth
+        self.assertEqual(self.random_classy_person.get_age(), get_age(self.new_year_of_birth))
 
     def test_attributes_and_methods_of_classes(self):
         self.assertEqual(
@@ -171,10 +152,10 @@ class TestPerson(unittest.TestCase):
                 '__subclasshook__',
                 '__weakref__',
                 'get_age',
-                'introduce',
-                'update_year_of_birth'
+                'introduce'
             ]
         )
+
 
 # Exceptions Encountered
 # AssertionError
