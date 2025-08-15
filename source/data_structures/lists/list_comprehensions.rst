@@ -767,6 +767,9 @@ I add a test to show I can perform operations in a `list comprehension`_
 
 .. code-block:: python
 
+  def test_making_a_list_w_conditions(self):
+      ...
+
   def test_making_a_list_w_processes(self):
       squares = []
       for item in self.iterable:
@@ -781,10 +784,7 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 1[2036 chars]1124] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1[1432 chars] 318]
-  AssertionError: Lists differ: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 1[1775 chars]8961] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1[1247 chars] 281]
-  AssertionError: Lists differ: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 1[6028 chars]7489] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1[3927 chars] 817]
-  AssertionError: Lists differ: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 1[1852 chars]5264] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1[1302 chars] 292]
+  AssertionError: Lists differ: [0, 1, 4, 9, ...] != [0, 1, 2, 3, ...]
 
 green: make it pass
 #################################################################################
@@ -833,7 +833,7 @@ refactor: make it better
     def square(iterable):
         return [item**2 for item in iterable]
 
-  the test passes
+  the test passes. ``item**x`` is how to write ``item`` raised to the power of ``x``
 
 * I add a :ref:`function<functions>` for the calculation I did 3 times in this test
 
