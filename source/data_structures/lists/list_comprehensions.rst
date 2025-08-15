@@ -298,7 +298,7 @@ refactor: make it better
 test_making_a_list_w_extend
 ****************************************************************************************
 
-I can also use the extend_ :ref:`method<function>` to make a list from an iterable_
+I can also use the extend_ :ref:`method<functions>` to make a list from an iterable_
 
 red: make it fail
 #################################################################################
@@ -881,9 +881,11 @@ I add a failing test
 
 .. code-block:: python
 
+  def test_making_a_list_w_processes(self):
+      ...
+
   def test_making_a_list_w_processes_and_conditions(self):
-      even_squares = []
-      odd_squares = []
+      even_squares = [], odd_squares = []
       for item in self.iterable:
           if condition(item):
               even_numbers.append(process(item))
@@ -899,17 +901,31 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-AssertionError: Lists differ: [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 4[3142 chars]9316] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[4120 chars] 855]
-AssertionError: Lists differ: [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 4[2750 chars]1536] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[3630 chars] 757]
-AssertionError: Lists differ: [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 4[2574 chars]6944] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[3405 chars] 712]
-AssertionError: Lists differ: [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 4[1934 chars]4704] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[2605 chars] 552]
+  AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 1, 2, 3, 4, ...]
 
 green: make it pass
 #################################################################################
 
-I add a call to ``process`` and ``condition``
+I add a call to ``condition``
 
 .. code-block:: python
+  :emphasize-lines: 3
+
+    self.assertEqual(
+        even_squares,
+        [item for item in self.iterable if condition(item)]
+    )
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 2, 4, 6, ...]
+
+I add a call to ``process``
+
+.. code-block:: python
+  :emphasize-lines: 3
 
   self.assertEqual(
       even_squares,
@@ -921,7 +937,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I add an assertion for ``odd_squares``
+I add another assertion
 
 .. code-block:: python
 
@@ -934,12 +950,24 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [1, 9, 25, 49, 81, 121, 169, 225, 289, 361[1978 chars]6969] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[2668 chars] 564]
-  AssertionError: Lists differ: [1, 9, 25, 49, 81, 121, 169, 225, 289, 361[356 chars]8225] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[523 chars] 135]
-  AssertionError: Lists differ: [1, 9, 25, 49, 81, 121, 169, 225, 289, 361[629 chars]5369] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[918 chars] 214]
-  AssertionError: Lists differ: [1, 9, 25, 49, 81, 121, 169, 225, 289, 361, 441] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+  AssertionError: Lists differ: [1, 9, 25, 49, ...] != [0, 1, 2, 3, 4, 5, 6, 7, ...]
 
-I add the calls
+I add a call to ``condition``
+
+.. code-block:: python
+
+  self.assertEqual(
+      odd_squares,
+      [item for item in self.iterable if not condition(item)]
+  )
+
+the terminal shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [1, 9, 25, 49, ...] != [1, 3, 5, 7, ...]
+
+I add a call to ``processes``
 
 .. code-block:: python
 
@@ -959,9 +987,17 @@ review
 From the tests I can make a :ref:`list<lists>` from an iterable_ by using
 
 * a `for loop`_ loop
+* the extend_ :ref:`method<functions>`
 * the :ref:`list <lists>` constructor_
-* and `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_
+* and `list comprehensions`_
 * I can use :ref:`functions` and conditions with `list comprehensions` to make a list with one line
+
+I can also do this with :ref:`dictionaries`, the syntax for a dict comprehension is any variation of the following
+
+.. code-block:: python
+  :force:
+
+  {a_process(key): another_process(value) for key/value in iterable if condition/NOT condition}
 
 Would you like to test :ref:`dictionaries`?
 
