@@ -99,14 +99,14 @@ I change the expectation to match the values in the terminal
 
 .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2, 3])
+  self.assertEqual(a_list, [0, 1, 2, 3])
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* I add another assertion to show that I can also do this with the :ref:`list<lists>` constructor_
+* I add another assertion to show that I can get the same result with the :ref:`list<lists>` constructor_
 
   .. code-block:: python
 
@@ -127,7 +127,7 @@ refactor: make it better
 
   the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to get the same thing? I will show this in a little bit
 
-* but first for some practice with the `for loop`_ I add another assertion
+* first, I add another assertion to practice writing a `for loop`_
 
   .. code-block:: python
 
@@ -146,6 +146,7 @@ refactor: make it better
 * I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
@@ -154,6 +155,7 @@ refactor: make it better
 * I add an `import statement`_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     import src.list_comprehensions
     import unittest
@@ -167,6 +169,7 @@ refactor: make it better
 * I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
@@ -177,12 +180,40 @@ refactor: make it better
 
   .. code-block:: python
 
+    def for_loop():
+        return None
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: for_loop() takes 0 positional arguments but 1 was given
+
+  I add the argument
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    def for_loop(iterable):
+        return None
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: None != [0, 1, 2, 3]
+
+  I change the `return statement`_
+
+  .. code-block:: python
+    :emphasize-lines: 2
+
     def for_loop(iterable):
         return [0, 1, 2, 3]
 
   the test passes
 
-* I need a better test, this one breaks if I change the values in the range_ :ref:`object<classes>`
+* I need a better test, this one breaks when I change the values in the range_ :ref:`object<classes>`
 
   .. code-block:: python
 
@@ -197,6 +228,7 @@ refactor: make it better
 * I undo the change then import the random_ :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     import random
     import src.list_comprehensions
@@ -212,10 +244,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2158 chars] 464] != [0, 1, 2, 3]
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2283 chars] 489] != [0, 1, 2, 3]
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2118 chars] 456] != [0, 1, 2, 3]
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[773 chars] 187] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
 
   the values change every time the test runs because I am using random integers_
 
@@ -235,17 +264,14 @@ refactor: make it better
     self.assertEqual(a_list, list(iterable))
     self.assertEqual(
         src.list_comprehensions.for_loop(iterable),
-        list(iterable)
+        a_list
     )
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[1393 chars] 311]
-    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[3743 chars] 781]
-    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[2208 chars] 474]
-    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1[4778 chars] 988]
+    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, ...]
 
   I change the `return statement`_ in the :ref:`function<functions>`
 
@@ -254,7 +280,7 @@ refactor: make it better
     def for_loop(iterable):
         return list(iterable)
 
-  the test passes, but I want to practice writing a `for loop`_, I change the :ref:`function<functions>`
+  the test passes. I made this :ref:`function<functions>` to practice writing a `for loop`_, I change it
 
   .. code-block:: python
 
@@ -264,13 +290,114 @@ refactor: make it better
             result.append(item)
         return result
 
-  the test is green, this is not yet better than using the :ref:`list<lists>` constructor, there is another way
+  the test is still green, though this is not yet better than using the :ref:`list<lists>` constructor_
 
 ----
 
 ****************************************************************************************
-test_making_a_list_w_list_comprehensions
+test_making_a_list_w_extend
 ****************************************************************************************
+
+I can also use the extend_ :ref:`method<function>` to make a list from an iterable_
+
+red: make it fail
+#################################################################################
+
+I add a new test
+
+.. code-block:: python
+
+  def test_making_a_list_w_a_for_loop(self):
+      ...
+
+  def test_making_a_list_w_extend(self):
+      a_ list = []
+      iterable = range(0, random.randint(2, 1000))
+      self.assertIsNone(a_list.extend())
+
+the terminal shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: list.extend() takes exactly one argument (0 given)
+
+green: make it pass
+#################################################################################
+
+I add the iterable_
+
+.. code-block:: python
+
+  self.assertIsNone(a_list.extend(iterable))
+
+the terminal shows green again
+
+refactor: make it better
+#################################################################################
+
+* I add another assertion to see what changed in ``a_list``
+
+  .. code-block:: python
+
+    self.assertIsNone(a_list.extend(iterable))
+    self.assertEqual(
+        a_list,
+        []
+    )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, ...] != []
+
+  I change the expectation
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_list,
+        src.list_comprehensions.for_loop(iterable)
+    )
+
+  the test passes. Still not better than the :ref:`list<lists>` constructor_ yet, but less lines than the `for loop`_
+
+* I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the class variables
+
+  .. code-block:: python
+
+    class TestListComprehensions(unittest.TestCase):
+
+        def setUp(self):
+            self.a_list = []
+            self.iterable = range(0, random.randint(2, 1000))
+
+        def test_making_a_list_w_a_for_loop(self):
+            for item in self.iterable:
+                self.a_list.append(item)
+
+            self.assertEqual(self.a_list, list(self.iterable))
+            self.assertEqual(
+                src.list_comprehensions.for_loop(self.iterable),
+                self.a_list
+            )
+
+        def test_making_a_list_w_extend(self):
+            self.assertIsNone(self.a_list.extend(self.iterable))
+            self.assertEqual(
+                self.a_list,
+                src.list_comprehensions.for_loop(self.iterable)
+            )
+
+  the terminal still shows green
+
+----
+
+****************************************************************************************
+test_making_a_list_w_a_list_comprehension
+****************************************************************************************
+
+I can also use a `list comprehension`_ to make a list from an iterable_
 
 red: make it fail
 #################################################################################
@@ -279,10 +406,10 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_making_a_list_w_a_for_loop(self):
+  def test_making_a_list_w_extend(self):
       ...
 
-  def test_making_a_list_w_list_comprehensions(self):
+  def test_making_a_list_w_a_list_comprehension(self):
       iterable = range(0, random.randint(2, 1000))
       self.assertEqual(
           src.list_comprehensions.for_loop(iterable),
@@ -379,11 +506,11 @@ refactor: make it better
             list(self.iterable)
         )
 
-  the test is still green. I do the same with :ref:`test_making_a_list_w_list_comprehensions`
+  the test is still green. I do the same with :ref:`test_making_a_list_w_a_list_comprehension`
 
   .. code-block:: python
 
-    def test_making_a_list_w_list_comprehensions(self):
+    def test_making_a_list_w_a_list_comprehension(self):
         self.assertEqual(
             src.list_comprehensions.for_loop(self.iterable),
             [item for item in self.iterable]
@@ -420,7 +547,7 @@ refactor: make it better
 ----
 
 ****************************************************************************************
-test_list_comprehensions_w_conditions
+test_making_a_list_w_conditions
 ****************************************************************************************
 
 What if I had to build a list from an iterable but based on a condition? This is where a `for loop`_ or a `list comprehension`_ works better
@@ -432,7 +559,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_list_comprehensions_w_conditions(self):
+  def test_making_a_list_w_conditions(self):
       even_numbers = []
       for item in self.iterable:
           if item % 2 == 0:
@@ -524,7 +651,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_list_comprehensions_w_conditions(self):
+    def test_making_a_list_w_conditions(self):
         even_numbers = []
         for item in self.iterable:
             # if item % 2 == 0:
@@ -678,7 +805,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_list_comprehensions_w_functions
+test_making_a_list_w_processes
 *********************************************************************************
 
 red: make it fail
@@ -688,7 +815,7 @@ I add a test to show I can perform operations in a `list comprehension`_
 
 .. code-block:: python
 
-  def test_list_comprehensions_w_functions(self):
+  def test_making_a_list_w_processes(self):
       squares = []
       for item in self.iterable:
           squares.append(item*item)
@@ -770,7 +897,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_list_comprehensions_w_functions(self):
+    def test_making_a_list_w_processes(self):
         squares = []
         for item in self.iterable:
             # squares.append(item*item)
@@ -792,7 +919,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_list_comprehensions_w_functions_and_conditions
+test_making_a_list_w_processes_and_conditions
 *********************************************************************************
 
 red: make it fail
@@ -802,7 +929,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_list_comprehensions_w_functions_and_conditions(self):
+  def test_making_a_list_w_processes_and_conditions(self):
       even_squares = []
       odd_squares = []
       for item in self.iterable:

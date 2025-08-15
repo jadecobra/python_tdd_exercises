@@ -176,10 +176,10 @@ test_list_comprehensions
 
 #. :ref:`test_making_a_list_w_a_for_loop`
 #. :ref:`test_making_a_list_w_extend`
-#. :ref:`test_making_a_list_w_list_comprehensions`
-#. :ref:`test_list_comprehensions_w_conditions`
-#. :ref:`test_list_comprehensions_w_functions`
-#. :ref:`test_list_comprehensions_w_functions_and_conditions`
+#. :ref:`test_making_a_list_w_a_list_comprehension`
+#. :ref:`test_making_a_list_w_conditions`
+#. :ref:`test_making_a_list_w_processes`
+#. :ref:`test_making_a_list_w_processes_and_conditions`
 
 *********************************************************************************
 test_dictionaries
