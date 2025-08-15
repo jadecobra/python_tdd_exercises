@@ -7,8 +7,6 @@
 .. _list comprehension: https://docs.python.org/3/glossary.html#term-list-comprehension
 .. _list comprehensions: https://docs.python.org/3/glossary.html#term-list-comprehension
 
-.. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
-
 #################################################################################
 lists: list comprehensions
 #################################################################################
@@ -25,7 +23,7 @@ lists: list comprehensions
 
 ----
 
-`List Comprehensions`_ are a simple to make a :ref:`list <lists>` from an iterable_, by going over every item and performing operations with one line
+`List Comprehensions`_ are a simple way to make a :ref:`list <lists>` from an iterable_ with one line
 
 *********************************************************************************
 requirements
@@ -87,7 +85,12 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-the list is no longer empty after calling the append_ :ref:`method<functions>` in the `for loop`_ which goes over every item in the iterable_
+- ``a_list = []`` makes an empty list and gives it a name
+- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first number given to the second number given minus 1, in this case it goes from 0 to 3
+- ``for item in iterable:`` goes over every item in the range_ object_
+- ``a_list.append(item)`` is called for every item in the range_ object_
+
+the list is no longer empty after the operation
 
 green: make it pass
 #################################################################################
@@ -103,14 +106,26 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion to show that I can do this with the :ref:`list<lists>` constructor_
+* I add another assertion to show that I can also do this with the :ref:`list<lists>` constructor_
 
   .. code-block:: python
 
     self.assertEqual(a_list, [0, 1, 2, 3])
+    self.assertEqual(a_list, list())
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: [0, 1, 2, 3] != []
+
+  I add the iterable_ to the call
+
+  .. code-block:: python
+
     self.assertEqual(a_list, list(iterable))
 
-  the test is still green. Why use a `for loop`_ when you can use the :ref:`list<lists>` constructor_ to get the same thing? I will show this in a little bit
+  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to get the same thing? I will show this in a little bit
 
 * but first for some practice with the `for loop`_ I add another assertion
 
