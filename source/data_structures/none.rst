@@ -1424,7 +1424,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
-  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, you can add more key-value pairs separating them with commas, that is the difference between :ref:`dictionaries` and sets_, there is more on this in the :ref:`dictionaries` chapter. I change the :ref:`method<functions>`
+  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, I can add more key-value pairs separating them with commas, that is the difference between :ref:`dictionaries` and sets_. I change the :ref:`method<functions>`
 
   .. code-block:: python
 

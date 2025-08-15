@@ -638,7 +638,7 @@ refactor: make it better
 
   the test passes
 
-* ``condition`` is not a descriptive name in this case, I am only using it to show that you can use any condition you want with the `list comprehension`_. I can add a function for the conditions in ``list_comprehensions.py`` and use a descriptive name
+* ``condition`` is not a descriptive name in this case, I am only using it to show that I can use any condition with the `list comprehension`_. I add a function for the conditions in ``list_comprehensions.py`` and use a descriptive name
 
   .. code-block:: python
 

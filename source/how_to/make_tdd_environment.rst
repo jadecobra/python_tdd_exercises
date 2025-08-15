@@ -133,7 +133,7 @@ how to manually make a python test driven development environment
 
       New-Item tests/test_magic.py
 
-  you can use any name as long as it starts with ``test_``
+  I can use any name as long as it starts with ``test_``
 
 * these are the folders/directories and files in the project
 
@@ -185,14 +185,14 @@ red: make it fail
   - ``class TestMagic``
 
     * ``class`` is the Python_ keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
-    * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test. You can use any name as long as it starts with ``Test``
+    * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test. I can use any name as long as it starts with ``Test``
     * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods<functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_ which allows me use its :ref:`methods<functions>`
 
   - ``def test_failure``
 
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`
-    * ``test_failure`` is the name of this :ref:`method<functions>`, you can use any name as long as it starts with ``test_``
+    * ``test_failure`` is the name of this :ref:`method<functions>`, I can use any name as long as it starts with ``test_``
     * ``self`` is used to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension the `unittest.TestCase`_ class instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an assertion
 
@@ -338,7 +338,7 @@ how to make a virtual environment
   - ``python3`` is the major version of Python_ being used
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed
-  - ``.venv`` is the name given, you can use any name
+  - ``.venv`` is the name given, I can use any name
 
 * I activate the `virtual environment`_ to use it
 
@@ -433,7 +433,7 @@ how to make a virtual environment
   - `Out-File`_ writes input text to a given file
   - `pytest-watch`_ is a Python_ program that automatically runs pytest_ when a Python_ file in the folder changes
   - pytest_ is a `python package`_ like unittest_ that is used for testing
-  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, you can use any name
+  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, I can use any name
 
 * I install `pytest-watch`_ and its dependencies
 
@@ -615,7 +615,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. You can change it to ``#!/bin/zsh`` if you have zsh_ installed
+  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. I can change it to ``#!/bin/zsh`` to use zsh_ instead
 
 * This program will always make a project called ``magic``. I add a variable to make it possible to make a project for any name I give when the program is called and use it to replace ``magic`` in the program
 
@@ -637,7 +637,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``$1`` is for the first argument given when the program is called, you can use it in place of ``$PROJECT_NAME``
+  ``$1`` is for the first argument given when the program is called, I can use it in place of ``$PROJECT_NAME``
 
 * I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
@@ -684,7 +684,7 @@ how to automatically make a python test driven development environment on Window
     :linenos:
     :language: PowerShell
 
-  - ``$args[0]`` is the first argument given when the program is called. You can use it in place of ``$PROJECT_NAME``
+  - ``$args[0]`` is the first argument given when the program is called. I can use it in place of ``$PROJECT_NAME``
   - `Out-File`_ writes input text to a given file
 
 * I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type
