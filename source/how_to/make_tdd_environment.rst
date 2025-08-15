@@ -243,7 +243,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the failure happened
 
-  .. tip:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` with your mouse in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
+  .. tip:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
 
 * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the failing test :ref:`method<functions>`

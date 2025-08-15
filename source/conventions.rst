@@ -26,7 +26,7 @@ names
 
     class AClassName(object):
 
-  you can use any case you want but TitleCase keeps things consistent
+  I can use any case I want but TitleCase keeps things consistent
 
 - variables (attributes) and :ref:`function (method)<functions>` names are in ``snake_case`` for example
 
@@ -69,7 +69,7 @@ Enclosures must be closed once open, which means they happen in pairs for exampl
   []
   {}
 
-Your Integrated Development Environment (IDE) will take care of this for you
+The Integrated Development Environment (IDE) takes care of this
 
 .. _conventions_quotes:
 

@@ -207,7 +207,7 @@ green: make it pass
 
   .. note::
 
-    your results can be different because of your Python_ version
+    results can be different because of Python_ version
 
   .. code-block:: python
 
