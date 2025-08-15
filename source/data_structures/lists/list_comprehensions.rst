@@ -410,9 +410,8 @@ I add a failing test
       ...
 
   def test_making_a_list_w_a_list_comprehension(self):
-      iterable = range(0, random.randint(2, 1000))
       self.assertEqual(
-          src.list_comprehensions.for_loop(iterable),
+          src.list_comprehensions.for_loop(self.iterable),
           []
       )
 
@@ -420,10 +419,7 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[413 chars] 113] != []
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[3178 chars] 666] != []
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[568 chars] 144] != []
-  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[3253 chars] 681] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
 green: make it pass
 #################################################################################
@@ -433,8 +429,8 @@ I use the :ref:`list<lists>` constructor_
 .. code-block:: python
 
   self.assertEqual(
-      src.list_comprehensions.for_loop(iterable),
-      list(iterable)
+      src.list_comprehensions.for_loop(self.iterable),
+      list(self.iterable)
   )
 
 the test passes
@@ -447,9 +443,9 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        src.list_comprehensions.for_loop(iterable),
-        # list(iterable)
-        [item for item in iterable]
+        src.list_comprehensions.for_loop(self.iterable),
+        # list(self.iterable)
+        [item for item in self.iterable]
     )
 
   the terminal still shows green. I remove the comment then add another assertion for practice
@@ -457,12 +453,12 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        src.list_comprehensions.for_loop(iterable),
-        [item for item in iterable]
+        src.list_comprehensions.for_loop(self.iterable),
+        [item for item in self.iterable]
     )
     self.assertEqual(
-        src.list_comprehensions.list_comprehension(iterable),
-        [item for item in iterable]
+        src.list_comprehensions.list_comprehension(self.iterable),
+        [item for item in self.iterable]
     )
 
   the terminal shows :ref:`AttributeError`
@@ -482,47 +478,9 @@ refactor: make it better
       def list_comprehension(iterable):
           return [item for item in iterable]
 
-  the test passes
+  the test passes. The `list comprehension`_ have the same syntax as the `for loop`_
 
-* I made the same variable twice for the iterable_, I will move it to the setUp_ :ref:`method<functions>` to remove duplication
-
-  .. code-block:: python
-
-    def setUp(self):
-        self.iterable = range(0, random.randint(2, 1000))
-
-  then use it in :ref:`test_making_a_list_w_a_for_loop`
-
-  .. code-block:: python
-
-    def test_making_a_list_w_a_for_loop(self):
-        a_list = []
-        for item in self.iterable:
-            a_list.append(item)
-
-        self.assertEqual(a_list, list(self.iterable))
-        self.assertEqual(
-            src.list_comprehensions.for_loop(self.iterable),
-            list(self.iterable)
-        )
-
-  the test is still green. I do the same with :ref:`test_making_a_list_w_a_list_comprehension`
-
-  .. code-block:: python
-
-    def test_making_a_list_w_a_list_comprehension(self):
-        self.assertEqual(
-            src.list_comprehensions.for_loop(self.iterable),
-            [item for item in self.iterable]
-        )
-        self.assertEqual(
-            src.list_comprehensions.list_comprehension(self.iterable),
-            [item for item in self.iterable]
-        )
-
-  the terminal still shows green
-
-* I made 2 :ref:`functions<functions>` - one that uses a `for loop`_ and another that uses a `list comprehension`_ to do the same thing difference between
+* I made 2 :ref:`functions<functions>` - one that uses a `for loop`_ and another that uses a `list comprehension`_ to do the same thing
 
   .. code-block:: python
 
@@ -542,7 +500,7 @@ refactor: make it better
   * loop through the iterable_
   * do the operation I want on the item of the iterable_
 
-  When I use `list comprehensions <https://docs.python.org/3/glossary.html#term-list-comprehension>`_, I get the same result with one line that covers all those steps, but so far none of this is better than using the :ref:`list<lists>` constructor_
+  When I use `list comprehensions`_, I get the same result with one line that covers all those steps, yet none of the options are better than using the :ref:`list<lists>` constructor_
 
 ----
 
@@ -550,7 +508,7 @@ refactor: make it better
 test_making_a_list_w_conditions
 ****************************************************************************************
 
-What if I had to build a list from an iterable but based on a condition? This is where a `for loop`_ or a `list comprehension`_ works better
+What if I had to build a list from an iterable_ based on a condition? This is where a `for loop`_ or `list comprehension`_ is better
 
 red: make it fail
 #################################################################################
@@ -571,10 +529,7 @@ the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[2375 chars] 990] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[4800 chars] 991]
-  AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[680 chars] 312] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[1410 chars] 313]
-  AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[137 chars], 94] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[320 chars], 94]
-  AssertionError: Lists differ: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 2[670 chars] 308] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13[1390 chars] 309]
+  AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
 * ``if item % 2 == 0:`` checks if the item in ``iterable`` leaves a remainder of ``0`` when divided by ``2``
 * ``%`` is the modulo_ operator, it divides the number on the left by the number on the right and returns a remainder, it is covered in :ref:`test_the_modulo_operation`
@@ -650,6 +605,7 @@ refactor: make it better
   I change the condition in the test
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def test_making_a_list_w_conditions(self):
         even_numbers = []
@@ -661,6 +617,7 @@ refactor: make it better
   the terminal still shows green. I remove the commented line and do the same thing in the first assertion
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     self.assertEqual(
         even_numbers,
@@ -671,6 +628,7 @@ refactor: make it better
   still green. I do it again with the next one
 
   .. code-block:: python
+    :emphasize-lines: 8
 
     self.assertEqual(
         even_numbers,
@@ -687,13 +645,17 @@ refactor: make it better
 * I add a new empty list
 
   .. code-block:: python
+    :emphasize-lines: 2
 
-    even_numbers = []
-    odd_numbers = []
+    def test_making_a_list_w_conditions(self):
+        even_numbers, odd_numbers = [], []
+        for item in self.iterable:
+            ...
 
   then add an else_ clause in the `for loop`_
 
   .. code-block:: python
+    :emphasize-lines: 4-5
 
     for item in self.iterable:
         if condition(item):
@@ -718,10 +680,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23[333 chars] 173] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[713 chars] 173]
-    AssertionError: Lists differ: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23[1723 chars] 729] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[3493 chars] 729]
-    AssertionError: Lists differ: [1, 3] != [0, 1, 2, 3, 4]
-    AssertionError: Lists differ: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23[1958 chars] 823] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,[3963 chars] 823]
+    AssertionError: Lists differ: [1, 3, 5, 7, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
 
   I add the condition to the assertion
 
@@ -765,7 +724,7 @@ refactor: make it better
 
   the test passes
 
-* ``condition`` is not a descriptive name in this case, I am only using it to show that I can use any condition with the `list comprehension`_. I add a function for the conditions in ``list_comprehensions.py`` and use a descriptive name
+* I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` it is too general. I am only using it to show that I can use any condition with the `list comprehension`_. I add a function for the conditions in ``list_comprehensions.py`` and use a more descriptive name then reference it in ``get_even_numbers``
 
   .. code-block:: python
 
@@ -775,13 +734,6 @@ refactor: make it better
 
     def is_even(number):
         return number % 2 == 0
-
-  then reference it in ``get_even_numbers``
-
-  .. code-block:: python
-
-    def is_even(number):
-        ...
 
 
     def get_even_numbers(iterable):
@@ -800,7 +752,7 @@ refactor: make it better
         return [item for item in iterable if not is_even(item)]
         return [item for item in iterable if item % 2 != 0]
 
-  the terminal still shows green, I remove the second `return statement`+
+  the terminal still shows green, I remove the second `return statement`
 
 ----
 
