@@ -36,13 +36,13 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                x='first', y='second',
+                x='first', y='second'
             ),
             ('first', 'second')
         )
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                y='second', x='first',
+                y='second', x='first'
             ),
             ('first', 'second')
         )
@@ -68,7 +68,7 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_unknown_arguments(self):
         self.assertEqual(
             src.functions.w_unknown_arguments(
-                0, 1, 2, 3, a=4, b=5, c=6, d=7
+                0, 1, 2, 3, a=4, b=5, c=6, d=7,
             ),
             ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
         )
@@ -78,9 +78,9 @@ class TestFunctions(unittest.TestCase):
         )
         self.assertEqual(
             src.functions.w_unknown_arguments(
-                a=5, b=6, c=7, d=8,
+                a=4, b=5, c=6, d=7,
             ),
-            ((), dict(a=5, b=6, c=7, d=8))
+            ((),  {'a': 4, 'b': 5, 'c': 6, 'd': 7})
         )
         self.assertEqual(
             src.functions.w_unknown_arguments(),
@@ -92,5 +92,4 @@ class TestFunctions(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
-# IndentationError
 # SyntaxError
