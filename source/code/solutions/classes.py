@@ -1,12 +1,17 @@
 import datetime
 
+
+def this_year():
+    return datetime.datetime.today().year
+
+
 def get_age(year_of_birth):
-    return datetime.datetime.today().year - year_of_birth
+    return this_year() - year_of_birth
 
 
 def factory(
         first_name, last_name='doe',
-        sex='M', year_of_birth=None
+        sex='M', year_of_birth=this_year()
     ):
     return {
         'first_name': first_name,
@@ -20,7 +25,7 @@ def introduce(person):
     return (
         f'Hi! My name is {person.get("first_name")} '
         f'{person.get("last_name")} '
-        f'and I am {person.get("age")} years old'
+        f'and I am {person.get("age")}'
     )
 
 
@@ -47,7 +52,8 @@ class Person(object):
     def introduce(self):
         return (
             f'Hi! My name is {self.first_name} '
-            f'{self.last_name} and I am {self.get_age()} years old'
+            f'{self.last_name} '
+            f'and I am {self.get_age()}'
         )
 
     def get_age(self):
