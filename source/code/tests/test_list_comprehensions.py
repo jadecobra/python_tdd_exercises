@@ -30,8 +30,8 @@ class TestListComprehensions(unittest.TestCase):
     def test_making_a_list_w_extend(self):
         self.assertIsNone(self.a_list.extend(self.iterable))
         self.assertEqual(
-            self.a_list,
-            src.list_comprehensions.for_loop(self.iterable)
+            src.list_comprehensions.for_loop(self.iterable),
+            self.a_list
         )
 
     def test_making_a_list_w_a_list_comprehension(self):
