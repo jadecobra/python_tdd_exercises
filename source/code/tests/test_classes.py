@@ -108,6 +108,14 @@ class TestPerson(unittest.TestCase):
             this_year()-self.random_new_year_of_birth
         )
 
+    def test_attributes_and_methods_of_classes(self):
+        self.assertEqual(
+            dir(src.class.Person),
+            [
+                
+            ]
+        )
+
 
 # Exceptions Encountered
 # AssertionError
