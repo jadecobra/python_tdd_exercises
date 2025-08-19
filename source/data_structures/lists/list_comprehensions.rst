@@ -246,7 +246,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
 
-  the values change every time the test runs because I am using random integers_
+  the values now change every time the test runs
 
 * I change the expectation in the first assertion
 
