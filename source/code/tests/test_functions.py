@@ -80,7 +80,7 @@ class TestFunctions(unittest.TestCase):
             src.functions.w_unknown_arguments(
                 a=4, b=5, c=6, d=7,
             ),
-            ((),  {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+            ((), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
         )
         self.assertEqual(
             src.functions.w_unknown_arguments(),
@@ -92,4 +92,4 @@ class TestFunctions(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
-# SyntaxError
+# IndentationError
