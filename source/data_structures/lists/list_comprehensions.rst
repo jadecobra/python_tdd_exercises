@@ -86,9 +86,9 @@ the terminal shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 2, 3] != []
 
 - ``a_list = []`` makes an empty list and gives it a name
-- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first number given to the second number given minus 1, in this case it goes from 0 to 3
+- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first number given to the second number given minus 1, in this case it goes from ``0`` to ``3``
 - ``for item in iterable:`` goes over every item in the range_ object_
-- ``a_list.append(item)`` is called for every item in the range_ object_
+- ``a_list.append(item)`` gets called for every item in the range_ object_
 
 the list is no longer empty after the operation
 
@@ -125,7 +125,7 @@ refactor: make it better
 
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to get the same thing? I will show this in a little bit
+  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to get the same thing? I will show this before the end of this chapter
 
 * first, I add another assertion to practice writing a `for loop`_
 
@@ -234,7 +234,7 @@ refactor: make it better
     import src.list_comprehensions
     import unittest
 
-* I change the values given to the range_ :ref:`object<classes>`
+* and change the values given to the range_ :ref:`object<classes>`
 
   .. code-block:: python
 
