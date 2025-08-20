@@ -86,9 +86,9 @@ the terminal shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 2, 3] != []
 
 - ``a_list = []`` makes an empty list and gives it a name
-- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first number given to the second number given minus 1, in this case it goes from ``0`` to ``3``
+- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first given number to the second given number minus 1, in this case it goes from ``0`` to ``3``
 - ``for item in iterable:`` goes over every item in the range_ object_
-- ``a_list.append(item)`` gets called for every item in the range_ object_
+- ``a_list.append(item)`` gets called every time the `for loop`_ runs
 
 the list is no longer empty after the operation
 
@@ -125,9 +125,9 @@ refactor: make it better
 
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to get the same thing? I will show this before the end of this chapter
+  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to get the same thing? Sometimes one is better than the other
 
-* first, I add another assertion to practice writing a `for loop`_
+* I add another assertion to practice writing a `for loop`_
 
   .. code-block:: python
 
@@ -234,7 +234,7 @@ refactor: make it better
     import src.list_comprehensions
     import unittest
 
-* and change the values given to the range_ :ref:`object<classes>`
+* I change the second value given to the range_ :ref:`object<classes>`
 
   .. code-block:: python
 
@@ -280,9 +280,10 @@ refactor: make it better
     def for_loop(iterable):
         return list(iterable)
 
-  the test passes. I made this :ref:`function<functions>` to practice writing a `for loop`_, I change it
+  the test passes, but I made this :ref:`function<functions>` to practice writing a `for loop`_ so I change it
 
   .. code-block:: python
+    :emphasize-lines: 2-4
 
     def for_loop(iterable):
         result = []
@@ -290,7 +291,7 @@ refactor: make it better
             result.append(item)
         return result
 
-  the test is still green, though this is not yet better than using the :ref:`list<lists>` constructor_
+  the test is still green
 
 ----
 
@@ -335,7 +336,7 @@ the terminal shows green again
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what changed in ``a_list``
+* I add another assertion to see what changed in the :ref:`list<lists>`
 
   .. code-block:: python
 
@@ -360,7 +361,7 @@ refactor: make it better
         src.list_comprehensions.for_loop(iterable)
     )
 
-  the test passes. Still not better than the :ref:`list<lists>` constructor_ yet, but less lines than the `for loop`_
+  the test passes. This way uses less lines than the `for loop`_
 
 * I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the class variables
 
@@ -424,13 +425,14 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I use the :ref:`list<lists>` constructor_
+I add a `list comprehension`_
 
 .. code-block:: python
 
   self.assertEqual(
       src.list_comprehensions.for_loop(self.iterable),
-      list(self.iterable)
+      # list(self.iterable)
+      [item for item in self.iterable]
   )
 
 the test passes
@@ -438,17 +440,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I can do the same thing with a `list comprehension`_
-
-  .. code-block:: python
-
-    self.assertEqual(
-        src.list_comprehensions.for_loop(self.iterable),
-        # list(self.iterable)
-        [item for item in self.iterable]
-    )
-
-  the terminal still shows green. I remove the comment then add another assertion for practice
+* I add another assertion for practice
 
   .. code-block:: python
 
@@ -469,24 +461,24 @@ refactor: make it better
 
   I add the :ref:`function<functions>`
 
-    .. code-block:: python
+  .. code-block:: python
 
-      def for_loop(iterable):
-          ...
+    def for_loop(iterable):
+        ...
 
 
-      def list_comprehension(iterable):
-          return [item for item in iterable]
+    def list_comprehension(iterable):
+        return [item for item in iterable]
 
-  the test passes. The `list comprehension`_ have the same syntax as the `for loop`_
+  the test passes. The `list comprehension`_ has the same syntax as the `for loop`_
 
 * I made 2 :ref:`functions<functions>` - one that uses a `for loop`_ and another that uses a `list comprehension`_ to do the same thing
 
   .. code-block:: python
 
-      a_list = []
+      result = []
       for item in iterable:
-          a_list.append()
+          result.append()
 
   and
 
@@ -500,7 +492,7 @@ refactor: make it better
   * loop through the iterable_
   * do the operation I want on the item of the iterable_
 
-  When I use `list comprehensions`_, I get the same result with one line that covers all those steps, yet none of the options are better than using the :ref:`list<lists>` constructor_
+  with the `list comprehension`_, I do all the steps in one line, yet none of the other ways are better than using the :ref:`list<lists>` constructor_, yet.
 
 ----
 
@@ -508,7 +500,7 @@ refactor: make it better
 test_making_a_list_w_conditions
 ****************************************************************************************
 
-What if I had to build a list from an iterable_ based on a condition? This is where a `for loop`_ or `list comprehension`_ is better
+What if I had to build a list from an iterable_ based on a condition, how would I do it with the :ref:`list<lists>` constructor_ without changing the iterable_? This is where a `for loop`_ or `list comprehension`_ works better
 
 red: make it fail
 #################################################################################
@@ -532,7 +524,7 @@ the terminal shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
 * ``if item % 2 == 0:`` checks if the item in ``iterable`` leaves a remainder of ``0`` when divided by ``2``
-* ``%`` is the modulo_ operator, it divides the number on the left by the number on the right and returns a remainder, it is covered in :ref:`test_the_modulo_operation`
+* ``%`` is the modulo_ operator, which divides the number on the left by the number on the right and returns a remainder, there's a test for it in :ref:`test_the_modulo_operation`
 
 green: make it pass
 #################################################################################
@@ -546,7 +538,13 @@ I change the expectation to use a `list comprehension`_
       [item for item in self.iterable]
   )
 
-the terminal still shows :ref:`AssertionError`, I add the condition
+the terminal still shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
+
+I add the condition
 
 .. code-block:: python
 
@@ -592,7 +590,7 @@ refactor: make it better
 
   the test passes
 
-* I wrote the same condition in the test 3 times. I add a :ref:`function<functions>` for it
+* I wrote the same condition in the test 3 times. I add a :ref:`function<functions>` to remove the duplication
 
   .. code-block:: python
 
@@ -602,7 +600,7 @@ refactor: make it better
     def condition(number):
         return number % 2 == 0
 
-  I change the condition in the test
+  I change the condition in the test to reference the new :ref:`function<functions>`
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -640,9 +638,9 @@ refactor: make it better
         [item for item in self.iterable if condition(item)]
     )
 
-  the terminal still shows green
+  the terminal still shows green. I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` because it is too general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``.
 
-* I add a new empty list
+* I add a new empty :ref:`list<lists>` to test another condition
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -652,7 +650,9 @@ refactor: make it better
         for item in self.iterable:
             ...
 
-  then add an else_ clause in the `for loop`_
+  ``even_numbers, odd_numbers = [], []`` makes 2 empty :ref:`lists` and names them
+
+* I add an else_ clause in the `for loop`_
 
   .. code-block:: python
     :emphasize-lines: 4-5
@@ -724,7 +724,7 @@ refactor: make it better
 
   the test passes
 
-* I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` it is too general. I am only using it to show that I can use any condition with the `list comprehension`_. I add a function for the conditions in ``list_comprehensions.py`` and use a more descriptive name then reference it in ``get_even_numbers``
+* I add a :ref:`function<functions>` for the condition in ``list_comprehensions.py`` and use a more descriptive name then call it in ``get_even_numbers``
 
   .. code-block:: python
 
@@ -740,7 +740,7 @@ refactor: make it better
         return [item for item in iterable if is_even(item)]
         return [item for item in iterable if item % 2 == 0]
 
-  the test is still passing. I remove the second `return statement`_ and use the new :ref:`function<functions>` in ``get_odd_numbers``
+  the test is still passing. I remove the second `return statement`_ then call the new :ref:`function<functions>` in ``get_odd_numbers``
 
   .. code-block:: python
 
@@ -833,7 +833,11 @@ refactor: make it better
     def square(iterable):
         return [item**2 for item in iterable]
 
-  the test passes. ``item**x`` is how to write ``item`` raised to the power of ``x``
+  the test passes. ``x**y`` is how to write ``x`` raised to the power of ``y``
+
+  .. math::
+
+    x ^ y
 
 * I add a :ref:`function<functions>` for the calculation I did 3 times in this test
 
@@ -845,7 +849,7 @@ refactor: make it better
     def process(number):
         return number ** 2
 
-  I reference the new :ref:`function<functions>` in the test
+  I call it in the test
 
   .. code-block:: python
 
@@ -866,13 +870,15 @@ refactor: make it better
             [process(item) for item in self.iterable]
         )
 
-  the terminal still shows green. I remove the commented lines
+  the terminal still shows green. I remove the commented lines. I do NOT recommend using ``process`` as a name for a :ref:`function<functions>` because it is too general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
 
 ----
 
 *********************************************************************************
 test_making_a_list_w_processes_and_conditions
 *********************************************************************************
+
+I can use both :ref:`processes<test_making_a_list_w_processes>` and :ref:`conditions<test_making_a_list_w_conditions>` in a `list comprehension`_
 
 red: make it fail
 #################################################################################
@@ -984,13 +990,14 @@ the test passes
 review
 *********************************************************************************
 
-From the tests I can make a :ref:`list<lists>` from an iterable_ by using
+The tests show I can make a :ref:`list<lists>` from an iterable_ with
 
-* a `for loop`_ loop
+* a `for loop`_
 * the extend_ :ref:`method<functions>`
 * the :ref:`list <lists>` constructor_
 * and `list comprehensions`_
-* I can use :ref:`functions` and conditions with `list comprehensions` to make a list with one line
+
+I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a list with one line
 
 I can also do this with :ref:`dictionaries`, the syntax for a dict comprehension is any variation of the following
 
