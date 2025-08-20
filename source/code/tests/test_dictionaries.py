@@ -110,7 +110,7 @@ class TestDictionaries(unittest.TestCase):
             {0: 'default', 1: 'default'}
         )
 
-    def test_get_a_value_for_a_key_in_a_dictionary(self):
+    def test_get_value_for_a_key_in_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
         self.assertEqual(a_dictionary.get('key', 'default'), 'value')
@@ -138,7 +138,7 @@ class TestDictionaries(unittest.TestCase):
             ['key1', 'keyN']
         )
 
-    def test_pop_removes_key_from_dictionary_and_returns_its_value(self):
+    def test_pop_removes_key_from_a_dictionary_and_returns_its_value(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('not_in_dictionary', 'default'), 'default')
         self.assertEqual(a_dictionary.pop('key', 'default'), 'value')
