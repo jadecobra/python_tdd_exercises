@@ -23,8 +23,8 @@ class TestListComprehensions(unittest.TestCase):
 
         self.assertEqual(self.a_list, list(self.iterable))
         self.assertEqual(
-            self.a_list,
-            src.list_comprehensions.for_loop(self.iterable)
+            src.list_comprehensions.for_loop(self.iterable),
+            self.a_list
         )
 
     def test_making_a_list_w_extend(self):
