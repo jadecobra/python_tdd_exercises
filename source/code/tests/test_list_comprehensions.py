@@ -105,3 +105,4 @@ class TestListComprehensions(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
+# TypeError
