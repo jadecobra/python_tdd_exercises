@@ -36,13 +36,13 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                x='first', y='second'
+                x='first', y='second',
             ),
             ('first', 'second')
         )
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                y='second', x='first'
+                y='second', x='first',
             ),
             ('first', 'second')
         )
@@ -92,4 +92,6 @@ class TestFunctions(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
+# TypeError
 # IndentationError
+# SyntaxError
