@@ -14,12 +14,12 @@ def is_even(number):
 
 
 def get_even_numbers(iterable):
-    return [item for item in iterable if is_even(item)]
+    return [number for number in iterable if is_even(number)]
 
 
 def get_odd_numbers(iterable):
-    return [item for item in iterable if not is_even(item)]
+    return [number for number in iterable if not is_even(number)]
 
 
 def square(iterable):
-    return [item**2 for item in iterable]
+    return [number**2 for number in iterable]
