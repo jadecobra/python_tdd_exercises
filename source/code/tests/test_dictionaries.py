@@ -118,20 +118,20 @@ class TestDictionaries(unittest.TestCase):
     def test_items_returns_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.items()),
             [
                 ('key1', 'value1'),
-                ('keyN', 'valueN'),
+                ('keyN', [0, 1, 2, 'n']),
             ]
         )
 
     def test_keys_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.keys()),
@@ -140,19 +140,20 @@ class TestDictionaries(unittest.TestCase):
 
     def test_pop_removes_key_from_a_dictionary_and_returns_its_value(self):
         a_dictionary = {'key': 'value'}
+
+        with self.assertRaises(KeyError):
+            self.assertIsNone(a_dictionary.pop('not_in_dictionary'))
+
         self.assertEqual(a_dictionary.pop('not_in_dictionary', 'default'), 'default')
         self.assertEqual(a_dictionary.pop('key', 'default'), 'value')
         self.assertEqual(a_dictionary, {})
 
-        with self.assertRaises(KeyError):
-            a_dictionary.pop('not_in_dictionary')
-
     def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
-        self.assertEqual(a_dictionary.popitem(), ('keyN', 'valueN'))
+        self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
         self.assertEqual(a_dictionary, {'key1': 'value1'})
 
     def test_setdefault_adds_a_key_to_a_dictionary(self):
@@ -169,38 +170,49 @@ class TestDictionaries(unittest.TestCase):
 
     def test_update_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.update(new_key='new value'))
+        self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
         self.assertIsNone(a_dictionary.update(key='updated value'))
-        self.assertIsNone(a_dictionary.update({'another_key': 'another value'}))
+        self.assertIsNone(a_dictionary.update({'another_key': {0, 1, 2, 'n'}}))
         self.assertEqual(
             a_dictionary,
             {
                 'key': 'updated value',
-                'new_key': 'new value',
-                'another_key': 'another value',
+                'new_key': [0, 1, 2, 'n'],
+                'another_key': {0, 1, 2, 'n'},
             }
         )
 
     def test_values_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.values()),
-            ['value1', 'valueN']
+            [
+                'value1',
+                [0, 1, 2, 'n'],
+            ]
         )
 
     def test_key_error(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary['key'], 'value')
-        self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
-        self.assertEqual(a_dictionary.pop('not_in_dictionary', 'default'), 'default')
 
         with self.assertRaises(KeyError):
             a_dictionary['not_in_dictionary']
+        self.assertEqual(
+            a_dictionary.get('not_in_dictionary', 'default'),
+            'default'
+        )
+
         with self.assertRaises(KeyError):
             a_dictionary.pop('not_in_dictionary')
+        self.assertEqual(
+            a_dictionary.pop('not_in_dictionary', 'default'),
+            'default'
+        )
+
         with self.assertRaises(KeyError):
             {}.popitem()
 
