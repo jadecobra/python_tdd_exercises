@@ -13,7 +13,7 @@ def factory(
         'first_name': first_name,
         'last_name': last_name,
         'sex': sex,
-        'age': this_year()-year_of_birth,
+        'age': this_year() - year_of_birth,
     }
 
 
@@ -30,7 +30,7 @@ def update_year_of_birth(person, new_year_of_birth):
         first_name=person.get('first_name'),
         last_name=person.get('last_name'),
         sex=person.get('sex'),
-        year_of_birth=new_year_of_birth,
+        year_of_birth=person.get('year_of_birth'),
     )
 
 
@@ -38,7 +38,7 @@ class Person(object):
 
     def __init__(
         self, first_name, last_name='doe',
-        sex='M', year_of_birth=None
+        sex='M', year_of_birth=this_year()
     ):
         self.first_name = first_name
         self.last_name = last_name
@@ -48,7 +48,8 @@ class Person(object):
     def introduce(self):
         return (
             f'Hi! My name is {self.first_name} '
-            f'{self.last_name} and I am {self.get_age()}'
+            f'{self.last_name} and '
+            f'I am {self.get_age()}'
         )
 
     def get_age(self):
