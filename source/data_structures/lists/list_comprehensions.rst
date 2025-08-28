@@ -292,7 +292,7 @@ refactor: make it better
 test_making_a_list_w_extend
 ****************************************************************************************
 
-I can also use the extend_ :ref:`method<functions>` to make a list from an iterable_
+I can also use the extend_ :ref:`method<functions>` to make a list_ from an iterable_
 
 red: make it fail
 #################################################################################
@@ -391,7 +391,7 @@ refactor: make it better
 test_making_a_list_w_a_list_comprehension
 ****************************************************************************************
 
-I can also use a `list comprehension`_ to make a list from an iterable_
+I can also use a `list comprehension`_ to make a list_ from an iterable_
 
 red: make it fail
 #################################################################################
