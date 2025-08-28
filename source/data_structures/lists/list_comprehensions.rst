@@ -246,7 +246,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
 
-  the values now change every time the test runs
+  this range_ object_ now goes from ``0`` to anywhere between ``2`` and ``999``. I could make it bigger if I want. The values now change every time the test runs
 
 * I change the expectation in the first assertion
 
@@ -273,25 +273,18 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, ...]
 
-  I change the `return statement`_ in the :ref:`function<functions>`
+  I change the :ref:`function<functions>`
 
   .. code-block:: python
-
-    def for_loop(iterable):
-        return list(iterable)
-
-  the test passes, but I made this :ref:`function<functions>` to practice writing a `for loop`_ so I change it
-
-  .. code-block:: python
-    :emphasize-lines: 2-4
 
     def for_loop(iterable):
         result = []
         for item in iterable:
             result.append(item)
         return result
+        return [0, 1, 2, 3]
 
-  the test is still green
+  the test passes and I remove the second `return statement`_
 
 ----
 
