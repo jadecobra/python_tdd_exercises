@@ -424,7 +424,6 @@ I add a `list comprehension`_
 
   self.assertEqual(
       src.list_comprehensions.for_loop(self.iterable),
-      # list(self.iterable)
       [item for item in self.iterable]
   )
 
@@ -485,7 +484,7 @@ refactor: make it better
   * loop through the iterable_
   * do the operation I want on the item of the iterable_
 
-  with the `list comprehension`_, I do all the steps in one line, yet none of the other ways are better than using the :ref:`list<lists>` constructor_, yet.
+  with the `list comprehension`_, I do all the steps in one line, but none of the other ways are better than using the :ref:`list<lists>` constructor_, yet.
 
 ----
 
@@ -579,11 +578,65 @@ refactor: make it better
 
 
     def get_even_numbers(iterable):
-        return [item for item in iterable if item % 2 == 0]
+        return [number for number in iterable if number % 2 == 0]
 
   the test passes
 
-* I wrote the same condition in the test 3 times. I add a :ref:`function<functions>` to remove the duplication
+* I wrote the same condition in the test 3 times. If I want to change it, I have to make the same change 3 times in the test and once in the solution. Let's say the condition is that the number should be divisible by ``3``, we can ignore the names of the variables and the :ref:`functions<functions>` for now
+
+  .. code-block:: python
+    :emphasize-lines: 4
+
+    def test_making_a_list_w_conditions(self):
+        even_numbers = []
+        for item in self.iterable:
+            if item % 3 == 0:
+                even_numbers.append(item)
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    UPDATE_ME
+
+
+  I change the condition in the `list comprehension`_ of the first assertion
+
+  .. code-block:: python
+    :emphasize-lines: 3
+
+    self.assertEqual(
+        even_numbers,
+        [item for item in self.iterable if item % 3 == 0]
+    )
+
+  the terminal shows green. I change the condition in the `list comprehension`_ of the second assertion
+
+  .. code-block:: python
+    :emphasize-lines: 3
+
+    self.assertEqual(
+        src.list_comprehensions.get_even_numbers(self.iterable),
+        [item for item in self.iterable if item % 3 == 0]
+    )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    UPDATE_ME
+
+  I change the condition in the solution
+
+  .. code-block:: python
+    :emphasize-lines: 2
+
+    def get_even_numbers(iterable):
+        return [number for number in iterable if number % 3 == 0]
+
+  the test passes
+
+* I add a :ref:`function<functions>` to remove the duplication
 
   .. code-block:: python
 
@@ -591,9 +644,9 @@ refactor: make it better
 
 
     def condition(number):
-        return number % 2 == 0
+        return number % 3 == 0
 
-  I change the condition in the test to reference the new :ref:`function<functions>`
+  then change the condition in the test to reference the new :ref:`function<functions>`
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -601,7 +654,7 @@ refactor: make it better
     def test_making_a_list_w_conditions(self):
         even_numbers = []
         for item in self.iterable:
-            # if item % 2 == 0:
+            # if item % 3 == 0:
             if condition(item):
                 even_numbers.append(item)
 
@@ -612,7 +665,7 @@ refactor: make it better
 
     self.assertEqual(
         even_numbers,
-        # [item for item in self.iterable if item % 2 == 0]
+        # [item for item in self.iterable if item % 3 == 0]
         [item for item in self.iterable if condition(item)]
     )
 
@@ -627,11 +680,32 @@ refactor: make it better
     )
     self.assertEqual(
         src.list_comprehensions.get_even_numbers(self.iterable),
-        # [item for item in self.iterable if item % 2 == 0]
+        # [item for item in self.iterable if item % 3 == 0]
         [item for item in self.iterable if condition(item)]
     )
 
-  the terminal still shows green. I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` because it is too general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``.
+  the terminal still shows green. I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` because it is too general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``. I change the condition in the :ref:`function<functions>`
+
+  .. code-block:: python
+    :emphasize-lines: 2
+
+    def condition(number):
+        return number % 2 == 0
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    UPDATE ME
+
+  I change the condition in ``get_even_numbers``
+
+  .. code-block:: python
+
+    def get_even_numbers(iterable):
+        return [number for number in iterable if number % 2 == 0]
+
+  the test passes. Yes, adding the :ref:`function<functions>` adds extra lines, and it makes managing the code easier since I only have to make a change in one place when needed
 
 * I add a new empty :ref:`list<lists>` to test another condition
 
@@ -713,7 +787,7 @@ refactor: make it better
 
 
     def get_odd_numbers(iterable):
-        return [item for item in iterable if item % 2 != 0]
+        return [number for number in iterable if number % 2 != 0]
 
   the test passes
 
@@ -730,8 +804,8 @@ refactor: make it better
 
 
     def get_even_numbers(iterable):
-        return [item for item in iterable if is_even(item)]
-        return [item for item in iterable if item % 2 == 0]
+        return [number for number in iterable if is_even(number)]
+        return [number for number in iterable if number % 2 == 0]
 
   the test is still passing. I remove the second `return statement`_ then call the new :ref:`function<functions>` in ``get_odd_numbers``
 
@@ -742,8 +816,8 @@ refactor: make it better
 
 
     def get_odd_numbers(iterable):
-        return [item for item in iterable if not is_even(item)]
-        return [item for item in iterable if item % 2 != 0]
+        return [number for number in iterable if not is_even(number)]
+        return [number for number in iterable if number % 2 != 0]
 
   the terminal still shows green, I remove the second `return statement`
 
