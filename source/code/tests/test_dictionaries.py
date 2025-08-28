@@ -112,8 +112,14 @@ class TestDictionaries(unittest.TestCase):
 
     def test_get_value_for_a_key_in_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
-        self.assertEqual(a_dictionary.get('key', 'default'), 'value')
+        self.assertEqual(
+            a_dictionary.get('not_in_dictionary', 'default'),
+            'default'
+        )
+        self.assertEqual(
+            a_dictionary.get('key', 'default'),
+            'value'
+        )
 
     def test_items_returns_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {
@@ -142,24 +148,38 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
 
         with self.assertRaises(KeyError):
-            self.assertIsNone(a_dictionary.pop('not_in_dictionary'))
-
-        self.assertEqual(a_dictionary.pop('not_in_dictionary', 'default'), 'default')
-        self.assertEqual(a_dictionary.pop('key', 'default'), 'value')
+            a_dictionary.pop('not_in_dictionary')
+        self.assertEqual(
+            a_dictionary.pop('not_in_dictionary', 'default'),
+            'default'
+        )
+        self.assertEqual(
+            a_dictionary.pop('key', 'default'),
+            'value'
+        )
         self.assertEqual(a_dictionary, {})
 
-    def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
+    def test_popitem_removes_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
             'keyN': [0, 1, 2, 'n'],
         }
-        self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
+        self.assertEqual(
+            a_dictionary.popitem(),
+            ('keyN', [0, 1, 2, 'n'])
+        )
         self.assertEqual(a_dictionary, {'key1': 'value1'})
 
     def test_setdefault_adds_a_key_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
-        self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
+        self.assertEqual(
+            a_dictionary.setdefault('new_key', 'default'),
+            'default'
+        )
+        self.assertEqual(
+            a_dictionary.setdefault('key', 'default'),
+            'value'
+        )
         self.assertEqual(
             a_dictionary,
             {
