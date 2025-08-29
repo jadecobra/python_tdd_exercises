@@ -36,13 +36,13 @@ class TestPerson(unittest.TestCase):
             first_name=self.random_first_name,
             last_name=self.random_last_name,
             year_of_birth=self.random_year_of_birth,
-            sex=self.random_sex,
+            sex=self.random_sex
         )
         self.random_classy_person = src.person.Person(
             first_name=self.random_first_name,
             last_name=self.random_last_name,
             year_of_birth=self.random_year_of_birth,
-            sex=self.random_sex,
+            sex=self.random_sex
         )
 
     def test_takes_keyword_arguments(self):
@@ -52,7 +52,7 @@ class TestPerson(unittest.TestCase):
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
                 sex=self.random_sex,
-                age=this_year()-self.random_year_of_birth,
+                age=self.original_age,
             )
         )
 
@@ -97,8 +97,12 @@ class TestPerson(unittest.TestCase):
 
         with self.assertRaises(KeyError):
             self.random_factory_person['year_of_birth']
-        self.random_factory_person['year_of_birth'] = self.random_new_year_of_birth
-
+        self.assertEqual(
+            self.random_factory_person.setdefault(
+                'year_of_birth', self.random_new_year_of_birth
+            ),
+            self.random_new_year_of_birth
+        )
         self.assertEqual(
             self.random_factory_person.get('age'),
             self.original_age
@@ -174,4 +178,4 @@ class TestPerson(unittest.TestCase):
 # AttributeError
 # TypeError
 # SyntaxError
-# KeyError
+# IndentationError
