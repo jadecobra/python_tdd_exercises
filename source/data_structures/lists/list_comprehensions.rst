@@ -597,8 +597,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    UPDATE_ME
-
+    AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
   I change the condition in the `list comprehension`_ of the first assertion
 
@@ -624,7 +623,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    UPDATE_ME
+    AssertionError: Lists differ: [0, 2, 4, 6, ...] != [0, 3, 6, 9, ...]
 
   I change the condition in the solution
 
@@ -696,7 +695,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    UPDATE ME
+    AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
   I change the condition in ``get_even_numbers``
 

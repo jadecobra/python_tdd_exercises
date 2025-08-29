@@ -68,7 +68,7 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_unknown_arguments(self):
         self.assertEqual(
             src.functions.w_unknown_arguments(
-                0, 1, 2, 3, a=4, b=5, c=6, d=7
+                0, 1, 2, 3, a=4, b=5, c=6, d=7,
             ),
             ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
         )
@@ -89,5 +89,5 @@ class TestFunctions(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 # NameError
-# AttributeError
+# IndentationError
 # SyntaxError
