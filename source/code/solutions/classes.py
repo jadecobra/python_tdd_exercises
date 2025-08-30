@@ -30,7 +30,7 @@ def update_year_of_birth(person, new_year_of_birth):
         first_name=person.get('first_name'),
         last_name=person.get('last_name'),
         sex=person.get('sex'),
-        year_of_birth=person.get('year_of_birth'),
+        year_of_birth=new_year_of_birth,
     )
 
 
@@ -48,8 +48,8 @@ class Person(object):
     def introduce(self):
         return (
             f'Hi! My name is {self.first_name} '
-            f'{self.last_name} and '
-            f'I am {self.get_age()}'
+            f'{self.last_name} '
+            f'and I am {self.get_age()}'
         )
 
     def get_age(self):

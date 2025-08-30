@@ -292,7 +292,7 @@ refactor: make it better
 test_making_a_list_w_extend
 ****************************************************************************************
 
-I can also use the extend_ :ref:`method<functions>` to make a list_ from an iterable_
+I can also use the extend_ :ref:`method<functions>` to make a :ref:`list<lists>` from an iterable_
 
 red: make it fail
 #################################################################################
@@ -391,7 +391,7 @@ refactor: make it better
 test_making_a_list_w_a_list_comprehension
 ****************************************************************************************
 
-I can also use a `list comprehension`_ to make a list_ from an iterable_
+I can also use a `list comprehension`_ to make a :ref:`list<lists>` from an iterable_
 
 red: make it fail
 #################################################################################
@@ -492,7 +492,7 @@ refactor: make it better
 test_making_a_list_w_conditions
 ****************************************************************************************
 
-What if I had to build a list from an iterable_ based on a condition, how would I do it with the :ref:`list<lists>` constructor_ without changing the iterable_? This is where a `for loop`_ or `list comprehension`_ works better
+What if I had to build a :ref:`list<lists>` from an iterable_ based on a condition? This is where a `for loop`_ or `list comprehension`_ works better
 
 red: make it fail
 #################################################################################
@@ -1063,7 +1063,7 @@ The tests show I can make a :ref:`list<lists>` from an iterable_ with
 * the :ref:`list <lists>` constructor_
 * and `list comprehensions`_
 
-I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a list with one line
+I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line
 
 I can also do this with :ref:`dictionaries`, the syntax for a dict comprehension is any variation of the following
 
