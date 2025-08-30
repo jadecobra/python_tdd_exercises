@@ -356,7 +356,7 @@ refactor: make it better
 
   the test passes. This way uses less lines than the `for loop`_
 
-* I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the class variables
+* I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the :ref:`class<classes>` :ref:`attributes<AttributeError>`
 
   .. code-block:: python
 
