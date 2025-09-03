@@ -144,7 +144,7 @@ class TestDictionaries(unittest.TestCase):
             ['key1', 'keyN']
         )
 
-    def test_pop_removes_key_from_a_dictionary_and_returns_its_value(self):
+    def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
         a_dictionary = {'key': 'value'}
 
         with self.assertRaises(KeyError):
@@ -170,7 +170,7 @@ class TestDictionaries(unittest.TestCase):
         )
         self.assertEqual(a_dictionary, {'key1': 'value1'})
 
-    def test_setdefault_adds_a_key_to_a_dictionary(self):
+    def test_setdefault_adds_given_key_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(
             a_dictionary.setdefault('new_key', 'default'),
