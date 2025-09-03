@@ -35,14 +35,14 @@ class TestPerson(unittest.TestCase):
         self.random_factory_person = src.person.factory(
             first_name=self.random_first_name,
             last_name=self.random_last_name,
+            sex=self.random_sex,
             year_of_birth=self.random_year_of_birth,
-            sex=self.random_sex
         )
         self.random_classy_person = src.person.Person(
             first_name=self.random_first_name,
             last_name=self.random_last_name,
+            sex=self.random_sex,
             year_of_birth=self.random_year_of_birth,
-            sex=self.random_sex
         )
 
     def test_takes_keyword_arguments(self):
@@ -179,3 +179,4 @@ class TestPerson(unittest.TestCase):
 # TypeError
 # SyntaxError
 # IndentationError
+# KeyError
