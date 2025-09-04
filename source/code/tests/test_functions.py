@@ -4,13 +4,13 @@ import unittest
 
 class TestFunctions(unittest.TestCase):
 
-    def test_making_functions_w_pass(self):
+    def test_making_a_function_w_pass(self):
         self.assertIsNone(src.functions.w_pass())
 
-    def test_making_functions_w_return(self):
+    def test_making_a_function_w_return(self):
         self.assertIsNone(src.functions.w_return())
 
-    def test_making_functions_w_return_none(self):
+    def test_making_a_function_w_return_none(self):
         self.assertIsNone(src.functions.w_return_none())
 
     def test_constant_function(self):
@@ -63,6 +63,10 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(
             src.functions.w_default_arguments('jane'),
             ('jane', 'doe')
+        )
+        self.assertEqual(
+            src.functions.w_default_arguments('joe', 'blow'),
+            ('joe', 'blow')
         )
 
     def test_functions_w_unknown_arguments(self):
