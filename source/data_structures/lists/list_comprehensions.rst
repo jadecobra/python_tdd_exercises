@@ -90,7 +90,7 @@ the terminal shows :ref:`AssertionError`
 - ``for item in iterable:`` goes over every item in the range_ object_
 - ``a_list.append(item)`` gets called every time the `for loop`_ runs
 
-the list is no longer empty after the operation
+the :ref:`list<lists>` is no longer empty after the operation
 
 green: make it pass
 #################################################################################
@@ -125,7 +125,7 @@ refactor: make it better
 
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to get the same thing? Sometimes one is better than the other
+  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing? Sometimes one is better than the other
 
 * I add another assertion to practice writing a `for loop`_
 
@@ -213,7 +213,7 @@ refactor: make it better
 
   the test passes
 
-* I need a better test, this one breaks when I change the values in the range_ :ref:`object<classes>`
+* I need a better test, because the solution is fixed, the test fails when I change the values in the range_ :ref:`object<classes>`
 
   .. code-block:: python
 
@@ -246,7 +246,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
 
-  this range_ object_ now goes from ``0`` to anywhere between ``2`` and ``999``. I could make it bigger if I want. The values now change every time the test runs
+  this range_ object_ now goes from ``0`` to anywhere between ``1`` and ``999``. The values change every time the test runs
 
 * I change the expectation in the first assertion
 
@@ -255,7 +255,7 @@ refactor: make it better
     self.assertEqual(a_list, list(iterable))
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. Since it is a duplication I remove the line
+  the test passes. I remove the line because it is a duplication
 
 * I change the expectation of the second assertion
 
@@ -492,7 +492,7 @@ refactor: make it better
 test_making_a_list_w_conditions
 ****************************************************************************************
 
-What if I had to build a :ref:`list<lists>` from an iterable_ based on a condition? This is where a `for loop`_ or `list comprehension`_ works better
+What if I had to make a :ref:`list<lists>` from an iterable_ based on a condition? This is where a `for loop`_ or `list comprehension`_ works better
 
 red: make it fail
 #################################################################################
@@ -507,7 +507,10 @@ I add a failing test
           if item % 2 == 0:
               even_numbers.append(item)
 
-      self.assertEqual(even_numbers, list(self.iterable))
+      self.assertEqual(
+          even_numbers,
+          list(self.iterable)
+      )
 
 the terminal shows :ref:`AssertionError`
 
@@ -582,7 +585,7 @@ refactor: make it better
 
   the test passes
 
-* I wrote the same condition in the test 3 times. If I want to change it, I have to make the same change 3 times in the test and once in the solution. Let's say the condition is that the number should be divisible by ``3``, we can ignore the names of the variables and the :ref:`functions<functions>` for now
+* I wrote the same condition in the test 3 times. If I want to change it, I have to make the same change 3 times in the test and once in the solution. Let's say the condition is that the number should be divisible by ``3``
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -599,7 +602,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
-  I change the condition in the `list comprehension`_ of the first assertion
+  I change the condition in the `list comprehension`_ of the first :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -645,7 +648,7 @@ refactor: make it better
     def condition(number):
         return number % 3 == 0
 
-  then change the condition in the test to reference the new :ref:`function<functions>`
+  then change the condition in the test to call the new :ref:`function<functions>`
 
   .. code-block:: python
     :emphasize-lines: 5

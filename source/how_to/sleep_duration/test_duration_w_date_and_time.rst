@@ -527,7 +527,7 @@ test_get_datetime
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I want a test for the ``get_datetime`` :ref:`function<functions>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it reference ``src.sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<functions>`
+I want a test for the ``get_datetime`` :ref:`function<functions>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it call ``src.sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<functions>`
 
 .. code-block:: python
 

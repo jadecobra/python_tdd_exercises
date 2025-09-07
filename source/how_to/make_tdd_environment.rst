@@ -590,7 +590,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     touch makePythonTdd.sh
 
-* I use the history_ program to list the commands I typed and use them as a reference for the program
+* I use the history_ program to list the commands I typed and use them as an example for the program
 
   .. code-block:: shell
 

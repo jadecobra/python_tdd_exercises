@@ -98,7 +98,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  the ``()`` to the right of ``src.type_error.none`` makes it a call, and the name ``none`` is a reference to :ref:`None` which is not callable_
+  the ``()`` to the right of ``src.type_error.none`` makes it a call, and the name ``none`` points to :ref:`None` which is not callable_
 
 * I add the error to the list of Exceptions_ encountered
 

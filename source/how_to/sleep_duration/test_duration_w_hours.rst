@@ -93,7 +93,7 @@ green: make it pass
         None
     )
 
-* then change the first argument to reference the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
+* then change the first argument to the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
@@ -102,13 +102,13 @@ green: make it pass
         None
     )
 
-  which gives me NameError_
+  I get NameError_
 
   .. code-block:: python
 
     NameError: name 'src' is not defined
 
-  and I add it as an exception encountered
+  I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ green: make it pass
 
     AssertionError: <module 'src.sleep_duration' from '/workspace[46 chars].py'> != None
 
-* I add a reference to something in the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
+* I use something in the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 
