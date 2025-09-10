@@ -351,10 +351,10 @@ refactor: make it better
 
     self.assertEqual(
         a_list,
-        src.list_comprehensions.for_loop(iterable)
+        list(iterable)
     )
 
-  the test passes. This way uses less lines than the `for loop`_
+  the test passes. This way uses less lines than the `for loop`_ but is not yet better than the :ref:`list<lists>` constructor_
 
 * I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the :ref:`class<classes>` :ref:`attributes<AttributeError>`
 
@@ -380,7 +380,7 @@ refactor: make it better
             self.assertIsNone(self.a_list.extend(self.iterable))
             self.assertEqual(
                 self.a_list,
-                src.list_comprehensions.for_loop(self.iterable)
+                list(self.iterable)
             )
 
   the terminal still shows green
@@ -405,7 +405,7 @@ I add a failing test
 
   def test_making_a_list_w_a_list_comprehension(self):
       self.assertEqual(
-          src.list_comprehensions.for_loop(self.iterable),
+          list(self.iterable),
           []
       )
 
@@ -423,7 +423,7 @@ I add a `list comprehension`_
 .. code-block:: python
 
   self.assertEqual(
-      src.list_comprehensions.for_loop(self.iterable),
+      list(self.iterable),
       [item for item in self.iterable]
   )
 
@@ -437,7 +437,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        src.list_comprehensions.for_loop(self.iterable),
+        list(self.iterable),
         [item for item in self.iterable]
     )
     self.assertEqual(
