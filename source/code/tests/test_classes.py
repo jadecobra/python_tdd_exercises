@@ -73,7 +73,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             src.person.introduce(self.random_factory_person),
             (
-                f'Hi! My name is {self.random_first_name} '
+                f'My name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
@@ -83,7 +83,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             self.random_classy_person.introduce(),
             (
-                f'Hi! My name is {self.random_first_name} '
+                f'My name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
@@ -178,5 +178,4 @@ class TestPerson(unittest.TestCase):
 # AttributeError
 # TypeError
 # SyntaxError
-# IndentationError
 # KeyError
