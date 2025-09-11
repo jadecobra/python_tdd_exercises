@@ -90,7 +90,7 @@ the terminal shows :ref:`AssertionError`
 - ``for item in iterable:`` goes over every item in the range_ object_
 - ``a_list.append(item)`` gets called every time the `for loop`_ runs
 
-the :ref:`list<lists>` is no longer empty after the operation
+the :ref:`list<lists>` is not empty after the operation
 
 green: make it pass
 #################################################################################
@@ -106,7 +106,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion to show that I can get the same result with the :ref:`list<lists>` constructor_
+* I add another :ref:`assertion<AssertionError>` to show that I can get the same result with the :ref:`list<lists>` constructor_
 
   .. code-block:: python
 
@@ -127,7 +127,7 @@ refactor: make it better
 
   the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing? Sometimes one is better than the other
 
-* I add another assertion to practice writing a `for loop`_
+* I add another :ref:`assertion<AssertionError>` to practice writing a `for loop`_
 
   .. code-block:: python
 
@@ -329,7 +329,7 @@ the terminal shows green again
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what changed in the :ref:`list<lists>`
+* I add another :ref:`assertion<AssertionError>` to see what changed in the :ref:`list<lists>`
 
   .. code-block:: python
 
@@ -432,7 +432,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion for practice
+* I add another :ref:`assertion<AssertionError>` for practice
 
   .. code-block:: python
 
@@ -553,7 +553,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion for practice
+* I add another :ref:`assertion<AssertionError>` for practice
 
   .. code-block:: python
 
@@ -821,7 +821,7 @@ refactor: make it better
         return [number for number in iterable if not is_even(number)]
         return [number for number in iterable if number % 2 != 0]
 
-  the terminal still shows green, I remove the second `return statement`
+  the terminal still shows green, I remove the second `return statement`_
 
 ----
 

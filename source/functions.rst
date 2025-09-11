@@ -329,7 +329,7 @@ refactor: make it better
 
 Wait a minute! Something is not quite right here. The definition for a identity :ref:`function<functions>` was that it returned the same thing it was given, the test passes when :ref:`False<test_what_is_false>` is given as input, will it still pass when another value is given or will it always return :ref:`False<test_what_is_false>`? Time to write a test
 
-* I add a new assertion to ``test_identity_functions``
+* I add a new :ref:`assertion<AssertionError>` to ``test_identity_functions``
 
   .. code-block:: python
 
@@ -453,7 +453,7 @@ How can I make this better?
 
   I still have passing tests
 
-* I add another assertion to make sure that ``take_positional_arguments`` outputs data in the order given
+* I add another :ref:`assertion<AssertionError>` to make sure that ``take_positional_arguments`` outputs data in the order given
 
   .. code-block:: python
 
@@ -531,7 +531,7 @@ test_functions_w_unknown_positional_arguments
 
   the test passes
 
-* I add another assertion to show that this :ref:`function<functions>` never needs to know the number of inputs it is receiving
+* I add another :ref:`assertion<AssertionError>` to show that this :ref:`function<functions>` never needs to know the number of inputs it is receiving
 
   .. code-block:: python
 
@@ -654,7 +654,7 @@ green: make it pass
 refactor: make it better
 ################################################################################
 
-* So far ``take_keyword_arguments`` looks the same as ``take_positional_arguments``, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an assertion that puts the input data out of order to see if there is a difference
+* So far ``take_keyword_arguments`` looks the same as ``take_positional_arguments``, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an :ref:`assertion<AssertionError>` that puts the input data out of order to see if there is a difference
 
   .. code-block:: python
 
@@ -762,7 +762,7 @@ test_functions_w_unknown_keyword_arguments
 
   the test passes
 
-* I add another assertion with a different number of inputs
+* I add another :ref:`assertion<AssertionError>` with a different number of inputs
 
   .. code-block:: python
 

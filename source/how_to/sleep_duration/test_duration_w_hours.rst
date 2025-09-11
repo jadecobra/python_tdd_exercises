@@ -566,7 +566,7 @@ refactor: make it better
 
         self.assertEqual(split, ['01', '23'])
 
-  the terminal still shows passing tests. I add an assertion for indexing the :ref:`list <lists>`
+  the terminal still shows passing tests. I add an :ref:`assertion<AssertionError>` for indexing the :ref:`list <lists>`
 
   .. code-block:: python
 
@@ -587,7 +587,7 @@ refactor: make it better
 
   and it passes
 
-* I add another assertion for the minutes
+* I add another :ref:`assertion<AssertionError>` for the minutes
 
   .. code-block:: python
 
@@ -674,7 +674,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   and the test passes
 
-* I add another assertion to test a bigger number
+* I add another :ref:`assertion<AssertionError>` to test a bigger number
 
   .. code-block:: python
 

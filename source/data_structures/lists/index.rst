@@ -293,7 +293,7 @@ the terminal shows green, the append_ :ref:`method<functions>` returns :ref:`Non
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what append_ did to the list_
+* I add another :ref:`assertion<AssertionError>` to see what append_ did to the list_
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -382,7 +382,7 @@ the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None
 red: make it fail
 #################################################################################
 
-I add an assertion to show what it did to the list_
+I add an :ref:`assertion<AssertionError>` to show what it did to the list_
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -583,7 +583,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* ``0`` is in the list_ 1 time, I add ``1`` to it 2 more times then add an assertion for it
+* ``0`` is in the list_ 1 time, I add ``1`` to it 2 more times then add an :ref:`assertion<AssertionError>` for it
 
   .. code-block:: python
     :emphasize-lines: 2, 4
@@ -703,7 +703,7 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what it did to the list_
+* I add another :ref:`assertion<AssertionError>` to see what it did to the list_
 
   .. code-block:: python
 
@@ -1147,14 +1147,14 @@ refactor: make it better
 
   the test is green again
 
-* I add another assertion to see what happens when I insert_ an item in the middle of the list
+* I add another :ref:`assertion<AssertionError>` to see what happens when I insert_ an item in the middle of the list
 
   .. code-block:: python
 
     self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
     self.assertIsNone(a_list.insert(3, 1.5))
 
-  the terminal shows green. I add an assertion to see what it did to the list
+  the terminal shows green. I add an :ref:`assertion<AssertionError>` to see what it did to the list
 
   .. code-block:: python
 
@@ -1483,7 +1483,7 @@ I add the next test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.reverse())
 
-the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an assertion to see what it did to the list_
+the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an :ref:`assertion<AssertionError>` to see what it did to the list_
 
 .. code-block:: python
 
@@ -1582,7 +1582,7 @@ refactor: make it better
         self.assertIsNone(a_list.sort())
 
 
-  the terminal still shows green, sort_ returns :ref:`None` when called. I add another assertion to see what it did to the list_
+  the terminal still shows green, sort_ returns :ref:`None` when called. I add another :ref:`assertion<AssertionError>` to see what it did to the list_
 
   .. code-block:: python
 

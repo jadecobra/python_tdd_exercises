@@ -217,7 +217,7 @@ The ``add`` :ref:`function<functions>` passes the test but does not meet the act
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add an assertion to show the problem with the :ref:`function<functions>`
+I add an :ref:`assertion<AssertionError>` to show the problem with the :ref:`function<functions>`
 
 .. code-block:: python
 
@@ -296,7 +296,7 @@ refactor: make it better
     AssertionError: -1 != 0
     AssertionError: 1 != 2
 
-  I change the expectation in the assertion to the correct calculation
+  I change the expectation in the :ref:`assertion<AssertionError>` to the correct calculation
 
   .. code-block:: python
 

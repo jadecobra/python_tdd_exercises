@@ -90,7 +90,7 @@ green: make it pass
     def test_duration_w_date_and_time(self):
     ...
 
-* then add an assertion in ``test_converting_strings_to_numbers`` to see if I can make the same ValueError_ happen again to make sure the problem is with converting the string to a number
+* then add an :ref:`assertion<AssertionError>` in ``test_converting_strings_to_numbers`` to see if I can make the same ValueError_ happen again to make sure the problem is with converting the string to a number
 
   .. code-block:: python
 
@@ -120,7 +120,7 @@ green: make it pass
   and the test is green again
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time``
-* then change the call in the assertion to a different :ref:`function<functions>`
+* then change the call in the :ref:`assertion<AssertionError>` to a different :ref:`function<functions>`
 
   .. code-block:: python
 

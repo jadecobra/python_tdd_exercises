@@ -459,7 +459,7 @@ refactor: make it better
 
   the terminal shows :ref:`AttributeError`
 
-* and I change each assertion to the right value until they all pass
+* and I change each :ref:`assertion<AssertionError>` to the right value until they all pass
 
 ----
 
@@ -637,7 +637,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I add another assertion to ``test_making_a_class_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
+* I add another :ref:`assertion<AssertionError>` to ``test_making_a_class_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
 
   .. code-block:: python
 

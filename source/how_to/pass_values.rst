@@ -181,7 +181,7 @@ The problem with this solution is that ``text`` does not care about the input an
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new assertion to ``test_passing_a_string``
+I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string``
 
 .. code-block:: python
 
@@ -273,7 +273,7 @@ I make the expectation match reality and the test passes
 refactor: make it better
 #################################################################################
 
-then add another assertion for a different :ref:`class<classes>`
+then add another :ref:`assertion<AssertionError>` for a different :ref:`class<classes>`
 
 .. code-block:: python
 
@@ -348,7 +348,7 @@ test_passing_a_boolean
 red: make it fail
 #################################################################################
 
-I add a test for :ref:`booleans`, first with an assertion for :ref:`True<test_what_is_true>`
+I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>` for :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -379,7 +379,7 @@ green: make it pass
 
   and the test passes
 
-* then I add an assertion for :ref:`False<test_what_is_false>`
+* then I add an :ref:`assertion<AssertionError>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
 

@@ -599,7 +599,7 @@ red: make it fail
 
   the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None`
 
-* I add an assertion to see what it did to the dictionary_
+* I add an :ref:`assertion<AssertionError>` to see what it did to the dictionary_
 
   .. code-block:: python
 
@@ -706,7 +706,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion to see what happens to the dictionary_ after the call
+* I add another :ref:`assertion<AssertionError>` to see what happens to the dictionary_ after the call
 
   .. code-block:: python
 
@@ -850,7 +850,7 @@ refactor: make it better
 
   the dictionary_ did not change
 
-* I remove the assertion then change the call to use the dict_ :ref:`class<classes>`
+* I remove the :ref:`assertion<AssertionError>` then change the call to use the dict_ :ref:`class<classes>`
 
   .. code-block:: python
 
@@ -1002,7 +1002,7 @@ refactor: make it better
 
   the test passes
 
-* I change the key in the first assertion for fun
+* I change the key in the first :ref:`assertion<AssertionError>` for fun
 
   .. code-block:: python
 
@@ -1448,7 +1448,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion to see what the :ref:`method<functions>` did to the dictionary_
+* I add another :ref:`assertion<AssertionError>` to see what the :ref:`method<functions>` did to the dictionary_
 
   .. code-block:: python
 
@@ -1681,7 +1681,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assertion to see what it did to the dictionary_
+* I add an :ref:`assertion<AssertionError>` to see what it did to the dictionary_
 
   .. code-block:: python
 
@@ -1744,7 +1744,7 @@ refactor: make it better
 
   the test is green again
 
-* I add an assertion to see what happens when the key is already in the dictionary_
+* I add an :ref:`assertion<AssertionError>` to see what happens when the key is already in the dictionary_
 
   .. code-block:: python
 
@@ -1777,7 +1777,7 @@ refactor: make it better
 
   the test passes
 
-* It looks like setdefault_ has a condition where it sets a default value when the key is not in the dictionary_ and returns the value when the key is in it. I change the first assertion to find out
+* It looks like setdefault_ has a condition where it sets a default value when the key is not in the dictionary_ and returns the value when the key is in it. I change the first :ref:`assertion<AssertionError>` to find out
 
   .. code-block:: python
 
@@ -1886,7 +1886,7 @@ red: make it fail
 
   the test is green. The update_ :ref:`method<functions>` returns :ref:`None`
 
-* I add an assertion to see what it did to the dictionary_
+* I add an :ref:`assertion<AssertionError>` to see what it did to the dictionary_
 
   .. code-block:: python
 
@@ -1965,7 +1965,7 @@ refactor: make it better
 
   the test passes
 
-* I add an assertion to see what would happen if I give a key that is already in the dictionary_
+* I add an :ref:`assertion<AssertionError>` to see what would happen if I give a key that is already in the dictionary_
 
   .. code-block:: python
 
@@ -2233,7 +2233,7 @@ refactor: make it better
 
   the test passes
 
-* I add an assertion to show that I can use the get_ :ref:`method<functions>` if I do not want to get :ref:`KeyError<test_key_error>` with a key that is not in a dictionary_
+* I add an :ref:`assertion<AssertionError>` to show that I can use the get_ :ref:`method<functions>` if I do not want to get :ref:`KeyError<test_key_error>` with a key that is not in a dictionary_
 
   .. code-block:: python
 
@@ -2254,7 +2254,7 @@ refactor: make it better
 
   the test passes
 
-* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` with a key that was not in the dictionary_, I add an assertion for it
+* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` with a key that was not in the dictionary_, I add an :ref:`assertion<AssertionError>` for it
 
   .. code-block:: python
 
