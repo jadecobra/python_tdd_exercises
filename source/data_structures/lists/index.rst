@@ -467,7 +467,7 @@ the :ref:`method<functions>` returns a copy of the list_
 green: make it pass
 #################################################################################
 
-I add the list_ to the assertion
+I add the list_ to the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -892,7 +892,7 @@ refactor: make it better
 
   the test is green again
 
-* I add a new assertion
+* I add a new :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -918,7 +918,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -939,7 +939,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -960,7 +960,7 @@ refactor: make it better
 
   the test is green again
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -989,7 +989,7 @@ refactor: make it better
     def test_index(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
 
-  the terminal still shows green. I add an assertion
+  the terminal still shows green. I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1105,7 +1105,7 @@ the test is green
 refactor: make it better
 #################################################################################
 
-* I add an assertion
+* I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1251,7 +1251,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assertion
+* I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1272,7 +1272,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1292,7 +1292,7 @@ refactor: make it better
     self.assertEqual(a_list, [0, 1, 2])
     self.assertEqual(a_list.pop(), 2)
 
-  the test passes. I add another assertion
+  the test passes. I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1373,7 +1373,7 @@ the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`Non
 refactor: make it better
 #################################################################################
 
-* I add an assertion
+* I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1569,7 +1569,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add a new list_ and another assertion
+* I add a new list_ and another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 5,6
@@ -1722,7 +1722,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1743,7 +1743,7 @@ refactor: make it better
 
   the terminal shows green again
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1804,7 +1804,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1825,7 +1825,7 @@ refactor: make it better
 
   the test passes
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1947,7 +1947,7 @@ refactor: make it better
 
   the terminal shows green again
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 

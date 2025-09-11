@@ -683,7 +683,7 @@ this :ref:`method<functions>` returns a copy of the dictionary_
 green: make it pass
 #################################################################################
 
-I add the value to the assertion
+I add the value to the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
 
@@ -1049,7 +1049,7 @@ refactor: make it better
 
   the test is green again
 
-* I do the same thing with the second assertion
+* I do the same thing with the second :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1412,7 +1412,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1757,7 +1757,7 @@ refactor: make it better
 
     AssertionError: 'value' is not None
 
-  setdefault_ returns the value for a key in a dictionary_ when the key is in the dictionary_. I add the value to the assertion
+  setdefault_ returns the value for a key in a dictionary_ when the key is in the dictionary_. I add the value to the :ref:`assertion<AssertionError>`
 
   .. code-block:: Python
 
@@ -1833,7 +1833,7 @@ refactor: make it better
 
   the test passes
 
-* I try the same thing with the second assertion
+* I try the same thing with the second :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1951,7 +1951,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value', 'new_key': 'new value'} != {'key': 'value'}
 
-  I add the new key-value pair to the assertion
+  I add the new key-value pair to the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1992,7 +1992,7 @@ refactor: make it better
 
   the test passes
 
-* since the update_ :ref:`method<functions>` takes keyword arguments it means I should be able to give it a dictionary_ as input. I add another assertion
+* since the update_ :ref:`method<functions>` takes keyword arguments it means I should be able to give it a dictionary_ as input. I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -2209,7 +2209,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 

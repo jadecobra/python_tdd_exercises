@@ -263,7 +263,7 @@ green: make it pass
 
   the test passes
 
-* I want the ``factory`` :ref:`function<functions>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation in the assertion
+* I want the ``factory`` :ref:`function<functions>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation in the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 

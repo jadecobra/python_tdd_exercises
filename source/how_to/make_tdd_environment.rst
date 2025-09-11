@@ -194,7 +194,7 @@ red: make it fail
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`
     * ``test_failure`` is the name of this :ref:`method<functions>`, I can use any name as long as it starts with ``test_``
     * ``self`` is used to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension the `unittest.TestCase`_ class instead of using ``TestMagic().`` or ``unittest.TestCase().``
-    * ``self.assertFalse(True)`` is an assertion
+    * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input

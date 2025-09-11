@@ -125,7 +125,7 @@ refactor: make it better
 
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing? Sometimes one is better than the other
+  the test passes. Why would I use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing? Sometimes one is better than the other, I show this before the end of this chapter
 
 * I add another :ref:`assertion<AssertionError>` to practice writing a `for loop`_
 
@@ -213,7 +213,7 @@ refactor: make it better
 
   the test passes
 
-* I need a better test, because the solution is fixed, the test fails when I change the values in the range_ :ref:`object<classes>`
+* I need a better test, this solution is fixed, the test fails when I change the values in the range_ :ref:`object<classes>`
 
   .. code-block:: python
 
@@ -248,7 +248,7 @@ refactor: make it better
 
   this range_ object_ now goes from ``0`` to anywhere between ``1`` and ``999``. The values change every time the test runs
 
-* I change the expectation in the first assertion
+* I change the expectation in the first :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -257,7 +257,7 @@ refactor: make it better
 
   the test passes. I remove the line because it is a duplication
 
-* I change the expectation of the second assertion
+* I change the expectation of the second :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -354,9 +354,9 @@ refactor: make it better
         list(iterable)
     )
 
-  the test passes. This way uses less lines than the `for loop`_ but is not yet better than the :ref:`list<lists>` constructor_
+  the test passes. This uses less lines than the `for loop`_ but is not yet better than the :ref:`list<lists>` constructor_
 
-* I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the :ref:`class<classes>` :ref:`attributes<AttributeError>`
+* I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the new :ref:`class<classes>` :ref:`attributes<AttributeError>`
 
   .. code-block:: python
 
@@ -462,9 +462,9 @@ refactor: make it better
     def list_comprehension(iterable):
         return [item for item in iterable]
 
-  the test passes. The `list comprehension`_ has the same syntax as the `for loop`_
+  the test passes. The `list comprehension`_ has the same syntax as the `for loop`_ without the append_
 
-* I made 2 :ref:`functions<functions>` - one that uses a `for loop`_ and another that uses a `list comprehension`_ to do the same thing
+* I made 2 :ref:`functions<functions>` that do the same thing - one that uses a `for loop`_ and another that uses a `list comprehension`_
 
   .. code-block:: python
 
@@ -492,7 +492,7 @@ refactor: make it better
 test_making_a_list_w_conditions
 ****************************************************************************************
 
-What if I had to make a :ref:`list<lists>` from an iterable_ based on a condition? This is where a `for loop`_ or `list comprehension`_ works better
+What if I had to make a :ref:`list<lists>` from an iterable_ based on a condition?
 
 red: make it fail
 #################################################################################
@@ -524,7 +524,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the expectation to use a `list comprehension`_
+How would I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_. Since I can make the list with a `for loop`_, I can do it with a a `list comprehension`_, I change the expectation
 
 .. code-block:: python
 
@@ -585,7 +585,7 @@ refactor: make it better
 
   the test passes
 
-* I wrote the same condition in the test 3 times. If I want to change it, I have to make the same change 3 times in the test and once in the solution. Let's say the condition is that the number should be divisible by ``3``
+* I wrote the same condition in the test 3 times. If I want to change it, I have to make the same change 3 times in the test and once in the solution. Imagine the new condition is that the number should be divisible by ``3``
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -612,7 +612,7 @@ refactor: make it better
         [item for item in self.iterable if item % 3 == 0]
     )
 
-  the terminal shows green. I change the condition in the `list comprehension`_ of the second assertion
+  the terminal shows green. I change the condition in the `list comprehension`_ of the second :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -660,7 +660,7 @@ refactor: make it better
             if condition(item):
                 even_numbers.append(item)
 
-  the terminal still shows green. I remove the commented line and do the same thing in the first assertion
+  the terminal still shows green. I remove the commented line and do the same thing in the first :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -686,7 +686,7 @@ refactor: make it better
         [item for item in self.iterable if condition(item)]
     )
 
-  the terminal still shows green. I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` because it is too general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``. I change the condition in the :ref:`function<functions>`
+  the terminal still shows green. I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``. I change the condition in the :ref:`function<functions>`
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -732,7 +732,7 @@ refactor: make it better
         else:
             odd_numbers.append(item)
 
-  I add an assertion
+  I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -751,7 +751,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [1, 3, 5, 7, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
 
-  I add the condition to the assertion
+  I add the condition to the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -760,7 +760,7 @@ refactor: make it better
         [item for item in self.iterable if not condition(item)]
     )
 
-  the test passes. I add another assertion
+  the test passes. I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -872,7 +872,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -939,7 +939,7 @@ refactor: make it better
             [process(item) for item in self.iterable]
         )
 
-  the terminal still shows green. I remove the commented lines. I do NOT recommend using ``process`` as a name for a :ref:`function<functions>` because it is too general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
+  the terminal still shows green. I remove the commented lines. I do NOT recommend using ``process`` as a name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
 
 ----
 
@@ -1012,7 +1012,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I add another assertion
+I add another :ref:`assertion<AssertionError>`
 
 .. code-block:: python
 

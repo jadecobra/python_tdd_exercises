@@ -84,7 +84,7 @@ red: make it fail
 green: make it pass
 *********************************************************************************
 
-* I add :ref:`None` as the first and second arguments of the assertion
+* I add :ref:`None` as the first and second arguments of the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 

@@ -69,7 +69,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* and change ``test_failure`` to ``test_addition`` then add an assertion
+* and change ``test_failure`` to ``test_addition`` then add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -264,7 +264,7 @@ refactor: make it better
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers
 
-* then I add variables and a new assertion
+* then I add variables and a new :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -761,7 +761,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the assertion
+* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 

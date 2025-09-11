@@ -693,7 +693,7 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 

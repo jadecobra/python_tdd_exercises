@@ -703,7 +703,7 @@ refactor: make it better
 test_functions_w_unknown_keyword_arguments
 *********************************************************************************
 
-* The :ref:`function<functions>` currently only takes in 2 keyword arguments. What if I want a :ref:`function<functions>` that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``. I add an assertion
+* The :ref:`function<functions>` currently only takes in 2 keyword arguments. What if I want a :ref:`function<functions>` that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``. I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
