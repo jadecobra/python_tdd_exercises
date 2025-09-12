@@ -58,9 +58,7 @@ class TestPerson(unittest.TestCase):
 
     def test_function_w_default_keyword_arguments(self):
         self.assertEqual(
-            src.person.factory(
-                first_name=self.random_first_name,
-            ),
+            src.person.factory(self.random_first_name),
             dict(
                 first_name=self.random_first_name,
                 last_name='doe',
