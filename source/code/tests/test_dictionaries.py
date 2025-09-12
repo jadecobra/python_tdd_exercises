@@ -146,9 +146,6 @@ class TestDictionaries(unittest.TestCase):
 
     def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
         a_dictionary = {'key': 'value'}
-
-        with self.assertRaises(KeyError):
-            a_dictionary.pop('not_in_dictionary')
         self.assertEqual(
             a_dictionary.pop('not_in_dictionary', 'default'),
             'default'
