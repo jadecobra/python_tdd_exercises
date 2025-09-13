@@ -61,7 +61,7 @@ test_making_a_list_w_a_for_loop
 red: make it fail
 #################################################################################
 
-I change ``test_failure`` to ``test_making_a_list_w_a_for_loop``
+I change ``test_failure``
 
 .. code-block:: python
 
@@ -86,11 +86,9 @@ the terminal shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 2, 3] != []
 
 - ``a_list = []`` makes an empty list and gives it a name
-- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first given number to the second given number minus 1, in this case it goes from ``0`` to ``3``
+- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first number to the second given number minus 1, in this case it goes from ``0`` to ``3``
 - ``for item in iterable:`` goes over every item in the range_ object_
 - ``a_list.append(item)`` gets called every time the `for loop`_ runs
-
-the :ref:`list<lists>` is not empty after the operation
 
 green: make it pass
 #################################################################################
@@ -101,7 +99,7 @@ I change the expectation to match the values in the terminal
 
   self.assertEqual(a_list, [0, 1, 2, 3])
 
-the test passes
+the test passes. The :ref:`list<lists>` now has the items from the range_ object_ after `for loop`_ runs
 
 refactor: make it better
 #################################################################################
@@ -125,7 +123,7 @@ refactor: make it better
 
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. Why would I use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing? Sometimes one is better than the other, I show this before the end of this chapter
+  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing and with less characters? Sometimes one is better than the other, I show this before the end of the chapter
 
 * I add another :ref:`assertion<AssertionError>` to practice writing a `for loop`_
 
@@ -213,7 +211,7 @@ refactor: make it better
 
   the test passes
 
-* I need a better test, this solution is fixed, the test fails when I change the values in the range_ :ref:`object<classes>`
+* this solution is fixed, the test fails when I change the values in the range_ :ref:`object<classes>`
 
   .. code-block:: python
 
@@ -225,7 +223,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
-* I undo the change then import the random_ :ref:`module<ModuleNotFoundError>`
+* I undo the change then import the random_ :ref:`module<ModuleNotFoundError>` to add randomness to the test
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -273,7 +271,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, ...]
 
-  I change the :ref:`function<functions>`
+  I change the ``for_loop`` :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -292,7 +290,7 @@ refactor: make it better
 test_making_a_list_w_extend
 ****************************************************************************************
 
-I can also use the extend_ :ref:`method<functions>` to make a :ref:`list<lists>` from an iterable_
+I can use the :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` :ref:`method<functions>` to make a :ref:`list<lists>` from an iterable_
 
 red: make it fail
 #################################################################################
@@ -334,10 +332,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertIsNone(a_list.extend(iterable))
-    self.assertEqual(
-        a_list,
-        []
-    )
+    self.assertEqual(a_list, [])
 
   the terminal shows :ref:`AssertionError`
 
@@ -349,12 +344,9 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertEqual(
-        a_list,
-        list(iterable)
-    )
+    self.assertEqual(a_list, list(iterable))
 
-  the test passes. This uses less lines than the `for loop`_ but is not yet better than the :ref:`list<lists>` constructor_
+  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not yet better than the :ref:`list<lists>` constructor_
 
 * I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the new :ref:`class<classes>` :ref:`attributes<AttributeError>`
 
@@ -378,10 +370,7 @@ refactor: make it better
 
         def test_making_a_list_w_extend(self):
             self.assertIsNone(self.a_list.extend(self.iterable))
-            self.assertEqual(
-                self.a_list,
-                list(self.iterable)
-            )
+            self.assertEqual(self.a_list, list(self.iterable))
 
   the terminal still shows green
 
@@ -391,7 +380,7 @@ refactor: make it better
 test_making_a_list_w_a_list_comprehension
 ****************************************************************************************
 
-I can also use a `list comprehension`_ to make a :ref:`list<lists>` from an iterable_
+I can use a `list comprehension`_ to make a :ref:`list<lists>` from an iterable_
 
 red: make it fail
 #################################################################################
@@ -456,7 +445,10 @@ refactor: make it better
   .. code-block:: python
 
     def for_loop(iterable):
-        ...
+        result = []
+        for item in iterable:
+            result.append(item)
+        return result
 
 
     def list_comprehension(iterable):
