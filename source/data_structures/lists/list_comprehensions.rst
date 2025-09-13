@@ -516,7 +516,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-How would I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_. Since I can make the list with a `for loop`_, I can do it with a a `list comprehension`_, I change the expectation
+How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_. Since I can make the list with a `for loop`_, I can do it with a `list comprehension`_, I change the expectation
 
 .. code-block:: python
 
@@ -577,7 +577,7 @@ refactor: make it better
 
   the test passes
 
-* I wrote the same condition in the test 3 times. If I want to change it, I have to make the same change 3 times in the test and once in the solution. Imagine the new condition is that the number should be divisible by ``3``
+* I wrote the same condition in the test 3 times. If I want to change it, I have to make the same change everywhere I wrote it. Let us say the new condition is that the number should be divisible by ``3``
 
   .. code-block:: python
     :emphasize-lines: 4

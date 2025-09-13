@@ -340,7 +340,7 @@ refactor: make it better
 
   and the test passes
 
-* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an idea and then change the ``duration`` :ref:`function<functions>` to match. It would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :ref:`module<ModuleNotFoundError>`  at the top of ``test_sleep_duration.py``
+* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an ideand then change the ``duration`` :ref:`function<functions>` to match. It would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :ref:`module<ModuleNotFoundError>`  at the top of ``test_sleep_duration.py``
 
   .. code-block:: python
 

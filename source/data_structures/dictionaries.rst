@@ -1089,7 +1089,7 @@ test_items_returns_key_value_pairs_of_a_dictionary
 red: make it fail
 #################################################################################
 
-I add a a test
+I add a test
 
 .. code-block:: python
 
@@ -1218,7 +1218,7 @@ test_keys_of_a_dictionary
 red: make it fail
 #################################################################################
 
-I add a a test
+I add a test
 
 .. code-block:: python
 
