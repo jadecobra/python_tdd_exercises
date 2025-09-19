@@ -1,25 +1,25 @@
-def for_loop(iterable):
+def for_loop(container):
     result = []
-    for item in iterable:
-        result.append(item)
+    for thing in container:
+        result.append(thing)
     return result
 
 
-def list_comprehension(iterable):
-    return [item for item in iterable]
+def list_comprehension(collection):
+    return [element for element in collection]
 
 
 def is_even(number):
     return number % 2 == 0
 
 
-def get_even_numbers(iterable):
-    return [number for number in iterable if is_even(number)]
+def get_even_numbers(numbers):
+    return [number for number in numbers if is_even(number)]
 
 
-def get_odd_numbers(iterable):
-    return [number for number in iterable if not is_even(number)]
+def get_odd_numbers(numbers):
+    return [number for number in numbers if not is_even(number)]
 
 
-def square(iterable):
-    return [number**2 for number in iterable]
+def square(numbers):
+    return [number**2 for number in numbers]
