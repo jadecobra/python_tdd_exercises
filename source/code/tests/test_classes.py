@@ -124,7 +124,6 @@ class TestPerson(unittest.TestCase):
             self.random_classy_person.get_age(),
             self.original_age
         )
-
         self.random_classy_person.year_of_birth = self.random_new_year_of_birth
         self.assertEqual(
             self.random_classy_person.get_age(),
