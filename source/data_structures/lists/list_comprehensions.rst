@@ -104,7 +104,7 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ object
 refactor: make it better
 #################################################################################
 
-* I add another :ref:`assertion<AssertionError>` to show that I can get the same result with the :ref:`list<lists>` constructor_
+* I add another :ref:`assertion<AssertionError>` to show that I can do the same thing with the :ref:`list<lists>` constructor_
 
   .. code-block:: python
 
@@ -123,7 +123,7 @@ refactor: make it better
 
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing and with less characters? Sometimes one is better than the other, I show this before the end of the chapter
+  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing with less characters? Sometimes one is better than the other, I show this before the end of the chapter
 
 * I add another :ref:`assertion<AssertionError>` to practice writing a `for loop`_
 
@@ -192,7 +192,7 @@ refactor: make it better
   .. code-block:: python
     :emphasize-lines: 1
 
-    def for_loop(iterable):
+    def for_loop(container):
         return None
 
   the terminal shows :ref:`AssertionError`
@@ -206,7 +206,7 @@ refactor: make it better
   .. code-block:: python
     :emphasize-lines: 2
 
-    def for_loop(iterable):
+    def for_loop(container):
         return [0, 1, 2, 3]
 
   the test passes
@@ -223,7 +223,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
-* I undo the change then import the random_ :ref:`module<ModuleNotFoundError>` to add randomness to the test
+* I undo the change then import the random_ :ref:`module<ModuleNotFoundError>` to add randomness to the test. I need a better solution
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -275,10 +275,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def for_loop(iterable):
+    def for_loop(container):
         result = []
-        for item in iterable:
-            result.append(item)
+        for thing in container:
+            result.append(thing)
         return result
         return [0, 1, 2, 3]
 
@@ -303,7 +303,7 @@ I add a new test
       ...
 
   def test_making_a_list_w_extend(self):
-      a_ list = []
+      a_list = []
       iterable = range(0, random.randint(2, 1000))
       self.assertIsNone(a_list.extend())
 
@@ -332,7 +332,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertIsNone(a_list.extend(iterable))
-    self.assertEqual(a_list, [])
+    self.assertEqual(a_list, list())
 
   the terminal shows :ref:`AssertionError`
 
@@ -348,7 +348,7 @@ refactor: make it better
 
   the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not yet better than the :ref:`list<lists>` constructor_
 
-* I made the same variables twice, one for the empty :ref:`list<lists>` and another for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the new :ref:`class<classes>` :ref:`attributes<AttributeError>`
+* I made the same variables twice, one for the empty :ref:`list<lists>` and one for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the new :ref:`class<classes>` :ref:`attributes<AttributeError>`
 
   .. code-block:: python
 
@@ -407,7 +407,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I add a `list comprehension`_
+The `list comprehension`_ is like the `for loop`_ without the :ref:`append<test_append_adds_item_to_end_of_a_list>`. I add one as the expectation
 
 .. code-block:: python
 
@@ -444,31 +444,31 @@ refactor: make it better
 
   .. code-block:: python
 
-    def for_loop(iterable):
+    def for_loop(container):
         result = []
-        for item in iterable:
-            result.append(item)
+        for thing in container:
+            result.append(thing)
         return result
 
 
-    def list_comprehension(iterable):
-        return [item for item in iterable]
+    def list_comprehension(collection):
+        return [element for element in collection]
 
-  the test passes. The `list comprehension`_ has the same syntax as the `for loop`_ without the append_
+  the test passes
 
 * I made 2 :ref:`functions<functions>` that do the same thing - one that uses a `for loop`_ and another that uses a `list comprehension`_
 
   .. code-block:: python
 
       result = []
-      for item in iterable:
-          result.append()
+      for thing in container:
+          result.append(thing)
 
   and
 
   .. code-block:: python
 
-      [item for item in iterable]
+      [element for element in collection]
 
   the difference between them is that in the first case I have to
 
@@ -516,7 +516,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_. Since I can make the list with a `for loop`_, I can do it with a `list comprehension`_, I change the expectation
+How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_. Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_, I change the expectation
 
 .. code-block:: python
 
@@ -572,7 +572,7 @@ refactor: make it better
         ...
 
 
-    def get_even_numbers(iterable):
+    def get_even_numbers(numbers):
         return [number for number in iterable if number % 2 == 0]
 
   the test passes
@@ -625,7 +625,7 @@ refactor: make it better
   .. code-block:: python
     :emphasize-lines: 2
 
-    def get_even_numbers(iterable):
+    def get_even_numbers(numbers):
         return [number for number in iterable if number % 3 == 0]
 
   the test passes
@@ -696,10 +696,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def get_even_numbers(iterable):
-        return [number for number in iterable if number % 2 == 0]
+    def get_even_numbers(numbers):
+        return [number for number in numbers if number % 2 == 0]
 
-  the test passes. Yes, adding the :ref:`function<functions>` adds extra lines, and it makes managing the code easier since I only have to make a change in one place when needed
+  the test passes. Yes, adding the :ref:`function<functions>` adds extra lines, and it makes managing the code easier since I now only have to make a change in one place in the test when I need
 
 * I add a new empty :ref:`list<lists>` to test another condition
 
@@ -776,12 +776,12 @@ refactor: make it better
 
   .. code-block:: python
 
-    def get_even_numbers(iterable):
+    def get_even_numbers(numbers):
         ...
 
 
-    def get_odd_numbers(iterable):
-        return [number for number in iterable if number % 2 != 0]
+    def get_odd_numbers(numbers):
+        return [number for number in numbers if number % 2 != 0]
 
   the test passes
 
@@ -797,21 +797,21 @@ refactor: make it better
         return number % 2 == 0
 
 
-    def get_even_numbers(iterable):
-        return [number for number in iterable if is_even(number)]
-        return [number for number in iterable if number % 2 == 0]
+    def get_even_numbers(numbers):
+        return [number for number in numbers if is_even(number)]
+        return [number for number in numbers if number % 2 == 0]
 
   the test is still passing. I remove the second `return statement`_ then call the new :ref:`function<functions>` in ``get_odd_numbers``
 
   .. code-block:: python
 
-    def get_even_numbers(iterable):
+    def get_even_numbers(numbers):
         ...
 
 
-    def get_odd_numbers(iterable):
-        return [number for number in iterable if not is_even(number)]
-        return [number for number in iterable if number % 2 != 0]
+    def get_odd_numbers(numbers):
+        return [number for number in numbers if not is_even(number)]
+        return [number for number in numbers if number % 2 != 0]
 
   the terminal still shows green, I remove the second `return statement`_
 
@@ -824,7 +824,7 @@ test_making_a_list_w_processes
 red: make it fail
 #################################################################################
 
-I add a test to show I can perform operations in a `list comprehension`_
+I add a test to show I can do other operations in a `list comprehension`_ not just the :ref:`append<test_append_adds_item_to_end_of_a_list>` :ref:`method<functions>`
 
 .. code-block:: python
 
@@ -887,7 +887,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def get_odd_numbers(iterable):
+    def get_odd_numbers(numbers):
         ...
 
 
@@ -1054,7 +1054,7 @@ review
 The tests show I can make a :ref:`list<lists>` from an iterable_ with
 
 * a `for loop`_
-* the extend_ :ref:`method<functions>`
+* the :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` :ref:`method<functions>`
 * the :ref:`list <lists>` constructor_
 * and `list comprehensions`_
 
