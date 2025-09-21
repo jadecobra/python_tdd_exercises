@@ -824,7 +824,7 @@ test_making_a_list_w_processes
 red: make it fail
 #################################################################################
 
-I add a test to show I can do other operations in a `list comprehension`_ not just the :ref:`append<test_append_adds_item_to_end_of_a_list>` :ref:`method<functions>`
+I add a test to show I can do other operations in a `list comprehension`_ not just :ref:`append<test_append_adds_item_to_end_of_a_list>`
 
 .. code-block:: python
 
@@ -891,8 +891,8 @@ refactor: make it better
         ...
 
 
-    def square(iterable):
-        return [item**2 for item in iterable]
+    def square(numbers):
+        return [number**2 for number in numbers]
 
   the test passes. ``x**y`` is how to write ``x`` raised to the power of ``y``
 
@@ -1058,7 +1058,7 @@ The tests show I can make a :ref:`list<lists>` from an iterable_ with
 * the :ref:`list <lists>` constructor_
 * and `list comprehensions`_
 
-I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line
+I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
 
 I can also do this with :ref:`dictionaries`, the syntax for a dict comprehension is any variation of the following
 
