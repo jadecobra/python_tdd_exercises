@@ -1,12 +1,12 @@
-def for_loop(container):
+def a_for_loop(a_container):
     result = []
-    for thing in container:
+    for thing in a_container:
         result.append(thing)
     return result
 
 
-def list_comprehension(collection):
-    return [element for element in collection]
+def a_list_comprehension(a_collection):
+    return [element for element in a_collection]
 
 
 def is_even(number):

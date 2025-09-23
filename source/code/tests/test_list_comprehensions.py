@@ -37,7 +37,7 @@ class TestListComprehensions(unittest.TestCase):
             [item for item in self.iterable]
         )
         self.assertEqual(
-            src.list_comprehensions.list_comprehension(self.iterable),
+            src.list_comprehensions.a_list_comprehension(self.iterable),
             [item for item in self.iterable]
         )
 
@@ -67,12 +67,12 @@ class TestListComprehensions(unittest.TestCase):
         )
 
     def test_making_a_list_w_processes(self):
-        square_numbers = []
+        square_club = []
         for item in self.iterable:
-            square_numbers.append(process(item))
+            square_club.append(process(item))
 
         self.assertEqual(
-            square_numbers,
+            square_club,
             [process(item) for item in self.iterable]
         )
         self.assertEqual(

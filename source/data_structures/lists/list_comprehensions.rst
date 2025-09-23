@@ -131,7 +131,7 @@ refactor: make it better
 
     self.assertEqual(a_list, list(iterable))
     self.assertEqual(
-        src.list_comprehensions.for_loop(iterable),
+        src.list_comprehensions.a_for_loop(iterable),
         [0, 1, 2, 3]
     )
 
@@ -178,21 +178,21 @@ refactor: make it better
 
   .. code-block:: python
 
-    def for_loop():
+    def a_for_loop():
         return None
 
   the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: for_loop() takes 0 positional arguments but 1 was given
+    TypeError: a_for_loop() takes 0 positional arguments but 1 was given
 
   I add the argument
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    def for_loop(container):
+    def a_for_loop(a_container):
         return None
 
   the terminal shows :ref:`AssertionError`
@@ -206,7 +206,7 @@ refactor: make it better
   .. code-block:: python
     :emphasize-lines: 2
 
-    def for_loop(container):
+    def a_for_loop(a_container):
         return [0, 1, 2, 3]
 
   the test passes
@@ -253,7 +253,7 @@ refactor: make it better
     self.assertEqual(a_list, list(iterable))
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. I remove the line because it is a duplication
+  the test passes. I remove the line because it is a duplicate
 
 * I change the expectation of the second :ref:`assertion<AssertionError>`
 
@@ -261,7 +261,7 @@ refactor: make it better
 
     self.assertEqual(a_list, list(iterable))
     self.assertEqual(
-        src.list_comprehensions.for_loop(iterable),
+        src.list_comprehensions.a_for_loop(iterable),
         a_list
     )
 
@@ -271,13 +271,13 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, ...]
 
-  I change the ``for_loop`` :ref:`function<functions>`
+  I change the :ref:`function<functions>`
 
   .. code-block:: python
 
-    def for_loop(container):
+    def a_for_loop(a_container):
         result = []
-        for thing in container:
+        for thing in a_container:
             result.append(thing)
         return result
         return [0, 1, 2, 3]
@@ -364,7 +364,7 @@ refactor: make it better
 
             self.assertEqual(self.a_list, list(self.iterable))
             self.assertEqual(
-                src.list_comprehensions.for_loop(self.iterable),
+                src.list_comprehensions.a_for_loop(self.iterable),
                 self.a_list
             )
 
@@ -430,7 +430,7 @@ refactor: make it better
         [item for item in self.iterable]
     )
     self.assertEqual(
-        src.list_comprehensions.list_comprehension(self.iterable),
+        src.list_comprehensions.a_list_comprehension(self.iterable),
         [item for item in self.iterable]
     )
 
@@ -444,15 +444,15 @@ refactor: make it better
 
   .. code-block:: python
 
-    def for_loop(container):
+    def a_for_loop(a_container):
         result = []
-        for thing in container:
+        for thing in a_container:
             result.append(thing)
         return result
 
 
-    def list_comprehension(collection):
-        return [element for element in collection]
+    def a_list_comprehension(a_collection):
+        return [element for element in a_collection]
 
   the test passes
 
@@ -461,20 +461,20 @@ refactor: make it better
   .. code-block:: python
 
       result = []
-      for thing in container:
+      for thing in a_container:
           result.append(thing)
 
   and
 
   .. code-block:: python
 
-      [element for element in collection]
+      [element for element in a_collection]
 
   the difference between them is that in the first case I have to
 
   * make a :ref:`list<lists>`
   * loop through the iterable_
-  * do the operation I want on the item of the iterable_
+  * do the operation I want on every item of the iterable_
 
   with the `list comprehension`_, I do all the steps in one line, but none of the other ways are better than using the :ref:`list<lists>` constructor_, yet.
 
@@ -568,7 +568,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def list_comprehension(iterable):
+    def a_list_comprehension(a_collection):
         ...
 
 
@@ -789,7 +789,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def list_comprehension(iterable):
+    def a_list_comprehension(a_collection):
         ...
 
 
