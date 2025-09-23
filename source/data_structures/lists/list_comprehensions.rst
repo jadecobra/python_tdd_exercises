@@ -832,12 +832,12 @@ I add a test to show I can do other operations in a `list comprehension`_ not ju
       ...
 
   def test_making_a_list_w_processes(self):
-      squares = []
+      square_club = []
       for item in self.iterable:
-          squares.append(item*item)
+          square_club.append(item*item)
 
       self.assertEqual(
-          squares,
+          square_club,
           [item for item in self.iterable]
       )
 
@@ -855,7 +855,7 @@ I add the calculation to the `list comprehension`_
 .. code-block:: python
 
   self.assertEqual(
-      squares,
+      square_club,
       [item*item for item in self.iterable]
   )
 
@@ -869,7 +869,7 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(
-        squares,
+        square_club,
         [item*item for item in self.iterable]
     )
     self.assertEqual(
@@ -915,16 +915,16 @@ refactor: make it better
   .. code-block:: python
 
     def test_making_a_list_w_processes(self):
-        squares = []
+        square_club = []
         for item in self.iterable:
-            # squares.append(item*item)
-            squares.append(process(item))
+            # square_club.append(item*item)
+            square_club.append(process(item))
 
         self.assertEqual(
-            squares,
+            square_club,
             # [item*item for item in self.iterable]
             [process(item) for item in self.iterable]
-        )
+
         self.assertEqual(
             src.list_comprehensions.square(self.iterable),
             # [item*item for item in self.iterable]
