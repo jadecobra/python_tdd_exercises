@@ -71,7 +71,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             src.person.introduce(self.random_factory_person),
             (
-                f'My name is {self.random_first_name} '
+                f'Hi, My name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
@@ -81,7 +81,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             self.random_classy_person.introduce(),
             (
-                f'My name is {self.random_first_name} '
+                f'Hi, My name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
@@ -124,6 +124,7 @@ class TestPerson(unittest.TestCase):
             self.random_classy_person.get_age(),
             self.original_age
         )
+
         self.random_classy_person.year_of_birth = self.random_new_year_of_birth
         self.assertEqual(
             self.random_classy_person.get_age(),

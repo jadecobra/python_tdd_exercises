@@ -19,7 +19,7 @@ def factory(
 
 def introduce(person):
     return (
-        f'My name is {person.get("first_name")} '
+        f'Hi, My name is {person.get("first_name")} '
         f'{person.get("last_name")} '
         f'and I am {person.get("age")}'
     )
@@ -38,7 +38,7 @@ class Person(object):
 
     def __init__(
         self, first_name, last_name='doe',
-        sex='M', year_of_birth=None
+        sex='M', year_of_birth=this_year(),
     ):
         self.first_name = first_name
         self.last_name = last_name
@@ -47,7 +47,7 @@ class Person(object):
 
     def introduce(self):
         return (
-            f'My name is {self.first_name} '
+            f'Hi, My name is {self.first_name} '
             f'{self.last_name} '
             f'and I am {self.get_age()}'
         )
