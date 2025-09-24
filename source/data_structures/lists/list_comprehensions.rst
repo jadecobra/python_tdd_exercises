@@ -162,7 +162,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AttributeError: module 'src.list_comprehensions' has no attribute 'for_loop'
+    AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
 
 * I add it to the list of Exceptions_ encountered
 
