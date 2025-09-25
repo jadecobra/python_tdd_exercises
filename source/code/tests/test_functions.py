@@ -62,7 +62,7 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_default_arguments(self):
         self.assertEqual(
             src.functions.w_default_arguments('jane'),
-            ('jane', 'doe')
+            ('jane', 'doe'),
         )
         self.assertEqual(
             src.functions.w_default_arguments('joe', 'blow'),

@@ -99,7 +99,7 @@ I change the expectation to match the values in the terminal
 
   self.assertEqual(a_list, [0, 1, 2, 3])
 
-the test passes. The :ref:`list<lists>` now has the items from the range_ object_ after `for loop`_ runs
+the test passes. The :ref:`list<lists>` now has the items from the range_ object_ after the `for loop`_ runs
 
 refactor: make it better
 #################################################################################
@@ -438,7 +438,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AttributeError: module 'src.list_comprehensions' has no attribute 'list_comprehension'
+    AttributeError: module 'src.list_comprehensions' has no attribute 'a_list_comprehension'
 
   I add the :ref:`function<functions>`
 
