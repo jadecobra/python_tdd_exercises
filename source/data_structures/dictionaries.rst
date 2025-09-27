@@ -1083,7 +1083,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_items_returns_key_value_pairs_of_a_dictionary
+test_items_returns_iterable_of_key_value_pairs_of_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1188,7 +1188,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_items_returns_key_value_pairs_of_a_dictionary(self):
+    def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
             'keyN': 'valueN',
@@ -1222,7 +1222,7 @@ I add a test
 
 .. code-block:: python
 
-  def test_items_returns_key_value_pairs_of_a_dictionary(self):
+  def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
       ...
 
   def test_keys(self):
@@ -1235,7 +1235,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_keys(['key']) is not None
 
-this looks like the error in :ref:`test_items_returns_key_value_pairs_of_a_dictionary`
+this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary`
 
 green: make it pass
 #################################################################################
@@ -2071,7 +2071,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_values(['value']) is not None
 
-this is like :ref:`test_items_returns_key_value_pairs_of_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
+this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
 
 green: make it pass
 #################################################################################

@@ -121,7 +121,7 @@ class TestDictionaries(unittest.TestCase):
             'value'
         )
 
-    def test_items_returns_key_value_pairs_of_a_dictionary(self):
+    def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
             'keyN': [0, 1, 2, 'n'],
