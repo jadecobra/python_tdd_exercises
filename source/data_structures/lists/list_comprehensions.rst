@@ -540,7 +540,7 @@ I add the condition
       [item for item in self.iterable if item % 2 == 0]
   )
 
-the test passes
+the test passes. This is a case where a `list comprehension`_ is better than using the :ref:`list<lists>` constructor_
 
 refactor: make it better
 #################################################################################
@@ -785,7 +785,7 @@ refactor: make it better
 
   the test passes
 
-* I add a :ref:`function<functions>` for the condition in ``list_comprehensions.py`` and use a more descriptive name then call it in ``get_even_numbers``
+* I add a :ref:`function<functions>` for the condition to remove duplication and use a more descriptive name then call it in ``get_even_numbers``
 
   .. code-block:: python
 
@@ -806,7 +806,7 @@ refactor: make it better
   .. code-block:: python
 
     def get_even_numbers(numbers):
-        ...
+        return [number for number in numbers if is_even(number)]
 
 
     def get_odd_numbers(numbers):
@@ -898,7 +898,7 @@ refactor: make it better
 
   .. math::
 
-    x ^ y
+    e.g. x ^ y
 
 * I add a :ref:`function<functions>` for the calculation I did 3 times in this test
 
@@ -952,7 +952,7 @@ I add a failing test
       ...
 
   def test_making_a_list_w_processes_and_conditions(self):
-      even_squares = [], odd_squares = []
+      even_squares, odd_squares = [], []
       for item in self.iterable:
           if condition(item):
               even_numbers.append(process(item))
@@ -1053,9 +1053,9 @@ review
 
 The tests show I can make a :ref:`list<lists>` from an iterable_ with
 
+* the :ref:`list <lists>` constructor_
 * a `for loop`_
 * the :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` :ref:`method<functions>`
-* the :ref:`list <lists>` constructor_
 * and `list comprehensions`_
 
 I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
