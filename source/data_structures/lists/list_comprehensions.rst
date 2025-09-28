@@ -338,7 +338,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3, 4, ...] != []
+    AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
   I change the expectation
 
