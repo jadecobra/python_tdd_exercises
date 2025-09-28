@@ -898,7 +898,7 @@ refactor: make it better
 
   .. math::
 
-    e.g. x ^ y
+    x ^ y
 
 * I add a :ref:`function<functions>` for the calculation I did 3 times in this test
 
