@@ -8,14 +8,14 @@ def this_year():
     return datetime.datetime.now().year
 
 
-def get_age(year_of_birth):
-    return this_year() - year_of_birth
-
-
 def random_year_of_birth():
     return random.randint(
         this_year()-120, this_year()
     )
+
+
+def get_age(year_of_birth):
+    return this_year() - year_of_birth
 
 
 class TestPerson(unittest.TestCase):
@@ -71,7 +71,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             src.person.introduce(self.random_factory_person),
             (
-                f'Hi, My name is {self.random_first_name} '
+                f'Hi, my name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
@@ -81,7 +81,7 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             self.random_classy_person.introduce(),
             (
-                f'Hi, My name is {self.random_first_name} '
+                f'Hi, my name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
