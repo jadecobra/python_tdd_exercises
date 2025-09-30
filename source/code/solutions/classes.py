@@ -25,7 +25,9 @@ def introduce(person):
     )
 
 
-def update_year_of_birth(person, new_year_of_birth):
+def update_year_of_birth(
+        person, new_year_of_birth
+    ):
     return factory(
         first_name=person.get('first_name'),
         last_name=person.get('last_name'),
