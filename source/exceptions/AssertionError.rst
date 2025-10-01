@@ -107,7 +107,7 @@ the test passes because this statement is :ref:`True<test_what_is_true>`
 refactor: make it better
 #################################################################################
 
-I can also make assertions with some :ref:`methods<functions>` from the `unittest.TestCase`_ class
+I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functions>` from the `unittest.TestCase`_ class
 
 * I add another failing line using the assertIsNotNone_ :ref:`method<functions>` which checks if something is NOT :ref:`None`
 

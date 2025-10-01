@@ -101,7 +101,7 @@ the test passes. This is how to make an empty list_
 refactor: make it better
 #################################################################################
 
-I add another assertion, this time with input to the list_ constructor_
+I add another :ref:`assertion<AssertionError>`, this time with input to the list_ constructor_
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -1026,7 +1026,7 @@ refactor: make it better
 
     self.assertEqual(a_list.index('1st', 1), 4)
 
-  the test passes, the second input is the position I want the :ref:`method<functions>` to start from. I try the same thing with the other assertions
+  the test passes, the second input is the position I want the :ref:`method<functions>` to start from. I try the same thing with the other :ref:`assertions<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 3-6

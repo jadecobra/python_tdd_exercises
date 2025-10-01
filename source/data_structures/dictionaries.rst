@@ -22,7 +22,7 @@ dictionaries
 
 ----
 
-A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>` but not the keys. I think this is the most important data structure to know as it can hold all the other data structures. In programming I have to deal with JSON_ which I can read and write as `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ in Python
+A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>`, I will add tests for the keys to see what :ref:`data types<data structures>` I can use. I think this is the most important data structure to know as it can hold all the other :ref:`data structures`. In programming I have had to deal with JSON_ which I can read and write as `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ in Python
 
 *********************************************************************************
 requirements
@@ -78,20 +78,21 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I copy the value from the terminal and paste it to replace :ref:`None`
+I change the expectation to match
 
 .. code-block:: python
 
   self.assertEqual(dict(), {})
 
-this is how to make an empty dictionary. I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``)
+the test passes. This is how to make an empty dictionary_
 
 refactor: make it better
 #################################################################################
 
-* I add another assertion, this time with input
+* I add another :ref:`assertion<AssertionError>`, this time with input
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     self.assertEqual(dict(), {})
     self.assertEqual(dict(0), {})
@@ -110,7 +111,7 @@ refactor: make it better
     # AssertionError
     # TypeError
 
-* I change the value to an iterable_
+* I change the value to a tuple_ which is an iterable_
 
   .. code-block:: python
 
@@ -123,7 +124,7 @@ refactor: make it better
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
-* I try a keyword argument instead
+* I try a keyword argument
 
   .. code-block:: python
 
@@ -142,7 +143,7 @@ refactor: make it better
 
     self.assertEqual(dict(key='value'), {'key': 'value'})
 
-  the terminal shows green again. This test uses strings_ as keys
+  the terminal shows green again. I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``) and I used a string_ as a key in this test
 
 ----
 
@@ -153,7 +154,7 @@ test_making_a_dictionary_w_none_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test where I use :ref:`None` as a key in a dictionary_
+I add a test to see if I can use :ref:`None` as a key in a dictionary_
 
 .. code-block:: python
 
@@ -175,7 +176,7 @@ I change ``'bap'`` to ``'boom'``
 
   self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-the test passes. I can use :ref:`None` as a key in a dictionary_
+the test passes. I can use :ref:`None` and strings_ as keys in a dictionary_
 
 ----
 
@@ -186,7 +187,7 @@ test_making_a_dictionary_w_a_boolean_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test where I use a :ref:`boolean<booleans>` as a key in a dictionary_
+I add a test to see if I can use a :ref:`boolean<booleans>` as a key in a dictionary_
 
 .. code-block:: python
 
@@ -216,7 +217,7 @@ the tests passes. I can use :ref:`False<test_what_is_false>` as a key in a dicti
 refactor: make it better
 #################################################################################
 
-I add :ref:`True<test_what_is_true>` as a key
+I add :ref:`True<test_what_is_true>` to the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
 
@@ -241,7 +242,7 @@ I add the new key-value pair to the expectation
       {False: 'boom', True: 'bap'}
   )
 
-the test passes. I can use a :ref:`boolean<booleans>` as a key in a dictionary_
+the test passes. I can use :ref:`booleans`, :ref:`None` and strings_ as keys in a dictionary_
 
 ----
 
@@ -252,7 +253,7 @@ test_making_a_dictionary_w_a_number_as_a_key
 red: make it fail
 #################################################################################
 
-I add a failing test
+I add a failing test to see if I can use a number as a key
 
 .. code-block:: python
 
@@ -282,7 +283,7 @@ the test passes. I can use an integer_ as a key in a dictionary_
 refactor: make it better
 #################################################################################
 
-I add a float_ as a key
+I want to see if I can use a float_ as a key
 
 .. code-block:: python
 
@@ -307,7 +308,7 @@ I add the new key-value pair to the expectation
       {0: 'boom', 0.1: 'bap'}
   )
 
-the test passes. I can use integers_ and floats_ as keys in a dictionary_
+the test passes. I can use numbers, :ref:`booleans`, :ref:`None` and strings_ as keys in a dictionary_
 
 ----
 
@@ -318,7 +319,7 @@ test_making_a_dictionary_w_a_tuple_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test for a tuple_ as a key
+I add a test to see if I can use a tuple_ as a key
 
 .. code-block:: python
 
@@ -349,7 +350,7 @@ I change ``'bap'`` to ``'boom'``
       {(0, 1): 'boom'}
   )
 
-the test passes. I can use a tuple_ as a key in a dictionary_
+the test passes. I can use tuples_, numbers, :ref:`booleans`, :ref:`None` and strings_ as keys in a dictionary_
 
 ----
 
@@ -360,7 +361,7 @@ test_making_a_dictionary_w_a_list_as_a_key
 red: make it fail
 #################################################################################
 
-I add another test
+I add a test for :ref:`lists`
 
 .. code-block:: python
 
@@ -398,7 +399,7 @@ I add assertRaises_
       with self.assertRaises(TypeError):
           {[3, 2, 1]: 'BOOM!'}
 
-the test passes. I cannot make a dictionary_ with a :ref:`list <lists>` as a key
+the test passes. I cannot use a :ref:`list<lists>` as a key in a dictionary_
 
 ----
 
@@ -436,7 +437,7 @@ I add assertRaises_
       with self.assertRaises(TypeError):
           {{3, 2, 1}: 'BOOM!'}
 
-the test is green again. I cannot use a set_ as a key in a dictionary_
+the test is green again. I cannot use a :ref:`list<lists>` or a set_ as a key in a dictionary_
 
 ----
 
@@ -447,7 +448,7 @@ test_making_a_dictionary_w_a_dictionary_as_a_key
 red: make it fail
 #################################################################################
 
-I add a new test
+I add another test
 
 .. code-block:: python
 
@@ -514,7 +515,7 @@ It also gives me a message to view the entire difference between the two :ref:`l
 green: make it pass
 #################################################################################
 
-I move the terminal to right side of the screen so I can see the entire difference, then add `maxDiff`_
+I move the terminal to right side of the screen, then add `maxDiff`_
 
 .. code-block:: python
 
@@ -557,7 +558,7 @@ the terminal shows the entire difference between the two :ref:`lists`. I copy an
           ]
       )
 
-the test passes and I move the terminal back to the bottom. I copy the names that do not have double underscores (__) to make a TODO list for the next set of tests
+the test passes and I move the terminal back to the bottom. I copy the names that do NOT have double underscores (__) to make a TODO list of tests
 
 .. code-block:: python
 
@@ -791,7 +792,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: 'int' object is not iterable
 
-I change the value passed to a tuple_
+I change the value to a tuple_
 
 .. code-block:: python
 
@@ -853,6 +854,7 @@ refactor: make it better
 * I remove the :ref:`assertion<AssertionError>` then change the call to use the dict_ :ref:`class<classes>`
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     def test_fromkeys(self):
         a_dictionary = {'key': 'value'}
@@ -871,7 +873,7 @@ refactor: make it better
             {0: None, 1: None}
         )
 
-* the dictionary_ the fromkeys_ :ref:`method<functions>` returns has :ref:`None` as a default value, I write it explicitly in the test
+* the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as a default value, I write it in the test
 
   .. code-block:: python
 
@@ -969,7 +971,24 @@ the terminal shows green
 refactor: make it better
 #################################################################################
 
-* I add another assertion, this time with something from the dictionary_
+* this :ref:`method<functions>` also expected at least 1 argument, I add :ref:`None` to the call
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.get(0, None))
+
+  the terminal still shows green. I change the value expecting a failure
+
+  .. code-block:: python
+
+    self.assertIsNone(a_dictionary.get(0, 'default'))
+
+  the terminal shows :ref:`AssertionError`
+
+    
+
+
+* I add another :ref:`assertion<AssertionError>`, this time with something from the dictionary_
 
   .. code-block:: python
 

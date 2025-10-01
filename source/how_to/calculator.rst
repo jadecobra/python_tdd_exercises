@@ -310,7 +310,7 @@ refactor: make it better
   - ``x = random.randint(-1, 1)`` points a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
-* I remove the other assertions because they are covered by the one that uses random numbers
+* I remove the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers
 
   .. code-block:: python
 

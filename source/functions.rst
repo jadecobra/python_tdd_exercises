@@ -1028,7 +1028,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
 
     E   AssertionError: Tuples differ: (('first_name',), {'last_name': 'last_name'}) != ('first_name', 'last_name')
 
-* I comment out the other assertions so I can focus on the failing test
+* I comment out the other :ref:`assertions<AssertionError>` so I can focus on the failing test
 
   .. code-block:: python
 
