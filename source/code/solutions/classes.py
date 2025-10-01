@@ -13,7 +13,7 @@ def factory(
         'first_name': first_name,
         'last_name': last_name,
         'sex': sex,
-        'age': this_year()-year_of_birth,
+        'age': this_year() - year_of_birth,
     }
 
 
@@ -25,9 +25,7 @@ def introduce(person):
     )
 
 
-def update_year_of_birth(
-        person, new_year_of_birth
-    ):
+def update_year_of_birth(person, new_year_of_birth):
     return factory(
         first_name=person.get('first_name'),
         last_name=person.get('last_name'),
