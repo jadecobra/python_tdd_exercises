@@ -389,7 +389,7 @@ I remove the things around the new dictionary_ then change the key for fun
 .. code-block:: python
 
   def test_making_a_dictionary_w_a_list_as_a_key(self):
-      {[3, 2, 1]: 'BOOM!'}
+      {[3, 2, 1]: 'BOOM!!!'}
 
 I add assertRaises_
 
@@ -397,7 +397,7 @@ I add assertRaises_
 
   def test_making_a_dictionary_w_a_list_as_a_key(self):
       with self.assertRaises(TypeError):
-          {[3, 2, 1]: 'BOOM!'}
+          {[3, 2, 1]: 'BOOM!!!'}
 
 the test passes. I cannot use a :ref:`list<lists>` as a key in a dictionary_
 
@@ -418,7 +418,7 @@ I try the same thing with a set_ as a key
       ...
 
   def test_making_a_dictionary_w_a_set_as_a_key(self):
-      {{3, 2, 1}: 'BOOM!'}
+      {{3, 2, 1}: 'BOOM!!!'}
 
 the terminal shows :ref:`TypeError`
 
@@ -435,7 +435,7 @@ I add assertRaises_
 
   def test_making_a_dictionary_w_a_set_as_a_key(self):
       with self.assertRaises(TypeError):
-          {{3, 2, 1}: 'BOOM!'}
+          {{3, 2, 1}: 'BOOM!!!'}
 
 the test is green again. I cannot use a :ref:`list<lists>` or a set_ as a key in a dictionary_
 
@@ -457,7 +457,7 @@ I add another test
 
   def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
       a_dictionary = {'key': 'value'}
-      {a_dictionary: 'BOOM!'}
+      {a_dictionary: 'BOOM!!!'}
 
 the terminal shows :ref:`TypeError`
 
@@ -475,7 +475,7 @@ I add assertRaises_
   def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
       a_dictionary = {'key': 'value'}
       with self.assertRaises(TypeError):
-          {a_dictionary: 'BOOM!'}
+          {a_dictionary: 'BOOM!!!'}
 
 the test passes. I cannot use a dictionary_, set_ or :ref:`list <lists>` as a key in a dictionary_ they are not hashable_
 
@@ -985,7 +985,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-    
+
 
 
 * I add another :ref:`assertion<AssertionError>`, this time with something from the dictionary_

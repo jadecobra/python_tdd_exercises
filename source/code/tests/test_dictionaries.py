@@ -30,16 +30,16 @@ class TestDictionaries(unittest.TestCase):
 
     def test_making_a_dictionary_w_a_list_as_a_key(self):
         with self.assertRaises(TypeError):
-            {[3, 2, 1]: 'BOOM!'}
+            {[3, 2, 1]: 'BOOM!!!'}
 
     def test_making_a_dictionary_w_a_set_as_a_key(self):
         with self.assertRaises(TypeError):
-            {{3, 2, 1}: 'BOOM!'}
+            {{3, 2, 1}: 'BOOM!!!'}
 
     def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
         a_dictionary = {'key': 'value'}
         with self.assertRaises(TypeError):
-            {a_dictionary: 'BOOM!'}
+            {a_dictionary: 'BOOM!!!'}
 
     def test_attributes_and_methods_of_dictionaries(self):
         self.maxDiff = None
