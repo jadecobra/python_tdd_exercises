@@ -190,7 +190,7 @@ and the terminal shows passing tests.
 ----
 
 *********************************************************************************
-test_constant_functions
+test_constant_function
 *********************************************************************************
 
 constant :ref:`functions` always return the same thing when called
@@ -202,7 +202,7 @@ I add a test to ``test_functions.py``
 
 .. code-block:: python
 
-    def test_constant_functions(self):
+    def test_constant_function(self):
         self.assertEqual(functions.constant(), 'first_name')
 
 the terminal shows :ref:`AttributeError`
@@ -218,17 +218,17 @@ I change the :ref:`function<functions>` to make it pass
       return 'first_name'
 
 *********************************************************************************
-test_constant_functions_w_inputs
+test_constant_function_w_inputs
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-I add a new test for a :ref:`constant function<test_constant_functions>` that takes input
+I add a new test for a :ref:`constant function<test_constant_function>` that takes input
 
 .. code-block:: python
 
-  def test_constant_functions_w_inputs(self):
+  def test_constant_function_w_inputs(self):
       self.assertEqual(
           src.functions.constant_w_inputs('Bob', 'James', 'Frank'),
           src.functions.constant()
@@ -255,7 +255,7 @@ the terminal shows passing tests
 ----
 
 *********************************************************************************
-test_identity_functions
+test_identity_function
 *********************************************************************************
 
 identity :ref:`functions` return their input as output
@@ -267,7 +267,7 @@ I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
 
 .. code-block:: python
 
-    def test_identity_functions(self):
+    def test_identity_function(self):
         self.assertEqual(functions.identity(False), False)
 
 the terminal shows :ref:`AttributeError`
@@ -329,11 +329,11 @@ refactor: make it better
 
 Wait a minute! Something is not quite right here. The definition for a identity :ref:`function<functions>` was that it returned the same thing it was given, the test passes when :ref:`False<test_what_is_false>` is given as input, will it still pass when another value is given or will it always return :ref:`False<test_what_is_false>`? Time to write a test
 
-* I add a new :ref:`assertion<AssertionError>` to ``test_identity_functions``
+* I add a new :ref:`assertion<AssertionError>` to ``test_identity_function``
 
   .. code-block:: python
 
-    def test_identity_functions(self):
+    def test_identity_function(self):
         self.assertEqual(functions.identity(False), False)
         self.assertEqual(functions.identity(True), True)
 
@@ -358,7 +358,7 @@ Wait a minute! Something is not quite right here. The definition for a identity 
 
   .. code-block:: python
 
-    def test_identity_functions(self):
+    def test_identity_function(self):
         self.assertEqual(functions.identity(False), False)
         self.assertEqual(functions.identity(True), True)
         self.assertEqual(functions.identity(None), False)
@@ -522,7 +522,7 @@ test_functions_w_unknown_positional_arguments
 
     AttributeError: module 'src.functions' has no attribute 'take_unknown_positional_arguments'. Did you mean: 'take_positional_arguments'?
 
-  I add the function with a `starred expression`_ like I did in :ref:`test_constant_functions`, to allow it take in any number of arguments
+  I add the function with a `starred expression`_ like I did in :ref:`test_constant_function`, to allow it take in any number of arguments
 
   .. code-block:: python
 
@@ -1189,8 +1189,8 @@ the tests show that
 * keyword arguments are represented as :ref:`dictionaries`
 * I can use ``*args`` to represent any number of positional arguments
 * positional arguments are represented as tuples_
-* :ref:`identity functions<test_identity_functions>` return their input
-* :ref:`constant functions<test_constant_functions>` always return the same thing
+* :ref:`identity functions<test_identity_function>` return their input
+* :ref:`constant functions<test_constant_function>` always return the same thing
 * :ref:`functions` return :ref:`None` by default
 * :ref:`functions` are defined using the def_ keyword
 
