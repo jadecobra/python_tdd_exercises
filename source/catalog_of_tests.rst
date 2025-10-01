@@ -197,12 +197,12 @@ test_dictionaries
 #. :ref:`test_clear_empties_a_dictionary`
 #. :ref:`test_copy_a_dictionary`
 #. :ref:`test_fromkeys_makes_a_dictionary_from_an_iterable`
-#. :ref:`test_get_a_value_from_a_dictionary`
+#. :ref:`test_get_value_of_a_key_from_a_dictionary`
 #. :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary`
 #. :ref:`test_keys_of_a_dictionary`
-#. :ref:`test_pop_removes_given_key_from_a_dictionary`
+#. :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value`
 #. :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary`
-#. :ref:`test_setdefault_adds_key_w_a_default_value_to_a_dictionary`
+#. :ref:`test_setdefault_adds_given_key_to_a_dictionary`
 #. :ref:`test_update_a_dictionary`
 #. :ref:`test_values_of_a_dictionary`
 #. :ref:`test_key_error`

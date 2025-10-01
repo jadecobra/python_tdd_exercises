@@ -932,7 +932,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_get_a_value_from_a_dictionary
+test_get_value_of_a_key_from_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1061,7 +1061,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_get_a_value_from_a_dictionary(self):
+    def test_get_value_of_a_key_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
         self.assertEqual(a_dictionary.get('key', 'default'), 'value')
@@ -1093,7 +1093,7 @@ I add a test
 
 .. code-block:: python
 
-  def test_get_a_value_from_a_dictionary(self):
+  def test_get_value_of_a_key_from_a_dictionary(self):
       ...
 
   def test_items(self):
@@ -1336,7 +1336,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_pop_removes_given_key_from_a_dictionary
+test_pop_removes_given_key_from_a_dictionary_and_returns_its_value
 *********************************************************************************
 
 red: make it fail
@@ -1473,7 +1473,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_pop_removes_given_key_from_a_dictionary(self):
+    def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.pop('key'), 'value')
         self.assertEqual(a_dictionary, {})
@@ -1503,7 +1503,7 @@ I add a failing test
 
 .. code-block:: python
 
-  def test_pop_removes_given_key_from_a_dictionary(self):
+  def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
       ...
 
   def test_pop_item(self):
@@ -1647,7 +1647,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_setdefault_adds_key_w_a_default_value_to_a_dictionary
+test_setdefault_adds_given_key_to_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1845,7 +1845,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
+    def test_setdefault_adds_given_key_to_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
         self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
@@ -1877,7 +1877,7 @@ red: make it fail
 
   .. code-block:: python
 
-    def test_setdefault_adds_key_w_a_default_value_to_a_dictionary(self):
+    def test_setdefault_adds_given_key_to_a_dictionary(self):
         ...
 
     def test_update(self):
@@ -2254,7 +2254,7 @@ refactor: make it better
 
   the test passes
 
-* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` with a key that was not in the dictionary_, I add an :ref:`assertion<AssertionError>` for it
+* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` with a key that was not in the dictionary_, I add an :ref:`assertion<AssertionError>` for it
 
   .. code-block:: python
 
