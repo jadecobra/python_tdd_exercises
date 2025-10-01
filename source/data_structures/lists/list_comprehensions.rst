@@ -516,7 +516,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_. Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_, I change the expectation
+How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_? Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_, I change the expectation
 
 .. code-block:: python
 
@@ -540,7 +540,7 @@ I add the condition
       [item for item in self.iterable if item % 2 == 0]
   )
 
-the test passes. This is a case where a `list comprehension`_ is better than using the :ref:`list<lists>` constructor_
+the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using the :ref:`list<lists>` constructor_
 
 refactor: make it better
 #################################################################################
@@ -1034,7 +1034,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: [1, 9, 25, 49, ...] != [1, 3, 5, 7, ...]
 
-I add a call to ``processes``
+I add a call to ``process``
 
 .. code-block:: python
 
