@@ -93,5 +93,6 @@ class TestFunctions(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 # NameError
+# AttributeError
 # IndentationError
 # SyntaxError
