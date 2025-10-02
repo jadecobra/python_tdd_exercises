@@ -1093,7 +1093,7 @@ test_items_returns_iterable_of_key_value_pairs_of_a_dictionary
 red: make it fail
 #################################################################################
 
-I add a test
+I add the next test from the list
 
 .. code-block:: python
 
@@ -1125,7 +1125,7 @@ the terminal shows NameError_
 
   NameError: name 'dict_items' is not defined
 
-this new :ref:`object<classes>` contains a :ref:`list<lists>`, I will use it as the expectation instead
+this new :ref:`object<classes>` contains a :ref:`list<lists>` and I know how to work with :ref:`lists`, I remove the stuff around it
 
 .. code-block:: python
 
@@ -1137,7 +1137,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
-I pass the call to the items_ :ref:`method<functions>` to the :ref:`list<lists>` constructor_
+I pass the call to the items_ :ref:`method<functions>` to the :ref:`list<lists>` constructor_ to see what happens
 
 .. code-block:: python
 
@@ -1149,25 +1149,25 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: [('key', 'value')] is not None : [('key', 'value')]
 
-I change assertIsNone_ to assertEqual_
+the values are the same, I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
 
   self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
-the test passes. It looks like the items_ :ref:`method<functions>` returns the key-value pairs of a dictionary_ as tuples_ in a :ref:`list<lists>`
+the test passes. This works because the items_ :ref:`method<functions>` returns an iterable_ of the key-value pairs of the dictionary_
 
 refactor: make it better
 #################################################################################
 
-* I add another key-value pair to the dictionary_
+* I add another key-value pair to the dictionary_ to see what how the :ref:`method<functions>` behaves when there is more than one key-value pair
 
   .. code-block:: python
 
     def test_items(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
@@ -1175,7 +1175,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: Lists differ: [('key1', 'value1'), ('keyN', 'valueN')] != [('key', 'value')]
+    AssertionError: Lists differ: [('key1', 'value1'), ('keyN', [0, 1, 2, 'n'])] != [('key', 'value')]
 
   I change the expectation to match
 
@@ -1183,7 +1183,7 @@ refactor: make it better
 
     self.assertEqual(
         list(a_dictionary.items()),
-        [('key1', 'value1'), ('keyN', 'valueN')]
+        [('key1', 'value1'), ('keyN', [0, 1, 2, 'n'])]
     )
 
   the test passes
@@ -1195,11 +1195,11 @@ refactor: make it better
     def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.items()),
-            [('key1', 'value1'), ('keyN', 'valueN')]
+            [('key1', 'value1'), ('keyN', [0, 1, 2, 'n'])]
         )
 
 * I remove items_ from the TODO list
@@ -1298,7 +1298,7 @@ refactor: make it better
     def test_keys(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(list(a_dictionary.keys()), ['key'])
 
@@ -1323,7 +1323,7 @@ refactor: make it better
     def test_keys_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(list(a_dictionary.keys()), ['key1', 'keyN'])
 
@@ -1577,20 +1577,20 @@ refactor: make it better
 
     a_dictionary = {
         'key1': 'value1',
-        'keyN': 'valueN',
+        'keyN': [0, 1, 2, 'n'],
     }
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('keyN', 'valueN') != ('key', 'value')
+    AssertionError: Tuples differ: ('keyN', [0, 1, 2, 'n']) != ('key', 'value')
 
   I change the expectation to match
 
   .. code-block:: python
 
-    self.assertEqual(a_dictionary.popitem(), ('keyN', 'valueN'))
+    self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
 
   the terminal shows :ref:`AssertionError`
 
@@ -1611,13 +1611,13 @@ refactor: make it better
   .. code-block:: python
 
     self.assertEqual(a_dictionary, {'key1': 'value1'})
-    self.assertEqual(a_dictionary.popitem(), ('keyN', 'valueN'))
+    self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('key1', 'value1') != ('keyN', 'valueN')
+    AssertionError: Tuples differ: ('key1', 'value1') != ('keyN', [0, 1, 2, 'n'])
 
   I change the expectation
 
@@ -1634,9 +1634,9 @@ refactor: make it better
     def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
-        self.assertEqual(a_dictionary.popitem(), ('keyN', 'valueN'))
+        self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
         self.assertEqual(a_dictionary, {'key1': 'value1'})
         self.assertEqual(a_dictionary.popitem(), ('key1', 'value1'))
 
@@ -2133,14 +2133,14 @@ refactor: make it better
 
     a_dictionary = {
         'key1': 'value1',
-        'keyN': 'valueN',
+        'keyN': [0, 1, 2, 'n'],
     }
 
   the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['value1', 'valueN'] != ['value']
+    AssertionError: Lists differ: ['value1', [0, 1, 2, 'n']] != ['value']
 
   I change the values in the expectation
 
@@ -2148,7 +2148,7 @@ refactor: make it better
 
         self.assertEqual(
             list(a_dictionary.values()),
-            ['value1', 'valueN']
+            ['value1', [0, 1, 2, 'n']]
         )
 
   the test passes
@@ -2160,11 +2160,11 @@ refactor: make it better
     def test_values_of_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
-            'keyN': 'valueN',
+            'keyN': [0, 1, 2, 'n'],
         }
         self.assertEqual(
             list(a_dictionary.values()),
-            ['value1', 'valueN']
+            ['value1', [0, 1, 2, 'n']]
         )
 
 * I remove values_ from the TODO list

@@ -64,9 +64,9 @@ class TestTelephone(unittest.TestCase):
         self.assertEqual(
             src.telephone.text({
                 'key1': 'value1',
-                'keyN': 'valueN'
+                'keyN': [1, 2, 3, 'n'],
             }),
-            "I received: {'key1': 'value1', 'keyN': 'valueN'}"
+            "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
         )
 
 

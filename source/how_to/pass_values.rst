@@ -574,16 +574,16 @@ I add a test for a :ref:`dictionary <dictionaries>`
       self.assertEqual(
           src.telephone.text({
               "key1": "value1",
-              "keyN": "valueN",
+              "keyN": [0, 1, 2, "n"],
           }),
-          "I received: '{key1: value1, keyN: valueN}'"
+          "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
       )
 
 and the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: "I received: {'key1': 'value1', 'keyN': 'valueN'}" != "I received: '{key1: value1, keyN: valueN}'"
+  AssertionError: "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
 
 green: make it pass
 #################################################################################
@@ -596,9 +596,9 @@ when I make the expectation match reality
       self.assertEqual(
           src.telephone.text({
               "key1": "value1",
-              "keyN": "valueN"
+              "keyN": [0, 1, 2, "n"],
           }),
-          "I received: {'key1': 'value1', 'keyN': 'valueN'}"
+          "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
       )
 
 the terminal shows all tests are passing.
@@ -702,7 +702,7 @@ green: make it pass
 
     AssertionError: True != 'I received: True'
     AssertionError: <class 'object'> != "I received: <class 'object'>"
-    AssertionError: {'key1': 'value1', 'keyN': 'valueN'} != "I received: {'key1': 'value1', 'keyN': 'valueN'}"
+    AssertionError: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']} != "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
     AssertionError: 1.234 != 'I received: 1.234'
     AssertionError: [1, 2, 3, 'n'] != "I received: [1, 2, 3, 'n']"
     AssertionError: "hello" != 'I received: hello'
