@@ -1060,7 +1060,7 @@ The tests show I can make a :ref:`list<lists>` from an iterable_ with
 
 I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
 
-I can also do this with :ref:`dictionaries`, the syntax for a dict comprehension is any variation of the following
+I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of the following
 
 .. code-block:: python
   :force:

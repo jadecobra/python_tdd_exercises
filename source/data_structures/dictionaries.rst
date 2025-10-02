@@ -528,7 +528,7 @@ I move the terminal to right side of the screen, then add `maxDiff`_
           ]
       )
 
-the terminal shows the entire difference between the two :ref:`lists`. I copy and paste the expected values from the terminal and use `find and replace`_ to remove the extra characters
+the terminal shows the entire difference between the two :ref:`lists`. I copy and paste the expected values from the terminal then use `find and replace`_ to remove the extra characters
 
 .. note::
 
@@ -587,7 +587,7 @@ test_clear_empties_a_dictionary
 red: make it fail
 #################################################################################
 
-* I add a test for the :ref:`method<functions>`
+* I add a test for the first :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -613,7 +613,7 @@ red: make it fail
 
     AssertionError: {} != {'key': 'value'}
 
-  the clear_ :ref:`method<functions>` emptied the dictionary_
+  the clear_ :ref:`method<functions>` emptied the dictionary_, same as it does with :ref:`lists`
 
 green: make it pass
 #################################################################################
@@ -726,7 +726,7 @@ refactor: make it better
 
     self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the test is green again
+  the test is green again. This :ref:`method<functions>` also works the same way with :ref:`lists`
 
 * I rename the test
 
@@ -873,7 +873,13 @@ refactor: make it better
             {0: None, 1: None}
         )
 
-* the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as a default value, I write it in the test
+* the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as a default value and when I called it without inputs the terminal showed :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: fromkeys expected at least 1 argument, got 0
+
+  I add a second input to see if it changes the default value of the dictionary_
 
   .. code-block:: python
 
@@ -882,7 +888,7 @@ refactor: make it better
         {0: None, 1: None}
     )
 
-  the terminal still shows green. I change it to see if I get a failure
+  the terminal still shows green. I change the second input to see if I get a failure
 
   .. code-block:: python
 
@@ -906,7 +912,7 @@ refactor: make it better
         {0: 'default', 1: 'default'}
     )
 
-  the test is green again
+  the test is green again. This reminds me of a dict comprehension
 
 * I rename the test
 
@@ -985,65 +991,6 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-
-
-
-* I add another :ref:`assertion<AssertionError>`, this time with something from the dictionary_
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.get(0))
-    self.assertIsNone(a_dictionary.get('key'))
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: 'value' is not None
-
-  it looks like the get_ :ref:`method<functions>` has a condition where it returns the value for the key it is given from the dictionary_ if it is there or returns :ref:`None` if the key is not there. I add the expected value
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.get('key'), 'value')
-
-  the terminal shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    AssertionError: 'value' is not None : value
-
-  I change assertIsNone_ to assertEqual_
-
-  .. code-block:: python
-
-    self.assertEqual(a_dictionary.get('key'), 'value')
-
-  the test passes
-
-* I change the key in the first :ref:`assertion<AssertionError>` for fun
-
-  .. code-block:: python
-
-    def test_get(self):
-        a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.get('not_in_dictionary'))
-        self.assertEqual(a_dictionary.get('key'), 'value')
-
-  the test is still green. I add a parameter to see if I can set a default value
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.get('not_in_dictionary', None))
-
-  the test is still passing. I change the value to see if I get an error
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.get('not_in_dictionary', 'default'))
-
-  the terminal shows :ref:`AssertionError`
-
   .. code-block:: python
 
     AssertionError: 'default' is not None
@@ -1052,7 +999,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    self.assertIsNone(a_dictionary.get('not_in_dictionary', 'default'), 'default')
+    self.assertIsNone(a_dictionary.get(0, 'default'), 'default')
 
   the terminal shows :ref:`AssertionError`
 
@@ -1060,21 +1007,53 @@ refactor: make it better
 
     AssertionError: 'default' is not None : default
 
-  I change assertIsNone_ to assertEqual_
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
-    self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
+    self.assertEqual(
+        a_dictionary.get(0, 'default'),
+        'default'
+    )
 
-  the test is green again
-
-* I do the same thing with the second :ref:`assertion<AssertionError>`
+  the test passes. I change the ``0`` to be more descriptive
 
   .. code-block:: python
 
-    self.assertEqual(a_dictionary.get('key', 'default'), 'value')
+    self.assertEqual(
+        a_dictionary.get('not_in_dictionary', 'default'),
+        'default'
+    )
 
-  the test is still green. The get_ :ref:`method<functions>` returns the value for a given key in a dictionary_ or returns a default value if the key is not there
+* I add another :ref:`assertion<AssertionError>`, this time with something from the dictionary_
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary.get('not_in_dictionary', 'default'),
+        'default'
+    )
+    self.assertEqual(
+        a_dictionary.get('key', 'default'),
+        'default'
+    )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'value' != 'default'
+
+  it looks like the get_ :ref:`method<functions>` has a condition where it returns the value if the key is in the dictionary_ or it returns the default argument when the key is not in the dictionary_. I change the expectation to match
+
+  .. code-block:: python
+
+    self.assertEqual(
+        a_dictionary.get('key', 'default'),
+        'value'
+    )
+
+  the test passes
 
 * I change the name of the test
 
@@ -1082,8 +1061,14 @@ refactor: make it better
 
     def test_get_value_of_a_key_from_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
-        self.assertEqual(a_dictionary.get('key', 'default'), 'value')
+        self.assertEqual(
+            a_dictionary.get('not_in_dictionary', 'default'),
+            'default'
+        )
+        self.assertEqual(
+            a_dictionary.get('key', 'default'),
+            'default'
+        )
 
   the test is still green
 
