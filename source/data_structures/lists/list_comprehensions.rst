@@ -277,8 +277,8 @@ refactor: make it better
 
     def a_for_loop(a_container):
         result = []
-        for thing in a_container:
-            result.append(thing)
+        for stuff in a_container:
+            result.append(stuff)
         return result
         return [0, 1, 2, 3]
 
@@ -446,8 +446,8 @@ refactor: make it better
 
     def a_for_loop(a_container):
         result = []
-        for thing in a_container:
-            result.append(thing)
+        for stuff in a_container:
+            result.append(stuff)
         return result
 
 
@@ -461,8 +461,8 @@ refactor: make it better
   .. code-block:: python
 
       result = []
-      for thing in a_container:
-          result.append(thing)
+      for stuff in a_container:
+          result.append(stuff)
 
   and
 

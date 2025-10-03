@@ -1,7 +1,7 @@
 def a_for_loop(a_container):
     result = []
-    for thing in a_container:
-        result.append(thing)
+    for stuff in a_container:
+        result.append(stuff)
     return result
 
 
