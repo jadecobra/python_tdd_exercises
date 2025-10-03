@@ -36,13 +36,13 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                x='first', y='second',
+                first='first', second='second',
             ),
             ('first', 'second')
         )
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                y='second', x='first',
+                second='second', first='first',
             ),
             ('first', 'second')
         )
