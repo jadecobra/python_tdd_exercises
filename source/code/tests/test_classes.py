@@ -169,7 +169,6 @@ class TestPerson(unittest.TestCase):
             ]
         )
 
-
 # Exceptions Encountered
 # AssertionError
 # NameError
