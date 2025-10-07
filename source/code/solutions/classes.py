@@ -13,7 +13,7 @@ def factory(
         'first_name': first_name,
         'last_name': last_name,
         'sex': sex,
-        'age': this_year() - year_of_birth,
+        'age': this_year()-year_of_birth,
     }
 
 
