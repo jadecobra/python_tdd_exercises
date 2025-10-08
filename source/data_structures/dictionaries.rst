@@ -9,6 +9,7 @@
 .. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
 .. _popitem: https://docs.python.org/3/library/stdtypes.html#dict.popitem
 .. _dictionary: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+.. _dictionaries: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
@@ -22,7 +23,9 @@ dictionaries
 
 ----
 
-A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>`, I will add tests for the keys to see what :ref:`data types<data structures>` I can use. I think this is the most important data structure to know as it can hold all the other :ref:`data structures`. In programming I have had to deal with JSON_ which I can read and write as `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ in Python
+A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>`. I will add tests for the keys to see which :ref:`data types<data structures>` I can or cannot use.
+
+I think this is the most important :ref:`data structure<data structures>` to know because they can hold all the other :ref:`data structures`. In programming I have had to deal with JSON_ which I can read and write as dictionaries_ in Python
 
 *********************************************************************************
 requirements
@@ -106,14 +109,16 @@ refactor: make it better
 * I add the error to the list of Exceptions_ encountered
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
     # TypeError
 
-* I change the value to a tuple_ which is an iterable_
+* I change the value to a tuple_ since it is an iterable_
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     self.assertEqual(dict(), {})
     self.assertEqual(dict((0, 1)), {})
@@ -127,6 +132,7 @@ refactor: make it better
 * I try a keyword argument
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     self.assertEqual(dict(), {})
     self.assertEqual(dict(key='value'), {})
@@ -157,6 +163,9 @@ red: make it fail
 I add a test to see if I can use :ref:`None` as a key in a dictionary_
 
 .. code-block:: python
+
+  def test_making_a_dictionary(self):
+      ...
 
   def test_making_a_dictionary_w_none_as_a_key(self):
       self.assertEqual({None: 'boom'}, {None: 'bap'})
@@ -253,7 +262,7 @@ test_making_a_dictionary_w_a_number_as_a_key
 red: make it fail
 #################################################################################
 
-I add a failing test to see if I can use a number as a key
+I add a failing test to see if I can use a number as a key in a dictionary_
 
 .. code-block:: python
 
@@ -283,7 +292,7 @@ the test passes. I can use an integer_ as a key in a dictionary_
 refactor: make it better
 #################################################################################
 
-I want to see if I can use a float_ as a key
+I want to see if I can use a float_ as a key in a dictionary_
 
 .. code-block:: python
 
@@ -319,7 +328,7 @@ test_making_a_dictionary_w_a_tuple_as_a_key
 red: make it fail
 #################################################################################
 
-I add a test to see if I can use a tuple_ as a key
+I add a test to see if I can use a tuple_ as a key in a dictionary_
 
 .. code-block:: python
 
@@ -370,7 +379,8 @@ I add a test for :ref:`lists`
 
   def test_making_a_dictionary_w_a_list_as_a_key(self):
       self.assertEqual(
-          {[0, 1]: 'boom'}
+          {[0, 1]: 'boom'},
+          {[0, 1]: 'bap'}
       )
 
 the terminal shows :ref:`TypeError`
@@ -379,21 +389,22 @@ the terminal shows :ref:`TypeError`
 
   TypeError: unhashable type: 'list'
 
-only hashable_ objects_ can be used as keys in a dictionary_
-
 green: make it pass
 #################################################################################
 
 I remove the things around the new dictionary_ then change the key for fun
 
 .. code-block:: python
+  :emphasize-lines: 3
 
   def test_making_a_dictionary_w_a_list_as_a_key(self):
+
       {[3, 2, 1]: 'BOOM!!!'}
 
-I add assertRaises_
+the terminal still shows :ref:`TypeError`, I add assertRaises_
 
 .. code-block:: python
+  :emphasize-lines: 2
 
   def test_making_a_dictionary_w_a_list_as_a_key(self):
       with self.assertRaises(TypeError):
@@ -410,7 +421,7 @@ test_making_a_dictionary_w_a_set_as_a_key
 red: make it fail
 #################################################################################
 
-I try the same thing with a set_ as a key
+I try another test with a set_ as a key in a dictionary_
 
 .. code-block:: python
 
@@ -432,6 +443,7 @@ green: make it pass
 I add assertRaises_
 
 .. code-block:: python
+  :emphasize-lines: 2
 
   def test_making_a_dictionary_w_a_set_as_a_key(self):
       with self.assertRaises(TypeError):
@@ -471,6 +483,7 @@ green: make it pass
 I add assertRaises_
 
 .. code-block:: python
+  :emphasize-lines: 3
 
   def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
       a_dictionary = {'key': 'value'}
