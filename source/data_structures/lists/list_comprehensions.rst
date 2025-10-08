@@ -86,7 +86,7 @@ the terminal shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 2, 3] != []
 
 - ``a_list = []`` makes an empty list and gives it a name
-- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first number to the second given number minus 1, in this case it goes from ``0`` to ``3``
+- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first given number to the second given number minus 1, in this case it goes from ``0`` to ``3``
 - ``for item in iterable:`` goes over every item in the range_ object_
 - ``a_list.append(item)`` gets called every time the `for loop`_ runs
 
@@ -516,7 +516,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_? Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_, I change the expectation
+How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_? Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_. I change the expectation
 
 .. code-block:: python
 
