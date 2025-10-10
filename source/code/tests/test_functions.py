@@ -95,3 +95,4 @@ class TestFunctions(unittest.TestCase):
 # NameError
 # AttributeError
 # IndentationError
+# SyntaxError
