@@ -131,7 +131,7 @@ class TestPerson(unittest.TestCase):
             self.new_age
         )
 
-    def test_attributes_and_methods_of_dictionaries(self):
+    def test_attributes_and_methods_of_classes(self):
         self.assertEqual(
             dir(src.person.Person),
             [
@@ -176,3 +176,4 @@ class TestPerson(unittest.TestCase):
 # AttributeError
 # TypeError
 # SyntaxError
+# KeyError
