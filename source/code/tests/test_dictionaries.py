@@ -102,7 +102,10 @@ class TestDictionaries(unittest.TestCase):
 
     def test_copy_a_dictionary(self):
         a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.copy(), {'key': 'value'})
+        self.assertEqual(
+            a_dictionary.copy(),
+            {'key': 'value'}
+        )
 
     def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
         self.assertEqual(
