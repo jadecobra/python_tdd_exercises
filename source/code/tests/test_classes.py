@@ -176,4 +176,5 @@ class TestPerson(unittest.TestCase):
 # AttributeError
 # TypeError
 # SyntaxError
+# IndentationError
 # KeyError
