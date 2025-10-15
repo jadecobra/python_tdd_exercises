@@ -110,10 +110,10 @@ class TestDictionaries(unittest.TestCase):
     def test_fromkeys_makes_a_dictionary_from_an_iterable(self):
         self.assertEqual(
             dict.fromkeys((0, 1), 'default'),
-            {0:  'default', 1:  'default'}
+            {0: 'default', 1: 'default'}
         )
 
-    def test_get_value_of_a_key_in_a_dictionary(self):
+    def test_get_value_of_key_in_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(
             a_dictionary.get('not_in_dictionary', 'default'),
@@ -169,7 +169,7 @@ class TestDictionaries(unittest.TestCase):
         }
         self.assertEqual(
             a_dictionary.popitem(),
-            ('keyN', [0, 1, 2,'n'])
+            ('keyN', [0, 1, 2, 'n'])
         )
         self.assertEqual(a_dictionary, {'key1': 'value1'})
 
