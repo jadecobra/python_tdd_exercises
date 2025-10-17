@@ -18,16 +18,16 @@ def identity(argument):
     return argument
 
 
-def w_positional_arguments(first, second):
-    return first, second
+def w_positional_arguments(first, last):
+    return first, last
 
 
-def w_keyword_arguments(first, second):
-    return first, second
+def w_keyword_arguments(first, last):
+    return first, last
 
 
-def w_positional_and_keyword_arguments(first_name, last_name):
-    return first_name, last_name
+def w_positional_and_keyword_arguments(first, last):
+    return first, last
 
 
 def w_default_arguments(first_name, last_name='doe'):

@@ -25,38 +25,38 @@ class TestFunctions(unittest.TestCase):
 
     def test_functions_w_positional_arguments(self):
         self.assertEqual(
-            src.functions.w_positional_arguments('first', 'second'),
-            ('first', 'second')
+            src.functions.w_positional_arguments('first', 'last'),
+            ('first', 'last')
         )
         self.assertEqual(
-            src.functions.w_positional_arguments('second', 'first'),
-            ('second', 'first')
+            src.functions.w_positional_arguments('last', 'first'),
+            ('last', 'first')
         )
 
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                first='first', second='second',
+                first='first', last='last',
             ),
-            ('first', 'second')
+            ('first', 'last')
         )
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                second='second', first='first',
+                last='last', first='first',
             ),
-            ('first', 'second')
+            ('first', 'last')
         )
         self.assertEqual(
-            src.functions.w_keyword_arguments('second', 'first'),
-            ('second', 'first')
+            src.functions.w_keyword_arguments('last', 'first'),
+            ('last', 'first')
         )
 
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_positional_and_keyword_arguments(
-                'john', last_name='smith',
+                'first', last='last',
             ),
-            ('john', 'smith')
+            ('first', 'last')
         )
 
     def test_functions_w_default_arguments(self):

@@ -197,7 +197,7 @@ test_dictionaries
 #. :ref:`test_clear_empties_a_dictionary`
 #. :ref:`test_copy_a_dictionary`
 #. :ref:`test_fromkeys_makes_a_dictionary_from_an_iterable`
-#. :ref:`test_get_value_of_a_key_from_a_dictionary`
+#. :ref:`test_get_value_of_a_key_in_a_dictionary`
 #. :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary`
 #. :ref:`test_keys_of_a_dictionary`
 #. :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value`

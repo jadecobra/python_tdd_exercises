@@ -23,9 +23,9 @@ dictionaries
 
 ----
 
-A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>`. I will add tests for the keys to see which :ref:`data types<data structures>` I can or cannot use.
+A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>`. I will add tests for the keys to see which :ref:`data types<data structures>` I can use.
 
-I think this is the most important :ref:`data structure<data structures>` to know because they can hold all the other :ref:`data structures`. In programming I have had to deal with JSON_ which I can read and write as dictionaries_ in Python
+I think this is the most important :ref:`data structure<data structures>` to know because they can hold all the other :ref:`data structures`. In programming I have had to work with JSON_ which I can read and write as dictionaries_ in Python
 
 *********************************************************************************
 requirements
@@ -359,7 +359,7 @@ I change ``'bap'`` to ``'boom'``
       {(0, 1): 'boom'}
   )
 
-the test passes. I can use tuples_, numbers, :ref:`booleans`, :ref:`None` and strings_ as keys in a dictionary_
+the test passes. I can use tuples_, numbers (floats_ and integers_), :ref:`booleans`, :ref:`None` and strings_ as keys in a dictionary_
 
 ----
 
@@ -380,7 +380,6 @@ I add a test for :ref:`lists`
   def test_making_a_dictionary_w_a_list_as_a_key(self):
       self.assertEqual(
           {[0, 1]: 'boom'},
-          {[0, 1]: 'bap'}
       )
 
 the terminal shows :ref:`TypeError`
@@ -953,7 +952,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_get_value_of_a_key_from_a_dictionary
+test_get_value_of_a_key_in_a_dictionary
 *********************************************************************************
 
 red: make it fail
@@ -1072,7 +1071,7 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_get_value_of_a_key_from_a_dictionary(self):
+    def test_get_value_of_a_key_in_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(
             a_dictionary.get('not_in_dictionary', 'default'),
@@ -1110,7 +1109,7 @@ I add the next test from the list
 
 .. code-block:: python
 
-  def test_get_value_of_a_key_from_a_dictionary(self):
+  def test_get_value_of_a_key_in_a_dictionary(self):
       ...
 
   def test_items(self):
