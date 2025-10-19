@@ -4,13 +4,9 @@
 reviews
 #################################################################################
 
-.. class:: testimonial
-
   "This is an amazing course, if you are beginner and you want a strong foundation in python. The course builds your confidence in programming so when or if something breaks or fails you have the confidence to figure it out and fix. The videos are explained in such a manner that is easy to understand also his voice is very calming so extra bonus points.
 
-  Overall this course has shown me a new way of thinking, that will have a great impact on my career long term"
-
-  - Jire
+  Overall this course has shown me a new way of thinking, that will have a great impact on my career long term" - Jire
 
 ----
 
