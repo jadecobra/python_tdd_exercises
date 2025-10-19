@@ -87,7 +87,7 @@ I change the expectation to match
 
   self.assertEqual(dict(), {})
 
-the test passes. This is how to make an empty dictionary_
+the test passes. These are two ways to make an empty dictionary_
 
 refactor: make it better
 #################################################################################
@@ -391,7 +391,7 @@ the terminal shows :ref:`TypeError`
 green: make it pass
 #################################################################################
 
-I remove the things around the new dictionary_ then change the key for fun
+I remove the things around the new dictionary_ then change the key and value for fun
 
 .. code-block:: python
   :emphasize-lines: 3
@@ -448,7 +448,7 @@ I add assertRaises_
       with self.assertRaises(TypeError):
           {{3, 2, 1}: 'BOOM!!!'}
 
-the test is green again. I cannot use a :ref:`list<lists>` or a set_ as a key in a dictionary_
+the test is green again. I cannot use a :ref:`lists` or sets_ as keys in a dictionary_
 
 ----
 
@@ -489,7 +489,7 @@ I add assertRaises_
       with self.assertRaises(TypeError):
           {a_dictionary: 'BOOM!!!'}
 
-the test passes. I cannot use a dictionary_, set_ or :ref:`list <lists>` as a key in a dictionary_ they are not hashable_
+the test passes. I cannot use a dictionaries_, sets_ or :ref:`lists` as keys in a dictionary_ they are not hashable_, which means they can change
 
 ----
 
@@ -507,9 +507,7 @@ I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attri
   def test_attributes_and_methods_of_dictionaries(self):
       self.assertEqual(
           dir(dict),
-          [
-
-          ]
+          []
       )
 
 the terminal shows :ref:`AssertionError`
@@ -518,7 +516,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
 
-It also gives me a message to view the entire difference between the two :ref:`lists`
+It also gives me a message to show the full difference between the two :ref:`lists`
 
 .. code-block:: python
 
@@ -527,20 +525,19 @@ It also gives me a message to view the entire difference between the two :ref:`l
 green: make it pass
 #################################################################################
 
-I move the terminal to right side of the screen, then add `maxDiff`_
+I move the terminal to right side of the screen, then add `maxDiff`_ to the test
 
 .. code-block:: python
+  :emphasize-lines: 3
 
   def test_attributes_and_methods_of_dictionaries(self):
       self.maxDiff = None
       self.assertEqual(
           dir(dict),
-          [
-
-          ]
+          []
       )
 
-the terminal shows the entire difference between the two :ref:`lists`. I copy and paste the expected values from the terminal then use `find and replace`_ to remove the extra characters
+the terminal shows the difference between the two :ref:`lists`. I copy and paste the expected values from the terminal then use `find and replace`_ to remove the extra characters
 
 .. note::
 
@@ -553,20 +550,20 @@ the terminal shows the entire difference between the two :ref:`lists`. I copy an
       self.assertEqual(
           dir(src.dictionaries.a_dict()),
           [
-                '__class__',
-                ...
-                '__subclasshook__',
-                'clear',
-                'copy',
-                'fromkeys',
-                'get',
-                'items',
-                'keys',
-                'pop',
-                'popitem',
-                'setdefault',
-                'update',
-                'values'
+              '__class__',
+              ...
+              '__subclasshook__',
+              'clear',
+              'copy',
+              'fromkeys',
+              'get',
+              'items',
+              'keys',
+              'pop',
+              'popitem',
+              'setdefault',
+              'update',
+              'values'
           ]
       )
 
