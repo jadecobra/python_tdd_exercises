@@ -165,7 +165,7 @@ class TestPerson(unittest.TestCase):
                 '__subclasshook__',
                 '__weakref__',
                 'get_age',
-                'introduce'
+                'introduce',
             ]
         )
 
@@ -176,5 +176,4 @@ class TestPerson(unittest.TestCase):
 # AttributeError
 # TypeError
 # SyntaxError
-# IndentationError
 # KeyError

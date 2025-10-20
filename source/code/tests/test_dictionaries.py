@@ -91,7 +91,7 @@ class TestDictionaries(unittest.TestCase):
                 'popitem',
                 'setdefault',
                 'update',
-                'values'
+                'values',
             ]
         )
 

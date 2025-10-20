@@ -59,7 +59,7 @@ class TestLists(unittest.TestCase):
                 'pop',
                 'remove',
                 'reverse',
-                'sort'
+                'sort',
             ]
         )
 

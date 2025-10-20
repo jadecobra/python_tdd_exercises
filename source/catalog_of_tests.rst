@@ -226,11 +226,8 @@ test_functions
 test_classes
 *********************************************************************************
 
-#. :ref:`test_making_a_class_w_pass`
-#. :ref:`test_making_a_class_w_parentheses`
-#. :ref:`test_making_a_class_w_object`
-#. :ref:`test_making_a_class_w_attributes`
-#. :ref:`test_making_a_class_w_methods`
-#. :ref:`test_making_a_class_w_attributes_and_methods`
-#. :ref:`test_making_a_class_w_initializer`
-#. :ref:`test_attributes_and_methods_of_objects`
+#. :ref:`test_factory_person_introduction`
+#. :ref:`test_factory_person_introduction`
+#. :ref:`test_update_factory_person_year_of_birth`
+#. :ref:`test_update_classy_person_year_of_birth`
+#. :ref:`test_attributes_and_methods_of_classes`
