@@ -842,13 +842,13 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an assert_ method to see what happens to the first dictionary_ in the test
+* I add another assert_ method to see what happens to the first dictionary_ in the test
 
   .. code-block:: python
 
     self.assertEqual(
-        a_dictionary.fromkeys((0, 1, 2, 3)),
-        {0: None, 1: None, 2: None, 3: None}
+        a_dictionary.fromkeys((0, 1)),
+        {0: None, 1: None}
     )
     self.assertEqual(a_dictionary, {})
 
@@ -882,13 +882,13 @@ refactor: make it better
             {0: None, 1: None}
         )
 
-* the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as a default value and when I called it without inputs the terminal showed :ref:`TypeError`
+* the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal showed :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: fromkeys expected at least 1 argument, got 0
 
-  I add a second input to see if it changes the default value of the dictionary_
+  I add a second input to see what will happen
 
   .. code-block:: python
 
@@ -897,7 +897,7 @@ refactor: make it better
         {0: None, 1: None}
     )
 
-  the terminal still shows green. I change the second input to see if I get a failure
+  the terminal still shows green. I change the second input expecting a failure
 
   .. code-block:: python
 
@@ -921,7 +921,7 @@ refactor: make it better
         {0: 'default', 1: 'default'}
     )
 
-  the test is green again. This reminds me of a dict comprehension
+  the test is green again. This is like a dict comprehension because it made a dictionary_ using the items from the iterable_ as keys
 
 * I rename the test
 
@@ -992,7 +992,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.get(0, None))
 
-  the terminal still shows green. I change the value expecting a failure
+  the terminal still shows green. I change the second argument expecting a failure
 
   .. code-block:: python
 
@@ -1034,7 +1034,7 @@ refactor: make it better
         'default'
     )
 
-* I add another :ref:`assertion<AssertionError>`, this time with something from the dictionary_
+* I want to see what would happen if I use the get_ :ref:`method<functions>` with a key that is in the dictionary_
 
   .. code-block:: python
 
@@ -1053,7 +1053,7 @@ refactor: make it better
 
     AssertionError: 'value' != 'default'
 
-  it looks like the get_ :ref:`method<functions>` has a condition where it returns the value if the key is in the dictionary_ or it returns the default argument when the key is not in the dictionary_. I change the expectation to match
+  the get_ :ref:`method<functions>` has a condition. When the key is NOT in the dictionary_, it returns the default argument, when the key is in the dictionary_, it returns its value. I change the expectation to match
 
   .. code-block:: python
 
@@ -1122,7 +1122,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I copy the value from the terminal and paste as the expectation
+I copy the value from the terminal and paste it as the expectation
 
 .. code-block:: python
 
@@ -1169,7 +1169,7 @@ the test passes. This works because the items_ :ref:`method<functions>` returns 
 refactor: make it better
 #################################################################################
 
-* I add another key-value pair to the dictionary_ to see what how the :ref:`method<functions>` behaves when there is more than one key-value pair
+* I add another key-value pair to the dictionary_ to see what the :ref:`method<functions>` does when there is more than one key-value pair
 
   .. code-block:: python
 
@@ -1192,7 +1192,10 @@ refactor: make it better
 
     self.assertEqual(
         list(a_dictionary.items()),
-        [('key1', 'value1'), ('keyN', [0, 1, 2, 'n'])]
+        [
+            ('key1', 'value1'),
+            ('keyN', [0, 1, 2, 'n']),
+        ]
     )
 
   the test passes
@@ -1208,7 +1211,10 @@ refactor: make it better
         }
         self.assertEqual(
             list(a_dictionary.items()),
-            [('key1', 'value1'), ('keyN', [0, 1, 2, 'n'])]
+            [
+                ('key1', 'value1'),
+                ('keyN', [0, 1, 2, 'n']),
+            ]
         )
 
 * I remove items_ from the TODO list
@@ -1221,6 +1227,8 @@ refactor: make it better
     'setdefault',
     'update',
     'values'
+
+  all tests are still passing
 
 ----
 
