@@ -69,13 +69,13 @@ requirements
 * then change ``True`` to ``False``
 
 *********************************************************************************
-test_functions_w_pass
+test_making_a_function_w_pass
 *********************************************************************************
 
 red: make it fail
 #################################################################################
 
-* I change ``test_failure`` to ``test_functions_w_pass``
+* I change ``test_failure`` to ``test_making_a_function_w_pass``
 
   .. code-block:: python
 
@@ -84,7 +84,7 @@ red: make it fail
 
     class TestFunctions(unittest.TestCase):
 
-        def test_functions_w_pass(self):
+        def test_making_a_function_w_pass(self):
             self.assertIsNone(src.functions.function_w_pass())
 
   the terminal shows NameError_
@@ -128,7 +128,7 @@ green: make it pass
 ----
 
 *********************************************************************************
-test_functions_w_return
+test_making_a_function_w_return
 *********************************************************************************
 
 red: make it fail
@@ -138,7 +138,7 @@ I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check 
 
 .. code-block:: python
 
-    def test_functions_w_return(self):
+    def test_making_a_function_w_return(self):
         self.assertIsNone(functions.function_w_return())
 
 the terminal shows :ref:`AttributeError`
@@ -158,7 +158,7 @@ the terminal shows this test also passes
 I defined 2 :ref:`functions` with different statements in their body but they both return the same result, because "inall :ref:`functions` return :ref:`None` by default, like the :ref:`function<functions>` has an invisible line that says ``return None``"
 
 *********************************************************************************
-test_functions_w_return_none
+test_making_a_function_w_return_none
 *********************************************************************************
 
 red: make it fail
@@ -168,7 +168,7 @@ I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to h
 
 .. code-block:: python
 
-    def test_functions_w_return_none(self):
+    def test_making_a_function_w_return_none(self):
         self.assertIsNone(
             functions.function_w_return_none()
         )

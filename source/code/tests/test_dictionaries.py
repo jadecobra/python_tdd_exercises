@@ -162,7 +162,7 @@ class TestDictionaries(unittest.TestCase):
         )
         self.assertEqual(a_dictionary, {})
 
-    def test_popitem_removes_and_returns_last_key_value_pair_in_a_dictionary(self):
+    def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
         a_dictionary = {
             'key1': 'value1',
             'keyN': [0, 1, 2, 'n'],

@@ -211,9 +211,9 @@ test_dictionaries
 test_functions
 *********************************************************************************
 
-#. :ref:`test_functions_w_pass`
-#. :ref:`test_functions_w_return`
-#. :ref:`test_functions_w_return_none`
+#. :ref:`test_making_a_function_w_pass`
+#. :ref:`test_making_a_function_w_return`
+#. :ref:`test_making_a_function_w_return_none`
 #. :ref:`test_constant_function`
 #. :ref:`test_identity_function`
 #. :ref:`test_functions_w_positional_arguments`
