@@ -687,7 +687,7 @@ how to automatically make a python test driven development environment on Window
   - ``$args[0]`` is the first argument given when the program is called. I can use it in place of ``$PROJECT_NAME``
   - `Out-File`_ writes input text to a given file
 
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type the following in the terminal 
 
   .. code-block:: PowerShell
 
