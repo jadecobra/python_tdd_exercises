@@ -622,7 +622,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program. I can change it to ``#!/bin/zsh`` to use zsh_ instead
 
-* This program will always make a project called ``magic``. I add a variable to replace ``magice`` so I can use it to make any project I want by giving it the name of the project
+* This program will always make a project called ``magic``. I add a variable to replace ``magic`` so I can use it to make any project I want by giving it the name of the project
 
   .. code-block:: shell
 
@@ -707,7 +707,7 @@ how to automatically make a python test driven development environment on Window
     pytest-watch
 
 
-* This program will always make a project called ``magic``. I add a variable to replace ``magice`` so I can use it to make any project I want by giving it the name of the project
+* This program will always make a project called ``magic``. I add a variable to replace ``magic`` so I can use it to make any project I want by giving it the name of the project
 
   .. code-block:: PowerShell
 
