@@ -413,7 +413,7 @@ how to make a virtual environment
 
     Package Version
     ------- -------
-    pip     x.y.z
+    pip     x.y
 
 * I make a file in the ``magic`` directory with `pytest-watch`_ as its text
 
