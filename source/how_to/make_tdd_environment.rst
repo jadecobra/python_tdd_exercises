@@ -660,13 +660,13 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   chmod_ is a program that changes the mode of the given file
 
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved,
 
   .. code-block:: shell
 
     ./makePythonTdd.sh calculator
 
-  in the terminal in the folder where ``makePythonTdd.sh`` is saved, the computer will make a `Test Driven Development`_ environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
+  the computer will make a `Test Driven Development`_ environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
 
 ----
 
@@ -737,13 +737,13 @@ how to automatically make a python test driven development environment on Window
     :linenos:
     :language: PowerShell
 
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type the following in the terminal
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type the following in the terminal in the directory where ``makePythonTdd.ps1`` is saved
 
   .. code-block:: PowerShell
 
     ./makePythonTdd.ps1 calculator
 
-  in the terminal in the directory where ``makePythonTdd.ps1`` is saved, the computer will make a `Test Driven Development`_ environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
+  the computer will make a `Test Driven Development`_ environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
 
 ----
 
@@ -751,7 +751,9 @@ how to automatically make a python test driven development environment on Window
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ Test Driven Development Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computers.
+One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me.
+
+You have seen a way to make a Python_ Test Driven Development Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 Would you like to test :doc:`making a calculator?</how_to/calculator>`
 
