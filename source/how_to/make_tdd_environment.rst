@@ -599,7 +599,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     history
 
-* then open the file in the Integrated Development Environment (IDE), and copy the commands I need to make a `Test Driven Development`_ Environment
+* I click on the file to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment
 
   .. admonition:: :ref:`click here how to automatically make a python test driven development environment on Windows_ without WSL`_ for how to do the same thing on Windows_ without `Windows Subsystem Linux`_
 
