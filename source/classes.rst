@@ -33,7 +33,7 @@ how to make a class in Python
 ----
 
 *********************************************************************************
-test_making_a_class_w_pass
+test_factory_person_introduction
 *********************************************************************************
 
 red: make it fail
@@ -141,7 +141,7 @@ Here is a quick review of what has happened so far
 
 
 *********************************************************************************
-test_making_a_class_w_parentheses
+test_classy_person_introduction
 *********************************************************************************
 
 red: make it fail
@@ -192,7 +192,7 @@ green: make it pass
 
 
 *********************************************************************************
-test_making_a_class_w_object
+test_update_factory_person_year_of_birth
 *********************************************************************************
 
 In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new objects_ that inherit from existing objects_.
@@ -240,7 +240,7 @@ green: make it pass
   and the terminal still shows passing tests
 
 *********************************************************************************
-test_making_a_class_w_attributes
+test_update_classy_person_year_of_birth
 *********************************************************************************
 
 I now add some tests for attributes since I know how to define a class for attributes
@@ -350,9 +350,8 @@ and the terminal shows all tests pass
 
 ----
 
-
 *********************************************************************************
-test_making_a_class_w_methods
+test_attributes_and_methods_of_classes
 *********************************************************************************
 
 I can also define classes with :ref:`methods<functions>` which are :ref:`function<functions>` definitions that belong to the class
