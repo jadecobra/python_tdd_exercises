@@ -50,8 +50,11 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 
   .. tip:: do not worry if you cannot install `Windows Subsystem Linux`_, I have you covered
 
+* after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
+* Press ``F1`` on the keyboard and select ``WSL:Connect to WSL`` to open a terminal in `Windows Subsystem Linux`_
 
-linux requirements
+
+linux/Windows Subsystem Linux requirements
 #################################################################################
 
 run these commands in a terminal to install Python in Linux_
@@ -352,7 +355,7 @@ how to make a virtual environment
 
       Set-ExecutionPolicy RemoteSigned
 
-    the terminal shows
+    the terminal may show the following message if you have never run this command before
 
     .. code-block:: text
 
@@ -598,6 +601,8 @@ You made it this far and have become the greatest programmer in the world. To fo
 
 * then open the file in the Integrated Development Environment (IDE), and copy the commands I need to make a `Test Driven Development`_ Environment
 
+  .. admonition:: :ref:`click here how to automatically make a python test driven development environment on Windows_ without WSL`_ for how to do the same thing on Windows_ without `Windows Subsystem Linux`_
+
   .. code-block:: ruby
 
     #!/bin/bash
@@ -676,6 +681,32 @@ how to automatically make a python test driven development environment on Window
 
     New-Item makePythonTdd.ps1
 
+* I use the history_ program to list the commands I typed and use them as an example for the program
+
+  .. code-block:: shell
+
+    history
+
+* then open the file in the Integrated Development Environment (IDE), and copy the commands I need to make a `Test Driven Development`_ Environment
+
+  .. code-block:: ruby
+
+    #!/bin/bash
+    mkdir magic
+    cd magic
+    mkdir src
+    touch src/magic.py
+    mkdir tests
+    touch tests/__init__.py
+    touch tests/test_magic.py
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    echo pytest-watch > requirements.txt
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
+
+
 * and open the file in the Integrated Development Environment's Editor then add the following
 
     the line numbers below are a guide, you do not need to copy them
@@ -687,7 +718,7 @@ how to automatically make a python test driven development environment on Window
   - ``$args[0]`` is the first argument given when the program is called. I can use it in place of ``$PROJECT_NAME``
   - `Out-File`_ writes input text to a given file
 
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type the following in the terminal 
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type the following in the terminal
 
   .. code-block:: PowerShell
 
