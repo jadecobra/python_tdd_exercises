@@ -652,7 +652,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     :language: shell
     :linenos:
 
-* then make the program executable
+* then I type this in the terminal to make the program I just wrote executable
 
   .. code-block:: shell
 
@@ -687,36 +687,55 @@ how to automatically make a python test driven development environment on Window
 
     history
 
-* then open the file in the Integrated Development Environment (IDE), and copy the commands I need to make a `Test Driven Development`_ Environment
+* then I open the file in the Integrated Development Environment (IDE), and copy the commands I need to make a `Test Driven Development`_ Environment
 
-  .. code-block:: ruby
+  .. code-block:: PowerShell
 
     #!/bin/bash
     mkdir magic
     cd magic
     mkdir src
-    touch src/magic.py
+    New-Item src/magic.py
     mkdir tests
-    touch tests/__init__.py
-    touch tests/test_magic.py
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo pytest-watch > requirements.txt
-    python3 -m pip install --requirement requirements.txt
+    New-Item tests/__init__.py
+    New-Item tests/test_magic.py
+    python -m venv .venv
+    .venv/scripts/activate.ps1
+    python -m pip install --upgrade pip
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF8
+    python -m pip install --requirement requirements.txt
     pytest-watch
 
 
-* and open the file in the Integrated Development Environment's Editor then add the following
+* This program will always make a project called ``magic``. I add a variable to make it possible to make a project for any name I give when the program is called and use it to replace ``magic`` in the program
+
+  .. code-block:: PowerShell
+
+    #!/bin/bash
+    $PROJECT_NAME=$args[0]
+    mkdir $PROJECT_NAME
+    cd $PROJECT_NAME
+    mkdir src
+    New-Item "src/$PROJECT_NAME.py"
+    mkdir tests
+    New-Item tests/__init__.py
+    New-Item tests/test_magic.py
+    python -m venv .venv
+    source .venv/bin/activate
+    python -m pip install --upgrade pip
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF8
+    python -m pip install --requirement requirements.txt
+    pytest-watch
+
+  ``$args[0]`` is the first argument given when the program is called. I can use it in place of ``$PROJECT_NAME``
+
+* I use the `Out-File`_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
     the line numbers below are a guide, you do not need to copy them
 
   .. literalinclude:: /code/make_tdd/makePythonTdd.ps1
     :linenos:
     :language: PowerShell
-
-  - ``$args[0]`` is the first argument given when the program is called. I can use it in place of ``$PROJECT_NAME``
-  - `Out-File`_ writes input text to a given file
 
 * I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type the following in the terminal
 
@@ -725,7 +744,6 @@ how to automatically make a python test driven development environment on Window
     ./makePythonTdd.ps1 calculator
 
   in the terminal in the directory where ``makePythonTdd.ps1`` is saved, the computer will make a `Test Driven Development`_ environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
-
 
 ----
 
