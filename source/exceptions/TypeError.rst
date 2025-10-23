@@ -4,8 +4,6 @@
 
 .. include:: ../links.rst
 
-.. _TypeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError
-
 #################################################################################
 TypeError
 #################################################################################
@@ -16,7 +14,7 @@ TypeError
 
 ----
 
-The TypeError_ is raised when an :ref:`object<classes>` is used in a way that it should not be.
+The `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an :ref:`object<classes>` is used in a way that it should not be.
 
 *********************************************************************************
 test_type_error_w_non_callables
@@ -514,7 +512,7 @@ I add a new test with a failing line
   def test_type_error_w_objects_that_do_not_mix(self):
       None + 1
 
-the terminal shows TypeError_
+the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
 .. code-block:: python
 
@@ -547,7 +545,7 @@ refactor: make it better
             None + 1
         'text' + 0.1
 
-  the terminal shows TypeError_
+  the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
@@ -576,7 +574,7 @@ refactor: make it better
             'text' + 0.1
         (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  the terminal shows TypeError_
+  the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
