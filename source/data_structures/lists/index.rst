@@ -1750,7 +1750,7 @@ refactor: make it better
     self.assertEqual(a_list[2], '3rd')
     self.assertEqual(a_list[-2], '')
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1811,7 +1811,7 @@ refactor: make it better
     self.assertEqual(a_list[-3], '2nd')
     self.assertEqual(a_list[3], '')
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

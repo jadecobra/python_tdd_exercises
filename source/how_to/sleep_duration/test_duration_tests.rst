@@ -95,7 +95,7 @@ green: make it pass
     def get_datetime():
         return None
 
-  and the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -107,7 +107,7 @@ green: make it pass
 
     def get_datetime(argument):
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -149,7 +149,7 @@ green: make it pass
       def get_datetime(argument):
       ...
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -184,7 +184,7 @@ green: make it pass
             argument, '%Y/%m/%d %H:%M'
         )
 
-  and get :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -196,7 +196,7 @@ green: make it pass
 
     duration
 
-  and get NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -223,7 +223,7 @@ green: make it pass
     def duration():
         return None
 
-  and the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -235,7 +235,7 @@ green: make it pass
 
     def duration(sleep_time):
 
-  and get :ref:`TypeError` for another keyword argument
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -300,7 +300,7 @@ green: make it pass
             "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
         )
 
-  and get a SyntaxError_ with this message
+  the terminal shows SyntaxError_
 
   .. code-block:: python
     :force:
@@ -334,7 +334,7 @@ green: make it pass
             'sleep_time: "8720/08/18 01:02"'
         )
 
-  and get another :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
+  the terminal shows :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
 
   .. code-block:: python
 
@@ -361,7 +361,7 @@ green: make it pass
         #    'sleep_time: "8720/08/18 01:02"'
         # )
 
-  and get the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
+  the terminal shows the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
 
 * I :doc:`interpolate</how_to/pass_values>` ``wake_time`` and ``sleep_time`` in the message
 
@@ -375,7 +375,7 @@ green: make it pass
             f'sleep_time: "{sleep_time}"'
         )
 
-  and get ValueError_
+  the terminal shows ValueError_
 
   .. code-block:: python
 
@@ -434,7 +434,7 @@ green: make it pass
         else:
             return (sleep_time - wake_time)
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -487,7 +487,7 @@ green: make it pass
               - get_datetime(wake_time)
             )
 
-  and get another :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

@@ -88,7 +88,7 @@ green: make it pass
     import src.person
     import unittest
 
-  and get :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -245,7 +245,7 @@ green: make it pass
     class TestPersonFactory(unittest.TestCase):
     ..
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -396,7 +396,7 @@ green: make it pass
             )
         )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -447,7 +447,7 @@ green: make it pass
         last_name = 'doe'
         ...
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -728,7 +728,7 @@ refactor: make it better
             'age': this_year() - year_of_birth,
         }
 
-  and get NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -749,7 +749,7 @@ refactor: make it better
             'age': datetime.datetime.now().year - year_of_birth,
         }
 
-  and the terminal shows another NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -821,7 +821,7 @@ refactor: make it better
         )
         ...
 
-  and get random success or :ref:`AssertionError`
+  the terminal shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -864,7 +864,7 @@ refactor: make it better
         )
         ...
 
-  and get random success or :ref:`AssertionError`
+  the terminal shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -943,7 +943,7 @@ green: make it pass
             )
         )
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -988,7 +988,7 @@ green: make it pass
         ):
         ...
 
-  and get another SyntaxError_
+  the terminal shows SyntaxError_
 
   .. code-block:: python
 
@@ -1098,7 +1098,7 @@ green: make it pass
         }
     )
 
-  and get the same NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -1121,7 +1121,7 @@ green: make it pass
         }
     )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1325,7 +1325,7 @@ refactor: make it better
             this_year()-120, this_year()
         )
 
-  and get another :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1408,7 +1408,7 @@ green: make it pass
     def factory(first_name):
         return None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1421,7 +1421,7 @@ green: make it pass
     def factory(first_name, last_name):
         return None
 
-  and the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1526,7 +1526,7 @@ green: make it pass
             'age': 20
         }
 
-  and get another :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1578,7 +1578,7 @@ green: make it pass
             'age': year_of_birth,
         }
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1630,7 +1630,7 @@ green: make it pass
         ):
         ...
 
-  and get a SyntaxError_
+  the terminal shows a SyntaxError_
 
 * When I add a default value for ``sex``
 
@@ -1678,7 +1678,7 @@ green: make it pass
         ):
         ...
 
-  and get another :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

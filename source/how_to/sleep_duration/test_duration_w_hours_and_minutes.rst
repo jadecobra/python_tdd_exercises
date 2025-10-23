@@ -261,7 +261,7 @@ green: make it pass
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  and get this :ref:`AssertionError` for ``test_duration_calculation``
+  the terminal shows :ref:`AssertionError` for ``test_duration_calculation``
 
   .. code-block:: python
 
@@ -313,7 +313,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
     self.assertEqual(150//60, 0)
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

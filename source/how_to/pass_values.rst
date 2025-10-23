@@ -120,7 +120,7 @@ green: make it pass
 
     text = None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ green: make it pass
       def text():
           return None
 
-  and the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -158,7 +158,7 @@ green: make it pass
     def text(value):
         return None
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -462,7 +462,7 @@ I add a test for a float_
           "I received: '1.234'"
       )
 
-and get :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -538,7 +538,7 @@ I add a test for a :ref:`list <lists>`
           "I received: '[1, 2, 3, n]'"
       )
 
-and get :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -630,7 +630,7 @@ green: make it pass
 
     text
 
-  and get NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -681,7 +681,7 @@ green: make it pass
     def text(argument):
         return 'I received: None'
 
-  and get another :ref:`AssertionError`
+  the terminal shows another :ref:`AssertionError`
 
   .. code-block:: python
 

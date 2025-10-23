@@ -197,7 +197,7 @@ green: make it pass
                 (wake_time, sleep_time)
             )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -296,7 +296,7 @@ because my `import statement`_ is different from `the example in the documentati
           ''
       )
 
-and get :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -347,7 +347,7 @@ refactor: make it better
             )
         )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -440,7 +440,7 @@ refactor: make it better
                 )
             )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -572,7 +572,7 @@ then add a variable for a random timestamp
           )
       )
 
-and get :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -669,7 +669,7 @@ and the test is still green
                 )
             )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -796,7 +796,7 @@ and the test is still green
             f'{random.randint(0,59):02}'
         )
 
-  and get a random ValueError_
+  the terminal shows a random ValueError_
 
   .. code-block:: python
 

@@ -233,7 +233,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_conjunction(True, False))
         self.assertFalse(src.truth_table.logical_conjunction(False, True))
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

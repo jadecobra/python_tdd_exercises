@@ -152,7 +152,7 @@ green: make it pass
 
     add = None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -192,7 +192,7 @@ green: make it pass
     def add(x, y):
         return None
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -232,7 +232,7 @@ I add an another :ref:`assertion<AssertionError>` in ``test_calculator.py`` to s
           0
       )
 
-and get :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -911,7 +911,7 @@ green: make it pass
 
     subtract
 
-  and get NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -929,14 +929,14 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I make it a :ref:`function<functions>`
+  I change ``subtract`` to a :ref:`function<functions>`
 
   .. code-block:: python
 
     def subtract():
         return None
 
-  and the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -945,11 +945,12 @@ green: make it pass
   I add positional arguments to the :ref:`function<functions>`
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def subtract(a, b):
         return None
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -965,7 +966,7 @@ green: make it pass
     def subtract(a, b):
         return a, b
 
-  and the terminal shows another :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -983,7 +984,7 @@ green: make it pass
     def subtract(a, b):
         return a - b
 
-  and the terminal shows another :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -996,7 +997,7 @@ green: make it pass
     def multiply():
         return None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1041,7 +1042,7 @@ green: make it pass
     def multiply(a, b):
         return a * b
 
-  and get another :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 

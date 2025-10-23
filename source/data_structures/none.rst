@@ -673,7 +673,7 @@ refactor: make it better
         self.assertIsInstance(0.1, float)
         self.assertIsInstance(None, float)
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1368,7 +1368,7 @@ refactor: make it better
         self.assertIsNotNone(dict())
         self.assertIsNone({'key': 'value'})
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

@@ -188,7 +188,7 @@ refactor: make it better
 
     true = True
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -333,7 +333,7 @@ red: make it fail
     def function_00():
         return None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -482,7 +482,7 @@ refactor: make it better
         ):
         return None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 

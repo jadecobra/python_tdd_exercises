@@ -52,7 +52,7 @@ green: make it pass
 
     raise_exception
 
-  and get NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -180,7 +180,7 @@ green: make it pass
 
     an_exception_handler = None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -193,7 +193,7 @@ green: make it pass
     def an_exception_handler():
         return None
 
-  and get a different message for the :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -247,7 +247,7 @@ I add a new test
           'succeeded'
       )
 
-and get :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -282,7 +282,7 @@ green: make it pass
 
     does_not_raise_exception = None
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block::
 

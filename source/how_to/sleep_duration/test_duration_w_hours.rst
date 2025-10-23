@@ -66,7 +66,7 @@ red: make it fail
 
             )
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ green: make it pass
         None
     )
 
-  and get :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -184,7 +184,7 @@ green: make it pass
         None
     )
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -233,7 +233,7 @@ green: make it pass
         None
     )
 
-  and get a similar :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -325,7 +325,7 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '06:00'
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -404,7 +404,7 @@ refactor: make it better
         (wake_time-sleep_time)
     )
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -505,7 +505,7 @@ refactor: make it better
         '01:23'.split(), ['01', '23']
     )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -594,7 +594,7 @@ refactor: make it better
     self.assertEqual(split[0], '01')
     self.assertEqual(split[1], '01')
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -623,7 +623,7 @@ refactor: make it better
         )
     )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -711,7 +711,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -747,7 +747,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

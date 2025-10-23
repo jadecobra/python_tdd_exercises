@@ -140,7 +140,7 @@ refactor: make it better
     variable_00 = None
     variable_01
 
-  and get NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 

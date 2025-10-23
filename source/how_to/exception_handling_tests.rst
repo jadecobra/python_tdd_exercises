@@ -211,7 +211,7 @@ red: make it fail
     def test_catching_type_error_in_tests(self):
         src.exceptions.function_name('argument')
 
-  and get :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -235,7 +235,7 @@ red: make it fail
 
     function_name = None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
