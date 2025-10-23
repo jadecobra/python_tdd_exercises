@@ -4,7 +4,7 @@
 
 .. include:: ../links.rst
 
-.. AttributeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
+.. _AttributeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
 
 #################################################################################
 AttributeError

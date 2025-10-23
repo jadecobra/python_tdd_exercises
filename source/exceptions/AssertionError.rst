@@ -4,7 +4,7 @@
 
 .. include:: ../links.rst
 
-.. AssertionError: https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError
+.. _AssertionError: https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError
 
 #################################################################################
 AssertionError
