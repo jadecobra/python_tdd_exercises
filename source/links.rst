@@ -171,7 +171,9 @@
 .. _Windows: https://www.microsoft.com/en-us/windows
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 
+.. _Pylance: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 .. _Python: https://docs.python.org
+.. _Python Extension: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 .. _PyCharm: https://www.jetbrains.com/pycharm/download
 .. _Sublime Text: https://www.sublimetext.com
 .. _Visual Studio Code: https://code.visualstudio.com/download

@@ -59,7 +59,7 @@ When working with just the Integrated Development Environment, I have the follow
       :width: 600
       :alt: Terminal Window at the bottom
 
-  - to the right - when the results I am looking at in the terminal are too long to see in the bottom, for example when working with documentation, JSON or :ref:`dictionaries`
+  - to the right - when the results I am looking at in the terminal are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries`
 
     .. image:: /_static/setup_my_ide/terminal_on_right.png
       :width: 600
@@ -78,7 +78,7 @@ Here are extensions I use in `Visual Studio Code`_
 
 * `Code Spell Checker`_ - to catch spelling mistakes
 * `indent-rainbow`_ - I like pretty colors and this makes indentation easier to see from a distance
-* `Python Extension <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`_ - Python_ language support with Pylance and a `Python <https://docs.python.org>`_ debugger
+* `Python Extension`_ - Python_ language support with Pylance_ and a Python_ debugger
 * `Dark Rainbow Theme`_  - did I mention I like pretty colors?
 
 ----
