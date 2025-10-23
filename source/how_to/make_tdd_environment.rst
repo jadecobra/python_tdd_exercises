@@ -48,7 +48,9 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 
     wsl --install --distribution debian
 
-  .. admonition:: If installing `Windows Subsystem Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead
+  .. admonition:: If installing `Windows Subsystem Linux`_ does not work
+
+    you can use :doc:`make_tdd_environment_no_wsl` instead
 
 * after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
 * Press ``F1`` on the keyboard and select ``WSL:Connect to WSL`` to open a terminal in `Windows Subsystem Linux`_

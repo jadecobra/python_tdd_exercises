@@ -69,7 +69,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* and change ``test_failure`` to ``test_addition`` then add an :ref:`assertion<AssertionError>`
+* and change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
 
   .. code-block:: python
 
@@ -106,7 +106,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_
+* then add an `import statement`_ at the top of the file
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then open ``calculator.py`` in the editor to put the name
+* then click on ``calculator.py`` in ``src`` folder to open it in the editor, and I type the name
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ green: make it pass
 
   because the ``add`` variable is :ref:`None` which is not callable_
 
-* I add the error to the list of Exceptions_ encountered
+* I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -170,7 +170,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then change ``add`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
+* then I change ``add`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
 
   .. code-block:: python
 
@@ -217,9 +217,10 @@ The ``add`` :ref:`function<functions>` passes the test but does not meet the act
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add an :ref:`assertion<AssertionError>` to show the problem with the :ref:`function<functions>`
+I add an another :ref:`assertion<AssertionError>` in ``test_calculator.py`` to show the problem with the :ref:`function<functions>`
 
 .. code-block:: python
+  :emphasize-lines: 6-9
 
   def test_addition(self):
       self.assertEqual(
@@ -254,9 +255,10 @@ the terminal shows a passing test
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I add an `import statement`_ to use random numbers in the test
+* I want the test to use random numbers instead of fixed numbers, so I add an `import statement`_ at the top of ``test_calculator.py`` to use random numbers in the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     import random
     import src.calculator
