@@ -16,7 +16,7 @@ AssertionError
 
 ----
 
-The AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was introduced in :doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with the first failing test
+The AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was introduced in :ref:`how to make a python test driven development environment` with the first failing test
 
 .. code-block:: python
 
