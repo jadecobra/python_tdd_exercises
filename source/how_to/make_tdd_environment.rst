@@ -150,7 +150,7 @@ red: make it fail
 
 * I open ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type the following
 
-    the line numbers below are a guide, you do not need to copy them
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: python
     :linenos:
@@ -219,7 +219,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the failure happened
 
-  .. attention:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
+  .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
 
 * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the failing test :ref:`method<functions>`
@@ -439,7 +439,7 @@ how to make a virtual environment
 
   then I change it back to :ref:`False<test_what_is_false>` to make it pass and can write the rest of the code for the project while the tests run automatically
 
-  .. attention:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
+  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 ----
 
@@ -547,7 +547,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
 * I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
-    the line numbers below are a guide, you do not need to copy them
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. literalinclude:: /code/make_tdd/makePythonTdd.sh
     :language: shell
