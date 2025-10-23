@@ -538,7 +538,7 @@ the terminal shows the difference between the two :ref:`lists`. I copy and paste
 
 .. note::
 
-  results can be different because of Python_ version
+  results can be different because of the Python_ version
 
 .. code-block:: python
 
