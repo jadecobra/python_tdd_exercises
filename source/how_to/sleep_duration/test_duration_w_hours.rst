@@ -302,7 +302,7 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '07:00'
 
-  which gives me :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -573,7 +573,7 @@ refactor: make it better
     self.assertEqual(split, ['01', '23'])
     self.assertEqual(split[0], 0)
 
-  which gives me :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
+  the terminal shows :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
 
   .. code-block:: python
 

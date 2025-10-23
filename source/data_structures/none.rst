@@ -1287,7 +1287,7 @@ refactor: make it better
         self.assertIsInstance({1, 2, 3, 'n'}, set)
         self.assertIsInstance(None, set)
 
-  which gives me :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 

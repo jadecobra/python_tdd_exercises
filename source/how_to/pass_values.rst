@@ -87,7 +87,7 @@ green: make it pass
     import src.telephone
     import unittest
 
-  which gives me :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -195,7 +195,7 @@ I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string``
           "I received: yes"
       )
 
-which gives me :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -287,7 +287,7 @@ then add another :ref:`assertion<AssertionError>` for a different :ref:`class<cl
           "I received: <class 'object'>"
       )
 
-which gives me :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -393,7 +393,7 @@ green: make it pass
             "I received: 'False'"
         )
 
-  which gives me :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

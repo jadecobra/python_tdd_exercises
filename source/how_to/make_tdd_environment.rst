@@ -48,7 +48,7 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 
     wsl --install --distribution debian
 
-  .. admonition:: If installing `Windows Subsystem Linux`_ does not work
+  .. attention:: If installing `Windows Subsystem Linux`_ does not work
 
     you can use :doc:`make_tdd_environment_no_wsl` instead
 
@@ -105,7 +105,7 @@ how to manually make a python test driven development environment
 
   then an empty file called ``__init__.py`` in the ``tests`` folder to tell Python_ that it is a `python package`_, this will help it find the tests later
 
-  .. admonition:: make sure to use 2 underscores (__) for ``__init__.py``
+  .. attention:: make sure to use 2 underscores (__) for ``__init__.py``
 
   .. code-block:: shell
 
@@ -219,7 +219,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the failure happened
 
-  .. admonition:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
+  .. attention:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
 
 * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the failing test :ref:`method<functions>`
@@ -439,7 +439,7 @@ how to make a virtual environment
 
   then I change it back to :ref:`False<test_what_is_false>` to make it pass and can write the rest of the code for the project while the tests run automatically
 
-  .. admonition:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
+  .. attention:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 ----
 

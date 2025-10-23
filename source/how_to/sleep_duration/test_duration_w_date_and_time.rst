@@ -66,7 +66,7 @@ red: make it fail
                 )
             )
 
-  which gives me ValueError_
+  the terminal shows ValueError_
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ green: make it pass
                 )
             )
 
-  which gives me :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -385,7 +385,7 @@ refactor: make it better
             )
         )
 
-  which gives me ValueError_
+  the terminal shows ValueError_
 
   .. code-block:: python
 

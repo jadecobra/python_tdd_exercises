@@ -164,7 +164,7 @@ red: make it fail
     import src.exceptions
     import unittest
 
-  which gives me :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 

@@ -66,7 +66,7 @@ red: make it fail
         f'{difference_hours:02}:00'
     )
 
-  which gives me :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -438,7 +438,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  which gives me random successes and random :ref:`AssertionError`
+  the terminal shows random successes and random :ref:`AssertionError`
 
   .. code-block:: python
 

@@ -92,7 +92,7 @@ green: make it pass
 
     variable_00
 
-  which gives me NameError_
+  the terminal shows NameError_
 
   .. code-block::
 

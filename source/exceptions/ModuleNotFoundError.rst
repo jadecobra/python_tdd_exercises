@@ -89,7 +89,7 @@ green: make it pass
         import src.module_00
         import src.module_01
 
-  which gives me `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
+  the terminal shows `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
 
   .. code-block:: python
 

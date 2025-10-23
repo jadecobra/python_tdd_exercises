@@ -73,7 +73,7 @@ green: make it pass
 
     get_datetime = None
 
-  which gives me :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ green: make it pass
 
     duration = None
 
-  which gives me :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 

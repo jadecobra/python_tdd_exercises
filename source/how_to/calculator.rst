@@ -311,7 +311,7 @@ refactor: make it better
 
   and the terminal shows passing tests
 
-  - ``x = random.randint(-1, 1)`` points a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``
+  - ``x = random.randint(-1, 1)`` points a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` the terminal shows a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
 * I remove the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers. I do not need them anymore
@@ -415,7 +415,7 @@ red: make it fail
 * I add a :ref:`method<functions>` to test subtraction in ``test_calculator.py``
 
   .. code-block:: python
-    :emphasize-lines:
+    :emphasize-lines: 5-12
 
     class TestCalculator(unittest.TestCase):
 
@@ -431,7 +431,7 @@ red: make it fail
                 x-y
             )
 
-  which gives me :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -456,13 +456,13 @@ green: make it pass
 
     NameError: name 'subtract' is not defined
 
-  then I point it to :ref:`None`
+  I point it to :ref:`None`
 
   .. code-block:: python
 
     subtract = None
 
-  and get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -470,32 +470,35 @@ green: make it pass
 
   I have seen this before
 
-* I change ``subtract`` to a :ref:`function<functions>` to make it callable_
+* I change ``subtract`` in ``calculator.py`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
-    :emphasize-lines:: 5
+    :emphasize-lines: 5
 
-    def add():
+    def add(x, y):
         ...
 
     def subtract():
         return None
 
-  and the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-* I make it take inputs
+* I make ``subtract`` take inputs
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 4
+
+    def add(x, y):
+        ...
 
     def subtract(x, y):
         return None
 
-  and get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -509,6 +512,7 @@ green: make it pass
 * When I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def subtract(x, y):
         return x - y
@@ -518,17 +522,17 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* I have some duplication to remove
+* I have some duplication to remove, the code below happens twice
 
   .. code-block:: python
 
     x = a_random_number()
     y = a_random_number()
 
-  the code above happens twice, once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` attributes (variables) to remove them and use the same numbers for both tests
+  once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) to remove them and use the same numbers for both tests
 
   .. code-block:: python
-    :emphasize-lines:: 3,4,
+    :emphasize-lines: 3-4,7-8, 15-16
 
     class TestCalculator(unittest.TestCase):
 
@@ -553,11 +557,12 @@ refactor: make it better
                 x-y
             )
 
-  the terminal shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` attributes (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
-* I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction``
+* I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction`` and use ``self.x`` and ``self.y`` instead
 
   .. code-block:: python
+    :emphasize-lines: 8-9, 14-15
 
     class TestCalculator(unittest.TestCase):
 
@@ -595,21 +600,23 @@ test_multiplication
 red: make it fail
 #################################################################################
 
-I add a failing test for multiplication
+I add a failing test for multiplication in ``test_calculator.py``
 
 .. code-block:: python
 
-  def test_subtraction(self):
-      self.assertEqual(
-          src.calculator.subtract(self.x, self.y),
-          self.x-self.y
-      )
+  class TestCalculator(unittest.TestCase):
 
-  def test_multiplication(self):
-      self.assertEqual(
-          src.calculator.multiply(self.x, self.y),
-          self.x*self.y
-      )
+      def test_addition(self):
+          ...
+
+      def test_subtraction(self):
+          ...
+
+      def test_multiplication(self):
+          self.assertEqual(
+              src.calculator.multiply(self.x, self.y),
+              self.x*self.y
+          )
 
 and the terminal shows :ref:`AttributeError`
 
@@ -620,18 +627,19 @@ and the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-using what I know so far I add a :ref:`function<functions>` to ``calculator.py``
+using what I know so far, I add a :ref:`function<functions>` to ``calculator.py``
 
 .. code-block:: python
+  :emphasize-lines: 5-6
 
   def subtract(x, y):
-      return x - y
+      ...
 
 
   def multiply(x, y):
       return x * y
 
-which gives me passing tests. I remove ``test_multiplication`` from the TODO list
+the test passes! I remove ``test_multiplication`` from the TODO list
 
 .. code-block:: python
 
@@ -648,21 +656,26 @@ test_division
 red: make it fail
 #################################################################################
 
-time for division
+time for division. I add a new test to ``test_calculator.py``
 
 .. code-block:: python
 
-  def test_multiplication(self):
-      self.assertEqual(
-          src.calculator.multiply(self.x, self.y),
-          self.x*self.y
-      )
+  class TestCalculator(unittest.TestCase):
 
-  def test_division(self):
-      self.assertEqual(
-          src.calculator.divide(self.x, self.y),
-          self.x/self.y
-      )
+      def test_addition(self):
+          ...
+
+      def test_subtraction(self):
+          ...
+
+      def test_multiplication(self):
+          ...
+
+      def test_division(self):
+          self.assertEqual(
+              src.calculator.divide(self.x, self.y),
+              self.x/self.y
+          )
 
 the terminal shows :ref:`AttributeError`
 
@@ -677,6 +690,15 @@ green: make it pass
 * I add a :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
+
+    def add(x, y):
+        ...
+
+    def subtract(x, y):
+        ...
+
+    def multiply(x, y):
+        ...
 
     def divide(x, y):
         return x / y
@@ -715,13 +737,16 @@ green: make it pass
 how to test that an Exception is raised
 ---------------------------------------------------------------------------------
 
-
 red: make it fail
 #################################################################################
 
-I add a line to raise the ZeroDivisionError_ and comment out the code that randomly fails
+I add a line to cause the ZeroDivisionError_ and comment out the code that randomly fails in ``test_calculator.py``
 
 .. code-block:: python
+  :emphasize-lines: 2
+
+  def test_multiplication(self):
+      ...
 
   def test_division(self):
       src.calculator.divide(self.x, 0)
@@ -741,7 +766,7 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-Exceptions_ like ZeroDivisionError` break execution of a program. No code will run past the line that caused one, which means I have to take care of this one. See :doc:`/how_to/exception_handling_tests_for more
+Exceptions_ like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an Exception_, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
 
 green: make it pass
@@ -750,6 +775,7 @@ green: make it pass
 * I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
 
   .. code-block:: python
+    :emphasize-lines: 2-3
 
     def test_division(self):
         with self.assertRaises(AssertionError):
@@ -766,20 +792,21 @@ green: make it pass
 
     ZeroDivisionError: division by zero
 
-* When I change it to use the right one
+* When I change it to use the right Exception_
 
   .. code-block:: python
+    :emphasize-lines: 2
 
-    with self.assertRaises(ZeroDivisionError):
-        src.calculator.divide(self.x, 0)
+    def test_division(self):
+        with self.assertRaises(ZeroDivisionError):
+            src.calculator.divide(self.x, 0)
 
   the test passes, showing that the code raises the Exception_
-
 
 refactor: make it better
 #################################################################################
 
-* I still have a problem since ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the :ref:`assertion<AssertionError>`
+* I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -797,12 +824,12 @@ refactor: make it better
 
   here is what it does
 
-  - if the value of ``self.y`` is ``0``
+  - when the value of ``self.y`` is ``0``
 
     * it points ``self.y`` to the result of calling ``a_random_number``
     * then checks if the value of ``self.y`` is ``0`` again, repeating the process until ``self.y`` is not ``0``
 
-  - if the value of ``self.y`` is not ``0`` at any point, it exits the loop and runs the code in the ``else`` block
+  - when the value of ``self.y`` is not ``0``, it leaves the loop and runs the code in the ``else`` block
 
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
 
@@ -821,7 +848,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  when ``self.y`` is randomly ``0``, the terminal shows a ZeroDivisionError_
+  when ``self.y`` is randomly ``0``, the terminal shows ZeroDivisionError_
 
   .. code-block:: python
 
@@ -896,7 +923,7 @@ green: make it pass
 
     subtract = None
 
-  which gives me :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -982,7 +1009,7 @@ green: make it pass
     def multiply(a, b):
         return None
 
-  which gives me :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

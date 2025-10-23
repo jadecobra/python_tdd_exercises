@@ -1382,7 +1382,7 @@ green: make it pass
 
     factory = None
 
-  which gives me :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1474,7 +1474,7 @@ green: make it pass
             'age': 20
         }
 
-  which gives me another :ref:`AssertionError`
+  the terminal shows another :ref:`AssertionError`
 
   .. code-block:: python
 

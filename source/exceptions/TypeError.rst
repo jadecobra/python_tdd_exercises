@@ -551,7 +551,7 @@ refactor: make it better
             None + 1
         'text' + 0.1
 
-  which gives me `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+  the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
