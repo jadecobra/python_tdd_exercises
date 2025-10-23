@@ -4,6 +4,9 @@
 
 .. include:: ../links.rst
 
+.. _now: https://docs.python.org/3/library/datetime.html#datetime.datetime.now
+.. _today: https://docs.python.org/3/library/datetime.html#datetime.date.today
+
 #################################################################################
 how to make a person
 #################################################################################
@@ -614,7 +617,7 @@ green: make it pass
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` attribute of the ``datetime`` object returned by the `now <https://docs.python.org/3/library/datetime.html#datetime.datetime.now>`_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. I can also use the `today <https://docs.python.org/3/library/datetime.html#datetime.date.today>`_ :ref:`method<functions>` to get the same value
+  ``datetime.datetime.now().year`` returns the ``year`` attribute of the ``datetime`` object returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class <classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. I can also use the today_ :ref:`method<functions>` to get the same value
 
   .. code-block:: python
 

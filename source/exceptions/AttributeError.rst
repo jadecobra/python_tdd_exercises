@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. AttributeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
+
 #################################################################################
 AttributeError
 #################################################################################
@@ -14,7 +16,7 @@ AttributeError
 
 ----
 
-The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists. An attribute is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color.
+The AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists. An attribute is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color.
 
 ----
 
@@ -63,7 +65,7 @@ red: make it fail
         def test_attribute_error_w_variables(self):
             src.attribute_error.variable_00
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it the terminal shows AttributeError_
 
   .. code-block:: python
 
@@ -120,7 +122,7 @@ refactor: make it better
         src.attribute_error.variable_00
         src.attribute_error.variable_01
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -158,7 +160,7 @@ refactor: make it better
         src.attribute_error.variable_01
         src.attribute_error.variable_02
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -185,7 +187,7 @@ refactor: make it better
         src.attribute_error.variable_02
         src.attribute_error.variable_03
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -219,7 +221,7 @@ I add a new test
   def test_attribute_error_w_functions(self):
       src.attribute_error.function_00()
 
-the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+the terminal shows AttributeError_
 
 .. code-block:: python
 
@@ -282,7 +284,7 @@ refactor: make it better
         src.attribute_error.function_00()
         src.attribute_error.function_01()
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -311,7 +313,7 @@ refactor: make it better
         src.attribute_error.function_01()
         src.attribute_error.function_02()
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -343,7 +345,7 @@ refactor: make it better
         src.attribute_error.function_02()
         src.attribute_error.function_03()
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -389,7 +391,7 @@ red: make it fail
     def test_attribute_error_w_class_attributes(self):
         src.attribute_error.AClass.attribute_00
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
 
@@ -421,7 +423,7 @@ green: make it pass
     def AClass():
         return None
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
 
@@ -486,7 +488,7 @@ refactor: make it better
         src.attribute_error.AClass.attribute_00
         src.attribute_error.AClass.attribute_01
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -513,7 +515,7 @@ refactor: make it better
         src.attribute_error.AClass.attribute_01
         src.attribute_error.AClass.attribute_02
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -540,7 +542,7 @@ refactor: make it better
         src.attribute_error.AClass.attribute_02
         src.attribute_error.AClass.attribute_03
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -577,7 +579,7 @@ red: make it fail
     def test_attribute_error_w_class_methods(self):
         src.attribute_error.AClass.method_00()
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
 
@@ -633,7 +635,7 @@ refactor: make it better
         src.attribute_error.AClass.method_00()
         src.attribute_error.AClass.method_01()
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -665,7 +667,7 @@ refactor: make it better
         src.attribute_error.AClass.method_01()
         src.attribute_error.AClass.method_02()
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -701,7 +703,7 @@ refactor: make it better
         src.attribute_error.AClass.method_02()
         src.attribute_error.AClass.method_03()
 
-  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -734,7 +736,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for the `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ with
+I ran tests for the AttributeError_ with
 
 * variables
 * :ref:`functions`

@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. _ModuleNotFoundError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
+
 #################################################################################
 ModuleNotFoundError
 #################################################################################
@@ -55,7 +57,7 @@ red: make it fail
         def test_module_not_found_error(self):
             import src.module_00
 
-  the terminal shows `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
+  the terminal shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -83,7 +85,7 @@ green: make it pass
         import src.module_00
         import src.module_01
 
-  the terminal shows `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
+  the terminal shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -99,7 +101,7 @@ green: make it pass
         import src.module_01
         import src.module_02
 
-  the terminal shows `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
+  the terminal shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -130,7 +132,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran a test for the `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_ and Python_ modules. Would you like to test the :ref:`AssertionError?<AssertionError>`
+I ran a test for the ModuleNotFoundError_ and Python_ modules. Would you like to test the :ref:`AssertionError?<AssertionError>`
 
 ----
 

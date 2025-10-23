@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a `Python <https://docs.python.org>`_ Test Driven Development environment
+This is one way to make a Python_ Test Driven Development environment
 
 ----
 
@@ -54,7 +54,7 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 linux/Windows Subsystem Linux requirements
 #################################################################################
 
-run these commands in a terminal to install Python in Linux_
+run these commands in a terminal to install Python_
 
 .. code-block:: shell
 
