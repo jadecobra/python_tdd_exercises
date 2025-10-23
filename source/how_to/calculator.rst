@@ -345,6 +345,7 @@ refactor: make it better
   I add a :ref:`function<functions>` to remove the duplication of calls to `random.randint`_
 
   .. code-block:: python
+    :emphasize-lines: 6-7
 
     import random
     import src.calculator
@@ -354,7 +355,11 @@ refactor: make it better
     def a_random_number():
         return random.randint(-1, 1)
 
-  then call it for the ``x`` and ``y`` variables
+
+    class TestCalculator(unittest.TestCase):
+        ...
+
+  then use the new :ref:`function<functions>` for the ``x`` and ``y`` variables
 
   .. code-block:: python
 
