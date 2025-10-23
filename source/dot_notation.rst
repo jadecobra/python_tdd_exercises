@@ -4,9 +4,6 @@ dot notation
 
 You have made it through the end of the book. Do you understand the following?
 
-.. contents:: table of contents
-  :local:
-
 *********************************************************************************
 AClass.attribute
 *********************************************************************************

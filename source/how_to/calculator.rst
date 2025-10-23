@@ -14,14 +14,6 @@ how to make a calculator
 
 ----
 
-In this chapter I write a program that does the arithmetic_ operations of addition, subtraction, multiplication and division
-
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
 *********************************************************************************
 test_addition
 *********************************************************************************

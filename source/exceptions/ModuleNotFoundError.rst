@@ -14,12 +14,6 @@ ModuleNotFoundError
 
 ----
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
 ``ModuleNotFoundError`` is raised when Python_ cannot find a module from an `import statement`_. A Python_ :ref:`module<ModuleNotFoundError>` has a filename that ends in ``.py``
 
 *********************************************************************************

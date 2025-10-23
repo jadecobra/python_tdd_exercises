@@ -16,12 +16,6 @@ booleans
 
 ----
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
 There are 2 booleans_ - True_ and False_
 
 *********************************************************************************

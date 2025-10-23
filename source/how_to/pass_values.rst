@@ -14,12 +14,6 @@ how to pass values
 
 ----
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
 I want to test passing values to programs
 
 *********************************************************************************

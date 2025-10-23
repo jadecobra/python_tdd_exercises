@@ -10,10 +10,6 @@ classes
 
 ``classes`` are definitions that represent an object. I think of them as :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that belong together
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 *********************************************************************************

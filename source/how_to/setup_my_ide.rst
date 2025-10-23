@@ -16,10 +16,6 @@ how I setup my Integrated Development Environment (IDE)
 
 As of this writing I use `Visual Studio Code`_
 
-.. contents:: table of contents
-  :local:
-  :depth: 2
-
 *********************************************************************************
 Screen Layout
 *********************************************************************************

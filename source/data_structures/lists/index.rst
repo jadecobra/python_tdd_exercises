@@ -21,12 +21,6 @@ lists
 
 ----
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
 A list_ is a container :ref:`object<classes>` that can hold any objects_
 
 * they are represented with ``[]``

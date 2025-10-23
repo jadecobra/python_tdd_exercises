@@ -14,10 +14,6 @@ truth table: test_truth_table_tests
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/DtGE6WqRZgo?si=08uXK8QMZaG06XWp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 *********************************************************************************

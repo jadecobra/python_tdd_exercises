@@ -16,10 +16,6 @@ how to make a person
 
 This is an exercise in making :ref:`dictionaries` with :ref:`functions`
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 *********************************************************************************

@@ -17,10 +17,6 @@ how to measure sleep duration: test_duration_tests
 
 This is part 5 of a program that calculates the difference between a given wake and sleep time.
 
-.. contents:: table of contents
-  :local:
-  :depth: 2
-
 ----
 
 I want to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them

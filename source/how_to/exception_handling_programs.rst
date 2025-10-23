@@ -14,14 +14,6 @@ how to handle Exceptions in programs
 
 ----
 
-This is a continuation of :doc:`exception_handling_tests`
-
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
 *********************************************************************************
 test_catching_exceptions_w_messages
 *********************************************************************************

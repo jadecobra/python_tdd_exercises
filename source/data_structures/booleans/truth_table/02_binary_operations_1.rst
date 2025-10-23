@@ -14,10 +14,6 @@ truth table: Binary Operations part 1
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/Q_jhE204MoE?si=m9_EvOX-4lrmSzo7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 There are 16 binary operations, they all take 2 inputs and each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`. This gives four cases

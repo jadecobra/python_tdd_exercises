@@ -10,10 +10,6 @@ booleans: truth table
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=7_bVE9tCltIq1uBF&amp;list=PL5lANtH-CROCjQaiFJP0-XEjHfCiwgwt1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with `if statements`_.

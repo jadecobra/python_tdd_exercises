@@ -17,10 +17,6 @@ how to measure sleep duration: test_duration_w_date_and_time
 
 This is part 4 of a program that calculates the difference between a given wake and sleep time.
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 I want to test the ``duration`` :ref:`function<functions>` with timestamps that have dates

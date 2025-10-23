@@ -17,10 +17,6 @@
 dictionaries
 #################################################################################
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>`. I will add tests for the keys to see which :ref:`data types<data structures>` I can use.

@@ -14,12 +14,6 @@ AttributeError
 
 ----
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
 The `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists. An attribute is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color.
 
 ----

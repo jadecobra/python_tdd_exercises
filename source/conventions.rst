@@ -8,10 +8,6 @@
 conventions
 #################################################################################
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 The following are a few conventions to know in Python

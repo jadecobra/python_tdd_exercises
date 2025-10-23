@@ -17,10 +17,6 @@ how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time
 
 This is part 3 of a program that calculates the difference between a given wake and sleep time.
 
-.. contents:: table of contents
-  :local:
-  :depth: 2
-
 ----
 
 I want to test the ``duration`` :ref:`function<functions>` with a ``wake_time`` that is earlier than the ``sleep_time``

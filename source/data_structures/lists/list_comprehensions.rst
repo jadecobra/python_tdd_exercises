@@ -17,12 +17,6 @@ lists: list comprehensions
 
 ----
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
-----
-
 `List Comprehensions`_ are a simple way to make a :ref:`list <lists>` from an iterable_ with one line
 
 *********************************************************************************

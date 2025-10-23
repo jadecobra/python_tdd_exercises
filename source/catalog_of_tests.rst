@@ -4,10 +4,6 @@
 catalog of tests
 #################################################################################
 
-.. contents:: table of contents
-  :local:
-  :depth: 2
-
 ----
 
 :ref:`test_failure`

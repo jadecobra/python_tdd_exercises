@@ -16,10 +16,6 @@ how to make a python test driven development environment
 
 This is one way to make a `Python <https://docs.python.org>`_ Test Driven Development environment
 
-.. contents:: table of contents
-  :local:
-  :depth: 2
-
 ----
 
 *********************************************************************************

@@ -11,10 +11,6 @@
 functions
 #################################################################################
 
-.. contents:: table of contents
-  :local:
-  :depth: 1
-
 ----
 
 A :ref:`function <test_functions>` is a unit or block of code that is callable_. I can write statements that I can used to do something and call it at different time from when I write it. They can make code smaller and easier to read, test, reuse, maintain and improve.
