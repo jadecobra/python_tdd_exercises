@@ -76,7 +76,7 @@ how to manually make a python test driven development environment on Windows wit
 
   then an empty file called ``__init__.py`` in the ``tests`` folder to tell Python_ that it is a `python package`_, this will help it find the tests later
 
-  .. admonition:: make sure to use 2 underscores (__) for ``__init__.py``
+  .. NOTE:: make sure to use 2 underscores (__) for ``__init__.py``
 
   .. code-block:: shell
 

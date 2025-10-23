@@ -415,24 +415,21 @@ red: make it fail
 * I add a :ref:`method<functions>` to test subtraction in ``test_calculator.py``
 
   .. code-block:: python
+    :emphasize-lines:
 
-    def test_addition(self):
-        x = a_random_number()
-        y = a_random_number()
+    class TestCalculator(unittest.TestCase):
 
-        self.assertEqual(
-            src.calculator.add(x, y),
-            x+y
-        )
+        def test_addition(self):
+            ...
 
-    def test_subtraction(self):
-        x = a_random_number()
-        y = a_random_number()
+        def test_subtraction(self):
+            x = a_random_number()
+            y = a_random_number()
 
-        self.assertEqual(
-            src.calculator.subtract(x, y),
-            x-y
-        )
+            self.assertEqual(
+                src.calculator.subtract(x, y),
+                x-y
+            )
 
   which gives me :ref:`AttributeError`
 
@@ -473,9 +470,13 @@ green: make it pass
 
   I have seen this before
 
-* I make it a :ref:`function<functions>` to make it callable_
+* I change ``subtract`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
+    :emphasize-lines:: 5
+
+    def add():
+        ...
 
     def subtract():
         return None
@@ -489,6 +490,7 @@ green: make it pass
 * I make it take inputs
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def subtract(x, y):
         return None
@@ -504,7 +506,7 @@ green: make it pass
 
   ``subtract`` returns :ref:`None` and the test expects ``x-y``
 
-* When I make the :ref:`function<functions>` return the difference between the inputs
+* When I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
 
   .. code-block:: python
 
@@ -523,9 +525,10 @@ refactor: make it better
     x = a_random_number()
     y = a_random_number()
 
-  the code above happen twice, once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` attributes (variables) to remove them and use the same numbers for both tests
+  the code above happens twice, once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` attributes (variables) to remove them and use the same numbers for both tests
 
   .. code-block:: python
+    :emphasize-lines:: 3,4,
 
     class TestCalculator(unittest.TestCase):
 

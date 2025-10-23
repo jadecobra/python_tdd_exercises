@@ -11,8 +11,8 @@ exclude_patterns = [
 ]
 
 extensions = [
-    'sphinx.ext.autosectionlabel',
     'sphinx_sitemap',
+    'sphinx.ext.autosectionlabel',
     'sphinx.ext.intersphinx',
     'sphinx.ext.githubpages',
     'notfound.extension',
