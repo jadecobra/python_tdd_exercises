@@ -33,7 +33,7 @@ test_catching_exceptions_w_messages
     def test_catching_exceptions_w_messages(self):
         src.exceptions.raise_exception()
 
-  and the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -64,7 +64,7 @@ green: make it pass
 
     raise_exception = None
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -206,7 +206,7 @@ green: make it pass
     def an_exception_handler(argument):
         return None
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -270,7 +270,7 @@ green: make it pass
     def an_exception_handler(argument):
         return 'failed'
 
-  and the terminal shows NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -298,7 +298,7 @@ green: make it pass
         return argument
         return 'failed'
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -324,7 +324,7 @@ green: make it pass
         return a_function()
         return 'failed'
 
-  - and the terminal shows :ref:`TypeError`
+  - the terminal shows :ref:`TypeError`
 
     .. code-block:: python
 
@@ -341,7 +341,7 @@ green: make it pass
       def does_not_raise_exception():
           return None
 
-    and the terminal shows :ref:`AssertionError`
+    the terminal shows :ref:`AssertionError`
 
     .. code-block:: python
 
@@ -396,7 +396,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  and the terminal shows passing tests.
+  the terminal shows passing tests.
 
   The `try statement`_ is used to catch/handle exceptions_ in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
 
@@ -442,7 +442,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  and the terminal shows green again
+  the terminal shows green again
 
 ----
 

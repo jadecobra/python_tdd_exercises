@@ -41,7 +41,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 person
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ green: make it pass
         ):
         return None
 
-  and the terminal shows a passing test
+  the terminal shows a passing test
 
 * I want the :ref:`function<functions>` to take in a keyword argument and give it the result of calling another one
 
@@ -278,7 +278,7 @@ green: make it pass
             dict()
         )
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -358,7 +358,7 @@ green: make it pass
         first_name = 'jane'
         ...
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -415,7 +415,7 @@ green: make it pass
             'last_name': 'last_name'
         }
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * ``'last_name'`` happens twice in the test, I add a variable to remove the duplication like I did with ``first_name``
 
@@ -510,7 +510,7 @@ green: make it pass
             'sex': 'M'
         }
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * I add a variable to remove the repetition in the test
 
@@ -765,7 +765,7 @@ refactor: make it better
     def factory(
     ...
 
-  and the terminal shows a passing test
+  the terminal shows a passing test
 
 * I add randomness to the ``sex`` variable
 
@@ -780,7 +780,7 @@ refactor: make it better
         )
         ...
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` and the terminal shows random success or :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` the terminal shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -961,7 +961,7 @@ green: make it pass
         ):
         ...
 
-  and the terminal shows a SyntaxError_
+  the terminal shows a SyntaxError_
 
   .. code-block:: python
 
@@ -1004,7 +1004,7 @@ green: make it pass
         ):
         ...
 
-  and the terminal shows NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -1030,7 +1030,7 @@ green: make it pass
         )
     )
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1450,7 +1450,7 @@ green: make it pass
         ):
         return None
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1614,7 +1614,7 @@ green: make it pass
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1657,7 +1657,7 @@ green: make it pass
             sex=None, year_of_birth=None
         ):
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

@@ -30,7 +30,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_sleep_duration.py``
-* then delete all the text in ``sleep_duration.py`` and the terminal shows :ref:`AttributeError`
+* then delete all the text in ``sleep_duration.py`` the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ green: make it pass
     def get_datetime(argument):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  and the terminal shows NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -164,7 +164,7 @@ green: make it pass
     def get_datetime(argument):
         return argument
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -409,7 +409,7 @@ green: make it pass
     else:
         return (sleep_time, wake_time)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -459,7 +459,7 @@ green: make it pass
               - get_datetime(wake_time)
             )
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -515,7 +515,7 @@ green: make it pass
               - get_datetime(sleep_time)
             )
 
-  and the terminal shows passing tests! YES!!
+  the terminal shows passing tests! YES!!
 
 *********************************************************************************
 refactor: make it better
@@ -530,7 +530,7 @@ refactor: make it better
             timestamp, '%Y/%m/%d %H:%M'
         )
 
-  and the terminal shows all tests are still passing
+  the terminal shows all tests are still passing
 
 * then I remove the list of Exceptions_ encountered because it was just for me
 

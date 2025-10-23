@@ -57,7 +57,7 @@ requirements
 
       ./makePythonTdd.ps1 functions
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -102,7 +102,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I make a file called ``functions.py`` in the project folder and the terminal shows :ref:`AttributeError` , which I add to the list of Exceptions_ encountered
+* I make a file called ``functions.py`` in the project folder the terminal shows :ref:`AttributeError` , which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit.`` I add 
   def function_w_return_none():
       return None
 
-and the terminal shows passing tests.
+the terminal shows passing tests.
 
 ----
 
@@ -307,7 +307,7 @@ green: make it pass
     def identity(argument):
         return None
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1099,7 +1099,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
           (('first_name', 'last_name'), {})
       )
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 * I uncomment the next test to see it fail
 
@@ -1125,7 +1125,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
         ((), {})
     )
 
-* I uncomment the last test to see it fail and the terminal shows :ref:`AssertionError`
+* I uncomment the last test to see it fail the terminal shows :ref:`AssertionError`
 
   .. code-block::
 

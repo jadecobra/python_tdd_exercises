@@ -35,7 +35,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_truth_table.py``
-* then delete all the tests in ``truth_table.py`` and the terminal shows 20 failures, I start with the last one
+* then delete all the tests in ``truth_table.py`` the terminal shows 20 failures, I start with the last one
 
   .. code-block:: python
 

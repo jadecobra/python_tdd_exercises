@@ -166,7 +166,7 @@ green: make it pass
         else:
             return None
 
-  and the terminal shows ValueError_
+  the terminal shows ValueError_
 
   .. code-block:: python
 
@@ -258,7 +258,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
   def test_duration_w_date_and_time(self):
   ...
 
-and the terminal shows NameError_
+the terminal shows NameError_
 
 .. code-block:: python
 
@@ -277,7 +277,7 @@ I add an `import statement`_ for the datetime_ module
   import unittest
   ...
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -470,7 +470,7 @@ refactor: make it better
                 )
             )
 
-  and the terminal shows NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -600,7 +600,7 @@ I add the variable to the expectation
           )
       )
 
-and the terminal shows green again
+the terminal shows green again
 
 refactor: make it better
 ---------------------------------------------------------------------------------
@@ -727,7 +727,7 @@ and the test is still green
                 )
             )
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -855,7 +855,7 @@ and the test is still green
         )
 
   all tests are still green
-* I change ``test_duration_w_date_and_time`` to ``test_duration`` and the terminal shows all tests are still passing
+* I change ``test_duration_w_date_and_time`` to ``test_duration`` the terminal shows all tests are still passing
 
 .. _sleep_duration_review:
 

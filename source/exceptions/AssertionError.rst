@@ -60,7 +60,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 assertion_error
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -221,7 +221,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     assert True is not None
 
-  and the terminal shows green again. I add a failing line using the assertIsNone_ :ref:`method<functions>`
+  the terminal shows green again. I add a failing line using the assertIsNone_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -292,7 +292,7 @@ I change the line to make it :ref:`True<test_what_is_true>`
   def test_assertion_error_w_false(self):
       assert True is not False
 
-and the terminal shows all tests are passing
+the terminal shows all tests are passing
 
 red: make it fail
 #################################################################################
@@ -352,7 +352,7 @@ I add a failing test
   def test_assertion_error_w_true(self):
       assert False is True
 
-and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
 .. code-block:: python
 
@@ -368,7 +368,7 @@ then I make the statement :ref:`True<test_what_is_true>`
   def test_assertion_error_w_true(self):
       assert False is not True
 
-and the terminal shows green again
+the terminal shows green again
 
 red: make it fail
 #################################################################################
@@ -463,7 +463,7 @@ refactor: make it better
         assert None == None
         self.assertNotEqual(None, None)
 
-  `unittest.TestCase.assertNotEqual`_ checks if the 2 things given are NOT equal, and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+  `unittest.TestCase.assertNotEqual`_ checks if the 2 things given are NOT equal, the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -500,7 +500,7 @@ refactor: make it better
 
         assert False == None
 
-  and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+  the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -519,7 +519,7 @@ refactor: make it better
     assert False != None
     self.assertEqual(False, None)
 
-  and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+  the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 
@@ -762,7 +762,7 @@ refactor: make it better
 
     assert False != True
 
-  and the terminal shows passing tests. I add another failing line
+  the terminal shows passing tests. I add another failing line
 
   .. code-block:: python
 
@@ -839,7 +839,7 @@ refactor: make it better
     assert True == True
     self.assertNotEqual(True, True)
 
-  and the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
+  the terminal shows `AssertionError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError>`_
 
   .. code-block:: python
 

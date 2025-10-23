@@ -41,7 +41,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 none
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -324,7 +324,7 @@ refactor: make it better
         self.assertIsNotNone(-1)
         self.assertIsNotNone(0)
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * I add another line
 
@@ -438,7 +438,7 @@ refactor: make it better
         self.assertIsInstance(0, int)
         self.assertIsInstance(1, int)
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 * one more instance test
 
@@ -453,7 +453,7 @@ refactor: make it better
         self.assertIsInstance(1, int)
         self.assertIsInstance(None, int)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -803,7 +803,7 @@ refactor: make it better
         self.assertIsInstance('', str)
         self.assertNotIsInstance("text", str)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -839,7 +839,7 @@ refactor: make it better
         self.assertIsInstance("text", str)
         self.assertIsInstance(None, str)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -941,7 +941,7 @@ refactor: make it better
         self.assertIsNotNone((1, 2, 3, 'n'))
         self.assertNotIsInstance((), tuple)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -997,7 +997,7 @@ refactor: make it better
         self.assertIsInstance((1, 2, 3, 'n'), tuple)
         self.assertIsInstance(None, tuple)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1048,7 +1048,7 @@ I add a new test for :ref:`lists`
   def test_is_none_a_list(self):
       self.assertIsNone([])
 
-and the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1102,7 +1102,7 @@ refactor: make it better
         self.assertIsNotNone([1, 2, 3, 'n'])
         self.assertNotIsInstance([], list)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1129,7 +1129,7 @@ refactor: make it better
         self.assertIsInstance([], list)
         self.assertNotIsInstance([1, 2, 3, 'n'], list)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1158,7 +1158,7 @@ refactor: make it better
         self.assertIsInstance([1, 2, 3, 'n'], list)
         self.assertIsInstance(None, list)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1262,7 +1262,7 @@ refactor: make it better
         self.assertIsNotNone({1, 2, 3, 'n'})
         self.assertNotIsInstance({1, 2, 3, 'n'}, set)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1418,7 +1418,7 @@ refactor: make it better
         self.assertIsInstance({}, dict)
         self.assertNotIsInstance({'key': 'value'}, dict)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 

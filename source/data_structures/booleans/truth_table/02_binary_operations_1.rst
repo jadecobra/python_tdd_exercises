@@ -464,7 +464,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.project_second(False, True))
         self.assertFalse(src.truth_table.project_second(False, False))
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

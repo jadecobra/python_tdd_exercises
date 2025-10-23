@@ -41,7 +41,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 telephone
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ green: make it pass
 
     text
 
-  and the terminal shows NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ green: make it pass
     def text(value):
         return f'I received: {value}'
 
-  and the terminal shows a passing test. This solution is called `string interpolation`_
+  the terminal shows a passing test. This solution is called `string interpolation`_
 
 ----
 
@@ -321,7 +321,7 @@ I add a new failing test for :ref:`None`
           "I received: 'None'"
       )
 
-and the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -424,7 +424,7 @@ I also add a test for an integer_
           "I received: '1234'"
       )
 
-and the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -443,7 +443,7 @@ I remove the quotes from the expectation
           "I received: 1234"
       )
 
-and the terminal shows passing tests.
+the terminal shows passing tests.
 
 *********************************************************************************
 test_passing_a_float
@@ -481,7 +481,7 @@ I remove the quotes from the number
           "I received: 1.234"
       )
 
-and the terminal shows passing tests.
+the terminal shows passing tests.
 
 *********************************************************************************
 test_passing_a_tuple
@@ -519,7 +519,7 @@ I make the expectation match reality
           "I received: (1, 2, 3, 'n')"
       )
 
-and the terminal shows green again.
+the terminal shows green again.
 
 *********************************************************************************
 test_passing_a_list
@@ -557,7 +557,7 @@ I change the expectation to match reality
           "I received: [1, 2, 3, 'n']"
       )
 
-and the terminal shows green again.
+the terminal shows green again.
 
 *********************************************************************************
 test_passing_a_dictionary
@@ -579,7 +579,7 @@ I add a test for a :ref:`dictionary <dictionaries>`
           "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
       )
 
-and the terminal shows :ref:`AssertionError`
+the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -615,7 +615,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_telephone.py``
-* then delete all the text in ``telephone.py`` and the terminal shows :ref:`AttributeError`
+* then delete all the text in ``telephone.py`` the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -642,7 +642,7 @@ green: make it pass
 
     text = None
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -668,7 +668,7 @@ green: make it pass
     def text(argument):
         return None
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

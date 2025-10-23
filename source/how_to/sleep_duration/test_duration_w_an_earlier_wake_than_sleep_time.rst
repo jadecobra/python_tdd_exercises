@@ -125,7 +125,7 @@ green: make it pass
                 f'{duration_minutes:02}'
             )
 
-  and the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -182,7 +182,7 @@ green: make it pass
             )
         )
 
-  and the terminal shows passing tests with no more random failures, green, green, green, green all the way!
+  the terminal shows passing tests with no more random failures, green, green, green, green all the way!
 
 *********************************************************************************
 refactor: make it better
@@ -276,7 +276,7 @@ refactor: make it better
 
     AssertionError: ValueError not raised
 
-  the `assertRaisesRegex`_ works as expected. I remove the comments and the terminal shows green again
+  the `assertRaisesRegex`_ works as expected. I remove the comments the terminal shows green again
 
 * I remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
 * then add an ``else`` block for the rest of the code in ``test_duration_w_hours_and_minutes``

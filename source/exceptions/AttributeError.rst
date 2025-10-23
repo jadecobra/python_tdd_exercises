@@ -43,7 +43,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 attribute_error
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -69,7 +69,7 @@ red: make it fail
         def test_attribute_error_w_variables(self):
             src.attribute_error.variable_00
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -179,7 +179,7 @@ refactor: make it better
     variable_01 = None
     variable_02 = None
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * one more time
 
@@ -427,7 +427,7 @@ green: make it pass
     def AClass():
         return None
 
-  and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
 
@@ -453,7 +453,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  and the terminal shows SyntaxError_
+  the terminal shows SyntaxError_
 
   .. code-block:: python
 
@@ -492,7 +492,7 @@ refactor: make it better
         src.attribute_error.AClass.attribute_00
         src.attribute_error.AClass.attribute_01
 
-  and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
     :force:
@@ -546,7 +546,7 @@ refactor: make it better
         src.attribute_error.AClass.attribute_02
         src.attribute_error.AClass.attribute_03
 
-  and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
     :force:
@@ -564,7 +564,7 @@ refactor: make it better
         attribute_02 = None
         attribute_03 = None
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 ----
 
@@ -606,7 +606,7 @@ green: make it pass
 
         method_00 = None
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -660,7 +660,7 @@ refactor: make it better
         def method_01():
             return None
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * I add another line
 
@@ -707,7 +707,7 @@ refactor: make it better
         src.attribute_error.AClass.method_02()
         src.attribute_error.AClass.method_03()
 
-  and the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
+  the terminal shows `AttributeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError>`_
 
   .. code-block:: python
     :force:

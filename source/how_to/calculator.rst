@@ -117,7 +117,7 @@ green: make it pass
     class TestCalculator(unittest.TestCase):
     ...
 
-  and the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -309,7 +309,7 @@ refactor: make it better
         x+y
     )
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
   - ``x = random.randint(-1, 1)`` points a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` the terminal shows a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
@@ -618,7 +618,7 @@ I add a failing test for multiplication in ``test_calculator.py``
               self.x*self.y
           )
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -894,7 +894,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_calculator.py``
-* then delete all the text in ``calculator.py`` and the terminal shows :ref:`AttributeError`
+* then delete all the text in ``calculator.py`` the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -994,6 +994,9 @@ green: make it pass
 
   .. code-block:: python
 
+    def subtract(a, b):
+        return a - b
+
     def multiply():
         return None
 
@@ -1003,9 +1006,10 @@ green: make it pass
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
-  then add 2 variables for the positional arguments
+  then I add 2 variables for the positional arguments
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def multiply(a, b):
         return None
@@ -1022,11 +1026,12 @@ green: make it pass
 * I change the `return statement`_ to see the difference between the inputs and the expected output
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def multiply(a, b):
         return a, b
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1035,9 +1040,10 @@ green: make it pass
     AssertionError: (2, 5) != 10
     AssertionError: (-9, -5) != 45
 
-  I change it to the product of the inputs, matching the name of the :ref:`function<functions>`
+  I change it to the multiplication of the inputs to match the name of the :ref:`function<functions>`
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def multiply(a, b):
         return a * b
@@ -1048,14 +1054,20 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'divide'
 
-* I add a :ref:`function<functions>`
+* I add another :ref:`function<functions>`
 
   .. code-block:: python
+
+    def subtract(a, b):
+        return a - b
+
+    def multiplication(a, b):
+        return a * b
 
     def divide(a, b):
         return a, b
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1073,6 +1085,7 @@ green: make it pass
   when I change the `return statement`_ to match the expectation
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def divide(a, b):
         return a / b
@@ -1086,6 +1099,16 @@ green: make it pass
 * the `return statement`_ of the last 3 :ref:`functions` matched their names, I use that for the new one
 
   .. code-block:: python
+    :emphasize-lines: 10
+
+    def subtract(a, b):
+        return a - b
+
+    def multiplication(a, b):
+        return a * b
+
+    def divide(a, b):
+        return a / b
 
     def add(a, b):
         return a + b

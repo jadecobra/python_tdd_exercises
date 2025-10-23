@@ -54,7 +54,7 @@ I change the text in ``test_truth_table.py``
       def test_logical_true(self):
           self.assertTrue(src.truth_table.logical_true())
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -131,7 +131,7 @@ green: make it pass
     def logical_false():
         return True
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -218,7 +218,7 @@ green: make it pass
     def logical_identity(argument):
         return False
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -270,7 +270,7 @@ there is a failure for the line that passed before. The expectation of the test 
   def logical_identity(argument):
       return argument
 
-and the terminal shows passing tests. ``logical_identity`` returns its input as output.
+the terminal shows passing tests. ``logical_identity`` returns its input as output.
 
 ----
 
@@ -351,7 +351,7 @@ refactor: make it better
     def logical_negation(argument):
         return True
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -377,7 +377,7 @@ refactor: make it better
     def logical_negation(argument):
         return not argument
 
-  and the terminal shows passing tests. ``logical_negation`` returns the opposite of its input
+  the terminal shows passing tests. ``logical_negation`` returns the opposite of its input
 
 * I change the name of the test
 

@@ -65,7 +65,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I make Python_ module called ``classes.py`` and the terminal shows :ref:`AttributeError` which I add to the list of Exceptions_ encountered
+* I make Python_ module called ``classes.py`` the terminal shows :ref:`AttributeError` which I add to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -80,7 +80,7 @@ green: make it pass
 
     ClassWithPass
 
-  and the terminal shows NameError` because ``ClassWithPass`_is not defined anywhere
+  the terminal shows NameError` because ``ClassWithPass`_is not defined anywhere
 
 * I add the error to the list of Exceptions_ encountered
 
@@ -124,7 +124,7 @@ green: make it pass
 
         pass
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 
 refactor: make it better
@@ -211,7 +211,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
   def test_making_a_class_w_object(self):
       self.assertIsInstance(classes.ClassWithObject(), object)
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -281,7 +281,7 @@ green: make it pass
 
         a_boolean
 
-  and the terminal shows a ` <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a ` <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
 
 * after I point the name to :ref:`None`
 
@@ -303,7 +303,7 @@ green: make it pass
 
         a_boolean = bool
 
-  and the terminal shows all tests passed
+  the terminal shows all tests passed
 
 refactor: make it better
 #################################################################################
@@ -346,7 +346,7 @@ I add matching attributes to ``ClassWithAttributes`` to make the tests pass
       a_set = set
       a_dictionary = dict
 
-and the terminal shows all tests pass
+the terminal shows all tests pass
 
 ----
 
@@ -369,7 +369,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
           'You called MethodA'
       )
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -420,7 +420,7 @@ green: make it pass
         def method_a():
             return None
 
-  and the terminal shows :ref:`AssertionError`. Progress!
+  the terminal shows :ref:`AssertionError`. Progress!
 
 * I then change the value that ``method_a`` returns to match the expectation of the test
 
@@ -655,7 +655,7 @@ refactor: make it better
 
         sex = 'M'
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -677,7 +677,7 @@ refactor: make it better
         def __init__(self):
             pass
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -690,7 +690,7 @@ refactor: make it better
     def __init__(self, sex=None):
         pass
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 * I add another :ref:`assertion<AssertionError>`
 
@@ -701,7 +701,7 @@ refactor: make it better
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')
 
-  and the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -786,7 +786,7 @@ refactor: make it better
         def __init__(self):
             pass
 
-* I remove the ``sex`` attribute and the terminal shows :ref:`AssertionError`
+* I remove the ``sex`` attribute the terminal shows :ref:`AssertionError`
 * I make the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python

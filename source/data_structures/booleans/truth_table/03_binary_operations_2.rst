@@ -45,7 +45,7 @@ I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_tru
   def test_negate_first(self):
       self.assertFalse(src.truth_table.negate_first(True, True))
 
-and the terminal shows :ref:`AttributeError`
+the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
 

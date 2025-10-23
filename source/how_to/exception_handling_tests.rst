@@ -45,7 +45,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 exceptions
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -107,7 +107,7 @@ red: make it fail
     def test_catching_name_error_in_tests(self):
         does_not_exist
 
-  and the terminal shows NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -133,7 +133,7 @@ I add `unittest.TestCase.assertRaises`_
       with self.assertRaises(NameError):
           does_not_exist
 
-and the terminal shows passing tests
+the terminal shows passing tests
 
 ----
 
@@ -193,7 +193,7 @@ then I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<function
       with self.assertRaises(AttributeError):
           src.exceptions.does_not_exist
 
-and the terminal shows passing tests
+the terminal shows passing tests
 
 ----
 
@@ -223,7 +223,7 @@ red: make it fail
 
     function_name
 
-  and the terminal shows NameError_
+  the terminal shows NameError_
 
   .. code-block:: python
 
@@ -263,7 +263,7 @@ then I add `unittest.TestCase.assertRaises`_ to the test
       with self.assertRaises(TypeError):
           src.exceptions.function_name('argument')
 
-and the terminal shows passing tests
+the terminal shows passing tests
 
 refactor: make it better
 #################################################################################
@@ -414,7 +414,7 @@ green: make it pass
         with self.assertRaises(IndexError):
             a_list[-5]
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * It looks like there is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
 
@@ -497,7 +497,7 @@ I add assertRaises_ to the test
         with self.assertRaises(KeyError):
             {'key': 'value'}['does_not_exist']
 
-and the terminal shows green again
+the terminal shows green again
 
 *********************************************************************************
 test_catching_zero_division_error_in_tests
@@ -513,7 +513,7 @@ red: make it fail
     def test_catching_zero_division_error_in_tests(self):
         1 / 0
 
-  any number divided by ``0`` and the terminal shows a ZeroDivisionError_
+  any number divided by ``0`` the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -544,7 +544,7 @@ then add the assertRaises_ :ref:`method<functions>` to the test
       with self.assertRaises(ZeroDivisionError):
           1 / 0
 
-and the terminal shows passing tests
+the terminal shows passing tests
 
 ----
 

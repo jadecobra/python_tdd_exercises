@@ -43,7 +43,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 type_error
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ refactor: make it better
         src.type_error.none()
         src.type_error.false()
 
-  and the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -161,7 +161,7 @@ refactor: make it better
     def false():
         return False
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * I add a line to test the other :ref:`boolean<Booleans>`
 
@@ -217,7 +217,7 @@ refactor: make it better
         src.type_error.true()
         src.type_error.a_list()
 
-  and the terminal shows :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -233,7 +233,7 @@ refactor: make it better
 
     a_list = [1, 2, 3, 'n']
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -279,7 +279,7 @@ refactor: make it better
 
     a_dictionary = {'key': 'value'}
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -296,7 +296,7 @@ refactor: make it better
     def a_dictionary():
         return {'key': 'value'}
 
-  and the terminal shows green again. It is safe to say that I cannot call :ref:`data structures`.
+  the terminal shows green again. It is safe to say that I cannot call :ref:`data structures`.
 
 ----
 
@@ -351,7 +351,7 @@ green: make it pass
     def function_00(argument):
         return None
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 refactor: make it better
 #################################################################################
@@ -382,7 +382,7 @@ refactor: make it better
     def function_01(argument):
         return None
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -430,7 +430,7 @@ refactor: make it better
         ):
         return None
 
-  and the terminal shows :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -446,7 +446,7 @@ refactor: make it better
         ):
         return None
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * I add one more failing line to the test
 
@@ -498,7 +498,7 @@ refactor: make it better
     ):
         return None
 
-  and the terminal shows both tests are passing.
+  the terminal shows both tests are passing.
 
 ----
 
@@ -598,7 +598,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  and the terminal shows all tests are passing.
+  the terminal shows all tests are passing.
 
 ----
 

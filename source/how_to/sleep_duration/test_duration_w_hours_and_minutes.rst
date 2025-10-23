@@ -188,7 +188,7 @@ green: make it pass
       - get_minutes(sleep_time)
     )
 
-  and the terminal shows passing tests! There is something wrong with this calculation...
+  the terminal shows passing tests! There is something wrong with this calculation...
 
 *********************************************************************************
 refactor: make it better
@@ -293,7 +293,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
     def test_duration_calculation(self):
     ...
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -325,7 +325,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
     self.assertEqual(150//60, 2)
 
-  and the terminal shows passing tests
+  the terminal shows passing tests
 
 
 test_the_modulo_operation
@@ -344,7 +344,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     def test_duration_calculation(self):
     ...
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -364,7 +364,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(150%60, 0)
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -376,7 +376,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(150%60, 30)
 
-  and the terminal shows green again
+  the terminal shows green again
 
 ----
 

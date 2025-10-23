@@ -39,7 +39,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 sleep_duration
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -536,7 +536,7 @@ refactor: make it better
         )
     )
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -555,7 +555,7 @@ refactor: make it better
             sleep_time.split(':')
         )
 
-  and the terminal shows green again
+  the terminal shows green again
 
 * I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_first_position_of_item_in_a_list>` I know I can get it by using its index, Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a variable to ``test_string_splitting``
 
@@ -660,7 +660,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     def test_duration_w_hours(self):
     ...
 
-  and the terminal shows :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -692,7 +692,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     self.assertEqual(int('23'), 23)
 
-  and the terminal shows green again
+  the terminal shows green again
 
 ----
 
@@ -766,7 +766,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
           - int(sleep_time.split(':')[0])
         )
 
-  and the terminal shows passing tests! Celebration Time!!
+  the terminal shows passing tests! Celebration Time!!
 
 * I add a :ref:`function<functions>` to get the hours part of a given timestamp since it is the only part that changes in the solution
 

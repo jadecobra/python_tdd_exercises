@@ -333,7 +333,7 @@ how to make a virtual environment
 
     pip list
 
-  and the terminal shows
+  the terminal shows
 
   .. code-block:: shell
 
@@ -368,7 +368,7 @@ how to make a virtual environment
 
     pip list
 
-  and the terminal shows
+  the terminal shows
 
   .. code-block:: python
 

@@ -41,7 +41,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 module_not_found_error
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -61,7 +61,7 @@ red: make it fail
         def test_module_not_found_error(self):
             import src.module_00
 
-  and the terminal shows `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
+  the terminal shows `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_
 
   .. code-block:: python
 
@@ -80,7 +80,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the terminal shows a passing test
+* then I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` the terminal shows a passing test
 * I add another `import statement`_
 
   .. code-block:: python
@@ -111,7 +111,7 @@ green: make it pass
 
     ModuleNotFoundError: No module called 'src.module_02'
 
-* I add ``module_02.py`` to the ``src`` folder, and the terminal shows green again
+* I add ``module_02.py`` to the ``src`` folder, the terminal shows green again
 * one last failing `import statement`_
 
   .. code-block:: python
@@ -122,7 +122,7 @@ green: make it pass
         import src.module_02
         import src.module_03
 
-  and the terminal shows
+  the terminal shows
 
   .. code-block:: python
 

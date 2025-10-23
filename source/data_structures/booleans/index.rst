@@ -43,7 +43,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 booleans
 
-  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -298,7 +298,7 @@ I change the :ref:`method<functions>`
 
   self.assertFalse(None)
 
-and the terminal shows passing tests
+the terminal shows passing tests
 
 refactor: make it better
 #################################################################################
