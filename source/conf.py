@@ -26,6 +26,7 @@ html_baseurl = 'https://www.pumpingpython.com/'
 html_favicon = '_static/dry_favicon_16x16.png'
 html_logo = "_static/dry_favicon_16x16.png"
 # html_theme = 'press'
+html_theme = 'furo'
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
 html_static_path = ['_static']
