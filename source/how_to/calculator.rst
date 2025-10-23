@@ -359,9 +359,10 @@ refactor: make it better
     class TestCalculator(unittest.TestCase):
         ...
 
-  then use the new :ref:`function<functions>` for the ``x`` and ``y`` variables
+  then use the new :ref:`function<functions>` for the ``x`` and ``y`` variables in ``test_addition``
 
   .. code-block:: python
+    :emphasize-lines: 2,3
 
     def test_addition(self):
         x = a_random_number()
@@ -382,13 +383,18 @@ refactor: make it better
   and the terminal still shows green. I can use any range of numbers the computer can handle, for example
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def a_random_number():
         return random.randint(-10**100000, 10**100000)
 
+
+    class TestCalculator(unittest.TestCase):
+        ...
+
   the test is still green and takes longer to run. I change the range back to ``-10, 10``
 
-* then remove ``test addition`` from the TODO list
+* then remove ``test addition`` from the TODO list in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -406,7 +412,7 @@ test_subtraction
 red: make it fail
 #################################################################################
 
-* I add a :ref:`method<functions>` to test subtraction
+* I add a :ref:`method<functions>` to test subtraction in ``test_calculator.py``
 
   .. code-block:: python
 
