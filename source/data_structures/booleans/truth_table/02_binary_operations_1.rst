@@ -27,7 +27,7 @@ There are 16 binary operations, they all take 2 inputs and each of the inputs ca
 requirements
 *********************************************************************************
 
-:doc:`how to make a python test driven development environment </how_to/make_tdd_environment>` with ``truth_table`` as the name of the project
+:ref:`truth table: Nullary and Unary Operations`
 
 ----
 

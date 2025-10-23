@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. _None: https://docs.python.org/3/library/constants.html?highlight=none#None
+
 #################################################################################
 None
 #################################################################################
@@ -18,7 +20,7 @@ None
 test_what_is_none
 *********************************************************************************
 
-`None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is used when there is no value
+None_ is used when there is no value
 
 red: make it fail
 #################################################################################
@@ -63,12 +65,12 @@ red: make it fail
 
     AssertionError: unexpectedly None
 
-  assertIsNotNone_ checks that its input is NOT `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+  assertIsNotNone_ checks that its input is NOT None_
 
 green: make it pass
 #################################################################################
 
-When I use the assertIsNone_ :ref:`method<functions>` to check if the input is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+When I use the assertIsNone_ :ref:`method<functions>` to check if the input is None_
 
 .. code-block:: python
 
@@ -264,7 +266,7 @@ test_is_none_an_integer
 red: make it fail
 #################################################################################
 
-I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is an integer_
+I add a test to see if None_ is an integer_
 
 .. code-block:: python
 
@@ -484,7 +486,7 @@ test_is_none_a_float
 red: make it fail
 #################################################################################
 
-I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a float_
+I add a test to see if None_ is a float_
 
 .. code-block:: python
 
@@ -705,7 +707,7 @@ test_is_none_a_string
 red: make it fail
 #################################################################################
 
-I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a string_
+I add a test to see if None_ is a string_
 
 .. code-block:: python
 
@@ -870,7 +872,7 @@ test_is_none_a_tuple
 red: make it fail
 #################################################################################
 
-I add a test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a tuple_
+I add a test to see if None_ is a tuple_
 
 .. code-block:: python
 
@@ -1020,7 +1022,7 @@ refactor: make it better
     # None is NOT a boolean
     # None is None
 
-  it looks like `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ and not anything else
+  it looks like None_ is None_ and not anything else
 
 ----
 
@@ -1102,7 +1104,7 @@ refactor: make it better
 
     AssertionError: [] is an instance of <class 'list'>
 
-  ``[]`` is the empty `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the :ref:`method<functions>`
+  ``[]`` is the empty :ref:`list <lists>`. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -1129,7 +1131,7 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
 
-  ``[1, 2, 3, 'n']`` is a `list <https://docs.python.org/3/library/stdtypes.html?highlight=list#list>`_. I change the :ref:`method<functions>`
+  ``[1, 2, 3, 'n']`` is a :ref:`list <lists>`. I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -1191,7 +1193,7 @@ test_is_none_a_set
 red: make it fail
 #################################################################################
 
-I want to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a set_
+I want to see if None_ is a set_
 
 .. code-block:: python
 
@@ -1320,7 +1322,7 @@ test_is_none_a_dictionary
 red: make it fail
 #################################################################################
 
-One last test to see if `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is a :ref:`dictionary<dictionaries>`
+One last test to see if None_ is a :ref:`dictionary<dictionaries>`
 
 .. code-block:: python
 
@@ -1479,7 +1481,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests to show what `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_ is and what it is not
+I ran tests to show what None_ is and what it is not
 
 Would you like to test :ref:`booleans`?
 

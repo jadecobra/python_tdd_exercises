@@ -10,6 +10,7 @@
 .. _popitem: https://docs.python.org/3/library/stdtypes.html#dict.popitem
 .. _dictionary: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 .. _dictionaries: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+.. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
@@ -496,7 +497,7 @@ test_attributes_and_methods_of_dictionaries
 red: make it fail
 #################################################################################
 
-I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of dictionaries_
 
 .. code-block:: python
 
@@ -2325,13 +2326,13 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for `dictionaries <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_
+I ran tests for dictionaries_
 
 * they contain key-value pairs
 * any :ref:`object<classes>` can be used as values
 * strings_, :ref:`booleans`, integers_, floats_ and tuples_ can be used as keys
 * they can be represented with ``{}``
-* they can be made with the `dict <https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`_ constructor_
+* they can be made with the dict_ constructor_
 
 Would you like to :ref:`test functions?<functions>`
 

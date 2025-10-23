@@ -178,7 +178,7 @@ green: make it pass
 
   the terminal shows all tests are still passing.
 
-* I can confidently say that in Python
+* I can confidently say that in Python_
 
   - I can define ``classes`` with parentheses
   - I can define ``classes`` without parentheses
@@ -277,7 +277,7 @@ green: make it pass
 
         a_boolean
 
-  the terminal shows a ` <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#NameError>`_
+  the terminal shows a NameError_
 
 * after I point the name to :ref:`None`
 

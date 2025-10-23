@@ -31,8 +31,7 @@ I put references on the left and the Integrated Development Environment on the r
   :width: 600
   :alt: Reference on the left
 
-this helps when I do not have an extra screen
-
+this helps when I do not have an extra screen. I can stack two editors on top of one another, source code on top, tests below, and the terminal below the tests
 
 for testing
 #################################################################################
