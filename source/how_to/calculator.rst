@@ -269,6 +269,7 @@ refactor: make it better
 * then I add variables and a new :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :emphasize-lines: 3,4,6-9
 
     class TestCalculator(unittest.TestCase):
 
@@ -298,9 +299,10 @@ refactor: make it better
     AssertionError: -1 != 0
     AssertionError: 1 != 2
 
-  I change the expectation in the :ref:`assertion<AssertionError>` to the correct calculation
+  I change the expectation of the :ref:`assertion<AssertionError>` in the test to the correct calculation
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     self.assertEqual(
         src.calculator.add(x, y),
@@ -312,7 +314,7 @@ refactor: make it better
   - ``x = random.randint(-1, 1)`` points a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` which gives me a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
-* I remove the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers
+* I remove the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers. I do not need them anymore
 
   .. code-block:: python
 
