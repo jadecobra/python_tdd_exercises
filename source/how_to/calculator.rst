@@ -662,7 +662,11 @@ green: make it pass
 using what I know so far, I add a :ref:`function<functions>` to ``calculator.py``
 
 .. code-block:: python
-  :emphasize-lines: 5-6
+  :emphasize-lines: 9-10
+
+  def add(x, y):
+      return x + y
+
 
   def subtract(x, y):
       return x - y
@@ -689,7 +693,7 @@ red: make it fail
 
 time for division. I add a new test to ``test_calculator.py``
 
-.. NOTE:: the ``...``(ellipsis) is a placeholder for the code you have already typed, no need to type it or replace what you have
+.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
 .. code-block:: python
   :emphasize-lines: 12-16
@@ -723,28 +727,32 @@ green: make it pass
 * I add a :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
-    :emphasize-lines: 10-11
+    :emphasize-lines: 13-14
 
     def add(x, y):
         return x + y
 
+
     def subtract(x, y):
         return x - y
+
 
     def multiply(x, y):
         return x * y
 
+
     def divide(x, y):
         return x / y
 
-  then make the range of numbers for the tests smaller
+  then I make the range of numbers for the tests smaller in ``test_calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def a_random_number():
         return random.randint(-1, 1)
 
-  and when ``y`` is randomly ``0`` the terminal shows a ZeroDivisionError_
+  I hit save ``(ctrl+s)`` a few times and when ``y`` is randomly ``0`` the terminal shows a ZeroDivisionError_
 
   .. code-block:: python
 
@@ -773,7 +781,9 @@ how to test that an Exception is raised
 red: make it fail
 #################################################################################
 
-I add a line to cause the ZeroDivisionError_ and comment out the code that randomly fails in ``test_calculator.py``
+I add a line to cause the ZeroDivisionError_ intentionally and comment out the code that randomly fails in ``test_calculator.py``
+
+.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
 .. code-block:: python
   :emphasize-lines: 2
