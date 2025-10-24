@@ -289,7 +289,7 @@ refactor: make it better
                 0
             )
 
-  because the range of numbers is small, the terminal shows random success or :ref:`AssertionError` every time I hit save ``(ctrl+s)``
+  because the range of numbers is small, the terminal shows random success or :ref:`AssertionError` every time I hit save ``(ctrl+s)`` in the editor to run the tests
 
   .. code-block:: python
 
@@ -762,7 +762,7 @@ green: make it pass
     >    return x / y
     E    ZeroDivisionError: division by zero
 
-  dividing by ``0`` is not defined in mathematics and raises an Exception_ in Python
+  dividing by ``0`` is not defined in mathematics and raises a ZeroDivisionError_ in Python
 
 * I add it to the list of Exceptions_ encountered in ``test_calculator.py``
 
@@ -786,7 +786,7 @@ I add a line to cause the ZeroDivisionError_ intentionally and comment out the c
 .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
 .. code-block:: python
-  :emphasize-lines: 2
+  :emphasize-lines: 5-10
 
   def test_multiplication(self):
       ...
@@ -803,7 +803,9 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
 
 .. code-block:: python
 
+  x = -1, y = 0
   x = 0, y = 0
+  x = 1, y = 0
 
     def divide(x, y):
   >    return x / y
@@ -829,7 +831,7 @@ green: make it pass
         #   self.x/self.y
         # )
 
-  because I used the wrong Exception_ the terminal still shows a ZeroDivisionError_
+  because I used the wrong Exception_ the terminal still shows ZeroDivisionError_
 
   .. code-block:: python
 
@@ -844,14 +846,15 @@ green: make it pass
         with self.assertRaises(ZeroDivisionError):
             src.calculator.divide(self.x, 0)
 
-  the test passes, showing that the code raises the Exception_
+  the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises the ZeroDivisionError_
 
 refactor: make it better
 #################################################################################
 
-* I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the :ref:`assertion<AssertionError>`
+* I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 5-11
 
     def test_division(self):
         with self.assertRaises(ZeroDivisionError):
@@ -877,6 +880,7 @@ refactor: make it better
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
 
   .. code-block:: python
+    :emphasize-lines: 6
 
     def test_division(self):
         with self.assertRaises(ZeroDivisionError):
@@ -900,6 +904,7 @@ refactor: make it better
 * I add an assertRaises_ block to catch the Exception_ in the `while statement`_ and remove the previous statement from the test because it is now part of the loop
 
   .. code-block:: python
+    :emphasize-lines: 2-4
 
     def test_division(self):
         while self.y == 0:
