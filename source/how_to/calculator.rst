@@ -46,6 +46,10 @@ red: make it fail
 * I add a list to keep track of the work for the program
 
   .. code-block:: python
+    :emphasize-lines: 7
+
+    import unittest
+
 
     class TestCalculator(unittest.TestCase):
 
@@ -66,6 +70,7 @@ red: make it fail
 * and change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
 
   .. code-block:: python
+    :emphasize-lines: 7-10
 
     import unittest
 
@@ -92,7 +97,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the error to the list of Exceptions_ encountered
+* I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -117,7 +122,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` as an address, ``add`` is something (an attribute) in the empty ``calculator.py`` file from the ``src`` folder/directory
+  I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file from the ``src`` folder/directory
 
 * I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
 
@@ -164,7 +169,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then I change ``add`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
+* then I change ``add`` in ``calculator.py`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
 
   .. code-block:: python
 
@@ -211,7 +216,7 @@ The ``add`` :ref:`function<functions>` passes the test but does not meet the act
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add an another :ref:`assertion<AssertionError>` in ``test_calculator.py`` to show the problem with the :ref:`function<functions>`
+I add another :ref:`assertion<AssertionError>` in ``test_calculator.py`` to show the problem with the :ref:`function<functions>`
 
 .. code-block:: python
   :emphasize-lines: 6-9
@@ -237,7 +242,7 @@ the :ref:`function<functions>` returns ``1`` and the test expects ``0``
 green: make it pass
 ---------------------------------------------------------------------------------
 
-when I change the `return statement`_ to the sum of the inputs
+when I change the `return statement`_ to add the two inputs
 
 .. code-block:: python
 
@@ -263,7 +268,7 @@ refactor: make it better
 * then I add variables and a new :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :emphasize-lines: 3,4,6-9
+    :emphasize-lines: 4-5,7-10
 
     class TestCalculator(unittest.TestCase):
 
@@ -284,7 +289,7 @@ refactor: make it better
                 0
             )
 
-  because the range of numbers is small, the terminal shows random success or :ref:`AssertionError`
+  because the range of numbers is small, the terminal shows random success or :ref:`AssertionError` every time I hit save ``(ctrl+s)``
 
   .. code-block:: python
 
@@ -323,9 +328,10 @@ refactor: make it better
                 x+y
             )
 
-* When I want to use a different range of random numbers for the test, I have to make a change in more than one place
+* There is some duplication, I have to make a change in more than one place when I want to use a different range of random numbers for the test
 
   .. code-block:: python
+    :emphasize-lines: 2-3
 
     def test_addition(self):
         x = random.randint(-10, 10)
@@ -336,7 +342,7 @@ refactor: make it better
             x+y
         )
 
-  I add a :ref:`function<functions>` to remove the duplication of calls to `random.randint`_
+  I add a :ref:`function<functions>` to remove the duplication of calls to `random.randint`_ in ``test_calculator.py``
 
   .. code-block:: python
     :emphasize-lines: 6-7
@@ -356,23 +362,33 @@ refactor: make it better
   then use the new :ref:`function<functions>` for the ``x`` and ``y`` variables in ``test_addition``
 
   .. code-block:: python
-    :emphasize-lines: 2,3
+    :emphasize-lines: 8-9
 
-    def test_addition(self):
-        x = a_random_number()
-        y = a_random_number()
+    def a_random_number():
+        return random.randint(-1, 1)
 
-        self.assertEqual(
-            src.calculator.add(x, y),
-            x+y
-        )
+
+    class TestCalculator(unittest.TestCase):
+
+        def test_addition(self):
+            x = a_random_number()
+            y = a_random_number()
+
+            self.assertEqual(
+                src.calculator.add(x, y),
+                x+y
+            )
 
   I now only need to change the range of random numbers for the test in one place
 
   .. code-block:: python
+    :emphasize-lines: 2
 
       def a_random_number():
           return random.randint(-10, 10)
+
+      class TestCalculator(unittest.TestCase):
+          ...
 
   and the terminal still shows green. I can use any range of numbers the computer can handle, for example
 
@@ -387,6 +403,12 @@ refactor: make it better
         ...
 
   the test is still green and takes longer to run. I change the range back to ``-10, 10``
+
+  .. code-block:: python
+    :emphasize-lines: 2
+
+    def a_random_number():
+        return random.randint(-10, 10)
 
 * then remove ``test addition`` from the TODO list in ``test_calculator.py``
 
@@ -406,10 +428,10 @@ test_subtraction
 red: make it fail
 #################################################################################
 
-* I add a :ref:`method<functions>` to test subtraction in ``test_calculator.py``
+* I add a :ref:`method<functions>` to use to test subtraction in ``test_calculator.py``
 
   .. code-block:: python
-    :emphasize-lines: 5-12
+    :emphasize-lines: 6-13
 
     class TestCalculator(unittest.TestCase):
 
