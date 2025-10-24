@@ -125,6 +125,7 @@
 .. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
+.. _while: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 .. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
 .. _zsh: https://zsh.sourceforge.io

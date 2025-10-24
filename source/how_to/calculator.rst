@@ -845,7 +845,7 @@ green: make it pass
         with self.assertRaises(ZeroDivisionError):
             src.calculator.divide(self.x, 0)
 
-  the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises the ZeroDivisionError_
+  the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises ZeroDivisionError_
 
 refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -871,10 +871,10 @@ refactor: make it better
 
   - when the value of ``self.y`` is ``0``
 
-    * it points ``self.y`` to the result of calling ``a_random_number``
-    * then checks if the value of ``self.y`` is ``0`` again, repeating the process until ``self.y`` is not ``0``
+    * it points ``self.y`` to the result of calling ``a_random_number()``
+    * then it checks if the value of ``self.y`` is ``0`` again. The process repeats the process until ``self.y`` is not ``0``
 
-  - when the value of ``self.y`` is not ``0``, it leaves the loop and runs the code in the ``else`` block
+  - when the value of ``self.y`` is not ``0``, it leaves the while_ loop and runs the code in the ``else`` block
 
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
 
@@ -948,7 +948,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_calculator.py``
-* then delete all the text in ``calculator.py`` the terminal shows :ref:`AttributeError`
+* then delete all the text in ``calculator.py``, the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1013,7 +1013,7 @@ green: make it pass
     AssertionError: None != 0
     AssertionError: None != 12
 
-* then change the `return statement`_ to see the difference between the inputs and expected output
+* I change the `return statement`_ to see the difference between the inputs and expected output
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1064,7 +1064,7 @@ green: make it pass
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
-  then I add 2 variables for the positional arguments
+  I add 2 variables for the positional arguments
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -1169,7 +1169,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-* the `return statement`_ of the last 3 :ref:`functions` matched their names, I use that for the new one
+* the `return statement`_ of the last 3 :ref:`functions` matched their names, I do the same thing for the new one
 
   .. code-block:: python
     :emphasize-lines: 13-14
@@ -1189,7 +1189,7 @@ green: make it pass
     def add(a, b):
         return a + b
 
-  and all tests are passing with no random failures. Lovely!
+  and all the tests are passing with no random failures. Lovely! I am a Programmer!
 
 ----
 
