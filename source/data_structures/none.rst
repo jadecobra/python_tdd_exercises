@@ -131,7 +131,7 @@ then change the :ref:`method<functions>`
   def test_is_none_a_boolean(self):
       self.assertIsNotNone(False)
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -167,7 +167,7 @@ refactor: make it better
         self.assertIsNotNone(False)
         self.assertIsNotNone(True)
 
-  and the test passes
+  the test passes
 
 * The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a :ref:`boolean<booleans>`
 
@@ -219,7 +219,7 @@ refactor: make it better
         self.assertIsInstance(False, bool)
         self.assertIsInstance(True, bool)
 
-  and the test passes
+  the test passes
 
 * I add another line
 
@@ -293,7 +293,7 @@ I change the :ref:`method<functions>` to match
   def test_is_none_an_integer(self):
       self.assertIsNotNone(-1)
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -346,7 +346,7 @@ refactor: make it better
         self.assertIsNotNone(0)
         self.assertIsNotNone(1)
 
-  and the test passes
+  the test passes
 
 * I add an instance test
 
@@ -402,7 +402,7 @@ refactor: make it better
         self.assertIsInstance(-1, int)
         self.assertIsInstance(0, int)
 
-  and the test passes
+  the test passes
 
 * I add another one
 
@@ -513,7 +513,7 @@ I change the :ref:`method<functions>`
   def test_is_none_a_float(self):
       self.assertIsNotNone(-0.1)
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -566,7 +566,7 @@ refactor: make it better
         self.assertIsNotNone(0.0)
         self.assertIsNotNone(0.1)
 
-  and the test passes
+  the test passes
 
 * time for instance tests
 
@@ -594,7 +594,7 @@ refactor: make it better
         self.assertIsNotNone(0.1)
         self.assertIsInstance(-0.1, float)
 
-  and the test passes
+  the test passes
 
 * I add the next instance test
 
@@ -624,7 +624,7 @@ refactor: make it better
         self.assertIsInstance(-0.1, float)
         self.assertIsInstance(0.0, float)
 
-  and the test passes
+  the test passes
 
 * I add another instance test
 
@@ -734,7 +734,7 @@ I change the :ref:`method<functions>`
   def test_is_none_a_string(self):
       self.assertIsNotNone('')
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -761,7 +761,7 @@ refactor: make it better
         self.assertIsNotNone('')
         self.assertIsNotNone("text")
 
-  and the test passes
+  the test passes
 
 * then I add a failing line for an instance test
 
@@ -787,7 +787,7 @@ refactor: make it better
         self.assertIsNotNone("text")
         self.assertIsInstance('', str)
 
-  and the test passes
+  the test passes
 
 * then I add another line
 
@@ -899,7 +899,7 @@ I change the :ref:`method<functions>`
   def test_is_none_a_tuple(self):
       self.assertIsNotNone(())
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -926,7 +926,7 @@ refactor: make it better
         self.assertIsNotNone(())
         self.assertIsNotNone((1, 2, 3, 'n'))
 
-  and the test passes
+  the test passes
 
 * then I add an instance test
 
@@ -952,7 +952,7 @@ refactor: make it better
         self.assertIsNotNone((1, 2, 3, 'n'))
         self.assertIsInstance((), tuple)
 
-  and the test passes
+  the test passes
 
 * I add another line
 
@@ -980,7 +980,7 @@ refactor: make it better
         self.assertIsInstance((), tuple)
         self.assertIsInstance((1, 2, 3, 'n'), tuple)
 
-  and the test passes
+  the test passes
 
 * I add one more instance test
 
@@ -1087,7 +1087,7 @@ refactor: make it better
         self.assertIsNotNone([])
         self.assertIsNotNone([1, 2, 3, 'n'])
 
-  and the test passes
+  the test passes
 
 * I add an instance test
 
@@ -1113,7 +1113,7 @@ refactor: make it better
         self.assertIsNotNone([1, 2, 3, 'n'])
         self.assertIsInstance([], list)
 
-  and the test passes
+  the test passes
 
 * then I add another instance test
 
@@ -1141,7 +1141,7 @@ refactor: make it better
         self.assertIsInstance([], list)
         self.assertIsInstance([1, 2, 3, 'n'], list)
 
-  and the test passes
+  the test passes
 
 * I add one more line
 
@@ -1220,7 +1220,7 @@ I change the :ref:`method<functions>` to match the message
   def test_is_none_a_set(self):
       self.assertIsNotNone(set())
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -1247,7 +1247,7 @@ refactor: make it better
         self.assertIsNotNone(set())
         self.assertIsNotNone({1, 2, 3, 'n'})
 
-  and the test passes
+  the test passes
 
 * then I add an instance test
 
@@ -1351,7 +1351,7 @@ I change the :ref:`method<functions>`
   def test_is_none_a_dictionary(self):
       self.assertIsNotNone(dict())
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -1430,7 +1430,7 @@ refactor: make it better
         self.assertIsInstance({}, dict)
         self.assertIsInstance({'key': 'value'}, dict)
 
-  and the test passes
+  the test passes
 
 * time for the last instance test
 

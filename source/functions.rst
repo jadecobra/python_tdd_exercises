@@ -891,7 +891,7 @@ green: make it pass
     def take_positional_and_keyword_arguments(last_name):
         return None
 
-  the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 

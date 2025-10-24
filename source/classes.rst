@@ -425,7 +425,7 @@ green: make it pass
     def method_a():
         return 'You called MethodA'
 
-  and the test passes
+  the test passes
 
 refactor: make it better
 #################################################################################
@@ -603,7 +603,7 @@ green: make it pass
 
         pass
 
-  the terminal shows another :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
 * I make the ``Boy`` class with an attribute called ``sex``
 

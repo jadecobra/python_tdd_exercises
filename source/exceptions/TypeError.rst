@@ -244,7 +244,7 @@ refactor: make it better
     def a_list():
         return [1, 2, 3, 'n']
 
-  and the test passes
+  the test passes
 
 * I add a new failing line
 
@@ -531,7 +531,7 @@ I add the assertRaises_ :ref:`method<functions>`
       with self.assertRaises(TypeError):
           None + 1
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -561,7 +561,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             'text' + 0.1
 
-  and the test passes
+  the test passes
 
 * then I add one more line
 

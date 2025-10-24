@@ -83,7 +83,7 @@ green: make it pass
         with self.assertRaises(ModuleNotFoundError):
             import does_not_exist
 
-  and the test passes
+  the test passes
 
 ----
 
@@ -359,7 +359,7 @@ green: make it pass
         with self.assertRaises(IndexError):
             a_list[4]
 
-  and the test passes
+  the test passes
 
 * I can also index with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``, think reading from right to left
 

@@ -149,7 +149,7 @@ refactor: make it better
     variable_00 = None
     variable_01 = None
 
-  and the test passes
+  the test passes
 
 * I do it again
 
@@ -203,7 +203,7 @@ refactor: make it better
     variable_02 = None
     variable_03 = None
 
-  and the test passes
+  the test passes
 
 ----
 
@@ -302,7 +302,7 @@ refactor: make it better
     def function_01():
         return None
 
-  and the test passes
+  the test passes
 
 * I add another line
 
@@ -371,7 +371,7 @@ refactor: make it better
     def function_03():
         return None
 
-  and the test passes
+  the test passes
 
 ----
 
@@ -475,7 +475,7 @@ green: make it pass
     class AClass():
         attribute_00 = None
 
-  and the test passes
+  the test passes
 
 refactor: make it better
 #################################################################################
@@ -504,7 +504,7 @@ refactor: make it better
         attribute_00 = None
         attribute_01 = None
 
-  and the test passes
+  the test passes
 
 * I do it again
 
@@ -622,7 +622,7 @@ green: make it pass
         def method_00():
             return None
 
-  and the test passes
+  the test passes
 
 refactor: make it better
 #################################################################################

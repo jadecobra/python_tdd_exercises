@@ -146,7 +146,7 @@ green: make it pass
     def factory(first_name):
         return None
 
-  and the test passes
+  the test passes
 
 * I want the :ref:`function<functions>` to take in a keyword argument named ``last_name``
 
@@ -328,7 +328,7 @@ green: make it pass
         ):
         return {'first_name': 'first_name'}
 
-  and the test passes
+  the test passes
 
 * ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places if I want a different value for it. I add a variable to remove the repetition
 
@@ -465,7 +465,7 @@ green: make it pass
             'last_name': last_name,
         }
 
-  and the test passes
+  the test passes
 
 * I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what was given in the call to the ``factory`` :ref:`function<functions>`
 
@@ -1394,7 +1394,7 @@ green: make it pass
     def factory():
         return None
 
-  the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1473,7 +1473,7 @@ green: make it pass
             'age': 20
         }
 
-  the terminal shows another :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1551,7 +1551,7 @@ green: make it pass
             'age': 20
         }
 
-  the terminal shows another :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

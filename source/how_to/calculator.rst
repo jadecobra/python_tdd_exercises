@@ -176,7 +176,7 @@ green: make it pass
     def add():
         return None
 
-  the terminal shows another :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 

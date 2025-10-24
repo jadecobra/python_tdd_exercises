@@ -352,7 +352,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(120%60, 0)
 
-  and the test passes
+  the test passes
 
 * I add another :ref:`assertion<AssertionError>`
 
@@ -423,7 +423,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         f'{duration_minutes:02}'
     )
 
-  and the test passes
+  the test passes
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_calculation``
 * and comment it out for ``test_duration_w_hours_and_minutes``
@@ -469,7 +469,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         )
     )
 
-  and the test passes with no more random failures
+  the test passes with no more random failures
 
 * I take out the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
 * and remove ``test_duration_calculation`` because it is covered by ``test_duration_w_hours_and_minutes`` which has the right calculation

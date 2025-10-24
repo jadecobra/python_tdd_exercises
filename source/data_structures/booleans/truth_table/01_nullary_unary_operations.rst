@@ -110,7 +110,7 @@ I change :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` in
   def logical_true():
       return True
 
-and the test passes
+the test passes
 
 test_logical_false
 #################################################################################
@@ -249,7 +249,7 @@ green: make it pass
     def logical_identity(argument):
         return True
 
-  and the test passes
+  the test passes
 
 refactor: make it better
 ---------------------------------------------------------------------------------

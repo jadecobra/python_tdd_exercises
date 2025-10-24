@@ -358,7 +358,7 @@ I change the :ref:`method<functions>`
 
   self.assertTrue(-1)
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -629,7 +629,7 @@ I change the :ref:`method<functions>`
 
   self.assertFalse(str())
 
-and the test passes
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -836,7 +836,7 @@ I change the :ref:`method<functions>`
 
   self.assertFalse(list())
 
-and the test passes, then I move the line to ``test_what_is_false``
+the test passes, then I move the line to ``test_what_is_false``
 
 .. code-block:: python
 

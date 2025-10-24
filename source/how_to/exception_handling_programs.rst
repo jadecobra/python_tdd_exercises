@@ -117,7 +117,7 @@ green: make it pass
     def raise_exception():
         raise Exception('BOOM!')
 
-  and the test passes. Time to add an :ref:`how to test that an Exception is raised` to the program
+  the test passes. Time to add an :ref:`how to test that an Exception is raised` to the program
 
 ----
 
@@ -213,7 +213,7 @@ green: make it pass
     def an_exception_handler(argument):
         return 'failed'
 
-  and the test passes.
+  the test passes.
 
 ----
 

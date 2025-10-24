@@ -267,7 +267,7 @@ green: make it pass
     def duration(wake_time=None, sleep_time=None):
         return ('08:00', '07:00')
 
-  and the test passes
+  the test passes
 
 
 *********************************************************************************
@@ -311,7 +311,7 @@ refactor: make it better
     def duration(wake_time=None, sleep_time=None):
         return ('09:00', '07:00')
 
-  and the test passes
+  the test passes
 
 * I change ``sleep_time``
 
@@ -334,7 +334,7 @@ refactor: make it better
     def duration(wake_time=None, sleep_time=None):
         return ('09:00', '06:00')
 
-  and the test passes
+  the test passes
 
 * I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an ideand then change the ``duration`` :ref:`function<functions>` to match. It would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the random_ :ref:`module<ModuleNotFoundError>`  at the top of ``test_sleep_duration.py``
 
@@ -386,7 +386,7 @@ refactor: make it better
     def duration(wake_time=None, sleep_time=None):
         return (wake_time, sleep_time)
 
-  and the test passes
+  the test passes
 
 * I change the expectation of the test to ``wake_time-sleep_time``
 
@@ -602,7 +602,7 @@ refactor: make it better
 
     self.assertEqual(split[1], '23')
 
-  and the test passes
+  the test passes
 
 * I change the expectation of ``test_duration_w_hours`` to the hours from ``wake_time`` and ``sleep_time``
 
@@ -638,7 +638,7 @@ refactor: make it better
             sleep_time.split(':')[0]
         )
 
-  and the test passes
+  the test passes
 
 
 test_converting_strings_to_numbers
@@ -668,7 +668,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     self.assertEqual(int('01'), 1)
 
-  and the test passes
+  the test passes
 
 * I add another :ref:`assertion<AssertionError>` to test a bigger number
 
@@ -726,7 +726,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
             int(sleep_time.split(':')[0])
         )
 
-  and the test passes
+  the test passes
 
 * I change the expectation in ``test_duration_w_hours`` to the difference between the hours
 

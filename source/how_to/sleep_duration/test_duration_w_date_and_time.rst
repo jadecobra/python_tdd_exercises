@@ -216,7 +216,7 @@ green: make it pass
         else:
             return (wake_time, sleep_time)
 
-  and the test passes
+  the test passes
 
 *********************************************************************************
 refactor: make it better
@@ -482,7 +482,7 @@ refactor: make it better
     def read_timestamp(timestamp=None, index=0):
     ...
 
-  and the test passes
+  the test passes
 
 * I just called `datetime.datetime.strptime`_ 5 times in a row with the same pattern, time to add a :ref:`function<functions>` to remove some repetition
 
@@ -691,7 +691,7 @@ and the test is still green
               - get_datetime(sleep_time)
             )
 
-  and the test passes
+  the test passes
 
 * I add the str_ constructor_ to the expectation in the test because I want the result as a string_ not a `datetime.timedelta`_ object
 

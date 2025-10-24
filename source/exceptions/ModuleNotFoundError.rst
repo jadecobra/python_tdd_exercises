@@ -124,7 +124,7 @@ green: make it pass
 
     ModuleNotFoundError: No module called 'src.module_03'
 
-* I add the file to the ``src`` folder and the test passes
+* I add the file to the ``src`` folder the test passes
 
 ----
 
