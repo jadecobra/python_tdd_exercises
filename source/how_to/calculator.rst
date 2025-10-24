@@ -436,7 +436,13 @@ red: make it fail
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
-            ...
+            x = a_random_number()
+            y = a_random_number()
+
+            self.assertEqual(
+                src.calculator.add(x, y),
+                x+y
+            )
 
         def test_subtraction(self):
             x = a_random_number()
@@ -459,6 +465,7 @@ green: make it pass
 * I add the name to ``calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def add(x, y):
         return x + y
@@ -472,7 +479,7 @@ green: make it pass
 
     NameError: name 'subtract' is not defined
 
-  I point it to :ref:`None`
+  I point ``subtract`` to :ref:`None`
 
   .. code-block:: python
 
@@ -489,10 +496,11 @@ green: make it pass
 * I change ``subtract`` in ``calculator.py`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
-    :emphasize-lines: 5
+    :emphasize-lines: 5-6
 
     def add(x, y):
-        ...
+        return x + y
+
 
     def subtract():
         return None
@@ -506,10 +514,11 @@ green: make it pass
 * I make ``subtract`` take inputs
 
   .. code-block:: python
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     def add(x, y):
-        ...
+        return x + y
+
 
     def subtract(x, y):
         return None
@@ -545,10 +554,10 @@ refactor: make it better
     x = a_random_number()
     y = a_random_number()
 
-  once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) to remove them and use the same numbers for both tests
+  once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove them and use the same numbers for both tests
 
   .. code-block:: python
-    :emphasize-lines: 3-4,7-8, 15-16
+    :emphasize-lines: 3-4,7-8,16-17
 
     class TestCalculator(unittest.TestCase):
 
@@ -619,14 +628,21 @@ red: make it fail
 I add a failing test for multiplication in ``test_calculator.py``
 
 .. code-block:: python
+  :emphasize-lines: 15-19
 
   class TestCalculator(unittest.TestCase):
 
       def test_addition(self):
-          ...
+          self.assertEqual(
+              src.calculator.add(self.x, self.y),
+              self.x+self.y
+          )
 
       def test_subtraction(self):
-          ...
+          self.assertEqual(
+              src.calculator.subtract(self.x, self.y),
+              self.x-self.y
+          )
 
       def test_multiplication(self):
           self.assertEqual(
@@ -649,7 +665,7 @@ using what I know so far, I add a :ref:`function<functions>` to ``calculator.py`
   :emphasize-lines: 5-6
 
   def subtract(x, y):
-      ...
+      return x - y
 
 
   def multiply(x, y):
@@ -668,13 +684,15 @@ the test passes! I remove ``test_multiplication`` from the TODO list
 test_division
 *********************************************************************************
 
-
 red: make it fail
 #################################################################################
 
 time for division. I add a new test to ``test_calculator.py``
 
+.. NOTE:: the ``...``(ellipsis) is a placeholder for the code you have already typed, no need to type it or replace what you have
+
 .. code-block:: python
+  :emphasize-lines: 12-16
 
   class TestCalculator(unittest.TestCase):
 
@@ -699,22 +717,22 @@ the terminal shows :ref:`AttributeError`
 
   AttributeError: module 'src.calculator' has no attribute 'divide'
 
-
 green: make it pass
 #################################################################################
 
 * I add a :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 10-11
 
     def add(x, y):
-        ...
+        return x + y
 
     def subtract(x, y):
-        ...
+        return x - y
 
     def multiply(x, y):
-        ...
+        return x * y
 
     def divide(x, y):
         return x / y
@@ -723,8 +741,8 @@ green: make it pass
 
   .. code-block:: python
 
-      def a_random_number():
-          return random.randint(-1, 1)
+    def a_random_number():
+        return random.randint(-1, 1)
 
   and when ``y`` is randomly ``0`` the terminal shows a ZeroDivisionError_
 
@@ -738,7 +756,7 @@ green: make it pass
 
   dividing by ``0`` is not defined in mathematics and raises an Exception_ in Python
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -748,7 +766,6 @@ green: make it pass
     # AttributeError
     # TypeError
     # ZeroDivisionError
-
 
 how to test that an Exception is raised
 ---------------------------------------------------------------------------------
