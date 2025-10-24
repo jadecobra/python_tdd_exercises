@@ -47,6 +47,8 @@ red: make it fail
 
   .. code-block:: python
 
+    class TestCalculator(unittest.TestCase):
+
         def test_failure(self):
             self.assertFalse(False)
 
@@ -107,7 +109,7 @@ green: make it pass
 
 
     class TestCalculator(unittest.TestCase):
-    ...
+        ...
 
   the terminal shows :ref:`AttributeError`
 
@@ -117,7 +119,7 @@ green: make it pass
 
   I think of ``src.calculator.add`` as an address, ``add`` is something (an attribute) in the empty ``calculator.py`` file from the ``src`` folder/directory
 
-* I add the error to the list of Exceptions_ encountered
+* I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
 
   .. code-block:: python
 
