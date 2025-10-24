@@ -197,7 +197,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``TestMagic`` is the :ref:`class <classes>` defined on line 4
   - ``test_failure`` is the :ref:`method<functions>` defined on line 6
 
-* ``F`` indicates a failure
+* ``F`` shows a failure
 * ``python -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
 
   - ``python`` is the major version of Python_ being used

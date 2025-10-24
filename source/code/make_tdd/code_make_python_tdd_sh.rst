@@ -1,10 +1,10 @@
-.. include: ../../../links.rst
+.. include:: ../../links.rst
 
 #################################################################################
 makePythonTdd.sh
 #################################################################################
 
-* Here is the ``./makePythonTdd.sh`` script from :doc:`/how_to/make_tdd_environment`
+* Here is the ``./makePythonTdd.sh`` program from :doc:`/how_to/make_tdd_environment`
 
   .. literalinclude:: makePythonTdd.sh
     :language: shell
@@ -15,7 +15,7 @@ makePythonTdd.sh
 
     chmod +x makePythonTdd.sh
 
-* give a name for the ``$PROJECT_NAME`` variable when the program is called to make a `Test Driven Development`_ on demand. for example typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will make a `Test Driven Development`_ environment for a project called ``calculator``
+* give a name for the ``$PROJECT_NAME`` variable when the program is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal in the folder where ``makePythonTdd.sh`` is saved will make a `Test Driven Development`_ environment for a project called ``calculator``
 
   .. code-block:: shell
 

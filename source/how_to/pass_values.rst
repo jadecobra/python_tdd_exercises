@@ -846,7 +846,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I make it ``text`` a :ref:`function<functions>`
+  I make ``text`` a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -921,7 +921,7 @@ green: make it pass
     def text(argument):
         return f'I received: {argument}'
 
-  and all the tests pass!
+  and all the tests are passing! Once again! I am a programmer!!
 
 ----
 
