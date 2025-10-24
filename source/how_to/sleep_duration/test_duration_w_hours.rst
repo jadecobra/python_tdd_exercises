@@ -762,7 +762,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
           - int(sleep_time.split(':')[0])
         )
 
-  the terminal shows passing tests! Celebration Time!!
+  the test passes! Celebration Time!!
 
 * I add a :ref:`function<functions>` to get the hours part of a given timestamp since it is the only part that changes in the solution
 

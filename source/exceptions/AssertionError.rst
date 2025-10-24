@@ -160,7 +160,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     assert False is not None
 
-  and the test passes. I add another line with the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
+  the test passes. I add another line with the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
 
   .. code-block:: python
 
@@ -184,7 +184,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
     assert False is None
     self.assertIsNotNone(False)
 
-  and the test passes. I add another note
+  the test passes. I add another note
 
   .. code-block:: python
 
@@ -318,7 +318,7 @@ I change the failing line
       assert True is not False
       self.assertFalse(False)
 
-and the test passes. Time to add notes
+the test passes. Time to add notes
 
 .. code-block:: python
 
@@ -439,14 +439,14 @@ the terminal shows AssertionError_
 green: make it pass
 #################################################################################
 
-I change the failing line and the test passes
+I change the failing line
 
 .. code-block:: python
 
   def test_assertion_error_w_equality(self):
       assert None == None
 
-``==`` is the symbol for ``is equal`` which makes this statement read as ``assert None is equal to None``
+the test passes. ``==`` is the symbol for ``is equal`` which makes this statement read as ``assert None is equal to None``
 
 refactor: make it better
 #################################################################################
@@ -473,7 +473,7 @@ refactor: make it better
         assert None == None
         self.assertEqual(None, None)
 
-  the terminal shows passing tests and I update the notes
+  the test passes.and I update the notes
 
   .. code-block:: python
 
@@ -508,7 +508,7 @@ refactor: make it better
 
     assert False != None
 
-  the terminal shows passing tests. I add the `unittest.TestCase.assertEqual`_ :ref:`method<functions>`
+  the test passes. I add the `unittest.TestCase.assertEqual`_ :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -528,7 +528,7 @@ refactor: make it better
     assert False != None
     self.assertNotEqual(False, None)
 
-  and the test passes. I update the notes to say that
+  the test passes. I update the notes to say that
 
   .. code-block:: python
 
@@ -566,7 +566,7 @@ refactor: make it better
 
     assert True != None
 
-  and the test passes. I do the same thing with an assert :ref:`method<functions>`
+  the test passes. I do the same thing with an assert :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -627,7 +627,7 @@ refactor: make it better
 
     assert True != False
 
-  and the test passes. I add a call to assertEqual_
+  the test passes. I add a call to assertEqual_
 
   .. code-block:: python
 
@@ -647,7 +647,7 @@ refactor: make it better
     assert True != False
     self.assertNotEqual(True, False)
 
-  and the test passes. I add a note
+  the test passes. I add a note
 
   .. code-block:: python
 
@@ -691,7 +691,7 @@ refactor: make it better
 
     assert False == False
 
-  and the test passes. I add another failing line
+  the test passes. I add another failing line
 
   .. code-block:: python
 
@@ -758,7 +758,7 @@ refactor: make it better
 
     assert False != True
 
-  the terminal shows passing tests. I add another failing line
+  the test passes. I add another failing line
 
   .. code-block:: python
 
@@ -778,7 +778,7 @@ refactor: make it better
     assert False != True
     self.assertNotEqual(False, True)
 
-  and the test passes. I add another note
+  the test passes. I add another note
 
   .. code-block:: python
 

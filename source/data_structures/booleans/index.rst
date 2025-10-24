@@ -516,7 +516,7 @@ refactor: make it better
 
     self.assertFalse(0.0)
 
-  the terminal shows passing tests and I move the line to ``test_what_is_false``
+  the test passes.and I move the line to ``test_what_is_false``
 
   .. code-block:: python
 

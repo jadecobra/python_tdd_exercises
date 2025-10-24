@@ -511,7 +511,7 @@ green: make it pass
               - get_datetime(sleep_time)
             )
 
-  the terminal shows passing tests! YES!!
+  the test passes. YES!!
 
 *********************************************************************************
 refactor: make it better

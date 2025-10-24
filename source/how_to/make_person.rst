@@ -1050,7 +1050,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows passing tests. When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
+  the test passes. When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
 
   .. code-block:: python
 
@@ -1141,7 +1141,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows passing tests. When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``sex='M'``
+  the test passes. When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``sex='M'``
 
   .. code-block:: python
 

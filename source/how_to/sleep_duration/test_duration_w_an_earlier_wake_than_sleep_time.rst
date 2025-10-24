@@ -178,7 +178,7 @@ green: make it pass
             )
         )
 
-  the terminal shows passing tests with no more random failures, green, green, green, green all the way!
+  the test passes with no more random failures, green, green, green, green all the way!
 
 *********************************************************************************
 refactor: make it better

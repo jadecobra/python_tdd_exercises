@@ -235,6 +235,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. Time to add :ref:`AssertionError` to the list
 
   .. code-block:: python
+    :emphasize-lines: 8-9
 
     import unittest
 

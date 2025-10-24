@@ -117,7 +117,7 @@ green: make it pass
   and we have a passing test
 
   * the test checks if the value of the call to ``functions.function_w_pass`` is :ref:`None`
-  * the :ref:`function<functions>` definition simply says pass_ yet the test passes
+  * the :ref:`function<functions>` definition simply says pass_ and the test passes
   * pass_ is a placeholder keyword which allows the :ref:`function<functions>` definition to followsyntax rules
   * the test passes because inall :ref:`functions` return :ref:`None` by default, as if the :ref:`function<functions>` has an invisible line that says ``return None``
 
@@ -181,7 +181,7 @@ from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit.`` I add 
   def function_w_return_none():
       return None
 
-the terminal shows passing tests.
+the test passes.
 
 ----
 
@@ -318,7 +318,7 @@ green: make it pass
     def identity(argument):
         return False
 
-  the terminal shows passing tests. I am genius!
+  the test passes. I am genius!
 
 refactor: make it better
 ################################################################################
@@ -348,7 +348,7 @@ Wait a minute! Something is not quite right here. The definition for a identity 
     def identity(argument):
         return argument
 
-  the terminal shows passing tests. I have more confidence that the identity :ref:`function<functions>` will return its input.
+  the test passes. I have more confidence that the identity :ref:`function<functions>` will return its input.
 
 * I add more tests using the otherdata structures
 

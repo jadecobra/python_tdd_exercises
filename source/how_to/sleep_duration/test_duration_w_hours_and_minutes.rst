@@ -184,7 +184,7 @@ green: make it pass
       - get_minutes(sleep_time)
     )
 
-  the terminal shows passing tests! There is something wrong with this calculation...
+  the test passes! There is something wrong with this calculation...
 
 *********************************************************************************
 refactor: make it better

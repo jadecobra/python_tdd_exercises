@@ -806,7 +806,7 @@ refactor: make it better
 
         pass
 
-  the terminal shows passing tests. Lovely
+  the test passes. Lovely
 
 * I wonder if I can do the same with the ``Other`` class? I change the definition to inherit from the ``Human`` class
 

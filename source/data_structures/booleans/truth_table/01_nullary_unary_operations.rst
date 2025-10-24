@@ -288,7 +288,7 @@ there is a failure for the line that passed before. The expectation of the test 
   def logical_identity(argument):
       return argument
 
-the terminal shows passing tests. ``logical_identity`` returns its input as output.
+the test passes. ``logical_identity`` returns its input as output.
 
 ----
 
@@ -395,7 +395,7 @@ refactor: make it better
     def logical_negation(argument):
         return not argument
 
-  the terminal shows passing tests. ``logical_negation`` returns the opposite of its input
+  the test passes. ``logical_negation`` returns the opposite of its input
 
 * I change the name of the test
 

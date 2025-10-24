@@ -100,6 +100,7 @@ green: make it pass
 * I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
@@ -127,6 +128,7 @@ green: make it pass
 * I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
@@ -162,6 +164,7 @@ green: make it pass
 * I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     # Exceptions Encountered
     # AssertionError
@@ -767,6 +770,7 @@ green: make it pass
 * I add it to the list of Exceptions_ encountered in ``test_calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 6
 
     # Exceptions Encountered
     # AssertionError

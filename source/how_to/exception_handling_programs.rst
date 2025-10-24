@@ -388,7 +388,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  the terminal shows passing tests.
+  the test passes.
 
   The `try statement`_ is used to catch/handle exceptions_ in Python. It allows the program to make a decision when it runs into an Exception_. I think of it as
 

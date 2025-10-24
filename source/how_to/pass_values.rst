@@ -73,6 +73,7 @@ green: make it pass
 * I add it to the list of Exceptions_ encountered in ``test_telephone.py``
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
@@ -101,6 +102,7 @@ green: make it pass
 * I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
@@ -134,6 +136,7 @@ green: make it pass
 * I add it to the list of Exceptions_ encountered in ``test_telephone.py``
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     # Exceptions Encountered
     # AssertionError
@@ -275,12 +278,12 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: "I received: <class 'object'>" != 'I received: object'
 
-object_ is the :ref:`class<classes>` that all Python_ :ref:`classes<classes>` inherit from
+object_ is the mother :ref:`class<classes>` that all Python_ :ref:`classes<classes>` come from
 
 green: make it pass
 #################################################################################
 
-I make the expectation match reality the test passes
+I make the expectation match reality
 
 .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
@@ -297,6 +300,8 @@ I make the expectation match reality the test passes
               src.telephone.text(object),
               "I received: <class 'object'>"
           )
+
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -542,7 +547,7 @@ I remove the quotes from the expectation
           "I received: 1234"
       )
 
-the terminal shows passing tests.
+the test passes.
 
 *********************************************************************************
 test_passing_a_float
@@ -599,7 +604,7 @@ I remove the quotes from the number
           "I received: 1.234"
       )
 
-the terminal shows passing tests.
+the test passes.
 
 *********************************************************************************
 test_passing_a_tuple
