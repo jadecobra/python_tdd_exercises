@@ -1017,11 +1017,12 @@ green: make it pass
 * then change the `return statement`_ to see the difference between the inputs and expected output
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def subtract(a, b):
         return a, b
 
-  the terminal shows :ref:`AssertionError`
+  the terminal shows random numbers with :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1035,6 +1036,7 @@ green: make it pass
 * I make the `return statement`_ match the expectation
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def subtract(a, b):
         return a - b
@@ -1048,9 +1050,11 @@ green: make it pass
 * I add a :ref:`function<functions>`
 
   .. code-block:: python
+    :emphasize-lines: 5-6
 
     def subtract(a, b):
         return a - b
+
 
     def multiply():
         return None
@@ -1064,7 +1068,11 @@ green: make it pass
   then I add 2 variables for the positional arguments
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 5
+
+    def subtract(a, b):
+        return a - b
+
 
     def multiply(a, b):
         return None
@@ -1081,12 +1089,16 @@ green: make it pass
 * I change the `return statement`_ to see the difference between the inputs and the expected output
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 6
+
+    def subtract(a, b):
+        return a - b
+
 
     def multiply(a, b):
         return a, b
 
-  the terminal shows :ref:`AssertionError`
+  the terminal shows random numbers with :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1098,7 +1110,11 @@ green: make it pass
   I change it to the multiplication of the inputs to match the name of the :ref:`function<functions>`
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 6
+
+    def subtract(a, b):
+        return a - b
+
 
     def multiply(a, b):
         return a * b
@@ -1112,12 +1128,15 @@ green: make it pass
 * I add another :ref:`function<functions>`
 
   .. code-block:: python
+    :emphasize-lines: 9-10
 
     def subtract(a, b):
         return a - b
 
+
     def multiplication(a, b):
         return a * b
+
 
     def divide(a, b):
         return a, b
@@ -1154,16 +1173,19 @@ green: make it pass
 * the `return statement`_ of the last 3 :ref:`functions` matched their names, I use that for the new one
 
   .. code-block:: python
-    :emphasize-lines: 10
+    :emphasize-lines: 13-14
 
     def subtract(a, b):
         return a - b
 
+
     def multiplication(a, b):
         return a * b
 
+
     def divide(a, b):
         return a / b
+
 
     def add(a, b):
         return a + b
