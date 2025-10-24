@@ -98,7 +98,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_ at the top of the file
+* then add an `import statement`_ at the top of `test_calculator.py`
 
   .. code-block:: python
 

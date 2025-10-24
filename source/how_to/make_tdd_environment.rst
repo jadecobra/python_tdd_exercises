@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ Test Driven Development environment
+This is one way to make a Python_ `Test Driven Development`_ environment
 
 ----
 
@@ -573,7 +573,7 @@ review
 
 One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me.
 
-You have seen a way to make a Python_ Test Driven Development Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computers.
+You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a program to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 Would you like to test :doc:`making a calculator?</how_to/calculator>`
 

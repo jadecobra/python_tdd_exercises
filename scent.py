@@ -13,6 +13,6 @@ def rst_files(filename):
 def run_tests(*args):
     # pdf = subprocess.run('make latexpdf', shell=True).returncode == 0
     if process('make clean html'):
-        # message = input('\nenter a commit message: ')
-        # process(f'git commit -am {message}')
+        message = input('\nenter a commit message: ')
+        process(f'git commit -am {message}')
         return True

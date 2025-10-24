@@ -14,7 +14,7 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 
-This is one way to make a Python_ Test Driven Development environment on a Windows Computer that does NOT have `Windows Subsystem Linux`_
+This is one way to make a Python_ `Test Driven Development`_ environment on a Windows Computer that does NOT have `Windows Subsystem Linux`_
 
 ----
 
