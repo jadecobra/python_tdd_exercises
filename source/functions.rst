@@ -920,7 +920,7 @@ green: make it pass
     def take_positional_and_keyword_arguments(first_name, last_name):
         return first_name, last_name
 
-  the terminal changes the :ref:`AssertionError` with the values I just added
+  the terminal shows :ref:`AssertionError` with the values I just added
 * I make ``test_functions_w_positional_and_keyword_arguments`` to make the results match the expectation
 
   .. code-block:: python

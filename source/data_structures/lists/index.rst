@@ -2201,7 +2201,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests to show that I can make a list_ with the constructor_ or square brackets (``[]``), then tested the different :ref:`methods<functions>` from append_ to sort_, added tests for :ref:`getting items of a list<test_getting_items_of_a_list>`, :ref:`setting items in a list<test_setting_items_in_a_list>`, :ref:`slicing a list<test_viewing_parts_of_a_list_aka_slicing>` and the :ref:`IndexError<test_index_error>`
+I ran tests to show that I can make a list_ with the constructor_ or square brackets (``[]``), then tested the different :ref:`methods<functions>` from append_ to sort_, added tests for :ref:`getting items of a list<test_getting_items_of_a_list>`, :ref:`setting items in a list<test_setting_items_in_a_list>`, :ref:`slicing a list<test_viewing_parts_of_a_list_aka_slicing>` and :ref:`IndexError<test_index_error>`
 
 Would you like to :ref:`test list comprehensions?<lists: list comprehensions>`
 

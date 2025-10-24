@@ -752,7 +752,7 @@ green: make it pass
     def a_random_number():
         return random.randint(-1, 1)
 
-  I hit save ``(ctrl+s)`` a few times and when ``y`` is randomly ``0`` the terminal shows a ZeroDivisionError_
+  I hit save ``(ctrl+s)`` a few times to run the tests, and when ``y`` is randomly ``0`` the terminal shows ZeroDivisionError_
 
   .. code-block:: python
 
@@ -762,7 +762,7 @@ green: make it pass
     >    return x / y
     E    ZeroDivisionError: division by zero
 
-  dividing by ``0`` is not defined in mathematics and raises a ZeroDivisionError_ in Python
+  dividing by ``0`` is undefined in mathematics and raises ZeroDivisionError_ in Python
 
 * I add it to the list of Exceptions_ encountered in ``test_calculator.py``
 
@@ -779,7 +779,7 @@ how to test that an Exception is raised
 ---------------------------------------------------------------------------------
 
 red: make it fail
-#################################################################################
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I add a line to cause the ZeroDivisionError_ intentionally and comment out the code that randomly fails in ``test_calculator.py``
 
@@ -813,11 +813,10 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
 
 Exceptions_ like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an Exception_, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
-
 green: make it pass
-#################################################################################
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that a ZeroDivisionError_ is raised when I try to divide a number by ``0``
+* I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that ZeroDivisionError_ is raised when I try to divide a number by ``0``
 
   .. code-block:: python
     :emphasize-lines: 2-3
@@ -849,7 +848,7 @@ green: make it pass
   the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises the ZeroDivisionError_
 
 refactor: make it better
-#################################################################################
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
 
@@ -895,7 +894,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  I hit save ``(ctrl+s)`` in the editor to run the tests a few times, and when ``self.y`` is randomly ``0``, the terminal shows ZeroDivisionError_
+  I hit save ``(ctrl+s)`` in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal shows ZeroDivisionError_
 
   .. code-block:: python
 
@@ -935,7 +934,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-10, 10)
 
-* then remove the TODO list
+* then I remove the TODO list
 
 ----
 

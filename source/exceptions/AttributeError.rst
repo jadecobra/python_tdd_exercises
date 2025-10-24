@@ -750,7 +750,7 @@ I also ran into the following Exceptions_
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to test the :ref:`TypeError?<TypeError>`
+Would you like to test :ref:`TypeError?<TypeError>`
 
 ----
 

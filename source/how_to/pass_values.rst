@@ -494,6 +494,9 @@ green: make it pass
 test_passing_an_integer
 *********************************************************************************
 
+red: make it fail
+#################################################################################
+
 I add a test for an integer_
 
 .. code-block:: python
@@ -838,7 +841,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I make it a :ref:`function<functions>`
+  I make it ``text`` a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -865,7 +868,7 @@ green: make it pass
 
     AssertionError: None != 'I received: None'
 
-* I copy the string_ from the terminal abd paste it in the `return statement`_ to match the expectation of the test
+* I copy the string_ from the terminal and paste it in the `return statement`_ to match the expectation of the test
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -890,7 +893,7 @@ green: make it pass
 
   the test summary info shows that every test has :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
     :force:
 
     AssertionError: True != 'I received: True'

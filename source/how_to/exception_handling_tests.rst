@@ -269,8 +269,13 @@ If I make ``function_name`` a :ref:`function<functions>`
   def function_name():
       return None
 
-the terminal still shows passing tests, I have the :ref:`TypeError` because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
+the terminal shows :ref:`TypeError`
 
+.. code-block:: python
+
+  TypeError:
+
+because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
 .. code-block:: python
 
   def function_name(argument):
@@ -282,7 +287,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: TypeError not raised
 
-because the :ref:`function<functions>` call matches the signature. I undo the change to get back the :ref:`TypeError` and make the test pass
+because the :ref:`function<functions>` call matches the signature. I undo the change, the terminal shows :ref:`TypeError` and I make the test pass
 
 .. code-block:: python
 

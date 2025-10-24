@@ -160,7 +160,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     assert False is not None
 
-  the test passes. I add another line with the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
+  and the test passes. I add another line with the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
 
   .. code-block:: python
 
@@ -184,7 +184,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
     assert False is None
     self.assertIsNotNone(False)
 
-  the test passes. I add another note
+  and the test passes. I add another note
 
   .. code-block:: python
 
@@ -318,7 +318,7 @@ I change the failing line
       assert True is not False
       self.assertFalse(False)
 
-the test passes. Time to add notes
+and the test passes. Time to add notes
 
 .. code-block:: python
 
@@ -439,7 +439,7 @@ the terminal shows AssertionError_
 green: make it pass
 #################################################################################
 
-I change the failing line the test passes
+I change the failing line and the test passes
 
 .. code-block:: python
 
@@ -528,7 +528,7 @@ refactor: make it better
     assert False != None
     self.assertNotEqual(False, None)
 
-  the test passes. I update the notes to say that
+  and the test passes. I update the notes to say that
 
   .. code-block:: python
 
@@ -566,7 +566,7 @@ refactor: make it better
 
     assert True != None
 
-  the test passes. I do the same thing with an assert :ref:`method<functions>`
+  and the test passes. I do the same thing with an assert :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -627,7 +627,7 @@ refactor: make it better
 
     assert True != False
 
-  the test passes. I add a call to assertEqual_
+  and the test passes. I add a call to assertEqual_
 
   .. code-block:: python
 
@@ -647,7 +647,7 @@ refactor: make it better
     assert True != False
     self.assertNotEqual(True, False)
 
-  the test passes. I add a note
+  and the test passes. I add a note
 
   .. code-block:: python
 
@@ -691,7 +691,7 @@ refactor: make it better
 
     assert False == False
 
-  the test passes. I add another failing line
+  and the test passes. I add another failing line
 
   .. code-block:: python
 
@@ -778,7 +778,7 @@ refactor: make it better
     assert False != True
     self.assertNotEqual(False, True)
 
-  the test passes. I add another note
+  and the test passes. I add another note
 
   .. code-block:: python
 
