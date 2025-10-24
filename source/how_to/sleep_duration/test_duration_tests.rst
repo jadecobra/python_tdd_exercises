@@ -267,7 +267,7 @@ green: make it pass
     def duration(sleep_time, wake_time):
         raise ValueError(sleep_time, wake_time)
 
-* When I raise ValueError_ in ``duration`` I get another :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
+* When I raise ValueError_ in ``duration`` the terminal shows :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: python
 

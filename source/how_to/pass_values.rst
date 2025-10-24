@@ -35,7 +35,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 telephone
 
-  it makes the folders and files that are needed, installs packages, runs the first test, the terminal shows :ref:`AssertionError`
+  it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -48,6 +48,10 @@ red: make it fail
 * and change ``test_failure`` to ``test_passing_a_string``
 
   .. code-block:: python
+    :emphasize-lines: 6-10
+
+    import unittest
+
 
     class TestTelephone(unittest.TestCase):
 
@@ -66,7 +70,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered in ``test_telephone.py``
 
   .. code-block:: python
 
@@ -74,12 +78,19 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then add an `import statement`_ for the ``telephone`` module
+* then I add an `import statement`_ for the ``telephone`` module at the top of ``test_telephone.py``
+
+  .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     import src.telephone
     import unittest
+
+
+    class TestTelephone(unittest.TestCase):
+        ...
 
   the terminal shows :ref:`AttributeError`
 
@@ -87,7 +98,7 @@ green: make it pass
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
-* another one for the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered
 
   .. code-block:: python
 
@@ -96,7 +107,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* I add a name to ``telephone.py``
+* I click on ``telephone.py`` to open it in the editor, then add a name
 
   .. code-block:: python
 
@@ -108,7 +119,7 @@ green: make it pass
 
     NameError: name 'text' is not defined
 
-* then I point ``text`` to :ref:`None`
+* I point ``text`` to :ref:`None`
 
   .. code-block:: python
 
@@ -120,7 +131,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* which I add to the list of Exceptions_ encountered
+* I add it to the list of Exceptions_ encountered in ``test_telephone.py``
 
   .. code-block:: python
 
@@ -130,7 +141,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I change ``text`` to a :ref:`function<functions>` to make it callable_
+* I change ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
 
@@ -143,11 +154,12 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  ``src.telephone.text`` was called with input but the definition of the :ref:`function<functions>` does not allow this
+  ``src.telephone.text`` was called with input but the definition of the :ref:`function<functions>` does not take any input
 
-* I make it take a value
+* I make the :ref:`function<functions>` take a value
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def text(value):
         return None
@@ -158,9 +170,10 @@ green: make it pass
 
     AssertionError: None != 'I received: hello'
 
-* when I copy the string_ from the terminal and paste it in the `return statement`_ to replace :ref:`None`
+* when I copy the string_ from the terminal and paste it in the `return statement`_ to replace :ref:`None` in ``telephone.py``
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def text(value):
         return 'I received: hello'
@@ -170,24 +183,27 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that ``text`` does not care about the input and will always return ``'I received: hello'``. I want it to return the value it receives as part of the message.
+The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input and will always return ``'I received: hello'``. I want it to return the value it receives as part of the message.
 
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string``
+I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string`` in ``test_telephone.py``
 
 .. code-block:: python
+  :emphasize-lines: 8-11
 
-  def test_passing_a_string(self):
-      self.assertEqual(
-          src.telephone.text("hello"),
-          "I received: hello"
-      )
-      self.assertEqual(
-          src.telephone.text("yes"),
-          "I received: yes"
-      )
+  class TestTelephone(unittest.TestCase):
+
+      def test_passing_a_string(self):
+          self.assertEqual(
+              src.telephone.text("hello"),
+              "I received: hello"
+          )
+          self.assertEqual(
+              src.telephone.text("yes"),
+              "I received: yes"
+          )
 
 the terminal shows :ref:`AssertionError`
 
@@ -198,14 +214,15 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* when I make the `return statement`_ match the expectation
+* when I make the `return statement`_ in ``telephone.py`` match the expectation
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def text(value):
         return 'I received: yes'
 
-  I get another :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -220,7 +237,7 @@ green: make it pass
     def text(value):
         return f'I received: {value}'
 
-  the terminal shows a passing test. This solution is called `string interpolation`_
+  the terminal shows a passing test. This is called `string interpolation`_, it allows me to put values in strings_
 
 ----
 
@@ -235,13 +252,21 @@ red: make it fail
 
 I add a failing test for a :ref:`class <classes>`
 
-.. code-block:: python
+.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
-  def test_passing_a_class(self):
-      self.assertEqual(
-          src.telephone.text(object),
-          "I received: object"
-      )
+.. code-block:: python
+  :emphasize-lines: 6-10
+
+  class TestTelephone(unittest.TestCase):
+
+      def test_passing_a_string(self):
+          ...
+
+      def test_passing_a_class(self):
+          self.assertEqual(
+              src.telephone.text(object),
+              "I received: object"
+          )
 
 the terminal shows :ref:`AssertionError`
 
