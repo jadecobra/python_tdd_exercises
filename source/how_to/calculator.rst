@@ -895,7 +895,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  when ``self.y`` is randomly ``0``, the terminal shows ZeroDivisionError_
+  I hit save ``(ctrl+s)`` in the editor to run the tests a few times, and when ``self.y`` is randomly ``0``, the terminal shows ZeroDivisionError_
 
   .. code-block:: python
 
@@ -919,14 +919,21 @@ refactor: make it better
 
   the terminal shows all tests are passing with no random failures
 
-* I use a bigger range of numbers for the tests
+* I use a bigger range of numbers for the tests in ``test_calculator.py``
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def a_random_number():
         return random.randint(-10**1000000, 10**1000000)
 
   the terminal still shows green and it takes longer to run the tests. I change the range back to ``-10, 10``
+
+  .. code-block:: python
+    :emphasize-lines: 2
+
+    def a_random_number():
+        return random.randint(-10, 10)
 
 * then remove the TODO list
 
