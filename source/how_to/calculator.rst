@@ -563,7 +563,7 @@ refactor: make it better
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 12-13,20-21,25-26
+    :emphasize-lines: 12-13,16-17,25-26
 
     import random
     import src.calculator
@@ -601,8 +601,19 @@ refactor: make it better
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction`` and use ``self.x`` and ``self.y`` instead
 
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+
   .. code-block:: python
-    :emphasize-lines: 8-9, 14-15
+    :linenos:
+    :emphasize-lines: 16-17, 22-23
+
+    import random
+    import src.calculator
+    import unittest
+
+
+    def a_random_number():
+        return random.randint(-10, 10)
 
     class TestCalculator(unittest.TestCase):
 
@@ -771,6 +782,8 @@ green: make it pass
 
   .. code-block:: python
 
+    x = -1, y = 0
+    x = 0, y = 0
     x = 1, y = 0
 
       def divide(x, y):
@@ -802,7 +815,7 @@ I add a line to cause the ZeroDivisionError_ intentionally and comment out the c
 .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
 .. code-block:: python
-  :emphasize-lines: 5-10
+  :emphasize-lines: 5, 7-10
 
   def test_multiplication(self):
       ...
@@ -916,10 +929,28 @@ refactor: make it better
 
     ZeroDivisionError: division by zero
 
-* I add an assertRaises_ block to catch the Exception_ in the `while statement`_ and remove the previous statement from the test because it is now part of the loop
+* I add an assertRaises_ block to catch the Exception_ in the `while statement`_
 
   .. code-block:: python
-    :emphasize-lines: 2-4
+    :emphasize-lines: 6-7
+
+    def test_division(self):
+        with self.assertRaises(ZeroDivisionError):
+            src.calculator.divide(self.x, 0)
+
+        while self.y == 0:
+            with self.assertRaises(ZeroDivisionError):
+                  src.calculator.divide(self.x, self.y)
+            self.y = a_random_number()
+        else:
+            self.assertEqual(
+                src.calculator.divide(self.x, self.y),
+                self.x/self.y
+            )
+
+* I no longer need the first assertRaises_ and remove it from the test because it is now part of the loop
+
+  .. code-block:: python
 
     def test_division(self):
         while self.y == 0:
