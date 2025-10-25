@@ -396,7 +396,8 @@ how to make a virtual environment
     iniconfig    x.y.z
     packaging    x.y
     pip          x.y
-    pluggy       x.y.z
+    pluggy       x.y.
+    Pygments     x.y.z
     pytest       x.y.z
     pytest-watch x.y.z
     watchdog     x.y.z
@@ -521,9 +522,12 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   the terminal shows all the commands I have typed so far, and I use them to write the program
 
-* I click on the ``makePythonTdd.sh`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
+* I click on ``makePythonTdd.sh`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
+
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: ruby
+    :linenos:
 
     #!/bin/bash
     mkdir magic
@@ -544,7 +548,10 @@ You made it this far and have become the greatest programmer in the world. To fo
 
 * The problem with this program is it will always make a project called ``magic``. I need it to be able to make any project I want. I add a variable to replace ``magic`` so I can give it any name when I want to make a project
 
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+
   .. code-block:: shell
+    :linenos:
 
     #!/bin/bash
     PROJECT_NAME=$1
