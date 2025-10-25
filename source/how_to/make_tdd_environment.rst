@@ -87,11 +87,13 @@ how to manually make a python test driven development environment
 
     mkdir src
 
-  I add an empty file for the source code (the actual program)
+  I use touch_
 
   .. code-block:: shell
 
     touch src/magic.py
+
+  this adds an empty file for the source code (the actual program)
 
 * I make a child directory
 
@@ -101,7 +103,7 @@ how to manually make a python test driven development environment
 
   this is where I will add tests for the actual program
 
-* I add an empty file called ``__init__.py`` in the ``tests`` folder
+* I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
 
   .. attention:: make sure to use 2 underscores (__) for ``__init__.py``
 
@@ -111,7 +113,7 @@ how to manually make a python test driven development environment
 
   this tells Python_ that ``tests`` is a `python package`_, it will help it find the tests I write later
 
-* I add one more empty file in the ``tests`` directory for the actual test
+* I use touch_ to add one more empty file in the ``tests`` directory for the actual test
 
   .. code-block:: shell
 
@@ -174,7 +176,7 @@ red: make it fail
       .. TIP:: I can use any name as long as it starts with ``Test``
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods<functions>` for testing
-    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a 'child' of `unittest.TestCase`_ which means me I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
+    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
 
   - ``def test_failure``
 
@@ -183,13 +185,13 @@ red: make it fail
 
       .. TIP:: I can use any name as long as it starts with ``test_``
 
-    * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` which is a 'child' of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
-      I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then me and Python_ have a problem
+      I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
 * I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by having to hit save ``(ctrl+s)`` every time I make a change
 * I type this in the terminal to run the test
@@ -222,7 +224,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 
 * ``FAILED (failures=1)`` the number of failures
 * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-* ``AssertionError: True is not false`` the Exception_(Error) raised and its message, in this case :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+* ``AssertionError: True is not false`` the Error(Exception_) raised and its message, in this case :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the failure and the location of the file where it is
 
@@ -246,7 +248,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
 
   .. code-block:: python
-    :emphasize-lines: 8-9
+    :emphasize-lines: 10-11
 
     import unittest
 
@@ -255,6 +257,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 
         def test_failure(self):
             self.assertFalse(True)
+
 
     # Exceptions Encountered
     # AssertionError
@@ -589,7 +592,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh calculator
 
-  the computer will make a `Test Driven Development`_ environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
+  the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :doc:`/how_to/calculator`
 
 ----
 

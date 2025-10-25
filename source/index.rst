@@ -90,6 +90,7 @@ table of contents
   :maxdepth: 2
   :titlesonly:
 
+  videos <https://www.youtube.com/@JacobItegboje>
   conventions
   exceptions/index
   data_structures/index

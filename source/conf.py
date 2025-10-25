@@ -30,11 +30,11 @@ html_theme = 'furo'
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
 html_static_path = ['_static']
-html_theme_options = {
-    'external_links': [
-        ("videos", "https://www.youtube.com/@JacobItegboje"),
-    ],
-}
+# html_theme_options = {
+#     'external_links': [
+#         ("videos", "https://www.youtube.com/@JacobItegboje"),
+#     ],
+# }
 
 sitemap_url_scheme = '{link}'
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
