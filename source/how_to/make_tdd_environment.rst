@@ -338,7 +338,7 @@ how to make a virtual environment
   - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
   - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the `python package`_ given
-  - ``pip`` is the package name I am giv for pip_ to install, in this case it upgrades itself
+  - ``pip`` is the package name I am giving pip_ to install, in this case it upgrades itself
 
 * I use pip_ to see what packages are installed in the virtual environment
 
@@ -354,7 +354,7 @@ how to make a virtual environment
     ------- -------
     pip     x.y
 
-* I make a file in the ``magic`` directory with `pytest-watch`_ as its text
+* I use echo_ to make a file in the ``magic`` directory with `pytest-watch`_ as its text
 
   .. code-block:: shell
 
@@ -368,7 +368,7 @@ how to make a virtual environment
 
     .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want
 
-* I install `pytest-watch`_ and its dependencies
+* I install `pytest-watch`_ and the programs it needs
 
   .. code-block:: python
 
@@ -376,6 +376,8 @@ how to make a virtual environment
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file
   - ``requirements.txt`` is the name of the file given
+
+    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want
 
 * I use pip_ to see what packages are now installed in the `virtual environment`_
 
@@ -452,7 +454,7 @@ how to make a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I change it back to :ref:`False<test_what_is_false>` to make it pass, and can write the rest of the code for the project while the tests run automatically
+  I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py`` to make it pass. I can now write the rest of the code for the project while the tests run automatically
 
   .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
@@ -461,7 +463,7 @@ how to make a virtual environment
 how to deactivate a virtual environment
 #################################################################################################
 
-type this in a terminal with an active `virtual environment`_
+When I want to leave a `virtual environment`_, I type this in the terminal to deactivate it
 
 .. code-block::
 
@@ -472,17 +474,17 @@ type this in a terminal with an active `virtual environment`_
 how to activate a virtual environment
 ############################################################################################
 
-Make sure you are in the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
+When I want to work in a `virtual environment`_, I change directory to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
 
 .. code-block:: shell
 
   source .venv/bin/activate
 
-the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_
+  .. NOTE:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
 
-.. code-block:: shell
+    .. code-block:: shell
 
-  (.venv) .../magic $
+      (.venv) .../magic $
 
 -----
 
@@ -490,7 +492,7 @@ the ``(.venv)`` on the far left of the command line in the terminal shows that I
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember each step of the process
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * I leave the `virtual environment`_
@@ -499,13 +501,13 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     deactivate
 
-* I change directory to the parent of ``magic``
+* I use cd_ to change directory to the parent of ``magic``
 
   .. code-block:: shell
 
     cd ..
 
-* I make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
+* I use touch_ to make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
 
   .. code-block:: shell
 
