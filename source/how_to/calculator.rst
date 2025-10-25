@@ -14,6 +14,8 @@ how to make a calculator
 
 ----
 
+I am going to write a program that can ``add``, ``subtract``, ``multiply`` and ``divide``
+
 *********************************************************************************
 test_addition
 *********************************************************************************
@@ -405,7 +407,7 @@ refactor: make it better
     class TestCalculator(unittest.TestCase):
         ...
 
-  the test is still green and takes longer to run. I change the range back to ``-10, 10``
+  the test is still green and takes longer to run. ``10**100000`` is how to write ``10`` raised to the power of ``100000``. I change the range back to ``-10, 10``
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -434,7 +436,7 @@ red: make it fail
 * I add a :ref:`method<functions>` to use to test subtraction in ``test_calculator.py``
 
   .. code-block:: python
-    :emphasize-lines: 6-13
+    :emphasize-lines: 12-19
 
     class TestCalculator(unittest.TestCase):
 
@@ -557,10 +559,20 @@ refactor: make it better
     x = a_random_number()
     y = a_random_number()
 
-  once in ``test_addition`` and again in ``test_subtraction``. I can use :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove them and use the same numbers for both tests
+  once in ``test_addition`` and again in ``test_subtraction``. I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests
 
   .. code-block:: python
-    :emphasize-lines: 3-4,7-8,16-17
+    :linenos:
+    :emphasize-lines: 12-13,20-21,25-26
+
+    import random
+    import src.calculator
+    import unittest
+
+
+    def a_random_number():
+        return random.randint(-10, 10)
+
 
     class TestCalculator(unittest.TestCase):
 
