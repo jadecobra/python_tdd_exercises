@@ -44,8 +44,8 @@ red: make it fail
     tests/test_telephone.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the editor
-* then change ``True`` to ``False`` to make the test pass
-* and change ``test_failure`` to ``test_passing_a_string``
+* then I change ``True`` to ``False`` to make the test pass
+* and I change ``test_failure`` to ``test_passing_a_string``
 
   .. code-block:: python
     :emphasize-lines: 6-10
@@ -157,9 +157,9 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  ``src.telephone.text`` was called with input but the definition of the :ref:`function<functions>` does not take any input
+  ``src.telephone.text`` was called with ``"hello"`` as input but the definition of the :ref:`function<functions>` does not take any input, the parentheses are empty
 
-* I make the :ref:`function<functions>` take a value
+* I make the :ref:`function<functions>` take input and call it ``value``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -186,7 +186,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input and will always return ``'I received: hello'``. I want it to return the value it receives as part of the message.
+The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it receives and will always return ``'I received: hello'``. I want it to return the value it receives as part of the message.
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -241,7 +241,7 @@ green: make it pass
     def text(value):
         return f'I received: {value}'
 
-  the terminal shows a passing test. This is called `string interpolation`_, it allows me to put values in strings_
+  the terminal shows a passing test. This is called `string interpolation`_, I can use it to put values in strings_
 
 ----
 
@@ -254,7 +254,7 @@ test_passing_a_class
 red: make it fail
 #################################################################################
 
-I add a failing test for a :ref:`class <classes>`
+I add a failing test for a :ref:`class <classes>` in ``test_telephone.py``
 
 .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
@@ -306,7 +306,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I add another :ref:`assertion<AssertionError>` to ``test_passing_a_class`` with a different :ref:`class<classes>`
+I add another :ref:`assertion<AssertionError>` to ``test_passing_a_class`` with the ``TestTelephone`` :ref:`class<classes>`
 
 .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 

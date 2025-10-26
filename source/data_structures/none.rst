@@ -46,8 +46,8 @@ red: make it fail
     tests/test_none.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the editor
-* then change ``True`` to ``False`` to make the test pass
-* and change ``test_failure`` to ``test_what_is_none``
+* then I change ``True`` to ``False`` to make the test pass
+* and I change ``test_failure`` to ``test_what_is_none``
 
   .. code-block:: python
 

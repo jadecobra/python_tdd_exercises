@@ -87,7 +87,7 @@ how to manually make a python test driven development environment
 
     mkdir src
 
-  I use touch_
+  I use touch_ to make an empty file
 
   .. code-block:: shell
 
@@ -119,7 +119,7 @@ how to manually make a python test driven development environment
 
     touch tests/test_magic.py
 
-  .. TIP:: I can use any name as long as it starts with ``test_``
+  .. TIP:: I can use any name for the file as long as it starts with ``test_``
 
 * these are the folders/directories and files in the project
 
@@ -242,7 +242,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``F`` shows a failure
 * ``python3 -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
 
-  - ``python3`` is the major version of Python_ being used
+  - ``python3`` is the Python_ program
   - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
 
 * I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
@@ -306,11 +306,11 @@ how to make a virtual environment
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     python3 -m venv .venv
 
-  - ``python3`` is the major version of Python_ being used
+  - ``python3`` is the Python_ program
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed
   - ``.venv`` is the name given
@@ -331,7 +331,7 @@ how to make a virtual environment
 
 * I upgrade pip_ the `python package manager`_ to the latest version
 
-  .. code-block:: python
+  .. code-block:: shell
 
     python3 -m pip install --upgrade pip
 
@@ -363,7 +363,7 @@ how to make a virtual environment
   - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
   - ``>`` is an operator that is used to send output from a program to the given file
   - `pytest-watch`_ is a Python_ program that automatically runs pytest_ when a Python_ file in the folder changes
-  - pytest_ is a `python package`_ like unittest_ that is used for testing
+  - pytest_ is a `python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install
 
     .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want
@@ -396,7 +396,7 @@ how to make a virtual environment
     iniconfig    x.y.z
     packaging    x.y
     pip          x.y
-    pluggy       x.y.
+    pluggy       x.y.z
     Pygments     x.y.z
     pytest       x.y.z
     pytest-watch x.y.z
@@ -601,7 +601,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh calculator
 
-  the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :doc:`/how_to/calculator`
+  the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`calculator<how to make a calculator>`
 
 ----
 
@@ -613,8 +613,8 @@ One of the advantages of programming is that I can take some steps and make them
 
 You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
-Would you like to test :doc:`making a calculator?</how_to/calculator>`
+Would you like to test :ref:`making a calculator?<how to make a calculator>`
 
 ----
 
-* :doc:`/code/make_tdd/code_make_python_tdd_sh`
+:ref:`makePythonTdd.sh`

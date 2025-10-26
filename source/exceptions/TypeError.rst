@@ -54,7 +54,7 @@ red: make it fail
     import unittest
     import src.type_error
 
-* and change ``test_failure`` to ``test_type_error_w_non_callables``
+* and I change ``test_failure`` to ``test_type_error_w_non_callables``
 
   .. code-block:: python
 

@@ -44,7 +44,7 @@ red: make it fail
     tests/test_calculator.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the editor in the editor
-* then change ``True`` to ``False`` to make the test pass
+* then I change ``True`` to ``False`` to make the test pass
 * I add a list to keep track of the work for the program
 
   .. code-block:: python
@@ -69,7 +69,7 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* and change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
+* and I change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
 
   .. code-block:: python
     :emphasize-lines: 7-10

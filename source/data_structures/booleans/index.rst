@@ -46,8 +46,8 @@ red: make it fail
     tests/test_booleans.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the editor
-* then change ``True`` to ``False`` to make the test pass
-* and change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of bool_
+* then I change ``True`` to ``False`` to make the test pass
+* and I change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of bool_
 
   .. code-block:: python
 

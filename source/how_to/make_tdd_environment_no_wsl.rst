@@ -36,55 +36,61 @@ requirements
 how to manually make a python test driven development environment on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
 
-* Imagine I have to work on a project called ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_ to make a folder/directory for the project
+* Imagine I have to work on a project and it's name is ``magic``. I open a terminal ``(ctrl+~)`` in the Integrated Development Environment (IDE) and type mkdir_
 
   .. code-block:: shell
 
     mkdir magic
 
-  then change directory to the project with the cd_ program
+  this makes a folder/directory for the project where its files will stay
+
+  * I type cd_
 
   .. code-block:: shell
 
     cd magic
 
-  this is where all code for the project will stay
+  this changes directory to the ``magic`` folder/directory I just made
 
-* I make a child folder for the source code
+* I make a child folder/directory for the source code (the actual program)
 
   .. code-block:: shell
 
     mkdir src
 
-  then add an empty file for the source code (the actual program)
+  I use `New-Item`_ to make an empty file
 
   .. code-block:: shell
 
     New-Item src/magic.py
 
-  `New-Item`_ makes an empty file when given a name
+  this adds an empty file for the source code (the actual program)
 
-* I make a child directory for the tests
+* I make a child directory
 
   .. code-block:: shell
 
     mkdir tests
 
-  then an empty file called ``__init__.py`` in the ``tests`` folder to tell Python_ that it is a `python package`_, this will help it find the tests later
+  this is where I will add tests for the actual program
 
-  .. NOTE:: make sure to use 2 underscores (__) for ``__init__.py``
+* I use `New-Item`_ to add an empty file called ``__init__.py`` in the ``tests`` folder
+
+  .. attention:: make sure to use 2 underscores (__) for ``__init__.py``
 
   .. code-block:: shell
 
     New-Item tests/__init__.py
 
-  I add one more empty file in the ``tests`` directory for the actual test
+  this tells Python_ that ``tests`` is a `python package`_, it will help it find the tests I write later
+
+* I use `New-Item`_ to add one more empty file in the ``tests`` directory for the actual test
 
   .. code-block:: shell
 
     New-Item tests/test_magic.py
 
-  I can use any name as long as it starts with ``test_``
+  .. TIP:: I can use any name for the file as long as it starts with ``test_``
 
 * these are the folders/directories and files in the project
 
@@ -98,7 +104,7 @@ how to manually make a python test driven development environment on Windows wit
          ╰──__init__.py
          ╰──test_magic.py
 
-  ``py`` at the end of a file name shows it is a Python_ :ref:`module<ModuleNotFoundError>`
+  ``.py`` at the end of a file name shows it is a Python_ :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -115,7 +121,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 red: make it fail
 ############################################################################################
 
-* I open ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) and type the following
+* I click on ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) to open it in the editor, then type the following
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -135,30 +141,37 @@ red: make it fail
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes`, which are a collection of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` for a purpose
-    * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test. I can use any name as long as it starts with ``Test``
-    * `unittest.TestCase`_ is a :ref:`class <classes>` defined in the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods<functions>` for testing
-    * ``class TestMagic(unittest.TestCase)`` defines that ``TestMagic`` inherits from `unittest.TestCase`_ which allows me use its :ref:`methods<functions>`
+    * ``class`` is the Python_ keyword for making :ref:`classes`, which are a group of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` that belong together, see :ref:`classes` for more
+    * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test
+
+      .. TIP:: I can use any name as long as it starts with ``Test``
+
+    * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods<functions>` for testing
+    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
 
   - ``def test_failure``
 
-    * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`
-    * ``test_failure`` is the name of this :ref:`method<functions>`, I can use any name as long as it starts with ``test_``
-    * ``self`` is used to access :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` class and by extension the `unittest.TestCase`_ class instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
+    * ``test_failure`` is the name of this :ref:`method<functions>` for my tests
+
+      .. TIP:: I can use any name as long as it starts with ``test_``
+
+    * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
-      - I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`, there is a problem if it does not fail
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by manually saving every time there is a change
-* then I type this in the terminal to run the test
+      I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`, there is a problem if it does not fail
+
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by having to hit save ``(ctrl+s)`` every time I make a change
+* I type this in the terminal to run the test
 
   .. code-block:: python
 
     python -m unittest
 
-  and it shows a failure
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -178,13 +191,13 @@ red: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You just wrote a test.
 
-This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal is about the failure, here is an explanation from the bottom up
+This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal is about the failure, I like to read these from the bottom up, here is an explanation of each line
 
 * ``FAILED (failures=1)`` the number of failures
-* ``Ran 1 test in A.XYZs`` the number of tests run and how long it took
-* ``AssertionError: True is not false`` the Exception_ raised and its message, in this case :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+* ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
+* ``AssertionError: True is not false`` the Error(Exception_) raised and its message, in this case :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 * ``self.assertFalse(True)`` the line of code that caused the failure
-* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number and location of the file where the failure happened
+* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the failure and the location of the file where it is
 
   .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
 
@@ -200,12 +213,13 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``F`` shows a failure
 * ``python -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
 
-  - ``python`` is the major version of Python_ being used
-  - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option
+  - ``python`` is the Python_ program
+  - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
 
-* I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. Time to add :ref:`AssertionError` to the list
+* I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
 
   .. code-block:: python
+    :emphasize-lines: 10-11
 
     import unittest
 
@@ -214,6 +228,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 
         def test_failure(self):
             self.assertFalse(True)
+
 
     # Exceptions Encountered
     # AssertionError
@@ -227,13 +242,13 @@ I change the input on line 7 from :ref:`True<test_what_is_true>` to :ref:`False<
 
   self.assertFalse(False)
 
-then run the test again in the terminal
+then I run the test again in the terminal
 
-.. code-block:: shell
+.. code-block:: python
 
   python -m unittest
 
-and it shows a passing test
+and the test passes
 
 .. code-block:: python
 
@@ -248,8 +263,8 @@ and it shows a passing test
 refactor: make it better
 ############################################################################################
 
-I ran ``python -m unittest`` to see the test fail, ran it again to see the test pass. I will have to run it again when I make a code change, to make sure tests that were passing are not failing and the new code does what I expect.
-This means it is run for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
+I ran ``python -m unittest`` to see the test fail, I ran it again to see the test pass. I will have to run it again when I make a code change, to make sure tests that were passing are not failing and that the new code I added does what I expect.
+This means I have to run ``python -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
 
 ----
 
@@ -266,10 +281,12 @@ how to make a virtual environment
 
     python -m venv .venv
 
-  - ``python`` is the major version of Python_ being used
+  - ``python`` is the Python_ program
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed
-  - ``.venv`` is the name given, I can use any name
+  - ``.venv`` is the name given
+
+    .. NOTE:: ``.venv`` is Python_ convention, I can use any name I want
 
 * I run PowerShell_ in Administrator mode and set the Execution Policy for the activation script to work
 
@@ -303,11 +320,11 @@ how to make a virtual environment
 
     .venv/scripts/activate.ps1
 
-  the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
+  .. NOTE:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    (.venv) .../magic $
+      (.venv) .../magic $
 
 * I upgrade pip_ the `python package manager`_ to the latest version
 
@@ -317,10 +334,10 @@ how to make a virtual environment
 
   - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
-  - ``--upgrade`` is an option given to the ``install`` argument for pip_ to upgrade the version of the `python package`_ given
-  - ``pip`` is the package name given for pip_ to install, in this case it upgrades itself
+  - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the `python package`_ given
+  - ``pip`` is the package name I am giving pip_ to install, in this case it upgrades itself
 
-* I can use pip_ to see what packages are installed in the virtual environment
+* I use pip_ to see what packages are installed in the virtual environment
 
   .. code-block:: python
 
@@ -334,19 +351,21 @@ how to make a virtual environment
     ------- -------
     pip     x.y
 
-* I make a file in the ``magic`` directory with `pytest-watch`_ as its text
+* I use `Out-File`_ to make a file in the ``magic`` directory with `pytest-watch`_ as its text
 
   .. code-block:: PowerShell
 
     "pytest-watch" | Out-File requirements.txt -Encoding UTF8
 
   - ``|`` is an operator that is used to send output from the left as input to the right
-  - `Out-File`_ writes input text to a given file
+  - `Out-File`_ is a program that writes input text to a given file
   - `pytest-watch`_ is a Python_ program that automatically runs pytest_ when a Python_ file in the folder changes
-  - pytest_ is a `python package`_ like unittest_ that is used for testing
-  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install, I can use any name
+  - pytest_ is a `python package`_ like unittest_, that is used for testing
+  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install
 
-* I install `pytest-watch`_ and its dependencies
+    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want
+
+* I install `pytest-watch`_ and the programs it needs
 
   .. code-block:: python
 
@@ -355,7 +374,9 @@ how to make a virtual environment
   - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file
   - ``requirements.txt`` is the name of the file given
 
-* I use pip_ to see the packages that are now installed in the `virtual environment`_
+    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want
+
+* I use pip_ to see what packages are now installed in the `virtual environment`_
 
   .. code-block:: python
 
@@ -373,6 +394,7 @@ how to make a virtual environment
     packaging    x.y
     pip          x.y
     pluggy       x.y.z
+    Pygments     x.y.z
     pytest       x.y.z
     pytest-watch x.y.z
     watchdog     x.y.z
@@ -412,7 +434,7 @@ how to make a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-* when I change the input on line 7 in ``test_magic.py`` from :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` it shows :ref:`AssertionError`
+* when I change the input on line 7 in ``test_magic.py`` from :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>`, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -430,16 +452,16 @@ how to make a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  then I change it back to :ref:`False<test_what_is_false>` to make it pass and can write the rest of the code for the project while the tests run automatically
+  I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py`` to make it pass. I can now write the rest of the code for the project while the tests run automatically
 
-  .. NOTE:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
+  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
 
 ----
 
 how to deactivate a virtual environment
 #################################################################################################
 
-type this in a terminal with an active `virtual environment`_
+When I want to leave a `virtual environment`_, I type this in the terminal to deactivate it
 
 .. code-block::
 
@@ -450,7 +472,7 @@ type this in a terminal with an active `virtual environment`_
 how to activate a virtual environment
 ############################################################################################
 
-Make sure you are in the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
+When I want to work in a `virtual environment`_, I change directory to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
 
 .. code-block:: PowerShell
 
@@ -462,11 +484,11 @@ or
 
   .venv/scripts/activate.ps1
 
-the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_
+.. NOTE:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  (.venv) .../magic $
+    (.venv) .../magic $
 
 -----
 
@@ -474,38 +496,42 @@ the ``(.venv)`` on the far left of the command line in the terminal shows that I
 how to automatically make a python test driven development environment on Windows without Windows Subsystem Linux
 *******************************************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I would write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember each step of the process
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember each step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
-* and leave the `virtual environment`_
+* I leave the `virtual environment`_
 
   .. code-block:: shell
 
     deactivate
 
-* then change directory to the parent of ``magic``
+* I use cd_ to change directory to the parent of ``magic``
 
   .. code-block:: shell
 
     cd ..
 
-* and make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.ps1`
+* I use `New-Item`_ to make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
 
   .. code-block:: shell
 
     New-Item makePythonTdd.ps1
 
-* I use the history_ program to list the commands I typed and use them as an example for the program
+* I use the history_ program
 
   .. code-block:: shell
 
     history
 
-* I click on the file to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the file
+  the terminal shows all the commands I have typed so far, and I use them to write the program
+
+* I click on ``makePythonTdd.ps1`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
+
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: PowerShell
+    :linenos:
 
-    #!/bin/bash
     mkdir magic
     cd magic
     mkdir src
@@ -520,11 +546,13 @@ You made it this far and have become the greatest programmer in the world. To fo
     python -m pip install --requirement requirements.txt
     pytest-watch
 
-* This program will always make a project called ``magic``. I add a variable to replace ``magic`` so I can use it to make any project I want by giving it the name of the project
+* The problem with this program is it will always make a project called ``magic``. I need it to be able to make any project I want. I add a variable to replace ``magic`` so I can give it any name when I want to make a project
+
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: PowerShell
+    :linenos:
 
-    #!/bin/bash
     $PROJECT_NAME=$args[0]
     mkdir $PROJECT_NAME
     cd $PROJECT_NAME
@@ -540,7 +568,15 @@ You made it this far and have become the greatest programmer in the world. To fo
     python -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``$args[0]`` is the first argument given when the program is called. I can use it in place of ``$PROJECT_NAME``
+  .. NOTE::
+
+    ``$args[0]`` is for the first argument given when the program is called, I can use it in place of ``$PROJECT_NAME`` for example
+
+    .. code-block:: shell
+
+      command argument
+
+    in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will get the value of  ``argument``
 
 * I use the `Out-File`_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
@@ -550,13 +586,13 @@ You made it this far and have become the greatest programmer in the world. To fo
     :linenos:
     :language: PowerShell
 
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``$PROJECT_NAME`` variable. For example, when I type the following in the terminal in the directory where ``makePythonTdd.ps1`` is saved
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.ps1`` is saved,
 
   .. code-block:: PowerShell
 
     ./makePythonTdd.ps1 calculator
 
-  the computer will make a `Test Driven Development`_ environment for a project called ``calculator``, you can continue this in :doc:`/how_to/calculator`
+  the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`calculator<how to make a calculator>`
 
 ----
 
@@ -566,10 +602,10 @@ review
 
 One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me.
 
-You have seen a way to make a Python_ Test Driven Development Environment, and have a program to do it for you on any Windows_ computers without having to install `Windows Subsystem Linux`_.
+You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Windows_ computers without having to install `Windows Subsystem Linux`_.
 
-Would you like to test :doc:`making a calculator?</how_to/calculator>`
+Would you like to test :ref:`making a calculator?<how to make a calculator>`
 
 ----
 
-* :doc:`/code/make_tdd/code_make_python_tdd_ps1`
+:ref:`makePythonTdd.ps1`
