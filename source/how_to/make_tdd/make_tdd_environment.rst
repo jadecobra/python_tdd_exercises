@@ -59,7 +59,7 @@ type this in the terminal to install Python_
 how to manually make a python test driven development environment
 ********************************************************************************************
 
-* Imagine I have to work on a project and it's name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and type mkdir_
+* Imagine I have to work on a project and it's name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_
 
   .. code-block:: shell
 
@@ -67,7 +67,7 @@ how to manually make a python test driven development environment
 
   this makes a folder/directory for the project where its files will stay
 
-* I type cd_
+* I use cd_
 
   .. code-block:: shell
 
@@ -95,7 +95,7 @@ how to manually make a python test driven development environment
 
     mkdir tests
 
-  this is where I will add tests for the actual program
+  this is where I will add tests for the project
 
 * I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
 
