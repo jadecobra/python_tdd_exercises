@@ -27,5 +27,5 @@ the chapters below cover handling Exceptions_ in tests and programs
 .. toctree::
   :maxdepth: 1
 
-  /how_to/exception_handling_tests
-  /how_to/exception_handling_programs
+  /how_to/exception_handling/exception_handling_tests
+  /how_to/exception_handling/exception_handling_programs
