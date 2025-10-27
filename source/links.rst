@@ -132,8 +132,6 @@
 
 ----
 
-.. _Exception: https://docs.python.org/3/library/exceptions.html
-.. _Exceptions: https://docs.python.org/3/library/exceptions.html
 .. _NameError: https://docs.python.org/3/library/exceptions.html#NameError
 .. _IndentationError: https://docs.python.org/3/library/exceptions.html#IndentationError
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html#

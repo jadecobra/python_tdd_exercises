@@ -941,7 +941,7 @@ Here are the tests I ran to see what happens when I pass Python_ :ref:`data stru
 * `test_passing_a_list`_
 * `test_passing_a_dictionary`_
 
-I also ran into the following Exceptions_
+I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * NameError_

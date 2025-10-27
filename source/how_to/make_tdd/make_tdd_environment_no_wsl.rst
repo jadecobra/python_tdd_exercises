@@ -195,7 +195,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 
 * ``FAILED (failures=1)`` the number of failures
 * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-* ``AssertionError: True is not false`` the :ref:`Error(Exception)<errors><` raised and its message, in this case :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+* ``AssertionError: True is not false`` the :ref:`Error/Exception<errors>` raised and its message, in this case :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the failure and the location of the file where it is
 
@@ -216,7 +216,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``python`` is the Python_ program
   - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
 
-* I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
+* I recommend you keep a list of :ref:`Exceptions<errors>` you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:

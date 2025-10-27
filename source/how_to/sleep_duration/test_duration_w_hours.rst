@@ -834,7 +834,7 @@ The challenge is to write a program that calculates the difference between a giv
   - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
-I also ran into the following Exceptions_
+I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * :ref:`TypeError`

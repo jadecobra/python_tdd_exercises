@@ -309,7 +309,7 @@ green: make it pass
 
     SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
 
-  Python_ does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of Exceptions_
+  Python_ does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of :ref:`Exceptions<errors>`
 
   .. code-block:: python
 
@@ -534,7 +534,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these Exceptions_ from the terminal
+The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<errors>` from the terminal
 
 * :ref:`AttributeError`
 * NameError_

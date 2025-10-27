@@ -840,7 +840,7 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-Exceptions_ like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an Exception_, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
+:ref:`Exceptions<errors>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an :ref:`Exception<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
 green: make it pass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -859,13 +859,13 @@ green: make it pass
         #   self.x/self.y
         # )
 
-  because I used the wrong Exception_ the terminal still shows ZeroDivisionError_
+  because I used the wrong :ref:`Exception<errors>` the terminal still shows ZeroDivisionError_
 
   .. code-block:: python
 
     ZeroDivisionError: division by zero
 
-* When I change it to use the right Exception_
+* When I change it to use the right :ref:`Exception<errors>`
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -929,7 +929,7 @@ refactor: make it better
 
     ZeroDivisionError: division by zero
 
-* I add an assertRaises_ block to catch the Exception_ in the `while statement`_
+* I add an assertRaises_ block to catch the :ref:`Exception<errors>` in the `while statement`_
 
   .. code-block:: python
     :emphasize-lines: 6-7
@@ -1001,7 +1001,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  can you tell what Exceptions_ will show up as I go along?
+  can you tell what :ref:`Exceptions<errors>` will show up as I go along?
 
 green: make it pass
 #################################################################################
@@ -1251,7 +1251,7 @@ I wrote the following tests for a program that performs the arithmetic_ operatio
 * `test_multiplication`_
 * `test_division`_
 
-I also ran into the following Exceptions_
+I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * NameError_

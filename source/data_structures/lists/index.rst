@@ -873,7 +873,7 @@ refactor: make it better
 
     ValueError: 'not in list' is not in list
 
-  I add assertRaises_ to handle the Exception_
+  I add assertRaises_ to handle the :ref:`Exception<errors>`
 
   .. code-block:: python
     :emphasize-lines: 4,5
@@ -2067,7 +2067,7 @@ refactor: make it better
 test_index_error
 *********************************************************************************
 
-IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it. When I see this Exception_ I know the underlying data structure is a list_
+IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it. When I see this :ref:`Exception<errors>` I know the underlying data structure is a list_
 
 red: make it fail
 #################################################################################

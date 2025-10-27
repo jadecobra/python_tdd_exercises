@@ -438,7 +438,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  and the terminal still shows the same Exception_ because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
+  and the terminal still shows the same :ref:`Exception<errors>` because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
 
 * I change the def_ keyword to the :ref:`class <classes>` keyword
 
@@ -457,7 +457,7 @@ green: make it pass
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-* I add it to the list of Exceptions_ Encountered
+* I add it to the list of :ref:`Exceptions<errors>` Encountered
 
   .. code-block:: python
 
@@ -743,7 +743,7 @@ I ran tests for the AttributeError_ with
 * :ref:`class<classes>` attributes (variables)
 * :ref:`class<classes>` :ref:`methods<functions>` (functions)
 
-I also ran into the following Exceptions_
+I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * NameError_

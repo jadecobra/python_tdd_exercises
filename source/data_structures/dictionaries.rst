@@ -2189,7 +2189,7 @@ refactor: make it better
 test_key_error
 *********************************************************************************
 
-The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important Exception_ to know when working with a dictionary_
+The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<errors>` to know when working with a dictionary_
 
 red: make it fail
 #################################################################################

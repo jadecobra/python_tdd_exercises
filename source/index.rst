@@ -27,7 +27,7 @@ who is this for?
 * If you are interested in Python_, this is for you
 * If you just started your journey, CONGRATULATIONS! You picked Python_ from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ out there, Celebrate it, this is for you
 * If you are new to `Test Driven Development`_ in Python_, this is for you
-* If you already use Python_ but do not know any of the Exceptions_ below, this is for you
+* If you already use Python_ but do not know any of the :ref:`Exceptions<errors>` below, this is for you
 
   - :ref:`AssertionError`
   - :ref:`AttributeError`

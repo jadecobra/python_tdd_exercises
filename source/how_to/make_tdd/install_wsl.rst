@@ -1,4 +1,4 @@
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 #################################################################################
 how to install Windows Subsystem Linux on Windows
@@ -39,7 +39,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
 * after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
 * Press ``F1`` on the keyboard and select ``WSL:Connect to WSL`` to open a terminal in `Windows Subsystem Linux`_
-* type this in the terminal to update the linux_ package manager
+* type this in the terminal to update the Linux_ package manager
 
   .. code-block:: shell
 
