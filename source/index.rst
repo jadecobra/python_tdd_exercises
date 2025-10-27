@@ -73,8 +73,9 @@ howtos
   :titlesonly:
 
   how_to/setup_my_ide
-  how_to/make_tdd_environment
-  how_to/make_tdd_environment_no_wsl
+  how_to/make_tdd
+  how_to/make_tdd/make_tdd_environment
+  how_to/make_tdd/make_tdd_environment_no_wsl
   how_to/calculator
   how_to/pass_values
   how_to/make_person

@@ -4,9 +4,9 @@
 
 .. include:: ../links.rst
 
-#################################################################################
-how to make a python test driven development environment
-#################################################################################
+########################################################################################################
+how to make a python test driven development environment on Windows without Windows Subsystem Linux
+########################################################################################################
 
 .. raw:: html
 
@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ environment
+This is one way to make a Python_ `Test Driven Development`_ environment on a Windows Computer that does NOT have `Windows Subsystem Linux`_
 
 ----
 
@@ -30,40 +30,11 @@ requirements
   - PyCharm_
   - `other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
 
-windows requirements
-#################################################################################
-
-If you are using a Windows computer, try to install Linux_ with `Windows Subsystem Linux`_
-
-* click ``start``
-* then type ``PowerShell``
-* right click and select ``Run as administrator``
-* then install `Windows Subsystem Linux`_ in the terminal
-
-  .. code-block:: powershell
-
-    wsl --install --distribution debian
-
-  .. NOTE:: If installing `Windows Subsystem Linux`_ does not work, you can use :doc:`make_tdd_environment_no_wsl` instead
-
-* after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
-* Press ``F1`` on the keyboard and select ``WSL:Connect to WSL`` to open a terminal in `Windows Subsystem Linux`_
-
-linux/Windows Subsystem Linux requirements
-#################################################################################
-
-run these commands in a terminal to install Python_
-
-.. code-block:: shell
-
-  sudo apt update
-  sudo apt install python3 python3-venv --yes
-
 ----
 
-********************************************************************************************
-how to manually make a python test driven development environment
-********************************************************************************************
+****************************************************************************************************************
+how to manually make a python test driven development environment on Windows without Windows Subsystem Linux
+****************************************************************************************************************
 
 * Imagine I have to work on a project and it's name is ``magic``. I open a terminal ``(ctrl+~)`` in the Integrated Development Environment (IDE) and type mkdir_
 
@@ -73,7 +44,7 @@ how to manually make a python test driven development environment
 
   this makes a folder/directory for the project where its files will stay
 
-* I type cd_
+  * I type cd_
 
   .. code-block:: shell
 
@@ -87,11 +58,11 @@ how to manually make a python test driven development environment
 
     mkdir src
 
-  I use touch_ to make an empty file
+  I use `New-Item`_ to make an empty file
 
   .. code-block:: shell
 
-    touch src/magic.py
+    New-Item src/magic.py
 
   this adds an empty file for the source code (the actual program)
 
@@ -103,21 +74,21 @@ how to manually make a python test driven development environment
 
   this is where I will add tests for the actual program
 
-* I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
+* I use `New-Item`_ to add an empty file called ``__init__.py`` in the ``tests`` folder
 
   .. attention:: make sure to use 2 underscores (__) for ``__init__.py``
 
   .. code-block:: shell
 
-    touch tests/__init__.py
+    New-Item tests/__init__.py
 
   this tells Python_ that ``tests`` is a `python package`_, it will help it find the tests I write later
 
-* I use touch_ to add one more empty file in the ``tests`` directory for the actual test
+* I use `New-Item`_ to add one more empty file in the ``tests`` directory for the actual test
 
   .. code-block:: shell
 
-    touch tests/test_magic.py
+    New-Item tests/test_magic.py
 
   .. TIP:: I can use any name for the file as long as it starts with ``test_``
 
@@ -191,14 +162,14 @@ red: make it fail
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
-      I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
+      I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`, there is a problem if it does not fail
 
 * I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by having to hit save ``(ctrl+s)`` every time I make a change
 * I type this in the terminal to run the test
 
   .. code-block:: python
 
-    python3 -m unittest
+    python -m unittest
 
   the terminal shows :ref:`AssertionError`
 
@@ -240,14 +211,15 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``test_failure`` is the :ref:`method<functions>` defined on line 6
 
 * ``F`` shows a failure
-* ``python3 -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
+* ``python -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
 
-  - ``python3`` is the Python_ program
+  - ``python`` is the Python_ program
   - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
 
 * I recommend you keep a list of Exceptions_ you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 10-11
 
     import unittest
@@ -275,7 +247,7 @@ then I run the test again in the terminal
 
 .. code-block:: python
 
-  python3 -m unittest
+  python -m unittest
 
 and the test passes
 
@@ -292,13 +264,14 @@ and the test passes
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` to see the test fail, I ran it again to see the test pass. I will have to run it again when I make a code change, to make sure tests that were passing are not failing and that the new code I added does what I expect.
-This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
+I ran ``python -m unittest`` to see the test fail, I ran it again to see the test pass. I will have to run it again when I make a code change, to make sure tests that were passing are not failing and that the new code I added does what I expect.
+
+This means I have to run ``python -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
 
 ----
 
 ********************************************************************************************
-how to automatically run tests
+how to automatically run tests on Windows without Windows Subsystem Linux
 ********************************************************************************************
 
 how to make a virtual environment
@@ -308,22 +281,48 @@ how to make a virtual environment
 
   .. code-block:: shell
 
-    python3 -m venv .venv
+    python -m venv .venv
 
-  - ``python3`` is the Python_ program
+  - ``python`` is the Python_ program
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed
   - ``.venv`` is the name given
 
     .. NOTE:: ``.venv`` is Python_ convention, I can use any name I want
 
-* I activate the `virtual environment`_ to use it
+* I run PowerShell_ in Administrator mode and set the Execution Policy for the activation script to work
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
-    source .venv/bin/activate
+    Set-ExecutionPolicy RemoteSigned
 
-  .. NOTE:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
+  the terminal may show the following message if you have never run this command before
+
+  .. code-block:: text
+
+    The execution policy helps protect you from scripts that you do not trust.
+    Changing the execution policy might expose you to the security risks
+    described in the about_Execution_Policies help topic at
+    https:/go.microsoft.com/fwlink/?LinkID=135170.
+    Do you want to change the execution policy?
+
+    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+
+  Type ``Y`` to accept the change and it will enable scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_
+
+  To activate the virtual environment, go back to the terminal you were working in before the Execution Policy change and type
+
+  .. code-block::
+
+    .venv/scripts/activate
+
+  or
+
+  .. code-block:: PowerShell
+
+    .venv/scripts/activate.ps1
+
+  .. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
 
     .. code-block:: shell
 
@@ -333,7 +332,7 @@ how to make a virtual environment
 
   .. code-block:: shell
 
-    python3 -m pip install --upgrade pip
+    python -m pip install --upgrade pip
 
   - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
@@ -354,14 +353,14 @@ how to make a virtual environment
     ------- -------
     pip     x.y
 
-* I use echo_ to make a file in the ``magic`` directory with `pytest-watch`_ as its text
+* I use `Out-File`_ to make a file in the ``magic`` directory with `pytest-watch`_ as its text
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
-    echo pytest-watch > requirements.txt
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF8
 
-  - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
-  - ``>`` is an operator that is used to send output from a program to the given file
+  - ``|`` is an operator that is used to send output from the left of it as input to the right of it
+  - `Out-File`_ is a program that writes input text to a given file
   - `pytest-watch`_ is a Python_ program that automatically runs pytest_ when a Python_ file in the folder changes
   - pytest_ is a `python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install
@@ -477,23 +476,29 @@ how to activate a virtual environment
 
 When I want to work in a `virtual environment`_, I change directory to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
 
-.. code-block:: shell
+.. code-block:: PowerShell
 
-  source .venv/bin/activate
+  .venv/scripts/activate
 
-  .. NOTE:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
+or
 
-    .. code-block:: shell
+.. code-block:: PowerShell
 
-      (.venv) .../magic $
+  .venv/scripts/activate.ps1
+
+.. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
+
+  .. code-block:: shell
+
+    (.venv) .../magic $
 
 -----
 
-********************************************************************************************
-how to automatically make a python test driven development environment
-********************************************************************************************
+*******************************************************************************************************************
+how to automatically make a python test driven development environment on Windows without Windows Subsystem Linux
+*******************************************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember each step of the process
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
 * I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
 * I leave the `virtual environment`_
@@ -508,11 +513,11 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     cd ..
 
-* I use touch_ to make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
+* I use `New-Item`_ to make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
 
   .. code-block:: shell
 
-    touch makePythonTdd.sh
+    New-Item makePythonTdd.ps1
 
 * I use the history_ program
 
@@ -522,84 +527,70 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   the terminal shows all the commands I have typed so far, and I use them to write the program
 
-* I click on ``makePythonTdd.sh`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
+* I click on ``makePythonTdd.ps1`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
-  .. code-block:: ruby
+  .. code-block:: PowerShell
     :linenos:
 
-    #!/bin/bash
     mkdir magic
     cd magic
     mkdir src
-    touch src/magic.py
+    New-Item src/magic.py
     mkdir tests
-    touch tests/__init__.py
-    touch tests/test_magic.py
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo pytest-watch > requirements.txt
-    python3 -m pip install --requirement requirements.txt
+    New-Item tests/__init__.py
+    New-Item tests/test_magic.py
+    python -m venv .venv
+    .venv/scripts/activate.ps1
+    python -m pip install --upgrade pip
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF8
+    python -m pip install --requirement requirements.txt
     pytest-watch
-
-  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program
 
 * The problem with this program is it will always make a project called ``magic``. I need it to be able to make any project I want. I add a variable to replace ``magic`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
     :linenos:
+    :emphasize-lines: 1-3,5,8
 
-    #!/bin/bash
-    PROJECT_NAME=$1
+    $PROJECT_NAME=$args[0]
     mkdir $PROJECT_NAME
     cd $PROJECT_NAME
     mkdir src
-    touch src/$PROJECT_NAME.py
+    New-Item "src/$PROJECT_NAME.py"
     mkdir tests
-    touch tests/__init__.py
-    touch tests/test_$PROJECT_NAME.py
-    python3 -m venv .venv
+    New-Item tests/__init__.py
+    New-Item tests/test_$PROJECT_NAME.py
+    python -m venv .venv
     source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo pytest-watch > requirements.txt
-    python3 -m pip install --requirement requirements.txt
+    python -m pip install --upgrade pip
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF8
+    python -m pip install --requirement requirements.txt
     pytest-watch
 
-  .. NOTE::
-
-    ``$1`` is for the first argument given when the program is called, I can use it in place of ``$PROJECT_NAME`` for example
+  .. ADMONITION:: ``$args[0]`` is for the first argument given when the program is called, I can use it in place of ``$PROJECT_NAME`` for example
 
     .. code-block:: shell
 
       command argument
 
-    in the code above, ``command`` will be ``makePythonTdd.sh`` and ``$1`` will get the value of  ``argument``
+    in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will get the value of  ``argument``
 
-* I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
+* I use the `Out-File`_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
-
-  .. literalinclude:: /code/make_tdd/makePythonTdd.sh
-    :language: shell
+  .. literalinclude:: /code/make_tdd/makePythonTdd.ps1
     :linenos:
+    :language: PowerShell
+    :emphasize-lines: 9-20
 
-* I type this in the terminal to make sure the program I just wrote is executable
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.ps1`` is saved,
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
-    chmod +x makePythonTdd.sh
-
-  chmod_ is a program that changes the mode of the given file
-
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved,
-
-  .. code-block:: shell
-
-    ./makePythonTdd.sh calculator
+    ./makePythonTdd.ps1 calculator
 
   the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`calculator<how to make a calculator>`
 
@@ -611,10 +602,10 @@ review
 
 One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me.
 
-You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
+You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Windows_ computers without having to install `Windows Subsystem Linux`_.
 
 Would you like to test :ref:`making a calculator?<how to make a calculator>`
 
 ----
 
-:ref:`makePythonTdd.sh`
+:ref:`makePythonTdd.ps1`
