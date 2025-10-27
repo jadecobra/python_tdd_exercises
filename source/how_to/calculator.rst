@@ -1259,8 +1259,8 @@ I also ran into the following Exceptions_
 * :ref:`TypeError`
 * ZeroDivisionError_
 
-Would you like to test :doc:`passing values?</how_to/pass_values>`
+Would you like to test :ref:`passing values?<how to pass values>`
 
 ----
 
-:doc:`/code/code_calculator`
+:ref:`how to make a calculator: tests and solutions`

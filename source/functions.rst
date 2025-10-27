@@ -1228,4 +1228,4 @@ Would you like to :ref:`test classes?<classes>`
 
 ----
 
-:doc:`/code/code_functions`
+:ref:`functions: tests and solutions`

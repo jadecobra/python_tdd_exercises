@@ -1065,4 +1065,4 @@ Would you like to test :ref:`dictionaries`?
 
 ----
 
-:doc:`/code/code_list_comprehensions`
+:ref:`data structures: list comprehensions: tests and solutions`

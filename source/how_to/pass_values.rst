@@ -948,8 +948,8 @@ I also ran into the following Exceptions_
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-Would you like to test :doc:`making a person?</how_to/make_person>`
+Would you like to test :ref:`making a person?<how to make a person>`
 
 ----
 
-:doc:`/code/code_pass_values`
+:ref:`how to pass values: tests and solution`

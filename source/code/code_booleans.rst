@@ -1,6 +1,6 @@
 
 #################################################################################
-data structures: Booleans: tests
+data structures: booleans: tests
 #################################################################################
 
 the code in ``tests/test_booleans.py`` from :ref:`booleans`

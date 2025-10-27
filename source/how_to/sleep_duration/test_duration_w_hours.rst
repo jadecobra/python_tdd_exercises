@@ -358,7 +358,7 @@ refactor: make it better
 
   `random.randint`_ gives me a random number from ``0`` up to and including ``23`` for the 24 hours in a day
 
-* I :doc:`interpolate </how_to/pass_values>` them as hours for ``wake_time`` and ``sleep_time``
+* I :ref:`interpolate<how to pass values>` them as hours for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -845,4 +845,4 @@ Would you like to :ref:`test duration with hours and minutes? <how to measure sl
 
 ----
 
-:doc:`/code/code_sleep_duration`
+:ref:`how to measure sleep duration: tests and solution`

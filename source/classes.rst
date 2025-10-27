@@ -863,4 +863,4 @@ the tests show
 
 ----
 
-:doc:`/code/code_classes`
+:ref:`classes: tests and solutions`

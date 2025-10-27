@@ -19,5 +19,4 @@ These chapters cover how to setup a project in Python to help you get started wi
 ----
 
 :ref:`makePythonTdd.sh`
-
 :ref:`makePythonTdd.ps1`

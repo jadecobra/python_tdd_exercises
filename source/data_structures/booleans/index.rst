@@ -1175,4 +1175,4 @@ Would you like to :ref:`test the truth table? <booleans: truth table>`
 
 ----
 
-:doc:`/code/code_booleans`
+:ref:`data structures: booleans: tests`

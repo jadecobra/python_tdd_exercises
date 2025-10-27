@@ -606,4 +606,4 @@ do you want to :ref:`test more binary operations? <binary_operations_iii>`
 
 ----
 
-:doc:`/code/code_truth_table`
+:ref:`truth table: tests and solutions`

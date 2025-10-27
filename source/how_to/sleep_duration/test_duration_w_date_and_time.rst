@@ -102,7 +102,7 @@ green: make it pass
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  I cannot use the int_ constructor_ to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :doc:`handle</how_to/exception_handling_tests>` the ValueError_
+  I cannot use the int_ constructor_ to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :ref:`handle<how to test that an Exception is raised>` the ValueError_
 
   .. code-block:: python
 
@@ -888,4 +888,4 @@ Would you like to :ref:`write the solution without looking at test_sleep_duratio
 
 ----
 
-:doc:`/code/code_sleep_duration`
+:ref:`how to measure sleep duration: tests and solution`

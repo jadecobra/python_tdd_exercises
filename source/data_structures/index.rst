@@ -23,4 +23,4 @@ The following Python_ data structures are tested here
 
 ----
 
-:doc:`/code/code_sleep_duration`
+:ref:`how to measure sleep duration: tests and solution`

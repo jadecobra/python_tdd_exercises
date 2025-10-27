@@ -4,7 +4,7 @@
 makePythonTdd.ps1
 #################################################################################
 
-* Here is the ``./makePythonTdd.ps1`` program from :doc:`/how_to/make_tdd/make_tdd_environment`
+* Here is the ``./makePythonTdd.ps1`` program from :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux`
 
   .. literalinclude:: makePythonTdd.ps1
     :language: PowerShell

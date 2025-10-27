@@ -604,4 +604,4 @@ I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?hi
 
 ----
 
-:doc:`/code/code_type_error`
+:ref:`TypeError: tests and solution`

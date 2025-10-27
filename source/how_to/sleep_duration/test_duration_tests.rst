@@ -359,7 +359,7 @@ green: make it pass
 
   the terminal shows the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
 
-* I :doc:`interpolate</how_to/pass_values>` ``wake_time`` and ``sleep_time`` in the message
+* I :ref:`interpolate<how to pass values>` ``wake_time`` and ``sleep_time`` in the message
 
   .. code-block:: python
 
@@ -545,4 +545,4 @@ The challenge was to write a program that makes the tests in ``test_sleep_durati
 
 ----
 
-:doc:`/code/code_sleep_duration`
+:ref:`how to measure sleep duration: tests and solution`

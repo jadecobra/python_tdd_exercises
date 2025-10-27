@@ -624,4 +624,4 @@ Would you like to :ref:`test the truth table tests?<test_truth_table_tests>`
 
 ----
 
-:doc:`/code/code_truth_table`
+:ref:`truth table: tests and solutions`

@@ -530,4 +530,4 @@ Would you like to :ref:`test duration with an earlier wake than sleep time? <how
 
 ----
 
-:doc:`/code/code_sleep_duration`
+:ref:`how to measure sleep duration: tests and solution`

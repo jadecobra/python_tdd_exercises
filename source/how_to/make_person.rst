@@ -1712,8 +1712,8 @@ I also ran into the following Exceptions_
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to know :doc:`how to test that an Exception is raised?</how_to/exception_handling_tests>`
+Would you like to know :ref:`how to test that an Exception is raised?<how to test that an Exception is raised>`
 
 ----
 
-:doc:`/code/code_person_factory`
+:ref:`how to make a person: tests and solution`

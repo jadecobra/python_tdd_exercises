@@ -448,4 +448,4 @@ I ran tests to show how to cause Exceptions_, and catch or handle them in tests 
 
 ----
 
-:doc:`/code/code_exception_handling`
+:ref:`how to handle Exceptions: tests and solutions`

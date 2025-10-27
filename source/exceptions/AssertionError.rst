@@ -879,4 +879,4 @@ Would you like to test the :ref:`AttributeError`?
 
 ----
 
-:doc:`/code/code_assertion_error`
+:ref:`AssertionError: tests`

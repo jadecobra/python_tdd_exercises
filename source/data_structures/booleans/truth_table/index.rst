@@ -90,4 +90,4 @@ how to run automated tests on Windows_ without WSL after you exit the tests
 
 ----
 
-:doc:`/code/code_truth_table`
+:ref:`truth table: tests and solutions`

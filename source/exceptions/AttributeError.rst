@@ -754,4 +754,4 @@ Would you like to test :ref:`TypeError?<TypeError>`
 
 ----
 
-:doc:`/code/code_attribute_error`
+:ref:`AttributeError: tests and solutions`

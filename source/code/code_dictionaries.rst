@@ -4,7 +4,7 @@
    It is DEFINITELY full of mistakes and may be completely different when I am done editing it though most of the code should work
 
 #################################################################################
-data structures: Dictionaries: tests
+data structures: dictionaries: tests
 #################################################################################
 
 *********************************************************************************

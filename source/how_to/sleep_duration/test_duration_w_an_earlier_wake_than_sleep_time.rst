@@ -60,7 +60,7 @@ green: make it pass
 *********************************************************************************
 
 
-* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the assertEqual_ to assertRaisesRegex_ to catch the :doc:`Exception</how_to/exception_handling_programs>` when it is raised by the :ref:`function<functions>`
+* The ``duration`` :ref:`function<functions>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the assertEqual_ to assertRaisesRegex_ to catch the :ref:`Exception<errors>` when it is raised by the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -463,4 +463,4 @@ Would you like to :ref:`test duration with timestamps that have dates? <how to m
 
 ----
 
-:doc:`/code/code_sleep_duration`
+:ref:`how to measure sleep duration: tests and solution`

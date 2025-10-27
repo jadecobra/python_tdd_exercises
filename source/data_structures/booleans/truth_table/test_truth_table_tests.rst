@@ -1280,4 +1280,4 @@ Would you like to :ref:`test lists?<lists>`
 
 ----
 
-:doc:`/code/code_truth_table`
+:ref:`truth table: tests and solutions`

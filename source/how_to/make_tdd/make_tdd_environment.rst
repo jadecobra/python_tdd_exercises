@@ -44,7 +44,7 @@ If you are using a Windows computer, try to install Linux_ with `Windows Subsyst
 
     wsl --install --distribution debian
 
-  .. NOTE:: If installing `Windows Subsystem Linux`_ does not work, you can use :doc:`make_tdd_environment_no_wsl` instead
+  .. NOTE:: If installing `Windows Subsystem Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead
 
 * after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
 * Press ``F1`` on the keyboard and select ``WSL:Connect to WSL`` to open a terminal in `Windows Subsystem Linux`_
@@ -231,7 +231,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
 
 * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure
-* ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :doc:`dot notation</dot_notation>` about the failing test :ref:`method<functions>`
+* ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
 
   - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
   -  ``tests`` is the ``tests`` folder

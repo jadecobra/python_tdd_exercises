@@ -505,7 +505,7 @@ test_catching_zero_division_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add another failing test for something that happened in :doc:`/how_to/calculator`
+* I add another failing test for something that happened in :ref:`how to make a calculator`
 
   .. code-block:: python
 
@@ -697,8 +697,8 @@ I have a way to catch Exceptions_ in tests and ran into the following
 * :ref:`KeyError <test_key_error>`
 * ZeroDivisionError_
 
-Would you like to test :doc:`handling Exceptions in programs?</how_to/exception_handling_programs>`
+Would you like to test :ref:`handling Exceptions in programs?<how to handle Exceptions in programs>`
 
 ----
 
-:doc:`/code/code_exception_handling`
+:ref:`how to handle Exceptions: tests and solutions`

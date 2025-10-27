@@ -4,7 +4,7 @@
 makePythonTdd.sh
 #################################################################################
 
-* Here is the ``./makePythonTdd.sh`` program from :doc:`/how_to/make_tdd/make_tdd_environment`
+* Here is the ``./makePythonTdd.sh`` program from :ref:`how to make a python test driven development environment`
 
   .. literalinclude:: makePythonTdd.sh
     :language: shell

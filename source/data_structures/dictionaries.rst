@@ -2338,4 +2338,4 @@ Would you like to :ref:`test functions?<functions>`
 
 ----
 
-:doc:`/code/code_dictionaries`
+:ref:`data structures: dictionaries: tests`

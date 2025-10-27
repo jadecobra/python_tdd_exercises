@@ -2207,4 +2207,4 @@ Would you like to :ref:`test list comprehensions?<lists: list comprehensions>`
 
 ----
 
-:doc:`/code/code_lists`
+:ref:`data structures: lists: tests`

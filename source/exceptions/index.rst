@@ -4,6 +4,9 @@
 
 .. include:: ../links.rst
 
+.. _Exception: https://docs.python.org/3/library/exceptions.html
+.. _Exceptions: https://docs.python.org/3/library/exceptions.html
+
 #################################################################################
 errors
 #################################################################################

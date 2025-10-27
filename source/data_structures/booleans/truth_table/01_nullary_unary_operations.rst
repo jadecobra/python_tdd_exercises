@@ -415,4 +415,4 @@ I ran tests for :ref:`Nullary<Nullary Operations>` and :ref:`Unary operations<Un
 
 ----
 
-:doc:`/code/code_truth_table`
+:ref:`truth table: tests and solutions`

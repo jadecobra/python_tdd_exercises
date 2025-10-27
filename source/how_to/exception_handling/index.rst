@@ -8,7 +8,7 @@
 how to handle Exceptions
 #################################################################################
 
-The following tests cover how to handle Errors(Exceptions_) in :ref:`tests<how to test that an Exception is raised>` and in :ref:`programs<how to handle Exceptions in programs>`
+The following tests cover how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<how to test that an Exception is raised>` and in :ref:`programs<how to handle Exceptions in programs>`
 
 .. toctree::
   :titlesonly:

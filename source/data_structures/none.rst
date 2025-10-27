@@ -1487,4 +1487,4 @@ Would you like to test :ref:`booleans`?
 
 ----
 
-:doc:`/code/code_none`
+:ref:`data structures: None: tests`
