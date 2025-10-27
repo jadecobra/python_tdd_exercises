@@ -58,31 +58,6 @@ There are videos for every chapter, check them out here `<https://www.youtube.co
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=_H3teEnFxh8QC0Xo&amp;list=PL5lANtH-CRODKvc0QPDAOlsis6f9z-MDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-.. _how-tos:
-
-*********************************************************************************
-howtos
-*********************************************************************************
-
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=zvJLrMw7HQQmS8SI&amp;list=PL5lANtH-CROBGwVZryCOovtR4RYSurpSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-.. toctree::
-  :maxdepth: 1
-  :titlesonly:
-
-  how_to/setup_my_ide
-  how_to/make_tdd
-  how_to/make_tdd/make_tdd_environment
-  how_to/make_tdd/make_tdd_environment_no_wsl
-  how_to/calculator
-  how_to/pass_values
-  how_to/make_person
-  how_to/exception_handling_tests
-  how_to/exception_handling_programs
-  how_to/sleep_duration/index
-
 *********************************************************************************
 table of contents
 *********************************************************************************
@@ -92,6 +67,7 @@ table of contents
   :titlesonly:
 
   videos <https://www.youtube.com/@JacobItegboje>
+  how_to/index
   conventions
   exceptions/index
   data_structures/index

@@ -2,7 +2,7 @@
   :description: Stop silent Python test failures. Learn to use unittest's assertRaises to verify exceptions like ModuleNotFoundError and NameError are properly raised.
   :keywords: Jacob Itegboje, python unittest assertraises, how to test for exceptions in python, python assert exception, python test specific exception raised, unittest assertraises example, python unit testing exceptions, python tdd exception handling, assertraises typeerror, assertraises keyerror
 
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 #################################################################################
 how to test that an Exception is raised

@@ -4,7 +4,7 @@
 makePythonTdd.sh
 #################################################################################
 
-* Here is the ``./makePythonTdd.sh`` program from :doc:`/how_to/make_tdd_environment`
+* Here is the ``./makePythonTdd.sh`` program from :doc:`/how_to/make_tdd/make_tdd_environment`
 
   .. literalinclude:: makePythonTdd.sh
     :language: shell
