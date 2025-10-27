@@ -156,7 +156,6 @@ class TestDictionaries(unittest.TestCase):
             a_dictionary.pop('not_in_dictionary', 'default'),
             'default'
         )
-
         self.assertEqual(
             a_dictionary.pop('key', 'default'),
             'value'
