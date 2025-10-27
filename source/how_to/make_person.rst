@@ -72,7 +72,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -93,7 +93,7 @@ green: make it pass
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* I add the error to the list of Exceptions_ encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -966,7 +966,7 @@ green: make it pass
 
     SyntaxError: parameter without a default follows parameter with a default
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 

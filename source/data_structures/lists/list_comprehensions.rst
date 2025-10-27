@@ -135,7 +135,7 @@ refactor: make it better
 
     NameError: name 'src' is not defined
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -158,7 +158,7 @@ refactor: make it better
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
     :emphasize-lines: 4

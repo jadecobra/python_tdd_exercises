@@ -67,7 +67,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -107,7 +107,7 @@ red: make it fail
 
     NameError: name 'does_not_exist' is not defined
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -166,7 +166,7 @@ red: make it fail
 
   because I tried to get something that is not in something that exists
 
-* I add the error to the list of Exceptions_ encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -235,7 +235,7 @@ red: make it fail
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -340,7 +340,7 @@ red: make it fail
 
     IndexError: list index out of range
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -472,7 +472,7 @@ red: make it fail
 
     KeyError: 'does_not_exist'
 
-* another one for the list of Exceptions_ encountered
+* another one for the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -518,7 +518,7 @@ red: make it fail
 
     ZeroDivisionError: division by zero
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 
@@ -561,7 +561,7 @@ red: make it fail
     def test_catching_exceptions_in_tests(self):
         raise Exception
 
-  the terminal shows Exception_ which is the mother of the Exceptions_ encountered so far, they inherit from it
+  the terminal shows Exception_ which is the mother of the :ref:`Exceptions<errors>` encountered so far, they inherit from it
 
   .. code-block:: python
 

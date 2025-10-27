@@ -15,6 +15,7 @@ pumping python: how I solve problems with test driven development
 ----
 
 My name is Jacob Itegboje and this is a collection of `Test Driven Development`_ exercises that have helped me use Python_ for more than a decade.
+
 `Test Driven Development`_ is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal.
 
 I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring`_, they both influenced the way I write programs.
@@ -71,7 +72,6 @@ table of contents
   conventions
   exceptions/index
   data_structures/index
-  data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   functions
   classes

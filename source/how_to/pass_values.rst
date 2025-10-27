@@ -70,7 +70,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of Exceptions_ encountered in ``test_telephone.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -99,7 +99,7 @@ green: make it pass
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -133,7 +133,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of Exceptions_ encountered in ``test_telephone.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
 
   .. code-block:: python
     :emphasize-lines: 5

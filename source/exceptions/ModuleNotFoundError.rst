@@ -65,7 +65,7 @@ red: make it fail
 
   because Python_ cannot find ``module_00.py`` in the ``src`` folder
 
-* I add the error to the list of Exceptions_ encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 

@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-how to install Windows Subsystem Linux on a Windows Machine
+how to install Windows Subsystem Linux on Windows
 #################################################################################
 
 Here is a manual way to install to install Linux_ with `Windows Subsystem Linux`_

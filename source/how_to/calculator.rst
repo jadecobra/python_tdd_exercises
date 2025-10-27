@@ -99,7 +99,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -127,7 +127,7 @@ green: make it pass
 
   I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file from the ``src`` folder/directory
 
-* I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -163,7 +163,7 @@ green: make it pass
 
   because the ``add`` variable is :ref:`None` which is not callable_
 
-* I add the error to the list of Exceptions_ encountered in ``test_calculator.py``
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -792,7 +792,7 @@ green: make it pass
 
   dividing by ``0`` is undefined in mathematics and raises ZeroDivisionError_ in Python
 
-* I add it to the list of Exceptions_ encountered in ``test_calculator.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
   .. code-block:: python
     :emphasize-lines: 6

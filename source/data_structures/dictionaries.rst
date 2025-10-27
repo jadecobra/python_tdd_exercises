@@ -103,7 +103,7 @@ refactor: make it better
 
     TypeError: 'int' object is not iterable
 
-* I add the error to the list of Exceptions_ encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -1394,7 +1394,7 @@ green: make it pass
 
     KeyError: 0
 
-* I add it to the list of Exceptions_ encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
 

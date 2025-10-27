@@ -109,7 +109,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: 'int' object is not iterable
 
-I add the error to the list of Exceptions_ encountered
+I add the error to the list of :ref:`Exceptions<errors>` encountered
 
 .. code-block:: python
   :emphasize-lines: 3
@@ -848,7 +848,7 @@ refactor: make it better
 
     ValueError: 0 is not in list
 
-  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_. I add it to the list of Exceptions_ encountered
+  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_. I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -2094,7 +2094,7 @@ when I use an index that is the same as or greater than the length of the list_ 
 green: make it pass
 #################################################################################
 
-I add it to the list of Exceptions_ encountered
+I add it to the list of :ref:`Exceptions<errors>` encountered
 
 .. code-block:: python
   :emphasize-lines: 5
