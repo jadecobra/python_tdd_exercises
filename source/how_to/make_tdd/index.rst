@@ -14,6 +14,7 @@ These chapters cover how to setup a project in Python to help you get started wi
   :titlesonly:
 
   make_tdd_environment
+  install_wsl
   make_tdd_environment_no_wsl
 
 ----

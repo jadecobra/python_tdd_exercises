@@ -33,30 +33,24 @@ requirements
 windows requirements
 #################################################################################
 
-If you are using a Windows computer, try to install Linux_ with `Windows Subsystem Linux`_
+If you are using a Windows computer, try
 
-* click ``start``
-* then type ``PowerShell``
-* right click and select ``Run as administrator``
-* then install `Windows Subsystem Linux`_ in the terminal
-
-  .. code-block:: powershell
-
-    wsl --install --distribution debian
-
-  .. NOTE:: If installing `Windows Subsystem Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead
-
-* after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
-* Press ``F1`` on the keyboard and select ``WSL:Connect to WSL`` to open a terminal in `Windows Subsystem Linux`_
+* :ref:`how to install Windows Subsystem Linux on a Windows Machine`
+* If installing `Windows Subsystem Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead
 
 linux/Windows Subsystem Linux requirements
 #################################################################################
 
-run these commands in a terminal to install Python_
+type this in the terminal to update the linux_ package manager
 
 .. code-block:: shell
 
   sudo apt update
+
+type this in the terminal to install Python_
+
+.. code-block:: shell
+
   sudo apt install python3 python3-venv --yes
 
 ----
