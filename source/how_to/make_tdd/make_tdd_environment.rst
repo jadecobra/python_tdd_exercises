@@ -239,7 +239,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``python3`` is the Python_ program
   - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
 
-* I recommend you keep a list of :ref:`Exceptions<errors>` you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
+* I recommend you keep a list of :ref:`Errors/Exceptions<errors>` you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -596,7 +596,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh calculator
 
-  the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`calculator<how to make a calculator>`
+  the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`how to make a calculator`
 
 ----
 
