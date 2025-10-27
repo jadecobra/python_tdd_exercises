@@ -36,7 +36,7 @@ requirements
 how to manually make a python test driven development environment on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
 
-* Imagine I have to work on a project and it's name is ``magic``. I open a terminal ``(ctrl+~)`` in the Integrated Development Environment (IDE) and type mkdir_
+* Imagine I have to work on a project and it's name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and type mkdir_
 
   .. code-block:: shell
 

@@ -35,11 +35,11 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
 * Next it will ask for a password, use something you will remember
 
-  .. IMPORTANT:: the terminal will not show any test while you type your password, hit ``enter/return`` when done and it will ask you to retype the password to confirm it
+  .. attention:: the terminal will not show any text while you type your password, hit ``enter/return`` when done and it will ask you to retype the password to confirm it
 
 * after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
-* Press ``F1`` on the keyboard and select ``WSL:Connect to WSL`` to open a terminal in `Windows Subsystem Linux`_
-* type this in the terminal to update the Linux_ package manager
+* Press ``F1`` on the keyboard while is `Visual Studio Code`_ and select ``WSL:Connect to WSL`` to open a terminal in `Windows Subsystem Linux`_
+* Open a terminal then type this to update the Linux_ package manager
 
   .. code-block:: shell
 
@@ -51,7 +51,6 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
     sudo apt install python3 python3-venv --yes
 
-----
+you can continue with :ref:`how to manually make a python test driven development environment`. If installing `Windows Subsystem Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead
 
-:ref:`makePythonTdd.sh`
-:ref:`makePythonTdd.ps1`
+----

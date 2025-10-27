@@ -41,7 +41,7 @@ If you are using a Windows computer, try
 linux/Windows Subsystem Linux requirements
 #################################################################################
 
-type this in the terminal to update the linux_ package manager
+Open a terminal then type this to update the Linux_ package manager
 
 .. code-block:: shell
 
@@ -59,7 +59,7 @@ type this in the terminal to install Python_
 how to manually make a python test driven development environment
 ********************************************************************************************
 
-* Imagine I have to work on a project and it's name is ``magic``. I open a terminal ``(ctrl+~)`` in the Integrated Development Environment (IDE) and type mkdir_
+* Imagine I have to work on a project and it's name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and type mkdir_
 
   .. code-block:: shell
 
