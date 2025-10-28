@@ -223,20 +223,20 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-* I add the name as input to the :ref:`function<functions>` in ``person.py``
+* I add ``sex`` as input to the :ref:`function<functions>` in ``person.py``
 
   .. code-block:: python
-      :emphasize-lines: 3
+    :emphasize-lines: 3
 
     def factory(
             first_name, last_name,
-            sex
+            sex,
         ):
         return None
 
   the test passes
 
-* I want the :ref:`function<functions>` to take in a keyword argument and give it the result of calling another :ref:`function<functions>`. I add it to the test in ``test_person.py``
+* I want the :ref:`function<functions>` to take in a keyword argument for ``year_of_birth`` and give it the result of calling another :ref:`function<functions>`. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :emphasize-lines: 7
@@ -258,7 +258,7 @@ green: make it pass
 
     NameError: name 'this_year' is not defined
 
-* I add the new :ref:`function<functions>` above the :ref:`class<classes>` definition in ``test_person.py``
+* I add a definition for the ``this_year`` :ref:`function<functions>` above the :ref:`class<classes>` definition in ``test_person.py``
 
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
@@ -275,6 +275,7 @@ green: make it pass
 
 
     class TestPersonFactory(unittest.TestCase):
+
         ...
 
   the terminal shows :ref:`TypeError`
@@ -290,7 +291,7 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return None
 
@@ -325,7 +326,7 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {}
 
@@ -362,7 +363,7 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {'first_name': 'first_name'}
 
@@ -421,7 +422,7 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {'first_name': 'jane}
 
@@ -461,11 +462,11 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
-            'last_name': 'last_name'
+            'last_name': 'last_name',
         }
 
   the test passes
@@ -518,7 +519,7 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
@@ -541,7 +542,7 @@ green: make it pass
                 first_name=first_name,
                 last_name=last_name,
                 sex='M',
-                year_of_birth=this_year()
+                year_of_birth=this_year(),
             ),
             dict(
                 first_name=first_name,
@@ -563,12 +564,12 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
             'last_name': 'doe',
-            'sex': 'M'
+            'sex': 'M',
         }
 
   the terminal shows green again
@@ -588,7 +589,7 @@ green: make it pass
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=this_year()
+                year_of_birth=this_year(),
             ),
             dict(
                 first_name=first_name,
@@ -626,12 +627,12 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
             'last_name': 'doe',
-            'sex': 'F'
+            'sex': 'F',
         }
 
   and the test is green again
@@ -712,13 +713,13 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
             'last_name': 'doe',
             'sex': 'F',
-            'age': 0
+            'age': 0,
         }
 
   the test passes
@@ -797,7 +798,7 @@ refactor: make it better
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
@@ -819,7 +820,7 @@ refactor: make it better
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
@@ -878,7 +879,7 @@ refactor: make it better
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
@@ -922,7 +923,7 @@ refactor: make it better
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'jane',
@@ -968,7 +969,7 @@ refactor: make it better
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': first_name,
@@ -1099,7 +1100,7 @@ green: make it pass
 
     def factory(
             first_name, last_name=None,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         ...
 
@@ -1128,7 +1129,7 @@ green: make it pass
 
     def factory(
             first_name, last_name=None,
-            sex=None, year_of_birth
+            sex=None, year_of_birth,
         ):
         ...
 
@@ -1145,7 +1146,7 @@ green: make it pass
 
     def factory(
             first_name, last_name=None,
-            sex=None, year_of_birth=None
+            sex=None, year_of_birth=None,
         ):
         ...
 
@@ -1200,7 +1201,7 @@ green: make it pass
 
     def factory(
             first_name, last_name='doe',
-            sex=None, year_of_birth=None
+            sex=None, year_of_birth=None,
         ):
         ...
 
@@ -1623,7 +1624,7 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return None
 
@@ -1640,13 +1641,13 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': 'john',
             'last_name': 'blow',
             'sex': 'F',
-            'age': 20
+            'age': 20,
         }
 
   the terminal shows :ref:`AssertionError`
@@ -1667,13 +1668,13 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': first_name,
             'last_name': 'blow',
             'sex': 'F',
-            'age': 20
+            'age': 20,
         }
 
   the terminal shows :ref:`AssertionError`
@@ -1694,13 +1695,13 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': first_name,
             'last_name': last_name,
             'sex': 'F',
-            'age': 20
+            'age': 20,
         }
 
   the terminal shows :ref:`AssertionError`
@@ -1721,13 +1722,13 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
-            'age': 20
+            'age': 20,
         }
 
   the terminal shows :ref:`AssertionError`
@@ -1748,7 +1749,7 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': first_name,
@@ -1786,7 +1787,7 @@ green: make it pass
 
     def factory(
             first_name, last_name,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         return {
             'first_name': first_name,
@@ -1808,7 +1809,7 @@ green: make it pass
 
     def factory(
             first_name, last_name=None,
-            sex, year_of_birth
+            sex, year_of_birth,
         ):
         ...
 
@@ -1825,7 +1826,7 @@ green: make it pass
 
     def factory(
             first_name, last_name=None,
-            sex=None, year_of_birth
+            sex=None, year_of_birth,
         ):
         ...
 
@@ -1842,7 +1843,7 @@ green: make it pass
 
     def factory(
             first_name, last_name=None,
-            sex=None, year_of_birth=None
+            sex=None, year_of_birth=None,
         ):
 
   the terminal shows :ref:`AssertionError`
@@ -1860,7 +1861,7 @@ green: make it pass
 
     def factory(
             first_name, last_name='doe',
-            sex=None, year_of_birth=None
+            sex=None, year_of_birth=None,
         ):
         ...
 
@@ -1877,7 +1878,7 @@ green: make it pass
 
     def factory(
             first_name, last_name='doe',
-            sex='M', year_of_birth=None
+            sex='M', year_of_birth=None,
         ):
         ...
 
