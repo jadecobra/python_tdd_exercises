@@ -45,7 +45,14 @@ red: make it fail
 
     tests/test_module_not_found_error.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_module_not_found_error.py:7`` to open it in the editor, then change ``test_failure`` to ``test_module_not_found_error``
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_module_not_found_error.py:7`` to open it in the editor,
+* then I change ``True`` to ``False`` to make the test pass
+
+  .. code-block:: python
+
+    self.assertFalse(False)
+
+* I change ``test_failure`` to ``test_module_not_found_error``
 
   .. code-block:: python
 

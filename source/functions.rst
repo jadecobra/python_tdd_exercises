@@ -62,7 +62,11 @@ requirements
     tests/test_functions.py:7: AssertionError
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_functions.py:7`` to open it in the editor
-* then change ``True`` to ``False``
+* then I change ``True`` to ``False`` to make the test pass
+
+  .. code-block:: python
+
+    self.assertFalse(False)
 
 *********************************************************************************
 test_making_a_function_w_pass

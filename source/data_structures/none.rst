@@ -17,13 +17,8 @@ None
 ----
 
 *********************************************************************************
-test_what_is_none
+requirements
 *********************************************************************************
-
-None_ is used when there is no value
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``none`` as the name of the project
 
@@ -47,7 +42,21 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the editor
 * then I change ``True`` to ``False`` to make the test pass
-* and I change ``test_failure`` to ``test_what_is_none``
+
+  .. code-block:: python
+
+    self.assertFalse(False)
+
+*********************************************************************************
+test_what_is_none
+*********************************************************************************
+
+None_ is used when there is no value
+
+red: make it fail
+#################################################################################
+
+* I change ``test_failure`` to ``test_what_is_none``
 
   .. code-block:: python
 

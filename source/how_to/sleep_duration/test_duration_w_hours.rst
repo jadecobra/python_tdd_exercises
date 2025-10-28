@@ -44,7 +44,12 @@ red: make it fail
     tests/test_sleep_duration.py:7: AssertionError
 
   then I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_sleep_duration.py:7`` to open it in the editor
-* and change ``True`` to ``False``
+* then I change ``True`` to ``False`` to make the test pass
+
+  .. code-block:: python
+
+    self.assertFalse(False)
+
 * I also change the :ref:`class <classes>` name to CapWords to match Python_ convention
 
   .. code-block:: python

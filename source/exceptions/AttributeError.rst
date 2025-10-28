@@ -49,6 +49,11 @@ red: make it fail
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_attribute_error.py:7`` to open it in the editor
 * then I change ``True`` to ``False`` to make the test pass
+
+  .. code-block:: python
+
+    self.assertFalse(False)
+
 * I add an `import statement`_
 
   .. code-block:: python
