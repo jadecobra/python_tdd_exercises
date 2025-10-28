@@ -14,10 +14,8 @@ how to make a calculator
 
 ----
 
-I am going to write a program that can ``add``, ``subtract``, ``multiply`` and ``divide``
-
 *********************************************************************************
-test_addition
+requirements
 *********************************************************************************
 
 red: make it fail
@@ -50,7 +48,7 @@ red: make it fail
 
     self.assertFalse(False)
 
-* I add a list to keep track of the work for the program
+* I am going to write a program that can ``add``, ``subtract``, ``multiply`` and ``divide``, I add a list to keep track of the work for the program
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -77,7 +75,11 @@ red: make it fail
     # Exceptions Encountered
     # AssertionError
 
-* and I change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
+*********************************************************************************
+test_addition
+*********************************************************************************
+
+* I change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
 
   .. code-block:: python
     :linenos:
