@@ -306,7 +306,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: TypeError not raised
 
-because the :ref:`function<functions>` call matches the signature. I undo the change, the terminal shows :ref:`TypeError` and I make the test pass
+because the :ref:`function<functions>` call matches the definition. I undo the change, the terminal shows :ref:`TypeError` and I make the test pass
 
 .. code-block:: python
 

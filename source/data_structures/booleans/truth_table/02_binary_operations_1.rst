@@ -88,7 +88,7 @@ the terminal shows :ref:`TypeError`
 
   TypeError: contradiction() takes 1 positional argument but 2 were given
 
-I change the signature to make it take 2 inputs
+I change the definition to make it take 2 inputs
 
 .. code-block:: python
 

@@ -223,7 +223,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  because the name is not in the :ref:`function's<functions>` signature. I add it with a default value of :ref:`None`
+  because the name is not in the :ref:`function's<functions>` definition. I add it with a default value of :ref:`None`
 
   .. code-block:: python
 
@@ -248,7 +248,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  because ``sleep_time`` is not in the :ref:`function's<functions>` signature. I add it with a default value of :ref:`None`
+  because ``sleep_time`` is not in the :ref:`function's<functions>` definition. I add it with a default value of :ref:`None`
 
   .. code-block:: python
 

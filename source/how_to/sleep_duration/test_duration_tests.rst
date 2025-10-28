@@ -97,7 +97,7 @@ green: make it pass
 
     TypeError: get_datetime() takes 0 positional arguments but 1 was given
 
-  then I add a name to the :ref:`function's<functions>` signature
+  then I add a name to the :ref:`function's<functions>` definition
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  I add the name to the :ref:`function's<functions>` signature
+  I add the name to the :ref:`function's<functions>` definition
 
   .. code-block:: python
 
@@ -237,7 +237,7 @@ green: make it pass
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  which I add to the signature
+  which I add to the definition
 
   .. code-block:: python
 

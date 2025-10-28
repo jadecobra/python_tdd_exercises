@@ -17,7 +17,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries` with :ref:`functions`. I think these are the 2 most important concepts in Python_ because I use them a lot.
+This is an exercise in making :ref:`dictionaries` with :ref:`functions`. I think these are the 2 most important concepts in Python_
 
 *********************************************************************************
 requirements
@@ -98,7 +98,7 @@ green: make it pass
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>` at the top of ``test_person.py``
+* then I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>` at the top of the file
 
   .. code-block:: python
     :linenos:
@@ -113,7 +113,7 @@ green: make it pass
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_person.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -162,7 +162,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then I add the name as an input parameter to the :ref:`function<functions>` in ``person.py``
+* then I add ``first_name`` as an input parameter to the :ref:`function<functions>` in ``person.py``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -192,7 +192,7 @@ green: make it pass
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
-* I add the name to the :ref:`function<functions>` definition in ``person.py``
+* I add ``last_name`` to the :ref:`function<functions>` definition in ``person.py``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1206,7 +1206,7 @@ green: make it pass
 
   the test passes
 
-  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``last_name='doe'``
+  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` definition, it is same as calling it with ``last_name='doe'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -1302,7 +1302,7 @@ green: make it pass
 
   the test passes
 
-  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` signature, it is same as calling it with ``sex='M'``
+  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` definition, it is same as calling it with ``sex='M'``
 
     .. code-block:: python
       :emphasize-lines: 5

@@ -314,7 +314,7 @@ refactor: make it better
 test_type_error_w_function_signatures
 *********************************************************************************
 
-Calls to a :ref:`function<functions>` have to match its signature
+Calls to a :ref:`function<functions>` have to match its definition
 
 red: make it fail
 #################################################################################
@@ -616,7 +616,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects_ that are not callable_, :ref:`function<functions>` signatures and objects_ that do not mix. Would you like to :ref:`test data structures?<data structures>`
+I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects_ that are not callable_, :ref:`function<functions>` definitions and objects_ that do not mix. Would you like to :ref:`test data structures?<data structures>`
 
 ----
 

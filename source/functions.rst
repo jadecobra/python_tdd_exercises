@@ -889,7 +889,7 @@ green: make it pass
 
     TypeError: take_positional_and_keyword_arguments() got an unexpected keyword argument 'last_name'
 
-* I make the :ref:`function<functions>` signature to take in an argument
+* I make the :ref:`function<functions>` definition to take in an argument
 
   .. code-block:: python
 
@@ -902,7 +902,7 @@ green: make it pass
 
     TypeError: take_positional_and_keyword_arguments() got multiple values for argument 'last_name'
 
-* I add another argument to the :ref:`function<functions>` signature
+* I add another argument to the :ref:`function<functions>` definition
 
   .. code-block:: python
 
@@ -910,7 +910,7 @@ green: make it pass
         return None
 
   the terminal shows the same error even though I have 2 different arguments. I need a way to let the ``take_positional_and_keyword_arguments`` know which argument is positional and which is a keyword argument
-* I reorder the arguments in the signature
+* I reorder the arguments in the definition
 
   .. code-block:: python
 
@@ -944,9 +944,9 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` signature which argument is positional and which is a keyword argument and do not want to wait for the :ref:`function<functions>` to fail when I send in values to find out
+Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the :ref:`function<functions>` definition which argument is positional and which is a keyword argument and do not want to wait for the :ref:`function<functions>` to fail when I send in values to find out
 
-* I make the signature of ``take_positional_and_keyword_arguments`` to have a default value for the keyword argument
+* I make the definition of ``take_positional_and_keyword_arguments`` to have a default value for the keyword argument
 
   .. code-block:: python
 
@@ -1014,7 +1014,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
             ()
         )
 
-  the terminal shows :ref:`TypeError` because the :ref:`function<functions>` signature only has 2 keyword arguments which are not provided in the call
+  the terminal shows :ref:`TypeError` because the :ref:`function<functions>` definition only has 2 keyword arguments which are not provided in the call
 
 * using what I know from previous tests I can alter the :ref:`function<functions>` to use starred expressions
 
