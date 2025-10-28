@@ -82,22 +82,6 @@ table of contents
   review
   reviews
 
-*********************************************************************************
-music
-*********************************************************************************
-
-Here is a playlist I like to listen to when programming
-
-.. raw:: html
-
-  <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" width="560" height="315" style="width:560;max-width:660px;overflow:hidden;border-radius:12px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/beatstrumentals/pl.f54198ad42404535be13eabf3835fb22"></iframe>
-
-----
-
-.. raw:: html
-
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1uJ4BgylqE1PJ6Ua14laJf?utm_source=generator" width="560" height="375" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
 ----
 
 :ref:`search <search>`

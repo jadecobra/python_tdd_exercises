@@ -19,14 +19,9 @@ how to make a person
 
 This is an exercise in making :ref:`dictionaries` with :ref:`functions`
 
-----
-
 *********************************************************************************
-test_takes_keyword_arguments
+requirements
 *********************************************************************************
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``person`` as the name of the project
 
@@ -55,9 +50,21 @@ red: make it fail
 
     self.assertFalse(False)
 
-* and I change ``test_failure`` to ``test_takes_keyword_arguments``
+*********************************************************************************
+test_takes_keyword_arguments
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I change ``test_failure`` to ``test_takes_keyword_arguments``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-10
+
+    import unittest
+
 
     class TestPersonFactory(unittest.TestCase):
 
@@ -73,21 +80,23 @@ red: make it fail
 
     NameError: name 'src' is not defined
 
-
 green: make it pass
 #################################################################################
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_person.py``
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>`
+* then I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>` at the top of ``test_person.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     import src.person
     import unittest
@@ -101,24 +110,26 @@ green: make it pass
 * I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
     # NameError
     # AttributeError
 
-* then open ``person.py`` from the ``src`` folder to add a :ref:`function<functions>`
+* I click on ``person.py`` in the ``src`` folder to open it in the editor then I add a :ref:`function<functions>`
 
   .. code-block:: python
 
     def factory():
         return None
 
-  the terminal shows a passing test
+  the test passes
 
 * I want the :ref:`function<functions>` to take in a keyword argument named ``first_name``
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     def test_takes_keyword_arguments(self):
         self.assertEqual(
@@ -137,6 +148,7 @@ green: make it pass
 * I add the error to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     # Exceptions Encountered
     # AssertionError
@@ -144,18 +156,20 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then add the name as an input parameter to the :ref:`function<functions>`
+* then I add the name as an input parameter to the :ref:`function<functions>` in ``person.py``
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def factory(first_name):
         return None
 
   the test passes
 
-* I want the :ref:`function<functions>` to take in a keyword argument named ``last_name``
+* I want the :ref:`function<functions>` to take in a keyword argument named ``last_name``, I add it to the test in ``test_telephone.py``
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def test_takes_keyword_arguments(self):
         self.assertEqual(
