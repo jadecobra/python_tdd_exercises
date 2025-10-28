@@ -40,6 +40,8 @@ red: make it fail
 
 I add a new TestCase_ to ``test_truth_table.py``
 
+.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+
 .. code-block:: python
 
   import unittest
