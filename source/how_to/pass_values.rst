@@ -95,6 +95,7 @@ green: make it pass
 
   .. code-block:: python
     :emphasize-lines: 1
+    :linenos:
 
     import src.telephone
     import unittest
@@ -157,6 +158,7 @@ green: make it pass
 * I change ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
+    :linenos:
 
       def text():
           return None
@@ -328,8 +330,6 @@ refactor: make it better
 
 I add another :ref:`assertion<AssertionError>` to ``test_passing_a_class`` with the ``TestTelephone`` :ref:`class<classes>`
 
-.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
-
 .. code-block:: python
   :emphasize-lines: 11-14
 
@@ -445,7 +445,7 @@ I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>`
 .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
 .. code-block:: python
-  :emphasize-lines: 12-16
+  :emphasize-lines: 15-19
 
   class TestTelephone(unittest.TestCase):
 
