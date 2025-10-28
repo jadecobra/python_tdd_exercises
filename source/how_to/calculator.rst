@@ -14,6 +14,8 @@ how to make a calculator
 
 ----
 
+I want to write a program that can ``add``, ``subtract``, ``multiply`` and ``divide``
+
 *********************************************************************************
 requirements
 *********************************************************************************
@@ -48,7 +50,7 @@ red: make it fail
 
     self.assertFalse(False)
 
-* I am going to write a program that can ``add``, ``subtract``, ``multiply`` and ``divide``, I add a list to keep track of the work for the program
+* I add a list to keep track of the work for the program
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 

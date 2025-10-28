@@ -17,11 +17,8 @@ how to pass values
 I want to test passing values to programs
 
 *********************************************************************************
-test_passing_a_string
+requirements
 *********************************************************************************
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``telephone`` as the name of the project
 
@@ -50,9 +47,17 @@ red: make it fail
 
     self.assertFalse(False)
 
-* and I change ``test_failure`` to ``test_passing_a_string``
+*********************************************************************************
+test_passing_a_string
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I change ``test_failure`` to ``test_passing_a_string``
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 6-10
 
     import unittest
@@ -246,7 +251,12 @@ green: make it pass
     def text(value):
         return f'I received: {value}'
 
-  the terminal shows a passing test. This is called `string interpolation`_, I can use it to put values in strings_
+  the terminal shows a passing test. This is called `string interpolation`_, I can use it to put values in strings_. A string_ is any characters in between quotes e.g.
+
+  - ``'a string made with single quotes'``
+  - ``"a string made with double quotes"``
+  - ``'''a string made with triple single quotes'''``
+  - ``"""a string made with triple double quotes"""``
 
 ----
 
@@ -261,15 +271,20 @@ red: make it fail
 
 I add a failing test for a :ref:`class <classes>` in ``test_telephone.py``
 
-.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
-
 .. code-block:: python
-  :emphasize-lines: 6-10
+  :emphasize-lines: 13-17
 
   class TestTelephone(unittest.TestCase):
 
       def test_passing_a_string(self):
-          ...
+          self.assertEqual(
+              src.telephone.text("hello"),
+              "I received: hello"
+          )
+          self.assertEqual(
+              src.telephone.text("yes"),
+              "I received: yes"
+          )
 
       def test_passing_a_class(self):
           self.assertEqual(
@@ -373,7 +388,7 @@ I add a new failing test for :ref:`None` in ``test_telephone.py``
 .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
 
 .. code-block:: python
-  :emphasize-lines: 9-13
+  :emphasize-lines: 16-20
 
   class TestTelephone(unittest.TestCase):
 
@@ -381,7 +396,14 @@ I add a new failing test for :ref:`None` in ``test_telephone.py``
           ...
 
       def test_passing_a_class(self):
-          ...
+          self.assertEqual(
+              src.telephone.text(object),
+              "I received: <class 'object'>"
+          )
+          self.assertEqual(
+              src.telephone.text(TestTelephone),
+              "I received: <class 'tests.test_telephone.TestTelephone'>"
+          )
 
       def test_passing_none(self):
           self.assertEqual(
@@ -420,6 +442,8 @@ red: make it fail
 
 I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>` for :ref:`True<test_what_is_true>`
 
+.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+
 .. code-block:: python
   :emphasize-lines: 12-16
 
@@ -432,7 +456,10 @@ I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>`
           ...
 
       def test_passing_none(self):
-          ...
+          self.assertEqual(
+              src.telephone.text(None),
+              "I received: None"
+          )
 
       def test_passing_a_boolean(self):
           self.assertEqual(
