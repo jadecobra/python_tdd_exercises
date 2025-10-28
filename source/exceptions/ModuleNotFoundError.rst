@@ -83,7 +83,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` the terminal shows a passing test
+* then I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` the test passes
 * I add another `import statement`_
 
   .. code-block:: python
@@ -98,7 +98,7 @@ green: make it pass
 
     ModuleNotFoundError: No module named 'src.module_01'
 
-* When I make a new file named ``module_01.py`` in the ``src`` folder, the terminal shows a passing test
+* When I make a new file named ``module_01.py`` in the ``src`` folder, the test passes
 * I continue with another `import statement`_
 
   .. code-block:: python

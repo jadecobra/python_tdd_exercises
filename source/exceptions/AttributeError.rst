@@ -745,7 +745,7 @@ I ran tests for the AttributeError_ with
 
 * variables
 * :ref:`functions`
-* :ref:`class<classes>` attributes (variables)
+* :ref:`class<classes>` :ref:`attributes<AttributeError>` (variables)
 * :ref:`class<classes>` :ref:`methods<functions>` (functions)
 
 I also ran into the following :ref:`Exceptions<errors>`

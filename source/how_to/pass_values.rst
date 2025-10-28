@@ -253,7 +253,7 @@ green: make it pass
     def text(value):
         return f'I received: {value}'
 
-  the terminal shows a passing test. This is called `string interpolation`_, I can use it to put values in strings_. A string_ is any characters in between quotes e.g.
+  the test passes. This is called `string interpolation`_, I can use it to put values in strings_. A string_ is any characters in between quotes e.g.
 
   - ``'a string made with single quotes'``
   - ``"a string made with double quotes"``

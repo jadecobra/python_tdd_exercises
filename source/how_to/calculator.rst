@@ -275,7 +275,7 @@ when I change the `return statement`_ in ``calculator.py`` to add the two inputs
   def add(x, y):
       return x + y
 
-the terminal shows a passing test
+the test passes
 
 refactor: make it better
 ---------------------------------------------------------------------------------
@@ -1085,10 +1085,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != -10
-    AssertionError: None != -9
-    AssertionError: None != 0
-    AssertionError: None != 12
+    AssertionError: None != X
 
 * I change the `return statement`_ to see the difference between the inputs and expected output
 
@@ -1157,10 +1154,7 @@ green: make it pass
 
   .. code-block:: python
 
-    AssertionError: None != -42
-    AssertionError: None != -10
-    AssertionError: None != 20
-    AssertionError: None != 36
+    AssertionError: None != X
 
 * I change the `return statement`_ to see the difference between the inputs and the expected output
 
