@@ -87,7 +87,7 @@ red: make it fail
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_00'
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
 
   .. code-block:: python
 
@@ -110,7 +110,7 @@ green: make it pass
 
     NameError: name 'variable_00' is not defined
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
 
   .. code-block:: python
 
@@ -264,7 +264,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* which I add to the list of :ref:`Exceptions<errors>` encountered
+* which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
 
   .. code-block:: python
 
@@ -473,7 +473,7 @@ green: make it pass
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-* I add it to the list of :ref:`Exceptions<errors>` Encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
 
   .. code-block:: python
 

@@ -130,7 +130,7 @@ green: make it pass
     ValueError: wake_time: "23:10" is earlier than sleep_time: "23:27"
     ValueError: wake_time: "11:32" is earlier than sleep_time: "13:52"
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_sleep_duration.py``
 
   .. code-block:: python
 

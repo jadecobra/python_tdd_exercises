@@ -91,7 +91,7 @@ red: make it fail
 
   .. code-block:: python
 
-  I add it to the list of :ref:`Exceptions<errors>` encountered
+  I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
 
   .. code-block:: python
 
@@ -102,7 +102,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I make a file called ``functions.py`` in the project folder the terminal shows :ref:`AttributeError` , which I add to the list of :ref:`Exceptions<errors>` encountered
+* I make a file called ``functions.py`` in the project folder the terminal shows :ref:`AttributeError` , which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
 
   .. code-block:: python
 
@@ -290,7 +290,7 @@ green: make it pass
 
   because the definition for ``identity`` does not allow inputs and the test sends :ref:`False<test_what_is_false>` as input
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
 
   .. code-block:: python
 
@@ -354,7 +354,7 @@ Wait a minute! Something is not quite right here. The definition for a identity 
 
   the test passes. I have more confidence that the identity :ref:`function<functions>` will return its input.
 
-* I add more tests using the otherdata structures
+* I add more tests using the other data structures
 
   .. code-block:: python
 
@@ -848,7 +848,8 @@ I can also define :ref:`functions` to take both positional arguments and keyword
         {}
       )
 
-the terminal shows a SyntaxError_ because I put a positional argument after a keyword argument. I add the error to the list of :ref:`Exceptions<errors>` encountered
+the terminal shows a SyntaxError_ because I put a positional argument
+after a keyword argument. I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
 
 .. code-block:: python
 

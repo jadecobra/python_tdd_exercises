@@ -86,7 +86,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
 
@@ -126,7 +126,7 @@ red: make it fail
 
     NameError: name 'does_not_exist' is not defined
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ red: make it fail
 
   because I tried to get something that is not in something that exists
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
 
@@ -254,7 +254,7 @@ red: make it fail
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
 
@@ -359,7 +359,7 @@ red: make it fail
 
     IndexError: list index out of range
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
 
@@ -491,7 +491,7 @@ red: make it fail
 
     KeyError: 'does_not_exist'
 
-* another one for the list of :ref:`Exceptions<errors>` encountered
+* another one for the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
 
@@ -537,7 +537,7 @@ red: make it fail
 
     ZeroDivisionError: division by zero
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
 

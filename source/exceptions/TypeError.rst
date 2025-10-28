@@ -85,7 +85,7 @@ red: make it fail
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
-  I add it to the list of :ref:`Exceptions<errors>` encountered
+  I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_type_error.py``
 
   .. code-block:: python
 
@@ -110,7 +110,7 @@ green: make it pass
 
   the ``()`` to the right of ``src.type_error.none`` makes it a call, and the name ``none`` points to :ref:`None` which is not callable_
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_type_error.py``
 
   .. code-block:: python
 

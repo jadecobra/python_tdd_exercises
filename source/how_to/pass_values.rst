@@ -116,7 +116,7 @@ green: make it pass
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
 
   .. code-block:: python
     :emphasize-lines: 4

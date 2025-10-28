@@ -87,7 +87,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I add it to the list of :ref:`Exceptions<errors>` encountered
+I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
 
 .. code-block:: python
 
@@ -225,7 +225,7 @@ green: make it pass
 
     TypeError: logical_identity() takes 0 positional arguments but 1 was given
 
-  I add the error to the list of :ref:`Exceptions<errors>` encountered
+  I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
 
   .. code-block:: python
 

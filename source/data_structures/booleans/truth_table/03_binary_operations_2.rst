@@ -560,7 +560,7 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I add it to the list of :ref:`Exceptions<errors>` encountered
+  I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
 
   .. code-block:: python
 

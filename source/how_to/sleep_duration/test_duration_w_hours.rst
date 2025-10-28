@@ -81,7 +81,7 @@ red: make it fail
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
-  which I add to the list of :ref:`Exceptions<errors>` encountered
+  which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -117,7 +117,7 @@ green: make it pass
 
     NameError: name 'src' is not defined
 
-  I add it to the list of :ref:`Exceptions<errors>` encountered
+  I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -158,7 +158,7 @@ green: make it pass
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
-  I add the error to the list of :ref:`Exceptions<errors>` encountered
+  I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_sleep_duration.py``
 
   .. code-block:: python
 

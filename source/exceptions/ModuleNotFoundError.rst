@@ -83,7 +83,7 @@ red: make it fail
 
   because Python_ cannot find ``module_00.py`` in the ``src`` folder
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_module_not_found_error.py``
 
   .. code-block:: python
 
