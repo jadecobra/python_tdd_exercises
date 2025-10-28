@@ -20,9 +20,6 @@ I want to write a program that can ``add``, ``subtract``, ``multiply`` and ``div
 requirements
 *********************************************************************************
 
-red: make it fail
-#################################################################################
-
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``calculator`` as the name of the project
 
   .. code-block:: python
@@ -50,7 +47,13 @@ red: make it fail
 
     self.assertFalse(False)
 
-* I add a list to keep track of the work for the program
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestSleepDuration(unittest.TestCase):
+
+* I add a TODO list to keep track of the work for the program
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 

@@ -47,6 +47,12 @@ requirements
 
     self.assertFalse(False)
 
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestNone(unittest.TestCase):
+
 *********************************************************************************
 test_what_is_none
 *********************************************************************************
@@ -59,6 +65,7 @@ red: make it fail
 * I change ``test_failure`` to ``test_what_is_none``
 
   .. code-block:: python
+    :linenos:
 
     import unittest
 

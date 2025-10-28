@@ -14,18 +14,15 @@ how to test that an Exception is raised
 
 ----
 
-When an error happens in Python_, an :ref:`Exception<errors>` is raised to break execution of the program, this means nothing past the line that caused it will run.
+When an :ref:`error/Exception<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to break execution of the program, this means nothing past the line that caused it will run.
 
 It is useful because there is a problem to be solved to continue as expected, it can be a pain when it causes the program to stop early. What if I want it to run even with errors? I might want to give messages to the user who does not care about or understand the details of the error.
 
 :ref:`Exception<errors>` Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
 *********************************************************************************
-test_catching_module_not_found_error_in_tests
+requirements
 *********************************************************************************
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``exceptions`` as the name of the project
 
@@ -54,9 +51,26 @@ red: make it fail
 
     self.assertFalse(False)
 
-* and I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
+
+    class TestExceptions(unittest.TestCase):
+
+*********************************************************************************
+test_catching_module_not_found_error_in_tests
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_
+
+  .. code-block:: python
+    :linenos:
+
+    import unittest
+
 
     class TestExceptions(unittest.TestCase):
 

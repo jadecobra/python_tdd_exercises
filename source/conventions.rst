@@ -10,26 +10,33 @@ conventions
 
 ----
 
-The following are a few conventions to know in Python
+The following are a few conventions to know in Python_
+
+*********************************************************************************
+CapWords
+*********************************************************************************
+
+:ref:`Class<classes>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized
 
 *********************************************************************************
 names
 *********************************************************************************
 
-- class names are usually in ``CamelCase`` for example
+- class names are usually in :ref:`CapWords` for example
 
   .. code-block:: python
 
     class AClassName(object):
 
-  I can use any case I want but TitleCase keeps things consistent
+  I can use any case I want but :ref:`CapWords` keeps things consistent
 
-- variables (attributes) and :ref:`function (method)<functions>` names are in ``snake_case`` for example
+- variables (:ref:`attributes<AttributeError>`) and :ref:`function (method)<functions>` names are in ``snake_case`` for example
 
   .. code-block:: python
 
     def function_name(argument_1, argument_2, keyword_argument=None):
         ...
+
 
     variable_name = None
 

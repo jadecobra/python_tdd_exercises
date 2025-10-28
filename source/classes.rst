@@ -76,7 +76,7 @@ green: make it pass
 
     ClassWithPass
 
-  the terminal shows NameError` because ``ClassWithPass`_ is not defined anywhere
+  the terminal shows NameError_ because ``ClassWithPass`` is not defined anywhere
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered
 

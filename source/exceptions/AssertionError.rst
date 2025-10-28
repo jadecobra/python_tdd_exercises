@@ -16,7 +16,7 @@ AssertionError
 
 ----
 
-The AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was introduced in :ref:`how to make a python test driven development environment` with the first failing test
+AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was introduced in :ref:`how to make a python test driven development environment` with the first failing test
 
 .. code-block:: python
 
@@ -38,11 +38,8 @@ The difference between my expectations and reality (what happens when the progra
 ----
 
 *********************************************************************************
-test_assertion_error_w_none
+requirements
 *********************************************************************************
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the name of the project
 
@@ -71,7 +68,20 @@ red: make it fail
 
     self.assertFalse(False)
 
-* and I change ``test_failure`` to ``test_assertion_error_w_none``
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestAssertionError(unittest.TestCase):
+
+*********************************************************************************
+test_assertion_error_w_none
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I change ``test_failure`` to ``test_assertion_error_w_none``
 
   .. code-block:: python
 

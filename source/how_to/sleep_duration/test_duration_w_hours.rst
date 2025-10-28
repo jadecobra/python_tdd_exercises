@@ -20,7 +20,7 @@ This is part 1 of a program that calculates the difference between a given wake 
 ----
 
 *********************************************************************************
-red: make it fail
+requirements
 *********************************************************************************
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the name of the project
@@ -43,22 +43,30 @@ red: make it fail
 
     tests/test_sleep_duration.py:7: AssertionError
 
-  then I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_sleep_duration.py:7`` to open it in the editor
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_sleep_duration.py:7`` to open it in the editor
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
 
     self.assertFalse(False)
 
-* I also change the :ref:`class <classes>` name to CapWords to match Python_ convention
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
 
     class TestSleepDuration(unittest.TestCase):
 
-* then change the test to a new failing test
+*********************************************************************************
+red: make it fail
+*********************************************************************************
+
+* I change the test to a new failing test
 
   .. code-block:: python
+    :linenos:
+
+    import unittest
+
 
     class TestSleepDuration(unittest.TestCase):
 

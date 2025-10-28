@@ -16,16 +16,13 @@ AttributeError
 
 ----
 
-The AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists. An attribute is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color.
+AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists. An attribute is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color.
 
 ----
 
 *********************************************************************************
-test_attribute_error_w_variables
+requirements
 *********************************************************************************
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``attribute_error`` as the name of the project
 
@@ -54,9 +51,23 @@ red: make it fail
 
     self.assertFalse(False)
 
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestAttributeError(unittest.TestCase):
+
+*********************************************************************************
+test_attribute_error_w_variables
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
 * I add an `import statement`_
 
   .. code-block:: python
+    :linenos:
 
     import unittest
     import src.attribute_error

@@ -47,6 +47,12 @@ requirements
 
     self.assertFalse(False)
 
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestSleepDuration(unittest.TestCase):
+
 *********************************************************************************
 test_passing_a_string
 *********************************************************************************

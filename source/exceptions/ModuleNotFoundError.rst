@@ -16,14 +16,11 @@ ModuleNotFoundError
 
 ----
 
-``ModuleNotFoundError`` is raised when Python_ cannot find a module from an `import statement`_. A Python_ :ref:`module<ModuleNotFoundError>` has a filename that ends in ``.py``
+ModuleNotFoundError_ is raised when Python_ cannot find a module from an `import statement`_. A Python_ :ref:`module<ModuleNotFoundError>` has a filename that ends in ``.py``
 
 *********************************************************************************
-test_module_not_found_error
+requirements
 *********************************************************************************
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
 
@@ -52,9 +49,23 @@ red: make it fail
 
     self.assertFalse(False)
 
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestModuleNotFoundError(unittest.TestCase):
+
+*********************************************************************************
+test_module_not_found_error
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
 * I change ``test_failure`` to ``test_module_not_found_error``
 
   .. code-block:: python
+    :linenos:
 
     import unittest
 

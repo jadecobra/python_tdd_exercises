@@ -50,6 +50,12 @@ requirements
 
     self.assertFalse(False)
 
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestListComprehensions(unittest.TestCase):
+
 ----
 
 *********************************************************************************
@@ -62,6 +68,7 @@ red: make it fail
 I change ``test_failure``
 
 .. code-block:: python
+  :linenos:
 
   import unittest
 

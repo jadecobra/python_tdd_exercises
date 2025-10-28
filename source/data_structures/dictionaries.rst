@@ -55,6 +55,12 @@ requirements
 
     self.assertFalse(False)
 
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestDictionaries(unittest.TestCase):
+
 ----
 
 *********************************************************************************
@@ -64,9 +70,13 @@ test_making_a_dictionary
 red: make it fail
 #################################################################################
 
-I change ``test_failure``
+I change ``test_failure`` to ``test_making_a_dictionary``
 
 .. code-block:: python
+  :linenos:
+
+  import unittest
+
 
   class TestDictionaries(unittest.TestCase):
 

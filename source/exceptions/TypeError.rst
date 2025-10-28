@@ -14,16 +14,11 @@ TypeError
 
 ----
 
-The `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an :ref:`object<classes>` is used in a way that it should not be.
+`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an :ref:`object<classes>` is used in a way that it should not be.
 
 *********************************************************************************
-test_type_error_w_non_callables
+requirements
 *********************************************************************************
-
-There are objects that cannot be called
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``type_error`` as the name of the project
 
@@ -52,9 +47,25 @@ red: make it fail
 
     self.assertFalse(False)
 
+* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+
+  .. code-block:: python
+
+    class TestTypeError(unittest.TestCase):
+
+*********************************************************************************
+test_type_error_w_non_callables
+*********************************************************************************
+
+There are :ref:`objects<classes>` that can NOT be called
+
+red: make it fail
+#################################################################################
+
 * I add an `import statement`_
 
   .. code-block:: python
+    :linenos:
 
     import unittest
     import src.type_error
