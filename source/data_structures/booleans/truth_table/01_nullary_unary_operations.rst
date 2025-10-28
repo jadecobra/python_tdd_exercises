@@ -65,6 +65,7 @@ red: make it fail
 I change the text in ``test_truth_table.py``
 
 .. code-block:: python
+  :linenos:
   :emphasize-lines: 7-8
 
   import unittest

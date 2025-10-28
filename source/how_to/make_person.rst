@@ -260,7 +260,7 @@ green: make it pass
 
 * I add the new :ref:`function<functions>` above the :ref:`class<classes>` definition in ``test_person.py``
 
-  .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :linenos:
@@ -494,7 +494,7 @@ green: make it pass
 
   I change the value
 
-  .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -601,7 +601,7 @@ green: make it pass
 
 * when I change the value of the ``sex`` variable
 
-  .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -769,7 +769,7 @@ refactor: make it better
 
 * I use it for the ``year_of_birth`` variable
 
-  .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :emphasize-lines: 5-7
@@ -836,7 +836,7 @@ refactor: make it better
 
   I add an `import statement`_ at the top of ``person.py``
 
-  .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :linenos:
@@ -1329,7 +1329,7 @@ refactor: make it better
 
 * ``first_name`` and ``year_of_birth`` are made the same way in both tests, I can remove this repetition by adding :ref:`class<classes>` :ref:`attributes<AttributeError>`
 
-  .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :emphasize-lines: 8-13

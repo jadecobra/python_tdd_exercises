@@ -748,7 +748,7 @@ red: make it fail
 
 time for division. I add a new test to ``test_calculator.py``
 
-.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
 .. code-block:: python
   :emphasize-lines: 12-16
@@ -842,7 +842,7 @@ red: make it fail
 
 I add a line to cause the ZeroDivisionError_ intentionally and comment out the code that randomly fails in ``test_calculator.py``
 
-.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
 .. code-block:: python
   :emphasize-lines: 5, 7-10

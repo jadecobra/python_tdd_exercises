@@ -91,7 +91,7 @@ green: make it pass
 
 * then I add an `import statement`_ for the ``telephone`` module at the top of ``test_telephone.py``
 
-  .. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -307,7 +307,7 @@ green: make it pass
 
 I make the expectation match reality
 
-.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
 .. code-block:: python
   :emphasize-lines: 9
@@ -385,7 +385,7 @@ red: make it fail
 
 I add a new failing test for :ref:`None` in ``test_telephone.py``
 
-.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
 .. code-block:: python
   :emphasize-lines: 16-20
@@ -442,7 +442,7 @@ red: make it fail
 
 I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>` for :ref:`True<test_what_is_true>`
 
-.. NOTE:: the ...(ellipsis) is a placeholder for the code you already have, you don't need to type it or replace your code
+.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
 .. code-block:: python
   :emphasize-lines: 15-19

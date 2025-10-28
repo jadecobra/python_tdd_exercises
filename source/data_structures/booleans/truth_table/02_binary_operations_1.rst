@@ -42,6 +42,15 @@ I add a new TestCase_ to ``test_truth_table.py``
 
 .. code-block:: python
 
+  import unittest
+  import src.truth_table
+
+
+  class TestNullaryOperations(unittest.TestCase):
+
+      def test_logical_identity(self):
+          ...
+
       def test_logical_negation_aka_not(self):
           ...
 
