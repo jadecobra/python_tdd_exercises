@@ -19,11 +19,8 @@ booleans
 There are 2 booleans_ - True_ and False_
 
 *********************************************************************************
-test_what_is_false
+requirements
 *********************************************************************************
-
-red: make it fail
-#################################################################################
 
 * I open a terminal to run :ref:`makePythonTdd.sh` with ``booleans`` as the name of the project
 
@@ -52,9 +49,24 @@ red: make it fail
 
     self.assertFalse(False)
 
-* and I change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of bool_
+* and I change the name of the :ref:`class<classes>` to match the cap words format
 
   .. code-block:: python
+
+    class TestBooleans(unittest.TestCase):
+
+*********************************************************************************
+test_what_is_false
+*********************************************************************************
+
+red: make it fail
+#################################################################################
+
+* I change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of bool_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-7
 
     import unittest
 
