@@ -52,7 +52,10 @@ red: make it fail
 
 * I add a list to keep track of the work for the program
 
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 10-14
 
     import unittest
@@ -77,7 +80,8 @@ red: make it fail
 * and I change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
 
   .. code-block:: python
-    :emphasize-lines: 7-10
+    :linenos:
+    :emphasize-lines: 6-10
 
     import unittest
 
@@ -116,6 +120,8 @@ green: make it pass
 * then add an `import statement`_ at the top of `test_calculator.py`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     import src.calculator
     import unittest
@@ -181,7 +187,10 @@ green: make it pass
 
 * then I change ``add`` in ``calculator.py`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
 
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+
   .. code-block:: python
+    :linenos:
 
     def add():
         return None
@@ -197,6 +206,7 @@ green: make it pass
 * I make it take 2 positional arguments
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def add(x, y):
         return None
@@ -212,6 +222,7 @@ green: make it pass
 * when I make the `return statement`_ match the expected value
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def add(x, y):
         return 1
@@ -252,9 +263,10 @@ the :ref:`function<functions>` returns ``1`` and the test expects ``0``
 green: make it pass
 ---------------------------------------------------------------------------------
 
-when I change the `return statement`_ to add the two inputs
+when I change the `return statement`_ in ``calculator.py`` to add the two inputs
 
 .. code-block:: python
+  :emphasize-lines: 2
 
   def add(x, y):
       return x + y
@@ -267,6 +279,7 @@ refactor: make it better
 * I want the test to use random numbers instead of fixed numbers, so I add an `import statement`_ at the top of ``test_calculator.py`` to use random numbers in the test
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     import random
@@ -354,7 +367,10 @@ refactor: make it better
 
   I add a :ref:`function<functions>` to remove the duplication of calls to `random.randint`_ in ``test_calculator.py``
 
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 6-7
 
     import random
@@ -369,7 +385,7 @@ refactor: make it better
     class TestCalculator(unittest.TestCase):
         ...
 
-  then use the new :ref:`function<functions>` for the ``x`` and ``y`` variables in ``test_addition``
+  then I use the new :ref:`function<functions>` for the ``x`` and ``y`` variables in ``test_addition``
 
   .. code-block:: python
     :emphasize-lines: 8-9
@@ -420,7 +436,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-10, 10)
 
-* then remove ``test addition`` from the TODO list in ``test_calculator.py``
+* then I remove ``test addition`` from the TODO list in ``test_calculator.py``
 
   .. code-block:: python
 
@@ -438,7 +454,7 @@ test_subtraction
 red: make it fail
 #################################################################################
 
-* I add a :ref:`method<functions>` to use to test subtraction in ``test_calculator.py``
+* I add a test for subtraction in ``test_calculator.py``
 
   .. code-block:: python
     :emphasize-lines: 12-19
@@ -474,7 +490,10 @@ green: make it pass
 
 * I add the name to ``calculator.py``
 
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 5
 
     def add(x, y):
@@ -506,6 +525,7 @@ green: make it pass
 * I change ``subtract`` in ``calculator.py`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 5-6
 
     def add(x, y):
@@ -524,6 +544,7 @@ green: make it pass
 * I make ``subtract`` take inputs
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 5
 
     def add(x, y):
@@ -544,7 +565,7 @@ green: make it pass
 
   ``subtract`` returns :ref:`None` and the test expects ``x-y``
 
-* When I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
+* I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -605,8 +626,6 @@ refactor: make it better
   the terminal shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction`` and use ``self.x`` and ``self.y`` instead
-
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: python
     :linenos:
@@ -693,6 +712,7 @@ green: make it pass
 using what I know so far, I add a :ref:`function<functions>` to ``calculator.py``
 
 .. code-block:: python
+  :linenos:
   :emphasize-lines: 9-10
 
   def add(x, y):
@@ -758,6 +778,7 @@ green: make it pass
 * I add a :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 13-14
 
     def add(x, y):
@@ -953,7 +974,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-* I no longer need the first assertRaises_ and remove it from the test because it is now part of the loop
+* I no longer need the first assertRaises_ and remove it from the test because it is now part of the while_ loop
 
   .. code-block:: python
 
