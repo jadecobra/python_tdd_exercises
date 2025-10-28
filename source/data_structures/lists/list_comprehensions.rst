@@ -209,7 +209,7 @@ refactor: make it better
 
   the test passes
 
-* this solution is fixed, the test fails when I change the values in the range_ :ref:`object<classes>`
+* this solution does not change, the test fails when I change the values in the range_ :ref:`object<classes>`
 
   .. code-block:: python
 

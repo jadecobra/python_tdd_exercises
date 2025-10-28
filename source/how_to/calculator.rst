@@ -280,7 +280,7 @@ the test passes
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I want the test to use random numbers instead of fixed numbers, so I add an `import statement`_ at the top of ``test_calculator.py`` to use random numbers in the test
+* I want the test to use random numbers instead of numbers that do not change, so I add an `import statement`_ at the top of ``test_calculator.py`` to use random numbers in the test
 
   .. code-block:: python
     :linenos:

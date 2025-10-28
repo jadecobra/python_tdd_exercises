@@ -17,7 +17,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries` with :ref:`functions`
+This is an exercise in making :ref:`dictionaries` with :ref:`functions`. I think these are the 2 most important concepts in Python_ because I use them a lot.
 
 *********************************************************************************
 requirements
@@ -49,6 +49,12 @@ requirements
   .. code-block:: python
 
     self.assertFalse(False)
+
+* and I change the name of the :ref:`class<classes>` to match the cap words format
+
+  .. code-block:: python
+
+    class TestPersonFactory(unittest.TestCase):
 
 *********************************************************************************
 test_takes_keyword_arguments
@@ -166,7 +172,7 @@ green: make it pass
 
   the test passes
 
-* I want the :ref:`function<functions>` to take in a keyword argument named ``last_name``. I add it to the test in ``test_telephone.py``
+* I want the :ref:`function<functions>` to take in a keyword argument named ``last_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -325,7 +331,7 @@ green: make it pass
 
   the test passes because ``{}`` and ``dict()`` are two ways to write an empty :ref:`dictionary<dictionaries>`
 
-* I want the :ref:`dictionary<dictionaries>` to have a key named ``first_name`` with the same value as what was given when the ``factory`` :ref:`function<functions>` was called. I change the expectation in ``test_person.py``
+* I want the :ref:`dictionary<dictionaries>` to have a key named ``first_name`` with the same value as what is given when the ``factory`` :ref:`function<functions>` is called. I change the expectation in ``test_person.py``
 
   .. code-block:: python
     :emphasize-lines: 10
@@ -421,7 +427,7 @@ green: make it pass
 
   and the test is green again
 
-* I want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as what was given in the call to the ``factory`` :ref:`function<functions>`. I add it to the expectation in ``test_person.py``
+* I want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<functions>`. I add it to the expectation in ``test_person.py``
 
   .. code-block:: python
     :emphasize-lines: 13
@@ -521,7 +527,7 @@ green: make it pass
 
   the test passes
 
-* I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what was given in the call to the ``factory`` :ref:`function<functions>` in ``test_person.py``
+* I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what is given in the call to the ``factory`` :ref:`function<functions>` in ``test_person.py``
 
   .. code-block:: python
     :emphasize-lines: 15
