@@ -303,7 +303,7 @@ I change the line to make it :ref:`True<test_what_is_true>`
   def test_assertion_error_w_false(self):
       assert True is not False
 
-the terminal shows all tests are passing
+the test passes
 
 red: make it fail
 #################################################################################

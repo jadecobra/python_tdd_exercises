@@ -76,7 +76,7 @@ green: make it pass
 
     ClassWithPass
 
-  the terminal shows NameError_ because ``ClassWithPass`` is not defined anywhere
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>` because ``ClassWithPass`` is not defined anywhere
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
 
@@ -277,7 +277,7 @@ green: make it pass
 
         a_boolean
 
-  the terminal shows a NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 * after I point the name to :ref:`None`
 
@@ -392,7 +392,7 @@ green: make it pass
 
         method_a
 
-  the terminal shows NameError_ because there is no definition for ``method_a``
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>` because there is no definition for ``method_a``
 
 
 * I define ``method_a`` as an attribute by pointing it to :ref:`None`
@@ -614,7 +614,7 @@ green: make it pass
 
         sex
 
-  the terminal produces NameError_
+  the terminal shows NameError_
 
 
 * I add a definition for the ``sex`` attribute

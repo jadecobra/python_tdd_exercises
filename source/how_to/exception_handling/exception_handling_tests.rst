@@ -346,7 +346,7 @@ refactor: make it better
 
     AssertionError: TypeError not raised
 
-  because the :ref:`function<functions>` call matches the definition, :ref:`TypeError` is not raised. I undo the change and the terminal shows green again
+  because the :ref:`function<functions>` call matches the definition, :ref:`TypeError` is NOT raised. I undo the change and the terminal shows green again
 
 ----
 
@@ -362,7 +362,7 @@ red: make it fail
   .. code-block:: python
     :emphasize-lines: 15-16
 
-      class TestExceptions(unittest.TestCase):
+    class TestExceptions(unittest.TestCase):
 
         def test_catching_module_not_found_error_in_tests(self):
             ...
@@ -496,7 +496,7 @@ green: make it pass
 * It looks like this is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
 
   .. code-block:: python
-    :emphasize-lines:
+    :emphasize-lines: 5
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -504,9 +504,10 @@ green: make it pass
             a_list[4]
             a_list[-5]
 
-  at the end of the chapter I show why this is not a repetition, I undo the change for now
+  I show why this is not a repetition at the end of the chapter. I undo the change for now
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -527,33 +528,55 @@ red: make it fail
 * I add a :ref:`dictionary<dictionaries>` to a new test
 
   .. code-block:: python
+    :emphasize-lines: 18-19
 
-    def test_catching_key_error_in_tests(self):
-        {'key': 'value'}
+    class TestExceptions(unittest.TestCase):
 
-  when I try to get the value for a key that exists
+        def test_catching_module_not_found_error_in_tests(self):
+            ...
+
+        def test_catching_name_error_in_tests(self):
+            ...
+
+        def test_catching_attribute_error_in_tests(self):
+            ...
+
+        def test_catching_type_error_in_tests(self):
+            ...
+
+        def test_catching_index_error_in_tests(self):
+            ...
+
+        def test_catching_key_error_in_tests(self):
+            {'key': 'value'}
+
+* when I try to get the value for a key that exists
 
   .. code-block:: python
 
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['key']
 
-  the terminal shows green, when I use a key that is in the :ref:`dictionary<dictionaries>`
+  the terminal shows green
+
+* when I use a key that is NOT in the :ref:`dictionary<dictionaries>`
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def test_catching_key_error_in_tests(self):
         {'key': 'value'}['does_not_exist']
 
-  I get :ref:`KeyError <test_key_error>`
+  the terminal shows :ref:`KeyError <test_key_error>`
 
   .. code-block:: python
 
     KeyError: 'does_not_exist'
 
-* another one for the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 8
 
     # Exceptions Encountered
     # AssertionError
@@ -570,6 +593,7 @@ green: make it pass
 I add assertRaises_ to the test
 
 .. code-block:: python
+  :emphasize-lines: 2-3
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(KeyError):
@@ -584,14 +608,35 @@ test_catching_zero_division_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add another failing test for something that happened in :ref:`how to make a calculator`
+* I add another failing test, this time for the :ref:`Exception<errors>` that happened in :ref:`how to make a calculator` when :ref:`testing division<test_division>`
 
   .. code-block:: python
+    :emphasize-lines: 21-22
 
-    def test_catching_zero_division_error_in_tests(self):
-        1 / 0
+    class TestExceptions(unittest.TestCase):
 
-  any number divided by ``0`` the terminal shows a ZeroDivisionError_
+        def test_catching_module_not_found_error_in_tests(self):
+            ...
+
+        def test_catching_name_error_in_tests(self):
+            ...
+
+        def test_catching_attribute_error_in_tests(self):
+            ...
+
+        def test_catching_type_error_in_tests(self):
+            ...
+
+        def test_catching_index_error_in_tests(self):
+            ...
+
+        def test_catching_key_error_in_tests(self):
+            ...
+
+        def test_catching_zero_division_error_in_tests(self):
+            1 / 0
+
+  any number divided by ``0`` the terminal shows ZeroDivisionError_
 
   .. code-block:: python
 
@@ -600,6 +645,7 @@ red: make it fail
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 9
 
     # Exceptions Encountered
     # AssertionError
@@ -614,9 +660,10 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then I add the assertRaises_ :ref:`method<functions>` to the test
+I add assertRaises_
 
 .. code-block:: python
+  :emphasize-lines: 2-3
 
   def test_catching_zero_division_error_in_tests(self):
       with self.assertRaises(ZeroDivisionError):
@@ -633,27 +680,52 @@ test_catching_exceptions_in_tests
 red: make it fail
 #################################################################################
 
-* I add a failing test
+* I add a failing test with the `raise statement`_
 
   .. code-block:: python
+    :emphasize-lines: 24-25
 
-    def test_catching_exceptions_in_tests(self):
-        raise Exception
+    class TestExceptions(unittest.TestCase):
 
-  the terminal shows :ref:`Exception<errors>` which is the mother of the :ref:`Exceptions<errors>` encountered so far, they inherit from it
+        def test_catching_module_not_found_error_in_tests(self):
+            ...
+
+        def test_catching_name_error_in_tests(self):
+            ...
+
+        def test_catching_attribute_error_in_tests(self):
+            ...
+
+        def test_catching_type_error_in_tests(self):
+            ...
+
+        def test_catching_index_error_in_tests(self):
+            ...
+
+        def test_catching_key_error_in_tests(self):
+            ...
+
+        def test_catching_zero_division_error_in_tests(self):
+            ...
+
+        def test_catching_exceptions_in_tests(self):
+            raise Exception
+
+  the terminal shows :ref:`Exception<errors>` which is the mother of all the :ref:`Exceptions<errors>` covered so far, they inherit from it
 
   .. code-block:: python
 
     Exception
 
-* I can use the `raise statement`_ to cause any :ref:`Exception<errors>`
+* I can use the `raise statement`_ to cause any :ref:`Exception<errors>` intentionally
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def test_catching_exceptions_in_tests(self):
         raise AssertionError
 
-  and the terminal will show it
+  and the terminal shows the :ref:`Exception<errors>`
 
   .. code-block:: python
 
@@ -662,9 +734,10 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-when I add the assertRaises_ :ref:`method<functions>` to the test
+I add the assertRaises_ :ref:`method<functions>`
 
 .. code-block:: python
+  :emphasize-lines: 2-3
 
   def test_catching_exceptions_in_tests(self):
       with self.assertRaises(Exception):
@@ -680,37 +753,59 @@ refactor: make it better
 * I can use :ref:`Exception<errors>` to catch any of the :ref:`Exceptions<errors>` that inherit from it, its children if you will
 
   .. code-block:: python
+    :emphasize-lines: 2, 5
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(Exception):
             {'key': 'value'}['does_not_exist']
-
 
     def test_catching_zero_division_error_in_tests(self):
         with self.assertRaises(Exception):
             1 / 0
 
-  all the tests are still green. The problem with using :ref:`Exception<errors>` to catch its children, is it does not tell anyone that reads the code what the actual error is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``
-
-* I cannot use siblings or cousins to catch other :ref:`Exceptions<errors>`
+  all the tests are still green. The problem with using :ref:`Exception<errors>` to catch its children, is it does not tell anyone that reads the code what the actual :ref:`error<errors>` is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``
 
   .. code-block:: python
+    :emphasize-lines: 2, 5
+
+    def test_catching_key_error_in_tests(self):
+        with self.assertRaises(KeyError):
+            {'key': 'value'}['does_not_exist']
+
+    def test_catching_zero_division_error_in_tests(self):
+        with self.assertRaises(ZeroDivisionError):
+            1 / 0
+
+* I cannot use sibling or cousin :ref:`Exceptions<errors>` to catch other :ref:`Exceptions<errors>`
+
+  .. code-block:: python
+    :emphasize-lines: 2
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(ModuleNotFoundError):
             {'key': 'value'}['does_not_exist']
 
-  shows :ref:`KeyError <test_key_error>`
+  the terminal shows :ref:`KeyError <test_key_error>`
 
   .. code-block:: python
 
     KeyError: 'does_not_exist'
 
-  because it is not :ref:`ModuleNotFoundError`
+  because it is not :ref:`ModuleNotFoundError`, when I change it back
+
+  .. code-block:: python
+    :emphasize-lines: 2
+
+    def test_catching_key_error_in_tests(self):
+        with self.assertRaises(KeyError):
+            {'key': 'value'}['does_not_exist']
+
+  the test passes
 
 * As promised here is why the second AssertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition, even though the test still passes when I remove it
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -721,6 +816,7 @@ refactor: make it better
   If I add a `raise statement`_ between the 2 lines
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -729,9 +825,10 @@ refactor: make it better
             raise Exception
             a_list[-5]
 
-  the terminal still shows a passing test, even though :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>`, it looks like the assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>`. When I move the `raise statement`_ above it
+  the terminal still shows a passing test, even though :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>`, it does NOT get raised. It looks like the assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>`. When I move the `raise statement`_ above it
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -746,11 +843,12 @@ refactor: make it better
 
     Exception
 
-  because it is not :ref:`IndexError<test_index_error>`
+  because it is not :ref:`IndexError<test_index_error>`, this is the expected behavior
 
-* as a rule of thumb I write one line of code for one :ref:`how to test that an Exception is raised` to know which line caused which error
+* as a rule of thumb I write one line of code for one :ref:`Exception<errors>`, this way I always know exactly which line caused which :ref:`Exception<errors>`
 
   .. code-block:: python
+    :emphasize-lines: 3-4
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -759,13 +857,15 @@ refactor: make it better
         with self.assertRaises(IndexError):
             a_list[-5]
 
+  all tests are passing! I know :ref:`how to test that an Exception is raised`!
+
 ----
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I have a way to catch :ref:`Exceptions<errors>` in tests and ran into the following
+I have a way to catch/handle :ref:`Exceptions<errors>` in tests and tested these
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
