@@ -54,7 +54,7 @@ requirements
 
   .. code-block:: python
 
-    class TestPersonFactory(unittest.TestCase):
+    class TestPerson(unittest.TestCase):
 
 *********************************************************************************
 test_takes_keyword_arguments
@@ -72,7 +72,7 @@ red: make it fail
     import unittest
 
 
-    class TestPersonFactory(unittest.TestCase):
+    class TestPerson(unittest.TestCase):
 
         def test_takes_keyword_arguments(self):
             self.assertEqual(
@@ -274,7 +274,7 @@ green: make it pass
         return None
 
 
-    class TestPersonFactory(unittest.TestCase):
+    class TestPerson(unittest.TestCase):
 
         ...
 
@@ -1481,7 +1481,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` with the name, it is local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
+  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` with the name, it is now local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot use it
 
 * I add ``self.`` to make it a :ref:`class<classes>` :ref:`attribute<AttributeError>`
 
@@ -1606,12 +1606,12 @@ green: make it pass
   when I add the keyword argument
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
     def factory(first_name, last_name, sex):
         return None
 
-  I still get :ref:`TypeError`
+  the terminal shows :ref:`TypeError`
 
   .. code-block:: python
 

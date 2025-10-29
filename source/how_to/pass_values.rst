@@ -249,7 +249,7 @@ green: make it pass
 
     AssertionError: 'I received: yes' != 'I received: hello'
 
-  this will not work, my change made an :ref:`assertion<AssertionError>` that was passing before, fail. The `return statement`_ has to use the input
+  this will not work, my change made a test that was passing before, fail. The `return statement`_ has to use the input
 
 * I use an `f-string`_ to add values to the string_
 

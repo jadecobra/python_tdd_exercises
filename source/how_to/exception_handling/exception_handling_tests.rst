@@ -14,9 +14,11 @@ how to test that an Exception is raised
 
 ----
 
-When an :ref:`error/Exception<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to break execution of the program, this means nothing past the line that caused it will run.
+When an :ref:`error<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to break execution of the program, this means nothing past the line that caused it will run.
 
-It is useful because there is a problem to be solved to continue as expected, it can be a pain when it causes the program to stop early. What if I want it to run even with errors? I might want to give messages to the user who does not care about or understand the details of the error.
+It is useful because there is a problem to be solved to continue as expected, and it can be a pain when it causes the program to stop early.
+
+What if I want it to run even with errors? I might want to give messages to the user who does not care about or understand the details of the error.
 
 :ref:`Exception<errors>` Handling is a way to deal with this, it allows programs to make decisions when one happens.
 
