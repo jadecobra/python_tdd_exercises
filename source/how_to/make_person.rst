@@ -815,10 +815,14 @@ refactor: make it better
 
   because I called a :ref:`function<functions>` that is NOT in ``person.py``.
 
-* I change the call to the ``this_year()`` :ref:`function<functions>` in ``person.py`` to the `return statement`_ of the ``this_year()`` :ref:`function<functions>` from ``test_person.py``
+* I change the call to the ``this_year()`` :ref:`function<functions>` in ``person.py`` to use the `return statement`_ of the ``this_year()`` :ref:`function<functions>` from ``test_person.py`` instead
 
   .. code-block:: python
-    :emphasize-lines: 9
+    :linenos:
+    :emphasize-lines: 12
+
+    import datetime
+
 
     def factory(
             first_name, last_name,
@@ -992,11 +996,11 @@ red: make it fail
 #################################################################################
 
 * I select ``test_takes_keyword_arguments`` in ``test_person.py``, then copy ``(ctrl+c)`` and paste ``(ctrl+v)`` it below the test
-* I change the name to ``test_function_w_default_keyword_arguments`` and remove the ``last_name`` variable
+* I change the name of the new test to ``test_function_w_default_keyword_arguments`` and remove the ``last_name`` variable
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 49-55
+    :emphasize-lines: 48-55
 
     import datetime
     import random
@@ -1271,12 +1275,12 @@ green: make it pass
             first_name=first_name,
             year_of_birth=year_of_birth,
         ),
-        {
-            'first_name': first_name,
-            'last_name': 'doe',
-            'sex': sex,
-            'age': this_year()-year_of_birth,
-        }
+        dict(
+            first_name=first_name,
+            last_name='doe',
+            sex=sex,
+            age=this_year()-year_of_birth,
+        )
     )
 
   the terminal shows NameError_
