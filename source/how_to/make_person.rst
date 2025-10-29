@@ -1265,23 +1265,31 @@ green: make it pass
 
     NameError: name 'sex' is not defined
 
-* I remove it from the call to the ``factory`` :ref:`function<functions>` in the :ref:`assertion<AssertionError>`
+* I remove it from the call to the ``factory`` :ref:`function<functions>` in the :ref:`assertion<AssertionError>` in ``test_person.py``
 
   .. code-block:: python
-    :emphasize-lines: 3-4
+    :emphasize-lines: 11-12
 
-    self.assertEqual(
-        src.person.factory(
-            first_name=first_name,
-            year_of_birth=year_of_birth,
-        ),
-        dict(
-            first_name=first_name,
-            last_name='doe',
-            sex=sex,
-            age=this_year()-year_of_birth,
+    def test_function_w_default_keyword_arguments(self):
+        first_name = random.choice((
+            'jane', 'joe', 'john', 'person',
+        ))
+        year_of_birth = random.randint(
+            this_year()-120, this_year()
         )
-    )
+
+        self.assertEqual(
+            src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            ),
+            dict(
+                first_name=first_name,
+                last_name='doe',
+                sex=sex,
+                age=this_year()-year_of_birth,
+            )
+        )
 
   the terminal shows NameError_
 
@@ -1292,20 +1300,28 @@ green: make it pass
   the value in the expected :ref:`dictionary<dictionaries>` still uses the variable I removed. I change the expectation
 
   .. code-block:: python
-    :emphasize-lines: 9
+    :emphasize-lines: 17
 
-    self.assertEqual(
-        src.person.factory(
-            first_name=first_name,
-            year_of_birth=year_of_birth,
-        ),
-        {
-            'first_name': first_name,
-            'last_name': 'doe',
-            'sex': 'M',
-            'age': this_year()-year_of_birth,
-        }
-    )
+    def test_function_w_default_keyword_arguments(self):
+        first_name = random.choice((
+            'jane', 'joe', 'john', 'person',
+        ))
+        year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
+
+        self.assertEqual(
+            src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            ),
+            dict(
+                first_name=first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year()-year_of_birth,
+            )
+        )
 
   the terminal shows :ref:`AssertionError`
 
