@@ -140,7 +140,7 @@ refactor: make it better
         [0, 1, 2, 3]
     )
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 

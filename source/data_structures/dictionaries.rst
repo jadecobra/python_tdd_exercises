@@ -1139,7 +1139,7 @@ I copy the value from the terminal and paste it as the expectation
 
   self.assertIsNone(a_dictionary.items(), dict_items([('key', 'value')]))
 
-the terminal shows NameError_
+the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -1278,7 +1278,7 @@ I copy the value from the terminal and paste it as the expectation
 
   self.assertIsNone(a_dictionary.keys(), dict_keys(['key']))
 
-the terminal shows NameError_
+the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -2114,7 +2114,7 @@ I add the expected value
 
   self.assertIsNone(a_dictionary.values, dict_values(['value']))
 
-the terminal shows NameError_
+the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 

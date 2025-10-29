@@ -111,7 +111,7 @@ green: make it pass
         None
     )
 
-  I get NameError_
+  I get :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -172,7 +172,7 @@ green: make it pass
 
     duration
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -851,7 +851,7 @@ I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * :ref:`TypeError`
-* NameError_
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 
 Would you like to :ref:`test duration with hours and minutes? <how to measure sleep duration: test_duration_w_hours_and_minutes>`

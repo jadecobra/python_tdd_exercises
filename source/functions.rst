@@ -87,7 +87,7 @@ red: make it fail
         def test_making_a_function_w_pass(self):
             self.assertIsNone(src.functions.function_w_pass())
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 

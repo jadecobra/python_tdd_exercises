@@ -614,7 +614,7 @@ green: make it pass
 
         sex
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 
 * I add a definition for the ``sex`` attribute

@@ -4,6 +4,8 @@
 
 .. include:: ../../links.rst
 
+.. _NameError: https://docs.python.org/3/library/exceptions.html#NameError
+
 #################################################################################
 how to test that an Exception is raised
 #################################################################################

@@ -104,7 +104,7 @@ green: make it pass
 
     variable_00
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block::
 
@@ -152,7 +152,7 @@ refactor: make it better
     variable_00 = None
     variable_01
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -762,7 +762,7 @@ I ran tests for the AttributeError_ with
 I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
-* NameError_
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`TypeError`
 * SyntaxError_
 

@@ -80,7 +80,7 @@ red: make it fail
                 None
             )
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -252,7 +252,7 @@ green: make it pass
             None
         )
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -809,7 +809,7 @@ refactor: make it better
             'age': this_year() - year_of_birth,
         }
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -834,7 +834,7 @@ refactor: make it better
             'age': datetime.datetime.now().year - year_of_birth,
         }
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1067,7 +1067,7 @@ red: make it fail
                 )
             )
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1173,7 +1173,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1288,7 +1288,7 @@ green: make it pass
 
         ...
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1322,7 +1322,7 @@ green: make it pass
             )
         )
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1689,7 +1689,7 @@ green: make it pass
 
     factory
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -2041,7 +2041,7 @@ I ran tests to make a :ref:`function<functions>` that takes in keyword arguments
 I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
-* NameError_
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 * SyntaxError_

@@ -49,7 +49,7 @@ green: make it pass
 
     get_datetime
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ green: make it pass
     def get_datetime(argument):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -192,7 +192,7 @@ green: make it pass
 
     duration
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -537,7 +537,7 @@ review
 The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<errors>` from the terminal
 
 * :ref:`AttributeError`
-* NameError_
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`TypeError`
 * :ref:`AssertionError`
 * SyntaxError_

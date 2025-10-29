@@ -104,7 +104,7 @@ test_addition
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is ``reality`` - ``src.calculator.add(0, 1)``, and the other is my ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
 
-  but the terminal shows NameError_
+  but the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -161,7 +161,7 @@ green: make it pass
 
     add
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -509,7 +509,7 @@ green: make it pass
 
     subtract
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1045,7 +1045,7 @@ green: make it pass
 
     subtract
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1281,7 +1281,7 @@ I wrote the following tests for a program that performs the arithmetic_ operatio
 I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
-* NameError_
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 * ZeroDivisionError_

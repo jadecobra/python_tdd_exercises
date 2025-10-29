@@ -52,7 +52,7 @@ green: make it pass
 
     raise_exception
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -168,7 +168,7 @@ green: make it pass
 
     an_exception_handler
 
-  I get NameError_
+  I get :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -270,7 +270,7 @@ green: make it pass
     def an_exception_handler(argument):
         return 'failed'
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 

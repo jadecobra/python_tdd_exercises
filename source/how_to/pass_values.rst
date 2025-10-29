@@ -77,7 +77,7 @@ red: make it fail
                 "I received: hello"
             )
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -132,7 +132,7 @@ green: make it pass
 
     text
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -866,7 +866,7 @@ green: make it pass
 
     text
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -982,7 +982,7 @@ Here are the tests I ran to see what happens when I pass Python_ :ref:`data stru
 I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
-* NameError_
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 

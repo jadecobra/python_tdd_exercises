@@ -254,7 +254,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
   def test_duration_w_date_and_time(self):
   ...
 
-the terminal shows NameError_
+the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -466,7 +466,7 @@ refactor: make it better
                 )
             )
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -880,7 +880,7 @@ I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * :ref:`TypeError`
-* NameError_
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * ValueError_
 

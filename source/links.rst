@@ -132,7 +132,6 @@
 
 ----
 
-.. _NameError: https://docs.python.org/3/library/exceptions.html#NameError
 .. _IndentationError: https://docs.python.org/3/library/exceptions.html#IndentationError
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html#
 .. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html#ZeroDivisionError

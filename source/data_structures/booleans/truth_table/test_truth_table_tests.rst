@@ -47,7 +47,7 @@ green: make it pass
 
     tautology
 
-  the terminal shows NameError_
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
