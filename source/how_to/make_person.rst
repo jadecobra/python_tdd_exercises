@@ -670,7 +670,7 @@ green: make it pass
 
   I cannot do subtraction with :ref:`None` and I want the value for the current year
 
-* I add an `import statement`_ in ``test_person.py``
+* I add an `import statement`_ at the top ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -759,6 +759,8 @@ refactor: make it better
 
 * I add an `import statement`_ at the top of ``test_person.py`` to use random values in the tests
 
+  .. TIP:: I like to arrange my `import statements`_ alphabetically
+
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2
@@ -819,10 +821,7 @@ refactor: make it better
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 12
-
-    import datetime
-
+    :emphasize-lines: 9
 
     def factory(
             first_name, last_name,
@@ -1374,11 +1373,16 @@ refactor: make it better
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
-    :emphasize-lines: 8-13
+    :emphasize-lines: 13-18
 
     import datetime
+    import random
     import src.person
     import unittest
+
+
+    def this_year():
+        return datetime.datetime.now().year
 
 
     class TestPerson(unittest.TestCase):
