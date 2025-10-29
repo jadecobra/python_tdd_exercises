@@ -891,16 +891,16 @@ refactor: make it better
 review
 *********************************************************************************
 
-I have a way to catch :ref:`Exceptions<errors>` in tests and tested these
+I have a way to catch :ref:`Exceptions<errors>` in tests and tested the following
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`
-* NameError_
+* :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError <test_key_error>`
-* ZeroDivisionError_
+* :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 Would you like to test :ref:`handling Exceptions in programs?<how to handle Exceptions in programs>`
 
