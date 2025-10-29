@@ -424,7 +424,7 @@ green: make it pass
             first_name, last_name,
             sex, year_of_birth,
         ):
-        return {'first_name': 'jane}
+        return {'first_name': 'jane'}
 
   and the test is green again
 

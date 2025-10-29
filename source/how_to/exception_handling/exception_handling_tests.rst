@@ -70,6 +70,7 @@ red: make it fail
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 6-7
 
     import unittest
 
@@ -91,6 +92,7 @@ green: make it pass
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
@@ -99,6 +101,7 @@ green: make it pass
 * I can make ``does_not_exist.py`` to solve the problem but I want to catch or handle it in the test. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code in its context raises the :ref:`Exception<errors>` it is given
 
   .. code-block:: python
+    :emphasize-lines: 2-3
 
     def test_catching_module_not_found_error_in_tests(self):
         with self.assertRaises(ModuleNotFoundError):
@@ -117,10 +120,18 @@ red: make it fail
 
 * I add a failing test
 
-  .. code-block:: python
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
-    def test_catching_name_error_in_tests(self):
-        does_not_exist
+  .. code-block:: python
+    :emphasize-lines: 6-7
+
+    class TestExceptions(unittest.TestCase):
+
+        def test_catching_module_not_found_error_in_tests(self):
+            ...
+
+        def test_catching_name_error_in_tests(self):
+            does_not_exist
 
   the terminal shows NameError_
 
@@ -131,6 +142,7 @@ red: make it fail
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
@@ -143,6 +155,7 @@ green: make it pass
 I add `unittest.TestCase.assertRaises`_
 
 .. code-block:: python
+  :emphasize-lines: 2-3
 
   def test_catching_name_error_in_tests(self):
       with self.assertRaises(NameError):
@@ -162,9 +175,18 @@ red: make it fail
 * I add another failing test
 
   .. code-block:: python
+    :emphasize-lines: 9-10
 
-    def test_catching_attribute_error_in_tests(self):
-        src.exceptions.does_not_exist
+    class TestExceptions(unittest.TestCase):
+
+        def test_catching_module_not_found_error_in_tests(self):
+            ...
+
+        def test_catching_name_error_in_tests(self):
+            ...
+
+        def test_catching_attribute_error_in_tests(self):
+            src.exceptions.does_not_exist
 
   the terminal shows NameError_
 
@@ -172,9 +194,11 @@ red: make it fail
 
     NameError: name 'src' is not defined
 
-* I add an `import statement`_ for the :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_ at the top of the file for the :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     import src.exceptions
     import unittest
@@ -185,11 +209,12 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'does_not_exist'
 
-  because I tried to get something that is not in something that exists
+  because I tried to get something that does NOT exist from something that exists
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     # Exceptions Encountered
     # AssertionError
