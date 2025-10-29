@@ -1471,7 +1471,6 @@ refactor: make it better
 * I remove the commented lines
 
   .. code-block:: python
-    :emphasize-lines: 2-5, 10-21
 
     def test_takes_keyword_arguments(self):
         last_name = random.choice((
@@ -1507,6 +1506,10 @@ refactor: make it better
     import unittest
 
 
+    def this_year():
+        return datetime.datetime.now().year
+
+
     class TestPerson(unittest.TestCase):
 
         def setUp(self):
@@ -1529,7 +1532,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` with the name, it is now local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot use it
+  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` with the name, it is now belongs to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot use it
 
 * I add ``self.`` to make it a :ref:`class<classes>` :ref:`attribute<AttributeError>`
 
