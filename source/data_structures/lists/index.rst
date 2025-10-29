@@ -189,7 +189,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   Diff is 748 characters long. Set self.maxDiff to None to see it
 
-`maxDiff`_ is an attribute of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal, when it is set to :ref:`None` it shows the entire difference
+`maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal, when it is set to :ref:`None` it shows the entire difference
 
 green: make it pass
 #################################################################################

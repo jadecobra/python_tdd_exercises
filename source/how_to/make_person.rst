@@ -690,13 +690,15 @@ green: make it pass
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` attribute of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class<classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. I can also use the today_ :ref:`method<functions>` to get the same value
+  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class<classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`.
 
-  .. code-block:: python
-    :emphasize-lines: 2
+  .. ADMONITION:: I can also use the today_ :ref:`method<functions>` to get the same value
 
-    def this_year():
-        return datetime.datetime.today().year
+    .. code-block:: python
+      :emphasize-lines: 2
+
+      def this_year():
+          return datetime.datetime.today().year
 
   the terminal shows :ref:`AssertionError`
 
@@ -766,9 +768,7 @@ refactor: make it better
     import src.person
     import unittest
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers
-
-* I use it for the ``year_of_birth`` variable
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers. I use it for the ``year_of_birth`` variable
 
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
@@ -813,7 +813,9 @@ refactor: make it better
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<functions>` that is NOT in ``person.py``. I change the call to the ``this_year()`` :ref:`function<functions>` to the `return statement`_ of the ``this_year()`` :ref:`function<functions>` of ``test_person.py``
+  because I called a :ref:`function<functions>` that is NOT in ``person.py``.
+
+* I change the call to the ``this_year()`` :ref:`function<functions>` in ``person.py`` to the `return statement`_ of the ``this_year()`` :ref:`function<functions>` from ``test_person.py``
 
   .. code-block:: python
     :emphasize-lines: 9
@@ -911,10 +913,9 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 51} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 51}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 54} != {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 54}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 110} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 110}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 116} != {'first_name': 'jane', 'last_name': 'public', 'sex': 'M', 'age': 116}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'public', 'sex': X, 'age': Y}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'smith', 'sex': X, 'age': Y}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'blow', 'sex': X, 'age': Y}
 
   I change the `return statement`_ in ``person.py`` to use the ``last_name`` input parameter
 
@@ -957,10 +958,9 @@ refactor: make it better
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'public', 'sex': 'F', 'age': 6} != {'first_name': 'john', 'last_name': 'public', 'sex': 'F', 'age': 6}
-    AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 19} != {'first_name': 'person', 'last_name': 'smith', 'sex': 'M', 'age': 19}
-    AssertionError: {'first_name': 'jane', 'last_name': 'blow', 'sex': 'M', 'age': 59} != {'first_name': 'person', 'last_name': 'blow', 'sex': 'M', 'age': 59}
-    AssertionError: {'first_name': 'jane', 'last_name': 'smith', 'sex': 'F', 'age': 117} != {'first_name': 'joe', 'last_name': 'smith', 'sex': 'F', 'age': 117}
+    AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'joe', 'last_name': X, 'sex': Y, 'age': Z}
+    AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'john', 'last_name': X, 'sex': Y, 'age': Z}
+    AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'person', 'last_name': X, 'sex': Y, 'age': Z}
 
   when I change the `return statement`_ in ``person.py`` to use the ``first_name`` input parameter
 
@@ -1081,7 +1081,7 @@ green: make it pass
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                age=this_year() - year_of_birth
+                age=this_year() - year_of_birth,
             )
         )
 
@@ -1207,7 +1207,7 @@ green: make it pass
 
   the test passes
 
-  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` definition, it is same as calling it with ``last_name='doe'``
+  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` definition, it is the same as calling it with ``last_name='doe'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -1303,7 +1303,7 @@ green: make it pass
 
   the test passes
 
-  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` definition, it is same as calling it with ``sex='M'``
+  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` definition, it is the same as calling it with ``sex='M'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -1392,7 +1392,7 @@ refactor: make it better
                 first_name=self.first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=self.year_of_birth
+                year_of_birth=self.year_of_birth,
             ),
             dict(
                 first_name=self.first_name,
@@ -1409,7 +1409,7 @@ refactor: make it better
         self.assertEqual(
             src.person.factory(
                 first_name=self.first_name,
-                year_of_birth=self.year_of_birth
+                year_of_birth=self.year_of_birth,
             ),
             dict(
                 first_name=self.first_name,
@@ -1448,7 +1448,7 @@ refactor: make it better
             )
         )
 
-* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they are assigned to new random values before each test
+* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they have new random values before each test
 
   .. code-block:: python
     :linenos:
@@ -1481,9 +1481,9 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a class attribute with the name, it is local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
+  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` with the name, it is local to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
 
-* I add ``self.`` to make it a class attribute
+* I add ``self.`` to make it a :ref:`class<classes>` :ref:`attribute<AttributeError>`
 
   .. code-block:: python
     :emphasize-lines: 2
