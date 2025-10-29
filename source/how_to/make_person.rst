@@ -995,11 +995,11 @@ red: make it fail
 #################################################################################
 
 * I select ``test_takes_keyword_arguments`` in ``test_person.py``, then copy ``(ctrl+c)`` and paste ``(ctrl+v)`` it below the test
-* I change the name of the new test to ``test_function_w_default_keyword_arguments`` and remove the ``last_name`` variable
+* I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` variable
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 48-55
+    :emphasize-lines: 40,44-46
 
     import datetime
     import random
@@ -1012,14 +1012,6 @@ red: make it fail
 
 
     class TestPerson(unittest.TestCase):
-
-        def setUp(self):
-            self.first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            self.year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
 
         def test_takes_keyword_arguments(self):
             first_name = random.choice((
@@ -1052,6 +1044,9 @@ red: make it fail
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
+            # last_name = random.choice((
+            #    'doe', 'smith', 'blow', 'public',
+            # ))
             sex = random.choice(('F', 'M'))
             year_of_birth = random.randint(
                 this_year()-120, this_year()
@@ -1081,15 +1076,18 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I remove ``last_name`` from the call to the ``factory`` :ref:`function<functions>` in the new test
+* I comment out ``last_name`` in the call to the ``factory`` :ref:`function<functions>` in ``test_function_w_default_keyword_arguments``
 
   .. code-block:: python
-    :emphasize-lines: 12-14
+    :emphasize-lines: 16
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
             'jane', 'joe', 'john', 'person',
         ))
+        # last_name = random.choice((
+        #    'doe', 'smith', 'blow', 'public',
+        # ))
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
             this_year()-120, this_year()
@@ -1098,6 +1096,7 @@ green: make it pass
         self.assertEqual(
             src.person.factory(
                 first_name=first_name,
+                # last_name=last_name,
                 year_of_birth=year_of_birth,
                 sex=sex,
             ),
@@ -1115,7 +1114,7 @@ green: make it pass
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  the ``factory`` :ref:`function<functions>` is called with 3 arguments in the ``test_function_w_default_keyword_arguments`` but the definition expects 4 in ``person.py``
+  the ``factory`` :ref:`function<functions>` is called with 3 arguments in ``test_function_w_default_keyword_arguments`` but the definition expects 4 in ``person.py``
 
 * I add a default value for ``last_name`` in ``person.py``
 
@@ -1180,17 +1179,20 @@ green: make it pass
 
     NameError: name 'last_name' is not defined
 
-  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` in ``test_person.py`` points to a variable that I removed earlier
+  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` in ``test_person.py`` points to ``last_name`` variable that I commented out earlier
 
 * I change the expectation for it in ``test_person.py``
 
   .. code-block:: python
-    :emphasize-lines: 18
+    :emphasize-lines: 22
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
             'jane', 'joe', 'john', 'person',
         ))
+        # last_name = random.choice((
+        #    'doe', 'smith', 'blow', 'public',
+        # ))
         sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
             this_year()-120, this_year()
@@ -1199,6 +1201,7 @@ green: make it pass
         self.assertEqual(
             src.person.factory(
                 first_name=first_name,
+                # last_name=last_name,
                 sex=sex,
                 year_of_birth=year_of_birth,
             ),
@@ -1242,16 +1245,43 @@ green: make it pass
           year_of_birth=year_of_birth,
           last_name='doe',
       )
-
-* I remove the ``sex`` variable from the test in ``test_person.py`` to see what would happen if I do not know its value
+* I remove the commented lines
 
   .. code-block:: python
-    :emphasize-lines: 2-7
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
             'jane', 'joe', 'john', 'person',
         ))
+        sex = random.choice(('F', 'M'))
+        year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
+
+        self.assertEqual(
+            src.person.factory(
+                first_name=first_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            ),
+            dict(
+                first_name=first_name,
+                last_name='doe',
+                sex=sex,
+                age=this_year()-year_of_birth,
+            )
+        )
+
+* I comment out the ``sex`` variable from the test in ``test_person.py`` to see what would happen if I do not know its value
+
+  .. code-block:: python
+    :emphasize-lines: 5
+
+    def test_function_w_default_keyword_arguments(self):
+        first_name = random.choice((
+            'jane', 'joe', 'john', 'person',
+        ))
+        # sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
             this_year()-120, this_year()
         )
@@ -1264,15 +1294,16 @@ green: make it pass
 
     NameError: name 'sex' is not defined
 
-* I remove it from the call to the ``factory`` :ref:`function<functions>` in the :ref:`assertion<AssertionError>` in ``test_person.py``
+* I comment it out in the call to the ``factory`` :ref:`function<functions>` in the :ref:`assertion<AssertionError>` in ``test_person.py``
 
   .. code-block:: python
-    :emphasize-lines: 11-12
+    :emphasize-lines: 13
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
             'jane', 'joe', 'john', 'person',
         ))
+        # sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
             this_year()-120, this_year()
         )
@@ -1280,6 +1311,7 @@ green: make it pass
         self.assertEqual(
             src.person.factory(
                 first_name=first_name,
+                # sex=sex,
                 year_of_birth=year_of_birth,
             ),
             dict(
@@ -1296,15 +1328,16 @@ green: make it pass
 
     NameError: name 'sex' is not defined
 
-  the value in the expected :ref:`dictionary<dictionaries>` still uses the variable I removed. I change the expectation
+  the value in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` variable I commented out. I change the expectation
 
   .. code-block:: python
-    :emphasize-lines: 17
+    :emphasize-lines: 19
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
             'jane', 'joe', 'john', 'person',
         ))
+        # sex = random.choice(('F', 'M'))
         year_of_birth = random.randint(
             this_year()-120, this_year()
         )
@@ -1312,6 +1345,7 @@ green: make it pass
         self.assertEqual(
             src.person.factory(
                 first_name=first_name,
+                # sex=sex,
                 year_of_birth=year_of_birth,
             ),
             dict(
@@ -1330,7 +1364,7 @@ green: make it pass
 
   the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with :ref:`None` as the value for ``sex`` and the test expects ``'M'``
 
-* when I add a default value in ``person.py`` to match the expectation
+* when I add a default value for ``sex`` in ``person.py`` to match the expectation
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -1364,6 +1398,33 @@ green: make it pass
           first_name=first_name,
           year_of_birth=year_of_birth,
       )
+
+* I remove the commented lines
+
+  .. code-block:: python
+
+    def test_function_w_default_keyword_arguments(self):
+        first_name = random.choice((
+            'jane', 'joe', 'john', 'person',
+        ))
+        year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
+
+        self.assertEqual(
+            src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            ),
+            dict(
+                first_name=first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year()-year_of_birth,
+            )
+        )
+
+  the terminal still shows green
 
 refactor: make it better
 #################################################################################
@@ -1399,7 +1460,7 @@ refactor: make it better
   then I use them in the tests with ``self.`` the same way I use the ``assert`` :ref:`methods<functions>` since they now belong to the ``TestPerson`` :ref:`class<classes>`
 
   .. code-block:: python
-    :emphasize-lines: 2-5,10-13,18-25,
+    :emphasize-lines: 2-5,10-13,18-25
 
     def test_takes_keyword_arguments(self):
         # first_name = random.choice((
@@ -1429,12 +1490,35 @@ refactor: make it better
 
         ...
 
-  the terminal still shows green. I remove the commented lines
+  the terminal still shows green
+
+* I remove the commented lines
+
+  .. code-block:: python
+
+    def test_takes_keyword_arguments(self):
+        first_name = self.first_name
+        last_name = random.choice((
+            'doe', 'smith', 'blow', 'public',
+        ))
+        sex = random.choice(('F', 'M'))
+        year_of_birth = self.year_of_birth
+
+        ...
+
+    def test_function_w_default_keyword_arguments(self):
+        first_name = self.first_name
+        year_of_birth = self.year_of_birth
+
+        ...
+
+  still green
 
 * since the variables point to :ref:`class<classes>` :ref:`attributes<AttributeError>`, I can use them directly and comment out ``first_name`` and ``year_of_birth``
 
   .. code-block:: python
-    :emphasize-lines: 11,14,17,20,30-31,34,37
+    :linenos:
+    :emphasize-lines: 2,7,11,14,17,20,25-26,30-31,34,37
 
     def test_takes_keyword_arguments(self):
         # first_name = self.first_name
@@ -1667,9 +1751,12 @@ green: make it pass
   when I add the keyword argument
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 2-3
 
-    def factory(first_name, last_name, sex):
+    def factory(
+        first_name, last_name,
+        sex
+    ):
         return None
 
   the terminal shows :ref:`TypeError`
