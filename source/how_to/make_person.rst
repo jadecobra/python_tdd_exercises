@@ -1395,7 +1395,7 @@ refactor: make it better
   then I use them in the tests with ``self.`` the same way I use the ``assert`` :ref:`methods<functions>` since they now belong to the ``TestPerson`` :ref:`class<classes>`
 
   .. code-block:: python
-    :emphasize-lines: 2-5,10-13
+    :emphasize-lines: 2-5,10-13,18-25,
 
     def test_takes_keyword_arguments(self):
         # first_name = random.choice((
@@ -1414,7 +1414,13 @@ refactor: make it better
         ...
 
     def test_function_w_default_keyword_arguments(self):
+        # first_name = random.choice((
+        #    'jane', 'joe', 'john', 'person',
+        # ))
         first_name = self.first_name
+        # year_of_birth = random.randint(
+        #    this_year()-120, this_year()
+        # )
         year_of_birth = self.year_of_birth
 
         ...
@@ -1498,7 +1504,7 @@ refactor: make it better
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9-15
+    :emphasize-lines: 13-19
 
     import datetime
     import random
