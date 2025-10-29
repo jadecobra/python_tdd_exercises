@@ -1419,7 +1419,7 @@ refactor: make it better
 
         ...
 
-  the terminal still shows green
+  the terminal still shows green. I remove the commented lines
 
 * since the variables point to :ref:`class<classes>` :ref:`attributes<AttributeError>`, I can use them directly
 
@@ -1499,9 +1499,10 @@ refactor: make it better
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 8-14
+    :emphasize-lines: 9-15
 
     import datetime
+    import random
     import src.person
     import unittest
 
