@@ -38,12 +38,15 @@ class Person(object):
 
     def __init__(
         self, first_name, last_name='doe',
-        sex='M', year_of_birth=None
+        sex='M', year_of_birth=this_year(),
     ):
         self.first_name = first_name
         self.last_name = last_name
         self.year_of_birth = year_of_birth
         return None
+
+    def get_age(self):
+        return this_year() - self.year_of_birth
 
     def introduce(self):
         return (
@@ -51,6 +54,3 @@ class Person(object):
             f'{self.last_name} '
             f'and I am {self.get_age()}'
         )
-
-    def get_age(self):
-        return this_year() - self.year_of_birth
