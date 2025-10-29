@@ -134,7 +134,6 @@
 
 .. _IndentationError: https://docs.python.org/3/library/exceptions.html#IndentationError
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html#
-.. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html#ZeroDivisionError
 
 .. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase

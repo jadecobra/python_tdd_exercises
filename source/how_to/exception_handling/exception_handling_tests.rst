@@ -5,6 +5,7 @@
 .. include:: ../../links.rst
 
 .. _NameError: https://docs.python.org/3/library/exceptions.html#NameError
+.. _ZeroDivisionError: https://docs.python.org/3/library/exceptions.html#ZeroDivisionError
 
 #################################################################################
 how to test that an Exception is raised
@@ -867,7 +868,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I have a way to catch/handle :ref:`Exceptions<errors>` in tests and tested these
+I have a way to catch :ref:`Exceptions<errors>` in tests and tested these
 
 * :ref:`AssertionError`
 * :ref:`ModuleNotFoundError`

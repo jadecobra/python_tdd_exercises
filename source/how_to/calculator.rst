@@ -811,7 +811,7 @@ green: make it pass
     def a_random_number():
         return random.randint(-1, 1)
 
-  I hit save ``(ctrl+s)`` a few times to run the tests, and when ``y`` is randomly ``0`` the terminal shows ZeroDivisionError_
+  I hit save ``(ctrl+s)`` a few times to run the tests, and when ``y`` is randomly ``0`` the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -823,7 +823,7 @@ green: make it pass
     >    return x / y
     E    ZeroDivisionError: division by zero
 
-  dividing by ``0`` is undefined in mathematics and raises ZeroDivisionError_ in Python
+  dividing by ``0`` is undefined in mathematics and raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in Python
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
@@ -837,13 +837,13 @@ green: make it pass
     # TypeError
     # ZeroDivisionError
 
-how to test that an Exception is raised
+how to test that ZeroDivisionError is raised
 ---------------------------------------------------------------------------------
 
 red: make it fail
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-I add a line to cause the ZeroDivisionError_ intentionally and comment out the code that randomly fails in ``test_calculator.py``
+I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` intentionally and comment out the code that randomly fails in ``test_calculator.py``
 
 .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
@@ -873,12 +873,12 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   >    return x / y
   E    ZeroDivisionError: division by zero
 
-:ref:`Exceptions<errors>` like ZeroDivisionError_ break execution of a program. No code will run past the line that causes an :ref:`Exception<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
+:ref:`Exceptions<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` break execution of a program. No code will run past the line that causes an :ref:`Exception<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
 green: make it pass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that ZeroDivisionError_ is raised when I try to divide a number by ``0``
+* I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when I try to divide a number by ``0``
 
   .. code-block:: python
     :emphasize-lines: 2-3
@@ -892,7 +892,7 @@ green: make it pass
         #   self.x/self.y
         # )
 
-  because I used the wrong :ref:`Exception<errors>` the terminal still shows ZeroDivisionError_
+  because I used the wrong :ref:`Exception<errors>` the terminal still shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -907,7 +907,7 @@ green: make it pass
         with self.assertRaises(ZeroDivisionError):
             src.calculator.divide(self.x, 0)
 
-  the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises ZeroDivisionError_
+  the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -956,7 +956,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  I hit save ``(ctrl+s)`` in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal shows ZeroDivisionError_
+  I hit save ``(ctrl+s)`` in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -1284,7 +1284,7 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
-* ZeroDivisionError_
+* :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 Would you like to test :ref:`passing values?<how to pass values>`
 
