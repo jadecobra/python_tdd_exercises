@@ -1421,18 +1421,18 @@ refactor: make it better
 
   the terminal still shows green. I remove the commented lines
 
-* since the variables point to :ref:`class<classes>` :ref:`attributes<AttributeError>`, I can use them directly
+* since the variables point to :ref:`class<classes>` :ref:`attributes<AttributeError>`, I can use them directly and comment out ``first_name`` and ``year_of_birth``
 
   .. code-block:: python
     :emphasize-lines: 11,14,17,20,30-31,34,37
 
     def test_takes_keyword_arguments(self):
-        first_name = self.first_name
+        # first_name = self.first_name
         last_name = random.choice((
             'doe', 'smith', 'blow', 'public',
         ))
         sex = random.choice(('F', 'M'))
-        year_of_birth = self.year_of_birth
+        # year_of_birth = self.year_of_birth
 
         self.assertEqual(
             src.person.factory(
@@ -1450,8 +1450,8 @@ refactor: make it better
         )
 
     def test_function_w_default_keyword_arguments(self):
-        first_name = self.first_name
-        year_of_birth = self.year_of_birth
+        # first_name = self.first_name
+        # year_of_birth = self.year_of_birth
 
         self.assertEqual(
             src.person.factory(
@@ -1468,7 +1468,7 @@ refactor: make it better
 
   all tests are still passing
 
-* I remove the variables because they are no longer used
+* I remove the commented lines
 
   .. code-block:: python
     :emphasize-lines: 2-5, 10-21
