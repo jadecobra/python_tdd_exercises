@@ -228,6 +228,7 @@ green: make it pass
 then I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
 
 .. code-block:: python
+  :emphasize-lines: 2-3
 
   def test_catching_attribute_error_in_tests(self):
       with self.assertRaises(AttributeError):
@@ -247,9 +248,21 @@ red: make it fail
 * I add a failing test
 
   .. code-block:: python
+    :emphasize-lines: 12-13
 
-    def test_catching_type_error_in_tests(self):
-        src.exceptions.function_name('argument')
+    class TestExceptions(unittest.TestCase):
+
+        def test_catching_module_not_found_error_in_tests(self):
+            ...
+
+        def test_catching_name_error_in_tests(self):
+            ...
+
+        def test_catching_attribute_error_in_tests(self):
+            ...
+
+        def test_catching_type_error_in_tests(self):
+            src.exceptions.function_name('argument')
 
   the terminal shows :ref:`AttributeError`
 
@@ -257,7 +270,7 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'function_name'
 
-* I add the name to ``exceptions.py``
+* I click on ``exceptions.py`` in the ``src`` folder to open it in the editor, then add the name
 
   .. code-block:: python
 
@@ -284,6 +297,7 @@ red: make it fail
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 6
 
     # Exceptions Encountered
     # AssertionError
@@ -298,6 +312,7 @@ green: make it pass
 then I add `unittest.TestCase.assertRaises`_ to the test
 
 .. code-block:: python
+  :emphasize-lines: 2-3
 
   def test_catching_type_error_in_tests(self):
       with self.assertRaises(TypeError):
@@ -308,37 +323,30 @@ the terminal shows passing tests
 refactor: make it better
 #################################################################################
 
-If I make ``function_name`` a :ref:`function<functions>`
+* If I make ``function_name`` a :ref:`function<functions>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  def function_name():
-      return None
+    def function_name():
+        return None
 
-the terminal shows :ref:`TypeError`
+  the terminal still shows green, because the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not accept input so :ref:`TypeError` is raised
 
-.. code-block:: python
+* If I add a parameter to the definition
 
-  TypeError:
+  .. code-block:: python
+    :emphasize-lines: 1
 
-because the call sends an argument and the :ref:`function<functions>` does not accept input. When I add a parameter to the definition
-.. code-block:: python
+    def function_name(argument):
+        return None
 
-  def function_name(argument):
-      return None
+  the terminal shows :ref:`AssertionError`
 
-the terminal shows :ref:`AssertionError`
+  .. code-block:: python
 
-.. code-block:: python
+    AssertionError: TypeError not raised
 
-  AssertionError: TypeError not raised
-
-because the :ref:`function<functions>` call matches the definition. I undo the change, the terminal shows :ref:`TypeError` and I make the test pass
-
-.. code-block:: python
-
-  def function_name():
-      return None
+  because the :ref:`function<functions>` call matches the definition, :ref:`TypeError` is not raised. I undo the change and the terminal shows green again
 
 ----
 
@@ -352,21 +360,38 @@ red: make it fail
 * I make a :ref:`list<lists>` in a new test
 
   .. code-block:: python
+    :emphasize-lines: 15-16
 
-    def test_catching_index_error_in_tests(self):
-        a_list = [1, 2, 3, 'n']
+      class TestExceptions(unittest.TestCase):
 
-  the first item in it has ``0`` as its index
+        def test_catching_module_not_found_error_in_tests(self):
+            ...
+
+        def test_catching_name_error_in_tests(self):
+            ...
+
+        def test_catching_attribute_error_in_tests(self):
+            ...
+
+        def test_catching_type_error_in_tests(self):
+            ...
+
+        def test_catching_index_error_in_tests(self):
+            a_list = [1, 2, 3, 'n']
+
+  the first item in a :ref:`list<lists>` has ``0`` as its :ref:`index<test_index_returns_first_position_of_item_in_a_list>`
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
         a_list[0]
 
-  the terminal shows green. The index for the last item is the total number of items minus ``1``, which is ``3`` in this case
+  the terminal shows green. The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the last item is the total number of items minus ``1``, which is ``3`` in this case
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -375,6 +400,7 @@ red: make it fail
   still green. When I use a number that is bigger than the index for the last item
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -389,6 +415,7 @@ red: make it fail
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 7
 
     # Exceptions Encountered
     # AssertionError
@@ -404,6 +431,7 @@ green: make it pass
 * then I add assertRaises_
 
   .. code-block:: python
+    :emphasize-lines: 3-4
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -412,9 +440,10 @@ green: make it pass
 
   the test passes
 
-* I can also index with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``, think reading from right to left
+* I can also :ref:`index<test_index_returns_first_position_of_item_in_a_list>` with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``, think reading from right to left
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -422,9 +451,10 @@ green: make it pass
             a_list[4]
         a_list[-1]
 
-  the terminal still shows passing tests. The index for the first item is negative the total number of items, ``-4`` in this case
+  the terminal still shows passing tests. The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the first item is negative the total number of items, ``-4`` in this case
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -435,6 +465,7 @@ green: make it pass
   still green. When I use a negative number that is outside the range
 
   .. code-block:: python
+    :emphasize-lines: 5
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -448,9 +479,10 @@ green: make it pass
 
     IndexError: list index out of range
 
-  I add the assertRaises_
+  I add assertRaises_
 
   .. code-block:: python
+    :emphasize-lines: 5-6
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -461,9 +493,10 @@ green: make it pass
 
   the terminal shows green again
 
-* It looks like there is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
+* It looks like this is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
 
   .. code-block:: python
+    :emphasize-lines: 
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']

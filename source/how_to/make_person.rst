@@ -991,62 +991,83 @@ I want to see what would happen when I try to make a person without a value for 
 red: make it fail
 #################################################################################
 
-* I make a copy of ``test_takes_keyword_arguments`` in ``test_person.py`` and paste it below the test
-* then change the name to ``test_function_w_default_keyword_arguments`` and remove the ``last_name`` variable
+* I select ``test_takes_keyword_arguments`` in ``test_person.py``, then copy ``(ctrl+c)`` and paste ``(ctrl+v)`` it below the test
+* I change the name to ``test_function_w_default_keyword_arguments`` and remove the ``last_name`` variable
 
   .. code-block:: python
-    :emphasize-lines: 28-50
+    :linenos:
+    :emphasize-lines: 49-55
 
-    def test_takes_keyword_arguments(self):
-        first_name = random.choice((
-            'jane', 'joe', 'john', 'person',
-        ))
-        last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
-        ))
-        sex = random.choice(('F', 'M'))
-        year_of_birth = random.randint(
-            this_year()-120, this_year()
-        )
+    import datetime
+    import random
+    import src.person
+    import unittest
 
-        self.assertEqual(
-            src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            ),
-            dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                age=this_year()-year_of_birth,
+
+    def this_year():
+        return datetime.datetime.now().year
+
+
+    class TestPerson(unittest.TestCase):
+
+        def setUp(self):
+            self.first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            self.year_of_birth = random.randint(
+                this_year()-120, this_year()
             )
-        )
 
-    def test_function_w_default_keyword_arguments(self):
-        first_name = random.choice((
-            'jane', 'joe', 'john', 'person',
-        ))
-        sex = random.choice(('F', 'M'))
-        year_of_birth = random.randint(
-            this_year()-120, this_year()
-        )
-
-        self.assertEqual(
-            src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            ),
-            dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                age=this_year()-year_of_birth,
+        def test_takes_keyword_arguments(self):
+            first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            sex = random.choice(('F', 'M'))
+            year_of_birth = random.randint(
+                this_year()-120, this_year()
             )
-        )
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                dict(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    age=this_year()-year_of_birth,
+                )
+            )
+
+        def test_function_w_default_keyword_arguments(self):
+            first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            sex = random.choice(('F', 'M'))
+            year_of_birth = random.randint(
+                this_year()-120, this_year()
+            )
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                dict(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    age=this_year()-year_of_birth,
+                )
+            )
 
   the terminal shows NameError_
 
