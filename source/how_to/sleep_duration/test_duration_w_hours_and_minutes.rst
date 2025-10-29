@@ -321,7 +321,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
     self.assertEqual(150//60, 2)
 
-  the terminal shows passing tests
+  the test passes
 
 
 test_the_modulo_operation

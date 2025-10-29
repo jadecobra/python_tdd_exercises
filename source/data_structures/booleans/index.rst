@@ -49,7 +49,7 @@ requirements
 
     self.assertFalse(False)
 
-* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
 
@@ -309,7 +309,7 @@ I change the :ref:`method<functions>`
 
   self.assertFalse(None)
 
-the terminal shows passing tests
+the test passes
 
 refactor: make it better
 #################################################################################

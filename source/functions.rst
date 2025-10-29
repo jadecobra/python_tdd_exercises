@@ -250,7 +250,7 @@ and I add a definition for it
   def constant_w_inputs(*arguments):
       return constant()
 
-the terminal shows passing tests
+the test passes
 
 ----
 
@@ -938,7 +938,7 @@ green: make it pass
               ('first_name', 'last_name')
           )
 
-  the terminal shows passing tests
+  the test passes
 
 
 refactor: make it better
@@ -1100,7 +1100,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
           (('first_name', 'last_name'), {})
       )
 
-  the terminal shows passing tests
+  the test passes
 
 * I uncomment the next test to see it fail
 

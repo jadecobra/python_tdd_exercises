@@ -47,7 +47,7 @@ requirements
 
     self.assertFalse(False)
 
-* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ refactor: make it better
         x+y
     )
 
-  the terminal shows passing tests
+  the test passes
 
   - ``x = random.randint(-1, 1)`` points a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` the terminal shows a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers

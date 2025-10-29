@@ -120,7 +120,7 @@ green: make it pass
 
         pass
 
-  the terminal shows passing tests
+  the test passes
 
 
 refactor: make it better
@@ -165,7 +165,7 @@ green: make it pass
 
         pass
 
-  the terminal shows passing tests
+  the test passes
 
 * When I make the definition include parentheses
 
@@ -626,7 +626,7 @@ green: make it pass
 
         sex = 'M'
 
-  the terminal shows passing tests
+  the test passes
 
 *********************************************************************************
 refactor: make it better
@@ -686,7 +686,7 @@ refactor: make it better
     def __init__(self, sex=None):
         pass
 
-  the terminal shows passing tests
+  the test passes
 
 * I add another :ref:`assertion<AssertionError>`
 
@@ -711,7 +711,7 @@ refactor: make it better
         def __init__(self, sex=None):
             pass
 
-  the terminal shows passing tests
+  the test passes
 
 * Wait a minute, I just repeated the same thing twice.
 
@@ -817,7 +817,7 @@ refactor: make it better
 
         pass
 
-  the terminal shows passing tests
+  the test passes
 
 * One More Thing! I remove the ``sex`` attribute from the ``Human`` class
 

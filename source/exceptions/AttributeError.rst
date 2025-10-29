@@ -51,7 +51,7 @@ requirements
 
     self.assertFalse(False)
 
-* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
 
@@ -576,7 +576,7 @@ refactor: make it better
         attribute_02 = None
         attribute_03 = None
 
-  the terminal shows passing tests
+  the test passes
 
 ----
 

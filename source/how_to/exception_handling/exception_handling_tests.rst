@@ -20,7 +20,7 @@ It is useful because there is a problem to be solved to continue as expected, an
 
 What if I want it to run even with errors? I might want to give messages to the user who does not care about or understand the details of the error.
 
-:ref:`Exception<errors>` Handling is a way to deal with this, it allows programs to make decisions when one happens.
+:ref:`Exception<errors>` Handling is a way to deal with this, it allows programs to make decisions when an :ref:`error<errors>` happens.
 
 *********************************************************************************
 requirements
@@ -53,7 +53,7 @@ requirements
 
     self.assertFalse(False)
 
-* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
 
@@ -161,7 +161,7 @@ I add `unittest.TestCase.assertRaises`_
       with self.assertRaises(NameError):
           does_not_exist
 
-the terminal shows passing tests
+the test passes
 
 ----
 
@@ -225,7 +225,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
+then I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
 
 .. code-block:: python
   :emphasize-lines: 2-3
@@ -234,7 +234,7 @@ then I add a call to the `unittest.TestCase.assertRaises`_ :ref:`method<function
       with self.assertRaises(AttributeError):
           src.exceptions.does_not_exist
 
-the terminal shows passing tests
+the test passes
 
 ----
 
@@ -282,7 +282,7 @@ red: make it fail
 
     NameError: name 'function_name' is not defined
 
-  then I assign it to :ref:`None` to define it
+  I assign it to :ref:`None` to define it
 
   .. code-block:: python
 
@@ -318,7 +318,7 @@ then I add `unittest.TestCase.assertRaises`_ to the test
       with self.assertRaises(TypeError):
           src.exceptions.function_name('argument')
 
-the terminal shows passing tests
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -496,7 +496,7 @@ green: make it pass
 * It looks like this is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
 
   .. code-block:: python
-    :emphasize-lines: 
+    :emphasize-lines:
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']
@@ -614,7 +614,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then add the assertRaises_ :ref:`method<functions>` to the test
+then I add the assertRaises_ :ref:`method<functions>` to the test
 
 .. code-block:: python
 
@@ -622,7 +622,7 @@ then add the assertRaises_ :ref:`method<functions>` to the test
       with self.assertRaises(ZeroDivisionError):
           1 / 0
 
-the terminal shows passing tests
+the test passes
 
 ----
 

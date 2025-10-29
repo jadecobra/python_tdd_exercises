@@ -348,7 +348,7 @@ green: make it pass
     def logical_negation(argument):
         return False
 
-  the terminal shows passing tests
+  the test passes
 
 refactor: make it better
 ---------------------------------------------------------------------------------

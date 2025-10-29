@@ -58,7 +58,7 @@ requirements
 
     self.assertFalse(False)
 
-* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
 
@@ -238,7 +238,7 @@ green: make it pass
             ]
         )
 
-  the terminal shows passing tests and I move it back to the bottom. I ignore the names with double underscores (__), then copy and paste the other names to make a TODO list
+  the test passes and I move it back to the bottom. I ignore the names with double underscores (__), then copy and paste the other names to make a TODO list
 
   .. code-block:: python
 

@@ -47,7 +47,7 @@ requirements
 
     self.assertFalse(False)
 
-* and I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
 
@@ -450,7 +450,7 @@ refactor: make it better
         self.assertIsInstance(0, int)
         self.assertIsInstance(1, int)
 
-  the terminal shows passing tests
+  the test passes
 
 * one more instance test
 
@@ -1394,7 +1394,7 @@ refactor: make it better
         self.assertIsNotNone(dict())
         self.assertIsNotNone({'key': 'value'})
 
-  the terminal shows passing tests
+  the test passes
 
 * I add an instance test
 
