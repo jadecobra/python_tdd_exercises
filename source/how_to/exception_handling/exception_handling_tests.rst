@@ -695,9 +695,7 @@ I add the assertRaises_ :ref:`method<functions>`
       with self.assertRaises(Exception):
           raise Exception
 
-the terminal shows all tests are passing.
-
-To review, the assertRaises_ :ref:`method<functions>` checks that the code in its context raises the :ref:`Exception<errors>` it is given.
+the terminal shows all tests are passing. The assertRaises_ :ref:`method<functions>` checks that the code in its context raises the :ref:`Exception<errors>` it is given.
 
 refactor: make it better
 #################################################################################
@@ -718,7 +716,7 @@ refactor: make it better
   all the tests are still green. The problem with using :ref:`Exception<errors>` to catch its children, is it does not tell anyone that reads the code what the actual :ref:`error<errors>` is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``
 
   .. code-block:: python
-    :emphasize-lines: 2, 5
+    :emphasize-lines: 2, 6
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(KeyError):
@@ -743,7 +741,7 @@ refactor: make it better
 
     KeyError: 'not_in_dictionary'
 
-  because it is not :ref:`ModuleNotFoundError` even though they are both :ref:`Exceptions<errors>`, when I change it back
+  because it is not :ref:`ModuleNotFoundError` even though they are both :ref:`Exceptions<errors>`. I undo the change
 
   .. code-block:: python
     :emphasize-lines: 2
