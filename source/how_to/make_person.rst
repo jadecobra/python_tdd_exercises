@@ -1641,9 +1641,6 @@ refactor: make it better
         def test_takes_keyword_arguments(self):
             ...
 
-        def test_function_w_default_keyword_arguments(self):
-            ...
-
   the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
@@ -2046,13 +2043,22 @@ green: make it pass
 * when I make the default value of the ``sex`` argument match the expectation
 
   .. code-block:: python
-    :emphasize-lines: 3
+    :linenos:
+    :emphasize-lines: 6
+
+    import datetime
+
 
     def factory(
             first_name, last_name='doe',
-            sex='M', year_of_birth=None,
+            sex='M', year_of_birth=None
         ):
-        ...
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.today().year - year_of_birth,
+        }
 
   both tests pass! I think I am pretty good at this
 
