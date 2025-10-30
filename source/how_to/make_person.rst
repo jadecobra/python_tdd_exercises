@@ -1347,7 +1347,10 @@ green: make it pass
   the value in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` variable I commented out. I change the expectation
 
   .. code-block:: python
-    :emphasize-lines: 19
+    :emphasize-lines: 22
+
+    def test_takes_keyword_arguments(self):
+        ...
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
@@ -1418,6 +1421,9 @@ green: make it pass
 * I remove the commented lines
 
   .. code-block:: python
+
+    def test_takes_keyword_arguments(self):
+        ...
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
@@ -1535,7 +1541,7 @@ refactor: make it better
 * since the variables point to :ref:`class<classes>` :ref:`attributes<AttributeError>`, I can use them directly and comment out ``first_name`` and ``year_of_birth``
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 21
     :emphasize-lines: 2,7,11,14,17,20,25-26,30-31,34,37
 
     def test_takes_keyword_arguments(self):

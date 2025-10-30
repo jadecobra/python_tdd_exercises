@@ -365,7 +365,7 @@ green: make it pass
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_failure - AssertionError: <function raise_exception at 0xabcd12e34567> != 'failed'
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
-  - ``test_catching_failure`` fails - in this test ``an_exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory
+  - ``test_catching_failure`` fails - in this test ``an_exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory (``0xabcd12e34567``)
   - ``test_catching_success`` fails - in this test ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
 * I rename the input parameter to be more descriptive
@@ -399,7 +399,7 @@ green: make it pass
       >       return a_function()
       E       TypeError: 'NoneType' object is not callable
 
-    because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_. I make it a :ref:`function<functions>` to fix this
+    because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_. I make it a :ref:`function<functions>` to make it callable_
 
     .. code-block:: python
       :emphasize-lines: 1-2
@@ -426,9 +426,19 @@ green: make it pass
 how to use try...except...else
 ---------------------------------------------------------------------------------
 
-* when I add a `try statement`_
+* I add a `try statement`_ to ``exceptions.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 10-13
+
+    def raise_exception():
+        raise Exception('BOOM')
+
+
+    def does_not_raise_exception():
+        return None
+
 
     def an_exception_handler(a_function):
         try:
@@ -442,9 +452,12 @@ how to use try...except...else
 
     AssertionError: None != 'succeeded'
 
-* I add an else_ clause
+  the `try statement`_ is used to handle :ref:`Exceptions<errors>` in programs
+
+* I add an else_ clause for when ``a_function()`` runs without problems
 
   .. code-block:: python
+    :emphasize-lines: 6-7
 
     def an_exception_handler(a_function):
         try:
@@ -454,9 +467,16 @@ how to use try...except...else
         else:
             return None
 
-  then change its `return statement`_
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
+
+    AssertionError: None != 'succeeded'
+
+  I change the `return statement`_
+
+  .. code-block:: python
+    :emphasize-lines: 6-7
 
     def an_exception_handler(a_function):
         try:
@@ -468,7 +488,7 @@ how to use try...except...else
 
   the test passes.
 
-  The `try statement`_ is used to catch/handle :ref:`exceptions<errors>` in Python. It allows the program to make a decision when it runs into an :ref:`Exception<errors>`. I think of it as
+  The `try statement`_ is used to catch/handle :ref:`exceptions<errors>` in Python_. It allows the program to make a decision when it runs into an :ref:`Exception<errors>`. I think of it as
 
   - ``try`` running **this**
   - ``except Exception`` - when running **this** raises ``Exception``, run the code in this block
