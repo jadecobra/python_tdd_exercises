@@ -1450,6 +1450,7 @@ refactor: make it better
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 13-18
 
     import datetime
@@ -1471,7 +1472,8 @@ refactor: make it better
             this_year()-120, this_year()
         )
 
-        ...
+        def test_takes_keyword_arguments(self):
+            ...
 
   then I use them in the tests with ``self.`` the same way I use the ``assert`` :ref:`methods<functions>` since they now belong to the ``TestPerson`` :ref:`class<classes>`
 
