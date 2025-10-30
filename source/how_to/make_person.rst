@@ -335,7 +335,7 @@ green: make it pass
 
     AssertionError: None != {}
 
-  when I make the `return statement`_ in ``person.py`` match the expectation
+  I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -374,7 +374,7 @@ green: make it pass
 
     AssertionError: {} != {'first_name': 'first_name'}
 
-* I copy the value from the right side of the :ref:`AssertionError` in the terminal, then use it to replace the empty :ref:`dictionary<dictionaries>` in the `return statement`_ in ``person.py``
+* I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -436,7 +436,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'first_name'} != {'first_name': 'jane'}
 
-* I copy the value from the terminal then use it to replace the one in the `return statement`_ in ``person.py``
+* I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -478,7 +478,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane'} != {'first_name': 'jane', 'last_name': 'last_name'}
 
-* I copy the value from the terminal then use it to change the `return statement`_ in ``person.py``
+* I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -538,7 +538,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'last_name'} != {'first_name': 'jane', 'last_name': 'doe'}
 
-* I copy the value from the terminal then use it to replace the `return statement`_ in ``person.py``
+* I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -585,7 +585,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
 
-  I copy the value from the right side then use it to replace the `return statement`_ in ``person.py``
+  I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -651,7 +651,7 @@ green: make it pass
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
-  I copy the value from the right side then use it to replace the `return statement`_ in ``person.py``
+  I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -669,7 +669,7 @@ green: make it pass
 
   and the test is green again
 
-* I add ``age`` with a calculation to the expectation in ``test_person.py``
+* I add a calculation and a key for ``age`` to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -728,7 +728,7 @@ green: make it pass
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class<classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`.
+  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class<classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I test :ref:`AttributeError` and :ref:`classes`
 
   .. ADMONITION:: I can also use the today_ :ref:`method<functions>` to get the same value
 
@@ -747,7 +747,7 @@ green: make it pass
 
   the new :ref:`dictionary<dictionaries>` has a value for ``age``
 
-* when I copy it from the terminal to replace the `return statement`_ in ``person.py``
+* I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -766,7 +766,7 @@ green: make it pass
 
   the test passes
 
-* I add a variable in ``test_person.py`` to remove duplication
+* I add a variable to remove duplication from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -800,7 +800,7 @@ refactor: make it better
 
 * I add an `import statement`_ at the top of ``test_person.py`` to use random values in the tests
 
-  .. TIP:: I like to arrange my `import statements`_ alphabetically
+  .. TIP:: I like to arrange `import statements`_ alphabetically
 
   .. code-block:: python
     :lineno-start: 4
@@ -827,7 +827,7 @@ refactor: make it better
 
             ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. When the age is not ``0``, the terminal shows :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and and when the age is not ``0``, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -858,7 +858,7 @@ refactor: make it better
 
   because I called a :ref:`function<functions>` that is NOT in ``person.py``.
 
-* I use the `return statement`_ of the ``this_year()`` :ref:`function<functions>` from ``test_person.py`` to replace the `return statement`_ of the ``this_year()`` :ref:`function<functions>` in ``person.py``
+* I use the `return statement`_ of the ``this_year()`` :ref:`function<functions>` from ``test_person.py`` to change ``this_year()`` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -913,13 +913,13 @@ refactor: make it better
 
             ...
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs and the terminal shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal shows :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': X}
 
-  I add the ``sex`` input parameter instead of a value that does not change the `return statement`_ in ``person.py``
+  I add the ``sex`` input parameter instead of a value that does not change to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -956,7 +956,7 @@ refactor: make it better
 
             ...
 
-  the terminal shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal shows :ref:`AssertionError`
+  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1003,7 +1003,7 @@ refactor: make it better
 
             ...
 
-  the terminal shows green when ``first_name`` is ``'jane'`` and when it is not, the terminal shows :ref:`AssertionError`
+  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1859,7 +1859,7 @@ green: make it pass
 
     AssertionError: None != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': A}
 
-* I copy the value from the right side of the :ref:`AssertionError` in the terminal to replace :ref:`None` in the `return statement`_
+* I change the `return statement`_
 
   .. code-block:: python
     :linenos:

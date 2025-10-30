@@ -321,7 +321,7 @@ refactor: make it better
                 0
             )
 
-  because the range of numbers is small, the terminal shows random success or :ref:`AssertionError` every time I hit save ``(ctrl+s)`` in the editor to run the tests
+  because the range of numbers is small, the terminal shows random success or :ref:`AssertionError` every time I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) in the editor to run the tests
 
   .. code-block:: python
 
@@ -813,7 +813,7 @@ green: make it pass
     def a_random_number():
         return random.randint(-1, 1)
 
-  I hit save ``(ctrl+s)`` a few times to run the tests, and when ``y`` is randomly ``0`` the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests, and when ``y`` is randomly ``0`` the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -958,7 +958,7 @@ refactor: make it better
                 self.x/self.y
             )
 
-  I hit save ``(ctrl+s)`` in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 

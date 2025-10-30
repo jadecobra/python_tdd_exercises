@@ -164,7 +164,7 @@ red: make it fail
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`, there is a problem if it does not fail
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by having to hit save ``(ctrl+s)`` every time I make a change
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by having to hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) every time I make a change
 * I type this in the terminal to run the test
 
   .. code-block:: python
