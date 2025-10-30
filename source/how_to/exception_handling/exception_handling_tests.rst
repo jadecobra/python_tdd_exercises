@@ -309,16 +309,16 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* If I make ``function_name`` a :ref:`function<functions>`
+* When I make ``function_name`` a :ref:`function<functions>`
 
   .. code-block:: python
 
     def function_name():
         return None
 
-  the terminal still shows green, because the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not accept input so :ref:`TypeError` is raised
+  because the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not accept input, :ref:`TypeError` is raised and the terminal still shows green
 
-* If I add a parameter to the definition
+* When I add a parameter to the definition
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -332,7 +332,7 @@ refactor: make it better
 
     AssertionError: TypeError not raised
 
-  because the :ref:`function<functions>` call matches the definition, :ref:`TypeError` is NOT raised. I undo the change
+  because :ref:`TypeError` is NOT raised since the :ref:`function<functions>` call matches the definition. I undo the change
 
   .. code-block:: python
     :emphasize-lines: 1

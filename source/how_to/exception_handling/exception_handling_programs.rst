@@ -182,6 +182,8 @@ red: make it fail
 
 I add a new failing test in ``test_exceptions.py``
 
+.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+
 .. code-block:: python
   :emphasize-lines: 4-10
 
