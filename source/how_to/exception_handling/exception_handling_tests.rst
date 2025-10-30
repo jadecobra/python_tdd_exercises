@@ -316,7 +316,7 @@ refactor: make it better
     def function_name():
         return None
 
-  because the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not accept input, :ref:`TypeError` is raised and the terminal still shows green
+  the terminal still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not take input
 
 * When I add a parameter to the definition
 
@@ -490,7 +490,7 @@ green: make it pass
             a_list[-5]
         # with self.assertRaises(IndexError):
 
-  I show why this is not a repetition at the end of the chapter. I undo the change for now
+  I show why this is not a repetition at :ref:`the end of the chapter<one_exception_one_exception_handler>`. I undo the change for now
 
   .. code-block:: python
     :emphasize-lines: 5-6
@@ -753,6 +753,8 @@ refactor: make it better
             {'key': 'value'}['not_in_dictionary']
 
   the test passes
+
+.. _one_exception_one_exception_handler:
 
 * As promised here is why the second AssertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition, even though the test still passes when I remove it
 
