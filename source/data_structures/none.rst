@@ -51,6 +51,7 @@ requirements
 * I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
+    :lineno-start: 4
 
     class TestNone(unittest.TestCase):
 
