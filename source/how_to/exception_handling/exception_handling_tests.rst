@@ -45,6 +45,7 @@ requirements
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
+    :lineno-start: 7
 
     self.assertFalse(False)
 
