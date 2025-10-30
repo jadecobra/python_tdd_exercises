@@ -170,18 +170,13 @@ red: make it fail
 * I add another failing test
 
   .. code-block:: python
-    :emphasize-lines: 9-10
+    :emphasize-lines: 4-5
 
-    class TestExceptions(unittest.TestCase):
+    def test_catching_name_error_in_tests(self):
+        ...
 
-        def test_catching_module_not_found_error_in_tests(self):
-            ...
-
-        def test_catching_name_error_in_tests(self):
-            ...
-
-        def test_catching_attribute_error_in_tests(self):
-            src.exceptions.does_not_exist
+    def test_catching_attribute_error_in_tests(self):
+        src.exceptions.does_not_exist
 
   the terminal shows NameError_
 
@@ -243,21 +238,13 @@ red: make it fail
 * I add a failing test
 
   .. code-block:: python
-    :emphasize-lines: 12-13
+    :emphasize-lines: 4-5
 
-    class TestExceptions(unittest.TestCase):
+    def test_catching_attribute_error_in_tests(self):
+        ...
 
-        def test_catching_module_not_found_error_in_tests(self):
-            ...
-
-        def test_catching_name_error_in_tests(self):
-            ...
-
-        def test_catching_attribute_error_in_tests(self):
-            ...
-
-        def test_catching_type_error_in_tests(self):
-            src.exceptions.function_name('argument')
+    def test_catching_type_error_in_tests(self):
+        src.exceptions.function_name('argument')
 
   the terminal shows :ref:`AttributeError`
 
@@ -363,24 +350,13 @@ red: make it fail
 * I make a :ref:`list<lists>` in a new test
 
   .. code-block:: python
-    :emphasize-lines: 15-16
+    :emphasize-lines: 4-5
 
-    class TestExceptions(unittest.TestCase):
+    def test_catching_type_error_in_tests(self):
+        ...
 
-        def test_catching_module_not_found_error_in_tests(self):
-            ...
-
-        def test_catching_name_error_in_tests(self):
-            ...
-
-        def test_catching_attribute_error_in_tests(self):
-            ...
-
-        def test_catching_type_error_in_tests(self):
-            ...
-
-        def test_catching_index_error_in_tests(self):
-            a_list = [1, 2, 3, 'n']
+    def test_catching_index_error_in_tests(self):
+        a_list = [1, 2, 3, 'n']
 
   the first item in a :ref:`list<lists>` has ``0`` as its :ref:`index<test_index_returns_first_position_of_item_in_a_list>`
 
@@ -532,27 +508,13 @@ red: make it fail
 * I add a :ref:`dictionary<dictionaries>` to a new test
 
   .. code-block:: python
-    :emphasize-lines: 18-19
+    :emphasize-lines: 4-5
 
-    class TestExceptions(unittest.TestCase):
+    def test_catching_index_error_in_tests(self):
+        ...
 
-        def test_catching_module_not_found_error_in_tests(self):
-            ...
-
-        def test_catching_name_error_in_tests(self):
-            ...
-
-        def test_catching_attribute_error_in_tests(self):
-            ...
-
-        def test_catching_type_error_in_tests(self):
-            ...
-
-        def test_catching_index_error_in_tests(self):
-            ...
-
-        def test_catching_key_error_in_tests(self):
-            {'key': 'value'}
+    def test_catching_key_error_in_tests(self):
+        {'key': 'value'}
 
 * when I try to get the value for a key that exists
 
@@ -600,9 +562,9 @@ I add assertRaises_ to the test
 .. code-block:: python
   :emphasize-lines: 2-3
 
-    def test_catching_key_error_in_tests(self):
-        with self.assertRaises(KeyError):
-            {'key': 'value'}['not_in_dictionary']
+  def test_catching_key_error_in_tests(self):
+      with self.assertRaises(KeyError):
+          {'key': 'value'}['not_in_dictionary']
 
 the terminal shows green again
 
@@ -616,30 +578,13 @@ red: make it fail
 * I add another failing test, this time for the :ref:`Exception<errors>` that happened in :ref:`how to make a calculator` when :ref:`testing division<test_division>`
 
   .. code-block:: python
-    :emphasize-lines: 21-22
+    :emphasize-lines: 4-5
 
-    class TestExceptions(unittest.TestCase):
+    def test_catching_key_error_in_tests(self):
+        ...
 
-        def test_catching_module_not_found_error_in_tests(self):
-            ...
-
-        def test_catching_name_error_in_tests(self):
-            ...
-
-        def test_catching_attribute_error_in_tests(self):
-            ...
-
-        def test_catching_type_error_in_tests(self):
-            ...
-
-        def test_catching_index_error_in_tests(self):
-            ...
-
-        def test_catching_key_error_in_tests(self):
-            ...
-
-        def test_catching_zero_division_error_in_tests(self):
-            1 / 0
+    def test_catching_zero_division_error_in_tests(self):
+        1 / 0
 
   any number divided by ``0`` the terminal shows ZeroDivisionError_
 
@@ -688,33 +633,13 @@ red: make it fail
 * I add a failing test with the `raise statement`_
 
   .. code-block:: python
-    :emphasize-lines: 24-25
+    :emphasize-lines: 4-5
 
-    class TestExceptions(unittest.TestCase):
+    def test_catching_zero_division_error_in_tests(self):
+        ...
 
-        def test_catching_module_not_found_error_in_tests(self):
-            ...
-
-        def test_catching_name_error_in_tests(self):
-            ...
-
-        def test_catching_attribute_error_in_tests(self):
-            ...
-
-        def test_catching_type_error_in_tests(self):
-            ...
-
-        def test_catching_index_error_in_tests(self):
-            ...
-
-        def test_catching_key_error_in_tests(self):
-            ...
-
-        def test_catching_zero_division_error_in_tests(self):
-            ...
-
-        def test_catching_exceptions_in_tests(self):
-            raise Exception
+    def test_catching_exceptions_in_tests(self):
+        raise Exception
 
   the terminal shows :ref:`Exception<errors>`
 
@@ -902,7 +827,7 @@ I have a way to catch :ref:`Exceptions<errors>` in tests and tested the followin
 * :ref:`KeyError <test_key_error>`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-Would you like to test :ref:`handling Exceptions in programs?<how to handle Exceptions in programs>`
+Would you like to :ref:`test handling Exceptions in programs?<how to handle Exceptions in programs>`
 
 ----
 

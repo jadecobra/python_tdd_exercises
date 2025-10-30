@@ -150,7 +150,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran a test for the ModuleNotFoundError_ and Python_ modules. Would you like to test the :ref:`AssertionError?<AssertionError>`
+I ran a test for the ModuleNotFoundError_ and Python_ modules. Would you like to :ref:`test AssertionError?<AssertionError>`
 
 ----
 

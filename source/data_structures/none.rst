@@ -1499,7 +1499,7 @@ review
 
 I ran tests to show what None_ is and what it is not
 
-Would you like to test :ref:`booleans`?
+Would you like to :ref:`test booleans?<booleans>`
 
 ----
 

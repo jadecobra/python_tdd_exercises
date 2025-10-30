@@ -1612,7 +1612,7 @@ refactor: make it better
 
     a_list = [0, 1, -1, 2, -2, 3, -3]
 
-  I get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2022,7 +2022,7 @@ refactor: make it better
     self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
     self.assertEqual(a_list[1:3], [])
 
-  I get :ref:`AssertionError`
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 

@@ -29,9 +29,36 @@ test_catching_exceptions_w_messages
 * I add a failing test to ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 27-28
 
-    def test_catching_exceptions_w_messages(self):
-        src.exceptions.raise_exception()
+    class TestExceptions(unittest.TestCase):
+
+        def test_catching_module_not_found_error_in_tests(self):
+            ...
+
+        def test_catching_name_error_in_tests(self):
+            ...
+
+        def test_catching_attribute_error_in_tests(self):
+            ...
+
+        def test_catching_type_error_in_tests(self):
+            ...
+
+        def test_catching_index_error_in_tests(self):
+            ...
+
+        def test_catching_key_error_in_tests(self):
+            ...
+
+        def test_catching_zero_division_error_in_tests(self):
+            ...
+
+        def test_catching_exceptions_in_tests(self):
+            ...
+
+        def test_catching_exceptions_w_messages(self):
+            src.exceptions.raise_exception()
 
   the terminal shows :ref:`AttributeError`
 
@@ -42,9 +69,11 @@ test_catching_exceptions_w_messages
 green: make it pass
 #################################################################################
 
-* I add the name to ``exceptions.py``
+* I add the name in ``exceptions.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
 
     def function_name():
         return None
@@ -70,18 +99,25 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* When I make it a :ref:`function<functions>`
+* When I make ``raise_exception`` a :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def function_name():
+        return None
+
 
     def raise_exception():
         return None
 
   the test passes
 
-* I want the :ref:`function<functions>` to raise an :ref:`Exception<errors>` when it is called
+* I want the :ref:`function<functions>` to raise an :ref:`Exception<errors>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 2-3
 
     def test_catching_exceptions_w_messages(self):
         with self.assertRaises(Exception):
@@ -93,18 +129,20 @@ green: make it pass
 
     AssertionError: Exception not raised
 
-* I use the `raise statement`_
+* I add a `raise statement`_ to the ``raise_exception`` :ref:`function<functions>` in ``exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def raise_exception():
         raise Exception
 
-  and the test is green
+  the test passes
 
-* I can use the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in tests, it checks that the code in its context raises the :ref:`Exception<errors>` it is given, with the message it is given, it uses `Regular Expressions`_ for this
+* I add the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in the test, it checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. I add it to ``test_catching_exceptions_w_messages`` in ``test_exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 2-4
 
     def test_catching_exceptions_w_messages(self):
         with self.assertRaisesRegex(
@@ -118,14 +156,17 @@ green: make it pass
 
     AssertionError: "BOOM!" does not match ""
 
-* the :ref:`Exception<errors>` is right, the message is not. I add it
+  the default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the test expects ``"BOOM!"``
+
+* the :ref:`Exception<errors>` is right, the message is not. I add the message in ``exceptions.py``
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def raise_exception():
         raise Exception('BOOM!')
 
-  the test passes. Time to add an :ref:`how to test that an Exception is raised` to the program
+  the test passes. Time to add an :ref:`Exception<errors>` to the program
 
 ----
 
@@ -137,9 +178,13 @@ test_catching_failure
 red: make it fail
 #################################################################################
 
-I add a new failing test
+I add a new failing test in ``test_exceptions.py``
 
 .. code-block:: python
+  :emphasize-lines: 4-10
+
+  def test_catching_exceptions_w_messages(self):
+      ...
 
   def test_catching_failure(self):
       self.assertEqual(
@@ -158,7 +203,7 @@ the terminal shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-* When I add the name
+* I add the name to ``exceptions.py``
 
   .. code-block:: python
 
@@ -168,7 +213,7 @@ green: make it pass
 
     an_exception_handler
 
-  I get :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -186,7 +231,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* then I make it a :ref:`function<functions>`
+* I make it a :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -202,6 +247,7 @@ green: make it pass
 * I make the :ref:`function<functions>` take input
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def an_exception_handler(argument):
         return None
@@ -212,7 +258,7 @@ green: make it pass
 
     AssertionError: None != 'failed'
 
-  the result of calling ``src.exceptions.an_exception_handler`` is :ref:`None`, the test expects ``'failed'``
+  the result of the call to ``src.exceptions.an_exception_handler`` is :ref:`None` and the test expects ``'failed'``
 
 * I change the `return statement`_ to match the expectation
 
@@ -224,7 +270,6 @@ green: make it pass
   the test passes.
 
 ----
-
 
 *********************************************************************************
 test_catching_success

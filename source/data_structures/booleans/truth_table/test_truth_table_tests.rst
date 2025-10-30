@@ -345,7 +345,7 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-  I get :ref:`AttributeError`
+  the terminal shows :ref:`AttributeError`
 
   .. code-block:: python
 

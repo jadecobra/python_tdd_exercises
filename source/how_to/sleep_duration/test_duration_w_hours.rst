@@ -111,7 +111,7 @@ green: make it pass
         None
     )
 
-  I get :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 

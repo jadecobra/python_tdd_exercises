@@ -890,7 +890,7 @@ With `assert statements`_ and :ref:`methods<functions>` I can test if something 
 * :ref:`True<test_what_is_true>` or not
 * equal or not
 
-Would you like to test the :ref:`AttributeError`?
+Would you like to :ref:`test AttributeError?<AttributeError>`
 
 ----
 

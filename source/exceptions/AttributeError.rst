@@ -766,7 +766,7 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to test :ref:`TypeError?<TypeError>`
+Would you like to :ref:`test TypeError?<TypeError>`
 
 ----
 
