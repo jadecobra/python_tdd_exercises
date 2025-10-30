@@ -1079,7 +1079,10 @@ green: make it pass
 * I comment out ``last_name`` in the call to the ``factory`` :ref:`function<functions>` in ``test_function_w_default_keyword_arguments``
 
   .. code-block:: python
-    :emphasize-lines: 16
+    :emphasize-lines: 19
+
+    def test_takes_keyword_arguments(self):
+        ...
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
@@ -1184,7 +1187,10 @@ green: make it pass
 * I change the expectation for it in ``test_person.py``
 
   .. code-block:: python
-    :emphasize-lines: 22
+    :emphasize-lines: 25
+
+    def test_takes_keyword_arguments(self):
+        ...
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
@@ -1245,9 +1251,13 @@ green: make it pass
           year_of_birth=year_of_birth,
           last_name='doe',
       )
-* I remove the commented lines
+
+* I remove the commented lines from ``test_function_w_default_keyword_arguments`` in ``test_person.py``
 
   .. code-block:: python
+
+    def test_takes_keyword_arguments(self):
+        ...
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
@@ -1275,7 +1285,10 @@ green: make it pass
 * I comment out the ``sex`` variable from the test in ``test_person.py`` to see what would happen if I do not know its value
 
   .. code-block:: python
-    :emphasize-lines: 5
+    :emphasize-lines: 8
+
+    def test_takes_keyword_arguments(self):
+        ...
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((
@@ -1297,7 +1310,10 @@ green: make it pass
 * I comment it out in the call to the ``factory`` :ref:`function<functions>` in the :ref:`assertion<AssertionError>` in ``test_person.py``
 
   .. code-block:: python
-    :emphasize-lines: 13
+    :emphasize-lines: 16
+
+    def test_takes_keyword_arguments(self):
+        ...
 
     def test_function_w_default_keyword_arguments(self):
         first_name = random.choice((

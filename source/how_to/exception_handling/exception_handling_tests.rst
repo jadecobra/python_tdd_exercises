@@ -779,7 +779,7 @@ refactor: make it better
             a_list[-5]
         # with self.assertRaises(IndexError):
 
-  the terminal still shows a passing test, even though :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>`, it does NOT get raised. It looks like the assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does NOT run the other lines.
+  the terminal still shows green, even though :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>`, it does NOT get raised. The assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does NOT run the other lines.
 
   When I move the `raise statement`_ above the first :ref:`IndexError<test_index_error>`
 

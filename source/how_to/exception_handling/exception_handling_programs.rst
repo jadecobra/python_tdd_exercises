@@ -141,7 +141,7 @@ green: make it pass
 
   the test passes
 
-* I add the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to be more specific in the test, it checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. I add it to ``test_catching_exceptions_w_messages`` in ``test_exceptions.py``
+* I can be more specific when testing for an :ref:`Exception<errors>`, I add the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to check that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given in ``test_catching_exceptions_w_messages`` in ``test_exceptions.py``
 
   .. code-block:: python
     :emphasize-lines: 2-4
