@@ -169,6 +169,8 @@ red: make it fail
 
 * I add another failing test
 
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+
   .. code-block:: python
     :emphasize-lines: 4-5
 
@@ -236,6 +238,8 @@ red: make it fail
 #################################################################################
 
 * I add a failing test
+
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :emphasize-lines: 4-5
@@ -348,6 +352,8 @@ red: make it fail
 #################################################################################
 
 * I make a :ref:`list<lists>` in a new test
+
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
     :emphasize-lines: 4-5

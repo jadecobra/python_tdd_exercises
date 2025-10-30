@@ -28,6 +28,8 @@ test_catching_exceptions_w_messages
 
 * I add a failing test to ``test_exceptions.py``
 
+  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+
   .. code-block:: python
     :emphasize-lines: 27-28
 
