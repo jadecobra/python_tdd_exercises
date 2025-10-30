@@ -703,7 +703,7 @@ refactor: make it better
 * I can use :ref:`Exception<errors>` to catch any of the :ref:`Exceptions<errors>` that inherit from it, its children if you will
 
   .. code-block:: python
-    :emphasize-lines: 2, 5
+    :emphasize-lines: 2, 6
 
     def test_catching_key_error_in_tests(self):
         with self.assertRaises(Exception):
