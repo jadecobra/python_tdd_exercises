@@ -1041,7 +1041,7 @@ I want to see what would happen when I try to make a person without a value for 
 red: make it fail
 #################################################################################
 
-* I select ``test_takes_keyword_arguments``, then copy ``(ctrl+c)`` and paste ``(ctrl+v)`` it below in ``test_person.py``
+* I select ``test_takes_keyword_arguments``, then copy (``ctrl+c`` (windows/linux) or ``command+c`` (mac)) and paste (``ctrl+v`` (windows/linux) or ``command+v`` (mac)) it below in ``test_person.py``
 * I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` variable
 
   .. code-block:: python
@@ -1126,20 +1126,8 @@ green: make it pass
 * I comment out ``last_name`` in the call to the ``factory`` :ref:`function<functions>` in ``test_function_w_default_keyword_arguments``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 16
-
-        def test_function_w_default_keyword_arguments(self):
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            # last_name = random.choice((
-            #    'doe', 'smith', 'blow', 'public',
-            # ))
-            sex = random.choice(('F', 'M'))
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
+    :lineno-start: 52
+    :emphasize-lines: 4
 
             self.assertEqual(
                 src.person.factory(
@@ -1231,25 +1219,13 @@ green: make it pass
 
     NameError: name 'last_name' is not defined
 
-  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` points to the ``last_name`` variable, which I commented out earlier
+  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` points to the ``last_name`` variable which I just commented out
 
-* I change the expectation for it in ``test_person.py``
+* I change the expectation of ``test_function_w_default_keyword_arguments`` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 22
-
-        def test_function_w_default_keyword_arguments(self):
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            # last_name = random.choice((
-            #    'doe', 'smith', 'blow', 'public',
-            # ))
-            sex = random.choice(('F', 'M'))
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
+    :lineno-start: 52
+    :emphasize-lines: 10
 
             self.assertEqual(
                 src.person.factory(
@@ -1274,7 +1250,7 @@ green: make it pass
 
   the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for ``last_name`` and the test expects ``'doe'``
 
-* When I make the default value for ``last_name`` in the ``factory`` :ref:`function<functions>` in ``person.py`` match the expectation
+* I change the default value for ``last_name`` in the ``factory`` :ref:`function<functions>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1403,7 +1379,7 @@ green: make it pass
 
   the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with :ref:`None` as the value for ``sex`` and the test expects ``'M'``
 
-* when I add a default value for ``sex`` in ``person.py``
+* I add a default value for ``sex`` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1439,7 +1415,7 @@ green: make it pass
           year_of_birth=year_of_birth,
       )
 
-* I remove the commented lines
+* I remove the commented lines from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -1470,7 +1446,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* ``first_name`` and ``year_of_birth`` are made the same way in both tests, I can remove this repetition by adding :ref:`class<classes>` :ref:`attributes<AttributeError>`
+* ``first_name`` and ``year_of_birth`` are made the same way in both tests, I can remove this repetition by adding :ref:`attributes<AttributeError>` to the ``TestPerson`` :ref:`class<classes>`
 
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
@@ -1523,7 +1499,7 @@ refactor: make it better
             self.assertEqual(
                 ...
 
-  I do the same thing in ``test_function_w_default_keyword_arguments``
+  the test is still green. I do the same thing in ``test_function_w_default_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 49
@@ -1560,7 +1536,7 @@ refactor: make it better
             self.assertEqual(
                 ...
 
-  and the commented lines from ``test_function_w_default_keyword_arguments``
+  and remove the commented lines from ``test_function_w_default_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 43
@@ -1663,7 +1639,7 @@ refactor: make it better
 
   the tests are still passing
 
-* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>`, it runs before each test, this way those variables get new random values every time a test runs
+* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I add the `unittest.TestCase.setUp`_ :ref:`method<functions>` to make sure they both get new random values before each test runs
 
   .. code-block:: python
     :lineno-start: 13
@@ -1688,7 +1664,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` named ``first_name``, it now belongs to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot use it
+  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` named ``first_name``, it is now a variable in the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
 
 * I add ``self.`` to make it a :ref:`class<classes>` :ref:`attribute<AttributeError>`
 
@@ -1830,9 +1806,9 @@ green: make it pass
     :emphasize-lines: 2-3
 
     def factory(
-        first_name, last_name,
-        sex
-    ):
+            first_name, last_name,
+            sex
+        ):
         return None
 
   the terminal shows :ref:`TypeError`
@@ -1997,7 +1973,7 @@ green: make it pass
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 1981} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 43}
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 1969} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 55}
 
-  it looks like I need the difference between the current year and the ``year_of_birth`` to get the ``age``
+  the test expects the difference between the current year and the ``year_of_birth`` to get the ``age``
 
 * I add an `import statement`_ at the top of the file
 
