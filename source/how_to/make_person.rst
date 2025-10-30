@@ -495,7 +495,7 @@ green: make it pass
 
   the test passes
 
-* ``'last_name'`` happens twice in the test, I add a variable to remove the duplication like I did with ``first_name``
+* ``'last_name'`` happens twice in the test, I add a variable to remove the duplication like I did with ``first_name`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -603,7 +603,7 @@ green: make it pass
 
   the terminal shows green again
 
-* I add a variable to remove the repetition in the test
+* I add a variable to remove the repetition in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -628,7 +628,7 @@ green: make it pass
                 )
             )
 
-  still green
+  the test is still green
 
 * when I change the value of the ``sex`` variable
 
@@ -669,7 +669,7 @@ green: make it pass
 
   and the test is green again
 
-* I add ``age`` to the expectation in ``test_person.py`` with a calculation
+* I add ``age`` with a calculation to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -858,7 +858,7 @@ refactor: make it better
 
   because I called a :ref:`function<functions>` that is NOT in ``person.py``.
 
-* I change the call to the ``this_year()`` :ref:`function<functions>` in ``person.py`` to use the `return statement`_ of the ``this_year()`` :ref:`function<functions>` from ``test_person.py`` instead
+* I use the `return statement`_ of the ``this_year()`` :ref:`function<functions>` from ``test_person.py`` to replace the `return statement`_ of the ``this_year()`` :ref:`function<functions>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -886,7 +886,7 @@ refactor: make it better
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
     :emphasize-lines: 1
 
     import datetime
@@ -919,7 +919,7 @@ refactor: make it better
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': X}
 
-  when I change the `return statement`_ in ``person.py`` to use the ``sex`` input parameter instead of a value that does not change
+  I add the ``sex`` input parameter instead of a value that does not change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -964,7 +964,7 @@ refactor: make it better
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'smith', 'sex': X, 'age': Y}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'blow', 'sex': X, 'age': Y}
 
-  I change the `return statement`_ in ``person.py`` to use the ``last_name`` input parameter
+  I add the ``last_name`` input parameter in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1011,7 +1011,7 @@ refactor: make it better
     AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'john', 'last_name': X, 'sex': Y, 'age': Z}
     AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'person', 'last_name': X, 'sex': Y, 'age': Z}
 
-  when I change the `return statement`_ in ``person.py`` to use the ``first_name`` input parameter
+  I add the ``first_name`` input parameter in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1041,7 +1041,7 @@ I want to see what would happen when I try to make a person without a value for 
 red: make it fail
 #################################################################################
 
-* I select ``test_takes_keyword_arguments`` in ``test_person.py``, then copy ``(ctrl+c)`` and paste ``(ctrl+v)`` it below the test
+* I select ``test_takes_keyword_arguments``, then copy ``(ctrl+c)`` and paste ``(ctrl+v)`` it below in ``test_person.py``
 * I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` variable
 
   .. code-block:: python
@@ -1231,7 +1231,7 @@ green: make it pass
 
     NameError: name 'last_name' is not defined
 
-  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` in ``test_person.py`` points to ``last_name`` variable that I commented out earlier
+  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` points to the ``last_name`` variable, which I commented out earlier
 
 * I change the expectation for it in ``test_person.py``
 
@@ -1328,7 +1328,7 @@ green: make it pass
                 )
             )
 
-* I comment out the ``sex`` variable from the test to see what would happen if I do not know its value
+* I comment out the ``sex`` variable in the test to see what would happen if I do not know its value
 
   .. code-block:: python
     :lineno-start: 40
@@ -1403,7 +1403,7 @@ green: make it pass
 
   the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with :ref:`None` as the value for ``sex`` and the test expects ``'M'``
 
-* when I add a default value for ``sex`` in ``person.py`` to match the expectation
+* when I add a default value for ``sex`` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1444,26 +1444,26 @@ green: make it pass
   .. code-block:: python
     :lineno-start: 40
 
-    def test_function_w_default_keyword_arguments(self):
-        first_name = random.choice((
-            'jane', 'joe', 'john', 'person',
-        ))
-        year_of_birth = random.randint(
-            this_year()-120, this_year()
-        )
-
-        self.assertEqual(
-            src.person.factory(
-                first_name=first_name,
-                year_of_birth=year_of_birth,
-            ),
-            dict(
-                first_name=first_name,
-                last_name='doe',
-                sex='M',
-                age=this_year()-year_of_birth,
+        def test_function_w_default_keyword_arguments(self):
+            first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            year_of_birth = random.randint(
+                this_year()-120, this_year()
             )
-        )
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ),
+                dict(
+                    first_name=first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=this_year()-year_of_birth,
+                )
+            )
 
   the terminal still shows green
 
@@ -1500,11 +1500,11 @@ refactor: make it better
         def test_takes_keyword_arguments(self):
             ...
 
-  then I use them in ``test_takes_keyword_arguments`` with ``self.`` the same way I use the ``assert`` :ref:`methods<functions>` since they now belong to the ``TestPerson`` :ref:`class<classes>`
+  I can use them in ``test_takes_keyword_arguments`` with ``self.`` the same way I use the ``assert`` :ref:`methods<functions>` since they now belong to the ``TestPerson`` :ref:`class<classes>`
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2-5,10-13,18-25
+    :lineno-start: 20
+    :emphasize-lines: 2-5,10-13
 
         def test_takes_keyword_arguments(self):
             # first_name = random.choice((
@@ -1520,10 +1520,14 @@ refactor: make it better
             # )
             year_of_birth = self.year_of_birth
 
-  I do the same thing with ``test_function_w_default_keyword_arguments``
+            self.assertEqual(
+                ...
+
+  I do the same thing in ``test_function_w_default_keyword_arguments``
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 49
+    :emphasize-lines: 2-9
 
         def test_function_w_default_keyword_arguments(self):
             # first_name = random.choice((
@@ -1535,125 +1539,135 @@ refactor: make it better
             # )
             year_of_birth = self.year_of_birth
 
+            self.assertEqual(
+                ...
+
   the terminal still shows green
 
-* I remove the commented lines in ``test_takes_keyword_arguments``
+* I remove the commented lines from ``test_takes_keyword_arguments``
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 20
 
-    def test_takes_keyword_arguments(self):
-        first_name = self.first_name
-        last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
-        ))
-        sex = random.choice(('F', 'M'))
-        year_of_birth = self.year_of_birth
+        def test_takes_keyword_arguments(self):
+            first_name = self.first_name
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            sex = random.choice(('F', 'M'))
+            year_of_birth = self.year_of_birth
 
-        ...
+            self.assertEqual(
+                ...
 
-  and ``test_function_w_default_keyword_arguments``
+  and the commented lines from ``test_function_w_default_keyword_arguments``
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 43
 
-    def test_function_w_default_keyword_arguments(self):
-        first_name = self.first_name
-        year_of_birth = self.year_of_birth
+        def test_function_w_default_keyword_arguments(self):
+            first_name = self.first_name
+            year_of_birth = self.year_of_birth
 
-        ...
+            self.assertEqual(
+                ...
 
   still green
 
-* since the variables point to :ref:`class<classes>` :ref:`attributes<AttributeError>`, I can use them directly and comment out ``first_name`` and ``year_of_birth``
+* since the variables point to :ref:`class<classes>` :ref:`attributes<AttributeError>`, I can use them directly and comment out ``first_name`` and ``year_of_birth`` in ``test_takes_keyword_arguments``
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2,7,11,14,17,20,25-26,30-31,34,37
+    :lineno-start: 20
+    :emphasize-lines: 2,7,11,14,17,20
 
-    def test_takes_keyword_arguments(self):
-        # first_name = self.first_name
-        last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
-        ))
-        sex = random.choice(('F', 'M'))
-        # year_of_birth = self.year_of_birth
+        def test_takes_keyword_arguments(self):
+            # first_name = self.first_name
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            sex = random.choice(('F', 'M'))
+            # year_of_birth = self.year_of_birth
 
-        self.assertEqual(
-            src.person.factory(
-                first_name=self.first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=self.year_of_birth,
-            ),
-            dict(
-                first_name=self.first_name,
-                last_name=last_name,
-                sex=sex,
-                age=this_year()-self.year_of_birth,
+            self.assertEqual(
+                src.person.factory(
+                    first_name=self.first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=self.year_of_birth,
+                ),
+                dict(
+                    first_name=self.first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    age=this_year()-self.year_of_birth,
+                )
             )
-        )
 
-    def test_function_w_default_keyword_arguments(self):
-        # first_name = self.first_name
-        # year_of_birth = self.year_of_birth
+  the test is still green. I make the same change in ``test_function_w_default_keyword_arguments``
 
-        self.assertEqual(
-            src.person.factory(
-                first_name=self.first_name,
-                year_of_birth=self.year_of_birth,
-            ),
-            dict(
-                first_name=self.first_name,
-                last_name='doe',
-                sex='M',
-                age=this_year()-self.year_of_birth,
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 2-3,7-8,11,14
+
+        def test_function_w_default_keyword_arguments(self):
+            # first_name = self.first_name
+            # year_of_birth = self.year_of_birth
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=self.first_name,
+                    year_of_birth=self.year_of_birth,
+                ),
+                dict(
+                    first_name=self.first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=this_year()-self.year_of_birth,
+                )
             )
-        )
 
   all tests are still passing
 
-* I remove the commented lines
+* I remove the commented lines from ``test_takes_keyword_arguments``
 
   .. code-block:: python
+    :lineno-start: 20
 
-    def test_takes_keyword_arguments(self):
-        last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
-        ))
-        sex = random.choice(('F', 'M'))
+        def test_takes_keyword_arguments(self):
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            sex = random.choice(('F', 'M'))
 
-        ...
+            self.assertEqual(
+                ...
 
-    def test_function_w_default_keyword_arguments(self):
-        self.assertEqual(
-            src.person.factory(
-                first_name=self.first_name,
-                year_of_birth=self.year_of_birth
-            ),
-            dict(
-                first_name=self.first_name,
-                last_name='doe',
-                sex='M',
-                age=this_year()-self.year_of_birth,
+  and in ``test_function_w_default_keyword_arguments``
+
+  .. code-block:: python
+    :lineno-start: 41
+
+        def test_function_w_default_keyword_arguments(self):
+            self.assertEqual(
+                src.person.factory(
+                    first_name=self.first_name,
+                    year_of_birth=self.year_of_birth
+                ),
+                dict(
+                    first_name=self.first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=this_year()-self.year_of_birth,
+                )
             )
-        )
 
-* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>` which runs before every test to make sure they have new random values before each test
+  the tests are still passing
+
+* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I can use the `unittest.TestCase.setUp`_ :ref:`method<functions>`, it runs before each test, this way those variables get new random values every time a test runs
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 13-19
-
-    import datetime
-    import random
-    import src.person
-    import unittest
-
-
-    def this_year():
-        return datetime.datetime.now().year
-
+    :lineno-start: 13
+    :emphasize-lines: 3-9
 
     class TestPerson(unittest.TestCase):
 
@@ -1674,20 +1688,24 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` with the name, it is now belongs to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot use it
+  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` named ``first_name``, it now belongs to the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot use it
 
 * I add ``self.`` to make it a :ref:`class<classes>` :ref:`attribute<AttributeError>`
 
   .. code-block:: python
+    :lineno-start: 13
     :emphasize-lines: 2
 
-    def setUp(self):
-        self.first_name = random.choice((
-            'jane', 'joe', 'john', 'person',
-        ))
-        year_of_birth = random.randint(
-            this_year()-120, this_year()
-        )
+        def setUp(self):
+            self.first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            year_of_birth = random.randint(
+                this_year()-120, this_year()
+            )
+
+        def test_takes_keyword_arguments(self):
+            ...
 
   the terminal shows :ref:`AttributeError`
 
@@ -1698,15 +1716,19 @@ refactor: make it better
 * same problem, same solution
 
   .. code-block:: python
+    :lineno-start: 13
     :emphasize-lines: 5
 
-    def setUp(self):
-        self.first_name = random.choice((
-            'jane', 'joe', 'john', 'person',
-        ))
-        self.year_of_birth = random.randint(
-            this_year()-120, this_year()
-        )
+        def setUp(self):
+            self.first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            self.year_of_birth = random.randint(
+                this_year()-120, this_year()
+            )
+
+        def test_takes_keyword_arguments(self):
+            ...
 
   and both tests are green again!
 
@@ -1734,6 +1756,7 @@ green: make it pass
 * I add the name
 
   .. code-block:: python
+    :linenos:
 
     factory
 
@@ -1746,6 +1769,7 @@ green: make it pass
 * I point it to :ref:`None`
 
   .. code-block:: python
+    :linenos:
 
     factory = None
 
@@ -1758,6 +1782,7 @@ green: make it pass
 * when I make it a :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
 
     def factory():
         return None
@@ -1771,6 +1796,7 @@ green: make it pass
   I add the keyword argument to the :ref:`function<functions>` definition
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     def factory(first_name):
@@ -1785,6 +1811,7 @@ green: make it pass
   I add the keyword argument
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     def factory(first_name, last_name):
@@ -1799,6 +1826,7 @@ green: make it pass
   when I add the keyword argument
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2-3
 
     def factory(
@@ -1816,6 +1844,7 @@ green: make it pass
   I add the missing keyword argument
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 3
 
     def factory(
@@ -1830,9 +1859,10 @@ green: make it pass
 
     AssertionError: None != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': A}
 
-* I copy the value from the terminal to replace :ref:`None` in the `return statement`_
+* I copy the value from the right side of the :ref:`AssertionError` in the terminal to replace :ref:`None` in the `return statement`_
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 5-10
 
     def factory(
@@ -1860,6 +1890,7 @@ green: make it pass
 * I make the :ref:`dictionary<dictionaries>` in the `return statement`_ use the ``first_name`` input parameter instead of a value that does not change
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 6
 
     def factory(
@@ -1887,6 +1918,7 @@ green: make it pass
 * I use the ``last_name`` input parameter in the `return statement`_
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 7
 
     def factory(
@@ -1914,6 +1946,7 @@ green: make it pass
 * When I add the ``sex`` input parameter to the `return statement`_
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 8
 
     def factory(
@@ -1941,6 +1974,7 @@ green: make it pass
 * I add the ``year_of_birth`` input parameter to the `return statement`_
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 9
 
     def factory(
@@ -1979,6 +2013,7 @@ green: make it pass
   then I use it to get the current year for the age calculation
 
   .. code-block:: python
+    :lineno-start: 4
     :emphasize-lines: 9
 
     def factory(
@@ -2001,6 +2036,7 @@ green: make it pass
 * I add a default value for ``last_name``
 
   .. code-block:: python
+    :lineno-start: 4
     :emphasize-lines: 2
 
     def factory(
@@ -2018,6 +2054,7 @@ green: make it pass
 * I add a default value for ``sex``
 
   .. code-block:: python
+    :lineno-start: 4
     :emphasize-lines: 3
 
     def factory(
@@ -2035,6 +2072,7 @@ green: make it pass
 * I add a default value for ``year_of_birth``
 
   .. code-block:: python
+    :lineno-start: 4
     :emphasize-lines: 3
 
     def factory(
@@ -2053,6 +2091,7 @@ green: make it pass
 * I change the default value for ``last_name`` to match
 
   .. code-block:: python
+    :lineno-start: 4
     :emphasize-lines: 2
 
     def factory(
