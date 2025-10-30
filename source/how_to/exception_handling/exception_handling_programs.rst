@@ -267,6 +267,7 @@ green: make it pass
 * I change the `return statement`_ to match the expectation
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def an_exception_handler(argument):
         return 'failed'
@@ -284,9 +285,13 @@ I want ``an_exception_handler`` to process its input and return ``failed`` when 
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a new test to ``test_exceptions.py``
 
 .. code-block:: python
+  :emphasize-lines: 4-10
+
+  def test_catching_failure(self):
+      ...
 
   def test_catching_success(self):
       self.assertEqual(
@@ -308,6 +313,8 @@ green: make it pass
 * I add the name to ``exceptions.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
 
     def raise_exception():
         raise Exception('BOOM')
@@ -342,6 +349,10 @@ green: make it pass
 * I make ``an_exception_handler`` return its input
 
   .. code-block:: python
+    :emphasize-lines: 5
+
+    does_not_raise_exception = None
+
 
     def an_exception_handler(argument):
         return argument
@@ -355,19 +366,24 @@ green: make it pass
     FAILED tests/test_exceptions.py::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
   - ``test_catching_failure`` fails - in this test ``an_exception_handler`` returns the name of the :ref:`function<functions>` it receives and its address in memory
-  - ``test_catching_success`` still fails - in this test ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
+  - ``test_catching_success`` fails - in this test ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
-* I rename the input parameter to describe it better
+* I rename the input parameter to be more descriptive
 
   .. code-block:: python
+    :emphasize-lines: 4-5
+
+    does_not_raise_exception = None
+
 
     def an_exception_handler(a_function):
         return a_function
         return 'failed'
 
-  then make ``an_exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
+  then I make ``an_exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
   .. code-block:: python
+    :emphasize-lines: 2
 
     def an_exception_handler(a_function):
         return a_function()
@@ -386,9 +402,14 @@ green: make it pass
     because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_. I make it a :ref:`function<functions>` to fix this
 
     .. code-block:: python
+      :emphasize-lines: 1-2
 
       def does_not_raise_exception():
           return None
+
+
+      def an_exception_handler(a_function):
+          ...
 
     the terminal shows :ref:`AssertionError`
 
