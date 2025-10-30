@@ -48,6 +48,7 @@
 .. _if statement: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
 .. _if statements: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
+.. _import statements: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _int: https://docs.python.org/3/library/functions.html#int
 .. _integer: https://docs.python.org/3/library/functions.html#int
