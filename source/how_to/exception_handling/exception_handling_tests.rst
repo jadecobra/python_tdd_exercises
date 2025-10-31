@@ -540,7 +540,7 @@ test_catching_key_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add a :ref:`dictionary<dictionaries>` to a new test
+* I add a :ref:`dictionary<dictionaries>` to a new test for :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -556,7 +556,7 @@ red: make it fail
         def test_catching_key_error_in_tests(self):
             {'key': 'value'}
 
-* when I try to get the value for a key that exists
+* when I try to get the value for a key that is in the :ref:`dictionary<dictionaries>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -708,7 +708,7 @@ red: make it fail
         def test_catching_exceptions_in_tests(self):
             raise AssertionError
 
-  and the terminal shows the :ref:`Exception<errors>`
+  and the terminal shows the :ref:`Exception<errors>` I give the `raise statement`_
 
   .. code-block:: python
 
@@ -747,7 +747,7 @@ the terminal shows all tests are passing. The assertRaises_ :ref:`method<functio
 refactor: make it better
 #################################################################################
 
-* I can use :ref:`Exception<errors>` to catch any of the :ref:`Exceptions<errors>` that inherit from it, its children
+* I can use :ref:`Exception<errors>` to catch any of the :ref:`Exceptions<errors>` that inherit from it - its children
 
   .. code-block:: python
     :lineno-start: 30
@@ -761,7 +761,11 @@ refactor: make it better
             with self.assertRaises(Exception):
                 1 / 0
 
-  all the tests are still green. The problem with using :ref:`Exception<errors>` to catch its children, is it does not tell anyone that reads the code what the actual :ref:`error<errors>` is or which line caused it, especially when there is more than one line of code in the context. It is better to be specific, from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``
+  all the tests are still green.
+
+  The problem with using :ref:`Exception<errors>` to catch its children, is it does not tell anyone that reads the code what the actual :ref:`error<errors>` is or which line caused it, especially when there is more than one line of code in the context.
+
+  It is better to be specific, from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``
 
   .. code-block:: python
     :lineno-start: 34
@@ -818,9 +822,10 @@ refactor: make it better
 
     Exception
 
-  because it is not ZeroDivisionError_ even though it is an :ref:`Exceptions<errors>`. I undo the change
+  because it is not ZeroDivisionError_ even though it is an :ref:`Exception<errors>`. I undo the change
 
   .. code-block:: python
+    :lineno-start: 38
     :emphasize-lines: 2
 
         def test_catching_exceptions_in_tests(self):
@@ -834,6 +839,7 @@ refactor: make it better
 * As promised here is why the second AssertRaises_ in :ref:`test_catching_index_error_in_tests` is not a repetition, even though the test still passes when I remove it
 
   .. code-block:: python
+    :lineno-start: 23
     :emphasize-lines: 5-6
 
         def test_catching_index_error_in_tests(self):
@@ -894,7 +900,7 @@ refactor: make it better
             with self.assertRaises(IndexError):
                 a_list[-5]
 
-  all tests are passing! I know :ref:`how to test that an Exception is raised`!
+  all tests are passing! I know :ref:`how to test that an Exception is raised`
 
 ----
 
