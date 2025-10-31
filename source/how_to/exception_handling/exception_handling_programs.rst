@@ -305,7 +305,7 @@ green: make it pass
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines: 5
+    :emphasize-lines: 1-2
 
     def raise_exception():
         raise Exception('BOOM!')
