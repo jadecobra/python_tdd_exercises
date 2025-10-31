@@ -82,7 +82,7 @@ green: make it pass
 * when I make ``raise_exception`` a :ref:`function<functions>`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 5
     :emphasize-lines: 1-2
 
     def raise_exception():
