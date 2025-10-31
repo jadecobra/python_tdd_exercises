@@ -489,6 +489,8 @@ how to use try...except...else
   - ``except Exception`` - when **calling** ``a_function()`` raises ``Exception`` return ``'failed'``
   - ``else`` - when **calling** ``a_function()`` does NOT raise ``Exception`` return ``'succeeded'``
 
+  the `try statement`_ is how I think of `Test Driven Development`_ or the scientific method. Try something, if it fails, try something else, do it as many times as you can
+
 * I can be more specific with the :ref:`Exception<errors>` in the ``except`` block, for example
 
   .. code-block:: python
