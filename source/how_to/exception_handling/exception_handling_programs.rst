@@ -511,12 +511,6 @@ how to use try...except...else
 
     Exception: BOOM!
 
-  and shows :ref:`AssertionError` for ``test_catching_success``
-
-  .. code-block:: python
-
-    AssertionError: None != 'succeeded'
-
   because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError`. The `try statement`_ will only catch the :ref:`Exception<errors>` given in the ``except`` block and its children, all others will be raised
 
 * I change it back to what works
