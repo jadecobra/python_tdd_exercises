@@ -121,7 +121,7 @@ green: make it pass
 
   the test passes
 
-* I can be more specific when testing for an :ref:`Exception<errors>`, I add the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to check that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given in ``test_catching_exceptions_w_messages`` in ``test_exceptions.py``
+* I can be more specific when testing for an :ref:`Exception<errors>`, I add assertRaisesRegex_ in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 42
@@ -139,9 +139,9 @@ green: make it pass
 
     AssertionError: "BOOM!" does not match ""
 
-  the default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the test expects ``"BOOM!"``
+  the assertRaisesRegex_ :ref:`method<functions>` checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. The default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the test expects ``"BOOM!"``
 
-* the :ref:`Exception<errors>` is right, the message is not. I add the message in ``exceptions.py``
+* the :ref:`Exception<errors>` is right, the message is not, I add the expected message in ``exceptions.py``
 
   .. code-block:: python
     :lineno-start: 5
