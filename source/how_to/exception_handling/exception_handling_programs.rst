@@ -308,7 +308,7 @@ green: make it pass
     :emphasize-lines: 5
 
     def raise_exception():
-        raise Exception('BOOM')
+        raise Exception('BOOM!')
 
 
     does_not_raise_exception
