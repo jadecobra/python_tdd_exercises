@@ -89,13 +89,14 @@ green: make it pass
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
+    :lineno-start: 10
     :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` in the ``src`` folder/directory to solve the problem but I want to catch/handle it in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file does NOT exist. I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` which checks that the code below it the :ref:`Exception<errors>` it is given
+* I can make ``does_not_exist.py`` in the ``src`` folder/directory to solve the problem but I want to catch/handle it in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file does NOT exist. I add the assertRaises_ :ref:`method<functions>` which checks that the code below it the :ref:`Exception<errors>` it is given
 
   .. code-block:: python
     :lineno-start: 6
@@ -172,9 +173,7 @@ test_catching_attribute_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add another failing test
-
-  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+* I add another failing test, this time for :ref:`AttributeError`
 
   .. code-block:: python
     :lineno-start: 10
@@ -225,11 +224,11 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then I add the `unittest.TestCase.assertRaises`_ :ref:`method<functions>`
+then I add the assertRaises_ :ref:`method<functions>`
 
 .. code-block:: python
   :lineno-start: 15
-  :emphasize-lines: 5-6
+  :emphasize-lines: 2-3
 
         def test_catching_attribute_error_in_tests(self):
             with self.assertRaises(AttributeError):
@@ -246,7 +245,7 @@ test_catching_type_error_in_tests
 red: make it fail
 #################################################################################
 
-* I add a failing test
+* I add a failing test for :ref:`TypeError`
 
   .. code-block:: python
     :lineno-start: 15
@@ -307,7 +306,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-then I add `unittest.TestCase.assertRaises`_ to the test
+then I add assertRaises_ to the test
 
 .. code-block:: python
   :lineno-start: 19
@@ -322,7 +321,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* When I make ``function_name`` a :ref:`function<functions>` in ``exceptions.py``
+* when I make ``function_name`` a :ref:`function<functions>` in ``exceptions.py``
 
   .. code-block:: python
     :linenos:
@@ -332,7 +331,7 @@ refactor: make it better
 
   the terminal still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not take input
 
-* When I add a parameter to the definition
+* when I add a parameter to the definition
 
   .. code-block:: python
     :linenos:
@@ -367,7 +366,7 @@ test_catching_index_error_in_tests
 red: make it fail
 #################################################################################
 
-* I make a :ref:`list<lists>` in a new test
+* I want to test catching :ref:`IndexError<test_index_error>`, I add a new test with a :ref:`list<lists>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -445,6 +444,9 @@ green: make it pass
                 a_list[4]
 
   the test passes
+
+refactor: make it better
+#################################################################################
 
 * I can also :ref:`index<test_index_returns_first_position_of_item_in_a_list>` with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``, think reading from right to left
 
@@ -679,7 +681,7 @@ red: make it fail
 * I add a failing test with the `raise statement`_
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 34
     :emphasize-lines: 5-6
 
         def test_catching_zero_division_error_in_tests(self):

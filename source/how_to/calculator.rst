@@ -880,7 +880,7 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
 green: make it pass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I can use the `unittest.TestCase.assertRaises`_ :ref:`method<functions>` to make sure that :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when I try to divide a number by ``0``
+* I can use the assertRaises_ :ref:`method<functions>` to make sure that :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when I try to divide a number by ``0``
 
   .. code-block:: python
     :emphasize-lines: 2-3
