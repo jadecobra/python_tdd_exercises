@@ -28,36 +28,13 @@ test_catching_exceptions_w_messages
 
 * I add a failing test to ``test_exceptions.py``
 
-  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
-
   .. code-block:: python
+    :lineno-start: 38
     :emphasize-lines: 27-28
 
-    class TestExceptions(unittest.TestCase):
-
-        def test_catching_module_not_found_error_in_tests(self):
-            ...
-
-        def test_catching_name_error_in_tests(self):
-            ...
-
-        def test_catching_attribute_error_in_tests(self):
-            ...
-
-        def test_catching_type_error_in_tests(self):
-            ...
-
-        def test_catching_index_error_in_tests(self):
-            ...
-
-        def test_catching_key_error_in_tests(self):
-            ...
-
-        def test_catching_zero_division_error_in_tests(self):
-            ...
-
         def test_catching_exceptions_in_tests(self):
-            ...
+            with self.assertRaises(Exception):
+                raise Exception
 
         def test_catching_exceptions_w_messages(self):
             src.exceptions.raise_exception()
@@ -71,7 +48,7 @@ test_catching_exceptions_w_messages
 green: make it pass
 #################################################################################
 
-* I add the name in ``exceptions.py``
+* I add the name to ``exceptions.py``
 
   .. code-block:: python
     :linenos:
@@ -92,6 +69,7 @@ green: make it pass
 * I point it to :ref:`None`
 
   .. code-block:: python
+    :lineno-start: 5
 
     raise_exception = None
 
@@ -104,7 +82,7 @@ green: make it pass
 * When I make ``raise_exception`` a :ref:`function<functions>`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 5
     :emphasize-lines: 5-6
 
     def function_name():
@@ -119,11 +97,12 @@ green: make it pass
 * I want the :ref:`function<functions>` to raise an :ref:`Exception<errors>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
 
   .. code-block:: python
+    :lineno-start: 42
     :emphasize-lines: 2-3
 
-    def test_catching_exceptions_w_messages(self):
-        with self.assertRaises(Exception):
-            src.exceptions.raise_exception()
+        def test_catching_exceptions_w_messages(self):
+            with self.assertRaises(Exception):
+                src.exceptions.raise_exception()
 
   the terminal shows :ref:`AssertionError`
 
@@ -134,6 +113,7 @@ green: make it pass
 * I add a `raise statement`_ to the ``raise_exception`` :ref:`function<functions>` in ``exceptions.py``
 
   .. code-block:: python
+    :lineno-start: 5
     :emphasize-lines: 2
 
     def raise_exception():
@@ -144,13 +124,14 @@ green: make it pass
 * I can be more specific when testing for an :ref:`Exception<errors>`, I add the `unittest.TestCase.assertRaisesRegex`_ :ref:`method<functions>` to check that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given in ``test_catching_exceptions_w_messages`` in ``test_exceptions.py``
 
   .. code-block:: python
+    :lineno-start: 42
     :emphasize-lines: 2-4
 
-    def test_catching_exceptions_w_messages(self):
-        with self.assertRaisesRegex(
-            Exception, 'BOOM!'
-        ):
-            src.exceptions.raise_exception()
+        def test_catching_exceptions_w_messages(self):
+            with self.assertRaisesRegex(
+                Exception, 'BOOM!'
+            ):
+                src.exceptions.raise_exception()
 
   the terminal shows :ref:`AssertionError`
 
@@ -163,6 +144,7 @@ green: make it pass
 * the :ref:`Exception<errors>` is right, the message is not. I add the message in ``exceptions.py``
 
   .. code-block:: python
+    :lineno-start: 5
     :emphasize-lines: 2
 
     def raise_exception():
@@ -171,7 +153,6 @@ green: make it pass
   the test passes. Time to add an :ref:`Exception<errors>` to the program
 
 ----
-
 
 *********************************************************************************
 test_catching_failure
@@ -182,21 +163,23 @@ red: make it fail
 
 I add a new failing test in ``test_exceptions.py``
 
-.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
-
 .. code-block:: python
-  :emphasize-lines: 4-10
+  :lineno-start: 42
+  :emphasize-lines: 7-13
 
-  def test_catching_exceptions_w_messages(self):
-      ...
+        def test_catching_exceptions_w_messages(self):
+            with self.assertRaisesRegex(
+                Exception, 'BOOM!'
+            ):
+                src.exceptions.raise_exception()
 
-  def test_catching_failure(self):
-      self.assertEqual(
-          src.exceptions.an_exception_handler(
-              src.exceptions.raise_exception
-          ),
-          'failed'
-      )
+        def test_catching_failure(self):
+            self.assertEqual(
+                src.exceptions.an_exception_handler(
+                    src.exceptions.raise_exception
+                ),
+                'failed'
+            )
 
 the terminal shows :ref:`AttributeError`
 
@@ -210,6 +193,8 @@ green: make it pass
 * I add the name to ``exceptions.py``
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5
 
     def raise_exception():
         raise Exception('BOOM')
@@ -226,6 +211,7 @@ green: make it pass
 * I point it to :ref:`None`
 
   .. code-block:: python
+    :lineno-start: 9
 
     an_exception_handler = None
 
@@ -238,6 +224,7 @@ green: make it pass
 * I make it a :ref:`function<functions>`
 
   .. code-block:: python
+    :lineno-start: 9
 
     def an_exception_handler():
         return None
@@ -251,6 +238,7 @@ green: make it pass
 * I make the :ref:`function<functions>` take input
 
   .. code-block:: python
+    :lineno-start: 9
     :emphasize-lines: 1
 
     def an_exception_handler(argument):
@@ -280,7 +268,7 @@ green: make it pass
 test_catching_success
 *********************************************************************************
 
-I want ``an_exception_handler`` to process its input and return ``failed`` when an :ref:`Exception<errors>` happens or ``success`` when it does not.
+I want ``an_exception_handler`` to process its input and return ``failed`` when an :ref:`Exception<errors>` happens or ``success`` when an :ref:`Exception<errors>` is NOT raised.
 
 red: make it fail
 #################################################################################
@@ -288,18 +276,24 @@ red: make it fail
 I add a new test to ``test_exceptions.py``
 
 .. code-block:: python
-  :emphasize-lines: 4-10
+  :lineno-start: 48
+  :emphasize-lines: 9-15
 
-  def test_catching_failure(self):
-      ...
+        def test_catching_failure(self):
+            self.assertEqual(
+                src.exceptions.an_exception_handler(
+                    src.exceptions.raise_exception
+                ),
+                'failed'
+            )
 
-  def test_catching_success(self):
-      self.assertEqual(
-          src.exceptions.an_exception_handler(
-              src.exceptions.does_not_raise_exception
-          ),
-          'succeeded'
-      )
+        def test_catching_success(self):
+            self.assertEqual(
+                src.exceptions.an_exception_handler(
+                    src.exceptions.does_not_raise_exception
+                ),
+                'succeeded'
+            )
 
 the terminal shows :ref:`AttributeError`
 
@@ -313,7 +307,7 @@ green: make it pass
 * I add the name to ``exceptions.py``
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 5
     :emphasize-lines: 5
 
     def raise_exception():
@@ -335,6 +329,8 @@ green: make it pass
 * I point it to :ref:`None`
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1
 
     does_not_raise_exception = None
 
@@ -349,6 +345,7 @@ green: make it pass
 * I make ``an_exception_handler`` return its input
 
   .. code-block:: python
+    :lineno-start: 9
     :emphasize-lines: 5
 
     does_not_raise_exception = None
@@ -371,10 +368,8 @@ green: make it pass
 * I rename the input parameter to be more descriptive
 
   .. code-block:: python
-    :emphasize-lines: 4-5
-
-    does_not_raise_exception = None
-
+    :lineno-start: 12
+    :emphasize-lines: 1-2
 
     def an_exception_handler(a_function):
         return a_function
@@ -383,6 +378,7 @@ green: make it pass
   then I make ``an_exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
   .. code-block:: python
+    :lineno-start: 12
     :emphasize-lines: 2
 
     def an_exception_handler(a_function):
@@ -402,6 +398,7 @@ green: make it pass
     because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_. I make it a :ref:`function<functions>` to make it callable_
 
     .. code-block:: python
+      :lineno-start: 9
       :emphasize-lines: 1-2
 
       def does_not_raise_exception():
@@ -409,7 +406,8 @@ green: make it pass
 
 
       def an_exception_handler(a_function):
-          ...
+          return a_function()
+          return 'failed'
 
     the terminal shows :ref:`AssertionError`
 
@@ -429,16 +427,8 @@ how to use try...except...else
 * I add a `try statement`_ to ``exceptions.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 10-13
-
-    def raise_exception():
-        raise Exception('BOOM')
-
-
-    def does_not_raise_exception():
-        return None
-
+    :lineno-start: 13
+    :emphasize-lines: 2-5
 
     def an_exception_handler(a_function):
         try:
@@ -446,7 +436,7 @@ how to use try...except...else
         except Exception:
             return 'failed'
 
-  ``test_catching_failure`` passes and the terminal still shows :ref:`AssertionError`
+  ``test_catching_failure`` passes, the terminal still shows :ref:`AssertionError` for ``test_catching_success``
 
   .. code-block:: python
 
@@ -454,9 +444,10 @@ how to use try...except...else
 
   the `try statement`_ is used to handle :ref:`Exceptions<errors>` in programs
 
-* I add an else_ clause for when ``a_function()`` runs without problems
+* I add an else_ clause for when ``a_function()`` runs without raising an :ref:`Exception<errors>`
 
   .. code-block:: python
+    :lineno-start: 13
     :emphasize-lines: 6-7
 
     def an_exception_handler(a_function):
@@ -473,10 +464,11 @@ how to use try...except...else
 
     AssertionError: None != 'succeeded'
 
-  I change the `return statement`_
+  I change the `return statement`_ in the else_ clause
 
   .. code-block:: python
-    :emphasize-lines: 6-7
+    :lineno-start: 13
+    :emphasize-lines: 7
 
     def an_exception_handler(a_function):
         try:
@@ -488,7 +480,7 @@ how to use try...except...else
 
   the test passes.
 
-  The `try statement`_ is used to catch/handle :ref:`exceptions<errors>` in Python_. It allows the program to make a decision when it runs into an :ref:`Exception<errors>`. I think of it as
+  The `try statement`_ is used to catch/handle :ref:`exceptions<errors>` in Python_. It allows the program to choose what it does when it runs into an :ref:`Exception<errors>`. I think of it as
 
   - ``try`` running **this**
   - ``except Exception`` - when running **this** raises ``Exception``, run the code in this block
@@ -503,6 +495,8 @@ how to use try...except...else
 * I can be more specific with the :ref:`Exception<errors>` in the ``except`` block, for example
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 4
 
     def an_exception_handler(a_function):
         try:
@@ -512,17 +506,25 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  shows this in the terminal
+  the terminal shows :ref:`Exception<errors>` for ``test_catching_failures``
 
   .. code-block:: python
 
-    Exception: 'BOOM!'
+    Exception: BOOM!
 
-  because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError`, the `try statement`_ will only catch the :ref:`Exception<errors>` given in the ``except`` block and its children, all others will be raised
+  and shows :ref:`AssertionError` for ``test_catching_success``
+
+  .. code-block:: python
+
+    AssertionError: None != 'succeeded'
+
+  because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError`. The `try statement`_ will only catch the :ref:`Exception<errors>` given in the ``except`` block and its children, all others will be raised
 
 * I change it back to what works
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 4
 
     def an_exception_handler(a_function):
         try:
