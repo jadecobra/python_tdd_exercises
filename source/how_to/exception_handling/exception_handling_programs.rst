@@ -193,7 +193,7 @@ green: make it pass
 * I add the name to ``exceptions.py``
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 5
     :emphasize-lines: 5
 
     def raise_exception():
@@ -255,6 +255,7 @@ green: make it pass
 * I change the `return statement`_ to match the expectation
 
   .. code-block:: python
+    :lineno-start: 9
     :emphasize-lines: 2
 
     def an_exception_handler(argument):
@@ -534,7 +535,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  the terminal shows green again
+  the terminal shows green again! I know :ref:`how to test that an Exception is raised` and :ref:`how to handle Exceptions in programs`. I am a master!!
 
 ----
 
