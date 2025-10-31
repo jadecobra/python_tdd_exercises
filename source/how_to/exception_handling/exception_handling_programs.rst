@@ -30,7 +30,7 @@ test_catching_exceptions_w_messages
 
   .. code-block:: python
     :lineno-start: 38
-    :emphasize-lines: 27-28
+    :emphasize-lines: 5-6
 
         def test_catching_exceptions_in_tests(self):
             with self.assertRaises(Exception):
@@ -79,15 +79,11 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* When I make ``raise_exception`` a :ref:`function<functions>`
+* when I make ``raise_exception`` a :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5-6
-
-    def function_name():
-        return None
-
+    :linenos:
+    :emphasize-lines: 1-2
 
     def raise_exception():
         return None
@@ -197,7 +193,7 @@ green: make it pass
     :emphasize-lines: 5
 
     def raise_exception():
-        raise Exception('BOOM')
+        raise Exception('BOOM!')
 
 
     an_exception_handler
