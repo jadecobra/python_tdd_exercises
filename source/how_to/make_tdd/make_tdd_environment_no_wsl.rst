@@ -629,6 +629,6 @@ Would you like to :ref:`test making a calculator?<how to make a calculator>`
 
 ----
 
-the program to setup a Python_ `Test Driven Development`_ Environment for any Windows_ computers without `Windows Subsystem Linux`_
+the program to make a Python_ `Test Driven Development`_ Environment for any Windows_ computers without `Windows Subsystem Linux`_
 
 :ref:`makePythonTdd.ps1`

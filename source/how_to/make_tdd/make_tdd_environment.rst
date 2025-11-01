@@ -635,6 +635,6 @@ Would you like to test :ref:`test making a calculator?<how to make a calculator>
 
 ----
 
-the program to setup a Python_ `Test Driven Development`_ Environment for any Linux_ or MacOS_ computers
+the program to make a Python_ `Test Driven Development`_ Environment for any Linux_ or MacOS_ computers
 
 :ref:`makePythonTdd.sh`
