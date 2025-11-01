@@ -278,7 +278,7 @@ then I run the test again in the terminal
 
 and the test passes! The terminal shows
 
-.. code-block:: python
+.. code-block:: none
 
   .
   ------------------------------------------------------
@@ -476,7 +476,7 @@ When I want to leave a `virtual environment`_, I type this in the terminal to de
 how to activate a virtual environment
 ############################################################################################
 
-When I want to work in a `virtual environment`_, I change directory to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
+When I want to work in a `virtual environment`_, I `change directory`_ to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
 
 .. code-block:: shell
 
@@ -503,7 +503,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     deactivate
 
-* I use cd_ to change directory to the parent of ``magic``
+* I use cd_ to `change directory`_ to the parent of ``magic``
 
   .. code-block:: shell
 
@@ -515,19 +515,19 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     touch makePythonTdd.sh
 
-* I use the history_ program
+* I use history_
 
   .. code-block:: shell
 
     history
 
-  the terminal shows all the commands I have typed so far, and I use them to write the program
+  the history_ program shows all the commands I have typed in the terminal so far, and I use them to write the program
 
 * I click on ``makePythonTdd.sh`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
-  .. code-block:: ruby
+  .. code-block:: python
     :linenos:
 
     #!/bin/bash
@@ -587,7 +587,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     :linenos:
     :emphasize-lines: 10-21
 
-* I type this in the terminal to make sure the program I just wrote is executable
+* I type this in the terminal to make sure the program I just wrote can run
 
   .. code-block:: shell
 
@@ -595,13 +595,31 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   chmod_ is a program that changes the mode of the given file
 
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved,
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved
 
   .. code-block:: shell
 
     ./makePythonTdd.sh calculator
 
-  the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`how to make a calculator`
+  the terminal shows
+
+  .. code-block:: python
+
+    ======================= FAILURES =======================
+    _____________ Testcalculator.test_failure ______________
+
+    self = <tests.test_calculator.Testcalculator testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_calculator.py:7: AssertionError
+    ================ short test summary info ===============
+    FAILED tests/test_calculator.py::Testcalculator::test_failure - AssertionError: True is not false
+    ================== 1 failed in X.YZs ===================
+
+  the computer made a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`how to make a calculator`
 
 ----
 

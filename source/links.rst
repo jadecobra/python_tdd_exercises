@@ -18,6 +18,7 @@
 .. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
+.. _change directory: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions

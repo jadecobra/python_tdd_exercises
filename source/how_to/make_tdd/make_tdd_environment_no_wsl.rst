@@ -253,7 +253,7 @@ then I run the test again in the terminal
 
 and the test passes! The terminal shows
 
-.. code-block:: python
+.. code-block:: none
 
   .
   ------------------------------------------------------
@@ -406,7 +406,7 @@ how to make a virtual environment
 
 * I now have these folders/directories and files
 
-  .. code-block:: python
+  .. code-block:: shell
     :force:
 
     magic
@@ -477,7 +477,7 @@ When I want to leave a `virtual environment`_, I type this in the terminal to de
 how to activate a virtual environment
 ############################################################################################
 
-When I want to work in a `virtual environment`_, I change directory to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
+When I want to work in a `virtual environment`_, I `change directory`_ to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
 
 .. code-block:: PowerShell
 
@@ -522,13 +522,13 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     New-Item makePythonTdd.ps1
 
-* I use the history_ program
+* I use history_
 
   .. code-block:: shell
 
     history
 
-  the terminal shows all the commands I have typed so far, and I use them to write the program
+  the history_ program shows all the commands I have typed in the terminal so far, and I use them to write the program
 
 * I click on ``makePythonTdd.ps1`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
 
@@ -589,13 +589,31 @@ You made it this far and have become the greatest programmer in the world. To fo
     :language: PowerShell
     :emphasize-lines: 9-20
 
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.ps1`` is saved,
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.ps1`` is saved
 
   .. code-block:: PowerShell
 
     ./makePythonTdd.ps1 calculator
 
-  the computer will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`how to make a calculator`
+  the terminal shows
+
+  .. code-block:: python
+
+    ======================= FAILURES =======================
+    _____________ Testcalculator.test_failure ______________
+
+    self = <tests.test_calculator.Testcalculator testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_calculator.py:7: AssertionError
+    ================ short test summary info ===============
+    FAILED tests/test_calculator.py::Testcalculator::test_failure - AssertionError: True is not false
+    ================== 1 failed in X.YZs ===================
+
+  the computer made a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`how to make a calculator`
 
 ----
 
