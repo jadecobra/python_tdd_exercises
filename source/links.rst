@@ -162,6 +162,7 @@
 .. _Logical Identity: https://en.wikipedia.org/wiki/Identity_function
 .. _Logical Negation: https://en.wikipedia.org/wiki/Negation
 .. _MacOS: https://www.apple.com/macos
+.. _Microsoft Store: https://apps.microsoft.com/home
 .. _Refactoring: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _Regular Expressions: https://en.wikipedia.org/wiki/Regular_expression
 .. _True: https://docs.python.org/3/library/constants.html?highlight=true#True

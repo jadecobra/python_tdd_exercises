@@ -12,20 +12,24 @@ Make sure your computer runs `Windows 11 <https://www.microsoft.com/en-us/softwa
 
 As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/windows/end-of-support?r=1>`_
 
+* click ``Search`` at bottom of your screen
 * search for ``Turn on windows features``
-* click ``Search`` at bottom of screen
-* click ``Turn on or off Windows Features``
-* Make sure the following have check marks to the left of them
+* click ``Turn on or off Windows Features`` from the results
+* Make sure the following have check marks to the left of them in the dialog box that opens up
 
   - Hyper V
   - Virtual Machine Platform
   - Windows Subsystem Linux
   - Windows Hypervisor Platform
 
-  Click ``OK`` to apply the changes
+  Click ``OK`` to apply the changes if any
 
-* Open Microsoft Store
+* Open the `Microsoft Store`_
 * Search for ``Debian``
+
+  .. image:: /_static/setup_my_ide/microsoft_store_debian.png
+    :width: 600
+    :alt: Terminal Window on the right
 
   .. TIP:: You can use any Linux Distribution you want, `Windows Subsystem Linux`_ installs Ubuntu by default
 
