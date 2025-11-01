@@ -8,7 +8,9 @@
 how to make a test driven development environment
 #################################################################################
 
-These chapters cover how to setup a project in Python to help you get started with Test Driven Development right away
+I set up an environment for every Python_ project, this way I keep all the things that belong to the project in the same place. I can do this manually, which means I have to do the same exact steps for every project or I could do it automatically where I give the computer a command and it does all those steps for me.
+
+These chapters show how I setup a project in Python_ on any computer (Linux_, Windows_, MacOS_)to help you get started with `Test Driven Development`_ right now
 
 .. toctree::
   :titlesonly:
@@ -19,5 +21,7 @@ These chapters cover how to setup a project in Python to help you get started wi
 
 ----
 
-:ref:`makePythonTdd.sh`
-:ref:`makePythonTdd.ps1`
+the programs to automatically setup a Python_ `Test Driven Development`_ project
+
+* :ref:`makePythonTdd.sh` - for MacOS_, Linux_ and `Windows Subsystem Linux`_
+* :ref:`makePythonTdd.ps1` - for Windows_ without `Windows Subsystem Linux`_
