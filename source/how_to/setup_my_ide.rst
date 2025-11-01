@@ -38,31 +38,38 @@ for testing
 
 When working with just the Integrated Development Environment, I have the following windows open
 
-* explorer on the left to see files/folder structure at once, and I can drag and drop files directly into the editor
+explorer on left
+---------------------------------------------------------------------------------
+explorer on the left to see files/folder structure at once, and I can drag and drop files directly into the editor
 
-  .. image:: /_static/setup_my_ide/explorer_w_editors.png
+.. image:: /_static/setup_my_ide/explorer_w_editors.png
+  :width: 600
+  :alt: Explorer with Editors
+
+2 editors
+---------------------------------------------------------------------------------
+editors side by side - source code on the left with tests on the right
+
+.. image:: /_static/setup_my_ide/2_editors.png
+  :width: 600
+  :alt: Editors side by side
+
+the terminal
+---------------------------------------------------------------------------------
+
+the terminal to show results of the tests
+
+* at the bottom - for most cases
+
+  .. image:: /_static/setup_my_ide/terminal_on_bottom.png
     :width: 600
-    :alt: Explorer with Editors
+    :alt: Terminal Window at the bottom
 
-* editors side by side - source code on the left with tests on the right
+* to the right - when the results I am looking at in the terminal are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries`
 
-  .. image:: /_static/setup_my_ide/2_editors.png
+  .. image:: /_static/setup_my_ide/terminal_on_right.png
     :width: 600
-    :alt: Editors side by side
-
-* the terminal to show results of the tests
-
-  - at the bottom - for most cases
-
-    .. image:: /_static/setup_my_ide/terminal_on_bottom.png
-      :width: 600
-      :alt: Terminal Window at the bottom
-
-  - to the right - when the results I am looking at in the terminal are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries`
-
-    .. image:: /_static/setup_my_ide/terminal_on_right.png
-      :width: 600
-      :alt: Terminal Window on the right
+    :alt: Terminal Window on the right
 
 This setup helps me answer 2 questions
 
