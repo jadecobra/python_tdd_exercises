@@ -61,7 +61,7 @@ type this in the terminal to install Python_
 how to manually make a python test driven development environment
 ********************************************************************************************
 
-* Imagine I have to work on a project and it's name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_
+* Imagine I have to work on a project and its name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_
 
   .. code-block:: shell
 
@@ -189,7 +189,7 @@ red: make it fail
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) every time I make a change
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time
 * I type this in the terminal to run the test
 
   .. code-block:: python
@@ -403,7 +403,7 @@ how to make a virtual environment
     pytest-watch x.y.z
     watchdog     x.y.z
 
-* I now have these folders/directories and files
+* I now have these folders/directories and files in the project
 
   .. code-block:: shell
     :force:
@@ -458,7 +458,7 @@ how to make a virtual environment
 
   I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py`` to make it pass. I can now write the rest of the code for the project while the tests run automatically
 
-  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
+  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
 
 ----
 
@@ -577,7 +577,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
       command argument
 
-    in the code above, ``command`` will be ``makePythonTdd.sh`` and ``$1`` will get the value of  ``argument``
+    in the code above, ``command`` will be ``makePythonTdd.sh`` and ``$1`` will be the value of  ``argument``
 
 * I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 

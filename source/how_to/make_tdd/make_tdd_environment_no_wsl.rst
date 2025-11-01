@@ -36,7 +36,7 @@ requirements
 how to manually make a python test driven development environment on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
 
-* Imagine I have to work on a project and it's name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_
+* Imagine I have to work on a project and its name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_
 
   .. code-block:: shell
 
@@ -44,7 +44,7 @@ how to manually make a python test driven development environment on Windows wit
 
   this makes a folder/directory for the project where its files will stay
 
-  * I use cd_
+* I use cd_
 
   .. code-block:: shell
 
@@ -162,9 +162,9 @@ red: make it fail
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
-      I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`, there is a problem if it does not fail
+      I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) every time I make a change
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time
 * I type this in the terminal to run the test
 
   .. code-block:: python
@@ -404,7 +404,7 @@ how to make a virtual environment
     pytest-watch x.y.z
     watchdog     x.y.z
 
-* I now have these folders/directories and files
+* I now have these folders/directories and files in the project
 
   .. code-block:: shell
     :force:
@@ -459,7 +459,7 @@ how to make a virtual environment
 
   I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py`` to make it pass. I can now write the rest of the code for the project while the tests run automatically
 
-  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal to stop the tests at anytime
+  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
 
 ----
 
@@ -568,7 +568,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     New-Item tests/__init__.py
     New-Item tests/test_$PROJECT_NAME.py
     python -m venv .venv
-    source .venv/bin/activate
+    source .venv/bin/activate.ps1
     python -m pip install --upgrade pip
     "pytest-watch" | Out-File requirements.txt -Encoding UTF8
     python -m pip install --requirement requirements.txt
@@ -580,7 +580,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
       command argument
 
-    in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will get the value of  ``argument``
+    in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will be the value of  ``argument``
 
 * I use the `Out-File`_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
