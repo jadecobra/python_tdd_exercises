@@ -41,6 +41,8 @@ If you are using a Windows computer, try
 linux/Windows Subsystem Linux requirements
 #################################################################################
 
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_
+
 Open a terminal then type this to update the Linux_ package manager
 
 .. code-block:: shell
@@ -81,15 +83,15 @@ how to manually make a python test driven development environment
 
     mkdir src
 
-  I use touch_ to make an empty file
+  I use touch_
 
   .. code-block:: shell
 
     touch src/magic.py
 
-  this adds an empty file for the source code (the actual program)
+  this makes an empty file for the source code (the actual program)
 
-* I make a child directory
+* I make a child folder/directory
 
   .. code-block:: shell
 
@@ -113,7 +115,7 @@ how to manually make a python test driven development environment
 
     touch tests/test_magic.py
 
-  .. TIP:: I can use any name for the file as long as it starts with ``test_``
+  .. TIP:: I can use any name for the test file as long as it starts with ``test_``
 
 * these are the folders/directories and files in the project
 
@@ -167,7 +169,7 @@ red: make it fail
     * ``class`` is the Python_ keyword for making :ref:`classes`, which are a group of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` that belong together, see :ref:`classes` for more
     * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test
 
-      .. TIP:: I can use any name as long as it starts with ``Test``
+      .. TIP:: I can use any name for the test class as long as it starts with ``Test``
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods<functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
@@ -177,7 +179,7 @@ red: make it fail
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
     * ``test_failure`` is the name of this :ref:`method<functions>` for my tests
 
-      .. TIP:: I can use any name as long as it starts with ``test_``
+      .. TIP:: I can use any name for the test method as long as it starts with ``test_``
 
     * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
@@ -187,7 +189,7 @@ red: make it fail
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by having to hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) every time I make a change
+* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) every time I make a change
 * I type this in the terminal to run the test
 
   .. code-block:: python
@@ -203,8 +205,9 @@ red: make it fail
     FAIL: test_failure (tests.test_magic.TestMagic.test_failure)
     -------------------------------------------------------------
     Traceback (most recent call last):
-    File ".../magic/tests/test_magic.py", line 7, in test_failure
+      File ".../magic/tests/test_magic.py", line 7, in test_failure
         self.assertFalse(True)
+        ~~~~~~~~~~~~~~~~^^^^^^
     AssertionError: True is not false
 
     -------------------------------------------------------------
@@ -311,7 +314,7 @@ how to make a virtual environment
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed
   - ``.venv`` is the name given
 
-    .. NOTE:: ``.venv`` is Python_ convention, I can use any name I want
+    .. NOTE:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
 
 * I activate the `virtual environment`_ to use it
 
@@ -362,7 +365,7 @@ how to make a virtual environment
   - pytest_ is a `python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install
 
-    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want
+    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want for the file
 
 * I install `pytest-watch`_ and the programs it needs
 
@@ -373,7 +376,7 @@ how to make a virtual environment
   - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file
   - ``requirements.txt`` is the name of the file given
 
-    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want
+    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want for the file
 
 * I use pip_ to see what packages are now installed in the `virtual environment`_
 
@@ -611,5 +614,7 @@ You have seen a way to make a Python_ `Test Driven Development`_ Environment, an
 Would you like to test :ref:`making a calculator?<how to make a calculator>`
 
 ----
+
+the program to setup a Python_ `Test Driven Development`_ Environment for any Linux_ or MacOS_ computers
 
 :ref:`makePythonTdd.sh`
