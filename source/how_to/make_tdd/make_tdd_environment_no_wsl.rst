@@ -599,8 +599,8 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   .. code-block:: python
 
-    ======================= FAILURES =======================
-    _____________ Testcalculator.test_failure ______________
+    ====================================== FAILURES =======================================
+    _____________________________ Testcalculator.test_failure _____________________________
 
     self = <tests.test_calculator.Testcalculator testMethod=test_failure>
 
@@ -609,9 +609,9 @@ You made it this far and have become the greatest programmer in the world. To fo
     E       AssertionError: True is not false
 
     tests/test_calculator.py:7: AssertionError
-    ================ short test summary info ===============
+    =============================== short test summary info ===============================
     FAILED tests/test_calculator.py::Testcalculator::test_failure - AssertionError: True is not false
-    ================== 1 failed in X.YZs ===================
+    ================================== 1 failed in X.YZs ==================================
 
   the computer made a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`how to make a calculator`
 
