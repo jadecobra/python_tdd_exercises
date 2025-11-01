@@ -119,15 +119,15 @@ how to manually make a python test driven development environment
 
 * these are the folders/directories and files in the project
 
-  .. code-block:: python
+  .. code-block:: none
     :force:
 
     magic
-      ╰──src
-      |  ╰──magic.py
-      ╰──tests
-         ╰──__init__.py
-         ╰──test_magic.py
+    ├── src
+    │   └── magic.py
+    └── tests
+        ├── __init__.py
+        └── test_magic.py
 
   ``.py`` at the end of a file name shows it is a Python_ :ref:`module<ModuleNotFoundError>`
 
@@ -223,11 +223,12 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
 * ``AssertionError: True is not false`` the :ref:`Error/Exception<errors>` raised and its message, in this case :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 * ``self.assertFalse(True)`` the line of code that caused the failure
+* ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above it that it thinks caused the :ref:`error<errors>`
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the failure and the location of the file where it is
 
   .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
 
-* ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure
+* ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
 
   - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
@@ -242,7 +243,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``python3`` is the Python_ program
   - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
 
-* I recommend you keep a list of :ref:`Errors/Exceptions<errors>` you meet to become familiar with them, it helps when you run into failures later. I add :ref:`AssertionError` to the list
+* I recommend you keep a list of :ref:`Errors/Exceptions<errors>` you meet to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -275,7 +276,7 @@ then I run the test again in the terminal
 
   python3 -m unittest
 
-and the test passes
+and the test passes! The terminal shows
 
 .. code-block:: python
 
@@ -290,7 +291,7 @@ and the test passes
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` to see the test fail, I ran it again to see the test pass. I will have to run it again when I make a code change, to make sure tests that were passing are not failing and that the new code I added does what I expect.
+I ran ``python3 -m unittest`` to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I make a code change, to make sure tests that were passing are not failing and that the new code I add does what I expect.
 
 This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
 
@@ -311,7 +312,8 @@ how to make a virtual environment
 
   - ``python3`` is the Python_ program
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name. A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name.
+  - A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed, this helps me keep things that belong to the project in one place separate from other things on the computer
   - ``.venv`` is the name given
 
     .. NOTE:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
@@ -336,7 +338,7 @@ how to make a virtual environment
 
   - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
   - ``install`` is an argument given to pip_ to install a given package name
-  - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the `python package`_ given
+  - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the given `python package`_
   - ``pip`` is the package name I am giving pip_ to install, in this case it upgrades itself
 
 * I use pip_ to see what packages are installed in the virtual environment
@@ -401,20 +403,20 @@ how to make a virtual environment
     pytest-watch x.y.z
     watchdog     x.y.z
 
-* The folder/directory structure now looks like this
+* I now have these folders/directories and files
 
-  .. code-block:: python
+  .. code-block:: shell
     :force:
 
     magic
-      ╰──.venv
-      ╰──src
-      | ╰──magic.py
-      ╰──tests
-      |  ╰──__pycache__
-      |  ╰──__init__.py
-      |  ╰──test_magic.py
-      ╰──requirements.txt
+    ├── .venv
+    ├── src
+    │   └── magic.py
+    └── tests
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   └── test_magic.py
+    └── requirements.txt
 
 * I run the tests from the terminal
 
