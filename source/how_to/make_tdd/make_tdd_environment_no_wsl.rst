@@ -625,7 +625,7 @@ One of the advantages of programming is that I can take some steps and make them
 
 You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Windows_ computers without having to install `Windows Subsystem Linux`_.
 
-Would you like to test :ref:`making a calculator?<how to make a calculator>`
+Would you like to :ref:`test making a calculator?<how to make a calculator>`
 
 ----
 
