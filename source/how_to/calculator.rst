@@ -477,6 +477,7 @@ red: make it fail
 * I add a test for subtraction in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start:10
     :emphasize-lines: 12-19
 
     class TestCalculator(unittest.TestCase):
@@ -531,6 +532,7 @@ green: make it pass
   I point ``subtract`` to :ref:`None`
 
   .. code-block:: python
+    :lineno-start: 5
 
     subtract = None
 
@@ -542,15 +544,11 @@ green: make it pass
 
   I have seen this before
 
-* I change ``subtract`` in ``calculator.py`` to a :ref:`function<functions>` to make it callable_
+* I change ``subtract`` to a :ref:`function<functions>` to make it callable_
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
-
-    def add(x, y):
-        return x + y
-
+    :lineno-start: 5
+    :emphasize-lines: 1-2
 
     def subtract():
         return None
@@ -564,12 +562,8 @@ green: make it pass
 * I make ``subtract`` take inputs
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    def add(x, y):
-        return x + y
-
+    :lineno-start: 5
+    :emphasize-lines: 1
 
     def subtract(x, y):
         return None
@@ -588,6 +582,7 @@ green: make it pass
 * I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
 
   .. code-block:: python
+    :lineno-start: 5
     :emphasize-lines: 2
 
     def subtract(x, y):
@@ -608,22 +603,19 @@ refactor: make it better
   once in ``test_addition`` and again in ``test_subtraction``. I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 12-13,16-17,25-26
-
-    import random
-    import src.calculator
-    import unittest
-
-
-    def a_random_number():
-        return random.randint(-10, 10)
-
+    :lineno-start: 10
+    :emphasize-lines: 3-4
 
     class TestCalculator(unittest.TestCase):
 
         x = a_random_number()
         y = a_random_number()
+
+  I use the new :ref:`class<classes>` :ref:`attributes<AttributeError>` in ``test_addition``
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 2-3
 
         def test_addition(self):
             x = self.x
@@ -633,6 +625,12 @@ refactor: make it better
                 src.calculator.add(x, y),
                 x+y
             )
+
+  and in ``test_subtraction``
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-3
 
         def test_subtraction(self):
             x = self.x
@@ -645,19 +643,32 @@ refactor: make it better
 
   the terminal shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
-* I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction`` and use ``self.x`` and ``self.y`` instead
+* I can use the :ref:`class<classes>` :ref:`attributes<AttributeError>` directly in ``test_addition``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 16-17, 22-23
+    :lineno-start: 19
+    :emphasize-lines: 2-3
 
-    import random
-    import src.calculator
-    import unittest
+            self.assertEqual(
+                src.calculator.add(self.x, self.y),
+                self.x+self.y
+            )
 
+  the test is still green. I do the same thing in ``test_subtraction``
 
-    def a_random_number():
-        return random.randint(-10, 10)
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 2-3
+
+            self.assertEqual(
+                src.calculator.subtract(self.x, self.y),
+                self.x-self.y
+            )
+
+* I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction`` since they are no longer needed
+
+  .. code-block:: python
+    :lineno-start: 10
 
     class TestCalculator(unittest.TestCase):
 
@@ -676,11 +687,16 @@ refactor: make it better
                 self.x-self.y
             )
 
+
+      # TODO
+      ...
+
   and the tests are still green!
 
 * I remove ``test subtraction`` from the TODO list
 
   .. code-block:: python
+    :lineno-start: 28
 
     # TODO
     # test multiplication
