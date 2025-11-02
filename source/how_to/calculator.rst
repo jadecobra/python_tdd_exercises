@@ -860,8 +860,6 @@ red: make it fail
 
 I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` intentionally and comment out the code that randomly fails in ``test_calculator.py``
 
-.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
-
 .. code-block:: python
   :lineno-start: 33
   :emphasize-lines: 2, 4-7
@@ -928,7 +926,7 @@ green: make it pass
 refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make a loop to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
+* I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make a never ending loop to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -951,7 +949,7 @@ refactor: make it better
   - when the value of ``self.y`` is ``0``
 
     * it points ``self.y`` to the result of calling ``a_random_number()``
-    * then it checks if the value of ``self.y`` is ``0`` again. The process happens again until ``self.y`` is not ``0``
+    * then it checks if the value of ``self.y`` is ``0`` again. The process happens again non stop until ``self.y`` is not ``0``
 
   - when the value of ``self.y`` is not ``0``, it leaves the while_ loop and runs the code in the ``else`` block
 
@@ -1031,7 +1029,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-10**1000000, 10**1000000)
 
-  the terminal still shows green and it takes longer to run the tests. I change the range back to ``-10, 10``
+  the terminal still shows green and it takes longer to run the tests. I change the range back to ``-10, 10`` to keep the tests fast
 
   .. code-block:: python
     :lineno-start: 6
@@ -1304,7 +1302,7 @@ green: make it pass
 review
 *********************************************************************************
 
-I wrote the following tests for a program that performs the arithmetic_ operations
+I wrote the following tests for a program that can :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` and :ref:`divide<test_division>`
 
 * `test_addition`_
 * `test_subtraction`_
@@ -1323,4 +1321,4 @@ Would you like to test :ref:`passing values?<how to pass values>`
 
 ----
 
-:ref:`how to make a calculator: tests and solutions`
+:ref:`Click Here to see the code I wrote in this chapter<how to make a calculator: tests and solutions>`
