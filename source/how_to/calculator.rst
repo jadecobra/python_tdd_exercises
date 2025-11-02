@@ -141,6 +141,7 @@ green: make it pass
 
 
     class TestCalculator(unittest.TestCase):
+
         ...
 
   the terminal shows :ref:`AttributeError`
@@ -178,6 +179,7 @@ green: make it pass
 * I point it to :ref:`None`
 
   .. code-block:: python
+    :linenos:
 
     add = None
 
@@ -192,6 +194,7 @@ green: make it pass
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 21
     :emphasize-lines: 5
 
     # Exceptions Encountered
@@ -200,7 +203,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* then I change ``add`` in ``calculator.py`` to a :ref:`function<functions>` with the def_ keyword to make it callable_
+* then I change ``add`` to a :ref:`function<functions>` to make it callable_ with the def_ keyword in ``calculator.py``
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -216,11 +219,12 @@ green: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-  ``add`` currently takes in 0 inputs, but 2 were provided in the test - ``0`` and ``1``
+  the definition of ``add`` does not input, but 2 were given in the call ``src.calculator.add(0, 1)`` - ``0`` and ``1``
 
 * I make it take 2 positional arguments
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     def add(x, y):
@@ -232,11 +236,12 @@ green: make it pass
 
     AssertionError: None != 1
 
-  the ``add`` :ref:`function<functions>` returns :ref:`None` and the test expects ``1``
+  the ``add`` :ref:`function<functions>` returns :ref:`None`, the test expects ``1``
 
 * when I make the `return statement`_ match the expected value
 
-  .. code-block:: python
+  .. code-block::
+    :linenos:
     :emphasize-lines: 2
 
     def add(x, y):
@@ -252,20 +257,21 @@ The ``add`` :ref:`function<functions>` passes the test but does not meet the act
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add another :ref:`assertion<AssertionError>` in ``test_calculator.py`` to show the problem with the :ref:`function<functions>`
+To show the problem with the :ref:`function<functions>`, I add another :ref:`assertion<AssertionError>` in ``test_calculator.py``
 
 .. code-block:: python
+  :linenos: 7
   :emphasize-lines: 6-9
 
-  def test_addition(self):
-      self.assertEqual(
-          src.calculator.add(0, 1),
-          1
-      )
-      self.assertEqual(
-          src.calculator.add(-1, 1),
-          0
-      )
+        def test_addition(self):
+            self.assertEqual(
+                src.calculator.add(0, 1),
+                1
+            )
+            self.assertEqual(
+                src.calculator.add(-1, 1),
+                0
+            )
 
 the terminal shows :ref:`AssertionError`
 
@@ -273,7 +279,7 @@ the terminal shows :ref:`AssertionError`
 
   E    AssertionError: 1 != 0
 
-the :ref:`function<functions>` returns ``1`` and the test expects ``0``
+the :ref:`function<functions>` returns ``1``, the test expects ``0``
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -281,6 +287,7 @@ green: make it pass
 when I change the `return statement`_ in ``calculator.py`` to add the two inputs
 
 .. code-block:: python
+  :linenos:
   :emphasize-lines: 2
 
   def add(x, y):
@@ -306,6 +313,7 @@ refactor: make it better
 * then I add variables and a new :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 6
     :emphasize-lines: 4-5,7-10
 
     class TestCalculator(unittest.TestCase):
@@ -327,7 +335,7 @@ refactor: make it better
                 0
             )
 
-  because the range of numbers is small, the terminal shows random success or :ref:`AssertionError` every time I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) in the editor to run the tests
+  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) in the editor to run the tests and because the range of numbers is small, the terminal shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -339,21 +347,23 @@ refactor: make it better
   I change the expectation of the :ref:`assertion<AssertionError>` in the test to the correct calculation
 
   .. code-block:: python
+    :lineno-start:12
     :emphasize-lines: 3
 
-    self.assertEqual(
-        src.calculator.add(x, y),
-        x+y
-    )
+            self.assertEqual(
+                src.calculator.add(x, y),
+                x+y
+            )
 
   the test passes
 
-  - ``x = random.randint(-1, 1)`` points a variable called ``x`` to the result of calling ``random.randint(-1, 1)`` the terminal shows a random number from ``-1`` up to and including ``1``
+  - ``x = random.randint(-1, 1)`` points a variable named ``x`` to the result of calling ``random.randint(-1, 1)``, the terminal shows a random number from ``-1`` up to and including ``1``
   - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
 
 * I remove the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers. I do not need them anymore
 
   .. code-block:: python
+    :lineno-start: 6
 
     class TestCalculator(unittest.TestCase):
 
@@ -366,21 +376,23 @@ refactor: make it better
                 x+y
             )
 
+
+    # TODO
+    ...
+
 * There is some duplication, I have to make a change in more than one place when I want to use a different range of random numbers for the test
 
   .. code-block:: python
+    :lineno-start: 8
     :emphasize-lines: 2-3
 
-    def test_addition(self):
-        x = random.randint(-10, 10)
-        y = random.randint(-10, 10)
+        def test_addition(self):
+            x = random.randint(-10, 10)
+            y = random.randint(-10, 10)
 
-        self.assertEqual(
-            src.calculator.add(x, y),
-            x+y
-        )
+            ...
 
-  I add a :ref:`function<functions>` to remove the duplication of calls to `random.randint`_ in ``test_calculator.py``
+  I add a :ref:`function<functions>` to remove the repetition
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -398,54 +410,47 @@ refactor: make it better
 
 
     class TestCalculator(unittest.TestCase):
+
         ...
 
   then I use the new :ref:`function<functions>` for the ``x`` and ``y`` variables in ``test_addition``
 
   .. code-block:: python
+    :lineno-start: 12
     :emphasize-lines: 8-9
-
-    def a_random_number():
-        return random.randint(-1, 1)
-
-
-    class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
             x = a_random_number()
             y = a_random_number()
 
-            self.assertEqual(
-                src.calculator.add(x, y),
-                x+y
-            )
+            ...
 
   I now only need to change the range of random numbers for the test in one place
 
   .. code-block:: python
+    :lineno-start: 6
     :emphasize-lines: 2
 
       def a_random_number():
           return random.randint(-10, 10)
 
       class TestCalculator(unittest.TestCase):
+
           ...
 
   and the terminal still shows green. I can use any range of numbers the computer can handle, for example
 
   .. code-block:: python
+    :lineno-start: 6
     :emphasize-lines: 2
 
     def a_random_number():
         return random.randint(-10**100000, 10**100000)
 
-
-    class TestCalculator(unittest.TestCase):
-        ...
-
-  the test is still green and takes longer to run. ``10**100000`` is how to write ``10`` raised to the power of ``100000``. I change the range back to ``-10, 10``
+  the test is still green and takes longer to run. ``10**100000`` is how to write ``10`` raised to the power of ``100,000``. I change the range back to ``-10, 10`` to keep the test running fast
 
   .. code-block:: python
+    :lineno-start: 6
     :emphasize-lines: 2
 
     def a_random_number():
@@ -454,6 +459,7 @@ refactor: make it better
 * then I remove ``test addition`` from the TODO list in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 22
 
     # TODO
     # test subtraction
@@ -578,7 +584,7 @@ green: make it pass
     AssertionError: None != 7
     AssertionError: None != 10
 
-  ``subtract`` returns :ref:`None` and the test expects ``x-y``
+  ``subtract`` returns :ref:`None`, the test expects ``x-y``
 
 * I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
 
