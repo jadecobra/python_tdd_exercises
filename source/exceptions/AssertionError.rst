@@ -103,7 +103,7 @@ red: make it fail
 
     tests/test_assertion_error.py:7: AssertionError
 
-  the assert_ at the beginning of the line makes the statement something like "DO NOT CONTINUE, UNLESS :ref:`None` is NOT :ref:`None`". The AssertionError_ is raised to break execution of the program because the statement is :ref:`False<test_what_is_false>`
+  the assert_ at the beginning of the line makes the statement something like "DO NOT CONTINUE, UNLESS :ref:`None` is NOT :ref:`None`". The AssertionError_ is raised to stop the program from running, because the statement is :ref:`False<test_what_is_false>`
 
 green: make it pass
 #################################################################################

@@ -455,7 +455,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-10, 10)
 
-* then I remove ``test addition`` from the TODO list in ``test_calculator.py``
+* then I remove ``test addition`` from the TODO list
 
   .. code-block:: python
     :lineno-start: 22
@@ -688,8 +688,8 @@ refactor: make it better
             )
 
 
-      # TODO
-      ...
+    # TODO
+    ...
 
   and the tests are still green!
 
@@ -714,15 +714,8 @@ red: make it fail
 I add a failing test for multiplication in ``test_calculator.py``
 
 .. code-block:: python
-  :emphasize-lines: 15-19
-
-  class TestCalculator(unittest.TestCase):
-
-      def test_addition(self):
-          self.assertEqual(
-              src.calculator.add(self.x, self.y),
-              self.x+self.y
-          )
+  :lineno-start: 21
+  :emphasize-lines: 7-11
 
       def test_subtraction(self):
           self.assertEqual(
@@ -736,6 +729,9 @@ I add a failing test for multiplication in ``test_calculator.py``
               self.x*self.y
           )
 
+  # TODO
+  ...
+
 the terminal shows :ref:`AttributeError`
 
 .. code-block:: python
@@ -748,12 +744,8 @@ green: make it pass
 using what I know so far, I add a :ref:`function<functions>` to ``calculator.py``
 
 .. code-block:: python
-  :linenos:
-  :emphasize-lines: 9-10
-
-  def add(x, y):
-      return x + y
-
+  :lineno-start: 5
+  :emphasize-lines: 5-6
 
   def subtract(x, y):
       return x - y
@@ -762,9 +754,11 @@ using what I know so far, I add a :ref:`function<functions>` to ``calculator.py`
   def multiply(x, y):
       return x * y
 
-the test passes! I remove ``test_multiplication`` from the TODO list
+the test passes! I remove ``test_multiplication`` from the TODO list in ``test_calculator.py``
 
 .. code-block:: python
+  :lineno-start: 34
+
 
   # TODO
   # test division
@@ -780,27 +774,24 @@ red: make it fail
 
 time for division. I add a new test to ``test_calculator.py``
 
-.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
-
 .. code-block:: python
-  :emphasize-lines: 12-16
-
-  class TestCalculator(unittest.TestCase):
-
-      def test_addition(self):
-          ...
-
-      def test_subtraction(self):
-          ...
+  :lineno-start: 27
+  :emphasize-lines: 7-11
 
       def test_multiplication(self):
-          ...
+          self.assertEqual(
+              src.calculator.multiply(self.x, self.y),
+              self.x*self.y
+          )
 
       def test_division(self):
           self.assertEqual(
               src.calculator.divide(self.x, self.y),
               self.x/self.y
           )
+
+  # TODO
+  ...
 
 the terminal shows :ref:`AttributeError`
 
@@ -814,16 +805,8 @@ green: make it pass
 * I add a :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 13-14
-
-    def add(x, y):
-        return x + y
-
-
-    def subtract(x, y):
-        return x - y
-
+    :lineno-start: 9
+    :emphasize-lines: 5-6
 
     def multiply(x, y):
         return x * y
@@ -835,12 +818,13 @@ green: make it pass
   then I make the range of numbers for the tests smaller in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 6
     :emphasize-lines: 2
 
     def a_random_number():
         return random.randint(-1, 1)
 
-  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests, and when ``y`` is randomly ``0`` the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times to run the tests, and when ``y`` is randomly ``0`` the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -848,15 +832,17 @@ green: make it pass
     x = 0, y = 0
     x = 1, y = 0
 
-      def divide(x, y):
-    >    return x / y
-    E    ZeroDivisionError: division by zero
+        def divide(x, y):
+    >       return x / y
+                   ^^^^^
+    E       ZeroDivisionError: division by zero
 
   dividing by ``0`` is undefined in mathematics and raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in Python
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 44
     :emphasize-lines: 6
 
     # Exceptions Encountered
@@ -877,18 +863,16 @@ I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_
 .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
 .. code-block:: python
-  :emphasize-lines: 5, 7-10
+  :lineno-start: 33
+  :emphasize-lines: 2, 4-7
 
-  def test_multiplication(self):
-      ...
+      def test_division(self):
+          src.calculator.divide(self.x, 0)
 
-  def test_division(self):
-      src.calculator.divide(self.x, 0)
-
-      # self.assertEqual(
-      #    src.calculator.divide(self.x, self.y),
-      #    self.x/self.y
-      # )
+          # self.assertEqual(
+          #    src.calculator.divide(self.x, self.y),
+          #    self.x/self.y
+          # )
 
 the terminal shows my expectation with a failure for any value of ``x`` since ``y`` is ``0``
 
@@ -898,11 +882,12 @@ the terminal shows my expectation with a failure for any value of ``x`` since ``
   x = 0, y = 0
   x = 1, y = 0
 
-    def divide(x, y):
-  >    return x / y
-  E    ZeroDivisionError: division by zero
+      def divide(x, y):
+  >       return x / y
+                  ^^^^^
+  E       ZeroDivisionError: division by zero
 
-:ref:`Exceptions<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` break execution of a program. No code will run past the line that causes an :ref:`Exception<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
+:ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program from running. No code will run past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
 green: make it pass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -910,16 +895,17 @@ green: make it pass
 * I can use the assertRaises_ :ref:`method<functions>` to make sure that :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when I try to divide a number by ``0``
 
   .. code-block:: python
+    :lineno-start: 33
     :emphasize-lines: 2-3
 
-    def test_division(self):
-        with self.assertRaises(AssertionError):
-            src.calculator.divide(self.x, 0)
+        def test_division(self):
+            with self.assertRaises(AssertionError):
+                src.calculator.divide(self.x, 0)
 
-        # self.assertEqual(
-        #   src.calculator.divide(self.x, self.y),
-        #   self.x/self.y
-        # )
+            # self.assertEqual(
+            #   src.calculator.divide(self.x, self.y),
+            #   self.x/self.y
+            # )
 
   because I used the wrong :ref:`Exception<errors>` the terminal still shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
@@ -927,109 +913,119 @@ green: make it pass
 
     ZeroDivisionError: division by zero
 
-* When I change it to use the right :ref:`Exception<errors>`
+* I change it to the right :ref:`Exception<errors>`
 
   .. code-block:: python
+    :lineno-start: 33
     :emphasize-lines: 2
 
-    def test_division(self):
-        with self.assertRaises(ZeroDivisionError):
-            src.calculator.divide(self.x, 0)
+        def test_division(self):
+            with self.assertRaises(ZeroDivisionError):
+                src.calculator.divide(self.x, 0)
 
   the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 refactor: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
+* I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make a loop to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 33
     :emphasize-lines: 5-11
 
-    def test_division(self):
-        with self.assertRaises(ZeroDivisionError):
-            src.calculator.divide(self.x, 0)
+        def test_division(self):
+            with self.assertRaises(ZeroDivisionError):
+                src.calculator.divide(self.x, 0)
 
-        while self.y == 0:
-            self.y = a_random_number()
-        else:
-            self.assertEqual(
-                src.calculator.divide(self.x, self.y),
-                self.x/self.y
-            )
+            while self.y == 0:
+                self.y = a_random_number()
+            else:
+                self.assertEqual(
+                    src.calculator.divide(self.x, self.y),
+                    self.x/self.y
+                )
 
   here is what it does
 
   - when the value of ``self.y`` is ``0``
 
     * it points ``self.y`` to the result of calling ``a_random_number()``
-    * then it checks if the value of ``self.y`` is ``0`` again. The process repeats the process until ``self.y`` is not ``0``
+    * then it checks if the value of ``self.y`` is ``0`` again. The process happens again until ``self.y`` is not ``0``
 
   - when the value of ``self.y`` is not ``0``, it leaves the while_ loop and runs the code in the ``else`` block
 
 * Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
 
   .. code-block:: python
+    :lineno-start: 33
     :emphasize-lines: 6
 
-    def test_division(self):
-        with self.assertRaises(ZeroDivisionError):
-            src.calculator.divide(self.x, 0)
+        def test_division(self):
+            with self.assertRaises(ZeroDivisionError):
+                src.calculator.divide(self.x, 0)
 
-        while self.y == 0:
-            src.calculator.divide(self.x, self.y)
-            self.y = a_random_number()
-        else:
-            self.assertEqual(
-                src.calculator.divide(self.x, self.y),
-                self.x/self.y
-            )
+            while self.y == 0:
+                src.calculator.divide(self.x, self.y)
+                self.y = a_random_number()
+            else:
+                self.assertEqual(
+                    src.calculator.divide(self.x, self.y),
+                    self.x/self.y
+                )
 
-  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
     ZeroDivisionError: division by zero
 
-* I add an assertRaises_ block to catch the :ref:`Exception<errors>` in the `while statement`_
+* I add assertRaises_ to catch the :ref:`Exception<errors>` in the `while statement`_
 
   .. code-block:: python
+    :lineno-start: 33
     :emphasize-lines: 6-7
 
-    def test_division(self):
-        with self.assertRaises(ZeroDivisionError):
-            src.calculator.divide(self.x, 0)
-
-        while self.y == 0:
+        def test_division(self):
             with self.assertRaises(ZeroDivisionError):
-                  src.calculator.divide(self.x, self.y)
-            self.y = a_random_number()
-        else:
-            self.assertEqual(
-                src.calculator.divide(self.x, self.y),
-                self.x/self.y
-            )
+                src.calculator.divide(self.x, 0)
+
+            while self.y == 0:
+                with self.assertRaises(ZeroDivisionError):
+                      src.calculator.divide(self.x, self.y)
+                self.y = a_random_number()
+            else:
+                self.assertEqual(
+                    src.calculator.divide(self.x, self.y),
+                    self.x/self.y
+                )
 
 * I no longer need the first assertRaises_ and remove it from the test because it is now part of the while_ loop
 
   .. code-block:: python
+    :lineno-start: 33
 
-    def test_division(self):
-        while self.y == 0:
-            with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.x, self.y)
-            self.y = a_random_number()
-        else:
-            self.assertEqual(
-                src.calculator.divide(self.x, self.y),
-                self.x/self.y
-            )
+        def test_division(self):
+            while self.y == 0:
+                with self.assertRaises(ZeroDivisionError):
+                    src.calculator.divide(self.x, self.y)
+                self.y = a_random_number()
+            else:
+                self.assertEqual(
+                    src.calculator.divide(self.x, self.y),
+                    self.x/self.y
+                )
+
+
+    # TODO
+    ...
 
   the terminal shows all tests are passing with no random failures
 
-* I use a bigger range of numbers for the tests in ``test_calculator.py``
+* I use a bigger range of numbers for the tests
 
   .. code-block:: python
+    :lineno-start: 6
     :emphasize-lines: 2
 
     def a_random_number():
@@ -1038,12 +1034,19 @@ refactor: make it better
   the terminal still shows green and it takes longer to run the tests. I change the range back to ``-10, 10``
 
   .. code-block:: python
+    :lineno-start: 6
     :emphasize-lines: 2
 
     def a_random_number():
         return random.randint(-10, 10)
 
 * then I remove the TODO list
+
+  .. code-block:: python
+    :lineno-start: 45
+
+    # Exceptions Encountered
+    ...
 
 ----
 
@@ -1071,6 +1074,7 @@ green: make it pass
 * I add the name to ``calculator.py``
 
   .. code-block:: python
+    :linenos:
 
     subtract
 
@@ -1083,6 +1087,7 @@ green: make it pass
   I point it to :ref:`None`
 
   .. code-block:: python
+    :linenos:
 
     subtract = None
 
@@ -1095,6 +1100,7 @@ green: make it pass
   I change ``subtract`` to a :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
 
     def subtract():
         return None
@@ -1108,6 +1114,7 @@ green: make it pass
   I add positional arguments to the :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     def subtract(a, b):
@@ -1122,6 +1129,7 @@ green: make it pass
 * I change the `return statement`_ to see the difference between the inputs and expected output
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def subtract(a, b):
@@ -1141,6 +1149,7 @@ green: make it pass
 * I make the `return statement`_ match the expectation
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def subtract(a, b):
@@ -1155,6 +1164,7 @@ green: make it pass
 * I add a :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 5-6
 
     def subtract(a, b):
@@ -1173,11 +1183,8 @@ green: make it pass
   I add 2 variables for the positional arguments
 
   .. code-block:: python
-    :emphasize-lines: 5
-
-    def subtract(a, b):
-        return a - b
-
+    :lineno-start: 5
+    :emphasize-lines: 1
 
     def multiply(a, b):
         return None
@@ -1191,11 +1198,8 @@ green: make it pass
 * I change the `return statement`_ to see the difference between the inputs and the expected output
 
   .. code-block:: python
-    :emphasize-lines: 6
-
-    def subtract(a, b):
-        return a - b
-
+    :lineno-start: 5
+    :emphasize-lines: 2
 
     def multiply(a, b):
         return a, b
@@ -1212,11 +1216,8 @@ green: make it pass
   I change it to the multiplication of the inputs to match the name of the :ref:`function<functions>`
 
   .. code-block:: python
-    :emphasize-lines: 6
-
-    def subtract(a, b):
-        return a - b
-
+    :lineno-start: 5
+    :emphasize-lines: 2
 
     def multiply(a, b):
         return a * b
@@ -1230,13 +1231,14 @@ green: make it pass
 * I add another :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 9-10
 
     def subtract(a, b):
         return a - b
 
 
-    def multiplication(a, b):
+    def multiply(a, b):
         return a * b
 
 
@@ -1261,6 +1263,7 @@ green: make it pass
   when I change the `return statement`_ to match the expectation
 
   .. code-block:: python
+    :lineno-start: 9
     :emphasize-lines: 2
 
     def divide(a, b):
@@ -1275,13 +1278,14 @@ green: make it pass
 * the `return statement`_ of the last 3 :ref:`functions` matched their names, I do the same thing for the new one
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 13-14
 
     def subtract(a, b):
         return a - b
 
 
-    def multiplication(a, b):
+    def multiply(a, b):
         return a * b
 
 
