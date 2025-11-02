@@ -104,9 +104,12 @@ test_addition
             )
 
   - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the explanation I like from what I have seen is that one of them is ``reality`` - ``src.calculator.add(0, 1)``, and the other is my ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
+  - the explanation I like from what I have seen is that one of them is
 
-  but the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+    - ``reality`` - ``src.calculator.add(0, 1)``, and the other is my
+    - ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
+
+  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -120,13 +123,14 @@ green: make it pass
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 20
     :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
     # NameError
 
-* then add an `import statement`_ at the top of `test_calculator.py`
+* then I add an `import statement`_ at the top of the file
 
   .. code-block:: python
     :linenos:
@@ -150,6 +154,7 @@ green: make it pass
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 21
     :emphasize-lines: 4
 
     # Exceptions Encountered
@@ -157,9 +162,10 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then click on ``calculator.py`` in ``src`` folder to open it in the editor, and I type the name
+* then I click on ``calculator.py`` in the ``src`` folder to open it in the editor, and I type the name
 
   .. code-block:: python
+    :linenos:
 
     add
 
