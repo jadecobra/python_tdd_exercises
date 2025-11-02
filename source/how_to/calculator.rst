@@ -219,9 +219,9 @@ green: make it pass
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-  the definition of ``add`` does not input, but 2 were given in the call ``src.calculator.add(0, 1)`` - ``0`` and ``1``
+  the definition of ``add`` does not take input, but 2 were given in the call ``src.calculator.add(0, 1)`` - ``0`` and ``1``
 
-* I make it take 2 positional arguments
+* I make it take 2 arguments
 
   .. code-block:: python
     :linenos:
@@ -335,7 +335,7 @@ refactor: make it better
                 0
             )
 
-  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) in the editor to run the tests and because the range of numbers is small, the terminal shows random success or :ref:`AssertionError`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the editor to run the tests and the terminal shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -357,8 +357,11 @@ refactor: make it better
 
   the test passes
 
-  - ``x = random.randint(-1, 1)`` points a variable named ``x`` to the result of calling ``random.randint(-1, 1)``, the terminal shows a random number from ``-1`` up to and including ``1``
-  - ``-1`` for negative numbers, ``0`` for itself, and ``1`` for positive numbers
+  - ``random.randint(-1, 1)`` returns a random number from ``-1`` up to and including ``1``
+
+    - ``-1`` for negative numbers
+    - ``0`` for ``0``
+    - ``1`` for positive numbers
 
 * I remove the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers. I do not need them anymore
 
@@ -417,7 +420,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 12
-    :emphasize-lines: 8-9
+    :emphasize-lines: 2-3
 
         def test_addition(self):
             x = a_random_number()
@@ -431,12 +434,8 @@ refactor: make it better
     :lineno-start: 6
     :emphasize-lines: 2
 
-      def a_random_number():
-          return random.randint(-10, 10)
-
-      class TestCalculator(unittest.TestCase):
-
-          ...
+    def a_random_number():
+        return random.randint(-10, 10)
 
   and the terminal still shows green. I can use any range of numbers the computer can handle, for example
 
