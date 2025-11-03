@@ -16,7 +16,7 @@ ModuleNotFoundError
 
 ----
 
-ModuleNotFoundError_ is raised when Python_ cannot find a module from an `import statement`_. A Python_ :ref:`module<ModuleNotFoundError>` has a filename that ends in ``.py``
+ModuleNotFoundError_ is raised when Python_ cannot find a module from an `import statement`_. A Python_ :ref:`module<ModuleNotFoundError>` is a file that ends in ``.py``
 
 *********************************************************************************
 requirements
@@ -68,6 +68,7 @@ red: make it fail
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 6-7
 
     import unittest
 
@@ -88,6 +89,8 @@ red: make it fail
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_module_not_found_error.py``
 
   .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
@@ -96,14 +99,19 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` the test passes
-* I add another `import statement`_
+I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the test passes
+
+refactor: make it better
+#################################################################################
+* I add another `import statement`_ to ``test_module_not_found_error.py``
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3
 
-    def test_module_not_found_error(self):
-        import src.module_00
-        import src.module_01
+        def test_module_not_found_error(self):
+            import src.module_00
+            import src.module_01
 
   the terminal shows ModuleNotFoundError_
 
@@ -111,15 +119,17 @@ green: make it pass
 
     ModuleNotFoundError: No module named 'src.module_01'
 
-* When I make a new file named ``module_01.py`` in the ``src`` folder, the test passes
+  I make a new file named ``module_01.py`` in the ``src`` folder and the test passes
 * I continue with another `import statement`_
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
 
-    def test_module_not_found_error(self):
-        import src.module_00
-        import src.module_01
-        import src.module_02
+        def test_module_not_found_error(self):
+            import src.module_00
+            import src.module_01
+            import src.module_02
 
   the terminal shows ModuleNotFoundError_
 
@@ -127,16 +137,23 @@ green: make it pass
 
     ModuleNotFoundError: No module called 'src.module_02'
 
-* I add ``module_02.py`` to the ``src`` folder, the terminal shows green again
-* one last failing `import statement`_
+  I add ``module_02.py`` to the ``src`` folder and the terminal shows green again
+* one last failing `import statement`_ for practice
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 10
 
-    def test_module_not_found_error(self):
-        import src.module_00
-        import src.module_01
-        import src.module_02
-        import src.module_03
+    import unittest
+
+
+    class TestModuleNotFoundError(unittest.TestCase):
+
+        def test_module_not_found_error(self):
+            import src.module_00
+            import src.module_01
+            import src.module_02
+            import src.module_03
 
   the terminal shows
 
@@ -152,8 +169,8 @@ green: make it pass
 review
 *********************************************************************************
 
-I ran a test for the ModuleNotFoundError_ and Python_ modules. Would you like to :ref:`test AssertionError?<AssertionError>`
+I ran a test for ModuleNotFoundError_ to practice making Python_ modules. Would you like to :ref:`test AssertionError?<AssertionError>`
 
 ----
 
-:ref:`ModuleNotFoundError: test`
+:ref:`Click Here for code in this chapter<ModuleNotFoundError: test>`
