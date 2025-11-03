@@ -53,7 +53,7 @@ requirements
   .. code-block:: python
     :lineno-start: 4
 
-    class TestSleepDuration(unittest.TestCase):
+    class TestCalculator(unittest.TestCase):
 
 * I add a TODO list to keep track of the work for the program
 

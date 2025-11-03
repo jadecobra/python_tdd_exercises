@@ -14,7 +14,7 @@ how to pass values
 
 ----
 
-I want to test passing values to programs
+I want to test passing values to programs. When testing, I want to be able to send input from my test to the program and see the results, this helps me see what is the same and what is different, the difference gives me a clue about to what to change to get to my goal.
 
 *********************************************************************************
 requirements
@@ -53,7 +53,7 @@ requirements
   .. code-block:: python
     :lineno-start: 4
 
-    class TestSleepDuration(unittest.TestCase):
+    class TestTelephone(unittest.TestCase):
 
 *********************************************************************************
 test_passing_a_string
@@ -88,16 +88,17 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
+    :lineno-start: 13
     :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ for the ``telephone`` module at the top of ``test_telephone.py``
+* then I add an `import statement`_ for the ``telephone`` module at the top of the file
 
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
@@ -110,6 +111,7 @@ green: make it pass
 
 
     class TestTelephone(unittest.TestCase):
+
         ...
 
   the terminal shows :ref:`AttributeError`
@@ -121,6 +123,7 @@ green: make it pass
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
 
   .. code-block:: python
+    :lineno-start: 14
     :emphasize-lines: 4
 
     # Exceptions Encountered
@@ -128,9 +131,10 @@ green: make it pass
     # NameError
     # AttributeError
 
-* I click on ``telephone.py`` to open it in the editor, then add a name
+* I click on ``telephone.py`` in the ``src`` folder to open it in the editor, then add a name
 
   .. code-block:: python
+    :linenos:
 
     text
 
@@ -143,6 +147,7 @@ green: make it pass
 * I point ``text`` to :ref:`None`
 
   .. code-block:: python
+    :linenos:
 
     text = None
 
@@ -155,6 +160,7 @@ green: make it pass
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
 
   .. code-block:: python
+    :lineno-start: 14
     :emphasize-lines: 5
 
     # Exceptions Encountered
@@ -163,13 +169,13 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I change ``text`` in ``telephone.py`` to a :ref:`function<functions>` to make it callable_
+* I change ``text`` to a :ref:`function<functions>` to make it callable_ in ``telephone.py``
 
   .. code-block:: python
     :linenos:
 
-      def text():
-          return None
+    def text():
+        return None
 
   the terminal shows :ref:`TypeError`
 
@@ -177,11 +183,12 @@ green: make it pass
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  ``src.telephone.text`` was called with ``"hello"`` as input but the definition of the :ref:`function<functions>` does not take any input, the parentheses are empty
+  ``src.telephone.text`` was called with ``"hello"`` as input but the definition of the :ref:`function<functions>` does not take any input - the parentheses are empty
 
 * I make the :ref:`function<functions>` take input and call it ``value``
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     def text(value):
@@ -193,9 +200,10 @@ green: make it pass
 
     AssertionError: None != 'I received: hello'
 
-* when I copy the string_ from the terminal and paste it in the `return statement`_ to replace :ref:`None` in ``telephone.py``
+* when I copy the string_ from the terminal and paste it in the `return statement`_ to replace :ref:`None`
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def text(value):
@@ -206,7 +214,7 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it receives and will always return ``'I received: hello'``. I want it to return the value it receives as part of the message.
+The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it receives and will always return ``'I received: hello'`` when it is called. I want it to return the value it receives as part of the message.
 
 red: make it fail
 ---------------------------------------------------------------------------------
@@ -214,9 +222,8 @@ red: make it fail
 I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string`` in ``test_telephone.py``
 
 .. code-block:: python
-  :emphasize-lines: 8-11
-
-  class TestTelephone(unittest.TestCase):
+  :lineno-start: 7
+  :emphasize-lines: 6-9
 
       def test_passing_a_string(self):
           self.assertEqual(
@@ -228,6 +235,10 @@ I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string`` in ``t
               "I received: yes"
           )
 
+
+  # Exceptions Encountered
+  ...
+
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
@@ -237,9 +248,10 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* when I make the `return statement`_ in ``telephone.py`` match the expectation
+* I change the `return statement`_ in ``telephone.py``
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def text(value):
@@ -251,11 +263,12 @@ green: make it pass
 
     AssertionError: 'I received: yes' != 'I received: hello'
 
-  this will not work, my change made a test that was passing before, fail. The `return statement`_ has to use the input
+  this will not work, my change breaks the test that was passing before. The `return statement`_ has to use the input
 
-* I use an `f-string`_ to add values to the string_
+* I use an `f-string`_ which allows me add any values I want to a string_
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def text(value):
@@ -270,7 +283,7 @@ green: make it pass
 
 ----
 
-I want to see what happens when I pass other Python_ :ref:`data structures` to the program
+I want to see what happens when I pass other Python_ basic :ref:`data structures` to the program
 
 *********************************************************************************
 test_passing_a_class
@@ -282,6 +295,7 @@ red: make it fail
 I add a failing test for a :ref:`class <classes>` in ``test_telephone.py``
 
 .. code-block:: python
+  :lineno-start: 5
   :emphasize-lines: 13-17
 
   class TestTelephone(unittest.TestCase):
@@ -302,6 +316,10 @@ I add a failing test for a :ref:`class <classes>` in ``test_telephone.py``
               "I received: object"
           )
 
+
+  # Exceptions Encountered
+  ...
+
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
@@ -315,15 +333,9 @@ green: make it pass
 
 I make the expectation match reality
 
-.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
-
 .. code-block:: python
-  :emphasize-lines: 9
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
+  :lineno-start: 17
+  :emphasize-lines: 4
 
       def test_passing_a_class(self):
           self.assertEqual(
@@ -336,15 +348,11 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I add another :ref:`assertion<AssertionError>` to ``test_passing_a_class`` with the ``TestTelephone`` :ref:`class<classes>`
+I add another :ref:`assertion<AssertionError>` with the ``TestTelephone`` :ref:`class<classes>` to ``test_passing_a_class``
 
 .. code-block:: python
-  :emphasize-lines: 11-14
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
+  :lineno-start: 17
+  :emphasize-lines: 6-9
 
       def test_passing_a_class(self):
           self.assertEqual(
@@ -362,15 +370,11 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: "I received: <class 'tests.test_telephone.TestTelephone'>" != "I received: <class 'object'>"
 
-when I change the expectation to match reality
+even though they are both :ref:`classes`, object_ and ``TestTelephone`` are different. I change the expectation
 
 .. code-block:: python
-  :emphasize-lines: 13
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
+  :lineno-start: 17
+  :emphasize-lines: 8
 
       def test_passing_a_class(self):
           self.assertEqual(
@@ -393,15 +397,9 @@ red: make it fail
 
 I add a new failing test for :ref:`None` in ``test_telephone.py``
 
-.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
-
 .. code-block:: python
-  :emphasize-lines: 16-20
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
+  :lineno-start: 17
+  :emphasize-lines: 11-15
 
       def test_passing_a_class(self):
           self.assertEqual(
@@ -431,13 +429,14 @@ green: make it pass
 I remove the quotes from around :ref:`None` in the expectation
 
 .. code-block:: python
+  :lineno-start: 27
   :emphasize-lines: 4
 
-  def test_passing_none(self):
-      self.assertEqual(
-          src.telephone.text(None),
-          "I received: None"
-      )
+      def test_passing_none(self):
+          self.assertEqual(
+              src.telephone.text(None),
+              "I received: None"
+          )
 
 the test passes.
 
@@ -453,15 +452,8 @@ I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>`
 .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
 .. code-block:: python
-  :emphasize-lines: 15-19
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
-
-      def test_passing_a_class(self):
-          ...
+  :lineno-start: 27
+  :emphasize-lines: 7-11
 
       def test_passing_none(self):
           self.assertEqual(
@@ -487,30 +479,32 @@ green: make it pass
 * I change the expectation
 
   .. code-block:: python
+    :lineno-start: 33
     :emphasize-lines: 4
 
-    def test_passing_a_boolean(self):
-        self.assertEqual(
-            src.telephone.text(True),
-            "I received: True"
-        )
+        def test_passing_a_boolean(self):
+            self.assertEqual(
+                src.telephone.text(True),
+                "I received: True"
+            )
 
   the test passes
 
 * I add an :ref:`assertion<AssertionError>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :lineno-start: 33
     :emphasize-lines: 6-9
 
-    def test_passing_a_boolean(self):
-        self.assertEqual(
-            src.telephone.text(True),
-            "I received: True"
-        )
-        self.assertEqual(
-            src.telephone.text(False),
-            "I received: 'False'"
-        )
+        def test_passing_a_boolean(self):
+            self.assertEqual(
+                src.telephone.text(True),
+                "I received: True"
+            )
+            self.assertEqual(
+                src.telephone.text(False),
+                "I received: 'False'"
+            )
 
   the terminal shows :ref:`AssertionError`
 
@@ -521,17 +515,18 @@ green: make it pass
 * I change the expectation
 
   .. code-block:: python
+    :lineno-start: 33
     :emphasize-lines: 8
 
-    def test_passing_a_boolean(self):
-        self.assertEqual(
-            src.telephone.text(True),
-            "I received: True"
-        )
-        self.assertEqual(
-            src.telephone.text(False),
-            "I received: False"
-        )
+        def test_passing_a_boolean(self):
+            self.assertEqual(
+                src.telephone.text(True),
+                "I received: True"
+            )
+            self.assertEqual(
+                src.telephone.text(False),
+                "I received: False"
+            )
 
   the test passes.
 
@@ -542,24 +537,21 @@ test_passing_an_integer
 red: make it fail
 #################################################################################
 
-I add a test for an integer_
+I add a test for an integer_ (a whole number)
 
 .. code-block:: python
-  :emphasize-lines: 15-19
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
-
-      def test_passing_a_class(self):
-          ...
-
-      def test_passing_none(self):
-          ...
+  :lineno-start: 33
+  :emphasize-lines: 11-15
 
       def test_passing_a_boolean(self):
-          ...
+          self.assertEqual(
+              src.telephone.text(True),
+              "I received: True"
+          )
+          self.assertEqual(
+              src.telephone.text(False),
+              "I received: False"
+          )
 
       def test_passing_an_integer(self):
           self.assertEqual(
@@ -579,13 +571,14 @@ green: make it pass
 I remove the quotes from the expectation
 
 .. code-block:: python
+  :lineno-start: 43
   :emphasize-lines: 4
 
-  def test_passing_an_integer(self):
-      self.assertEqual(
-          src.telephone.text(1234),
-          "I received: 1234"
-      )
+      def test_passing_an_integer(self):
+          self.assertEqual(
+              src.telephone.text(1234),
+              "I received: 1234"
+          )
 
 the test passes.
 
@@ -596,27 +589,17 @@ test_passing_a_float
 red: make it fail
 #################################################################################
 
-I add a test for a float_
+I add a test for a float_ (floating point decimal numbers)
 
 .. code-block:: python
-  :emphasize-lines: 18-22
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
-
-      def test_passing_a_class(self):
-          ...
-
-      def test_passing_none(self):
-          ...
-
-      def test_passing_a_boolean(self):
-          ...
+  :lineno-start: 43
+  :emphasize-lines: 7-11
 
       def test_passing_an_integer(self):
-          ...
+          self.assertEqual(
+              src.telephone.text(1234),
+              "I received: 1234"
+          )
 
       def test_passing_a_float(self):
           self.assertEqual(
@@ -636,13 +619,14 @@ green: make it pass
 I remove the quotes from the number
 
 .. code-block:: python
+  :lineno-start: 49
   :emphasize-lines: 4
 
-  def test_passing_a_float(self):
-      self.assertEqual(
-          src.telephone.text(1.234),
-          "I received: 1.234"
-      )
+      def test_passing_a_float(self):
+          self.assertEqual(
+              src.telephone.text(1.234),
+              "I received: 1.234"
+          )
 
 the test passes.
 
@@ -656,27 +640,14 @@ red: make it fail
 I add a test for a tuple_
 
 .. code-block:: python
-  :emphasize-lines: 21-25
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
-
-      def test_passing_a_class(self):
-          ...
-
-      def test_passing_none(self):
-          ...
-
-      def test_passing_a_boolean(self):
-          ...
-
-      def test_passing_an_integer(self):
-          ...
+  :lineno-start: 49
+  :emphasize-lines: 7-11
 
       def test_passing_a_float(self):
-          ...
+          self.assertEqual(
+              src.telephone.text(1.234),
+              "I received: 1.234"
+          )
 
       def test_passing_a_tuple(self):
           self.assertEqual(
@@ -693,16 +664,17 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I make the expectation match reality
+I change the expectation
 
 .. code-block:: python
+  :lineno-start: 55
   :emphasize-lines: 4
 
-  def test_passing_a_tuple(self):
-      self.assertEqual(
-          src.telephone.text((1, 2, 3, "n")),
-          "I received: (1, 2, 3, 'n')"
-      )
+      def test_passing_a_tuple(self):
+          self.assertEqual(
+              src.telephone.text((1, 2, 3, "n")),
+              "I received: (1, 2, 3, 'n')"
+          )
 
 the test passes.
 
@@ -716,30 +688,14 @@ red: make it fail
 I add a test for a :ref:`list <lists>`
 
 .. code-block:: python
-  :emphasize-lines: 24-28
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
-
-      def test_passing_a_class(self):
-          ...
-
-      def test_passing_none(self):
-          ...
-
-      def test_passing_a_boolean(self):
-          ...
-
-      def test_passing_an_integer(self):
-          ...
-
-      def test_passing_a_float(self):
-          ...
+  :lineno-start: 55
+  :emphasize-lines: 7-11
 
       def test_passing_a_tuple(self):
-          ...
+          self.assertEqual(
+              src.telephone.text((1, 2, 3, "n")),
+              "I received: (1, 2, 3, 'n')"
+          )
 
       def test_passing_a_list(self):
           self.assertEqual(
@@ -759,13 +715,14 @@ green: make it pass
 I change the expectation to match reality
 
 .. code-block:: python
+  :lineno-start: 61
   :emphasize-lines: 4
 
-  def test_passing_a_list(self):
-      self.assertEqual(
-          src.telephone.text([1, 2, 3, "n"]),
-          "I received: [1, 2, 3, 'n']"
-      )
+      def test_passing_a_list(self):
+          self.assertEqual(
+              src.telephone.text([1, 2, 3, "n"]),
+              "I received: [1, 2, 3, 'n']"
+          )
 
 the test passes.
 
@@ -779,33 +736,14 @@ red: make it fail
 I add a test for a :ref:`dictionary <dictionaries>`
 
 .. code-block:: python
-  :emphasize-lines: 27-34
-
-  class TestTelephone(unittest.TestCase):
-
-      def test_passing_a_string(self):
-          ...
-
-      def test_passing_a_class(self):
-          ...
-
-      def test_passing_none(self):
-          ...
-
-      def test_passing_a_boolean(self):
-          ...
-
-      def test_passing_an_integer(self):
-          ...
-
-      def test_passing_a_float(self):
-          ...
-
-      def test_passing_a_tuple(self):
-          ...
+  :lineno-start: 61
+  :emphasize-lines: 7-14
 
       def test_passing_a_list(self):
-          ...
+          self.assertEqual(
+              src.telephone.text([1, 2, 3, "n"]),
+              "I received: [1, 2, 3, 'n']"
+          )
 
       def test_passing_a_dictionary(self):
           self.assertEqual(
@@ -825,19 +763,24 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-when I make the expectation match reality
+I change the expectation
 
 .. code-block:: python
+  :lineno-start: 67
   :emphasize-lines: 7
 
-  def test_passing_a_dictionary(self):
-      self.assertEqual(
-          src.telephone.text({
-              "key1": "value1",
-              "keyN": [0, 1, 2, "n"],
-          }),
-          "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
-      )
+      def test_passing_a_dictionary(self):
+          self.assertEqual(
+              src.telephone.text({
+                  "key1": "value1",
+                  "keyN": [0, 1, 2, "n"],
+              }),
+              "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+          )
+
+
+  # Exceptions Encountered
+  ...
 
 the terminal shows all tests are passing.
 
@@ -847,7 +790,7 @@ the terminal shows all tests are passing.
 test_telephone
 *********************************************************************************
 
-Time to write the program that makes the tests in ``test_telephone.py`` pass without looking at them
+Time to write the program that makes the tests pass without looking at ``test_telephone.py``
 
 red: make it fail
 #################################################################################
