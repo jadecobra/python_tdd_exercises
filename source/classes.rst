@@ -863,4 +863,4 @@ the tests show
 
 ----
 
-:ref:`classes: tests and solutions`
+:ref:`Click Here to see the code from this chapter<classes: tests and solutions>`

@@ -2122,4 +2122,4 @@ Would you like to know :ref:`how to test that an Exception is raised?<how to tes
 
 ----
 
-:ref:`how to make a person: tests and solution`
+:ref:`Click Here to see the code from this chapter<how to make a person: tests and solution>`

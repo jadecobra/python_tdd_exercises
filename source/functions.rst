@@ -1234,4 +1234,4 @@ Would you like to :ref:`test classes?<classes>`
 
 ----
 
-:ref:`functions: tests and solutions`
+:ref:`Click Here to see the code from this chapter<functions: tests and solutions>`

@@ -923,4 +923,4 @@ Would you like to :ref:`test handling Exceptions in programs?<how to handle Exce
 
 ----
 
-:ref:`how to handle Exceptions: tests and solutions`
+:ref:`Click Here to see the code from this chapter<how to handle Exceptions: tests and solutions>`

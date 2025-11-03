@@ -495,7 +495,7 @@ how to use try...except...else
   -  if it fails, try something else
   -  do this as many times as you can until you get what you want
 
-  or in the words of a famous singer 
+  or in the words of a famous singer
 
 * I can be more specific with the :ref:`Exception<errors>` in the ``except`` block, for example
 
@@ -547,4 +547,4 @@ I ran tests to show how to cause any :ref:`Exceptions<errors>`, and catch or han
 
 ----
 
-:ref:`how to handle Exceptions: tests and solutions`
+:ref:`Click Here to see the code from this chapter<how to handle Exceptions: tests and solutions>`

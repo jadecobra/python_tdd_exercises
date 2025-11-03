@@ -38,4 +38,4 @@ These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<
 
 ----
 
-:ref:`how to handle Exceptions: tests and solutions`
+:ref:`Click Here to see the code from this chapter<how to handle Exceptions: tests and solutions>`

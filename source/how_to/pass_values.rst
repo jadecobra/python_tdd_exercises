@@ -808,6 +808,7 @@ green: make it pass
 * I add the name to ``telephone.py``
 
   .. code-block:: python
+    :linenos:
 
     text
 
@@ -820,6 +821,7 @@ green: make it pass
   I point it to :ref:`None`
 
   .. code-block:: python
+    :linenos:
 
     text = None
 
@@ -832,6 +834,7 @@ green: make it pass
   I make ``text`` a :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
 
     def text():
         return None
@@ -845,6 +848,7 @@ green: make it pass
   I make the :ref:`function<functions>` take input
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     def text(argument):
@@ -859,6 +863,7 @@ green: make it pass
 * I copy the string_ from the terminal and paste it in the `return statement`_ to match the expectation of the test
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def text(argument):
@@ -873,6 +878,7 @@ green: make it pass
 * I add a `return statement`_ to see the difference between the input and the expected output
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def text(argument):
@@ -899,6 +905,7 @@ green: make it pass
 * I remove the first `return statement`_ then make the second one use an `f-string`_
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def text(argument):
@@ -912,7 +919,7 @@ green: make it pass
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass Python_ :ref:`data structures` from a test to a program and place them in an `f-string`_
+Here are the tests I ran to see what happens when I pass Python_ basic :ref:`data structures` from a test to a program and place them in an `f-string`_
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_
@@ -935,4 +942,4 @@ Would you like to test :ref:`making a person?<how to make a person>`
 
 ----
 
-:ref:`how to pass values: tests and solution`
+:ref:`Click Here to see the code from this chapter<how to pass values: tests and solution>`
