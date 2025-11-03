@@ -16,7 +16,7 @@ AssertionError
 
 ----
 
-AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was introduced in :ref:`how to make a python test driven development environment` with the first failing test
+AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was introduced in :ref:`how to make a python test driven development environment` with :ref:`the first failing test<test_failure>`
 
 .. code-block:: python
 
@@ -301,7 +301,6 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
 ----
 
-
 *********************************************************************************
 test_assertion_error_w_false
 *********************************************************************************
@@ -314,9 +313,14 @@ red: make it fail
 I add a failing test
 
 .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 4-5
 
-  def test_assertion_error_w_false(self):
-      assert True is False
+            assert True is not None
+            self.assertIsNotNone(True)
+
+        def test_assertion_error_w_false(self):
+            assert True is False
 
 the terminal shows AssertionError_
 
@@ -330,22 +334,26 @@ green: make it pass
 I change the line to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 2
 
-  def test_assertion_error_w_false(self):
-      assert True is not False
+      def test_assertion_error_w_false(self):
+          assert True is not False
 
 the test passes
 
 red: make it fail
 #################################################################################
 
-There is a :ref:`method<functions>` for this, it is the one from the first failing test which checks if something is :ref:`False<test_what_is_false>`
+There is an assert_ :ref:`method<functions>` for this, it is the one from :ref:`the first failing test<test_failure>` which checks if something is :ref:`False<test_what_is_false>`
 
 .. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 3
 
-  def test_assertion_error_w_false(self):
-      assert True is not False
-      self.assertFalse(True)
+      def test_assertion_error_w_false(self):
+          assert True is not False
+          self.assertFalse(True)
 
 the terminal shows AssertionError_
 
@@ -359,14 +367,23 @@ green: make it pass
 I change the failing line
 
 .. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 3
 
-  def test_assertion_error_w_false(self):
-      assert True is not False
-      self.assertFalse(False)
+      def test_assertion_error_w_false(self):
+          assert True is not False
+          self.assertFalse(False)
 
-the test passes. Time to add notes
+the test passes
+
+refactor: make it better
+#################################################################################
+
+I add notes
 
 .. code-block:: python
+  :lineno-start: 21
+  :emphasize-lines: 2-3
 
   # NOTES
   # False is False
@@ -377,12 +394,11 @@ the test passes. Time to add notes
 
 ----
 
-
 *********************************************************************************
 test_assertion_error_w_true
 *********************************************************************************
 
-I can test if something is :ref:`True<test_what_is_true>`
+I can also test if something is :ref:`True<test_what_is_true>`
 
 red: make it fail
 #################################################################################
@@ -390,9 +406,14 @@ red: make it fail
 I add a failing test
 
 .. code-block:: python
+  :lineno-start: 16
 
-  def test_assertion_error_w_true(self):
-      assert False is True
+      def test_assertion_error_w_false(self):
+          assert True is not False
+          self.assertFalse(False)
+
+      def test_assertion_error_w_true(self):
+          assert False is True
 
 the terminal shows AssertionError_
 
@@ -403,25 +424,29 @@ the terminal shows AssertionError_
 green: make it pass
 #################################################################################
 
-then I make the statement :ref:`True<test_what_is_true>`
+I change the statement to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 20
+  :emphasize-lines: 2
 
-  def test_assertion_error_w_true(self):
-      assert False is not True
+      def test_assertion_error_w_true(self):
+          assert False is not True
 
 the terminal shows green again
 
 red: make it fail
 #################################################################################
 
-there is also a :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
+there is an assert_ :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 20
+  :emphasize-lines: 3
 
-  def test_assertion_error_w_true(self):
-      assert False is not True
-      self.assertTrue(False)
+      def test_assertion_error_w_true(self):
+          assert False is not True
+          self.assertTrue(False)
 
 the terminal shows AssertionError_
 
@@ -435,14 +460,22 @@ green: make it pass
 I change the failing line to a :ref:`True<test_what_is_true>` statement
 
 .. code-block:: python
+  :lineno-start: 20
 
-  def test_assertion_error_w_true(self):
-      assert False is not True
-      self.assertTrue(True)
+      def test_assertion_error_w_true(self):
+          assert False is not True
+          self.assertTrue(True)
 
-and all tests are passing. I add more notes
+and all tests are passing.
+
+refactor: make it better
+#################################################################################
+
+I add more notes
 
 .. code-block:: python
+  :lineno-start:
+  :emphasize-lines: 2-3
 
   # NOTES
   # True is True
@@ -453,7 +486,7 @@ and all tests are passing. I add more notes
   # False is not None
   # None is None
 
-These statements can be summed up as - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They set up a basic expectation because I can compare things to them.
+All these statements can also be said as - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They set up a basic expectation because I can compare things with them.
 
 ----
 
