@@ -141,13 +141,8 @@ refactor: make it better
 * one last failing `import statement`_ for practice
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 10
-
-    import unittest
-
-
-    class TestModuleNotFoundError(unittest.TestCase):
+    :lineno-start: 6
+    :emphasize-lines: 5
 
         def test_module_not_found_error(self):
             import src.module_00
