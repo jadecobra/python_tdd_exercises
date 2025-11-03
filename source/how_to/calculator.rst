@@ -1321,4 +1321,4 @@ Would you like to test :ref:`passing values?<how to pass values>`
 
 ----
 
-:ref:`Click Here to see the code I wrote in this chapter<how to make a calculator: tests and solutions>`
+:ref:`Click Here to see the code from this chapter<how to make a calculator: tests and solutions>`
