@@ -14,7 +14,7 @@ how to pass values
 
 ----
 
-I want to test passing values to programs. When testing, I want to be able to send input from my test to the program and see the results, this helps me see what is the same and what is different, the difference gives me a clue about to what to change to get to my goal.
+I want to test passing values to programs. When testing, I want to be able to send input from my test to the program and see the results. This helps me see what is the same, and what is different, the difference gives helps me know what to change to get what I want.
 
 *********************************************************************************
 requirements
@@ -637,7 +637,7 @@ test_passing_a_tuple
 red: make it fail
 #################################################################################
 
-I add a test for a tuple_
+I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
 
 .. code-block:: python
   :lineno-start: 49
@@ -685,7 +685,7 @@ test_passing_a_list
 red: make it fail
 #################################################################################
 
-I add a test for a :ref:`list <lists>`
+I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), separated by a comma)
 
 .. code-block:: python
   :lineno-start: 55
@@ -733,7 +733,7 @@ test_passing_a_dictionary
 red: make it fail
 #################################################################################
 
-I add a test for a :ref:`dictionary <dictionaries>`
+I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly braces (``{}``), separated by a comma)
 
 .. code-block:: python
   :lineno-start: 61
