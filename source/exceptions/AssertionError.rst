@@ -676,7 +676,7 @@ refactor: make it better
 
   the test passes
 
-* I add an assertion_ :ref:`method<functions>`
+* I add an assert_ :ref:`method<functions>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -794,6 +794,8 @@ refactor: make it better
 * on to the next line
 
   .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 14
 
         def test_assertion_error_w_equality(self):
             assert None == None
@@ -843,6 +845,8 @@ refactor: make it better
   I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 2
 
             assert False == False
             self.assertEqual(False, False)
@@ -906,6 +910,7 @@ refactor: make it better
 * I add another failing line
 
   .. code-block:: python
+    :lineno-start: 40
     :emphasize-lines: 2
 
             assert False != True
@@ -926,7 +931,9 @@ refactor: make it better
             assert False != True
             self.assertNotEqual(False, True)
 
-  the test passes. I add another note
+  the test passes
+
+* I add another note
 
   .. code-block:: python
     :lineno-start: 44
@@ -941,7 +948,7 @@ refactor: make it better
     # False is not None and not equal to None
     # None is None and equal to None
 
-* time for the last statement
+* time for the last statements
 
   .. code-block:: python
     :lineno-start: 24
@@ -977,6 +984,7 @@ refactor: make it better
   I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 43
 
               assert True == True
 
@@ -1000,7 +1008,7 @@ refactor: make it better
   I change the :ref:`method<functions>`
 
   .. code-block:: python
-    lineno-start: 43
+    :lineno-start: 43
     :emphasize-lines: 2
 
               assert True == True
@@ -1035,10 +1043,10 @@ I can use `assert statements`_ and :ref:`methods<functions>` to test if somethin
 * :ref:`None` or not
 * :ref:`False<test_what_is_false>` or not
 * :ref:`True<test_what_is_true>` or not
-* equal or not
+* :ref:`equal or not<test_assertion_error_w_equality>`
 
-Would you like to :ref:`test AttributeError?<AttributeError>`
+Would you like to :ref:`test what is None?<None>`
 
 ----
 
-:ref:`AssertionError: tests`
+:ref:`Click here for all the tests from this chapter<AssertionError: tests>`
