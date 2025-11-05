@@ -206,7 +206,7 @@ refactor: make it better
 
   the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is an instance of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a :ref:`boolean<booleans>`
+* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a :ref:`boolean<booleans>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -217,13 +217,13 @@ refactor: make it better
             self.assertIsNotNone(True)
             self.assertNotIsInstance(False, bool)
 
-  I use the assertNotIsInstance_ :ref:`method<functions>` to test if :ref:`False<test_what_is_false>` is NOT an instance of the :ref:`bool<booleans>` :ref:`class<classes>`. The terminal shows :ref:`AssertionError`
+  I use the assertNotIsInstance_ :ref:`method<functions>` to test if :ref:`False<test_what_is_false>` is NOT a child of the :ref:`bool<booleans>` :ref:`class<classes>`. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is an instance of the bool_ :ref:`class<classes>`
+  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is a child of the bool_ :ref:`class<classes>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -262,11 +262,11 @@ refactor: make it better
     :lineno-start: 9
     :emphasize-lines: 5
 
-    def test_is_none_a_boolean(self):
-        self.assertIsNotNone(False)
-        self.assertIsNotNone(True)
-        self.assertIsInstance(False, bool)
-        self.assertIsInstance(True, bool)
+        def test_is_none_a_boolean(self):
+            self.assertIsNotNone(False)
+            self.assertIsNotNone(True)
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(True, bool)
 
   the test passes
 
@@ -297,12 +297,12 @@ refactor: make it better
     :lineno-start: 9
     :emphasize-lines: 6
 
-    def test_is_none_a_boolean(self):
-        self.assertIsNotNone(False)
-        self.assertIsNotNone(True)
-        self.assertIsInstance(False, bool)
-        self.assertIsInstance(True, bool)
-        self.assertNotIsInstance(None, bool)
+        def test_is_none_a_boolean(self):
+            self.assertIsNotNone(False)
+            self.assertIsNotNone(True)
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(True, bool)
+            self.assertNotIsInstance(None, bool)
 
   the test passes
 

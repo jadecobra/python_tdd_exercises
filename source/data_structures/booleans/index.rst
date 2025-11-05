@@ -64,7 +64,7 @@ test_what_is_false
 red: make it fail
 #################################################################################
 
-* I change ``test_failure`` to ``test_what_is_false`` to check if False_ is an instance of bool_
+* I change ``test_failure`` to ``test_what_is_false`` to check if False_ is a child of bool_
 
   .. code-block:: python
     :linenos:
