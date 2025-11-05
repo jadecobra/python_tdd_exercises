@@ -16,6 +16,8 @@ None
 
 ----
 
+None_ is used to representing nothing or the absence of a value
+
 *********************************************************************************
 requirements
 *********************************************************************************
@@ -1501,7 +1503,7 @@ review
 
 I ran tests to show what None_ is and what it is not
 
-Would you like to :ref:`test booleans?<booleans>`
+Would you like to :ref:`test what is True and False?<booleans>`
 
 ----
 

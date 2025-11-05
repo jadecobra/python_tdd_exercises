@@ -1276,8 +1276,8 @@ I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or
   - :ref:`Project Second<test_project_second>` always returns ``y``
   - :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`
 
-Would you like to :ref:`test lists?<lists>`
+Would you like to :ref:`test making a calculator?<lists>`
 
 ----
 
-:ref:`truth table: tests and solutions`
+:ref:`Click Here for the code for the Truth Table tests and solutions<how to make a calculator>`
