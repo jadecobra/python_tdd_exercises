@@ -28,7 +28,9 @@ which is like
 
   assert True is False
 
-When building a program I can use assert_ methods to make sure something is :ref:`True<test_what_is_true>` before it continues, I can also use them to test how the program behaves, for example when it is given inputs. Assertions can help catch things that break passing tests when they are added. They also help me answer 2 questions
+I can use assertions when building a program to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves, for example when it is given inputs.
+
+Assertions can help catch things that break passing tests when they are added. They also help me answer 2 questions
 
 * what is the same?
 * what is different?
@@ -105,12 +107,12 @@ red: make it fail
 
     tests/test_assertion_error.py:7: AssertionError
 
-  the assert_ at the beginning of the line makes the statement something like "DO NOT CONTINUE, UNLESS :ref:`None` is NOT :ref:`None`". The AssertionError_ is raised to stop the program from running, because the statement is :ref:`False<test_what_is_false>`
+  the assert_ at the beginning of the line makes the statement something like "DO NOT CONTINUE, UNLESS :ref:`None` is NOT :ref:`None`". The AssertionError_ is raised to stop the program from running, because this statement is :ref:`False<test_what_is_false>`
 
 green: make it pass
 #################################################################################
 
-I change the failing line
+I change the failing line to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -118,7 +120,7 @@ I change the failing line
       def test_assertion_error_w_none(self):
           assert None is None
 
-the test passes because the statement is now :ref:`True<test_what_is_true>`
+the test passes
 
 refactor: make it better
 #################################################################################
@@ -191,7 +193,9 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
             assert False is not None
 
-  the test passes. I add another line with the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
+  the test passes.
+
+* I add another line with the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
 
   .. code-block:: python
     :lineno-start: 6
@@ -210,7 +214,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     AssertionError: False is not None
 
-  I change the statement
+  I change the statement with assertIsNotNone_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -219,7 +223,9 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
             assert False is None
             self.assertIsNotNone(False)
 
-  the test passes. I add another note
+  the test passes.
+
+* I add another note
 
   .. code-block:: python
     :lineno-start: 14
@@ -229,7 +235,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
     # False is not None
     # None is None
 
-* I add another failing line
+* I add another assertion
 
   .. code-block:: python
     :lineno-start: 6
@@ -257,9 +263,13 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
             assert True is not None
 
-  the terminal shows green again. I add a failing line using the assertIsNone_ :ref:`method<functions>`
+  the test passes
+
+* I use the assertIsNone_ :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 9
 
         def test_assertion_error_w_none(self):
             assert None is None
@@ -305,7 +315,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 test_assertion_error_w_false
 *********************************************************************************
 
-I can test if something is :ref:`False<test_what_is_false>`
+I can use assertions to test if something is :ref:`False<test_what_is_false>`
 
 red: make it fail
 #################################################################################
@@ -342,55 +352,49 @@ I change the line to make it :ref:`True<test_what_is_true>`
 
 the test passes
 
-red: make it fail
-#################################################################################
-
-There is an assert_ :ref:`method<functions>` for this, it is the one from :ref:`the first failing test<test_failure>` which checks if something is :ref:`False<test_what_is_false>`
-
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 3
-
-      def test_assertion_error_w_false(self):
-          assert True is not False
-          self.assertFalse(True)
-
-the terminal shows AssertionError_
-
-.. code-block:: python
-
-  AssertionError: True is not false
-
-green: make it pass
-#################################################################################
-
-I change the failing line
-
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 3
-
-      def test_assertion_error_w_false(self):
-          assert True is not False
-          self.assertFalse(False)
-
-the test passes
-
 refactor: make it better
 #################################################################################
 
-I add notes
+* There is an assert_ :ref:`method<functions>` to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`
 
-.. code-block:: python
-  :lineno-start: 21
-  :emphasize-lines: 2-3
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3
 
-  # NOTES
-  # False is False
-  # True is not False
-  # True is not None
-  # False is not None
-  # None is None
+        def test_assertion_error_w_false(self):
+            assert True is not False
+            self.assertFalse(True)
+
+  the terminal shows AssertionError_
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3
+
+        def test_assertion_error_w_false(self):
+            assert True is not False
+            self.assertFalse(False)
+
+  the test passes
+
+* I add notes
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-3
+
+    # NOTES
+    # False is False
+    # True is not False
+    # True is not None
+    # False is not None
+    # None is None
 
 ----
 
@@ -398,7 +402,7 @@ I add notes
 test_assertion_error_w_true
 *********************************************************************************
 
-I can also test if something is :ref:`True<test_what_is_true>`
+I can also use assertions to test if something is :ref:`True<test_what_is_true>`
 
 red: make it fail
 #################################################################################
@@ -433,60 +437,54 @@ I change the statement to make it :ref:`True<test_what_is_true>`
       def test_assertion_error_w_true(self):
           assert False is not True
 
-the terminal shows green again
-
-red: make it fail
-#################################################################################
-
-there is an assert_ :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
-
-.. code-block:: python
-  :lineno-start: 20
-  :emphasize-lines: 3
-
-      def test_assertion_error_w_true(self):
-          assert False is not True
-          self.assertTrue(False)
-
-the terminal shows AssertionError_
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-green: make it pass
-#################################################################################
-
-I change the failing line to a :ref:`True<test_what_is_true>` statement
-
-.. code-block:: python
-  :lineno-start: 20
-
-      def test_assertion_error_w_true(self):
-          assert False is not True
-          self.assertTrue(True)
-
-and all tests are passing.
+the test passes
 
 refactor: make it better
 #################################################################################
 
-I add more notes
+* there is an assert_ :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
 
-.. code-block:: python
-  :lineno-start:
-  :emphasize-lines: 2-3
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 3
 
-  # NOTES
-  # True is True
-  # False is not True
-  # False is False
-  # True is not False
-  # True is not None
-  # False is not None
-  # None is None
+        def test_assertion_error_w_true(self):
+            assert False is not True
+            self.assertTrue(False)
 
-All these statements can also be said as - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They set up a basic expectation because I can compare things with them.
+  the terminal shows AssertionError_
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+* I change the failing line to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_assertion_error_w_true(self):
+            assert False is not True
+            self.assertTrue(True)
+
+  the test passes
+
+* I add more notes
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2-3
+
+    # NOTES
+    # True is True
+    # False is not True
+    # False is False
+    # True is not False
+    # True is not None
+    # False is not None
+    # None is None
+
+All these statements can also be said as - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They set up a basic expectation of the language because I can compare things with them.
 
 ----
 
@@ -494,12 +492,12 @@ All these statements can also be said as - :ref:`True<test_what_is_true>`, :ref:
 test_assertion_error_w_equality
 *********************************************************************************
 
-I can also test if 2 things are equal
+I can use assertions to test if 2 things are equal
 
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a new failing test
 
 .. code-block:: python
   :lineno-start: 20
@@ -523,7 +521,7 @@ the terminal shows AssertionError_
 green: make it pass
 #################################################################################
 
-I change the failing line
+I change the statement to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 24
@@ -537,7 +535,7 @@ the test passes. ``==`` is the symbol for ``is equal`` which makes this statemen
 refactor: make it better
 #################################################################################
 
-* there are assert_ :ref:`methods<functions>` to check for equality. I add one
+* there are assert_ :ref:`methods<functions>` to check for equality. I add assertNotEqual_ checks if the 2 things in the parentheses are NOT equal
 
   .. code-block:: python
     :lineno-start: 24
@@ -547,7 +545,7 @@ refactor: make it better
             assert None == None
             self.assertNotEqual(None, None)
 
-  assertNotEqual_ checks if the 2 things given are NOT equal, the terminal shows AssertionError_
+  the terminal shows AssertionError_
 
   .. code-block:: python
 
@@ -565,7 +563,7 @@ refactor: make it better
 
   the test passes
 
-* I update the notes
+* I add to the notes
 
   .. code-block:: python
     :lineno-start: 29
@@ -598,7 +596,7 @@ refactor: make it better
 
     E    assert False == None
 
-  I change the failing line to a :ref:`True<test_what_is_true>`
+  I change the failing line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -625,7 +623,7 @@ refactor: make it better
   I change the failing line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-
+    :lineno-start: 28
     :emphasize-lines: 2
 
             assert False != None
@@ -633,7 +631,7 @@ refactor: make it better
 
   the test passes
 
-* I update the notes to say that
+* I add to the notes
 
   .. code-block:: python
     :lineno-start: 34
