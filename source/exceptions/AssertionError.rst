@@ -946,27 +946,29 @@ refactor: make it better
 * time for the last statement
 
   .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 20
 
-    def test_assertion_error_w_equality(self):
-        assert None == None
-        self.assertEqual(None, None)
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
 
-        assert False != None
-        self.assertNotEqual(False, None)
+            assert False != None
+            self.assertNotEqual(False, None)
 
-        assert True != None
-        self.assertNotEqual(True, None)
+            assert True != None
+            self.assertNotEqual(True, None)
 
-        assert True != False
-        self.assertNotEqual(True, False)
+            assert True != False
+            self.assertNotEqual(True, False)
 
-        assert False == False
-        self.assertEqual(False, False)
+            assert False == False
+            self.assertEqual(False, False)
 
-        assert False != True
-        self.assertNotEqual(False, True)
+            assert False != True
+            self.assertNotEqual(False, True)
 
-        assert True != True
+            assert True != True
 
   the terminal shows AssertionError_
 
@@ -974,18 +976,22 @@ refactor: make it better
 
     E    assert True != True
 
-  when I make the line :ref:`True<test_what_is_true>`
+  I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
-    assert True == True
+              assert True == True
 
-  the test passes. I add a line with the assert_ :ref:`method<functions>`
+  the test passes
+
+* I add a line with the assert_ :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 2
 
-    assert True == True
-    self.assertNotEqual(True, True)
+              assert True == True
+              self.assertNotEqual(True, True)
 
   the terminal shows AssertionError_
 
@@ -996,13 +1002,19 @@ refactor: make it better
   I change the :ref:`method<functions>`
 
   .. code-block:: python
+    lineno-start: 43
+    :emphasize-lines: 2
 
-    assert True == True
-    self.assertEqual(True, True)
+              assert True == True
+              self.assertEqual(True, True)
 
-  and all tests are passing. I add a note for the last statement
+  and all tests are passing!
+
+* I add a note for the last statement
 
   .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 2
 
     # NOTES
     # True is True and equal to True
@@ -1020,7 +1032,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-With `assert statements`_ and :ref:`methods<functions>` I can test if something is
+I can use `assert statements`_ and :ref:`methods<functions>` to test if something is
 
 * :ref:`None` or not
 * :ref:`False<test_what_is_false>` or not
