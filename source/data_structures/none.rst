@@ -586,13 +586,13 @@ red: make it fail
 I add a test to see if None_ is a float_ (floating point decimal number)
 
 .. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 5
+  :lineno-start: 23
+  :emphasize-lines: 3-4
 
-      self.assertNotIsInstance(None, int)
+          self.assertNotIsInstance(None, int)
 
-  def test_is_none_a_float(self):
-      self.assertIsNone(-0.1)
+      def test_is_none_a_float(self):
+          self.assertIsNone(-0.1)
 
 the terminal shows :ref:`AssertionError`
 
@@ -606,9 +606,11 @@ green: make it pass
 I change the :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 25
+  :emphasize-lines: 2
 
-  def test_is_none_a_float(self):
-      self.assertIsNotNone(-0.1)
+      def test_is_none_a_float(self):
+          self.assertIsNotNone(-0.1)
 
 the test passes
 
@@ -618,10 +620,12 @@ refactor: make it better
 * I add another line
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNone(0.0)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNone(0.0)
 
   the terminal shows :ref:`AssertionError`
 
@@ -632,21 +636,25 @@ refactor: make it better
   when I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
 
   the test passes
 
-* I add a failing line
+* I add another assertion
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 4
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNone(0.1)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNone(0.1)
 
   the terminal shows :ref:`AssertionError`
 
@@ -657,25 +665,29 @@ refactor: make it better
   I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 4
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
 
   the test passes
 
 * time for instance tests
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 5
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
-        self.assertNotIsInstance(-0.1, float)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
+            self.assertNotIsInstance(-0.1, float)
 
-  float_ is the :ref:`class<classes>` for floating point numbers, the terminal shows :ref:`AssertionError`
+  float_ is the :ref:`class<classes>` for floating point numbers. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -684,25 +696,29 @@ refactor: make it better
   ``-0.1`` is for the negative floating point numbers. I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 5
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
-        self.assertIsInstance(-0.1, float)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
+            self.assertIsInstance(-0.1, float)
 
   the test passes
 
 * I add the next instance test
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 6
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
-        self.assertIsInstance(-0.1, float)
-        self.assertNotIsInstance(0.0, float)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
+            self.assertIsInstance(-0.1, float)
+            self.assertNotIsInstance(0.0, float)
 
   the terminal shows :ref:`AssertionError`
 
@@ -713,27 +729,31 @@ refactor: make it better
   ``0.0`` is a floating point number. I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 6
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
-        self.assertIsInstance(-0.1, float)
-        self.assertIsInstance(0.0, float)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
+            self.assertIsInstance(-0.1, float)
+            self.assertIsInstance(0.0, float)
 
   the test passes
 
 * I add another instance test
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 7
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
-        self.assertIsInstance(-0.1, float)
-        self.assertIsInstance(0.0, float)
-        self.assertNotIsInstance(0.1, float)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
+            self.assertIsInstance(-0.1, float)
+            self.assertIsInstance(0.0, float)
+            self.assertNotIsInstance(0.1, float)
 
   the terminal shows :ref:`AssertionError`
 
@@ -741,30 +761,36 @@ refactor: make it better
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  ``0.1`` is for the positive floating point numbers. I make the test pass
+  ``0.1`` is for the positive floating point numbers. I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 7
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
-        self.assertIsInstance(-0.1, float)
-        self.assertIsInstance(0.0, float)
-        self.assertIsInstance(0.1, float)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
+            self.assertIsInstance(-0.1, float)
+            self.assertIsInstance(0.0, float)
+            self.assertIsInstance(0.1, float)
 
-* then I add one more line
+  the test passes
+
+* I add one more line
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 8
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
-        self.assertIsInstance(-0.1, float)
-        self.assertIsInstance(0.0, float)
-        self.assertIsInstance(0.1, float)
-        self.assertIsInstance(None, float)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
+            self.assertIsInstance(-0.1, float)
+            self.assertIsInstance(0.0, float)
+            self.assertIsInstance(0.1, float)
+            self.assertIsInstance(None, float)
 
   the terminal shows :ref:`AssertionError`
 
@@ -772,22 +798,32 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'float'>
 
-  when I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 8
 
-    def test_is_none_a_float(self):
-        self.assertIsNotNone(-0.1)
-        self.assertIsNotNone(0.0)
-        self.assertIsNotNone(0.1)
-        self.assertIsInstance(-0.1, float)
-        self.assertIsInstance(0.0, float)
-        self.assertIsInstance(0.1, float)
-        self.assertNotIsInstance(None, float)
+        def test_is_none_a_float(self):
+            self.assertIsNotNone(-0.1)
+            self.assertIsNotNone(0.0)
+            self.assertIsNotNone(0.1)
+            self.assertIsInstance(-0.1, float)
+            self.assertIsInstance(0.0, float)
+            self.assertIsInstance(0.1, float)
+            self.assertNotIsInstance(None, float)
 
-  the test passes, time for a new note
+
+    # NOTES
+    ...
+
+  the test passes
+
+* I add a new note
 
   .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 2
 
     # NOTES
     # None is NOT a float
