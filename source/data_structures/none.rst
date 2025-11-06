@@ -840,16 +840,20 @@ test_is_none_a_string
 red: make it fail
 #################################################################################
 
-I add a test to see if None_ is a string_
+I add a test to see if None_ is a string_ (any thing in quotes)
 
 .. code-block:: python
+  :lineno-start: 32
+  :emphasize-lines: 3-4
 
-  def test_is_none_a_float(self):
-      ...
-      self.assertNotIsInstance(None, float)
+          self.assertNotIsInstance(None, float)
 
-  def test_is_none_a_string(self):
-      self.assertIsNone('')
+      def test_is_none_a_string(self):
+          self.assertIsNone('')
+
+
+  # NOTES
+  ...
 
 the terminal shows :ref:`AssertionError`
 
@@ -863,22 +867,26 @@ green: make it pass
 I change the :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 34
+  :emphasize-lines: 2
 
-  def test_is_none_a_string(self):
-      self.assertIsNotNone('')
+      def test_is_none_a_string(self):
+          self.assertIsNotNone('')
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* then I add another line
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 3
 
-    def test_is_none_a_string(self):
-        self.assertIsNotNone('')
-        self.assertIsNone("text")
+        def test_is_none_a_string(self):
+            self.assertIsNotNone('')
+            self.assertIsNone("text")
 
   the terminal shows :ref:`AssertionError`
 
@@ -889,21 +897,25 @@ refactor: make it better
   I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 3
 
-    def test_is_none_a_string(self):
-        self.assertIsNotNone('')
-        self.assertIsNotNone("text")
+        def test_is_none_a_string(self):
+            self.assertIsNotNone('')
+            self.assertIsNotNone("text")
 
   the test passes
 
-* then I add a failing line for an instance test
+* I add an :ref:`assertion<AssertionError>` for an instance test
 
   .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 4
 
-    def test_is_none_a_string(self):
-        self.assertIsNotNone('')
-        self.assertIsNotNone("text")
-        self.assertNotIsInstance('', str)
+        def test_is_none_a_string(self):
+            self.assertIsNotNone('')
+            self.assertIsNotNone("text")
+            self.assertNotIsInstance('', str)
 
   str_ is the :ref:`class<classes>` for strings_. The terminal shows :ref:`AssertionError`
 
@@ -911,26 +923,32 @@ refactor: make it better
 
     AssertionError: '' is an instance of <class 'str'>
 
-  ``''`` is the empty string_. I change the :ref:`method<functions>`
+  ``''`` is the empty string_
+
+* I change the assert_ :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 4
 
-    def test_is_none_a_string(self):
-        self.assertIsNotNone('')
-        self.assertIsNotNone("text")
-        self.assertIsInstance('', str)
+        def test_is_none_a_string(self):
+            self.assertIsNotNone('')
+            self.assertIsNotNone("text")
+            self.assertIsInstance('', str)
 
   the test passes
 
-* then I add another line
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 5
 
-    def test_is_none_a_string(self):
-        self.assertIsNotNone('')
-        self.assertIsNotNone("text")
-        self.assertIsInstance('', str)
-        self.assertNotIsInstance("text", str)
+        def test_is_none_a_string(self):
+            self.assertIsNotNone('')
+            self.assertIsNotNone("text")
+            self.assertIsInstance('', str)
+            self.assertNotIsInstance("text", str)
 
   the terminal shows :ref:`AssertionError`
 
@@ -938,15 +956,19 @@ refactor: make it better
 
     AssertionError: 'text' is an instance of <class 'str'>
 
-  ``'text'`` is a string_. I change the :ref:`method<functions>` to make the test pass
+  ``'text'`` is a string_
+
+* I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 5
 
-    def test_is_none_a_string(self):
-        self.assertIsNotNone('')
-        self.assertIsNotNone("text")
-        self.assertIsInstance('', str)
-        self.assertIsInstance("text", str)
+        def test_is_none_a_string(self):
+            self.assertIsNotNone('')
+            self.assertIsNotNone("text")
+            self.assertIsInstance('', str)
+            self.assertIsInstance("text", str)
 
   A string_ is anything in single, double or triple quotes, for example
 
@@ -957,16 +979,18 @@ refactor: make it better
 
   see :ref:`quotes` for more
 
-* I add one more instance test
+* I add another instance test
 
   .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 6
 
-    def test_is_none_a_string(self):
-        self.assertIsNotNone('')
-        self.assertIsNotNone("text")
-        self.assertIsInstance('', str)
-        self.assertIsInstance("text", str)
-        self.assertIsInstance(None, str)
+        def test_is_none_a_string(self):
+            self.assertIsNotNone('')
+            self.assertIsNotNone("text")
+            self.assertIsInstance('', str)
+            self.assertIsInstance("text", str)
+            self.assertIsInstance(None, str)
 
   the terminal shows :ref:`AssertionError`
 
@@ -974,20 +998,29 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'str'>
 
-  when I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 6
 
-    def test_is_none_a_string(self):
-        self.assertIsNotNone('')
-        self.assertIsNotNone("text")
-        self.assertIsInstance('', str)
-        self.assertIsInstance("text", str)
-        self.assertNotIsInstance(None, str)
+        def test_is_none_a_string(self):
+            self.assertIsNotNone('')
+            self.assertIsNotNone("text")
+            self.assertIsInstance('', str)
+            self.assertIsInstance("text", str)
+            self.assertNotIsInstance(None, str)
 
-  the test passes and I add a note
+    # NOTES
+    ...
+
+  the test passes
+
+* I add a note
 
   .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 2
 
     # NOTES
     # None is NOT a string
