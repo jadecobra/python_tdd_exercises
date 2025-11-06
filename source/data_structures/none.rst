@@ -50,7 +50,7 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to make the statement :ref:`True<test_what_is_true>` the :ref:`CapWords` format
 
   .. code-block:: python
     :lineno-start: 4
@@ -325,16 +325,16 @@ test_is_none_an_integer
 red: make it fail
 #################################################################################
 
-I add a test to see if None_ is an integer_
+I add a test to see if None_ is an integer_ (a whole number)
 
 .. code-block:: python
+  :lineno-start: 14
+  :emphasize-lines: 3-4
 
-  def test_is_none_a_boolean(self):
-      ...
-      self.assertNotIsInstance(None, bool)
+          self.assertNotIsInstance(None, bool)
 
-  def test_is_none_an_integer(self):
-      self.assertIsNone(-1)
+      def test_is_none_an_integer(self):
+          self.assertIsNone(-1)
 
 the terminal shows :ref:`AssertionError`
 
@@ -345,12 +345,14 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>` to match
+I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 2
 
-  def test_is_none_an_integer(self):
-      self.assertIsNotNone(-1)
+      def test_is_none_an_integer(self):
+          self.assertIsNotNone(-1)
 
 the test passes
 
@@ -360,10 +362,12 @@ refactor: make it better
 * I add a new line
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNone(0)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNone(0)
 
   the terminal shows :ref:`AssertionError`
 
@@ -374,21 +378,25 @@ refactor: make it better
   I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
 
-  the terminal shows green again
+  the test passes
 
 * I add another line
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 4
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNone(1)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNone(1)
 
   the terminal shows :ref:`AssertionError`
 
@@ -399,23 +407,27 @@ refactor: make it better
   I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 4
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
 
   the test passes
 
-* I add an instance test
+* I add assertNotIsInstance_
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 5
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
-        self.assertNotIsInstance(-1, int)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
+            self.assertNotIsInstance(-1, int)
 
   int_ is the :ref:`class<classes>` for integers_, the terminal shows :ref:`AssertionError`
 
@@ -423,26 +435,34 @@ refactor: make it better
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  ``-1`` is an integer_ for the positive integers_. I make the test pass
+  ``-1`` is an integer_ for the positive integers_
+
+* I use assertIsInstance_
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 5
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
-        self.assertIsInstance(-1, int)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
+            self.assertIsInstance(-1, int)
+
+  the test passes
 
 * I add another instance test
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
-        self.assertIsInstance(-1, int)
-        self.assertNotIsInstance(0, int)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
+            self.assertIsInstance(-1, int)
+            self.assertNotIsInstance(0, int)
 
   the terminal shows :ref:`AssertionError`
 
@@ -450,30 +470,36 @@ refactor: make it better
 
     AssertionError: 0 is an instance of <class 'int'>
 
-  ``0`` is an integer_. I change the :ref:`method<functions>`
+  ``0`` is an integer_
+
+* I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
-        self.assertIsInstance(-1, int)
-        self.assertIsInstance(0, int)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
+            self.assertIsInstance(-1, int)
+            self.assertIsInstance(0, int)
 
   the test passes
 
-* I add another one
+* I add another failing line
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 7
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
-        self.assertIsInstance(-1, int)
-        self.assertIsInstance(0, int)
-        self.assertNotIsInstance(1, int)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
+            self.assertIsInstance(-1, int)
+            self.assertIsInstance(0, int)
+            self.assertNotIsInstance(1, int)
 
   the terminal shows :ref:`AssertionError`
 
@@ -481,32 +507,38 @@ refactor: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` is for the positive integers_. I change the :ref:`method<functions>`
+  ``1`` is for the positive integers_
+
+* I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 7
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
-        self.assertIsInstance(-1, int)
-        self.assertIsInstance(0, int)
-        self.assertIsInstance(1, int)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
+            self.assertIsInstance(-1, int)
+            self.assertIsInstance(0, int)
+            self.assertIsInstance(1, int)
 
   the test passes
 
 * one more instance test
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 8
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
-        self.assertIsInstance(-1, int)
-        self.assertIsInstance(0, int)
-        self.assertIsInstance(1, int)
-        self.assertIsInstance(None, int)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
+            self.assertIsInstance(-1, int)
+            self.assertIsInstance(0, int)
+            self.assertIsInstance(1, int)
+            self.assertIsInstance(None, int)
 
   the terminal shows :ref:`AssertionError`
 
@@ -514,22 +546,28 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'int'>
 
-  I make the test pass
+* I use assertNotIsInstance_
 
   .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 8
 
-    def test_is_none_an_integer(self):
-        self.assertIsNotNone(-1)
-        self.assertIsNotNone(0)
-        self.assertIsNotNone(1)
-        self.assertIsInstance(-1, int)
-        self.assertIsInstance(0, int)
-        self.assertIsInstance(1, int)
-        self.assertNotIsInstance(None, int)
+        def test_is_none_an_integer(self):
+            self.assertIsNotNone(-1)
+            self.assertIsNotNone(0)
+            self.assertIsNotNone(1)
+            self.assertIsInstance(-1, int)
+            self.assertIsInstance(0, int)
+            self.assertIsInstance(1, int)
+            self.assertNotIsInstance(None, int)
 
-  then add a new note
+  the test passes
+
+* I add a new note
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
 
     # NOTES
     # None is NOT an integer
@@ -545,12 +583,12 @@ test_is_none_a_float
 red: make it fail
 #################################################################################
 
-I add a test to see if None_ is a float_
+I add a test to see if None_ is a float_ (floating point decimal number)
 
 .. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 5
 
-  def test_is_none_an_integer(self):
-      ...
       self.assertNotIsInstance(None, int)
 
   def test_is_none_a_float(self):
@@ -591,7 +629,7 @@ refactor: make it better
 
     AssertionError: 0.0 is not None
 
-  when I change the :ref:`method<functions>` to match
+  when I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -812,7 +850,7 @@ refactor: make it better
 
     AssertionError: 'text' is not None
 
-  I change the :ref:`method<functions>` to match
+  I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -1112,7 +1150,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-when I change the :ref:`method<functions>` to match
+when I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -1272,7 +1310,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>` to match the message
+I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
