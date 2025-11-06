@@ -86,7 +86,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I change the :ref:`method<functions>` to assertIsNone_, which checks if what it gets in parentheses is None_
+* I change the :ref:`assertion<AssertionError>` to assertIsNone_, which checks if what it gets in parentheses is None_
 
   .. code-block:: python
     :lineno-start: 6
@@ -153,7 +153,7 @@ I add a note
   # False is NOT None
   # None is None
 
-then I change the :ref:`method<functions>`
+then I change the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
   :lineno-start: 9
@@ -194,7 +194,7 @@ refactor: make it better
     # False is NOT None
     # None is None
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -223,7 +223,7 @@ refactor: make it better
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I change the :ref:`method<functions>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is a child of the bool_ :ref:`class<classes>`
+  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I change the :ref:`assertion<AssertionError>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is a child of the bool_ :ref:`class<classes>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -270,7 +270,7 @@ refactor: make it better
 
   the test passes
 
-* I add another line to test if None_ is a child of the :ref:`boolean<booleans>` :ref:`class<classes>`
+* I add another :ref:`assertion<AssertionError>` to test if None_ is a child of the :ref:`boolean<booleans>` :ref:`class<classes>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -291,7 +291,7 @@ refactor: make it better
 
   :ref:`None` is NOT a :ref:`boolean<booleans>`
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -345,7 +345,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
+I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 16
@@ -375,7 +375,7 @@ refactor: make it better
 
     AssertionError: 0 is not None
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -387,7 +387,7 @@ refactor: make it better
 
   the test passes
 
-* I add another line
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -404,7 +404,7 @@ refactor: make it better
 
     AssertionError: 1 is not None
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -472,7 +472,7 @@ refactor: make it better
 
   ``0`` is an integer_
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -509,7 +509,7 @@ refactor: make it better
 
   ``1`` is for the positive integers_
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -603,7 +603,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>`
+I change the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
   :lineno-start: 25
@@ -617,7 +617,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another line
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -633,7 +633,7 @@ refactor: make it better
 
     AssertionError: 0.0 is not None
 
-  when I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
+  when I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -662,7 +662,7 @@ refactor: make it better
 
     AssertionError: 0.1 is not None
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -693,7 +693,7 @@ refactor: make it better
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  ``-0.1`` is for the negative floating point numbers. I change the :ref:`method<functions>`
+  ``-0.1`` is for the negative floating point numbers. I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -726,7 +726,7 @@ refactor: make it better
 
     AssertionError: 0.0 is an instance of <class 'float'>
 
-  ``0.0`` is a floating point number. I change the :ref:`method<functions>`
+  ``0.0`` is a floating point number. I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -761,7 +761,7 @@ refactor: make it better
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  ``0.1`` is for the positive floating point numbers. I change the :ref:`method<functions>`
+  ``0.1`` is for the positive floating point numbers. I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -798,7 +798,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'float'>
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -864,7 +864,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>`
+I change the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
   :lineno-start: 34
@@ -894,7 +894,7 @@ refactor: make it better
 
     AssertionError: 'text' is not None
 
-  I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
+  I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -1038,16 +1038,19 @@ test_is_none_a_tuple
 red: make it fail
 #################################################################################
 
-I add a test to see if None_ is a tuple_
+I add a test to see if None_ is a tuple_ (anything in parentheses ``()``)
 
 .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 3-4
 
-  def test_is_none_a_string(self):
-      ...
-      self.assertNotIsInstance(None, str)
+          self.assertNotIsInstance(None, str)
 
-  def test_is_none_a_tuple(self):
-      self.assertIsNone(())
+      def test_is_none_a_tuple(self):
+          self.assertIsNone(())
+
+  # NOTES
+  ...
 
 the terminal shows :ref:`AssertionError`
 
@@ -1058,25 +1061,29 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>`
+I change the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
+  :lineno-start: 41
+  :emphasize-lines: 2
 
-  def test_is_none_a_tuple(self):
-      self.assertIsNotNone(())
+      def test_is_none_a_tuple(self):
+          self.assertIsNotNone(())
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* I add a failing line
+* I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 3
 
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNone((1, 2, 3, 'n'))
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNone((1, 2, 3, 'n'))
 
   the terminal shows :ref:`AssertionError`
 
@@ -1084,24 +1091,28 @@ refactor: make it better
 
     AssertionError: (1, 2, 3, 'n') is not None
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 3
 
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
 
   the test passes
 
-* then I add an instance test
+* I add an instance test
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 4
 
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
-        self.assertNotIsInstance((), tuple)
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertNotIsInstance((), tuple)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1109,26 +1120,32 @@ refactor: make it better
 
     AssertionError: () is an instance of <class 'tuple'>
 
-  ``()`` is the empty tuple_. I change the :ref:`method<functions>`
+  ``()`` is the empty tuple_
+
+* I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 4
 
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
-        self.assertIsInstance((), tuple)
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertIsInstance((), tuple)
 
   the test passes
 
-* I add another line
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 5
 
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
-        self.assertIsInstance((), tuple)
-        self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertIsInstance((), tuple)
+            self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1136,28 +1153,34 @@ refactor: make it better
 
     AssertionError: (1, 2, 3, 'n') is an instance of <class 'tuple'>
 
-  ``(1, 2, 3, 'n')`` is a tuple_. I change the :ref:`method<functions>`
+  ``(1, 2, 3, 'n')`` is a tuple_
+
+* I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 5
 
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
-        self.assertIsInstance((), tuple)
-        self.assertIsInstance((1, 2, 3, 'n'), tuple)
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertIsInstance((), tuple)
+            self.assertIsInstance((1, 2, 3, 'n'), tuple)
 
   the test passes
 
 * I add one more instance test
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 6
 
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
-        self.assertIsInstance((), tuple)
-        self.assertIsInstance((1, 2, 3, 'n'), tuple)
-        self.assertIsInstance(None, tuple)
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertIsInstance((), tuple)
+            self.assertIsInstance((1, 2, 3, 'n'), tuple)
+            self.assertIsInstance(None, tuple)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1165,20 +1188,30 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'tuple'>
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 6
 
-    def test_is_none_a_tuple(self):
-        self.assertIsNotNone(())
-        self.assertIsNotNone((1, 2, 3, 'n'))
-        self.assertIsInstance((), tuple)
-        self.assertIsInstance((1, 2, 3, 'n'), tuple)
-        self.assertNotIsInstance(None, tuple)
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertIsInstance((), tuple)
+            self.assertIsInstance((1, 2, 3, 'n'), tuple)
+            self.assertNotIsInstance(None, tuple)
 
-  the test passes and I add a note
+
+    # NOTES
+    ...
+
+  the test passes
+
+* I add a note
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
 
     # NOTES
     # None is NOT a tuple
@@ -1219,7 +1252,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-when I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
+when I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -1245,7 +1278,7 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is not None
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1270,7 +1303,7 @@ refactor: make it better
 
     AssertionError: [] is an instance of <class 'list'>
 
-  ``[]`` is the empty :ref:`list <lists>`. I change the :ref:`method<functions>`
+  ``[]`` is the empty :ref:`list <lists>`. I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1297,7 +1330,7 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
 
-  ``[1, 2, 3, 'n']`` is a :ref:`list <lists>`. I change the :ref:`method<functions>`
+  ``[1, 2, 3, 'n']`` is a :ref:`list <lists>`. I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1379,7 +1412,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
+I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
 
@@ -1391,7 +1424,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another line
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1405,7 +1438,7 @@ refactor: make it better
 
     AssertionError: {1, 2, 3, 'n'} is not None
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1455,7 +1488,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'set'>
 
-  I change the :ref:`method<functions>` to make it pass
+  I change the :ref:`assertion<AssertionError>` to make it pass
 
   .. code-block:: python
 
@@ -1510,7 +1543,7 @@ wait a minute! Python_ uses ``{}`` for sets_, it also uses them for :ref:`dictio
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>`
+I change the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
 
@@ -1522,7 +1555,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* then I add another line
+* then I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1536,7 +1569,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is not None
 
-  when I change the :ref:`method<functions>`
+  when I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -1561,7 +1594,7 @@ refactor: make it better
 
     AssertionError: {} is an instance of <class 'dict'>
 
-  ``{}`` is the empty :ref:`dictionary<dictionaries>`. I change the :ref:`method<functions>` to make it pass
+  ``{}`` is the empty :ref:`dictionary<dictionaries>`. I change the :ref:`assertion<AssertionError>` to make it pass
 
   .. code-block:: python
 
@@ -1586,7 +1619,7 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
-  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, I can add more key-value pairs separating them with commas, that is the difference between :ref:`dictionaries` and sets_. I change the :ref:`method<functions>`
+  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, I can add more key-value pairs separating them with commas, that is the difference between :ref:`dictionaries` and sets_. I change the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
