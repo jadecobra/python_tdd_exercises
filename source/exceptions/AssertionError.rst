@@ -72,6 +72,7 @@ requirements
 
   .. code-block:: python
     :lineno-start: 7
+    :emphasize-lines: 1
 
             self.assertFalse(False)
 
@@ -79,6 +80,7 @@ requirements
 
   .. code-block:: python
     :lineno-start: 4
+    :emphasize-lines: 1
 
     class TestAssertionError(unittest.TestCase):
 
@@ -132,7 +134,7 @@ refactor: make it better
 
 I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functions>` from the `unittest.TestCase`_ class
 
-* I add another failing line with the assertIsNotNone_ :ref:`method<functions>` which checks if the thing is parentheses is NOT :ref:`None`
+* I add another failing line with the assertIsNotNone_ :ref:`method<functions>` which checks if the thing in parentheses is NOT :ref:`None`
 
   .. code-block:: python
     :lineno-start: 6
@@ -148,7 +150,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     AssertionError: unexpectedly None
 
-  I change the statement to use the assertIsNone_ :ref:`method<functions>` which checks if the thing is parentheses is :ref:`None`
+  I change the statement to use the assertIsNone_ :ref:`method<functions>` which checks if the thing in parentheses is :ref:`None`
 
   .. code-block:: python
     :lineno-start: 6
@@ -265,6 +267,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
   .. code-block:: python
     :lineno-start: 13
+    :emphasize-lines: 1
 
             assert True is not None
 
@@ -331,11 +334,14 @@ I add a failing test
     :lineno-start: 13
     :emphasize-lines: 4-5
 
-            assert True is not None
-            self.assertIsNotNone(True)
+          assert True is not None
+          self.assertIsNotNone(True)
 
-        def test_assertion_error_w_false(self):
-            assert True is False
+      def test_assertion_error_w_false(self):
+          assert True is False
+
+  # NOTES
+  ...
 
 the terminal shows AssertionError_
 
@@ -416,6 +422,7 @@ I add a failing test
 
 .. code-block:: python
   :lineno-start: 16
+  :emphasize-lines: 5-6
 
       def test_assertion_error_w_false(self):
           assert True is not False
@@ -423,6 +430,10 @@ I add a failing test
 
       def test_assertion_error_w_true(self):
           assert False is True
+
+
+  # NOTES
+  ...
 
 the terminal shows AssertionError_
 
@@ -467,6 +478,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 20
+    :emphasize-lines: 3
 
         def test_assertion_error_w_true(self):
             assert False is not True
@@ -515,6 +527,10 @@ I add a new failing test
       def test_assertion_error_w_equality(self):
           assert None != None
 
+
+  # NOTES
+  ...
+
 the terminal shows AssertionError_
 
 .. code-block:: python
@@ -540,7 +556,7 @@ the test passes. ``==`` is the symbol for ``is equal`` which makes this statemen
 refactor: make it better
 #################################################################################
 
-* there are assert_ :ref:`methods<functions>` to check for equality. I add assertNotEqual_ which checks if the 2 things in the parentheses are NOT equal
+* there are assert_ :ref:`methods<functions>` to check if 2 things are equal or not. I add assertNotEqual_ which checks if the 2 things in the parentheses are NOT equal
 
   .. code-block:: python
     :lineno-start: 24
@@ -605,6 +621,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 28
+    :emphasize-lines: 1
 
             assert False != None
 
@@ -676,6 +693,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 31
+    :emphasize-lines: 1
 
             assert True != None
 
@@ -725,7 +743,7 @@ refactor: make it better
 * I add another failing line
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 24
     :emphasize-lines: 11
 
         def test_assertion_error_w_equality(self):
@@ -750,6 +768,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 34
+    :emphasize-lines: 1
 
             assert True != False
 
@@ -827,6 +846,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 37
+    :emphasize-lines: 1
 
             assert False == False
 
@@ -907,6 +927,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 40
+    :emphasize-lines: 1
 
             assert False != True
 
