@@ -16,21 +16,19 @@ AssertionError
 
 ----
 
-AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was introduced in :ref:`how to make a python test driven development environment` with :ref:`the first failing test<test_failure>`
+AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was in :ref:`how to make a python test driven development environment` with :ref:`the first failing test<test_failure>`
 
 .. code-block:: python
 
-          self.assertFalse(True)
+  self.assertFalse(True)
 
 which is like
 
 .. code-block:: python
 
-          assert True is False
+  assert True is False0
 
-the assert_ at the beginning of the line makes the statement something like
-
-"DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`"
+I think of the assert_ at the beginning of the line makes the statement as "DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`"
 
 The line stops the program because the statement is NOT :ref:`True<test_what_is_true>`, it is :ref:`False<test_what_is_false>`
 
@@ -118,7 +116,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I change the failing line to make it :ref:`True<test_what_is_true>`
+I change the line to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 6
@@ -133,7 +131,7 @@ refactor: make it better
 
 I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functions>` from the `unittest.TestCase`_ class
 
-* I add another failing line using the assertIsNotNone_ :ref:`method<functions>` which checks if something is NOT :ref:`None`
+* I add another failing line with the assertIsNotNone_ :ref:`method<functions>` which checks if the thing is parentheses is NOT :ref:`None`
 
   .. code-block:: python
     :lineno-start: 6
@@ -149,7 +147,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     AssertionError: unexpectedly None
 
-  I change the statement to use the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
+  I change the statement to use the assertIsNone_ :ref:`method<functions>` which checks if the thing is parentheses is :ref:`None`
 
   .. code-block:: python
     :lineno-start: 6
@@ -174,7 +172,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
     # Exceptions Encountered
     # AssertionError
 
-* I add a new failing line
+* I add a new :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -199,9 +197,9 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
             assert False is not None
 
-  the test passes.
+  the test passes
 
-* I add another line with the assertIsNone_ :ref:`method<functions>` which checks if something is :ref:`None`
+* I add another line with assertIsNone_
 
   .. code-block:: python
     :lineno-start: 6
@@ -220,7 +218,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     AssertionError: False is not None
 
-  I change the statement with assertIsNotNone_ to make it :ref:`True<test_what_is_true>`
+  I use assertIsNotNone_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -229,7 +227,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
             assert False is None
             self.assertIsNotNone(False)
 
-  the test passes.
+  the test passes
 
 * I add another note
 
@@ -241,7 +239,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
     # False is not None
     # None is None
 
-* I add another assertion
+* I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -271,7 +269,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
   the test passes
 
-* I use the assertIsNone_ :ref:`method<functions>`
+* I add assertIsNone_
 
   .. code-block:: python
     :lineno-start: 6
@@ -293,7 +291,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     AssertionError: True is not None
 
-  I make the statement :ref:`True<test_what_is_true>`
+  I change it with assertIsNotNone_
 
   .. code-block:: python
     :lineno-start: 13
