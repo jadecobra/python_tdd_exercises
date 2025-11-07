@@ -14,6 +14,7 @@ tests
 the code in ``tests/test_classes.py`` from :ref:`classes`
 
 .. literalinclude:: tests/test_classes.py
+  :linenos:
 
 *********************************************************************************
 solutions
@@ -23,3 +24,4 @@ solutions
 the solutions in ``classes.py`` from :ref:`classes`
 
 .. literalinclude:: solutions/classes.py
+  :linenos:

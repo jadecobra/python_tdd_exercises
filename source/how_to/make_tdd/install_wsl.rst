@@ -46,12 +46,14 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 * then type this in the terminal to update the Linux_ `package manager <https://manpages.debian.org/trixie/apt/apt.8.en.html>`_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     sudo apt update
 
 * type this in the terminal to install Python_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     sudo apt install python3 python3-venv --yes
 

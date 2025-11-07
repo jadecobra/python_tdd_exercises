@@ -9,6 +9,7 @@ tests
 the code in ``tests/test_list_comprehensions.py`` from :ref:`lists: list comprehensions`
 
 .. literalinclude:: tests/test_list_comprehensions.py
+  :linenos:
 
 *********************************************************************************
 solutions
@@ -17,3 +18,4 @@ solutions
 the solutions in ``list_comprehensions.py`` from :ref:`lists: list comprehensions`
 
 .. literalinclude:: solutions/list_comprehensions.py
+  :linenos:

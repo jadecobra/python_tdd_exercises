@@ -52,6 +52,7 @@ requirements
 
   .. code-block:: python
     :lineno-start: 4
+    :emphasize-lines: 1
 
     class TestCalculator(unittest.TestCase):
 

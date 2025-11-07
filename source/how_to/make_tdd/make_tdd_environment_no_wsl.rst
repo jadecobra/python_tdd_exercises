@@ -39,6 +39,7 @@ how to manually make a python test driven development environment on Windows wit
 * Imagine I have to work on a project and its name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     mkdir magic
 
@@ -47,6 +48,7 @@ how to manually make a python test driven development environment on Windows wit
 * I use cd_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     cd magic
 
@@ -55,12 +57,14 @@ how to manually make a python test driven development environment on Windows wit
 * I make a child folder/directory for the source code (the actual program)
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     mkdir src
 
   I use `New-Item`_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     New-Item src/magic.py
 
@@ -69,6 +73,7 @@ how to manually make a python test driven development environment on Windows wit
 * I make a child folder/directory
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     mkdir tests
 
@@ -79,6 +84,7 @@ how to manually make a python test driven development environment on Windows wit
   .. attention:: make sure to use 2 underscores (__) for ``__init__.py``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     New-Item tests/__init__.py
 
@@ -87,6 +93,7 @@ how to manually make a python test driven development environment on Windows wit
 * I use `New-Item`_ to add one more empty file in the ``tests`` directory for the actual test
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     New-Item tests/test_magic.py
 

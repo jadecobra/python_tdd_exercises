@@ -10,6 +10,7 @@ tests
 the code in ``tests/test_tree.py``
 
 .. literalinclude:: tests/test_tree.py
+  :linenos:
 
 *********************************************************************************
 solutions
@@ -18,3 +19,4 @@ solutions
 the solutions in ``tree.py``
 
 .. literalinclude:: solutions/tree.py
+  :linenos:

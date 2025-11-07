@@ -36,6 +36,7 @@ requirements
   it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     E       AssertionError: True is not false
 
@@ -46,6 +47,7 @@ requirements
 
   .. code-block:: python
     :lineno-start: 7
+    :emphasize-lines: 1
 
             self.assertFalse(False)
 
@@ -53,6 +55,7 @@ requirements
 
   .. code-block:: python
     :lineno-start: 4
+    :emphasize-lines: 1
 
     class TestExceptions(unittest.TestCase):
 
@@ -230,9 +233,9 @@ then I add the assertRaises_ :ref:`method<functions>`
   :lineno-start: 15
   :emphasize-lines: 2-3
 
-        def test_catching_attribute_error_in_tests(self):
-            with self.assertRaises(AttributeError):
-                src.exceptions.does_not_exist
+      def test_catching_attribute_error_in_tests(self):
+          with self.assertRaises(AttributeError):
+              src.exceptions.does_not_exist
 
 the test passes
 
@@ -268,6 +271,7 @@ red: make it fail
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     function_name
 
@@ -281,6 +285,7 @@ red: make it fail
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     function_name = None
 
@@ -325,6 +330,7 @@ refactor: make it better
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1-2
 
     def function_name():
         return None
@@ -405,9 +411,9 @@ red: make it fail
     :lineno-start: 23
     :emphasize-lines: 3
 
-    def test_catching_index_error_in_tests(self):
-        a_list = [1, 2, 3, 'n']
-        a_list[4]
+        def test_catching_index_error_in_tests(self):
+            a_list = [1, 2, 3, 'n']
+            a_list[4]
 
   the terminal shows :ref:`IndexError<test_index_error>`
 
@@ -511,12 +517,12 @@ refactor: make it better
     :lineno-start: 23
     :emphasize-lines: 5-6
 
-    def test_catching_index_error_in_tests(self):
-        a_list = [1, 2, 3, 'n']
-        with self.assertRaises(IndexError):
-            a_list[4]
-            a_list[-5]
-        # with self.assertRaises(IndexError):
+        def test_catching_index_error_in_tests(self):
+            a_list = [1, 2, 3, 'n']
+            with self.assertRaises(IndexError):
+                a_list[4]
+                a_list[-5]
+            # with self.assertRaises(IndexError):
 
   I show why this is not a repetition at :ref:`the end of the chapter<one_exception_one_exception_handler>`. I undo the change for now
 
@@ -524,12 +530,12 @@ refactor: make it better
     :lineno-start: 23
     :emphasize-lines: 5-6
 
-    def test_catching_index_error_in_tests(self):
-        a_list = [1, 2, 3, 'n']
-        with self.assertRaises(IndexError):
-            a_list[4]
-        with self.assertRaises(IndexError):
-            a_list[-5]
+        def test_catching_index_error_in_tests(self):
+            a_list = [1, 2, 3, 'n']
+            with self.assertRaises(IndexError):
+                a_list[4]
+            with self.assertRaises(IndexError):
+                a_list[-5]
 
 ----
 
@@ -606,9 +612,9 @@ I add assertRaises_ to the test
   :lineno-start: 30
   :emphasize-lines: 2-3
 
-        def test_catching_key_error_in_tests(self):
-            with self.assertRaises(KeyError):
-                {'key': 'value'}['not_in_dictionary']
+      def test_catching_key_error_in_tests(self):
+          with self.assertRaises(KeyError):
+              {'key': 'value'}['not_in_dictionary']
 
 the test passes
 
@@ -663,9 +669,9 @@ I add assertRaises_
   :lineno-start: 34
   :emphasize-lines: 2-3
 
-        def test_catching_zero_division_error_in_tests(self):
-            with self.assertRaises(ZeroDivisionError):
-                1 / 0
+      def test_catching_zero_division_error_in_tests(self):
+          with self.assertRaises(ZeroDivisionError):
+              1 / 0
 
 the test passes
 

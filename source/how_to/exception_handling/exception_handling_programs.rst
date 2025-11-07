@@ -70,6 +70,7 @@ green: make it pass
 
   .. code-block:: python
     :lineno-start: 5
+    :emphasize-lines: 1
 
     raise_exception = None
 
@@ -208,6 +209,7 @@ green: make it pass
 
   .. code-block:: python
     :lineno-start: 9
+    :emphasize-lines: 1
 
     an_exception_handler = None
 
@@ -221,6 +223,7 @@ green: make it pass
 
   .. code-block:: python
     :lineno-start: 9
+    :emphasize-lines: 1-2
 
     def an_exception_handler():
         return None
@@ -396,7 +399,7 @@ green: make it pass
 
     .. code-block:: python
       :lineno-start: 9
-      :emphasize-lines: 1-2
+     :emphasize-lines: 1-2
 
       def does_not_raise_exception():
           return None
