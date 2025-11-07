@@ -14,6 +14,7 @@ tests
 the code in ``tests/test_functions.py`` from :ref:`functions`
 
 .. literalinclude:: tests/test_functions.py
+  :language: python
   :linenos:
 
 *********************************************************************************
@@ -23,4 +24,5 @@ solutions
 the solutions in ``functions.py`` from :ref:`functions`
 
 .. literalinclude:: solutions/functions.py
+  :language: python
   :linenos:

@@ -10,6 +10,7 @@ tests
 the code in ``tests/test_type_error.py`` from :ref:`TypeError`
 
 .. literalinclude:: tests/test_type_error.py
+  :language: python
   :linenos:
 
 *********************************************************************************
@@ -19,4 +20,5 @@ solutions
 the solution in in ``type_error.py`` from :ref:`TypeError`
 
 .. literalinclude:: solutions/type_error.py
+  :language: python
   :linenos:

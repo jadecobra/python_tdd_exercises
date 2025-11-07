@@ -8,10 +8,12 @@ makePythonTdd.sh
 
   .. literalinclude:: makePythonTdd.sh
     :language: shell
+    :linenos:
 
 * use ``chmod`` to make the program executable
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     chmod +x makePythonTdd.sh
 
