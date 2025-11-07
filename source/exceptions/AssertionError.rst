@@ -406,7 +406,7 @@ refactor: make it better
 test_assertion_error_w_true
 *********************************************************************************
 
-I can also use assertions to test if something is :ref:`True<test_what_is_true>`
+I can also use :ref:`assertions<AssertionError>` to test if something is :ref:`True<test_what_is_true>`
 
 red: make it fail
 #################################################################################
@@ -488,7 +488,7 @@ refactor: make it better
     # False is not None
     # None is None
 
-All these statements can also be said as - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They set up a basic expectation of the language because I can compare things with them.
+All the statements so far show that - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They set up a basic expectation of the language because I can compare things with them.
 
 ----
 
@@ -539,7 +539,7 @@ the test passes. ``==`` is the symbol for ``is equal`` which makes this statemen
 refactor: make it better
 #################################################################################
 
-* there are assert_ :ref:`methods<functions>` to check for equality. I add assertNotEqual_ checks if the 2 things in the parentheses are NOT equal
+* there are assert_ :ref:`methods<functions>` to check for equality. I add assertNotEqual_ which checks if the 2 things in the parentheses are NOT equal
 
   .. code-block:: python
     :lineno-start: 24
@@ -555,7 +555,7 @@ refactor: make it better
 
     AssertionError: None == None
 
-  I change the :ref:`assertion<AssertionError>` to use the assertEqual_ :ref:`method<functions>` to make the failing line :ref:`True<test_what_is_true>`
+  I change the :ref:`assertion<AssertionError>` to use the assertEqual_ :ref:`method<functions>` which checks if the 2 things in the parentheses are equal
 
   .. code-block:: python
     :lineno-start: 24
@@ -607,9 +607,9 @@ refactor: make it better
 
             assert False != None
 
-  the test passes.
+  the test passes
 
-* I add the assertEqual_ :ref:`method<functions>`
+* I add assertEqual_
 
   .. code-block:: python
     :lineno-start: 28
@@ -624,7 +624,7 @@ refactor: make it better
 
     AssertionError: False != None
 
-  I change the failing line to make it :ref:`True<test_what_is_true>`
+  I change it to assertNotEqual_
 
   .. code-block:: python
     :lineno-start: 28
@@ -671,7 +671,7 @@ refactor: make it better
 
     E    assert True == None
 
-  I change the statement
+  I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -680,7 +680,7 @@ refactor: make it better
 
   the test passes
 
-* I add an assert_ :ref:`method<functions>`
+* I add assertEqual_
 
   .. code-block:: python
     :lineno-start: 31
@@ -695,7 +695,7 @@ refactor: make it better
 
     AssertionError: True != None
 
-  I change the :ref:`method<functions>`
+  I change it to assertNotEqual_
 
   .. code-block:: python
     :lineno-start: 31
@@ -704,7 +704,7 @@ refactor: make it better
             assert True != None
             self.assertNotEqual(True, None)
 
-  and the test passes
+  the test passes
 
 * I add a note
 
