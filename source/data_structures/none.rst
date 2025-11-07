@@ -1042,8 +1042,8 @@ red: make it fail
 I add a test to see if None_ is a tuple_ (anything in parentheses ``()``)
 
 .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 3-4
+  :lineno-start: 39
+  :emphasize-lines: 3-4
 
           self.assertNotIsInstance(None, str)
 

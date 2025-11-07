@@ -399,7 +399,7 @@ green: make it pass
 
     .. code-block:: python
       :lineno-start: 9
-     :emphasize-lines: 1-2
+      :emphasize-lines: 1-2
 
       def does_not_raise_exception():
           return None
@@ -517,6 +517,7 @@ how to use try...except...else
   the terminal shows :ref:`Exception<errors>` for ``test_catching_failures``
 
   .. code-block:: python
+    :force:
 
     Exception: BOOM!
 

@@ -82,7 +82,6 @@ requirements
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 1
-    :emphasize-lines: 1
 
     class TestAssertionError(unittest.TestCase):
 
@@ -333,8 +332,8 @@ red: make it fail
 I add a failing test
 
 .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 4-5
+  :lineno-start: 13
+  :emphasize-lines: 4-5
 
           assert True is not None
           self.assertIsNotNone(True)

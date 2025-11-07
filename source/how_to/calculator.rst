@@ -261,7 +261,7 @@ red: make it fail
 To show the problem with the :ref:`function<functions>`, I add another :ref:`assertion<AssertionError>` in ``test_calculator.py``
 
 .. code-block:: python
-  :linenos: 7
+  :lineno-start: 7
   :emphasize-lines: 6-9
 
         def test_addition(self):
@@ -348,7 +348,7 @@ refactor: make it better
   I change the expectation of the :ref:`assertion<AssertionError>` in the test to the correct calculation
 
   .. code-block:: python
-    :lineno-start:12
+    :lineno-start: 12
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -478,7 +478,7 @@ red: make it fail
 * I add a test for subtraction in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start:10
+    :lineno-start: 10
     :emphasize-lines: 12-19
 
     class TestCalculator(unittest.TestCase):
