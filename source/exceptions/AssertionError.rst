@@ -20,17 +20,23 @@ AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_f
 
 .. code-block:: python
 
-  self.assertFalse(True)
+          self.assertFalse(True)
 
 which is like
 
 .. code-block:: python
 
-  assert True is False
+          assert True is False
+
+the assert_ at the beginning of the line makes the statement something like
+
+"DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`"
+
+The line stops the program because the statement is NOT :ref:`True<test_what_is_true>`, it is :ref:`False<test_what_is_false>`
 
 I can use assertions when building a program to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves, for example when it is given inputs.
 
-Assertions can help catch things that break passing tests when they are added. They also help me answer 2 questions
+Assertions can help catch things that break passing tests when I add new lines. They also help me answer 2 questions
 
 * what is the same?
 * what is different?
@@ -107,7 +113,7 @@ red: make it fail
 
     tests/test_assertion_error.py:7: AssertionError
 
-  the assert_ at the beginning of the line makes the statement something like "DO NOT CONTINUE, UNLESS :ref:`None` is NOT :ref:`None`". The AssertionError_ is raised to stop the program from running, because this statement is :ref:`False<test_what_is_false>`
+  because this statement is :ref:`False<test_what_is_false>`
 
 green: make it pass
 #################################################################################
