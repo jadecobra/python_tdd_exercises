@@ -319,7 +319,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 test_assertion_error_w_false
 *********************************************************************************
 
-I can use assertions to test if something is :ref:`False<test_what_is_false>`
+I can use :ref:`assertions<AssertionError>` to test if something is :ref:`False<test_what_is_false>`
 
 red: make it fail
 #################################################################################
