@@ -120,6 +120,7 @@ I change the line to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 6
+  :emphasize-lines: 2
 
       def test_assertion_error_w_none(self):
           assert None is None
@@ -224,7 +225,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
     :lineno-start: 10
     :emphasize-lines: 2
 
-            assert False is None
+            assert False is not None
             self.assertIsNotNone(False)
 
   the test passes
@@ -745,7 +746,7 @@ refactor: make it better
 
     E    assert True == False
 
-  I change the failing line
+  I change the line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -831,7 +832,7 @@ refactor: make it better
 
   the test passes
 
-* I add another failing line with an assert_ :ref:`method<functions>`
+* I add another failing line with assertNotEqual_
 
   .. code-block:: python
     :lineno-start: 37
@@ -846,7 +847,7 @@ refactor: make it better
 
     AssertionError: False == False
 
-  I change the :ref:`method<functions>`
+  I change it to assertEqual_
 
   .. code-block:: python
     :lineno-start: 37
@@ -872,7 +873,7 @@ refactor: make it better
     # False is not None and not equal to None
     # None is None and equal to None
 
-* I add another failing line
+* I add another failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -902,7 +903,7 @@ refactor: make it better
 
     E    assert False == True
 
-  I change the line
+  I change the line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -911,7 +912,7 @@ refactor: make it better
 
   the test passes
 
-* I add another failing line
+* I add assertEqual_
 
   .. code-block:: python
     :lineno-start: 40
@@ -926,7 +927,7 @@ refactor: make it better
 
     AssertionError: False != True
 
-  I change the assert_ :ref:`method<functions>`
+  I change it to assertNotEqual_
 
   .. code-block:: python
     :lineno-start: 40
