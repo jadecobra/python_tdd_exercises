@@ -208,12 +208,8 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 * I add another line with assertIsNone_
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 6
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
+    :lineno-start: 10
+    :emphasize-lines: 2
 
             assert False is not None
             self.assertIsNone(False)
@@ -227,10 +223,9 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
   I use assertIsNotNone_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 2
+    :lineno-start: 11
+    :emphasize-lines: 1
 
-            assert False is not None
             self.assertIsNotNone(False)
 
   the test passes
@@ -248,17 +243,17 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 * I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 8
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
+    :lineno-start: 10
+    :emphasize-lines: 4
 
             assert False is not None
             self.assertIsNotNone(False)
 
             assert True is None
+
+
+    # NOTES
+    ...
 
   the terminal shows AssertionError_
 
@@ -279,14 +274,9 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 * I add a failing line with assertIsNone_
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 9
+    :lineno-start: 11
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
             self.assertIsNotNone(False)
 
             assert True is not None
@@ -301,11 +291,22 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
   I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2
+    :lineno-start: 6
+    :emphasize-lines: 9
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
 
             assert True is not None
             self.assertIsNotNone(True)
+
+
+    # NOTES
+    ...
 
   the test passes
 
@@ -358,10 +359,9 @@ green: make it pass
 I change the line to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 2
+  :lineno-start: 17
+  :emphasize-lines: 1
 
-      def test_assertion_error_w_false(self):
           assert True is not False
 
 the test passes
@@ -424,11 +424,9 @@ red: make it fail
 I add a failing test
 
 .. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 5-6
+  :lineno-start: 18
+  :emphasize-lines: 4
 
-      def test_assertion_error_w_false(self):
-          assert True is not False
           self.assertFalse(False)
 
       def test_assertion_error_w_true(self):
@@ -450,10 +448,9 @@ green: make it pass
 I change the statement to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 20
-  :emphasize-lines: 2
+  :lineno-start: 21
+  :emphasize-lines: 1
 
-      def test_assertion_error_w_true(self):
           assert False is not True
 
 the test passes
@@ -464,10 +461,9 @@ refactor: make it better
 * there is an assert_ :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 3
+    :lineno-start: 21
+    :emphasize-lines: 2
 
-        def test_assertion_error_w_true(self):
             assert False is not True
             self.assertTrue(False)
 
@@ -486,6 +482,10 @@ refactor: make it better
         def test_assertion_error_w_true(self):
             assert False is not True
             self.assertTrue(True)
+
+
+    # NOTES
+    ...
 
   the test passes
 
