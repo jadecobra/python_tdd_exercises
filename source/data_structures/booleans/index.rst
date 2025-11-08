@@ -47,6 +47,7 @@ requirements
 
   .. code-block:: python
     :lineno-start: 7
+    :emphasize-lines: 1
 
             self.assertFalse(False)
 

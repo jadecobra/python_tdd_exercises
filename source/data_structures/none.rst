@@ -47,6 +47,7 @@ requirements
 
   .. code-block:: python
     :lineno-start: 7
+    :emphasize-lines: 1
 
             self.assertFalse(False)
 
@@ -54,6 +55,7 @@ requirements
 
   .. code-block:: python
     :lineno-start: 4
+    :emphasize-lines: 1
 
     class TestNone(unittest.TestCase):
 
@@ -81,7 +83,7 @@ red: make it fail
 
     AssertionError: unexpectedly None
 
-  assertIsNotNone_ checks that what it gets in parentheses is NOT None_
+  assertIsNotNone_ checks that what is in the parentheses is NOT None_
 
 green: make it pass
 #################################################################################
@@ -94,6 +96,10 @@ green: make it pass
 
         def test_what_is_none(self):
             self.assertIsNone(None)
+
+
+    # NOTES
+    ...
 
   the test passes
 
@@ -122,14 +128,14 @@ red: make it fail
 I add another failing test to see if None_ is a :ref:`boolean<booleans>`
 
 .. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 4-5
+  :lineno-start: 7
+  :emphasize-lines: 3-4
 
-      def test_what_is_none(self):
           self.assertIsNone(None)
 
       def test_is_none_a_boolean(self):
           self.assertIsNone(False)
+
 
   # NOTES
   ...
@@ -153,13 +159,12 @@ I add a note
   # False is NOT None
   # None is None
 
-then I change the :ref:`assertion<AssertionError>`
+I make the line :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 .. code-block:: python
-  :lineno-start: 9
-  :emphasize-lines: 2
+  :lineno-start: 10
+  :emphasize-lines: 1
 
-      def test_is_none_a_boolean(self):
           self.assertIsNotNone(False)
 
 the test passes
@@ -167,13 +172,12 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another failing line for the other :ref:`boolean<booleans>`
+* I add another failing :ref:`assertion<AssertionError>` for the other :ref:`boolean<booleans>`
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3
+    :lineno-start: 10
+    :emphasize-lines: 2
 
-        def test_is_none_a_boolean(self):
             self.assertIsNotNone(False)
             self.assertIsNone(True)
 
@@ -194,57 +198,47 @@ refactor: make it better
     # False is NOT None
     # None is None
 
-* I change the :ref:`assertion<AssertionError>`
+* I make the line :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3
+    :lineno-start: 11
+    :emphasize-lines: 1
 
-        def test_is_none_a_boolean(self):
-            self.assertIsNotNone(False)
             self.assertIsNotNone(True)
 
   the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child of a :ref:`class<classes>` or not, I use them to test if :ref:`None` is a :ref:`boolean<booleans>`
+* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child of a :ref:`class<classes>` or not. I add assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 4
+    :lineno-start: 11
+    :emphasize-lines: 2
 
-        def test_is_none_a_boolean(self):
-            self.assertIsNotNone(False)
             self.assertIsNotNone(True)
             self.assertNotIsInstance(False, bool)
 
-  I use the assertNotIsInstance_ :ref:`method<functions>` to test if :ref:`False<test_what_is_false>` is NOT a child of the :ref:`bool<booleans>` :ref:`class<classes>`. The terminal shows :ref:`AssertionError`
+  assertNotIsInstance_ checks if the first item (:ref:`False<test_what_is_false>`) it is given is NOT a child of the second item (the :ref:`bool<booleans>` :ref:`class<classes>`) it is given. It is like asking the question ``is False NOT a child of the bool class?``. bool_ is the :ref:`class<classes>` for :ref:`booleans<booleans>`. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I change the :ref:`assertion<AssertionError>` to assertIsInstance_ to show that :ref:`False<test_what_is_false>` is a child of the bool_ :ref:`class<classes>`
+  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I make the statement :ref:`True<test_what_is_true>` with the assertIsInstance_ :ref:`method<functions>` which checks if the first item (:ref:`False<test_what_is_false>`) it is given :ref:`False<test_what_is_false>` is a child of the second item (the bool_ :ref:`class<classes>`) it is given
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 4
+    :lineno-start: 12
+    :emphasize-lines: 1
 
-        def test_is_none_a_boolean(self):
-            self.assertIsNotNone(False)
-            self.assertIsNotNone(True)
             self.assertIsInstance(False, bool)
 
   the test passes
 
-* I use assertNotIsInstance_ with :ref:`True<test_what_is_true>`
+* I add a failing line for the other :ref:`boolean<booleans>` with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5
+    :lineno-start: 12
+    :emphasize-lines: 2
 
-        def test_is_none_a_boolean(self):
-            self.assertIsNotNone(False)
-            self.assertIsNotNone(True)
             self.assertIsInstance(False, bool)
             self.assertNotIsInstance(True, bool)
 
@@ -256,30 +250,22 @@ refactor: make it better
 
   :ref:`True<test_what_is_true>` is a :ref:`boolean<booleans>`
 
-* I use the assertIsInstance_ :ref:`method<functions>`
+* I make the statement :ref:`True<test_what_is_true>` with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5
+    :lineno-start: 13
+    :emphasize-lines: 1
 
-        def test_is_none_a_boolean(self):
-            self.assertIsNotNone(False)
-            self.assertIsNotNone(True)
-            self.assertIsInstance(False, bool)
             self.assertIsInstance(True, bool)
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>` to test if None_ is a child of the :ref:`boolean<booleans>` :ref:`class<classes>`
+* I add another :ref:`assertion<AssertionError>` to test if None_ is a child of the bool_ :ref:`class<classes>`
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 6
+    :lineno-start: 13
+    :emphasize-lines: 2
 
-        def test_is_none_a_boolean(self):
-            self.assertIsNotNone(False)
-            self.assertIsNotNone(True)
-            self.assertIsInstance(False, bool)
             self.assertIsInstance(True, bool)
             self.assertIsInstance(None, bool)
 
@@ -291,7 +277,7 @@ refactor: make it better
 
   :ref:`None` is NOT a :ref:`boolean<booleans>`
 
-* I change the :ref:`assertion<AssertionError>`
+* I make the line :ref:`True<test_what_is_true>` with assertNotIsInstance_
 
   .. code-block:: python
     :lineno-start: 9
@@ -303,6 +289,10 @@ refactor: make it better
             self.assertIsInstance(False, bool)
             self.assertIsInstance(True, bool)
             self.assertNotIsInstance(None, bool)
+
+
+    # NOTES
+    ...
 
   the test passes
 
@@ -345,13 +335,12 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
+I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 .. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 2
+  :lineno-start: 17
+  :emphasize-lines: 1
 
-      def test_is_none_an_integer(self):
           self.assertIsNotNone(-1)
 
 the test passes
@@ -359,13 +348,12 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add a new line
+* I add a new failing line with assertIsNone_
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 17
     :emphasize-lines: 2
 
-        def test_is_none_an_integer(self):
             self.assertIsNotNone(-1)
             self.assertIsNone(0)
 
@@ -375,14 +363,12 @@ refactor: make it better
 
     AssertionError: 0 is not None
 
-  I change the :ref:`assertion<AssertionError>`
+  I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3
+    :lineno-start: 18
+    :emphasize-lines: 1
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
             self.assertIsNotNone(0)
 
   the test passes
@@ -390,11 +376,9 @@ refactor: make it better
 * I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 4
+    :lineno-start: 18
+    :emphasize-lines: 2
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
             self.assertIsNotNone(0)
             self.assertIsNone(1)
 
@@ -404,28 +388,22 @@ refactor: make it better
 
     AssertionError: 1 is not None
 
-  I change the :ref:`assertion<AssertionError>`
+  I change the line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 4
+    :lineno-start: 19
+    :emphasize-lines: 1
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
-            self.assertIsNotNone(0)
             self.assertIsNotNone(1)
 
   the test passes
 
-* I add assertNotIsInstance_
+* I add a new failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 5
+    :lineno-start: 19
+    :emphasize-lines: 2
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
-            self.assertIsNotNone(0)
             self.assertIsNotNone(1)
             self.assertNotIsInstance(-1, int)
 
@@ -435,32 +413,24 @@ refactor: make it better
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  ``-1`` is an integer_ for the positive integers_
+  I use ``-1`` for all the integers_ that are smaller than ``0``
 
-* I use assertIsInstance_
+* I make the line :ref:`True<test_what_is_true>` with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 5
+    :lineno-start: 20
+    :emphasize-lines: 1
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
-            self.assertIsNotNone(0)
-            self.assertIsNotNone(1)
             self.assertIsInstance(-1, int)
 
   the test passes
 
-* I add another instance test
+* I add another failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 6
+    :lineno-start: 20
+    :emphasize-lines: 2
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
-            self.assertIsNotNone(0)
-            self.assertIsNotNone(1)
             self.assertIsInstance(-1, int)
             self.assertNotIsInstance(0, int)
 
@@ -472,32 +442,22 @@ refactor: make it better
 
   ``0`` is an integer_
 
-* I change the :ref:`assertion<AssertionError>`
+* I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 6
+    :lineno-start: 21
+    :emphasize-lines: 1
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
-            self.assertIsNotNone(0)
-            self.assertIsNotNone(1)
-            self.assertIsInstance(-1, int)
             self.assertIsInstance(0, int)
 
   the test passes
 
-* I add another failing line
+* I add another failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 7
+    :lineno-start: 21
+    :emphasize-lines: 2
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
-            self.assertIsNotNone(0)
-            self.assertIsNotNone(1)
-            self.assertIsInstance(-1, int)
             self.assertIsInstance(0, int)
             self.assertNotIsInstance(1, int)
 
@@ -507,36 +467,24 @@ refactor: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  ``1`` is for the positive integers_
+  I use ``1`` for all the integers_ that are bigger than ``0``
 
-* I change the :ref:`assertion<AssertionError>`
+* I make the failing line :ref:`True<test_what_is_true>` with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 7
+    :lineno-start: 22
+    :emphasize-lines: 1
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
-            self.assertIsNotNone(0)
-            self.assertIsNotNone(1)
-            self.assertIsInstance(-1, int)
-            self.assertIsInstance(0, int)
             self.assertIsInstance(1, int)
 
   the test passes
 
-* one more instance test
+* I add one more failing line with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 8
+    :lineno-start: 22
+    :emphasize-lines: 2
 
-        def test_is_none_an_integer(self):
-            self.assertIsNotNone(-1)
-            self.assertIsNotNone(0)
-            self.assertIsNotNone(1)
-            self.assertIsInstance(-1, int)
-            self.assertIsInstance(0, int)
             self.assertIsInstance(1, int)
             self.assertIsInstance(None, int)
 
@@ -546,7 +494,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'int'>
 
-* I use assertNotIsInstance_
+* I make the line :ref:`True<test_what_is_true>` with assertNotIsInstance_
 
   .. code-block:: python
     :lineno-start: 16
@@ -561,12 +509,16 @@ refactor: make it better
             self.assertIsInstance(1, int)
             self.assertNotIsInstance(None, int)
 
+
+    # NOTES
+    ...
+
   the test passes
 
 * I add a new note
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 26
     :emphasize-lines: 2
 
     # NOTES
