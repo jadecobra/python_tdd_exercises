@@ -504,7 +504,7 @@ refactor: make it better
     # False is not None
     # None is None
 
-All the statements so far show that - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They set up a basic expectation of the language because I can compare things with them.
+All the statements so far show that - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They give me a basic expectation of Python_ because I can compare things with them.
 
 ----
 
@@ -520,11 +520,9 @@ red: make it fail
 I add a new failing test
 
 .. code-block:: python
-  :lineno-start: 20
-  :emphasize-lines: 5-6
+  :lineno-start: 22
+  :emphasize-lines: 3-4
 
-      def test_assertion_error_w_true(self):
-          assert False is not True
           self.assertTrue(True)
 
       def test_assertion_error_w_equality(self):
@@ -554,7 +552,11 @@ I change the statement to make it :ref:`True<test_what_is_true>`
       def test_assertion_error_w_equality(self):
           assert None == None
 
-the test passes. ``==`` is the symbol for ``is equal`` which makes this statement read as ``assert None is equal to None``
+the test passes.
+
+``==`` is the symbol for ``is equal`` which makes this statement read as ``assert None is equal to None``
+
+``=`` is the symbol for assignment, it's how to give a name to something in Python_
 
 refactor: make it better
 #################################################################################
@@ -602,7 +604,7 @@ refactor: make it better
     # False is not None
     # None is None and equal to None
 
-* I add a new failing line
+* I add a new failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -614,13 +616,17 @@ refactor: make it better
 
             assert False == None
 
+
+    # NOTES
+    ...
+
   the terminal shows AssertionError_
 
   .. code-block:: python
 
     E    assert False == None
 
-  I change the failing line to make it :ref:`True<test_what_is_true>`
+  I change the line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -630,7 +636,7 @@ refactor: make it better
 
   the test passes
 
-* I add assertEqual_
+* I add a failing line with assertEqual_
 
   .. code-block:: python
     :lineno-start: 28
@@ -645,7 +651,7 @@ refactor: make it better
 
     AssertionError: False != None
 
-  I change it to assertNotEqual_
+  I make the line :ref:`True<test_what_is_true>` with assertNotEqual_
 
   .. code-block:: python
     :lineno-start: 28
@@ -671,7 +677,7 @@ refactor: make it better
     # False is not None and not equal to None
     # None is None and equal to None
 
-* I add the next failing line
+* I add the next failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -702,7 +708,7 @@ refactor: make it better
 
   the test passes
 
-* I add assertEqual_
+* I add a failing line with assertEqual_
 
   .. code-block:: python
     :lineno-start: 31
@@ -717,13 +723,12 @@ refactor: make it better
 
     AssertionError: True != None
 
-  I change it to assertNotEqual_
+  I make the line :ref:`True<test_what_is_true>` with assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 2
+    :lineno-start: 32
+    :emphasize-lines: 1
 
-            assert True != None
             self.assertNotEqual(True, None)
 
   the test passes
@@ -743,7 +748,7 @@ refactor: make it better
     # False is not None and not equal to None
     # None is None and equal to None
 
-* I add another failing line
+* I add another failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -761,6 +766,10 @@ refactor: make it better
 
             assert True == False
 
+
+    # NOTES
+    ...
+
   the terminal shows AssertionError_
 
   .. code-block:: python
@@ -777,7 +786,7 @@ refactor: make it better
 
   the test passes
 
-* I add assertEqual_
+* I add a failing line with assertEqual_
 
   .. code-block:: python
     :lineno-start: 34
@@ -818,7 +827,7 @@ refactor: make it better
     # False is not None and not equal to None
     # None is None and equal to None
 
-* on to the next line
+* on to the next failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -838,6 +847,10 @@ refactor: make it better
             self.assertNotEqual(True, False)
 
             assert False != False
+
+
+    # NOTES
+    ...
 
   the terminal shows AssertionError_
 
@@ -870,7 +883,7 @@ refactor: make it better
 
     AssertionError: False == False
 
-  I change it to assertEqual_
+  I change the line to use assertEqual_
 
   .. code-block:: python
     :lineno-start: 37
@@ -896,29 +909,19 @@ refactor: make it better
     # False is not None and not equal to None
     # None is None and equal to None
 
-* I add another failing :ref:`assertion<AssertionError>`
+* I add a failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 17
+    :lineno-start: 38
+    :emphasize-lines: 3
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
-
-            assert False != None
-            self.assertNotEqual(False, None)
-
-            assert True != None
-            self.assertNotEqual(True, None)
-
-            assert True != False
-            self.assertNotEqual(True, False)
-
-            assert False == False
             self.assertEqual(False, False)
 
             assert False == True
+
+
+    # NOTES
+    ...
 
   the terminal shows AssertionError_
 
@@ -936,7 +939,7 @@ refactor: make it better
 
   the test passes
 
-* I add assertEqual_
+* I add a failing line with assertEqual_
 
   .. code-block:: python
     :lineno-start: 40
@@ -951,7 +954,7 @@ refactor: make it better
 
     AssertionError: False != True
 
-  I change it to assertNotEqual_
+  I make the line :ref:`True<test_what_is_true>` with assertNotEqual_
 
   .. code-block:: python
     :lineno-start: 40
@@ -1014,12 +1017,13 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 43
+    :emphasize-lines: 1
 
               assert True == True
 
   the test passes
 
-* I add a line with the assert_ :ref:`method<functions>`
+* I add a failing line with the assertNotEqual_ :ref:`method<functions>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -1034,7 +1038,7 @@ refactor: make it better
 
     AssertionError: True == True
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`method<functions>` to assertEqual_
 
   .. code-block:: python
     :lineno-start: 43
@@ -1074,7 +1078,7 @@ I can use `assert statements`_ and :ref:`methods<functions>` to test if somethin
 * :ref:`True<test_what_is_true>` or not
 * :ref:`equal or not<test_assertion_error_w_equality>`
 
-Would you like to :ref:`test what is None?<None>`
+Would you like to :ref:`test None?<None>`
 
 ----
 
