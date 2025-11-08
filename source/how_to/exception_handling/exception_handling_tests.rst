@@ -36,7 +36,6 @@ requirements
   it makes the folders and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
-    :emphasize-lines: 1
 
     E       AssertionError: True is not false
 
