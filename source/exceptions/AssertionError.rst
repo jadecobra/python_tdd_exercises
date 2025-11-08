@@ -253,7 +253,6 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
 
     # NOTES
-    ...
 
   the terminal shows AssertionError_
 
@@ -306,7 +305,6 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
 
     # NOTES
-    ...
 
   the test passes
 
@@ -345,7 +343,6 @@ I add a failing test
           assert True is False
 
   # NOTES
-  ...
 
 the terminal shows AssertionError_
 
@@ -434,7 +431,6 @@ I add a failing test
 
 
   # NOTES
-  ...
 
 the terminal shows AssertionError_
 
@@ -485,7 +481,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the test passes
 
@@ -530,7 +525,6 @@ I add a new failing test
 
 
   # NOTES
-  ...
 
 the terminal shows AssertionError_
 
@@ -616,7 +610,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the terminal shows AssertionError_
 
@@ -686,7 +679,6 @@ refactor: make it better
             assert True == None
 
     # NOTES
-    ...
 
   the terminal shows AssertionError_
 
@@ -757,7 +749,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the terminal shows AssertionError_
 
@@ -829,7 +820,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the terminal shows AssertionError_
 
@@ -900,7 +890,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the terminal shows AssertionError_
 
@@ -972,7 +961,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the terminal shows AssertionError_
 
@@ -1035,7 +1023,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   and all the tests are passing!
 

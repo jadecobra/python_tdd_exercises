@@ -99,7 +99,6 @@ green: make it pass
 
 
     # NOTES
-    ...
 
   the test passes
 
@@ -138,7 +137,6 @@ I add another failing test to see if None_ is a :ref:`boolean<booleans>`
 
 
   # NOTES
-  ...
 
 the terminal shows :ref:`AssertionError`
 
@@ -292,7 +290,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the test passes
 
@@ -511,7 +508,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the test passes
 
@@ -546,6 +542,9 @@ I add a test to see if None_ is a float_ (floating point decimal number)
       def test_is_none_a_float(self):
           self.assertIsNone(-0.1)
 
+
+  # NOTES
+
 the terminal shows :ref:`AssertionError`
 
 .. code-block:: python
@@ -555,13 +554,12 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`assertion<AssertionError>`
+I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 .. code-block:: python
-  :lineno-start: 25
-  :emphasize-lines: 2
+  :lineno-start: 26
+  :emphasize-lines: 1
 
-      def test_is_none_a_float(self):
           self.assertIsNotNone(-0.1)
 
 the test passes
@@ -569,13 +567,12 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another failing line with assertIsNone_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 3
+    :lineno-start: 26
+    :emphasize-lines: 2
 
-        def test_is_none_a_float(self):
             self.assertIsNotNone(-0.1)
             self.assertIsNone(0.0)
 
@@ -585,26 +582,22 @@ refactor: make it better
 
     AssertionError: 0.0 is not None
 
-  when I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
+  I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 3
+    :lineno-start: 27
+    :emphasize-lines: 1
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
             self.assertIsNotNone(0.0)
 
   the test passes
 
-* I add another assertion
+* I add a failing line with assertIsNone_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 4
+    :lineno-start: 26
+    :emphasize-lines: 2
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
             self.assertIsNotNone(0.0)
             self.assertIsNone(0.1)
 
@@ -614,28 +607,22 @@ refactor: make it better
 
     AssertionError: 0.1 is not None
 
-  I change the :ref:`assertion<AssertionError>`
+  I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 4
+    :lineno-start: 28
+    :emphasize-lines: 1
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
             self.assertIsNotNone(0.1)
 
   the test passes
 
-* time for instance tests
+* time for instance tests. I add a failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 5
+    :lineno-start: 28
+    :emphasize-lines: 2
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
             self.assertIsNotNone(0.1)
             self.assertNotIsInstance(-0.1, float)
 
@@ -645,30 +632,24 @@ refactor: make it better
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  ``-0.1`` is for the negative floating point numbers. I change the :ref:`assertion<AssertionError>`
+  I use ``-0.1`` for all the floating point numbers that are smaller than ``0.0``
+
+* I make the statement :ref:`True<test_what_is_true>` with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 5
+    :lineno-start: 29
+    :emphasize-lines: 1
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
-            self.assertIsNotNone(0.1)
             self.assertIsInstance(-0.1, float)
 
   the test passes
 
-* I add the next instance test
+* I add the next instance test with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 6
+    :lineno-start: 29
+    :emphasize-lines: 2
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
-            self.assertIsNotNone(0.1)
             self.assertIsInstance(-0.1, float)
             self.assertNotIsInstance(0.0, float)
 
@@ -678,32 +659,24 @@ refactor: make it better
 
     AssertionError: 0.0 is an instance of <class 'float'>
 
-  ``0.0`` is a floating point number. I change the :ref:`assertion<AssertionError>`
+  ``0.0`` is a floating point number
+
+* I make the statement :ref:`True<test_what_is_true>` with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 6
+    :lineno-start: 30
+    :emphasize-lines: 1
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
-            self.assertIsNotNone(0.1)
-            self.assertIsInstance(-0.1, float)
             self.assertIsInstance(0.0, float)
 
   the test passes
 
-* I add another instance test
+* I add a failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 7
+    :lineno-start: 30
+    :emphasize-lines: 2
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
-            self.assertIsNotNone(0.1)
-            self.assertIsInstance(-0.1, float)
             self.assertIsInstance(0.0, float)
             self.assertNotIsInstance(0.1, float)
 
@@ -713,34 +686,24 @@ refactor: make it better
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  ``0.1`` is for the positive floating point numbers. I change the :ref:`assertion<AssertionError>`
+  I use ``0.1`` for all the floating point numbers that are bigger than ``0.0``
+
+* I make the statement :ref:`True<test_what_is_true>` with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 7
+    :lineno-start: 31
+    :emphasize-lines: 1
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
-            self.assertIsNotNone(0.1)
-            self.assertIsInstance(-0.1, float)
-            self.assertIsInstance(0.0, float)
             self.assertIsInstance(0.1, float)
 
   the test passes
 
-* I add one more line
+* I add one more failing line with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 8
+    :lineno-start: 31
+    :emphasize-lines: 2
 
-        def test_is_none_a_float(self):
-            self.assertIsNotNone(-0.1)
-            self.assertIsNotNone(0.0)
-            self.assertIsNotNone(0.1)
-            self.assertIsInstance(-0.1, float)
-            self.assertIsInstance(0.0, float)
             self.assertIsInstance(0.1, float)
             self.assertIsInstance(None, float)
 
@@ -750,7 +713,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'float'>
 
-  I change the :ref:`assertion<AssertionError>`
+  I make the statement :ref:`True<test_what_is_true>` with assertNotIsInstance_
 
   .. code-block:: python
     :lineno-start: 25
@@ -767,7 +730,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the test passes
 
@@ -805,7 +767,6 @@ I add a test to see if None_ is a string_ (any thing in quotes)
 
 
   # NOTES
-  ...
 
 the terminal shows :ref:`AssertionError`
 
@@ -964,7 +925,6 @@ refactor: make it better
             self.assertNotIsInstance(None, str)
 
     # NOTES
-    ...
 
   the test passes
 
@@ -1002,7 +962,6 @@ I add a test to see if None_ is a tuple_ (anything in parentheses ``()``)
           self.assertIsNone(())
 
   # NOTES
-  ...
 
 the terminal shows :ref:`AssertionError`
 
@@ -1155,7 +1114,6 @@ refactor: make it better
 
 
     # NOTES
-    ...
 
   the test passes
 
