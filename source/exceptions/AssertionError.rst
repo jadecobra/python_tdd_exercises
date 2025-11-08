@@ -580,11 +580,9 @@ refactor: make it better
   I change the :ref:`assertion<AssertionError>` to use the assertEqual_ :ref:`method<functions>` which checks if the 2 things in the parentheses are equal
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 3
+    :lineno-start: 26
+    :emphasize-lines: 1
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
             self.assertEqual(None, None)
 
   the test passes
@@ -654,10 +652,9 @@ refactor: make it better
   I make the line :ref:`True<test_what_is_true>` with assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 2
+    :lineno-start: 29
+    :emphasize-lines: 1
 
-            assert False != None
             self.assertNotEqual(False, None)
 
   the test passes
@@ -680,17 +677,16 @@ refactor: make it better
 * I add the next failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 8
-
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
+    :lineno-start: 28
+    :emphasize-lines: 4
 
             assert False != None
             self.assertNotEqual(False, None)
 
             assert True == None
+
+    # NOTES
+    ...
 
   the terminal shows AssertionError_
 
@@ -751,15 +747,8 @@ refactor: make it better
 * I add another failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 11
-
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
-
-            assert False != None
-            self.assertNotEqual(False, None)
+    :lineno-start: 31
+    :emphasize-lines: 4
 
             assert True != None
             self.assertNotEqual(True, None)
@@ -830,18 +819,8 @@ refactor: make it better
 * on to the next failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 14
-
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
-
-            assert False != None
-            self.assertNotEqual(False, None)
-
-            assert True != None
-            self.assertNotEqual(True, None)
+    :lineno-start: 34
+    :emphasize-lines: 4
 
             assert True != False
             self.assertNotEqual(True, False)
@@ -886,10 +865,9 @@ refactor: make it better
   I change the line to use assertEqual_
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 2
+    :lineno-start: 38
+    :emphasize-lines: 1
 
-            assert False == False
             self.assertEqual(False, False)
 
   the test passes
@@ -912,9 +890,10 @@ refactor: make it better
 * I add a failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 3
+    :lineno-start: 37
+    :emphasize-lines: 4
 
+            assert False == False
             self.assertEqual(False, False)
 
             assert False == True
@@ -983,29 +962,17 @@ refactor: make it better
 * time for the last statements
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 20
-
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
-
-            assert False != None
-            self.assertNotEqual(False, None)
-
-            assert True != None
-            self.assertNotEqual(True, None)
-
-            assert True != False
-            self.assertNotEqual(True, False)
-
-            assert False == False
-            self.assertEqual(False, False)
+    :lineno-start: 40
+    :emphasize-lines: 4
 
             assert False != True
             self.assertNotEqual(False, True)
 
             assert True != True
+
+
+    # NOTES
+    ...
 
   the terminal shows AssertionError_
 
@@ -1041,13 +1008,36 @@ refactor: make it better
   I change the :ref:`method<functions>` to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 2
+    :lineno-start: 24
+    :emphasize-lines: 21
+
+          def test_assertion_error_w_equality(self):
+              assert None == None
+              self.assertEqual(None, None)
+
+              assert False != None
+              self.assertNotEqual(False, None)
+
+              assert True != None
+              self.assertNotEqual(True, None)
+
+              assert True != False
+              self.assertNotEqual(True, False)
+
+              assert False == False
+              self.assertEqual(False, False)
+
+              assert False != True
+              self.assertNotEqual(False, True)
 
               assert True == True
               self.assertEqual(True, True)
 
-  and all tests are passing!
+
+    # NOTES
+    ...
+
+  and all the tests are passing!
 
 * I add a note for the last statement
 
