@@ -28,7 +28,7 @@ requirements
   - `Visual Studio Code`_
   - `Sublime Text`_
   - PyCharm_
-  - `other Integrated Development Environment (IDE) options <https://wiki.python.org/moin/IntegratedDevelopmentEnvironments>`_
+  - `other Integrated Development Environment (IDE) options`_
 
 windows requirements
 #################################################################################

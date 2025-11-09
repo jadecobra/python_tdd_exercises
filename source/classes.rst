@@ -191,7 +191,7 @@ green: make it pass
 test_update_factory_person_year_of_birth
 *********************************************************************************
 
-In object oriented programming there is a concept called `Inheritance <https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming>`_\ ). With Inheritance I can define new objects_ that inherit from existing objects_.
+In object oriented programming there is a concept called Inheritance_. With Inheritance_ I can define new objects_ that inherit from existing objects_.
 
 Making new objects is easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead and change the new objects for my specific use case
 

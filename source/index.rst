@@ -20,14 +20,14 @@ This is a way to write software with a focus on tests. I write tests for ideas t
 
 I also find that sometimes when I am working on a project and have an idea, I will remember I have a test for that idea in a previous project and can go back to run it or write a new test for the idea.
 
-I recommend reading `Kent Beck’s <https://en.wikipedia.org/wiki/Kent_Beck>`_ `Test Driven Development by Example`_ and `Martin Fowler’s <https://en.wikipedia.org/wiki/Martin_Fowler_(software_engineer)>`_ `Refactoring`_, they both influenced the way I write programs.
+I recommend reading `Test Driven Development by Example`_ by `Kent Beck`_ and Refactoring_ by `Martin Fowler`_, they both influenced the way I write programs.
 
 *********************************************************************************
 who is this for?
 *********************************************************************************
 
 * If you are interested in Python_, this is for you
-* If you just started your journey, CONGRATULATIONS! You picked Python_ from the many `programming languages <https://en.wikipedia.org/wiki/Programming_language>`_ out there, Celebrate it, this is for you
+* If you just started your journey, CONGRATULATIONS! You picked Python_ from the list of `Programming Languages`_ out there, Celebrate it, this is for you
 * If you are new to `Test Driven Development`_ in Python_, this is for you
 * If you already use Python_ but do not know any of the :ref:`Exceptions<errors>` below, this is for you
 * If you have been telling yourself, "I will learn Python_ some day", today is the day, this is for you

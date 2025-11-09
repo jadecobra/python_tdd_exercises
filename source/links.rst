@@ -52,6 +52,7 @@
 .. _import statements: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _int: https://docs.python.org/3/library/functions.html#int
+.. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: https://docs.python.org/3/library/functions.html#int
 .. _integers: https://docs.python.org/3/library/functions.html#int
 .. _insert: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
@@ -156,13 +157,17 @@
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _I Do Not Repeat myself: https://grokipedia.com/page/Don%27t_repeat_yourself
+.. _Inheritance: https://grokipedia.com/page/Inheritance_(object-oriented_programming)
 .. _JSON: https://grokipedia.com/page/JSON
+.. _Kent Beck: https://grokipedia.com/page/Kent_Beck
 .. _Linux: https://www.kernel.org/category/about.html
 .. _Linux distributions: https://grokipedia.com/page/List_of_Linux_distributions
 .. _Logical Identity: https://grokipedia.com/page/Identity_function
 .. _Logical Negation: https://grokipedia.com/page/Negation
 .. _MacOS: https://www.apple.com/macos
+.. _Martin Fowler: https://grokipedia.com/page/Martin_Fowler_(software_engineer)
 .. _Microsoft Store: https://apps.microsoft.com/home
+.. _Programming Languages: https://grokipedia.com/page/List_of_programming_languages
 .. _Refactoring: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _Regular Expressions: https://grokipedia.com/page/Regular_expression
 .. _True: https://docs.python.org/3/library/constants.html?highlight=true#True
