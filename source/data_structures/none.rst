@@ -1109,13 +1109,16 @@ red: make it fail
 I add a new test for :ref:`lists`
 
 .. code-block:: python
+  :lineno-start: 46
+  :emphasize-lines: 3-4
 
-  def test_is_none_a_tuple(self):
-      ...
-      self.assertNotIsInstance(None, tuple)
+          self.assertNotIsInstance(None, tuple)
 
-  def test_is_none_a_list(self):
-      self.assertIsNone([])
+      def test_is_none_a_list(self):
+          self.assertIsNone([])
+
+
+  # NOTES
 
 the terminal shows :ref:`AssertionError`
 
@@ -1126,12 +1129,13 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-when I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
+I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 49
+  :emphasize-lines: 1
 
-  def test_is_none_a_list(self):
-      self.assertIsNotNone([])
+          self.assertIsNotNone([])
 
 the test passes
 
@@ -1141,10 +1145,11 @@ refactor: make it better
 * I add another failing line
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
 
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNone([1, 2, 3, 'n'])
+            self.assertIsNotNone([])
+            self.assertIsNone([1, 2, 3, 'n'])
 
   the terminal shows :ref:`AssertionError`
 
@@ -1152,24 +1157,24 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is not None
 
-  I change the :ref:`assertion<AssertionError>`
+  I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 1
 
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
+            self.assertIsNotNone([1, 2, 3, 'n'])
 
   the test passes
 
-* I add an instance test
+* I add a failing instance test
 
   .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 2
 
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
-        self.assertNotIsInstance([], list)
+            self.assertIsNotNone([1, 2, 3, 'n'])
+            self.assertNotIsInstance([], list)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1177,26 +1182,26 @@ refactor: make it better
 
     AssertionError: [] is an instance of <class 'list'>
 
-  ``[]`` is the empty :ref:`list <lists>`. I change the :ref:`assertion<AssertionError>`
+  ``[]`` is the empty :ref:`list <lists>`
+
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 1
 
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
-        self.assertIsInstance([], list)
+            self.assertIsInstance([], list)
 
   the test passes
 
-* then I add another instance test
+* I add another failing line with assertNotIsInstance_
 
   .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 2
 
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
-        self.assertIsInstance([], list)
-        self.assertNotIsInstance([1, 2, 3, 'n'], list)
+            self.assertIsInstance([], list)
+            self.assertNotIsInstance([1, 2, 3, 'n'], list)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1204,26 +1209,24 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
 
-  ``[1, 2, 3, 'n']`` is a :ref:`list <lists>`. I change the :ref:`assertion<AssertionError>`
+  ``[1, 2, 3, 'n']`` is a :ref:`list <lists>`
+
+* I change the assert_ :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 1
 
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
-        self.assertIsInstance([], list)
         self.assertIsInstance([1, 2, 3, 'n'], list)
 
   the test passes
 
-* I add one more line
+* I add one more failing line with the assertIsInstance_ :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 2
 
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
-        self.assertIsInstance([], list)
         self.assertIsInstance([1, 2, 3, 'n'], list)
         self.assertIsInstance(None, list)
 
@@ -1233,18 +1236,23 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'list'>
 
-  I change the line to make the test pass
+  I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 6
 
-    def test_is_none_a_list(self):
-        self.assertIsNotNone([])
-        self.assertIsNotNone([1, 2, 3, 'n'])
-        self.assertIsInstance([], list)
-        self.assertIsInstance([1, 2, 3, 'n'], list)
-        self.assertNotIsInstance(None, list)
+        def test_is_none_a_list(self):
+            self.assertIsNotNone([])
+            self.assertIsNotNone([1, 2, 3, 'n'])
+            self.assertIsInstance([], list)
+            self.assertIsInstance([1, 2, 3, 'n'], list)
+            self.assertNotIsInstance(None, list)
 
-  then add a new note
+
+    # NOTES
+
+* I add a new note
 
   .. code-block:: python
 
