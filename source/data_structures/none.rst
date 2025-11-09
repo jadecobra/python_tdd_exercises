@@ -942,6 +942,7 @@ I add a test to see if None_ is a tuple_ (anything in parentheses ``()``)
       def test_is_none_a_tuple(self):
           self.assertIsNone(())
 
+
   # NOTES
 
 the terminal shows :ref:`AssertionError`
@@ -953,7 +954,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`assertion<AssertionError>`
+I make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 41
@@ -967,7 +968,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add an :ref:`assertion<AssertionError>`
+* I add a failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -983,26 +984,22 @@ refactor: make it better
 
     AssertionError: (1, 2, 3, 'n') is not None
 
-  I change the :ref:`assertion<AssertionError>`
+  I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 3
+    :lineno-start: 43
+    :emphasize-lines: 1
 
-        def test_is_none_a_tuple(self):
-            self.assertIsNotNone(())
             self.assertIsNotNone((1, 2, 3, 'n'))
 
   the test passes
 
-* I add an instance test
+* I add a failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 4
+    :lineno-start: 43
+    :emphasize-lines: 2
 
-        def test_is_none_a_tuple(self):
-            self.assertIsNotNone(())
             self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertNotIsInstance((), tuple)
 
@@ -1014,28 +1011,22 @@ refactor: make it better
 
   ``()`` is the empty tuple_
 
-* I change the :ref:`assertion<AssertionError>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 44
     :emphasize-lines: 4
 
-        def test_is_none_a_tuple(self):
-            self.assertIsNotNone(())
-            self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertIsInstance((), tuple)
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another failing line
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 5
+    :lineno-start: 44
+    :emphasize-lines: 2
 
-        def test_is_none_a_tuple(self):
-            self.assertIsNotNone(())
-            self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertIsInstance((), tuple)
             self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
 
@@ -1047,16 +1038,12 @@ refactor: make it better
 
   ``(1, 2, 3, 'n')`` is a tuple_
 
-* I change the :ref:`assertion<AssertionError>`
+* I change the assert_ :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 5
+    :lineno-start: 45
+    :emphasize-lines: 1
 
-        def test_is_none_a_tuple(self):
-            self.assertIsNotNone(())
-            self.assertIsNotNone((1, 2, 3, 'n'))
-            self.assertIsInstance((), tuple)
             self.assertIsInstance((1, 2, 3, 'n'), tuple)
 
   the test passes
@@ -1064,13 +1051,9 @@ refactor: make it better
 * I add one more instance test
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 6
+    :lineno-start: 45
+    :emphasize-lines: 2
 
-        def test_is_none_a_tuple(self):
-            self.assertIsNotNone(())
-            self.assertIsNotNone((1, 2, 3, 'n'))
-            self.assertIsInstance((), tuple)
             self.assertIsInstance((1, 2, 3, 'n'), tuple)
             self.assertIsInstance(None, tuple)
 
@@ -1080,7 +1063,7 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'tuple'>
 
-  I change the :ref:`assertion<AssertionError>`
+  I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 41
