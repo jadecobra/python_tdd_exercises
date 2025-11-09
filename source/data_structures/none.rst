@@ -16,7 +16,7 @@ None
 
 ----
 
-None_ is used when there is no value
+None_ is used when there is no value. It is the simplest :ref:`data structure<data structures>` in Python_
 
 *********************************************************************************
 requirements
@@ -51,7 +51,7 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to make the statement :ref:`True<test_what_is_true>` the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
 
   .. code-block:: python
     :lineno-start: 4
@@ -88,13 +88,12 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I change the :ref:`assertion<AssertionError>` to assertIsNone_, which checks if what it gets in parentheses is None_
+* I change the assert_ :ref:`method<functions>` to assertIsNone_, which checks if what it gets in parentheses is None_
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2
+    :lineno-start: 7
+    :emphasize-lines: 1
 
-        def test_what_is_none(self):
             self.assertIsNone(None)
 
 
@@ -206,7 +205,7 @@ refactor: make it better
 
   the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child of a :ref:`class<classes>` or not. I add assertNotIsInstance_
+* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child/instance of a :ref:`class<classes>` or not. I add assertNotIsInstance_
 
   .. code-block:: python
     :lineno-start: 11
@@ -215,13 +214,15 @@ refactor: make it better
             self.assertIsNotNone(True)
             self.assertNotIsInstance(False, bool)
 
-  assertNotIsInstance_ checks if the first item (:ref:`False<test_what_is_false>`) it is given is NOT a child of the second item (the :ref:`bool<booleans>` :ref:`class<classes>`) it is given. It is like asking the question ``is False NOT a child of the bool class?``. bool_ is the :ref:`class<classes>` for :ref:`booleans<booleans>`. The terminal shows :ref:`AssertionError`
+  assertNotIsInstance_ checks if the first item (:ref:`False<test_what_is_false>`) it is given is NOT a child/instance of the second item (the :ref:`bool<booleans>` :ref:`class<classes>`). It is like asking the question ``is False NOT a child of the bool class?``. bool_ is the :ref:`class<classes>` for :ref:`booleans<booleans>`. The terminal shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`. I make the statement :ref:`True<test_what_is_true>` with the assertIsInstance_ :ref:`method<functions>` which checks if the first item (:ref:`False<test_what_is_false>`) it is given :ref:`False<test_what_is_false>` is a child of the second item (the bool_ :ref:`class<classes>`) it is given
+  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
+
+* I make the statement :ref:`True<test_what_is_true>` with the assertIsInstance_ :ref:`method<functions>` which checks if the first item (:ref:`False<test_what_is_false>`) it is given is a child/instance of the second item (the bool_ :ref:`class<classes>`)
 
   .. code-block:: python
     :lineno-start: 12
@@ -258,7 +259,7 @@ refactor: make it better
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>` to test if None_ is a child of the bool_ :ref:`class<classes>`
+* I add assertIsInstance_ to test if None_ is a child/instance of the bool_ :ref:`class<classes>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -754,7 +755,7 @@ test_is_none_a_string
 red: make it fail
 #################################################################################
 
-I add a test to see if None_ is a string_ (any thing in quotes)
+I add a test to see if None_ is a string_ (anything in :ref:`quotes`)
 
 .. code-block:: python
   :lineno-start: 32
@@ -774,7 +775,7 @@ the terminal shows :ref:`AssertionError`
 
   AssertionError: '' is not None
 
-the empty string ``''`` is NOT :ref:`None`
+the empty string_ (``''``) is NOT :ref:`None`
 
 green: make it pass
 #################################################################################
@@ -832,6 +833,8 @@ refactor: make it better
 
     AssertionError: '' is an instance of <class 'str'>
 
+  because anything in :ref:`quotes` is a string_
+
 * I change the assert_ :ref:`method<functions>`
 
   .. code-block:: python
@@ -857,7 +860,7 @@ refactor: make it better
 
     AssertionError: 'text' is an instance of <class 'str'>
 
-  ``'text'`` is a string_
+  because anything in :ref:`quotes` is a string_
 
 * I change the assert_ :ref:`method<functions>`
 
@@ -867,7 +870,7 @@ refactor: make it better
 
             self.assertIsInstance("text", str)
 
-  A string_ is anything in single, double or triple quotes, for example
+  A string_ is anything in single, double or triple :ref:`quotes`, for example
 
   - ``'single quotes'``
   - ``'''triple single quotes'''``
@@ -957,10 +960,9 @@ green: make it pass
 I make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 41
-  :emphasize-lines: 2
+  :lineno-start: 42
+  :emphasize-lines: 1
 
-      def test_is_none_a_tuple(self):
           self.assertIsNotNone(())
 
 the test passes
@@ -971,10 +973,9 @@ refactor: make it better
 * I add a failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 3
+    :lineno-start: 42
+    :emphasize-lines: 2
 
-        def test_is_none_a_tuple(self):
             self.assertIsNotNone(())
             self.assertIsNone((1, 2, 3, 'n'))
 
@@ -1009,7 +1010,7 @@ refactor: make it better
 
     AssertionError: () is an instance of <class 'tuple'>
 
-  ``()`` is the empty tuple_
+  because anything in parentheses ``()`` in Python_ is a tuple_
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -1036,7 +1037,7 @@ refactor: make it better
 
     AssertionError: (1, 2, 3, 'n') is an instance of <class 'tuple'>
 
-  ``(1, 2, 3, 'n')`` is a tuple_
+  because anything in parentheses ``()`` in Python_ is a tuple_
 
 * I change the assert_ :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
 
@@ -1182,7 +1183,7 @@ refactor: make it better
 
     AssertionError: [] is an instance of <class 'list'>
 
-  ``[]`` is the empty :ref:`list <lists>`
+  because anything in square brackets ``[]`` in Python_ is a :ref:`list<lists>`
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -1209,7 +1210,7 @@ refactor: make it better
 
     AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
 
-  ``[1, 2, 3, 'n']`` is a :ref:`list <lists>`
+  because anything in square brackets ``[]`` in Python_ is a :ref:`list<lists>`
 
 * I change the assert_ :ref:`method<functions>`
 
@@ -1251,6 +1252,8 @@ refactor: make it better
 
 
     # NOTES
+
+  the test passes
 
 * I add a new note
 
@@ -1387,6 +1390,8 @@ refactor: make it better
 
     # NOTES
 
+  the test passes
+
 * I add a note
 
   .. code-block:: python
@@ -1415,8 +1420,8 @@ red: make it fail
 One last test to see if None_ is a :ref:`dictionary<dictionaries>`
 
 .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 3-4
+  :lineno-start: 59
+  :emphasize-lines: 3-4
 
           self.assertNotIsInstance(None, set)
 
@@ -1500,6 +1505,8 @@ refactor: make it better
 
             self.assertIsInstance({}, dict)
 
+  the test passes
+
 * I add another instance test
 
   .. code-block:: python
@@ -1556,6 +1563,8 @@ refactor: make it better
 
     # NOTES
 
+  the test passes
+
 * I add the last note
 
   .. code-block:: python
@@ -1577,7 +1586,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests to show what None_ is and what it is not. Would you like to :ref:`test what is True and False?<booleans>`
+I ran tests to show what None_ is and what it is NOT. Would you like to :ref:`test what is True and False?<booleans>`
 
 ----
 
