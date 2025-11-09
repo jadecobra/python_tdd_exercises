@@ -1,6 +1,6 @@
 .. _and: https://docs.python.org/3/reference/expressions.html#and
 .. _append: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _arithmetic: https://en.wikipedia.org/wiki/Arithmetic
+.. _arithmetic: https://grokipedia.com/page/Arithmetic
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
@@ -19,11 +19,11 @@
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _change directory: https://man7.org/linux/man-pages/man1/cd.1p.html
-.. _chmod: https://en.wikipedia.org/wiki/Chmod
+.. _chmod: https://grokipedia.com/page/Chmod
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _conditional expressions: https://docs.python.org/3/reference/expressions.html#conditional-expressions
-.. _constructor: https://en.wikipedia.org/wiki/Constructor_(object-oriented_programming)
+.. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
 .. _count: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
@@ -37,7 +37,7 @@
 .. _find and replace: https://code.visualstudio.com/docs/editing/codebasics#_find-and-replace
 .. _float: https://docs.python.org/3/library/functions.html#float
 .. _floats: https://docs.python.org/3/library/functions.html#float
-.. _floor (integer) division: https://en.wikipedia.org/wiki/Division_(mathematics)#Division_in_different_contexts
+.. _floor (integer) division: https://grokipedia.com/page/Division_(mathematics)#Division_in_different_contexts
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
 .. _fromkeys: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
@@ -60,7 +60,7 @@
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
-.. _modulo: https://en.wikipedia.org/wiki/Modulo
+.. _modulo: https://grokipedia.com/page/Modulo
 .. _not: https://docs.python.org/3/reference/expressions.html#not
 .. _nots: https://docs.python.org/3/reference/expressions.html#not
 .. _object: https://docs.python.org/3/glossary.html#term-object
@@ -92,8 +92,8 @@
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _setdefault: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
 .. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
-.. _shebang: https://en.wikipedia.org/wiki/Shebang_(Unix)
-.. _standard output (stdout): https://en.wikipedia.org/wiki/Standard_streams#Standard_output_(stdout)
+.. _shebang: https://grokipedia.com/page/Shebang_(Unix)
+.. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
 .. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
@@ -130,7 +130,7 @@
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
 .. _while: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 .. _while statement: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
-.. _zero-based indexing: https://en.wikipedia.org/wiki/Zero-based_numbering
+.. _zero-based indexing: https://grokipedia.com/page/Zero-based_numbering
 .. _zsh: https://zsh.sourceforge.io
 
 ----
@@ -151,26 +151,26 @@
 .. _Set-ExecutionPolicy: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4&viewFallbackFrom=powershell-6
 .. _Write-Output: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.4
 
-.. _Algebra: https://en.wikipedia.org/wiki/Algebra
+.. _Algebra: https://grokipedia.com/page/Algebra
 .. _Debian: https://www.debian.org
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
-.. _remove duplication: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-.. _I Do Not Repeat myself: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-.. _JSON: https://en.wikipedia.org/wiki/JSON
+.. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
+.. _I Do Not Repeat myself: https://grokipedia.com/page/Don%27t_repeat_yourself
+.. _JSON: https://grokipedia.com/page/JSON
 .. _Linux: https://www.kernel.org/category/about.html
-.. _Linux distributions: https://en.wikipedia.org/wiki/List_of_Linux_distributions
-.. _Logical Identity: https://en.wikipedia.org/wiki/Identity_function
-.. _Logical Negation: https://en.wikipedia.org/wiki/Negation
+.. _Linux distributions: https://grokipedia.com/page/List_of_Linux_distributions
+.. _Logical Identity: https://grokipedia.com/page/Identity_function
+.. _Logical Negation: https://grokipedia.com/page/Negation
 .. _MacOS: https://www.apple.com/macos
 .. _Microsoft Store: https://apps.microsoft.com/home
 .. _Refactoring: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
-.. _Regular Expressions: https://en.wikipedia.org/wiki/Regular_expression
+.. _Regular Expressions: https://grokipedia.com/page/Regular_expression
 .. _True: https://docs.python.org/3/library/constants.html?highlight=true#True
-.. _Truth Table: https://en.wikipedia.org/wiki/Truth_table
-.. _Test Driven Development: https://en.wikipedia.org/wiki/Test-driven_development
+.. _Truth Table: https://grokipedia.com/page/Truth_table
+.. _Test Driven Development: https://grokipedia.com/page/Test-driven_development
 .. _Test Driven Development by Example: https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
-.. _The Abstraction Principle: https://en.wikipedia.org/wiki/Abstraction_principle_(computer_programming)
-.. _The Do Not Repeat Yourself (DRY) Principle: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+.. _The Abstraction Principle: https://grokipedia.com/page/Abstraction_principle_(computer_programming)
+.. _The Do Not Repeat Yourself (DRY) Principle: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _Windows: https://www.microsoft.com/en-us/windows
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 
