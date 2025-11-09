@@ -1415,13 +1415,16 @@ red: make it fail
 One last test to see if None_ is a :ref:`dictionary<dictionaries>`
 
 .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 3-4
 
-  def test_is_none_a_set(self):
-      ...
-      self.assertNotIsInstance(None, set)
+          self.assertNotIsInstance(None, set)
 
-  def test_is_none_a_dictionary(self):
-      self.assertIsNone(dict())
+      def test_is_none_a_dictionary(self):
+          self.assertIsNone(dict())
+
+
+  # NOTES
 
 the terminal shows :ref:`AssertionError`
 
@@ -1434,25 +1437,27 @@ wait a minute! Python_ uses ``{}`` for sets_, it also uses them for :ref:`dictio
 green: make it pass
 #################################################################################
 
-I change the :ref:`assertion<AssertionError>`
+I make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 62
+  :emphasize-lines: 1
 
-  def test_is_none_a_dictionary(self):
-      self.assertIsNotNone(dict())
+          self.assertIsNotNone(dict())
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* then I add another :ref:`assertion<AssertionError>`
+* I add another failing line
 
   .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 2
 
-    def test_is_none_a_dictionary(self):
-        self.assertIsNotNone(dict())
-        self.assertIsNone({'key': 'value'})
+            self.assertIsNotNone(dict())
+            self.assertIsNone({'key': 'value'})
 
   the terminal shows :ref:`AssertionError`
 
@@ -1460,24 +1465,24 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is not None
 
-  when I change the :ref:`assertion<AssertionError>`
+  I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 1
 
-    def test_is_none_a_dictionary(self):
-        self.assertIsNotNone(dict())
-        self.assertIsNotNone({'key': 'value'})
+            self.assertIsNotNone({'key': 'value'})
 
   the test passes
 
-* I add an instance test
+* I add a failing instance test
 
   .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 1
 
-    def test_is_none_a_dictionary(self):
-        self.assertIsNotNone(dict())
-        self.assertIsNotNone({'key': 'value'})
-        self.assertNotIsInstance({}, dict)
+            self.assertIsNotNone({'key': 'value'})
+            self.assertNotIsInstance({}, dict)
 
   :ref:`dict<dictionaries>` is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal shows :ref:`AssertionError`
 
@@ -1485,24 +1490,24 @@ refactor: make it better
 
     AssertionError: {} is an instance of <class 'dict'>
 
-  ``{}`` is the empty :ref:`dictionary<dictionaries>`. I change the :ref:`assertion<AssertionError>` to make it pass
+  ``{}`` is the empty :ref:`dictionary<dictionaries>`
+
+* I change the assert_ :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 1
 
-    def test_is_none_a_dictionary(self):
-        self.assertIsNotNone(dict())
-        self.assertIsNotNone({'key': 'value'})
-        self.assertIsInstance({}, dict)
+            self.assertIsInstance({}, dict)
 
-* then I add another instance test
+* I add another instance test
 
   .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 2
 
-    def test_is_none_a_dictionary(self):
-        self.assertIsNotNone(dict())
-        self.assertIsNotNone({'key': 'value'})
-        self.assertIsInstance({}, dict)
-        self.assertNotIsInstance({'key': 'value'}, dict)
+            self.assertIsInstance({}, dict)
+            self.assertNotIsInstance({'key': 'value'}, dict)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1510,28 +1515,25 @@ refactor: make it better
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
-  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, I can add more key-value pairs separating them with commas, that is the difference between :ref:`dictionaries` and sets_. I change the :ref:`assertion<AssertionError>`
+  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, I can add more key-value pairs separating them with commas. sets_ do NOT have key-value pairs.
+
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 1
 
-    def test_is_none_a_dictionary(self):
-        self.assertIsNotNone(dict())
-        self.assertIsNotNone({'key': 'value'})
-        self.assertIsInstance({}, dict)
-        self.assertIsInstance({'key': 'value'}, dict)
+            self.assertIsInstance({'key': 'value'}, dict)
 
   the test passes
 
-* time for the last instance test
+* I add the last failing instance test with assertIsInstance_
 
   .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2
 
-    def test_is_none_a_dictionary(self):
-        self.assertIsNotNone(dict())
-        self.assertIsNotNone({'key': 'value'})
-        self.assertIsInstance({}, dict)
-        self.assertIsInstance({'key': 'value'}, dict)
-        self.assertIsInstance(None, dict)
+            self.assertIsInstance(None, dict)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1539,18 +1541,22 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'dict'>
 
-  I make the test pass
+  I make the statement :ref:`True<test_what_is_true>` with assertNotIsInstance_
 
   .. code-block:: python
+    :lineno-start: 61
 
-    def test_is_none_a_dictionary(self):
-        self.assertIsNotNone(dict())
-        self.assertIsNotNone({'key': 'value'})
-        self.assertIsInstance({}, dict)
-        self.assertIsInstance({'key': 'value'}, dict)
-        self.assertNotIsInstance(None, dict)
+        def test_is_none_a_dictionary(self):
+            self.assertIsNotNone(dict())
+            self.assertIsNotNone({'key': 'value'})
+            self.assertIsInstance({}, dict)
+            self.assertIsInstance({'key': 'value'}, dict)
+            self.assertNotIsInstance(None, dict)
 
-  then I add the last note
+
+    # NOTES
+
+* I add the last note
 
   .. code-block:: python
 
@@ -1571,10 +1577,8 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests to show what None_ is and what it is not
-
-Would you like to :ref:`test what is True and False?<booleans>`
+I ran tests to show what None_ is and what it is not. Would you like to :ref:`test what is True and False?<booleans>`
 
 ----
 
-:ref:`data structures: None: tests`
+:ref:`Click Here for the code from this chapter<data structures: None: tests>`
