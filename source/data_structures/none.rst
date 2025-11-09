@@ -1277,13 +1277,13 @@ red: make it fail
 I want to see if None_ is a set_
 
 .. code-block:: python
+  :lineno-start: 53
+  :emphasize-lines: 3-4
 
-  def test_is_none_a_list(self):
-      ...
-      self.assertNotIsInstance(None, list)
+          self.assertNotIsInstance(None, list)
 
-  def test_is_none_a_set(self):
-      self.assertIsNone(set())
+      def test_is_none_a_set(self):
+          self.assertIsNone(set())
 
 the terminal shows :ref:`AssertionError`
 
@@ -1294,12 +1294,13 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
+I make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 56
+  :emphasize-lines: 1
 
-  def test_is_none_a_set(self):
-      self.assertIsNotNone(set())
+              self.assertIsNotNone(set())
 
 the test passes
 
@@ -1309,10 +1310,11 @@ refactor: make it better
 * I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 2
 
-    def test_is_none_a_set(self):
-        self.assertIsNotNone(set())
-        self.assertIsNone({1, 2, 3, 'n'})
+            self.assertIsNotNone(set())
+            self.assertIsNone({1, 2, 3, 'n'})
 
   the terminal shows :ref:`AssertionError`
 
@@ -1320,24 +1322,24 @@ refactor: make it better
 
     AssertionError: {1, 2, 3, 'n'} is not None
 
-  I change the :ref:`assertion<AssertionError>`
+  I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 1
 
-    def test_is_none_a_set(self):
-        self.assertIsNotNone(set())
-        self.assertIsNotNone({1, 2, 3, 'n'})
+            self.assertIsNotNone({1, 2, 3, 'n'})
 
   the test passes
 
-* then I add an instance test
+* I add an instance test
 
   .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 2
 
-    def test_is_none_a_set(self):
-        self.assertIsNotNone(set())
-        self.assertIsNotNone({1, 2, 3, 'n'})
-        self.assertNotIsInstance({1, 2, 3, 'n'}, set)
+            self.assertIsNotNone({1, 2, 3, 'n'})
+            self.assertNotIsInstance({1, 2, 3, 'n'}, set)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1345,24 +1347,24 @@ refactor: make it better
 
     AssertionError: {1, 2, 3, 'n'} is an instance of <class 'set'>
 
-  I make the test pass
+  I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 1
 
-    def test_is_none_a_set(self):
-        self.assertIsNotNone(set())
-        self.assertIsNotNone({1, 2, 3, 'n'})
-        self.assertIsInstance({1, 2, 3, 'n'}, set)
+            self.assertIsInstance({1, 2, 3, 'n'}, set)
 
-* then add another instance test
+  the test passes
+
+* I add another instance test
 
   .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 2
 
-    def test_is_none_a_set(self):
-        self.assertIsNotNone(set())
-        self.assertIsNotNone({1, 2, 3, 'n'})
-        self.assertIsInstance({1, 2, 3, 'n'}, set)
-        self.assertIsInstance(None, set)
+            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            self.assertIsInstance(None, set)
 
   the terminal shows :ref:`AssertionError`
 
@@ -1370,19 +1372,26 @@ refactor: make it better
 
     AssertionError: None is not an instance of <class 'set'>
 
-  I change the :ref:`assertion<AssertionError>` to make it pass
+  I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 5
 
-    def test_is_none_a_set(self):
-        self.assertIsNotNone(set())
-        self.assertIsNotNone({1, 2, 3, 'n'})
-        self.assertIsInstance({1, 2, 3, 'n'}, set)
-        self.assertNotIsInstance(None, set)
+        def test_is_none_a_set(self):
+            self.assertIsNotNone(set())
+            self.assertIsNotNone({1, 2, 3, 'n'})
+            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            self.assertNotIsInstance(None, set)
 
-  then add a note
+
+    # NOTES
+
+* I add a note
 
   .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 2
 
     # NOTES
     # None is NOT a set
