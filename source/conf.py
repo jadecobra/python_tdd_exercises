@@ -30,6 +30,9 @@ html_theme = 'furo'
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
 html_static_path = ['_static']
+html_js_files = [
+    '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js',
+]
 
 sitemap_url_scheme = '{link}'
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
