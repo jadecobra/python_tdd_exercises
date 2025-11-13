@@ -62,6 +62,7 @@
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://grokipedia.com/page/Modulo
+.. _mv: https://grokipedia.com/page/Mv_(Unix)
 .. _not: https://docs.python.org/3/reference/expressions.html#not
 .. _nots: https://docs.python.org/3/reference/expressions.html#not
 .. _object: https://docs.python.org/3/glossary.html#term-object
@@ -104,6 +105,7 @@
 .. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _touch: https://man7.org/linux/man-pages/man1/touch.1.html
+.. _tree: https://grokipedia.com/page/Tree_(command)
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuple
 .. _tuples: https://docs.python.org/3/library/stdtypes.html#tuple
