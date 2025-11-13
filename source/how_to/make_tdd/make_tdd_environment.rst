@@ -91,10 +91,10 @@ how to manually make a python test driven development environment
 
     .../pumping_python $
 
-  - a `folder/directory`_ is a container for files_. It helps to organize things, just like a folder in a file cabinet is used to organize files that belong together. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in the ``pumping_python`` folder_
-  - a `file`_ is a collection or container for text, their names usually in an extension for example ``.txt``, ``.sh``, ``.ps1``, ``.py``, they are like paper we write or print on and put in a folder to put in a cabinet
+  - a `folder/directory`_ is a container for files_. It helps to organize things, just like a folder in a file cabinet is used to organize files that belong together. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in ``pumping_python``
+  - a `file`_ is a collection or container for text, their names usually end in an extension to show the type of file for example ``.txt``, ``.sh``, ``.ps1``, ``.py``. Files_ are like paper we write or print on and keep in a folder.
 
-* I can use the tree_ program to see files and folders are in a directory_. I type it in the terminal to see what is in the ``pumping_python`` `folder/directory`
+* I can use the tree_ program to see what files and folders are in a directory_. I type it in the terminal to see what is in the ``pumping_python`` directory_
 
   .. code-block:: shell
 
@@ -108,7 +108,7 @@ how to manually make a python test driven development environment
 
     0 directories, 0 files
 
-* I `change directory`_ to the ``magic`` project in the ``pumping_python`` `folder/directory`_ with cd_
+* I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_ with cd_
 
   .. code-block:: shell
 
@@ -120,7 +120,7 @@ how to manually make a python test driven development environment
 
     cd: no such file or directory: magic
 
-  the ``magic`` folder does not exist yet. I make it with mkdir_
+  the ``magic`` folder does not exist yet, ``pumping_python`` is empty. I make the directory_ with mkdir_
 
   .. code-block:: shell
 
@@ -141,7 +141,7 @@ how to manually make a python test driven development environment
 
     2 directories, 0 files
 
-* I try cd_ again
+  I try cd_ again
 
   .. code-block:: shell
 
@@ -153,7 +153,7 @@ how to manually make a python test driven development environment
 
     .../pumping_python/magic
 
-* I use Python_ run the ``magic`` program
+* I use Python_ to run the ``magic`` program
 
   .. code-block:: shell
 
@@ -161,7 +161,7 @@ how to manually make a python test driven development environment
 
   the terminal shows
 
-  .. code-block:: shell
+  .. code-block:: text
     :force:
 
     python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
@@ -255,16 +255,23 @@ red: make it fail
     NO TESTS RAN
 
   - ``python3`` is the Python_ program
-  - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
+  - ``-m`` is an option/switch passed when calling the Python_ program to run the :ref:`module<ModuleNotFoundError>` given after it
   - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``
 
-* I do not have any tests yet, so none will run. I make a child `folder/directory`_ to keep the tests separate from the source code (the actual program)
+* I do not have any tests yet, that is why no tests ran. I make a child `folder/directory`_ to keep the tests separate from the source code (the actual program)
 
   .. code-block:: shell
 
     mkdir tests
 
-  the terminal shows nothing
+  the terminal shows nothing, I use tree_ to see what my project looks like now
+
+  .. code-block:: shell
+
+    .
+    ├── src
+    │   └── magic.py
+    └── tests
 
 * I use touch_ to add an empty file in the ``tests`` directory for the actual test
 
@@ -272,15 +279,39 @@ red: make it fail
 
     touch tests/magic.py
 
-  the terminal shows nothing
+  the terminal shows nothing. I use the tree_ program to see what the project looks like so far
 
   .. code-block:: shell
 
-    touch tests/test_magic.py
+    tree
 
-  .. TIP:: I can use any name for the test file as long as it starts with ``test_``
+  the terminal shows
 
-* I use the tree_ program to see what the project looks like so far
+  .. code-block:: shell
+
+    tree: command not found
+
+  I need to install tree_ to use it
+
+  .. admonition:: to install tree_ on MacOS_ type this in the terminal
+
+    .. code-block:: shell
+
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  .. admonition:: to install tree_ on Linux_ or `Windows Subsystem Linux`_ type this in the terminal
+
+    .. code-block:: shell
+
+      sudo apt install tree
+
+* I run the command again
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
 
   .. code-block:: shell
 
@@ -290,7 +321,9 @@ red: make it fail
     └── tests
         └── magic.py
 
-  I run the tests again
+    3 directories, 2 files
+
+* I run the test again
 
   .. code-block:: shell
 
@@ -302,7 +335,7 @@ red: make it fail
 
     NO TESTS RAN
 
-* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following
+* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following Python_ code
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -326,7 +359,7 @@ red: make it fail
     * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` that belong together, see :ref:`classes` for more
     * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test
 
-      .. TIP:: I can use any name for the test class as long as it starts with ``Test``
+      .. TIP:: I can use any name for the test :ref:`class<classes>` as long as it starts with ``Test``
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` I will use for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
@@ -336,7 +369,7 @@ red: make it fail
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
     * ``test_failure`` is the name of this :ref:`method<functions>` for my tests
 
-      .. TIP:: I can use any name for the test method as long as it starts with ``test_``
+      .. TIP:: I can use any name for the test :ref:`method/function<functions>` as long as it starts with ``test_``
 
     * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`

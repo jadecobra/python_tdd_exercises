@@ -17,7 +17,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 * click ``Turn on or off Windows Features`` from the results
 * Make sure the following have check marks to the left of them in the dialog box that opens up
 
-  - Hyper V
+  - Hyper V (this might not be in the list, you can skip it if it is not)
   - Virtual Machine Platform
   - Windows Subsystem Linux
   - Windows Hypervisor Platform
