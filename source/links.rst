@@ -52,7 +52,7 @@
 .. _import statements: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _int: https://docs.python.org/3/library/functions.html#int
-.. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
+.. _other `Integrated Development Environment (IDE)`_ options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: https://docs.python.org/3/library/functions.html#int
 .. _integers: https://docs.python.org/3/library/functions.html#int
 .. _insert: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
@@ -158,6 +158,7 @@
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _I Do Not Repeat myself: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _Inheritance: https://grokipedia.com/page/Inheritance_(object-oriented_programming)
+.. _Integrated Development Environment (IDE): https://grokipedia.com/page/Integrated_development_environment
 .. _JSON: https://grokipedia.com/page/JSON
 .. _Kent Beck: https://grokipedia.com/page/Kent_Beck
 .. _Linux: https://www.kernel.org/category/about.html

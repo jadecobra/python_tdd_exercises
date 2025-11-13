@@ -61,77 +61,110 @@ type this in the terminal to install Python_
 how to manually make a python test driven development environment
 ********************************************************************************************
 
-* Imagine I have to work on a project and its name is ``magic``. I open a terminal in the `Integrated Development Environment (IDE)`_ and use mkdir_
+* Let us say I have to work on a project and its name is ``magic``. I open a terminal in the `Integrated Development Environment (IDE)`_ to use the cd_ program to change directory/folder to where I will store all the projects from this book
 
   .. code-block:: shell
 
-    mkdir magic
+    cd pumping_python
 
-  this makes a folder/directory for the project where its files will stay
+  the terminal shows
 
-* I use cd_
+  .. code-block:: shell
+
+    cd: no such file or directory: pumping_python
+
+  the directory/folder does not yet exist. I need to make it
+
+* I use the mkdir_ program to make a directory/folder
+
+  .. code-block:: shell
+
+    mkdir pumping_python
+
+  the terminal shows nothing. I try changing directory again
+
+  .. code-block:: python
+
+    cd pumping_python
+
+  the terminal shows I am now in the ``pumping_python`` directory/folder
+
+  .. code-block:: shell
+
+    .../pumping_python $
+
+  a folder/directory is a container for files. It helps to organize things. I keep every project I work on in its own folder/directory which makes them easy to find later. For example all the code from this book will be kept in the ``pumping_python`` folder
+
+* I change directory to the ``magic`` project in the ``pumping_python`` folder/directory with cd_
 
   .. code-block:: shell
 
     cd magic
 
-  this changes directory to the ``magic`` folder/directory I just made
+  the terminal shows
 
-* I make a child folder/directory for the source code (the actual program)
+  .. code-block:: shell
+
+    cd: no such file or directory: magic
+
+  the ``magic`` folder does not exist yet. I make it with mkdir_
+
+  .. code-block:: shell
+
+    mkdir magic
+
+  the terminal shows nothing. I try cd_ again
+
+  .. code-block:: shell
+
+    cd magic
+
+  the terminal shows I am in the ``magic`` folder I just made in the ``pumping_python`` folder
+
+  .. code-block:: shell
+
+    .../pumping_python/magic
+
+* I try to use Python_ run the ``magic`` program
+
+  .. code-block:: shell
+
+    python3 src/magic.py
+
+  the terminal shows
+
+  .. code-block:: shell
+    :force:
+
+    python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
+
+  the computer cannot find the program because I have not made it yet. I make a child folder/directory in the ``magic`` folder for the source code (the actual program)
 
   .. code-block:: shell
 
     mkdir src
 
-  I use touch_
+  the terminal shows nothing. I try the command again
+
+  .. code-block:: shell
+
+    python3 src/magic.py
+
+  the terminal shows the same error from before. I have to make the file. I use touch_ to make an empty file in the ``src`` folder
 
   .. code-block:: shell
 
     touch src/magic.py
 
-  this makes an empty file for the source code (the actual program)
+  the terminal shows nothing
 
-* I make a child folder/directory
-
-  .. code-block:: shell
-
-    mkdir tests
-
-  this is where I will add tests for the project
-
-* I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
-
-  .. attention:: make sure to use 2 underscores (__) for ``__init__.py``
+  touch_ is a program that is used to make an empty file at the address given - ``src/magic.py`` in this case should make a file named ``magic.py`` in the ``src`` folder. I try the command again
 
   .. code-block:: shell
 
-    touch tests/__init__.py
+    python3 src/magic.py
 
-  this tells Python_ that ``tests`` is a `python package`_, it will help it find the tests I write later
-
-* I use touch_ to add one more empty file in the ``tests`` directory for the actual test
-
-  .. code-block:: shell
-
-    touch tests/test_magic.py
-
-  .. TIP:: I can use any name for the test file as long as it starts with ``test_``
-
-* these are the folders/directories and files in the project
-
-  .. code-block:: none
-    :force:
-
-    magic
-    ├── src
-    │   └── magic.py
-    └── tests
-        ├── __init__.py
-        └── test_magic.py
-
-  ``.py`` at the end of a file name shows it is a Python_ :ref:`module<ModuleNotFoundError>`
-
-----
+  the terminal shows nothing. Success! Even though there is no code in my ``magic.py`` program, I can successfully run it
 
 ********************************************************************************************
 test_failure
@@ -146,12 +179,76 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 red: make it fail
 ############################################################################################
 
-* I click on ``magic/tests/test_magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following
+* Since the approach is `Test Driven Development`_ I will run tests using the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ which comes with Python_
+
+  .. code-block:: python
+
+    python3 -m unittest
+
+  the terminal shows
+
+  .. code-block:: python
+
+    ----------------------------------------------------------------------
+    Ran 0 tests in 0.000s
+
+    NO TESTS RAN
+
+  - ``python3`` is the Python_ program
+  - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
+  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``
+
+* I do not have any tests yet, so none will run. I make a child folder/directory to keep the tests separate from the source code (the actual program)
+
+  .. code-block:: shell
+
+    mkdir tests
+
+  the terminal shows nothing
+
+* I use touch_ to add an empty file in the ``tests`` directory for the actual test
+
+  .. code-block:: shell
+
+    touch tests/magic.py
+
+  the terminal shows nothing
+
+  .. code-block:: shell
+
+    touch tests/test_magic.py
+
+  .. TIP:: I can use any name for the test file as long as it starts with ``test_``
+
+* I use the tree_ program to see what the project looks like so far
+
+  .. code-block:: shell
+
+    .
+    ├── src
+    │   └── magic.py
+    └── tests
+        └── magic.py
+
+  I run the tests again
+
+  .. code-block:: shell
+
+    python3 -m unittest
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    NO TESTS RAN
+
+* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1, 4, 6-7
 
     import unittest
 
@@ -163,15 +260,15 @@ red: make it fail
 
   Here is an explanation of the code in the file
 
-  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used for testing
+  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes`, which are a group of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` that belong together, see :ref:`classes` for more
+    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` that belong together, see :ref:`classes` for more
     * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test
 
       .. TIP:: I can use any name for the test class as long as it starts with ``Test``
 
-    * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` which has :ref:`methods<functions>` for testing
+    * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` I will use for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
 
   - ``def test_failure``
@@ -190,9 +287,69 @@ red: make it fail
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time
-* I type this in the terminal to run the test
+* I run the command again
 
-  .. code-block:: python
+  .. code-block:: shell
+
+    python3 -m unittest
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    NO TESTS RAN
+
+  I need to tell Python_ that the ``tests`` folder is a `python package`_, so it can find the tests
+
+* I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
+
+  .. attention:: make sure to use 2 underscores (__) for ``__init__.py``
+
+  .. code-block:: shell
+
+    touch tests/__init__.py
+
+  the terminal shows nothing. I run the command again
+
+  .. code-block:: shell
+
+    python3 -m unittest
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    NO TESTS RAN
+
+  I need to tell Python_ that ``magic.py`` in the ``tests`` folder is a test file
+
+* I use the mv_ program to change the name of the file to ``test_magic.py``
+
+  .. code-block:: shell
+
+    mv test/magic.py tests/test_magic.py
+
+  the terminal shows nothing. I use tree_ to see what I have so far
+
+  .. code-shell:: python
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+    ├── src
+    │   └── magic.py
+    └── tests
+        ├── __init__.py
+        ├── __pycache__
+        └── test_magic.py
+
+* I run the command again
+
+  .. code-block:: shell
 
     python3 -m unittest
 
@@ -243,7 +400,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
   - ``python3`` is the Python_ program
   - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
 
-* I recommend you keep a list of :ref:`Errors/Exceptions<errors>` you meet to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
+* I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -264,11 +421,13 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 green: make it pass
 #################################################################################
 
-I change the input on line 7 from :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
+I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7
 
 .. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 1
 
-  self.assertFalse(False)
+          self.assertFalse(False)
 
 then I run the test again in the terminal
 
@@ -291,7 +450,7 @@ and the test passes! The terminal shows
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I make a code change, to make sure tests that were passing are not failing and that the new code I add does what I expect.
+I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I expect.
 
 This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
 
@@ -300,6 +459,20 @@ This means I have to run ``python3 -m unittest`` for each part of the `Test Driv
 ********************************************************************************************
 how to automatically run tests
 ********************************************************************************************
+
+I can use `pytest-watch`_ to automatically run tests. It is a Python_ program that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change. pytest_ is a `python package`_ like unittest_, it is just not part of the `python standard library`_. I type it in the terminal
+
+.. code-block:: shell
+
+  pytest-watch
+
+the terminal shows
+
+.. code-block:: shell
+
+  command not found: pytest-watch
+
+I need to install it for the computer to use it
 
 how to make a virtual environment
 ############################################################################################
@@ -313,10 +486,12 @@ how to make a virtual environment
   - ``python3`` is the Python_ program
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name.
-  - A `virtual environment`_ is a separate folder where `python packages`_ needed by the project will be installed, this helps me keep things that belong to the project in one place separate from other things on the computer
-  - ``.venv`` is the name given
+  - A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment` for every project with only the programs that the project needs
+  - ``.venv`` is the name I am giving for the `virtual environment`
 
     .. NOTE:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
+
+  the terminal shows nothing
 
 * I activate the `virtual environment`_ to use it
 
@@ -330,18 +505,21 @@ how to make a virtual environment
 
       (.venv) .../magic $
 
-* I upgrade pip_ the `python package manager`_ to the latest version
+  I run the command again
 
   .. code-block:: shell
 
-    python3 -m pip install --upgrade pip
+    pytest-watch
 
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
-  - ``install`` is an argument given to pip_ to install a given package name
-  - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the given `python package`_
-  - ``pip`` is the package name I am giving pip_ to install, in this case it upgrades itself
+  the terminal shows
 
-* I use pip_ to see what packages are installed in the virtual environment
+  .. code-block:: shell
+
+    command not found: pytest-watch
+
+  I have to install it in the `virtual environment`_ to use it here
+
+* I use the `python package manager`_ to see what packages are installed in the virtual environment
 
   .. code-block:: python
 
@@ -355,7 +533,16 @@ how to make a virtual environment
     ------- -------
     pip     x.y
 
-* I use echo_ to make a file in the ``magic`` directory with `pytest-watch`_ as its text
+  - `pytest-watch`_ is not in the list
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
+
+* I can tell pip_ to install `pytest-watch`_ directly
+
+  .. code-block:: shell
+
+    python3 -m pip install pytest-watch
+
+  or I can create a ``requirements.txt`` file where I list all the Python_ packages for my project and have pip_ install the programs listed in the file. I use echo_ to make ``requirements.txt`` with `pytest-watch`_ as its text
 
   .. code-block:: shell
 
@@ -369,16 +556,33 @@ how to make a virtual environment
 
     .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want for the file
 
-* I install `pytest-watch`_ and the programs it needs
+* I use pip_ to install `pytest-watch`_ and the programs it needs
 
   .. code-block:: python
 
-      pip install --requirement requirements.txt
+      python3 -m pip install --requirement requirements.txt
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file
   - ``requirements.txt`` is the name of the file given
 
     .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want for the file
+
+  when I do not have the latest version of pip_, the terminal shows
+
+  .. code-block:: python
+
+    [notice] A new release of pip is available: 25.2 -> 25.3
+    [notice] To update, run: pip install --upgrade pip
+
+  I upgrade the `python package manager`_ to the latest version (this is good practice)
+
+  .. code-block:: shell
+
+    python3 -m pip install --upgrade pip
+
+  - ``install`` is an argument given to pip_ to install a given package name
+  - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the given `python package`_
+  - ``pip`` is the package name I am giving pip_ to install, in this case it upgrades itself
 
 * I use pip_ to see what packages are now installed in the `virtual environment`_
 
@@ -403,6 +607,8 @@ how to make a virtual environment
     pytest-watch x.y.z
     watchdog     x.y.z
 
+  ``pytest-watch`` is in the list
+
 * I now have these folders/directories and files in the project
 
   .. code-block:: shell
@@ -418,7 +624,7 @@ how to make a virtual environment
     │   └── test_magic.py
     └── requirements.txt
 
-* I run the tests from the terminal
+* I try `pytest-watch`_ again
 
   .. code-block:: shell
 
@@ -438,7 +644,15 @@ how to make a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-* when I change the input on line 7 in ``test_magic.py`` from :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>`, the terminal shows :ref:`AssertionError`
+  I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
+
+          self.assertFalse(True)
+
+  the terminal shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -456,7 +670,15 @@ how to make a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py`` to make it pass. I can now write the rest of the code for the project while the tests run automatically
+  I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
+
+          self.assertFalse(False)
+
+  the test passes. I can now write the rest of the code for the project while the tests run automatically
 
   .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
 
@@ -503,19 +725,39 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     deactivate
 
+  I try `pytest-watch`_ again to show that it only works inside the `virtual environment`_
+
+  .. code-block:: shell
+
+    pytest-watch
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    command not found: pytest-watch
+
 * I use cd_ to `change directory`_ to the parent of ``magic``
 
   .. code-block:: shell
 
     cd ..
 
-* I use touch_ to make an empty file with a name that describes what the program does so it is easy to remember later, for example :ref:`makePythonTdd.sh`
+  ``..`` is shorthand for the parent of any directory you are in, the terminal shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory
+
+* I use touch_ to make an empty file with a name that describes the program I will write so that it is easy to remember later, for example :ref:`makePythonTdd.sh`
 
   .. code-block:: shell
 
     touch makePythonTdd.sh
 
-* I use history_
+* I use history_ to see all the commands I have typed so far
 
   .. code-block:: shell
 
@@ -529,6 +771,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1-
 
     #!/bin/bash
     mkdir magic
@@ -547,7 +790,80 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program
 
-* The problem with this program is it will always make a project called ``magic``. I need it to be able to make any project I want. I add a variable to replace ``magic`` so I can give it any name when I want to make a project
+* I go back to the terminal to run the program
+
+  .. code-block:: shell
+
+    makePythonTdd.sh
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    command not found: makePythonTdd.sh
+
+  I have to tell the computer exactly where the file is
+
+  .. code-block:: shell
+
+    ./makePythonTdd.sh
+
+  ``./`` is shorthand for ``this directory`` which is where the file is saved. The computer checks a few folders by default whenever a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal shows
+
+  .. code-block:: shell
+
+    permission denied: ./makePythonTdd.sh
+
+  I need to make the program executable so the computer can run it
+
+* I change the mode of the file to make sure the program I just wrote can run
+
+  .. code-block:: shell
+
+    chmod +x makePythonTdd.sh
+
+  chmod_ is a program that changes the mode of the given file. the terminal shows nothing
+
+* I try the command again
+
+  .. code-block:: shell
+
+    ./makePythonTdd.sh
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    mkdir: cannot create directory ‘magic’: File exists
+    mkdir: cannot create directory ‘src’: File exists
+    mkdir: cannot create directory ‘tests’: File exists
+    Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (x.y)
+    Collecting pip
+    ...
+    Successfully installed pip-X.Y
+    Requirement already satisfied: pytest-watch in ./.venv/lib/python3.13/site-packages (from -r requirements.txt (line 1)) (X.Y.Z)
+    Requirement already satisfied: docopt>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
+    Requirement already satisfied: colorama>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
+    Requirement already satisfied: watchdog>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
+    Requirement already satisfied: pytest>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
+    Requirement already satisfied: iniconfig>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
+    Requirement already satisfied: packaging>=XX in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y)
+    Requirement already satisfied: pluggy<X,>=X.Y in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
+    Requirement already satisfied: pygments>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
+
+    [Thu Nov 13 07:05:26 2025] Running: py.test
+    ================================= test session starts ==================================
+    platform linux -- Python 3.13.7, pytest-9.0.1, pluggy-1.6.0
+    rootdir: /workspaces/pumping_python/magic
+    collected 1 item
+
+    tests/test_magic.py .                                                            [100%]
+
+    ================================== 1 passed in 0.01s ===================================
+
+  The problem with this program is it will always make a project called ``magic``. It is repeating what I have already done.
+
+* I want the program to be able to make any project I want. It should take a name I give and use that as the name for the project, making the same structure I did for ``magic``. I add a variable to replace ``magic`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -577,7 +893,82 @@ You made it this far and have become the greatest programmer in the world. To fo
 
       command argument
 
-    in the code above, ``command`` will be ``makePythonTdd.sh`` and ``$1`` will be the value of  ``argument``
+    in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be the value of  ``argument``
+
+* I run the program again
+
+  .. code-block:: python
+
+    ./makePythonTdd.sh
+
+  the terminal shows
+
+  .. code-block:: python
+
+    mkdir: missing operand
+    Try 'mkdir --help' for more information.
+    mkdir: cannot create directory ‘src’: File exists
+    mkdir: cannot create directory ‘tests’: File exists
+    Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (25.2)
+    Collecting pip
+      Using cached pip-X.Y-py3-none-any.whl.metadata (4.7 kB)
+    Using cached pip-X.Y-py3-none-any.whl (1.8 MB)
+    Installing collected packages: pip
+      Attempting uninstall: pip
+        Found existing installation: pip X.Y
+        Uninstalling pip-A.B:
+          Successfully uninstalled pip-A.B
+    Successfully installed pip-X.Y
+    Collecting pytest-watch (from -r requirements.txt (line 1))
+      Using cached pytest_watch-X.Y.Z-py3-none-any.whl
+    Collecting docopt>=X.Y.Z (from pytest-watch->-r requirements.txt (line 1))
+      Using cached docopt-X.Y.Z-py2.py3-none-any.whl
+    Collecting colorama>=X.Y.Z (from pytest-watch->-r requirements.txt (line 1))
+      Using cached colorama-X.Y.Z-py2.py3-none-any.whl.metadata (17 kB)
+    Collecting watchdog>=X.Y.Z (from pytest-watch->-r requirements.txt (line 1))
+      Using cached watchdog-X.Y.Z-py3-none-manylinux2014_aarch64.whl.metadata (AA kB)
+    Collecting pytest>=X.Y.Z (from pytest-watch->-r requirements.txt (line 1))
+      Using cached pytest-X.Y.Z-py3-none-any.whl.metadata (A.B kB)
+    Collecting iniconfig>=X.Y.Z (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1))
+      Using cached iniconfig-X.Y.Z-py3-none-any.whl.metadata (A.B kB)
+    Collecting packaging>=XX (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1))
+      Using cached packaging-X.Y-py3-none-any.whl.metadata (A.B kB)
+    Collecting pluggy<Z,>=X.Y (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1))
+      Using cached pluggy-X.Y.Z-py3-none-any.whl.metadata (A.B kB)
+    Collecting pygments>=X.Y.Z (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1))
+      Using cached pygments-X.Y.Z-py3-none-any.whl.metadata (A.B kB)
+    Using cached colorama-X.Y.Z-py2.py3-none-any.whl (AB kB)
+    Using cached pytest-X.Y.Z-py3-none-any.whl (ABC kB)
+    Using cached pluggy-X.Y.Z-py3-none-any.whl (AB kB)
+    Using cached iniconfig-X.Y.Z-py3-none-any.whl (A.B kB)
+    Using cached packaging-X.Y-py3-none-any.whl (AB kB)
+    Using cached pygments-X.Y.Z-py3-none-any.whl (A.B MB)
+    Using cached watchdog-X.Y.Z-py3-none-manylinux2014_aarch64.whl (AB kB)
+    Installing collected packages: docopt, watchdog, pygments, pluggy, packaging, iniconfig, colorama, pytest, pytest-watch
+    Successfully installed colorama-X.Y.Z docopt-X.Y.Z iniconfig-X.Y.Z packaging-X.Y pluggy-X.Y.Z pygments-X.Y.Z pytest-X.Y.Z pytest-watch-X.Y.Z watchdog-X.Y.Z
+
+    ================================= test session starts ==================================
+    platform linux -- Python 3.13.7, pytest-X.Y.Z, pluggy-X.Y.Z
+    rootdir: ...
+    collected 0 items
+
+    ================================ no tests ran in 0.00s =================================
+
+  it didn't work. I did not give a project name when I called the ``./makePythonTdd.sh`` so mkdir_ and cd_ did not work
+
+* I call the program again with a project name this time
+
+  .. code-block:: python
+
+    ./makePythonTdd.sh a_project
+
+  the terminal shows no errors but no tests run
+
+  .. code-block:: python
+
+    ================================ no tests ran in 0.02s ================================
+
+  I need to add code for the project to the test file
 
 * I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
@@ -587,15 +978,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     :linenos:
     :emphasize-lines: 10-21
 
-* I type this in the terminal to make sure the program I just wrote can run
-
-  .. code-block:: shell
-
-    chmod +x makePythonTdd.sh
-
-  chmod_ is a program that changes the mode of the given file
-
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved
+* I can now make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved
 
   .. code-block:: shell
 

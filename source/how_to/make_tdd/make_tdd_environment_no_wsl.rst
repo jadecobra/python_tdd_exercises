@@ -36,7 +36,7 @@ requirements
 how to manually make a python test driven development environment on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
 
-* Imagine I have to work on a project and its name is ``magic``. I open a terminal in the Integrated Development Environment (IDE) and use mkdir_
+* Imagine I have to work on a project and its name is ``magic``. I open a terminal in the `Integrated Development Environment (IDE)`_ and use mkdir_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -128,7 +128,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 red: make it fail
 ############################################################################################
 
-* I click on ``magic/tests/test_magic.py`` in the Integrated Development Environment (IDE) to open it in the editor, then type the following
+* I click on ``magic/tests/test_magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -171,7 +171,7 @@ red: make it fail
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the Integrated Development Environment (IDE) to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time
 * I type this in the terminal to run the test
 
   .. code-block:: python
@@ -208,7 +208,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the failure and the location of the file where it is
 
-  .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the Integrated Development Environment (IDE) will open the file in the editor with the cursor at the line where the failure happened
+  .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
 
 * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
@@ -639,3 +639,13 @@ Would you like to test :ref:`test AssertionError?<AssertionError>`
 the program to make a Python_ `Test Driven Development`_ Environment for any Windows_ computers without `Windows Subsystem Linux`_
 
 :ref:`Click Here to see the code for the program to make a Python Test Driven Development environment for any Windows computers without Windows Subsystem Linux<makePythonTdd.ps1>`
+
+----
+
+.. raw:: html
+
+  <!-- TrustBox widget - Review Collector -->
+  <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">Click Here to leave a 5 star review on TrustPilot, if you found this helpful</a>
+  </div>
+  <!-- End TrustBox widget -->
