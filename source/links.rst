@@ -52,7 +52,7 @@
 .. _import statements: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _index: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _int: https://docs.python.org/3/library/functions.html#int
-.. _other `Integrated Development Environment (IDE)`_ options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
+.. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: https://docs.python.org/3/library/functions.html#int
 .. _integers: https://docs.python.org/3/library/functions.html#int
 .. _insert: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists

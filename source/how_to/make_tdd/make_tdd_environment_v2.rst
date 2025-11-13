@@ -331,7 +331,7 @@ red: make it fail
 
   the terminal shows nothing. I use tree_ to see what I have so far
 
-  .. code-shell:: python
+  .. code-block:: shell
 
     tree
 
@@ -903,7 +903,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   the terminal shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     mkdir: missing operand
     Try 'mkdir --help' for more information.
