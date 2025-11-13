@@ -234,7 +234,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
 * **GREEN**: make it pass - write only what will make the failing test pass
-* **REFACTOR**: make it better - write a better solution, test or both. Usually `remove duplication`_
+* **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
 
 red: make it fail
 ############################################################################################
