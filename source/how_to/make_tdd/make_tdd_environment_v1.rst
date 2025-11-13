@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-how to make a python test driven development environment
+how to make a python test driven development environment v1
 #################################################################################
 
 .. raw:: html
@@ -58,7 +58,7 @@ type this in the terminal to install Python_
 ----
 
 ********************************************************************************************
-how to manually make a python test driven development environment
+how to manually make a python test driven development environment v1
 ********************************************************************************************
 
 * Imagine I have to work on a project and its name is ``magic``. I open a terminal in the `Integrated Development Environment (IDE)`_ and use mkdir_
@@ -134,7 +134,7 @@ how to manually make a python test driven development environment
 ----
 
 ********************************************************************************************
-test_failure
+test_failure v1
 ********************************************************************************************
 
 The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
@@ -298,10 +298,10 @@ This means I have to run ``python3 -m unittest`` for each part of the `Test Driv
 ----
 
 ********************************************************************************************
-how to automatically run tests
+how to automatically run tests v1
 ********************************************************************************************
 
-how to make a virtual environment
+how to make a virtual environment v1
 ############################################################################################
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
@@ -462,7 +462,7 @@ how to make a virtual environment
 
 ----
 
-how to deactivate a virtual environment
+how to deactivate a virtual environment v1
 #################################################################################################
 
 When I want to leave a `virtual environment`_, I type this in the terminal to deactivate it
@@ -473,7 +473,7 @@ When I want to leave a `virtual environment`_, I type this in the terminal to de
 
 ----
 
-how to activate a virtual environment
+how to activate a virtual environment v1
 ############################################################################################
 
 When I want to work in a `virtual environment`_, I `change directory`_ to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
