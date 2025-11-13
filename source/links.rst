@@ -25,13 +25,18 @@
 .. _conditional expressions: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
 .. _count: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _directory: https://grokipedia.com/page/Directory_(computing)
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dir: https://docs.python.org/3/library/functions.html#dir
-.. _folder/directory: https://grokipedia.com/page/Directory_(computing)
+.. _file: https://grokipedia.com/page/File
+.. _files: file_
+.. _folder: directory_
+.. _folder/directory: directory_
+.. _folders/directories: directory_
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _extend: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
@@ -159,7 +164,8 @@
 .. _Debian: https://www.debian.org
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
-.. _I Do Not Repeat myself: https://grokipedia.com/page/Don%27t_repeat_yourself
+.. _removing duplication: `remove duplication`_
+.. _I Do Not Repeat myself: `remove duplication`_
 .. _Inheritance: https://grokipedia.com/page/Inheritance_(object-oriented_programming)
 .. _Integrated Development Environment (IDE): https://grokipedia.com/page/Integrated_development_environment
 .. _JSON: https://grokipedia.com/page/JSON
@@ -179,7 +185,7 @@
 .. _Test Driven Development: https://grokipedia.com/page/Test-driven_development
 .. _Test Driven Development by Example: https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _The Abstraction Principle: https://grokipedia.com/page/Abstraction_principle_(computer_programming)
-.. _The Do Not Repeat Yourself (DRY) Principle: https://grokipedia.com/page/Don%27t_repeat_yourself
+.. _The Do Not Repeat Yourself (DRY) Principle: `remove duplication`_
 .. _Windows: https://www.microsoft.com/en-us/windows
 .. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
 

@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This chapter shows one way to make a Python_ `Test Driven Development`_ environment, first by doing it manually where I make all the folders and files needed, including setting up the first test, then writing a program to do it for me
+This chapter shows one way to make a Python_ `Test Driven Development`_ environment, first by doing it manually where I make all the `folders/directories`_ and files needed, including setting up the first test, then writing a program to do it for me
 
 ----
 
@@ -91,9 +91,24 @@ how to manually make a python test driven development environment
 
     .../pumping_python $
 
-  a `folder/directory`_ is a container for files. It helps to organize things. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in the ``pumping_python`` folder
+  - a `folder/directory`_ is a container for files_. It helps to organize things, just like a folder in a file cabinet is used to organize files that belong together. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in the ``pumping_python`` folder_
+  - a `file`_ is a collection or container for text, their names usually in an extension for example ``.txt``, ``.sh``, ``.ps1``, ``.py``, they are like paper we write or print on and put in a folder to put in a cabinet
 
-* I change directory to the ``magic`` project in the ``pumping_python`` `folder/directory`_ with cd_
+* I can use the tree_ program to see files and folders are in a directory_. I type it in the terminal to see what is in the ``pumping_python`` `folder/directory`
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+
+    0 directories, 0 files
+
+* I `change directory`_ to the ``magic`` project in the ``pumping_python`` `folder/directory`_ with cd_
 
   .. code-block:: shell
 
@@ -111,19 +126,34 @@ how to manually make a python test driven development environment
 
     mkdir magic
 
-  the terminal shows nothing. I try cd_ again
+  the terminal shows nothing. I use tree_ again
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+    └── magic
+
+    2 directories, 0 files
+
+* I try cd_ again
 
   .. code-block:: shell
 
     cd magic
 
-  the terminal shows I am in the ``magic`` folder I just made in the ``pumping_python`` folder
+  the terminal shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
   .. code-block:: shell
 
     .../pumping_python/magic
 
-* I try to use Python_ run the ``magic`` program
+* I use Python_ run the ``magic`` program
 
   .. code-block:: shell
 
@@ -142,7 +172,20 @@ how to manually make a python test driven development environment
 
     mkdir src
 
-  the terminal shows nothing. I try the command again
+  the terminal shows nothing. I use tree_ to see what changed in the ``magic`` directory_
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+    └── src
+
+  I try to run the program again
 
   .. code-block:: shell
 
@@ -156,13 +199,32 @@ how to manually make a python test driven development environment
 
   the terminal shows nothing
 
-  touch_ is a program that is used to make an empty file at the address given - ``src/magic.py`` in this case should make a file named ``magic.py`` in the ``src`` folder. I try the command again
+
+  touch_ is a program that is used to make an empty file with whatever name it is given in whatever directory_ is given in the name, for example - ``touch src/magic.py`` in this case should make a file named ``magic.py`` in the ``src`` folder.
+
+* I use tree_
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+    └── src
+        └── magic.py
+
+    2 directories, 1 file
+
+* I try to run the program again
 
   .. code-block:: shell
 
     python3 src/magic.py
 
-  the terminal shows nothing. Success! Even though there is no code in my ``magic.py`` program, I can successfully run it
+  the terminal shows nothing. Success! This is because there is no code in ``src/magic.py``, it is empty, and I can run it
 
 ********************************************************************************************
 test_failure
@@ -171,8 +233,8 @@ test_failure
 The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
-* **GREEN**: make it pass - write only what is needed to make the failing test pass
-* **REFACTOR**: make it better - `remove duplication`_
+* **GREEN**: make it pass - write only what will make the failing test pass
+* **REFACTOR**: make it better - write a better solution, test or both. Usually `remove duplication`_
 
 red: make it fail
 ############################################################################################
@@ -806,7 +868,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh
 
-  ``./`` is shorthand for ``this directory`` which is where the file is saved. The computer checks a few folders by default whenever a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal shows
+  ``./`` is shorthand for ``this directory`` which is where the file is saved. The computer checks a few `folders/directories`_ by default whenever a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal shows
 
   .. code-block:: shell
 

@@ -517,7 +517,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     deactivate
 
-* I use cd_ to change directory to the parent of ``magic``
+* I use cd_ to `change directory`_ to the parent of ``magic``
 
   .. code-block:: shell
 
