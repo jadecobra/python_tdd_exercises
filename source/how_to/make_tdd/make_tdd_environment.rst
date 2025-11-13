@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ environment
+This chapter shows one way to make a Python_ `Test Driven Development`_ environment, first by doing it manually where I make all the folders and files needed, including setting up the first test, then writing a program to do it for me
 
 ----
 
@@ -23,7 +23,7 @@ requirements
 *********************************************************************************
 
 * `download and install Python <https://www.python.org/downloads/>`_
-* get an Integrated Development Environment (IDE). Here are a few options
+* get an `Integrated Development Environment (IDE)`_. Here are a few options
 
   - `Visual Studio Code`_
   - `Sublime Text`_
@@ -33,15 +33,12 @@ requirements
 windows requirements
 #################################################################################
 
-If you are using a Windows computer, try
-
-* :ref:`how to install Windows Subsystem Linux on Windows`
-* If installing `Windows Subsystem Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead
+If you are using a Windows_ computer, try :ref:`how to install Windows Subsystem Linux on Windows`. If installing `Windows Subsystem Linux`_ does not work, use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead of this chapter
 
 linux/Windows Subsystem Linux requirements
 #################################################################################
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_, no need to do it on a MacOS_
 
 Open a terminal then type this to update the Linux_ package manager
 
@@ -61,7 +58,8 @@ type this in the terminal to install Python_
 how to manually make a python test driven development environment
 ********************************************************************************************
 
-* Let us say I have to work on a project and its name is ``magic``. I open a terminal in the `Integrated Development Environment (IDE)`_ to use the cd_ program to change directory/folder to where I will store all the projects from this book
+* Let us say I have to work on a project and its name is ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal
+* I can use the cd_ program to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal
 
   .. code-block:: shell
 
@@ -73,9 +71,9 @@ how to manually make a python test driven development environment
 
     cd: no such file or directory: pumping_python
 
-  the directory/folder does not yet exist. I need to make it
+  the `folder/directory`_ does NOT exist. I need to make it
 
-* I use the mkdir_ program to make a directory/folder
+* I use the mkdir_ program to make a `folder/directory`_
 
   .. code-block:: shell
 
@@ -87,15 +85,15 @@ how to manually make a python test driven development environment
 
     cd pumping_python
 
-  the terminal shows I am now in the ``pumping_python`` directory/folder
+  the terminal shows I am now in the ``pumping_python`` `folder/directory`_
 
   .. code-block:: shell
 
     .../pumping_python $
 
-  a folder/directory is a container for files. It helps to organize things. I keep every project I work on in its own folder/directory which makes them easy to find later. For example all the code from this book will be kept in the ``pumping_python`` folder
+  a `folder/directory`_ is a container for files. It helps to organize things. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in the ``pumping_python`` folder
 
-* I change directory to the ``magic`` project in the ``pumping_python`` folder/directory with cd_
+* I change directory to the ``magic`` project in the ``pumping_python`` `folder/directory`_ with cd_
 
   .. code-block:: shell
 
@@ -138,7 +136,7 @@ how to manually make a python test driven development environment
 
     python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program because I have not made it yet. I make a child folder/directory in the ``magic`` folder for the source code (the actual program)
+  the computer cannot find the program because I have not made it yet. I make a child `folder/directory`_ in the ``magic`` folder for the source code (the actual program)
 
   .. code-block:: shell
 
@@ -198,7 +196,7 @@ red: make it fail
   - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
   - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``
 
-* I do not have any tests yet, so none will run. I make a child folder/directory to keep the tests separate from the source code (the actual program)
+* I do not have any tests yet, so none will run. I make a child `folder/directory`_ to keep the tests separate from the source code (the actual program)
 
   .. code-block:: shell
 
@@ -698,7 +696,7 @@ When I want to leave a `virtual environment`_, I type this in the terminal to de
 how to activate a virtual environment
 ############################################################################################
 
-When I want to work in a `virtual environment`_, I `change directory`_ to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
+When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal
 
 .. code-block:: shell
 

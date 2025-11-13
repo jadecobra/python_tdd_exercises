@@ -67,7 +67,7 @@ how to manually make a python test driven development environment v1
 
     mkdir magic
 
-  this makes a folder/directory for the project where its files will stay
+  this makes a `folder/directory`_ for the project where its files will stay
 
 * I use cd_
 
@@ -75,9 +75,9 @@ how to manually make a python test driven development environment v1
 
     cd magic
 
-  this changes directory to the ``magic`` folder/directory I just made
+  this changes directory to the ``magic`` `folder/directory`_ I just made
 
-* I make a child folder/directory for the source code (the actual program)
+* I make a child `folder/directory`_ for the source code (the actual program)
 
   .. code-block:: shell
 
@@ -91,7 +91,7 @@ how to manually make a python test driven development environment v1
 
   this makes an empty file for the source code (the actual program)
 
-* I make a child folder/directory
+* I make a child `folder/directory`_
 
   .. code-block:: shell
 
@@ -476,7 +476,7 @@ When I want to leave a `virtual environment`_, I type this in the terminal to de
 how to activate a virtual environment v1
 ############################################################################################
 
-When I want to work in a `virtual environment`_, I `change directory`_ to the folder/directory that has the `virtual environment`_ for example ``magic``, and type this in the terminal
+When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal
 
 .. code-block:: shell
 

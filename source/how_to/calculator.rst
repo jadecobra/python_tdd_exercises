@@ -152,7 +152,7 @@ green: make it pass
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file from the ``src`` folder/directory
+  I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file from the ``src`` `folder/directory`_
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 

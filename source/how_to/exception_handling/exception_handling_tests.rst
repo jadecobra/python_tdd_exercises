@@ -98,7 +98,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` in the ``src`` folder/directory to solve the problem but I want to catch/handle it in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file does NOT exist. I add the assertRaises_ :ref:`method<functions>` which checks that the code below it the :ref:`Exception<errors>` it is given
+* I can make ``does_not_exist.py`` in the ``src`` `folder/directory`_ to solve the problem but I want to catch/handle it in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file does NOT exist. I add the assertRaises_ :ref:`method<functions>` which checks that the code below it the :ref:`Exception<errors>` it is given
 
   .. code-block:: python
     :lineno-start: 6
