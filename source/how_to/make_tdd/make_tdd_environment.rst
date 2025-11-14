@@ -488,7 +488,11 @@ red: make it fail
     │   └── magic.py
     └── tests
         ├── __init__.py
+        ├── __pycache__
+        │   └── __init__.cpython-313.pyc
         └── test_magic.py
+
+    4 directories, 4 files
 
 * I run the command again
 

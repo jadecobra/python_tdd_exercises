@@ -113,6 +113,7 @@
 .. _strings: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
+.. _terminal: https://grokipedia.com/page/Terminal#software-terminals-and-emulators
 .. _touch: https://man7.org/linux/man-pages/man1/touch.1.html
 .. _tree: https://grokipedia.com/page/Tree_(command)
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
