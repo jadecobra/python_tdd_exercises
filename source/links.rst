@@ -20,6 +20,7 @@
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _change directory: https://man7.org/linux/man-pages/man1/cd.1p.html
+.. _changing directory: `change directory`_
 .. _chmod: https://grokipedia.com/page/Chmod
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
@@ -182,6 +183,7 @@
 .. _Programming Languages: https://grokipedia.com/page/List_of_programming_languages
 .. _Refactoring: https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _Regular Expressions: https://grokipedia.com/page/Regular_expression
+.. _Remote Development: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
 .. _True: https://docs.python.org/3/library/constants.html?highlight=true#True
 .. _Truth Table: https://grokipedia.com/page/Truth_table
 .. _Test Driven Development: https://grokipedia.com/page/Test-driven_development

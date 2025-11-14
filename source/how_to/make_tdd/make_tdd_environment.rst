@@ -46,6 +46,12 @@ Open a terminal then type this to update the Linux_ package manager
 
   sudo apt update
 
+optionally, you can do a full upgrade if you want
+
+.. code-block:: shell
+
+  sudo apt full-upgrade --yes
+
 type this in the terminal to install Python_
 
 .. code-block:: shell
@@ -79,7 +85,7 @@ how to manually make a python test driven development environment
 
     mkdir pumping_python
 
-  the terminal shows nothing. I try changing directory again
+  the terminal shows nothing. I try `changing directory`_ again
 
   .. code-block:: python
 
@@ -92,7 +98,12 @@ how to manually make a python test driven development environment
     .../pumping_python $
 
   - a `folder/directory`_ is a container for files_. It helps to organize things, just like a folder in a file cabinet is used to organize files that belong together. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in ``pumping_python``
-  - a `file`_ is a collection or container for text, their names usually end in an extension to show the type of file for example ``.txt``, ``.sh``, ``.ps1``, ``.py``. Files_ are like paper we write or print on and keep in a folder.
+  - a `file`_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end in with extension to show the type of file_ for example
+
+    - ``.txt`` for a text file
+    - ``.sh`` for a bash file
+    - ``.ps1`` for a PowerShell_ file
+    -  ``.py`` for a Python_ :ref:`module<ModuleNotFoundError>`
 
 * I can use the tree_ program to see what files and folders are in a directory_. I type it in the terminal to see what is in the ``pumping_python`` directory_
 
@@ -108,7 +119,7 @@ how to manually make a python test driven development environment
 
   I need to install tree_ to use it
 
-  .. admonition:: to install tree_ on MacOS_ type this in the terminal
+  .. admonition:: if you are on using MacOS_ type this in the terminal
 
     first install brew_, if you do not have it already
 
@@ -124,13 +135,13 @@ how to manually make a python test driven development environment
 
   or
 
-  .. admonition:: to install tree_ on Linux_ or `Windows Subsystem Linux`_ type this in the terminal
+  .. admonition:: if you are using Linux_ or `Windows Subsystem Linux`_ type this in the terminal
 
     .. code-block:: shell
 
-      sudo apt install tree
+      sudo apt install tree --yes
 
-* I run the command again
+* after the computer installs tree_, I run the command again
 
   .. code-block:: shell
 
