@@ -662,7 +662,6 @@ how to make a virtual environment
     │   └── magic.py
     ├── tests
     │   ├── __init__.py
-    │   ├── magic.py
     │   ├── __pycache__
     │   └── test_magic.py
     └── .venv
