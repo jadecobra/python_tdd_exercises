@@ -1313,7 +1313,7 @@ refactor: make it better
 * I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 56
     :emphasize-lines: 2
 
             self.assertIsNotNone(set())
