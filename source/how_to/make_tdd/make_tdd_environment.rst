@@ -792,7 +792,7 @@ how to make a virtual environment
 
   .. code-block:: shell
 
-    tree
+    tree -a -L 2
 
   the terminal shows
 
