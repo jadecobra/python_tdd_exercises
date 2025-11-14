@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This chapter shows one way to make a Python_ `Test Driven Development`_ environment, first by doing it manually where I make all the `folders/directories`_ and files needed, including setting up the first test, then writing a program to do it for me
+This chapter shows one way to make a Python_ `Test Driven Development`_ environment, first I do it manually where I make all the `folders/directories`_ and files needed, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment>`
 
 ----
 

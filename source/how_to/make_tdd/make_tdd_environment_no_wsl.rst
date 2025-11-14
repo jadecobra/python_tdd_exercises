@@ -23,7 +23,7 @@ requirements
 *********************************************************************************
 
 * `download and install Python <https://www.python.org/downloads/>`_
-* get an Integrated Development Environment (IDE). Here are a few options
+* get an `Integrated Development Environment (IDE)`_ . Here are a few options
 
   - `Visual Studio Code`_
   - `Sublime Text`_
@@ -537,7 +537,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   the history_ program shows all the commands I have typed in the terminal so far, and I use them to write the program
 
-* I click on ``makePythonTdd.ps1`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
+* I click on ``makePythonTdd.ps1`` to open it in the `Integrated Development Environment (IDE)`_ , then type the commands I need to make a `Test Driven Development`_ Environment in the editor
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 

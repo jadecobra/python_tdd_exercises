@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-how I setup my Integrated Development Environment (IDE)
+how I setup my `Integrated Development Environment (IDE)`_ (IDE)
 #################################################################################
 
 .. raw:: html
@@ -25,7 +25,7 @@ I split my screen in the following ways depending on the use case, try different
 for references
 #################################################################################
 
-I put references on the left and the Integrated Development Environment on the right
+I put references on the left and the `Integrated Development Environment (IDE)`_ on the right
 
 .. image:: /_static/setup_my_ide/reference_on_left.png
   :width: 600
@@ -36,7 +36,7 @@ this helps when I do not have an extra screen. I can stack two editors on top of
 for testing
 #################################################################################
 
-When working with just the Integrated Development Environment, I have the following windows open
+When working with just the `Integrated Development Environment (IDE)`_, I have the following windows open
 
 explorer on left
 ---------------------------------------------------------------------------------
