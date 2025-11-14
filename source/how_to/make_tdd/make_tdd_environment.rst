@@ -121,7 +121,7 @@ how to manually make a python test driven development environment
 
   .. admonition:: if you are on using MacOS_ type this in the terminal
 
-    first install brew_, if you do not have it already
+    first install brew_ (The Missing Package Manager for macOS), if you do not have it already
 
     .. code-block:: shell
 
@@ -287,7 +287,7 @@ this process can be repeated as many times as possible
 red: make it fail
 ############################################################################################
 
-* Since the approach in this book is `Test Driven Development`_ I will run tests using the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ which comes with Python_
+* Since the approach in this book is `Test Driven Development`_ I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ which comes with Python_ to run tests. I type it in the terminal
 
   .. code-block:: python
 
@@ -303,8 +303,8 @@ red: make it fail
     NO TESTS RAN
 
   - ``python3`` is the Python_ program
-  - ``-m`` is an option/switch passed when calling the Python_ program to run the :ref:`module<ModuleNotFoundError>` given after it as a script
-  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``
+  - ``-m`` is an option/switch passed when calling the Python_ program to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case,  as a script
+  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``, this means somewhere on the computer there is a file named ``unittest.py``
 
 * I do not have any tests yet, that is why no tests ran. I make a child `folder/directory`_ to keep the tests separate from the source code (the actual program)
 
@@ -386,10 +386,10 @@ red: make it fail
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes<AttributeError>` and :ref:`methods<functions>` that belong together, see :ref:`classes` for more
+    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`values (attributes)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
     * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test
 
-      .. TIP:: I can use any name for the test :ref:`class<classes>` as long as it starts with ``Test``
+      .. TIP:: I can use any name for the test :ref:`class<classes>` but it MUST start with ``Test`` or unittest_ will not run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` I will use for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
@@ -397,9 +397,9 @@ red: make it fail
   - ``def test_failure``
 
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
-    * ``test_failure`` is the name of this :ref:`method<functions>` for my tests
+    * ``test_failure`` is the name of this :ref:`method<functions>` for :ref:`this first test<test_failure>`
 
-      .. TIP:: I can use any name for the test :ref:`method (function)<functions>` as long as it starts with ``test_``
+      .. ATTENTION:: I can use any name for the test :ref:`method (function)<functions>` but it MUST start with ``test_`` or unittest_ will not run the tests in it
 
     * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
@@ -471,7 +471,7 @@ red: make it fail
 
     mv tests/magic.py tests/test_magic.py
 
-  .. TIP:: I can use any name for the test file as long as it starts with ``test_``
+  .. ATTENTION:: I can use any name for the test file but it must start with ``test_`` or unittest_ will not run the tests in the file
 
   the terminal shows nothing. I use tree_ to see what I have so far
 
@@ -630,7 +630,7 @@ how to make a virtual environment
   - A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment` for every project with only the programs that the project needs
   - ``.venv`` is the name I am giving for the `virtual environment`
 
-    .. NOTE:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
+    .. TIP:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
 
 * I run tree_ with a few options to see what changed
 
@@ -724,7 +724,7 @@ how to make a virtual environment
   - pytest_ is a `python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install
 
-    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want for the file
+    .. TIP:: ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
 
 * I use pip_ to install `pytest-watch`_ and the programs it needs
 
@@ -734,8 +734,6 @@ how to make a virtual environment
 
   - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file
   - ``requirements.txt`` is the name of the file given
-
-    .. NOTE:: ``requirements.txt`` is Python_ convention, I can use any name I want for the file
 
   when I do not have the latest version of pip_, the terminal shows
 
