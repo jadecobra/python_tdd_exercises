@@ -37,6 +37,7 @@
 .. _files: file_
 .. _folder: directory_
 .. _folder/directory: directory_
+.. _folders: directory_
 .. _folders/directories: directory_
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else

@@ -596,7 +596,7 @@ refactor: make it better
 * I add a failing line with assertIsNone_
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 27
     :emphasize-lines: 2
 
             self.assertIsNotNone(0.0)

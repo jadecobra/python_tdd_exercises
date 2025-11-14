@@ -122,6 +122,8 @@ how to manually make a python test driven development environment
 
       brew install tree
 
+  or
+
   .. admonition:: to install tree_ on Linux_ or `Windows Subsystem Linux`_ type this in the terminal
 
     .. code-block:: shell
@@ -219,6 +221,8 @@ how to manually make a python test driven development environment
     .
     └── src
 
+    2 directories, 0 files
+
   I try to run the program again
 
   .. code-block:: shell
@@ -231,12 +235,9 @@ how to manually make a python test driven development environment
 
     touch src/magic.py
 
-  the terminal shows nothing
+  the terminal shows nothing. touch_ is a program that is used to make an empty file with whatever name it is given in whatever directory_ is given in the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
-
-  touch_ is a program that is used to make an empty file with whatever name it is given in whatever directory_ is given in the name, for example - ``touch src/magic.py`` in this case should make a file named ``magic.py`` in the ``src`` folder.
-
-* I use tree_
+* I use tree_ to see what folders_ and files I have now
 
   .. code-block:: shell
 
@@ -270,10 +271,12 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 * **GREEN**: make it pass - write only what will make the failing test pass
 * **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
 
+this process can be repeated as many times as possible
+
 red: make it fail
 ############################################################################################
 
-* Since the approach is `Test Driven Development`_ I will run tests using the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ which comes with Python_
+* Since the approach in this book is `Test Driven Development`_ I will run tests using the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ which comes with Python_
 
   .. code-block:: python
 
@@ -289,7 +292,7 @@ red: make it fail
     NO TESTS RAN
 
   - ``python3`` is the Python_ program
-  - ``-m`` is an option/switch passed when calling the Python_ program to run the :ref:`module<ModuleNotFoundError>` given after it
+  - ``-m`` is an option/switch passed when calling the Python_ program to run the :ref:`module<ModuleNotFoundError>` given after it as a script
   - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``
 
 * I do not have any tests yet, that is why no tests ran. I make a child `folder/directory`_ to keep the tests separate from the source code (the actual program)
@@ -299,6 +302,8 @@ red: make it fail
     mkdir tests
 
   the terminal shows nothing, I use tree_ to see what my project looks like now
+
+  .. code-b
 
   .. code-block:: shell
 
