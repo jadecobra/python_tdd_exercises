@@ -388,7 +388,7 @@ red: make it fail
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
     * ``test_failure`` is the name of this :ref:`method<functions>` for my tests
 
-      .. TIP:: I can use any name for the test :ref:`method/function<functions>` as long as it starts with ``test_``
+      .. TIP:: I can use any name for the test :ref:`method (function)<functions>` as long as it starts with ``test_``
 
     * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
@@ -421,7 +421,26 @@ red: make it fail
 
     touch tests/__init__.py
 
-  the terminal shows nothing. I run the command again
+  the terminal shows nothing. I run the tree_ command to see what changed
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+    ├── src
+    │   └── magic.py
+    └── tests
+        ├── __init__.py
+        └── magic.py
+
+    3 directories, 3 files
+
+  I run the command again
 
   .. code-block:: shell
 
@@ -439,7 +458,9 @@ red: make it fail
 
   .. code-block:: shell
 
-    mv test/magic.py tests/test_magic.py
+    mv tests/magic.py tests/test_magic.py
+
+  .. TIP:: I can use any name for the test file as long as it starts with ``test_``
 
   the terminal shows nothing. I use tree_ to see what I have so far
 
@@ -456,7 +477,6 @@ red: make it fail
     │   └── magic.py
     └── tests
         ├── __init__.py
-        ├── __pycache__
         └── test_magic.py
 
 * I run the command again
@@ -474,7 +494,7 @@ red: make it fail
     FAIL: test_failure (tests.test_magic.TestMagic.test_failure)
     -------------------------------------------------------------
     Traceback (most recent call last):
-      File ".../magic/tests/test_magic.py", line 7, in test_failure
+      File "...pumping_python/magic/tests/test_magic.py", line 7, in test_failure
         self.assertFalse(True)
         ~~~~~~~~~~~~~~~~^^^^^^
     AssertionError: True is not false
@@ -484,35 +504,31 @@ red: make it fail
 
     FAILED (failures=1)
 
-If you are typing along, *CONGRATULATIONS!* You just wrote a test.
+* If you are typing along, *CONGRATULATIONS!* You just wrote a test.
 
-This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal is about the failure, I like to read these from the bottom up, here is an explanation of each line
+  This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal is about the failure, I like to read these from the bottom up, here is an explanation of each line
 
-* ``FAILED (failures=1)`` the number of failures
-* ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-* ``AssertionError: True is not false`` the :ref:`Error/Exception<errors>` raised and its message, in this case :ref:`AssertionError` is raised because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
-* ``self.assertFalse(True)`` the line of code that caused the failure
-* ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above it that it thinks caused the :ref:`error<errors>`
-* ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the failure and the location of the file where it is
+  * ``FAILED (failures=1)`` the number of failures
+  * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
+  * ``AssertionError: True is not false`` the :ref:`Error/Exception<errors>` that happened and its message, in this case :ref:`AssertionError` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  * ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError`
+  * ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
+  * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
 
-  .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
+    .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
 
-* ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
-* ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
+  * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
+  * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
 
-  - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
-  -  ``tests`` is the ``tests`` folder
-  -  ``test_magic`` is the ``test_magic.py`` file
-  - ``TestMagic`` is the :ref:`class <classes>` defined on line 4
-  - ``test_failure`` is the :ref:`method<functions>` defined on line 6
+    - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
+    -  ``tests`` is the ``tests`` folder
+    -  ``test_magic`` is the ``test_magic.py`` file
+    - ``TestMagic`` is the :ref:`class <classes>` defined on line 4
+    - ``test_failure`` is the :ref:`method (function)<functions>` defined on line 6
 
-* ``F`` shows a failure
-* ``python3 -m unittest`` is the command to run tests with the ``unittest`` :ref:`module<ModuleNotFoundError>`
+  * ``F`` shows a failure
 
-  - ``python3`` is the Python_ program
-  - ``-m`` is an option/switch passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after it
-
-* I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
+* I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
 
   .. code-block:: python
     :linenos:
@@ -572,7 +588,7 @@ This means I have to run ``python3 -m unittest`` for each part of the `Test Driv
 how to automatically run tests
 ********************************************************************************************
 
-I can use `pytest-watch`_ to automatically run tests. It is a Python_ program that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change. pytest_ is a `python package`_ like unittest_, it is just not part of the `python standard library`_. I type it in the terminal
+I can use `pytest-watch`_ to automatically run tests. It is a Python_ program that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change. pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal
 
 .. code-block:: shell
 
@@ -595,6 +611,8 @@ how to make a virtual environment
 
     python3 -m venv .venv
 
+  the terminal shows nothing
+
   - ``python3`` is the Python_ program
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name.
@@ -603,9 +621,38 @@ how to make a virtual environment
 
     .. NOTE:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
 
-  the terminal shows nothing
+* I run tree_ with a few options to see what changed
 
-* I activate the `virtual environment`_ to use it
+  .. code-block:: shell
+
+    tree -a -L 2
+
+  - the ``-a`` option makes tree_ show all files that are listed including ``.venv`` which is hidden because it has a ``.`` at the start of the name
+  - the ``-L`` option tells tree_ how deep to go with showing the folders_ and files, I use ``2`` to keep it only to the contents of the child folders_
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+    ├── src
+    │   └── magic.py
+    ├── tests
+    │   ├── __init__.py
+    │   ├── magic.py
+    │   ├── __pycache__
+    │   └── test_magic.py
+    └── .venv
+        ├── bin
+        ├── .gitignore
+        ├── include
+        ├── lib
+        ├── lib64 -> lib
+        └── pyvenv.cfg
+
+  there is now a folder_ named ``.venv``
+
+* I have to activate the `virtual environment`_ to use it
 
   .. code-block:: shell
 
@@ -629,9 +676,9 @@ how to make a virtual environment
 
     command not found: pytest-watch
 
-  I have to install it in the `virtual environment`_ to use it here
+  I have to install `pytest-watch` in the `virtual environment`_ to use it in the `virtual environment`_
 
-* I use the `python package manager`_ to see what packages are installed in the virtual environment
+* I use the `python package manager`_ to see what packages are already installed in the virtual environment
 
   .. code-block:: python
 
@@ -646,7 +693,7 @@ how to make a virtual environment
     pip     x.y
 
   - `pytest-watch`_ is not in the list
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is the `python package manager` used to install `python packages`_
 
 * I can tell pip_ to install `pytest-watch`_ directly
 
@@ -660,7 +707,7 @@ how to make a virtual environment
 
     echo pytest-watch > requirements.txt
 
-  - echo_ is a program that writes its given arguments to the `standard output (stdout)`_
+  - echo_ is a program that shows whatever it is given on the screen (`standard output (stdout)`_)
   - ``>`` is an operator that is used to send output from a program to the given file
   - `pytest-watch`_ is a Python_ program that automatically runs pytest_ when a Python_ file in the folder changes
   - pytest_ is a `python package`_ like unittest_, that is used for testing
@@ -692,9 +739,9 @@ how to make a virtual environment
 
     python3 -m pip install --upgrade pip
 
-  - ``install`` is an argument given to pip_ to install a given package name
+  - ``install`` is an argument given to pip_ to install a given Python_ package
   - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the given `python package`_
-  - ``pip`` is the package name I am giving pip_ to install, in this case it upgrades itself
+  - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself
 
 * I use pip_ to see what packages are now installed in the `virtual environment`_
 
@@ -721,20 +768,33 @@ how to make a virtual environment
 
   ``pytest-watch`` is in the list
 
-* I now have these folders/directories and files in the project
+* I run tree_ to see what the project looks like now
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
 
   .. code-block:: shell
     :force:
 
-    magic
-    ├── .venv
+    .
+    ├── requirements.txt
     ├── src
     │   └── magic.py
-    └── tests
+    ├── tests
     │   ├── __init__.py
+    │   ├── magic.py
     │   ├── __pycache__
     │   └── test_magic.py
-    └── requirements.txt
+    └── .venv
+        ├── bin
+        ├── .gitignore
+        ├── include
+        ├── lib
+        ├── lib64 -> lib
+        └── pyvenv.cfg
 
 * I try `pytest-watch`_ again
 
@@ -756,7 +816,7 @@ how to make a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-  I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
+  I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -782,7 +842,7 @@ how to make a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -869,15 +929,16 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     touch makePythonTdd.sh
 
-* I use history_ to see all the commands I have typed so far
+* I type history_ in the terminal
 
   .. code-block:: shell
 
     history
 
-  the history_ program shows all the commands I have typed in the terminal so far, and I use them to write the program
+  the history_ program shows all the commands I have typed in the terminal so far, and I use them to write the program that will automate making a Python_ `Test Driven Development`_ environment for me
 
-* I click on ``makePythonTdd.sh`` to open it in the Integrated Development Environment (IDE), then type the commands I need to make a `Test Driven Development`_ Environment in the editor
+* I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_
+* then I type the commands for the program in the editor
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -900,7 +961,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run the program
+  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run this program
 
 * I go back to the terminal to run the program
 
@@ -920,7 +981,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh
 
-  ``./`` is shorthand for ``this directory`` which is where the file is saved. The computer checks a few `folders/directories`_ by default whenever a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal shows
+  ``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few `folders/directories`_ by default whenever a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal shows
 
   .. code-block:: shell
 
@@ -973,7 +1034,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ================================== 1 passed in 0.01s ===================================
 
-  The problem with this program is it will always make a project called ``magic``. It is repeating what I have already done.
+  This is a problem, the program just made the ``magic`` project which already exists and so I get no failing test as my first test. It is repeating what I have already done.
 
 * I want the program to be able to make any project I want. It should take a name I give and use that as the name for the project, making the same structure I did for ``magic``. I add a variable to replace ``magic`` so I can give it any name when I want to make a project
 
@@ -1007,7 +1068,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be the value of  ``argument``
 
-* I run the program again
+* I use ``ctrl+c`` to stop the test from running then I run the program again
 
   .. code-block:: python
 
@@ -1066,7 +1127,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ================================ no tests ran in 0.00s =================================
 
-  it didn't work. I did not give a project name when I called the ``./makePythonTdd.sh`` so mkdir_ and cd_ did not work
+  it didn't work. NO tests ran and there were errors with making the folders. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ did not work
 
 * I call the program again with a project name this time
 
@@ -1084,37 +1145,62 @@ You made it this far and have become the greatest programmer in the world. To fo
 
 * I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
-
   .. literalinclude:: /code/make_tdd/makePythonTdd.sh
     :language: shell
     :linenos:
     :emphasize-lines: 10-21
 
-* I can now make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved
+  I try the program again
 
   .. code-block:: shell
 
-    ./makePythonTdd.sh calculator
+    ./makePythonTdd.sh another_project
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    ====================================== FAILURES =======================================
+    __________________________ Testanother_project.test_failure ___________________________
+
+    self = <tests.test_another_project.Testanother_project testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_another_project.py:7: AssertionError
+    ============================== short test summary info ================================
+    FAILED tests/test_another_project.py::Testanother_project::test_failure - AssertionError: True is not false
+    ================================= 1 failed in X.YZs ===================================
+
+  I hit ``ctrl+c`` on the keyboard to stop the test
+
+* I can now make a `Test Driven Development`_ environment when I call ``makePythonTdd.sh`` with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved
+
+  .. code-block:: shell
+
+    ./makePythonTdd.sh assertion_error
 
   the terminal shows
 
   .. code-block:: python
 
     ====================================== FAILURES =======================================
-    _____________________________ Testcalculator.test_failure _____________________________
+    __________________________ Testassertion_error.test_failure ___________________________
 
-    self = <tests.test_calculator.Testcalculator testMethod=test_failure>
+    self = <tests.test_assertion_error.Testassertion_error testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/test_calculator.py:7: AssertionError
+    tests/test_assertion_error.py:7: AssertionError
     =============================== short test summary info ===============================
-    FAILED tests/test_calculator.py::Testcalculator::test_failure - AssertionError: True is not false
+    FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
-  the computer made a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`, you can continue this in :ref:`how to make a calculator`
+  the computer made a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and ran the first failing test. You can continue this in :ref:`AssertionError`
 
 ----
 
