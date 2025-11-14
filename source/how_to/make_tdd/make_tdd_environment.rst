@@ -1056,9 +1056,9 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   This is a problem, the program just made the ``magic`` project which already exists and so I get no failing test as my first test. It is repeating what I have already done.
 
-* I want the program to be able to make any project I want. It should take a name I give and use that as the name for the project, making the same structure I did for ``magic``. I add a variable to replace ``magic`` so I can give it any name when I want to make a project
+* I want the program to be able to make any project I want. It should take a name I give and use that as the name for the project, making the same structure I did for ``magic``. I add a variable (name) to replace ``magic`` so I can give it any name when I want to make a project
 
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
 
   .. code-block:: shell
     :linenos:

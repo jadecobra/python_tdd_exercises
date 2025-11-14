@@ -543,6 +543,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   .. code-block:: PowerShell
     :linenos:
+    :emphasize-lines: 1-
 
     mkdir magic
     cd magic
