@@ -821,7 +821,7 @@ refactor: make it better
 * I add a failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 36
     :emphasize-lines: 2
 
             self.assertIsNotNone("text")

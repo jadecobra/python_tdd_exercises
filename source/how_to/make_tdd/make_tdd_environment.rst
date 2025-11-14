@@ -303,7 +303,11 @@ red: make it fail
 
   the terminal shows nothing, I use tree_ to see what my project looks like now
 
-  .. code-b
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
 
   .. code-block:: shell
 
@@ -311,6 +315,8 @@ red: make it fail
     ├── src
     │   └── magic.py
     └── tests
+
+    3 directories, 1 file
 
 * I use touch_ to add an empty file in the ``tests`` directory for the actual test
 
