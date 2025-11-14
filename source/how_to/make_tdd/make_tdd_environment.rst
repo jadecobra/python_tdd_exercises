@@ -119,7 +119,7 @@ how to manually make a python test driven development environment
 
   I need to install tree_ to use it
 
-  .. admonition:: if you are on using MacOS_ type this in the terminal
+  .. admonition:: if you are using MacOS_ type this in the terminal
 
     first install brew_ (The Missing Package Manager for macOS), if you do not have it already
 
