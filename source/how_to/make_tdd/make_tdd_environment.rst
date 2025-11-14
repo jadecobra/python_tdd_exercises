@@ -105,6 +105,14 @@ how to manually make a python test driven development environment
     - ``.ps1`` for a PowerShell_ file
     -  ``.py`` for a Python_ :ref:`module<ModuleNotFoundError>`
 
+  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`
+
+    .. code-block:: shell
+
+      code .
+
+    a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
+
 * I can use the tree_ program to see what files and folders are in a directory_. I type it in the terminal to see what is in the ``pumping_python`` directory_
 
   .. code-block:: shell
@@ -213,7 +221,7 @@ how to manually make a python test driven development environment
 
     python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program because I have not made it yet. I make a child `folder/directory`_ in the ``magic`` folder for the source code (the actual program)
+  the computer cannot find the program because it does not exist yet. I make a child `folder/directory`_ in the ``magic`` folder for the source code (the actual program)
 
   .. code-block:: shell
 
