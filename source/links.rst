@@ -16,6 +16,7 @@
 .. _assert statements: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _bash: https://www.gnu.org/software/bash/
 .. _bool: https://docs.python.org/3/library/functions.html#bool
+.. _brew: https://brew.sh
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
 .. _change directory: https://man7.org/linux/man-pages/man1/cd.1p.html

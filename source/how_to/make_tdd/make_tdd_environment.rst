@@ -104,6 +104,40 @@ how to manually make a python test driven development environment
 
   .. code-block:: shell
 
+    tree: command not found
+
+  I need to install tree_ to use it
+
+  .. admonition:: to install tree_ on MacOS_ type this in the terminal
+
+    first install brew_, if you do not have it already
+
+    .. code-block:: shell
+
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    then use brew_ to install tree_
+
+    .. code-block:: shell
+
+      brew install tree
+
+  .. admonition:: to install tree_ on Linux_ or `Windows Subsystem Linux`_ type this in the terminal
+
+    .. code-block:: shell
+
+      sudo apt install tree
+
+* I run the command again
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
     .
 
     0 directories, 0 files
@@ -280,32 +314,6 @@ red: make it fail
     touch tests/magic.py
 
   the terminal shows nothing. I use the tree_ program to see what the project looks like so far
-
-  .. code-block:: shell
-
-    tree
-
-  the terminal shows
-
-  .. code-block:: shell
-
-    tree: command not found
-
-  I need to install tree_ to use it
-
-  .. admonition:: to install tree_ on MacOS_ type this in the terminal
-
-    .. code-block:: shell
-
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  .. admonition:: to install tree_ on Linux_ or `Windows Subsystem Linux`_ type this in the terminal
-
-    .. code-block:: shell
-
-      sudo apt install tree
-
-* I run the command again
 
   .. code-block:: shell
 
