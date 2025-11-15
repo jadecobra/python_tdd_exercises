@@ -1,0 +1,43 @@
+# Learn Directory Structure
+mkdir parent
+cd parent
+tree
+cd .
+touch aka_current_working_directory
+pwd
+tree
+ls
+cd non_existent_child_of_parent
+mkdir child_n_of_parent
+ls
+tree
+mkdir sibling_n_of_child_n_of_parent
+ls
+tree
+cd child_n_of_parent && ls && tree
+mkdir child_n_of_child_n_of_parent
+cd child_n_of_child_n_of_parent
+cd .
+tree
+touch aka_current_working_directory
+pwd
+tree
+touch aka_grandchild_n_of_parent
+touch aka_child_n_of_child_n
+touch aka_cousin_of_child_n_of_sibling_n_of_child_n_of_parent
+tree
+cd parent
+cd child_n_of_parent
+cd sibling_n_of_child_n_of_parent
+cd child_n_of_sibling_n_of_child_n_of_parent
+cd non_existent_child_of_child_n_of_child_n_of_parent
+ls
+
+pwd
+cd ..
+pwd
+cd ..
+pwd
+cd ..
+pwd
+rm -rf parent
