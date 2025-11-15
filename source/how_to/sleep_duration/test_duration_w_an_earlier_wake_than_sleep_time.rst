@@ -46,7 +46,7 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
   def test_duration_w_hours_and_minutes(self):
   ...
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -81,7 +81,7 @@ green: make it pass
                 wake_time=wake_time
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -121,7 +121,7 @@ green: make it pass
                 f'{duration_minutes:02}'
             )
 
-  the terminal shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  the terminal_ shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: python
 
@@ -266,13 +266,13 @@ refactor: make it better
                 f'{duration_minutes:02}'
             )
 
-  the terminal shows :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
+  the terminal_ shows :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
     AssertionError: ValueError not raised
 
-  the `assertRaisesRegex`_ works as expected. I remove the comments the terminal shows green again
+  the `assertRaisesRegex`_ works as expected. I remove the comments the terminal_ shows green again
 
 * I remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
 * then add an ``else`` block for the rest of the code in ``test_duration_w_hours_and_minutes``

@@ -41,7 +41,7 @@ I add a test
   def test_negate_second(self):
       self.assertFalse(src.truth_table.negate_second(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -74,7 +74,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_second(True, True))
         self.assertTrue(src.truth_table.negate_second(True, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_second(False, True))
         self.assertTrue(src.truth_table.negate_second(False, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -169,7 +169,7 @@ I add another test
     def test_logical_nor(self):
         self.assertFalse(src.truth_table.logical_nor(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -203,7 +203,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_nor(True, True))
         self.assertFalse(src.truth_table.logical_nor(True, False))
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 * on to the next case
 
@@ -226,7 +226,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_nor(False, True))
         self.assertTrue(src.truth_table.logical_nor(False, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -250,7 +250,7 @@ refactor: make it better
         return not p not or not q
         return not p and not q
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 
@@ -291,7 +291,7 @@ I add a new test
   def test_logical_equality(self):
       self.assertTrue(src.truth_table.logical_equality(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -325,7 +325,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_equality(True, True))
         self.assertFalse(src.truth_table.logical_equality(True, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -351,7 +351,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_equality(True, False))
         self.assertFalse(src.truth_table.logical_equality(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -413,7 +413,7 @@ refactor: make it better
         return (not not p not and not q) not or (not p not and not not q)
         return not ((not p and q) or (p and not q):)
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 
@@ -435,7 +435,7 @@ refactor: make it better
         return (p or not q) and (not p or q)
         return not ((not p and q) or (p and not q))
 
-  the terminal shows green. I remove the other line
+  the terminal_ shows green. I remove the other line
 
   .. code-block:: python
 
@@ -473,7 +473,7 @@ I add a new test
   def test_material_implication(self):
       self.assertTrue(src.truth_table.material_implication(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -508,7 +508,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.material_implication(True, True))
         self.assertFalse(src.truth_table.material_implication(True, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -523,7 +523,7 @@ refactor: make it better
             return False
         return True
 
-  the terminal shows green
+  the terminal_ shows green
 
 * I add the next case
 
@@ -566,7 +566,7 @@ refactor: make it better
         return not p not and not not q
         return not (p and not q)
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 

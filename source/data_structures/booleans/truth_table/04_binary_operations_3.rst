@@ -41,7 +41,7 @@ I add a new test
   def test_exclusive_disjunction(self):
       self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -74,7 +74,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
         self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -100,7 +100,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
         self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -154,7 +154,7 @@ refactor: make it better
             return True
         return False
 
-  the terminal still shows green. I remove the other statements
+  the terminal_ still shows green. I remove the other statements
 
   .. code-block:: python
 
@@ -214,7 +214,7 @@ I add another test
     def test_material_non_implication(self):
         self.assertFalse(src.truth_table.material_non_implication(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -250,7 +250,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.material_non_implication(True, True))
         self.assertTrue(src.truth_table.material_non_implication(True, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -288,7 +288,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.material_non_implication(False, True))
         self.assertFalse(src.truth_table.material_non_implication(False, False))
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 * there is only one case where the result is :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
@@ -326,7 +326,7 @@ I add a test
   def test_project_first(self):
       self.assertTrue(src.truth_table.project_first(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -370,7 +370,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.project_first(True, False))
         self.assertFalse(src.truth_table.project_first(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -397,7 +397,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.project_first(False, True))
         self.assertFalse(src.truth_table.project_first(False, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -452,7 +452,7 @@ I add a new test
   def test_converse_implication(self):
       self.assertTrue(src.truth_table.converse_implication(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -497,7 +497,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.converse_implication(True, False))
         self.assertFalse(src.truth_table.converse_implication(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -524,7 +524,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.converse_implication(False, True))
         self.assertTrue(src.truth_table.converse_implication(False, False))
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 * I add a `return statement`_
 
@@ -544,7 +544,7 @@ refactor: make it better
         return not not p not and not q
         return not (not p and q)
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 

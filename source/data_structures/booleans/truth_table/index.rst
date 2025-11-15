@@ -37,7 +37,7 @@ truth table operations
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``truth_table`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``truth_table`` as the name of the project
 
   .. code-block:: python
 
@@ -49,7 +49,7 @@ requirements
 
       ./makePythonTdd.ps1 truth_table
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 

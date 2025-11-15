@@ -24,7 +24,7 @@ AttributeError_ is raised when there is a reference to a name that is NOT in an 
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``attribute_error`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``attribute_error`` as the name of the project
 
   .. code-block:: python
 
@@ -36,7 +36,7 @@ requirements
 
       ./makePythonTdd.ps1 attribute_error
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ red: make it fail
         def test_attribute_error_w_variables(self):
             src.attribute_error.variable_00
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it the terminal shows AttributeError_
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it the terminal_ shows AttributeError_
 
   .. code-block:: python
 
@@ -108,7 +108,7 @@ green: make it pass
 
     variable_00
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block::
 
@@ -142,7 +142,7 @@ refactor: make it better
         src.attribute_error.variable_00
         src.attribute_error.variable_01
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -156,7 +156,7 @@ refactor: make it better
     variable_00 = None
     variable_01
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -180,7 +180,7 @@ refactor: make it better
         src.attribute_error.variable_01
         src.attribute_error.variable_02
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -195,7 +195,7 @@ refactor: make it better
     variable_01 = None
     variable_02 = None
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * one more time
 
@@ -207,7 +207,7 @@ refactor: make it better
         src.attribute_error.variable_02
         src.attribute_error.variable_03
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -241,7 +241,7 @@ I add a new test
   def test_attribute_error_w_functions(self):
       src.attribute_error.function_00()
 
-the terminal shows AttributeError_
+the terminal_ shows AttributeError_
 
 .. code-block:: python
 
@@ -262,7 +262,7 @@ green: make it pass
 
     function_00 = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -304,7 +304,7 @@ refactor: make it better
         src.attribute_error.function_00()
         src.attribute_error.function_01()
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -333,7 +333,7 @@ refactor: make it better
         src.attribute_error.function_01()
         src.attribute_error.function_02()
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -365,7 +365,7 @@ refactor: make it better
         src.attribute_error.function_02()
         src.attribute_error.function_03()
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -411,7 +411,7 @@ red: make it fail
     def test_attribute_error_w_class_attributes(self):
         src.attribute_error.AClass.attribute_00
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ green: make it pass
     def AClass():
         return None
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
 
@@ -458,7 +458,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  and the terminal still shows the same :ref:`Exception<errors>` because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
+  and the terminal_ still shows the same :ref:`Exception<errors>` because I cannot access a variable that belongs to a :ref:`function<functions>` from outside of it
 
 * I change the def_ keyword to the :ref:`class <classes>` keyword
 
@@ -469,7 +469,7 @@ green: make it pass
         attribute_00 = None
         return None
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 
@@ -508,7 +508,7 @@ refactor: make it better
         src.attribute_error.AClass.attribute_00
         src.attribute_error.AClass.attribute_01
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -535,7 +535,7 @@ refactor: make it better
         src.attribute_error.AClass.attribute_01
         src.attribute_error.AClass.attribute_02
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -562,7 +562,7 @@ refactor: make it better
         src.attribute_error.AClass.attribute_02
         src.attribute_error.AClass.attribute_03
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -599,7 +599,7 @@ red: make it fail
     def test_attribute_error_w_class_methods(self):
         src.attribute_error.AClass.method_00()
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
 
@@ -622,7 +622,7 @@ green: make it pass
 
         method_00 = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -655,7 +655,7 @@ refactor: make it better
         src.attribute_error.AClass.method_00()
         src.attribute_error.AClass.method_01()
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -676,7 +676,7 @@ refactor: make it better
         def method_01():
             return None
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * I add another line
 
@@ -687,7 +687,7 @@ refactor: make it better
         src.attribute_error.AClass.method_01()
         src.attribute_error.AClass.method_02()
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:
@@ -723,7 +723,7 @@ refactor: make it better
         src.attribute_error.AClass.method_02()
         src.attribute_error.AClass.method_03()
 
-  the terminal shows AttributeError_
+  the terminal_ shows AttributeError_
 
   .. code-block:: python
     :force:

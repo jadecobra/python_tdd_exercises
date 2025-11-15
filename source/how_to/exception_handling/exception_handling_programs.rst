@@ -39,7 +39,7 @@ test_catching_exceptions_w_messages
         def test_catching_exceptions_w_messages(self):
             src.exceptions.raise_exception()
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -60,7 +60,7 @@ green: make it pass
 
     raise_exception
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -74,7 +74,7 @@ green: make it pass
 
     raise_exception = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -101,7 +101,7 @@ green: make it pass
             with self.assertRaises(Exception):
                 src.exceptions.raise_exception()
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -130,7 +130,7 @@ green: make it pass
             ):
                 src.exceptions.raise_exception()
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -178,7 +178,7 @@ I add a new failing test in ``test_exceptions.py``
                 'failed'
             )
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block::
 
@@ -199,7 +199,7 @@ green: make it pass
 
     an_exception_handler
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -213,7 +213,7 @@ green: make it pass
 
     an_exception_handler = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -228,7 +228,7 @@ green: make it pass
     def an_exception_handler():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -243,7 +243,7 @@ green: make it pass
     def an_exception_handler(argument):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -295,7 +295,7 @@ I add a new test to ``test_exceptions.py``
                 'succeeded'
             )
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -320,7 +320,7 @@ green: make it pass
     def an_exception_handler(argument):
         return 'failed'
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -334,7 +334,7 @@ green: make it pass
 
     does_not_raise_exception = None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block::
 
@@ -355,7 +355,7 @@ green: make it pass
         return argument
         return 'failed'
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -385,7 +385,7 @@ green: make it pass
         return a_function()
         return 'failed'
 
-  - the terminal shows :ref:`TypeError`
+  - the terminal_ shows :ref:`TypeError`
 
     .. code-block:: python
 
@@ -409,7 +409,7 @@ green: make it pass
           return a_function()
           return 'failed'
 
-    the terminal shows :ref:`AssertionError`
+    the terminal_ shows :ref:`AssertionError`
 
     .. code-block:: python
 
@@ -436,7 +436,7 @@ how to use try...except...else
         except Exception:
             return 'failed'
 
-  ``test_catching_failure`` passes, the terminal still shows :ref:`AssertionError` for ``test_catching_success``
+  ``test_catching_failure`` passes, the terminal_ still shows :ref:`AssertionError` for ``test_catching_success``
 
   .. code-block:: python
 
@@ -458,7 +458,7 @@ how to use try...except...else
         else:
             return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -514,7 +514,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  the terminal shows :ref:`Exception<errors>` for ``test_catching_failures``
+  the terminal_ shows :ref:`Exception<errors>` for ``test_catching_failures``
 
   .. code-block:: python
     :force:
@@ -537,7 +537,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  the terminal shows green again! I know :ref:`how to test that an Exception is raised` and :ref:`how to handle Exceptions in programs`. I am a master!!
+  the terminal_ shows green again! I know :ref:`how to test that an Exception is raised` and :ref:`how to handle Exceptions in programs`. I am a master!!
 
 ----
 

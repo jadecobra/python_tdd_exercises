@@ -62,7 +62,7 @@ red: make it fail
         f'{difference_hours:02}:00'
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -159,7 +159,7 @@ green: make it pass
             f'{difference_minutes:02}'
         )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -215,7 +215,7 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
   def test_duration_w_hours_and_minutes(self):
   ...
 
-the terminal shows :ref:`AssertionError` when I add ``test_duration_calculation``
+the terminal_ shows :ref:`AssertionError` when I add ``test_duration_calculation``
 
 .. code-block:: python
 
@@ -240,7 +240,7 @@ green: make it pass
         f'{difference_minutes:02}'
     )
 
-  the terminal shows :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
+  the terminal_ shows :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
 
   .. code-block:: python
 
@@ -257,7 +257,7 @@ green: make it pass
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  the terminal shows :ref:`AssertionError` for ``test_duration_calculation``
+  the terminal_ shows :ref:`AssertionError` for ``test_duration_calculation``
 
   .. code-block:: python
 
@@ -289,7 +289,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
     def test_duration_calculation(self):
     ...
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -309,7 +309,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
     self.assertEqual(150//60, 0)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -340,7 +340,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     def test_duration_calculation(self):
     ...
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -360,7 +360,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(150%60, 0)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -372,7 +372,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(150%60, 30)
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 ----
 
@@ -434,7 +434,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  the terminal shows random successes and random :ref:`AssertionError`
+  the terminal_ shows random successes and random :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -498,7 +498,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         )
     ...
 
-* and remove ``get_hour`` and ``get_minutes``. The terminal shows all tests are still passing!
+* and remove ``get_hour`` and ``get_minutes``. The terminal_ shows all tests are still passing!
 
 *********************************************************************************
 review

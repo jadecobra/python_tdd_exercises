@@ -48,7 +48,7 @@ I make a new file called ``test_classes.py`` in the ``tests`` directory
       def test_making_a_class_w_pass(self):
           self.assertIsInstance(classes.ClassWithPass(), object)
 
-the terminal shows :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
+the terminal_ shows :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 green: make it pass
 #################################################################################
@@ -61,7 +61,7 @@ green: make it pass
     # AssertionError
     # ModuleNotFoundError
 
-* I make Python_ module called ``classes.py`` the terminal shows :ref:`AttributeError` which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
+* I make Python_ module called ``classes.py`` the terminal_ shows :ref:`AttributeError` which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
 
   .. code-block:: python
 
@@ -76,7 +76,7 @@ green: make it pass
 
     ClassWithPass
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>` because ``ClassWithPass`` is not defined anywhere
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>` because ``ClassWithPass`` is not defined anywhere
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
 
@@ -100,7 +100,7 @@ green: make it pass
 
     class ClassWithPass:
 
-  the terminal shows IndentationError_ because I declared a class without adding any indented text
+  the terminal_ shows IndentationError_ because I declared a class without adding any indented text
 * I add the new error to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
 
   .. code-block:: python
@@ -150,7 +150,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
   def test_making_a_class_w_parentheses(self):
       self.assertIsInstance(classes.ClassWithParentheses(), object)
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -176,7 +176,7 @@ green: make it pass
 
         pass
 
-  the terminal shows all tests are still passing.
+  the terminal_ shows all tests are still passing.
 
 * I can confidently say that in Python_
 
@@ -207,7 +207,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
   def test_making_a_class_w_object(self):
       self.assertIsInstance(classes.ClassWithObject(), object)
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -222,7 +222,7 @@ green: make it pass
 
         pass
 
-  the terminal shows all tests passed
+  the terminal_ shows all tests passed
 
 * then I change the definition to explicitly state the parent :ref:`object<classes>`
 
@@ -233,7 +233,7 @@ green: make it pass
 
         pass
 
-  and the terminal still shows passing tests
+  and the terminal_ still shows passing tests
 
 *********************************************************************************
 test_update_classy_person_year_of_birth
@@ -252,7 +252,7 @@ red: make it fail
     def test_making_a_class_w_attributes(self):
         self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -263,7 +263,7 @@ red: make it fail
 
         pass
 
-  the terminal shows :ref:`AttributeError` for a missing attribute in the newly defined class
+  the terminal_ shows :ref:`AttributeError` for a missing attribute in the newly defined class
 
 green: make it pass
 #################################################################################
@@ -277,7 +277,7 @@ green: make it pass
 
         a_boolean
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 * after I point the name to :ref:`None`
 
@@ -288,7 +288,7 @@ green: make it pass
 
         a_boolean = None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
 * I redefine the attribute to make the test pass
 
@@ -299,7 +299,7 @@ green: make it pass
 
         a_boolean = bool
 
-  the terminal shows all tests passed
+  the terminal_ shows all tests passed
 
 refactor: make it better
 #################################################################################
@@ -321,7 +321,7 @@ Let us add more tests with the other Python_ data structures to ``test_making_a_
       self.assertEqual(classes.ClassWithAttributes.a_set, set)
       self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 ---------------------------------------------------------------------------------
@@ -342,7 +342,7 @@ I add matching attributes to ``ClassWithAttributes`` to make the tests pass
       a_set = set
       a_dictionary = dict
 
-the terminal shows all tests pass
+the terminal_ shows all tests pass
 
 ----
 
@@ -365,7 +365,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
           'You called MethodA'
       )
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -380,7 +380,7 @@ green: make it pass
 
         pass
 
-  the terminal now gives :ref:`AttributeError` with a different error
+  the terminal_ now gives :ref:`AttributeError` with a different error
 
 
 * When I add the missing attribute to the ``ClassWithMethods`` class
@@ -392,7 +392,7 @@ green: make it pass
 
         method_a
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>` because there is no definition for ``method_a``
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>` because there is no definition for ``method_a``
 
 
 * I define ``method_a`` as an attribute by pointing it to :ref:`None`
@@ -404,7 +404,7 @@ green: make it pass
 
         method_a = None
 
-  the terminal shows :ref:`TypeError` since ``method_a`` is :ref:`None` which is not callable
+  the terminal_ shows :ref:`TypeError` since ``method_a`` is :ref:`None` which is not callable
 
 * I change the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
 
@@ -416,7 +416,7 @@ green: make it pass
         def method_a():
             return None
 
-  the terminal shows :ref:`AssertionError`. Progress!
+  the terminal_ shows :ref:`AssertionError`. Progress!
 
 * I then change the value that ``method_a`` returns to match the expectation of the test
 
@@ -452,7 +452,7 @@ refactor: make it better
             'You called MethodD'
         )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
 * and I change each :ref:`assertion<AssertionError>` to the right value until they all pass
 
@@ -482,7 +482,7 @@ I add another test for a class that has both attributes and methods
           'you called a method'
       )
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -523,12 +523,12 @@ I add a test to ``test_classes.py``
         []
     )
 
-the terminal shows :ref:`AssertionError` as the expected and real values do not match
+the terminal_ shows :ref:`AssertionError` as the expected and real values do not match
 
 green: make it pass
 #################################################################################
 
-I copy the values from the terminal to change the expectation of the test
+I copy the values from the terminal_ to change the expectation of the test
 
 .. code-block:: python
 
@@ -588,7 +588,7 @@ I add a failing test to ``test_classes.py``
   def test_making_a_class_w_initializers(self):
       self.assertEqual(classes.Boy().sex, 'M')
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 *********************************************************************************
 green: make it pass
@@ -603,7 +603,7 @@ green: make it pass
 
         pass
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
 * I make the ``Boy`` class with an attribute called ``sex``
 
@@ -614,7 +614,7 @@ green: make it pass
 
         sex
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 
 * I add a definition for the ``sex`` attribute
@@ -640,7 +640,7 @@ refactor: make it better
         self.assertEqual(classes.Boy().sex, 'M')
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
 * I try the same solution I used for the ``Boy`` class then add a definition for the ``Girl`` class to ``classes.py``
 
@@ -651,7 +651,7 @@ refactor: make it better
 
         sex = 'M'
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -673,7 +673,7 @@ refactor: make it better
         def __init__(self):
             pass
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -697,7 +697,7 @@ refactor: make it better
         self.assertEqual(classes.Girl(sex='F').sex, 'F')
         self.assertEqual(classes.Other(sex='?').sex, '?')
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
 * I add a class definition to ``classes.py``
 
@@ -731,7 +731,7 @@ refactor: make it better
         def __init__(self, sex=None):
             pass
 
-  the terminal shows all tests still passing and I have now written the same thing 3 times. Earlier on I mentioned inheritance, and will now try to use it to remove this duplication so `I do not repeat myself`_
+  the terminal_ shows all tests still passing and I have now written the same thing 3 times. Earlier on I mentioned inheritance, and will now try to use it to remove this duplication so `I do not repeat myself`_
 
 * I add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :ref:`method<functions>` of the classes I am trying to abstract
 
@@ -745,7 +745,7 @@ refactor: make it better
         def __init__(self, sex='M'):
             pass
 
-  the terminal still shows passing tests
+  the terminal_ still shows passing tests
 
 * I change the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
 
@@ -782,7 +782,7 @@ refactor: make it better
         def __init__(self):
             pass
 
-* I remove the ``sex`` attribute the terminal shows :ref:`AssertionError`
+* I remove the ``sex`` attribute the terminal_ shows :ref:`AssertionError`
 * I make the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python
@@ -795,7 +795,7 @@ refactor: make it better
         def __init__(self, sex='M'):
             self.sex = sex
 
-  the terminal still shows :ref:`AssertionError`
+  the terminal_ still shows :ref:`AssertionError`
 
 * when I remove the ``__init__`` :ref:`method<functions>` from the ``Girl`` class
 

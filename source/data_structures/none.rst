@@ -22,7 +22,7 @@ None_ is used when there is no value. It is the simplest :ref:`data structure<da
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``none`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``none`` as the name of the project
 
   .. code-block:: python
 
@@ -34,7 +34,7 @@ requirements
 
       ./makePythonTdd.ps1 none
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -77,7 +77,7 @@ red: make it fail
         def test_what_is_none(self):
             self.assertIsNotNone(None)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -137,7 +137,7 @@ I add another failing test to see if None_ is a :ref:`boolean<booleans>`
 
   # NOTES
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -178,7 +178,7 @@ refactor: make it better
             self.assertIsNotNone(False)
             self.assertIsNone(True)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -214,7 +214,7 @@ refactor: make it better
             self.assertIsNotNone(True)
             self.assertNotIsInstance(False, bool)
 
-  assertNotIsInstance_ checks if the first item (:ref:`False<test_what_is_false>`) it is given is NOT a child/instance of the second item (the :ref:`bool<booleans>` :ref:`class<classes>`). It is like asking the question ``is False NOT a child of the bool class?``. bool_ is the :ref:`class<classes>` for :ref:`booleans<booleans>`. The terminal shows :ref:`AssertionError`
+  assertNotIsInstance_ checks if the first item (:ref:`False<test_what_is_false>`) it is given is NOT a child/instance of the second item (the :ref:`bool<booleans>` :ref:`class<classes>`). It is like asking the question ``is False NOT a child of the bool class?``. bool_ is the :ref:`class<classes>` for :ref:`booleans<booleans>`. The terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -241,7 +241,7 @@ refactor: make it better
             self.assertIsInstance(False, bool)
             self.assertNotIsInstance(True, bool)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -268,7 +268,7 @@ refactor: make it better
             self.assertIsInstance(True, bool)
             self.assertIsInstance(None, bool)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -324,7 +324,7 @@ I add a test to see if None_ is an integer_ (a whole number)
       def test_is_none_an_integer(self):
           self.assertIsNone(-1)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -355,7 +355,7 @@ refactor: make it better
             self.assertIsNotNone(-1)
             self.assertIsNone(0)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -380,7 +380,7 @@ refactor: make it better
             self.assertIsNotNone(0)
             self.assertIsNone(1)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -405,7 +405,7 @@ refactor: make it better
             self.assertIsNotNone(1)
             self.assertNotIsInstance(-1, int)
 
-  int_ is the :ref:`class<classes>` for integers_, the terminal shows :ref:`AssertionError`
+  int_ is the :ref:`class<classes>` for integers_, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -432,7 +432,7 @@ refactor: make it better
             self.assertIsInstance(-1, int)
             self.assertNotIsInstance(0, int)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -459,7 +459,7 @@ refactor: make it better
             self.assertIsInstance(0, int)
             self.assertNotIsInstance(1, int)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -486,7 +486,7 @@ refactor: make it better
             self.assertIsInstance(1, int)
             self.assertIsInstance(None, int)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -546,7 +546,7 @@ I add a test to see if None_ is a float_ (floating point decimal number)
 
   # NOTES
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -577,7 +577,7 @@ refactor: make it better
             self.assertIsNotNone(-0.1)
             self.assertIsNone(0.0)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -602,7 +602,7 @@ refactor: make it better
             self.assertIsNotNone(0.0)
             self.assertIsNone(0.1)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -627,7 +627,7 @@ refactor: make it better
             self.assertIsNotNone(0.1)
             self.assertNotIsInstance(-0.1, float)
 
-  float_ is the :ref:`class<classes>` for floating point numbers. The terminal shows :ref:`AssertionError`
+  float_ is the :ref:`class<classes>` for floating point numbers. The terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -654,7 +654,7 @@ refactor: make it better
             self.assertIsInstance(-0.1, float)
             self.assertNotIsInstance(0.0, float)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -681,7 +681,7 @@ refactor: make it better
             self.assertIsInstance(0.0, float)
             self.assertNotIsInstance(0.1, float)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -708,7 +708,7 @@ refactor: make it better
             self.assertIsInstance(0.1, float)
             self.assertIsInstance(None, float)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -769,7 +769,7 @@ I add a test to see if None_ is a string_ (anything in :ref:`quotes`)
 
   # NOTES
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -802,7 +802,7 @@ refactor: make it better
             self.assertIsNotNone('')
             self.assertIsNone("text")
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -827,7 +827,7 @@ refactor: make it better
             self.assertIsNotNone("text")
             self.assertNotIsInstance('', str)
 
-  str_ is the :ref:`class<classes>` for strings_. The terminal shows :ref:`AssertionError`
+  str_ is the :ref:`class<classes>` for strings_. The terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -854,7 +854,7 @@ refactor: make it better
             self.assertIsInstance('', str)
             self.assertNotIsInstance("text", str)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -888,7 +888,7 @@ refactor: make it better
             self.assertIsInstance("text", str)
             self.assertIsInstance(None, str)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -948,7 +948,7 @@ I add a test to see if None_ is a tuple_ (anything in parentheses ``()``)
 
   # NOTES
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -979,7 +979,7 @@ refactor: make it better
             self.assertIsNotNone(())
             self.assertIsNone((1, 2, 3, 'n'))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1004,7 +1004,7 @@ refactor: make it better
             self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertNotIsInstance((), tuple)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1031,7 +1031,7 @@ refactor: make it better
             self.assertIsInstance((), tuple)
             self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1058,7 +1058,7 @@ refactor: make it better
             self.assertIsInstance((1, 2, 3, 'n'), tuple)
             self.assertIsInstance(None, tuple)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1121,7 +1121,7 @@ I add a new test for :ref:`lists`
 
   # NOTES
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1152,7 +1152,7 @@ refactor: make it better
             self.assertIsNotNone([])
             self.assertIsNone([1, 2, 3, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1177,7 +1177,7 @@ refactor: make it better
             self.assertIsNotNone([1, 2, 3, 'n'])
             self.assertNotIsInstance([], list)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1204,7 +1204,7 @@ refactor: make it better
             self.assertIsInstance([], list)
             self.assertNotIsInstance([1, 2, 3, 'n'], list)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1231,7 +1231,7 @@ refactor: make it better
         self.assertIsInstance([1, 2, 3, 'n'], list)
         self.assertIsInstance(None, list)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1288,7 +1288,7 @@ I want to see if None_ is a set_
       def test_is_none_a_set(self):
           self.assertIsNone(set())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1319,7 +1319,7 @@ refactor: make it better
             self.assertIsNotNone(set())
             self.assertIsNone({1, 2, 3, 'n'})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1344,7 +1344,7 @@ refactor: make it better
             self.assertIsNotNone({1, 2, 3, 'n'})
             self.assertNotIsInstance({1, 2, 3, 'n'}, set)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1369,7 +1369,7 @@ refactor: make it better
             self.assertIsInstance({1, 2, 3, 'n'}, set)
             self.assertIsInstance(None, set)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1431,7 +1431,7 @@ One last test to see if None_ is a :ref:`dictionary<dictionaries>`
 
   # NOTES
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1464,7 +1464,7 @@ refactor: make it better
             self.assertIsNotNone(dict())
             self.assertIsNone({'key': 'value'})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1489,7 +1489,7 @@ refactor: make it better
             self.assertIsNotNone({'key': 'value'})
             self.assertNotIsInstance({}, dict)
 
-  :ref:`dict<dictionaries>` is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal shows :ref:`AssertionError`
+  :ref:`dict<dictionaries>` is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1516,7 +1516,7 @@ refactor: make it better
             self.assertIsInstance({}, dict)
             self.assertNotIsInstance({'key': 'value'}, dict)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1542,7 +1542,7 @@ refactor: make it better
 
             self.assertIsInstance(None, dict)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 

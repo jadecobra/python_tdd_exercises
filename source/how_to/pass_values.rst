@@ -20,7 +20,7 @@ I want to test passing values to programs. When testing, I want to be able to se
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``telephone`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``telephone`` as the name of the project
 
   .. code-block:: python
 
@@ -32,7 +32,7 @@ requirements
 
       ./makePythonTdd.ps1 telephone
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -81,7 +81,7 @@ red: make it fail
                 "I received: hello"
             )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -116,7 +116,7 @@ green: make it pass
 
         ...
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -140,7 +140,7 @@ green: make it pass
 
     text
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -153,7 +153,7 @@ green: make it pass
 
     text = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -179,7 +179,7 @@ green: make it pass
     def text():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -196,13 +196,13 @@ green: make it pass
     def text(value):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != 'I received: hello'
 
-* when I copy the string_ from the terminal and paste it in the `return statement`_ to replace :ref:`None`
+* when I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None`
 
   .. code-block:: python
     :linenos:
@@ -241,7 +241,7 @@ I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string`` in ``t
   # Exceptions Encountered
   ...
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -259,7 +259,7 @@ green: make it pass
     def text(value):
         return 'I received: yes'
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -322,7 +322,7 @@ I add a failing test for a :ref:`class <classes>` in ``test_telephone.py``
   # Exceptions Encountered
   ...
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -366,7 +366,7 @@ I add another :ref:`assertion<AssertionError>` with the ``TestTelephone`` :ref:`
               "I received: <class 'object'>"
           )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -419,7 +419,7 @@ I add a new failing test for :ref:`None` in ``test_telephone.py``
               "I received: 'None'"
           )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -469,7 +469,7 @@ I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>`
               "I received: 'True'"
           )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -508,7 +508,7 @@ green: make it pass
                 "I received: 'False'"
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -561,7 +561,7 @@ I add a test for an integer_ (a whole number)
               "I received: '1234'"
           )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -609,7 +609,7 @@ I add a test for a float_ (floating point decimal numbers)
               "I received: '1.234'"
           )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -657,7 +657,7 @@ I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
               "I received: '(1, 2, 3, n)'"
           )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -705,7 +705,7 @@ I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), sepa
               "I received: '[1, 2, 3, n]'"
           )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -756,7 +756,7 @@ I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly br
               "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
           )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -784,7 +784,7 @@ I change the expectation
   # Exceptions Encountered
   ...
 
-the terminal shows all tests are passing.
+the terminal_ shows all tests are passing.
 
 ----
 
@@ -798,7 +798,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_telephone.py``
-* then delete all the text in ``telephone.py``, the terminal shows :ref:`AttributeError`
+* then delete all the text in ``telephone.py``, the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -814,7 +814,7 @@ green: make it pass
 
     text
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -827,7 +827,7 @@ green: make it pass
 
     text = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -841,7 +841,7 @@ green: make it pass
     def text():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -856,13 +856,13 @@ green: make it pass
     def text(argument):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: None != 'I received: None'
 
-* I copy the string_ from the terminal and paste it in the `return statement`_ to match the expectation of the test
+* I copy the string_ from the terminal_ and paste it in the `return statement`_ to match the expectation of the test
 
   .. code-block:: python
     :linenos:
@@ -871,7 +871,7 @@ green: make it pass
     def text(argument):
         return 'I received: None'
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 

@@ -22,7 +22,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module from an `import
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
 
   .. code-block:: python
 
@@ -34,7 +34,7 @@ requirements
 
       ./makePythonTdd.ps1 module_not_found_error
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -80,7 +80,7 @@ red: make it fail
         def test_module_not_found_error(self):
             import src.module_00
 
-  the terminal shows ModuleNotFoundError_
+  the terminal_ shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -115,7 +115,7 @@ refactor: make it better
             import src.module_00
             import src.module_01
 
-  the terminal shows ModuleNotFoundError_
+  the terminal_ shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -133,13 +133,13 @@ refactor: make it better
             import src.module_01
             import src.module_02
 
-  the terminal shows ModuleNotFoundError_
+  the terminal_ shows ModuleNotFoundError_
 
   .. code-block:: python
 
     ModuleNotFoundError: No module called 'src.module_02'
 
-  I add ``module_02.py`` to the ``src`` folder and the terminal shows green again
+  I add ``module_02.py`` to the ``src`` folder and the terminal_ shows green again
 * one last failing `import statement`_ for practice
 
   .. code-block:: python
@@ -152,7 +152,7 @@ refactor: make it better
             import src.module_02
             import src.module_03
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: python
 

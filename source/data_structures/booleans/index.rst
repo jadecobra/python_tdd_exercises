@@ -22,7 +22,7 @@ There are 2 booleans_ - True_ and False_
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``booleans`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``booleans`` as the name of the project
 
   .. code-block:: python
 
@@ -34,7 +34,7 @@ requirements
 
       ./makePythonTdd.ps1 booleans
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -80,7 +80,7 @@ red: make it fail
         def test_what_is_false(self):
             self.assertNotIsInstance(False, bool)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -127,7 +127,7 @@ I add another test
   def test_what_is_true(self):
       self.assertNotIsInstance(True, bool)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: shell
 
@@ -165,7 +165,7 @@ refactor: make it better
         self.assertIsInstance(True, bool)
         self.assertTrue(False)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -218,7 +218,7 @@ refactor: make it better
         self.assertFalse(False)
         self.assertFalse(True)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -298,7 +298,7 @@ I add a line
       self.assertTrue(True)
       self.assertTrue(None)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -364,7 +364,7 @@ I add another line
       self.assertFalse(None)
       self.assertFalse(-1)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -401,7 +401,7 @@ refactor: make it better
         self.assertTrue(-1)
         self.assertTrue(0)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -430,7 +430,7 @@ refactor: make it better
         self.assertFalse(0)
         self.assertFalse(1)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -490,7 +490,7 @@ I add a line to test
       self.assertFalse(0)
       self.assertFalse(-0.1)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -525,7 +525,7 @@ refactor: make it better
         self.assertTrue(-0.1)
         self.assertTrue(0.0)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -554,7 +554,7 @@ refactor: make it better
         self.assertFalse(0.0)
         self.assertFalse(0.1)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -633,7 +633,7 @@ I add a line to test
       self.assertTrue(0.1)
       self.assertTrue(str())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -672,7 +672,7 @@ refactor: make it better
         self.assertFalse(str())
         self.assertFalse('text')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -736,7 +736,7 @@ I add a line to see
       self.assertTrue('text')
       self.assertTrue(tuple())
 
-The terminal shows :ref:`AssertionError`
+The terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -773,7 +773,7 @@ refactor: make it better
         self.assertFalse(tuple())
         self.assertFalse((1, 2, 3, 'n'))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -840,7 +840,7 @@ I add a line
       self.assertTrue((1, 2, 3, 'n'))
       self.assertTrue(list())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -877,7 +877,7 @@ refactor: make it better
         self.assertFalse(list())
         self.assertFalse([1, 2, 3, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -947,7 +947,7 @@ I add a line to test
       self.assertTrue([1, 2, 3, 'n'])
       self.assertTrue(set())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -984,7 +984,7 @@ refactor: make it better
         self.assertFalse(set())
         self.assertFalse({1, 2, 3, 'n'})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1057,7 +1057,7 @@ I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_
       self.assertTrue({1, 2, 3, 'n'})
       self.assertTrue(dict())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1110,7 +1110,7 @@ refactor: make it better
         self.assertFalse(dict())
         self.assertFalse({'key': 'value'})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 

@@ -31,7 +31,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_truth_table.py``
-* then delete all the tests in ``truth_table.py`` the terminal shows 20 failures, I start with the last one
+* then delete all the tests in ``truth_table.py`` the terminal_ shows 20 failures, I start with the last one
 
   .. code-block:: python
 
@@ -47,7 +47,7 @@ green: make it pass
 
     tautology
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -59,7 +59,7 @@ green: make it pass
 
     tautology = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -72,7 +72,7 @@ green: make it pass
     def tautology():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -85,7 +85,7 @@ green: make it pass
     def tautology(x, y):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -98,7 +98,7 @@ green: make it pass
     def tautology(x, y):
         return True
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -111,7 +111,7 @@ green: make it pass
     def project_second(x, y):
         return True
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -124,7 +124,7 @@ green: make it pass
     def project_second(x, y):
         return False
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -137,7 +137,7 @@ green: make it pass
     def project_second(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -150,7 +150,7 @@ green: make it pass
     def project_second(x, y):
         return y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -163,7 +163,7 @@ green: make it pass
     def project_first(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -176,7 +176,7 @@ green: make it pass
     def project_first(x, y):
         return x
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -189,7 +189,7 @@ green: make it pass
     def negate_second(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -203,7 +203,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -218,7 +218,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -231,7 +231,7 @@ green: make it pass
     def negate_first(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -245,7 +245,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -260,7 +260,7 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -273,7 +273,7 @@ green: make it pass
     def material_non_implication(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -287,7 +287,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -302,7 +302,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -318,7 +318,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -331,7 +331,7 @@ green: make it pass
     def material_implication(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -345,7 +345,7 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -358,7 +358,7 @@ green: make it pass
     def logical_nor(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -372,7 +372,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -387,7 +387,7 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -403,7 +403,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -417,7 +417,7 @@ green: make it pass
     def logical_nand(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -431,7 +431,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -444,7 +444,7 @@ green: make it pass
     def logical_equality(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -458,7 +458,7 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -473,7 +473,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -487,7 +487,7 @@ green: make it pass
     def logical_disjunction(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -501,7 +501,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -515,7 +515,7 @@ green: make it pass
     def logical_conjunction(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -529,7 +529,7 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -544,7 +544,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -560,7 +560,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -573,7 +573,7 @@ green: make it pass
     def exclusive_disjunction(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -587,7 +587,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -602,7 +602,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -616,7 +616,7 @@ green: make it pass
     def converse_non_implication(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -630,7 +630,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -645,7 +645,7 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -661,7 +661,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -675,7 +675,7 @@ green: make it pass
     def converse_implication(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -689,7 +689,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -702,7 +702,7 @@ green: make it pass
     def contradiction(x, y):
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -716,7 +716,7 @@ green: make it pass
         if (x, y) == (True, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -731,7 +731,7 @@ green: make it pass
         if (x, y) == (True, False): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -747,7 +747,7 @@ green: make it pass
         if (x, y) == (False, True): return False
         return x, y
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -764,7 +764,7 @@ green: make it pass
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -778,7 +778,7 @@ green: make it pass
     def logical_negation(x, y):
         return x, y
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -791,7 +791,7 @@ green: make it pass
     def logical_negation(x):
         return x
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -804,7 +804,7 @@ green: make it pass
     def logical_negation(x):
         return not x
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -818,7 +818,7 @@ green: make it pass
     def logical_identity(x):
         return not x
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -831,7 +831,7 @@ green: make it pass
     def logical_identity(x):
         return x
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -845,7 +845,7 @@ green: make it pass
     def logical_true(x):
         return x
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -858,7 +858,7 @@ green: make it pass
     def logical_true():
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -871,7 +871,7 @@ green: make it pass
     def logical_true():
         return True
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -885,7 +885,7 @@ green: make it pass
     def logical_false():
         return False
 
-  the terminal shows green!
+  the terminal_ shows green!
 
 refactor: make it better
 #################################################################################
@@ -940,7 +940,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         if (x, y) == (False, False): return False
         return x, y
 
-  the terminal still shows green and I remove the other lines
+  the terminal_ still shows green and I remove the other lines
 
   .. code-block:: python
 
@@ -1005,7 +1005,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
     def logical_equality(x, y):
         return (x, y) != (True, False) and (x, y) != (False, True)
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 * :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`
 
@@ -1107,7 +1107,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
     def material_non_implication(x, y):
         return x and not y
 
-  the terminal shows all tests are still passing
+  the terminal_ shows all tests are still passing
 
 * I try it with :ref:`material_implication<test_material_implication>`
 
@@ -1117,7 +1117,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         return not x and y
         return (x, y) != (True, False)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1147,7 +1147,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         return not x not or not y
         return not x and not y
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 
@@ -1162,7 +1162,7 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         # return not x not or not y
         return not x and not y
 
-  the terminal still shows green. I remove the other statements
+  the terminal_ still shows green. I remove the other statements
 
   .. code-block:: python
 

@@ -43,13 +43,13 @@ linux/Windows Subsystem Linux requirements
 
 .. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_
 
-Open a terminal then type this to update the Linux_ package manager
+Open a terminal_ then type this to update the Linux_ package manager
 
 .. code-block:: shell
 
   sudo apt update
 
-type this in the terminal to install Python_
+type this in the terminal_ to install Python_
 
 .. code-block:: shell
 
@@ -61,7 +61,7 @@ type this in the terminal to install Python_
 how to manually make a python test driven development environment v1
 ********************************************************************************************
 
-* Imagine I have to work on a project and its name is ``magic``. I open a terminal in the `Integrated Development Environment (IDE)`_ and use mkdir_
+* Imagine I have to work on a project and its name is ``magic``. I open a terminal_ in the `Integrated Development Environment (IDE)`_ and use mkdir_
 
   .. code-block:: shell
 
@@ -190,13 +190,13 @@ red: make it fail
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time
-* I type this in the terminal to run the test
+* I type this in the terminal_ to run the test
 
   .. code-block:: python
 
     python3 -m unittest
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -217,7 +217,7 @@ red: make it fail
 
 If you are typing along, *CONGRATULATIONS!* You just wrote a test.
 
-This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal is about the failure, I like to read these from the bottom up, here is an explanation of each line
+This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line
 
 * ``FAILED (failures=1)`` the number of failures
 * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
@@ -226,7 +226,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above it that it thinks caused the :ref:`error<errors>`
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the failure and the location of the file where it is
 
-  .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
+  .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
 
 * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
@@ -270,13 +270,13 @@ I change the input on line 7 from :ref:`True<test_what_is_true>` to :ref:`False<
 
   self.assertFalse(False)
 
-then I run the test again in the terminal
+then I run the test again in the terminal_
 
 .. code-block:: python
 
   python3 -m unittest
 
-and the test passes! The terminal shows
+and the test passes! The terminal_ shows
 
 .. code-block:: none
 
@@ -324,7 +324,7 @@ how to make a virtual environment v1
 
     source .venv/bin/activate
 
-  .. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
+  .. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
 
     .. code-block:: shell
 
@@ -347,7 +347,7 @@ how to make a virtual environment v1
 
     pip list
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -386,7 +386,7 @@ how to make a virtual environment v1
 
     pip list
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -418,7 +418,7 @@ how to make a virtual environment v1
     │   └── test_magic.py
     └── requirements.txt
 
-* I run the tests from the terminal
+* I run the tests from the terminal_
 
   .. code-block:: shell
 
@@ -438,7 +438,7 @@ how to make a virtual environment v1
 
     =============== 1 passed in X.YZs =======================
 
-* when I change the input on line 7 in ``test_magic.py`` from :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>`, the terminal shows :ref:`AssertionError`
+* when I change the input on line 7 in ``test_magic.py`` from :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>`, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -458,14 +458,14 @@ how to make a virtual environment v1
 
   I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py`` to make it pass. I can now write the rest of the code for the project while the tests run automatically
 
-  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
+  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal_ when you want to stop the tests
 
 ----
 
 how to deactivate a virtual environment v1
 #################################################################################################
 
-When I want to leave a `virtual environment`_, I type this in the terminal to deactivate it
+When I want to leave a `virtual environment`_, I type this in the terminal_ to deactivate it
 
 .. code-block::
 
@@ -476,13 +476,13 @@ When I want to leave a `virtual environment`_, I type this in the terminal to de
 how to activate a virtual environment v1
 ############################################################################################
 
-When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal
+When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal_
 
 .. code-block:: shell
 
   source .venv/bin/activate
 
-.. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
+.. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
 
   .. code-block:: shell
 
@@ -496,7 +496,7 @@ how to automatically make a python test driven development environment
 
 You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
-* I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
+* I exit the tests in the terminal_ by pressing ``ctrl`` + ``c`` on the keyboard
 * I leave the `virtual environment`_
 
   .. code-block:: shell
@@ -521,7 +521,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     history
 
-  the history_ program shows all the commands I have typed in the terminal so far, and I use them to write the program
+  the history_ program shows all the commands I have typed in the terminal_ so far, and I use them to write the program
 
 * I click on ``makePythonTdd.sh`` to open it in the `Integrated Development Environment (IDE)`_, then type the commands I need to make a `Test Driven Development`_ Environment in the editor
 
@@ -587,7 +587,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     :linenos:
     :emphasize-lines: 10-21
 
-* I type this in the terminal to make sure the program I just wrote can run
+* I type this in the terminal_ to make sure the program I just wrote can run
 
   .. code-block:: shell
 
@@ -595,13 +595,13 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   chmod_ is a program that changes the mode of the given file
 
-* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved
+* I can make a `Test Driven Development`_ environment when I call the program with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_ in the folder where ``makePythonTdd.sh`` is saved
 
   .. code-block:: shell
 
     ./makePythonTdd.sh calculator
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: python
 

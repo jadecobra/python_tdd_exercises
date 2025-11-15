@@ -42,7 +42,7 @@ Here are a few things I would do if I were in your shoes to make the process mor
 
 * type out the code portions of a chapter without copying and pasting
 * at the end of a chapter, delete the tests and try to write them from memory or use the solution as a guide
-* close the tests at the end of a chapter, delete the solution and try to write one with the terminal response as a guide
+* close the tests at the end of a chapter, delete the solution and try to write one with the terminal_ response as a guide
 * try to write solutions using the tests from the `catalog of tests <https://www.pumpingpython.com/catalog_of_tests.html>`_ as a guide
 * try adding tests for any ideas I get as I go through a chapter, the sooner you start writing tests the better since it requires a different way of thinking
 * I would not quit until I get to the end of a chapter, especially when it is hard, this is part of the experience when learning to solve problems, things get harder before they are easier because there is a lot of failure. I can always walk away to go do something different for a while, then come back and try again. If you take one small step at a time you eventually get where you want to go

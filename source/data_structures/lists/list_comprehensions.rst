@@ -23,7 +23,7 @@ lists: list comprehensions
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``list_comprehensions`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``list_comprehensions`` as the name of the project
 
   .. code-block:: python
 
@@ -35,7 +35,7 @@ requirements
 
       ./makePythonTdd.ps1 list_comprehensions
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -88,7 +88,7 @@ I change ``test_failure``
 
         self.assertEqual(a_list, [])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -102,7 +102,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the expectation to match the values in the terminal
+I change the expectation to match the values in the terminal_
 
 .. code-block:: python
 
@@ -120,7 +120,7 @@ refactor: make it better
     self.assertEqual(a_list, [0, 1, 2, 3])
     self.assertEqual(a_list, list())
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -144,7 +144,7 @@ refactor: make it better
         [0, 1, 2, 3]
     )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -167,7 +167,7 @@ refactor: make it better
     import src.list_comprehensions
     import unittest
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -190,7 +190,7 @@ refactor: make it better
     def a_for_loop():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -204,7 +204,7 @@ refactor: make it better
     def a_for_loop(a_container):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ refactor: make it better
 
     iterable = range(0, 5)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -247,7 +247,7 @@ refactor: make it better
 
     iterable = range(0, random.randint(2, 1000))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -274,7 +274,7 @@ refactor: make it better
         a_list
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -316,7 +316,7 @@ I add a new test
       iterable = range(0, random.randint(2, 1000))
       self.assertIsNone(a_list.extend())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -331,7 +331,7 @@ I add the iterable_
 
   self.assertIsNone(a_list.extend(iterable))
 
-the terminal shows green again
+the terminal_ shows green again
 
 refactor: make it better
 #################################################################################
@@ -343,7 +343,7 @@ refactor: make it better
     self.assertIsNone(a_list.extend(iterable))
     self.assertEqual(a_list, list())
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -381,7 +381,7 @@ refactor: make it better
             self.assertIsNone(self.a_list.extend(self.iterable))
             self.assertEqual(self.a_list, list(self.iterable))
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 ----
 
@@ -407,7 +407,7 @@ I add a failing test
           []
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -443,7 +443,7 @@ refactor: make it better
         [item for item in self.iterable]
     )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -513,7 +513,7 @@ I add a failing test
           list(self.iterable)
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -534,7 +534,7 @@ How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ wit
       [item for item in self.iterable]
   )
 
-the terminal still shows :ref:`AssertionError`
+the terminal_ still shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -567,7 +567,7 @@ refactor: make it better
         [item for item in self.iterable if item % 2 == 0]
     )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -597,7 +597,7 @@ refactor: make it better
             if item % 3 == 0:
                 even_numbers.append(item)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -613,7 +613,7 @@ refactor: make it better
         [item for item in self.iterable if item % 3 == 0]
     )
 
-  the terminal shows green. I change the condition in the `list comprehension`_ of the second :ref:`assertion<AssertionError>`
+  the terminal_ shows green. I change the condition in the `list comprehension`_ of the second :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -623,7 +623,7 @@ refactor: make it better
         [item for item in self.iterable if item % 3 == 0]
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -661,7 +661,7 @@ refactor: make it better
             if condition(item):
                 even_numbers.append(item)
 
-  the terminal still shows green. I remove the commented line and do the same thing in the first :ref:`assertion<AssertionError>`
+  the terminal_ still shows green. I remove the commented line and do the same thing in the first :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -687,7 +687,7 @@ refactor: make it better
         [item for item in self.iterable if condition(item)]
     )
 
-  the terminal still shows green. I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``. I change the condition in the :ref:`function<functions>`
+  the terminal_ still shows green. I do NOT recommend using ``condition`` as a name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``. I change the condition in the :ref:`function<functions>`
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -695,7 +695,7 @@ refactor: make it better
     def condition(number):
         return number % 2 == 0
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -746,7 +746,7 @@ refactor: make it better
         [item for item in self.iterable]
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -774,7 +774,7 @@ refactor: make it better
         [item for item in self.iterable if not condition(item)]
     )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -822,7 +822,7 @@ refactor: make it better
         return [number for number in numbers if not is_even(number)]
         return [number for number in numbers if number % 2 != 0]
 
-  the terminal still shows green, I remove the second `return statement`_
+  the terminal_ still shows green, I remove the second `return statement`_
 
 ----
 
@@ -850,7 +850,7 @@ I add a test to show I can do other operations in a `list comprehension`_ not ju
           [item for item in self.iterable]
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -886,7 +886,7 @@ refactor: make it better
         [item*item for item in self.iterable]
     )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -940,7 +940,7 @@ refactor: make it better
             [process(item) for item in self.iterable]
         )
 
-  the terminal still shows green. I remove the commented lines. I do NOT recommend using ``process`` as a name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
+  the terminal_ still shows green. I remove the commented lines. I do NOT recommend using ``process`` as a name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
 
 ----
 
@@ -973,7 +973,7 @@ I add a failing test
           [item for item in self.iterable]
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -992,7 +992,7 @@ I add a call to ``condition``
         [item for item in self.iterable if condition(item)]
     )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1022,7 +1022,7 @@ I add another :ref:`assertion<AssertionError>`
       [item for item in self.iterable]
   )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1037,7 +1037,7 @@ I add a call to ``condition``
       [item for item in self.iterable if not condition(item)]
   )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 

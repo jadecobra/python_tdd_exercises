@@ -41,7 +41,7 @@ I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_tru
   def test_negate_first(self):
       self.assertFalse(src.truth_table.negate_first(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -85,7 +85,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.negate_first(True, False))
         self.assertTrue(src.truth_table.negate_first(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.negate_first(False, True))
         self.assertTrue(src.truth_table.negate_first(False, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -208,7 +208,7 @@ I add a new test
   def test_logical_nand(self):
       self.assertFalse(src.truth_table.logical_nand(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -229,7 +229,7 @@ I add a definition for the :ref:`function<functions>`
   def logical_nand(p, q):
       return False
 
-the terminal shows green again
+the terminal_ shows green again
 
 refactor: make it better
 #################################################################################
@@ -242,7 +242,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_nand(True, True))
         self.assertTrue(src.truth_table.logical_nand(True, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -268,7 +268,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_nand(True, False))
         self.assertTrue(src.truth_table.logical_nand(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -297,7 +297,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_nand(False, True))
         self.assertTrue(src.truth_table.logical_nand(False, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -385,7 +385,7 @@ I add a test
   def test_tautology(self):
       self.assertTrue(src.truth_table.tautology(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -418,7 +418,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.tautology(True, True))
         self.assertTrue(src.truth_table.tautology(True, False))
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 * I add another case
 
@@ -462,7 +462,7 @@ I add another test
   def test_logical_disjunction(self):
       self.assertTrue(src.truth_table.logical_disjunction(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -496,7 +496,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_disjunction(True, True))
         self.assertTrue(src.truth_table.logical_disjunction(True, False))
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 * I add the next case
 
@@ -519,7 +519,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_disjunction(False, True))
         self.assertFalse(src.truth_table.logical_disjunction(False, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -554,7 +554,7 @@ refactor: make it better
         return not not p not and not not q:
         return not (not p and not q):
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 

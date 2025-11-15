@@ -23,7 +23,7 @@ This is an exercise in making :ref:`dictionaries` with :ref:`functions`. I think
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``person`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``person`` as the name of the project
 
   .. code-block:: python
 
@@ -35,7 +35,7 @@ requirements
 
       ./makePythonTdd.ps1 person
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -84,7 +84,7 @@ red: make it fail
                 None
             )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -112,7 +112,7 @@ green: make it pass
     import src.person
     import unittest
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -153,7 +153,7 @@ green: make it pass
                 None
             )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -197,7 +197,7 @@ green: make it pass
                 None
             )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -230,7 +230,7 @@ green: make it pass
                 None
             )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -267,7 +267,7 @@ green: make it pass
                 None
             )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -294,7 +294,7 @@ green: make it pass
         def test_takes_keyword_arguments(self):
             ...
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -331,7 +331,7 @@ green: make it pass
                 dict()
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -370,7 +370,7 @@ green: make it pass
                 )
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -432,7 +432,7 @@ green: make it pass
                 )
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -474,7 +474,7 @@ green: make it pass
                 )
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -534,7 +534,7 @@ green: make it pass
 
             ...
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -581,7 +581,7 @@ green: make it pass
                 )
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -603,7 +603,7 @@ green: make it pass
             'sex': 'M',
         }
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * I add a variable to remove the repetition in ``test_person.py``
 
@@ -647,7 +647,7 @@ green: make it pass
 
             ...
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -697,7 +697,7 @@ green: make it pass
                 )
             )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -741,7 +741,7 @@ green: make it pass
       def this_year():
           return datetime.datetime.today().year
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -829,7 +829,7 @@ refactor: make it better
 
             ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and and when the age is not ``0``, the terminal shows :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -852,7 +852,7 @@ refactor: make it better
             'age': this_year() - year_of_birth,
         }
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -877,7 +877,7 @@ refactor: make it better
             'age': datetime.datetime.now().year - year_of_birth,
         }
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -915,7 +915,7 @@ refactor: make it better
 
             ...
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal shows :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -958,7 +958,7 @@ refactor: make it better
 
             ...
 
-  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal shows :ref:`AssertionError`
+  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1005,7 +1005,7 @@ refactor: make it better
 
             ...
 
-  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal shows :ref:`AssertionError`
+  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1116,7 +1116,7 @@ red: make it fail
                 )
             )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1146,7 +1146,7 @@ green: make it pass
                 )
             )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1166,7 +1166,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 
@@ -1197,7 +1197,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 
@@ -1215,7 +1215,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1244,7 +1244,7 @@ green: make it pass
                 )
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1321,7 +1321,7 @@ green: make it pass
                 this_year()-120, this_year()
             )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1347,7 +1347,7 @@ green: make it pass
               )
           )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1373,7 +1373,7 @@ green: make it pass
             )
         )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1443,7 +1443,7 @@ green: make it pass
                 )
             )
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 refactor: make it better
 #################################################################################
@@ -1520,7 +1520,7 @@ refactor: make it better
             self.assertEqual(
                 ...
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 * I remove the commented lines from ``test_takes_keyword_arguments``
 
@@ -1660,7 +1660,7 @@ refactor: make it better
         def test_takes_keyword_arguments(self):
             ...
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1685,7 +1685,7 @@ refactor: make it better
         def test_takes_keyword_arguments(self):
             ...
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1722,7 +1722,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_person.py``
-* I want to write the solution without looking at the tests and delete all the text in ``person.py``. The terminal shows :ref:`AttributeError`
+* I want to write the solution without looking at the tests and delete all the text in ``person.py``. The terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1738,7 +1738,7 @@ green: make it pass
 
     factory
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1751,7 +1751,7 @@ green: make it pass
 
     factory = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1765,7 +1765,7 @@ green: make it pass
     def factory():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1780,7 +1780,7 @@ green: make it pass
     def factory(first_name):
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1795,7 +1795,7 @@ green: make it pass
     def factory(first_name, last_name):
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1813,7 +1813,7 @@ green: make it pass
         ):
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1831,7 +1831,7 @@ green: make it pass
         ):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1854,7 +1854,7 @@ green: make it pass
             'age': 20,
         }
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1882,7 +1882,7 @@ green: make it pass
             'age': 20,
         }
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1910,7 +1910,7 @@ green: make it pass
             'age': 20,
         }
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1938,7 +1938,7 @@ green: make it pass
             'age': 20,
         }
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1966,7 +1966,7 @@ green: make it pass
             'age': year_of_birth,
         }
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2005,7 +2005,7 @@ green: make it pass
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -2023,7 +2023,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 
@@ -2041,7 +2041,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
 
@@ -2058,7 +2058,7 @@ green: make it pass
             sex=None, year_of_birth=None,
         ):
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2078,7 +2078,7 @@ green: make it pass
         ):
         ...
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 

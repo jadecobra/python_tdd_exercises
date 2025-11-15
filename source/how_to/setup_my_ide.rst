@@ -31,7 +31,7 @@ I put references on the left and the `Integrated Development Environment (IDE)`_
   :width: 600
   :alt: Reference on the left
 
-this helps when I do not have an extra screen. I can stack two editors on top of one another, source code on top, tests below, and the terminal below the tests
+this helps when I do not have an extra screen. I can stack two editors on top of one another, source code on top, tests below, and the terminal_ below the tests
 
 for testing
 #################################################################################
@@ -57,7 +57,7 @@ editors side by side - source code on the left with tests on the right
 the terminal
 ---------------------------------------------------------------------------------
 
-the terminal to show results of the tests
+the terminal_ to show results of the tests
 
 * at the bottom - for most cases
 
@@ -65,7 +65,7 @@ the terminal to show results of the tests
     :width: 600
     :alt: Terminal Window at the bottom
 
-* to the right - when the results I am looking at in the terminal are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries`
+* to the right - when the results I am looking at in the terminal_ are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries`
 
   .. image:: /_static/setup_my_ide/terminal_on_right.png
     :width: 600

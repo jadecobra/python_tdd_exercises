@@ -39,7 +39,7 @@ in other words
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``functions`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``functions`` as the name of the project
 
   .. code-block:: python
 
@@ -51,7 +51,7 @@ requirements
 
       ./makePythonTdd.ps1 functions
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ red: make it fail
         def test_making_a_function_w_pass(self):
             self.assertIsNone(src.functions.function_w_pass())
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -102,7 +102,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* I make a file called ``functions.py`` in the project folder the terminal shows :ref:`AttributeError` , which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
+* I make a file called ``functions.py`` in the project folder the terminal_ shows :ref:`AttributeError` , which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
 
   .. code-block:: python
 
@@ -141,7 +141,7 @@ I add a new failing test to ``TestFunctions`` in ``test_functions.py`` to check 
     def test_making_a_function_w_return(self):
         self.assertIsNone(functions.function_w_return())
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -153,7 +153,7 @@ I add a new :ref:`function<functions>` to ``functions.py`` to make the test pass
     def function_w_return(self):
         return
 
-the terminal shows this test also passes
+the terminal_ shows this test also passes
 
 I defined 2 :ref:`functions` with different statements in their body but they both return the same result, because "inall :ref:`functions` return :ref:`None` by default, like the :ref:`function<functions>` has an invisible line that says ``return None``"
 
@@ -173,7 +173,7 @@ I add one more test to the ``TestFunctions`` class in ``test_functions.py`` to h
             functions.function_w_return_none()
         )
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 ################################################################################
@@ -205,7 +205,7 @@ I add a test to ``test_functions.py``
     def test_constant_function(self):
         self.assertEqual(functions.constant(), 'first_name')
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -238,7 +238,7 @@ I add a new test for a :ref:`constant function<test_constant_function>` that tak
           src.functions.constant()
       )
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 #################################################################################
@@ -270,7 +270,7 @@ I add a failing test to the ``TestFunctions`` class in ``test_functions.py``
     def test_identity_function(self):
         self.assertEqual(functions.identity(False), False)
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 green: make it pass
 ################################################################################
@@ -282,7 +282,7 @@ green: make it pass
     def identity():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -307,7 +307,7 @@ green: make it pass
     def identity(argument):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -337,7 +337,7 @@ Wait a minute! Something is not quite right here. The definition for a identity 
         self.assertEqual(functions.identity(False), False)
         self.assertEqual(functions.identity(True), True)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -369,7 +369,7 @@ Wait a minute! Something is not quite right here. The definition for a identity 
         self.assertEqual(functions.identity(set), False)
         self.assertEqual(functions.identity(dict), False)
 
-  the terminal shows :ref:`AssertionError` for each line until I make the input match the output, proving that the identity :ref:`function<functions>` I have defined returns the input it is given. Hooray! I am genius again
+  the terminal_ shows :ref:`AssertionError` for each line until I make the input match the output, proving that the identity :ref:`function<functions>` I have defined returns the input it is given. Hooray! I am genius again
 
 ----
 
@@ -389,7 +389,7 @@ I can make a :ref:`function<functions>` take more than one input
             ('first_name', 'last_name')
         )
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -405,7 +405,7 @@ green: make it pass
     def take_positional_arguments(argument):
         return argument
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -420,7 +420,7 @@ green: make it pass
     ):
         return argument
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -471,7 +471,7 @@ How can I make this better?
               ('first_name', 'last_name')
           )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -495,7 +495,7 @@ How can I make this better?
               ('last_name', 'first_name')
           )
 
-  the terminal shows passing
+  the terminal_ shows passing
 
 * the :ref:`function<functions>` currently takes in 2 positional arguments.
 
@@ -515,7 +515,7 @@ test_functions_w_unknown_positional_arguments
             (0, 1, 2, 3)
         )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -548,7 +548,7 @@ test_functions_w_unknown_positional_arguments
         None
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block::
     :force:
@@ -594,7 +594,7 @@ I add a new test to ``test_functions.py``
           ('first_name', 'last_name')
       )
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -611,7 +611,7 @@ green: make it pass
     def take_keyword_arguments():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -624,7 +624,7 @@ green: make it pass
     def take_keyword_arguments(first_name):
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
     :force:
@@ -638,7 +638,7 @@ green: make it pass
     def take_keyword_arguments(first_name, last_name):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
     AssertionError: None != ('first_name', 'last_name')
 
@@ -674,7 +674,7 @@ refactor: make it better
               ('last_name', 'first_name')
           )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -715,7 +715,7 @@ test_functions_w_unknown_keyword_arguments
             None
         )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -729,7 +729,7 @@ test_functions_w_unknown_keyword_arguments
     def take_unknown_keyword_arguments(*arguments):
         return arguments
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -742,7 +742,7 @@ test_functions_w_unknown_keyword_arguments
     def take_unknown_keyword_arguments(**keyword_arguments):
         return keyword_arguments
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -787,14 +787,14 @@ test_functions_w_unknown_keyword_arguments
         {}
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
     :force:
 
     AssertionError: {'none': None, 'a_boolean': <class 'bool'>[190 chars]ct'>} != {}
 
-  I change the expectation to match the values in the terminal
+  I change the expectation to match the values in the terminal_
 
   .. code-block:: python
 
@@ -848,7 +848,7 @@ I can also define :ref:`functions` to take both positional arguments and keyword
         {}
       )
 
-the terminal shows a SyntaxError_ because I put a positional argument
+the terminal_ shows a SyntaxError_ because I put a positional argument
 after a keyword argument. I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
 
 .. code-block:: python
@@ -875,7 +875,7 @@ green: make it pass
             {}
         )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 * I add a definition for the :ref:`function<functions>` to ``functions.py``
 
   .. code-block:: python
@@ -883,7 +883,7 @@ green: make it pass
     def take_positional_and_keyword_arguments():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -896,7 +896,7 @@ green: make it pass
     def take_positional_and_keyword_arguments(last_name):
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -909,7 +909,7 @@ green: make it pass
     def take_positional_and_keyword_arguments(last_name, first_name):
         return None
 
-  the terminal shows the same error even though I have 2 different arguments. I need a way to let the ``take_positional_and_keyword_arguments`` know which argument is positional and which is a keyword argument
+  the terminal_ shows the same error even though I have 2 different arguments. I need a way to let the ``take_positional_and_keyword_arguments`` know which argument is positional and which is a keyword argument
 * I reorder the arguments in the definition
 
   .. code-block:: python
@@ -917,7 +917,7 @@ green: make it pass
     def take_positional_and_keyword_arguments(first_name, last_name):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 * I edit the `return statement`_ to make the test pass
 
   .. code-block:: python
@@ -925,7 +925,7 @@ green: make it pass
     def take_positional_and_keyword_arguments(first_name, last_name):
         return first_name, last_name
 
-  the terminal shows :ref:`AssertionError` with the values I just added
+  the terminal_ shows :ref:`AssertionError` with the values I just added
 * I make ``test_functions_w_positional_and_keyword_arguments`` to make the results match the expectation
 
   .. code-block:: python
@@ -1014,7 +1014,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
             ()
         )
 
-  the terminal shows :ref:`TypeError` because the :ref:`function<functions>` definition only has 2 keyword arguments which are not provided in the call
+  the terminal_ shows :ref:`TypeError` because the :ref:`function<functions>` definition only has 2 keyword arguments which are not provided in the call
 
 * using what I know from previous tests I can alter the :ref:`function<functions>` to use starred expressions
 
@@ -1023,7 +1023,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
     def take_positional_and_keyword_arguments(*args, **kwargs):
         return args, kwargs
 
-  the terminal shows :ref:`AssertionError` for a previous passing test. I have introduced a regression
+  the terminal_ shows :ref:`AssertionError` for a previous passing test. I have introduced a regression
 
   .. code-block:: python
 
@@ -1071,7 +1071,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
         (('first_name',), {'last_name': 'last_name'})
     )
 
-  the terminal shows tests passing, with the positional argument in parentheses and the keyword argument in curly braces
+  the terminal_ shows tests passing, with the positional argument in parentheses and the keyword argument in curly braces
 * I uncomment the next test
 
   .. code-block:: python
@@ -1083,7 +1083,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
         (('first_name', 'last_name'), {})
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1111,7 +1111,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
           (None, None)
       )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1126,7 +1126,7 @@ Hold on a second. This looks exactly like what I did in ``test_functions_w_posit
         ((), {})
     )
 
-* I uncomment the last test to see it fail the terminal shows :ref:`AssertionError`
+* I uncomment the last test to see it fail the terminal_ shows :ref:`AssertionError`
 
   .. code-block::
 

@@ -28,7 +28,7 @@ I think this is the most important :ref:`data structure<data structures>` to kno
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``dictionaries`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``dictionaries`` as the name of the project
 
   .. code-block:: python
 
@@ -40,7 +40,7 @@ requirements
 
       ./makePythonTdd.ps1 dictionaries
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -87,7 +87,7 @@ I change ``test_failure`` to ``test_making_a_dictionary``
       def test_making_a_dictionary(self):
           self.assertEqual(dict(), None)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -115,7 +115,7 @@ refactor: make it better
     self.assertEqual(dict(), {})
     self.assertEqual(dict(0), {})
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -138,7 +138,7 @@ refactor: make it better
     self.assertEqual(dict(), {})
     self.assertEqual(dict((0, 1)), {})
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -152,19 +152,19 @@ refactor: make it better
     self.assertEqual(dict(), {})
     self.assertEqual(dict(key='value'), {})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: {'key': 'value'} != {}
 
-  I change the expectation to match the values in the terminal
+  I change the expectation to match the values in the terminal_
 
   .. code-block:: python
 
     self.assertEqual(dict(key='value'), {'key': 'value'})
 
-  the terminal shows green again. I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``) and I used a string_ as a key in this test
+  the terminal_ shows green again. I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``) and I used a string_ as a key in this test
 
 ----
 
@@ -185,7 +185,7 @@ I add a test to see if I can use :ref:`None` as a key in a dictionary_
   def test_making_a_dictionary_w_none_as_a_key(self):
       self.assertEqual({None: 'boom'}, {None: 'bap'})
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -221,7 +221,7 @@ I add a test to see if I can use a :ref:`boolean<booleans>` as a key in a dictio
     def test_making_a_dictionary_w_a_boolean_as_a_key(self):
         self.assertEqual({False: 'boom'}, {False: 'bap'})
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -251,7 +251,7 @@ I add :ref:`True<test_what_is_true>` to the :ref:`assertion<AssertionError>`
           {False: 'boom'}
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -287,7 +287,7 @@ I add a failing test to see if I can use a number as a key in a dictionary_
   def test_making_a_dictionary_w_a_number_as_a_key(self):
       self.assertEqual({0: 'boom'}, {0: 'bap'})
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -317,7 +317,7 @@ I want to see if I can use a float_ as a key in a dictionary_
           {0: 'boom'}
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -356,7 +356,7 @@ I add a test to see if I can use a tuple_ as a key in a dictionary_
           {(0, 1): 'bap'}
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -397,7 +397,7 @@ I add a test for :ref:`lists`
           {[0, 1]: 'boom'},
       )
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -415,7 +415,7 @@ I remove the things around the new dictionary_ then change the key and value for
 
       {[3, 2, 1]: 'BOOM!!!'}
 
-the terminal still shows :ref:`TypeError`, I add assertRaises_
+the terminal_ still shows :ref:`TypeError`, I add assertRaises_
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -445,7 +445,7 @@ I try another test with a set_ as a key in a dictionary_
   def test_making_a_dictionary_w_a_set_as_a_key(self):
       {{3, 2, 1}: 'BOOM!!!'}
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -485,7 +485,7 @@ I add another test
       a_dictionary = {'key': 'value'}
       {a_dictionary: 'BOOM!!!'}
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -525,7 +525,7 @@ I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attri
           []
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -540,7 +540,7 @@ It also gives me a message to show the full difference between the two :ref:`lis
 green: make it pass
 #################################################################################
 
-I move the terminal to right side of the screen, then add `maxDiff`_ to the test
+I move the terminal_ to right side of the screen, then add `maxDiff`_ to the test
 
 .. code-block:: python
   :emphasize-lines: 3
@@ -552,7 +552,7 @@ I move the terminal to right side of the screen, then add `maxDiff`_ to the test
           []
       )
 
-the terminal shows the difference between the two :ref:`lists`. I copy and paste the expected values from the terminal then use `find and replace`_ to remove the extra characters
+the terminal_ shows the difference between the two :ref:`lists`. I copy and paste the expected values from the terminal_ then use `find and replace`_ to remove the extra characters
 
 .. note::
 
@@ -582,7 +582,7 @@ the terminal shows the difference between the two :ref:`lists`. I copy and paste
           ]
       )
 
-the test passes and I move the terminal back to the bottom. I copy the names that do NOT have double underscores (__) to make a TODO list of tests
+the test passes and I move the terminal_ back to the bottom. I copy the names that do NOT have double underscores (__) to make a TODO list of tests
 
 .. code-block:: python
 
@@ -622,7 +622,7 @@ red: make it fail
           a_dictionary = {'key': 'value'}
           self.assertIsNone(a_dictionary.clear())
 
-  the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None`
+  the terminal_ shows green. The clear_ :ref:`method<functions>` returns :ref:`None`
 
 * I add an :ref:`assertion<AssertionError>` to see what it did to the dictionary_
 
@@ -631,7 +631,7 @@ red: make it fail
     self.assertIsNone(a_dictionary.clear())
     self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -697,7 +697,7 @@ I add a test for the next :ref:`method<functions>`
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.copy())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -714,7 +714,7 @@ I add the value to the :ref:`assertion<AssertionError>`
 
   self.assertIsNone(a_dictionary.copy(), {'key': 'value'})
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -738,7 +738,7 @@ refactor: make it better
     self.assertEqual(a_dictionary.copy(), {'key': 'value'})
     self.assertEqual(a_dictionary, {})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -795,7 +795,7 @@ I add a test
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.fromkeys())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -810,7 +810,7 @@ I pass a value to the call
 
   self.assertIsNone(a_dictionary.fromkeys(0))
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -822,7 +822,7 @@ I change the value to a tuple_
 
   self.assertIsNone(a_dictionary.fromkeys((0, 1)))
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -837,7 +837,7 @@ the fromkeys_ :ref:`method<functions>` returns a dictionary_ that uses the value
       {0: None, 1: None}
   )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -867,7 +867,7 @@ refactor: make it better
     )
     self.assertEqual(a_dictionary, {})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -897,7 +897,7 @@ refactor: make it better
             {0: None, 1: None}
         )
 
-* the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal showed :ref:`TypeError`
+* the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal_ showed :ref:`TypeError`
 
   .. code-block:: python
 
@@ -912,7 +912,7 @@ refactor: make it better
         {0: None, 1: None}
     )
 
-  the terminal still shows green. I change the second input expecting a failure
+  the terminal_ still shows green. I change the second input expecting a failure
 
   .. code-block:: python
 
@@ -921,7 +921,7 @@ refactor: make it better
         {0: None, 1: None}
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -981,7 +981,7 @@ I add another test
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.get())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -996,7 +996,7 @@ I add a value to the call
 
   self.assertIsNone(a_dictionary.get(0))
 
-the terminal shows green
+the terminal_ shows green
 
 refactor: make it better
 #################################################################################
@@ -1007,13 +1007,13 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.get(0, None))
 
-  the terminal still shows green. I change the second argument expecting a failure
+  the terminal_ still shows green. I change the second argument expecting a failure
 
   .. code-block:: python
 
     self.assertIsNone(a_dictionary.get(0, 'default'))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1025,7 +1025,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.get(0, 'default'), 'default')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1062,7 +1062,7 @@ refactor: make it better
         'default'
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1128,7 +1128,7 @@ I add the next test from the list
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.items())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1137,13 +1137,13 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I copy the value from the terminal and paste it as the expectation
+I copy the value from the terminal_ and paste it as the expectation
 
 .. code-block:: python
 
   self.assertIsNone(a_dictionary.items(), dict_items([('key', 'value')]))
 
-the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -1155,7 +1155,7 @@ this new :ref:`object<classes>` contains a :ref:`list<lists>` and I know how to 
 
   self.assertIsNone(a_dictionary.items(), [('key', 'value')])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1167,7 +1167,7 @@ I pass the call to the items_ :ref:`method<functions>` to the :ref:`list<lists>`
 
   self.assertIsNone(list(a_dictionary.items()), [('key', 'value')])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1195,7 +1195,7 @@ refactor: make it better
         }
         self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1265,7 +1265,7 @@ I add a test
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.keys())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1276,13 +1276,13 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 green: make it pass
 #################################################################################
 
-I copy the value from the terminal and paste it as the expectation
+I copy the value from the terminal_ and paste it as the expectation
 
 .. code-block:: python
 
   self.assertIsNone(a_dictionary.keys(), dict_keys(['key']))
 
-the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -1294,7 +1294,7 @@ the ``dict_keys`` :ref:`object<classes>` contains a :ref:`list<lists>`, I will u
 
   self.assertIsNone(a_dictionary.keys(), ['key'])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1306,7 +1306,7 @@ I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list<lists>` 
 
   self.assertIsNone(list(a_dictionary.keys()), ['key'])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1334,7 +1334,7 @@ refactor: make it better
         }
         self.assertEqual(list(a_dictionary.keys()), ['key'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1389,7 +1389,7 @@ I wonder if the next :ref:`method<functions>` is the same as the one in :ref:`te
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.pop())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -1406,7 +1406,7 @@ green: make it pass
 
     self.assertIsNone(a_dictionary.pop(0))
 
-  the terminal shows :ref:`KeyError<test_key_error>`
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1428,7 +1428,7 @@ green: make it pass
     a_dictionary = {'key': 'value'}
     a_dictionary.pop('not in dictionary')
 
-  the terminal shows :ref:`KeyError<test_key_error>`
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1458,7 +1458,7 @@ refactor: make it better
     with self.assertRaises(KeyError):
         a_dictionary.pop('not in dictionary')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1470,7 +1470,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.pop('key'), 'value')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1491,7 +1491,7 @@ refactor: make it better
     self.assertEqual(a_dictionary.pop('key'), 'value')
     self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1546,7 +1546,7 @@ I add a failing test
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.popitem())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1557,13 +1557,13 @@ the popitem_ :ref:`method<functions>` returns the key-value pair as a tuple_
 green: make it pass
 #################################################################################
 
-I add the value from the terminal as an expectation
+I add the value from the terminal_ as an expectation
 
 .. code-block:: python
 
   self.assertIsNone(a_dictionary.popitem(), ('key', 'value'))
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1587,7 +1587,7 @@ refactor: make it better
     self.assertEqual(a_dictionary.popitem(), ('key', 'value'))
     self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1612,7 +1612,7 @@ refactor: make it better
         'keyN': [0, 1, 2, 'n'],
     }
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1624,7 +1624,7 @@ refactor: make it better
 
     self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1645,7 +1645,7 @@ refactor: make it better
     self.assertEqual(a_dictionary, {'key1': 'value1'})
     self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1697,7 +1697,7 @@ I add a test
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.setdefault())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -1724,7 +1724,7 @@ refactor: make it better
     self.assertIsNone(a_dictionary.setdefault(0))
     self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1760,7 +1760,7 @@ refactor: make it better
         }
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1787,7 +1787,7 @@ refactor: make it better
     self.assertIsNone(a_dictionary.setdefault('new_key'))
     self.assertIsNone(a_dictionary.setdefault('key'))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1799,7 +1799,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.setdefault('key'), 'value')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1819,13 +1819,13 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.setdefault('new_key', None))
 
-  the terminal still shows green. I change the given default value expecting a failure
+  the terminal_ still shows green. I change the given default value expecting a failure
 
   .. code-block:: python
 
     self.assertIsNone(a_dictionary.setdefault('new_key', 'default'))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1837,7 +1837,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.setdefault('new_key', 'default'), 'default')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1849,7 +1849,7 @@ refactor: make it better
 
     self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1875,7 +1875,7 @@ refactor: make it better
 
     self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
 
-  the terminal still shows green. setdefault_ adds a given key to the dictionary_ with a given default value and returns the default value if the key is not in the dictionary. It returns the value for a key that is already in the dictionary_
+  the terminal_ still shows green. setdefault_ adds a given key to the dictionary_ with a given default value and returns the default value if the key is not in the dictionary. It returns the value for a key that is already in the dictionary_
 
 * I rename the test
 
@@ -1929,7 +1929,7 @@ red: make it fail
     self.assertIsNone(a_dictionary.update())
     self.assertEqual(a_dictionary, {})
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1940,7 +1940,7 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-I change the values in the expectation to match the terminal
+I change the values in the expectation to match the terminal_
 
 .. code-block:: python
 
@@ -1957,7 +1957,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.update(0))
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1969,7 +1969,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.update((0, 1)))
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1981,7 +1981,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.update(new_key='new value'))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2008,7 +2008,7 @@ refactor: make it better
     self.assertIsNone(a_dictionary.update(new_key='new value'))
     self.assertIsNone(a_dictionary.update(key='updated value'))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2034,7 +2034,7 @@ refactor: make it better
 
     self.assertIsNone(a_dictionary.update({'another_key': 'another_value'}))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2101,7 +2101,7 @@ I add a test for the last :ref:`method<functions>`
       a_dictionary = {'key': 'value'}
       self.assertIsNone(a_dictionary.values())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -2118,7 +2118,7 @@ I add the expected value
 
   self.assertIsNone(a_dictionary.values, dict_values(['value']))
 
-the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -2130,7 +2130,7 @@ I use the :ref:`list<lists>` in the ``dict_values`` object_
 
   self.assertIsNone(a_dictionary.values(), ['value'])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -2142,7 +2142,7 @@ I change assertIsNone_ to assertEqual_
 
   self.assertEqual(a_dictionary.values(), ['value'])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -2168,7 +2168,7 @@ refactor: make it better
         'keyN': [0, 1, 2, 'n'],
     }
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2223,7 +2223,7 @@ I add a test for getting the value of a key that is in a dictionary_
         a_dictionary = {'key': 'value'}
         self.assertEqual(a_dictionary['key'], '')
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -2234,7 +2234,7 @@ I can get the value for a key in a dictionary_ by giving it in ``[]``, this is l
 green: make it pass
 #################################################################################
 
-I change the value in the expectation to match the terminal
+I change the value in the expectation to match the terminal_
 
 .. code-block:: python
 
@@ -2252,7 +2252,7 @@ refactor: make it better
     self.assertEqual(a_dictionary['key'], 'value')
     self.assertEqual(a_dictionary['not_in_dictionary'])
 
-  the terminal shows :ref:`KeyError<test_key_error>`
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -2276,7 +2276,7 @@ refactor: make it better
     self.assertEqual(a_dictionary['key'], 'value')
     self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'value')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2298,7 +2298,7 @@ refactor: make it better
         a_dictionary['not_in_dictionary']
     a_dictionary.pop('not_in_dictionary')
 
-  the terminal shows :ref:`KeyError<test_key_error>`
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -2323,7 +2323,7 @@ refactor: make it better
         a_dictionary.pop('not_in_dictionary')
     {}.popitem()
 
-  the terminal shows :ref:`KeyError<test_key_error>`
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 

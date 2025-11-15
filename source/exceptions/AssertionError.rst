@@ -45,7 +45,7 @@ The difference between my expectations and reality (what happens when the progra
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the name of the project
 
   .. code-block:: python
 
@@ -57,7 +57,7 @@ requirements
 
       ./makePythonTdd.ps1 assertion_error
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -107,7 +107,7 @@ red: make it fail
     # Exceptions Encountered
     ...
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
             assert None is None
             self.assertIsNotNone(None)
 
-  the terminal shows a more descriptive message for the AssertionError_
+  the terminal_ shows a more descriptive message for the AssertionError_
 
   .. code-block:: python
 
@@ -189,7 +189,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
             assert False is None
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -214,7 +214,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
             assert False is not None
             self.assertIsNone(False)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -254,7 +254,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 
     # NOTES
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -281,7 +281,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
             assert True is not None
             self.assertIsNone(True)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -344,7 +344,7 @@ I add a failing test
 
   # NOTES
 
-the terminal shows AssertionError_
+the terminal_ shows AssertionError_
 
 .. code-block:: python
 
@@ -376,7 +376,7 @@ refactor: make it better
             assert True is not False
             self.assertFalse(True)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -432,7 +432,7 @@ I add a failing test
 
   # NOTES
 
-the terminal shows AssertionError_
+the terminal_ shows AssertionError_
 
 .. code-block:: python
 
@@ -463,7 +463,7 @@ refactor: make it better
             assert False is not True
             self.assertTrue(False)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -526,7 +526,7 @@ I add a new failing test
 
   # NOTES
 
-the terminal shows AssertionError_
+the terminal_ shows AssertionError_
 
 .. code-block:: python
 
@@ -565,7 +565,7 @@ refactor: make it better
             assert None == None
             self.assertNotEqual(None, None)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -611,7 +611,7 @@ refactor: make it better
 
     # NOTES
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -636,7 +636,7 @@ refactor: make it better
             assert False != None
             self.assertEqual(False, None)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -680,7 +680,7 @@ refactor: make it better
 
     # NOTES
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -705,7 +705,7 @@ refactor: make it better
             assert True != None
             self.assertEqual(True, None)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -750,7 +750,7 @@ refactor: make it better
 
     # NOTES
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -775,7 +775,7 @@ refactor: make it better
             assert True != False
             self.assertEqual(True, False)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -821,7 +821,7 @@ refactor: make it better
 
     # NOTES
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -846,7 +846,7 @@ refactor: make it better
             assert False == False
             self.assertNotEqual(False, False)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -891,7 +891,7 @@ refactor: make it better
 
     # NOTES
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -916,7 +916,7 @@ refactor: make it better
             assert False != True
             self.assertEqual(False, True)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -962,7 +962,7 @@ refactor: make it better
 
     # NOTES
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 
@@ -987,7 +987,7 @@ refactor: make it better
               assert True == True
               self.assertNotEqual(True, True)
 
-  the terminal shows AssertionError_
+  the terminal_ shows AssertionError_
 
   .. code-block:: python
 

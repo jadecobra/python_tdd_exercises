@@ -21,7 +21,7 @@ how to test that an Exception is raised
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``exceptions`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``exceptions`` as the name of the project
 
   .. code-block:: python
 
@@ -33,7 +33,7 @@ requirements
 
       ./makePythonTdd.ps1 exceptions
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -79,7 +79,7 @@ red: make it fail
         def test_catching_module_not_found_error_in_tests(self):
             import does_not_exist
 
-  the terminal shows :ref:`ModuleNotFoundError`
+  the terminal_ shows :ref:`ModuleNotFoundError`
 
   .. code-block:: python
 
@@ -132,7 +132,7 @@ red: make it fail
         def test_catching_name_error_in_tests(self):
             does_not_exist
 
-  the terminal shows NameError_
+  the terminal_ shows NameError_
 
   .. code-block:: python
 
@@ -188,7 +188,7 @@ red: make it fail
         def test_catching_attribute_error_in_tests(self):
             src.exceptions.does_not_exist
 
-  the terminal shows NameError_
+  the terminal_ shows NameError_
 
   .. code-block:: python
 
@@ -203,7 +203,7 @@ red: make it fail
     import src.exceptions
     import unittest
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -260,7 +260,7 @@ red: make it fail
         def test_catching_type_error_in_tests(self):
             src.exceptions.function_name('argument')
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -274,7 +274,7 @@ red: make it fail
 
     function_name
 
-  the terminal shows NameError_
+  the terminal_ shows NameError_
 
   .. code-block:: python
 
@@ -288,7 +288,7 @@ red: make it fail
 
     function_name = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -334,7 +334,7 @@ refactor: make it better
     def function_name():
         return None
 
-  the terminal still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not take input
+  the terminal_ still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not take input
 
 * when I add a parameter to the definition
 
@@ -345,7 +345,7 @@ refactor: make it better
     def function_name(argument):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -360,7 +360,7 @@ refactor: make it better
     def function_name():
         return None
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 ----
 
@@ -394,7 +394,7 @@ red: make it fail
             a_list = [1, 2, 3, 'n']
             a_list[0]
 
-  the terminal shows green. The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the last item is the total number of items minus ``1``, which is ``3`` in this case
+  the terminal_ shows green. The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the last item is the total number of items minus ``1``, which is ``3`` in this case
 
   .. code-block:: python
     :lineno-start: 23
@@ -414,7 +414,7 @@ red: make it fail
             a_list = [1, 2, 3, 'n']
             a_list[4]
 
-  the terminal shows :ref:`IndexError<test_index_error>`
+  the terminal_ shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
 
@@ -465,7 +465,7 @@ refactor: make it better
                 a_list[4]
             a_list[-1]
 
-  the terminal still shows passing tests. The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the first item is negative the total number of items, ``-4`` in this case
+  the terminal_ still shows passing tests. The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the first item is negative the total number of items, ``-4`` in this case
 
   .. code-block:: python
     :lineno-start: 23
@@ -489,7 +489,7 @@ refactor: make it better
                 a_list[4]
             a_list[-5]
 
-  the terminal shows :ref:`IndexError<test_index_error>`
+  the terminal_ shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
 
@@ -508,7 +508,7 @@ refactor: make it better
             with self.assertRaises(IndexError):
                 a_list[-5]
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * It looks like this is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
 
@@ -570,7 +570,7 @@ red: make it fail
         def test_catching_key_error_in_tests(self):
             {'key': 'value'}['key']
 
-  the terminal shows green
+  the terminal_ shows green
 
 * when I use a key that is NOT in the :ref:`dictionary<dictionaries>`
 
@@ -581,7 +581,7 @@ red: make it fail
         def test_catching_key_error_in_tests(self):
             {'key': 'value'}['not_in_dictionary']
 
-  the terminal shows :ref:`KeyError <test_key_error>`
+  the terminal_ shows :ref:`KeyError <test_key_error>`
 
   .. code-block:: python
 
@@ -637,7 +637,7 @@ red: make it fail
         def test_catching_zero_division_error_in_tests(self):
             1 / 0
 
-  any number divided by ``0`` the terminal shows ZeroDivisionError_
+  any number divided by ``0`` the terminal_ shows ZeroDivisionError_
 
   .. code-block:: python
 
@@ -696,7 +696,7 @@ red: make it fail
         def test_catching_exceptions_in_tests(self):
             raise Exception
 
-  the terminal shows :ref:`Exception<errors>`
+  the terminal_ shows :ref:`Exception<errors>`
 
   .. code-block:: python
 
@@ -713,7 +713,7 @@ red: make it fail
         def test_catching_exceptions_in_tests(self):
             raise AssertionError
 
-  and the terminal shows the :ref:`Exception<errors>` I give the `raise statement`_
+  and the terminal_ shows the :ref:`Exception<errors>` I give the `raise statement`_
 
   .. code-block:: python
 
@@ -728,7 +728,7 @@ red: make it fail
         def test_catching_exceptions_in_tests(self):
             raise Exception
 
-  the terminal shows :ref:`Exception<errors>`
+  the terminal_ shows :ref:`Exception<errors>`
 
   .. code-block:: python
 
@@ -747,7 +747,7 @@ I add the assertRaises_ :ref:`method<functions>`
           with self.assertRaises(Exception):
               raise Exception
 
-the terminal shows all tests are passing. The assertRaises_ :ref:`method<functions>` checks that the code under it raises the :ref:`Exception<errors>` it is given.
+the terminal_ shows all tests are passing. The assertRaises_ :ref:`method<functions>` checks that the code under it raises the :ref:`Exception<errors>` it is given.
 
 refactor: make it better
 #################################################################################
@@ -794,7 +794,7 @@ refactor: make it better
             with self.assertRaises(ModuleNotFoundError):
                 {'key': 'value'}['not_in_dictionary']
 
-  the terminal shows :ref:`KeyError <test_key_error>`
+  the terminal_ shows :ref:`KeyError <test_key_error>`
 
   .. code-block:: python
 
@@ -821,7 +821,7 @@ refactor: make it better
             with self.assertRaises(ZeroDivisionError):
                 raise Exception
 
-  the terminal shows :ref:`Exception<errors>`
+  the terminal_ shows :ref:`Exception<errors>`
 
   .. code-block:: python
 
@@ -868,7 +868,7 @@ refactor: make it better
                 a_list[-5]
             # with self.assertRaises(IndexError):
 
-  the terminal still shows green, even though :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>`, it does NOT get raised. The assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does NOT run the other lines.
+  the terminal_ still shows green, even though :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>`, it does NOT get raised. The assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does NOT run the other lines.
 
   When I move the `raise statement`_ above the first :ref:`IndexError<test_index_error>`
 
@@ -884,7 +884,7 @@ refactor: make it better
                 a_list[-5]
             # with self.assertRaises(IndexError):
 
-  the terminal shows :ref:`Exception<errors>`
+  the terminal_ shows :ref:`Exception<errors>`
 
   .. code-block:: python
 

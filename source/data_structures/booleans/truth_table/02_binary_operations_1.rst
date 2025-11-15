@@ -62,7 +62,7 @@ I add a new TestCase_ to ``test_truth_table.py``
       def test_contradiction(self):
           self.assertFalse(src.truth_table.contradiction(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -82,7 +82,7 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
   def contradiction(argument):
       return not argument
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -119,7 +119,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.contradiction(True, False))
         self.assertFalse(src.truth_table.contradiction(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -165,7 +165,7 @@ I add the next test
   def test_logical_conjunction(self):
       self.assertTrue(src.truth_table.logical_conjunction(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -199,7 +199,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.logical_conjunction(True, True))
         self.assertFalse(src.truth_table.logical_conjunction(True, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -213,7 +213,7 @@ refactor: make it better
         return False
         return True
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -240,7 +240,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_conjunction(True, False))
         self.assertFalse(src.truth_table.logical_conjunction(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -271,7 +271,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_conjunction(False, True))
         self.assertFalse(src.truth_table.logical_conjunction(False, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -365,7 +365,7 @@ refactor: make it better
         else:
             return False
 
-  the terminal shows green, I remove the other `if statements`_ then use a simpler statement
+  the terminal_ shows green, I remove the other `if statements`_ then use a simpler statement
 
   .. code-block:: python
 
@@ -399,7 +399,7 @@ I add another test
   def test_project_second(self):
       self.assertTrue(src.truth_table.project_second(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -432,7 +432,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.project_second(True, True))
         self.assertFalse(src.truth_table.project_second(True, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -471,7 +471,7 @@ refactor: make it better
         self.assertTrue(src.truth_table.project_second(False, True))
         self.assertFalse(src.truth_table.project_second(False, False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -532,7 +532,7 @@ I add another test
   def test_converse_non_implication(self):
       self.assertFalse(src.truth_table.converse_non_implication(True, True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -576,7 +576,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.converse_non_implication(True, False))
         self.assertTrue(src.truth_table.converse_non_implication(False, True))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -617,7 +617,7 @@ refactor: make it better
                 return True
         return False
 
-  the terminal still shows green. I remove the other statements then change the first line with :ref:`logical negation<test_logical_negation>` and bool_
+  the terminal_ still shows green. I remove the other statements then change the first line with :ref:`logical negation<test_logical_negation>` and bool_
 
   .. code-block:: python
 

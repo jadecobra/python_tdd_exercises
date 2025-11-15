@@ -20,7 +20,7 @@ I want to write a program that can ``add``, ``subtract``, ``multiply`` and ``div
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``calculator`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``calculator`` as the name of the project
 
   .. code-block:: python
 
@@ -32,7 +32,7 @@ requirements
 
       ./makePythonTdd.ps1 calculator
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -111,7 +111,7 @@ test_addition
     - ``reality`` - ``src.calculator.add(0, 1)``, and the other is my
     - ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -146,7 +146,7 @@ green: make it pass
 
         ...
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -172,7 +172,7 @@ green: make it pass
 
     add
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ green: make it pass
 
     add = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -215,7 +215,7 @@ green: make it pass
     def add():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -232,7 +232,7 @@ green: make it pass
     def add(x, y):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -275,7 +275,7 @@ To show the problem with the :ref:`function<functions>`, I add another :ref:`ass
                 0
             )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -337,7 +337,7 @@ refactor: make it better
                 0
             )
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the editor to run the tests and the terminal shows random success or :ref:`AssertionError`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the editor to run the tests and the terminal_ shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -439,7 +439,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-10, 10)
 
-  and the terminal still shows green. I can use any range of numbers the computer can handle, for example
+  and the terminal_ still shows green. I can use any range of numbers the computer can handle, for example
 
   .. code-block:: python
     :lineno-start: 6
@@ -502,7 +502,7 @@ red: make it fail
                 x-y
             )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -525,7 +525,7 @@ green: make it pass
 
     subtract
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -538,7 +538,7 @@ green: make it pass
 
     subtract = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -555,7 +555,7 @@ green: make it pass
     def subtract():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -570,7 +570,7 @@ green: make it pass
     def subtract(x, y):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -643,7 +643,7 @@ refactor: make it better
                 x-y
             )
 
-  the terminal shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal_ shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I can use the :ref:`class<classes>` :ref:`attributes<AttributeError>` directly in ``test_addition``
 
@@ -734,7 +734,7 @@ I add a failing test for multiplication in ``test_calculator.py``
   # TODO
   ...
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -795,7 +795,7 @@ time for division. I add a new test to ``test_calculator.py``
   # TODO
   ...
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -826,7 +826,7 @@ green: make it pass
     def a_random_number():
         return random.randint(-1, 1)
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times to run the tests, and when ``y`` is randomly ``0`` the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times to run the tests, and when ``y`` is randomly ``0`` the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -874,7 +874,7 @@ I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_
           #    self.x/self.y
           # )
 
-the terminal shows my expectation with a failure for any value of ``x`` since ``y`` is ``0``
+the terminal_ shows my expectation with a failure for any value of ``x`` since ``y`` is ``0``
 
 .. code-block:: python
 
@@ -907,7 +907,7 @@ green: make it pass
             #   self.x/self.y
             # )
 
-  because I used the wrong :ref:`Exception<errors>` the terminal still shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  because I used the wrong :ref:`Exception<errors>` the terminal_ still shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -974,7 +974,7 @@ refactor: make it better
                     self.x/self.y
                 )
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -1020,7 +1020,7 @@ refactor: make it better
     # TODO
     ...
 
-  the terminal shows all tests are passing with no random failures
+  the terminal_ shows all tests are passing with no random failures
 
 * I use a bigger range of numbers for the tests
 
@@ -1031,7 +1031,7 @@ refactor: make it better
     def a_random_number():
         return random.randint(-10**1000000, 10**1000000)
 
-  the terminal still shows green and it takes longer to run the tests. I change the range back to ``-10, 10`` to keep the tests fast
+  the terminal_ still shows green and it takes longer to run the tests. I change the range back to ``-10, 10`` to keep the tests fast
 
   .. code-block:: python
     :lineno-start: 6
@@ -1060,7 +1060,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_calculator.py``
-* then delete all the text in ``calculator.py``, the terminal shows :ref:`AttributeError`
+* then delete all the text in ``calculator.py``, the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1078,7 +1078,7 @@ green: make it pass
 
     subtract
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1091,7 +1091,7 @@ green: make it pass
 
     subtract = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1105,7 +1105,7 @@ green: make it pass
     def subtract():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1120,7 +1120,7 @@ green: make it pass
     def subtract(a, b):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1135,7 +1135,7 @@ green: make it pass
     def subtract(a, b):
         return a, b
 
-  the terminal shows random numbers with :ref:`AssertionError`
+  the terminal_ shows random numbers with :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1155,7 +1155,7 @@ green: make it pass
     def subtract(a, b):
         return a - b
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1174,7 +1174,7 @@ green: make it pass
     def multiply():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1189,7 +1189,7 @@ green: make it pass
     def multiply(a, b):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1204,7 +1204,7 @@ green: make it pass
     def multiply(a, b):
         return a, b
 
-  the terminal shows random numbers with :ref:`AssertionError`
+  the terminal_ shows random numbers with :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1222,7 +1222,7 @@ green: make it pass
     def multiply(a, b):
         return a * b
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1245,7 +1245,7 @@ green: make it pass
     def divide(a, b):
         return a, b
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1269,7 +1269,7 @@ green: make it pass
     def divide(a, b):
         return a / b
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 

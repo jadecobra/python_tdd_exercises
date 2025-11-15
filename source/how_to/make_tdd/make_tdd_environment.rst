@@ -38,9 +38,9 @@ If you are using a Windows_ computer, try :ref:`how to install Windows Subsystem
 linux/Windows Subsystem Linux requirements
 #################################################################################
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_, no need to do it on a MacOS_
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_, no need to do it on a MacOS_ computer
 
-Open a terminal then type this to update the Linux_ package manager
+Open a terminal_ then type this to update the `linux package manager`_
 
 .. code-block:: shell
 
@@ -52,7 +52,7 @@ optionally, you can do a full upgrade if you want
 
   sudo apt full-upgrade --yes
 
-type this in the terminal to install Python_
+type this in the terminal_ to install Python_
 
 .. code-block:: shell
 
@@ -64,14 +64,14 @@ type this in the terminal to install Python_
 how to manually make a python test driven development environment
 ********************************************************************************************
 
-* Let us say I have to work on a project and its name is ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal
-* I can use the cd_ program to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal
+* Let us say I have to work on a project and its name is ``magic``. I click on ``terminal_`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New terminal_`` to open a terminal_
+* I can use the cd_ program to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
 
   .. code-block:: shell
 
     cd pumping_python
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -79,33 +79,33 @@ how to manually make a python test driven development environment
 
   the `folder/directory`_ does NOT exist. I need to make it
 
-* I use the mkdir_ program to make a `folder/directory`_
+* I use the mkdir_ program_ to make a `folder/directory`_
 
   .. code-block:: shell
 
     mkdir pumping_python
 
-  the terminal shows nothing. I try `changing directory`_ again
+  the terminal_ shows nothing. I try `changing directory`_ again
 
   .. code-block:: python
 
     cd pumping_python
 
-  the terminal shows I am now in the ``pumping_python`` `folder/directory`_
+  the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
 
   .. code-block:: shell
 
     .../pumping_python $
 
   - a `folder/directory`_ is a container for files_. It helps to organize things, just like a folder in a file cabinet is used to organize files that belong together. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in ``pumping_python``
-  - a `file`_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end in with extension to show the type of file_ for example
+  - a `file`_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an  extension to show the type of file_ for example
 
-    - ``.txt`` for a text file
-    - ``.sh`` for a bash file
-    - ``.ps1`` for a PowerShell_ file
-    -  ``.py`` for a Python_ :ref:`module<ModuleNotFoundError>`
+    - ``.txt`` for a `plain text`_ file_
+    - ``.sh`` for a bash_ file_
+    - ``.ps1`` for a PowerShell_ file_
+    -  ``.py`` for a :ref:`Python module<ModuleNotFoundError>`
 
-  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`
+  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
 
     .. code-block:: shell
 
@@ -113,55 +113,55 @@ how to manually make a python test driven development environment
 
     a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
-* I can use the tree_ program to see what files and folders are in a directory_. I type it in the terminal to see what is in the ``pumping_python`` directory_
+* I can use the tree_ program_ to see what files and folders are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
 
   .. code-block:: shell
 
     tree
 
-  the terminal shows
-
-  .. code-block:: shell
-
-    tree: command not found
-
-  I need to install tree_ to use it
-
-  .. admonition:: if you are using MacOS_ type this in the terminal
-
-    first install brew_ (The Missing Package Manager for macOS), if you do not have it already
+  - when tree_ is not installed on the computer the terminal_ shows
 
     .. code-block:: shell
 
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      tree: command not found
 
-    then use brew_ to install tree_
+    I need to install tree_ to use it
+
+    .. admonition:: if you are using MacOS_ type this in the terminal_
+
+      first install brew_ (The Missing Package Manager for macOS), if you do not have it already
+
+      .. code-block:: shell
+
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+      then use brew_ to install tree_
+
+      .. code-block:: shell
+
+        brew install tree
+
+    or
+
+    .. admonition:: if you are using Linux_ or `Windows Subsystem Linux`_ type this in the terminal_
+
+      .. code-block:: shell
+
+        sudo apt install tree --yes
+
+    after the computer installs tree_, I run the command again
 
     .. code-block:: shell
 
-      brew install tree
+      tree
 
-  or
-
-  .. admonition:: if you are using Linux_ or `Windows Subsystem Linux`_ type this in the terminal
+  - when tree_ is installed on the computer, the terminal_ shows
 
     .. code-block:: shell
 
-      sudo apt install tree --yes
+      .
 
-* after the computer installs tree_, I run the command again
-
-  .. code-block:: shell
-
-    tree
-
-  the terminal shows
-
-  .. code-block:: shell
-
-    .
-
-    0 directories, 0 files
+      0 directories, 0 files
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_ with cd_
 
@@ -169,7 +169,7 @@ how to manually make a python test driven development environment
 
     cd magic
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -181,13 +181,13 @@ how to manually make a python test driven development environment
 
     mkdir magic
 
-  the terminal shows nothing. I use tree_ again
+  the terminal_ shows nothing. I use tree_ again
 
   .. code-block:: shell
 
     tree
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -202,38 +202,38 @@ how to manually make a python test driven development environment
 
     cd magic
 
-  the terminal shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
+  the terminal_ shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
   .. code-block:: shell
 
     .../pumping_python/magic
 
-* I use Python_ to run the ``magic`` program
+* I use Python_ to run the ``magic`` program_
 
   .. code-block:: shell
 
     python3 src/magic.py
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: text
     :force:
 
     python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program because it does not exist yet. I make a child `folder/directory`_ in the ``magic`` folder for the source code (the actual program)
+  the computer cannot find the program_ because it does not exist yet. I make a child folder_ in the ``magic`` directory_ for the actual program_ (source code)
 
   .. code-block:: shell
 
     mkdir src
 
-  the terminal shows nothing. I use tree_ to see what changed in the ``magic`` directory_
+  the terminal_ shows nothing. I use tree_ to see what changed in the ``magic`` directory_
 
   .. code-block:: shell
 
     tree
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -242,27 +242,27 @@ how to manually make a python test driven development environment
 
     2 directories, 0 files
 
-  I try to run the program again
+  I try to run the ``magic`` program_ again
 
   .. code-block:: shell
 
     python3 src/magic.py
 
-  the terminal shows the same error from before. I have to make the file. I use touch_ to make an empty file in the ``src`` folder
+  the terminal_ shows the same error from before. I have to make the file_. I use touch_ to make an empty file in the ``src`` folder
 
   .. code-block:: shell
 
     touch src/magic.py
 
-  the terminal shows nothing. touch_ is a program that is used to make an empty file with whatever name it is given in whatever directory_ is given in the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  the terminal_ shows nothing
 
-* I use tree_ to see what folders_ and files I have now
+* I use tree_ to see what folders_ and files_ I have now
 
   .. code-block:: shell
 
     tree
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -272,13 +272,15 @@ how to manually make a python test driven development environment
 
     2 directories, 1 file
 
-* I try to run the program again
+  touch_ is a program_ that makes an empty file with whatever name it is given in whatever directory_ is given in the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+
+* I try to run the ``magic`` program_ again
 
   .. code-block:: shell
 
     python3 src/magic.py
 
-  the terminal shows nothing. Success! This is because there is no code in ``src/magic.py``, it is empty, and I can run it
+  the terminal_ shows nothing. Success! This is because there is no code in ``src/magic.py``, it is empty, and I can run it
 
 ********************************************************************************************
 test_failure
@@ -295,13 +297,13 @@ this process can be repeated as many times as possible
 red: make it fail
 ############################################################################################
 
-* Since the approach in this book is `Test Driven Development`_ I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ which comes with Python_ to run tests. I type it in the terminal
+* Since the approach in this book is `Test Driven Development`_ I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ which comes with Python_ to run tests. I type it in the terminal_
 
   .. code-block:: python
 
     python3 -m unittest
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -310,23 +312,23 @@ red: make it fail
 
     NO TESTS RAN
 
-  - ``python3`` is the Python_ program
-  - ``-m`` is an option/switch passed when calling the Python_ program to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case,  as a script
+  - ``python3`` is the Python_ program_
+  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
   - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``, this means somewhere on the computer there is a file named ``unittest.py``
 
-* I do not have any tests yet, that is why no tests ran. I make a child `folder/directory`_ to keep the tests separate from the source code (the actual program)
+* I do not have any tests yet, that is why no tests ran. I make a child `folder/directory`_ to keep the tests separate from the actual program_ (source code)
 
   .. code-block:: shell
 
     mkdir tests
 
-  the terminal shows nothing, I use tree_ to see what my project looks like now
+  the terminal_ shows nothing, I use tree_ to see what my project looks like now
 
   .. code-block:: shell
 
     tree
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -343,13 +345,13 @@ red: make it fail
 
     touch tests/magic.py
 
-  the terminal shows nothing. I use the tree_ program to see what the project looks like so far
+  the terminal_ shows nothing. I use tree_ to see what the project looks like so far
 
   .. code-block:: shell
 
     tree
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -367,7 +369,7 @@ red: make it fail
 
     python3 -m unittest
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -424,7 +426,7 @@ red: make it fail
 
     python3 -m unittest
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -440,13 +442,13 @@ red: make it fail
 
     touch tests/__init__.py
 
-  the terminal shows nothing. I run the tree_ command to see what changed
+  the terminal_ shows nothing. I run the tree_ command to see what changed
 
   .. code-block:: shell
 
     tree
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -465,7 +467,7 @@ red: make it fail
 
     python3 -m unittest
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -473,7 +475,7 @@ red: make it fail
 
   I need to tell Python_ that ``magic.py`` in the ``tests`` folder is a test file
 
-* I use the mv_ program to change the name of the file to ``test_magic.py``
+* I use the mv_ program_ to change the name of the file to ``test_magic.py``
 
   .. code-block:: shell
 
@@ -481,13 +483,13 @@ red: make it fail
 
   .. ATTENTION:: I can use any name for the test file but it must start with ``test_`` or unittest_ will not run the tests in the file
 
-  the terminal shows nothing. I use tree_ to see what I have so far
+  the terminal_ shows nothing. I use tree_ to see what I have so far
 
   .. code-block:: shell
 
     tree
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -508,7 +510,7 @@ red: make it fail
 
     python3 -m unittest
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -529,7 +531,7 @@ red: make it fail
 
 * If you are typing along, *CONGRATULATIONS!* You just wrote a test.
 
-  This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal is about the failure, I like to read these from the bottom up, here is an explanation of each line
+  This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line
 
   * ``FAILED (failures=1)`` the number of failures
   * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
@@ -538,7 +540,7 @@ red: make it fail
   * ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
   * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
 
-    .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
+    .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
 
   * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
   * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
@@ -580,13 +582,13 @@ I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on l
 
           self.assertFalse(False)
 
-then I run the test again in the terminal
+then I run the test again in the terminal_
 
 .. code-block:: python
 
   python3 -m unittest
 
-and the test passes! The terminal shows
+and the test passes! The terminal_ shows
 
 .. code-block:: none
 
@@ -603,7 +605,7 @@ refactor: make it better
 
 I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I expect.
 
-This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a program to run the tests so `I do not repeat myself`_.
+This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a computer program_ to run the tests so `I do not repeat myself`_.
 
 ----
 
@@ -611,13 +613,13 @@ This means I have to run ``python3 -m unittest`` for each part of the `Test Driv
 how to automatically run tests
 ********************************************************************************************
 
-I can use `pytest-watch`_ to automatically run tests. It is a Python_ program that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change. pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal
+I can use `pytest-watch`_ to automatically run tests. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change. pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal_
 
 .. code-block:: shell
 
   pytest-watch
 
-the terminal shows
+the terminal_ shows
 
 .. code-block:: shell
 
@@ -634,12 +636,12 @@ how to make a virtual environment
 
     python3 -m venv .venv
 
-  the terminal shows nothing
+  the terminal_ shows nothing
 
-  - ``python3`` is the Python_ program
+  - ``python3`` is the Python_ program_
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name.
-  - A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment` for every project with only the programs that the project needs
+  - A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment` for every project with only the programs_ that the project needs
   - ``.venv`` is the name I am giving for the `virtual environment`
 
     .. TIP:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
@@ -653,7 +655,7 @@ how to make a virtual environment
   - the ``-a`` option makes tree_ show all files that are listed including ``.venv`` which is hidden because it has a ``.`` at the start of the name
   - the ``-L`` option tells tree_ how deep to go with showing the folders_ and files, I use ``2`` to keep it only to the contents of the child folders_
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -680,7 +682,7 @@ how to make a virtual environment
 
     source .venv/bin/activate
 
-  .. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
+  .. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
 
     .. code-block:: shell
 
@@ -692,7 +694,7 @@ how to make a virtual environment
 
     pytest-watch
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -706,7 +708,7 @@ how to make a virtual environment
 
     pip list
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -723,21 +725,21 @@ how to make a virtual environment
 
     python3 -m pip install pytest-watch
 
-  or I can create a ``requirements.txt`` file where I list all the Python_ packages for my project and have pip_ install the programs listed in the file. I use echo_ to make ``requirements.txt`` with `pytest-watch`_ as its text
+  or I can create a ``requirements.txt`` file where I list all the Python_ packages for my project and have pip_ install the programs_ listed in the file. I use echo_ to make ``requirements.txt`` with `pytest-watch`_ as its text
 
   .. code-block:: shell
 
     echo pytest-watch > requirements.txt
 
-  - echo_ is a program that shows whatever it is given on the screen (`standard output (stdout)`_)
-  - ``>`` is an operator that is used to send output from a program to the given file
-  - `pytest-watch`_ is a Python_ program that automatically runs pytest_ when a Python_ file in the folder changes
+  - echo_ is a program_ that shows whatever it is given on the screen (`standard output (stdout)`_)
+  - ``>`` is an operator that is used to send output from a program to the given file_
+  - `pytest-watch`_ is a Python_ program_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
   - pytest_ is a `python package`_ like unittest_, that is used for testing
-  - ``requirements.txt`` is the name of a file where I can list `python packages`_ for pip_ to install
+  - ``requirements.txt`` is the name of a file_ where I can list `python packages`_ for pip_ to install
 
     .. TIP:: ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
 
-* I use pip_ to install `pytest-watch`_ and the programs it needs
+* I use pip_ to install `pytest-watch`_ and the programs_ it needs
 
   .. code-block:: python
 
@@ -746,7 +748,7 @@ how to make a virtual environment
   - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file
   - ``requirements.txt`` is the name of the file given
 
-  when I do not have the latest version of pip_, the terminal shows
+  when I do not have the latest version of pip_, the terminal_ shows
 
   .. code-block:: python
 
@@ -769,7 +771,7 @@ how to make a virtual environment
 
     pip list
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -794,7 +796,7 @@ how to make a virtual environment
 
     tree -a -L 2
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
     :force:
@@ -844,7 +846,7 @@ how to make a virtual environment
 
           self.assertFalse(True)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -872,14 +874,14 @@ how to make a virtual environment
 
   the test passes. I can now write the rest of the code for the project while the tests run automatically
 
-  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal when you want to stop the tests
+  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal_ when you want to stop the tests
 
 ----
 
 how to deactivate a virtual environment
 #################################################################################################
 
-When I want to leave a `virtual environment`_, I type this in the terminal to deactivate it
+When I want to leave a `virtual environment`_, I type this in the terminal_ to deactivate it
 
 .. code-block::
 
@@ -890,13 +892,13 @@ When I want to leave a `virtual environment`_, I type this in the terminal to de
 how to activate a virtual environment
 ############################################################################################
 
-When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal
+When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal_
 
 .. code-block:: shell
 
   source .venv/bin/activate
 
-.. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal shows that I am in the `virtual environment`_, for example
+.. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
 
   .. code-block:: shell
 
@@ -908,9 +910,9 @@ When I want to work in a `virtual environment`_, I `change directory`_ to the `f
 how to automatically make a python test driven development environment
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
+You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
-* I exit the tests in the terminal by pressing ``ctrl`` + ``c`` on the keyboard
+* I exit the tests in the terminal_ by pressing ``ctrl`` + ``c`` on the keyboard
 * I leave the `virtual environment`_
 
   .. code-block:: shell
@@ -923,7 +925,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     pytest-watch
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -935,7 +937,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     cd ..
 
-  ``..`` is shorthand for the parent of any directory you are in, the terminal shows
+  ``..`` is shorthand for the parent of any directory you are in, the terminal_ shows
 
   .. code-block:: shell
 
@@ -943,19 +945,19 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   I am back in the ``pumping_python`` directory
 
-* I use touch_ to make an empty file with a name that describes the program I will write so that it is easy to remember later, for example :ref:`makePythonTdd.sh`
+* I use touch_ to make an empty file with a name that describes the program_, to make it is easy to remember later, for example :ref:`makePythonTdd.sh`
 
   .. code-block:: shell
 
     touch makePythonTdd.sh
 
-* I type history_ in the terminal
+* I type history_ in the terminal_
 
   .. code-block:: shell
 
     history
 
-  the history_ program shows all the commands I have typed in the terminal so far, and I use them to write the program that will automate making a Python_ `Test Driven Development`_ environment for me
+  the history_ program shows all the commands I have typed in the terminal_ so far, and I use them to write the program that will automate making a Python_ `Test Driven Development`_ environment for me
 
 * I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_
 * then I type the commands for the program in the editor
@@ -983,13 +985,13 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run this program
 
-* I go back to the terminal to run the program
+* I go back to the terminal_ to run the program
 
   .. code-block:: shell
 
     makePythonTdd.sh
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1001,7 +1003,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh
 
-  ``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few `folders/directories`_ by default whenever a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal shows
+  ``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few `folders/directories`_ by default whenever a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
 
   .. code-block:: shell
 
@@ -1015,7 +1017,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program that changes the mode of the given file. the terminal shows nothing
+  chmod_ is a program that changes the mode of the given file. the terminal_ shows nothing
 
 * I try the command again
 
@@ -1023,7 +1025,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1094,7 +1096,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1155,7 +1157,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh a_project
 
-  the terminal shows no errors but no tests run
+  the terminal_ shows no errors but no tests ran
 
   .. code-block:: python
 
@@ -1170,13 +1172,13 @@ You made it this far and have become the greatest programmer in the world. To fo
     :linenos:
     :emphasize-lines: 10-21
 
-  I try the program again
+  I try the program again with a different name for the project
 
   .. code-block:: shell
 
     ./makePythonTdd.sh another_project
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1196,13 +1198,13 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   I hit ``ctrl+c`` on the keyboard to stop the test
 
-* I can now make a `Test Driven Development`_ environment when I call ``makePythonTdd.sh`` with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal in the folder where ``makePythonTdd.sh`` is saved
+* I can now make a `Test Driven Development`_ environment when I call ``makePythonTdd.sh`` with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_ in the folder where ``makePythonTdd.sh`` is saved
 
   .. code-block:: shell
 
     ./makePythonTdd.sh assertion_error
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: python
 

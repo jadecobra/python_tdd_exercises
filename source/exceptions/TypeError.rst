@@ -20,7 +20,7 @@ TypeError
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``type_error`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``type_error`` as the name of the project
 
   .. code-block:: python
 
@@ -32,7 +32,7 @@ requirements
 
       ./makePythonTdd.ps1 type_error
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -83,7 +83,7 @@ red: make it fail
         def test_type_error_w_non_callables(self):
             src.type_error.none()
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -106,7 +106,7 @@ green: make it pass
 
     none = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -143,7 +143,7 @@ refactor: make it better
         src.type_error.none()
         src.type_error.false()
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -159,7 +159,7 @@ refactor: make it better
 
     false = False
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -175,7 +175,7 @@ refactor: make it better
     def false():
         return False
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * I add a line to test the other :ref:`boolean<Booleans>`
 
@@ -186,7 +186,7 @@ refactor: make it better
         src.type_error.false()
         src.type_error.true()
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -202,7 +202,7 @@ refactor: make it better
 
     true = True
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -231,7 +231,7 @@ refactor: make it better
         src.type_error.true()
         src.type_error.a_list()
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -247,7 +247,7 @@ refactor: make it better
 
     a_list = [1, 2, 3, 'n']
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -277,7 +277,7 @@ refactor: make it better
         src.type_error.a_list()
         src.type_error.a_dictionary()
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -293,7 +293,7 @@ refactor: make it better
 
     a_dictionary = {'key': 'value'}
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -310,7 +310,7 @@ refactor: make it better
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal shows green again. It is safe to say that I cannot call :ref:`data structures`.
+  the terminal_ shows green again. It is safe to say that I cannot call :ref:`data structures`.
 
 ----
 
@@ -330,7 +330,7 @@ red: make it fail
     def test_type_error_w_function_signatures(self):
         src.type_error.function_00('a')
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -347,7 +347,7 @@ red: make it fail
     def function_00():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -378,7 +378,7 @@ refactor: make it better
         src.type_error.function_00('a')
         src.type_error.function_01('a', 'b')
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -396,7 +396,7 @@ refactor: make it better
     def function_01(argument):
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -422,7 +422,7 @@ refactor: make it better
         src.type_error.function_01('a', 'b')
         src.type_error.function_02('a', 'b', 'c')
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -444,7 +444,7 @@ refactor: make it better
         ):
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -460,7 +460,7 @@ refactor: make it better
         ):
         return None
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * I add one more failing line to the test
 
@@ -472,7 +472,7 @@ refactor: make it better
         src.type_error.function_02('a', 'b', 'c')
         src.type_error.function_03('a', 'b', 'c', 'd')
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
     :force:
@@ -496,7 +496,7 @@ refactor: make it better
         ):
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -512,7 +512,7 @@ refactor: make it better
     ):
         return None
 
-  the terminal shows both tests are passing.
+  the terminal_ shows both tests are passing.
 
 ----
 
@@ -532,7 +532,7 @@ I add a new test with a failing line
   def test_type_error_w_objects_that_do_not_mix(self):
       None + 1
 
-the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
 .. code-block:: python
 
@@ -565,7 +565,7 @@ refactor: make it better
             None + 1
         'text' + 0.1
 
-  the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+  the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
@@ -594,7 +594,7 @@ refactor: make it better
             'text' + 0.1
         (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  the terminal shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+  the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
   .. code-block:: python
 
@@ -612,7 +612,7 @@ refactor: make it better
         with self.assertRaises(TypeError):
             (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  the terminal shows all tests are passing.
+  the terminal_ shows all tests are passing.
 
 ----
 

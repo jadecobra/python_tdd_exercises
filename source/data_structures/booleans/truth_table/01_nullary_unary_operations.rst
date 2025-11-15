@@ -18,7 +18,7 @@ truth table: Nullary and Unary Operations
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``truth_table`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``truth_table`` as the name of the project
 
   .. code-block:: python
 
@@ -30,7 +30,7 @@ requirements
 
       ./makePythonTdd.ps1 truth_table
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -79,7 +79,7 @@ I change the text in ``test_truth_table.py``
       def test_logical_true(self):
           self.assertTrue(src.truth_table.logical_true())
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -104,7 +104,7 @@ then I add a :ref:`function<functions>` to ``truth_table.py``
   def logical_true():
       return None
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -135,7 +135,7 @@ I add another test
   def test_logical_false(self):
       self.assertFalse(src.truth_table.logical_false())
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
   :force:
@@ -156,7 +156,7 @@ green: make it pass
     def logical_false():
         return True
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -201,7 +201,7 @@ I add a new TestCase_ and a test to ``test_truth_table.py``
       def test_logical_identity(self):
           self.assertTrue(src.truth_table.logical_identity(True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -221,7 +221,7 @@ green: make it pass
     def logical_identity():
         return False
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -243,7 +243,7 @@ green: make it pass
     def logical_identity(argument):
         return False
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -269,7 +269,7 @@ I add another line to the test
       self.assertTrue(src.truth_table.logical_identity(True))
       self.assertFalse(src.truth_table.logical_identity(False))
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -282,7 +282,7 @@ when I change the `return statement`_
     def logical_identity(argument):
         return False
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -316,7 +316,7 @@ I add a new test
   def test_logical_negation(self):
       self.assertFalse(src.truth_table.logical_negation(True))
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -337,7 +337,7 @@ green: make it pass
     def logical_negation(argument):
         return argument
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -363,7 +363,7 @@ refactor: make it better
         self.assertFalse(src.truth_table.logical_negation(True))
         self.assertTrue(src.truth_table.logical_negation(False))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -376,7 +376,7 @@ refactor: make it better
     def logical_negation(argument):
         return True
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -389,7 +389,7 @@ refactor: make it better
     def logical_negation(argument):
         return argument
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 

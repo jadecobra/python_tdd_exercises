@@ -31,7 +31,7 @@ A list_ is a container :ref:`object<classes>` that can hold any objects_
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``lists`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``lists`` as the name of the project
 
   .. code-block:: python
 
@@ -43,7 +43,7 @@ requirements
 
       ./makePythonTdd.ps1 lists
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -90,7 +90,7 @@ I change ``test_failure`` to ``test_making_a_list``
       def test_making_a_list(self):
           self.assertEqual(list(), None)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -118,7 +118,7 @@ I add another :ref:`assertion<AssertionError>`, this time with input to the list
   self.assertEqual(list(), [])
   self.assertEqual(list(0), [])
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -141,7 +141,7 @@ I change the input to a tuple_
   self.assertEqual(list(), [])
   self.assertEqual(list((0, 1, 2, 'n')), [])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -181,7 +181,7 @@ I add a failing test
           ]
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -193,12 +193,12 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   Diff is 748 characters long. Set self.maxDiff to None to see it
 
-`maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal, when it is set to :ref:`None` it shows the entire difference
+`maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None` it shows the entire difference
 
 green: make it pass
 #################################################################################
 
-* I add ``self.maxDiff`` to the test then move the terminal to the right
+* I add ``self.maxDiff`` to the test then move the terminal_ to the right
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -212,7 +212,7 @@ green: make it pass
             ]
         )
 
-  the terminal shows a long list_ of items. I copy and paste them from the terminal then use `find and replace`_ to remove the extra characters
+  the terminal_ shows a long list_ of items. I copy and paste them from the terminal_ then use `find and replace`_ to remove the extra characters
 
   .. note::
 
@@ -282,7 +282,7 @@ I add a test for the append_ :ref:`method<functions>`
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.append())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -297,7 +297,7 @@ I add ``0`` as input
 
   self.assertIsNone(a_list.append(0))
 
-the terminal shows green, the append_ :ref:`method<functions>` returns :ref:`None` when called
+the terminal_ shows green, the append_ :ref:`method<functions>` returns :ref:`None` when called
 
 refactor: make it better
 #################################################################################
@@ -310,13 +310,13 @@ refactor: make it better
     self.assertIsNone(a_list.append(0))
     self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
 
-  the :ref:`method<functions>` added a value. I change the expectation to match the values in the terminal
+  the :ref:`method<functions>` added a value. I change the expectation to match the values in the terminal_
 
   .. code-block:: python
 
@@ -330,7 +330,7 @@ refactor: make it better
 
     self.assertIsNone(a_list.append('n+1'))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -386,7 +386,7 @@ I add a test for the clear_ :ref:`method<functions>`
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.clear())
 
-the terminal shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when called
+the terminal_ shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when called
 
 red: make it fail
 #################################################################################
@@ -399,7 +399,7 @@ I add an :ref:`assertion<AssertionError>` to show what it did to the list_
   self.assertIsNone(a_list.clear())
   self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -465,7 +465,7 @@ I add another test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.copy())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -484,7 +484,7 @@ I add the list_ to the :ref:`assertion<AssertionError>`
   a_list = [0, 1, 2, 'n']
   self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -545,7 +545,7 @@ I add a test for the next :ref:`method<functions>`
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.count())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -560,7 +560,7 @@ I add a value to the call
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.count(0))
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -575,7 +575,7 @@ I add the value
 
   self.assertIsNone(a_list.count(0), 1)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -602,7 +602,7 @@ refactor: make it better
         self.assertEqual(a_list.count(0), 1)
         self.assertEqual(a_list.count(1), 1)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -623,7 +623,7 @@ refactor: make it better
     self.assertEqual(a_list.count(1), 3)
     self.assertEqual(a_list.count('not in list'), 3)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -680,7 +680,7 @@ time for another test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.extend())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -695,7 +695,7 @@ I pass a value to the call
 
   self.assertIsNone(a_list.extend(0))
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -719,7 +719,7 @@ refactor: make it better
     self.assertIsNone(a_list.extend((0, 1)))
     self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -743,7 +743,7 @@ refactor: make it better
         self.assertIsNone(a_list.extend((2, 1, 0)))
         self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -798,7 +798,7 @@ I add a test for the index_ :ref:`method<functions>`
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.index())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -816,7 +816,7 @@ I add a value to the call
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.index(0))
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -828,7 +828,7 @@ I add the expectation
 
   self.assertIsNone(a_list.index(0), 0)
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -857,7 +857,7 @@ refactor: make it better
         a_list = ['1st', '2nd', '3rd', '...last']
         self.assertEqual(a_list.index(0), 0)
 
-  the terminal shows ValueError_
+  the terminal_ shows ValueError_
 
   .. code-block:: python
 
@@ -882,7 +882,7 @@ refactor: make it better
         a_list = ['1st', '2nd', '3rd', '...last']
         a_list.index('not in list')
 
-  the terminal shows ValueError_
+  the terminal_ shows ValueError_
 
   .. code-block:: python
 
@@ -913,7 +913,7 @@ refactor: make it better
         with self.assertRaises(ValueError):
             a_list.index('not in list')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -934,7 +934,7 @@ refactor: make it better
     self.assertEqual(a_list.index('1st'), 0)
     self.assertEqual(a_list.index('3rd'), 0)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -955,7 +955,7 @@ refactor: make it better
     self.assertEqual(a_list.index('3rd'), 2)
     self.assertEqual(a_list.index('2nd'), 2)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -976,13 +976,13 @@ refactor: make it better
     self.assertEqual(a_list.index('2nd'), 1)
     self.assertEqual(a_list.index('...last'), 1)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 3 != 1
 
-  I change the value to match the terminal
+  I change the value to match the terminal_
 
   .. code-block:: python
 
@@ -998,20 +998,20 @@ refactor: make it better
     def test_index(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
 
-  the terminal still shows green. I add an :ref:`assertion<AssertionError>`
+  the terminal_ still shows green. I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
     self.assertEqual(a_list.index('...last'), 3)
     self.assertEqual(a_list.index('1st'), 4)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
     AssertionError: 0 != 4
 
-  when I first called the index_ :ref:`method<functions>`, the terminal showed :ref:`TypeError`
+  when I first called the index_ :ref:`method<functions>`, the terminal_ showed :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1023,7 +1023,7 @@ refactor: make it better
 
     self.assertEqual(a_list.index('1st', 0), 4)
 
-  the terminal still shows :ref:`AssertionError`
+  the terminal_ still shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1092,7 +1092,7 @@ I add a test for the next :ref:`method<functions>`
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -1122,7 +1122,7 @@ refactor: make it better
     self.assertIsNone(a_list.insert(0, 1))
     self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1142,7 +1142,7 @@ refactor: make it better
 
     self.assertIsNone(a_list.insert(0, -1))
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1163,14 +1163,14 @@ refactor: make it better
     self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
     self.assertIsNone(a_list.insert(3, 1.5))
 
-  the terminal shows green. I add an :ref:`assertion<AssertionError>` to see what it did to the list
+  the terminal_ shows green. I add an :ref:`assertion<AssertionError>` to see what it did to the list
 
   .. code-block:: python
 
     self.assertIsNone(a_list.insert(3, 1.5))
     self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1225,7 +1225,7 @@ I add a new test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.pop())
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1242,7 +1242,7 @@ I add the expectation
 
   self.assertIsNone(a_list.pop(), 'n')
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1267,7 +1267,7 @@ refactor: make it better
     self.assertEqual(a_list.pop(), 'n')
     self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1288,7 +1288,7 @@ refactor: make it better
     self.assertEqual(a_list, [0, 1, 2])
     self.assertEqual(a_list.pop(), 'n')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1308,7 +1308,7 @@ refactor: make it better
     self.assertEqual(a_list.pop(), 2)
     self.assertEqual(a_list, [0, 1, 2])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1362,7 +1362,7 @@ time for the next :ref:`method<functions>`
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.remove())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -1377,7 +1377,7 @@ I add a value to the call
 
   self.assertIsNone(a_list.remove(0))
 
-the terminal shows green, the remove_ :ref:`method<functions>` returns :ref:`None`
+the terminal_ shows green, the remove_ :ref:`method<functions>` returns :ref:`None`
 
 refactor: make it better
 #################################################################################
@@ -1389,7 +1389,7 @@ refactor: make it better
     self.assertIsNone(a_list.remove(0))
     self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1413,7 +1413,7 @@ refactor: make it better
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 2, 'n'])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1434,7 +1434,7 @@ refactor: make it better
     self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
     self.assertIsNone(a_list.remove('not in list'))
 
-  the terminal shows ValueError_
+  the terminal_ shows ValueError_
 
   .. code-block:: python
 
@@ -1492,14 +1492,14 @@ I add the next test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.reverse())
 
-the terminal shows green. This :ref:`method<functions>` returns :ref:`None`. I add an :ref:`assertion<AssertionError>` to see what it did to the list_
+the terminal_ shows green. This :ref:`method<functions>` returns :ref:`None`. I add an :ref:`assertion<AssertionError>` to see what it did to the list_
 
 .. code-block:: python
 
   self.assertIsNone(a_list.reverse())
   self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1554,7 +1554,7 @@ I add a test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.sort())
 
-the terminal shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -1591,14 +1591,14 @@ refactor: make it better
         self.assertIsNone(a_list.sort())
 
 
-  the terminal still shows green, sort_ returns :ref:`None` when called. I add another :ref:`assertion<AssertionError>` to see what it did to the list_
+  the terminal_ still shows green, sort_ returns :ref:`None` when called. I add another :ref:`assertion<AssertionError>` to see what it did to the list_
 
   .. code-block:: python
 
     self.assertIsNone(a_list.sort())
     self.assertEqual(a_list, [])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1616,7 +1616,7 @@ refactor: make it better
 
     a_list = [0, 1, -1, 2, -2, 3, -3]
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1667,7 +1667,7 @@ I add a failing test
       a_list = ['1st', '2nd', '3rd', '...last']
       self.assertEqual(a_list[0], '')
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1696,7 +1696,7 @@ refactor: make it better
     self.assertEqual(a_list[0], '1st')
     self.assertEqual(a_list[a_list.index('1st')], '')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1717,7 +1717,7 @@ refactor: make it better
     self.assertEqual(a_list[a_list.index('1st')], '1st')
     self.assertEqual(a_list[-4], '')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1738,7 +1738,7 @@ refactor: make it better
     self.assertEqual(a_list[-4], '1st')
     self.assertEqual(a_list[2], '')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1750,7 +1750,7 @@ refactor: make it better
 
     self.assertEqual(a_list[2], '3rd')
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * I add another :ref:`assertion<AssertionError>`
 
@@ -1759,7 +1759,7 @@ refactor: make it better
     self.assertEqual(a_list[2], '3rd')
     self.assertEqual(a_list[-2], '')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1780,7 +1780,7 @@ refactor: make it better
     self.assertEqual(a_list[-2], '3rd')
     self.assertEqual(a_list[1], '')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1799,7 +1799,7 @@ refactor: make it better
     self.assertEqual(a_list[1], '2nd')
     self.assertEqual(a_list[-3], '')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1820,7 +1820,7 @@ refactor: make it better
     self.assertEqual(a_list[-3], '2nd')
     self.assertEqual(a_list[3], '')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1841,7 +1841,7 @@ refactor: make it better
     self.assertEqual(a_list[3], '...last')
     self.assertEqual(a_list[-1], '')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1876,7 +1876,7 @@ I add a test
       a_list[-1] = '4th'
       self.assertEqual(a_list, ['1st', '2nd', '3rd', '...last'])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1887,7 +1887,7 @@ I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` 
 green: make it pass
 #################################################################################
 
-I change the expectation to match the terminal
+I change the expectation to match the terminal_
 
 .. code-block:: python
 
@@ -1915,7 +1915,7 @@ I add another test
       a_list = ['a', 'b', 'c', 'd']
       self.assertEqual(a_list[0:2], [])
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -1942,7 +1942,7 @@ refactor: make it better
     self.assertEqual(a_list[0:2], ['a', 'b'])
     self.assertEqual(a_list[:2], [])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1954,7 +1954,7 @@ refactor: make it better
 
     self.assertEqual(a_list[:2], ['a', 'b'])
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * I add another :ref:`assertion<AssertionError>`
 
@@ -1963,7 +1963,7 @@ refactor: make it better
     self.assertEqual(a_list[:2], ['a', 'b'])
     self.assertEqual(a_list[1:4], [])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -1984,7 +1984,7 @@ refactor: make it better
     self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
     self.assertEqual(a_list[1:], [])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2005,7 +2005,7 @@ refactor: make it better
     self.assertEqual(a_list[1:], ['b', 'c', 'd'])
     self.assertEqual(a_list[0:3], [])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2026,7 +2026,7 @@ refactor: make it better
     self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
     self.assertEqual(a_list[1:3], [])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2047,7 +2047,7 @@ refactor: make it better
     self.assertEqual(a_list[1:3], ['b', 'c'])
     self.assertEqual(a_list[:], [])
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -2098,7 +2098,7 @@ I add a failing test
       a_list = ['a', 'b', 'c', 'd']
       a_list[4]
 
-the terminal shows IndexError_
+the terminal_ shows IndexError_
 
 .. code-block:: python
 
@@ -2144,7 +2144,7 @@ refactor: make it better
         a_list[4]
     a_list[-5]
 
-  the terminal shows IndexError_
+  the terminal_ shows IndexError_
 
   .. code-block:: python
 
@@ -2170,7 +2170,7 @@ refactor: make it better
         a_list[-5]
     [].pop()
 
-  the terminal shows IndexError_
+  the terminal_ shows IndexError_
 
   .. code-block:: python
 
@@ -2186,7 +2186,7 @@ refactor: make it better
     with self.assertRaises(IndexError):
         [].pop()
 
-  the terminal shows green. I cannot remove the last item from a list_ that has no items, this is like trying to get an item from a list_ that has no items
+  the terminal_ shows green. I cannot remove the last item from a list_ that has no items, this is like trying to get an item from a list_ that has no items
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -2195,7 +2195,7 @@ refactor: make it better
         [].pop()
     [][-1]
 
-  the terminal shows IndexError_
+  the terminal_ shows IndexError_
 
   .. code-block:: python
 

@@ -23,7 +23,7 @@ This is part 1 of a program that calculates the difference between a given wake 
 requirements
 *********************************************************************************
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the name of the project
 
   .. code-block:: python
 
@@ -35,7 +35,7 @@ requirements
 
       ./makePythonTdd.ps1 sleep_duration
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -79,7 +79,7 @@ red: make it fail
 
             )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -115,7 +115,7 @@ green: make it pass
         None
     )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -141,7 +141,7 @@ green: make it pass
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -156,7 +156,7 @@ green: make it pass
         None
     )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -176,7 +176,7 @@ green: make it pass
 
     duration
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -197,7 +197,7 @@ green: make it pass
         None
     )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -246,7 +246,7 @@ green: make it pass
         None
     )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -271,7 +271,7 @@ green: make it pass
         ('08:00', '07:00')
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -315,7 +315,7 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '07:00'
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ refactor: make it better
         wake_time = '09:00'
         sleep_time = '06:00'
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -387,7 +387,7 @@ refactor: make it better
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal shows :ref:`AssertionError`
+  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -417,7 +417,7 @@ refactor: make it better
         (wake_time-sleep_time)
     )
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -443,7 +443,7 @@ refactor: make it better
         self.assertEqual(help(str))
     ...
 
-  the terminal shows `python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like what I am looking for
+  the terminal_ shows `python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like what I am looking for
 
   .. code-block:: python
 
@@ -486,7 +486,7 @@ I add a failing test for the `str.split`_ :ref:`method<functions>` to see what i
   def test_duration_w_hours(self):
   ...
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -497,7 +497,7 @@ the terminal shows :ref:`AssertionError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I copy the :ref:`list <lists>` from the terminal and paste it in the test to make it pass
+I copy the :ref:`list <lists>` from the terminal_ and paste it in the test to make it pass
 
 .. code-block:: python
 
@@ -518,7 +518,7 @@ refactor: make it better
         '01:23'.split(), ['01', '23']
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -549,7 +549,7 @@ refactor: make it better
         )
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -568,7 +568,7 @@ refactor: make it better
             sleep_time.split(':')
         )
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_first_position_of_item_in_a_list>` I know I can get it by using its index, Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a variable to ``test_string_splitting``
 
@@ -579,14 +579,14 @@ refactor: make it better
 
         self.assertEqual(split, ['01', '23'])
 
-  the terminal still shows passing tests. I add an :ref:`assertion<AssertionError>` for indexing the :ref:`list <lists>`
+  the terminal_ still shows passing tests. I add an :ref:`assertion<AssertionError>` for indexing the :ref:`list <lists>`
 
   .. code-block:: python
 
     self.assertEqual(split, ['01', '23'])
     self.assertEqual(split[0], 0)
 
-  the terminal shows :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
+  the terminal_ shows :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
 
   .. code-block:: python
 
@@ -607,7 +607,7 @@ refactor: make it better
     self.assertEqual(split[0], '01')
     self.assertEqual(split[1], '01')
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -636,7 +636,7 @@ refactor: make it better
         )
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -673,7 +673,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     def test_duration_w_hours(self):
     ...
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -693,7 +693,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     self.assertEqual(int('23'), 1)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -705,7 +705,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     self.assertEqual(int('23'), 23)
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 ----
 
@@ -724,7 +724,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -760,7 +760,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -798,7 +798,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
           - get_hour(sleep_time)
         )
 
-  and the terminal still shows passing tests!
+  and the terminal_ still shows passing tests!
 
 * ``wake_hour`` and ``sleep_hour`` are only used once in  ``test_sleep_duration.py``, I can change them with direct calls to `random.randint`_
 
@@ -809,7 +809,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         sleep_time = f'{random.randint(0,23):02}:00'
     ...
 
-  the terminal still shows passing tests
+  the terminal_ still shows passing tests
 
 * ``wake_time`` and ``sleep_time`` are defined in the same way, time to make a :ref:`function<functions>` that returns a random timestamp
 

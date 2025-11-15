@@ -26,7 +26,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_sleep_duration.py``
-* then delete all the text in ``sleep_duration.py`` the terminal shows :ref:`AttributeError`
+* then delete all the text in ``sleep_duration.py`` the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -49,7 +49,7 @@ green: make it pass
 
     get_datetime
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -69,7 +69,7 @@ green: make it pass
 
     get_datetime = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -91,7 +91,7 @@ green: make it pass
     def get_datetime():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -103,7 +103,7 @@ green: make it pass
 
     def get_datetime(argument):
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -122,14 +122,14 @@ green: make it pass
     # TypeError
     # AssertionError
 
-* I copy the value from the terminal to change :ref:`None` in the `return statement`_
+* I copy the value from the terminal_ to change :ref:`None` in the `return statement`_
 
   .. code-block:: python
 
     def get_datetime(argument):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -145,7 +145,7 @@ green: make it pass
       def get_datetime(argument):
       ...
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ green: make it pass
     def get_datetime(argument):
         return argument
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -180,7 +180,7 @@ green: make it pass
             argument, '%Y/%m/%d %H:%M'
         )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -192,7 +192,7 @@ green: make it pass
 
     duration
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -206,7 +206,7 @@ green: make it pass
 
     duration = None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -219,7 +219,7 @@ green: make it pass
     def duration():
         return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -231,7 +231,7 @@ green: make it pass
 
     def duration(sleep_time):
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -243,7 +243,7 @@ green: make it pass
 
     def duration(sleep_time, wake_time):
 
-  the terminal shows this :ref:`AssertionError`
+  the terminal_ shows this :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -267,7 +267,7 @@ green: make it pass
     def duration(sleep_time, wake_time):
         raise ValueError(sleep_time, wake_time)
 
-* When I raise ValueError_ in ``duration`` the terminal shows :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
+* When I raise ValueError_ in ``duration`` the terminal_ shows :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: python
 
@@ -287,7 +287,7 @@ green: make it pass
 
   which does not tell me anything so I comment it out to get the other message I got with the :ref:`AssertionError`, I can raise ValueError_ again or try to return the inputs
 
-* When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal to change the message of the ValueError_
+* When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal_ to change the message of the ValueError_
 
   .. code-block:: python
 
@@ -296,7 +296,7 @@ green: make it pass
             "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
         )
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: python
     :force:
@@ -330,7 +330,7 @@ green: make it pass
             'sleep_time: "8720/08/18 01:02"'
         )
 
-  the terminal shows :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
+  the terminal_ shows :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
 
   .. code-block:: python
 
@@ -357,7 +357,7 @@ green: make it pass
         #    'sleep_time: "8720/08/18 01:02"'
         # )
 
-  the terminal shows the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
+  the terminal_ shows the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
 
 * I :ref:`interpolate<how to pass values>` ``wake_time`` and ``sleep_time`` in the message
 
@@ -371,7 +371,7 @@ green: make it pass
             f'sleep_time: "{sleep_time}"'
         )
 
-  the terminal shows ValueError_
+  the terminal_ shows ValueError_
 
   .. code-block:: python
 
@@ -405,7 +405,7 @@ green: make it pass
     else:
         return (sleep_time, wake_time)
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -430,7 +430,7 @@ green: make it pass
         else:
             return (sleep_time - wake_time)
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -455,7 +455,7 @@ green: make it pass
               - get_datetime(wake_time)
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -483,7 +483,7 @@ green: make it pass
               - get_datetime(wake_time)
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -526,7 +526,7 @@ refactor: make it better
             timestamp, '%Y/%m/%d %H:%M'
         )
 
-  the terminal shows all tests are still passing
+  the terminal_ shows all tests are still passing
 
 * then I remove the list of :ref:`Exceptions<errors>` encountered because it was just for me
 
@@ -534,7 +534,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<errors>` from the terminal
+The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<errors>` from the terminal_
 
 * :ref:`AttributeError`
 * :ref:`NameError<test_catching_name_error_in_tests>`

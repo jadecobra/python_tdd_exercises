@@ -13,7 +13,7 @@ An Infinite Learning Model
 red: make it fail
 #################################################################################
 
-* I open a terminal to run :ref:`makePythonTdd.sh` with ``learning`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``learning`` as the name of the project
 
   .. code-block:: python
 
@@ -25,7 +25,7 @@ red: make it fail
 
       ./makePythonTdd.ps1 learning
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal shows :ref:`AssertionError`
+  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -39,7 +39,7 @@ red: make it fail
 
   .. literalinclude:: /code/tests/test_learning_models.py
 
-* the terminal shows :ref:`AttributeError`
+* the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 

@@ -62,7 +62,7 @@ red: make it fail
                 )
             )
 
-  the terminal shows ValueError_
+  the terminal_ shows ValueError_
 
   .. code-block:: python
 
@@ -96,7 +96,7 @@ green: make it pass
 
         int('1999/12/31 21')
 
-  the terminal shows ValueError_ with the same message from ``test_duration_w_date_and_time``
+  the terminal_ shows ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -142,7 +142,7 @@ green: make it pass
                 )
             )
 
-  the terminal shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -162,7 +162,7 @@ green: make it pass
         else:
             return None
 
-  the terminal shows ValueError_
+  the terminal_ shows ValueError_
 
   .. code-block:: python
 
@@ -193,7 +193,7 @@ green: make it pass
                 (wake_time, sleep_time)
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -254,7 +254,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
   def test_duration_w_date_and_time(self):
   ...
 
-the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -273,7 +273,7 @@ I add an `import statement`_ for the datetime_ module
   import unittest
   ...
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
@@ -292,7 +292,7 @@ because my `import statement`_ is different from `the example in the documentati
           ''
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -343,7 +343,7 @@ refactor: make it better
             )
         )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -381,7 +381,7 @@ refactor: make it better
             )
         )
 
-  the terminal shows ValueError_
+  the terminal_ shows ValueError_
 
   .. code-block:: python
 
@@ -402,7 +402,7 @@ refactor: make it better
             )
         )
 
-  the terminal shows green again
+  the terminal_ shows green again
 
 * I add calls to the `datetime.datetime.strptime`_ :ref:`method<functions>` in ``test_duration_w_date_and_time``
 
@@ -436,7 +436,7 @@ refactor: make it better
                 )
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -466,7 +466,7 @@ refactor: make it better
                 )
             )
 
-  the terminal shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -568,7 +568,7 @@ then add a variable for a random timestamp
           )
       )
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
@@ -596,7 +596,7 @@ I add the variable to the expectation
           )
       )
 
-the terminal shows green again
+the terminal_ shows green again
 
 refactor: make it better
 ---------------------------------------------------------------------------------
@@ -665,7 +665,7 @@ and the test is still green
                 )
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -723,7 +723,7 @@ and the test is still green
                 )
             )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -752,7 +752,7 @@ and the test is still green
   the test passes
 
 * I remove ``duration`` because ``duration_a`` is a better solution
-* which means I can remove ``read_timestamp`` because no one calls it anymore. The terminal shows :ref:`AttributeError`
+* which means I can remove ``read_timestamp`` because no one calls it anymore. The terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -792,7 +792,7 @@ and the test is still green
             f'{random.randint(0,59):02}'
         )
 
-  the terminal shows a random ValueError_
+  the terminal_ shows a random ValueError_
 
   .. code-block:: python
 
@@ -851,7 +851,7 @@ and the test is still green
         )
 
   all tests are still green
-* I change ``test_duration_w_date_and_time`` to ``test_duration`` the terminal shows all tests are still passing
+* I change ``test_duration_w_date_and_time`` to ``test_duration`` the terminal_ shows all tests are still passing
 
 .. _sleep_duration_review:
 

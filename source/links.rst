@@ -68,6 +68,7 @@
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
+.. _linux package manager: https://grokipedia.com/page/APT_(software)
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
 .. _modulo: https://grokipedia.com/page/Modulo
@@ -78,7 +79,10 @@
 .. _objects: https://docs.python.org/3/glossary.html#term-object
 .. _or: https://docs.python.org/3/reference/expressions.html#or
 .. _pass: https://docs.python.org/3/tutorial/controlflow.html#pass-statements
+.. _plain text: https://grokipedia.com/page/Plain_text
 .. _pip: https://pypi.org/project/pip/
+.. _program: https://grokipedia.com/page/Computer_program
+.. _programs: program_
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package
@@ -97,14 +101,15 @@
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _return statements: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _reverse: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _sort: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _static method: https://docs.python.org/3/library/functions.html#staticmethod
+.. _script: program_
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _setdefault: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
 .. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _shebang: https://grokipedia.com/page/Shebang_(Unix)
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
+.. _sort: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
@@ -113,7 +118,7 @@
 .. _strings: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 .. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
-.. _terminal: https://grokipedia.com/page/Terminal#software-terminals-and-emulators
+.. _terminal: https://grokipedia.com/page/Terminal_emulator#terminal-emulator
 .. _touch: https://man7.org/linux/man-pages/man1/touch.1.html
 .. _tree: https://grokipedia.com/page/Tree_(command)
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
