@@ -19,6 +19,17 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
   install_wsl
   make_tdd_environment_no_wsl
 
+they cover the following
+
+- :ref:`windows requirements`
+- :ref:`linux/Windows Subsystem Linux requirements`
+- :ref:`how to make a python test driven development environment manually`
+- :ref:`how to make a python test driven development environment automatically`
+- :ref:`the first failing test<test_failure>`
+- :ref:`how to make a virtual environment`
+- :ref:`how to activate a virtual environment`
+- :ref:`how to deactivate a virtual environment`
+
 ----
 
 the programs to automatically setup a Python_ `Test Driven Development`_ project

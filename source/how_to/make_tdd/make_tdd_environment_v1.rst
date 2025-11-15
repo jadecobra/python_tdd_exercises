@@ -58,7 +58,7 @@ type this in the terminal_ to install Python_
 ----
 
 ********************************************************************************************
-how to manually make a python test driven development environment v1
+how to make a python test driven development environment manually v1
 ********************************************************************************************
 
 * Imagine I have to work on a project and its name is ``magic``. I open a terminal_ in the `Integrated Development Environment (IDE)`_ and use mkdir_

@@ -61,7 +61,7 @@ type this in the terminal_ to install Python_
 ----
 
 ********************************************************************************************
-how to manually make a python test driven development environment
+how to make a python test driven development environment manually
 ********************************************************************************************
 
 * Let us say I have to work on a project and its name is ``magic``. I click on ``terminal_`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New terminal_`` to open a terminal_
@@ -611,7 +611,7 @@ and the test passes! The terminal_ shows
 refactor: make it better
 ############################################################################################
 
-I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I expect.
+I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I want.
 
 This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a `computer program`_ to run the tests so `I do not repeat myself`_.
 
@@ -621,7 +621,9 @@ This means I have to run ``python3 -m unittest`` for each part of the `Test Driv
 how to run tests automatically
 ********************************************************************************************
 
-I can use `pytest-watch`_ to run tests automatically. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change. pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal_
+I can use `pytest-watch`_ to run tests automatically. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change.
+
+pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal_
 
 .. code-block:: shell
 
@@ -638,6 +640,10 @@ I need to install it for the computer to use it
 how to make a virtual environment
 ############################################################################################
 
+I can install it globally, which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed specifically for this project.
+
+A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs
+
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: shell
@@ -647,21 +653,39 @@ how to make a virtual environment
   the terminal_ shows nothing
 
   - ``python3`` is the Python_ program_
-  - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option as a script
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name.
-  - A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment` for every project with only the programs_ that the project needs
-  - ``.venv`` is the name I am giving for the `virtual environment`
+  - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name
+  - ``.venv`` is the name I am giving for this `virtual environment`_
 
     .. TIP:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
 
-* I run tree_ with a few options to see what changed
+* I run tree_
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+    ├── src
+    │   └── magic.py
+    └── tests
+        ├── __init__.py
+        ├── __pycache__
+        │   ├── __init__.cpython-313.pyc
+        │   └── test_magic.cpython-313.pyc
+        └── test_magic.py
+
+  it does not look like anything changed. This is because the ``.`` in front of ``.venv`` means the folder_ is hidden
+
+* I try tree_ again with a few options to see what changed
 
   .. code-block:: shell
 
     tree -a -L 2
-
-  - the ``-a`` option makes tree_ show all files that are listed including ``.venv`` which is hidden because it has a ``.`` at the start of the name
-  - the ``-L`` option tells tree_ how deep to go with showing the folders_ and files, I use ``2`` to keep it only to the contents of the child folders_
 
   the terminal_ shows
 
@@ -684,19 +708,24 @@ how to make a virtual environment
 
   there is now a folder_ named ``.venv``
 
+  - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
+  - the ``-L`` option tells tree_ how deep to go with showing the folders_ and files_, I use ``2`` to keep it only to the first level of  contents of the child folders_
+
 * I have to activate the `virtual environment`_ to use it
 
   .. code-block:: shell
 
     source .venv/bin/activate
 
-  .. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
+  the terminal shows
 
-    .. code-block:: shell
+  .. code-block:: shell
 
-      (.venv) .../magic $
+    (.venv) .../magic $
 
-  I run the command again
+  the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
+
+* I run `pytest-watch`_ again
 
   .. code-block:: shell
 
@@ -708,9 +737,9 @@ how to make a virtual environment
 
     command not found: pytest-watch
 
-  I have to install `pytest-watch` in the `virtual environment`_ to use it in the `virtual environment`_
+  I have to install it in the `virtual environment`_ to use it in the `virtual environment`_
 
-* I use the `python package manager`_ to see what packages are already installed in the virtual environment
+* I use the `python package manager (pip)`_ to see what `python packages`_ are already installed in the `virtual environment`_
 
   .. code-block:: python
 
@@ -725,78 +754,30 @@ how to make a virtual environment
     pip     x.y
 
   - `pytest-watch`_ is not in the list
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is the `python package manager` used to install `python packages`_
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is the package manager used to install `python packages`_
 
-* I can tell pip_ to install `pytest-watch`_ directly
-
-  .. code-block:: shell
-
-    python3 -m pip install pytest-watch
-
-  or I can create a ``requirements.txt`` file where I list all the Python_ packages for my project and have pip_ install the programs_ listed in the file. I use echo_ to make ``requirements.txt`` with `pytest-watch`_ as its text
+* I want to make a file where I can list all the Python_ packages for my project as a way to document it and have pip_ install the programs_ listed in the file. I can use echo_ to do this, it is a program_ that shows whatever it is given on the screen (`standard output (stdout)`_) for example
 
   .. code-block:: shell
 
-    echo pytest-watch > requirements.txt
+    echo "pytest-watch"
 
-  - echo_ is a program_ that shows whatever it is given on the screen (`standard output (stdout)`_)
+  the terminal shows
+
+  .. code-block:: shell
+
+    pytest-watch
+
+  I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
+
+  .. code-block:: shell
+
+    echo "pytest-watch" > requirements.txt
+
   - ``>`` is an operator that is used to send output from a program_ to the given file_
   - `pytest-watch`_ is a Python_ program_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
   - pytest_ is a `python package`_ like unittest_, that is used for testing
-  - ``requirements.txt`` is the name of a file_ where I can list `python packages`_ for pip_ to install
-
-    .. TIP:: ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
-
-* I use pip_ to install `pytest-watch`_ and the programs_ it needs
-
-  .. code-block:: python
-
-      python3 -m pip install --requirement requirements.txt
-
-  - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file
-  - ``requirements.txt`` is the name of the file given
-
-  when I do not have the latest version of pip_, the terminal_ shows
-
-  .. code-block:: python
-
-    [notice] A new release of pip is available: 25.2 -> 25.3
-    [notice] To update, run: pip install --upgrade pip
-
-  I upgrade the `python package manager`_ to the latest version (this is good practice)
-
-  .. code-block:: shell
-
-    python3 -m pip install --upgrade pip
-
-  - ``install`` is an argument given to pip_ to install a given Python_ package
-  - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the given `python package`_
-  - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself
-
-* I use pip_ to see what packages are now installed in the `virtual environment`_
-
-  .. code-block:: python
-
-    pip list
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    Package      Version
-    ------------ -------
-    colorama     x.y.z
-    docopt       x.y.z
-    iniconfig    x.y.z
-    packaging    x.y
-    pip          x.y
-    pluggy       x.y.z
-    Pygments     x.y.z
-    pytest       x.y.z
-    pytest-watch x.y.z
-    watchdog     x.y.z
-
-  ``pytest-watch`` is in the list
+  - ``requirements.txt`` is the name of a file_ where I can list `python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
 
 * I run tree_ to see what the project looks like now
 
@@ -826,7 +807,66 @@ how to make a virtual environment
         ├── lib64 -> lib
         └── pyvenv.cfg
 
-* I try `pytest-watch`_ again
+  there is a requirements file as part of the project
+
+* I use pip_ to install `pytest-watch`_ from the requirements file
+
+  .. code-block:: python
+
+    python3 -m pip install --requirement requirements.txt
+
+  - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file_
+  - ``requirements.txt`` is the name of the given file_
+
+  when I do not have the latest version of pip_, the terminal_ shows
+
+  .. code-block:: python
+
+    [notice] A new release of pip is available: XY.Z -> AB.C
+    [notice] To update, run: pip install --upgrade pip
+
+  I upgrade pip_ to the latest version (this is good practice)
+
+  .. code-block:: shell
+
+    python3 -m pip install --upgrade pip
+
+  - ``install`` is an argument given to pip_ to install a given Python_ package
+  - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the given `python package`_
+  - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself
+
+  .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list`` and it does not help someone else who is trying to run my project later
+
+    .. code-block:: shell
+
+      python3 -m pip install pytest-watch
+
+* I use pip_ to see what packages are now installed in the `virtual environment`_
+
+  .. code-block:: python
+
+    pip list
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    Package      Version
+    ------------ -------
+    colorama     x.y.z
+    docopt       x.y.z
+    iniconfig    x.y.z
+    packaging    x.y
+    pip          x.y
+    pluggy       x.y.z
+    Pygments     x.y.z
+    pytest       x.y.z
+    pytest-watch x.y.z
+    watchdog     x.y.z
+
+  `pytest-watch`_ is in the list. Yes!
+
+* I try to run the tests again
 
   .. code-block:: shell
 
@@ -846,7 +886,7 @@ how to make a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-  I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
+  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -872,7 +912,7 @@ how to make a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -882,7 +922,7 @@ how to make a virtual environment
 
   the test passes. I can now write the rest of the code for the project while the tests run automatically
 
-  .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests
+  .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back control of the terminal
 
 ----
 
@@ -890,7 +930,7 @@ how to make a virtual environment
 how to make a python test driven development environment automatically
 ********************************************************************************************
 
-You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
+You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
 * I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 * I leave the `virtual environment`_
@@ -917,7 +957,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     cd ..
 
-  ``..`` is shorthand for the parent of any directory you are in, the terminal_ shows
+  ``..`` is shorthand for the parent of any directory_ you are in. The terminal_ shows
 
   .. code-block:: shell
 
@@ -925,11 +965,35 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   I am back in the ``pumping_python`` directory
 
-* I use touch_ to make an empty file with a name that describes the program_, to make it is easy to remember later, for example :ref:`makePythonTdd.sh`
+* I use touch_ to make an empty file with a name that describes the program_ to make a `Test Driven Development` environment automatically, this will make it is easy to remember later
 
   .. code-block:: shell
 
     touch makePythonTdd.sh
+
+  the terminal_ shows nothing. I use tree_ to see what is in the ``pumping_python`` directory_
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal_ shows my new file is in the directory_
+
+  .. code-block:: shell
+
+    .
+    ├── magic
+    │   ├── requirements.txt
+    │   ├── src
+    │   │   └── magic.py
+    │   └── tests
+    │       ├── __init__.py
+    │       ├── __pycache__
+    │       │   ├── __init__.cpython-313.pyc
+    │       │   ├── test_magic.cpython-313.pyc
+    │       │   └── test_magic.cpython-313-pytest-9.0.1.pyc
+    │       └── test_magic.py
+    └── makePythonTdd.sh
 
 * I type history_ in the terminal_
 
@@ -937,9 +1001,9 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     history
 
-  the history_ program_ shows all the commands I have typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
+  the history_ program_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_, then I type these commands
+* I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_, then I add these commands to it
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -958,7 +1022,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
-    echo pytest-watch > requirements.txt
+    echo "pytest-watch" > requirements.txt
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
@@ -982,7 +1046,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ./makePythonTdd.sh
 
-  ``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few `folders/directories`_ by default whenever a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
+  ``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few directories_ by default when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
 
   .. code-block:: shell
 
@@ -1007,6 +1071,7 @@ You made it this far and have become the greatest programmer in the world. To fo
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 1-3
 
     mkdir: cannot create directory ‘magic’: File exists
     mkdir: cannot create directory ‘src’: File exists
@@ -1025,19 +1090,19 @@ You made it this far and have become the greatest programmer in the world. To fo
     Requirement already satisfied: pluggy<X,>=X.Y in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
     Requirement already satisfied: pygments>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
 
-    [Thu Nov 13 07:05:26 2025] Running: py.test
+    [today's date] Running: py.test
     ================================= test session starts ==================================
-    platform linux -- Python 3.13.7, pytest-9.0.1, pluggy-1.6.0
-    rootdir: /workspaces/pumping_python/magic
+    platform linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
+    rootdir: .../pumping_python/magic
     collected 1 item
 
     tests/test_magic.py .                                                            [100%]
 
-    ================================== 1 passed in 0.01s ===================================
+    ================================== 1 passed in X.YZs ===================================
 
   This is a problem, the ``makePythonTdd.sh`` just made the ``magic`` project which already exists and so I get no failing test as my first test. It is repeating what I have already done.
 
-* I want it to be able to make any project I want. It should take a name use it as the name for the project, with the same structure I had for ``magic``. I add a variable (name) to replace ``magic`` so I can give it any name when I want to make a project
+* I want it to be able to make any project I want. It should take a name use it as the name for the project, then make the same structure I had for the ``magic`` project. I add a name as a variable_ to change ``magic`` in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
 
@@ -1061,7 +1126,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  .. ADMONITION:: ``$1`` is for the first argument given when the program_ is called, I can use it in place of ``$PROJECT_NAME`` for example
+  .. NOTE:: ``$1`` represents the first argument given when a program_ is called, I can use it in place of ``$PROJECT_NAME`` for example,
 
     .. code-block:: shell
 
@@ -1078,59 +1143,26 @@ You made it this far and have become the greatest programmer in the world. To fo
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 1-4
 
     mkdir: missing operand
     Try 'mkdir --help' for more information.
     mkdir: cannot create directory ‘src’: File exists
     mkdir: cannot create directory ‘tests’: File exists
-    Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (25.2)
+    Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (XY.Z)
     Collecting pip
-      Using cached pip-X.Y-py3-none-any.whl.metadata (4.7 kB)
-    Using cached pip-X.Y-py3-none-any.whl (1.8 MB)
-    Installing collected packages: pip
-      Attempting uninstall: pip
-        Found existing installation: pip X.Y
-        Uninstalling pip-A.B:
-          Successfully uninstalled pip-A.B
-    Successfully installed pip-X.Y
-    Collecting pytest-watch (from -r requirements.txt (line 1))
-      Using cached pytest_watch-X.Y.Z-py3-none-any.whl
-    Collecting docopt>=X.Y.Z (from pytest-watch->-r requirements.txt (line 1))
-      Using cached docopt-X.Y.Z-py2.py3-none-any.whl
-    Collecting colorama>=X.Y.Z (from pytest-watch->-r requirements.txt (line 1))
-      Using cached colorama-X.Y.Z-py2.py3-none-any.whl.metadata (17 kB)
-    Collecting watchdog>=X.Y.Z (from pytest-watch->-r requirements.txt (line 1))
-      Using cached watchdog-X.Y.Z-py3-none-manylinux2014_aarch64.whl.metadata (AA kB)
-    Collecting pytest>=X.Y.Z (from pytest-watch->-r requirements.txt (line 1))
-      Using cached pytest-X.Y.Z-py3-none-any.whl.metadata (A.B kB)
-    Collecting iniconfig>=X.Y.Z (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1))
-      Using cached iniconfig-X.Y.Z-py3-none-any.whl.metadata (A.B kB)
-    Collecting packaging>=XX (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1))
-      Using cached packaging-X.Y-py3-none-any.whl.metadata (A.B kB)
-    Collecting pluggy<Z,>=X.Y (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1))
-      Using cached pluggy-X.Y.Z-py3-none-any.whl.metadata (A.B kB)
-    Collecting pygments>=X.Y.Z (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1))
-      Using cached pygments-X.Y.Z-py3-none-any.whl.metadata (A.B kB)
-    Using cached colorama-X.Y.Z-py2.py3-none-any.whl (AB kB)
-    Using cached pytest-X.Y.Z-py3-none-any.whl (ABC kB)
-    Using cached pluggy-X.Y.Z-py3-none-any.whl (AB kB)
-    Using cached iniconfig-X.Y.Z-py3-none-any.whl (A.B kB)
-    Using cached packaging-X.Y-py3-none-any.whl (AB kB)
-    Using cached pygments-X.Y.Z-py3-none-any.whl (A.B MB)
-    Using cached watchdog-X.Y.Z-py3-none-manylinux2014_aarch64.whl (AB kB)
-    Installing collected packages: docopt, watchdog, pygments, pluggy, packaging, iniconfig, colorama, pytest, pytest-watch
-    Successfully installed colorama-X.Y.Z docopt-X.Y.Z iniconfig-X.Y.Z packaging-X.Y pluggy-X.Y.Z pygments-X.Y.Z pytest-X.Y.Z pytest-watch-X.Y.Z watchdog-X.Y.Z
+      ...
 
     ================================= test session starts ==================================
-    platform linux -- Python 3.13.7, pytest-X.Y.Z, pluggy-X.Y.Z
+    platform linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
     rootdir: ...
     collected 0 items
 
     ================================ no tests ran in 0.00s =================================
 
-  it didn't work. NO tests ran and there were errors with making the folders. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ did not work
+  it did not work. No tests ran and there were errors with making the folders. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ did not work
 
-* I run ``makePythonTdd.sh`` with a project name this time
+* I stop `pytest-watch`_ from running by hitting ``ctrl+c`` on the keyboard in the terminal_, then I run ``makePythonTdd.sh`` with a project name this time
 
   .. code-block:: python
 
@@ -1140,11 +1172,11 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   .. code-block:: python
 
-    ================================ no tests ran in 0.02s ================================
+    ================================ no tests ran in X.YZs ================================
 
   I need to add code for :ref:`the first failing test<test_failure>` to the test file
 
-* I use echo_ instead of touch_, to add text for the first failing test to ``test_$PROJECT_NAME.py``
+* I use echo_ instead of touch_ to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
   .. code-block:: shell
     :lineno-start: 9
@@ -1154,12 +1186,14 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   then I add the text for the test like I did with ``test_magic.py`` in the :ref:`quotes ("")<quotes>`
 
+  .. CAUTION:: Indentation_ matters in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
+
   .. literalinclude:: /code/make_tdd/makePythonTdd.sh
     :language: shell
     :linenos:
     :emphasize-lines: 10-21
 
-* I try the program_ again with a different name for the project
+* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_, then I try the program_ again with a different name for the project
 
   .. code-block:: shell
 
@@ -1183,9 +1217,9 @@ You made it this far and have become the greatest programmer in the world. To fo
     FAILED tests/test_another_project.py::Testanother_project::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hit ``ctrl+c`` on the keyboard to stop the test
+  I hit ``ctrl+c`` on the keyboard in the terminal_ to stop the test
 
-* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_ in the folder where ``makePythonTdd.sh`` is saved
+* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_
 
   .. code-block:: shell
 
@@ -1209,7 +1243,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
-  the computer made a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and ran :ref:`the first failing test<test_failure>`. You can continue this in :ref:`AssertionError`
+  the computer makes a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError`
 
 ----
 
@@ -1233,11 +1267,11 @@ When I want to work in a `virtual environment`_, I `change directory`_ to the `f
 
   source .venv/bin/activate
 
-.. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
+the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    (.venv) .../magic $
+  (.venv) .../magic $
 
 -----
 
@@ -1245,9 +1279,7 @@ When I want to work in a `virtual environment`_, I `change directory`_ to the `f
 review
 ********************************************************************************************
 
-One of the advantages of `Computer Programming`_ is that I can take some steps and make them a one line command for the computer to do for me.
-
-You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 Would you like to test :ref:`test AssertionError?<AssertionError>`
 

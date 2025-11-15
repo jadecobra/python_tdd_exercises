@@ -88,7 +88,7 @@
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package
-.. _python package manager: https://pypi.org/project/pip/
+.. _python package manager (pip): pip_
 .. _python packages: https://docs.python.org/3/glossary.html#term-regular-package
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
@@ -122,6 +122,7 @@
 .. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _ternary operators: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _terminal: https://grokipedia.com/page/Terminal_emulator#terminal-emulator
+.. _the greatest programmer in the world: https://www.reddit.com/r/ProgrammerHumor/comments/f8duna/the_two_states_of_every_programmer/
 .. _touch: https://man7.org/linux/man-pages/man1/touch.1.html
 .. _tree: https://grokipedia.com/page/Tree_(command)
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
@@ -146,6 +147,7 @@
 .. _unittest.TestCase.setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _unittest.TestCase.assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
 .. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
+.. _variable: https://grokipedia.com/page/Variable_(computer_science)
 .. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
@@ -172,6 +174,8 @@
 .. _Set-ExecutionPolicy: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4&viewFallbackFrom=powershell-6
 .. _Write-Output: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.4
 
+----
+
 .. _Algebra: https://grokipedia.com/page/Algebra
 .. _Computer Programming: https://grokipedia.com/page/Computer_programming
 .. _Debian: https://www.debian.org
@@ -179,6 +183,7 @@
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _removing duplication: `remove duplication`_
 .. _I Do Not Repeat myself: `remove duplication`_
+.. _Indentation: https://peps.python.org/pep-0008/#indentation
 .. _Inheritance: https://grokipedia.com/page/Inheritance_(object-oriented_programming)
 .. _Integrated Development Environment (IDE): https://grokipedia.com/page/Integrated_development_environment
 .. _JSON: https://grokipedia.com/page/JSON
