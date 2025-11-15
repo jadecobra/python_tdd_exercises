@@ -280,7 +280,7 @@ how to manually make a python test driven development environment
 
     python3 src/magic.py
 
-  the terminal_ shows nothing. Success! This is because there is no code in ``src/magic.py``, it is empty, and I can run it
+  the terminal_ shows nothing. Success! Even though this ``magic.py`` does not do anything because there is no code in it, I can successfully run it.
 
 ********************************************************************************************
 test_failure
@@ -289,7 +289,7 @@ test_failure
 The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
-* **GREEN**: make it pass - write only what will make the failing test pass
+* **GREEN**: make it pass - write the simplest thing that will make the failing test pass
 * **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
 
 this process can be repeated as many times as possible
@@ -297,7 +297,7 @@ this process can be repeated as many times as possible
 red: make it fail
 ############################################################################################
 
-* Since the approach in this book is `Test Driven Development`_ I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ which comes with Python_ to run tests. I type it in the terminal_
+* Since this books is about `Test Driven Development`_ I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type it in the terminal_
 
   .. code-block:: python
 
@@ -314,9 +314,9 @@ red: make it fail
 
   - ``python3`` is the Python_ program_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
-  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``, this means somewhere on the computer there is a file named ``unittest.py``
+  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``, this means somewhere on the computer there is a file named ``unittest.py``, `see the source code for unittest here <https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py>`_
 
-* I do not have any tests yet, that is why no tests ran. I make a child `folder/directory`_ to keep the tests separate from the actual program_ (`source code`_)
+* I do not have any tests yet, that is why none ran. I make a child folder_ to keep the tests separate from the actual program_ (`source code`_)
 
   .. code-block:: shell
 
@@ -375,7 +375,13 @@ red: make it fail
 
     NO TESTS RAN
 
-* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following Python_ code
+* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following Python_ code in the file
+
+  .. TIP:: I can open a file from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file, for example
+
+    .. code-block:: shell
+
+      code tests/magic.py
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -396,10 +402,10 @@ red: make it fail
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`values (attributes)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
+    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
     * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test
 
-      .. TIP:: I can use any name for the test :ref:`class<classes>` but it MUST start with ``Test`` or unittest_ will not run the tests in it
+      .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will not run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` I will use for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
@@ -409,7 +415,7 @@ red: make it fail
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
     * ``test_failure`` is the name of this :ref:`method<functions>` for :ref:`this first test<test_failure>`
 
-      .. ATTENTION:: I can use any name for the test :ref:`method (function)<functions>` but it MUST start with ``test_`` or unittest_ will not run the tests in it
+      .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ will not run the tests in it
 
     * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
@@ -419,7 +425,7 @@ red: make it fail
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time I make a change
 * I run the command again
 
   .. code-block:: shell
@@ -434,9 +440,9 @@ red: make it fail
 
   I need to tell Python_ that the ``tests`` folder is a `python package`_, so it can find the tests
 
-* I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
+* then I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
 
-  .. attention:: make sure to use 2 underscores (__) for ``__init__.py``
+  .. IMPORTANT:: make sure to use 2 underscores (__) for ``__init__.py``
 
   .. code-block:: shell
 
@@ -475,13 +481,15 @@ red: make it fail
 
   I need to tell Python_ that ``magic.py`` in the ``tests`` folder is a test file
 
-* I use the mv_ program_ to change the name of the file to ``test_magic.py``
+* I close ``magic.py`` in the editor of the `Integrated Development Environment (IDE)`_
+
+  .. CAUTION:: if you do not close ``magic.py`` you will have 3 files in the ``tests`` folder after the next step instead of 2 because you turned on the ``Auto Save`` feature earlier
+
+* then I use the mv_ program_ to change the name of the file to ``test_magic.py``
 
   .. code-block:: shell
 
     mv tests/magic.py tests/test_magic.py
-
-  .. ATTENTION:: I can use any name for the test file but it must start with ``test_`` or unittest_ will not run the tests in the file
 
   the terminal_ shows nothing. I use tree_ to see what I have so far
 
@@ -529,27 +537,27 @@ red: make it fail
 
     FAILED (failures=1)
 
-* If you are typing along, *CONGRATULATIONS!* You just wrote a test.
+  .. IMPORTANT:: I can use any name for the test file but it must start with ``test_`` or unittest_ will not run the tests in the file
 
-  This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line
+* This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line
 
   * ``FAILED (failures=1)`` the number of failures
   * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-  * ``AssertionError: True is not false`` the :ref:`Error/Exception<errors>` that happened and its message, in this case :ref:`AssertionError` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  * ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
   * ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError`
   * ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
   * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
 
-    .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
+    .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
 
   * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
   * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
 
     - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
-    -  ``tests`` is the ``tests`` folder
-    -  ``test_magic`` is the ``test_magic.py`` file
-    - ``TestMagic`` is the :ref:`class <classes>` defined on line 4
-    - ``test_failure`` is the :ref:`method (function)<functions>` defined on line 6
+    -  ``tests`` is the ``tests`` folder_
+    -  ``test_magic`` is the ``test_magic.py`` file_ in the ``tests`` directory_
+    - ``TestMagic`` is the :ref:`class <classes>` defined on line 4 in ``test_magic.py``
+    - ``test_failure`` is the :ref:`method (function)<functions>` defined on line 6 in ``test_magic.py``
 
   * ``F`` shows a failure
 
@@ -878,34 +886,6 @@ how to make a virtual environment
 
 ----
 
-how to deactivate a virtual environment
-#################################################################################################
-
-When I want to leave a `virtual environment`_, I type this in the terminal_ to deactivate it
-
-.. code-block::
-
-  deactivate
-
-----
-
-how to activate a virtual environment
-############################################################################################
-
-When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal_
-
-.. code-block:: shell
-
-  source .venv/bin/activate
-
-.. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
-
-  .. code-block:: shell
-
-    (.venv) .../magic $
-
------
-
 ********************************************************************************************
 how to make a python test driven development environment automatically
 ********************************************************************************************
@@ -1232,6 +1212,34 @@ You made it this far and have become the greatest programmer in the world. To fo
   the computer made a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and ran :ref:`the first failing test<test_failure>`. You can continue this in :ref:`AssertionError`
 
 ----
+
+how to deactivate a virtual environment
+#################################################################################################
+
+When I want to leave a `virtual environment`_, I type this in the terminal_ to deactivate it
+
+.. code-block::
+
+  deactivate
+
+----
+
+how to activate a virtual environment
+############################################################################################
+
+When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal_
+
+.. code-block:: shell
+
+  source .venv/bin/activate
+
+.. ADMONITION:: the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
+
+  .. code-block:: shell
+
+    (.venv) .../magic $
+
+-----
 
 ********************************************************************************************
 review

@@ -29,6 +29,7 @@
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
 .. _count: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _directory: https://grokipedia.com/page/Directory_(computing)
+.. _directories: directory_
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
