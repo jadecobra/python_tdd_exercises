@@ -23,6 +23,7 @@
 .. _changing directory: `change directory`_
 .. _chmod: https://grokipedia.com/page/Chmod
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
+.. _computer program: https://grokipedia.com/page/Computer_program
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _conditional expressions: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
@@ -81,8 +82,8 @@
 .. _pass: https://docs.python.org/3/tutorial/controlflow.html#pass-statements
 .. _plain text: https://grokipedia.com/page/Plain_text
 .. _pip: https://pypi.org/project/pip/
-.. _program: https://grokipedia.com/page/Computer_program
-.. _programs: program_
+.. _program: `computer program`_
+.. _programs: `computer program`_
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://pypi.org/project/pytest-watch/
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package
@@ -101,7 +102,7 @@
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _return statements: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _reverse: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _script: program_
+.. _script: `computer program`_
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _setdefault: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
@@ -109,6 +110,7 @@
 .. _shebang: https://grokipedia.com/page/Shebang_(Unix)
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
 .. _sort: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _source code: https://grokipedia.com/page/Source_code
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
@@ -170,6 +172,7 @@
 .. _Write-Output: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.4
 
 .. _Algebra: https://grokipedia.com/page/Algebra
+.. _Computer Programming: https://grokipedia.com/page/Computer_programming
 .. _Debian: https://www.debian.org
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself

@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This chapter shows one way to make a Python_ `Test Driven Development`_ environment, first I do it manually where I make all the `folders/directories`_ and files needed, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment>`
+This chapter shows one way to make a Python_ `Test Driven Development`_ environment, first I do it manually where I make all the `folders/directories`_ and files needed, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
 
 ----
 
@@ -65,7 +65,7 @@ how to manually make a python test driven development environment
 ********************************************************************************************
 
 * Let us say I have to work on a project and its name is ``magic``. I click on ``terminal_`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New terminal_`` to open a terminal_
-* I can use the cd_ program to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
+* I can use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
 
   .. code-block:: shell
 
@@ -221,7 +221,7 @@ how to manually make a python test driven development environment
 
     python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program_ because it does not exist yet. I make a child folder_ in the ``magic`` directory_ for the actual program_ (source code)
+  the computer cannot find the program_ because it does not exist yet. I make a child folder_ in the ``magic`` directory_ for it
 
   .. code-block:: shell
 
@@ -316,7 +316,7 @@ red: make it fail
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
   - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``, this means somewhere on the computer there is a file named ``unittest.py``
 
-* I do not have any tests yet, that is why no tests ran. I make a child `folder/directory`_ to keep the tests separate from the actual program_ (source code)
+* I do not have any tests yet, that is why no tests ran. I make a child `folder/directory`_ to keep the tests separate from the actual program_ (`source code`_)
 
   .. code-block:: shell
 
@@ -605,15 +605,15 @@ refactor: make it better
 
 I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I expect.
 
-This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a computer program_ to run the tests so `I do not repeat myself`_.
+This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a `computer program`_ to run the tests so `I do not repeat myself`_.
 
 ----
 
 ********************************************************************************************
-how to automatically run tests
+how to run tests automatically
 ********************************************************************************************
 
-I can use `pytest-watch`_ to automatically run tests. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change. pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal_
+I can use `pytest-watch`_ to run tests automatically. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change. pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal_
 
 .. code-block:: shell
 
@@ -732,7 +732,7 @@ how to make a virtual environment
     echo pytest-watch > requirements.txt
 
   - echo_ is a program_ that shows whatever it is given on the screen (`standard output (stdout)`_)
-  - ``>`` is an operator that is used to send output from a program to the given file_
+  - ``>`` is an operator that is used to send output from a program_ to the given file_
   - `pytest-watch`_ is a Python_ program_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
   - pytest_ is a `python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file_ where I can list `python packages`_ for pip_ to install
@@ -874,7 +874,7 @@ how to make a virtual environment
 
   the test passes. I can now write the rest of the code for the project while the tests run automatically
 
-  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal_ when you want to stop the tests
+  .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests
 
 ----
 
@@ -907,12 +907,12 @@ When I want to work in a `virtual environment`_, I `change directory`_ to the `f
 -----
 
 ********************************************************************************************
-how to automatically make a python test driven development environment
+how to make a python test driven development environment automatically
 ********************************************************************************************
 
 You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
-* I exit the tests in the terminal_ by pressing ``ctrl`` + ``c`` on the keyboard
+* I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 * I leave the `virtual environment`_
 
   .. code-block:: shell
@@ -957,10 +957,9 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     history
 
-  the history_ program shows all the commands I have typed in the terminal_ so far, and I use them to write the program that will automate making a Python_ `Test Driven Development`_ environment for me
+  the history_ program_ shows all the commands I have typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_
-* then I type the commands for the program in the editor
+* I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_, then I type these commands
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -983,9 +982,9 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``#!/bin/bash`` is a shebang_ line that tells the computer to use bash_ to run this program
+  ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
-* I go back to the terminal_ to run the program
+* I go back to the terminal_ to run the program_
 
   .. code-block:: shell
 
@@ -1009,15 +1008,15 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     permission denied: ./makePythonTdd.sh
 
-  I need to make the program executable so the computer can run it
+  I need to make the program_ executable so the computer can run it
 
-* I change the mode of the file to make sure the program I just wrote can run
+* I change the mode of the file_
 
   .. code-block:: shell
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program that changes the mode of the given file. the terminal_ shows nothing
+  chmod_ is a program_ that changes the mode of the given file_, the terminal_ shows nothing
 
 * I try the command again
 
@@ -1056,9 +1055,9 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ================================== 1 passed in 0.01s ===================================
 
-  This is a problem, the program just made the ``magic`` project which already exists and so I get no failing test as my first test. It is repeating what I have already done.
+  This is a problem, the ``makePythonTdd.sh`` just made the ``magic`` project which already exists and so I get no failing test as my first test. It is repeating what I have already done.
 
-* I want the program to be able to make any project I want. It should take a name I give and use that as the name for the project, making the same structure I did for ``magic``. I add a variable (name) to replace ``magic`` so I can give it any name when I want to make a project
+* I want it to be able to make any project I want. It should take a name use it as the name for the project, with the same structure I had for ``magic``. I add a variable (name) to replace ``magic`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
 
@@ -1082,7 +1081,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  .. ADMONITION:: ``$1`` is for the first argument given when the program is called, I can use it in place of ``$PROJECT_NAME`` for example
+  .. ADMONITION:: ``$1`` is for the first argument given when the program_ is called, I can use it in place of ``$PROJECT_NAME`` for example
 
     .. code-block:: shell
 
@@ -1090,7 +1089,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be the value of  ``argument``
 
-* I use ``ctrl+c`` to stop the test from running then I run the program again
+* I use ``ctrl+c`` to stop the test from running then I run the ``makePythonTdd.sh`` again
 
   .. code-block:: python
 
@@ -1151,7 +1150,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   it didn't work. NO tests ran and there were errors with making the folders. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ did not work
 
-* I call the program again with a project name this time
+* I run ``makePythonTdd.sh`` with a project name this time
 
   .. code-block:: python
 
@@ -1163,16 +1162,24 @@ You made it this far and have become the greatest programmer in the world. To fo
 
     ================================ no tests ran in 0.02s ================================
 
-  I need to add code for the project to the test file
+  I need to add code for :ref:`the first failing test<test_failure>` to the test file
 
-* I use the echo_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
+* I use echo_ instead of touch_, to add text for the first failing test to ``test_$PROJECT_NAME.py``
+
+  .. code-block:: shell
+    :lineno-start: 9
+    :emphasize-lines: 1
+
+    echo "" > tests/test_$PROJECT_NAME.py
+
+  then I add the text for the test like I did with ``test_magic.py`` in the :ref:`quotes ("")<quotes>`
 
   .. literalinclude:: /code/make_tdd/makePythonTdd.sh
     :language: shell
     :linenos:
     :emphasize-lines: 10-21
 
-  I try the program again with a different name for the project
+* I try the program_ again with a different name for the project
 
   .. code-block:: shell
 
@@ -1198,7 +1205,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   I hit ``ctrl+c`` on the keyboard to stop the test
 
-* I can now make a `Test Driven Development`_ environment when I call ``makePythonTdd.sh`` with a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_ in the folder where ``makePythonTdd.sh`` is saved
+* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_ in the folder where ``makePythonTdd.sh`` is saved
 
   .. code-block:: shell
 
@@ -1222,7 +1229,7 @@ You made it this far and have become the greatest programmer in the world. To fo
     FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
-  the computer made a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and ran the first failing test. You can continue this in :ref:`AssertionError`
+  the computer made a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and ran :ref:`the first failing test<test_failure>`. You can continue this in :ref:`AssertionError`
 
 ----
 
@@ -1230,7 +1237,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 review
 ********************************************************************************************
 
-One of the advantages of programming is that I can take some steps and make them a one line command for the computer to do for me.
+One of the advantages of `Computer Programming`_ is that I can take some steps and make them a one line command for the computer to do for me.
 
 You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 

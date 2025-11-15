@@ -77,7 +77,7 @@ how to manually make a python test driven development environment v1
 
   this changes directory to the ``magic`` `folder/directory`_ I just made
 
-* I make a child `folder/directory`_ for the source code (the actual program)
+* I make a child `folder/directory`_ for the actual program_ (`source code`_)
 
   .. code-block:: shell
 
@@ -89,7 +89,7 @@ how to manually make a python test driven development environment v1
 
     touch src/magic.py
 
-  this makes an empty file for the source code (the actual program)
+  this makes an empty file for the actual program_ (`source code`_)
 
 * I make a child `folder/directory`_
 
@@ -298,7 +298,7 @@ This means I have to run ``python3 -m unittest`` for each part of the `Test Driv
 ----
 
 ********************************************************************************************
-how to automatically run tests v1
+how to run tests automatically v1
 ********************************************************************************************
 
 how to make a virtual environment v1
@@ -458,7 +458,7 @@ how to make a virtual environment v1
 
   I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py`` to make it pass. I can now write the rest of the code for the project while the tests run automatically
 
-  .. TIP:: press ``ctrl`` + ``c`` on the keyboard in the terminal_ when you want to stop the tests
+  .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests
 
 ----
 
@@ -491,12 +491,12 @@ When I want to work in a `virtual environment`_, I `change directory`_ to the `f
 -----
 
 ********************************************************************************************
-how to automatically make a python test driven development environment
+how to make a python test driven development environment automatically
 ********************************************************************************************
 
 You made it this far and have become the greatest programmer in the world. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
-* I exit the tests in the terminal_ by pressing ``ctrl`` + ``c`` on the keyboard
+* I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 * I leave the `virtual environment`_
 
   .. code-block:: shell

@@ -31,7 +31,7 @@ I put references on the left and the `Integrated Development Environment (IDE)`_
   :width: 600
   :alt: Reference on the left
 
-this helps when I do not have an extra screen. I can stack two editors on top of one another, source code on top, tests below, and the terminal_ below the tests
+this helps when I do not have an extra screen. I can stack two editors on top of one another, `source code`_ on top, tests below, and the terminal_ below the tests
 
 for testing
 #################################################################################
@@ -48,7 +48,7 @@ explorer on the left to see files/folder structure at once, and I can drag and d
 
 2 editors
 ---------------------------------------------------------------------------------
-editors side by side - source code on the left with tests on the right
+editors side by side - `source code`_ on the left with tests on the right
 
 .. image:: /_static/setup_my_ide/2_editors.png
   :width: 600
