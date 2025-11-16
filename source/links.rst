@@ -91,6 +91,7 @@
 .. _pytest-watch: https://github.com/joeyespo/pytest-watch
 .. _python package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _python package manager (pip): pip_
+.. _python package manager: pip_
 .. _python packages: `python package`_
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
