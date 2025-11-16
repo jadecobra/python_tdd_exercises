@@ -73,6 +73,7 @@
 .. _linux package manager: https://grokipedia.com/page/APT_(software)
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
+.. _make the directory: mkdir_
 .. _modulo: https://grokipedia.com/page/Modulo
 .. _mv: https://grokipedia.com/page/Mv_(Unix)
 .. _not: https://docs.python.org/3/reference/expressions.html#not

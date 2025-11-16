@@ -64,7 +64,7 @@ type this in the terminal_ to install Python_
 how to make a python test driven development environment manually
 ********************************************************************************************
 
-* Let us say I have to work on a project and its name is ``magic``. I click on ``terminal_`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New terminal_`` to open a terminal_
+Let us say I have to work on a project and its name is ``magic``. I click on ``terminal_`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New terminal`` to open a terminal_
 
 how to change directories
 #################################################################################################
@@ -123,7 +123,7 @@ the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
 how to look at directory structure
 #################################################################################################
 
-I can use the tree_ program_ to see what files and folders are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
+I can use the tree_ program_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
 
 .. code-block:: shell
 
@@ -173,7 +173,7 @@ I can use the tree_ program_ to see what files and folders are in a directory_. 
 
     0 directories, 0 files
 
-* I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_ with cd_
+* I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
   .. code-block:: shell
 
@@ -185,7 +185,7 @@ I can use the tree_ program_ to see what files and folders are in a directory_. 
 
     cd: no such file or directory: magic
 
-  the ``magic`` folder does not yet exist, ``pumping_python`` is empty. I make the directory_ with mkdir_
+  the ``magic`` folder does not yet exist, ``pumping_python`` is empty. I `make the directory`_
 
   .. code-block:: shell
 
@@ -221,47 +221,47 @@ I can use the tree_ program_ to see what files and folders are in a directory_. 
 how to run a Python program
 #################################################################################################
 
-* I use Python_ to run the ``magic`` program_
+I use Python_ to run the ``magic`` program_
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    python3 src/magic.py
+  python3 src/magic.py
 
-  the terminal_ shows
+the terminal_ shows
 
-  .. code-block:: text
-    :force:
+.. code-block:: text
+  :force:
 
-    python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
+  python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program_ because it does not exist. I make a child folder_ in the ``magic`` directory_ for it
+the computer cannot find the program_ because it does not exist. I make a child folder_ in the ``magic`` directory_ for it
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    mkdir src
+  mkdir src
 
-  the terminal_ shows nothing. I use tree_ to see what changed in the ``magic`` directory_
+the terminal_ shows nothing. I use tree_ to see what changed in the ``magic`` directory_
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    tree
+  tree
 
-  the terminal_ shows
+the terminal_ shows
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    .
-    └── src
+  .
+  └── src
 
-    2 directories, 0 files
+  2 directories, 0 files
 
-  I try to run the ``magic`` program_ again
+I try to run the ``magic`` program_ again
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    python3 src/magic.py
+  python3 src/magic.py
 
-  the terminal_ shows the same error from before. I have to make the file_
+the terminal_ shows the same error from before. I have to make the file_
 
 how to make an empty file
 #################################################################################################
@@ -313,7 +313,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 this process can be repeated as many times as possible.
 
 how to run tests manually
---------------------------------------------------------------------------------------------
+#################################################################################################
 
 * I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type it in the terminal_
 
@@ -512,7 +512,7 @@ how to make a python package
 how to rename a file
 --------------------------------------------------------------------------------------------
 
-* then I use the mv_ program_ to change the name of the file to ``test_magic.py``
+* I use the mv_ program_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
 
   .. code-block:: shell
 
@@ -609,7 +609,7 @@ how to rename a file
 green: make it pass
 #################################################################################
 
-I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7
+I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
 
 .. code-block:: python
   :lineno-start: 7
@@ -633,7 +633,7 @@ and the test passes! The terminal_ shows
 
   OK
 
-*cue CELEBRATION MUSIC AND DANCE!* I am GREEN.
+*cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
 refactor: make it better
 ############################################################################################
@@ -667,9 +667,9 @@ I need to install it for the computer to use it
 how to make a virtual environment
 ############################################################################################
 
-I can install `pytest-watch`_ globally, which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
+I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
-A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs
+A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
 
@@ -741,7 +741,7 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 how to activate a virtual environment
 ############################################################################################
 
-When I want to work in a `virtual environment`, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal to use it
+* When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal to use it
 
   .. code-block:: shell
 
@@ -769,30 +769,31 @@ When I want to work in a `virtual environment`, I make sure I am in the parent d
 
   I have to install it in the `virtual environment`_ to use it in the `virtual environment`_
 
-* I use the `python package manager (pip)`_ to see what `python packages`_ are already installed in the `virtual environment`_
-
-  .. code-block:: python
-
-    pip list
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Package Version
-    ------- -------
-    pip     x.y
-
-  - `pytest-watch`_ is not in the list
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is the package manager used to install `python packages`_
-
-how to activate a virtual environment
-############################################################################################
-
-how to document programs a project needs
+how to see what packages are installed in a virtual environment
 --------------------------------------------------------------------------------------------
 
-* I want to make a file where I can list all the `python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file. I can use echo_ to do this, it is a program_ that shows whatever it is given on the screen (`standard output (stdout)`_) for example
+I use the `python package manager (pip)`_ to see what `python packages`_ are installed in the `virtual environment`_
+
+.. code-block:: python
+
+  pip list
+
+the terminal_ shows
+
+.. code-block:: shell
+
+  Package Version
+  ------- -------
+  pip     x.y
+
+- `pytest-watch`_ is not in the list
+- pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is the package manager used to install `python packages`_
+
+how to write text to a file
+--------------------------------------------------------------------------------------------
+I want to make a file where I can list all the `python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file
+
+* I can write text to a file with the echo_ program_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
 
   .. code-block:: shell
 
@@ -854,7 +855,7 @@ how to install python packages in a virtual environment
 
     python3 -m pip install --requirement requirements.txt
 
-  - ``--requirement`` is another option that can be passed to the ``install`` argument for `python packages`_ in a given file_
+  - ``--requirement`` is an option that can be passed to the ``install`` argument for `python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
   when I do not have the latest version of pip_, the terminal_ shows
@@ -870,20 +871,17 @@ how to install python packages in a virtual environment
 
     python3 -m pip install --upgrade pip
 
-  - ``install`` is an argument given to pip_ to install a given Python_ package
-  - ``--upgrade`` is an option/switch given to the ``install`` argument for pip_ to upgrade the version of the given `python package`_
-  - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself
+  - ``install`` is an argument given to pip_ to install a given `python package`_
+  - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `python package`_
+  - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself to the latest version since I did not give a version number
 
-  .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list`` and it does not help someone else who is trying to run my project later
+  .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
 
     .. code-block:: shell
 
       python3 -m pip install pytest-watch
 
-how to view python packages installed in a virtual environment
---------------------------------------------------------------------------------------------
-
-* I use pip_ to see what `python packages`_ are now installed in the `virtual environment`_
+* I check what `python packages`_ are now installed in the `virtual environment`_
 
   .. code-block:: python
 
@@ -974,19 +972,20 @@ how to make a python test driven development environment automatically
 
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
-how to document programs a project needs
---------------------------------------------------------------------------------------------
+how to exit the automated tests
+############################################################################################
 I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 
 how to deactivate a virtual environment
---------------------------------------------------------------------------------------------
-* I leave the `virtual environment`_
+############################################################################################
+
+* I leave the `virtual environment`_ by typing this in the terminal_
 
   .. code-block:: shell
 
     deactivate
 
-  I try `pytest-watch`_ again to show that it only works inside the `virtual environment`_
+  I try `pytest-watch`_ again to show that I do not have it installed outside the `virtual environment`_
 
   .. code-block:: shell
 
@@ -998,7 +997,7 @@ how to deactivate a virtual environment
 
     command not found: pytest-watch
 
-* I use cd_ to `change directory`_ to the parent of ``magic``
+* I `change directory`_ to the parent of ``magic``
 
   .. code-block:: shell
 
@@ -1012,7 +1011,10 @@ how to deactivate a virtual environment
 
   I am back in the ``pumping_python`` directory
 
-* I use touch_ to make an empty file with a name that describes the program_ to make a `Test Driven Development` environment automatically, this will make it is easy to remember later
+how to make a shell script
+############################################################################################
+
+* I use touch_ to make an empty file with a name that describes the program_ that will make a `Test Driven Development`_ environment automatically, with a name that is easy to remember later
 
   .. code-block:: shell
 
@@ -1022,9 +1024,9 @@ how to deactivate a virtual environment
 
   .. code-block:: shell
 
-    tree
+    tree -L 2
 
-  the terminal_ shows my new file is in the directory_
+  the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
 
   .. code-block:: shell
 
@@ -1032,17 +1034,10 @@ how to deactivate a virtual environment
     ├── magic
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic.py
     │   └── tests
-    │       ├── __init__.py
-    │       ├── __pycache__
-    │       │   ├── __init__.cpython-313.pyc
-    │       │   ├── test_magic.cpython-313.pyc
-    │       │   └── test_magic.cpython-313-pytest-9.0.1.pyc
-    │       └── test_magic.py
     └── makePythonTdd.sh
 
-how to view all the commands you have typed in a terminal
+how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
 
 * I type history_ in the terminal_
@@ -1053,7 +1048,7 @@ how to view all the commands you have typed in a terminal
 
   the history_ program_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_, then I add these commands to it
+* I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -1078,36 +1073,36 @@ how to view all the commands you have typed in a terminal
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
-how to run your own program
+how to run a shell script
 --------------------------------------------------------------------------------------------
 
-* I go back to the terminal_ to run the program_
+I go back to the terminal_ to run the program_
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    makePythonTdd.sh
+  makePythonTdd.sh
 
-  the terminal_ shows
+the terminal_ shows
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    command not found: makePythonTdd.sh
+  command not found: makePythonTdd.sh
 
-  I have to tell the computer exactly where the file is
+I have to tell the computer exactly where the file is
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    ./makePythonTdd.sh
+  ./makePythonTdd.sh
 
-  ``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few directories_ by default when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
+``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few directories_ by default when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    permission denied: ./makePythonTdd.sh
+  permission denied: ./makePythonTdd.sh
 
-  I need to make the program_ executable so the computer can run it
+I want to make the program_ executable so the computer can run it
 
-how to make your program executable
+how to make a shell script run as a command
 --------------------------------------------------------------------------------------------
 
 * I change the mode of the file_
@@ -1136,18 +1131,6 @@ how to make your program executable
     Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (x.y)
     Collecting pip
     ...
-    Successfully installed pip-X.Y
-    Requirement already satisfied: pytest-watch in ./.venv/lib/python3.13/site-packages (from -r requirements.txt (line 1)) (X.Y.Z)
-    Requirement already satisfied: docopt>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
-    Requirement already satisfied: colorama>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
-    Requirement already satisfied: watchdog>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
-    Requirement already satisfied: pytest>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
-    Requirement already satisfied: iniconfig>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
-    Requirement already satisfied: packaging>=XX in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y)
-    Requirement already satisfied: pluggy<X,>=X.Y in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
-    Requirement already satisfied: pygments>=X.Y.Z in ./.venv/lib/python3.13/site-packages (from pytest>=X.Y.Z->pytest-watch->-r requirements.txt (line 1)) (X.Y.Z)
-
-    [today's date] Running: py.test
     ================================= test session starts ==================================
     platform linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
     rootdir: .../pumping_python/magic
@@ -1159,7 +1142,12 @@ how to make your program executable
 
   This is a problem, the ``makePythonTdd.sh`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done.
 
-* I want it to be able to make any project I want. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project. I add a name as a variable_ to change ``magic`` in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
+  I want ``makePythonTdd.sh`` to be able to make a project for any name I give. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project
+
+how to use variables in a shell script
+--------------------------------------------------------------------------------------------
+
+* I add a name as a variable_ to change ``magic`` in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
 
@@ -1209,7 +1197,6 @@ how to make your program executable
     Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (XY.Z)
     Collecting pip
       ...
-
     ================================= test session starts ==================================
     platform linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
     rootdir: ...
@@ -1217,21 +1204,61 @@ how to make your program executable
 
     ================================ no tests ran in 0.00s =================================
 
-  it did not work. No tests ran and there were errors with making the folders. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ did not work
+  it did not work. No tests ran and there were errors with making the folders_. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ did not work
 
-* I stop `pytest-watch`_ from running by hitting ``ctrl+c`` on the keyboard in the terminal_, then I run ``makePythonTdd.sh`` with a project name this time
+* I stop `pytest-watch`_ from running by hitting ``ctrl+c`` on the keyboard in the terminal_. I run tree_
 
-  .. code-block:: python
+  .. code-block:: shell
+
+    tree -L 2
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .
+    ├── magic
+    │   ├── requirements.txt
+    │   ├── src
+    │   └── tests
+    └── makePythonTdd.sh
+
+  I still have the same files and folders as before I ran the program_
+
+* I run ``makePythonTdd.sh`` with a project name this time
+
+  .. code-block:: shell
 
     ./makePythonTdd.sh a_project
 
   the terminal_ shows no errors but no tests ran
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ================================ no tests ran in X.YZs ================================
 
   I need to add code for :ref:`the first failing test<test_failure>` to the test file
+
+* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch` then check what is in the ``pumping_python`` folder now
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .
+    ├── a_project
+    │   ├── requirements.txt
+    │   ├── src
+    │   └── tests
+    ├── magic
+    │   ├── requirements.txt
+    │   ├── src
+    │   └── tests
+    └── makePythonTdd.sh
 
 * I use echo_ instead of touch_ to add text for the first failing test to ``test_$PROJECT_NAME.py``
 
@@ -1241,16 +1268,16 @@ how to make your program executable
 
     echo "" > tests/test_$PROJECT_NAME.py
 
-  then I add the text for the test like I did with ``test_magic.py`` in the :ref:`quotes ("")<quotes>`
+  I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>`
 
-  .. CAUTION:: Indentation_ matters in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
+  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
 
   .. literalinclude:: /code/make_tdd/makePythonTdd.sh
     :language: shell
     :linenos:
     :emphasize-lines: 10-21
 
-* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_, then I try the program_ again with a different name for the project
+* I try the program_ again in the terminal_ with a different name for the project
 
   .. code-block:: shell
 
@@ -1274,7 +1301,30 @@ how to make your program executable
     FAILED tests/test_another_project.py::Testanother_project::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hit ``ctrl+c`` on the keyboard in the terminal_ to stop the test
+* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch` then check what is in the ``pumping_python`` folder now
+
+  .. code-block:: shell
+
+    tree
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .
+    ├── another_project
+    │   ├── requirements.txt
+    │   ├── src
+    │   └── tests
+    ├── a_project
+    │   ├── requirements.txt
+    │   ├── src
+    │   └── tests
+    ├── magic
+    │   ├── requirements.txt
+    │   ├── src
+    │   └── tests
+    └── makePythonTdd.sh
 
 * I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_
 
@@ -1304,15 +1354,6 @@ how to make your program executable
 
 ----
 
-how to deactivate a virtual environment
-#################################################################################################
-
-When I want to leave a `virtual environment`_, I type this in the terminal_ to deactivate it
-
-.. code-block::
-
-  deactivate
-
 ********************************************************************************************
 review
 ********************************************************************************************
@@ -1323,19 +1364,27 @@ Here are the questions you can answer after going through this chapter
 
 * :ref:`How can I change directories?<how to change directories>`
 * :ref:`How can I make a directory?<how to make a directory>`
-* :ref:`How can I look at directory structure?<how to look at directory structure>`
-* :ref:`How can I run a Python Program?<how to run a Python program>`
 * :ref:`How can I make an empty file?<how to make an empty file>`
-* :ref:`How can I make a python package?<how to make a python package>`
 * :ref:`How can I rename a file?<how to rename a file>`
+* :ref:`How can I see directory structure?<how to look at directory structure>`
+* :ref:`How can I run a Python Program?<how to run a Python program>`
+* :ref:`How can I test for failure?<test_failure>`
+* :ref:`How can I make a python package?<how to make a python package>`
 * :ref:`How can I run tests manually?<how to run tests manually>`
 * :ref:`How can I run tests automatically?<how to run tests automatically>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
-* :ref:`How can I document the Python programs my project needs?<how to document programs a project needs>`
+* :ref:`How can I document the Python programs my project needs?<how to write text to a file>`
+* :ref:`How can I write text to a file?<how to write text to a file>`
 * :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment>`
-* :ref:`How can I view the Python packages installed in a Virtual Environment?<how to view python packages installed in a virtual environment>`
+* :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
+* :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
+* :ref:`How can I make a shell script?<how to make a shell script>`
+* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
+* :ref:`How can I run a shell script<how to run a shell script>`
+* :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
+* :ref:`How can I use a variable in a shell script<how to use variables in a shell script>`
 * :ref:`How can I make a Python Test Driven Development Environment automatically?<how to make a python test driven development environment automatically>`
 * :ref:`What is the Test Driven Development Cycle?<test_failure>`
 * :ref:`What is a virtual environment?<how to make a virtual environment>`
