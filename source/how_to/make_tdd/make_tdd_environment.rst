@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This chapter shows one way to make a Python_ `Test Driven Development`_ environment, first I do it manually where I make all the `folders/directories`_ and files needed, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
+This chapter shows one way to make a Python_ `Test Driven Development`_ project, first I do it manually where I make all the `folders/directories`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
 
 ----
 
@@ -65,103 +65,113 @@ how to make a python test driven development environment manually
 ********************************************************************************************
 
 * Let us say I have to work on a project and its name is ``magic``. I click on ``terminal_`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New terminal_`` to open a terminal_
-* I can use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
+
+how to change directories
+#################################################################################################
+
+I can use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
+
+.. code-block:: shell
+
+  cd pumping_python
+
+the terminal_ shows
+
+.. code-block:: shell
+
+  cd: no such file or directory: pumping_python
+
+the `folder/directory`_ does NOT exist. I need to make it
+
+how to make a directory
+#################################################################################################
+
+I use the mkdir_ program_ to make a `folder/directory`_
+
+.. code-block:: shell
+
+  mkdir pumping_python
+
+the terminal_ shows nothing. I try `changing directory`_ again
+
+.. code-block:: python
+
+  cd pumping_python
+
+the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
+
+.. code-block:: shell
+
+  .../pumping_python $
+
+- a `folder/directory`_ is a container for files_. It helps to organize things, just like a folder in a file cabinet is used to organize files that belong together. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in ``pumping_python``
+- a `file`_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an  extension to show the type of file_ for example
+
+  - ``.txt`` for a `plain text`_ file_
+  - ``.sh`` for a bash_ file_
+  - ``.ps1`` for a PowerShell_ file_
+  -  ``.py`` for a :ref:`Python module<ModuleNotFoundError>`
+
+.. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
 
   .. code-block:: shell
 
-    cd pumping_python
+    code .
 
-  the terminal_ shows
+  a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
-  .. code-block:: shell
+how to look at directory structure
+#################################################################################################
 
-    cd: no such file or directory: pumping_python
+I can use the tree_ program_ to see what files and folders are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
 
-  the `folder/directory`_ does NOT exist. I need to make it
+.. code-block:: shell
 
-* I use the mkdir_ program_ to make a `folder/directory`_
+  tree
 
-  .. code-block:: shell
-
-    mkdir pumping_python
-
-  the terminal_ shows nothing. I try `changing directory`_ again
-
-  .. code-block:: python
-
-    cd pumping_python
-
-  the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
+* when tree_ is not installed on the computer the terminal_ shows
 
   .. code-block:: shell
 
-    .../pumping_python $
+    tree: command not found
 
-  - a `folder/directory`_ is a container for files_. It helps to organize things, just like a folder in a file cabinet is used to organize files that belong together. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in ``pumping_python``
-  - a `file`_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an  extension to show the type of file_ for example
+  I need to install tree_ to use it
 
-    - ``.txt`` for a `plain text`_ file_
-    - ``.sh`` for a bash_ file_
-    - ``.ps1`` for a PowerShell_ file_
-    -  ``.py`` for a :ref:`Python module<ModuleNotFoundError>`
+  .. admonition:: if you are using MacOS_ type this in the terminal_
 
-  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
+    first install brew_ (The Missing Package Manager for macOS), if you do not have it already
 
     .. code-block:: shell
 
-      code .
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
+    then use brew_ to install tree_
 
-* I can use the tree_ program_ to see what files and folders are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
+    .. code-block:: shell
+
+      brew install tree
+
+  or
+
+  .. admonition:: if you are using Linux_ or `Windows Subsystem Linux`_ type this in the terminal_
+
+    .. code-block:: shell
+
+      sudo apt install tree --yes
+
+  after the computer installs tree_, I run the command again
 
   .. code-block:: shell
 
     tree
 
-  - when tree_ is not installed on the computer the terminal_ shows
+* when tree_ is installed on the computer, the terminal_ shows
 
-    .. code-block:: shell
+  .. code-block:: shell
 
-      tree: command not found
+    .
 
-    I need to install tree_ to use it
-
-    .. admonition:: if you are using MacOS_ type this in the terminal_
-
-      first install brew_ (The Missing Package Manager for macOS), if you do not have it already
-
-      .. code-block:: shell
-
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-      then use brew_ to install tree_
-
-      .. code-block:: shell
-
-        brew install tree
-
-    or
-
-    .. admonition:: if you are using Linux_ or `Windows Subsystem Linux`_ type this in the terminal_
-
-      .. code-block:: shell
-
-        sudo apt install tree --yes
-
-    after the computer installs tree_, I run the command again
-
-    .. code-block:: shell
-
-      tree
-
-  - when tree_ is installed on the computer, the terminal_ shows
-
-    .. code-block:: shell
-
-      .
-
-      0 directories, 0 files
+    0 directories, 0 files
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_ with cd_
 
@@ -175,7 +185,7 @@ how to make a python test driven development environment manually
 
     cd: no such file or directory: magic
 
-  the ``magic`` folder does not exist yet, ``pumping_python`` is empty. I make the directory_ with mkdir_
+  the ``magic`` folder does not yet exist, ``pumping_python`` is empty. I make the directory_ with mkdir_
 
   .. code-block:: shell
 
@@ -208,6 +218,9 @@ how to make a python test driven development environment manually
 
     .../pumping_python/magic
 
+how to run a Python program
+#################################################################################################
+
 * I use Python_ to run the ``magic`` program_
 
   .. code-block:: shell
@@ -221,7 +234,7 @@ how to make a python test driven development environment manually
 
     python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program_ because it does not exist yet. I make a child folder_ in the ``magic`` directory_ for it
+  the computer cannot find the program_ because it does not exist. I make a child folder_ in the ``magic`` directory_ for it
 
   .. code-block:: shell
 
@@ -248,7 +261,12 @@ how to make a python test driven development environment manually
 
     python3 src/magic.py
 
-  the terminal_ shows the same error from before. I have to make the file_. I use touch_ to make an empty file in the ``src`` folder
+  the terminal_ shows the same error from before. I have to make the file_
+
+how to make an empty file
+#################################################################################################
+
+* I use touch_ to make an empty file in the ``src`` folder
 
   .. code-block:: shell
 
@@ -256,7 +274,7 @@ how to make a python test driven development environment manually
 
   the terminal_ shows nothing
 
-* I use tree_ to see what folders_ and files_ I have now
+* I use tree_ to see what folders_ and files_ I now have
 
   .. code-block:: shell
 
@@ -272,7 +290,7 @@ how to make a python test driven development environment manually
 
     2 directories, 1 file
 
-  touch_ is a program_ that makes an empty file with whatever name it is given in whatever directory_ is given in the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  touch_ is a program_ that makes an empty file with the name it is given in the directory_ given in the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -280,7 +298,7 @@ how to make a python test driven development environment manually
 
     python3 src/magic.py
 
-  the terminal_ shows nothing. Success! Even though this ``magic.py`` does not do anything because there is no code in it, I can successfully run it.
+  the terminal_ shows nothing. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it.
 
 ********************************************************************************************
 test_failure
@@ -292,12 +310,12 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 * **GREEN**: make it pass - write the simplest thing that will make the failing test pass
 * **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
 
-this process can be repeated as many times as possible
+this process can be repeated as many times as possible.
 
-red: make it fail
-############################################################################################
+how to run tests manually
+--------------------------------------------------------------------------------------------
 
-* Since this books is about `Test Driven Development`_ I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type it in the terminal_
+* I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type it in the terminal_
 
   .. code-block:: python
 
@@ -322,7 +340,7 @@ red: make it fail
 
     mkdir tests
 
-  the terminal_ shows nothing, I use tree_ to see what my project looks like now
+  the terminal_ shows nothing, I use tree_ to see what my project now looks like
 
   .. code-block:: shell
 
@@ -375,9 +393,12 @@ red: make it fail
 
     NO TESTS RAN
 
-* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following Python_ code in the file
+red: make it fail
+#################################################################################################
 
-  .. TIP:: I can open a file from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file, for example
+* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following Python_ code in the file_
+
+  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
 
     .. code-block:: shell
 
@@ -397,7 +418,7 @@ red: make it fail
         def test_failure(self):
             self.assertFalse(True)
 
-  Here is an explanation of the code in the file
+  Here is an explanation of the code in the file_
 
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, this is what I am using for testing
   - ``class TestMagic``
@@ -440,7 +461,10 @@ red: make it fail
 
   I need to tell Python_ that the ``tests`` folder is a `python package`_, so it can find the tests
 
-* then I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
+how to make a python package
+--------------------------------------------------------------------------------------------
+
+* I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
 
   .. IMPORTANT:: make sure to use 2 underscores (__) for ``__init__.py``
 
@@ -484,6 +508,9 @@ red: make it fail
 * I close ``magic.py`` in the editor of the `Integrated Development Environment (IDE)`_
 
   .. CAUTION:: if you do not close ``magic.py`` you will have 3 files in the ``tests`` folder after the next step instead of 2 because you turned on the ``Auto Save`` feature earlier
+
+how to rename a file
+--------------------------------------------------------------------------------------------
 
 * then I use the mv_ program_ to change the name of the file to ``test_magic.py``
 
@@ -640,7 +667,7 @@ I need to install it for the computer to use it
 how to make a virtual environment
 ############################################################################################
 
-I can install it globally, which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed specifically for this project.
+I can install `pytest-watch`_ globally, which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
 A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs
 
@@ -711,7 +738,10 @@ A `virtual environment`_ is a separate folder where I can install `python packag
   - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
   - the ``-L`` option tells tree_ how deep to go with showing the folders_ and files_, I use ``2`` to keep it only to the first level of  contents of the child folders_
 
-* I have to activate the `virtual environment`_ to use it
+how to activate a virtual environment
+############################################################################################
+
+When I want to work in a `virtual environment`, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal to use it
 
   .. code-block:: shell
 
@@ -723,7 +753,7 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 
     (.venv) .../magic $
 
-  the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
+  the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
 
 * I run `pytest-watch`_ again
 
@@ -756,7 +786,13 @@ A `virtual environment`_ is a separate folder where I can install `python packag
   - `pytest-watch`_ is not in the list
   - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is the package manager used to install `python packages`_
 
-* I want to make a file where I can list all the Python_ packages for my project as a way to document it and have pip_ install the programs_ listed in the file. I can use echo_ to do this, it is a program_ that shows whatever it is given on the screen (`standard output (stdout)`_) for example
+how to activate a virtual environment
+############################################################################################
+
+how to document programs a project needs
+--------------------------------------------------------------------------------------------
+
+* I want to make a file where I can list all the `python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file. I can use echo_ to do this, it is a program_ that shows whatever it is given on the screen (`standard output (stdout)`_) for example
 
   .. code-block:: shell
 
@@ -807,7 +843,10 @@ A `virtual environment`_ is a separate folder where I can install `python packag
         ├── lib64 -> lib
         └── pyvenv.cfg
 
-  there is a requirements file as part of the project
+  ``requirements.txt`` is now in the ``magic`` folder_project
+
+how to install python packages in a virtual environment
+--------------------------------------------------------------------------------------------
 
 * I use pip_ to install `pytest-watch`_ from the requirements file
 
@@ -841,7 +880,10 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 
       python3 -m pip install pytest-watch
 
-* I use pip_ to see what packages are now installed in the `virtual environment`_
+how to view python packages installed in a virtual environment
+--------------------------------------------------------------------------------------------
+
+* I use pip_ to see what `python packages`_ are now installed in the `virtual environment`_
 
   .. code-block:: python
 
@@ -932,7 +974,12 @@ how to make a python test driven development environment automatically
 
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
-* I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
+how to document programs a project needs
+--------------------------------------------------------------------------------------------
+I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
+
+how to deactivate a virtual environment
+--------------------------------------------------------------------------------------------
 * I leave the `virtual environment`_
 
   .. code-block:: shell
@@ -995,6 +1042,9 @@ You made it this far and have become `the greatest programmer in the world`_. To
     │       └── test_magic.py
     └── makePythonTdd.sh
 
+how to view all the commands you have typed in a terminal
+--------------------------------------------------------------------------------------------
+
 * I type history_ in the terminal_
 
   .. code-block:: shell
@@ -1028,6 +1078,9 @@ You made it this far and have become `the greatest programmer in the world`_. To
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
+how to run your own program
+--------------------------------------------------------------------------------------------
+
 * I go back to the terminal_ to run the program_
 
   .. code-block:: shell
@@ -1054,6 +1107,9 @@ You made it this far and have become `the greatest programmer in the world`_. To
 
   I need to make the program_ executable so the computer can run it
 
+how to make your program executable
+--------------------------------------------------------------------------------------------
+
 * I change the mode of the file_
 
   .. code-block:: shell
@@ -1071,6 +1127,7 @@ You made it this far and have become `the greatest programmer in the world`_. To
   the terminal_ shows
 
   .. code-block:: shell
+    :force:
     :emphasize-lines: 1-3
 
     mkdir: cannot create directory ‘magic’: File exists
@@ -1100,9 +1157,9 @@ You made it this far and have become `the greatest programmer in the world`_. To
 
     ================================== 1 passed in X.YZs ===================================
 
-  This is a problem, the ``makePythonTdd.sh`` just made the ``magic`` project which already exists and so I get no failing test as my first test. It is repeating what I have already done.
+  This is a problem, the ``makePythonTdd.sh`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done.
 
-* I want it to be able to make any project I want. It should take a name use it as the name for the project, then make the same structure I had for the ``magic`` project. I add a name as a variable_ to change ``magic`` in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
+* I want it to be able to make any project I want. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project. I add a name as a variable_ to change ``magic`` in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
 
@@ -1256,30 +1313,32 @@ When I want to leave a `virtual environment`_, I type this in the terminal_ to d
 
   deactivate
 
-----
-
-how to activate a virtual environment
-############################################################################################
-
-When I want to work in a `virtual environment`_, I `change directory`_ to the `folder/directory`_ that has the `virtual environment`_ for example ``magic``, and type this in the terminal_
-
-.. code-block:: shell
-
-  source .venv/bin/activate
-
-the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_, for example
-
-.. code-block:: shell
-
-  (.venv) .../magic $
-
------
-
 ********************************************************************************************
 review
 ********************************************************************************************
 
 `Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
+
+Here are the questions you can answer after going through this chapter
+
+* :ref:`How can I change directories?<how to change directories>`
+* :ref:`How can I make a directory?<how to make a directory>`
+* :ref:`How can I look at directory structure?<how to look at directory structure>`
+* :ref:`How can I run a Python Program?<how to run a Python program>`
+* :ref:`How can I make an empty file?<how to make an empty file>`
+* :ref:`How can I make a python package?<how to make a python package>`
+* :ref:`How can I rename a file?<how to rename a file>`
+* :ref:`How can I run tests manually?<how to run tests manually>`
+* :ref:`How can I run tests automatically?<how to run tests automatically>`
+* :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
+* :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
+* :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
+* :ref:`How can I document the Python programs my project needs?<how to document programs a project needs>`
+* :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment>`
+* :ref:`How can I view the Python packages installed in a Virtual Environment?<how to view python packages installed in a virtual environment>`
+* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to make a python test driven development environment automatically>`
+* :ref:`What is the Test Driven Development Cycle?<test_failure>`
+* :ref:`What is a virtual environment?<how to make a virtual environment>`
 
 Would you like to test :ref:`test AssertionError?<AssertionError>`
 
