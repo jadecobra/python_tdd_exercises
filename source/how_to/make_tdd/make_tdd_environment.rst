@@ -44,18 +44,21 @@ linux/Windows Subsystem Linux requirements
 Open a terminal_ then type this to update the `linux package manager`_
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   sudo apt update
 
 optionally, you can do a full upgrade if you want
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   sudo apt full-upgrade --yes
 
 type this in the terminal_ to install Python_
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   sudo apt install python3 python3-venv --yes
 
@@ -73,6 +76,7 @@ how to change directories
 I can use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   cd pumping_python
 
@@ -95,7 +99,8 @@ I use the mkdir_ program_ to make a `folder/directory`_
 
 the terminal_ shows nothing. I try `changing directory`_ again
 
-.. code-block:: python
+.. code-block:: shell
+  :emphasize-lines: 1
 
   cd pumping_python
 
@@ -116,6 +121,7 @@ the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
 .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     code .
 
@@ -127,6 +133,7 @@ how to look at directory structure
 I can use the tree_ program_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   tree
 
@@ -143,12 +150,14 @@ I can use the tree_ program_ to see what files_ and folders_ are in a directory_
     first install brew_ (The Missing Package Manager for macOS), if you do not have it already
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     then use brew_ to install tree_
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
       brew install tree
 
@@ -157,12 +166,14 @@ I can use the tree_ program_ to see what files_ and folders_ are in a directory_
   .. admonition:: if you are using Linux_ or `Windows Subsystem Linux`_ type this in the terminal_
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
       sudo apt install tree --yes
 
   after the computer installs tree_, I run the command again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -177,6 +188,7 @@ I can use the tree_ program_ to see what files_ and folders_ are in a directory_
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     cd magic
 
@@ -189,12 +201,14 @@ I can use the tree_ program_ to see what files_ and folders_ are in a directory_
   the ``magic`` folder does not yet exist, ``pumping_python`` is empty. I `make the directory`_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     mkdir magic
 
   the terminal_ shows nothing. I use tree_ again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -210,6 +224,7 @@ I can use the tree_ program_ to see what files_ and folders_ are in a directory_
   I try cd_ again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     cd magic
 
@@ -217,7 +232,7 @@ I can use the tree_ program_ to see what files_ and folders_ are in a directory_
 
   .. code-block:: shell
 
-    .../pumping_python/magic
+    .../pumping_python/magic $
 
 how to run a Python program
 #################################################################################################
@@ -225,6 +240,7 @@ how to run a Python program
 * I use Python_ to run the ``magic`` program_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 src/magic.py
 
@@ -240,6 +256,7 @@ how to run a Python program
 * I make a child folder_ in the ``magic`` directory_ for it
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     mkdir src
 
@@ -248,6 +265,7 @@ how to run a Python program
 * I use tree_ to see what changed in the ``magic`` directory_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -263,6 +281,7 @@ how to run a Python program
 * I try to run the ``magic`` program_ again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 src/magic.py
 
@@ -274,6 +293,7 @@ how to make an empty file
 * I use touch_ to make an empty file in the ``src`` folder
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     touch src/magic.py
 
@@ -282,6 +302,7 @@ how to make an empty file
 * I use tree_ to see what folders_ and files_ I now have
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -300,6 +321,7 @@ how to make an empty file
 * I try to run the ``magic`` program_ again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 src/magic.py
 
@@ -322,13 +344,14 @@ how to run tests manually
 
 * I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 -m unittest
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ----------------------------------------------------------------------
     Ran 0 tests in 0.000s
@@ -342,12 +365,14 @@ how to run tests manually
 * I do not have any tests yet, that is why none ran. I make a child folder_ to keep the tests separate from the actual program_ (`source code`_)
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     mkdir tests
 
   the terminal_ shows nothing, I use tree_ to see what my project now looks like
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -365,12 +390,14 @@ how to run tests manually
 * I use touch_ to add an empty file to the ``tests`` directory for the actual test
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     touch tests/magic.py
 
   the terminal_ shows nothing. I use tree_ to see what the project looks like so far
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -389,6 +416,7 @@ how to run tests manually
 * I run the test again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 -m unittest
 
@@ -406,12 +434,13 @@ red: make it fail
   .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
       code tests/magic.py
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
-  .. code-block:: python
+  .. code-block:: shell
     :linenos:
     :emphasize-lines: 1, 4, 6-7
 
@@ -455,6 +484,7 @@ red: make it fail
 * I run the command again to run the tests in the terminal_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 -m unittest
 
@@ -474,12 +504,14 @@ how to make a python package
   .. IMPORTANT:: make sure to use 2 underscores (__) for ``__init__.py``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     touch tests/__init__.py
 
   the terminal_ shows nothing. I run the tree_ command to see what changed
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -499,6 +531,7 @@ how to make a python package
   I try to run the tests again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 -m unittest
 
@@ -520,12 +553,14 @@ how to rename a file
 * I use the mv_ program_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     mv tests/magic.py tests/test_magic.py
 
   the terminal_ shows nothing. I use tree_ to see what I have so far
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -547,12 +582,13 @@ how to rename a file
 * I run the command to run the tests again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 -m unittest
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     F
     =============================================================
@@ -594,7 +630,7 @@ how to rename a file
 
 * I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
 
-  .. code-block:: python
+  .. code-block:: shell
     :linenos:
     :emphasize-lines: 10-11
 
@@ -615,7 +651,7 @@ green: make it pass
 
 I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
 
-.. code-block:: python
+.. code-block:: shell
   :lineno-start: 7
   :emphasize-lines: 1
 
@@ -623,7 +659,8 @@ I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on l
 
 then I run the test again in the terminal_
 
-.. code-block:: python
+.. code-block:: shell
+  :emphasize-lines: 1
 
   python3 -m unittest
 
@@ -657,6 +694,7 @@ I can use `pytest-watch`_ to run tests automatically. It is a Python_ program_ t
 pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal_
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   pytest-watch
 
@@ -678,6 +716,7 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 -m venv .venv
 
@@ -693,6 +732,7 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 * I run tree_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -717,6 +757,7 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 * I try tree_ again with a few options to see what changed
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree -a -L 2
 
@@ -752,6 +793,7 @@ how to activate a virtual environment
 * When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal to use it
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     source .venv/bin/activate
 
@@ -766,6 +808,7 @@ how to activate a virtual environment
 * I run `pytest-watch`_ again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     pytest-watch
 
@@ -782,7 +825,8 @@ how to see what packages are installed in a virtual environment
 
 I use the `python package manager (pip)`_ to see what `python packages`_ are installed in the `virtual environment`_
 
-.. code-block:: python
+.. code-block:: shell
+  :emphasize-lines: 1
 
   pip list
 
@@ -804,6 +848,7 @@ I want to make a file where I can list all the `python packages`_ for my project
 * I can write text to a file with the echo_ program_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     echo "pytest-watch"
 
@@ -816,6 +861,7 @@ I want to make a file where I can list all the `python packages`_ for my project
   I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     echo "pytest-watch" > requirements.txt
 
@@ -827,6 +873,7 @@ I want to make a file where I can list all the `python packages`_ for my project
 * I run tree_ to see what the project looks like now
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree -a -L 2
 
@@ -860,7 +907,8 @@ how to install python packages in a virtual environment
 
 * I use pip_ to install `pytest-watch`_ from the requirements file
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 -m pip install --requirement requirements.txt
 
@@ -869,7 +917,7 @@ how to install python packages in a virtual environment
 
   when I do not have the latest version of pip_, the terminal_ shows the following after installing the programs_ from the requirements file
 
-  .. code-block:: python
+  .. code-block:: shell
 
     [notice] A new release of pip is available: XY.Z -> AB.C
     [notice] To update, run: pip install --upgrade pip
@@ -877,6 +925,7 @@ how to install python packages in a virtual environment
   I upgrade pip_ to the latest version (this is good practice)
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     python3 -m pip install --upgrade pip
 
@@ -887,18 +936,20 @@ how to install python packages in a virtual environment
   .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
       python3 -m pip install pytest-watch
 
 * I check what `python packages`_ are now installed in the `virtual environment`_
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 1
 
     pip list
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     Package      Version
     ------------ -------
@@ -918,6 +969,7 @@ how to install python packages in a virtual environment
 * I try to run the tests again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     pytest-watch
 
@@ -936,7 +988,7 @@ how to install python packages in a virtual environment
 
   I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
 
-  .. code-block:: python
+  .. code-block:: shell
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -944,7 +996,7 @@ how to install python packages in a virtual environment
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ====================================== FAILURES =======================================
     _______________________________ TestMagic.test_failure ________________________________
@@ -962,7 +1014,7 @@ how to install python packages in a virtual environment
 
   I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
-  .. code-block:: python
+  .. code-block:: shell
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -990,12 +1042,14 @@ how to deactivate a virtual environment
 * I leave the `virtual environment`_ by typing this in the terminal_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     deactivate
 
   I try `pytest-watch`_ again to show that I do not have it installed outside the `virtual environment`_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     pytest-watch
 
@@ -1008,6 +1062,7 @@ how to deactivate a virtual environment
 * I `change directory`_ to the parent of ``magic``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     cd ..
 
@@ -1015,16 +1070,17 @@ how to deactivate a virtual environment
 
   .. code-block:: shell
 
-    .../pumping_python
+    .../pumping_python $
 
-  I am back in the ``pumping_python`` directory
+  I am back in the ``pumping_python`` folder_
 
 how to make a shell script
 ############################################################################################
 
-* I use touch_ to make an empty file with a name that describes the program_ that will make a `Test Driven Development`_ environment automatically, with a name that is easy to remember later
+* I use touch_ to make an empty file_ with a name that describes the program_ that will make a `Test Driven Development`_ environment automatically, with a name that is easy to remember later
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     touch makePythonTdd.sh
 
@@ -1053,6 +1109,7 @@ how to view all the commands I typed in a terminal
 * I type history_ in the terminal_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     history
 
@@ -1115,7 +1172,7 @@ how to view all the commands I typed in a terminal
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
-  .. code-block:: python
+  .. code-block:: shell
     :linenos:
     :emphasize-lines: 1-
 
@@ -1142,6 +1199,7 @@ how to run a shell script
 I go back to the terminal_ to run the program_
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   makePythonTdd.sh
 
@@ -1154,6 +1212,7 @@ the terminal_ shows
 I have to tell the computer exactly where the file is
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   ./makePythonTdd.sh
 
@@ -1171,14 +1230,16 @@ how to make a shell script run as a command
 * I change the mode of the file_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program_ that changes the mode of the given file_, the terminal_ shows nothing
+  chmod_ is a program_ that changes the mode of the given file_, the terminal_ shows nothing. I use it to make the file_ executable so the computer can run it
 
 * I try the command again
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh
 
@@ -1244,7 +1305,8 @@ how to use variables in a shell script
 
 * I use ``ctrl+c`` in the terminal_ to stop the test from running then I run the ``makePythonTdd.sh`` again
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh
 
@@ -1272,6 +1334,7 @@ how to use variables in a shell script
 * I stop `pytest-watch`_ from running by hitting ``ctrl+c`` on the keyboard in the terminal_. I run tree_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree -a -L 2
 
@@ -1290,11 +1353,12 @@ how to use variables in a shell script
 
     6 directories, 2 files
 
-  I still have the same files and folders as before I ran the program_
+  I still have the same files_ and folders_ as before I ran the program_
 
 * I run ``makePythonTdd.sh`` with a project name this time
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh a_project
 
@@ -1309,6 +1373,7 @@ how to use variables in a shell script
 * I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder now
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree -a -L 2
 
@@ -1351,6 +1416,7 @@ how to use variables in a shell script
 * I try the program_ again in the terminal_ with a different name for the project
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh another_project
 
@@ -1375,8 +1441,9 @@ how to use variables in a shell script
 * I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder now
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
-    tree
+    tree -a -L 2
 
   the terminal_ shows
 
@@ -1405,15 +1472,16 @@ how to use variables in a shell script
 
     16 directories, 4 files
 
-* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_
+* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh assertion_error
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ====================================== FAILURES =======================================
     __________________________ Testassertion_error.test_failure ___________________________
