@@ -222,47 +222,51 @@ I can use the tree_ program_ to see what files_ and folders_ are in a directory_
 how to run a Python program
 #################################################################################################
 
-I use Python_ to run the ``magic`` program_
+* I use Python_ to run the ``magic`` program_
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  python3 src/magic.py
+    python3 src/magic.py
 
-the terminal_ shows
+  the terminal_ shows
 
-.. code-block:: text
-  :force:
+  .. code-block:: text
+    :force:
 
-  python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
+    python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-the computer cannot find the program_ because it does not exist. I make a child folder_ in the ``magic`` directory_ for it
+  the computer cannot find the program_ because it does not exist.
 
-.. code-block:: shell
+* I make a child folder_ in the ``magic`` directory_ for it
 
-  mkdir src
+  .. code-block:: shell
 
-the terminal_ shows nothing. I use tree_ to see what changed in the ``magic`` directory_
+    mkdir src
 
-.. code-block:: shell
+  the terminal_ shows nothing
 
-  tree
+* I use tree_ to see what changed in the ``magic`` directory_
 
-the terminal_ shows
+  .. code-block:: shell
 
-.. code-block:: shell
+    tree
 
-  .
-  └── src
+  the terminal_ shows
 
-  2 directories, 0 files
+  .. code-block:: shell
 
-I try to run the ``magic`` program_ again
+    .
+    └── src
 
-.. code-block:: shell
+    2 directories, 0 files
 
-  python3 src/magic.py
+* I try to run the ``magic`` program_ again
 
-the terminal_ shows the same error from before. I have to make the file_
+  .. code-block:: shell
+
+    python3 src/magic.py
+
+  the terminal_ shows the same error from before. I have to make the file_
 
 how to make an empty file
 #################################################################################################
@@ -291,7 +295,7 @@ how to make an empty file
 
     2 directories, 1 file
 
-  touch_ is a program_ that makes an empty file with the name it is given in the directory_ given in the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  touch_ is a program_ that makes an empty file_ with the name it is given in the directory_ given in the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -311,7 +315,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 * **GREEN**: make it pass - write the simplest thing that will make the failing test pass
 * **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
 
-this process can be repeated as many times as possible.
+this process can be repeated as many times as possible or until I get to my goal.
 
 how to run tests manually
 #################################################################################################

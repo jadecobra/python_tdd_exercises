@@ -24,11 +24,31 @@ they cover the following
 - :ref:`windows requirements`
 - :ref:`linux/Windows Subsystem Linux requirements`
 - :ref:`how to make a python test driven development environment manually`
-- :ref:`how to make a python test driven development environment automatically`
-- :ref:`the first failing test<test_failure>`
+- :ref:`how to change directories`
+- :ref:`how to make a directory`
+- :ref:`how to look at directory structure`
+- :ref:`how to run a Python program`
+- :ref:`how to make an empty file`
+- :ref:`test_failure`
+- :ref:`how to run tests manually`
+- :ref:`how to make a python package`
+- :ref:`how to rename a file`
+- :ref:`how to run tests automatically`
 - :ref:`how to make a virtual environment`
 - :ref:`how to activate a virtual environment`
+- :ref:`how to see what packages are installed in a virtual environment`
+- :ref:`how to write text to a file`
+- :ref:`how to install python packages in a virtual environment`
+- :ref:`how to make a python test driven development environment automatically`
+- :ref:`how to exit the automated tests`
 - :ref:`how to deactivate a virtual environment`
+- :ref:`how to make a shell script`
+- :ref:`how to view all the commands I typed in a terminal`
+- :ref:`how to run a shell script`
+- :ref:`how to make a shell script run as a command`
+- :ref:`how to use variables in a shell script`
+- :ref:`how to install Windows Subsystem Linux on Windows`
+- :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux`
 
 ----
 
