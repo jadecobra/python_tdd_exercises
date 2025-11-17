@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-how I setup my `Integrated Development Environment (IDE)`_ (IDE)
+how I setup my Integrated Development Environment (IDE)
 #################################################################################
 
 .. raw:: html

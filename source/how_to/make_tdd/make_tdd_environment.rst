@@ -33,7 +33,8 @@ requirements
 windows requirements
 #################################################################################
 
-If you are using a Windows_ computer, try :ref:`how to install Windows Subsystem Linux on Windows`. If installing `Windows Subsystem Linux`_ does not work, use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead of this chapter
+* If you are using a Windows_ computer, :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`
+* If you cannot :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`, you can still :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem Linux<how to make a python test driven development environment on Windows without Windows Subsystem Linux>` instead of this chapter
 
 linux/Windows Subsystem Linux requirements
 #################################################################################
@@ -64,7 +65,7 @@ type this in the terminal_ to install Python_
 how to make a python test driven development environment manually
 ********************************************************************************************
 
-Let us say I have to work on a project and its name is ``magic``. I click on ``terminal_`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New terminal`` to open a terminal_
+Let us say I have to work on a project and its name is ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
 how to change directories
 #################################################################################################
