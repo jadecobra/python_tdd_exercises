@@ -40,7 +40,7 @@ requirements
 
     tests/test_calculator.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the editor
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -165,7 +165,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* then I click on ``calculator.py`` in the ``src`` folder to open it in the editor, and I type the name
+* then I click on ``calculator.py`` in the ``src`` folder to open it in the :ref:`editor<2 editors>`, and I type the name
 
   .. code-block:: python
     :linenos:
@@ -337,7 +337,7 @@ refactor: make it better
                 0
             )
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the editor to run the tests and the terminal_ shows random success or :ref:`AssertionError`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -974,7 +974,7 @@ refactor: make it better
                     self.x/self.y
                 )
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) in the editor a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) in the :ref:`editor<2 editors>` a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 

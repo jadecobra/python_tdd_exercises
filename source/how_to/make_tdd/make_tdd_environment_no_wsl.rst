@@ -128,7 +128,7 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 red: make it fail
 ############################################################################################
 
-* I click on ``magic/tests/test_magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following
+* I click on ``magic/tests/test_magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -208,7 +208,7 @@ This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in
 * ``self.assertFalse(True)`` the line of code that caused the failure
 * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the failure and the location of the file where it is
 
-  .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
+  .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``File ".../magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ will open the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
 * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
@@ -537,7 +537,7 @@ You made it this far and have become the greatest programmer in the world. To fo
 
   the history_ program shows all the commands I have typed in the terminal_ so far, and I use them to write the program
 
-* I click on ``makePythonTdd.ps1`` to open it in the `Integrated Development Environment (IDE)`_ , then type the commands I need to make a `Test Driven Development`_ Environment in the editor
+* I click on ``makePythonTdd.ps1`` to open it in the `Integrated Development Environment (IDE)`_ , then type the commands I need to make a `Test Driven Development`_ Environment in the :ref:`editor<2 editors>`
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 

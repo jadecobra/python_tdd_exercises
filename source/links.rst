@@ -3,6 +3,9 @@
 .. _append: more_on_lists_
 .. _arithmetic: https://grokipedia.com/page/Arithmetic
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+.. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+.. _assertion: assert_
+.. _assertions: assert_
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
 .. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
@@ -93,6 +96,7 @@
 .. _python package manager (pip): pip_
 .. _python package manager: pip_
 .. _python packages: `python package`_
+.. _packages: `python package`_
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
 .. _python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library

@@ -16,28 +16,28 @@ AssertionError
 
 ----
 
-AssertionError_ is raised to show that a statement is :ref:`False<test_what_is_false>`. It was in :ref:`how to make a python test driven development environment` with :ref:`the first failing test<test_failure>`
+AssertionError_ happens when a statement is :ref:`False<test_what_is_false>`. It was in :ref:`how to make a python test driven development environment` with :ref:`the first failing test<test_failure>`
 
 .. code-block:: python
 
   self.assertFalse(True)
 
-which is like
+which is like an `assert statement`_
 
 .. code-block:: python
 
   assert True is False
 
-I think of the assertion as "DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". The line stops the program because the statement is NOT :ref:`True<test_what_is_true>`, it is :ref:`False<test_what_is_false>`
+I think of the statement as "DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". The line stops the program_ because the statement is NOT :ref:`True<test_what_is_true>`, it is :ref:`False<test_what_is_false>`
 
-I can use assertions when building a program to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program behaves, for example when it is given inputs.
+I can use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program_ behaves, for example when it is given inputs.
 
-Assertions can help catch things that break passing tests when I add new lines. They also help me answer 2 questions
+Assertions_ can help catch things that break passing tests when I add new lines. They also help me answer 2 questions
 
 * what is the same?
 * what is different?
 
-The difference between my expectations and reality (what happens when the program runs), tells me what to change to make them match.
+The difference between my expectations and reality (what happens when the program_ runs), tells me what to change to make them match.
 
 ----
 
@@ -57,7 +57,7 @@ requirements
 
       ./makePythonTdd.ps1 assertion_error
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -65,7 +65,7 @@ requirements
 
     tests/test_assertion_error.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the editor
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -115,7 +115,7 @@ red: make it fail
 
     tests/test_assertion_error.py:7: AssertionError
 
-  the statement is :ref:`False<test_what_is_false>`, :ref:`None` is :ref:`None`
+  the `assert statement`_ is :ref:`False<test_what_is_false>`, :ref:`None` is :ref:`None`
 
 green: make it pass
 #################################################################################
@@ -134,9 +134,9 @@ the test passes
 refactor: make it better
 #################################################################################
 
-I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functions>` from the `unittest.TestCase`_ class
+I can also make assertions_ with some :ref:`methods<functions>` from the `unittest.TestCase`_ :ref:`class<classes>`
 
-* I add another failing line with the assertIsNotNone_ :ref:`method<functions>` which checks if the thing in parentheses is NOT :ref:`None`
+* I add another failing line with the assertIsNotNone_ :ref:`method<functions>` which checks if the thing in parentheses (``()``) is NOT :ref:`None`
 
   .. code-block:: python
     :lineno-start: 6
@@ -325,7 +325,7 @@ I can also make :ref:`assertions<AssertionError>` with some :ref:`methods<functi
 test_assertion_error_w_false
 *********************************************************************************
 
-I can use :ref:`assertions<AssertionError>` to test if something is :ref:`False<test_what_is_false>`
+I can use assertions_ to test if something is :ref:`False<test_what_is_false>`
 
 red: make it fail
 #################################################################################
@@ -413,7 +413,7 @@ refactor: make it better
 test_assertion_error_w_true
 *********************************************************************************
 
-I can also use :ref:`assertions<AssertionError>` to test if something is :ref:`True<test_what_is_true>`
+I can also use assertions_ to test if something is :ref:`True<test_what_is_true>`
 
 red: make it fail
 #################################################################################

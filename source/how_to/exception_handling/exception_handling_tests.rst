@@ -33,7 +33,7 @@ requirements
 
       ./makePythonTdd.ps1 exceptions
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -41,7 +41,7 @@ requirements
 
     tests/test_exceptions.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the editor
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -266,7 +266,7 @@ red: make it fail
 
     AttributeError: module 'src.exceptions' has no attribute 'function_name'
 
-* I click on ``exceptions.py`` in the ``src`` folder to open it in the editor, then add the name
+* I click on ``exceptions.py`` in the ``src`` folder to open it in the :ref:`editor<2 editors>`, then add the name
 
   .. code-block:: python
     :linenos:

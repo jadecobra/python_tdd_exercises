@@ -49,7 +49,7 @@ requirements
 
       ./makePythonTdd.ps1 truth_table
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -57,7 +57,7 @@ requirements
 
     tests/test_truth_table.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it in the editor
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 * I add an `import statement`_
 

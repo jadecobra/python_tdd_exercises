@@ -35,7 +35,7 @@ requirements
 
       ./makePythonTdd.ps1 person
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -43,7 +43,7 @@ requirements
 
     tests/test_person.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the editor
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -129,7 +129,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-* I click on ``person.py`` in the ``src`` folder to open it in the editor then I add a :ref:`function<functions>`
+* I click on ``person.py`` in the ``src`` folder to open it in the :ref:`editor<2 editors>` then I add a :ref:`function<functions>`
 
   .. code-block:: python
     :linenos:

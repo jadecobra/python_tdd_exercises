@@ -35,7 +35,7 @@ requirements
 
       ./makePythonTdd.ps1 sleep_duration
 
-  it makes the `folders/directories`_ and files that are needed, installs packages, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
 
@@ -43,7 +43,7 @@ requirements
 
     tests/test_sleep_duration.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_sleep_duration.py:7`` to open it in the editor
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_sleep_duration.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -172,7 +172,7 @@ green: make it pass
     # NameError
     # AttributeError
 
-  then open ``sleep_duration.py`` in the editor to add the name ::
+  then open ``sleep_duration.py`` in the :ref:`editor<2 editors>` to add the name ::
 
     duration
 

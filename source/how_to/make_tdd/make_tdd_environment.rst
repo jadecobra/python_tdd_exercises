@@ -429,7 +429,7 @@ how to run tests manually
 red: make it fail
 #################################################################################################
 
-* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the editor, then type the following Python_ code in the file_
+* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following Python_ code in the file_
 
   .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
 
@@ -543,7 +543,7 @@ how to make a python package
 
   I need to tell Python_ that ``magic.py`` in the ``tests`` folder is a test file
 
-* I close ``magic.py`` in the editor of the `Integrated Development Environment (IDE)`_
+* I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
   .. CAUTION:: if you do not close ``magic.py`` you will have 3 files in the ``tests`` folder after the next step instead of 2 because you turned on the ``Auto Save`` feature earlier
 
@@ -626,7 +626,7 @@ how to rename a file
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the editor with the cursor at the line where the failure happened
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 * I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
 
@@ -986,7 +986,7 @@ how to install python packages in a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
+  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1012,7 +1012,7 @@ how to install python packages in a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the editor of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1168,7 +1168,7 @@ how to view all the commands I typed in a terminal
 
   the history_ program_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* I click on ``makePythonTdd.sh`` to open it in the editor of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
+* I click on ``makePythonTdd.sh`` to open it in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -1396,7 +1396,7 @@ how to use variables in a shell script
     │   └── .venv
     └── makePythonTdd.sh
 
-* I use echo_ instead of touch_ to add text for the first failing test to ``test_$PROJECT_NAME.py``
+* I use echo_ instead of touch_ to add text for the first failing test to ``test_$PROJECT_NAME.py`` in ``makePythonTdd.sh``
 
   .. code-block:: shell
     :lineno-start: 9
@@ -1527,6 +1527,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
 * :ref:`How can I document the Python programs my project needs?<how to write text to a file>`
+* :ref:`How can I install the Python programs my project needs from a file?<how to install python packages in a virtual environment>`
 * :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
