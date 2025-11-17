@@ -135,10 +135,6 @@
 .. _types: type_
 .. _unittest: https://docs.python.org/3/library/unittest.html
 .. _unittest.TestCase.assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
-.. _unittest.TestCase.assertIsInstance: assertIsInstance_
-.. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
-.. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
-.. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
 .. _unittest.TestCase.assertEqual: assertEqual_
 .. _unittest.TestCase.assertNotEqual: assertNotEqual_
 .. _unittest.TestCase.assertFalse: assertFalse_
@@ -149,6 +145,9 @@
 .. _unittest.TestCase.assertRaisesRegex: assertRaisesRegex_
 .. _unittest.TestCase.setUp: setUp_
 .. _unittest.TestCase.assertIsInstance: assertIsInstance_
+.. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
+.. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
+.. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
 .. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
 .. _variable: https://grokipedia.com/page/Variable_(computer_science)
 .. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
