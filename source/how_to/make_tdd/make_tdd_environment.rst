@@ -1203,7 +1203,7 @@ how to make a shell script run as a command
 
     ================================== 1 passed in X.YZs ===================================
 
-  This is a problem, the ``makePythonTdd.sh`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done.
+  This is a problem, t``makePythonTdd.sh`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done, and `I do not repeat myself`_
 
   I want ``makePythonTdd.sh`` to be able to make a project for any name I give. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project
 
@@ -1242,7 +1242,7 @@ how to use variables in a shell script
 
     in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be the value of  ``argument``
 
-* I use ``ctrl+c`` to stop the test from running then I run the ``makePythonTdd.sh`` again
+* I use ``ctrl+c`` in the terminal_ to stop the test from running then I run the ``makePythonTdd.sh`` again
 
   .. code-block:: python
 
@@ -1273,7 +1273,7 @@ how to use variables in a shell script
 
   .. code-block:: shell
 
-    tree -L 2
+    tree -a -L 2
 
   the terminal_ shows
 
@@ -1281,10 +1281,14 @@ how to use variables in a shell script
 
     .
     ├── magic
+    │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
-    │   └── tests
+    │   ├── tests
+    │   └── .venv
     └── makePythonTdd.sh
+
+    6 directories, 2 files
 
   I still have the same files and folders as before I ran the program_
 
@@ -1302,11 +1306,11 @@ how to use variables in a shell script
 
   I need to add code for :ref:`the first failing test<test_failure>` to the test file
 
-* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch` then check what is in the ``pumping_python`` folder now
+* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder now
 
   .. code-block:: shell
 
-    tree
+    tree -a -L 2
 
   the terminal_ shows
 
@@ -1314,13 +1318,17 @@ how to use variables in a shell script
 
     .
     ├── a_project
+    │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
-    │   └── tests
+    │   ├── tests
+    │   └── .venv
     ├── magic
+    │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
-    │   └── tests
+    │   ├── tests
+    │   └── .venv
     └── makePythonTdd.sh
 
 * I use echo_ instead of touch_ to add text for the first failing test to ``test_$PROJECT_NAME.py``
@@ -1364,7 +1372,7 @@ how to use variables in a shell script
     FAILED tests/test_another_project.py::Testanother_project::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch` then check what is in the ``pumping_python`` folder now
+* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder now
 
   .. code-block:: shell
 
@@ -1376,18 +1384,26 @@ how to use variables in a shell script
 
     .
     ├── another_project
+    │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
-    │   └── tests
+    │   ├── tests
+    │   └── .venv
     ├── a_project
+    │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
-    │   └── tests
+    │   ├── tests
+    │   └── .venv
     ├── magic
+    │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
-    │   └── tests
+    │   ├── tests
+    │   └── .venv
     └── makePythonTdd.sh
+
+    16 directories, 4 files
 
 * I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable. For example, when I type this in the terminal_
 

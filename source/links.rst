@@ -184,7 +184,7 @@
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _removing duplication: `remove duplication`_
-.. _I Do Not Repeat myself: `remove duplication`_
+.. _I do not repeat myself: `remove duplication`_
 .. _Indentation: https://peps.python.org/pep-0008/#indentation
 .. _Inheritance: https://grokipedia.com/page/Inheritance_(object-oriented_programming)
 .. _Integrated Development Environment (IDE): https://grokipedia.com/page/Integrated_development_environment
