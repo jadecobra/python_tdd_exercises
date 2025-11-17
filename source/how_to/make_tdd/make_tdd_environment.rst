@@ -320,7 +320,7 @@ this process can be repeated as many times as possible or until I get to my goal
 how to run tests manually
 #################################################################################################
 
-* I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type it in the terminal_
+* I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
 
   .. code-block:: python
 
@@ -362,7 +362,7 @@ how to run tests manually
 
     3 directories, 1 file
 
-* I use touch_ to add an empty file in the ``tests`` directory for the actual test
+* I use touch_ to add an empty file to the ``tests`` directory for the actual test
 
   .. code-block:: shell
 
@@ -431,7 +431,7 @@ red: make it fail
     * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
     * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test
 
-      .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will not run the tests in it
+      .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` I will use for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
@@ -441,7 +441,7 @@ red: make it fail
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
     * ``test_failure`` is the name of this :ref:`method<functions>` for :ref:`this first test<test_failure>`
 
-      .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ will not run the tests in it
+      .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
     * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
@@ -452,7 +452,7 @@ red: make it fail
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time I make a change
-* I run the command again
+* I run the command again to run the tests in the terminal_
 
   .. code-block:: shell
 
@@ -496,7 +496,7 @@ how to make a python package
 
     3 directories, 3 files
 
-  I run the command again
+  I try to run the tests again
 
   .. code-block:: shell
 
@@ -544,7 +544,7 @@ how to rename a file
 
     4 directories, 4 files
 
-* I run the command again
+* I run the command to run the tests again
 
   .. code-block:: shell
 
@@ -569,7 +569,7 @@ how to rename a file
 
     FAILED (failures=1)
 
-  .. IMPORTANT:: I can use any name for the test file but it must start with ``test_`` or unittest_ will not run the tests in the file
+  .. IMPORTANT:: I can use any name for the test file but it must start with ``test_`` or unittest_ will NOT run the tests in the file
 
 * This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line
 
@@ -579,9 +579,6 @@ how to rename a file
   * ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError`
   * ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
   * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
-
-    .. TIP:: Hold ``ctrl`` (windows/linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ will open the file in the editor with the cursor at the line where the failure happened
-
   * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
   * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
 
@@ -592,6 +589,8 @@ how to rename a file
     - ``test_failure`` is the :ref:`method (function)<functions>` defined on line 6 in ``test_magic.py``
 
   * ``F`` shows a failure
+
+* I hold ``ctrl`` (windows/linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the editor with the cursor at the line where the failure happened
 
 * I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
 
@@ -674,7 +673,7 @@ how to make a virtual environment
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
-A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place separate from other things on the computer. It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
+A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer. It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
 
@@ -711,6 +710,8 @@ A `virtual environment`_ is a separate folder where I can install `python packag
         │   └── test_magic.cpython-313.pyc
         └── test_magic.py
 
+    4 directories, 5 files
+
   it does not look like anything changed. This is because the ``.`` in front of ``.venv`` means the folder_ is hidden
 
 * I try tree_ again with a few options to see what changed
@@ -738,7 +739,9 @@ A `virtual environment`_ is a separate folder where I can install `python packag
         ├── lib64 -> lib
         └── pyvenv.cfg
 
-  there is now a folder_ named ``.venv``
+    9 directories, 5 files
+
+  there is now a folder_ named ``.venv`` for the `virtual environment`_
 
   - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
   - the ``-L`` option tells tree_ how deep to go with showing the folders_ and files_, I use ``2`` to keep it only to the first level of  contents of the child folders_
@@ -792,7 +795,7 @@ the terminal_ shows
   pip     x.y
 
 - `pytest-watch`_ is not in the list
-- pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is the package manager used to install `python packages`_
+- pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
 
 how to write text to a file
 --------------------------------------------------------------------------------------------
@@ -838,7 +841,6 @@ I want to make a file where I can list all the `python packages`_ for my project
     │   └── magic.py
     ├── tests
     │   ├── __init__.py
-    │   ├── magic.py
     │   ├── __pycache__
     │   └── test_magic.py
     └── .venv
@@ -848,6 +850,8 @@ I want to make a file where I can list all the `python packages`_ for my project
         ├── lib
         ├── lib64 -> lib
         └── pyvenv.cfg
+
+    9 directories, 6 files
 
   ``requirements.txt`` is now in the ``magic`` folder_project
 
@@ -863,7 +867,7 @@ how to install python packages in a virtual environment
   - ``--requirement`` is an option that can be passed to the ``install`` argument for `python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
-  when I do not have the latest version of pip_, the terminal_ shows
+  when I do not have the latest version of pip_, the terminal_ shows the following after installing the programs_ from the requirements file
 
   .. code-block:: python
 
@@ -921,7 +925,6 @@ how to install python packages in a virtual environment
 
   .. code-block:: ruby
 
-    [TODAYS_DATE] Running: py.test
     ================== test session starts===================
     ...
     rootdir: .../magic
@@ -1042,6 +1045,8 @@ how to make a shell script
     │   └── tests
     └── makePythonTdd.sh
 
+    4 directories, 2 files
+
 how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
 
@@ -1050,6 +1055,59 @@ how to view all the commands I typed in a terminal
   .. code-block:: shell
 
     history
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    cd pumping_python
+    mkdir pumping_python
+    cd pumping_python
+    tree
+    sudo apt install tree --yes
+    tree
+    cd magic
+    mkdir magic
+    tree
+    cd magic
+    python3 src/magic.py
+    mkdir src
+    tree
+    python3 src/magic.py
+    touch src/magic.py
+    tree
+    python3 src/magic.py
+    python3 -m unittest
+    mkdir tests
+    tree
+    touch tests/magic.py
+    tree
+    python3 -m unittest
+    touch tests/__init__.py
+    tree
+    python3 -m unittest
+    mv tests/magic.py tests/test_magic.py
+    tree
+    python3 -m unittest
+    pytest-watch
+    python3 -m venv .venv
+    tree
+    tree -a -L 2
+    source .venv/bin/activate
+    pytest-watch
+    pip list
+    echo "pytest-watch"
+    echo "pytest-watch" > requirements.txt
+    tree -a -L 2
+    python3 -m pip install --requirement requirements.txt
+    python3 -m pip install --upgrade pip
+    pip list
+    pytest-watch
+    deactivate
+    pytest-watch
+    cd ..
+    touch makePythonTdd.sh
+    tree -L 2
 
   the history_ program_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
