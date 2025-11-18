@@ -824,9 +824,9 @@ refactor: make it better
     :lineno-start: 11
     :emphasize-lines: 3
 
-        self.assertFalse(0.0)
-        self.assertFalse(str())
-        self.assertFalse('text')
+            self.assertFalse(0.0)
+            self.assertFalse(str())
+            self.assertFalse('text')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -837,24 +837,34 @@ refactor: make it better
   I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 1
 
-    self.assertTrue('text')
-
-  the test passes and I move the line to ``test_what_is_true``
-
-  .. code-block:: python
-
-    def test_what_is_false(self):
-        ...
-        self.assertFalse(str())
-
-    def test_what_is_true(self):
-        ...
         self.assertTrue('text')
 
-  I add notes
+  the test passes
+
+* I move the line to ``test_what_is_true``
 
   .. code-block:: python
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(1)
+            self.assertTrue(-0.1)
+            self.assertTrue(0.1)
+            self.assertTrue('text')
+
+
+    # NOTES
+
+* I add notes
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: , 7
 
     # NOTES
     # a string with things is true
@@ -868,6 +878,10 @@ refactor: make it better
     # False is false
     # False is not true
     # False is a boolean
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 ----
 
