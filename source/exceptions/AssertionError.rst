@@ -136,6 +136,9 @@ refactor: make it better
 
 I can also make assertions_ with some :ref:`methods<functions>` from the `unittest.TestCase`_ :ref:`class<classes>`
 
+how to test if something is None
+--------------------------------------------------------------------------------------------
+
 * I add another failing line with the assertIsNotNone_ :ref:`method<functions>` which checks if the thing in parentheses (``()``) is NOT :ref:`None`
 
   .. code-block:: python
@@ -366,7 +369,12 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* There is an assert_ :ref:`method<functions>` to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`. I add a failing line with assertFalse_
+There is an assert_ :ref:`method<functions>` to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`
+
+how to test if something is False
+--------------------------------------------------------------------------------------------
+
+* I add a failing line with assertFalse_
 
   .. code-block:: python
     :lineno-start: 16
@@ -454,7 +462,12 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* there is an assert_ :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
+There is an assert_ :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
+
+how to test if something is True
+--------------------------------------------------------------------------------------------
+
+* I add a failing statement
 
   .. code-block:: python
     :lineno-start: 21
@@ -555,7 +568,13 @@ the test passes.
 refactor: make it better
 #################################################################################
 
-* there are assert_ :ref:`methods<functions>` to check if 2 things are equal or not. I add assertNotEqual_ which checks if the 2 things in the parentheses are NOT equal
+There are assert_ :ref:`methods<functions>` to check if 2 things are equal or not.
+
+
+how to test if two things are Equal
+--------------------------------------------------------------------------------------------
+
+* I add assertNotEqual_ which checks if the 2 things in the parentheses are NOT equal
 
   .. code-block:: python
     :lineno-start: 24
@@ -1054,6 +1073,13 @@ I can use `assert statements`_ and :ref:`methods<functions>` to test if somethin
 * :ref:`False<test_what_is_false>` or not
 * :ref:`True<test_what_is_true>` or not
 * :ref:`equal or not<test_assertion_error_w_equality>`
+
+Here are questions you can answer after going through this chapter
+
+:ref:`How can I test if something is None?<how to test if something is None>`
+:ref:`How can I test if something is False?<how to test if something is False>`
+:ref:`How can I test if something is True?<how to test if something is True>`
+:ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 
 Would you like to :ref:`test None?<None>`
 
