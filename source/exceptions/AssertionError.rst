@@ -105,7 +105,7 @@ red: make it fail
 
 
     # Exceptions Encountered
-    ...
+    # AssertionError
 
   the terminal_ shows AssertionError_
 
@@ -243,6 +243,10 @@ how to test if something is None
     # False is not None
     # None is None
 
+
+    # Exceptions Encountered
+    # AssertionError
+
 * I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
@@ -321,6 +325,10 @@ how to test if something is None
     # True is not None
     # False is not None
     # None is None
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 ----
 
@@ -414,6 +422,10 @@ how to test if something is False
     # True is not None
     # False is not None
     # None is None
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 ----
 
@@ -511,6 +523,10 @@ how to test if something is True
     # True is not None
     # False is not None
     # None is None
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 All the statements so far show that - :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They give me a basic expectation of Python_ because I can compare things with them.
 
@@ -615,6 +631,10 @@ how to test if two things are Equal
     # False is not None
     # None is None and equal to None
 
+
+    # Exceptions Encountered
+    # AssertionError
+
 * I add a new failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
@@ -686,6 +706,10 @@ how to test if two things are Equal
     # False is not None and not equal to None
     # None is None and equal to None
 
+
+    # Exceptions Encountered
+    # AssertionError
+
 * I add the next failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
@@ -754,6 +778,10 @@ how to test if two things are Equal
     # True is not None and not equal to None
     # False is not None and not equal to None
     # None is None and equal to None
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 * I add another failing :ref:`assertion<AssertionError>`
 
@@ -826,6 +854,10 @@ how to test if two things are Equal
     # False is not None and not equal to None
     # None is None and equal to None
 
+
+    # Exceptions Encountered
+    # AssertionError
+
 * on to the next failing :ref:`assertion<AssertionError>`
 
   .. code-block:: python
@@ -895,6 +927,10 @@ how to test if two things are Equal
     # True is not None and not equal to None
     # False is not None and not equal to None
     # None is None and equal to None
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 * I add a failing :ref:`assertion<AssertionError>`
 
@@ -966,6 +1002,10 @@ how to test if two things are Equal
     # True is not None and not equal to None
     # False is not None and not equal to None
     # None is None and equal to None
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 * time for the last statements
 
@@ -1060,6 +1100,10 @@ how to test if two things are Equal
     # False is not None and not equal to None
     # None is None and equal to None
 
+
+    # Exceptions Encountered
+    # AssertionError
+
 ----
 
 
@@ -1076,10 +1120,10 @@ I can use `assert statements`_ and :ref:`methods<functions>` to test if somethin
 
 Here are questions you can answer after going through this chapter
 
-:ref:`How can I test if something is None?<how to test if something is None>`
-:ref:`How can I test if something is False?<how to test if something is False>`
-:ref:`How can I test if something is True?<how to test if something is True>`
-:ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
+* :ref:`How can I test if something is None?<how to test if something is None>`
+* :ref:`How can I test if something is False?<how to test if something is False>`
+* :ref:`How can I test if something is True?<how to test if something is True>`
+* :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 
 Would you like to :ref:`test None?<None>`
 

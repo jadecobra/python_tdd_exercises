@@ -92,13 +92,17 @@ green: make it pass
 I change assertNotIsInstance_ to assertIsInstance_
 
 .. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 2
 
-  def test_what_is_false(self):
-      self.assertIsInstance(False, bool)
+      def test_what_is_false(self):
+          self.assertIsInstance(False, bool)
 
 the test passes and I add a note
 
 .. code-block:: python
+  :lineno-start: 10
+  :emphasize-lines: 1-2
 
   # NOTES
   # False is a boolean
@@ -120,12 +124,14 @@ red: make it fail
 I add another test
 
 .. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 4-5
 
-  def test_what_is_false(self):
-      self.assertIsInstance(False, bool)
+      def test_what_is_false(self):
+          self.assertIsInstance(False, bool)
 
-  def test_what_is_true(self):
-      self.assertNotIsInstance(True, bool)
+      def test_what_is_true(self):
+          self.assertNotIsInstance(True, bool)
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -136,20 +142,30 @@ the terminal_ shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>`
+* I change the :ref:`method<functions>`
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
 
-  def test_what_is_true(self):
-      self.assertIsInstance(True, bool)
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
 
-the test passes and I add another note
+  the test passes
 
-.. code-block:: python
+* I add another note
 
-  # NOTES
-  # True is a boolean
-  # False is a boolean
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
+
+    # NOTES
+    # True is a boolean
+    # False is a boolean
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 ----
 
@@ -160,10 +176,12 @@ refactor: make it better
 * I add a failing line to ``test_what_is_true``
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(False)
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(False)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -171,37 +189,51 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add a note
+* I add a note
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
 
     # NOTES
     # True is a boolean
     # False is not true
     # False is a boolean
 
-  when I change assertTrue_ to assertFalse_
+
+    # Exceptions Encountered
+    # AssertionError
+
+* I change assertTrue_ to assertFalse_
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertFalse(False)
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertFalse(False)
 
-  the test passes and I move the line to the ``test_what_is_false`` :ref:`method<functions>`
+  the test passes
 
-  .. code-block:: python
-
-    def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-
-  then I add a note
+* I move the line to the from the ``test_what_is_true`` to the ``test_what_is_false`` :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3
+
+      def test_what_is_false(self):
+          self.assertIsInstance(False, bool)
+          self.assertFalse(False)
+
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 3
 
     # NOTES
     # True is a boolean
@@ -209,14 +241,20 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
+
+    # Exceptions Encountered
+    # AssertionError
+
 * I add a failing line to ``test_what_is_false``
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
 
-    def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(True)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(True)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -224,9 +262,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add a note
+* I add a note
 
   .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 2
 
     # NOTES
     # True is not false
@@ -235,30 +275,43 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-  then change assertFalse_ to assertTrue_
+
+    # Exceptions Encountered
+    # AssertionError
+
+* I change assertFalse_ to assertTrue_
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
 
-    def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertTrue(True)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertTrue(True)
 
-  the test passes and I move the line to the ``test_what_is_true`` :ref:`method<functions>`
+  the test passes
+
+* I move the line from ``test_what_is_false`` to the ``test_what_is_true`` :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 7
 
-    def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
 
   then I add another note
 
   .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 2
+
 
     # NOTES
     # True is true
@@ -267,6 +320,10 @@ refactor: make it better
     # False is false
     # False is not true
     # False is a boolean
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 I want to test the other Python_ basic data types_ to see if any of them are False_ or True_
 
@@ -292,11 +349,13 @@ red: make it fail
 I add a line
 
 .. code-block:: python
+  :lineno-start: 10
+  :emphasize-lines: 4
 
-  def test_what_is_true(self):
-      self.assertIsInstance(True, bool)
-      self.assertTrue(True)
-      self.assertTrue(None)
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+          self.assertTrue(True)
+          self.assertTrue(None)
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -310,30 +369,37 @@ green: make it pass
 I change the :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 1
 
-  self.assertFalse(None)
+          self.assertFalse(None)
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-I move the line to ``test_what_is_false``
+I move the line from ``test_what_is_true`` to ``test_what_is_false``
 
 .. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 4
 
-    def test_what_is_false(self):
-        self.assertIsInstance(False, bool)
-        self.assertFalse(False)
-        self.assertFalse(None)
+      def test_what_is_false(self):
+          self.assertIsInstance(False, bool)
+          self.assertFalse(False)
+          self.assertFalse(None)
 
-    def test_what_is_true(self):
-        self.assertIsInstance(True, bool)
-        self.assertTrue(True)
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+          self.assertTrue(True)
 
-then add a note
+I add a note
 
 .. code-block:: python
+  :lineno-start: 15
+  :emphasize-lines: 5
+
 
   # NOTES
   # True is true
@@ -343,6 +409,10 @@ then add a note
   # False is false
   # False is not true
   # False is a boolean
+
+
+  # Exceptions Encountered
+  # AssertionError
 
 ----
 
@@ -354,9 +424,11 @@ red: make it fail
 #################################################################################
 
 
-I add another line
+I add a failing line to see if an integer_ is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 5
 
   def test_what_is_false(self):
       self.assertIsInstance(False, bool)
@@ -376,30 +448,40 @@ green: make it pass
 I change the :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 10
+  :emphasize-lines: 1
 
-  self.assertTrue(-1)
+          self.assertTrue(-1)
 
 the test passes
 
 refactor: make it better
 #################################################################################
 
-* then I move the line to ``test_what_is_true``
+* I move the line from ``test_what_is_false`` to ``test_what_is_true``
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 9
 
-    def test_what_is_true(self):
-        ...
-        self.assertTrue(-1)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
 
-* I add a new line
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+
+* I add a new failing line to ``test_what_is_true``
 
   .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 2
 
-    def test_what_is_true(self):
-        ...
-        self.assertTrue(-1)
-        self.assertTrue(0)
+            self.assertTrue(-1)
+            self.assertTrue(0)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -407,28 +489,40 @@ refactor: make it better
 
     AssertionError: 0 is not true
 
-  I change the :ref:`method<functions>`
+* I change the :ref:`method<functions>` to assertFalse_
 
   .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 1
 
-    self.assertFalse(0)
+            self.assertFalse(0)
 
-  the test passes and I move the line to ``test_what_is_false``
+  the test passes
 
-  .. code-block:: python
-
-    def test_what_is_false(self):
-        ...
-        self.assertFalse(0)
-
-* I add one more line
+* I move the line to ``test_what_is_false``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4
 
-    def test_what_is_false(self):
-        ...
-        self.assertFalse(0)
-        self.assertFalse(1)
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
+            self.assertFalse(0)
+
+        def test_what_is_true(self):
+
+* I add another failing line to ``test_what_is_false``
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 2
+
+            self.assertFalse(0)
+            self.assertFalse(1)
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -436,28 +530,35 @@ refactor: make it better
 
     AssertionError: 1 is not false
 
-  when I change the :ref:`method<functions>`
+* I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 1
 
-    self.assertTrue(1)
+            self.assertTrue(1)
 
-  the test passes and I move the line to ``test_what_is_true``
+  the test passes
 
-  .. code-block:: python
-
-    def test_what_is_false(self):
-        ...
-        self.assertFalse(0)
-
-    def test_what_is_true(self):
-        ...
-        self.assertTrue(-1)
-        self.assertTrue(1)
-
-  then I add notes
+* I move the line to ``test_what_is_true``
 
   .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 7
+
+            self.assertFalse(0)
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(1)
+
+* I add notes
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 2, 6
 
     # NOTES
     # positive and negative integers are true
@@ -470,6 +571,10 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
+
+    # Exceptions Encountered
+    # AssertionError
+
 -----
 
 *********************************************************************************
@@ -479,16 +584,17 @@ is a float False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test
+I add a line to test if floats_ are :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` in ``test_what_is_false``
 
 .. code-block:: python
+  :lineno-start: 10
+  :emphasize-lines: 2
 
-  def test_what_is_false(self):
-      self.assertIsInstance(False, bool)
-      self.assertFalse(False)
-      self.assertFalse(None)
-      self.assertFalse(0)
-      self.assertFalse(-0.1)
+            self.assertFalse(0)
+            self.assertFalse(-0.1)
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -499,31 +605,38 @@ the terminal_ shows :ref:`AssertionError`
 green: make it pass
 #################################################################################
 
-I change the :ref:`method<functions>`
+* I change the :ref:`method<functions>`
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 1
 
-  self.assertTrue(-0.1)
+            self.assertTrue(-0.1)
 
-the test passes and I move the line to ``test_what_is_true``
+  the test passes
 
-.. code-block:: python
+* I move the line to ``test_what_is_true``
 
-  def test_what_is_true(self):
-      ...
-      self.assertTrue(-0.1)
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 4
+
+          self.assertTrue(True)
+          self.assertTrue(-1)
+          self.assertTrue(1)
+          self.assertTrue(-0.1)
 
 refactor: make it better
 #################################################################################
 
-* I add a line
+* I add another failing line to ``test_what_is_true``
 
   .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 2
 
-    def test_what_is_true(self):
-        ...
-        self.assertTrue(-0.1)
-        self.assertTrue(0.0)
+            self.assertTrue(-0.1)
+            self.assertTrue(0.0)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -534,25 +647,40 @@ refactor: make it better
   I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 1
 
-    self.assertFalse(0.0)
+            self.assertFalse(0.0)
 
-  the test passes.and I move the line to ``test_what_is_false``
+  the test passes
 
-  .. code-block:: python
-
-    def test_what_is_false(self):
-        ...
-        self.assertFalse(0.0)
-
-* I add another line
+* I move the line to ``test_what_is_false``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6
 
-    def test_what_is_false(self):
-        ...
-        self.assertFalse(0.0)
-        self.assertFalse(0.1)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
+            self.assertFalse(0)
+            self.assertFalse(0.0)
+
+        def test_what_is_true(self):
+
+* I add another line to ``test_what_is_false``
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 2
+
+            self.assertFalse(0.0)
+            self.assertFalse(0.1)
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -566,22 +694,32 @@ refactor: make it better
 
     self.assertTrue(0.1)
 
-  the test passes and I move the line to ``test_what_is_true``
+  the test passes
+
+* I move the line to ``test_what_is_true``
 
   .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 9
 
-    def test_what_is_false(self):
-        ...
-        self.assertFalse(0.0)
+            self.assertFalse(0.0)
 
-    def test_what_is_true(self):
-        ...
-        self.assertTrue(-0.1)
-        self.assertTrue(0.1)
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(1)
+            self.assertTrue(-0.1)
+            self.assertTrue(0.1)
 
-  then I add notes
+
+    # NOTES
+
+* I add notes
 
   .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 2, 7
 
     # NOTES
     # positive and negative floats are true
@@ -596,9 +734,11 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-  I can make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
+  I make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
 
   .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 2, 5
 
     # NOTES
     # positive and negative numbers are true
@@ -610,6 +750,10 @@ refactor: make it better
     # False is false
     # False is not true
     # False is a boolean
+
+
+    # Exceptions Encountered
+    # AssertionError
 
 -----
 
@@ -750,8 +894,10 @@ green: make it pass
 I change the :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start:
+  :emphasize-lines: 1
 
-  self.assertTrue(tuple())
+  self.assertFalse(tuple())
 
 the test passes and I move the line to ``test_what_is_false``
 
