@@ -424,7 +424,7 @@ red: make it fail
 #################################################################################
 
 
-I add a failing line to see if an integer_ is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+I add a failing line to see if an integer_ is False_ or True_
 
 .. code-block:: python
   :lineno-start: 6
@@ -584,7 +584,7 @@ is a float False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test if floats_ are :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` in ``test_what_is_false``
+I add a line to test if floats_ are True_ or False_ in ``test_what_is_false``
 
 .. code-block:: python
   :lineno-start: 10
@@ -734,7 +734,7 @@ refactor: make it better
     # False is not true
     # False is a boolean
 
-  I make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
+* I make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
 
   .. code-block:: python
     :lineno-start: 22
@@ -764,18 +764,23 @@ is a string False or True?
 red: make it fail
 #################################################################################
 
-I add a line to test
+I add a failing line to ``test_what_is_true`` to test if a string_ is False_ or True_
 
 .. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines:
 
-  def test_what_is_true(self):
-      self.assertIsInstance(True, bool)
-      self.assertTrue(True)
-      self.assertTrue(-1)
-      self.assertTrue(1)
-      self.assertTrue(-0.1)
-      self.assertTrue(0.1)
-      self.assertTrue(str())
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+          self.assertTrue(True)
+          self.assertTrue(-1)
+          self.assertTrue(1)
+          self.assertTrue(-0.1)
+          self.assertTrue(0.1)
+          self.assertTrue(str())
+
+
+  # NOTES
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -791,8 +796,10 @@ green: make it pass
 I change the :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 20
+  :emphasize-lines: 1
 
-  self.assertFalse(str())
+          self.assertFalse(str())
 
 the test passes
 
@@ -802,17 +809,22 @@ refactor: make it better
 * I move the line to ``test_what_is_false``
 
   .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 2
 
-    def test_what_is_false(self):
-        ...
-        self.assertFalse(str())
+        self.assertFalse(0.0)
+        self.assertTrue(str())
 
-* then I add another line
+    def test_what_is_true(self):
+        self.assertIsInstance(True, bool)
+
+* I add a failing line to ``test_what_is_false``
 
   .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
 
-    def test_what_is_false(self):
-        ...
+        self.assertFalse(0.0)
         self.assertFalse(str())
         self.assertFalse('text')
 
