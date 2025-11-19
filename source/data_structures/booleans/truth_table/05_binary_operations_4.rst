@@ -179,15 +179,19 @@ test_logical_nor
 red: make it fail
 #################################################################################
 
-I add another test
+I add a test for another Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 103
+  :emphasize-lines: 3-4
 
-    def test_material_non_implication(self):
-        ...
+          self.assertTrue(src.truth_table.negate_second(False, False))
 
-    def test_logical_nor(self):
-        self.assertFalse(src.truth_table.logical_nor(True, True))
+      def test_logical_nor(self):
+          self.assertFalse(src.truth_table.logical_nor(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -199,9 +203,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>`
+I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 69
+  :emphasize-lines: 5-6
 
   def negate_second(p, q):
       return not q
@@ -215,36 +221,45 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the next case
+* I add the next case to ``test_logical_nor`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 3
 
-    def test_logical_nor(self):
-        self.assertFalse(src.truth_table.logical_nor(True, True))
-        self.assertFalse(src.truth_table.logical_nor(True, False))
+        def test_logical_nor(self):
+            self.assertFalse(src.truth_table.logical_nor(True, True))
+            self.assertFalse(src.truth_table.logical_nor(True, False))
 
   the terminal_ still shows green
 
 * on to the next case
 
   .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 4
 
-    def test_logical_nor(self):
-        self.assertFalse(src.truth_table.logical_nor(True, True))
-        self.assertFalse(src.truth_table.logical_nor(True, False))
-        self.assertFalse(src.truth_table.logical_nor(False, True))
+        def test_logical_nor(self):
+            self.assertFalse(src.truth_table.logical_nor(True, True))
+            self.assertFalse(src.truth_table.logical_nor(True, False))
+            self.assertFalse(src.truth_table.logical_nor(False, True))
 
   the test is still green
 
 * I add the last case
 
   .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 5
 
-    def test_logical_nor(self):
-        self.assertFalse(src.truth_table.logical_nor(True, True))
-        self.assertFalse(src.truth_table.logical_nor(True, False))
-        self.assertFalse(src.truth_table.logical_nor(False, True))
-        self.assertTrue(src.truth_table.logical_nor(False, False))
+        def test_logical_nor(self):
+            self.assertFalse(src.truth_table.logical_nor(True, True))
+            self.assertFalse(src.truth_table.logical_nor(True, False))
+            self.assertFalse(src.truth_table.logical_nor(False, True))
+            self.assertTrue(src.truth_table.logical_nor(False, False))
+
+
+    # Exceptions Encountered
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -252,19 +267,23 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  this is the only case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
+  this is the only case that returns :ref:`True<test_what_is_true>`. I add a `return statement`_ for it
 
   .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 2
 
-    def logical_nor(p, q):
-        return not p and not q
-        return False
+        def logical_nor(p, q):
+            return not p and not q
+            return False
 
   the test passes
 
-* I want to factor out "not_" since it happens 2 times, I rewrite the statement in terms of it
+* I factor out "not_" since it happens 2 times
 
   .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 2
 
     def logical_nor(p, q):
         return not p not or not q
@@ -276,18 +295,23 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I comment out the line then add the correct statement
+* I comment out the line then add the correct statement
 
   .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 2-3
 
     def logical_nor(p, q):
         return not (p or q)
         # return not p not or not q
         return not p and not q
 
-  still green, I remove the other statements
+  still green
+
+* I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 73
 
     def logical_nor(p, q):
         return not (p or q)
@@ -301,15 +325,19 @@ test_logical_equality
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a new test for the next Binary Operation to ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 109
+  :emphasize-lines: 3-4
 
-  def test_logical_nor(self):
-      ...
+          self.assertTrue(src.truth_table.logical_nor(False, False))
 
-  def test_logical_equality(self):
-      self.assertTrue(src.truth_table.logical_equality(True, True))
+      def test_logical_equality(self):
+          self.assertTrue(src.truth_table.logical_equality(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -321,9 +349,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>` definition
+I add a :ref:`function<functions>` definition for it in ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 73
+  :emphasize-lines: 5-6
 
   def logical_nor(p, q):
       return not (p or q)
@@ -337,13 +367,15 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the next case
+* I add the next case to ``test_logical_equality`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3
 
-    def test_logical_equality(self):
-        self.assertTrue(src.truth_table.logical_equality(True, True))
-        self.assertFalse(src.truth_table.logical_equality(True, False))
+        def test_logical_equality(self):
+            self.assertTrue(src.truth_table.logical_equality(True, True))
+            self.assertFalse(src.truth_table.logical_equality(True, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -351,9 +383,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add an `if statement`_
+* I add an `if statement`_ to ``logical_equality`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2-3
 
     def logical_equality(p, q):
         if p and not q:
@@ -362,14 +396,16 @@ refactor: make it better
 
   the test passes
 
-* I add another case
+* I add another case to ``test_logical_equality`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 4
 
-    def test_logical_equality(self):
-        self.assertTrue(src.truth_table.logical_equality(True, True))
-        self.assertFalse(src.truth_table.logical_equality(True, False))
-        self.assertFalse(src.truth_table.logical_equality(False, True))
+        def test_logical_equality(self):
+            self.assertTrue(src.truth_table.logical_equality(True, True))
+            self.assertFalse(src.truth_table.logical_equality(True, False))
+            self.assertFalse(src.truth_table.logical_equality(False, True))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -377,9 +413,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add another `if statement`_
+* I add another `if statement`_ to ``logical_equality`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2-3
 
     def logical_equality(p, q):
         if not p and q:
@@ -390,21 +428,28 @@ refactor: make it better
 
   the test passes
 
-* I add the last case
+* I add the last case ``test_logical_equality`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 5
 
-    def test_logical_equality(self):
-        self.assertTrue(src.truth_table.logical_equality(True, True))
-        self.assertFalse(src.truth_table.logical_equality(True, False))
-        self.assertFalse(src.truth_table.logical_equality(False, True))
-        self.assertTrue(src.truth_table.logical_equality(False, False))
+        def test_logical_equality(self):
+            self.assertTrue(src.truth_table.logical_equality(True, True))
+            self.assertFalse(src.truth_table.logical_equality(True, False))
+            self.assertFalse(src.truth_table.logical_equality(False, True))
+            self.assertTrue(src.truth_table.logical_equality(False, False))
+
+
+    # Exceptions Encountered
 
   the test is still green
 
-* I use "or_" to put the 2 statements that return :ref:`False<test_what_is_false>` together
+* I use "or_" to put the 2 statements that return :ref:`False<test_what_is_false>` together, since they are at the same level
 
   .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2-3
 
     def logical_equality(p, q):
         if (not p and q) or (p and not q):
@@ -415,19 +460,39 @@ refactor: make it better
             return False
         return True
 
-  still green. I remove the other `if statements`_ then write a new `return statement`_
+  still green
+
+* I remove the other `if statements`_
 
   .. code-block:: python
+    :lineno-start: 77
 
     def logical_equality(p, q):
-        return not ((not p and q) or (p and not q)):
         if (not p and q) or (p and not q):
             return False
         return True
 
-  the test is still green. I "multiply not_" by every symbol in the parentheses
+  the test is still passing
+
+* I write a new `return statement`_ with not_ to replace the `if statement`_
 
   .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2
+
+    def logical_equality(p, q):
+        return not ((not p and q) or (p and not q))
+        if (not p and q) or (p and not q):
+            return False
+        return True
+
+  the test is still green
+
+* I "multiply not_" by every symbol in the parentheses
+
+  .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2
 
     def logical_equality(p, q):
         return (not not p not and not q) not or (not p not and not not q)
@@ -442,31 +507,42 @@ refactor: make it better
   I change "not_ and_" to "or_" in both parentheses and "not_ or_" to "and_" in between them
 
   .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2
 
     def logical_equality(p, q):
         return (not not p or not q) and (not p or not not q)
         return not ((not p and q) or (p and not q))
 
-  the test is green again. I remove "not_ not_" from both parentheses
+  the test is green again
+
+* I remove "not_ not_" from both parentheses
 
   .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2
 
     def logical_equality(p, q):
         return (p or not q) and (not p or q)
         return not ((not p and q) or (p and not q))
 
-  the terminal_ shows green. I remove the other line
+  still green
+
+* I remove the second `return statement`_
 
   .. code-block:: python
+    :lineno-start: 77
 
     def logical_equality(p, q):
         return (p or not q) and (not p or q)
 
-  the test is still passing.
+  the test is still passing
 
-* The 2 cases that return :ref:`True<test_what_is_true>` are when ``p`` and ``q`` are the same, which means I can write a simpler `return statement`_
+* The 2 cases that return :ref:`True<test_what_is_true>` are when ``p`` and ``q`` are the same, which means I can write an even simpler `return statement`_
 
   .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2
 
     def logical_equality(p, q):
         return p == q
@@ -483,15 +559,19 @@ test_material_implication
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a new test for another Binary Operation to ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 115
+  :emphasize-lines: 3-4
 
-  def test_logical_equality(self):
-      ...
+          self.assertTrue(src.truth_table.logical_equality(False, False))
 
-  def test_material_implication(self):
-      self.assertTrue(src.truth_table.material_implication(True, True))
+      def test_material_implication(self):
+          self.assertTrue(src.truth_table.material_implication(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -503,9 +583,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add the :ref:`method<functions>`
+I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 77
+  :emphasize-lines: 6-7
 
   def logical_equality(p, q):
       return p == q
@@ -520,13 +602,15 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the next case
+* I add the next case to ``test_material_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 3
 
-    def test_material_implication(self):
-        self.assertTrue(src.truth_table.material_implication(True, True))
-        self.assertFalse(src.truth_table.material_implication(True, False))
+        def test_material_implication(self):
+            self.assertTrue(src.truth_table.material_implication(True, True))
+            self.assertFalse(src.truth_table.material_implication(True, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -534,9 +618,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add an `if statement`_
+* I add an `if statement`_ for the case in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 2-3
 
     def material_implication(p, q):
         if p and not q:
@@ -545,32 +631,40 @@ refactor: make it better
 
   the terminal_ shows green
 
-* I add the next case
+* I add the next case to ``test_material_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 4
 
-    def test_material_implication(self):
-        self.assertTrue(src.truth_table.material_implication(True, True))
-        self.assertFalse(src.truth_table.material_implication(True, False))
-        self.assertTrue(src.truth_table.material_implication(False, True))
+        def test_material_implication(self):
+            self.assertTrue(src.truth_table.material_implication(True, True))
+            self.assertFalse(src.truth_table.material_implication(True, False))
+            self.assertTrue(src.truth_table.material_implication(False, True))
 
   the test is still green
 
 * I add the fourth case
 
   .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 5
 
-    def test_material_implication(self):
-        self.assertTrue(src.truth_table.material_implication(True, True))
-        self.assertFalse(src.truth_table.material_implication(True, False))
-        self.assertTrue(src.truth_table.material_implication(False, True))
-        self.assertTrue(src.truth_table.material_implication(False, False))
+        def test_material_implication(self):
+            self.assertTrue(src.truth_table.material_implication(True, True))
+            self.assertFalse(src.truth_table.material_implication(True, False))
+            self.assertTrue(src.truth_table.material_implication(False, True))
+            self.assertTrue(src.truth_table.material_implication(False, False))
+
+    # Exceptions Encountered
 
   the test is still passing
 
-* there is only one case where this :ref:`function<functions>` returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it
+* there is only one case where ``material_implication`` returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 2
 
     def material_implication(p, q):
         return not (p and not q)
@@ -578,9 +672,13 @@ refactor: make it better
             return False
         return True
 
-  the test is still green, I "multiply not_" by the symbols in the parentheses
+  the test is still green
+
+* I "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 2
 
     def material_implication(p, q):
         return not p not and not not q
@@ -592,25 +690,34 @@ refactor: make it better
 
     SyntaxError: invalid syntax
 
-  I change "not_ and_" to "or_"
+* I change "not_ and_" to "or_"
 
   .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 2
 
     def material_implication(p, q):
         return not p or not not q
         return not (p and not q)
 
-  the test is green again. I remove "not_ not_"
+  the test is green again
+
+* I remove "not_ not_"
 
   .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 2
 
     def material_implication(p, q):
         return not p or q
         return not (p and not q)
 
-  all tests are still passing. I remove the other statement
+  the test is still passing
+
+* I remove the other statement
 
   .. code-block:: python
+    :lineno-start: 82
 
     def material_implication(p, q):
         return not p or q
@@ -621,7 +728,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each of the inputs can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
 
 * :ref:`Material Implication  <test_material_implication>` returns ``not p or q``
 * :ref:`Logical Equality <test_logical_equality>` returns ``p == q``
@@ -639,6 +746,12 @@ Binary Operations take 2 inputs, each of the inputs can be :ref:`True<test_what_
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+
+and
+
+* :ref:`Logical Disjunction <test_logical_disjunction>` is "or_"
+* :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
+* :ref:`Logical Negation <test_logical_negation>` is "not_"
 
 Would you like to :ref:`test the truth table tests?<test_truth_table_tests>`
 
