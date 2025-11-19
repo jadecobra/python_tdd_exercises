@@ -698,7 +698,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each of which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
 
 * :ref:`Converse Implication <test_converse_implication>` returns ``p or not q``
 * :ref:`Project First <test_project_first>` always returns ``p``
@@ -712,6 +712,12 @@ Binary Operations take 2 inputs, each of which could be :ref:`True<test_what_is_
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+
+and
+
+* :ref:`Logical Disjunction <test_logical_disjunction>` is "or_"
+* :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
+* :ref:`Logical Negation <test_logical_negation>` is "not_"
 
 do you want to :ref:`test more binary operations? <binary_operations_iv>`
 

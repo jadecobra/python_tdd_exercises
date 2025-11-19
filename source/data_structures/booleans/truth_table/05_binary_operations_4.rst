@@ -31,15 +31,18 @@ test_negate_second
 red: make it fail
 #################################################################################
 
-I add a test
+I add a new test for another Binary Operation to ``test_truth_table.py
 
 .. code-block:: python
+  :lineno-start: 97
+  :emphasize-lines: 3-4
 
-  def test_converse_implication(self):
-      ...
+          self.assertTrue(src.truth_table.converse_implication(False, False))
 
-  def test_negate_second(self):
-      self.assertFalse(src.truth_table.negate_second(True, True))
+      def test_negate_second(self):
+          self.assertFalse(src.truth_table.negate_second(True, True))
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -50,9 +53,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>` definition to ``truth_table.py``
+I add a :ref:`function<functions>` definition for it to ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 65
+  :emphasize-lines: 5-6
 
   def converse_implication(p, q):
       return p or not q
@@ -66,13 +71,15 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the next case
+* I add the next case to ``test_negate_second`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 3
 
-    def test_negate_second(self):
-        self.assertFalse(src.truth_table.negate_second(True, True))
-        self.assertTrue(src.truth_table.negate_second(True, False))
+        def test_negate_second(self):
+            self.assertFalse(src.truth_table.negate_second(True, True))
+            self.assertTrue(src.truth_table.negate_second(True, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -80,9 +87,11 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+* I add an `if statement`_ to ``negate_second`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 2-3
 
     def negate_second(p, q):
         if p and not q:
@@ -91,26 +100,30 @@ refactor: make it better
 
   the test passes
 
-* I add the third case
+* I add the third case to ``test_negate_second`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 4
 
-    def test_negate_second(self):
-        self.assertFalse(src.truth_table.negate_second(True, True))
-        self.assertTrue(src.truth_table.negate_second(True, False))
-        self.assertFalse(src.truth_table.negate_second(False, True))
+        def test_negate_second(self):
+            self.assertFalse(src.truth_table.negate_second(True, True))
+            self.assertTrue(src.truth_table.negate_second(True, False))
+            self.assertFalse(src.truth_table.negate_second(False, True))
 
   the test is still passing
 
 * I add another case
 
   .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 5
 
-    def test_negate_second(self):
-        self.assertFalse(src.truth_table.negate_second(True, True))
-        self.assertTrue(src.truth_table.negate_second(True, False))
-        self.assertFalse(src.truth_table.negate_second(False, True))
-        self.assertTrue(src.truth_table.negate_second(False, False))
+        def test_negate_second(self):
+            self.assertFalse(src.truth_table.negate_second(True, True))
+            self.assertTrue(src.truth_table.negate_second(True, False))
+            self.assertFalse(src.truth_table.negate_second(False, True))
+            self.assertTrue(src.truth_table.negate_second(False, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -118,9 +131,11 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_ for the case
+* I add an `if statement`_ for the case to ``negate_second`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 2-3
 
     def negate_second(p, q):
         if not p and not q:
@@ -131,9 +146,11 @@ refactor: make it better
 
   the test is green again
 
-* this :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases where ``q`` is :ref:`False<test_what_is_false>`, I add a `return statement`_
+* the ``negate_second`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases where ``q`` is :ref:`False<test_what_is_false>`, I add a `return statement`_ to show this
 
   .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 2
 
     def negate_second(p, q):
         return not q
@@ -143,9 +160,12 @@ refactor: make it better
             return True
         return False
 
-  the test is still green. I remove the other statements
+  the test is still green
+
+* I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 69
 
     def negate_second(p, q):
         return not q
