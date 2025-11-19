@@ -68,7 +68,7 @@ I change the text in ``test_truth_table.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 7-8
+  :emphasize-lines: 2, 5, 7-8
 
   import unittest
   import src.truth_table
@@ -79,45 +79,53 @@ I change the text in ``test_truth_table.py``
       def test_logical_true(self):
           self.assertTrue(src.truth_table.logical_true())
 
+
+  # Exceptions Encountered
+
 the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: python
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_true'
 
-
 green: make it pass
 ---------------------------------------------------------------------------------
 
-I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
 
-  # Exceptions Encountered
-  # AssertionError
-  # AttributeError
+    # Exceptions Encountered
+    # AssertionError
+    # AttributeError
 
-then I add a :ref:`function<functions>` to ``truth_table.py``
+* I hold ``ctrl`` on the keyboard and click on ``truth_table.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>`, then I add a :ref:`function<functions>`
 
-.. code-block:: python
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-
 
-  def logical_true():
-      return None
+    def logical_true():
+        return None
 
-the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: None is not true
+    AssertionError: None is not true
 
-I change :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` in the `return statement`_
+  I change :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` in the `return statement`_
 
-.. code-block:: python
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
 
-  def logical_true():
-      return True
+    def logical_true():
+        return True
 
-the test passes
+  the test passes
 
 test_logical_false
 #################################################################################
@@ -125,15 +133,17 @@ test_logical_false
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add another test
+I add another test to ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 4-5
 
-  def test_logical_true(self):
-      self.assertTrue(src.truth_table.logical_true())
+      def test_logical_true(self):
+          self.assertTrue(src.truth_table.logical_true())
 
-  def test_logical_false(self):
-      self.assertFalse(src.truth_table.logical_false())
+      def test_logical_false(self):
+          self.assertFalse(src.truth_table.logical_false())
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -148,6 +158,8 @@ green: make it pass
 * I add a :ref:`function<functions>` definition to ``truth_table.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
 
     def logical_true():
         return True
@@ -162,9 +174,11 @@ green: make it pass
 
     AssertionError: True is not false
 
-* When I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
+* I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2
 
     def logical_false():
         return False
@@ -191,15 +205,25 @@ red: make it fail
 I add a new TestCase_ and a test to ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 5
+  :emphasize-lines: 10, 12-13
 
   class TestNullaryOperations(unittest.TestCase):
-      ...
+
+      def test_logical_true(self):
+          self.assertTrue(src.truth_table.logical_true())
+
+      def test_logical_false(self):
+          self.assertFalse(src.truth_table.logical_false())
 
 
   class TestUnaryOperations(unittest.TestCase):
 
       def test_logical_identity(self):
           self.assertTrue(src.truth_table.logical_identity(True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -210,9 +234,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>` to the ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
 
     def logical_false():
         return False
@@ -227,18 +253,22 @@ green: make it pass
 
     TypeError: logical_identity() takes 0 positional arguments but 1 was given
 
-  I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
+* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
     # AttributeError
     # TypeError
 
-  then I add a parameter
+* I add a name in the parentheses of the :ref:`function<functions>` in ``truth_table.py`` so it can take input
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1
 
     def logical_identity(argument):
         return False
@@ -261,41 +291,49 @@ green: make it pass
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-I add another line to the test
+* I add another line to ``test_logical_identity`` in ``test_truth_table.py``
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3
 
-  def test_logical_identity(self):
-      self.assertTrue(src.truth_table.logical_identity(True))
-      self.assertFalse(src.truth_table.logical_identity(False))
+        def test_logical_identity(self):
+            self.assertTrue(src.truth_table.logical_identity(True))
+            self.assertFalse(src.truth_table.logical_identity(False))
 
-the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: True is not false
+    AssertionError: True is not false
 
-when I change the `return statement`_
+* I change the `return statement`_ of ``logical_identity`` in ``truth_table.py``
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
+
+      def logical_identity(argument):
+          return False
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  there is a failure for the line that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_true>`
+
+* I change the `return statement`_ of the :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
 
     def logical_identity(argument):
-        return False
+        return argument
 
-the terminal_ shows :ref:`AssertionError`
-
-.. code-block:: python
-
-  AssertionError: False is not true
-
-there is a failure for the line that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_true>`. I make ``logical_identity`` return its input
-
-.. code-block:: python
-
-  def logical_identity(argument):
-      return argument
-
-the test passes. ``logical_identity`` returns its input as output.
+  the test passes. ``logical_identity`` returns its input as output.
 
 ----
 
@@ -410,7 +448,7 @@ refactor: make it better
 
     def test_logical_negation_aka_not(self):
         self.assertFalse(src.truth_table.logical_negation(True))
-        self.assertFalse(src.truth_table.logical_negation(False))
+        self.assertTrue(src.truth_table.logical_negation(False))
 
 ----
 
