@@ -31,15 +31,19 @@ test_exclusive_disjunction
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a new test to ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 73
+  :emphasize-lines: 3-4
 
-  def test_logical_disjunction(self):
-      ...
+          self.assertFalse(src.truth_table.logical_disjunction(False, False))
 
-  def test_exclusive_disjunction(self):
-      self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+      def test_exclusive_disjunction(self):
+          self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -50,9 +54,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add the :ref:`function<functions>`
+I add the :ref:`function<functions>` for it in ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 45
+  :emphasize-lines: 5-6
 
   def logical_disjunction(p, q):
       return p or q
@@ -66,13 +72,15 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the next case
+* I add the next case to ``test_exclusive_disjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 3
 
-    def test_exclusive_disjunction(self):
-        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
-        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
+        def test_exclusive_disjunction(self):
+            self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+            self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -80,9 +88,11 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+* I add an `if statement`_ to ``exclusive_disjunction`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2-3
 
     def exclusive_disjunction(p, q):
         if p and not q:
@@ -91,14 +101,16 @@ refactor: make it better
 
   the test is green again
 
-* I add the third case
+* I add the third case to ``test_exclusive_disjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 4
 
-    def test_exclusive_disjunction(self):
-        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
-        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
-        self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
+        def test_exclusive_disjunction(self):
+            self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+            self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
+            self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -106,9 +118,11 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add another `if statement`_
+* I add another `if statement`_ to ``exclusive_disjunction`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2-3
 
     def exclusive_disjunction(p, q):
         if not p and q:
@@ -119,21 +133,28 @@ refactor: make it better
 
   the test is green
 
-* I add the last case
+* I add the last case to ``test_exclusive_disjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 5
 
-    def test_exclusive_disjunction(self):
-        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
-        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
-        self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
-        self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
+        def test_exclusive_disjunction(self):
+            self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+            self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
+            self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
+            self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
+
+
+    # Exceptions Encountered
 
   the test is still green
 
 * I can use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two `if statements`_ that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 2-3
 
     def exclusive_disjunction(p, q):
         if (not p and q) or (p and not q):
@@ -144,9 +165,25 @@ refactor: make it better
             return True
         return False
 
-  the test is still green. I remove the other `if statements`_ then use a simple `return statement`_
+  the test is still green
+
+* I remove the other `if statements`_
 
   .. code-block:: python
+    :lineno-start: 49
+
+    def exclusive_disjunction(p, q):
+        if (not p and q) or (p and not q):
+            return True
+        return False
+
+  still green
+
+* I use a simple `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
 
     def exclusive_disjunction(p, q):
         return (not p and q) or (p and not q)
@@ -154,16 +191,23 @@ refactor: make it better
             return True
         return False
 
-  the terminal_ still shows green. I remove the other statements
+  the terminal_ still shows green
+
+* I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 49
 
     def exclusive_disjunction(p, q):
         return (not p and q) or (p and not q)
 
-* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases where ``p`` and ``q`` are the same, I can use this `if statement`_
+  still green
+
+* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases where ``p`` and ``q`` are the same, which means I can use this `if statement`_
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2-5
 
     def exclusive_disjunction(p, q):
         if p == q:
@@ -172,9 +216,11 @@ refactor: make it better
             return True
         return (not p and q) or (p and not q)
 
-  I can change it to a simple `return statement`_
+* I change it to a simple `return statement`_
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
 
     def exclusive_disjunction(p, q):
         return not (p == q)
@@ -184,16 +230,20 @@ refactor: make it better
             return True
         return (not p and q) or (p and not q)
 
-  there is an even simpler statement
+  the test is still green
+
+* I use an even simpler `return statement`_
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
 
     def exclusive_disjunction(p, q):
         return p != q
         return not (p == q)
         return (not p and q) or (p and not q)
 
-  ``!=`` is the symbol for NOT equal
+  the terminal_ still shows green. ``!=`` is the symbol for NOT equal
 
 ----
 
@@ -204,15 +254,19 @@ test_material_non_implication
 red: make it fail
 #################################################################################
 
-I add another test
+I add another test to ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 79
+  :emphasize-lines: 3-4
 
-    def test_exclusive_disjunction(self):
-        ...
+          self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
+      def test_material_non_implication(self):
+          self.assertFalse(src.truth_table.material_non_implication(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -224,9 +278,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>`
+I add a :ref:`function<functions>` for ``material_non_implication`` in ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 49
+  :emphasize-lines: 7-8
 
   def exclusive_disjunction(p, q):
       return p != q
@@ -242,13 +298,15 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another case
+* I add another case to ``test_material_non_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 3
 
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
-        self.assertTrue(src.truth_table.material_non_implication(True, False))
+        def test_material_non_implication(self):
+            self.assertFalse(src.truth_table.material_non_implication(True, True))
+            self.assertTrue(src.truth_table.material_non_implication(True, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -256,9 +314,11 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+* I add an `if statement`_ for the :ref:`function<functions>` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 2-3
 
     def material_non_implication(p, q):
         if p and not q:
@@ -267,14 +327,16 @@ refactor: make it better
 
   the test passes
 
-* I add the next case
+* I add the next case in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 4
 
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
-        self.assertTrue(src.truth_table.material_non_implication(True, False))
-        self.assertFalse(src.truth_table.material_non_implication(False, True))
+        def test_material_non_implication(self):
+            self.assertFalse(src.truth_table.material_non_implication(True, True))
+            self.assertTrue(src.truth_table.material_non_implication(True, False))
+            self.assertFalse(src.truth_table.material_non_implication(False, True))
 
   the test is still green
 
@@ -290,9 +352,11 @@ refactor: make it better
 
   the terminal_ still shows green
 
-* there is only one case where the result is :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
+* there is only one case where the result is :ref:`True<test_what_is_true>`, I add a `return statement`_ for it in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 2
 
     def material_non_implication(p, q):
         return p and not q
@@ -300,9 +364,12 @@ refactor: make it better
             return True
         return False
 
-  the test is still green. I remove the other statements
+  the test is still green
+
+* I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 55
 
     def material_non_implication(p, q):
         return p and not q
@@ -316,15 +383,19 @@ test_project_first
 red: make it fail
 #################################################################################
 
-I add a test
+I add a new test for the next Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 85
+  :emphasize-lines: 3-4
 
-  def test_material_non_implication(self):
-      ...
+          self.assertFalse(src.truth_table.material_non_implication(False, False))
 
-  def test_project_first(self):
-      self.assertTrue(src.truth_table.project_first(True, True))
+      def test_project_first(self):
+          self.assertTrue(src.truth_table.project_first(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -335,9 +406,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>` definition for it
+I add a :ref:`function<functions>` definition for ``project_first`` in ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 55
+  :emphasize-lines: 5-6
 
   def material_non_implication(p, q):
       return p and not q
@@ -351,19 +424,23 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the second case
+* I add the second case to ``test_project_first`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 87
+    :emphasize-lines: 3
 
-    def test_project_first(self):
-        self.assertTrue(src.truth_table.project_first(True, True))
-        self.assertTrue(src.truth_table.project_first(True, False))
+        def test_project_first(self):
+            self.assertTrue(src.truth_table.project_first(True, True))
+            self.assertTrue(src.truth_table.project_first(True, False))
 
   the test is still green
 
 * on to the next case
 
   .. code-block:: python
+    :lineno-start: 87
+    :emphasize-lines: 4
 
     def test_project_first(self):
         self.assertTrue(src.truth_table.project_first(True, True))
@@ -376,9 +453,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add an `if statement`_
+* I add an `if statement`_ for this case to ``project_first`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 2-3
 
     def project_first(p, q):
         if not p and q:
@@ -387,15 +466,17 @@ refactor: make it better
 
   the test passes
 
-* I add the last case
+* I add the last case to ``test_project_first`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 87
+    :emphasize-lines:
 
-    def test_project_first(self):
-        self.assertTrue(src.truth_table.project_first(True, True))
-        self.assertTrue(src.truth_table.project_first(True, False))
-        self.assertFalse(src.truth_table.project_first(False, True))
-        self.assertFalse(src.truth_table.project_first(False, False))
+        def test_project_first(self):
+            self.assertTrue(src.truth_table.project_first(True, True))
+            self.assertTrue(src.truth_table.project_first(True, False))
+            self.assertFalse(src.truth_table.project_first(False, True))
+            self.assertFalse(src.truth_table.project_first(False, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -403,9 +484,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add another `if statement`_
+* I add another `if statement`_ to ``project_first`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 2-3
 
     def project_first(p, q):
         if not p and not q:
@@ -414,9 +497,13 @@ refactor: make it better
             return False
         return True
 
-* I add a `return statement`_ to show that this :ref:`function<functions>` returns the same value as ``p``
+  the test passes
+
+* I add a `return statement`_ to show that this :ref:`function<functions>` returns the same value as ``p`` in every case
 
   .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 2
 
     def project_first(p, q):
         return p
@@ -426,9 +513,12 @@ refactor: make it better
             return False
         return True
 
-  still green. I remove the other statements
+  the terminal_ still shows green
+
+* I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 61
 
     def project_first(p, q):
         return p
@@ -442,15 +532,19 @@ test_converse_implication
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a new test to ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 91
+  :emphasize-lines: 3-4
 
-  def test_project_first(self):
-      ...
+          self.assertFalse(src.truth_table.project_first(False, False))
 
-  def test_converse_implication(self):
-      self.assertTrue(src.truth_table.converse_implication(True, True))
+      def test_converse_implication(self):
+          self.assertTrue(src.truth_table.converse_implication(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -462,9 +556,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add a :ref:`function<functions>` definition
+I add a :ref:`function<functions>` definition for ``converse_implication`` in ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 61
+  :emphasize-lines: 5-6
 
   def project_first(p, q):
       return p
@@ -478,24 +574,28 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the second case
+* I add the second case to ``test_converse_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 3
 
-    def test_converse_implication(self):
-        self.assertTrue(src.truth_table.converse_implication(True, True))
-        self.assertTrue(src.truth_table.converse_implication(True, False))
+        def test_converse_implication(self):
+            self.assertTrue(src.truth_table.converse_implication(True, True))
+            self.assertTrue(src.truth_table.converse_implication(True, False))
 
   the test is still green
 
 * time for the next case
 
   .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 4
 
-    def test_converse_implication(self):
-        self.assertTrue(src.truth_table.converse_implication(True, True))
-        self.assertTrue(src.truth_table.converse_implication(True, False))
-        self.assertFalse(src.truth_table.converse_implication(False, True))
+        def test_converse_implication(self):
+            self.assertTrue(src.truth_table.converse_implication(True, True))
+            self.assertTrue(src.truth_table.converse_implication(True, False))
+            self.assertFalse(src.truth_table.converse_implication(False, True))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -503,9 +603,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add an `if statement`_
+* I add an `if statement`_ to ``converse_implication`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2-3
 
     def converse_implication(p, q):
         if not p and q:
@@ -514,21 +616,25 @@ refactor: make it better
 
   the test passes
 
-* I add another case
+* I add another case to ``test_converse_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 5
 
-    def test_converse_implication(self):
-        self.assertTrue(src.truth_table.converse_implication(True, True))
-        self.assertTrue(src.truth_table.converse_implication(True, False))
-        self.assertFalse(src.truth_table.converse_implication(False, True))
-        self.assertTrue(src.truth_table.converse_implication(False, False))
+        def test_converse_implication(self):
+            self.assertTrue(src.truth_table.converse_implication(True, True))
+            self.assertTrue(src.truth_table.converse_implication(True, False))
+            self.assertFalse(src.truth_table.converse_implication(False, True))
+            self.assertTrue(src.truth_table.converse_implication(False, False))
 
   the terminal_ still shows green
 
-* I add a `return statement`_
+* I add a `return statement`_ to replace the `if statement_` in ``converse_implication`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2
 
     def converse_implication(p, q):
         return not (not p and q)
@@ -536,9 +642,13 @@ refactor: make it better
             return False
         return True
 
-  I "multiply not_" by the symbols in the parentheses
+  the test is still green
+
+* I "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2
 
     def converse_implication(p, q):
         return not not p not and not q
@@ -553,22 +663,31 @@ refactor: make it better
   I change "not_ and_" to "or_" to be correct
 
   .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2
 
     def converse_implication(p, q):
         return not not p or not q
         return not (not p and q)
 
-  back to green. I remove "not_ not_" since it cancels out, the negation of a negation is the original thing
+  back to green
+
+* I remove "not_ not_" since it cancels out, the negation of a negation is the original thing
 
   .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2
 
     def converse_implication(p, q):
         return p or not q
         return not (not p and q)
 
-  all the tests are still green. I remove the other statements
+  the tests is still green
+
+* I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 65
 
     def converse_implication(p, q):
         return p or not q
