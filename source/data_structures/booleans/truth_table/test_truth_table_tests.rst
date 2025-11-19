@@ -493,9 +493,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_nor'?
 
-* I add a :ref:`function<functions>` for ``logical_nor``
+* I add a :ref:`function<functions>` for ``logical_nand``
 
   .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, True): return False
+        return x, y
+
 
     def logical_nand(x, y):
         return x, y
@@ -509,6 +515,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 2
 
     def logical_nand(x, y):
         if (x, y) == (True, True): return False
@@ -523,6 +531,12 @@ green: make it pass
 * I add the :ref:`function<functions>`
 
   .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 5-6
+
+        if (x, y) == (True, True): return False
+        return x, y
+
 
     def logical_equality(x, y):
         return x, y
@@ -536,6 +550,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
 
     def logical_equality(x, y):
         if (x, y) == (True, False): return False

@@ -848,7 +848,7 @@ refactor: make it better
 * I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 37
     :emphasize-lines: 2
 
             self.assertIsInstance('', str)
