@@ -505,7 +505,7 @@ I copy the :ref:`list <lists>` from the terminal_ and paste it in the test to ma
       '01:23'.split(), ['01:23']
   )
 
-green again
+the test passes
 
 refactor: make it better
 ---------------------------------------------------------------------------------

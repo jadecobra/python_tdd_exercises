@@ -389,7 +389,7 @@ refactor: make it better
                 )
             )
 
-  green again
+  the test passes
 
 * I also add an ``assert`` :ref:`method<functions>` for the `assertRaisesRegex`_ block
 

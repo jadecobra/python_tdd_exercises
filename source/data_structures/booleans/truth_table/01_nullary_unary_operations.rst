@@ -405,7 +405,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 20
-    :emphasize-lines:
+    :emphasize-lines: 3
 
         def test_logical_negation(self):
             self.assertFalse(src.truth_table.logical_negation(True))
