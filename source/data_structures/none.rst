@@ -1540,6 +1540,7 @@ refactor: make it better
     :lineno-start: 65
     :emphasize-lines: 2
 
+            self.assertIsInstance({'key': 'value'}, dict)
             self.assertIsInstance(None, dict)
 
   the terminal_ shows :ref:`AssertionError`
