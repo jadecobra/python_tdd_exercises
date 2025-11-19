@@ -16,7 +16,7 @@ truth table: Binary Operations part 1
 
 ----
 
-There are 16 binary operations, they all take 2 inputs and each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`. This gives four cases
+There are 16 binary operations, they all take 2 inputs and each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`. This gives four cases for each one
 
 * :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
 * :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`
@@ -40,9 +40,9 @@ red: make it fail
 
 I add a new TestCase_ to ``test_truth_table.py``
 
-.. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
-
 .. code-block:: python
+  :linenos:
+  :emphasize-lines: 25, 27-28
 
   import unittest
   import src.truth_table
@@ -50,17 +50,31 @@ I add a new TestCase_ to ``test_truth_table.py``
 
   class TestNullaryOperations(unittest.TestCase):
 
+      def test_logical_true(self):
+          self.assertTrue(src.truth_table.logical_true())
+
+      def test_logical_false(self):
+          self.assertFalse(src.truth_table.logical_false())
+
+
+  class TestUnaryOperations(unittest.TestCase):
+
       def test_logical_identity(self):
-          ...
+          self.assertTrue(src.truth_table.logical_identity(True))
+          self.assertFalse(src.truth_table.logical_identity(False))
 
       def test_logical_negation_aka_not(self):
-          ...
+          self.assertFalse(src.truth_table.logical_negation(True))
+          self.assertTrue(src.truth_table.logical_negation(False))
 
 
   class TestBinaryOperations(unittest.TestCase):
 
       def test_contradiction(self):
           self.assertFalse(src.truth_table.contradiction(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -74,6 +88,8 @@ green: make it pass
 I add a :ref:`function<functions>` definition to ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 5-6
 
   def logical_negation(argument):
       return not argument
@@ -88,9 +104,11 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: contradiction() takes 1 positional argument but 2 were given
 
-I change the definition to make it take 2 inputs
+I rename ``argument`` to ``p`` for the first input given when the :ref:`function<functions>` is called by the test, and change the definition of the :ref:`function<functions>` to make it use ``q`` as the name of the second input
 
 .. code-block:: python
+  :lineno-start: 17
+  :emphasize-lines: 1-2
 
   def contradiction(p, q):
       return not p
@@ -100,24 +118,29 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the second case
+* I add the second case to ``test_contradiction`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 3
 
-    def test_contradiction(self):
-        self.assertFalse(src.truth_table.contradiction(True, True))
-        self.assertFalse(src.truth_table.contradiction(True, False))
+        def test_contradiction(self):
+            self.assertFalse(src.truth_table.contradiction(True, True))
+            self.assertFalse(src.truth_table.contradiction(True, False))
 
   the test is still green
 
 * I add the next case
 
   .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 4
 
-    def test_contradiction(self):
-        self.assertFalse(src.truth_table.contradiction(True, True))
-        self.assertFalse(src.truth_table.contradiction(True, False))
-        self.assertFalse(src.truth_table.contradiction(False, True))
+
+        def test_contradiction(self):
+            self.assertFalse(src.truth_table.contradiction(True, True))
+            self.assertFalse(src.truth_table.contradiction(True, False))
+            self.assertFalse(src.truth_table.contradiction(False, True))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -125,24 +148,30 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  all three cases of the test expect :ref:`False<test_what_is_false>`. I change the `return statement`_
+  all three cases of the test expect :ref:`False<test_what_is_false>`
+
+* I change the `return statement`_ in the ``contradiction`` :ref:`function<functions>` in ``truth_table.py`` to match them
 
   .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 2
 
     def contradiction(p, q):
         return False
 
   the test is green again
 
-* I add the fourth case
+* I add the fourth case to ``test_contradiction`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 5
 
-    def test_contradiction(self):
-        self.assertFalse(src.truth_table.contradiction(True, True))
-        self.assertFalse(src.truth_table.contradiction(True, False))
-        self.assertFalse(src.truth_table.contradiction(False, True))
-        self.assertFalse(src.truth_table.contradiction(False, False))
+        def test_contradiction(self):
+            self.assertFalse(src.truth_table.contradiction(True, True))
+            self.assertFalse(src.truth_table.contradiction(True, False))
+            self.assertFalse(src.truth_table.contradiction(False, True))
+            self.assertFalse(src.truth_table.contradiction(False, False))
 
   the test is still green! :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
@@ -155,15 +184,19 @@ test_logical_conjunction
 red: make it fail
 #################################################################################
 
-I add the next test
+I add a new test in ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 30
+  :emphasize-lines: 4-5
 
-  def test_contradiction(self):
-      ...
+            self.assertFalse(src.truth_table.contradiction(False, True))
+            self.assertFalse(src.truth_table.contradiction(False, False))
 
-  def test_logical_conjunction(self):
-      self.assertTrue(src.truth_table.logical_conjunction(True, True))
+        def test_logical_conjunction(self):
+            self.assertTrue(src.truth_table.logical_conjunction(True, True))
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -175,9 +208,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add the :ref:`function<functions>`
+I add the :ref:`function<functions>` in ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 17
+  :emphasize-lines: 5-6
 
   def contradiction(p, q):
       return False
@@ -191,13 +226,15 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the next case
+* I add the next case to ``test_logical_conjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 3
 
-    def test_logical_conjunction(self):
-        self.assertTrue(src.truth_table.logical_conjunction(True, True))
-        self.assertFalse(src.truth_table.logical_conjunction(True, False))
+        def test_logical_conjunction(self):
+            self.assertTrue(src.truth_table.logical_conjunction(True, True))
+            self.assertFalse(src.truth_table.logical_conjunction(True, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -205,9 +242,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I make the :ref:`function<functions>` return :ref:`False <test_what_is_false>`
+* I make the ``logical_conjunction`` :ref:`function<functions>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
 
     def logical_conjunction(p, q):
         return False
@@ -219,9 +258,13 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  The line that was passing before is now failing. ``logical_conjunction`` has to choose whether to return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` based on the inputs. I can make it do that with `if statements`_
+  The line that was passing before is now failing
+
+* ``logical_conjunction`` has to choose whether to return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` based on the inputs. I can make it do that with `if statements`_
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-4
 
     def logical_conjunction(p, q):
         if p == True:
@@ -231,14 +274,16 @@ refactor: make it better
 
   the test passes.  The :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when ``p`` is :ref:`True<test_what_is_true>` and ``q`` is :ref:`False<test_what_is_false>`,  otherwise it returns :ref:`True<test_what_is_true>`
 
-* I add the next case
+* I add the next case to ``test_logical_conjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 4
 
-    def test_logical_conjunction(self):
-        self.assertTrue(src.truth_table.logical_conjunction(True, True))
-        self.assertFalse(src.truth_table.logical_conjunction(True, False))
-        self.assertFalse(src.truth_table.logical_conjunction(False, True))
+        def test_logical_conjunction(self):
+            self.assertTrue(src.truth_table.logical_conjunction(True, True))
+            self.assertFalse(src.truth_table.logical_conjunction(True, False))
+            self.assertFalse(src.truth_table.logical_conjunction(False, True))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -246,9 +291,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add another `if statement`_
+  I add another `if statement`_ to ``logical_conjunction`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-4
 
     def logical_conjunction(p, q):
         if p == False:
@@ -261,15 +308,20 @@ refactor: make it better
 
   the test passes
 
-* I add the last case
+* I add the last case to ``test_logical_conjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 5
 
-    def test_logical_conjunction(self):
-        self.assertTrue(src.truth_table.logical_conjunction(True, True))
-        self.assertFalse(src.truth_table.logical_conjunction(True, False))
-        self.assertFalse(src.truth_table.logical_conjunction(False, True))
-        self.assertFalse(src.truth_table.logical_conjunction(False, False))
+        def test_logical_conjunction(self):
+            self.assertTrue(src.truth_table.logical_conjunction(True, True))
+            self.assertFalse(src.truth_table.logical_conjunction(True, False))
+            self.assertFalse(src.truth_table.logical_conjunction(False, True))
+            self.assertFalse(src.truth_table.logical_conjunction(False, False))
+
+
+    # Exceptions Encountered
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -277,9 +329,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add an `if statement`_ for it
+* I add an `if statement`_ for the new case to ``logical_conjunction`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-3
 
     def logical_conjunction(p, q):
         if p == False:
@@ -297,6 +351,8 @@ refactor: make it better
 * I add an `if statement`_ for the first case
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 10-11
 
     def logical_conjunction(p, q):
         if p == False:
@@ -313,6 +369,8 @@ refactor: make it better
 * There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I can use an `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` and an else_ clause for the other cases
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-5
 
     def logical_conjunction(p, q):
         if p == True and q == True:
@@ -330,9 +388,13 @@ refactor: make it better
             if q == True:
                 return True
 
-  the test is still green. I remove the other `if statements`_ then change the first statement with bool_
+  the test is still green
+
+* I remove the other `if statements`_ then change the first statement with bool_
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-3
 
     def logical_conjunction(p, q):
         if bool(p) and bool(q):
@@ -341,9 +403,13 @@ refactor: make it better
         else:
             return False
 
-  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>`. I remove the commented line then change the first line to make it simpler
+  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>`
+
+* I remove the commented line then change the first line to make it simpler
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-3
 
     def logical_conjunction(p, q):
         if p and q:
@@ -352,11 +418,13 @@ refactor: make it better
         else:
             return False
 
-  the test is still green, Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background, I remove the commented line
+  the test is still green. With ``if p and q``,  Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background, I remove the commented line
 
 * Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
 
     def logical_conjunction(p, q):
         return True if p and q else False
@@ -365,17 +433,24 @@ refactor: make it better
         else:
             return False
 
-  the terminal_ shows green, I remove the other `if statements`_ then use a simpler statement
+  the terminal_ shows green, I remove the other `if statements`_
+
+* I change the `return statement`_ to a simpler statement
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
 
     def logical_conjunction(p, q):
         return p and q
         return True if p and q else False
 
-  still green! I remove the second `return statement`_
+  still green!
+
+* I remove the second `return statement`_
 
   .. code-block:: python
+    :lineno-start: 21
 
     def logical_conjunction(p, q):
         return p and q
@@ -389,15 +464,19 @@ test_project_second
 red: make it fail
 #################################################################################
 
-I add another test
+I add a test for another Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 37
+  :emphasize-lines: 3-4
 
-  def test_logical_conjunction(self):
-      ...
+          self.assertFalse(src.truth_table.logical_conjunction(False, False))
 
-  def test_project_second(self):
-      self.assertTrue(src.truth_table.project_second(True, True))
+      def test_project_second(self):
+          self.assertTrue(src.truth_table.project_second(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -408,9 +487,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-When I add a :ref:`function<functions>` definition for it
+I add a definition for the :ref:`function<functions>` in ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 21
+  :emphasize-lines: 5-6
 
   def logical_conjunction(p, q):
       return p and q
@@ -424,13 +505,15 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add the second case
+* I add the second case to ``test_project_second`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 3
 
-    def test_project_second(self):
-        self.assertTrue(src.truth_table.project_second(True, True))
-        self.assertFalse(src.truth_table.project_second(True, False))
+        def test_project_second(self):
+            self.assertTrue(src.truth_table.project_second(True, True))
+            self.assertFalse(src.truth_table.project_second(True, False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -438,9 +521,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add an `if statement`_
+* I add an `if statement`_ to ``project_second`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2-4
 
     def project_second(p, q):
         if p == True:
@@ -450,26 +535,32 @@ refactor: make it better
 
   the test passes
 
-* I add the next case
+* I add the next case to ``test_project_second`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 4
 
-    def test_project_second(self):
-        self.assertTrue(src.truth_table.project_second(True, True))
-        self.assertFalse(src.truth_table.project_second(True, False))
-        self.assertTrue(src.truth_table.project_second(False, True))
+        def test_project_second(self):
+            self.assertTrue(src.truth_table.project_second(True, True))
+            self.assertFalse(src.truth_table.project_second(True, False))
+            self.assertTrue(src.truth_table.project_second(False, True))
 
   the test is still green
 
 * I add the last case
 
   .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 5
 
-    def test_project_second(self):
-        self.assertTrue(src.truth_table.project_second(True, True))
-        self.assertFalse(src.truth_table.project_second(True, False))
-        self.assertTrue(src.truth_table.project_second(False, True))
-        self.assertFalse(src.truth_table.project_second(False, False))
+        def test_project_second(self):
+            self.assertTrue(src.truth_table.project_second(True, True))
+            self.assertFalse(src.truth_table.project_second(True, False))
+            self.assertTrue(src.truth_table.project_second(False, True))
+            self.assertFalse(src.truth_table.project_second(False, False))
+
+    # Exceptions Encountered
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -477,9 +568,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  I add another `if statement`_
+* I add another `if statement`_ to ``project_second`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2-4
 
     def project_second(p, q):
         if p == False:
@@ -492,9 +585,11 @@ refactor: make it better
 
   the test passes
 
-* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when ``q`` is :ref:`False<test_what_is_false>` and returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`True<test_what_is_true>`. I add a new statement to show this
+* ``project_second`` returns :ref:`False<test_what_is_false>` when ``q`` is :ref:`False<test_what_is_false>` and returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`True<test_what_is_true>`. I add a new `return statement`_ to show this
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
 
     def project_second(p, q):
         return q
@@ -506,9 +601,12 @@ refactor: make it better
                 return False
         return True
 
-  the test is still green, I remove the other statements
+  the test is still green
+
+* I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 25
 
     def project_second(p, q):
         return q
@@ -522,15 +620,19 @@ test_converse_non_implication
 red: make it fail
 #################################################################################
 
-I add another test
+I add another test for a new Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 43
+  :emphasize-lines: 3-4
 
-  def test_project_second(self):
-      ...
+          self.assertFalse(src.truth_table.project_second(False, False))
 
-  def test_converse_non_implication(self):
-      self.assertFalse(src.truth_table.converse_non_implication(True, True))
+      def test_converse_non_implication(self):
+          self.assertFalse(src.truth_table.converse_non_implication(True, True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -541,9 +643,11 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add the :ref:`function<functions>`
+I add the :ref:`function<functions>` to ``truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 25
+  :emphasize-lines: 5-6
 
   def project_second(p, q):
       return q
@@ -557,13 +661,15 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add another case
+* I add another case to ``test_converse_non_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 3
 
-    def test_converse_non_implication(self):
-        self.assertFalse(src.truth_table.converse_non_implication(True, True))
-        self.assertFalse(src.truth_table.converse_non_implication(True, False))
+        def test_converse_non_implication(self):
+            self.assertFalse(src.truth_table.converse_non_implication(True, True))
+            self.assertFalse(src.truth_table.converse_non_implication(True, False))
 
   the test is still green
 
@@ -571,10 +677,10 @@ refactor: make it better
 
   .. code-block:: python
 
-    def test_converse_non_implication(self):
-        self.assertFalse(src.truth_table.converse_non_implication(True, True))
-        self.assertFalse(src.truth_table.converse_non_implication(True, False))
-        self.assertTrue(src.truth_table.converse_non_implication(False, True))
+        def test_converse_non_implication(self):
+            self.assertFalse(src.truth_table.converse_non_implication(True, True))
+            self.assertFalse(src.truth_table.converse_non_implication(True, False))
+            self.assertTrue(src.truth_table.converse_non_implication(False, True))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -582,9 +688,11 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I add an `if statement`_
+* I add an `if statement`_ to ``converse_non_implication`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-4
 
     def converse_non_implication(p, q):
         if p == False:
@@ -594,21 +702,28 @@ refactor: make it better
 
   the test is green again
 
-* I add the next case
+* I add the next case to ``test_converse_non_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 5
 
-    def test_converse_non_implication(self):
-        self.assertFalse(src.truth_table.converse_non_implication(True, True))
-        self.assertFalse(src.truth_table.converse_non_implication(True, False))
-        self.assertTrue(src.truth_table.converse_non_implication(False, True))
-        self.assertFalse(src.truth_table.converse_non_implication(False, False))
+        def test_converse_non_implication(self):
+            self.assertFalse(src.truth_table.converse_non_implication(True, True))
+            self.assertFalse(src.truth_table.converse_non_implication(True, False))
+            self.assertTrue(src.truth_table.converse_non_implication(False, True))
+            self.assertFalse(src.truth_table.converse_non_implication(False, False))
+
+
+    # Exceptions Encountered
 
   the test is still passing
 
-* I can use ``and`` to put the two `if statements`_ together
+* I use ``and`` to put the two `if statements`_ together in ``converse_non_implication`` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: -4
 
     def converse_non_implication(p, q):
         if p == False and q == True:
@@ -617,9 +732,29 @@ refactor: make it better
                 return True
         return False
 
-  the terminal_ still shows green. I remove the other statements then change the first line with :ref:`logical negation<test_logical_negation>` and bool_
+  the terminal_ still shows green
+
+* I remove the commented lines then change the first line with :ref:`logical negation<test_logical_negation>` and bool_
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-4
+
+    def converse_non_implication(p, q):
+        if not p == True and bool(q):
+        # if p == False and q == True:
+            return True
+        return False
+
+  still green
+
+* I add an else_ clause
+
+  .. code-block:: python
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 4-5
 
     def converse_non_implication(p, q):
         if not p == True and bool(q):
@@ -628,9 +763,13 @@ refactor: make it better
         else:
             return False
 
-  still green. I remove the comment and change the line again
+  the test is still green
+
+* I remove the comment and change the first line again to make it simpler
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
 
     def converse_non_implication(p, q):
         if not bool(p) and q:
@@ -639,9 +778,13 @@ refactor: make it better
         else:
             return False
 
-  the test is still green. I remove the commented line and make the `if statement`_ simpler
+  the test is still green
+
+* I remove the commented line and make the `if statement`_ simpler
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
 
     def converse_non_implication(p, q):
         if not p and q:
@@ -650,9 +793,13 @@ refactor: make it better
         else:
             return False
 
-  the test is still green. I use a `conditional expression`_
+  the test is still green.
+
+* I use a `conditional expression`_
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2
 
     def converse_non_implication(p, q):
         return True if not p and q else False
@@ -661,17 +808,24 @@ refactor: make it better
         else:
             return False
 
-  still green. I use the simpler `return statement`_
+  still green
+
+* I use the simpler `return statement`_
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2
 
     def converse_non_implication(p, q):
         return not p and q
         return True if not p and q else False
 
-  all tests are still passing. I remove the second `return statement`_
+  all tests are still passing
+
+* I remove the second `return statement`_
 
   .. code-block:: python
+    :lineno-start: 29
 
     def converse_non_implication(p, q):
         return not p and q
@@ -682,12 +836,14 @@ refactor: make it better
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each of which could be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
+* :ref:`Logical Negation <test_logical_negation>` is "not_"
 
 do you want to :ref:`test more binary operations? <binary_operations_ii>`
 
