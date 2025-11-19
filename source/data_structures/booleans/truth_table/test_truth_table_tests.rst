@@ -31,7 +31,7 @@ red: make it fail
 *********************************************************************************
 
 * I close ``test_truth_table.py``
-* then delete all the tests in ``truth_table.py`` the terminal_ shows 20 failures, I start with the last one
+* then delete all the tests in ``truth_table.py``, the terminal_ shows 20 failures, I start with the last one
 
   .. code-block:: python
 
@@ -44,6 +44,8 @@ green: make it pass
 * I add the name
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     tautology
 
@@ -56,6 +58,8 @@ green: make it pass
   I point the name to :ref:`None`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     tautology = None
 
@@ -65,9 +69,11 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  I make it a :ref:`function<functions>`
+  I make ``tautology`` a :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
 
     def tautology():
         return None
@@ -78,9 +84,11 @@ green: make it pass
 
     TypeError: tautology() takes 0 positional arguments but 2 were given
 
-  I add input arguments to the :ref:`function<functions>` definition
+  I add names in parentheses for the :ref:`function<functions>` to take input arguments
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     def tautology(x, y):
         return None
@@ -94,6 +102,8 @@ green: make it pass
   I change :ref:`None` to :ref:`True<test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
 
     def tautology(x, y):
         return True
@@ -104,9 +114,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
-* I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>` using the solution I just used for ``tautology``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def tautology(x, y):
+        return True
+
 
     def project_second(x, y):
         return True
@@ -120,6 +136,8 @@ green: make it pass
   I change the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2
 
     def project_second(x, y):
         return False
@@ -133,6 +151,8 @@ green: make it pass
   I want to see the difference between the inputs and the expected output
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2
 
     def project_second(x, y):
         return x, y
@@ -143,9 +163,11 @@ green: make it pass
 
     AssertionError: (True, False) is not false
 
-  ``y`` is :ref:`False<test_what_is_false>`, I remove ``x``
+  ``y`` is :ref:`False<test_what_is_false>`, I remove ``x`` from the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2
 
     def project_second(x, y):
         return y
@@ -156,9 +178,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'project_first'
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for it
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
+
+    def project_second(x, y):
+        return y
+
 
     def project_first(x, y):
         return x, y
@@ -169,9 +197,11 @@ green: make it pass
 
     AssertionError: (False, True) is not false
 
-  ``x`` is :ref:`False<test_what_is_false>`, I remove ``y``
+  ``x`` is :ref:`False<test_what_is_false>`, I remove ``y`` from the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
 
     def project_first(x, y):
         return x
@@ -182,9 +212,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``negate_second``
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-6
+
+    def project_first(x, y):
+        return x
+
 
     def negate_second(x, y):
         return x, y
@@ -195,9 +231,11 @@ green: make it pass
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`_
+  I add an `if statement`_ to ``negate_second``
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
     def negate_second(x, y):
         if (x, y) == (True, True): return False
@@ -212,6 +250,8 @@ green: make it pass
   I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
 
     def negate_second(x, y):
         if (x, y) == (True, True): return False
@@ -224,9 +264,16 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
-* I add a definition for it
+* I add a :ref:`function<functions>` definition for it
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 6-7
+
+    def negate_second(x, y):
+        if (x, y) == (True, True): return False
+        if (x, y) == (False, True): return False
+        return x, y
 
     def negate_first(x, y):
         return x, y
@@ -240,6 +287,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 2
 
     def negate_first(x, y):
         if (x, y) == (True, True): return False
@@ -254,6 +303,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 3
 
     def negate_first(x, y):
         if (x, y) == (True, True): return False
@@ -266,9 +317,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``material_non_implication``
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5-6
+
+        if (x, y) == (True, False): return False
+        return x, y
+
 
     def material_non_implication(x, y):
         return x, y
@@ -282,6 +339,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
 
     def material_non_implication(x, y):
         if (x, y) == (True, True): return False
@@ -296,6 +355,8 @@ green: make it pass
   I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3
 
     def material_non_implication(x, y):
         if (x, y) == (True, True): return False
@@ -308,9 +369,11 @@ green: make it pass
 
     AssertionError: (False, False) is not false
 
-  I add an `if statement`_
+  I add an `if statement`_ for it
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 4
 
     def material_non_implication(x, y):
         if (x, y) == (True, True): return False
@@ -324,9 +387,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``material_implication``
 
   .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, False): return False
+        return x, y
+
 
     def material_implication(x, y):
         return x, y
@@ -340,6 +409,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 2
 
     def material_implication(x, y):
         if (x, y) == (True, False): return False
@@ -351,9 +422,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nor'
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``logical_nor``
 
   .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 5-6
+
+        if (x, y) == (True, False): return False
+        return x, y
+
 
     def logical_nor(x, y):
         return x, y
@@ -367,6 +444,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines:  2
 
     def logical_nor(x, y):
         if (x, y) == (True, True): return False
@@ -381,6 +460,8 @@ green: make it pass
   I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 3
 
     def logical_nor(x, y):
         if (x, y) == (True, True): return False
@@ -396,6 +477,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 4
 
     def logical_nor(x, y):
         if (x, y) == (True, True): return False
@@ -410,7 +493,7 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_nor'?
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``logical_nor``
 
   .. code-block:: python
 
