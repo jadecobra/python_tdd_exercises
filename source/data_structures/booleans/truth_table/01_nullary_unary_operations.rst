@@ -343,16 +343,21 @@ test_logical_negation
 red: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new test
+I add a new test to ``test_truth_table.py``
 
 .. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 5-6
 
-  def test_logical_identity(self):
-      self.assertTrue(src.truth_table.logical_identity(True))
-      self.assertFalse(src.truth_table.logical_identity(False))
+      def test_logical_identity(self):
+          self.assertTrue(src.truth_table.logical_identity(True))
+          self.assertFalse(src.truth_table.logical_identity(False))
 
-  def test_logical_negation(self):
-      self.assertFalse(src.truth_table.logical_negation(True))
+      def test_logical_negation(self):
+          self.assertFalse(src.truth_table.logical_negation(True))
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -363,43 +368,48 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a definition for it
+I add a definition for the :ref:`function<functions>` in ``truth_table.py``
 
-  .. code-block:: python
+.. code-block:: python
+  :lineno-start: 9
+  :emphasize-lines: 5-6
+
+  def logical_identity(argument):
+      return argument
 
 
-    def logical_identity(argument):
-        return argument
+  def logical_negation(argument):
+      return argument
 
+the terminal_ shows :ref:`AssertionError`
 
-    def logical_negation(argument):
-        return argument
+.. code-block:: python
 
-  the terminal_ shows :ref:`AssertionError`
+  AssertionError: True is not false
 
-  .. code-block:: python
+I change the `return statement`_
 
-    AssertionError: True is not false
+.. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 2
 
-  when I make it return False_
+  def logical_negation(argument):
+      return False
 
-  .. code-block:: python
-
-    def logical_negation(argument):
-        return False
-
-  the test passes
+the test passes
 
 refactor: make it better
 ---------------------------------------------------------------------------------
 
-* I add the next case
+* I add another line in ``test_logical_negation`` in ``test_truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines:
 
-    def test_logical_negation(self):
-        self.assertFalse(src.truth_table.logical_negation(True))
-        self.assertTrue(src.truth_table.logical_negation(False))
+        def test_logical_negation(self):
+            self.assertFalse(src.truth_table.logical_negation(True))
+            self.assertTrue(src.truth_table.logical_negation(False))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -407,7 +417,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  I change the `return statement`_
+* I change the `return statement`_ of the ``logical_negation`` :ref:`function<functions>` in ``truth_table.py``
 
   .. code-block:: python
 
@@ -420,7 +430,9 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  it fails for the line that passed before. When I make the :ref:`function<functions>` return its input
+  the test fails for the line that passed before
+
+* I make the :ref:`function<functions>` return its input
 
   .. code-block:: python
 
@@ -445,10 +457,21 @@ refactor: make it better
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 7
 
-    def test_logical_negation_aka_not(self):
-        self.assertFalse(src.truth_table.logical_negation(True))
-        self.assertTrue(src.truth_table.logical_negation(False))
+    class TestUnaryOperations(unittest.TestCase):
+
+        def test_logical_identity(self):
+            self.assertTrue(src.truth_table.logical_identity(True))
+            self.assertFalse(src.truth_table.logical_identity(False))
+
+        def test_logical_negation_aka_not(self):
+            self.assertFalse(src.truth_table.logical_negation(True))
+            self.assertTrue(src.truth_table.logical_negation(False))
+
+
+    # Exceptions Encountered
 
 ----
 
