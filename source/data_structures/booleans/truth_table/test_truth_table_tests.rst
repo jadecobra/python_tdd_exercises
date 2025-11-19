@@ -1276,6 +1276,12 @@ I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or
   - :ref:`Project Second<test_project_second>` always returns ``y``
   - :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`
 
+and
+
+* :ref:`Logical Disjunction <test_logical_disjunction>` is "or_"
+* :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
+* :ref:`Logical Negation <test_logical_negation>` is "not_"
+
 Would you like to :ref:`test making a calculator?<lists>`
 
 ----
