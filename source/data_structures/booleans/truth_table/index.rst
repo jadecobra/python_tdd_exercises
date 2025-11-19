@@ -17,23 +17,6 @@ Sometimes I want programs to make decisions based on inputs or conditions, and c
 These are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics
 
 *********************************************************************************
-truth table operations
-*********************************************************************************
-
-.. toctree::
-  :maxdepth: 2
-  :titlesonly:
-
-  01_nullary_unary_operations
-  02_binary_operations_1
-  03_binary_operations_2
-  04_binary_operations_3
-  05_binary_operations_4
-  test_truth_table_tests
-
-----
-
-*********************************************************************************
 requirements
 *********************************************************************************
 
@@ -65,6 +48,25 @@ requirements
 
     import unittest
     import src.truth_table
+
+----
+
+*********************************************************************************
+truth table operations
+*********************************************************************************
+
+.. toctree::
+  :maxdepth: 2
+  :titlesonly:
+
+  01_nullary_unary_operations
+  02_binary_operations_1
+  03_binary_operations_2
+  04_binary_operations_3
+  05_binary_operations_4
+  test_truth_table_tests
+
+----
 
 *********************************************************************************
 how to run automated tests after you exit the tests
