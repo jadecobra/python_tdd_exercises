@@ -64,7 +64,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: -3 != '-3:00'
     AssertionError: 0 != '00:00'
@@ -127,7 +127,7 @@ red: make it fail
 
   I get random success when ``random_timestamp`` returns ``00`` for the minutes and :ref:`AssertionError` when it does not
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '-18:00' != '-18:44'
     AssertionError: '05:00' != '05:-16'
@@ -161,7 +161,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '20:20' != '20:-6'
     AssertionError: '06:06' != '06:17'
@@ -217,7 +217,7 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
 
 the terminal_ shows :ref:`AssertionError` when I add ``test_duration_calculation``
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: '01:-29' != '00:31'
 
@@ -242,7 +242,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError` for ``test_duration_w_hours_and_minutes``
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: -458 != '-7:-38'
     AssertionError: -936 != '-15:-36'
@@ -259,7 +259,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError` for ``test_duration_calculation``
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 31 != '00:31
 
@@ -291,7 +291,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 2 != 0
 
@@ -311,7 +311,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 2 != 0
 
@@ -342,7 +342,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 != 2
 
@@ -362,7 +362,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 30 != 0
 
@@ -436,7 +436,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
   the terminal_ shows random successes and random :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '-11:46' != '-10:-14'
     AssertionError: '-6:04' != '-5:-56'

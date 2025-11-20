@@ -27,10 +27,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``attribute_error`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh attribute_error
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -87,7 +88,7 @@ red: make it fail
 
   I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it the terminal_ shows AttributeError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_00'
 
@@ -158,7 +159,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'variable_01' is not defined
 
@@ -243,7 +244,7 @@ I add a new test
 
 the terminal_ shows AttributeError_
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.attribute_error' has no attribute 'function_00'
 
@@ -264,7 +265,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -413,7 +414,7 @@ red: make it fail
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.attribute_error' has no attribute 'AClass'
 
@@ -445,7 +446,7 @@ green: make it pass
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: 'function' object has no attribute 'attribute_00'
 
@@ -601,7 +602,7 @@ red: make it fail
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: type object 'AClass' has no attribute 'method_00'
 
@@ -624,7 +625,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 

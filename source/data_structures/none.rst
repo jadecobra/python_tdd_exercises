@@ -25,10 +25,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``none`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh none
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -79,7 +80,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: unexpectedly None
 
@@ -139,7 +140,7 @@ I add another failing test to see if None_ is a :ref:`boolean<booleans>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: False is not None
 
@@ -180,7 +181,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not None
 
@@ -326,7 +327,7 @@ I add a test to see if None_ is an integer_ (a whole number)
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: -1 is not None
 
@@ -357,7 +358,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 is not None
 
@@ -382,7 +383,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 1 is not None
 
@@ -548,7 +549,7 @@ I add a test to see if None_ is a float_ (floating point decimal number)
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: -0.1 is not None
 
@@ -579,7 +580,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0.0 is not None
 
@@ -604,7 +605,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0.1 is not None
 
@@ -771,7 +772,7 @@ I add a test to see if None_ is a string_ (anything in :ref:`quotes`)
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: '' is not None
 
@@ -804,7 +805,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'text' is not None
 
@@ -950,7 +951,7 @@ I add a test to see if None_ is a tuple_ (anything in parentheses ``()``)
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: () is not None
 
@@ -981,7 +982,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: (1, 2, 3, 'n') is not None
 
@@ -1123,7 +1124,7 @@ I add a new test for :ref:`lists`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: [] is not None
 
@@ -1154,7 +1155,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: [1, 2, 3, 'n'] is not None
 
@@ -1290,7 +1291,7 @@ I want to see if None_ is a set_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: set() is not None
 
@@ -1321,7 +1322,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {1, 2, 3, 'n'} is not None
 
@@ -1433,7 +1434,7 @@ One last test to see if None_ is a :ref:`dictionary<dictionaries>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {} is not None
 
@@ -1466,7 +1467,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value'} is not None
 

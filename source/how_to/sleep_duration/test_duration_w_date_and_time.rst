@@ -64,7 +64,7 @@ red: make it fail
 
   the terminal_ shows ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 03'
     ValueError: invalid literal for int() with base 10: '1999/12/31 07'
@@ -98,7 +98,7 @@ green: make it pass
 
   the terminal_ shows ValueError_ with the same message from ``test_duration_w_date_and_time``
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
@@ -144,7 +144,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration_a'...
 
@@ -164,7 +164,7 @@ green: make it pass
 
   the terminal_ shows ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
@@ -195,7 +195,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != ('1999/12/31 09:52', '1999/12/31 07:11')
     AssertionError: None != ('1999/12/31 18:16', '1999/12/31 11:21')
@@ -256,7 +256,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
 
 the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: python
+.. code-block:: shell
 
   NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
@@ -275,7 +275,7 @@ I add an `import statement`_ for the datetime_ module
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'datetime' has no attribute 'strptime'
 
@@ -294,7 +294,7 @@ because my `import statement`_ is different from `the example in the documentati
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
 
@@ -345,7 +345,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: datetime.datetime(2021, 11, 6, 16, 30) != datetime.datetime(2006, 11, 21, 16, 30)
 
@@ -383,7 +383,7 @@ refactor: make it better
 
   the terminal_ shows ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: time data '2006/11/21 16:30' does not match format '%y/%m/%d %H:%M'
 
@@ -438,7 +438,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('1999/12/31 07:20', '1999/12/31 03:08') != (datetime.datetime(1999, 12, 31, 7, 20), datetime.datetime(1999, 12, 31, 3, 8))
     AssertionError: Tuples differ: ('1999/12/31 15:01', '1999/12/31 00:37') != (datetime.datetime(1999, 12, 31, 15, 1), datetime.datetime(1999, 12, 31, 0, 37))
@@ -468,7 +468,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
@@ -570,7 +570,7 @@ then add a variable for a random timestamp
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: datetime.datetime(1999, 12, 31, 0, 23) != datetime.datetime(2006, 11, 21, 16, 30)
   AssertionError: datetime.datetime(1999, 12, 31, 8, 55) != datetime.datetime(2006, 11, 21, 16, 30)
@@ -667,7 +667,7 @@ and the test is still green
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: (datetime.datetime(1999, 12, 31, 16, 1), datetime.datetime(1999, 12, 31, 14, 6)) != datetime.timedelta(seconds=6900)
     AssertionError: (datetime.datetime(1999, 12, 31, 9, 57), datetime.datetime(1999, 12, 31, 1, 3)) != datetime.timedelta(seconds=32040)
@@ -725,7 +725,7 @@ and the test is still green
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: datetime.timedelta(seconds=4440) != '1:14:00'
     AssertionError: datetime.timedelta(seconds=15780) != '4:23:00'
@@ -754,13 +754,13 @@ and the test is still green
 * I remove ``duration`` because ``duration_a`` is a better solution
 * which means I can remove ``read_timestamp`` because no one calls it anymore. The terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'...
 
 * I change the name of ``duration_a`` to ``duration`` in ``sleep_duration.py`` and ``test_sleep_duration.py`` which leaves me with ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: time data '04:51' does not match format '%Y/%m/%d %H:%M'
     ValueError: time data '13:35' does not match format '%Y/%m/%d %H:%M'
@@ -794,7 +794,7 @@ and the test is still green
 
   the terminal_ shows a random ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: day is out of range for month
 

@@ -28,7 +28,7 @@ red: make it fail
 * I close ``test_sleep_duration.py``
 * then delete all the text in ``sleep_duration.py`` the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.sleep_duration' has no attribute 'get_datetime'
 
@@ -51,7 +51,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'get_datetime' is not defined
 
@@ -71,7 +71,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -93,7 +93,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: get_datetime() takes 0 positional arguments but 1 was given
 
@@ -131,7 +131,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
@@ -147,7 +147,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: datetime.datetime(2006, 11, 21, 19, 8) != datetime.datetime(2006, 11, 21, 0, 15)
 
@@ -162,7 +162,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '2006/11/21 02:58' != datetime.datetime(2006, 11, 21, 2, 58)
     AssertionError: '2006/11/21 03:14' != datetime.datetime(2006, 11, 21, 3, 14)
@@ -182,7 +182,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
@@ -194,7 +194,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'duration' is not defined
 
@@ -208,7 +208,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -221,7 +221,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
@@ -233,7 +233,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
@@ -245,13 +245,13 @@ green: make it pass
 
   the terminal_ shows this :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: ValueError not raised
 
   or
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != '2944049 days, 15:58:00'
     AssertionError: None != '130331 days, 11:57:00'
@@ -269,7 +269,7 @@ green: make it pass
 
 * When I raise ValueError_ in ``duration`` the terminal_ shows :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: "wake_time: "3133/04/18 05:11" is earlier than sleep_time: "6999/09/22 05:07"" does not match "('6999/09/22 05:07', '3133/04/18 05:11')"
     AssertionError: "wake_time: "5856/04/20 15:58" is earlier than sleep_time: "7186/01/12 06:39"" does not match "('7186/01/12 06:39', '5856/04/20 15:58')"
@@ -278,7 +278,7 @@ green: make it pass
 
   this tells me that the test expects a message with the ValueError_, or I get ValueError_ that looks like this
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: ('0887/08/27 17:21', '5668/08/15 20:16')
     ValueError: ('2880/08/20 10:10', '9134/08/22 20:28')
@@ -332,7 +332,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: "wake_time: "1184/07/11 12:07" is earlier than sleep_time: "3059/12/16 04:30"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
     AssertionError: "wake_time: "2476/05/07 19:46" is earlier than sleep_time: "9204/03/10 20:53"" does not match "wake_time: "0615/04/17 08:51" is earlier than sleep_time: "6631/03/18 20:25""
@@ -341,7 +341,7 @@ green: make it pass
 
   or ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"
 
@@ -373,7 +373,7 @@ green: make it pass
 
   the terminal_ shows ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: wake_time: "9251/06/04 01:20" is earlier than sleep_time: "1034/03/24 22:35"
     ValueError: wake_time: "2669/08/09 17:30" is earlier than sleep_time: "2520/01/27 06:40"
@@ -407,7 +407,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: ('0435/03/20 02:03', '0711/05/03 10:35') != '100850 days, 8:32:00'
     AssertionError: ('2544/12/29 13:05', '4351/03/05 09:47') != '659692 days, 20:42:00'
@@ -432,7 +432,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
@@ -457,7 +457,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: datetime.timedelta(days=-43256, seconds=82860) != '43255 days, 0:59:00'
     AssertionError: datetime.timedelta(days=-28643, seconds=68100) != '28642 days, 5:05:00'
@@ -485,7 +485,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '-2681410 days, 19:19:00' != '2681409 days, 4:41:00'
     AssertionError: '-1492190 days, 13:23:00' != '1492189 days, 10:37:00'

@@ -78,7 +78,7 @@ I add a new TestCase_ to ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
@@ -100,7 +100,7 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: contradiction() takes 1 positional argument but 2 were given
 
@@ -144,7 +144,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -238,7 +238,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -254,7 +254,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -287,7 +287,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -325,7 +325,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -480,7 +480,7 @@ I add a test for another Binary Operation in ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
@@ -517,7 +517,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -564,7 +564,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -636,7 +636,7 @@ I add another test for a new Binary Operation in ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'
 
@@ -684,7 +684,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 

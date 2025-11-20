@@ -24,10 +24,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``exceptions`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh exceptions
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -81,7 +82,7 @@ red: make it fail
 
   the terminal_ shows :ref:`ModuleNotFoundError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ModuleNotFoundError: No module named 'does_not_exist'
 
@@ -134,7 +135,7 @@ red: make it fail
 
   the terminal_ shows NameError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'does_not_exist' is not defined
 
@@ -190,7 +191,7 @@ red: make it fail
 
   the terminal_ shows NameError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'src' is not defined
 
@@ -205,7 +206,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.exceptions' has no attribute 'does_not_exist'
 
@@ -262,7 +263,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.exceptions' has no attribute 'function_name'
 
@@ -276,7 +277,7 @@ red: make it fail
 
   the terminal_ shows NameError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'function_name' is not defined
 
@@ -290,7 +291,7 @@ red: make it fail
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -347,7 +348,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: TypeError not raised
 
@@ -583,7 +584,7 @@ red: make it fail
 
   the terminal_ shows :ref:`KeyError <test_key_error>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     KeyError: 'not_in_dictionary'
 
@@ -796,7 +797,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`KeyError <test_key_error>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     KeyError: 'not_in_dictionary'
 

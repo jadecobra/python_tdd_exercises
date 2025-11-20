@@ -25,10 +25,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``booleans`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh booleans
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -185,7 +186,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -258,7 +259,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -359,7 +360,7 @@ I add a line
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: None is not true
 
@@ -438,7 +439,7 @@ I add a failing line to see if an integer_ is False_ or True_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: -1 is not false
 
@@ -485,7 +486,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 is not true
 
@@ -526,7 +527,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 1 is not false
 
@@ -598,7 +599,7 @@ I add a line to test if floats_ are True_ or False_ in ``test_what_is_false``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: -0.1 is not false
 
@@ -640,7 +641,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0.0 is not true
 
@@ -684,7 +685,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0.1 is not false
 
@@ -784,7 +785,7 @@ I add a failing line to ``test_what_is_true`` to test if a string_ is False_ or 
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: '' is not true
 
@@ -830,7 +831,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'text' is not false
 
@@ -913,7 +914,7 @@ I add a line to see if a tuple_ (anything in parentheses) is False_ or True_
 
 The terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: () is not true
 
@@ -961,7 +962,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: (1, 2, 3, 'n') is not false
 
@@ -1040,7 +1041,7 @@ I add a line to test if a :ref:`list<lists>` (anything in square brackets (``[]`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: [] is not true
 
@@ -1086,7 +1087,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: [1, 2, 3, 'n'] is not false
 
@@ -1175,7 +1176,7 @@ I add a line to test if a set_ is False_ or True_ in ``test_what_is_true``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: set() is not true
 
@@ -1231,7 +1232,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {1, 2, 3, 'n'} is not false
 
@@ -1322,7 +1323,7 @@ I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_ in
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {} is not true
 
@@ -1377,7 +1378,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value'} is not false
 

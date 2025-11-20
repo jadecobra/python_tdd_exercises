@@ -26,10 +26,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh sleep_duration
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -81,7 +82,7 @@ red: make it fail
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
@@ -117,7 +118,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'src' is not defined
 
@@ -143,7 +144,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: <module 'src.sleep_duration' from '/workspace[46 chars].py'> != None
 
@@ -158,7 +159,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
@@ -178,7 +179,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'duration' is not defined
 
@@ -199,7 +200,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -223,7 +224,7 @@ green: make it pass
 
   then get :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
@@ -248,7 +249,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
@@ -273,7 +274,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != ('08:00', '07:00')
 
@@ -317,7 +318,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
 
@@ -340,7 +341,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('09:00', '07:00') != ('09:00', '06:00')
 
@@ -389,7 +390,7 @@ refactor: make it better
 
   the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('09:00', '06:00') != ('10:00', '02:00')
     AssertionError: Tuples differ: ('09:00', '06:00') != ('23:00', '00:00')
@@ -419,7 +420,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
@@ -488,7 +489,7 @@ I add a failing test for the `str.split`_ :ref:`method<functions>` to see what i
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: ['01:23'] != None
 
@@ -520,7 +521,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
@@ -551,7 +552,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('00:00', '10:00') != (['00', '00'], ['10', '00'])
     AssertionError: Tuples differ: ('23:00', '08:00') != (['23', '00'], ['08', '00'])
@@ -588,7 +589,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '01' != 0
 
@@ -609,7 +610,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '23' != '01'
 
@@ -638,7 +639,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: (['00', '00'], ['19', '00']) != ('00', '19')
     AssertionError: Tuples differ: (['14', '00'], ['17', '00']) != ('14', '17')
@@ -675,7 +676,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 1 != 0
 
@@ -695,7 +696,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 23 != 1
 
@@ -726,7 +727,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('00', '05') != (0, 5)
     AssertionError: Tuples differ: ('08', '21') != (8, 21)
@@ -762,7 +763,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: (7, 23) != -16
     AssertionError: (11, 4) != 7

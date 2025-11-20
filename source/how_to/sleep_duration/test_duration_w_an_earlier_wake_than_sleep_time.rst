@@ -48,7 +48,7 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: '-1:00' != ''
   AssertionError: '-2:12' != ''
@@ -83,7 +83,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: ValueError not raised
 
@@ -123,7 +123,7 @@ green: make it pass
 
   the terminal_ shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: wake_time: "07:33" is earlier than sleep_time: "08:12"
     ValueError: wake_time: "07:46" is earlier than sleep_time: "14:47"
@@ -268,7 +268,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: ValueError not raised
 

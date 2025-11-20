@@ -48,10 +48,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh assertion_error
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -151,7 +152,7 @@ how to test if something is None
 
   the terminal_ shows a more descriptive message for the AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: unexpectedly None
 
@@ -219,7 +220,7 @@ how to test if something is None
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not None
 
@@ -290,7 +291,7 @@ how to test if something is None
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not None
 
@@ -394,7 +395,7 @@ how to test if something is False
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -490,7 +491,7 @@ how to test if something is True
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -602,7 +603,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None == None
 
@@ -677,7 +678,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False != None
 
@@ -750,7 +751,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True != None
 
@@ -824,7 +825,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True != False
 
@@ -899,7 +900,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False == False
 
@@ -973,7 +974,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False != True
 
@@ -1048,7 +1049,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True == True
 

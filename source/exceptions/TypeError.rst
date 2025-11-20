@@ -23,10 +23,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``type_error`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh type_error
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -85,7 +86,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
@@ -108,7 +109,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -145,7 +146,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'false'
 
@@ -161,7 +162,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'bool' object is not callable
 
@@ -188,7 +189,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'true'
 
@@ -204,7 +205,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'bool' object is not callable
 
@@ -233,7 +234,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'a_list'
 
@@ -249,7 +250,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'list' object is not callable
 
@@ -279,7 +280,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'a_dictionary'
 
@@ -295,7 +296,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'dict' object is not callable
 
@@ -332,7 +333,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'function_00'
 
@@ -349,7 +350,7 @@ red: make it fail
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: function_00() takes 0 positional arguments but 1 was given
 
@@ -398,7 +399,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: function_01() takes 1 positional argument but 2 were given
 
@@ -446,7 +447,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
@@ -498,7 +499,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: function_03() takes 3 positional arguments but 4 were given
 
@@ -534,7 +535,7 @@ I add a new test with a failing line
 
 the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 
@@ -567,7 +568,7 @@ refactor: make it better
 
   the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: can only concatenate str (not "float") to str
 
@@ -596,7 +597,7 @@ refactor: make it better
 
   the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: unsupported operand type(s) for -: 'tuple' and 'set'
 

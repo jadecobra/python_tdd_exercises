@@ -2,6 +2,8 @@
 .. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _append: more_on_lists_
 .. _arithmetic: https://grokipedia.com/page/Arithmetic
+.. _argument: https://docs.python.org/3/glossary.html#term-argument
+.. _arguments: argument_
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assertion: assert_
@@ -154,6 +156,7 @@
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
 .. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
 .. _variable: https://grokipedia.com/page/Variable_(computer_science)
+.. _variables: https://grokipedia.com/page/Variable_(computer_science)
 .. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment

@@ -8,7 +8,6 @@ exclude_patterns = [
     'notes',
     '.venv',
     'code/code_tree.rst',
-    'bonus',
 ]
 
 extensions = [

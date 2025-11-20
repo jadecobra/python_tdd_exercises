@@ -46,7 +46,7 @@ I add a new test for another Binary Operation to ``test_truth_table.py
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
@@ -83,7 +83,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -127,7 +127,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -263,7 +263,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -379,7 +379,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -409,7 +409,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -614,7 +614,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 

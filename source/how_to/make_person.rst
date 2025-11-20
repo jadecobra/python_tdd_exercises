@@ -26,10 +26,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``person`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh person
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -86,7 +87,7 @@ red: make it fail
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'src' is not defined
 
@@ -114,7 +115,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
@@ -155,7 +156,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
@@ -199,7 +200,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
@@ -232,7 +233,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
@@ -269,7 +270,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'this_year' is not defined
 
@@ -296,7 +297,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
@@ -333,7 +334,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != {}
 
@@ -372,7 +373,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {} != {'first_name': 'first_name'}
 
@@ -434,7 +435,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'first_name'} != {'first_name': 'jane'}
 
@@ -476,7 +477,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane'} != {'first_name': 'jane', 'last_name': 'last_name'}
 
@@ -536,7 +537,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane', 'last_name': 'last_name'} != {'first_name': 'jane', 'last_name': 'doe'}
 
@@ -583,7 +584,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
 
@@ -649,7 +650,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
@@ -699,7 +700,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
@@ -743,7 +744,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
 
@@ -831,7 +832,7 @@ refactor: make it better
 
   ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X}
 
@@ -854,7 +855,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'this_year' is not defined
 
@@ -879,7 +880,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
@@ -917,7 +918,7 @@ refactor: make it better
 
   ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': X}
 
@@ -960,7 +961,7 @@ refactor: make it better
 
   I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'public', 'sex': X, 'age': Y}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'smith', 'sex': X, 'age': Y}
@@ -1007,7 +1008,7 @@ refactor: make it better
 
   I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'joe', 'last_name': X, 'sex': Y, 'age': Z}
     AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'john', 'last_name': X, 'sex': Y, 'age': Z}
@@ -1118,7 +1119,7 @@ red: make it fail
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'last_name' is not defined
 
@@ -1148,7 +1149,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
@@ -1217,7 +1218,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'last_name' is not defined
 
@@ -1246,7 +1247,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': X, 'last_name': None, 'sex': Y, 'age': Z} != {'first_name': X, 'last_name': 'doe', 'sex': Y, 'age': Z}
 
@@ -1323,7 +1324,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'sex' is not defined
 
@@ -1349,7 +1350,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'sex' is not defined
 
@@ -1375,7 +1376,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': X, 'last_name': 'doe', 'sex': None, 'age': Y} != {'first_name': X, 'last_name': 'doe', 'sex': 'M', 'age': Y}
 
@@ -1662,7 +1663,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
@@ -1687,7 +1688,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: 'TestPerson' object has no attribute 'year_of_birth'
 
@@ -1724,7 +1725,7 @@ red: make it fail
 * I close ``test_person.py``
 * I want to write the solution without looking at the tests and delete all the text in ``person.py``. The terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
@@ -1740,7 +1741,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'factory' is not defined
 
@@ -1753,7 +1754,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -1767,7 +1768,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
@@ -1782,7 +1783,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
@@ -1797,7 +1798,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
@@ -1815,7 +1816,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
@@ -1833,7 +1834,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': A}
 
@@ -1856,7 +1857,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 50}
     AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 73}
@@ -1884,7 +1885,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': X, 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': X, 'last_name': 'public', 'sex': 'M', 'age': 69}
     AssertionError: {'first_name': X, 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': X, 'last_name': 'blow', 'sex': 'M', 'age': 97}
@@ -1912,7 +1913,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': 'F', 'age': 20} != {'first_name': X, 'last_name': Y, 'sex': 'M', 'age': 3}
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': 'F', 'age': 20} != {'first_name': X, 'last_name': Y, 'sex': 'M', 'age': 118}
@@ -1940,7 +1941,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 20} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 1}
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 20} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 90}
@@ -1968,7 +1969,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 2022} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 2}
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 2024} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 0}
@@ -2007,7 +2008,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: factory() missing 2 required positional arguments: 'last_name' and 'sex'
 
@@ -2060,7 +2061,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': X, 'last_name': None, 'sex': None, 'age': Y} != {'first_name': X, 'last_name': 'doe', 'sex': 'M', 'age': Y}
 
@@ -2080,7 +2081,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': None, 'age': Z} != {'first_name': Z, 'last_name': Y, 'sex': 'M', 'age': Z}
 

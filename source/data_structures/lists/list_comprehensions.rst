@@ -26,10 +26,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``list_comprehensions`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh list_comprehensions
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -90,7 +91,7 @@ I change ``test_failure``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [0, 1, 2, 3] != []
 
@@ -122,7 +123,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
@@ -146,7 +147,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'src' is not defined
 
@@ -169,7 +170,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
 
@@ -192,7 +193,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: a_for_loop() takes 0 positional arguments but 1 was given
 
@@ -206,7 +207,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != [0, 1, 2, 3]
 
@@ -228,7 +229,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
@@ -249,7 +250,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
 
@@ -276,7 +277,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, ...]
 
@@ -318,7 +319,7 @@ I add a new test
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: list.extend() takes exactly one argument (0 given)
 
@@ -345,7 +346,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
@@ -409,7 +410,7 @@ I add a failing test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
@@ -445,7 +446,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_list_comprehension'
 
@@ -515,7 +516,7 @@ I add a failing test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
@@ -536,7 +537,7 @@ How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ wit
 
 the terminal_ still shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
@@ -569,7 +570,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'get_even_numbers'
 
@@ -599,7 +600,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
@@ -625,7 +626,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 2, 4, 6, ...] != [0, 3, 6, 9, ...]
 
@@ -697,7 +698,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
@@ -748,7 +749,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [1, 3, 5, 7, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
 
@@ -852,7 +853,7 @@ I add a test to show I can do other operations in a `list comprehension`_ not ju
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [0, 1, 4, 9, ...] != [0, 1, 2, 3, ...]
 
@@ -888,7 +889,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'square'
 
@@ -975,7 +976,7 @@ I add a failing test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 1, 2, 3, 4, ...]
 
@@ -994,7 +995,7 @@ I add a call to ``condition``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 2, 4, 6, ...]
 
@@ -1024,7 +1025,7 @@ I add another :ref:`assertion<AssertionError>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [1, 9, 25, 49, ...] != [0, 1, 2, 3, 4, 5, 6, 7, ...]
 
@@ -1039,7 +1040,7 @@ I add a call to ``condition``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [1, 9, 25, 49, ...] != [1, 3, 5, 7, ...]
 

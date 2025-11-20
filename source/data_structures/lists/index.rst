@@ -34,10 +34,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``lists`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh lists
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -92,7 +93,7 @@ I change ``test_failure`` to ``test_making_a_list``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: [] != None
 
@@ -120,7 +121,7 @@ I add another :ref:`assertion<AssertionError>`, this time with input to the list
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: 'int' object is not iterable
 
@@ -143,7 +144,7 @@ I change the input to a tuple_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [0, 1, 2, 'n'] != []
 
@@ -183,7 +184,7 @@ I add a failing test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: ['__add__', '__class__', '__class_getitem_[552 chars]ort'] != []
 
@@ -284,7 +285,7 @@ I add a test for the append_ :ref:`method<functions>`
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: list.append() takes exactly one argument (0 given)
 
@@ -312,7 +313,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
 
@@ -332,7 +333,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 'n+1'] != [0, 1, 2, 'n', 0]
 
@@ -401,7 +402,7 @@ I add an :ref:`assertion<AssertionError>` to show what it did to the list_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: [] != [0, 1, 2, 'n']
 
@@ -467,7 +468,7 @@ I add another test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: [0, 1, 2, 'n'] is not None
 
@@ -486,7 +487,7 @@ I add the list_ to the :ref:`assertion<AssertionError>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: [0, 1, 2, 'n'] is not None : [0, 1, 2, 'n']
 
@@ -547,7 +548,7 @@ I add a test for the next :ref:`method<functions>`
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: list.count() takes exactly one argument (0 given)
 
@@ -562,7 +563,7 @@ I add a value to the call
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 1 is not None
 
@@ -577,7 +578,7 @@ I add the value
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 1 is not None : 1
 
@@ -604,7 +605,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 3 != 1
 
@@ -625,7 +626,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 != 3
 
@@ -682,7 +683,7 @@ time for another test
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: list.extend() takes exactly one argument (0 given)
 
@@ -697,7 +698,7 @@ I pass a value to the call
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: 'int' object is not iterable
 
@@ -721,7 +722,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0, 1] != [0, 1, 2, 'n']
 
@@ -745,7 +746,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 2, 1, 0] != [0, 1, 2, 'n', 0, 1]
 
@@ -800,7 +801,7 @@ I add a test for the index_ :ref:`method<functions>`
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: index expected at least 1 argument, got 0
 
@@ -818,7 +819,7 @@ I add a value to the call
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 0 is not None
 
@@ -830,7 +831,7 @@ I add the expectation
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 0 is not None : 0
 
@@ -859,7 +860,7 @@ refactor: make it better
 
   the terminal_ shows ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: 0 is not in list
 
@@ -884,7 +885,7 @@ refactor: make it better
 
   the terminal_ shows ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: 'not in list' is not in list
 
@@ -915,7 +916,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 != '1st'
 
@@ -936,7 +937,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 2 != 0
 
@@ -957,7 +958,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 1 != 2
 
@@ -978,7 +979,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 3 != 1
 
@@ -1007,13 +1008,13 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 != 4
 
   when I first called the index_ :ref:`method<functions>`, the terminal_ showed :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: index expected at least 1 argument, got 0
 
@@ -1025,7 +1026,7 @@ refactor: make it better
 
   the terminal_ still shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 != 4
 
@@ -1094,7 +1095,7 @@ I add a test for the next :ref:`method<functions>`
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: insert expected 2 arguments, got 0
 
@@ -1124,7 +1125,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [1, 0, 1, 2, 'n'] != [0, 1, 2, 'n']
 
@@ -1144,7 +1145,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [-1, 0, 1, 2, 'n'] != [1, 0, 1, 2, 'n']
 
@@ -1172,7 +1173,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [-1, 0, 1, 1.5, 2, 'n'] != [-1, 0, 1, 2, 'n']
 
@@ -1227,7 +1228,7 @@ I add a new test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 'n' is not None
 
@@ -1244,7 +1245,7 @@ I add the expectation
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 'n' is not None : n
 
@@ -1269,7 +1270,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 'n']
 
@@ -1290,7 +1291,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 2 != 'n'
 
@@ -1310,7 +1311,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1] != [0, 1, 2]
 
@@ -1364,7 +1365,7 @@ time for the next :ref:`method<functions>`
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: list.remove() takes exactly one argument (0 given)
 
@@ -1391,7 +1392,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
@@ -1415,7 +1416,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [1, 0, 2, 0, 'n'] != [1, 2, 'n']
 
@@ -1436,7 +1437,7 @@ refactor: make it better
 
   the terminal_ shows ValueError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ValueError: list.remove(x): x not in list
 
@@ -1501,7 +1502,7 @@ the terminal_ shows green. This :ref:`method<functions>` returns :ref:`None`. I 
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
 
@@ -1556,7 +1557,7 @@ I add a test
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: '<' not supported between instances of 'str' and 'int'
 
@@ -1600,7 +1601,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
@@ -1618,7 +1619,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
@@ -1669,7 +1670,7 @@ I add a failing test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: '1st' != ''
 
@@ -1698,7 +1699,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '1st' != ''
 
@@ -1719,7 +1720,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '1st' != ''
 
@@ -1740,7 +1741,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '3rd' != ''
 
@@ -1761,7 +1762,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '3rd' != ''
 
@@ -1782,7 +1783,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '2nd' != ''
 
@@ -1801,7 +1802,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '2nd' != ''
 
@@ -1822,7 +1823,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '...last' != ''
 
@@ -1843,7 +1844,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: '...last' != ''
 
@@ -1878,7 +1879,7 @@ I add a test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
 
@@ -1917,7 +1918,7 @@ I add another test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: ['a', 'b'] != []
 
@@ -1944,7 +1945,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['a', 'b'] != []
 
@@ -1965,7 +1966,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['b', 'c', 'd'] != []
 
@@ -1986,7 +1987,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['b', 'c', 'd'] != []
 
@@ -2007,7 +2008,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['a', 'b', 'c'] != []
 
@@ -2028,7 +2029,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['b', 'c'] != []
 
@@ -2049,7 +2050,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['a', 'b', 'c', 'd'] != []
 
@@ -2100,7 +2101,7 @@ I add a failing test
 
 the terminal_ shows IndexError_
 
-.. code-block:: python
+.. code-block:: shell
 
   IndexError: list index out of range
 

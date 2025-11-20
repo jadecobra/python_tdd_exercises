@@ -31,10 +31,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``dictionaries`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh dictionaries
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -89,7 +90,7 @@ I change ``test_failure`` to ``test_making_a_dictionary``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {} != None
 
@@ -117,7 +118,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'int' object is not iterable
 
@@ -140,7 +141,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -154,7 +155,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value'} != {}
 
@@ -187,7 +188,7 @@ I add a test to see if I can use :ref:`None` as a key in a dictionary_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {None: 'boom'} != {None: 'bap'}
 
@@ -223,7 +224,7 @@ I add a test to see if I can use a :ref:`boolean<booleans>` as a key in a dictio
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {False: 'boom'} != {False: 'bap'}
 
@@ -253,7 +254,7 @@ I add :ref:`True<test_what_is_true>` to the :ref:`assertion<AssertionError>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {False: 'boom', True: 'bap'} != {False: 'boom'}
 
@@ -289,7 +290,7 @@ I add a failing test to see if I can use a number as a key in a dictionary_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {0: 'boom'} != {0: 'bap'}
 
@@ -319,7 +320,7 @@ I want to see if I can use a float_ as a key in a dictionary_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {0: 'boom', 0.1: 'bap'} != {0: 'boom'}
 
@@ -358,7 +359,7 @@ I add a test to see if I can use a tuple_ as a key in a dictionary_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {(0, 1): 'boom'} != {(0, 1): 'bap'}
 
@@ -399,7 +400,7 @@ I add a test for :ref:`lists`
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: unhashable type: 'list'
 
@@ -447,7 +448,7 @@ I try another test with a set_ as a key in a dictionary_
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: unhashable type: 'set'
 
@@ -487,7 +488,7 @@ I add another test
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: unhashable type: 'dict'
 
@@ -527,7 +528,7 @@ I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attri
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
 
@@ -633,7 +634,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {} != {'key': 'value'}
 
@@ -699,7 +700,7 @@ I add a test for the next :ref:`method<functions>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {'key': 'value'} is not None
 
@@ -716,7 +717,7 @@ I add the value to the :ref:`assertion<AssertionError>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {'key': 'value'} is not None : {'key': 'value'}
 
@@ -740,7 +741,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value'} != {}
 
@@ -797,7 +798,7 @@ I add a test
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: fromkeys expected at least 1 argument, got 0
 
@@ -812,7 +813,7 @@ I pass a value to the call
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: 'int' object is not iterable
 
@@ -824,7 +825,7 @@ I change the value to a tuple_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {0: None, 1: None} is not None
 
@@ -839,7 +840,7 @@ the fromkeys_ :ref:`method<functions>` returns a dictionary_ that uses the value
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
 
@@ -869,7 +870,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value'} != {}
 
@@ -899,7 +900,7 @@ refactor: make it better
 
 * the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal_ showed :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: fromkeys expected at least 1 argument, got 0
 
@@ -923,7 +924,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {0: 'default', 1: 'default'} != {0: None, 1: None}
 
@@ -983,7 +984,7 @@ I add another test
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: get expected at least 1 argument, got 0
 
@@ -1015,7 +1016,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'default' is not None
 
@@ -1027,7 +1028,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'default' is not None : default
 
@@ -1064,7 +1065,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'value' != 'default'
 
@@ -1130,7 +1131,7 @@ I add the next test from the list
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: dict_items([('key', 'value')]) is not None
 
@@ -1145,7 +1146,7 @@ I copy the value from the terminal_ and paste it as the expectation
 
 the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: python
+.. code-block:: shell
 
   NameError: name 'dict_items' is not defined
 
@@ -1157,7 +1158,7 @@ this new :ref:`object<classes>` contains a :ref:`list<lists>` and I know how to 
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
@@ -1169,7 +1170,7 @@ I pass the call to the items_ :ref:`method<functions>` to the :ref:`list<lists>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: [('key', 'value')] is not None : [('key', 'value')]
 
@@ -1197,7 +1198,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: [('key1', 'value1'), ('keyN', [0, 1, 2, 'n'])] != [('key', 'value')]
 
@@ -1267,7 +1268,7 @@ I add a test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: dict_keys(['key']) is not None
 
@@ -1284,7 +1285,7 @@ I copy the value from the terminal_ and paste it as the expectation
 
 the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: python
+.. code-block:: shell
 
   NameError: name 'dict_keys' is not defined
 
@@ -1296,7 +1297,7 @@ the ``dict_keys`` :ref:`object<classes>` contains a :ref:`list<lists>`, I will u
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: dict_keys(['key']) is not None : ['key']
 
@@ -1308,7 +1309,7 @@ I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list<lists>` 
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: ['key'] is not None : ['key']
 
@@ -1336,7 +1337,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['key1', 'keyN'] != ['key']
 
@@ -1391,7 +1392,7 @@ I wonder if the next :ref:`method<functions>` is the same as the one in :ref:`te
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: pop expected at least 1 argument, got 0
 
@@ -1408,7 +1409,7 @@ green: make it pass
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     KeyError: 0
 
@@ -1430,7 +1431,7 @@ green: make it pass
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     KeyError: 'not in dictionary'
 
@@ -1460,7 +1461,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'value' is not None
 
@@ -1472,7 +1473,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'value' is not None : value
 
@@ -1493,7 +1494,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {} != {'key': 'value'}
 
@@ -1548,7 +1549,7 @@ I add a failing test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: ('key', 'value') is not None
 
@@ -1565,7 +1566,7 @@ I add the value from the terminal_ as an expectation
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: ('key', 'value') is not None : ('key', 'value')
 
@@ -1589,7 +1590,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {} != {'key': 'value'}
 
@@ -1614,7 +1615,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('keyN', [0, 1, 2, 'n']) != ('key', 'value')
 
@@ -1626,7 +1627,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key1': 'value1'} != {'key': 'value'}
 
@@ -1647,7 +1648,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('key1', 'value1') != ('keyN', [0, 1, 2, 'n'])
 
@@ -1699,7 +1700,7 @@ I add a test
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   TypeError: setdefault expected at least 1 argument, got 0
 
@@ -1726,7 +1727,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value', 0: None} != {'key': 'value'}
 
@@ -1762,7 +1763,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value', 'new_key': None} != {'key': 'value', 0: None}
 
@@ -1789,7 +1790,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'value' is not None
 
@@ -1801,7 +1802,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'value' is not None : value
 
@@ -1827,7 +1828,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'default' is not None
 
@@ -1839,7 +1840,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'default' is not None : default
 
@@ -1851,7 +1852,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value', 'new_key': 'default'} != {'key': 'value', 'new_key': None}
 
@@ -1931,7 +1932,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value'} != {}
 
@@ -1959,7 +1960,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'int' object is not iterable
 
@@ -1971,7 +1972,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -1983,7 +1984,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'value', 'new_key': 'new value'} != {'key': 'value'}
 
@@ -2010,7 +2011,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'updated value', 'new_key': 'new value'} != {'key': 'value', 'new_key': 'new value'}
 
@@ -2036,7 +2037,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: {'key': 'updated value', 'new_key': 'new value', 'another_key': 'another_value'} != {'key': 'updated value', 'new_key': 'new value'}
 
@@ -2103,7 +2104,7 @@ I add a test for the last :ref:`method<functions>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: dict_values(['value']) is not None
 
@@ -2120,7 +2121,7 @@ I add the expected value
 
 the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: python
+.. code-block:: shell
 
   NameError: name 'dict_values' is not defined
 
@@ -2132,7 +2133,7 @@ I use the :ref:`list<lists>` in the ``dict_values`` object_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: dict_values(['value']) is not None : ['value']
 
@@ -2144,7 +2145,7 @@ I change assertIsNone_ to assertEqual_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: dict_values(['value']) != ['value']
 
@@ -2170,7 +2171,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Lists differ: ['value1', [0, 1, 2, 'n']] != ['value']
 
@@ -2225,7 +2226,7 @@ I add a test for getting the value of a key that is in a dictionary_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 'value' != ''
 
@@ -2254,7 +2255,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     KeyError: 'key_not_in_dictionary'
 
@@ -2278,7 +2279,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'default' != 'value'
 
@@ -2300,7 +2301,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     KeyError: 'not_in_dictionary'
 
@@ -2325,7 +2326,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     KeyError: 'popitem(): dictionary is empty'
 

@@ -653,7 +653,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: Girl() takes no arguments
 

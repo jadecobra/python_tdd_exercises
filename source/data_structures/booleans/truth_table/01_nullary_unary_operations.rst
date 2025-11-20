@@ -21,10 +21,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``truth_table`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh truth_table
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -84,7 +85,7 @@ I change the text in ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_true'
 
@@ -112,7 +113,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None is not true
 
@@ -170,7 +171,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -227,7 +228,7 @@ I add a new TestCase_ and a test to ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_identity'
 
@@ -249,7 +250,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: logical_identity() takes 0 positional arguments but 1 was given
 
@@ -275,7 +276,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -303,7 +304,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -318,7 +319,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -361,7 +362,7 @@ I add a new test to ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_negation'
 
@@ -383,7 +384,7 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: True is not false
 
@@ -413,7 +414,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: False is not true
 
@@ -426,7 +427,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 
@@ -441,7 +442,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: True is not false
 

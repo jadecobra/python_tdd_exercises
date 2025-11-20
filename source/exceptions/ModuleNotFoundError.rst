@@ -25,10 +25,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh module_not_found_error
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -82,7 +83,7 @@ red: make it fail
 
   the terminal_ shows ModuleNotFoundError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ModuleNotFoundError: No module called 'src.module_00'
 
@@ -117,7 +118,7 @@ refactor: make it better
 
   the terminal_ shows ModuleNotFoundError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ModuleNotFoundError: No module named 'src.module_01'
 
@@ -135,7 +136,7 @@ refactor: make it better
 
   the terminal_ shows ModuleNotFoundError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ModuleNotFoundError: No module called 'src.module_02'
 
@@ -154,7 +155,7 @@ refactor: make it better
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ModuleNotFoundError: No module called 'src.module_03'
 

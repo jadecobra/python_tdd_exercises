@@ -23,10 +23,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``calculator`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh calculator
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -111,7 +112,7 @@ test_addition
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'src' is not defined
 
@@ -144,7 +145,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
@@ -170,7 +171,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'add' is not defined
 
@@ -183,7 +184,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -211,7 +212,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
@@ -228,7 +229,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != 1
 
@@ -333,7 +334,7 @@ refactor: make it better
 
   I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 0 != 2
     AssertionError: -1 != -2
@@ -489,7 +490,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
@@ -510,7 +511,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'subtract' is not defined
 
@@ -523,7 +524,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -540,7 +541,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
@@ -555,7 +556,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != -17
     AssertionError: None != -4
@@ -746,7 +747,7 @@ I add a failing test for multiplication in ``test_calculator.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.calculator' has no attribute 'multiply'
 
@@ -809,7 +810,7 @@ time for division. I add a new test to ``test_calculator.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.calculator' has no attribute 'divide'
 
@@ -1077,7 +1078,7 @@ red: make it fail
 * I close ``test_calculator.py``
 * then delete all the text in ``calculator.py``, the terminal_ shows 4 failures, I start with the last :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
@@ -1096,7 +1097,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'subtract' is not defined
 
@@ -1110,7 +1111,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -1125,7 +1126,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
@@ -1140,7 +1141,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != X
 
@@ -1155,7 +1156,7 @@ green: make it pass
 
   the terminal_ shows random numbers with :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: (-10, 2) != -12
     AssertionError: (-1, 7) != -8
@@ -1175,7 +1176,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.calculator' has no attribute 'multiply'
 
@@ -1194,7 +1195,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
@@ -1209,7 +1210,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != X
 
@@ -1224,7 +1225,7 @@ green: make it pass
 
   the terminal_ shows random numbers with :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: (-6, 6) != -36
     AssertionError: (-2, 3) != -6
@@ -1242,7 +1243,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.calculator' has no attribute 'divide'
 
@@ -1261,7 +1262,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: (-10, 6) != -1.6666666666666667
     AssertionError: (-6, -6) != 1.0
@@ -1270,7 +1271,7 @@ green: make it pass
 
   or
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: ZeroDivisionError not raised
 
@@ -1285,7 +1286,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 

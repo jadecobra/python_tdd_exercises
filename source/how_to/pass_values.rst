@@ -23,10 +23,11 @@ requirements
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``telephone`` as the name of the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh telephone
 
-  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1`
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: python
 
@@ -83,7 +84,7 @@ red: make it fail
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'src' is not defined
 
@@ -118,7 +119,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
@@ -142,7 +143,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'text' is not defined
 
@@ -155,7 +156,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -181,7 +182,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
@@ -198,7 +199,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != 'I received: hello'
 
@@ -243,7 +244,7 @@ I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string`` in ``t
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 'I received: hello' != 'I received: yes'
 
@@ -261,7 +262,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'I received: yes' != 'I received: hello'
 
@@ -324,7 +325,7 @@ I add a failing test for a :ref:`class <classes>` in ``test_telephone.py``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: "I received: <class 'object'>" != 'I received: object'
 
@@ -368,7 +369,7 @@ I add another :ref:`assertion<AssertionError>` with the ``TestTelephone`` :ref:`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: "I received: <class 'tests.test_telephone.TestTelephone'>" != "I received: <class 'object'>"
 
@@ -421,7 +422,7 @@ I add a new failing test for :ref:`None` in ``test_telephone.py``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 'I received: None' != "I received: 'None'"
 
@@ -471,7 +472,7 @@ I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: "I received: True" != "I received: 'True'"
 
@@ -510,7 +511,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: "I received: False" != "I received: 'False'"
 
@@ -563,7 +564,7 @@ I add a test for an integer_ (a whole number)
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 'I received: 1234' != "I received: '1234'"
 
@@ -611,7 +612,7 @@ I add a test for a float_ (floating point decimal numbers)
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: 'I received: 1.234' != "I received: '1.234'"
 
@@ -659,7 +660,7 @@ I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: "I received: (1, 2, 3, 'n')" != "I received: '(1, 2, 3, n)'"
 
@@ -707,7 +708,7 @@ I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), sepa
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: "I received: [1, 2, 3, 'n']" != "I received: '[1, 2, 3, n]'"
 
@@ -758,7 +759,7 @@ I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly br
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AssertionError: "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
 
@@ -800,7 +801,7 @@ red: make it fail
 * I close ``test_telephone.py``
 * then delete all the text in ``telephone.py``, the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
@@ -816,7 +817,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'text' is not defined
 
@@ -829,7 +830,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -843,7 +844,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
@@ -858,7 +859,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != 'I received: None'
 
@@ -873,7 +874,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: 'I received: None' != 'I received: 1234'
 

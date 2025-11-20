@@ -41,7 +41,7 @@ test_catching_exceptions_w_messages
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.exceptions' has no attribute 'raise_exception'
 
@@ -62,7 +62,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'raise_exception' is not defined
 
@@ -76,7 +76,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -103,7 +103,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Exception not raised
 
@@ -132,7 +132,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: "BOOM!" does not match ""
 
@@ -201,7 +201,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'an_exception_handler' is not defined
 
@@ -215,7 +215,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: 'NoneType' object is not callable
 
@@ -230,7 +230,7 @@ green: make it pass
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     TypeError: an_exception_handler() takes 0 positional arguments but 1 was given
 
@@ -245,7 +245,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != 'failed'
 
@@ -297,7 +297,7 @@ I add a new test to ``test_exceptions.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
+.. code-block:: shell
 
   AttributeError: module 'src.exceptions' has no attribute 'does_not_raise_exception'
 
@@ -322,7 +322,7 @@ green: make it pass
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'does_not_raise_exception' is not defined
 
@@ -438,7 +438,7 @@ how to use try...except...else
 
   ``test_catching_failure`` passes, the terminal_ still shows :ref:`AssertionError` for ``test_catching_success``
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != 'succeeded'
 
@@ -460,7 +460,7 @@ how to use try...except...else
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != 'succeeded'
 
