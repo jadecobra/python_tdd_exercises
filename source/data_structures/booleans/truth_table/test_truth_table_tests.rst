@@ -566,6 +566,8 @@ green: make it pass
   I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 3
 
     def logical_equality(x, y):
         if (x, y) == (True, False): return False
@@ -579,9 +581,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``logical_disjunction``
 
   .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, True): return False
+        return x, y
+
 
     def logical_disjunction(x, y):
         return x, y
@@ -595,6 +603,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
 
     def logical_disjunction(x, y):
         if (x, y) == (False, False): return False
@@ -607,9 +617,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_disjunction'?
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``logical_disjunction``
 
   .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, False): return False
+        return x, y
+
 
     def logical_conjunction(x, y):
         return x, y
@@ -623,6 +639,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 2
 
     def logical_conjunction(x, y):
         if (x, y) == (True, False): return False
@@ -637,6 +655,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 3
 
     def logical_conjunction(x, y):
         if (x, y) == (True, False): return False
@@ -652,6 +672,8 @@ green: make it pass
   I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 4
 
     def logical_conjunction(x, y):
         if (x, y) == (True, False): return False
@@ -665,9 +687,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction
 
-* I add a :ref:`function<functions>` for it
+* I add a :ref:`function<functions>` for ``exclusive_disjunction``
 
   .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, False): return False
+        return x, y
+
 
     def exclusive_disjunction(x, y):
         return x, y
@@ -681,6 +709,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 2
 
     def exclusive_disjunction(x, y):
         if (x, y) == (True, True): return False
@@ -695,6 +725,8 @@ green: make it pass
   I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 3
 
     def exclusive_disjunction(x, y):
         if (x, y) == (True, True): return False
@@ -708,9 +740,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'. Did you mean: 'material_non_implication'?
 
-* I add the definition for the :ref:`function<functions>`
+* I add a definition for the ``material_non_implication`` :ref:`function<functions>`
 
   .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, False): return False
+        return x, y
+
 
     def converse_non_implication(x, y):
         return x, y
@@ -724,6 +762,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 2
 
     def converse_non_implication(x, y):
         if (x, y) == (True, True): return False
@@ -738,6 +778,8 @@ green: make it pass
   I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 3
 
     def converse_non_implication(x, y):
         if (x, y) == (True, True): return False
@@ -753,6 +795,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 4
 
     def converse_non_implication(x, y):
         if (x, y) == (True, True): return False
@@ -767,9 +811,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 
-* I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>` for ``converse_non_implication``
 
   .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, False): return False
+        return x, y
+
 
     def converse_implication(x, y):
         return x, y
@@ -783,6 +833,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 80
+    :emphasize-lines: 2
 
     def converse_implication(x, y):
         if (x, y) == (False, True): return False
@@ -794,9 +846,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``contradiction``
 
   .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, True): return False
+        return x, y
+
 
     def contradiction(x, y):
         return x, y
@@ -810,6 +868,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 2
 
     def contradiction(x, y):
         if (x, y) == (True, True): return False
@@ -824,6 +884,8 @@ green: make it pass
   I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 3
 
     def contradiction(x, y):
         if (x, y) == (True, True): return False
@@ -836,9 +898,11 @@ green: make it pass
 
     AssertionError: (False, True) is not false
 
-  I add an `if statement`_
+  I add another `if statement`_
 
   .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 4
 
     def contradiction(x, y):
         if (x, y) == (True, True): return False
@@ -855,6 +919,8 @@ green: make it pass
   I add an `if statement`_
 
   .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 5
 
     def contradiction(x, y):
         if (x, y) == (True, True): return False
@@ -870,9 +936,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_negation'. Did you mean: 'logical_conjunction'?
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``logical_negation``
 
   .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 5-6
+
+        if (x, y) == (False, False): return False
+        return x, y
+
 
     def logical_negation(x, y):
         return x, y
@@ -883,9 +955,11 @@ green: make it pass
 
     TypeError: logical_negation() missing 1 required positional argument: 'y'
 
-  I change the definition
+  I remove ``y`` from the parentheses, to make the :ref:`function<functions>` take only 1 input
 
   .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 1-2
 
     def logical_negation(x):
         return x
@@ -899,6 +973,8 @@ green: make it pass
   I add "not_" to the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 2
 
     def logical_negation(x):
         return not x
@@ -910,9 +986,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_identity'. Did you mean: 'logical_equality'?
 
-  I add a :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``logical_identity``
 
   .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 5-6
+
+    def logical_negation(x):
+        return not x
+
 
     def logical_identity(x):
         return not x
@@ -923,9 +1005,11 @@ green: make it pass
 
     AssertionError: False is not true
 
-  I remove "not_"
+  I remove "not_" from the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 2
 
     def logical_identity(x):
         return x
@@ -937,9 +1021,15 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_true'. Did you mean: 'logical_nand'?
 
-  I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``logical_true``
 
   .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 5-6
+
+    def logical_identity(x):
+        return x
+
 
     def logical_true(x):
         return x
@@ -950,9 +1040,11 @@ green: make it pass
 
     TypeError: logical_true() missing 1 required positional argument: 'x'
 
-  I remove the input parameter and change the `return statement`_
+  I remove ``x`` from the parentheses, this :ref:`function` does not take input, I change the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 101
+    :emphasize-lines: 1-2
 
     def logical_true():
         return None
@@ -966,6 +1058,8 @@ green: make it pass
   I change :ref:`None` to :ref:`True<test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 101
+    :emphasize-lines: 2
 
     def logical_true():
         return True
@@ -977,14 +1071,20 @@ green: make it pass
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_nand'?
 
-* I add the :ref:`function<functions>`
+* I add a :ref:`function<functions>` for ``logical_false``
 
   .. code-block:: python
+    :lineno-start: 101
+    :emphasize-lines: 5-6
+
+    def logical_true():
+        return None
+
 
     def logical_false():
-        return False
+        return None
 
-  the terminal_ shows green!
+  the terminal_ shows green! All tests are passing and the world is a better place than when I started.
 
 refactor: make it better
 #################################################################################
