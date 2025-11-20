@@ -59,8 +59,6 @@ requirements
 
 * I add a TODO list to keep track of the work for the program
 
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
-
   .. code-block:: python
     :linenos:
     :emphasize-lines: 10-14
@@ -144,8 +142,6 @@ green: make it pass
 
     class TestCalculator(unittest.TestCase):
 
-        ...
-
   the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: python
@@ -207,8 +203,6 @@ green: make it pass
 
 * then I change ``add`` to a :ref:`function<functions>` to make it callable_ with the def_ keyword in ``calculator.py``
 
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
-
   .. code-block:: python
     :linenos:
 
@@ -240,9 +234,9 @@ green: make it pass
 
   the ``add`` :ref:`function<functions>` returns :ref:`None`, the test expects ``1``
 
-* when I make the `return statement`_ match the expected value
+* I make the `return statement`_ match the expected value
 
-  .. code-block::
+  .. code-block:: python
     :linenos:
     :emphasize-lines: 2
 
@@ -383,7 +377,6 @@ refactor: make it better
 
 
     # TODO
-    ...
 
 * There is some duplication, I have to make a change in more than one place when I want to use a different range of random numbers for the test
 
@@ -395,11 +388,7 @@ refactor: make it better
             x = random.randint(-10, 10)
             y = random.randint(-10, 10)
 
-            ...
-
   I add a :ref:`function<functions>` to remove the repetition
-
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: python
     :linenos:
@@ -416,8 +405,6 @@ refactor: make it better
 
     class TestCalculator(unittest.TestCase):
 
-        ...
-
   then I use the new :ref:`function<functions>` for the ``x`` and ``y`` variables in ``test_addition``
 
   .. code-block:: python
@@ -427,8 +414,6 @@ refactor: make it better
         def test_addition(self):
             x = a_random_number()
             y = a_random_number()
-
-            ...
 
   I now only need to change the range of random numbers for the test in one place
 
@@ -512,8 +497,6 @@ green: make it pass
 #################################################################################
 
 * I add the name to ``calculator.py``
-
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: python
     :linenos:
@@ -613,14 +596,18 @@ refactor: make it better
         x = a_random_number()
         y = a_random_number()
 
+        def test_addition(self):
+
   I use the new :ref:`class<classes>` :ref:`attributes<AttributeError>` in ``test_addition``
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 2-3
+    :emphasize-lines: 3, 5
 
         def test_addition(self):
+            # x = a_random_number()
             x = self.x
+            # y = a_random_number()
             y = self.y
 
             self.assertEqual(
@@ -631,11 +618,13 @@ refactor: make it better
   and in ``test_subtraction``
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 2-3
+    :lineno-start: 26
+    :emphasize-lines: 3, 5
 
         def test_subtraction(self):
+            # x = a_random_number()
             x = self.x
+            # y = a_random_number()
             y = self.y
 
             self.assertEqual(
@@ -644,6 +633,24 @@ refactor: make it better
             )
 
   the terminal_ shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+
+* I remove the commented lines in ``test_addition``
+
+  .. code-block:: python
+    :lineno-start: 15
+
+        def test_addition(self):
+            x = self.x
+            y = self.y
+
+  and do the same thing in ``test_subtraction``
+
+  .. code-block:: python
+    :lineno-start: 24
+
+        def test_subtraction(self):
+            x = self.x
+            y = self.y
 
 * I can use the :ref:`class<classes>` :ref:`attributes<AttributeError>` directly in ``test_addition``
 
@@ -656,7 +663,9 @@ refactor: make it better
                 self.x+self.y
             )
 
-  the test is still green. I do the same thing in ``test_subtraction``
+  the test is still green
+
+* I do the same thing in ``test_subtraction``
 
   .. code-block:: python
     :lineno-start: 28
@@ -691,7 +700,6 @@ refactor: make it better
 
 
     # TODO
-    ...
 
   and the tests are still green!
 
@@ -703,6 +711,9 @@ refactor: make it better
     # TODO
     # test multiplication
     # test division
+
+
+    # Exceptions Encountered
 
 ----
 
@@ -732,7 +743,6 @@ I add a failing test for multiplication in ``test_calculator.py``
           )
 
   # TODO
-  ...
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -765,6 +775,9 @@ the test passes! I remove ``test_multiplication`` from the TODO list in ``test_c
   # TODO
   # test division
 
+
+  # Exceptions Encountered
+
 ----
 
 *********************************************************************************
@@ -793,7 +806,6 @@ time for division. I add a new test to ``test_calculator.py``
           )
 
   # TODO
-  ...
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -1018,7 +1030,6 @@ refactor: make it better
 
 
     # TODO
-    ...
 
   the terminal_ shows all tests are passing with no random failures
 
@@ -1046,7 +1057,11 @@ refactor: make it better
     :lineno-start: 45
 
     # Exceptions Encountered
-    ...
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # ZeroDivisionError
 
 ----
 
@@ -1060,7 +1075,7 @@ red: make it fail
 #################################################################################
 
 * I close ``test_calculator.py``
-* then delete all the text in ``calculator.py``, the terminal_ shows :ref:`AttributeError`
+* then delete all the text in ``calculator.py``, the terminal_ shows 4 failures, I start with the last :ref:`AttributeError`
 
   .. code-block:: python
 
@@ -1075,6 +1090,7 @@ green: make it pass
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     subtract
 
@@ -1088,6 +1104,7 @@ green: make it pass
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     subtract = None
 
@@ -1101,6 +1118,7 @@ green: make it pass
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1-2
 
     def subtract():
         return None
@@ -1231,12 +1249,8 @@ green: make it pass
 * I add another :ref:`function<functions>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 9-10
-
-    def subtract(a, b):
-        return a - b
-
+    :lineno-start: 5
+    :emphasize-lines: 5-6
 
     def multiply(a, b):
         return a * b
