@@ -1078,24 +1078,26 @@ green: make it pass
     :emphasize-lines: 5-6
 
     def logical_true():
-        return None
+        return True
 
 
     def logical_false():
-        return None
+        return False
 
   the terminal_ shows green! All tests are passing and the world is a better place than when I started.
 
 refactor: make it better
 #################################################################################
 
-I can refactor the :ref:`functions<functions>` to make them simpler since all the tests are passing
+I can refactor the :ref:`functions<functions>` I have, to make them simpler since all the tests are passing
 
 * :ref:`logical_false<test_logical_false>`, :ref:`logical_true<test_logical_true>`, :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>` are already simple
 
 * :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in 4 cases, with 2 inputs there are only 4 cases. I add a `return statement`_
 
   .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 2
 
     def contradiction(x, y):
         return False
@@ -1105,16 +1107,23 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         if (x, y) == (False, False): return False
         return x, y
 
-  the test is still green. I remove the other lines
+  the test is still green. I remove the other lines in the :ref:`function<functions>`
 
   .. code-block:: python
+    :lineno-start: 85
 
     def contradiction(x, y):
         return False
 
+
+    def logical_negation(x):
+        return not x
+
 * :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the `if statement`_, for the 3 cases that return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 80
+    :emphasize-lines: 2
 
     def converse_implication(x, y):
         return (x, y) != (False, True)
@@ -1124,13 +1133,20 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   still green. I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 80
 
     def converse_implication(x, y):
         return (x, y) != (False, True)
 
+
+    def contradiction(x, y):
+        return False
+
 * :ref:`converse_non_implication<test_converse_non_implication>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
 
   .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 2
 
     def converse_non_implication(x, y):
         return (x, y) == (False, True)
@@ -1142,13 +1158,20 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   the terminal_ still shows green and I remove the other lines
 
   .. code-block:: python
+    :lineno-start: 73
 
     def converse_non_implication(x, y):
         return (x, y) == (False, True)
 
+
+    def converse_implication(x, y):
+        return (x, y) != (False, True)
+
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two `if statements`_ I can put them together as one
 
   .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 2
 
     def exclusive_disjunction(x, y):
         if (x, y) == (True, True) or (x, y) == (False, False): return False
@@ -1159,6 +1182,8 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   the test is still green. I remove the other `if statements`_ then return the :ref:`logical negation<test_logical_negation>`
 
   .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 2
 
     def exclusive_disjunction(x, y):
         return (x, y) != (True, True) and (x, y) != (False, False)
@@ -1168,13 +1193,20 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   the test is still green, I remove the other lines
 
   .. code-block:: python
+    :lineno-start: 67
 
     def exclusive_disjunction(x, y):
         return (x, y) != (True, True) and (x, y) != (False, False)
 
-* :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`
+
+    def converse_non_implication(x, y):
+        return (x, y) == (False, True)
+
+* :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement` for it
 
   .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 2
 
     def logical_conjunction(x, y):
         return (x, y) == (True, True)
@@ -1186,59 +1218,164 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   still green, I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 60
 
     def logical_conjunction(x, y):
         return (x, y) == (True, True)
 
-* :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`
+
+    def exclusive_disjunction(x, y):
+        return (x, y) != (True, True) and (x, y) != (False, False)
+
+* :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the opposite of it which covers the other 3 cases
 
   .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 2
+
+    def logical_disjunction(x, y):
+        return (x, y) != (False, False)
+        if (x, y) == (False, False): return False
+        return x, y
+
+  the terminal_ still shows green, and I remove the other lines
+
+  .. code-block:: python
+    :lineno-start: 55
 
     def logical_disjunction(x, y):
         return (x, y) != (False, False)
 
-* :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+
+    def logical_conjunction(x, y):
+        return (x, y) == (True, True)
+
+* :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>` to add a `return statement`
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
+
+    def logical_equality(x, y):
+        return (x, y) != (True, False) and (x, y) != (False, True)
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
+        return x, y
+
+  the terminal_ still shows green. I remove the other lines
+
+  .. code-block:: python
+    :lineno-start: 49
 
     def logical_equality(x, y):
         return (x, y) != (True, False) and (x, y) != (False, True)
 
-  the terminal_ still shows green
 
-* :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`
+    def logical_disjunction(x, y):
+        return (x, y) != (False, False)
+
+* :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for its opposite which covers the other 3 cases
 
   .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 2
+
+    def logical_nand(x, y):
+        return (x, y) != (True, True)
+        if (x, y) == (True, True): return False
+        return x, y
+
+  still green. I remove the other lines
+
+  .. code-block:: python
+    :lineno-start: 44
 
     def logical_nand(x, y):
         return (x, y) != (True, True)
 
-  still green
 
-* :ref:`logical_nor<test_logical_nor>` only has one case that returns :ref:`True<test_what_is_true>`
+    def logical_equality(x, y):
+        return (x, y) != (True, False) and (x, y) != (False, True)
+
+* :ref:`logical_nor<test_logical_nor>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
   .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 2
+
+    def logical_nor(x, y):
+        return (x, y) == (False, False)
+        if (x, y) == (True, True): return False
+        if (x, y) == (True, False): return False
+        if (x, y) == (False, True): return False
+        return x, y
+
+  still green, I remove the other statements
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 2
 
     def logical_nor(x, y):
         return (x, y) == (False, False)
 
-* :ref:`material_implication<test_material_implication>` has only one case that returns :ref:`False<test_what_is_false>`
+
+    def logical_nand(x, y):
+        return (x, y) != (True, True)
+
+* :ref:`material_implication<test_material_implication>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the other 3
 
   .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 2
 
-    def material_non_implication(x, y):
-        return (x, y) == (True, False)
+    def material_implication(x, y):
+        return (x, y) != (True, False)
+        if (x, y) == (True, False): return False
+        return x, y
 
-* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`
+  the test is still green. I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 25
 
     def material_implication(x, y):
         return (x, y) != (True, False)
 
-* ``x`` is :ref:`True<test_what_is_true>` in both cases of :ref:`negate_first<test_negate_first>` that return :ref:`False<test_what_is_false>`, I add an `if statement`_ to show this
+
+    def logical_nor(x, y):
+        return (x, y) == (False, False)
+
+* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the 1 case that returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
+
+    def material_non_implication(x, y):
+        return (x, y) == (True, False)
+        if (x, y) == (True, True): return False
+        if (x, y) == (False, True): return False
+        if (x, y) == (False, False): return False
+        return x, y
+
+  the terminal_ still shows green. I remove the other statements
+
+  .. code-block:: python
+    :lineno-start: 25
+
+    def material_non_implication(x, y):
+        return (x, y) == (True, False)
+
+
+    def material_implication(x, y):
+        return (x, y) != (True, False)
+
+* ``x`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an `if statement`_ for them
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 2
 
     def negate_first(x, y):
         if x == True: return False
@@ -1246,71 +1383,126 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         if (x, y) == (True, False): return False
         return x, y
 
-  the test is still green.  I add a `return statement`_
+  the test is still green.  I add a simpler `return statement`_
 
   .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 2
 
     def negate_first(x, y):
         return x != True
         if x == True: return False
         return x, y
 
-  still green, I remove the other statements
+  the test is still green, I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 19
 
     def negate_first(x, y):
         return x != True
 
-* ``y`` is :ref:`True<test_what_is_true>` in the 2 cases that return :ref:`False<test_what_is_false>` in :ref:`negate_second<test_negate_second>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
+
+    def material_non_implication(x, y):
+        return (x, y) == (True, False)
+
+* ``y`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
+
+    def negate_second(x, y):
+        return y != True
+        if (x, y) == (True, True): return False
+        if (x, y) == (False, True): return False
+        return x, y
+
+  still green. I remove the other statements
+
+  .. code-block:: python
+    :lineno-start: 13
 
     def negate_second(x, y):
         return y != True
 
-  still green
+
+    def negate_first(x, y):
+        return x != True
 
 * :ref:`project_second<test_project_second>`, :ref:`project_first<test_project_first>` and :ref:`tautology<test_tautology>` are already simple
 
-* I change the `return statement`_ in :ref:`negate_second<test_negate_second>`
+* I change the `return statement`_ in :ref:`negate_second<test_negate_second>` to make it simpler
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
     def negate_second(x, y):
         return not y == True
         return y != True
 
-  when ``not y`` is :ref:`True<test_what_is_true>` it means the statement will be ``True == True`` which is a duplication. I remove the second part of the statement
+  when ``not y`` is :ref:`True<test_what_is_true>` it means the `return statement` will be ``True == True`` which is a duplication. I remove the second part of the statement and the second `return statement`_
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
     def negate_second(x, y):
         return not y
+
+
+    def negate_first(x, y):
 
   the test is still green
 
 * I do the same thing with :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 2
 
     def negate_first(x, y):
         return not x
+        return x != True
 
-  still green
+  still green. I remove the second `return statement`_
+
+  .. code-block:: python
+      :lineno-start: 17
+
+      def negate_first(x, y):
+          return not x
+
+
+      def material_non_implication(x, y):
 
 * I use this with :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
+
+    def material_non_implication(x, y):
+        return x and not y
+        return (x, y) == (True, False)
+
+  the terminal_ shows all tests are still passing. I remove the second `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 21
 
     def material_non_implication(x, y):
         return x and not y
 
-  the terminal_ shows all tests are still passing
+
+    def material_implication(x, y):
 
 * I try it with :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
 
     def material_implication(x, y):
         return not x and y
@@ -1325,22 +1517,39 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   I change "and_" to "or_"
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
+
+    def material_implication(x, y):
+        return not x or y
+        return (x, y) != (True, False)
+
+  the test is green again, I will use "or_" the next time I see ``!=`` in these tests. I remove the other `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 25
 
     def material_implication(x, y):
         return not x or y
 
-  the test is green again, I will use "or_" the next time I see ``!=`` in these tests
 
-* I do it with :ref:`logical_nor<test_logical_nor>`
+    def logical_nor(x, y):
+
+* I do the same thing with :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2
 
     def logical_nor(x, y):
         return not x and not y
+        return (x, y) == (False, False)
 
-  then rewrite the `return statement`_ in terms of "not_" since it happens 2 times
+  the test is still green. I remove the second `return statement`_ and change the first `return statement`_ in terms of "not_" since it happens 2 times
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2
 
     def logical_nor(x, y):
         return not x not or not y
@@ -1355,6 +1564,8 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   I comment the line out then factor out "not_"
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
 
     def logical_nor(x, y):
         return not (x or y)
@@ -1364,25 +1575,47 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   the terminal_ still shows green. I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 29
 
     def logical_nor(x, y):
         return not (x or y)
 
-* I add a `return statement`_ for :ref:`logical_nand<test_logical_nand>`
+
+    def logical_nand(x, y):
+
+* I add a `return statement`_ to :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 2
 
     def logical_nand(x, y):
         return not x or not y
+        return (x, y) != (True, True)
 
-  still green and it factors out to
+  the test is still green, I factor out "not_"
 
   .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 2
+
+    def logical_nand(x, y):
+        return not (x and y)
+        return not x or not y
+        return (x, y) != (True, True)
+
+  still green. I remove the other `return statements`_
+
+  .. code-block:: python
+    :lineno-start: 33
 
     def logical_nand(x, y):
         return not (x and y)
 
-* :ref:`logical_equality<test_logical_equality>`
+
+    def logical_equality(x, y):
+
+* I add a `return statement`_ to :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
 
@@ -1390,25 +1623,63 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
         return (not x or y) and (x or not y)
         return (x, y) != (True, False) and (x, y) != (False, True)
 
-  the test is still green, I remove the other statement
+  the test is still green, I remove the other `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 37
+
+    def logical_equality(x, y):
+        return (not x or y) and (x or not y)
+
+
+    def logical_disjunction(x, y):
 
 * :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 2
+
+    def logical_disjunction(x, y):
+        return x or y
+        return (x, y) != (False, False)
+
+  still green. I remove the other `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 41
 
     def logical_disjunction(x, y):
         return x or y
 
+
+    def logical_conjunction(x, y):
+
 * :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2
+
+    def logical_conjunction(x, y):
+        return x and y
+        return (x, y) == (True, True)
+
+  the terminal_ still shows green. I remove the other `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 45
 
     def logical_conjunction(x, y):
         return x and y
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+
+    def exclusive_disjunction(x, y):
+
+* I add a `return statement` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
+    :lineno-start: 49
 
     def exclusive_disjunction(x, y):
         return (not x or not y) and (x or y)
@@ -1417,26 +1688,66 @@ I can refactor the :ref:`functions<functions>` to make them simpler since all th
   still green, I can factor out "not_" from the first part of the statement
 
   .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
 
     def exclusive_disjunction(x, y):
         return not (x and y) and (x or y)
         return (not x or not y) and (x or y)
+        return (x, y) != (True, True) and (x, y) != (False, False)
 
-  the test is still green. I remove the other statement
-
-* :ref:`converse_non_implication<test_converse_non_implication>`
+  the test is still green. I remove the other statements
 
   .. code-block:: python
+    :lineno-start: 49
+
+    def exclusive_disjunction(x, y):
+        return not (x and y) and (x or y)
+
+
+    def converse_non_implication(x, y):
+
+* I do the same thing to :ref:`converse_non_implication<test_converse_non_implication>`
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 2
+
+    def converse_non_implication(x, y):
+        return not x and y
+        return (x, y) == (False, True)
+
+  still green. I remove the other line
+
+  .. code-block:: python
+    :lineno-start: 53
 
     def converse_non_implication(x, y):
         return not x and y
 
-* :ref:`converse_implication<test_converse_implication>`
+
+    def converse_implication(x, y):
+
+* time for :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 2
 
     def converse_implication(x, y):
         return x or not y
+        return (x, y) != (False, True)
+
+  I remove the second `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 57
+
+    def converse_implication(x, y):
+        return x or not y
+
+
+    def contradiction(x, y):
 
 all the tests are still passing
 
@@ -1446,15 +1757,15 @@ review
 
 I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
 
-* there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input and are constant
+* there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input and always return the same thing, they are :ref:`constant<test_constant_function>`
 
   - :ref:`Logical False<test_logical_false>` always returns :ref:`False<test_what_is_false>`
   - :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>`
 
 * there are 2 :ref:`unary operations<Unary Operations>`, they take one input
 
-  - :ref:`Logical Identity<test_logical_identity>` returns its input
-  - :ref:`Logical Negation<test_logical_negation>` returns the negation of its input
+  - :ref:`Logical Identity<test_logical_identity>` returns its input as output
+  - :ref:`Logical Negation<test_logical_negation>` returns the negation of its input as output
 
 * there are 16 binary operations, they each take 2 inputs, in this case I named the second input ``y`` and the first one ``x``
 
@@ -1485,7 +1796,7 @@ Would you like to :ref:`test making a calculator?<lists>`
 
 ----
 
-:ref:`Click Here for the code for the Truth Table tests and solutions<how to make a calculator>`
+:ref:`Click Here for the code for the Truth Table tests and solutions<truth table: tests and solutions>`
 
 ----
 
