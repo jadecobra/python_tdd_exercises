@@ -612,7 +612,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 69
-    :emphasize-liens: 5
+    :emphasize-lines: 5
 
         def test_logical_disjunction(self):
             self.assertTrue(src.truth_table.logical_disjunction(True, True))

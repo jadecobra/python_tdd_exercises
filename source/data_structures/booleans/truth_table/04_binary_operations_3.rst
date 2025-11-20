@@ -470,7 +470,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 87
-    :emphasize-lines:
+    :emphasize-lines: 5
 
         def test_project_first(self):
             self.assertTrue(src.truth_table.project_first(True, True))

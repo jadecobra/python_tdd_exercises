@@ -1333,7 +1333,7 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`TypeError`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-Would you like to test :ref:`passing values?<how to pass values>`
+Would you like to :ref:`test functions?<functions>`
 
 ----
 
