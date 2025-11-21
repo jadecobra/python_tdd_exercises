@@ -97,7 +97,7 @@ I use the mkdir_ program_ to make a `folder/directory`_
 
   mkdir pumping_python
 
-the terminal_ shows nothing. I try `changing directory`_ again
+the terminal_ goes back to the command line. I try `changing directory`_ again
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -205,7 +205,7 @@ I can use the tree_ program_ to see what files_ and folders_ are in a directory_
 
     mkdir magic
 
-  the terminal_ shows nothing. I use tree_ again
+  the terminal_ goes back to the command line. I use tree_ again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -260,7 +260,7 @@ how to run a Python program
 
     mkdir src
 
-  the terminal_ shows nothing
+  the terminal_ goes back to the command line
 
 * I use tree_ to see what changed in the ``magic`` directory_
 
@@ -297,7 +297,7 @@ how to make an empty file
 
     touch src/magic.py
 
-  the terminal_ shows nothing
+  the terminal_ goes back to the command line
 
 * I use tree_ to see what folders_ and files_ I now have
 
@@ -325,7 +325,7 @@ how to make an empty file
 
     python3 src/magic.py
 
-  the terminal_ shows nothing. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it.
+  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it.
 
 ********************************************************************************************
 test_failure
@@ -369,7 +369,7 @@ how to run tests manually
 
     mkdir tests
 
-  the terminal_ shows nothing, I use tree_ to see what my project now looks like
+  the terminal_ goes back to the command line, I use tree_ to see what my project now looks like
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -394,7 +394,7 @@ how to run tests manually
 
     touch tests/magic.py
 
-  the terminal_ shows nothing. I use tree_ to see what the project looks like so far
+  the terminal_ goes back to the command line. I use tree_ to see what the project looks like so far
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -508,7 +508,7 @@ how to make a python package
 
     touch tests/__init__.py
 
-  the terminal_ shows nothing. I run the tree_ command to see what changed
+  the terminal_ goes back to the command line. I run the tree_ command to see what changed
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -557,7 +557,7 @@ how to rename a file
 
     mv tests/magic.py tests/test_magic.py
 
-  the terminal_ shows nothing. I use tree_ to see what I have so far
+  the terminal_ goes back to the command line. I use tree_ to see what I have so far
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -720,7 +720,7 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 
     python3 -m venv .venv
 
-  the terminal_ shows nothing
+  the terminal_ goes back to the command line
 
   - ``python3`` is the Python_ program_
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option
@@ -1084,7 +1084,7 @@ how to make a shell script
 
     touch makePythonTdd.sh
 
-  the terminal_ shows nothing. I use tree_ to see what is in the ``pumping_python`` directory_
+  the terminal_ goes back to the command line. I use tree_ to see what is in the ``pumping_python`` directory_
 
   .. code-block:: shell
 
@@ -1234,7 +1234,7 @@ how to make a shell script run as a command
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program_ that changes the mode of the given file_, the terminal_ shows nothing. I use it to make the file_ executable so the computer can run it
+  chmod_ is a program_ that changes the mode of the given file_, the terminal_ goes back to the command line. I use it to make the file_ executable so the computer can run it
 
 * I try the command again
 
