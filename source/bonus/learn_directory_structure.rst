@@ -385,7 +385,7 @@ how to work with/in directories
 
     ls
 
-  the terminal_ goes back to the command line. I use the short form of the ``--all`` option
+  the terminal_ goes back to the command line. I use the short form of the ``--all`` option with ls_
 
   .. code-block:: shell
 
@@ -418,7 +418,7 @@ how to work with/in directories
 
     mkdir child_of_child
 
-  the terminal_ goes back to the command line. I `change directory`
+  the terminal_ goes back to the command line. I `change directory`_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -431,7 +431,7 @@ how to work with/in directories
 
     .../parent/child/child_of_child $
 
-  I `change directory`_
+  I `change directory`_ again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1004,7 +1004,7 @@ how to work with/in directories
 
   the terminal_ goes back to the command line
 
-* I want to `change directory` to ``sibling_of_child``, I can use the path of a folder_ and the short forms to get to it, once I know its relation to where I am. I use cd_ with ``..``
+* I want to `change directory`_ to ``sibling_of_child``, I can use the path of a folder_ to get to it, once I know its relation to where I am. I use cd_ with ``..``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1111,7 +1111,7 @@ how to work with/in directories
 
     5 directories, 9 files
 
-* I `change directory` to ``parent``
+* I `change directory`_ to ``parent``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1180,7 +1180,7 @@ how to work with/in directories
 
     5 directories, 11 files
 
-* I can "visit" any folder_ as long as I know its path (address). I go to see ``child_of_sibling_of_child``
+* I can "visit" any folder_ as long as I know its path/address. I go to see ``child_of_sibling_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1193,7 +1193,9 @@ how to work with/in directories
 
     .../parent/sibling_of_child/child_of_sibling_of_child $
 
-* knowing where I am in relation to where I want to go, tells me how to get there. I go to see ``child_of_child``
+  knowing where I am in relation to where I want to go, helps me get there
+
+* I go to see ``child_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1247,7 +1249,7 @@ how to work with/in directories
 
     1 directory, 3 files
 
-* I can do the same thing with ls_. I `change directory`_ to ``sibling_of_child``
+* I `change directory`_ to ``sibling_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1260,7 +1262,7 @@ how to work with/in directories
 
     .../pumping_python/parent/sibling_of_child $
 
-  I list the contents of ``child_of_child``
+  I can do the same thing with ls_. I list the contents of ``child_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
