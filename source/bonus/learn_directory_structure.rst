@@ -146,7 +146,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch aka_current_working_directory
+    touch in_parent
 
   the terminal_ shows
 
@@ -179,7 +179,7 @@ how to work with/in directories
   .. code-block:: shell
 
     .
-    └── aka_current_working_directory
+    └── in_parent
 
     1 directory, 1 file
 
@@ -196,7 +196,7 @@ how to work with/in directories
 
   .. code-block:: shell
 
-    aka_current_working_directory
+    in_parent
 
   there is only one file_ in the directory_. ls_ has a few options, I try it again with one of them
 
@@ -209,7 +209,7 @@ how to work with/in directories
 
   .. code-block:: shell
 
-    .  ..  aka_current_working_directory
+    .  ..  in_parent
 
   - ``--all`` tells ls_ to show things in the directory that start with ``.``, these are hidden by default
   - ``.`` represents the current directory
@@ -269,7 +269,7 @@ how to work with/in directories
 
   .. code-block:: shell
 
-    .  ..  aka_current_working_directory  child_n_of_parent
+    .  ..  in_parent  child_n_of_parent
 
   .. NOTE:: Your terminal might use colors to show the difference between a file_ and a `folder/directory`_
 
@@ -285,7 +285,7 @@ how to work with/in directories
   .. code-block:: shell
 
     .
-    ├── aka_current_working_directory
+    ├── in_parent
     └── child_n_of_parent
 
     2 directories, 1 file
@@ -295,7 +295,7 @@ how to work with/in directories
   - ``.`` which means the directory_ I am in
   - ``child_n_of_parent``
 
-  and 1 file - ``aka_current_working_directory``
+  and 1 file - ``in_parent``
 
 * I try to go to a different directory_
 
@@ -328,7 +328,7 @@ how to work with/in directories
 
   .. code-block:: shell
 
-    .  ..  aka_current_working_directory  child_n_of_parent  sibling_n_of_child_n_of_parent
+    .  ..  in_parent  child_n_of_parent  sibling_n_of_child_n_of_parent
 
   I use tree_ to see the structure
 
@@ -342,7 +342,7 @@ how to work with/in directories
   .. code-block:: shell
 
     .
-    ├── aka_current_working_directory
+    ├── in_parent
     ├── child_n_of_parent
     └── sibling_n_of_child_n_of_parent
 
@@ -558,12 +558,12 @@ how to work with/in directories
 
     cd: no such file or directory: sibling_n_of_child_n_of_parent
 
-  I try to go to another folder_ in the ``child_n_of_parent`` directory_
+  I try to go to a folder_ in the ``child_n_of_parent`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd child_n_of_sibling_n_of_child_n_of_parent
+    cd child_n_of_child_n_of_parent
 
   the terminal shows
 
@@ -576,13 +576,13 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd non_existent_child_of_child_n_of_child_n_of_parent
+    cd this_directory_does_not_exist
 
   the terminal shows
 
   .. code-block:: shell
 
-    cd: no such file or directory: non_existent_child_of_child_n_of_child_n_of_parent
+    cd: no such file or directory: this_directory_does_not_exist
 
   I list all the files_ and folders_ where I am at the moment
 
@@ -700,7 +700,7 @@ how to work with/in directories
 
   .. code-block:: shell
 
-    .  ..  aka_current_working_directory  child_n_of_parent  sibling_n_of_child_n_of_parent
+    .  ..  in_parent  child_n_of_parent  sibling_n_of_child_n_of_parent
 
   I use tree_
 
@@ -714,7 +714,7 @@ how to work with/in directories
   .. code-block:: shell
 
     .
-    ├── aka_current_working_directory
+    ├── in_parent
     ├── child_n_of_parent
     │   └── child_n_of_child_n_of_parent
     │       ├── aka_a_cousin_of_child_n_of_sibling_n_of_child_n_of_parent
@@ -839,7 +839,228 @@ how to work with/in directories
 
     .  ..  aka_another_grandchild_of_parent  aka_child_n_of_child_n_sibling_n  in_child_n_of_child_n_of_sibling_n_of_child_n_of_parent
 
+* I try to go back to the ``parent`` directory_ I started from
 
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd parent
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    cd: no such file or directory: parent
+
+  I try to go to a directory_ in the ``parent`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd child_n_of_parent
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    cd: no such file or directory: child_n_of_parent
+
+  I try to go to another directory_ in the ``parent`` folder
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd sibling_n_of_child_n_of_parent
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    cd: no such file or directory: sibling_n_of_child_n_of_parent
+
+  I try to go to another folder_ in the ``child_n_of_parent`` directory_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd child_n_of_of_child_n_of_parent
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    cd: no such file or directory: child_n_of_sibling_n_of_child_n_of_parent
+
+  I try to go to a folder_ that does not exist
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd this_directory_does_not_exist
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    cd: no such file or directory: this_directory_does_not_exist
+
+  I list all the files_ and folders_ where I am at the moment
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls --all
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .  ..  aka_another_grandchild_of_parent  aka_child_n_of_child_n_sibling_n  in_child_n_of_child_n_of_sibling_n_of_child_n_of_parent
+
+  none of the directories_ I tried to go to are in this directory_. I use pwd_ to show where I am
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pwd
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../sibling_n_of_child_n_of_parent/child_n_of_sibling_n_of_child_n_of_parent/child_n_of_child_n_of_sibling_n_of_child_n_of_parent
+
+* I can go to the parent of the directory_ I am in
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../sibling_n_of_child_n_of_parent/child_n_of_sibling_n_of_child_n_of_parent $
+
+  I use pwd_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pwd
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../sibling_n_of_child_n_of_parent/child_n_of_sibling_n_of_child_n_of_parent
+
+  I use ls_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls --all
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .  ..  child_n_of_child_n_of_sibling_n_of_child_n_of_parent
+
+  I use tree_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    .
+    └── child_n_of_child_n_of_sibling_n_of_child_n_of_parent
+        ├── aka_another_grandchild_of_parent
+        ├── aka_child_n_of_child_n_sibling_n
+        └── in_child_n_of_child_n_of_sibling_n_of_child_n_of_parent
+
+    2 directories, 3 file
+
+* I go up another level
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../parent/sibling_n_of_child_n_of_parent $
+
+* I go up one more level
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent $
+
+  I am back at the first directory_ I made - ``parent``. I type pwd_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pwd
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent
+
+  I list the contents
+
+  .. code-block:: shell
+    :emphasize-lines:
+
+    ls --all
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .  ..  in_parent  child_n_of_parent  sibling_n_of_child_n_of_parent
+
+  I use tree_ to see the structure
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .
+    ├── aka_current_working_directory
+    ├── child_n_of_parent
+    │   └── child_n_of_child_n_of_parent
+    │       ├── aka_a_cousin_of_child_n_of_sibling_n_of_child_n_of_parent
+    │       ├── aka_a_grandchild_of_parent
+    │       ├── aka_child_n_of_child_n
+    │       └── in_child_n_of_child_n_of_parent
+    └── sibling_n_of_child_n_of_parent
+        └── child_n_of_sibling_n_of_child_n_of_parent
+            └── child_n_of_child_n_of_sibling_n_of_child_n_of_parent
+                ├── aka_another_grandchild_of_parent
+                ├── aka_child_n_of_child_n_sibling_n
+                └── in_child_n_of_child_n_of_sibling_n_of_child_n_of_parent
+
+    6 directories, 8 files
 
 * I `change directory`_ to the parent of ``parent``
 
@@ -866,7 +1087,6 @@ how to work with/in directories
   .. code-block:: shell
 
     /workspaces/pumping_python/pumping_python
-
 
 * I remove the ``parent`` directory_ and all its children and grandchildren
 
