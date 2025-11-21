@@ -797,7 +797,7 @@ refactor: make it better
         else:
             return False
 
-  the test is still green.
+  the terminal_ still shows green
 
 * I use a `conditional expression`_
 
