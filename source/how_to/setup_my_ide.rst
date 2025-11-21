@@ -88,6 +88,8 @@ Here are extensions I use in `Visual Studio Code`_
 * `Dark Rainbow Theme`_  - did I mention I like pretty colors?
 * `Remote Development`_ - This allows me to work with `Windows Subsystem Linux`_ or Linux_ on any computer
 
+I have a gift for you, since you made it this far. It will make using your computer easier and everything in :ref:`how to make a test driven development environment` easier as well. This is the underlying structure of your computer. :ref:`Check it out here<learn directory structure>`
+
 ----
 
 .. raw:: html

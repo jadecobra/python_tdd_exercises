@@ -31,7 +31,7 @@ how to install tree on linux/Windows Subsystem Linux requirements
 
   sudo apt update
 
-optionally, you can do a full upgrade if you ant
+optionally, you can do a full upgrade if you want
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -671,7 +671,7 @@ how to work with/in directories
   I list the contents
 
   .. code-block:: shell
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     ls --all
 
@@ -958,7 +958,7 @@ how to work with/in directories
   I list the contents
 
   .. code-block:: shell
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     ls --all
 
@@ -1072,7 +1072,7 @@ how to work with/in directories
 * I can make a file_ in child directories_ by using the path. I make an empty file_ in ``child``
 
   .. code-block:: shell
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     touch parent/child/aunt_or_uncle_of_another_grandchild_of_parent
 

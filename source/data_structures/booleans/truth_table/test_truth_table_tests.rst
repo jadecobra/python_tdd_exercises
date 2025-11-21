@@ -1040,7 +1040,7 @@ green: make it pass
 
     TypeError: logical_true() missing 1 required positional argument: 'x'
 
-  I remove ``x`` from the parentheses, this :ref:`function` does not take input, I change the `return statement`_
+  I remove ``x`` from the parentheses, this :ref:`function<functions>` does not take input, I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 101

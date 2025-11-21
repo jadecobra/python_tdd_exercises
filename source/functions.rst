@@ -719,7 +719,7 @@ refactor: make it better
 * ``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_, except their names, the difference is in how I call the functions_ in the tests. In the first case I use positional arguments_ which have to be given in order, and in the second case I keyword arguments_ which use the names of the variables in parentheses in the function_ definition. I add another test with the keyword arguments out of order in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 1
     :emphasize-lines: 8-13
 
         def test_functions_w_keyword_arguments(self):
