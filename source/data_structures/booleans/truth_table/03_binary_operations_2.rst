@@ -304,7 +304,7 @@ refactor: make it better
     :emphasize-lines: 2-3
 
     def logical_nand(p, q):
-        if p and not q
+        if p and not q:
             return True
         return False
 
@@ -353,6 +353,7 @@ refactor: make it better
             self.assertTrue(src.truth_table.logical_nand(True, False))
             self.assertTrue(src.truth_table.logical_nand(False, True))
             self.assertTrue(src.truth_table.logical_nand(False, False))
+
 
     # Exceptions Encountered
 
@@ -448,7 +449,7 @@ test_tautology
 red: make it fail
 #################################################################################
 
-I add a test for the next Binary Operation to ``test_truth_table.py``
+I add a test for the next Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 61
