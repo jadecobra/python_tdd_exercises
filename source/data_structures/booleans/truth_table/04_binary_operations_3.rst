@@ -54,7 +54,7 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 #################################################################################
 
-I add the :ref:`function<functions>` for it in ``truth_table.py``
+I add the :ref:`function<functions>` for ``exclusive_disjunction`` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 45
@@ -131,7 +131,7 @@ refactor: make it better
             return True
         return False
 
-  the test is green
+  the test passes
 
 * I add the last case to ``test_exclusive_disjunction`` in ``test_truth_table.py``
 
@@ -153,7 +153,7 @@ refactor: make it better
 * I can use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two `if statements`_ that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 49
     :emphasize-lines: 2-3
 
     def exclusive_disjunction(p, q):
@@ -203,7 +203,7 @@ refactor: make it better
 
   still green
 
-* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases where ``p`` and ``q`` are the same, which means I can use this `if statement`_
+* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases where ``p`` and ``q`` are the same. I add an `if statement`_ to show this
 
   .. code-block:: python
     :lineno-start: 49
@@ -313,7 +313,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-* I add an `if statement`_ for the :ref:`function<functions>` in ``truth_table.py``
+* I add an `if statement`_ to ``material_non_implication`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 55
@@ -342,16 +342,21 @@ refactor: make it better
 * I add the fourth case
 
   .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 5
 
-    def test_material_non_implication(self):
-        self.assertFalse(src.truth_table.material_non_implication(True, True))
-        self.assertTrue(src.truth_table.material_non_implication(True, False))
-        self.assertFalse(src.truth_table.material_non_implication(False, True))
-        self.assertFalse(src.truth_table.material_non_implication(False, False))
+        def test_material_non_implication(self):
+            self.assertFalse(src.truth_table.material_non_implication(True, True))
+            self.assertTrue(src.truth_table.material_non_implication(True, False))
+            self.assertFalse(src.truth_table.material_non_implication(False, True))
+            self.assertFalse(src.truth_table.material_non_implication(False, False))
+
+
+    # Exceptions Encountered
 
   the terminal_ still shows green
 
-* there is only one case where the result is :ref:`True<test_what_is_true>`, I add a `return statement`_ for it in ``truth_table.py``
+* there is only one case where ``material_non_implication`` returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 55
@@ -441,10 +446,10 @@ refactor: make it better
     :lineno-start: 87
     :emphasize-lines: 4
 
-    def test_project_first(self):
-        self.assertTrue(src.truth_table.project_first(True, True))
-        self.assertTrue(src.truth_table.project_first(True, False))
-        self.assertFalse(src.truth_table.project_first(False, True))
+        def test_project_first(self):
+            self.assertTrue(src.truth_table.project_first(True, True))
+            self.assertTrue(src.truth_table.project_first(True, False))
+            self.assertFalse(src.truth_table.project_first(False, True))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -455,7 +460,7 @@ refactor: make it better
 * I add an `if statement`_ for this case to ``project_first`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 59
     :emphasize-lines: 2-3
 
     def project_first(p, q):
@@ -477,6 +482,9 @@ refactor: make it better
             self.assertFalse(src.truth_table.project_first(False, True))
             self.assertFalse(src.truth_table.project_first(False, False))
 
+
+    # Exceptions Encountered
+
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
@@ -486,7 +494,7 @@ refactor: make it better
 * I add another `if statement`_ to ``project_first`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 59
     :emphasize-lines: 2-3
 
     def project_first(p, q):
@@ -501,7 +509,7 @@ refactor: make it better
 * I add a `return statement`_ to show that this :ref:`function<functions>` returns the same value as ``p`` in every case
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 59
     :emphasize-lines: 2
 
     def project_first(p, q):
@@ -517,7 +525,7 @@ refactor: make it better
 * I remove the other statements
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 59
 
     def project_first(p, q):
         return p
