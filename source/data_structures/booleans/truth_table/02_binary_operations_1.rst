@@ -16,7 +16,7 @@ truth table: Binary Operations part 1
 
 ----
 
-There are 16 binary operations, they all take 2 inputs and each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`. This gives four cases for each one
+There are 16 binary operations, they all take 2 inputs and each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`. This gives four cases or ways the inputs can be given to the operation
 
 * :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
 * :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`
@@ -104,7 +104,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: contradiction() takes 1 positional argument but 2 were given
 
-I rename ``argument`` to ``p`` for the first input given when the :ref:`function<functions>` is called by the test, and change the definition of the :ref:`function<functions>` to make it use ``q`` as the name of the second input
+I add ``q`` as the second name in parentheses then rename ``argument`` to ``p`` for the first input given when the :ref:`function<functions>` is called by the test
 
 .. code-block:: python
   :lineno-start: 17
@@ -150,7 +150,7 @@ refactor: make it better
 
   all three cases of the test expect :ref:`False<test_what_is_false>`
 
-* I change the `return statement`_ in the ``contradiction`` :ref:`function<functions>` in ``truth_table.py`` to match them
+* I change the `return statement`_ in the ``contradiction`` :ref:`function<functions>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -172,6 +172,9 @@ refactor: make it better
             self.assertFalse(src.truth_table.contradiction(True, False))
             self.assertFalse(src.truth_table.contradiction(False, True))
             self.assertFalse(src.truth_table.contradiction(False, False))
+
+
+    # Exceptions Encountered
 
   the test is still green! :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
@@ -195,6 +198,7 @@ I add a new test in ``test_truth_table.py``
 
         def test_logical_conjunction(self):
             self.assertTrue(src.truth_table.logical_conjunction(True, True))
+
 
   # Exceptions Encountered
 
@@ -365,7 +369,7 @@ refactor: make it better
             if q == True:
                 return True
 
-* There are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I can use an `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` and an else_ clause for the other cases
+* there are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I use an `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` and an else_ clause for the other cases
 
   .. code-block:: python
     :lineno-start: 21
@@ -417,7 +421,7 @@ refactor: make it better
         else:
             return False
 
-  the test is still green. With ``if p and q``,  Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background, I remove the commented line
+  the test is still green. With ``if p and q``,  Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background. I remove the commented line
 
 * Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
@@ -558,6 +562,7 @@ refactor: make it better
             self.assertFalse(src.truth_table.project_second(True, False))
             self.assertTrue(src.truth_table.project_second(False, True))
             self.assertFalse(src.truth_table.project_second(False, False))
+
 
     # Exceptions Encountered
 
