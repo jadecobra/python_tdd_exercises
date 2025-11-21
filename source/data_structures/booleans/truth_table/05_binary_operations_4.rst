@@ -195,8 +195,7 @@ I add a test for another Binary Operation in ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_nor'. Did you mean: 'logical_nand'?
 
@@ -341,8 +340,7 @@ I add a new test for the next Binary Operation to ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_equality'. Did you mean: 'logical_identity'?
 
@@ -575,8 +573,7 @@ I add a new test for another Binary Operation to ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 

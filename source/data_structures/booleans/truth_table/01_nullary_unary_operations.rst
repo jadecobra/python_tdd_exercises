@@ -146,10 +146,12 @@ I add another test to ``test_truth_table.py``
       def test_logical_false(self):
           self.assertFalse(src.truth_table.logical_false())
 
+
+  # Exceptions Encountered
+
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_true'?
 
@@ -206,13 +208,8 @@ red: make it fail
 I add a new TestCase_ and a test to ``test_truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 10, 12-13
-
-  class TestNullaryOperations(unittest.TestCase):
-
-      def test_logical_true(self):
-          self.assertTrue(src.truth_table.logical_true())
+  :lineno-start: 10
+  :emphasize-lines: 5, 7-8
 
       def test_logical_false(self):
           self.assertFalse(src.truth_table.logical_false())
@@ -235,7 +232,7 @@ the terminal_ shows :ref:`AttributeError`
 green: make it pass
 ---------------------------------------------------------------------------------
 
-* I add the :ref:`function<functions>` to the ``truth_table.py``
+* I add the :ref:`function<functions>` to ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -265,7 +262,7 @@ green: make it pass
     # AttributeError
     # TypeError
 
-* I add a name in the parentheses of the :ref:`function<functions>` in ``truth_table.py`` so it can take input
+* I add a name in parentheses for ``logical_identity`` to take input in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -283,6 +280,8 @@ green: make it pass
   I change the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
 
     def logical_identity(argument):
         return True
@@ -314,8 +313,8 @@ refactor: make it better
     :lineno-start: 9
     :emphasize-lines: 2
 
-      def logical_identity(argument):
-          return False
+    def logical_identity(argument):
+        return False
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -323,7 +322,7 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  there is a failure for the line that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_true>`
+  there is a failure for the test that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_true>`
 
 * I change the `return statement`_ of the :ref:`function<functions>`
 
@@ -421,6 +420,8 @@ refactor: make it better
 * I change the `return statement`_ of the ``logical_negation`` :ref:`function<functions>` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
     def logical_negation(argument):
         return True
@@ -436,6 +437,8 @@ refactor: make it better
 * I make the :ref:`function<functions>` return its input
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
     def logical_negation(argument):
         return argument
@@ -446,9 +449,11 @@ refactor: make it better
 
     AssertionError: True is not false
 
-  the expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`, I can make that happen with the "not_" keyword
+  the expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`, I can make that happen with the "not_" keyword. I add it to the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
     def logical_negation(argument):
         return not argument

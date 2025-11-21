@@ -256,8 +256,7 @@ I add a new test to ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
 
@@ -557,8 +556,7 @@ I add another test
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'. Did you mean: 'logical_conjunction'?
 

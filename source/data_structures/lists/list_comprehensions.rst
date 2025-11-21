@@ -1072,8 +1072,7 @@ I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>
 
 I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of the following
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   {a_process(key): another_process(value) for key/value in iterable if condition/NOT condition}
 

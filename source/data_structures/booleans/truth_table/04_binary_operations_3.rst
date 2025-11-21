@@ -270,8 +270,7 @@ I add another test to ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'. Did you mean: 'converse_non_implication'?
 
@@ -548,8 +547,7 @@ I add a new test to ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 

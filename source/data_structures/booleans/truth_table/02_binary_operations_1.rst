@@ -200,8 +200,7 @@ I add a new test in ``test_truth_table.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-.. code-block:: python
-  :force:
+.. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_negation'?
 
