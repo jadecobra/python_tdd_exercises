@@ -78,8 +78,10 @@
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
 .. _keyword arguments: arguments_
 .. _linux package manager: https://grokipedia.com/page/APT_(software)
+.. _ls: https://grokipedia.com/page/Ls
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
+.. _make a directory: mkdir_
 .. _make the directory: mkdir_
 .. _modulo: https://grokipedia.com/page/Modulo
 .. _mv: https://grokipedia.com/page/Mv_(Unix)
@@ -103,6 +105,7 @@
 .. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _python's online documentation: https://docs.python.org/3/search.html
 .. _python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
+.. _pwd: touch aka_current_working_directory
 .. _raises: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
 .. _raise statement: raises_
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
@@ -113,6 +116,7 @@
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _return statements: `return statement`_
 .. _reverse: more_on_lists_
+.. _rm: https://grokipedia.com/page/Rm_(Unix)
 .. _script: `computer program`_
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: set_
