@@ -33,7 +33,13 @@ class TestFunctions(unittest.TestCase):
             ('last', 'first')
         )
 
-c
+    def test_functions_w_keyword_arguments(self):
+        self.assertEqual(
+            src.functions.w_keyword_arguments(
+                first='first', last='last',
+            ),
+            ('first', 'last')
+        )
         self.assertEqual(
             src.functions.w_keyword_arguments(
                 last='last', first='first',

@@ -76,6 +76,7 @@
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
+.. _keyword arguments: arguments_
 .. _linux package manager: https://grokipedia.com/page/APT_(software)
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html

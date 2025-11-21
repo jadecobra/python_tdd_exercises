@@ -685,7 +685,7 @@ green: make it pass
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction
+    AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction'
 
 * I add a :ref:`function<functions>` for ``exclusive_disjunction``
 

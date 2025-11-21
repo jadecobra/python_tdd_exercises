@@ -595,7 +595,7 @@ refactor: make it better
 
   the terminal shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: Tuples differ: ('last', 'first') != ('first', 'last')
 
@@ -656,95 +656,144 @@ green: make it pass
 * I add a function_ definition to ``functions.py``
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5-6
 
-    def take_keyword_arguments():
+    def w_positional_arguments(first, last):
+        return first, last
+
+
+    def w_keyword_arguments():
         return None
 
   the terminal_ shows :ref:`TypeError`
 
   .. code-block:: shell
 
-    TypeError: take_keyword_arguments() got an unexpected keyword argument 'first_name'
+    TypeError: w_keyword_arguments() got an unexpected keyword argument 'first'
 
-  I add the argument_ to the defintion
+  I add the name for the argument_ in parentheses
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 1
 
-    def take_keyword_arguments(first_name):
+    def w_keyword_arguments(first):
         return None
 
   the terminal_ shows :ref:`TypeError`
 
+  .. code-block:: shell
+
+    TypeError: w_keyword_arguments() got an unexpected keyword argument 'last'
+
+  I add the name in parentheses
+
   .. code-block:: python
-    :force:
+    :lineno-start: 25
+    :emphasize-lines: 1
 
-    TypeError: take_keyword_arguments() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
-
-  I add the argument
-
-  .. code-block:: python
-
-    def take_keyword_arguments(first_name, last_name):
+    def w_keyword_arguments(first, last):
         return None
 
   the terminal_ shows :ref:`AssertionError`
 
-    AssertionError: None != ('first_name', 'last_name')
+  .. code-block:: shell
+
+    AssertionError: None != ('first', 'last')
 
   I change the `return statement`_
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
 
-    def take_keyword_arguments(first_name, last_name):
-        return ('first_name', 'last_name')
+    def w_keyword_arguments(first, last):
+        return first, last
 
   the test passes
 
 refactor: make it better
 ################################################################################
 
-* So far ``take_keyword_arguments`` looks the same as ``take_positional_arguments``, I have not yet seen a difference between a ``positional argument`` and a ``keyword argument``. I add an :ref:`assertion<AssertionError>` that puts the input data out of order to see if there is a difference
+* ``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_, except their names, the difference is in how I call the functions_ in the tests. In the first case I use positional arguments_ which have to be given in order, and in the second case I keyword arguments_ which use the names of the variables in parentheses in the function_ definition. I add another test with the keyword arguments out of order in ``test_functions.py``
 
   .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 8-13
 
-      def test_functions_w_keyword_arguments(self):
-          self.assertEqual(
-              functions.take_keyword_arguments(
-                  first_name='first_name',
-                  last_name='last_name'
-              ),
-              ('first_name', 'last_name')
-          )
-          self.assertEqual(
-              src.functions.take_keyword_arguments(
-                  last_name='last_name',
-                  first_name='first_name',
-              ),
-              ('last_name', 'first_name')
-          )
+        def test_functions_w_keyword_arguments(self):
+            self.assertEqual(
+                src.functions.w_keyword_arguments(
+                    first='first', last='last',
+                ),
+                ('first', 'last')
+            )
+            self.assertEqual(
+                src.functions.w_keyword_arguments(
+                    last='last', first='first',
+                ),
+                ('last', 'first')
+            )
 
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
-    AssertionError: Tuples differ: ('first_name', 'last_name') != ('last_name', 'first_name')
+    AssertionError: Tuples differ: ('first', 'last') != ('last', 'first')
 
   the order stayed the same. I change the expectation to make the test pass
 
   .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 6
 
-    self.assertEqual(
-        src.functions.take_keyword_arguments(
-            last_name='last_name',
-            first_name='first_name',
-        ),
-        ('first_name', 'last_name')
-    )
+            self.assertEqual(
+                src.functions.w_keyword_arguments(
+                    last='last', first='first',
+                ),
+                ('first', 'last')
+            )
 
-  the test passes. Keyword Arguments allow the input to be passed in any order
+  the test passes. `Keyword Arguments`_ allow the input to be passed in any order
+
+* I can still call the function_ without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`, I add an assertion_ to show this
+
+  .. code-block:: python
+    :lineno-start: 43
+
+          self.assertEqual(
+              src.functions.w_keyword_arguments(
+                  last='last', first='first',
+              ),
+              ('first', 'last')
+          )
+          self.assertEqual(
+              src.functions.w_keyword_arguments('last', 'first'),
+              ('first', 'last')
+          )
+
+  the terminal shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: Tuples differ: ('last', 'first') != ('first', 'last')
+
+  I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 3
+
+          self.assertEqual(
+              src.functions.w_keyword_arguments('last', 'first'),
+              ('last', 'first')
+          )
 
 
-# ADD examples with dictionary as input
+    # Exceptions Encountered
+
+  the test passes. Positional arguments_ must be given in the expected order, `Keyword Arguments`_ do not have to be given in any order
 
 ----
 
@@ -752,7 +801,69 @@ refactor: make it better
 test_functions_w_unknown_keyword_arguments
 *********************************************************************************
 
-* The function_ currently only takes in 2 keyword arguments. What if I want a function_ that can take in any number of keyword arguments? There is a starred expression for keyword arguments - ``**``. I add an :ref:`assertion<AssertionError>`
+I can also write functions_ that take both positional and keyword arguments_
+
+red: make it fail
+################################################################################
+
+I add a failing test to ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 49
+  :emphasize-lines: 6-12
+
+          self.assertEqual(
+              src.functions.w_keyword_arguments('last', 'first'),
+              ('last', 'first')
+          )
+
+      def test_functions_w_positional_and_keyword_arguments(self):
+          self.assertEqual(
+              src.functions.w_positional_and_keyword_arguments(
+                  'first', last='last',
+              ),
+              ('first', 'last')
+          )
+
+
+  # Exceptions
+
+the terminal shows :ref:`AttributeError`
+
+.. code-block:: shell
+
+  AttributeError: module 'src.functions' has no attribute 'w_positional_and_keyword_arguments'
+
+green: make it pass
+################################################################################
+
+* I add a function_ to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 5-6
+
+      def w_keyword_arguments(first, last):
+          return first, last
+
+
+      def w_positional_and_keyword_arguments():
+          return None
+
+  the terminal shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: w_positional_and_keyword_arguments() got an unexpected keyword argument 'last'
+
+
+----
+
+*********************************************************************************
+test_functions_w_unknown_keyword_arguments
+*********************************************************************************
+
+* The function_ currently only takes in 2 `keyword arguments`_. What if I want a function_ that can take in any number of `keyword arguments`_? There is a starred expression for `keyword arguments`_ - ``**``. I add an :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 

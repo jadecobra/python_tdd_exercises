@@ -1374,7 +1374,7 @@ how to use variables in a shell script
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh a_project
+    ./makePythonTdd.sh magic_again
 
   the terminal_ shows no errors but no tests ran
 
@@ -1396,7 +1396,7 @@ how to use variables in a shell script
   .. code-block:: shell
 
     .
-    ├── a_project
+    ├── magic_again
     │   ├── .pytest_cache
     │   │   ├── CACHEDIR.TAG
     │   │   ├── .gitignore
@@ -1404,11 +1404,11 @@ how to use variables in a shell script
     │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── a_project.py
+    │   │   └── magic_again.py
     │   ├── tests
     │   │   ├── __init__.py
     │   │   ├── __pycache__
-    │   │   └── test_a_project.py
+    │   │   └── test_magic_again.py
     │   └── .venv
     │       ├── bin
     │       ├── .gitignore
@@ -1460,24 +1460,24 @@ how to use variables in a shell script
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh another_project
+    ./makePythonTdd.sh more_magic
 
   the terminal_ shows
 
   .. code-block:: shell
 
     ====================================== FAILURES =======================================
-    __________________________ Testanother_project.test_failure ___________________________
+    __________________________ Testmore_magic.test_failure ___________________________
 
-    self = <tests.test_another_project.Testanother_project testMethod=test_failure>
+    self = <tests.test_more_magic.Testmore_magic testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/test_another_project.py:7: AssertionError
+    tests/test_more_magic.py:7: AssertionError
     ============================== short test summary info ================================
-    FAILED tests/test_another_project.py::Testanother_project::test_failure - AssertionError: True is not false
+    FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
 * I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder now
@@ -1492,7 +1492,7 @@ how to use variables in a shell script
   .. code-block:: shell
 
     .
-    ├── another_project
+    ├── more_magic
     │   ├── .pytest_cache
     │   │   ├── CACHEDIR.TAG
     │   │   ├── .gitignore
@@ -1500,11 +1500,11 @@ how to use variables in a shell script
     │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── another_project.py
+    │   │   └── more_magic.py
     │   ├── tests
     │   │   ├── __init__.py
     │   │   ├── __pycache__
-    │   │   └── test_another_project.py
+    │   │   └── test_more_magic.py
     │   └── .venv
     │       ├── bin
     │       ├── .gitignore
@@ -1512,7 +1512,7 @@ how to use variables in a shell script
     │       ├── lib
     │       ├── lib64 -> lib
     │       └── pyvenv.cfg
-    ├── a_project
+    ├── magic_again
     │   ├── .pytest_cache
     │   │   ├── CACHEDIR.TAG
     │   │   ├── .gitignore
@@ -1520,11 +1520,11 @@ how to use variables in a shell script
     │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── a_project.py
+    │   │   └── magic_again.py
     │   ├── tests
     │   │   ├── __init__.py
     │   │   ├── __pycache__
-    │   │   └── test_a_project.py
+    │   │   └── test_magic_again.py
     │   └── .venv
     │       ├── bin
     │       ├── .gitignore

@@ -261,7 +261,7 @@ green: make it pass
 
   .. code-block:: shell
 
-    AssertionError: 31 != '00:31
+    AssertionError: 31 != '00:31'
 
   the :ref:`function<functions>` returns the right number of minutes for the difference. I need a way to change it to hours and minutes to match the expectations of the tests. I add the `unittest.skip decorator`_ to skip it while I test the solution
 
