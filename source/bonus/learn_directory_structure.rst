@@ -152,11 +152,7 @@ how to work with/in directories
 
   - ``--all`` tells ls_ to show things in the directory that start with ``.``, these are hidden by default
 
-  .. TIP:: options like ``--all`` are the long form and usually have a short form e.g.
-
-    .. code-block:: shell
-
-      ls -a
+    .. TIP:: c
 
   - ``.`` represents the current directory
 
