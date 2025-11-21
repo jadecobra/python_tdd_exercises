@@ -150,7 +150,7 @@ refactor: make it better
 
   the test is green again
 
-* The 2 cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``p`` is :ref:`False<test_what_is_false>`, I add a new `if statement`_ with an else_ clause
+* The 2 cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``p`` is :ref:`False<test_what_is_false>`. I add a new `if statement`_ with an else_ clause
 
   .. code-block:: python
     :lineno-start: 33
