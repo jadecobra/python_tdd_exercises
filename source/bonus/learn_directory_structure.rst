@@ -1300,7 +1300,7 @@ how to work with/in directories
 
   .. code-block:: shell
 
-    /workspaces/pumping_python/pumping_python
+    .../pumping_python
 
 * I remove the ``parent`` directory_ and all its children and grandchildren
 
