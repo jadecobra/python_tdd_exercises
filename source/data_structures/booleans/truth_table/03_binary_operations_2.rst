@@ -667,7 +667,7 @@ refactor: make it better
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     SyntaxError: invalid syntax
 

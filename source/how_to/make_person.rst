@@ -1169,7 +1169,7 @@ green: make it pass
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     SyntaxError: parameter without a default follows parameter with a default
 
@@ -1200,7 +1200,7 @@ green: make it pass
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     SyntaxError: parameter without a default follows parameter with a default
 
@@ -2026,7 +2026,7 @@ green: make it pass
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     SyntaxError: parameter without a default follows parameter with a default
 
@@ -2044,7 +2044,7 @@ green: make it pass
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     SyntaxError: parameter without a default follows parameter with a default
 

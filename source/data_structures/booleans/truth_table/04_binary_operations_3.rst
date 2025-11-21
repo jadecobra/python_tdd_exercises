@@ -565,7 +565,7 @@ green: make it pass
 I add a :ref:`function<functions>` definition for ``converse_implication`` in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 61
+  :lineno-start: 59
   :emphasize-lines: 5-6
 
   def project_first(p, q):
@@ -612,7 +612,7 @@ refactor: make it better
 * I add an `if statement`_ to ``converse_implication`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 63
     :emphasize-lines: 2-3
 
     def converse_implication(p, q):
@@ -634,12 +634,15 @@ refactor: make it better
             self.assertFalse(src.truth_table.converse_implication(False, True))
             self.assertTrue(src.truth_table.converse_implication(False, False))
 
+
+    # Exceptions Encountered
+
   the terminal_ still shows green
 
 * I add a `return statement`_ to replace the `if statement_` in ``converse_implication`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 63
     :emphasize-lines: 2
 
     def converse_implication(p, q):
@@ -653,7 +656,7 @@ refactor: make it better
 * I "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 63
     :emphasize-lines: 2
 
     def converse_implication(p, q):
@@ -662,14 +665,14 @@ refactor: make it better
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     SyntaxError: invalid syntax
 
   I change "not_ and_" to "or_" to be correct
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 63
     :emphasize-lines: 2
 
     def converse_implication(p, q):
@@ -681,7 +684,7 @@ refactor: make it better
 * I remove "not_ not_" since it cancels out, the negation of a negation is the original thing
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 63
     :emphasize-lines: 2
 
     def converse_implication(p, q):
@@ -693,7 +696,7 @@ refactor: make it better
 * I remove the other statements
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 63
 
     def converse_implication(p, q):
         return p or not q

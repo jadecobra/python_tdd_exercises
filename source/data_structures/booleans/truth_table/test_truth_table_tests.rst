@@ -1557,7 +1557,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     SyntaxError: invalid syntax
 

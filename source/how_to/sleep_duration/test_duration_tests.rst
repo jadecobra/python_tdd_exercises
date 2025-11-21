@@ -305,7 +305,7 @@ green: make it pass
 
   or this message
 
-  .. code-block:: python
+  .. code-block:: shell
 
     SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
 
