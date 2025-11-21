@@ -56,7 +56,7 @@ green: make it pass
 I add a :ref:`function<functions>` definition for it to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 65
+  :lineno-start: 63
   :emphasize-lines: 5-6
 
   def converse_implication(p, q):
@@ -90,7 +90,7 @@ refactor: make it better
 * I add an `if statement`_ to ``negate_second`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 67
     :emphasize-lines: 2-3
 
     def negate_second(p, q):
@@ -134,7 +134,7 @@ refactor: make it better
 * I add an `if statement`_ for the case to ``negate_second`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 67
     :emphasize-lines: 2-3
 
     def negate_second(p, q):
@@ -144,12 +144,12 @@ refactor: make it better
             return True
         return False
 
-  the test is green again
+  the test passes
 
 * the ``negate_second`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases where ``q`` is :ref:`False<test_what_is_false>`, I add a `return statement`_ to show this
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 67
     :emphasize-lines: 2
 
     def negate_second(p, q):
@@ -165,7 +165,7 @@ refactor: make it better
 * I remove the other statements
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 67
 
     def negate_second(p, q):
         return not q
@@ -205,7 +205,7 @@ green: make it pass
 I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 69
+  :lineno-start: 67
   :emphasize-lines: 5-6
 
   def negate_second(p, q):
@@ -266,10 +266,10 @@ refactor: make it better
 
     AssertionError: False is not true
 
-  this is the only case that returns :ref:`True<test_what_is_true>`. I add a `return statement`_ for it
+  this is the only case that returns :ref:`True<test_what_is_true>`. I add a `return statement`_ for it in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 71
     :emphasize-lines: 2
 
         def logical_nor(p, q):
@@ -281,7 +281,7 @@ refactor: make it better
 * I factor out "not_" since it happens 2 times
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 71
     :emphasize-lines: 2
 
     def logical_nor(p, q):
@@ -297,7 +297,7 @@ refactor: make it better
 * I comment out the line then add the correct statement
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 71
     :emphasize-lines: 2-3
 
     def logical_nor(p, q):
@@ -310,7 +310,7 @@ refactor: make it better
 * I remove the other statements
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 71
 
     def logical_nor(p, q):
         return not (p or q)
@@ -324,7 +324,7 @@ test_logical_equality
 red: make it fail
 #################################################################################
 
-I add a new test for the next Binary Operation to ``test_truth_table.py``
+I add a new test for the next Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 109
@@ -350,7 +350,7 @@ green: make it pass
 I add a :ref:`function<functions>` definition for it in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 73
+  :lineno-start: 71
   :emphasize-lines: 5-6
 
   def logical_nor(p, q):
@@ -384,7 +384,7 @@ refactor: make it better
 * I add an `if statement`_ to ``logical_equality`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
     :emphasize-lines: 2-3
 
     def logical_equality(p, q):
@@ -414,7 +414,7 @@ refactor: make it better
 * I add another `if statement`_ to ``logical_equality`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
     :emphasize-lines: 2-3
 
     def logical_equality(p, q):
@@ -443,10 +443,10 @@ refactor: make it better
 
   the test is still green
 
-* I use "or_" to put the 2 statements that return :ref:`False<test_what_is_false>` together, since they are at the same level
+* I use "or_" to put the 2 statements that return :ref:`False<test_what_is_false>` together, since they are at the same level in ``logical_equality`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
     :emphasize-lines: 2-3
 
     def logical_equality(p, q):
@@ -463,7 +463,7 @@ refactor: make it better
 * I remove the other `if statements`_
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
 
     def logical_equality(p, q):
         if (not p and q) or (p and not q):
@@ -475,7 +475,7 @@ refactor: make it better
 * I write a new `return statement`_ with not_ to replace the `if statement`_
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
     :emphasize-lines: 2
 
     def logical_equality(p, q):
@@ -489,12 +489,12 @@ refactor: make it better
 * I "multiply not_" by every symbol in the parentheses
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
     :emphasize-lines: 2
 
     def logical_equality(p, q):
         return (not not p not and not q) not or (not p not and not not q)
-        return not ((not p and q) or (p and not q):)
+        return not ((not p and q) or (p and not q))
 
   the terminal_ shows SyntaxError_
 
@@ -505,7 +505,7 @@ refactor: make it better
   I change "not_ and_" to "or_" in both parentheses and "not_ or_" to "and_" in between them
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
     :emphasize-lines: 2
 
     def logical_equality(p, q):
@@ -517,7 +517,7 @@ refactor: make it better
 * I remove "not_ not_" from both parentheses
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
     :emphasize-lines: 2
 
     def logical_equality(p, q):
@@ -529,7 +529,7 @@ refactor: make it better
 * I remove the second `return statement`_
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
 
     def logical_equality(p, q):
         return (p or not q) and (not p or q)
@@ -539,7 +539,7 @@ refactor: make it better
 * The 2 cases that return :ref:`True<test_what_is_true>` are when ``p`` and ``q`` are the same, which means I can write an even simpler `return statement`_
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 75
     :emphasize-lines: 2
 
     def logical_equality(p, q):
@@ -557,7 +557,7 @@ test_material_implication
 red: make it fail
 #################################################################################
 
-I add a new test for another Binary Operation to ``test_truth_table.py``
+I add a new test for another Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 115
@@ -583,7 +583,7 @@ green: make it pass
 I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 77
+  :lineno-start: 75
   :emphasize-lines: 6-7
 
   def logical_equality(p, q):
@@ -615,10 +615,10 @@ refactor: make it better
 
     AssertionError: True is not false
 
-* I add an `if statement`_ for the case in ``truth_table.py``
+* I add an `if statement`_ to ``material_implication`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 80
     :emphasize-lines: 2-3
 
     def material_implication(p, q):
@@ -626,7 +626,7 @@ refactor: make it better
             return False
         return True
 
-  the terminal_ shows green
+  the test passes
 
 * I add the next case to ``test_material_implication`` in ``test_truth_table.py``
 
@@ -660,7 +660,7 @@ refactor: make it better
 * there is only one case where ``material_implication`` returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 80
     :emphasize-lines: 2
 
     def material_implication(p, q):
@@ -674,7 +674,7 @@ refactor: make it better
 * I "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 80
     :emphasize-lines: 2
 
     def material_implication(p, q):
@@ -690,7 +690,7 @@ refactor: make it better
 * I change "not_ and_" to "or_"
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 80
     :emphasize-lines: 2
 
     def material_implication(p, q):
@@ -702,7 +702,7 @@ refactor: make it better
 * I remove "not_ not_"
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 80
     :emphasize-lines: 2
 
     def material_implication(p, q):
@@ -714,7 +714,7 @@ refactor: make it better
 * I remove the other statement
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 80
 
     def material_implication(p, q):
         return not p or q
