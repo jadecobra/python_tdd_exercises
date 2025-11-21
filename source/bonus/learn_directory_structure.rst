@@ -1340,7 +1340,7 @@ I ran the following commands to practice `folder/directory`_ structure
 * cd_
 * ls_
 * tree_
-* touch
+* touch_
 * rm_
 
 ----
