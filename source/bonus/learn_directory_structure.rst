@@ -235,7 +235,7 @@ how to work with/in directories
 
     .../pumping_python/parent $
 
-* I use ls_ to see what is in the folder
+* I use ls_ to see what is in the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -394,12 +394,14 @@ how to work with/in directories
   I list the contents of the folder_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     ls
 
   the terminal_ goes back to the command line. I use ls_ with the short form of the ``--all`` option
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     ls -a
 
@@ -412,6 +414,7 @@ how to work with/in directories
   I use tree_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree
 
@@ -606,7 +609,7 @@ how to work with/in directories
 
     /workspaces/…/pumping_python/parent/child $
 
-  I use pwd_
+  I use pwd_ to see where I am at the moment
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -619,7 +622,7 @@ how to work with/in directories
 
     .../parent/child
 
-  I use ls_
+  I use ls_ to list the contents of the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -693,7 +696,7 @@ how to work with/in directories
 
   I am back at the first directory_ I made - ``parent``
 
-  .. NOTE:: Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent, I can continue that for each parent, for example ``../../../..`` would be the great great grand parent of a folder_
+  .. NOTE:: Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent. I can use as many ``..`` I need for each parent, for example ``../../../..`` would be the great great grand parent
 
 * I type pwd_
 
@@ -708,7 +711,7 @@ how to work with/in directories
 
     .../pumping_python/parent $
 
-  I list the contents
+  I list the contents of the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -931,7 +934,7 @@ how to work with/in directories
 
     .../parent/sibling_of_child $
 
-  I use pwd_
+  I use pwd_ to show where I am at the moment
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -944,7 +947,7 @@ how to work with/in directories
 
     .../parent/sibling_of_child $
 
-  I use ls_
+  I use ls_ to show the files_ and folders_ in this directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
