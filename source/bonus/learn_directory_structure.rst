@@ -1180,7 +1180,59 @@ how to work with/in directories
 
     5 directories, 11 files
 
-* I can "visit" any folder_ as long as I know its path/address. I go to see ``child_of_sibling_of_child``
+* I can "visit" any folder_ as long as I know its path/address. I want to go to see ``child_of_sibling_of_child``. I start with the ``parent`` directory_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd parent
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent $
+
+  then I `change directory`_ to the child
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/sibling_of_child $
+
+  I `change directory`_ one more time
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd child_of_sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/sibling_of_child/child_of_sibling_of_child $
+
+  I have to go through a parent to get to its child. I go back to the parent of ``parent``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ../../..
+
+  the terminal_ shows
+
+  .. code-block::
+
+    .../pumping_python $
+
+  I can go to ``child_of_sibling_of_child`` with one command instead of 3 and still go through the parent
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1195,7 +1247,71 @@ how to work with/in directories
 
   knowing where I am in relation to where I want to go, helps me get there
 
-* I go to see ``child_of_child``
+* I want to go see ``child_of_child``, first I go to its parent
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../parent/sibling_of_child $
+
+  I go to ``parent``
+
+  .. code-block:: shell
+    :emphasize-lines:
+
+    cd ..
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent $
+
+  I go to ``child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd child
+
+  the terminal shows
+
+  .. code-block:: shell
+
+    .../parent/child $
+
+  I go to ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd child_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/child/child_of_child $
+
+  I go back to the parent of ``parent``, the great grandparent of ``child_of_child``
+
+  .. code-block:: shell
+
+    cd ../../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python $
+
+  I can go to ``child_of_child`` with one command instead of 3 and still go through the parent
 
   .. code-block:: shell
     :emphasize-lines: 1
