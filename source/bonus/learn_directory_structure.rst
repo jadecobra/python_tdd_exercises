@@ -67,6 +67,12 @@ then use brew_ to install tree_
 how to work with/in directories
 #################################################################################
 
+.. ATTENTION:: On Windows_ without `Windows SubSystem Linux`_ use the following substitions
+
+  * `New-Item`_ instead of touch_
+  * ``tree /F`` instead of `tree`
+  * ``ls -Force`` instead of ``ls --all/-a``
+
 * I want to work in a directory named ``parent``
 
   .. code-block:: shell
@@ -144,21 +150,26 @@ how to work with/in directories
 
     ls --all
 
-  the terminal_ shows
+  .. ATTENTION:: On MacOS_ the terminal might show the error below
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    .  ..
+      ls: unrecognized option '--all'
 
-  - ``--all`` tells ls_ to show things in the directory that start with ``.``, these are hidden by default
-
-    .. TIP:: options like ``--all`` are the long form, and there is usually a short form, for example
+    ``--all`` are the long form, and there is usually a short form, you can use the short form instead
 
     .. code-block:: shell
       :emphasize-lines: 1
 
       ls -a
 
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .  ..
+
+  - ``--all/-a`` tells ls_ to show things in the directory that start with ``.``, these are hidden by default
   - ``.`` represents the current directory
 
 * I try to `change directory`_ to the ``.``
@@ -240,7 +251,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -291,7 +302,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -351,7 +362,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -575,7 +586,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -627,7 +638,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -716,7 +727,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -758,12 +769,12 @@ how to work with/in directories
 
     .../parent/sibling_of_child $
 
-  I list the contents
+  I list the contents of the directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -818,7 +829,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -952,7 +963,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -1033,7 +1044,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all
+    ls -a
 
   the terminal_ shows
 
@@ -1528,7 +1539,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all ../../child/child_of_child
+    ls -a ../../child/child_of_child
 
   the terminal_ shows
 
@@ -1542,7 +1553,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all ../../child
+    ls -a ../../child
 
   the terminal_ shows
 
@@ -1569,7 +1580,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all ../../sibling_of_child/child_of_sibling_of_child
+    ls -a ../../sibling_of_child/child_of_sibling_of_child
 
   the terminal_ shows
 
@@ -1583,7 +1594,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all ../../sibling_of_child
+    ls -a ../../sibling_of_child
 
   the terminal_ shows
 
