@@ -152,7 +152,12 @@ how to work with/in directories
 
   - ``--all`` tells ls_ to show things in the directory that start with ``.``, these are hidden by default
 
-    .. TIP:: c
+    .. TIP:: options like ``--all`` are the long form, and there is usually a short form, for example
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      ls -a
 
   - ``.`` represents the current directory
 
@@ -169,7 +174,8 @@ how to work with/in directories
 
     .../pumping_python/parent $
 
-  I am still in the same folder_. ``.`` is used for the directory_ I am in, which is ``parent`` in this case
+  - I am still in the same folder_
+  - ``.`` is used for the directory_ I am in, which is ``parent`` in this case
 
 * I try cd_ with ``..`` to see what happens
 
@@ -183,13 +189,17 @@ how to work with/in directories
 
     .../pumping_python $
 
-  I am in the parent of ``parent``. ``..`` is used for the parent of the directory_ I am in. I go back to ``parent``
+  - I am in the parent of ``parent``
+  - ``..`` is used for the parent of the directory_ I am in
+
+  I go back to ``parent``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     cd parent
 
-  the terminal_ shows
+  the terminal_ goes back to the command line
 
   .. code-block:: shell
 
@@ -301,6 +311,7 @@ how to work with/in directories
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 3
 
     .
     ├── a_file_in_parent
@@ -310,7 +321,7 @@ how to work with/in directories
 
   there are 2 directories_
 
-  - ``.`` which means the directory_ I am in
+  - ``.`` for the directory_ I am in
   - ``child``
 
   and 1 file - ``a_file_in_parent``
@@ -358,6 +369,7 @@ how to work with/in directories
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 4
 
     .
     ├── a_file_in_parent
@@ -385,7 +397,7 @@ how to work with/in directories
 
     ls
 
-  the terminal_ goes back to the command line. I use the short form of the ``--all`` option with ls_
+  the terminal_ goes back to the command line. I use ls_ with the short form of the ``--all`` option
 
   .. code-block:: shell
 
@@ -651,7 +663,39 @@ how to work with/in directories
 
     .../pumping_python/parent $
 
-  I am back at the first directory_ I made - ``parent``. I type pwd_
+  I am back at the first directory_ I made - ``parent``
+
+* I can go to ``child_of_child`` in one step instead of 2
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd child/child_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/child/child_of_child $
+
+  I can also go to ``parent`` from ``child_of_child`` in one step instead of 2
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent $
+
+  I am back at the first directory_ I made - ``parent``
+
+  .. NOTE:: Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent, I can continue that for each parent, for example ``../../../..`` would be the great great grand parent of a folder_
+
+* I type pwd_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -662,7 +706,7 @@ how to work with/in directories
 
   .. code-block:: shell
 
-    .../pumping_python/parent
+    .../pumping_python/parent $
 
   I list the contents
 
@@ -938,7 +982,37 @@ how to work with/in directories
 
     .../pumping_python/parent $
 
-  I am back at the first directory_ I made - ``parent``. I type pwd_
+  I am back at the first directory_ I made - ``parent``
+
+* I can go to ``child_of_sibling_of_child`` in one step instead of 2
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd sibling_of_child/child_of_sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/sibling_of_child/child_of_sibling_of_child $
+
+  I can also go to ``parent`` from ``child_of_sibling_of_child`` in one step instead of 2
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent $
+
+  I am back at the first directory_ I made - ``parent``
+
+* I type pwd_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -974,6 +1048,7 @@ how to work with/in directories
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 4-6, 8-10
 
     .
     ├── a_file_in_parent
@@ -987,6 +1062,47 @@ how to work with/in directories
             └── another_grandchild_of_parent
 
     5 directories, 5 files
+
+* I make an empty file
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch aka_grandparent_of_child_of_child
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch aka_grandparent_of_child_of_sibling_of_child
+
+  the terminal_ goes back to the command line. I use tree_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 3-4
+
+    .
+    ├── a_file_in_parent
+    ├── aka_grandparent_of_child_of_child
+    ├── aka_grandparent_of_sibling_of_child
+    ├── child
+    │   └── child_of_child
+    │       ├── a_file_in_child_of_child
+    │       └── a_grandchild_of_parent
+    └── sibling_of_child
+        └── child_of_sibling_of_child
+            ├── a_file_in_child_of_sibling_of_child
+            └── another_grandchild_of_parent
+
+    5 directories, 7 files
 
 * I `change directory`_ to a child of ``parent``
 
@@ -1026,7 +1142,7 @@ how to work with/in directories
 
   the terminal_ goes back to the command line
 
-* I `change directory`_  to the parent of ``parent``
+* I `change directory`_  to the parent of ``parent`` in one step
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1049,9 +1165,12 @@ how to work with/in directories
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 6, 11
 
     parent
     ├── a_file_in_parent
+    ├── aka_grandparent_of_child_of_child
+    ├── aka_grandparent_of_sibling_of_child
     ├── child
     │   ├── a_file_in_child
     │   └── child_of_child
@@ -1063,9 +1182,9 @@ how to work with/in directories
             ├── a_file_in_child_of_sibling_of_child
             └── another_grandchild_of_parent
 
-    5 directories, 7 files
+    5 directories, 9 files
 
-* I can make a file_ in child directories_ by using the path. I make an empty file_ in ``child``
+* I can make a file_ in children directories_ by using the path. I make an empty file_ in ``child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1093,9 +1212,12 @@ how to work with/in directories
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 7, 13
 
     parent
     ├── a_file_in_parent
+    ├── aka_grandparent_of_child_of_child
+    ├── aka_grandparent_of_sibling_of_child
     ├── child
     │   ├── a_file_in_child
     │   ├── aunt_or_uncle_of_another_grandchild_of_parent
@@ -1109,48 +1231,26 @@ how to work with/in directories
             ├── a_file_in_child_of_sibling_of_child
             └── another_grandchild_of_parent
 
-    5 directories, 9 files
+    5 directories, 11 files
 
-* I `change directory`_ to ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd parent
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent $
-
-  I make an empty file in ``child_of_child``
+* I make an empty file in ``child_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch child/child_of_child/cousin_of_another_grandchild_of_parent
+    touch parent/child/child_of_child/cousin_of_another_grandchild_of_parent
 
-  the terminal_ goes back to the command line. I make an empty file_ in ``child_of_sibling_of_child``
+  the terminal_ goes back to the command line
 
-  .. code-block:: shell
-
-    touch sibling_of_child/child_of_sibling_of_child/cousin_of_a_grandchild_of_parent
-
-  I `change directory`_ to the parent of ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
+* I make an empty file_ in ``child_of_sibling_of_child``
 
   .. code-block:: shell
 
-    .../pumping_python $
+    touch parent/sibling_of_child/child_of_sibling_of_child/cousin_of_a_grandchild_of_parent
 
-  I show the directory_ structure of ``parent``
+  the terminal_ goes back to the command line
+
+* I show the directory_ structure of ``parent``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1160,9 +1260,12 @@ how to work with/in directories
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 11, 18
 
     parent
     ├── a_file_in_parent
+    ├── aka_grandparent_of_child_of_child
+    ├── aka_grandparent_of_sibling_of_child
     ├── child
     │   ├── a_file_in_child
     │   ├── aunt_or_uncle_of_another_grandchild_of_parent
@@ -1178,9 +1281,9 @@ how to work with/in directories
             ├── another_grandchild_of_parent
             └── cousin_of_a_grandchild_of_parent
 
-    5 directories, 11 files
+    5 directories, 13 files
 
-* I can "visit" any folder_ as long as I know its path/address. I want to go to see ``child_of_sibling_of_child``. I start with the ``parent`` directory_
+* I can "visit" any folder_ as long as I know its path/address and how it is "related" to where I am. I want to go to see ``child_of_sibling_of_child``. I start with the ``parent`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1193,7 +1296,7 @@ how to work with/in directories
 
     .../pumping_python/parent $
 
-  then I `change directory`_ to the child
+  then I `change directory`_ to the child directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1219,7 +1322,7 @@ how to work with/in directories
 
     .../parent/sibling_of_child/child_of_sibling_of_child $
 
-  I have to go through a parent to get to its child. I go back to the parent of ``parent``
+  I cannot get to a child without its parent. I go back to the parent of ``parent``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1254,7 +1357,7 @@ how to work with/in directories
 
     cd ..
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1267,7 +1370,7 @@ how to work with/in directories
 
     cd ..
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1280,7 +1383,7 @@ how to work with/in directories
 
     cd child
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1316,7 +1419,7 @@ how to work with/in directories
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd ../../child/child_of_child
+    cd parent/child/child_of_child
 
   the terminal_ shows
 
@@ -1324,9 +1427,9 @@ how to work with/in directories
 
     .../parent/child/child_of_child $
 
-  both ``child_of_child`` and ``child_of_sibling_of_child`` have the same grandparent, since ``..`` is for the parent ``../..`` is for the grandparent
+  .. NOTE:: ``child_of_child`` and ``child_of_sibling_of_child`` have the same grandparent, since ``..`` is for the parent ``../..`` is for the grandparent
 
-* I can do the same thing with tree_. I want to see the structure of ``sibling_of_child``
+* I can do the same thing with tree_. I want to see the structure of ``sibling_of_child`` from inside ``child_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1365,12 +1468,12 @@ how to work with/in directories
 
     1 directory, 3 files
 
-* I `change directory`_ to ``sibling_of_child``
+* I `change directory`_ to ``child_of_sibling_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd ../../sibling_of_child
+    cd ../../sibling_of_child/child_of_sibling_of_child
 
   the terminal_ shows
 
@@ -1378,12 +1481,51 @@ how to work with/in directories
 
     .../pumping_python/parent/sibling_of_child $
 
-  I can do the same thing with ls_. I list the contents of ``child_of_child``
+  I want to see the structure of ``child`` from inside ``sibling_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls --all ../child/child_of_child
+    tree ../../child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    ../../child
+    ├── a_file_in_child
+    ├── aunt_or_uncle_of_another_grandchild_of_parent
+    └── child_of_child
+        ├── a_file_in_child_of_child
+        ├── a_grandchild_of_parent
+        └── cousin_of_another_grandchild_of_parent
+
+    2 directories, 5 f
+
+  I try the same thing with ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree ../../child/child_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    ../../child/child_of_child
+    ├── a_file_in_child_of_child
+    ├── a_grandchild_of_parent
+    └── cousin_of_another_grandchild_of_parent
+
+    1 directory, 3 files
+
+* I can do the same thing with ls_. I list the contents of ``child_of_child`` from inside ``child_of_sibling_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls --all ../../child/child_of_child
 
   the terminal_ shows
 
@@ -1392,12 +1534,99 @@ how to work with/in directories
     .   a_file_in_child_of_child  cousin_of_another_grandchild_of_parent
     ..  a_grandchild_of_parent
 
+  I list the contents of ``child`` from inside ``child_of_sibling_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls --all ../../child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .   a_file_in_child                                child_of_child
+    ..  aunt_or_uncle_of_another_grandchild_of_parent
+
+  I `change directory` to ``child_of_child`` from ``child_of_sibling_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ../../child/child_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/child/child_of_child $
+
+  I list the contents of ``child_of_sibling_of_child`` from inside ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls --all ../../sibling_of_child/child_of_sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .   a_file_in_child_of_sibling_of_child  cousin_of_a_grandchild_of_parent
+    ..  another_grandchild_of_pare
+
+  I list the contents of ``sibling_of_child`` from inside ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls --all ../../sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .   a_file_in_sibling_of_child               child_of_sibling_of_child
+    ..  aunt_or_uncle_of_a_grandchild_of_parent
+
+* I look at the structure of ``parent`` again, this time from inside ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree ../../../parent
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    ../../../parent
+    ├── a_file_in_parent
+    ├── aka_grandparent_of_child_of_child
+    ├── aka_grandparent_of_sibling_of_child
+    ├── child
+    │   ├── a_file_in_child
+    │   ├── aunt_or_uncle_of_another_grandchild_of_parent
+    │   └── child_of_child
+    │       ├── a_file_in_child_of_child
+    │       ├── a_grandchild_of_parent
+    │       └── cousin_of_another_grandchild_of_parent
+    └── sibling_of_child
+        ├── a_file_in_sibling_of_child
+        ├── aunt_or_uncle_of_a_grandchild_of_parent
+        └── child_of_sibling_of_child
+            ├── a_file_in_child_of_sibling_of_child
+            ├── another_grandchild_of_parent
+            └── cousin_of_a_grandchild_of_parent
+
+    5 directories, 13 files
+
 * I `change directory`_ to the parent of ``parent``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd ../..
+    cd ../../..
 
   the terminal_ shows
 
@@ -1418,7 +1647,7 @@ how to work with/in directories
 
     .../pumping_python
 
-* I remove the ``parent`` directory_ and all its children and grandchildren
+* I remove the ``parent`` directory_ and all its descendants
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1428,8 +1657,8 @@ how to work with/in directories
   the terminal_ goes back to the command line
 
   - rm_ is used to remove files_ and folders_
-  - ``-r`` means remove directories_ and what is in them recursively, it goes through each child directory_ and removes everything
-  - ``-f`` means "force", do not ask any questions, just remove the file_ or folder_
+  - ``-r`` means remove child directories_ and what is in them recursively, it goes through each child directory_ and removes everything include its children
+  - ``-f`` means "force", do not me any questions, just remove the file_ or folder_
 
 * I try to go to the ``parent`` directory_
 
