@@ -70,7 +70,7 @@ how to work with/in directories
 .. ATTENTION:: On Windows_ without `Windows SubSystem Linux`_ use the following substitions
 
   * `New-Item`_ instead of touch_
-  * ``tree /F`` instead of `tree`
+  * ``tree /F`` instead of tree_
   * ``ls -Force`` instead of ``ls --all/-a``
 
 * I want to work in a directory named ``parent``
@@ -130,7 +130,7 @@ how to work with/in directories
 
   pwd_ shows the path/address to the current folder_ I am in at the moment
 
-* I can use ls_ to list what is in the directory_ and see information about the files in it
+* I can use ls_ to show what is in the directory_ and see information about the files in it
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -162,6 +162,12 @@ how to work with/in directories
       :emphasize-lines: 1
 
       ls -a
+
+    .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
+
+      .. code-block:: python
+
+        ls -Force
 
   the terminal_ shows
 
@@ -223,6 +229,13 @@ how to work with/in directories
 
     tree
 
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree /F
+
   the terminal_ shows
 
   .. code-block:: shell
@@ -239,6 +252,13 @@ how to work with/in directories
     :emphasize-lines: 1
 
     touch a_file_in_parent
+
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      New-Item a_file_in_parent
 
   the terminal_ shows
 
@@ -1176,6 +1196,13 @@ how to work with/in directories
 
     tree parent
 
+  .. admonition:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      tree /F parent
+
   the terminal_ shows
 
   .. code-block:: shell
@@ -1380,7 +1407,7 @@ how to work with/in directories
   I go to ``parent``
 
   .. code-block:: shell
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     cd ..
 
