@@ -110,23 +110,6 @@ the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
 
   .../pumping_python $
 
-- a `folder/directory`_ is a container for files_. It helps to organize things, just like a folder in a file cabinet is used to organize files that belong together. I keep every project I work on in its own `folder/directory`_ which makes them easy to find later. For example all the code from this book will be kept in ``pumping_python``
-- a `file`_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an  extension to show the type of file_ for example
-
-  - ``.txt`` for a `plain text`_ file_
-  - ``.sh`` for a bash_ file_
-  - ``.ps1`` for a PowerShell_ file_
-  -  ``.py`` for a :ref:`Python module<ModuleNotFoundError>`
-
-.. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    code .
-
-  a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
-
 how to look at directory structure
 #################################################################################################
 
