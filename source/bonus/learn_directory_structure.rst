@@ -29,10 +29,10 @@ I keep every project I work on in its own `folder/directory`_. All the code from
 
 A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an extension (optionally) to show the type of file_. For example
 
-* `.txt` for a `plain text`_ file_
-* `.sh` for a bash_ file_
-* `.ps1` for a PowerShell_ file_
-* `.py` for a :ref:`Python module<ModuleNotFoundError>`
+* ``.txt`` for a `plain text`_ file_
+* ``.sh`` for a bash_ file_
+* ``.ps1`` for a PowerShell_ file_
+* ``.py`` for a :ref:`Python module<ModuleNotFoundError>`
 
 .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
 
@@ -82,28 +82,29 @@ then use brew_ to install tree_
 
   brew install tree
 
-----
+how to install tree on Windows without Windows Subsystem Linux
+#################################################################################
 
-.. ADMONITION:: On Windows_ without `Windows SubSystem Linux`_ use the following substitions
+tree_ comes with Windows_ you do not have to do anything, but here are the things you would type in place of what I have in the chapter
 
   * `New-Item`_ instead of touch_
   * ``tree /F`` instead of tree_
   * ``ls -Force`` instead of ``ls --all/-a``
 
-  The path shown when you call pwd_ or tree_ will show ``\`` instead of ``/`` for example
+The path shown when you call pwd_ or tree_ will show ``\`` instead of ``/`` for example
 
-  .. code-block:: PowerShell
+.. code-block:: PowerShell
 
-    ...\pumping_python
+  ...\pumping_python
 
-  instead of
+instead of
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    .../pumping_python
+  .../pumping_python
 
 ********************************************************************************************
-how to work with/in directories
+how to work in directories
 ********************************************************************************************
 
 how to see the current directory
@@ -377,6 +378,13 @@ how to look at directory structure
 
     ls -a
 
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      ls -Force
+
   the terminal_ shows
 
   .. code-block:: shell
@@ -398,7 +406,7 @@ how to look at directory structure
     .
     └── child
 
-    2 directories
+    2 directories, 0 files
 
 * I try to go to a different directory_
 
@@ -523,7 +531,9 @@ how to look at directory structure
 
     mkdir child_of_child
 
-  the terminal_ goes back to the command line. I try to go to ``child_of_child`` again
+  the terminal_ goes back to the command line
+
+* I try to go to ``child_of_child`` again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -614,7 +624,7 @@ how to look at directory structure
 
     0 directories, 0 files
 
-* I `change directory`_ to a child
+* I `change directory`_ to a child of this folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -634,7 +644,9 @@ how to look at directory structure
 
     mkdir child_of_sibling_of_child
 
-  the terminal_ goes back to the command line. I try to go to ``child_of_sibling_of_child`` again
+  the terminal_ goes back to the command line
+
+* I try to go to ``child_of_sibling_of_child`` again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -694,7 +706,7 @@ how to look at directory structure
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 3, 6
+    :emphasize-lines: 3, 5
 
     .
     ├── child
@@ -709,7 +721,7 @@ how to make an empty file
 
 I can make empty files_ in a folder_ with the touch_ program
 
-* I add an empty file_
+* I add an empty file_ to ``parent``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -729,7 +741,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     .../pumping_python/parent
 
-* I use ls_ to see what is in the folder_
+* I use ls_ to see what is in the folder_ now
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -742,7 +754,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     .  ..  a_file_in_parent  child  sibling_of_child
 
-* I `change directory` to one of the children of ``parent``
+* I `change directory`_ to one of the children of ``parent``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -790,7 +802,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     .../pumping_python/parent
 
-* I `change directory` to the other child of ``parent``
+* I `change directory`_ to the other child of ``parent``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -899,6 +911,8 @@ I can make empty files_ in a folder_ with the touch_ program
   .. code-block:: shell
 
     .../pumping_python/parent
+
+  Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent. I can use as many ``..``'s I need for each parent, for example ``../../../..`` would be the great great grand parent
 
 * I try to go from ``parent`` to ``child_of_child`` in 1 step
 
@@ -1090,28 +1104,28 @@ I can make empty files_ in a folder_ with the touch_ program
 
     5 directories, 7 files
 
-* I can add an empty file_ in 1 step in any directory_ as long as I know its path and its relation to where I am and as long as I have permission to write to the folder_. I add an empty file_ in ``child_of_child``
+* I can add an empty file_ in 1 step in any directory_ as long as I know its path and its relation to where I am and as long as I have permission to write to the folder_. I add another empty file_ in ``child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch child/child_of_child/a_file_in_child_of_child
+    touch child/aunt_or_uncle_of_another_grandchild_of_parent
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
 
     .. code-block:: python
       :emphasize-lines: 1
 
-      New-Item child/child_of_child/a_file_in_child_of_child
+      New-Item child/aunt_or_uncle_of_another_grandchild_of_parent
 
   the terminal_ goes back to the command line
 
-* I add another empty file_ in ``child_of_sibling_of_child``
+* I add another empty file_ in ``sibling_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
+    touch sibling_of_child/aunt_or_uncle_of_a_grandchild_of_parent
 
   the terminal_ goes back to the command line
 
@@ -1125,7 +1139,7 @@ I can make empty files_ in a folder_ with the touch_ program
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 8, 13
+    :emphasize-lines: 7, 12
 
     .
     ├── a_file_in_parent
@@ -1133,117 +1147,87 @@ I can make empty files_ in a folder_ with the touch_ program
     ├── aka_grandparent_of_child_of_sibling_of_child
     ├── child
     │   ├── a_file_in_child
+    │   ├── aunt_or_uncle_of_another_grandchild_of_parent
+    │   └── child_of_child
+    │       └── a_grandchild_of_parent
+    └── sibling_of_child
+        ├── a_file_in_sibling_of_child
+        ├── aunt_or_uncle_of_a_grandchild_of_parent
+        └── child_of_sibling_of_child
+            └── another_grandchild_of_parent
+
+    5 directories, 9 files
+
+* I add an empty file_ in ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch child/child_of_child/a_file_in_child_of_child
+
+  the terminal_ goes back to the command line
+
+* I add an empty file_ in ``child_of_sibling_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
+
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    New-Item sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
+
+  the terminal_ goes back to the command line
+
+* I `change directory`_ to the parent of ``parent``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+* I use tree_ to show what is in ``parent``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree parent
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 9, 15
+
+    parent
+    ├── a_file_in_parent
+    ├── aka_grandparent_of_child_of_child
+    ├── aka_grandparent_of_child_of_sibling_of_child
+    ├── child
+    │   ├── a_file_in_child
+    │   ├── aunt_or_uncle_of_another_grandchild_of_parent
     │   └── child_of_child
     │       ├── a_file_in_child_of_child
     │       └── a_grandchild_of_parent
     └── sibling_of_child
         ├── a_file_in_sibling_of_child
+        ├── aunt_or_uncle_of_a_grandchild_of_parent
         └── child_of_sibling_of_child
             ├── a_file_in_child_of_sibling_of_child
             └── another_grandchild_of_parent
 
-    5 directories, 9 files
+    5 directories, 11 files
 
-
-
-
-  I use touch_ to make another empty file
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch a_grandchild_of_parent
-
-  the terminal_ goes back to the command line. I use tree_ to see what I have now
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree
-
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      tree /F
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    ├── a_file_in_child_of_child
-    └── a_grandchild_of_parent
-
-    1 directory, 2 files
-
-* I try to go back to the ``parent`` directory_ I started from
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd parent
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: parent
-
-  I try to go to a directory_ in the ``parent`` folder_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: child
-
-  I try to go to another directory_ in the ``parent`` folder
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: sibling_of_child
-
-  I try to go to a folder_ that does not exist
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd does_not_exist
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: does_not_exist
-
-  I list all the files_ and folders_ where I am at the moment
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .  ..  a_file_in_child_of_child  a_grandchild_of_parent
-
-  I cannot go to those directories_ the way I tried, because they are not children of this directory_. I use pwd_ to show where I am
+* I type pwd_ to show where I am
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1254,128 +1238,9 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .../parent/child/child_of_child
+    .../pumping_python
 
-  - ``child`` is the parent of ``child_of_child``
-  - ``parent`` is the parent of ``child``
-  - ``parent`` is the grand parent of ``child_of_child``
-
-* I go to the parent of the directory_ I am in with ``..``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  ``..`` is used for the parent of the directory_ I am in. the terminal_ shows
-
-  .. code-block:: shell
-
-    /workspaces/…/pumping_python/parent/child
-
-  I use pwd_ to see where I am at the moment
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/child
-
-  I use ls_ to list the contents of the folder_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .  ..  child_of_child
-
-  I use tree_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    └── child_of_child
-        ├── a_file_in_child_of_child
-        └── a_grandchild_of_parent
-
-    2 directories, 2 files
-
-* I go up another level
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
-
-  I am back at the first directory_ I made - ``parent``
-
-* I can go to ``child_of_child`` in one step instead of 2 by using its parent
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd child/child_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/child/child_of_child
-
-  I can also go to ``parent`` from ``child_of_child`` in one step instead of 2 by using ``..``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
-
-  I am back at the first directory_ I made - ``parent``
-
-  .. NOTE:: Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent. I can use as many ``..``'s I need for each parent, for example ``../../../..`` would be the great great grand parent
-
-* I type pwd_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
-
-  I list the contents of the folder_
+* I can list the contents of any folder_ once I know its path or relation to where I am
 
   .. code-block:: shell
     :emphasize-lines: 1
