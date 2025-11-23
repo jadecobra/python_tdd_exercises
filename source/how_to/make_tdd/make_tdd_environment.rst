@@ -70,52 +70,46 @@ how to make a python test driven development environment manually
 
 Let us say I have to work on a project and its name is ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
-I use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
+* I use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-  cd pumping_python
+    cd pumping_python
 
-the terminal_ shows
+  the terminal_ shows
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  cd: no such file or directory: pumping_python
+    cd: no such file or directory: pumping_python
 
-the `folder/directory`_ does NOT exist. I need to make it
+  the `folder/directory`_ does NOT exist. I need to make it
 
-how to make a directory
-#################################################################################################
+* I use the mkdir_ program_ to make a `folder/directory`_
 
-I use the mkdir_ program_ to make a `folder/directory`_
+  .. code-block:: shell
 
-.. code-block:: shell
+    mkdir pumping_python
 
-  mkdir pumping_python
+  the terminal_ goes back to the command line. I try `changing directory`_ again
 
-the terminal_ goes back to the command line. I try `changing directory`_ again
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-.. code-block:: shell
-  :emphasize-lines: 1
+    cd pumping_python
 
-  cd pumping_python
+  the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
 
-the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
+  .. code-block:: shell
 
-.. code-block:: shell
+    .../pumping_python $
 
-  .../pumping_python $
+* I can use the tree_ program_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
 
-how to look at directory structure
-#################################################################################################
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-I can use the tree_ program_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  tree
+    tree
 
 * when tree_ is not installed on the computer the terminal_ shows
 
@@ -1573,7 +1567,7 @@ Here are questions you can answer after going through this chapter
 
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to make a python test driven development environment manually>`
 * :ref:`How can I make a Python Test Driven Development Environment automatically?<how to make a python test driven development environment automatically>`
-* :ref:`How can I change directories?<how to change directories>`
+* :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`
 * :ref:`How can I make an empty file?<how to make an empty file>`

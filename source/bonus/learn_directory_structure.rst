@@ -23,9 +23,13 @@ when it is not installed on the computer, the terminal_ shows
 
 when it is installed, the terminal_ shows a tree of directories_ and files_. The tree_ program shows how files_ and folders_ on a computer are related.
 
+.. _what_is_a_folder:
+
 A `folder/directory`_ is a container for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
 
 I keep every project I work on in its own `folder/directory`_. All the code from this book will be kept in a folder_ named ``pumping_python``
+
+.. _what_is_a_file:
 
 A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an extension (optionally) to show the type of file_. For example
 
@@ -225,6 +229,9 @@ how to make a directory
 
     .../pumping_python/parent
 
+how to list what is in a directory
+#################################################################################################
+
 * I can use ls_ to show what is in a directory_ and see information about the files_ in it
 
   .. code-block:: shell
@@ -260,12 +267,12 @@ how to make a directory
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       ls -Force
 
-    the terminal will not show ``.`` and ``..``
+    the terminal_ will not show ``.`` and ``..``
 
   the terminal_ shows
 
@@ -332,7 +339,7 @@ how to look at directory structure
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       tree /F
@@ -380,7 +387,7 @@ how to look at directory structure
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       ls -Force
@@ -698,7 +705,7 @@ how to look at directory structure
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       tree /F
@@ -730,7 +737,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       New-Item a_file_in_parent
@@ -1108,7 +1115,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       tree /F
@@ -1142,7 +1149,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       New-Item child/aunt_or_uncle_of_another_grandchild_of_parent
@@ -1205,7 +1212,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of touch_
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       New-Item sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
@@ -1338,7 +1345,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     .  ..  a_file_in_child_of_sibling_of_child  another_grandchild_of_parent
 
-* I `change directory` to ``child_of_child``
+* I `change directory`_ to ``child_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1385,7 +1392,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   1 directory, 3 files
 
-* I can use the same thing to `change directory` to ``child_of_sibling_of_child`` from ``child_of_child``
+* I can use the same thing to `change directory`_ to ``child_of_sibling_of_child`` from ``child_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1420,7 +1427,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   the terminal_ goes back to the command line
 
-* I use tree_ to show what is in ``child_of_child``
+* I use tree_ to show what is in ``child_of_child`` now
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1437,814 +1444,9 @@ I can make empty files_ in a folder_ with the touch_ program
     ├── a_grandchild_of_parent
     └── cousin_of_child_of_sibling_of_child
 
-  1 directory, 3 files
-
-
-
-
-* I try to go back to the ``parent`` directory_ I started from
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd parent
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: parent
-
-  I try to go to a directory_ in the ``parent`` folder_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: child
-
-  I try to go to another directory_ in the ``parent`` folder
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: sibling_of_child
-
-  I try to go to another folder_ in the ``child`` directory_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd child_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: child_of_child
-
-  I try to go to a folder_ that does not exist
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd does_not_exist
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    cd: no such file or directory: does_not_exist
-
-  I cannot go to a directory_ that is not a child of this directory_ this way. I use pwd_ to show where I am
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child/child_of_sibling_of_child
-
-  - ``sibling_of_child`` is the parent of ``child_of_sibling_of_child``
-  - ``parent`` is the parent of ``sibling_of_child``
-  - ``parent`` is the grand parent of ``child_of_sibling_of_child``
-
-* I go to the parent of the directory_ I am in
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child
-
-  I use pwd_ to show where I am at the moment
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child
-
-  I use ls_ to show the files_ and folders_ in this directory_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .  ..  child_of_sibling_of_child
-
-  I use tree_ to show the structure
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    .
-    └── child_of_sibling_of_child
-        ├── a_file_in_child_of_sibling_of_child
-        └── another_grandchild_of_parent
-
-    2 directories, 2 files
-
-* I go up another level
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
-
-  I am back at the first directory_ I made - ``parent``
-
-* I can go to ``child_of_sibling_of_child`` in one step instead of 2 by using its parent
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd sibling_of_child/child_of_sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child/child_of_sibling_of_child
-
-  I can also go to ``parent`` from ``child_of_sibling_of_child`` in one step instead of 2 by using ``..``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
-
-  I am back at the first directory_ I made - ``parent``
-
-* I type pwd_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
-
-  I list the contents
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a
-
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      ls -Force
-
-    the terminal will not show ``.`` and ``..``
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .  ..  a_file_in_parent  child  sibling_of_child
-
-  I use tree_ to see the structure
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree
-
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      tree /F
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 4-6, 8-10
-
-    .
-    ├── a_file_in_parent
-    ├── child
-    │   └── child_of_child
-    │       ├── a_file_in_child_of_child
-    │       └── a_grandchild_of_parent
-    └── sibling_of_child
-        └── child_of_sibling_of_child
-            ├── a_file_in_child_of_sibling_of_child
-            └── another_grandchild_of_parent
-
-    5 directories, 5 files
-
-* I make an empty file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch aka_grandparent_of_child_of_child
-
-  the terminal_ goes back to the command line
-
-* I make another empty file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch aka_grandparent_of_child_of_sibling_of_child
-
-  the terminal_ goes back to the command line
-
-* I use tree_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 3-4
-
-    .
-    ├── a_file_in_parent
-    ├── aka_grandparent_of_child_of_child
-    ├── aka_grandparent_of_sibling_of_child
-    ├── child
-    │   └── child_of_child
-    │       ├── a_file_in_child_of_child
-    │       └── a_grandchild_of_parent
-    └── sibling_of_child
-        └── child_of_sibling_of_child
-            ├── a_file_in_child_of_sibling_of_child
-            └── another_grandchild_of_parent
-
-    5 directories, 7 files
-
-* I `change directory`_ to a child of ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd child
-
-  the terminal_ goes back to the command line
-
-* I make an empty file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch a_file_in_child
-
-  the terminal_ goes back to the command line
-
-* I want to `change directory`_ to ``sibling_of_child`` in one step. I can use the path of a folder_ to get to it, once I know its relation to where I am. I use cd_ with ``..``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child
-
-  I make an empty file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch a_file_in_sibling_of_child
-
-  the terminal_ goes back to the command line
-
-* I `change directory`_  to the parent of ``parent`` in one step
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    ../pumping_python
-
-  I show the directory_ structure of ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree parent
-
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      tree /F parent
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 6, 11
-
-    parent
-    ├── a_file_in_parent
-    ├── aka_grandparent_of_child_of_child
-    ├── aka_grandparent_of_sibling_of_child
-    ├── child
-    │   ├── a_file_in_child
-    │   └── child_of_child
-    │       ├── a_file_in_child_of_child
-    │       └── a_grandchild_of_parent
-    └── sibling_of_child
-        ├── a_file_in_sibling_of_child
-        └── child_of_sibling_of_child
-            ├── a_file_in_child_of_sibling_of_child
-            └── another_grandchild_of_parent
-
-    5 directories, 9 files
-
-* I can make a file_ in children directories_ by using the path to go through the parents. I make an empty file_ in ``child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch parent/child/aunt_or_uncle_of_another_grandchild_of_parent
-
-  the terminal_ goes back to the command line
-
-* I make another empty file_, this time in ``sibling_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch parent/sibling_of_child/aunt_or_uncle_of_a_grandchild_of_parent
-
-  the terminal_ goes back to the command line
-
-* I show the structure of ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree parent
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 7, 13
-
-    parent
-    ├── a_file_in_parent
-    ├── aka_grandparent_of_child_of_child
-    ├── aka_grandparent_of_sibling_of_child
-    ├── child
-    │   ├── a_file_in_child
-    │   ├── aunt_or_uncle_of_another_grandchild_of_parent
-    │   └── child_of_child
-    │       ├── a_file_in_child_of_child
-    │       └── a_grandchild_of_parent
-    └── sibling_of_child
-        ├── a_file_in_sibling_of_child
-        ├── aunt_or_uncle_of_a_grandchild_of_parent
-        └── child_of_sibling_of_child
-            ├── a_file_in_child_of_sibling_of_child
-            └── another_grandchild_of_parent
-
-    5 directories, 11 files
-
-* I make an empty file in ``child_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch parent/child/child_of_child/cousin_of_another_grandchild_of_parent
-
-  the terminal_ goes back to the command line
-
-* I make an empty file_ in ``child_of_sibling_of_child``
-
-  .. code-block:: shell
-
-    touch parent/sibling_of_child/child_of_sibling_of_child/cousin_of_a_grandchild_of_parent
-
-  the terminal_ goes back to the command line
-
-* I show the directory_ structure of ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree parent
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 11, 18
-
-    parent
-    ├── a_file_in_parent
-    ├── aka_grandparent_of_child_of_child
-    ├── aka_grandparent_of_sibling_of_child
-    ├── child
-    │   ├── a_file_in_child
-    │   ├── aunt_or_uncle_of_another_grandchild_of_parent
-    │   └── child_of_child
-    │       ├── a_file_in_child_of_child
-    │       ├── a_grandchild_of_parent
-    │       └── cousin_of_another_grandchild_of_parent
-    └── sibling_of_child
-        ├── a_file_in_sibling_of_child
-        ├── aunt_or_uncle_of_a_grandchild_of_parent
-        └── child_of_sibling_of_child
-            ├── a_file_in_child_of_sibling_of_child
-            ├── another_grandchild_of_parent
-            └── cousin_of_a_grandchild_of_parent
-
-    5 directories, 13 files
-
-* I can "visit" any folder_ as long as I know its path/address and how it is "related" to where I am. I want to go see ``child_of_sibling_of_child``. I start with ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd parent
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
-
-  then I `change directory`_ to the child directory_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child
-
-  I `change directory`_ one more time
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd child_of_sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child/child_of_sibling_of_child
-
-  I cannot get to a child without its parent. I go back to the parent of ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../../..
-
-  the terminal_ shows
-
-  .. code-block::
-
-    .../pumping_python
-
-  I can go to ``child_of_sibling_of_child`` with one command instead of 3 and still go through the parent
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd parent/sibling_of_child/child_of_sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child/child_of_sibling_of_child
-
-  knowing where I am in relation to where I want to go, helps me get there
-
-* I want to go see ``child_of_child``, first I go to the parent of ``child_of_sibling_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child
-
-  I go to ``parent``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
-
-  I go to ``child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/child
-
-  I go to ``child_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd child_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/child/child_of_child
-
-  I go back to the parent of ``parent``, the great grandparent of ``child_of_child``
-
-  .. code-block:: shell
-
-    cd ../../..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python
-
-  I go back to ``child_of_sibling_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd parent/sibling_of_child/child_of_sibling_of_child
-
-  the terminal shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child/child_of_sibling_of_child
-
-  I can go to ``child_of_child`` with one command instead of 3 and still go through each parent
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../../child/child_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/child/child_of_child
-
-  .. NOTE:: ``child_of_child`` and ``child_of_sibling_of_child`` have the same grandparent, since ``..`` is for the parent ``../..`` is for the grandparent
-
-* I can do the same thing with tree_. I want to see the structure of ``sibling_of_child`` from inside ``child_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree ../../sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    ../../sibling_of_child
-    ├── a_file_in_sibling_of_child
-    ├── aunt_or_uncle_of_a_grandchild_of_parent
-    └── child_of_sibling_of_child
-        ├── a_file_in_child_of_sibling_of_child
-        ├── another_grandchild_of_parent
-        └── cousin_of_a_grandchild_of_parent
-
-    2 directories, 5 files
-
-  I try the same thing with ``child_of_sibling_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree ../../sibling_of_child/child_of_sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    ../../sibling_of_child/child_of_sibling_of_child
-    ├── a_file_in_child_of_sibling_of_child
-    ├── another_grandchild_of_parent
-    └── cousin_of_a_grandchild_of_parent
-
     1 directory, 3 files
 
-* I `change directory`_ to ``child_of_sibling_of_child`` from inside ``child_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../../sibling_of_child/child_of_sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent/sibling_of_child
-
-  I want to see the structure of ``child`` from inside ``sibling_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree ../../child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    ../../child
-    ├── a_file_in_child
-    ├── aunt_or_uncle_of_another_grandchild_of_parent
-    └── child_of_child
-        ├── a_file_in_child_of_child
-        ├── a_grandchild_of_parent
-        └── cousin_of_another_grandchild_of_parent
-
-    2 directories, 5 files
-
-  I try the same thing with ``child_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree ../../child/child_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    ../../child/child_of_child
-    ├── a_file_in_child_of_child
-    ├── a_grandchild_of_parent
-    └── cousin_of_another_grandchild_of_parent
-
-    1 directory, 3 files
-
-* I can do the same thing with ls_. I list the contents of ``child_of_child`` from inside ``child_of_sibling_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a ../../child/child_of_child
-
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      ls -Force ../../child/child_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .   a_file_in_child_of_child  cousin_of_another_grandchild_of_parent
-    ..  a_grandchild_of_parent
-
-  I list the contents of ``child`` from inside ``child_of_sibling_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a ../../child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .   a_file_in_child                                child_of_child
-    ..  aunt_or_uncle_of_another_grandchild_of_parent
-
-  I `change directory`_ to ``child_of_child`` from ``child_of_sibling_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../../child/child_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/child/child_of_child
-
-  I list the contents of ``child_of_sibling_of_child`` from inside ``child_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a ../../sibling_of_child/child_of_sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .   a_file_in_child_of_sibling_of_child  cousin_of_a_grandchild_of_parent
-    ..  another_grandchild_of_pare
-
-  I list the contents of ``sibling_of_child`` from inside ``child_of_child``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a ../../sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .   a_file_in_sibling_of_child               child_of_sibling_of_child
-    ..  aunt_or_uncle_of_a_grandchild_of_parent
-
-* I look at the structure of ``parent`` again, this time from inside ``child_of_child``
+* I look at the structure of ``parent`` again, this time from inside ``child_of_sibling_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -2254,25 +1456,26 @@ I can make empty files_ in a folder_ with the touch_ program
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 11, 18
 
     ../../../parent
     ├── a_file_in_parent
     ├── aka_grandparent_of_child_of_child
-    ├── aka_grandparent_of_sibling_of_child
+    ├── aka_grandparent_of_child_of_sibling_of_child
     ├── child
     │   ├── a_file_in_child
     │   ├── aunt_or_uncle_of_another_grandchild_of_parent
     │   └── child_of_child
     │       ├── a_file_in_child_of_child
     │       ├── a_grandchild_of_parent
-    │       └── cousin_of_another_grandchild_of_parent
+    │       └── cousin_of_child_of_sibling_of_child
     └── sibling_of_child
         ├── a_file_in_sibling_of_child
         ├── aunt_or_uncle_of_a_grandchild_of_parent
         └── child_of_sibling_of_child
             ├── a_file_in_child_of_sibling_of_child
             ├── another_grandchild_of_parent
-            └── cousin_of_a_grandchild_of_parent
+            └── cousin_of_child_of_child
 
     5 directories, 13 files
 
@@ -2312,8 +1515,8 @@ I can make empty files_ in a folder_ with the touch_ program
   the terminal_ goes back to the command line
 
   - rm_ is used to remove files_ and folders_
-  - ``-r`` means remove child directories_ and what is in them recursively, it goes through each child directory_ and removes everything include its children
-  - ``-f`` means "force", do not me any questions, just remove the file_ or folder_
+  - ``-r`` means remove child directories_ and what is in them recursively, it goes through each child directory_ and removes everything include their children
+  - ``-f`` means "force", do not ask me any questions, just remove the file_ or folder_
 
 * I try to go back to the ``parent`` directory_
 
@@ -2340,6 +1543,16 @@ I ran the following commands to practice `folder/directory`_ structure
 * tree_
 * touch_
 * rm_
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`What is a folder/directory?<what_is_a_folder>`
+* :ref:`What is a file?<what_is_a_file>`
+* :ref:`How can I change directories?<how to change directory>`
+* :ref:`How can I make a directory?<how to make a directory>`
+* :ref:`How can I see directory relationships?<how to look at directory structure>`
+* :ref:`How can I list what is in a directory?<how to list what is in a directory>`
+* :ref:`How can I make an empty file?<how to make an empty file>`
 
 ----
 

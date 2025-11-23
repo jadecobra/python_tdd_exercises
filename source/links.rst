@@ -5,9 +5,10 @@
 .. _argument: https://docs.python.org/3/glossary.html#term-argument
 .. _arguments: argument_
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
-.. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+.. _assert statement: assert_
 .. _assertion: assert_
 .. _assertions: assert_
+.. _assert statements: assert_
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
 .. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
@@ -18,8 +19,6 @@
 .. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
-.. _assert statement: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
-.. _assert statements: `assert statement`_
 .. _bash: https://www.gnu.org/software/bash/
 .. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _brew: https://brew.sh
