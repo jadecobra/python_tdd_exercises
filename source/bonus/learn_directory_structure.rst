@@ -787,7 +787,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .  ..  a_file_in_child
+    .  ..  a_file_in_child  child_of_child
 
 * I `change directory`_ to the parent of ``child``
 
@@ -835,7 +835,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .  ..  a_file_in_sibling_of_child
+    .  ..  a_file_in_sibling_of_child  child_of_sibling_of_child
 
 * I `change directory`_ to the parent of ``sibling_of_child``
 
@@ -872,6 +872,8 @@ I can make empty files_ in a folder_ with the touch_ program
         └── child_of_sibling_of_child
 
     5 directories, 3 files
+
+  .. TIP:: Your terminal_ may use colors to show the difference between directories_ and files_
 
 * I want to make a file in ``child_of_child``. I use `change directory`_ to go to its parent first
 
@@ -950,6 +952,19 @@ I can make empty files_ in a folder_ with the touch_ program
     touch a_grandchild_of_parent
 
   the terminal_ goes back to the command line
+
+* I use ls_ to list the contents of the folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls -a
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .  ..  a_grandchild_of_parent
 
 * I go back to ``parent``
 
@@ -1040,6 +1055,19 @@ I can make empty files_ in a folder_ with the touch_ program
 
   the terminal_ goes back to the command line
 
+* I use ls_ to list the contents of the folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls -a
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .  ..  another_grandchild_of_parent
+
 * I go back to ``parent``
 
   .. code-block:: shell
@@ -1056,6 +1084,7 @@ I can make empty files_ in a folder_ with the touch_ program
 * I add an empty file_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     touch aka_grandparent_of_child_of_child
 
@@ -1174,12 +1203,12 @@ I can make empty files_ in a folder_ with the touch_ program
 
     touch sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of touch_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. code-block:: python
+      :emphasize-lines: 1
 
-    New-Item sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
+      New-Item sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
 
   the terminal_ goes back to the command line
 
@@ -1245,116 +1274,63 @@ I can make empty files_ in a folder_ with the touch_ program
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a
+    ls parent -a
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .  ..  a_file_in_parent  child  sibling_of_child
+    .                 aka_grandparent_of_child_of_child             sibling_of_child
+    ..                aka_grandparent_of_child_of_sibling_of_child
+    a_file_in_parent  child
 
-  I look at the structure
+* I list the contents of ``child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree
-
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      tree /F
+    ls -a parent/child
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .
-    ├── a_file_in_parent
-    ├── child
-    │   └── child_of_child
-    │       ├── a_file_in_child_of_child
-    │       └── a_grandchild_of_parent
-    └── sibling_of_child
+    .   a_file_in_child                                child_of_child
+    ..  aunt_or_uncle_of_another_grandchild_of_parent
 
-    4 directories, 3 files
-
-* I `change directory`_ to the other child of ``parent``
+* I list the contents of ``child_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd sibling_of_child
+    ls -a parent/child/child_of_child
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .../parent/sibling_of_child
+    .  ..  a_file_in_child_of_child  a_grandchild_of_parent
 
-  I list the contents of the directory_
+* I list the contents of ``sibling_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a
+    ls -a parent/sibling_child
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .  ..
+    .   a_file_in_sibling_of_child               child_of_sibling_of_child
+    ..  aunt_or_uncle_of_a_grandchild_of_parent
 
-  I use tree_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    .
-
-    0 directories, 0 files
-
-  I `make a directory`_
-
-  .. code-block:: shell
-
-    mkdir child_of_sibling_of_child
-
-  the terminal_ goes back to the command line. I `change directory`_ to the folder_ I just made
+* I list the contents of ``child_of_sibling_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd child_of_sibling_of_child
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../parent/sibling_of_child/child_of_sibling_of_child
-
-* I make an empty file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch a_file_in_child_of_sibling_of_child
-
-  the terminal_ goes back to the command line. I make another empty file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch another_grandchild_of_parent
-
-  the terminal_ goes back to the command line. I list the contents of the folder_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -a
+    ls -a parent/sibling_of_child/child_of_sibling_of_child
 
   the terminal_ shows
 
@@ -1362,22 +1338,109 @@ I can make empty files_ in a folder_ with the touch_ program
 
     .  ..  a_file_in_child_of_sibling_of_child  another_grandchild_of_parent
 
-  I use tree_
+* I `change directory` to ``child_of_child``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree
+    cd parent/child/child_of_child
+
+* I want to list the contents of ``child_of_sibling_of_child`` from inside ``child_of_child`` in 1 step. ``../..`` is ``parent`` and I can go from ``parent`` to ``child_of_sibling_of_child``, I use the relationship with ls_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls -a ../../sibling_of_child/child_of_sibling_of_child
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .
-    ├── a_file_in_child_of_sibling_of_child
-    └── another_grandchild_of_parent
+    .  ..  a_file_in_child_of_sibling_of_child  another_grandchild_of_parent
 
-    1 directory, 2 files
+* I add an empty file_ to ``child_of_sibling_of_child`` from ``child_of_child``
+
+  .. code-block:: shell
+
+    touch ../../sibling_of_child/child_of_sibling_of_child/cousin_of_child_of_child
+
+  the terminal_ goes back to the command line
+
+* I use tree_ this time
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree ../../sibling_of_child/child_of_sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    ../../sibling_of_child/child_of_sibling_of_child
+    ├── a_file_in_child_of_sibling_of_child
+    ├── another_grandchild_of_parent
+    └── cousin_of_child_of_child
+
+  1 directory, 3 files
+
+* I can use the same thing to `change directory` to ``child_of_sibling_of_child`` from ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ../../sibling_of_child/child_of_sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/sibling_of_child/child_of_sibling_of_child $
+
+* I want to list the contents of ``child_of_child`` from inside ``child_of_sibling_of_child`` in 1 step. Since ``../..`` is ``parent`` and I can go from ``parent`` to ``child_of_child``, I use the relationship with ls_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls -a ../../child/child_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .  ..  a_file_in_child_of_child  a_grandchild_of_parent
+
+* I add an empty file_ to ``child_of_child`` from ``child_of_sibling_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch ../../child/child_of_child/cousin_of_child_of_sibling_of_child
+
+  the terminal_ goes back to the command line
+
+* I use tree_ to show what is in ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree ../../child/child_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    ../../child/child_of_child
+    ├── a_file_in_child_of_child
+    ├── a_grandchild_of_parent
+    └── cousin_of_child_of_sibling_of_child
+
+  1 directory, 3 files
+
+
+
 
 * I try to go back to the ``parent`` directory_ I started from
 
