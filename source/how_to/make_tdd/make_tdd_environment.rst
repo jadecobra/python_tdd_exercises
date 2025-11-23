@@ -70,10 +70,7 @@ how to make a python test driven development environment manually
 
 Let us say I have to work on a project and its name is ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
-how to change directories
-#################################################################################################
-
-I can use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
+I use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
 
 .. code-block:: shell
   :emphasize-lines: 1

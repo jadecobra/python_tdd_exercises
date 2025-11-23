@@ -24,7 +24,7 @@ they cover the following
 - :ref:`windows requirements`
 - :ref:`linux/Windows Subsystem Linux requirements`
 - :ref:`how to make a python test driven development environment manually`
-- :ref:`how to change directories`
+- :ref:`how to change directory`
 - :ref:`how to make a directory`
 - :ref:`how to look at directory structure`
 - :ref:`how to run a Python program`
