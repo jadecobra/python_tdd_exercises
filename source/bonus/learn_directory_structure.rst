@@ -937,31 +937,185 @@ I can make empty files_ in a folder_ with the touch_ program
 
   the terminal_ goes back to the command line
 
-* I want to go to ``child_of_sibling_of_child`` from ``child_of_child`` in 1 step
-
-
-* I add an empty file_ with touch_
+* I go back to ``parent``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch a_file_in_child_of_child
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent
+
+* I want to make a file in ``child_of_sibling_of_child``. I use `change directory`_ to go to its parent first
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    /pumping_python/parent/sibling_of_child
+
+  I `change directory`_ to ``child_of_sibling_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd child_of_sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/sibling_of_child/child_of_sibling_child
+
+* I go from ``child_of_sibling_of_child`` to ``parent`` in 1 step
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent
+
+* I try to go from ``parent`` to ``child_of_sibling_of_child`` in 1 step
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd child_of_sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    cd: child_of_sibling_of_child: No such file or directory
+
+  I can only go directly to folders_ that exist where I am or use the path to the folder_ I want to go to
+
+* I go from ``parent`` to ``child_of_sibling_of_child`` in 1 step with its parent
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd sibling_of_child/child_of_sibling_of_child
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../parent/sibling_of_child/child_of_sibling_of_child
+
+* I make an empty file_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch another_grandchild_of_parent
+
+  the terminal_ goes back to the command line
+
+* I go back to ``parent``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/parent
+
+* I add an empty file_
+
+  .. code-block:: shell
+
+    touch aka_grandparent_of_child_of_child
+
+  the terminal_ goes back to the command line
+
+* I make another empty file_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch aka_grandparent_of_child_of_sibling_of_child
+
+  the terminal_ goes back to the command line
+
+* I use tree_ to see what ``parent`` looks like now
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree
+
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      tree /F
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 3-4, 8, 12
+
+    .
+    ├── a_file_in_parent
+    ├── aka_grandparent_of_child_of_child
+    ├── aka_grandparent_of_child_of_sibling_of_child
+    ├── child
+    │   ├── a_file_in_child
+    │   └── child_of_child
+    │       └── a_grandchild_of_parent
+    └── sibling_of_child
+        ├── a_file_in_sibling_of_child
+        └── child_of_sibling_of_child
+            └── another_grandchild_of_parent
+
+    5 directories, 7 files
+
+* I can add an empty file_ in 1 step in any directory_ as long as I know its path and its relation to where I am and as long as I have permission to write to the folder_. I add an empty file_ in ``child_of_child``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch child/child_of_child/a_file_in_child_of_child
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
 
     .. code-block:: python
       :emphasize-lines: 1
 
-      New-Item a_file_in_child_of_child
+      New-Item child/child_of_child/a_file_in_child_of_child
 
   the terminal_ goes back to the command line
 
+* I add another empty file_ in ``child_of_sibling_of_child``
 
+  .. code-block:: shell
+    :emphasize-lines: 1
 
+    touch sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
 
+  the terminal_ goes back to the command line
 
-
-  I use tree_
+* I use tree_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -971,66 +1125,24 @@ I can make empty files_ in a folder_ with the touch_ program
   the terminal_ shows
 
   .. code-block:: shell
-
-    .
-    └── a_file_in_parent
-
-    1 directory, 1 file
-
-  I have ``.`` which is the directory_ I am in, and the file_ I made with touch_
-
-
-
-
-
-
-
-
-
-  .. NOTE:: Your terminal might use colors to show the difference between a file_ and a `folder/directory`_
-
-  I use tree_ to see the current structure
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 3
+    :emphasize-lines: 8, 13
 
     .
     ├── a_file_in_parent
-    └── child
+    ├── aka_grandparent_of_child_of_child
+    ├── aka_grandparent_of_child_of_sibling_of_child
+    ├── child
+    │   ├── a_file_in_child
+    │   └── child_of_child
+    │       ├── a_file_in_child_of_child
+    │       └── a_grandchild_of_parent
+    └── sibling_of_child
+        ├── a_file_in_sibling_of_child
+        └── child_of_sibling_of_child
+            ├── a_file_in_child_of_sibling_of_child
+            └── another_grandchild_of_parent
 
-    2 directories, 1 file
-
-  there are 2 directories_
-
-  - ``.`` for the directory_ I am in and
-  - ``child`` the directory_ I just added
-
-  and 1 file - ``a_file_in_parent``
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    5 directories, 9 files
 
 
 
