@@ -856,6 +856,72 @@ green: make it pass
 
     TypeError: w_positional_and_keyword_arguments() got an unexpected keyword argument 'last'
 
+* I add to the function_ definition in parentheses in ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 1
+
+    def w_positional_and_keyword_arguments(last):
+        return None
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last'
+
+  I add another name in parentheses
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 1
+
+    def w_positional_and_keyword_arguments(last, first):
+        return None
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last'
+
+  Python_ assumes I am sending in 2 values since ``last`` is both the second argument and passed in as a keyword argument
+
+* I change the order of names in parentheses
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 1
+
+    def w_positional_and_keyword_arguments(first, last):
+        return None
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: None != ('first', 'last')
+
+  I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2
+
+    def w_positional_and_keyword_arguments(first, last):
+        return first, last
+
+  the test passes. There is no difference between the last 3 functions except their names, they all have this signature
+
+  .. code-block:: python
+
+    def name(first, last):
+        return first, last
+
+  what is different is the way I called them in the tests
+
+I can use positional and keyword arguments when I
 
 ----
 
