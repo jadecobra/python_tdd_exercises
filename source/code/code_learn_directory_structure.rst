@@ -1,7 +1,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-learnDirectoryStructure
+learnDirectoryStructure.sh
 #################################################################################
 
 * Open a terminal then type the following to learn about directories_, hit enter after every line to see results as you type along, errors are expected

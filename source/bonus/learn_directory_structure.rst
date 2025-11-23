@@ -302,6 +302,7 @@ how to list what is in a directory
 * I try cd_ with ``..`` to see what happens
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     cd ..
 
@@ -742,11 +743,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
       New-Item a_file_in_parent
 
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/parent
+  the terminal_ goes back to the command line
 
 * I use ls_ to see what is in the folder_ now
 
@@ -754,6 +751,15 @@ I can make empty files_ in a folder_ with the touch_ program
     :emphasize-lines: 1
 
     ls -a
+
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      ls -Force
+
+    the terminal_ will not show ``.`` and ``..``
 
   the terminal_ shows
 
@@ -1140,7 +1146,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     5 directories, 7 files
 
-* I can add an empty file_ in 1 step in any directory_ as long as I know its path and its relation to where I am and as long as I have permission to write to the folder_. I add another empty file_ in ``child``
+* I can add an empty file_ in 1 step in any directory_ as long as I know its path, its relation to where I am and I have permission to write to the folder_. I add another empty file_ in ``child``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1553,6 +1559,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I see directory relationships?<how to look at directory structure>`
 * :ref:`How can I list what is in a directory?<how to list what is in a directory>`
 * :ref:`How can I make an empty file?<how to make an empty file>`
+
+:ref:`Click here to see all the code I typed in this chapter<learnDirectoryStructure.sh>`
 
 ----
 
