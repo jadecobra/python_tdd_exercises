@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This chapter shows one way to make a Python_ `Test Driven Development`_ project, first I do it manually where I make all the `folders/directories`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
+This chapter shows one way to make a Python_ `Test Driven Development`_ project, first :ref:`I do it manually<how to make a python test driven development environment automatically>` where I make all the `folders/directories`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
 
 ----
 
@@ -23,7 +23,7 @@ requirements
 *********************************************************************************
 
 * `download and install Python <https://www.python.org/downloads/>`_
-* get an `Integrated Development Environment (IDE)`_. Here are a few options
+* an `Integrated Development Environment (IDE)`_. Here are a few options
 
   - `Visual Studio Code`_
   - `Sublime Text`_
@@ -34,7 +34,7 @@ windows requirements
 #################################################################################
 
 * If you are using a Windows_ computer, :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`
-* If you cannot :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`, you can still :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem Linux<how to make a python test driven development environment on Windows without Windows Subsystem Linux>` instead of this chapter
+* If you cannot :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`, you can :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem Linux<how to make a python test driven development environment on Windows without Windows Subsystem Linux>` instead of this chapter
 
 linux/Windows Subsystem Linux requirements
 #################################################################################
@@ -68,9 +68,9 @@ type this in the terminal_ to install Python_
 how to make a python test driven development environment manually
 ********************************************************************************************
 
-Let us say I have to work on a project and its name is ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
+I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
-* I use the cd_ program_ to change `folder/directory`_ to where I will store all the projects from this book. I type it in the terminal_
+* I use the cd_ program_ to change `folder/directory`_ to where I will put all the projects from this book. I type it in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -104,14 +104,14 @@ Let us say I have to work on a project and its name is ``magic``. I click on ``T
 
     .../pumping_python $
 
-* I can use the tree_ program_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``pumping_python`` directory_
+* I type tree_ in the terminal_ to see what files_ and folders_ are  in the ``pumping_python`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     tree
 
-* when tree_ is not installed on the computer the terminal_ shows
+* when tree_ is not installed on the computer, the terminal_ shows
 
   .. code-block:: shell
 
@@ -159,6 +159,8 @@ Let us say I have to work on a project and its name is ``magic``. I click on ``T
 
     0 directories, 0 files
 
+  You will see more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
+
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
   .. code-block:: shell
@@ -172,7 +174,7 @@ Let us say I have to work on a project and its name is ``magic``. I click on ``T
 
     cd: no such file or directory: magic
 
-  the ``magic`` folder does not yet exist, ``pumping_python`` is empty. I `make the directory`_
+  the ``magic`` folder does not yet exist. I `make the directory`_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -290,7 +292,7 @@ how to make an empty file
 
     2 directories, 1 file
 
-  touch_ is a program_ that makes an empty file_ with the name it is given in the directory_ given in the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  touch_ is a program_ that makes an empty file_ with the name, I can give the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -334,9 +336,9 @@ how to run tests manually
 
   - ``python3`` is the Python_ program_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
-  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends in ``.py``, this means somewhere on the computer there is a file named ``unittest.py``, `see the source code for unittest here <https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py>`_
+  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends with ``.py``, this means somewhere on the computer there is a file named ``unittest.py``, `see the source code for unittest here <https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py>`_
 
-* I do not have any tests yet, that is why none ran. I make a child folder_ to keep the tests separate from the actual program_ (`source code`_)
+* I do not have any tests yet, that is why none ran. I make a child folder_ to keep the tests separate from the actual program_
 
   .. code-block:: shell
     :emphasize-lines: 1

@@ -14,8 +14,8 @@ The tests in this chapter cover the following Exceptions_
   :titlesonly:
   :maxdepth: 3
 
-  ModuleNotFoundError
   AssertionError
+  ModuleNotFoundError
   AttributeError
   TypeError
 

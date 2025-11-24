@@ -102,7 +102,7 @@ green: make it pass
     # AssertionError
     # AttributeError
 
-* I hold ``ctrl`` on the keyboard and click on ``truth_table.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>`, then I add a :ref:`function<functions>`
+* I click on ``truth_table.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>`, then I add a :ref:`function<functions>`
 
   .. code-block:: python
     :linenos:

@@ -549,7 +549,7 @@ review
 
 I ran tests to show how to cause any :ref:`Exceptions<errors>`, and catch or handle them in tests and programs.
 
-Would you like to :ref:`test ModuleNotFoundError? <how to measure sleep duration>`
+Would you like to :ref:`test TypeError?<TypeError>`
 
 ----
 
