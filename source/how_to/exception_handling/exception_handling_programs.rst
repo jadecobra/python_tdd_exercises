@@ -547,7 +547,9 @@ how to use try...except...else
 review
 *********************************************************************************
 
-I ran tests to show how to cause any :ref:`Exceptions<errors>`, and catch or handle them in tests and programs. Would you like to :ref:`test measuring sleep duration? <how to measure sleep duration>`
+I ran tests to show how to cause any :ref:`Exceptions<errors>`, and catch or handle them in tests and programs.
+
+Would you like to :ref:`test ModuleNotFoundError? <how to measure sleep duration>`
 
 ----
 

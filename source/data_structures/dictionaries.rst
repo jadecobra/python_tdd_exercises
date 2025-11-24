@@ -1050,7 +1050,7 @@ refactor: make it better
         'default'
     )
 
-* I want to see what would happen if I use the get_ :ref:`method<functions>` with a key that is in the dictionary_
+* I want to see what happens if I use the get_ :ref:`method<functions>` with a key that is in the dictionary_
 
   .. code-block:: python
 
@@ -1952,7 +1952,7 @@ the test passes
 refactor: make it better
 #################################################################################
 
-* I add a value to the call to see what would happen
+* I add a value to the call to see what happens
 
   .. code-block:: python
 
@@ -2002,7 +2002,7 @@ refactor: make it better
 
   the test passes
 
-* I add an :ref:`assertion<AssertionError>` to see what would happen if I give a key that is already in the dictionary_
+* I add an :ref:`assertion<AssertionError>` to see what happens if I give a key that is already in the dictionary_
 
   .. code-block:: python
 
@@ -2029,7 +2029,7 @@ refactor: make it better
 
   the test passes
 
-* since the update_ :ref:`method<functions>` takes keyword arguments it means I should be able to give it a dictionary_ as input. I add another :ref:`assertion<AssertionError>`
+* since the update_ :ref:`method<functions>` takes :ref:`keyword arguments<test_functions_w_keyword_arguments>` it means I should be able to give it a dictionary_ as input. I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -2353,7 +2353,7 @@ I ran tests for dictionaries_
 * they can be represented with ``{}``
 * they can be made with the dict_ constructor_
 
-Would you like to :ref:`test functions?<functions>`
+Would you like to :ref:`test How to make a Person?<how to make a person>`
 
 ----
 

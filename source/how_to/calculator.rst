@@ -1130,7 +1130,7 @@ green: make it pass
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-  I add positional arguments to the :ref:`function<functions>`
+  I add :ref:`positional arguments<test_functions_w_positional_arguments>` to the :ref:`function<functions>`
 
   .. code-block:: python
     :linenos:

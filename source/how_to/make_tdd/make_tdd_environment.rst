@@ -710,7 +710,7 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 
     tree
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -764,14 +764,14 @@ A `virtual environment`_ is a separate folder where I can install `python packag
 how to activate a virtual environment
 ############################################################################################
 
-* When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal to use it
+* When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     source .venv/bin/activate
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -826,7 +826,7 @@ I want to make a file where I can list all the `python packages`_ for my project
 
     echo "pytest-watch"
 
-  the terminal shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1240,7 +1240,7 @@ how to make a shell script run as a command
 
   This is a problem, ``makePythonTdd.sh`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done, and `I do not repeat myself`_
 
-  .. NOTE:: the terminal might show a different result for you. You can keep going, the key thing is that the program does not yet do what I want
+  .. NOTE:: the terminal_ might show a different result for you. You can keep going, the key thing is that the program does not yet do what I want
 
   I want ``makePythonTdd.sh`` to be able to make a project for any name I give. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project
 

@@ -991,7 +991,7 @@ refactor: make it better
 
   the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the list_. Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
 
-* I want to know what would happen if I have the same item in the list_ more than once, so I add a duplicate
+* I want to know what happens if I have the same item in the list_ more than once, so I add a duplicate
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1404,7 +1404,7 @@ refactor: make it better
 
   the test passes
 
-* I change the values in the list_ to see what would happen if an item is in there more than once
+* I change the values in the list_ to see what happens if an item is in there more than once
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1428,7 +1428,7 @@ refactor: make it better
 
   the test passes
 
-* I want to know what would happen if I try to remove_ an item that is not in the list_
+* I want to know what happens if I try to remove_ an item that is not in the list_
 
   .. code-block:: python
 
@@ -1611,7 +1611,7 @@ refactor: make it better
 
     self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is sorted, I change it to see what would happen when it is not sorted
+  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is sorted, I change it to see what happens when it is not sorted
 
   .. code-block:: python
 

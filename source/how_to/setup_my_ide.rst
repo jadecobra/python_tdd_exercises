@@ -63,13 +63,13 @@ the terminal_ to show results of the tests
 
   .. image:: /_static/setup_my_ide/terminal_on_bottom.png
     :width: 600
-    :alt: Terminal Window at the bottom
+    :alt: terminal_ Window at the bottom
 
 * to the right - when the results I am looking at in the terminal_ are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries`
 
   .. image:: /_static/setup_my_ide/terminal_on_right.png
     :width: 600
-    :alt: Terminal Window on the right
+    :alt: terminal_ Window on the right
 
 This setup helps me answer 2 questions
 

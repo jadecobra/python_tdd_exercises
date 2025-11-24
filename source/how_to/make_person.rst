@@ -1039,7 +1039,7 @@ refactor: make it better
 test_function_w_default_keyword_arguments
 *************************************************************************************
 
-I want to see what would happen when I try to make a person without a value for the ``last_name`` argument
+I want to see what happens when I try to make a person without a value for the ``last_name`` argument
 
 red: make it fail
 #################################################################################
@@ -1307,7 +1307,7 @@ green: make it pass
                 )
             )
 
-* I comment out the ``sex`` variable in the test to see what would happen if I do not know its value
+* I comment out the ``sex`` variable in the test to see what happens if I do not know its value
 
   .. code-block:: python
     :lineno-start: 40
@@ -2111,7 +2111,7 @@ green: make it pass
 review
 *************************************************************************************
 
-I ran tests to make a :ref:`function<functions>` that takes in keyword arguments as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary <dictionaries>` as output
+I ran tests to make a :ref:`function<functions>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary <dictionaries>` as output
 
 I also ran into the following :ref:`Exceptions<errors>`
 
@@ -2121,7 +2121,7 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to know :ref:`how to test that an Exception is raised?<how to test that an Exception is raised>`
+Would you like to :ref:`test Classes?<classes>`
 
 ----
 

@@ -621,7 +621,9 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects_ that are not callable_, :ref:`function<functions>` definitions and objects_ that do not mix. Would you like to :ref:`test data structures?<data structures>`
+I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects_ that are not callable_, :ref:`function<functions>` definitions and objects_ that do not mix.
+
+Would you like to :ref:`test Lists?<lists>`
 
 ----
 

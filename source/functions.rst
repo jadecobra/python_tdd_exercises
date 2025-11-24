@@ -343,7 +343,7 @@ I add the function_ to ``functions.py``
   def constant():
       return None
 
-the terminal shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: shell
 
@@ -556,7 +556,7 @@ green: make it pass
     def w_positional_arguments(first, last):
         return None
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -593,7 +593,7 @@ refactor: make it better
 
     # Exceptions Encountered
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -716,7 +716,7 @@ green: make it pass
 refactor: make it better
 ################################################################################
 
-* ``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_, except their names, the difference is in how I call the functions_ in the tests. In the first case I use positional arguments_ which have to be given in order, and in the second case I keyword arguments_ which use the names of the variables in parentheses in the function_ definition. I add another test with the keyword arguments out of order in ``test_functions.py``
+* ``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_, except their names, the difference is in how I call the functions_ in the tests. In the first case I use positional arguments_ which have to be given in order, and in the second case I keyword arguments_ which use the names of the variables in parentheses in the function_ definition. I add another test with the :ref:`keyword arguments<test_functions_w_keyword_arguments>` out of order in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 1
@@ -773,7 +773,7 @@ refactor: make it better
               ('first', 'last')
           )
 
-  the terminal shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -798,7 +798,7 @@ refactor: make it better
 ----
 
 *********************************************************************************
-test_functions_w_unknown_keyword_arguments
+test_functions_w_positional_and_keyword_arguments
 *********************************************************************************
 
 I can also write functions_ that take both positional and keyword arguments_
@@ -826,9 +826,9 @@ I add a failing test to ``test_functions.py``
           )
 
 
-  # Exceptions
+  # Exceptions Encountered
 
-the terminal shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: shell
 
@@ -850,7 +850,7 @@ green: make it pass
       def w_positional_and_keyword_arguments():
           return None
 
-  the terminal shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -886,7 +886,7 @@ green: make it pass
 
     TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last'
 
-  Python_ assumes I am sending in 2 values since ``last`` is both the second argument and passed in as a keyword argument
+  Python_ cannot tell the difference between the 2 values since ``last`` is both the second argument and passed in as a keyword argument
 
 * I change the order of names in parentheses
 
@@ -903,7 +903,7 @@ green: make it pass
 
     AssertionError: None != ('first', 'last')
 
-  I change the `return statement`_
+* I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 29
@@ -912,495 +912,16 @@ green: make it pass
     def w_positional_and_keyword_arguments(first, last):
         return first, last
 
-  the test passes. There is no difference between the last 3 functions except their names, they all have this signature
+  the test passes.
 
-  .. code-block:: python
-
-    def name(first, last):
-        return first, last
-
-  what is different is the way I called them in the tests
-
-I can use positional and keyword arguments when I
-
-----
-
-*********************************************************************************
-test_functions_w_unknown_keyword_arguments
-*********************************************************************************
-
-* The function_ currently only takes in 2 `keyword arguments`_. What if I want a function_ that can take in any number of `keyword arguments`_? There is a starred expression for `keyword arguments`_ - ``**``. I add an :ref:`assertion<AssertionError>`
-
-  .. code-block:: python
-
-    def test_functions_w_unknown_keyword_arguments(self):
-        self.assertEqual(
-            src.functions.take_unknown_keyword_arguments(
-                a=1, b=2, c=3, d=4
-            ),
-            None
-        )
-
-  the terminal_ shows :ref:`AttributeError`
-
-  .. code-block:: python
-    :force:
-
-    AttributeError: module 'src.functions' has no attribute 'take_unknown_keyword_arguments'. Did you mean: 'take_keyword_arguments'?
-
-  I add a function_ using a `starred expression`_
-
-  .. code-block:: python
-
-    def take_unknown_keyword_arguments(*arguments):
-        return arguments
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: shell
-
-    TypeError: take_unknown_keyword_arguments() got an unexpected keyword argument 'a'
-
-  the `starred expression`_ for keyword arguments is different, I change the function_
-
-  .. code-block:: python
-
-    def take_unknown_keyword_arguments(**keyword_arguments):
-        return keyword_arguments
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: {'a': 1, 'b': 2, 'c': 3, 'd': 4} != None
-
-  I change the expectation in the test to match
-
-  .. code-block:: python
-
-    def test_functions_w_unknown_keyword_arguments(self):
-        self.assertEqual(
-            src.functions.take_unknown_keyword_arguments(
-                a=1, b=2, c=3, d=4
-            ),
-            {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-        )
-
-  the test passes
-
-* I add another :ref:`assertion<AssertionError>` with a different number of inputs
-
-  .. code-block:: python
-
-    self.assertEqual(
-        src.functions.take_unknown_keyword_arguments(
-            a=1, b=2, c=3, d=4
-        ),
-        {'a': 1, 'b': 2, 'c': 3, 'd': 4}
-    )
-    self.assertEqual(
-        src.functions.take_unknown_keyword_arguments(
-            none=None,
-            a_boolean=bool,
-            an_integer=int,
-            a_float=float,
-            a_string=str,
-            a_tuple=tuple,
-            a_list=list,
-            a_set=set,
-            a_dictionary=dict
-        ),
-        {}
-    )
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: python
-    :force:
-
-    AssertionError: {'none': None, 'a_boolean': <class 'bool'>[190 chars]ct'>} != {}
-
-  I change the expectation to match the values in the terminal_
-
-  .. code-block:: python
-
-    self.assertEqual(
-        src.functions.take_unknown_keyword_arguments(
-            none=None,
-            a_boolean=bool,
-            an_integer=int,
-            a_float=float,
-            a_string=str,
-            a_tuple=tuple,
-            a_list=list,
-            a_set=set,
-            a_dictionary=dict
-        ),
-        dict(
-            a_boolean=bool,
-            a_dictionary=dict,
-            a_float=float,
-            a_list=list,
-            a_set=set,
-            a_string=str,
-            a_tuple=tuple,
-            an_integer=int,
-            none=None,
-        )
-    )
-
-  the test passes
-
-# ADD examples with dictionary as input
-
-----
-
-*********************************************************************************
-test_functions_w_positional_and_keyword_arguments
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-I can also define functions_ to take both positional arguments and keyword arguments as inputs. I add a new failing test to ``test_functions.py``
+There is no difference between the last 3 functions except their names, they all have this signature
 
 .. code-block:: python
 
-    def test_functions_w_positional_and_keyword_arguments(self):
-        self.assertEqual(
-        functions.take_positional_and_keyword_arguments(
-            last_name='last_name', 'first_name'
-        ),
-        {}
-      )
+  def name_of_function(first, last):
+      return first, last
 
-the terminal_ shows a SyntaxError_ because I put a positional argument
-after a keyword argument. I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
-
-.. code-block:: python
-
-  # Exceptions Encountered
-  # AssertionError
-  # ModuleNotFoundError
-  # AttributeError
-  # TypeError
-  # SyntaxError
-
-green: make it pass
-#################################################################################
-
-* I fix the order of arguments in ``test_functions_w_positional_and_keyword_arguments`` since keyword arguments come after positional arguments
-
-  .. code-block:: python
-
-    def test_functions_w_positional_and_keyword_arguments(self):
-        self.assertEqual(
-            functions.take_positional_and_keyword_arguments(
-                'first_name', last_name='last_name'
-            ),
-            {}
-        )
-
-  the terminal_ shows :ref:`AttributeError`
-* I add a definition for the function_ to ``functions.py``
-
-  .. code-block:: python
-
-    def take_positional_and_keyword_arguments():
-        return None
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: shell
-
-    TypeError: take_positional_and_keyword_arguments() got an unexpected keyword argument 'last_name'
-
-* I make the function_ definition to take in an argument
-
-  .. code-block:: python
-
-    def take_positional_and_keyword_arguments(last_name):
-        return None
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: shell
-
-    TypeError: take_positional_and_keyword_arguments() got multiple values for argument 'last_name'
-
-* I add another argument to the function_ definition
-
-  .. code-block:: python
-
-    def take_positional_and_keyword_arguments(last_name, first_name):
-        return None
-
-  the terminal_ shows the same error even though I have 2 different arguments. I need a way to let the ``take_positional_and_keyword_arguments`` know which argument is positional and which is a keyword argument
-* I reorder the arguments in the definition
-
-  .. code-block:: python
-
-    def take_positional_and_keyword_arguments(first_name, last_name):
-        return None
-
-  the terminal_ shows :ref:`AssertionError`
-* I edit the `return statement`_ to make the test pass
-
-  .. code-block:: python
-
-    def take_positional_and_keyword_arguments(first_name, last_name):
-        return first_name, last_name
-
-  the terminal_ shows :ref:`AssertionError` with the values I just added
-* I make ``test_functions_w_positional_and_keyword_arguments`` to make the results match the expectation
-
-  .. code-block:: python
-
-      def test_functions_w_positional_and_keyword_arguments(self):
-          self.assertEqual(
-          functions.take_positional_and_keyword_arguments(
-                  'first_name', last_name='last_name'
-              ),
-              ('first_name', 'last_name')
-          )
-
-  the test passes
-
-
-refactor: make it better
-#################################################################################
-
-Hold on a second. This looks exactly like what I did in ``test_functions_w_positional_arguments``. I cannot tell from the function_ definition which argument is positional and which is a keyword argument and do not want to wait for the function_ to fail when I send in values to find out
-
-* I make the definition of ``take_positional_and_keyword_arguments`` to have a default value for the keyword argument
-
-  .. code-block:: python
-
-    def take_positional_and_keyword_arguments(first_name, last_name=None):
-        return first_name, last_name
-
-  all tests are still passing
-
-* I did not add a default argument for ``first_name``, what would happen if I did?
-
-  .. code-block:: python
-
-    def take_positional_and_keyword_arguments(first_name=None, last_name=None):
-        return first_name, last_name
-
-  I still have passing tests. It looks likelets us use default arguments with no issues, and I can provide keyword arguments positionally without using the name.
-
-* I add another test to ``test_functions_w_positional_and_keyword_arguments`` to show this
-
-  .. code-block:: python
-
-      def test_functions_w_positional_and_keyword_arguments(self):
-          self.assertEqual(
-              functions.take_positional_and_keyword_arguments(
-                  'first_name', last_name='last_name'
-              ),
-              ('first_name', 'last_name')
-          )
-          self.assertEqual(
-              functions.take_positional_and_keyword_arguments(
-                  'first_name', 'last_name'
-              ),
-              ('first_name', 'last_name')
-          )
-
-  all the tests are still passing. The problem here is without the names the program is going to take the input data in the order I provide it so it is better to be explicit with the names, from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit.``
-* I add 2 tests, this time for an unknown number of positional and keyword arguments
-
-  .. code-block:: python
-
-    def test_functions_w_positional_and_keyword_arguments(self):
-        self.assertEqual(
-            functions.take_positional_and_keyword_arguments(
-                'first_name', last_name='last_name'
-            ),
-            ('first_name', 'last_name')
-        )
-        self.assertEqual(
-            functions.take_positional_and_keyword_arguments(
-                'first_name', 'last_name'
-            ),
-            ('first_name', 'last_name')
-        )
-        self.assertEqual(
-            functions.take_positional_and_keyword_arguments(),
-            (None, None)
-        )
-        self.assertEqual(
-            functions.take_positional_and_keyword_arguments(
-                bool, int, float, str, tuple, list, set, dict,
-                a_boolean=bool, an_integer=int, a_float=float,
-                a_string=str, a_tuple=tuple, a_list=list,
-                a_set=set, a_dictionary=dict
-            ),
-            ()
-        )
-
-  the terminal_ shows :ref:`TypeError` because the function_ definition only has 2 keyword arguments which are not provided in the call
-
-* using what I know from previous tests I can alter the function_ to use starred expressions
-
-  .. code-block:: python
-
-    def take_positional_and_keyword_arguments(*args, **kwargs):
-        return args, kwargs
-
-  the terminal_ shows :ref:`AssertionError` for a previous passing test. I have introduced a regression
-
-  .. code-block:: python
-
-    E   AssertionError: Tuples differ: (('first_name',), {'last_name': 'last_name'}) != ('first_name', 'last_name')
-
-* I comment out the other :ref:`assertions<AssertionError>` so I can focus on the failing test
-
-  .. code-block:: python
-
-      def test_functions_w_positional_and_keyword_arguments(self):
-          self.assertEqual(
-            functions.take_positional_and_keyword_arguments(
-              'first_name', last_name='last_name'
-            ),
-            ('first_name', 'last_name')
-          )
-          # self.assertEqual(
-          #    functions.take_positional_and_keyword_arguments(
-          #        'first_name', 'last_name'
-          #    ),
-          #    (('first_name', 'last_name'), {})
-          # )
-          # self.assertEqual(
-          #     functions.take_positional_and_keyword_arguments(),
-          #     (None, None)
-          # )
-          # self.assertEqual(
-          #    functions.take_positional_and_keyword_arguments(
-          #        bool, int, float, str, tuple, list, set, dict,
-          #        a_boolean=bool, an_integer=int, a_float=float,
-          #        a_string=str, a_tuple=tuple, a_list=list,
-          #        a_set=set, a_dictionary=dict
-          #    ),
-          #    ()
-          # )
-
-* I change the expected values in the test to make it pass
-
-  .. code-block:: python
-
-    self.assertEqual(
-        functions.take_positional_and_keyword_arguments(
-            'first_name', last_name='last_name'
-        ),
-        (('first_name',), {'last_name': 'last_name'})
-    )
-
-  the terminal_ shows tests passing, with the positional argument in parentheses and the keyword argument in curly braces
-* I uncomment the next test
-
-  .. code-block:: python
-
-    self.assertEqual(
-        functions.take_positional_and_keyword_arguments(
-            'first_name', 'last_name'
-        ),
-        (('first_name', 'last_name'), {})
-    )
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    E    AssertionError: Tuples differ: (('first_name', 'last_name'), {}) != (('first_name', 'last_name'), {})
-
-* I make the test pass with both positional arguments in parentheses and empty curly braces since there are no keyword arguments
-
-  .. code-block:: python
-
-      self.assertEqual(
-          functions.take_positional_and_keyword_arguments(
-              'first_name', 'last_name'
-          ),
-          (('first_name', 'last_name'), {})
-      )
-
-  the test passes
-
-* I uncomment the next test to see it fail
-
-  .. code-block:: python
-
-      self.assertEqual(
-          functions.take_positional_and_keyword_arguments(),
-          (None, None)
-      )
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: Tuples differ: ((), {}) != (None, None)
-
-* I make the test pass with empty parentheses and curly braces as the expectation since no positional or keyword arguments were provided as inputs
-
-  .. code-block:: python
-
-    self.assertEqual(
-        functions.take_positional_and_keyword_arguments(),
-        ((), {})
-    )
-
-* I uncomment the last test to see it fail the terminal_ shows :ref:`AssertionError`
-
-  .. code-block::
-
-    AssertionError: Tuples differ: ((<class 'bool'>, <class 'int'>, <class 'f[307 chars]t'>}) != ()
-
-* I make the test pass
-
-  .. code-block:: python
-
-      self.assertEqual(
-          functions.take_positional_and_keyword_arguments(
-              bool, int, float, str, tuple, list, set, dict,
-              a_boolean=bool, an_integer=int, a_float=float,
-              a_string=str, a_tuple=tuple, a_list=list,
-              a_set=set, a_dictionary=dict
-          ),
-          (
-              (bool, int, float, str, tuple, list, set, dict,),
-              {
-                  'a_boolean': bool,
-                  'an_integer': int,
-                  'a_float': float,
-                  'a_string': str,
-                  'a_tuple': tuple,
-                  'a_list': list,
-                  'a_set': set,
-                  'a_dictionary': dict
-              }
-          )
-      )
-
-----
-
-*********************************************************************************
-test_functions_w_unknown_positional_and_keyword_arguments
-*********************************************************************************
-
-red: make it fail
-#################################################################################
-
-
-green: make it pass
-#################################################################################
-
-
-refactor: make it better
-#################################################################################
-
+what is different is the way I called them in the tests
 
 ----
 
@@ -1408,16 +929,131 @@ refactor: make it better
 test_functions_w_default_arguments
 *********************************************************************************
 
-red: make it fail
-#################################################################################
+I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want a function to take inputs that are required and inputs that are optional. The example below is from :ref:`how to make a person`
 
+red: make it fail
+################################################################################
+
+I add a failing test to ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 54
+  :emphasize-lines: 9-14
+
+      def test_functions_w_positional_and_keyword_arguments(self):
+          self.assertEqual(
+              src.functions.w_positional_and_keyword_arguments(
+                  'first', last='last',
+              ),
+              ('first', 'last')
+          )
+
+      def test_functions_w_default_arguments(self):
+          self.assertEqual(
+              src.functions.w_default_arguments('jane', last_name='doe'),
+              ('jane', 'doe')
+          )
+
+
+  # Exceptions Encountered
+
+the terminal_ shows :ref:`AttributeError`
+
+.. code-block:: shell
+
+  AttributeError: module 'src.functions' has no attribute 'w_default_arguments'. Did you mean: 'w_keyword_arguments'?
 
 green: make it pass
-#################################################################################
+################################################################################
 
+I add a function_ to ``functions.py``
+
+.. code-block:: python
+  :lineno-start: 29
+  :emphasize-lines: 5-6
+
+  def w_positional_and_keyword_arguments(first, last):
+      return first, last
+
+
+  def w_default_arguments(first_name, last_name):
+      return first_name, last_name
+
+the test passes
 
 refactor: make it better
-#################################################################################
+################################################################################
+
+* I remove ``last_name='doe'`` from the call to ``w_default_arguments`` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 3
+
+        def test_functions_w_default_arguments(self):
+            self.assertEqual(
+                src.functions.w_default_arguments('jane'),
+                ('jane', 'doe')
+            )
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: w_default_arguments() missing 1 required positional argument: 'last_name'
+
+  the ``last_name`` argument is required in the function_ definition
+
+* I make the argument optional by giving it a default value in ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 1
+
+    def w_default_arguments(first_name, last_name='doe'):
+        return first_name, last_name
+
+  the test passes.
+
+  Calling the function_ without ``last_name`` - ``w_default_arguments('jane')`` - would be the same as calling it with the default value - ``w_default_arguments('jane', last_name='doe')``
+
+* I add another assertion_ to show that I can still call the function_ with different inputs
+
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 8
+
+        def test_functions_w_default_arguments(self):
+            self.assertEqual(
+                src.functions.w_default_arguments('jane'),
+                ('jane', 'doe')
+            )
+            self.assertEqual(
+                src.functions.w_default_arguments('joe', 'blow'),
+                ()
+            )
+
+
+    # Exceptions Encountered
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: Tuples differ: ('joe', 'blow') != ()
+
+  I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.functions.w_default_arguments('joe', 'blow'),
+                ('joe', 'blow')
+            )
+
+  the test passes
 
 ----
 
@@ -1425,16 +1061,301 @@ refactor: make it better
 test_functions_w_unknown_arguments
 *********************************************************************************
 
+I can also make functions_ that take any number of positional and keyword arguments. This means I do not need to know how many inputs will be sent to the function_ when it is called
+
 red: make it fail
 #################################################################################
 
+I add a a new test to ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 67
+  :emphasize-lines:
+
+          self.assertEqual(
+              src.functions.w_default_arguments('joe', 'blow'),
+              ('joe', 'blow')
+          )
+
+      def test_functions_w_unknown_arguments(self):
+          self.assertEqual(
+              src.functions.w_unknown_arguments(
+                  0, 1, 2, 3, a=4, b=5, c=6, d=7,
+              ),
+              None
+          )
+
+the terminal_ shows :ref:`AttributeError`
+
+.. code-block:: shell
+
+  AttributeError: module 'src.functions' has no attribute 'w_unknown_arguments'. Did you mean: 'w_keyword_arguments'?
 
 green: make it pass
 #################################################################################
 
+* I add a function_ to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 5-6
+
+    def w_default_arguments(first_name, last_name='doe'):
+        return first_name, last_name
+
+
+    def w_unknown_arguments():
+        return None
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: w_unknown_arguments() got an unexpected keyword argument 'a'
+
+* I add the name to the function_ definition
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+    def w_unknown_arguments(a):
+        return None
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: w_unknown_arguments() got multiple values for argument 'a'
+
+  I had this same problem in :ref:`test_functions_w_positional_and_keyword_arguments`, Python_ cannot tell which arguments are positional or :ref:`keyword arguments<test_functions_w_keyword_arguments>` yet
+
+* Python_ has a way to allow passing any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many inputs will be passed. I use it to replace ``a`` in the parentheses
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+    def w_unknown_arguments(**kwargs):
+        return None
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: w_unknown_arguments() takes 0 positional arguments but 4 were given
+
+* I add a name for the first positional argument
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    def w_unknown_arguments(**kwargs, x):
+        return None
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: shell
+
+    SyntaxError: arguments cannot follow var-keyword argument
+
+  a reminder that I cannot put :ref:`positional arguments<test_functions_w_positional_arguments>` after keyword arguments
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 6
+
+    # Exceptions Encountered
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* I change the order of the inputs in ``w_unknown_arguments`` in ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+    def w_unknown_arguments(x, **kwargs):
+        return None
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: w_unknown_arguments() takes 1 positional argument but 4 were given
+
+* I can add names for the other positional arguments, or I can do a similar thing to what I did with the keyword arguments
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+    def w_unknown_arguments(*args, **kwargs):
+        return None
+
+  the test passes
 
 refactor: make it better
 #################################################################################
+
+* ``*args, **kwargs`` is Python_ convention. I change the names to be more descriptive
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+    def w_unknown_arguments(*arguments, **keyword_arguments):
+        return None
+
+  the test is still green
+
+* I want the function_ to return its input, I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+    def w_unknown_arguments(*arguments, **keyword_arguments):
+        return arguments, keyword_arguments
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    AssertionError: ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != None
+
+* I copy the tuple_ from the terminal_ and use it to change the expectation in ``test_functions_w_unknown_arguments`` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 6
+
+        def test_functions_w_unknown_arguments(self):
+            self.assertEqual(
+                src.functions.w_unknown_arguments(
+                    0, 1, 2, 3, a=4, b=5, c=6, d=7,
+                ),
+                ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+            )
+
+  the test passes
+
+* I want to see what happens when I call the function_ without keyword arguments. I add a new assertion_
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 7-10
+
+            self.assertEqual(
+                src.functions.w_unknown_arguments(
+                    0, 1, 2, 3, a=4, b=5, c=6, d=7,
+                ),
+                ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+            )
+            self.assertEqual(
+                src.functions.w_unknown_arguments(0, 1, 2, 3),
+                ()
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: Tuples differ: ((0, 1, 2, 3), {}) != ()
+
+  I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 79
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.functions.w_unknown_arguments(0, 1, 2, 3),
+                ((0, 1, 2, 3), {})
+            )
+
+
+    # Exceptions Encountered
+
+  the test passes
+
+* I add another assertion_ to see what happens when I call the function_ without :ref:`positional arguments<test_functions_w_positional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 79
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.functions.w_unknown_arguments(0, 1, 2, 3),
+                ((0, 1, 2, 3), {})
+            )
+            self.assertEqual(
+                src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+                ()
+            )
+
+  the terminal_
+
+  .. code-block:: shell
+
+    AssertionError: Tuples differ: ((), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != ()
+
+  I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+                ((), dict(a=4, b=5, c=6, d=7))
+            )
+
+
+    # Exceptions Encountered
+
+  the test passes
+
+* I add one more assertion_ to see what happens when I call the function_ with no inputs
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 5-8
+
+          self.assertEqual(
+              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+              ((), dict(a=4, b=5, c=6, d=7))
+          )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(),
+              ()
+          )
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    AssertionError: Tuples differ: ((), {}) != ()
+
+  I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 87
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.functions.w_unknown_arguments(),
+                ((), {})
+            )
+
+  the test passes
+
+The function_ reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_ and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`. This is why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input
 
 ----
 
@@ -1442,20 +1363,27 @@ refactor: make it better
 review
 *********************************************************************************
 
-the tests show that
+I ran tests to show that I can make functions_ with
 
-* I can define default values for arguments
-* positional arguments must come before keyword arguments
+* the def_ keyword
+* positional arguments
+* keyword arguments
+* positional and keyword arguments
+* default values
+* can take any number of inputs
+
+as a reminder
+
+* :ref:`positional arguments<test_functions_w_positional_arguments>` must come before keyword arguments
 * I can use ``**kwargs`` to represent any number of keyword arguments
-* keyword arguments are represented as :ref:`dictionaries`
+* :ref:`keyword arguments<test_functions_w_keyword_arguments>` are represented as :ref:`dictionaries`
 * I can use ``*args`` to represent any number of positional arguments
-* positional arguments are represented as tuples_
+* :ref:`positional arguments<test_functions_w_positional_arguments>` are represented as tuples_
 * :ref:`identity functions<test_identity_function>` return their input
 * :ref:`constant functions<test_constant_function>` always return the same thing
 * functions_ return :ref:`None` by default
-* functions_ are defined using the def_ keyword
 
-Would you like to :ref:`test classes?<classes>`
+Would you like to know :ref:`how to test that an Exception is raised?<how to test that an Exception is raised>`
 
 ----
 
