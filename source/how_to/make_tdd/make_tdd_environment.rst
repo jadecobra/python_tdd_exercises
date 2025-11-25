@@ -619,32 +619,32 @@ how to rename a file
 green: make it pass
 #################################################################################
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
+I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
 
-  .. code-block:: shell
-    :lineno-start: 7
-    :emphasize-lines: 1
+.. code-block:: shell
+  :lineno-start: 7
+  :emphasize-lines: 1
 
-            self.assertFalse(False)
+          self.assertFalse(False)
 
-  * I run the test again in the terminal_
+I run the test again in the terminal_
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+.. code-block:: shell
+  :emphasize-lines: 1
 
-    python3 -m unittest
+  python3 -m unittest
 
-  the test passes! The terminal_ shows
+the test passes! The terminal_ shows
 
-  .. code-block:: none
+.. code-block:: none
 
-    .
-    ------------------------------------------------------
-    Ran 1 test in A.XYZs
+  .
+  ------------------------------------------------------
+  Ran 1 test in A.XYZs
 
-    OK
+  OK
 
-  *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
+*cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
 refactor: make it better
 ############################################################################################

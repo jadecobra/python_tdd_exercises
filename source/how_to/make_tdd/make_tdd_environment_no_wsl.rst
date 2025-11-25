@@ -473,7 +473,7 @@ how to rename a file on Windows without WSL
 
   the terminal_ goes back to the command line
 
-* I use tree_ with the ``-L`` option to see what I have so far
+* I use tree_ to see what I have so far
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -493,8 +493,6 @@ how to rename a file on Windows without WSL
         └── test_magic.py
 
     4 directories, 3 files
-
-  the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of  contents of the child folders_
 
 * I run the tests again
 
@@ -548,32 +546,32 @@ how to rename a file on Windows without WSL
 green: make it pass
 #################################################################################
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
+I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
 
-  .. code-block:: PowerShell
-    :lineno-start: 7
-    :emphasize-lines: 1
+.. code-block:: PowerShell
+  :lineno-start: 7
+  :emphasize-lines: 1
 
-            self.assertFalse(False)
+          self.assertFalse(False)
 
-  * I run the test again in the terminal_
+I run the test again in the terminal_
 
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
+.. code-block:: PowerShell
+  :emphasize-lines: 1
 
-    python -m unittest
+  python -m unittest
 
-  the test passes! The terminal_ shows
+the test passes! The terminal_ shows
 
-  .. code-block:: none
+.. code-block:: none
 
-    .
-    ------------------------------------------------------
-    Ran 1 test in A.XYZs
+  .
+  ------------------------------------------------------
+  Ran 1 test in A.XYZs
 
-    OK
+  OK
 
-  *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
+*cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
 refactor: make it better
 ############################################################################################
@@ -701,9 +699,6 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
   there is now a folder_ named ``.venv`` for the `virtual environment`_
 
-  - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
-  - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to keep it to the first level of what is in the children folders_ of ``magic``
-
 how to activate a virtual environment on Windows without WSL
 ############################################################################################
 
@@ -819,7 +814,7 @@ I want to make a file where I can list all the `python packages`_ for my project
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
-how to install python packages in a virtual environment on Windows without Windows SubSystem Linux
+how to install python packages in a virtual environment on Windows without WSL
 ---------------------------------------------------------------------------------------------------
 
 * I use pip_ to install `pytest-watch`_ from the requirements file
@@ -1492,8 +1487,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
 * :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
 * :ref:`How can I document the Python programs my project needs?<how to write text to a file on Windows without Windows SubSystem Linux>`
-* :ref:`How can I install the Python programs my project needs from a file?<how to install python packages in a virtual environment on Windows without Windows SubSystem Linux>`
-* :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment on Windows without Windows SubSystem Linux>`
+* :ref:`How can I install the Python programs my project needs from a file?<how to install python packages in a virtual environment on Windows without WSL>`
+* :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment on Windows without WSL>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
