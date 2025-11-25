@@ -603,7 +603,7 @@ This means I have to run ``python -m unittest`` for each part of the `Test Drive
 ----
 
 ********************************************************************************************
-how to run tests automatically
+how to run tests automatically on Windows without Windows SubSystem Linux
 ********************************************************************************************
 
 I can use `pytest-watch`_ to run tests automatically. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change.
@@ -758,7 +758,7 @@ the terminal_ shows
 - `pytest-watch`_ is not in the list
 - pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
 
-how to write text to a file on Windows without WSL
+how to write text to a file on Windows without Windows SubSystem Linux
 --------------------------------------------------------------------------------------------
 I want to make a file where I can list all the `python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
@@ -819,8 +819,8 @@ I want to make a file where I can list all the `python packages`_ for my project
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
-how to install python packages in a virtual environment
---------------------------------------------------------------------------------------------
+how to install python packages in a virtual environment on Windows without Windows SubSystem Linux
+---------------------------------------------------------------------------------------------------
 
 * I use pip_ to install `pytest-watch`_ from the requirements file
 
@@ -1478,27 +1478,27 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`
-* :ref:`How can I make an empty file?<how to make an empty file>`
-* :ref:`How can I write text to a file?<how to write text to a file on Windows without WSL>`
+* :ref:`How can I make an empty file?<how to make an empty file on Windows without Windows SubSystem Linux>`
+* :ref:`How can I write text to a file?<how to write text to a file on Windows without Windows SubSystem Linux>`
 * :ref:`How can I rename a file?<how to rename a file on Windows without WSL>`
-* :ref:`How can I run a Python Program?<how to run a Python program>`
+* :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows SubSystem Linux>`
 * :ref:`How can I test for failure?<test_failure>`
 * :ref:`How can I make a python package?<how to make a python package>`
 * :ref:`How can I run tests manually?<how to run tests manually on Windows without WSL>`
-* :ref:`How can I run tests automatically?<how to run tests automatically>`
+* :ref:`How can I run tests automatically?<how to run tests automatically on Windows without Windows SubSystem Linux>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
 * :ref:`What is a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
 * :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
-* :ref:`How can I document the Python programs my project needs?<how to write text to a file on Windows without WSL>`
-* :ref:`How can I install the Python programs my project needs from a file?<how to install python packages in a virtual environment>`
-* :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment>`
+* :ref:`How can I document the Python programs my project needs?<how to write text to a file on Windows without Windows SubSystem Linux>`
+* :ref:`How can I install the Python programs my project needs from a file?<how to install python packages in a virtual environment on Windows without Windows SubSystem Linux>`
+* :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment on Windows without Windows SubSystem Linux>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`What is a variable?<how to use variables in a PowerShell script>`
 * :ref:`How can I use a variable in a PowerShell script<how to use variables in a PowerShell script>`
+* :ref:`What is a variable?<how to use variables in a PowerShell script>`
 * :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
 * :ref:`What is the Test Driven Development Cycle?<test_failure>`
 
