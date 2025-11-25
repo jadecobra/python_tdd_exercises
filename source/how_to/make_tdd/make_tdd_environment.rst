@@ -1076,7 +1076,7 @@ how to make a shell script
 
   .. code-block:: shell
 
-    tree -L 2
+    tree -a -L 2
 
   the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
 
@@ -1084,12 +1084,14 @@ how to make a shell script
 
     .
     ├── magic
+    │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
-    │   └── tests
+    │   ├── tests
+    │   └── .venv
     └── makePythonTdd.sh
 
-    4 directories, 2 files
+    5 directories, 2 files
 
 how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
@@ -1104,6 +1106,7 @@ how to view all the commands I typed in a terminal
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 8, 10, 12, 15
 
     cd pumping_python
     mkdir pumping_python
@@ -1132,7 +1135,7 @@ how to view all the commands I typed in a terminal
     tree
     python3 -m unittest
     mv tests/magic.py tests/test_magic.py
-    tree
+    tree -L 2
     python3 -m unittest
     pytest-watch
     python3 -m venv .venv
@@ -1152,7 +1155,7 @@ how to view all the commands I typed in a terminal
     pytest-watch
     cd ..
     touch makePythonTdd.sh
-    tree -L 2
+    tree -a -L 2
 
   the history_ program_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 

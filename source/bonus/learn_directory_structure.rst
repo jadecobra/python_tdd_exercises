@@ -93,7 +93,7 @@ tree_ comes with Windows_ you do not have to do anything, but here are the thing
 
   * `New-Item`_ instead of touch_
   * ``tree /F`` instead of tree_
-  * ``ls -Force`` instead of ``ls --all/-a``
+  * ``dir /ah`` instead of ``ls --all/-a``
 
 The path shown when you call pwd_ or tree_ will show ``\`` instead of ``/`` for example
 
@@ -265,12 +265,12 @@ how to list what is in a directory
 
       ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      ls -Force
+      dir /ah
 
     the terminal_ will not show ``.`` and ``..``
 
@@ -386,12 +386,12 @@ how to look at directory structure
 
     ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      ls -Force
+      dir /ah
 
   the terminal_ shows
 
@@ -752,12 +752,12 @@ I can make empty files_ in a folder_ with the touch_ program
 
     ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      ls -Force
+      dir /ah
 
     the terminal_ will not show ``.`` and ``..``
 
@@ -1518,19 +1518,19 @@ I can make empty files_ in a folder_ with the touch_ program
 
     rm -rf parent
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``rm -Force`` instead of ``rm -rf``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm -rf``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      rm -Force parent
+      Remove-Item -Path parent -Recurse -Force
 
 
   the terminal_ goes back to the command line
 
   - rm_ is used to remove files_ and folders_
-  - ``-r`` means remove child directories_ and what is in them recursively, it goes through each child directory_ and removes everything include their children
-  - ``-f`` means "force", do not ask me any questions, just remove the file_ or folder_
+  - ``-r/-Recurse`` means remove child directories_ and what is in them recursively, it goes through each child directory_ and removes everything include their children
+  - ``-f/-Force`` means "force", do not ask me any questions, just remove the file_ or folder_
 
 * I try to go back to the ``parent`` directory_
 
