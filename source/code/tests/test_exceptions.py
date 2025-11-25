@@ -18,7 +18,7 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_type_error_in_tests(self):
         with self.assertRaises(TypeError):
-            src.exceptions.function_name('argument')
+            src.exceptions.function_name('the_input')
 
     def test_catching_index_error_in_tests(self):
         a_list = [1, 2, 3, 'n']

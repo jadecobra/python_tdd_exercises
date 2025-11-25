@@ -240,7 +240,7 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 1
 
-    def an_exception_handler(argument):
+    def an_exception_handler(the_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -257,7 +257,7 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 2
 
-    def an_exception_handler(argument):
+    def an_exception_handler(the_input):
         return 'failed'
 
   the test passes.
@@ -317,7 +317,7 @@ green: make it pass
     does_not_raise_exception
 
 
-    def an_exception_handler(argument):
+    def an_exception_handler(the_input):
         return 'failed'
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
@@ -351,8 +351,8 @@ green: make it pass
     does_not_raise_exception = None
 
 
-    def an_exception_handler(argument):
-        return argument
+    def an_exception_handler(the_input):
+        return the_input
         return 'failed'
 
   the terminal_ shows :ref:`AssertionError`

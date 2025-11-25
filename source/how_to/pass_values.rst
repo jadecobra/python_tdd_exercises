@@ -854,7 +854,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 1
 
-    def text(argument):
+    def text(the_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -869,7 +869,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def text(argument):
+    def text(the_input):
         return 'I received: None'
 
   the terminal_ shows :ref:`AssertionError`
@@ -884,8 +884,8 @@ green: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def text(argument):
-        return argument
+    def text(the_input):
+        return the_input
         return 'I received: None'
 
   the test summary info shows that every test has :ref:`AssertionError`
@@ -911,7 +911,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def text(argument):
+    def text(the_input):
         return f'I received: {argument}'
 
   and all the tests are passing! Once again! I am a programmer!!

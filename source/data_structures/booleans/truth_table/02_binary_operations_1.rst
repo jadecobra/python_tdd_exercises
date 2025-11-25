@@ -91,11 +91,11 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
   :lineno-start: 13
   :emphasize-lines: 5-6
 
-  def logical_negation(argument):
+  def logical_negation(the_input):
       return not argument
 
 
-  def contradiction(argument):
+  def contradiction(the_input):
       return not argument
 
 the terminal_ shows :ref:`TypeError`
@@ -110,7 +110,7 @@ I add ``q`` as the second name in parentheses then rename ``argument`` to ``p`` 
   :lineno-start: 17
   :emphasize-lines: 1-2
 
-  def contradiction(p, q):
+  def contradiction(input_1, input_2):
       return not p
 
 the test passes
@@ -156,7 +156,7 @@ refactor: make it better
     :lineno-start: 17
     :emphasize-lines: 2
 
-    def contradiction(p, q):
+    def contradiction(input_1, input_2):
         return False
 
   the test is green again
@@ -217,11 +217,11 @@ I add the :ref:`function<functions>` in ``truth_table.py``
   :lineno-start: 17
   :emphasize-lines: 5-6
 
-  def contradiction(p, q):
+  def contradiction(input_1, input_2):
       return False
 
 
-  def logical_conjunction(p, q):
+  def logical_conjunction(input_1, input_2):
       return True
 
 the test passes
@@ -251,7 +251,7 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2
 
-    def logical_conjunction(p, q):
+    def logical_conjunction(input_1, input_2):
         return False
         return True
 
@@ -269,9 +269,9 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2-4
 
-    def logical_conjunction(p, q):
-        if p == True:
-            if q == False:
+    def logical_conjunction(input_1, input_2):
+        if input_1 == True:
+            if input_2 == False:
                 return False
         return True
 
@@ -300,12 +300,12 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2-4
 
-    def logical_conjunction(p, q):
-        if p == False:
-            if q == True:
+    def logical_conjunction(input_1, input_2):
+        if input_1 == False:
+            if input_2 == True:
                 return False
-        if p == True:
-            if q == False:
+        if input_1 == True:
+            if input_2 == False:
                 return False
         return True
 
@@ -338,14 +338,14 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2-3
 
-    def logical_conjunction(p, q):
-        if p == False:
-            if q == False:
+    def logical_conjunction(input_1, input_2):
+        if input_1 == False:
+            if input_2 == False:
                 return False
-            if q == True:
+            if input_2 == True:
                 return False
-        if p == True:
-            if q == False:
+        if input_1 == True:
+            if input_2 == False:
                 return False
         return True
 
@@ -357,16 +357,16 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 10-11
 
-    def logical_conjunction(p, q):
-        if p == False:
-            if q == False:
+    def logical_conjunction(input_1, input_2):
+        if input_1 == False:
+            if input_2 == False:
                 return False
-            if q == True:
+            if input_2 == True:
                 return False
-        if p == True:
-            if q == False:
+        if input_1 == True:
+            if input_2 == False:
                 return False
-            if q == True:
+            if input_2 == True:
                 return True
 
 * there are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I use an `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` and an else_ clause for the other cases
@@ -375,20 +375,20 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2-5
 
-    def logical_conjunction(p, q):
-        if p == True and q == True:
+    def logical_conjunction(input_1, input_2):
+        if input_1 == True and q == True:
             return True
         else:
             return False
-        if p == False:
-            if q == False:
+        if input_1 == False:
+            if input_2 == False:
                 return False
-            if q == True:
+            if input_2 == True:
                 return False
-        if p == True:
-            if q == False:
+        if input_1 == True:
+            if input_2 == False:
                 return False
-            if q == True:
+            if input_2 == True:
                 return True
 
   the test is still green
@@ -399,9 +399,9 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2-3
 
-    def logical_conjunction(p, q):
+    def logical_conjunction(input_1, input_2):
         if bool(p) and bool(q):
-        # if p == True and q == True:
+        # if input_1 == True and q == True:
             return True
         else:
             return False
@@ -414,14 +414,14 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2-3
 
-    def logical_conjunction(p, q):
-        if p and q:
+    def logical_conjunction(input_1, input_2):
+        if input_1 and q:
         # if bool(p) and bool(q):
             return True
         else:
             return False
 
-  the test is still green. With ``if p and q``,  Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background. I remove the commented line
+  the test is still green. With ``if input_1 and q``,  Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background. I remove the commented line
 
 * Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
@@ -429,9 +429,9 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2
 
-    def logical_conjunction(p, q):
-        return True if p and q else False
-        if p and q:
+    def logical_conjunction(input_1, input_2):
+        return True if input_1 and q else False
+        if input_1 and q:
             return True
         else:
             return False
@@ -444,9 +444,9 @@ refactor: make it better
     :lineno-start: 21
     :emphasize-lines: 2
 
-    def logical_conjunction(p, q):
+    def logical_conjunction(input_1, input_2):
         return p and q
-        return True if p and q else False
+        return True if input_1 and q else False
 
   still green!
 
@@ -455,7 +455,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 21
 
-    def logical_conjunction(p, q):
+    def logical_conjunction(input_1, input_2):
         return p and q
 
 ----
@@ -496,11 +496,11 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
   :lineno-start: 21
   :emphasize-lines: 5-6
 
-  def logical_conjunction(p, q):
+  def logical_conjunction(input_1, input_2):
       return p and q
 
 
-  def project_second(p, q):
+  def project_second(input_1, input_2):
       return True
 
 the test passes
@@ -530,9 +530,9 @@ refactor: make it better
     :lineno-start: 25
     :emphasize-lines: 2-4
 
-    def project_second(p, q):
-        if p == True:
-            if q == False:
+    def project_second(input_1, input_2):
+        if input_1 == True:
+            if input_2 == False:
                 return False
         return True
 
@@ -578,12 +578,12 @@ refactor: make it better
     :lineno-start: 25
     :emphasize-lines: 2-4
 
-    def project_second(p, q):
-        if p == False:
-            if q == False:
+    def project_second(input_1, input_2):
+        if input_1 == False:
+            if input_2 == False:
                 return False
-        if p == True:
-            if q == False:
+        if input_1 == True:
+            if input_2 == False:
                 return False
         return True
 
@@ -595,13 +595,13 @@ refactor: make it better
     :lineno-start: 25
     :emphasize-lines: 2
 
-    def project_second(p, q):
+    def project_second(input_1, input_2):
         return q
-        if p == False:
-            if q == False:
+        if input_1 == False:
+            if input_2 == False:
                 return False
-        if p == True:
-            if q == False:
+        if input_1 == True:
+            if input_2 == False:
                 return False
         return True
 
@@ -612,7 +612,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 25
 
-    def project_second(p, q):
+    def project_second(input_1, input_2):
         return q
 
 ----
@@ -653,11 +653,11 @@ I add the :ref:`function<functions>` to ``truth_table.py``
   :lineno-start: 25
   :emphasize-lines: 5-6
 
-  def project_second(p, q):
+  def project_second(input_1, input_2):
       return q
 
 
-  def converse_non_implication(p, q):
+  def converse_non_implication(input_1, input_2):
       return False
 
 the test passes
@@ -698,9 +698,9 @@ refactor: make it better
     :lineno-start: 29
     :emphasize-lines: 2-4
 
-    def converse_non_implication(p, q):
-        if p == False:
-            if q == True:
+    def converse_non_implication(input_1, input_2):
+        if input_1 == False:
+            if input_2 == True:
                 return True
         return False
 
@@ -729,10 +729,10 @@ refactor: make it better
     :lineno-start: 29
     :emphasize-lines: -4
 
-    def converse_non_implication(p, q):
-        if p == False and q == True:
-        # if p == False:
-        #    if q == True:
+    def converse_non_implication(input_1, input_2):
+        if input_1 == False and q == True:
+        # if input_1 == False:
+        #    if input_2 == True:
                 return True
         return False
 
@@ -744,9 +744,9 @@ refactor: make it better
     :lineno-start: 29
     :emphasize-lines: 2-4
 
-    def converse_non_implication(p, q):
+    def converse_non_implication(input_1, input_2):
         if not p == True and bool(q):
-        # if p == False and q == True:
+        # if input_1 == False and q == True:
             return True
         return False
 
@@ -760,9 +760,9 @@ refactor: make it better
     :lineno-start: 29
     :emphasize-lines: 4-5
 
-    def converse_non_implication(p, q):
+    def converse_non_implication(input_1, input_2):
         if not p == True and bool(q):
-        # if p == False and q == True:
+        # if input_1 == False and q == True:
             return True
         else:
             return False
@@ -775,7 +775,7 @@ refactor: make it better
     :lineno-start: 29
     :emphasize-lines: 2-3
 
-    def converse_non_implication(p, q):
+    def converse_non_implication(input_1, input_2):
         if not bool(p) and q:
         # if not p == True and bool(q):
             return True
@@ -790,7 +790,7 @@ refactor: make it better
     :lineno-start: 29
     :emphasize-lines: 2-3
 
-    def converse_non_implication(p, q):
+    def converse_non_implication(input_1, input_2):
         if not p and q:
         # if not bool(p) and q:
             return True
@@ -805,7 +805,7 @@ refactor: make it better
     :lineno-start: 29
     :emphasize-lines: 2
 
-    def converse_non_implication(p, q):
+    def converse_non_implication(input_1, input_2):
         return True if not p and q else False
         if not p and q:
             return True
@@ -820,7 +820,7 @@ refactor: make it better
     :lineno-start: 29
     :emphasize-lines: 2
 
-    def converse_non_implication(p, q):
+    def converse_non_implication(input_1, input_2):
         return not p and q
         return True if not p and q else False
 
@@ -831,7 +831,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 29
 
-    def converse_non_implication(p, q):
+    def converse_non_implication(input_1, input_2):
         return not p and q
 
 ----

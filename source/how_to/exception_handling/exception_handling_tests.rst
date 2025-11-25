@@ -259,7 +259,7 @@ red: make it fail
                 src.exceptions.does_not_exist
 
         def test_catching_type_error_in_tests(self):
-            src.exceptions.function_name('argument')
+            src.exceptions.function_name('the_input')
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -319,7 +319,7 @@ then I add assertRaises_ to the test
 
       def test_catching_type_error_in_tests(self):
           with self.assertRaises(TypeError):
-              src.exceptions.function_name('argument')
+              src.exceptions.function_name('the_input')
 
 the test passes
 
@@ -335,7 +335,7 @@ refactor: make it better
     def function_name():
         return None
 
-  the terminal_ still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('argument')`` sends ``'argument'`` as input and the :ref:`function<functions>` does not take input
+  the terminal_ still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('the_input')`` sends ``'the_input'`` as input and the :ref:`function<functions>` does not take input
 
 * when I add a parameter to the definition
 
@@ -343,7 +343,7 @@ refactor: make it better
     :linenos:
     :emphasize-lines: 1
 
-    def function_name(argument):
+    def function_name(the_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -380,7 +380,7 @@ red: make it fail
 
         def test_catching_type_error_in_tests(self):
             with self.assertRaises(TypeError):
-                src.exceptions.function_name('argument')
+                src.exceptions.function_name('the_input')
 
         def test_catching_index_error_in_tests(self):
             a_list = [1, 2, 3, 'n']

@@ -59,11 +59,11 @@ I add a :ref:`function<functions>` definition for it to ``truth_table.py``
   :lineno-start: 63
   :emphasize-lines: 5-6
 
-  def converse_implication(p, q):
+  def converse_implication(input_1, input_2):
       return p or not q
 
 
-  def negate_second(p, q):
+  def negate_second(input_1, input_2):
       return False
 
 the test passes
@@ -93,8 +93,8 @@ refactor: make it better
     :lineno-start: 67
     :emphasize-lines: 2-3
 
-    def negate_second(p, q):
-        if p and not q:
+    def negate_second(input_1, input_2):
+        if input_1 and not q:
             return True
         return False
 
@@ -137,10 +137,10 @@ refactor: make it better
     :lineno-start: 67
     :emphasize-lines: 2-3
 
-    def negate_second(p, q):
+    def negate_second(input_1, input_2):
         if not p and not q:
             return True
-        if p and not q:
+        if input_1 and not q:
             return True
         return False
 
@@ -152,11 +152,11 @@ refactor: make it better
     :lineno-start: 67
     :emphasize-lines: 2
 
-    def negate_second(p, q):
+    def negate_second(input_1, input_2):
         return not q
         if not p and not q:
             return True
-        if p and not q:
+        if input_1 and not q:
             return True
         return False
 
@@ -167,7 +167,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 67
 
-    def negate_second(p, q):
+    def negate_second(input_1, input_2):
         return not q
 
 ----
@@ -208,11 +208,11 @@ I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
   :lineno-start: 67
   :emphasize-lines: 5-6
 
-  def negate_second(p, q):
+  def negate_second(input_1, input_2):
       return not q
 
 
-  def logical_nor(p, q):
+  def logical_nor(input_1, input_2):
       return False
 
 the test passes
@@ -272,7 +272,7 @@ refactor: make it better
     :lineno-start: 71
     :emphasize-lines: 2
 
-        def logical_nor(p, q):
+        def logical_nor(input_1, input_2):
             return not p and not q
             return False
 
@@ -284,7 +284,7 @@ refactor: make it better
     :lineno-start: 71
     :emphasize-lines: 2
 
-    def logical_nor(p, q):
+    def logical_nor(input_1, input_2):
         return not p not or not q
         return not p and not q
 
@@ -300,7 +300,7 @@ refactor: make it better
     :lineno-start: 71
     :emphasize-lines: 2-3
 
-    def logical_nor(p, q):
+    def logical_nor(input_1, input_2):
         return not (p or q)
         # return not p not or not q
         return not p and not q
@@ -312,7 +312,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 71
 
-    def logical_nor(p, q):
+    def logical_nor(input_1, input_2):
         return not (p or q)
 
 ----
@@ -353,11 +353,11 @@ I add a :ref:`function<functions>` definition for it in ``truth_table.py``
   :lineno-start: 71
   :emphasize-lines: 5-6
 
-  def logical_nor(p, q):
+  def logical_nor(input_1, input_2):
       return not (p or q)
 
 
-  def logical_equality(p, q):
+  def logical_equality(input_1, input_2):
       return True
 
 the test passes
@@ -387,8 +387,8 @@ refactor: make it better
     :lineno-start: 75
     :emphasize-lines: 2-3
 
-    def logical_equality(p, q):
-        if p and not q:
+    def logical_equality(input_1, input_2):
+        if input_1 and not q:
             return False
         return True
 
@@ -417,10 +417,10 @@ refactor: make it better
     :lineno-start: 75
     :emphasize-lines: 2-3
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         if not p and q:
             return False
-        if p and not q:
+        if input_1 and not q:
             return False
         return True
 
@@ -449,12 +449,12 @@ refactor: make it better
     :lineno-start: 75
     :emphasize-lines: 2-3
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         if (not p and q) or (p and not q):
             return False
         if not p and q:
             return False
-        if p and not q:
+        if input_1 and not q:
             return False
         return True
 
@@ -465,7 +465,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 75
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         if (not p and q) or (p and not q):
             return False
         return True
@@ -478,7 +478,7 @@ refactor: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         return not ((not p and q) or (p and not q))
         if (not p and q) or (p and not q):
             return False
@@ -492,7 +492,7 @@ refactor: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         return (not not p not and not q) not or (not p not and not not q)
         return not ((not p and q) or (p and not q))
 
@@ -508,7 +508,7 @@ refactor: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         return (not not p or not q) and (not p or not not q)
         return not ((not p and q) or (p and not q))
 
@@ -520,7 +520,7 @@ refactor: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         return (p or not q) and (not p or q)
         return not ((not p and q) or (p and not q))
 
@@ -531,7 +531,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 75
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         return (p or not q) and (not p or q)
 
   the test is still passing
@@ -542,7 +542,7 @@ refactor: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(p, q):
+    def logical_equality(input_1, input_2):
         return p == q
         return (p or not q) and (not p or q)
 
@@ -586,12 +586,12 @@ I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.p
   :lineno-start: 75
   :emphasize-lines: 6-7
 
-  def logical_equality(p, q):
+  def logical_equality(input_1, input_2):
       return p == q
       return (p or not q) and (not p or q)
 
 
-  def material_implication(p, q):
+  def material_implication(input_1, input_2):
       return True
 
 the test passes
@@ -621,8 +621,8 @@ refactor: make it better
     :lineno-start: 80
     :emphasize-lines: 2-3
 
-    def material_implication(p, q):
-        if p and not q:
+    def material_implication(input_1, input_2):
+        if input_1 and not q:
             return False
         return True
 
@@ -663,9 +663,9 @@ refactor: make it better
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def material_implication(p, q):
+    def material_implication(input_1, input_2):
         return not (p and not q)
-        if p and not q:
+        if input_1 and not q:
             return False
         return True
 
@@ -677,7 +677,7 @@ refactor: make it better
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def material_implication(p, q):
+    def material_implication(input_1, input_2):
         return not p not and not not q
         return not (p and not q)
 
@@ -693,7 +693,7 @@ refactor: make it better
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def material_implication(p, q):
+    def material_implication(input_1, input_2):
         return not p or not not q
         return not (p and not q)
 
@@ -705,7 +705,7 @@ refactor: make it better
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def material_implication(p, q):
+    def material_implication(input_1, input_2):
         return not p or q
         return not (p and not q)
 
@@ -716,7 +716,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 80
 
-    def material_implication(p, q):
+    def material_implication(input_1, input_2):
         return not p or q
 
 ----

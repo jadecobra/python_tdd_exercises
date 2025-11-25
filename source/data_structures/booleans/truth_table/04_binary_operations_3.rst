@@ -60,11 +60,11 @@ I add the :ref:`function<functions>` for ``exclusive_disjunction`` in ``truth_ta
   :lineno-start: 45
   :emphasize-lines: 5-6
 
-  def logical_disjunction(p, q):
+  def logical_disjunction(input_1, input_2):
       return p or q
 
 
-  def exclusive_disjunction(p, q):
+  def exclusive_disjunction(input_1, input_2):
       return False
 
 the test passes
@@ -94,8 +94,8 @@ refactor: make it better
     :lineno-start: 45
     :emphasize-lines: 2-3
 
-    def exclusive_disjunction(p, q):
-        if p and not q:
+    def exclusive_disjunction(input_1, input_2):
+        if input_1 and not q:
             return True
         return False
 
@@ -124,10 +124,10 @@ refactor: make it better
     :lineno-start: 49
     :emphasize-lines: 2-3
 
-    def exclusive_disjunction(p, q):
+    def exclusive_disjunction(input_1, input_2):
         if not p and q:
             return True
-        if p and not q:
+        if input_1 and not q:
             return True
         return False
 
@@ -156,12 +156,12 @@ refactor: make it better
     :lineno-start: 49
     :emphasize-lines: 2-3
 
-    def exclusive_disjunction(p, q):
+    def exclusive_disjunction(input_1, input_2):
         if (not p and q) or (p and not q):
             return True
         if not p and q:
             return True
-        if p and not q:
+        if input_1 and not q:
             return True
         return False
 
@@ -172,7 +172,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 49
 
-    def exclusive_disjunction(p, q):
+    def exclusive_disjunction(input_1, input_2):
         if (not p and q) or (p and not q):
             return True
         return False
@@ -185,7 +185,7 @@ refactor: make it better
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def exclusive_disjunction(p, q):
+    def exclusive_disjunction(input_1, input_2):
         return (not p and q) or (p and not q)
         if (not p and q) or (p and not q):
             return True
@@ -198,7 +198,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 49
 
-    def exclusive_disjunction(p, q):
+    def exclusive_disjunction(input_1, input_2):
         return (not p and q) or (p and not q)
 
   still green
@@ -209,8 +209,8 @@ refactor: make it better
     :lineno-start: 49
     :emphasize-lines: 2-5
 
-    def exclusive_disjunction(p, q):
-        if p == q:
+    def exclusive_disjunction(input_1, input_2):
+        if input_1 == q:
             return False
         else:
             return True
@@ -222,9 +222,9 @@ refactor: make it better
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def exclusive_disjunction(p, q):
+    def exclusive_disjunction(input_1, input_2):
         return not (p == q)
-        if p == q:
+        if input_1 == q:
             return False
         else:
             return True
@@ -238,7 +238,7 @@ refactor: make it better
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def exclusive_disjunction(p, q):
+    def exclusive_disjunction(input_1, input_2):
         return p != q
         return not (p == q)
         return (not p and q) or (p and not q)
@@ -283,13 +283,13 @@ I add a :ref:`function<functions>` for ``material_non_implication`` in ``truth_t
   :lineno-start: 49
   :emphasize-lines: 7-8
 
-  def exclusive_disjunction(p, q):
+  def exclusive_disjunction(input_1, input_2):
       return p != q
       return not (p == q)
       return (not p and q) or (p and not q)
 
 
-  def material_non_implication(p, q):
+  def material_non_implication(input_1, input_2):
       return False
 
 the test passes
@@ -319,8 +319,8 @@ refactor: make it better
     :lineno-start: 55
     :emphasize-lines: 2-3
 
-    def material_non_implication(p, q):
-        if p and not q:
+    def material_non_implication(input_1, input_2):
+        if input_1 and not q:
             return True
         return False
 
@@ -362,9 +362,9 @@ refactor: make it better
     :lineno-start: 55
     :emphasize-lines: 2
 
-    def material_non_implication(p, q):
+    def material_non_implication(input_1, input_2):
         return p and not q
-        if p and not q:
+        if input_1 and not q:
             return True
         return False
 
@@ -375,7 +375,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 55
 
-    def material_non_implication(p, q):
+    def material_non_implication(input_1, input_2):
         return p and not q
 
 ----
@@ -416,11 +416,11 @@ I add a :ref:`function<functions>` definition for ``project_first`` in ``truth_t
   :lineno-start: 55
   :emphasize-lines: 5-6
 
-  def material_non_implication(p, q):
+  def material_non_implication(input_1, input_2):
       return p and not q
 
 
-  def project_first(p, q):
+  def project_first(input_1, input_2):
       return True
 
 the test passes
@@ -463,7 +463,7 @@ refactor: make it better
     :lineno-start: 59
     :emphasize-lines: 2-3
 
-    def project_first(p, q):
+    def project_first(input_1, input_2):
         if not p and q:
             return False
         return True
@@ -497,7 +497,7 @@ refactor: make it better
     :lineno-start: 59
     :emphasize-lines: 2-3
 
-    def project_first(p, q):
+    def project_first(input_1, input_2):
         if not p and not q:
             return False
         if not p and q:
@@ -512,7 +512,7 @@ refactor: make it better
     :lineno-start: 59
     :emphasize-lines: 2
 
-    def project_first(p, q):
+    def project_first(input_1, input_2):
         return p
         if not p and not q:
             return False
@@ -527,7 +527,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 59
 
-    def project_first(p, q):
+    def project_first(input_1, input_2):
         return p
 
 ----
@@ -568,11 +568,11 @@ I add a :ref:`function<functions>` definition for ``converse_implication`` in ``
   :lineno-start: 59
   :emphasize-lines: 5-6
 
-  def project_first(p, q):
+  def project_first(input_1, input_2):
       return p
 
 
-  def converse_implication(p, q):
+  def converse_implication(input_1, input_2):
       return True
 
 the test passes
@@ -615,7 +615,7 @@ refactor: make it better
     :lineno-start: 63
     :emphasize-lines: 2-3
 
-    def converse_implication(p, q):
+    def converse_implication(input_1, input_2):
         if not p and q:
             return False
         return True
@@ -645,7 +645,7 @@ refactor: make it better
     :lineno-start: 63
     :emphasize-lines: 2
 
-    def converse_implication(p, q):
+    def converse_implication(input_1, input_2):
         return not (not p and q)
         if not p and q:
             return False
@@ -659,7 +659,7 @@ refactor: make it better
     :lineno-start: 63
     :emphasize-lines: 2
 
-    def converse_implication(p, q):
+    def converse_implication(input_1, input_2):
         return not not p not and not q
         return not (not p and q)
 
@@ -675,7 +675,7 @@ refactor: make it better
     :lineno-start: 63
     :emphasize-lines: 2
 
-    def converse_implication(p, q):
+    def converse_implication(input_1, input_2):
         return not not p or not q
         return not (not p and q)
 
@@ -687,7 +687,7 @@ refactor: make it better
     :lineno-start: 63
     :emphasize-lines: 2
 
-    def converse_implication(p, q):
+    def converse_implication(input_1, input_2):
         return p or not q
         return not (not p and q)
 
@@ -698,7 +698,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 63
 
-    def converse_implication(p, q):
+    def converse_implication(input_1, input_2):
         return p or not q
 
 ----

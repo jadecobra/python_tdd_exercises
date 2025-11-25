@@ -90,7 +90,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 1
 
-    def tautology(x, y):
+    def tautologyreturn (first_input, second_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -105,7 +105,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def tautology(x, y):
+    def tautologyreturn (first_input, second_input):
         return True
 
   the terminal_ shows :ref:`AttributeError`
@@ -120,11 +120,11 @@ green: make it pass
     :linenos:
     :emphasize-lines: 5-6
 
-    def tautology(x, y):
+    def tautologyreturn (first_input, second_input):
         return True
 
 
-    def project_second(x, y):
+    def project_secondreturn (first_input, second_input):
         return True
 
   the terminal_ shows :ref:`AssertionError`
@@ -139,7 +139,7 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def project_second(x, y):
+    def project_secondreturn (first_input, second_input):
         return False
 
   the terminal_ shows :ref:`AssertionError`
@@ -154,7 +154,7 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def project_second(x, y):
+    def project_secondreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -169,7 +169,7 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def project_second(x, y):
+    def project_secondreturn (first_input, second_input):
         return y
 
   the terminal_ shows :ref:`AttributeError`
@@ -184,11 +184,11 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 5-6
 
-    def project_second(x, y):
+    def project_secondreturn (first_input, second_input):
         return y
 
 
-    def project_first(x, y):
+    def project_firstreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -203,7 +203,7 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 2
 
-    def project_first(x, y):
+    def project_firstreturn (first_input, second_input):
         return x
 
   the terminal_ shows :ref:`AttributeError`
@@ -218,11 +218,11 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 5-6
 
-    def project_first(x, y):
+    def project_firstreturn (first_input, second_input):
         return x
 
 
-    def negate_second(x, y):
+    def negate_secondreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -237,8 +237,8 @@ green: make it pass
     :lineno-start: 13
     :emphasize-lines: 2
 
-    def negate_second(x, y):
-        if (x, y) == (True, True): return False
+    def negate_secondreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -253,9 +253,9 @@ green: make it pass
     :lineno-start: 13
     :emphasize-lines: 3
 
-    def negate_second(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, True): return False
+    def negate_secondreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -270,12 +270,12 @@ green: make it pass
     :lineno-start: 13
     :emphasize-lines: 6-7
 
-    def negate_second(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, True): return False
+    def negate_secondreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
-    def negate_first(x, y):
+    def negate_firstreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -290,8 +290,8 @@ green: make it pass
     :lineno-start: 19
     :emphasize-lines: 2
 
-    def negate_first(x, y):
-        if (x, y) == (True, True): return False
+    def negate_firstreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -306,9 +306,9 @@ green: make it pass
     :lineno-start: 19
     :emphasize-lines: 3
 
-    def negate_first(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
+    def negate_firstreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -323,11 +323,11 @@ green: make it pass
     :lineno-start: 21
     :emphasize-lines: 5-6
 
-        if (x, y) == (True, False): return False
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
 
-    def material_non_implication(x, y):
+    def material_non_implicationreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -342,8 +342,8 @@ green: make it pass
     :lineno-start: 25
     :emphasize-lines: 2
 
-    def material_non_implication(x, y):
-        if (x, y) == (True, True): return False
+    def material_non_implicationreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -358,9 +358,9 @@ green: make it pass
     :lineno-start: 25
     :emphasize-lines: 3
 
-    def material_non_implication(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, True): return False
+    def material_non_implicationreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -375,10 +375,10 @@ green: make it pass
     :lineno-start: 25
     :emphasize-lines: 4
 
-    def material_non_implication(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, True): return False
-        if (x, y) == (False, False): return False
+    def material_non_implicationreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (False, True): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -393,11 +393,11 @@ green: make it pass
     :lineno-start: 28
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, False): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
 
-    def material_implication(x, y):
+    def material_implicationreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -412,8 +412,8 @@ green: make it pass
     :lineno-start: 32
     :emphasize-lines: 2
 
-    def material_implication(x, y):
-        if (x, y) == (True, False): return False
+    def material_implicationreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -428,11 +428,11 @@ green: make it pass
     :lineno-start: 33
     :emphasize-lines: 5-6
 
-        if (x, y) == (True, False): return False
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
 
-    def logical_nor(x, y):
+    def logical_norreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -447,8 +447,8 @@ green: make it pass
     :lineno-start: 37
     :emphasize-lines:  2
 
-    def logical_nor(x, y):
-        if (x, y) == (True, True): return False
+    def logical_norreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -463,9 +463,9 @@ green: make it pass
     :lineno-start: 37
     :emphasize-lines: 3
 
-    def logical_nor(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
+    def logical_norreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -480,10 +480,10 @@ green: make it pass
     :lineno-start: 37
     :emphasize-lines: 4
 
-    def logical_nor(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
+    def logical_norreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -499,11 +499,11 @@ green: make it pass
     :lineno-start: 40
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, True): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
 
-    def logical_nand(x, y):
+    def logical_nandreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -518,8 +518,8 @@ green: make it pass
     :lineno-start: 44
     :emphasize-lines: 2
 
-    def logical_nand(x, y):
-        if (x, y) == (True, True): return False
+    def logical_nandreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -534,11 +534,11 @@ green: make it pass
     :lineno-start: 45
     :emphasize-lines: 5-6
 
-        if (x, y) == (True, True): return False
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
 
-    def logical_equality(x, y):
+    def logical_equalityreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -553,8 +553,8 @@ green: make it pass
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def logical_equality(x, y):
-        if (x, y) == (True, False): return False
+    def logical_equalityreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -569,9 +569,9 @@ green: make it pass
     :lineno-start: 49
     :emphasize-lines: 3
 
-    def logical_equality(x, y):
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
+    def logical_equalityreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -587,11 +587,11 @@ green: make it pass
     :lineno-start: 45
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, True): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
 
-    def logical_disjunction(x, y):
+    def logical_disjunctionreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -606,8 +606,8 @@ green: make it pass
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def logical_disjunction(x, y):
-        if (x, y) == (False, False): return False
+    def logical_disjunctionreturn (first_input, second_input):
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -623,11 +623,11 @@ green: make it pass
     :lineno-start: 56
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, False): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
 
-    def logical_conjunction(x, y):
+    def logical_conjunctionreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -642,8 +642,8 @@ green: make it pass
     :lineno-start: 60
     :emphasize-lines: 2
 
-    def logical_conjunction(x, y):
-        if (x, y) == (True, False): return False
+    def logical_conjunctionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -658,9 +658,9 @@ green: make it pass
     :lineno-start: 60
     :emphasize-lines: 3
 
-    def logical_conjunction(x, y):
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
+    def logical_conjunctionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -675,10 +675,10 @@ green: make it pass
     :lineno-start: 60
     :emphasize-lines: 4
 
-    def logical_conjunction(x, y):
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
-        if (x, y) == (False, False): return False
+    def logical_conjunctionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -693,11 +693,11 @@ green: make it pass
     :lineno-start: 63
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, False): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
 
-    def exclusive_disjunction(x, y):
+    def exclusive_disjunctionreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -712,8 +712,8 @@ green: make it pass
     :lineno-start: 67
     :emphasize-lines: 2
 
-    def exclusive_disjunction(x, y):
-        if (x, y) == (True, True): return False
+    def exclusive_disjunctionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -728,9 +728,9 @@ green: make it pass
     :lineno-start: 67
     :emphasize-lines: 3
 
-    def exclusive_disjunction(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, False): return False
+    def exclusive_disjunctionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -746,11 +746,11 @@ green: make it pass
     :lineno-start: 69
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, False): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
 
-    def converse_non_implication(x, y):
+    def converse_non_implicationreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -765,8 +765,8 @@ green: make it pass
     :lineno-start: 73
     :emphasize-lines: 2
 
-    def converse_non_implication(x, y):
-        if (x, y) == (True, True): return False
+    def converse_non_implicationreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -781,9 +781,9 @@ green: make it pass
     :lineno-start: 73
     :emphasize-lines: 3
 
-    def converse_non_implication(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
+    def converse_non_implicationreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -798,10 +798,10 @@ green: make it pass
     :lineno-start: 73
     :emphasize-lines: 4
 
-    def converse_non_implication(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, False): return False
+    def converse_non_implicationreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -817,11 +817,11 @@ green: make it pass
     :lineno-start: 76
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, False): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
 
-    def converse_implication(x, y):
+    def converse_implicationreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -836,8 +836,8 @@ green: make it pass
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def converse_implication(x, y):
-        if (x, y) == (False, True): return False
+    def converse_implicationreturn (first_input, second_input):
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -852,11 +852,11 @@ green: make it pass
     :lineno-start: 81
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, True): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
 
-    def contradiction(x, y):
+    def contradictionreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -871,8 +871,8 @@ green: make it pass
     :lineno-start: 85
     :emphasize-lines: 2
 
-    def contradiction(x, y):
-        if (x, y) == (True, True): return False
+    def contradictionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -887,9 +887,9 @@ green: make it pass
     :lineno-start: 85
     :emphasize-lines: 3
 
-    def contradiction(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
+    def contradictionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -904,10 +904,10 @@ green: make it pass
     :lineno-start: 85
     :emphasize-lines: 4
 
-    def contradiction(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
+    def contradictionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -922,11 +922,11 @@ green: make it pass
     :lineno-start: 85
     :emphasize-lines: 5
 
-    def contradiction(x, y):
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
-        if (x, y) == (False, False): return False
+    def contradictionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ shows :ref:`AttributeError`
@@ -942,11 +942,11 @@ green: make it pass
     :lineno-start: 89
     :emphasize-lines: 5-6
 
-        if (x, y) == (False, False): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
 
-    def logical_negation(x, y):
+    def logical_negationreturn (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`TypeError`
@@ -1099,12 +1099,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 85
     :emphasize-lines: 2
 
-    def contradiction(x, y):
+    def contradictionreturn (first_input, second_input):
         return False
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
-        if (x, y) == (False, False): return False
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the test is still green. I remove the other lines in the :ref:`function<functions>`
@@ -1112,7 +1112,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 85
 
-    def contradiction(x, y):
+    def contradictionreturn (first_input, second_input):
         return False
 
 
@@ -1125,9 +1125,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def converse_implication(x, y):
-        return (x, y) != (False, True)
-        if (x, y) == (False, True): return False
+    def converse_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) != (False, True)
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   still green. I remove the other statements
@@ -1135,11 +1135,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 80
 
-    def converse_implication(x, y):
-        return (x, y) != (False, True)
+    def converse_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) != (False, True)
 
 
-    def contradiction(x, y):
+    def contradictionreturn (first_input, second_input):
         return False
 
 * :ref:`converse_non_implication<test_converse_non_implication>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
@@ -1148,11 +1148,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 73
     :emphasize-lines: 2
 
-    def converse_non_implication(x, y):
-        return (x, y) == (False, True)
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, False): return False
+    def converse_non_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) == (False, True)
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ still shows green and I remove the other lines
@@ -1160,12 +1160,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 73
 
-    def converse_non_implication(x, y):
-        return (x, y) == (False, True)
+    def converse_non_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) == (False, True)
 
 
-    def converse_implication(x, y):
-        return (x, y) != (False, True)
+    def converse_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) != (False, True)
 
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two `if statements`_ I can put them together as one
 
@@ -1173,10 +1173,10 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 67
     :emphasize-lines: 2
 
-    def exclusive_disjunction(x, y):
-        if (x, y) == (True, True) or (x, y) == (False, False): return False
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, False): return False
+    def exclusive_disjunctionreturn (first_input, second_input):
+        if return (first_input, second_input) == (True, True) or return (first_input, second_input) == (False, False): return False
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the test is still green. I remove the other `if statements`_ then return the :ref:`logical negation<test_logical_negation>`
@@ -1185,9 +1185,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 67
     :emphasize-lines: 2
 
-    def exclusive_disjunction(x, y):
-        return (x, y) != (True, True) and (x, y) != (False, False)
-        if (x, y) == (True, True) or (x, y) == (False, False): return False
+    def exclusive_disjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
+        if return (first_input, second_input) == (True, True) or return (first_input, second_input) == (False, False): return False
         return x, y
 
   the test is still green, I remove the other lines
@@ -1195,12 +1195,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 67
 
-    def exclusive_disjunction(x, y):
-        return (x, y) != (True, True) and (x, y) != (False, False)
+    def exclusive_disjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
 
 
-    def converse_non_implication(x, y):
-        return (x, y) == (False, True)
+    def converse_non_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) == (False, True)
 
 * :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement` for it
 
@@ -1208,11 +1208,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 60
     :emphasize-lines: 2
 
-    def logical_conjunction(x, y):
-        return (x, y) == (True, True)
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
-        if (x, y) == (False, False): return False
+    def logical_conjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) == (True, True)
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   still green, I remove the other statements
@@ -1220,12 +1220,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 60
 
-    def logical_conjunction(x, y):
-        return (x, y) == (True, True)
+    def logical_conjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) == (True, True)
 
 
-    def exclusive_disjunction(x, y):
-        return (x, y) != (True, True) and (x, y) != (False, False)
+    def exclusive_disjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
 
 * :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the opposite of it which covers the other 3 cases
 
@@ -1233,9 +1233,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 55
     :emphasize-lines: 2
 
-    def logical_disjunction(x, y):
-        return (x, y) != (False, False)
-        if (x, y) == (False, False): return False
+    def logical_disjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) != (False, False)
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ still shows green, and I remove the other lines
@@ -1243,12 +1243,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 55
 
-    def logical_disjunction(x, y):
-        return (x, y) != (False, False)
+    def logical_disjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) != (False, False)
 
 
-    def logical_conjunction(x, y):
-        return (x, y) == (True, True)
+    def logical_conjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) == (True, True)
 
 * :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>` to add a `return statement`
 
@@ -1256,10 +1256,10 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def logical_equality(x, y):
-        return (x, y) != (True, False) and (x, y) != (False, True)
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
+    def logical_equalityreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   the terminal_ still shows green. I remove the other lines
@@ -1267,12 +1267,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 49
 
-    def logical_equality(x, y):
-        return (x, y) != (True, False) and (x, y) != (False, True)
+    def logical_equalityreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
 
 
-    def logical_disjunction(x, y):
-        return (x, y) != (False, False)
+    def logical_disjunctionreturn (first_input, second_input):
+        return return (first_input, second_input) != (False, False)
 
 * :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for its opposite which covers the other 3 cases
 
@@ -1280,9 +1280,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 44
     :emphasize-lines: 2
 
-    def logical_nand(x, y):
-        return (x, y) != (True, True)
-        if (x, y) == (True, True): return False
+    def logical_nandreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, True)
+        if return (first_input, second_input) == (True, True): return False
         return x, y
 
   still green. I remove the other lines
@@ -1290,12 +1290,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 44
 
-    def logical_nand(x, y):
-        return (x, y) != (True, True)
+    def logical_nandreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, True)
 
 
-    def logical_equality(x, y):
-        return (x, y) != (True, False) and (x, y) != (False, True)
+    def logical_equalityreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
 
 * :ref:`logical_nor<test_logical_nor>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
@@ -1303,11 +1303,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 37
     :emphasize-lines: 2
 
-    def logical_nor(x, y):
-        return (x, y) == (False, False)
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
-        if (x, y) == (False, True): return False
+    def logical_norreturn (first_input, second_input):
+        return return (first_input, second_input) == (False, False)
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   still green, I remove the other statements
@@ -1316,12 +1316,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 37
     :emphasize-lines: 2
 
-    def logical_nor(x, y):
-        return (x, y) == (False, False)
+    def logical_norreturn (first_input, second_input):
+        return return (first_input, second_input) == (False, False)
 
 
-    def logical_nand(x, y):
-        return (x, y) != (True, True)
+    def logical_nandreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, True)
 
 * :ref:`material_implication<test_material_implication>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the other 3
 
@@ -1329,9 +1329,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 32
     :emphasize-lines: 2
 
-    def material_implication(x, y):
-        return (x, y) != (True, False)
-        if (x, y) == (True, False): return False
+    def material_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, False)
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the test is still green. I remove the other statements
@@ -1339,12 +1339,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 25
 
-    def material_implication(x, y):
-        return (x, y) != (True, False)
+    def material_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, False)
 
 
-    def logical_nor(x, y):
-        return (x, y) == (False, False)
+    def logical_norreturn (first_input, second_input):
+        return return (first_input, second_input) == (False, False)
 
 * :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the 1 case that returns :ref:`True<test_what_is_true>`
 
@@ -1352,11 +1352,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 25
     :emphasize-lines: 2
 
-    def material_non_implication(x, y):
-        return (x, y) == (True, False)
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, True): return False
-        if (x, y) == (False, False): return False
+    def material_non_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) == (True, False)
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (False, True): return False
+        if return (first_input, second_input) == (False, False): return False
         return x, y
 
   the terminal_ still shows green. I remove the other statements
@@ -1364,12 +1364,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 25
 
-    def material_non_implication(x, y):
-        return (x, y) == (True, False)
+    def material_non_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) == (True, False)
 
 
-    def material_implication(x, y):
-        return (x, y) != (True, False)
+    def material_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) != (True, False)
 
 * ``x`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an `if statement`_ for them
 
@@ -1377,10 +1377,10 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 19
     :emphasize-lines: 2
 
-    def negate_first(x, y):
+    def negate_firstreturn (first_input, second_input):
         if x == True: return False
-        if (x, y) == (True, True): return False
-        if (x, y) == (True, False): return False
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (True, False): return False
         return x, y
 
   the test is still green.  I add a simpler `return statement`_
@@ -1389,7 +1389,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 19
     :emphasize-lines: 2
 
-    def negate_first(x, y):
+    def negate_firstreturn (first_input, second_input):
         return x != True
         if x == True: return False
         return x, y
@@ -1399,12 +1399,12 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 19
 
-    def negate_first(x, y):
+    def negate_firstreturn (first_input, second_input):
         return x != True
 
 
-    def material_non_implication(x, y):
-        return (x, y) == (True, False)
+    def material_non_implicationreturn (first_input, second_input):
+        return return (first_input, second_input) == (True, False)
 
 * ``y`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
 
@@ -1412,10 +1412,10 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 13
     :emphasize-lines: 2
 
-    def negate_second(x, y):
+    def negate_secondreturn (first_input, second_input):
         return y != True
-        if (x, y) == (True, True): return False
-        if (x, y) == (False, True): return False
+        if return (first_input, second_input) == (True, True): return False
+        if return (first_input, second_input) == (False, True): return False
         return x, y
 
   still green. I remove the other statements
@@ -1423,11 +1423,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 13
 
-    def negate_second(x, y):
+    def negate_secondreturn (first_input, second_input):
         return y != True
 
 
-    def negate_first(x, y):
+    def negate_firstreturn (first_input, second_input):
         return x != True
 
 * :ref:`project_second<test_project_second>`, :ref:`project_first<test_project_first>` and :ref:`tautology<test_tautology>` are already simple
@@ -1438,7 +1438,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 13
     :emphasize-lines: 2
 
-    def negate_second(x, y):
+    def negate_secondreturn (first_input, second_input):
         return not y == True
         return y != True
 
@@ -1448,11 +1448,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 13
     :emphasize-lines: 2
 
-    def negate_second(x, y):
+    def negate_secondreturn (first_input, second_input):
         return not y
 
 
-    def negate_first(x, y):
+    def negate_firstreturn (first_input, second_input):
 
   the test is still green
 
@@ -1462,7 +1462,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 17
     :emphasize-lines: 2
 
-    def negate_first(x, y):
+    def negate_firstreturn (first_input, second_input):
         return not x
         return x != True
 
@@ -1471,11 +1471,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
       :lineno-start: 17
 
-      def negate_first(x, y):
+      def negate_firstreturn (first_input, second_input):
           return not x
 
 
-      def material_non_implication(x, y):
+      def material_non_implicationreturn (first_input, second_input):
 
 * I use this with :ref:`material_non_implication<test_material_non_implication>`
 
@@ -1483,20 +1483,20 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 21
     :emphasize-lines: 2
 
-    def material_non_implication(x, y):
+    def material_non_implicationreturn (first_input, second_input):
         return x and not y
-        return (x, y) == (True, False)
+        return return (first_input, second_input) == (True, False)
 
   the terminal_ shows all tests are still passing. I remove the second `return statement`_
 
   .. code-block:: python
     :lineno-start: 21
 
-    def material_non_implication(x, y):
+    def material_non_implicationreturn (first_input, second_input):
         return x and not y
 
 
-    def material_implication(x, y):
+    def material_implicationreturn (first_input, second_input):
 
 * I try it with :ref:`material_implication<test_material_implication>`
 
@@ -1504,9 +1504,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 25
     :emphasize-lines: 2
 
-    def material_implication(x, y):
+    def material_implicationreturn (first_input, second_input):
         return not x and y
-        return (x, y) != (True, False)
+        return return (first_input, second_input) != (True, False)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1520,20 +1520,20 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 25
     :emphasize-lines: 2
 
-    def material_implication(x, y):
+    def material_implicationreturn (first_input, second_input):
         return not x or y
-        return (x, y) != (True, False)
+        return return (first_input, second_input) != (True, False)
 
   the test is green again, I will use "or_" the next time I see ``!=`` in these tests. I remove the other `return statement`_
 
   .. code-block:: python
     :lineno-start: 25
 
-    def material_implication(x, y):
+    def material_implicationreturn (first_input, second_input):
         return not x or y
 
 
-    def logical_nor(x, y):
+    def logical_norreturn (first_input, second_input):
 
 * I do the same thing with :ref:`logical_nor<test_logical_nor>`
 
@@ -1541,9 +1541,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 29
     :emphasize-lines: 2
 
-    def logical_nor(x, y):
+    def logical_norreturn (first_input, second_input):
         return not x and not y
-        return (x, y) == (False, False)
+        return return (first_input, second_input) == (False, False)
 
   the test is still green. I remove the second `return statement`_ and change the first `return statement`_ in terms of "not_" since it happens 2 times
 
@@ -1551,7 +1551,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 29
     :emphasize-lines: 2
 
-    def logical_nor(x, y):
+    def logical_norreturn (first_input, second_input):
         return not x not or not y
         return not x and not y
 
@@ -1567,7 +1567,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 29
     :emphasize-lines: 2-3
 
-    def logical_nor(x, y):
+    def logical_norreturn (first_input, second_input):
         return not (x or y)
         # return not x not or not y
         return not x and not y
@@ -1577,11 +1577,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 29
 
-    def logical_nor(x, y):
+    def logical_norreturn (first_input, second_input):
         return not (x or y)
 
 
-    def logical_nand(x, y):
+    def logical_nandreturn (first_input, second_input):
 
 * I add a `return statement`_ to :ref:`logical_nand<test_logical_nand>`
 
@@ -1589,9 +1589,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 33
     :emphasize-lines: 2
 
-    def logical_nand(x, y):
+    def logical_nandreturn (first_input, second_input):
         return not x or not y
-        return (x, y) != (True, True)
+        return return (first_input, second_input) != (True, True)
 
   the test is still green, I factor out "not_"
 
@@ -1599,40 +1599,40 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 33
     :emphasize-lines: 2
 
-    def logical_nand(x, y):
+    def logical_nandreturn (first_input, second_input):
         return not (x and y)
         return not x or not y
-        return (x, y) != (True, True)
+        return return (first_input, second_input) != (True, True)
 
   still green. I remove the other `return statements`_
 
   .. code-block:: python
     :lineno-start: 33
 
-    def logical_nand(x, y):
+    def logical_nandreturn (first_input, second_input):
         return not (x and y)
 
 
-    def logical_equality(x, y):
+    def logical_equalityreturn (first_input, second_input):
 
 * I add a `return statement`_ to :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
 
-    def logical_equality(x, y):
+    def logical_equalityreturn (first_input, second_input):
         return (not x or y) and (x or not y)
-        return (x, y) != (True, False) and (x, y) != (False, True)
+        return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
 
   the test is still green, I remove the other `return statement`_
 
   .. code-block:: python
     :lineno-start: 37
 
-    def logical_equality(x, y):
+    def logical_equalityreturn (first_input, second_input):
         return (not x or y) and (x or not y)
 
 
-    def logical_disjunction(x, y):
+    def logical_disjunctionreturn (first_input, second_input):
 
 * :ref:`logical_disjunction<test_logical_disjunction>`
 
@@ -1640,20 +1640,20 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 41
     :emphasize-lines: 2
 
-    def logical_disjunction(x, y):
+    def logical_disjunctionreturn (first_input, second_input):
         return x or y
-        return (x, y) != (False, False)
+        return return (first_input, second_input) != (False, False)
 
   still green. I remove the other `return statement`_
 
   .. code-block:: python
     :lineno-start: 41
 
-    def logical_disjunction(x, y):
+    def logical_disjunctionreturn (first_input, second_input):
         return x or y
 
 
-    def logical_conjunction(x, y):
+    def logical_conjunctionreturn (first_input, second_input):
 
 * :ref:`logical_conjunction<test_logical_conjunction>`
 
@@ -1661,29 +1661,29 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 45
     :emphasize-lines: 2
 
-    def logical_conjunction(x, y):
+    def logical_conjunctionreturn (first_input, second_input):
         return x and y
-        return (x, y) == (True, True)
+        return return (first_input, second_input) == (True, True)
 
   the terminal_ still shows green. I remove the other `return statement`_
 
   .. code-block:: python
     :lineno-start: 45
 
-    def logical_conjunction(x, y):
+    def logical_conjunctionreturn (first_input, second_input):
         return x and y
 
 
-    def exclusive_disjunction(x, y):
+    def exclusive_disjunctionreturn (first_input, second_input):
 
 * I add a `return statement` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 49
 
-    def exclusive_disjunction(x, y):
+    def exclusive_disjunctionreturn (first_input, second_input):
         return (not x or not y) and (x or y)
-        return (x, y) != (True, True) and (x, y) != (False, False)
+        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
 
   still green, I can factor out "not_" from the first part of the statement
 
@@ -1691,21 +1691,21 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def exclusive_disjunction(x, y):
+    def exclusive_disjunctionreturn (first_input, second_input):
         return not (x and y) and (x or y)
         return (not x or not y) and (x or y)
-        return (x, y) != (True, True) and (x, y) != (False, False)
+        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
 
   the test is still green. I remove the other statements
 
   .. code-block:: python
     :lineno-start: 49
 
-    def exclusive_disjunction(x, y):
+    def exclusive_disjunctionreturn (first_input, second_input):
         return not (x and y) and (x or y)
 
 
-    def converse_non_implication(x, y):
+    def converse_non_implicationreturn (first_input, second_input):
 
 * I do the same thing to :ref:`converse_non_implication<test_converse_non_implication>`
 
@@ -1713,20 +1713,20 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 53
     :emphasize-lines: 2
 
-    def converse_non_implication(x, y):
+    def converse_non_implicationreturn (first_input, second_input):
         return not x and y
-        return (x, y) == (False, True)
+        return return (first_input, second_input) == (False, True)
 
   still green. I remove the other line
 
   .. code-block:: python
     :lineno-start: 53
 
-    def converse_non_implication(x, y):
+    def converse_non_implicationreturn (first_input, second_input):
         return not x and y
 
 
-    def converse_implication(x, y):
+    def converse_implicationreturn (first_input, second_input):
 
 * time for :ref:`converse_implication<test_converse_implication>`
 
@@ -1734,20 +1734,20 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 57
     :emphasize-lines: 2
 
-    def converse_implication(x, y):
+    def converse_implicationreturn (first_input, second_input):
         return x or not y
-        return (x, y) != (False, True)
+        return return (first_input, second_input) != (False, True)
 
   I remove the second `return statement`_
 
   .. code-block:: python
     :lineno-start: 57
 
-    def converse_implication(x, y):
+    def converse_implicationreturn (first_input, second_input):
         return x or not y
 
 
-    def contradiction(x, y):
+    def contradictionreturn (first_input, second_input):
 
 all the tests are still passing
 

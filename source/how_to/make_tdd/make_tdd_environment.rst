@@ -370,7 +370,9 @@ how to run tests manually
 
     touch tests/magic.py
 
-  the terminal_ goes back to the command line. I use tree_ to see what the project looks like so far
+  the terminal_ goes back to the command line
+
+* I use tree_ to see what the project looks like so far
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -434,21 +436,24 @@ red: make it fail
   - ``class TestMagic``
 
     * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
-    * ``TestMagic`` is the name of this :ref:`class <classes>` and will hold the test
+    * ``TestMagic`` is the name I gave this :ref:`class <classes>` and will hold the test
 
       .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
-    * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` I will use for testing
+    * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
 
   - ``def test_failure``
 
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
-    * ``test_failure`` is the name of this :ref:`method<functions>` for :ref:`this first test<test_failure>`
+    * ``test_failure`` is the name I used :ref:`method<functions>` for :ref:`this first test<test_failure>`
 
       .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
     * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
+
+      .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name but it is easier to stick with convention for this concept
+
     * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
@@ -456,8 +461,8 @@ red: make it fail
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time I make a change
-* I run the command again to run the tests in the terminal_
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time I make a change
+* I try the command again to run the tests in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -475,7 +480,7 @@ red: make it fail
 how to make a python package
 --------------------------------------------------------------------------------------------
 
-* I use touch_ to add an empty file called ``__init__.py`` in the ``tests`` folder
+* I use touch_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
 
   .. IMPORTANT:: make sure to use 2 underscores (__) for ``__init__.py``
 
@@ -484,7 +489,9 @@ how to make a python package
 
     touch tests/__init__.py
 
-  the terminal_ goes back to the command line. I run the tree_ command to see what changed
+  the terminal_ goes back to the command line
+
+* I run the tree_ command to see what changed
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -504,7 +511,7 @@ how to make a python package
 
     3 directories, 3 files
 
-  I try to run the tests again
+* I try to run the tests again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -533,12 +540,14 @@ how to rename a file
 
     mv tests/magic.py tests/test_magic.py
 
-  the terminal_ goes back to the command line. I use tree_ to see what I have so far
+  the terminal_ goes back to the command line
+
+* I use tree_ with the ``-L`` option to see what I have so far
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree
+    tree -L 2
 
   the terminal_ shows
 
@@ -550,12 +559,13 @@ how to rename a file
     └── tests
         ├── __init__.py
         ├── __pycache__
-        │   └── __init__.cpython-313.pyc
         └── test_magic.py
 
-    4 directories, 4 files
+    4 directories, 3 files
 
-* I run the command to run the tests again
+    - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to keep it only to the first level of  contents of the child folders_
+
+* I run the tests again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -583,7 +593,7 @@ how to rename a file
 
   .. IMPORTANT:: I can use any name for the test file but it must start with ``test_`` or unittest_ will NOT run the tests in the file
 
-* This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line
+* This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
 
   * ``FAILED (failures=1)`` the number of failures
   * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
@@ -604,60 +614,60 @@ how to rename a file
 
 * I hold ``ctrl`` (windows/linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
-* I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add :ref:`AssertionError` to the list
-
-  .. code-block:: shell
-    :linenos:
-    :emphasize-lines: 10-11
-
-    import unittest
-
-
-    class TestMagic(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions Encountered
-    # AssertionError
-
 green: make it pass
 #################################################################################
 
-I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
 
-.. code-block:: shell
-  :lineno-start: 7
-  :emphasize-lines: 1
+  .. code-block:: shell
+    :lineno-start: 7
+    :emphasize-lines: 1
 
-          self.assertFalse(False)
+            self.assertFalse(False)
 
-then I run the test again in the terminal_
+  * I run the test again in the terminal_
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-  python3 -m unittest
+    python3 -m unittest
 
-and the test passes! The terminal_ shows
+  the test passes! The terminal_ shows
 
-.. code-block:: none
+  .. code-block:: none
 
-  .
-  ------------------------------------------------------
-  Ran 1 test in A.XYZs
+    .
+    ------------------------------------------------------
+    Ran 1 test in A.XYZs
 
-  OK
+    OK
 
-*cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
+  *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
 refactor: make it better
 ############################################################################################
 
+I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
+
+.. code-block:: shell
+  :linenos:
+  :emphasize-lines: 10-11
+
+  import unittest
+
+
+  class TestMagic(unittest.TestCase):
+
+      def test_failure(self):
+          self.assertFalse(True)
+
+
+  # Exceptions Encountered
+  # AssertionError
+
 I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I want.
 
-This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a `computer program`_ to run the tests so `I do not repeat myself`_.
+This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a `computer program`_ to run the tests so that `I do not repeat myself`_.
 
 ----
 
@@ -680,14 +690,16 @@ the terminal_ shows
 
   command not found: pytest-watch
 
-I need to install it for the computer to use it
+I need to install `pytest-watch`_ for the computer to use it
 
 how to make a virtual environment
 ############################################################################################
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
-A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer. It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
+A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
+
+It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
 
@@ -710,7 +722,7 @@ A `virtual environment`_ is a separate folder where I can install `python packag
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree
+    tree -L 2
 
   the terminal_ shows
 
@@ -722,15 +734,13 @@ A `virtual environment`_ is a separate folder where I can install `python packag
     └── tests
         ├── __init__.py
         ├── __pycache__
-        │   ├── __init__.cpython-313.pyc
-        │   └── test_magic.cpython-313.pyc
         └── test_magic.py
 
-    4 directories, 5 files
+    4 directories, 3 files
 
   it does not look like anything changed. This is because the ``.`` in front of ``.venv`` means the folder_ is hidden
 
-* I try tree_ again with a few options to see what changed
+* I try tree_ again with another option to see what changed
 
   .. code-block:: shell
     :emphasize-lines: 1

@@ -101,7 +101,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def get_datetime(argument):
+    def get_datetime(the_input):
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -126,7 +126,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def get_datetime(argument):
+    def get_datetime(the_input):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
@@ -142,7 +142,7 @@ green: make it pass
       import datetime
 
 
-      def get_datetime(argument):
+      def get_datetime(the_input):
       ...
 
   the terminal_ shows :ref:`AssertionError`
@@ -157,8 +157,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def get_datetime(argument):
-        return argument
+    def get_datetime(the_input):
+        return the_input
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -175,7 +175,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def get_datetime(argument):
+    def get_datetime(the_input):
         return datetime.datetime.strptime(
             argument, '%Y/%m/%d %H:%M'
         )

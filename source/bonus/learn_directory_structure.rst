@@ -267,7 +267,7 @@ how to list what is in a directory
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       ls -Force
@@ -340,7 +340,7 @@ how to look at directory structure
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       tree /F
@@ -388,7 +388,7 @@ how to look at directory structure
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       ls -Force
@@ -706,7 +706,7 @@ how to look at directory structure
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       tree /F
@@ -738,7 +738,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       New-Item a_file_in_parent
@@ -754,7 +754,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``ls -Force`` instead of ``ls -a``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       ls -Force
@@ -1121,7 +1121,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       tree /F
@@ -1155,7 +1155,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       New-Item child/aunt_or_uncle_of_another_grandchild_of_parent
@@ -1218,7 +1218,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of touch_
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       New-Item sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
@@ -1517,6 +1517,14 @@ I can make empty files_ in a folder_ with the touch_ program
     :emphasize-lines: 1
 
     rm -rf parent
+
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``rm -Force`` instead of ``rm -rf``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      rm -Force parent
+
 
   the terminal_ goes back to the command line
 

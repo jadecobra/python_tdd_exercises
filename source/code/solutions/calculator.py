@@ -1,14 +1,14 @@
-def add(x, y):
+def addreturn (first_input, second_input):
     return x + y
 
 
-def subtract(x, y):
+def subtractreturn (first_input, second_input):
     return x - y
 
 
-def multiply(x, y):
+def multiplyreturn (first_input, second_input):
     return x * y
 
 
-def divide(x, y):
+def dividereturn (first_input, second_input):
     return x / y

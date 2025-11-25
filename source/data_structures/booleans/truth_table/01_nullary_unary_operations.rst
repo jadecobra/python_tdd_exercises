@@ -268,7 +268,7 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 1
 
-    def logical_identity(argument):
+    def logical_identity(the_input):
         return False
 
   the terminal_ shows :ref:`AssertionError`
@@ -283,7 +283,7 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 2
 
-    def logical_identity(argument):
+    def logical_identity(the_input):
         return True
 
   the test passes
@@ -313,7 +313,7 @@ refactor: make it better
     :lineno-start: 9
     :emphasize-lines: 2
 
-    def logical_identity(argument):
+    def logical_identity(the_input):
         return False
 
   the terminal_ shows :ref:`AssertionError`
@@ -330,8 +330,8 @@ refactor: make it better
     :lineno-start: 9
     :emphasize-lines: 2
 
-    def logical_identity(argument):
-        return argument
+    def logical_identity(the_input):
+        return the_input
 
   the test passes. ``logical_identity`` returns its input as output.
 
@@ -374,12 +374,12 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
   :lineno-start: 9
   :emphasize-lines: 5-6
 
-  def logical_identity(argument):
-      return argument
+  def logical_identity(the_input):
+      return the_input
 
 
-  def logical_negation(argument):
-      return argument
+  def logical_negation(the_input):
+      return the_input
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -393,7 +393,7 @@ I change the `return statement`_
   :lineno-start: 13
   :emphasize-lines: 2
 
-  def logical_negation(argument):
+  def logical_negation(the_input):
       return False
 
 the test passes
@@ -423,7 +423,7 @@ refactor: make it better
     :lineno-start: 13
     :emphasize-lines: 2
 
-    def logical_negation(argument):
+    def logical_negation(the_input):
         return True
 
   the terminal_ shows :ref:`AssertionError`
@@ -440,8 +440,8 @@ refactor: make it better
     :lineno-start: 13
     :emphasize-lines: 2
 
-    def logical_negation(argument):
-        return argument
+    def logical_negation(the_input):
+        return the_input
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -455,7 +455,7 @@ refactor: make it better
     :lineno-start: 13
     :emphasize-lines: 2
 
-    def logical_negation(argument):
+    def logical_negation(the_input):
         return not argument
 
   the test passes. ``logical_negation`` returns the opposite of its input

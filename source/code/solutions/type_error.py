@@ -22,7 +22,7 @@ def function_00():
     return None
 
 
-def function_01(argument):
+def function_01(the_input):
     return None
 
 

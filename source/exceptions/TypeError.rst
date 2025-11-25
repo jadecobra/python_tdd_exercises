@@ -363,7 +363,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def function_00(argument):
+    def function_00(the_input):
         return None
 
   the test passes
@@ -390,11 +390,11 @@ refactor: make it better
 
   .. code-block:: python
 
-    def function_00(argument):
+    def function_00(the_input):
         return None
 
 
-    def function_01(argument):
+    def function_01(the_input):
         return None
 
   the terminal_ shows :ref:`TypeError`

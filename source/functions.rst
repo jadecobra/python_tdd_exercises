@@ -437,7 +437,7 @@ green: make it pass
     :lineno-start: 17
     :emphasize-lines: 1
 
-    def identity(argument):
+    def identity(the_input):
         return None
 
   the test passes. I am genius
@@ -471,8 +471,8 @@ The definition for the :ref:`identity function<test_logical_identity>` is that i
     :lineno-start: 17
     :emphasize-lines: 2
 
-    def identity(argument):
-        return argument
+    def identity(the_input):
+        return the_input
 
   the test passes
 
@@ -521,8 +521,8 @@ green: make it pass
     :lineno-start: 17
     :emphasize-lines: 5-6
 
-    def identity(argument):
-        return argument
+    def identity(the_input):
+        return the_input
 
 
     def w_positional_arguments():
@@ -553,7 +553,7 @@ green: make it pass
 
   .. code-block:: python
 
-    def w_positional_arguments(first, last):
+    def w_positional_arguments(first_input, last_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -566,8 +566,8 @@ green: make it pass
 
   .. code-block:: python
 
-    def w_positional_arguments(first, last):
-        return first, last
+    def w_positional_arguments(first_input, last_input):
+        return first_input, last_input
 
   the test passes
 
@@ -659,8 +659,8 @@ green: make it pass
     :lineno-start: 21
     :emphasize-lines: 5-6
 
-    def w_positional_arguments(first, last):
-        return first, last
+    def w_positional_arguments(first_input, last_input):
+        return first_input, last_input
 
 
     def w_keyword_arguments():
@@ -693,7 +693,7 @@ green: make it pass
     :lineno-start: 25
     :emphasize-lines: 1
 
-    def w_keyword_arguments(first, last):
+    def w_keyword_arguments(first_input, last_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -708,8 +708,8 @@ green: make it pass
     :lineno-start: 25
     :emphasize-lines: 2
 
-    def w_keyword_arguments(first, last):
-        return first, last
+    def w_keyword_arguments(first_input, last_input):
+        return first_input, last_input
 
   the test passes
 
@@ -843,8 +843,8 @@ green: make it pass
     :lineno-start: 25
     :emphasize-lines: 5-6
 
-      def w_keyword_arguments(first, last):
-          return first, last
+      def w_keyword_arguments(first_input, last_input):
+          return first_input, last_input
 
 
       def w_positional_and_keyword_arguments():
@@ -894,7 +894,7 @@ green: make it pass
     :lineno-start: 29
     :emphasize-lines: 1
 
-    def w_positional_and_keyword_arguments(first, last):
+    def w_positional_and_keyword_arguments(first_input, last_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -909,8 +909,8 @@ green: make it pass
     :lineno-start: 29
     :emphasize-lines: 2
 
-    def w_positional_and_keyword_arguments(first, last):
-        return first, last
+    def w_positional_and_keyword_arguments(first_input, last_input):
+        return first_input, last_input
 
   the test passes.
 
@@ -918,8 +918,8 @@ There is no difference between the last 3 functions except their names, they all
 
 .. code-block:: python
 
-  def name_of_function(first, last):
-      return first, last
+  def name_of_function(first_input, last_input):
+      return first_input, last_input
 
 what is different is the way I called them in the tests
 
@@ -972,8 +972,8 @@ I add a function_ to ``functions.py``
   :lineno-start: 29
   :emphasize-lines: 5-6
 
-  def w_positional_and_keyword_arguments(first, last):
-      return first, last
+  def w_positional_and_keyword_arguments(first_input, last_input):
+      return first_input, last_input
 
 
   def w_default_arguments(first_name, last_name):
@@ -1070,7 +1070,7 @@ I add a a new test to ``test_functions.py``
 
 .. code-block:: python
   :lineno-start: 67
-  :emphasize-lines:
+  :emphasize-lines: 6-12
 
           self.assertEqual(
               src.functions.w_default_arguments('joe', 'blow'),
@@ -1221,7 +1221,7 @@ refactor: make it better
     :emphasize-lines: 1
 
     def w_unknown_arguments(*arguments, **keyword_arguments):
-        return arguments, keyword_arguments
+        return the_inputs, keyword_arguments
 
   the terminal_ shows
 

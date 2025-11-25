@@ -60,11 +60,11 @@ I add the :ref:`function<functions>` definition in ``truth_table.py``
   :lineno-start: 29
   :emphasize-lines: 5-6
 
-  def converse_non_implication(p, q):
+  def converse_non_implication(input_1, input_2):
       return not p and q
 
 
-  def negate_first(p, q):
+  def negate_first(input_1, input_2):
       return False
 
 the test passes
@@ -107,8 +107,8 @@ refactor: make it better
     :lineno-start: 33
     :emphasize-lines: 2-3
 
-    def negate_first(p, q):
-        if p == False and q == True:
+    def negate_first(input_1, input_2):
+        if input_1 == False and q == True:
             return True
         return False
 
@@ -141,10 +141,10 @@ refactor: make it better
     :lineno-start: 33
     :emphasize-lines: 2-3
 
-    def negate_first(p, q):
-        if p == False and q == False:
+    def negate_first(input_1, input_2):
+        if input_1 == False and q == False:
             return True
-        if p == False and q == True:
+        if input_1 == False and q == True:
             return True
         return False
 
@@ -156,14 +156,14 @@ refactor: make it better
     :lineno-start: 33
     :emphasize-lines: 2-5
 
-    def negate_first(p, q):
-        if p == False:
+    def negate_first(input_1, input_2):
+        if input_1 == False:
             return True
         else:
             return False
-        if p == False and q == False:
+        if input_1 == False and q == False:
             return True
-        if p == False and q == True:
+        if input_1 == False and q == True:
             return True
         return False
 
@@ -175,9 +175,9 @@ refactor: make it better
     :lineno-start: 33
     :emphasize-lines: 2-3
 
-    def negate_first(p, q):
+    def negate_first(input_1, input_2):
         if not bool(p):
-        # if p == False:
+        # if input_1 == False:
             return True
         return False
 
@@ -189,7 +189,7 @@ refactor: make it better
     :lineno-start: 33
     :emphasize-lines: 2-3
 
-    def negate_first(p, q):
+    def negate_first(input_1, input_2):
         if not p:
         # if not bool(p):
             return True
@@ -203,7 +203,7 @@ refactor: make it better
     :lineno-start: 33
     :emphasize-lines: 2
 
-    def negate_first(p, q):
+    def negate_first(input_1, input_2):
         return True if not p else False
         if not p:
             return True
@@ -217,7 +217,7 @@ refactor: make it better
     :lineno-start: 33
     :emphasize-lines: 2
 
-    def negate_first(p, q):
+    def negate_first(input_1, input_2):
         return not p
         return True if not p else False
 
@@ -228,7 +228,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 33
 
-    def negate_first(p, q):
+    def negate_first(input_1, input_2):
         return not p
 
 ----
@@ -269,11 +269,11 @@ I add a definition for the :ref:`function<functions>` to ``truth_table.py``
   :lineno-start: 33
   :emphasize-lines: 5-6
 
-  def negate_first(p, q):
+  def negate_first(input_1, input_2):
       return not p
 
 
-  def logical_nand(p, q):
+  def logical_nand(input_1, input_2):
       return False
 
 the terminal_ shows green again
@@ -303,8 +303,8 @@ refactor: make it better
     :lineno-start: 37
     :emphasize-lines: 2-3
 
-    def logical_nand(p, q):
-        if p and not q:
+    def logical_nand(input_1, input_2):
+        if input_1 and not q:
             return True
         return False
 
@@ -333,10 +333,10 @@ refactor: make it better
     :lineno-start: 37
     :emphasize-lines: 2-3
 
-    def logical_nand(p, q):
+    def logical_nand(input_1, input_2):
         if not p and q:
             return True
-        if p and not q:
+        if input_1 and not q:
             return True
         return False
 
@@ -369,12 +369,12 @@ refactor: make it better
     :lineno-start: 37
     :emphasize-lines: 2-3
 
-    def logical_nand(p, q):
+    def logical_nand(input_1, input_2):
         if not p and not q:
             return True
         if not p and q:
             return True
-        if p and not q:
+        if input_1 and not q:
             return True
         return False
 
@@ -386,8 +386,8 @@ refactor: make it better
     :lineno-start: 37
     :emphasize-lines: 2-5
 
-    def logical_nand(p, q):
-        if p and q:
+    def logical_nand(input_1, input_2):
+        if input_1 and q:
             return False
         else:
             return True
@@ -395,7 +395,7 @@ refactor: make it better
             return True
         if not p and q:
             return True
-        if p and not q:
+        if input_1 and not q:
             return True
         return False
 
@@ -406,8 +406,8 @@ refactor: make it better
   .. code-block:: python
     :emphasize-lines: 4-5
 
-    def logical_nand(p, q):
-        if p and q:
+    def logical_nand(input_1, input_2):
+        if input_1 and q:
             return False
         if not (p and q):
         # else:
@@ -421,9 +421,9 @@ refactor: make it better
     :lineno-start: 37
     :emphasize-lines: 2
 
-    def logical_nand(p, q):
+    def logical_nand(input_1, input_2):
         return not (p and q)
-        if p and q:
+        if input_1 and q:
             return False
         if not (p and q):
             return True
@@ -435,7 +435,7 @@ refactor: make it better
   .. code-block:: python
     :lineno-start: 37
 
-    def logical_nand(p, q):
+    def logical_nand(input_1, input_2):
         return not (p and q)
 
   When there is only one `if statement`_ that returns :ref:`False<test_what_is_false>` with an else_ clause, I can return its :ref:`logical negation<test_logical_negation>` with not_
@@ -478,11 +478,11 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
   :lineno-start: 37
   :emphasize-lines: 5-6
 
-  def logical_nand(p, q):
+  def logical_nand(input_1, input_2):
       return not (p and q)
 
 
-  def tautology(p, q):
+  def tautology(input_1, input_2):
       return True
 
 the test passes
@@ -570,11 +570,11 @@ I add the :ref:`function<functions>` to ``truth_table.py``
   :lineno-start: 41
   :emphasize-lines: 5-6
 
-  def tautology(p, q):
+  def tautology(input_1, input_2):
       return True
 
 
-  def logical_disjunction(p, q):
+  def logical_disjunction(input_1, input_2):
       return True
 
 the test passes
@@ -634,7 +634,7 @@ refactor: make it better
     :lineno-start: 45
     :emphasize-lines: 2-3
 
-    def logical_disjunction(p, q):
+    def logical_disjunction(input_1, input_2):
         if not p and not q:
             return False
         return True
@@ -647,7 +647,7 @@ refactor: make it better
     :lineno-start: 45
     :emphasize-lines: 2
 
-    def logical_disjunction(p, q):
+    def logical_disjunction(input_1, input_2):
         return not (not p and not q)
         if not p and not q:
             return False
@@ -661,7 +661,7 @@ refactor: make it better
     :lineno-start: 45
     :emphasize-lines: 2
 
-    def logical_disjunction(p, q):
+    def logical_disjunction(input_1, input_2):
         return not not p not and not not q
         return not (not p and not q)
 
@@ -689,7 +689,7 @@ refactor: make it better
     :lineno-start: 45
     :emphasize-lines: 2
 
-    def logical_disjunction(p, q):
+    def logical_disjunction(input_1, input_2):
         return not not p or not not q
         return not (not p and not q)
 
@@ -701,7 +701,7 @@ refactor: make it better
     :lineno-start: 45
     :emphasize-lines: 2
 
-    def logical_disjunction(p, q):
+    def logical_disjunction(input_1, input_2):
         return p or q
 
   the test is still green
