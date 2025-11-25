@@ -35,7 +35,7 @@ test_factory_person_introduction
 red: make it fail
 #################################################################################
 
-I make a new file called ``test_classes.py`` in the ``tests`` directory
+I make a new file_ called ``test_classes.py`` in the ``tests`` directory
 
 .. code-block:: python
 

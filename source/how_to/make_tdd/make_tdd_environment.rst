@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This chapter shows one way to make a Python_ `Test Driven Development`_ project, first :ref:`I do it manually<how to make a python test driven development environment automatically>` where I make all the `folders/directories`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
+This is one way to make a Python_ `Test Driven Development`_ project, first :ref:`I do it manually<how to make a python test driven development environment manually>` where I make all the `folders/directories`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
 
 ----
 
@@ -23,7 +23,7 @@ requirements
 *********************************************************************************
 
 * `download and install Python <https://www.python.org/downloads/>`_
-* an `Integrated Development Environment (IDE)`_. Here are a few options
+* get an `Integrated Development Environment (IDE)`_. Here are a few options
 
   - `Visual Studio Code`_
   - `Sublime Text`_
@@ -159,7 +159,7 @@ I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the
 
     0 directories, 0 files
 
-  You will see more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
+  .. NOTE:: You will see more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
@@ -181,7 +181,9 @@ I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the
 
     mkdir magic
 
-  the terminal_ goes back to the command line. I use tree_ again
+  the terminal_ goes back to the command line
+
+* I use tree_ again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -197,7 +199,7 @@ I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the
 
     2 directories, 0 files
 
-  I try cd_ again
+* I try cd_ again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -229,7 +231,7 @@ how to run a Python program
 
   the computer cannot find the program_ because it does not exist.
 
-* I make a child folder_ in the ``magic`` directory_ for it
+* I make a child folder_ in the ``magic`` directory_ for the program_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -292,7 +294,7 @@ how to make an empty file
 
     2 directories, 1 file
 
-  touch_ is a program_ that makes an empty file_ with the name, I can give the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  touch_ is a program_ that makes an empty file_ with the name. I can give the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -1106,7 +1108,7 @@ how to view all the commands I typed in a terminal
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 8, 10, 12, 15
+    :emphasize-lines: 8, 10, 12, 15, 19, 21, 24, 31, 34, 38, 40, 41, 45
 
     cd pumping_python
     mkdir pumping_python
@@ -1200,7 +1202,7 @@ the terminal_ shows
 
   command not found: makePythonTdd.sh
 
-I have to tell the computer exactly where the file is
+I have to tell the computer exactly where the file_ is
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -1264,7 +1266,7 @@ how to make a shell script run as a command
 how to use variables in a shell script
 --------------------------------------------------------------------------------------------
 
-* I add a name as a variable_ to change ``magic`` in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
+* I change ``magic`` to a variable_ in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
 
@@ -1288,6 +1290,8 @@ how to use variables in a shell script
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
+  a variable_ is a name that is used for a value that can change. For example in mathematics we can use ``x`` to represent any number. In this case I use ``PROJECT_NAME`` to represent any name of a project
+
   .. NOTE:: ``$1`` represents the first argument given when a program_ is called, I can use it in place of ``$PROJECT_NAME`` for example,
 
     .. code-block:: shell
@@ -1296,7 +1300,7 @@ how to use variables in a shell script
 
     in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be the value of  ``argument``
 
-* I use ``ctrl+c`` in the terminal_ to stop the test from running then I run the ``makePythonTdd.sh`` again
+* I use ``ctrl+c`` on the keyboard in the terminal_ to stop the test from running then I run the ``makePythonTdd.sh`` again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1322,7 +1326,7 @@ how to use variables in a shell script
 
     ================================ no tests ran in 0.00s =================================
 
-  it did not work. No tests ran and there were errors with making the folders_. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ did not work
+  it did not work. No tests ran and there were errors with making the folders_. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ were tried with no name and did not work
 
 * I stop `pytest-watch`_ from running by hitting ``ctrl+c`` on the keyboard in the terminal_. I run tree_
 
@@ -1367,15 +1371,15 @@ how to use variables in a shell script
 
     ./makePythonTdd.sh magic_again
 
-  the terminal_ shows no errors but no tests ran
+  the terminal_ shows no errors because no tests ran
 
   .. code-block:: shell
 
     ================================ no tests ran in X.YZs ================================
 
-  I need to add code for :ref:`the first failing test<test_failure>` to the test file
+  I need to add code for :ref:`the first failing test<test_failure>` to the test file_
 
-* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder now
+* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder_ now
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1385,28 +1389,10 @@ how to use variables in a shell script
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 23-41
+
 
     .
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
-    │   ├── requirements.txt
-    │   ├── src
-    │   │   └── magic_again.py
-    │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic_again.py
-    │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
     ├── magic
     │   ├── .pytest_cache
     │   │   ├── CACHEDIR.TAG
@@ -1420,6 +1406,26 @@ how to use variables in a shell script
     │   │   ├── __init__.py
     │   │   ├── __pycache__
     │   │   └── test_magic.py
+    │   └── .venv
+    │       ├── bin
+    │       ├── .gitignore
+    │       ├── include
+    │       ├── lib
+    │       ├── lib64 -> lib
+    │       └── pyvenv.cfg
+    ├── magic_again
+    │   ├── .pytest_cache
+    │   │   ├── CACHEDIR.TAG
+    │   │   ├── .gitignore
+    │   │   ├── README.md
+    │   │   └── v
+    │   ├── requirements.txt
+    │   ├── src
+    │   │   └── magic_again.py
+    │   ├── tests
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   └── test_magic_again.py
     │   └── .venv
     │       ├── bin
     │       ├── .gitignore
@@ -1456,6 +1462,7 @@ how to use variables in a shell script
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 10
 
     ====================================== FAILURES =======================================
     __________________________ Testmore_magic.test_failure ___________________________
@@ -1481,9 +1488,10 @@ how to use variables in a shell script
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 43-
 
     .
-    ├── more_magic
+    ├── magic
     │   ├── .pytest_cache
     │   │   ├── CACHEDIR.TAG
     │   │   ├── .gitignore
@@ -1491,11 +1499,11 @@ how to use variables in a shell script
     │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── more_magic.py
+    │   │   └── magic.py
     │   ├── tests
     │   │   ├── __init__.py
     │   │   ├── __pycache__
-    │   │   └── test_more_magic.py
+    │   │   └── test_magic.py
     │   └── .venv
     │       ├── bin
     │       ├── .gitignore
@@ -1523,27 +1531,28 @@ how to use variables in a shell script
     │       ├── lib
     │       ├── lib64 -> lib
     │       └── pyvenv.cfg
-    ├── magic
-    │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
-    │   ├── requirements.txt
-    │   ├── src
-    │   │   └── magic.py
-    │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
-    │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
-    └── makePythonTdd.sh
+    ├── makePythonTdd.sh
+    └── more_magic
+        ├── .pytest_cache
+        │   ├── CACHEDIR.TAG
+        │   ├── .gitignore
+        │   ├── README.md
+        │   └── v
+        ├── requirements.txt
+        ├── src
+        │   └── more_magic.py
+        ├── tests
+        │   ├── __init__.py
+        │   ├── __pycache__
+        │   └── test_more_magic.py
+        └── .venv
+            ├── bin
+            ├── .gitignore
+            ├── include
+            ├── lib
+            ├── lib64 -> lib
+            └── pyvenv.cfg
+
 
 * I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 
@@ -1605,6 +1614,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a shell script?<how to make a shell script>`
+* :ref:`What is a variable?<how to use variables in a shell script>`
 * :ref:`How can I use a variable in a shell script<how to use variables in a shell script>`
 * :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
 * :ref:`How can I run a shell script<how to run a shell script>`
