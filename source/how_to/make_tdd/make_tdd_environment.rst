@@ -563,7 +563,7 @@ how to rename a file
 
     4 directories, 3 files
 
-    - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to keep it only to the first level of  contents of the child folders_
+  the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of  contents of the child folders_
 
 * I run the tests again
 
@@ -771,7 +771,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
   there is now a folder_ named ``.venv`` for the `virtual environment`_
 
   - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
-  - the ``-L`` option tells tree_ how deep to go with showing the folders_ and files_, I use ``2`` to keep it only to the first level of  contents of the child folders_
+  - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to keep it to the first level of what is in the children folders_ of ``magic``
 
 how to activate a virtual environment
 ############################################################################################
@@ -804,7 +804,7 @@ how to activate a virtual environment
 
     command not found: pytest-watch
 
-  I have to install it in the `virtual environment`_ to use it in the `virtual environment`_
+  I have to install `pytest-watch`_ in the `virtual environment`_ to use it in the `virtual environment`_
 
 how to see what packages are installed in a virtual environment
 --------------------------------------------------------------------------------------------
@@ -829,9 +829,9 @@ the terminal_ shows
 
 how to write text to a file
 --------------------------------------------------------------------------------------------
-I want to make a file where I can list all the `python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file
+I want to make a file where I can list all the `python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
-* I can write text to a file with the echo_ program_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
+* I can write text to a file_ with the echo_ program_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -844,7 +844,7 @@ I want to make a file where I can list all the `python packages`_ for my project
 
     pytest-watch
 
-  I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
+* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -886,7 +886,7 @@ I want to make a file where I can list all the `python packages`_ for my project
 
     9 directories, 6 files
 
-  ``requirements.txt`` is now in the ``magic`` folder_project
+  ``requirements.txt`` is now in the ``magic`` folder_
 
 how to install python packages in a virtual environment
 --------------------------------------------------------------------------------------------
@@ -901,14 +901,14 @@ how to install python packages in a virtual environment
   - ``--requirement`` is an option that can be passed to the ``install`` argument for `python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
-  when I do not have the latest version of pip_, the terminal_ shows the following after installing the programs_ from the requirements file
+  the terminal_ shows a bunch or programs_ being installed, and when I do not have the latest version of pip_ installed, it shows
 
   .. code-block:: shell
 
     [notice] A new release of pip is available: XY.Z -> AB.C
     [notice] To update, run: pip install --upgrade pip
 
-  I upgrade pip_ to the latest version (this is good practice)
+  I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -961,7 +961,8 @@ how to install python packages in a virtual environment
 
   and it shows results without going back to the command line
 
-  .. code-block:: ruby
+  .. code-block:: shell
+    :emphasize-lines: 6
 
     ================== test session starts===================
     ...
@@ -983,6 +984,7 @@ how to install python packages in a virtual environment
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
+    :emphasize-lines: 10
 
     ====================================== FAILURES =======================================
     _______________________________ TestMagic.test_failure ________________________________
@@ -1006,9 +1008,9 @@ how to install python packages in a virtual environment
 
           self.assertFalse(False)
 
-  the test passes. I can now write the rest of the code for the project while the tests run automatically
+  the test passes and I can write the rest of the code for the project as the tests run automatically in response to my changes
 
-  .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back control of the terminal
+  .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back to the command line
 
 ----
 
@@ -1016,7 +1018,7 @@ how to install python packages in a virtual environment
 how to make a python test driven development environment automatically
 ********************************************************************************************
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use it to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
+You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
 how to exit the automated tests
 ############################################################################################
@@ -1032,7 +1034,7 @@ how to deactivate a virtual environment
 
     deactivate
 
-  I try `pytest-watch`_ again to show that I do not have it installed outside the `virtual environment`_
+* I try `pytest-watch`_ again to show that I do not have it installed outside the `virtual environment`_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1063,7 +1065,7 @@ how to deactivate a virtual environment
 how to make a shell script
 ############################################################################################
 
-* I use touch_ to make an empty file_ with a name that describes the program_ that will make a `Test Driven Development`_ environment automatically, with a name that is easy to remember later
+* I use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will make a `Test Driven Development`_ environment automatically
 
   .. code-block:: shell
     :emphasize-lines: 1
