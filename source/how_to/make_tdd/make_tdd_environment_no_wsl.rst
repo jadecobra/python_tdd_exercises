@@ -578,7 +578,7 @@ refactor: make it better
 
 I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
-.. code-block:: PowerShell
+.. code-block:: python
   :linenos:
   :emphasize-lines: 10-11
 
@@ -1031,7 +1031,7 @@ how to view all the commands I typed in a terminal
   the terminal_ shows
 
   .. code-block:: PowerShell
-    :emphasize-lines: 8, 10, 12, 15, 19, 21, 24, 31, 34, 38, 40, 41, 45
+    :emphasize-lines: 6, 8, 10, 13, 22, 29, 32, 35, 37, 38, 40
 
     cd pumping_python
     mkdir pumping_python
@@ -1278,7 +1278,7 @@ how to use variables in a PowerShell script
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 23-41
+    :emphasize-lines: 22-41
 
     .
     ├── magic

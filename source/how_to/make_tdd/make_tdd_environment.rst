@@ -420,7 +420,7 @@ red: make it fail
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
-  .. code-block:: shell
+  .. code-block:: python
     :linenos:
     :emphasize-lines: 1, 4, 6-7
 
@@ -651,7 +651,7 @@ refactor: make it better
 
 I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
-.. code-block:: shell
+.. code-block:: python
   :linenos:
   :emphasize-lines: 10-11
 
@@ -1389,7 +1389,7 @@ how to use variables in a shell script
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 23-41
+    :emphasize-lines: 22-41
 
 
     .
