@@ -454,7 +454,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     duration_hours = difference // 60
     duration_minutes = difference % 60
 
-  then change the :ref:`variables<test_attribute_error_w_variables>`in the expectation
+  then change the :ref:`variables<test_attribute_error_w_variables>` in the expectation
 
   .. code-block:: python
 

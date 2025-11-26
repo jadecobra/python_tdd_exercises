@@ -358,7 +358,7 @@ refactor: make it better
 
   the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not yet better than the :ref:`list<lists>` constructor_
 
-* I made the same :ref:`variables<test_attribute_error_w_variables>`twice, one for the empty :ref:`list<lists>` and one for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the new :ref:`class<classes>` :ref:`attributes<AttributeError>`
+* I made the same :ref:`variables<test_attribute_error_w_variables>` twice, one for the empty :ref:`list<lists>` and one for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the new :ref:`class<classes>` :ref:`attributes<AttributeError>`
 
   .. code-block:: python
 
