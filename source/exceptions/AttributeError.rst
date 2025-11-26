@@ -224,7 +224,7 @@ refactor: make it better
 
   the test passes
 
-* one more assertion_ in ``test_attribute_error.py``
+* one more line in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -243,7 +243,7 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_03'. Did you mean: 'variable_00'?
 
-* I add the attribute to ``attribute.py``
+* I add the attribute to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -319,7 +319,7 @@ green: make it pass
     # NameError
     # TypeError
 
-* I change the attribute to a :ref:`function<functions>` in ``attribute.py``
+* I change the attribute to a :ref:`function<functions>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -336,15 +336,15 @@ green: make it pass
 refactor: make it better
 #################################################################################
 
-* time to do it as a drill in ``test_attribute_error.py``
+* time to do it as a drill, I add another call in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 2
 
-    def test_attribute_error_w_functions(self):
-        src.attribute_error.function_00()
-        src.attribute_error.function_01()
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
 
   the terminal_ shows AttributeError_
 
@@ -352,9 +352,11 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-  I add the :ref:`function<functions>` to ``attribute_error.py``
+* I add the :ref:`function<functions>` to ``attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5-6
 
     def function_00():
         return None
@@ -365,14 +367,15 @@ refactor: make it better
 
   the test passes
 
-* I add another line
+* I add another line to ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 13
 
-    def test_attribute_error_w_functions(self):
-        src.attribute_error.function_00()
-        src.attribute_error.function_01()
-        src.attribute_error.function_02()
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
+            src.attribute_error.function_02()
 
   the terminal_ shows AttributeError_
 
@@ -380,13 +383,11 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-  I make the test pass
+* I add a :ref:`function<functions>` for it in ``attribute_error.py``
 
   .. code-block:: python
-
-    def function_00():
-        return None
-
+    :lineno-start: 11
+    :emphasize-lines: 5-6
 
     def function_01():
         return None
@@ -395,15 +396,22 @@ refactor: make it better
     def function_02():
         return None
 
-* then I add another line
+  the test passes
+
+* then I add another line in ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5
 
-    def test_attribute_error_w_functions(self):
-        src.attribute_error.function_00()
-        src.attribute_error.function_01()
-        src.attribute_error.function_02()
-        src.attribute_error.function_03()
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
+            src.attribute_error.function_02()
+            src.attribute_error.function_03()
+
+
+    # Exceptions Encountered
 
   the terminal_ shows AttributeError_
 
@@ -411,17 +419,11 @@ refactor: make it better
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-  I add it to the :ref:`module<ModuleNotFoundError>`
+* I add it the :ref:`function<functions>` to ``attribute_error.py``
 
   .. code-block:: python
-
-    def function_00():
-        return None
-
-
-    def function_01():
-        return None
-
+    :lineno-start: 15
+    :emphasize-lines: 5-6
 
     def function_02():
         return None
