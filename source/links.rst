@@ -27,7 +27,6 @@
 .. _change directory: cd_
 .. _changing directory: cd_
 .. _chmod: https://grokipedia.com/page/Chmod
-.. _class: https://docs.python.org/3/glossary.html#term-class
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _computer program: https://grokipedia.com/page/Computer_program
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
