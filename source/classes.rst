@@ -94,7 +94,7 @@ green: make it pass
 
     ClassWithPass = None
 
-* and then redefine the variable as a class using the Python_ class_ keyword
+* and then redefine the :ref:`variable<test_attribute_error_w_variables>`as a class using the Python_ class_ keyword
 
   .. code-block:: python
 

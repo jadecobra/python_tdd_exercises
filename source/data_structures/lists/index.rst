@@ -1566,7 +1566,7 @@ I have to change ``'n'`` to a number or change the other numbers to a string_
 green: make it pass
 #################################################################################
 
-I remove the things around the call, and the variable name since it is not used, then add assertRaises_
+I remove the things around the call, and the :ref:`variable<test_attribute_error_w_variables>`name since it is not used, then add assertRaises_
 
 .. code-block:: python
 

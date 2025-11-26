@@ -292,7 +292,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-* I add variables to remove the repetition of the values for ``wake_time`` and ``sleep_time``
+* I add :ref:`variables<test_attribute_error_w_variables>`to remove the repetition of the values for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -362,7 +362,7 @@ refactor: make it better
     import src.sleep_duration
     import unittest
 
-  then add variables for random hours in a day
+  then add :ref:`variables<test_attribute_error_w_variables>`for random hours in a day
 
   .. code-block:: python
 
@@ -571,7 +571,7 @@ refactor: make it better
 
   the terminal_ shows green again
 
-* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_first_position_of_item_in_a_list>` I know I can get it by using its index, Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a variable to ``test_string_splitting``
+* I want the hours part of the timestamp string_ which is the first item from calling `str.split`_. From :ref:`the chapter on lists<test_index_returns_first_position_of_item_in_a_list>` I know I can get it by using its index, Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the second an index of ``1``. I add a :ref:`variable<test_attribute_error_w_variables>`to ``test_string_splitting``
 
   .. code-block:: python
 

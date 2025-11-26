@@ -28,7 +28,7 @@ names
 
   I can use any case I want but :ref:`CapWords` keeps things consistent
 
-- variables (:ref:`attributes<AttributeError>`) and :ref:`function (method)<functions>` names are in ``snake_case`` for example
+- :ref:`variables<test_attribute_error_w_variables>`(:ref:`attributes<AttributeError>`) and :ref:`function (method)<functions>` names are in ``snake_case`` for example
 
   .. code-block:: python
 

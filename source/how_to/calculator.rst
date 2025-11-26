@@ -188,7 +188,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` variable is :ref:`None` which is not callable_
+  because the ``add`` :ref:`variable<test_attribute_error_w_variables>`is :ref:`None` which is not callable_
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
@@ -307,7 +307,7 @@ refactor: make it better
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers
 
-* then I add variables and a new :ref:`assertion<AssertionError>`
+* then I add :ref:`variables<test_attribute_error_w_variables>`and a new :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -406,7 +406,7 @@ refactor: make it better
 
     class TestCalculator(unittest.TestCase):
 
-  then I use the new :ref:`function<functions>` for the ``x`` and ``y`` variables in ``test_addition``
+  then I use the new :ref:`function<functions>` for the ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>`in ``test_addition``
 
   .. code-block:: python
     :lineno-start: 12
@@ -633,7 +633,7 @@ refactor: make it better
                 x-y
             )
 
-  the terminal_ shows the tests are still passing. The ``x`` and ``y`` variables are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal_ shows the tests are still passing. The ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>`are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the commented lines in ``test_addition``
 
@@ -677,7 +677,7 @@ refactor: make it better
                 self.x-self.y
             )
 
-* I remove the ``x`` and ``y`` variables from ``test_addition`` and ``test_subtraction`` since they are no longer needed
+* I remove the ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>`from ``test_addition`` and ``test_subtraction`` since they are no longer needed
 
   .. code-block:: python
     :lineno-start: 10
@@ -1199,7 +1199,7 @@ green: make it pass
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
-  I add 2 variables for the positional arguments
+  I add 2 :ref:`variables<test_attribute_error_w_variables>`for the positional arguments
 
   .. code-block:: python
     :lineno-start: 5

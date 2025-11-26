@@ -358,7 +358,7 @@ I change the `return statement`_
   def constant():
       return 'the same thing'
 
-the test passes. A constant function_ always return the same thing when called, I can use them in place of variables_, though the number of cases where they are faster than variables_ for constants, is pretty small. It is something like if the function_ is only called less than 10 times, but who's counting?
+the test passes. A constant function_ always return the same thing when called, I can use them in place of variables_, though the number of cases where they are faster than :ref:`variables<test_attribute_error_w_variables>`for constants, is pretty small. It is something like if the function_ is only called less than 10 times, but who's counting?
 
 ----
 
@@ -716,7 +716,7 @@ green: make it pass
 refactor: make it better
 ################################################################################
 
-* ``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_, except their names, the difference is in how I call the functions_ in the tests. In the first case I use positional arguments_ which have to be given in order, and in the second case I keyword arguments_ which use the names of the variables in parentheses in the function_ definition. I add another test with the :ref:`keyword arguments<test_functions_w_keyword_arguments>` out of order in ``test_functions.py``
+* ``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_, except their names, the difference is in how I call the functions_ in the tests. In the first case I use positional arguments_ which have to be given in order, and in the second case I keyword arguments_ which use the names of the :ref:`variables<test_attribute_error_w_variables>`in parentheses in the function_ definition. I add another test with the :ref:`keyword arguments<test_functions_w_keyword_arguments>` out of order in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 1
