@@ -764,7 +764,7 @@ using what I know so far, I add a :ref:`function<functions>` to ``calculator.py`
       return first_input - second_input
 
 
-  def multiply (first_input, second_input):
+  def multiply(first_input, second_input):
       return first_input * second_input
 
 the test passes! I remove ``test_multiplication`` from the TODO list in ``test_calculator.py``
@@ -823,7 +823,7 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 5-6
 
-    def multiply (first_input, second_input):
+    def multiply(first_input, second_input):
         return first_input * second_input
 
 

@@ -1016,7 +1016,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .../parent/sibling_of_child/child_of_sibling_child
+    .../parent/sibling_of_child/child_of_sibling_of_child
 
 * I go from ``child_of_sibling_of_child`` to ``parent`` in 1 step
 
@@ -1329,7 +1329,7 @@ I can make empty files_ in a folder_ with the touch_ program
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a parent/sibling_child
+    ls -a parent/sibling_of_child
 
   the terminal_ shows
 
