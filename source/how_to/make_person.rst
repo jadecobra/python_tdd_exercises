@@ -1553,7 +1553,7 @@ refactor: make it better
 
   still green
 
-* since the :ref:`variables<test_attribute_error_w_variables>` point to :ref:`class<classes>` :ref:`attributes<AttributeError>`, I can use them directly and comment out ``first_name`` and ``year_of_birth`` in ``test_takes_keyword_arguments``
+* since the :ref:`variables<test_attribute_error_w_variables>` point to :ref:`class attributes<test_attribute_error_w_class_attributes>`, I can use them directly and comment out ``first_name`` and ``year_of_birth`` in ``test_takes_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 20

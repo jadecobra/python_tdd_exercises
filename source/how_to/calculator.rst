@@ -599,7 +599,7 @@ refactor: make it better
 
         def test_addition(self):
 
-  I use the new :ref:`class<classes>` :ref:`attributes<AttributeError>` in ``test_addition``
+  I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in ``test_addition``
 
   .. code-block:: python
     :lineno-start: 15
@@ -653,7 +653,7 @@ refactor: make it better
             x = self.x
             y = self.y
 
-* I can use the :ref:`class<classes>` :ref:`attributes<AttributeError>` directly in ``test_addition``
+* I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly in ``test_addition``
 
   .. code-block:: python
     :lineno-start: 19
