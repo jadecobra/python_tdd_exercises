@@ -391,7 +391,7 @@ green: make it pass
 
   the test passes
 
-* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places if I want a different value for it. I add a :ref:`variable<test_attribute_error_w_variables>`to remove the repetition in ``test_person.py``
+* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places if I want a different value for it. I add a :ref:`variable<test_attribute_error_w_variables>` to remove the repetition in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -498,7 +498,7 @@ green: make it pass
 
   the test passes
 
-* ``'last_name'`` happens twice in the test, I add a :ref:`variable<test_attribute_error_w_variables>`to remove the duplication like I did with ``first_name`` in ``test_person.py``
+* ``'last_name'`` happens twice in the test, I add a :ref:`variable<test_attribute_error_w_variables>` to remove the duplication like I did with ``first_name`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -606,7 +606,7 @@ green: make it pass
 
   the terminal_ shows green again
 
-* I add a :ref:`variable<test_attribute_error_w_variables>`to remove the repetition in ``test_person.py``
+* I add a :ref:`variable<test_attribute_error_w_variables>` to remove the repetition in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -769,7 +769,7 @@ green: make it pass
 
   the test passes
 
-* I add a :ref:`variable<test_attribute_error_w_variables>`to remove duplication from ``test_person.py``
+* I add a :ref:`variable<test_attribute_error_w_variables>` to remove duplication from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -900,7 +900,7 @@ refactor: make it better
 
   the test passes
 
-* I add randomness to the ``sex`` :ref:`variable<test_attribute_error_w_variables>`in ``test_person.py``
+* I add randomness to the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -941,7 +941,7 @@ refactor: make it better
 
   the test passes with no more random failures
 
-* I use `random.choice`_ with the ``last_name`` :ref:`variable<test_attribute_error_w_variables>`in ``test_person.py``
+* I use `random.choice`_ with the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -986,7 +986,7 @@ refactor: make it better
 
   and the test is green again
 
-* I do the same thing for the ``first_name`` :ref:`variable<test_attribute_error_w_variables>`in ``test_person.py``
+* I do the same thing for the ``first_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -1222,7 +1222,7 @@ green: make it pass
 
     NameError: name 'last_name' is not defined
 
-  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>`which I just commented out
+  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` which I just commented out
 
 * I change the expectation of ``test_function_w_default_keyword_arguments`` in ``test_person.py``
 
@@ -1307,7 +1307,7 @@ green: make it pass
                 )
             )
 
-* I comment out the ``sex`` :ref:`variable<test_attribute_error_w_variables>`in the test to see what happens if I do not know its value
+* I comment out the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in the test to see what happens if I do not know its value
 
   .. code-block:: python
     :lineno-start: 40
@@ -1354,7 +1354,7 @@ green: make it pass
 
     NameError: name 'sex' is not defined
 
-  the value in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>`I commented out. I change the expectation
+  the value in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>` I commented out. I change the expectation
 
   .. code-block:: python
     :lineno-start: 49
@@ -1667,7 +1667,7 @@ refactor: make it better
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` named ``first_name``, it is now a :ref:`variable<test_attribute_error_w_variables>`in the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
+  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` named ``first_name``, it is now a :ref:`variable<test_attribute_error_w_variables>` in the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
 
 * I add ``self.`` to make it a :ref:`class<classes>` :ref:`attribute<AttributeError>`
 

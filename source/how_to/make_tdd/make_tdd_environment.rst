@@ -1266,7 +1266,7 @@ how to make a shell script run as a command
 how to use variables in a shell script
 --------------------------------------------------------------------------------------------
 
-* I change ``magic`` to a :ref:`variable<test_attribute_error_w_variables>`in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
+* I change ``magic`` to a :ref:`variable<test_attribute_error_w_variables>` in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
 
@@ -1290,7 +1290,7 @@ how to use variables in a shell script
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  a :ref:`variable<test_attribute_error_w_variables>`is a name that is used for a value that can change. For example in mathematics we can use ``x`` to represent any number. In this case I use ``PROJECT_NAME`` to represent any name of a project
+  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example in mathematics we can use ``x`` to represent any number. In this case I use ``PROJECT_NAME`` to represent any name of a project
 
   .. NOTE:: ``$1`` represents the first argument given when a program_ is called, I can use it in place of ``$PROJECT_NAME`` for example,
 
@@ -1615,7 +1615,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a shell script?<how to make a shell script>`
 * :ref:`What is a :ref:`variable<test_attribute_error_w_variables>`?<how to use variables in a shell script>`
-* :ref:`How can I use a :ref:`variable<test_attribute_error_w_variables>`in a shell script<how to use variables in a shell script>`
+* :ref:`How can I use a :ref:`variable<test_attribute_error_w_variables>` in a shell script<how to use variables in a shell script>`
 * :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
 * :ref:`How can I run a shell script<how to run a shell script>`
 * :ref:`What is the Test Driven Development Cycle?<test_failure>`

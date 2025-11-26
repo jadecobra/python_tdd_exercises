@@ -188,7 +188,7 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` :ref:`variable<test_attribute_error_w_variables>`is :ref:`None` which is not callable_
+  because the ``add`` :ref:`variable<test_attribute_error_w_variables>` is :ref:`None` which is not callable_
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 

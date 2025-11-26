@@ -442,7 +442,7 @@ A :ref:`function<functions>` in a :ref:`module<ModuleNotFoundError>` is an attri
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-We know that variables_ and :ref:`functions` defined in a :ref:`module<ModuleNotFoundError>`. They are also variables_ defined inside a :ref:`class<classes>`
+We know that variables_ and :ref:`functions` defined in a :ref:`module<ModuleNotFoundError>` are attributes. variables_ defined inside a :ref:`class<classes>` are also attributes.
 
 red: make it fail
 #################################################################################
@@ -650,16 +650,26 @@ refactor: make it better
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-:ref:`methods <functions>` are :ref:`functions` defined inside a :ref:`class<classes>`
+We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`module<ModuleNotFoundError>` are attributes. We also know that variables_ defined inside a :ref:`class<classes>` are attributes.
+
+:ref:`functions<functions>` defined inside a :ref:`class<classes>` are also attributes, they are known as :ref:`methods<functions>`
 
 red: make it fail
 #################################################################################
-* I add a new test
+
+* I add a new test to ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 3-4
 
-    def test_attribute_error_w_class_methods(self):
-        src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.attribute_03
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+
+
+    # Exceptions Encountered
 
   the terminal_ shows AttributeError_
 
@@ -667,13 +677,14 @@ red: make it fail
 
     AttributeError: type object 'AClass' has no attribute 'method_00'
 
-
 green: make it pass
 #################################################################################
 
-* I add the name to ``AClass`` and point it to :ref:`None`
+* I add the name to ``AClass`` and point it to :ref:`None` in ``attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 8
 
     class AClass():
 
@@ -690,32 +701,31 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* I make it a :ref:`method<functions>` by using the def_ keyword to make it callable_
+* I make it a :ref:`method<functions>` by using the def_ keyword
 
   .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 3-4
 
-    class AClass():
-
-        attribute_00 = None
-        attribute_01 = None
-        attribute_02 = None
         attribute_03 = None
 
         def method_00():
             return None
 
-  the test passes
+  the test passes. ``method_00`` is now an attribute/property of ``AClass`` which is an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.AClass.method_00()``
 
 refactor: make it better
 #################################################################################
 
-* You know the "drill", I add a new line
+* You know the "drill", I add a new failing line to ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3
 
-    def test_attribute_error_w_class_methods(self):
-        src.attribute_error.AClass.method_00()
-        src.attribute_error.AClass.method_01()
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01()
 
   the terminal_ shows AttributeError_
 
@@ -723,13 +733,11 @@ refactor: make it better
 
     AttributeError: type object 'AClass' has no attribute 'method_01'. Did you mean: 'method_00'?
 
-  I add a definition for it
+* I add a definition for it in ``attribute_error.py``
 
   .. code-block:: python
-
-    class AClass():
-
-        ...
+    :lineno-start: 30
+    :emphasize-lines: 4-5
 
         def method_00():
             return None
@@ -739,14 +747,16 @@ refactor: make it better
 
   the terminal_ shows green again
 
-* I add another line
+* I add another failing line to ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 4
 
-    def test_attribute_error_w_class_methods(self):
-        src.attribute_error.AClass.method_00()
-        src.attribute_error.AClass.method_01()
-        src.attribute_error.AClass.method_02()
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01()
+            src.attribute_error.AClass.method_02()
 
   the terminal_ shows AttributeError_
 
@@ -754,16 +764,11 @@ refactor: make it better
 
     AttributeError: type object 'AClass' has no attribute 'method_02'. Did you mean: 'method_00'?
 
-  I repeat the solution
+* I add the :ref:`method<functions>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-
-    class AClass():
-
-        ...
-
-        def method_00():
-            return None
+    :lineno-start: 33
+    :emphasize-lines: 4-5
 
         def method_01():
             return None
@@ -773,15 +778,20 @@ refactor: make it better
 
   the test passes
 
-* then I add the last line
+* I add the last line to ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 5
 
-    def test_attribute_error_w_class_methods(self):
-        src.attribute_error.AClass.method_00()
-        src.attribute_error.AClass.method_01()
-        src.attribute_error.AClass.method_02()
-        src.attribute_error.AClass.method_03()
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01()
+            src.attribute_error.AClass.method_02()
+            src.attribute_error.AClass.method_03()
+
+
+    # Exceptions Encountered
 
   the terminal_ shows AttributeError_
 
@@ -789,19 +799,11 @@ refactor: make it better
 
     AttributeError: type object 'AClass' has no attribute 'method_03'. Did you mean: 'method_00'?
 
-  I make the test pass
+* I add the :ref:`method<functions>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-
-    class AClass():
-
-        ...
-
-        def method_00():
-            return None
-
-        def method_01():
-            return None
+    :lineno-start: 36
+    :emphasize-lines: 4-5
 
         def method_02():
             return None
@@ -809,31 +811,36 @@ refactor: make it better
         def method_03():
             return None
 
+  the test passes
+
+* A :ref:`function<functions>` in a :ref:`class<classes>` is called a :ref:`method<functions>` and is an attribute of the :ref:`class<classes>`
+* A :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+
 ----
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I ran tests for the AttributeError_ with
+I ran tests for AttributeError_ with
 
-* variables
-* :ref:`functions`
-* :ref:`class<classes>` :ref:`attributes<AttributeError>` (variables)
-* :ref:`class<classes>` :ref:`methods<functions>` (functions)
+* :ref:`variables<test_attribute_error_w_variables>`
+* :ref:`functions<test_attribute_error_w_functions>`
+* :ref:`variables in classes aka class attributes<test_attribute_error_w_class_attributes>`
+* :ref:`functions in classes aka methods<test_attribute_error_w_class_methods>`
 
 I also ran into the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`TypeError`
+* :ref:`TypeError` and
 * SyntaxError_
 
-Would you like to :ref:`test ModuleNotFoundError?<ModuleNotFoundError>`
+:ref:`can we measure learning?`
 
 ----
 
-:ref:`AttributeError: tests and solutions`
+:ref:`Click here to see the code I typed in this chapter<AttributeError: tests and solutions>`
 
 ----
 
