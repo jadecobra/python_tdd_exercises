@@ -124,6 +124,8 @@ refactor: make it better
 
   I make a new file named ``module_01.py`` in the ``src`` folder and the test passes
 
+* I close the file
+
 * I continue with another `import statement`_ in ``test_module_not_found_error.py``
 
   .. code-block:: python
@@ -142,6 +144,8 @@ refactor: make it better
     ModuleNotFoundError: No module called 'src.module_02'
 
   I add ``module_02.py`` to the ``src`` folder and the terminal_ shows green again
+
+* I close the file
 
 * I add one last failing `import statement`_ for practice in ``test_module_not_found_error.py``
 
@@ -163,6 +167,8 @@ refactor: make it better
 
 * I add the file to the ``src`` folder_ and the test passes
 
+* I close the file
+
 ----
 
 *********************************************************************************
@@ -173,7 +179,7 @@ I ran a test for ModuleNotFoundError_ to practice making Python_ modules_. Would
 
 ----
 
-:ref:`Click Here for code in this chapter<ModuleNotFoundError: test>`
+:ref:`Click Here for the code I wrote in this chapter<ModuleNotFoundError: test>`
 
 ----
 

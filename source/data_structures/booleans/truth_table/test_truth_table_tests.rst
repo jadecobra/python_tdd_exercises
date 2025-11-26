@@ -488,8 +488,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_nor'?
 
@@ -576,8 +575,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'
 
@@ -612,8 +610,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_disjunction'?
 
@@ -735,8 +732,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'. Did you mean: 'material_non_implication'?
 
@@ -806,8 +802,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 
@@ -931,8 +926,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_negation'. Did you mean: 'logical_conjunction'?
 
@@ -981,8 +975,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_identity'. Did you mean: 'logical_equality'?
 
@@ -1016,8 +1009,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_true'. Did you mean: 'logical_nand'?
 
@@ -1066,8 +1058,7 @@ green: make it pass
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_nand'?
 

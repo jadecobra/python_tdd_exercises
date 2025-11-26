@@ -16,7 +16,9 @@ AttributeError
 
 ----
 
-AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists. An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color.
+AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists.
+
+An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color. They are also known as properties
 
 ----
 
@@ -69,7 +71,7 @@ test_attribute_error_w_variables
 red: make it fail
 #################################################################################
 
-* I add an `import statement`_
+* I add an `import statement`_ at the top of  ``test_attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -77,16 +79,23 @@ red: make it fail
     import unittest
     import src.attribute_error
 
-* then change ``test_failure`` to ``test_attribute_error_w_variables``
+* I change ``test_failure`` to ``test_attribute_error_w_variables``
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-4
 
     class TestAttributeError(unittest.TestCase):
 
         def test_attribute_error_w_variables(self):
             src.attribute_error.variable_00
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` in the ``src`` folder, since the file is empty, the variable is not in it the terminal_ shows AttributeError_
+
+    # Exceptions Encountered
+
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` which is in the ``src`` folder. Since the file is empty, the variable is not in it.
+
+  The terminal_ shows AttributeError_
 
   .. code-block:: shell
 
@@ -95,6 +104,8 @@ red: make it fail
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
@@ -103,56 +114,65 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then I add a name to ``attribute_error.py``
+* I click on ``attribute_error.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a name
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     variable_00
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block::
+  .. code-block:: shell
 
     NameError: name 'variable_00' is not defined
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
     # AttributeError
     # NameError
 
-* and point ``variable_00`` to :ref:`None`
+* I point ``variable_00`` to :ref:`None` in ``attribute_error.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     variable_00 = None
 
-  the test passes
+  the test passes. ``variable_00`` is now an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.variable_00``
 
 refactor: make it better
 #################################################################################
 
-* I do it a few more times as a drill
+* I do the same test a few more times as a drill in ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3
 
-    def test_attribute_error_w_variables(self):
-        src.attribute_error.variable_00
-        src.attribute_error.variable_01
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_01'. Did you mean: 'variable_00'?
 
-  I add the name to ``attribute_error.py``
+* I add the name to ``attribute_error.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
 
     variable_00 = None
     variable_01
@@ -166,58 +186,68 @@ refactor: make it better
   I point it to :ref:`None`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
 
     variable_00 = None
     variable_01 = None
 
   the test passes
 
-* I do it again
+* I another statement to ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4
 
-    def test_attribute_error_w_variables(self):
-        src.attribute_error.variable_00
-        src.attribute_error.variable_01
-        src.attribute_error.variable_02
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
+            src.attribute_error.variable_02
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
+  .. code-block:: shell
     :force:
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_02'. Did you mean: 'variable_00'?
 
-  I add the name and point it to :ref:`None`
+* I add the name and point it to :ref:`None`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
 
     variable_00 = None
     variable_01 = None
     variable_02 = None
 
-  the terminal_ shows green again
+  the test passes
 
-* one more time
+* one more assertion_ in ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5
 
-    def test_attribute_error_w_variables(self):
-        src.attribute_error.variable_00
-        src.attribute_error.variable_01
-        src.attribute_error.variable_02
-        src.attribute_error.variable_03
+
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
+            src.attribute_error.variable_02
+            src.attribute_error.variable_03
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_03'. Did you mean: 'variable_00'?
 
-  I add it to the file
+* I add the attribute to ``attribute.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4
 
     variable_00 = None
     variable_01 = None
@@ -225,6 +255,8 @@ refactor: make it better
     variable_03 = None
 
   the test passes
+
+A variable_ in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -235,12 +267,19 @@ test_attribute_error_w_functions
 red: make it fail
 #################################################################################
 
-I add a new test
+I add a new test to ``test_attribute_error.py``
 
 .. code-block:: python
+  :lineno-start: 11
+  :emphasize-lines: 3-4
 
-  def test_attribute_error_w_functions(self):
-      src.attribute_error.function_00()
+          src.attribute_error.variable_03
+
+      def test_attribute_error_w_functions(self):
+          src.attribute_error.function_00()
+
+
+  # Exceptions Encountered
 
 the terminal_ shows AttributeError_
 
@@ -251,13 +290,12 @@ the terminal_ shows AttributeError_
 green: make it pass
 #################################################################################
 
-* I add the name and point it to :ref:`None`
+* I add the name and point it to :ref:`None` in ``attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 4
 
-    variable_00 = None
-    variable_01 = None
-    variable_02 = None
     variable_03 = None
 
 
@@ -269,9 +307,11 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-* which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 5
 
     # Exceptions Encountered
     # AssertionError
@@ -279,27 +319,28 @@ green: make it pass
     # NameError
     # TypeError
 
-* when I make it a :ref:`function<functions>`
+* I change the attribute to a :ref:`function<functions>` in ``attribute.py``
 
   .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 4-5
 
-    variable_00 = None
-    variable_01 = None
-    variable_02 = None
     variable_03 = None
 
 
     def function_00():
         return None
 
-  the test passes
+  the test passes. ``function_00`` is now an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can call it by using ``src.attribute_error.function_00()``
 
 refactor: make it better
 #################################################################################
 
-* time to do it as a drill
+* time to do it as a drill in ``test_attribute_error.py``
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
     def test_attribute_error_w_functions(self):
         src.attribute_error.function_00()
@@ -307,8 +348,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
@@ -336,8 +376,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
@@ -368,8 +407,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
@@ -393,6 +431,8 @@ refactor: make it better
         return None
 
   the test passes
+
+A :ref:`function<functions>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -511,8 +551,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
 
@@ -538,8 +577,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
      AttributeError: type object 'AClass' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
 
@@ -565,8 +603,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
      AttributeError: type object 'AClass' has no attribute 'attribute_03'. Did you mean: 'attribute_00'?
 
@@ -658,8 +695,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: type object 'AClass' has no attribute 'method_01'. Did you mean: 'method_00'?
 
@@ -690,8 +726,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: type object 'AClass' has no attribute 'method_02'. Did you mean: 'method_00'?
 
@@ -726,8 +761,7 @@ refactor: make it better
 
   the terminal_ shows AttributeError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: type object 'AClass' has no attribute 'method_03'. Did you mean: 'method_00'?
 

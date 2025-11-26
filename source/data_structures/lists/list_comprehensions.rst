@@ -96,8 +96,8 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 2, 3] != []
 
 - ``a_list = []`` makes an empty list and gives it a name
-- ``iterable = range(0, 4)`` makes a range_ object_ that goes from the first given number to the second given number minus 1, in this case it goes from ``0`` to ``3``
-- ``for item in iterable:`` goes over every item in the range_ object_
+- ``iterable = range(0, 4)`` makes a range_ :ref:`object<classes>` that goes from the first given number to the second given number minus 1, in this case it goes from ``0`` to ``3``
+- ``for item in iterable:`` goes over every item in the range_ :ref:`object<classes>`
 - ``a_list.append(item)`` gets called every time the `for loop`_ runs
 
 green: make it pass
@@ -109,7 +109,7 @@ I change the expectation to match the values in the terminal_
 
   self.assertEqual(a_list, [0, 1, 2, 3])
 
-the test passes. The :ref:`list<lists>` now has the items from the range_ object_ after the `for loop`_ runs
+the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`object<classes>` after the `for loop`_ runs
 
 refactor: make it better
 #################################################################################
@@ -254,7 +254,7 @@ refactor: make it better
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
 
-  this range_ object_ now goes from ``0`` to anywhere between ``1`` and ``999``. The values change every time the test runs
+  this range_ :ref:`object<classes>` now goes from ``0`` to anywhere between ``1`` and ``999``. The values change every time the test runs
 
 * I change the expectation in the first :ref:`assertion<AssertionError>`
 
@@ -777,8 +777,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
 

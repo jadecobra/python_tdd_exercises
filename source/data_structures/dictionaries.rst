@@ -2125,7 +2125,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   NameError: name 'dict_values' is not defined
 
-I use the :ref:`list<lists>` in the ``dict_values`` object_
+I use the :ref:`list<lists>` in the ``dict_values`` :ref:`object<classes>`
 
 .. code-block:: python
 

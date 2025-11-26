@@ -381,8 +381,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
@@ -425,8 +424,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
@@ -475,8 +473,7 @@ refactor: make it better
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 

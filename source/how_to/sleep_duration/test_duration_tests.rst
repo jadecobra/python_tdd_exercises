@@ -298,8 +298,7 @@ green: make it pass
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     SyntaxError: invalid syntax. Perhaps you forgot a comma?
 

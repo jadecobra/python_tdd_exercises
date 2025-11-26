@@ -516,8 +516,7 @@ how to use try...except...else
 
   the terminal_ shows :ref:`Exception<errors>` for ``test_catching_failures``
 
-  .. code-block:: python
-    :force:
+  .. code-block:: shell
 
     Exception: BOOM!
 

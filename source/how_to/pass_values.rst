@@ -329,7 +329,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: "I received: <class 'object'>" != 'I received: object'
 
-object_ is the mother :ref:`class<classes>` that all Python_ :ref:`classes<classes>` come from
+:ref:`object<classes>` is the mother :ref:`class<classes>` that all Python_ :ref:`classes<classes>` come from
 
 green: make it pass
 #################################################################################
@@ -373,7 +373,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: "I received: <class 'tests.test_telephone.TestTelephone'>" != "I received: <class 'object'>"
 
-even though they are both :ref:`classes`, object_ and ``TestTelephone`` are different. I change the expectation
+even though they are both :ref:`classes`, :ref:`object<classes>` and ``TestTelephone`` are different. I change the expectation
 
 .. code-block:: python
   :lineno-start: 17
