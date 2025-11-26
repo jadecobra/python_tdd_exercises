@@ -83,6 +83,8 @@
 .. _make a directory: mkdir_
 .. _make the directory: mkdir_
 .. _modulo: https://grokipedia.com/page/Modulo
+.. _module: https://docs.python.org/3/glossary.html#term-module
+.. _modules: module_
 .. _mv: https://grokipedia.com/page/Mv_(Unix)
 .. _not: https://docs.python.org/3/reference/expressions.html#not
 .. _nots: not_

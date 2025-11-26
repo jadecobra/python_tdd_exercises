@@ -16,7 +16,7 @@ ModuleNotFoundError
 
 ----
 
-ModuleNotFoundError_ is raised when Python_ cannot find a module from an `import statement`_. A Python_ :ref:`module<ModuleNotFoundError>` is a file that ends in ``.py``
+ModuleNotFoundError_ is raised when Python_ cannot find a module_ that is given in an `import statement`_. A Python_ module_ is a file that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_
 
 *********************************************************************************
 requirements
@@ -123,7 +123,8 @@ refactor: make it better
     ModuleNotFoundError: No module named 'src.module_01'
 
   I make a new file named ``module_01.py`` in the ``src`` folder and the test passes
-* I continue with another `import statement`_
+
+* I continue with another `import statement`_ in ``test_module_not_found_error.py``
 
   .. code-block:: python
     :lineno-start: 6
@@ -141,7 +142,8 @@ refactor: make it better
     ModuleNotFoundError: No module called 'src.module_02'
 
   I add ``module_02.py`` to the ``src`` folder and the terminal_ shows green again
-* one last failing `import statement`_ for practice
+
+* I add one last failing `import statement`_ for practice in ``test_module_not_found_error.py``
 
   .. code-block:: python
     :lineno-start: 6
@@ -159,7 +161,7 @@ refactor: make it better
 
     ModuleNotFoundError: No module called 'src.module_03'
 
-* I add the file to the ``src`` folder the test passes
+* I add the file to the ``src`` folder_ and the test passes
 
 ----
 
@@ -167,7 +169,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran a test for ModuleNotFoundError_ to practice making Python_ modules. Would you like to :ref:`test AssertionError?<AssertionError>`
+I ran a test for ModuleNotFoundError_ to practice making Python_ modules_. Would you like to :ref:`test AttributeError?<AttributeError>`
 
 ----
 
