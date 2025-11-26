@@ -311,7 +311,7 @@ refactor: make it better
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 4-5,7-10
+    :emphasize-lines: 4-5, 7-10
 
     class TestCalculator(unittest.TestCase):
 
@@ -320,7 +320,7 @@ refactor: make it better
             y = random.randint(-1, 1)
 
             self.assertEqual(
-                src.calculator.add(first_input, second_input),
+                src.calculator.add(x, y),
                 x+x
             )
             self.assertEqual(
@@ -332,14 +332,11 @@ refactor: make it better
                 0
             )
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError`
+  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError` with random values that look like this
 
   .. code-block:: shell
 
-    AssertionError: 0 != 2
-    AssertionError: -1 != -2
-    AssertionError: -1 != 0
-    AssertionError: 1 != 2
+    AssertionError: X != Y
 
   I change the expectation of the :ref:`assertion<AssertionError>` in the test to the correct calculation
 
@@ -348,7 +345,7 @@ refactor: make it better
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.add(first_input, second_input),
+                src.calculator.add(x, y),
                 x+y
             )
 
@@ -372,7 +369,7 @@ refactor: make it better
             y = random.randint(-1, 1)
 
             self.assertEqual(
-                src.calculator.add(first_input, second_input),
+                src.calculator.add(x, y),
                 x+y
             )
 
@@ -484,7 +481,7 @@ red: make it fail
             y = a_random_number()
 
             self.assertEqual(
-                src.calculator.subtract(first_input, second_input),
+                src.calculator.subtract(x, y),
                 x-y
             )
 
@@ -612,7 +609,7 @@ refactor: make it better
             y = self.y
 
             self.assertEqual(
-                src.calculator.add(first_input, second_input),
+                src.calculator.add(x, y),
                 x+y
             )
 
@@ -629,7 +626,7 @@ refactor: make it better
             y = self.y
 
             self.assertEqual(
-                src.calculator.subtract(first_input, second_input),
+                src.calculator.subtract(x, y),
                 x-y
             )
 
@@ -849,7 +846,7 @@ green: make it pass
 
         def divide(first_input, second_input):
     >       return first_input / second_input
-                   ^^^^^
+                   ^^^^^^^^^^^
     E       ZeroDivisionError: division by zero
 
   dividing by ``0`` is undefined in mathematics and raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in Python
@@ -897,7 +894,7 @@ the terminal_ shows my expectation with a failure for any value of ``x`` since `
 
       def divide(first_input, second_input):
   >       return first_input / second_input
-                  ^^^^^
+                ^^^^^^^^^^^^
   E       ZeroDivisionError: division by zero
 
 :ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program from running. No code will run past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
@@ -1136,7 +1133,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 1
 
-    def subtract(a, b):
+    def subtract(input_1, input_2):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -1151,17 +1148,14 @@ green: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def subtract(a, b):
-        return a, b
+    def subtract(input_1, input_2):
+        return input_1, input_2
 
-  the terminal_ shows random numbers with :ref:`AssertionError`
+  the terminal_ shows random numbers with :ref:`AssertionError` that look like this
 
   .. code-block:: shell
 
-    AssertionError: (-10, 2) != -12
-    AssertionError: (-1, 7) != -8
-    AssertionError: (10, 6) != 4
-    AssertionError: (7, -10) != 17
+    AssertionError: (X, Y) != Z
 
   the name of the :ref:`function<functions>` is ``subtract`` and the test expects the difference between the 2 inputs
 
@@ -1171,8 +1165,8 @@ green: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def subtract(a, b):
-        return a - b
+    def subtract(input_1, input_2):
+        return input_1 - input_2
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -1186,8 +1180,8 @@ green: make it pass
     :linenos:
     :emphasize-lines: 5-6
 
-    def subtract(a, b):
-        return a - b
+    def subtract(input_1, input_2):
+        return input_1 - input_2
 
 
     def multiply():
@@ -1205,7 +1199,7 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 1
 
-    def multiply(a, b):
+    def multiply(input_1, input_2):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -1220,17 +1214,14 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def multiply(a, b):
-        return a, b
+    def multiply(input_1, input_2):
+        return input_1, input_2
 
-  the terminal_ shows random numbers with :ref:`AssertionError`
+  the terminal_ shows random numbers with :ref:`AssertionError` that look like this
 
   .. code-block:: shell
 
-    AssertionError: (-6, 6) != -36
-    AssertionError: (-2, 3) != -6
-    AssertionError: (2, 5) != 10
-    AssertionError: (-9, -5) != 45
+    AssertionError: (X, Y) != Z
 
   I change it to the multiplication of the inputs to match the name of the :ref:`function<functions>`
 
@@ -1238,8 +1229,8 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def multiply(a, b):
-        return a * b
+    def multiply(input_1, input_2):
+        return input_1 * input_2
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -1253,14 +1244,14 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 5-6
 
-    def multiply(a, b):
-        return a * b
+    def multiply(input_1, input_2):
+        return input_1 * input_2
 
 
-    def divide(a, b):
-        return a, b
+    def divide(input_1, input_2):
+        return input_1, input_2
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError` with random numbers that look like this
 
   .. code-block:: shell
 
@@ -1281,8 +1272,8 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 2
 
-    def divide(a, b):
-        return a / b
+    def divide(input_1, input_2):
+        return input_1 / input_2
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -1296,20 +1287,20 @@ green: make it pass
     :linenos:
     :emphasize-lines: 13-14
 
-    def subtract(a, b):
-        return a - b
+    def subtract(input_1, input_2):
+        return input_1 - input_2
 
 
-    def multiply(a, b):
-        return a * b
+    def multiply(input_1, input_2):
+        return input_1 * input_2
 
 
-    def divide(a, b):
-        return a / b
+    def divide(input_1, input_2):
+        return input_1 / input_2
 
 
-    def add(a, b):
-        return a + b
+    def add(input_1, input_2):
+        return input_1 + input_2
 
   and all the tests are passing with no random failures. Lovely! I am a Programmer!
 
