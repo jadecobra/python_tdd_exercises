@@ -486,19 +486,17 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-  I add the :ref:`function<functions>` to ``type_error.py``
+* I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 5-6
 
-    def function_01(
-            input_1, input_2
-        ):
+    def function_01(input_1, input_2):
         return None
 
 
-    def function_02(
-            input_1, input_2
-        ):
+    def function_02(input_1, input_2):
         return None
 
   the terminal_ shows :ref:`TypeError`
@@ -507,27 +505,28 @@ refactor: make it better
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
-  then I make the number of inputs match
+* I add another name in parentheses to make the number of inputs match in ``type_error.p``
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 1
 
-    def function_02(
-            input_1, input_2,
-            argument_3
-        ):
+    def function_02(input_1, input_2, input_3):
         return None
 
-  the terminal_ shows green again
+  the test passes
 
-* I add one more failing line to the test
+* I add one more failing line in ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 5
 
-    def test_type_error_w_function_signatures(self):
-        src.type_error.function_00('a')
-        src.type_error.function_01('a', 'b')
-        src.type_error.function_02('a', 'b', 'c')
-        src.type_error.function_03('a', 'b', 'c', 'd')
+        def test_type_error_w_function_signatures(self):
+            src.type_error.function_00('a')
+            src.type_error.function_01('a', 'b')
+            src.type_error.function_02('a', 'b', 'c')
+            src.type_error.function_03('a', 'b', 'c', 'd')
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -535,21 +534,17 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 5-6
 
-    def function_02(
-            input_1, input_2,
-            argument_3
-        ):
+    def function_02(input_1, input_2, input_3):
         return None
 
 
-    def function_03(
-            input_1, input_2,
-            argument_3
-        ):
+    def function_03(input_1, input_2, input_3):
         return None
 
   the terminal_ shows :ref:`TypeError`
@@ -558,17 +553,18 @@ refactor: make it better
 
     TypeError: function_03() takes 3 positional arguments but 4 were given
 
-  I add a 4th parameter to the definition
+* I add a 4th name in parentheses to the definition
 
   .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 1
 
-    def function_03(
-        input_1, input_2,
-        argument_3, argument_4
-    ):
+    def function_03(input_1, input_2, input_3, input_4):
         return None
 
-  the terminal_ shows both tests are passing.
+  the test passes
+
+I have to call a :ref:`function<functions>` with the same number of inputs its definition expects
 
 ----
 
