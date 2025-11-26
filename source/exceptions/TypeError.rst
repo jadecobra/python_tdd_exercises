@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. _TypeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError
+
 #################################################################################
 TypeError
 #################################################################################
@@ -14,7 +16,7 @@ TypeError
 
 ----
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an :ref:`object<classes>` is used in a way that it should not be. This will help you understand how to use :ref:`functions` and :ref:`classes`
+TypeError_ is raised when an :ref:`object<classes>` is used in a way that it should not be. This will help you understand how to use :ref:`functions` and :ref:`classes`
 
 *********************************************************************************
 requirements
@@ -572,7 +574,7 @@ I have to call a :ref:`function<functions>` with the same number of inputs its d
 test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
-Some operations do not work if the objects_ are not the same type_
+Some operations do not work if the objects_ are not of the same type_
 
 red: make it fail
 #################################################################################
@@ -580,11 +582,18 @@ red: make it fail
 I add a new test with a failing line
 
 .. code-block:: python
+  :lineno-start: 18
+  :emphasize-lines: 3-4
 
-  def test_type_error_w_objects_that_do_not_mix(self):
-      None + 1
+          src.type_error.function_03('a', 'b', 'c', 'd')
 
-the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+      def test_type_error_w_objects_that_do_not_mix(self):
+          None + 1
+
+
+  # Exceptions Encountered
+
+the terminal_ shows TypeError_
 
 .. code-block:: shell
 
@@ -617,7 +626,7 @@ refactor: make it better
             None + 1
         'text' + 0.1
 
-  the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -646,7 +655,7 @@ refactor: make it better
             'text' + 0.1
         (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  the terminal_ shows `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -672,7 +681,7 @@ refactor: make it better
 review
 *********************************************************************************
 
-I ran tests for `TypeError <https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#TypeError>`_ with objects_ that are not callable_, :ref:`function<functions>` definitions and objects_ that do not mix.
+I ran tests for TypeError_ with objects_ that are not callable_, :ref:`function<functions>` definitions and objects_ that do not mix.
 
 Would you like to :ref:`test Lists?<lists>`
 

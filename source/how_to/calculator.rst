@@ -224,7 +224,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 1
 
-    def addreturn (first_input, second_input):
+    def add (first_input, second_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -241,7 +241,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def addreturn (first_input, second_input):
+    def add (first_input, second_input):
         return 1
 
   the test passes, time for a victory lap!
@@ -287,7 +287,7 @@ when I change the `return statement`_ in ``calculator.py`` to add the two inputs
   :linenos:
   :emphasize-lines: 2
 
-  def addreturn (first_input, second_input):
+  def add (first_input, second_input):
       return x + y
 
 the test passes
@@ -320,7 +320,7 @@ refactor: make it better
             y = random.randint(-1, 1)
 
             self.assertEqual(
-                src.calculator.addreturn (first_input, second_input),
+                src.calculator.add (first_input, second_input),
                 x+x
             )
             self.assertEqual(
@@ -348,7 +348,7 @@ refactor: make it better
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.addreturn (first_input, second_input),
+                src.calculator.add (first_input, second_input),
                 x+y
             )
 
@@ -372,7 +372,7 @@ refactor: make it better
             y = random.randint(-1, 1)
 
             self.assertEqual(
-                src.calculator.addreturn (first_input, second_input),
+                src.calculator.add (first_input, second_input),
                 x+y
             )
 
@@ -475,7 +475,7 @@ red: make it fail
             y = a_random_number()
 
             self.assertEqual(
-                src.calculator.addreturn (first_input, second_input),
+                src.calculator.add (first_input, second_input),
                 x+y
             )
 
@@ -484,7 +484,7 @@ red: make it fail
             y = a_random_number()
 
             self.assertEqual(
-                src.calculator.subtractreturn (first_input, second_input),
+                src.calculator.subtract (first_input, second_input),
                 x-y
             )
 
@@ -503,7 +503,7 @@ green: make it pass
     :linenos:
     :emphasize-lines: 5
 
-    def addreturn (first_input, second_input):
+    def add (first_input, second_input):
         return x + y
 
 
@@ -551,7 +551,7 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 1
 
-    def subtractreturn (first_input, second_input):
+    def subtract (first_input, second_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -571,7 +571,7 @@ green: make it pass
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def subtractreturn (first_input, second_input):
+    def subtract (first_input, second_input):
         return x - y
 
   the test passes. SUCCESS!
@@ -612,7 +612,7 @@ refactor: make it better
             y = self.y
 
             self.assertEqual(
-                src.calculator.addreturn (first_input, second_input),
+                src.calculator.add (first_input, second_input),
                 x+y
             )
 
@@ -629,7 +629,7 @@ refactor: make it better
             y = self.y
 
             self.assertEqual(
-                src.calculator.subtractreturn (first_input, second_input),
+                src.calculator.subtract (first_input, second_input),
                 x-y
             )
 
@@ -760,11 +760,11 @@ using what I know so far, I add a :ref:`function<functions>` to ``calculator.py`
   :lineno-start: 5
   :emphasize-lines: 5-6
 
-  def subtractreturn (first_input, second_input):
+  def subtract (first_input, second_input):
       return x - y
 
 
-  def multiplyreturn (first_input, second_input):
+  def multiply (first_input, second_input):
       return x * y
 
 the test passes! I remove ``test_multiplication`` from the TODO list in ``test_calculator.py``
@@ -823,11 +823,11 @@ green: make it pass
     :lineno-start: 9
     :emphasize-lines: 5-6
 
-    def multiplyreturn (first_input, second_input):
+    def multiply (first_input, second_input):
         return x * y
 
 
-    def dividereturn (first_input, second_input):
+    def divide (first_input, second_input):
         return x / y
 
   then I make the range of numbers for the tests smaller in ``test_calculator.py``
@@ -847,7 +847,7 @@ green: make it pass
     x = 0, y = 0
     x = 1, y = 0
 
-        def dividereturn (first_input, second_input):
+        def divide (first_input, second_input):
     >       return x / y
                    ^^^^^
     E       ZeroDivisionError: division by zero
@@ -895,7 +895,7 @@ the terminal_ shows my expectation with a failure for any value of ``x`` since `
   x = 0, y = 0
   x = 1, y = 0
 
-      def dividereturn (first_input, second_input):
+      def divide (first_input, second_input):
   >       return x / y
                   ^^^^^
   E       ZeroDivisionError: division by zero
@@ -1334,7 +1334,7 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`TypeError`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-Would you like to :ref:`test functions?<functions>`
+Would you like to know :ref:`how to test that an Exception is raised?<how to test that an Exception is raised>`
 
 ----
 

@@ -1783,7 +1783,7 @@ and
 * :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
 * :ref:`Logical Negation <test_logical_negation>` is "not_"
 
-Would you like to :ref:`test making a calculator?<how to make a calculator>`
+Would you like to :ref:`test functions?<functions>`
 
 ----
 

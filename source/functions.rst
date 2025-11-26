@@ -1383,7 +1383,7 @@ as a reminder
 * :ref:`constant functions<test_constant_function>` always return the same thing
 * functions_ return :ref:`None` by default
 
-Would you like to know :ref:`how to test that an Exception is raised?<how to test that an Exception is raised>`
+Would you like to :ref:`test making a calculator?<how to make a calculator>`
 
 ----
 
