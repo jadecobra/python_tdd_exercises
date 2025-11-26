@@ -14,7 +14,7 @@ TypeError
 
 ----
 
-`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an :ref:`object<classes>` is used in a way that it should not be.
+`TypeError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError>`_ is raised when an :ref:`object<classes>` is used in a way that it should not be. This will help you understand how to use :ref:`functions` and :ref:`classes`
 
 *********************************************************************************
 requirements
@@ -67,17 +67,20 @@ There are :ref:`objects<classes>` that can NOT be called
 red: make it fail
 #################################################################################
 
-* I add an `import statement`_
+* I add an `import statement`_ at the top of ``test_type_error.py``
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 2
 
     import unittest
     import src.type_error
 
-* and I change ``test_failure`` to ``test_type_error_w_non_callables``
+* I change ``test_failure`` to ``test_type_error_w_non_callables``
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-4
 
     class TestTypeError(unittest.TestCase):
 
@@ -90,9 +93,11 @@ red: make it fail
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
-  I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_type_error.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
 
     # Exceptions Encountered
     # AssertionError
@@ -101,9 +106,11 @@ red: make it fail
 green: make it pass
 #################################################################################
 
-* then I add the name to ``type_error.py`` and point it to :ref:`None`
+* I click on ``type_error.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
     none = None
 
@@ -113,36 +120,44 @@ green: make it pass
 
     TypeError: 'NoneType' object is not callable
 
-  the ``()`` to the right of ``src.type_error.none`` makes it a call, and the name ``none`` points to :ref:`None` which is not callable_
+  the ``()`` to the right of ``src.type_error.none`` makes it a call, and the name ``none`` points to :ref:`None` which is NOT callable_
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
     # AttributeError
     # TypeError
 
-* and I make ``none`` a :ref:`function<functions>` to make it callable_
+* I make ``none`` a :ref:`function<functions>` in ``type_error.py`` to make it callable_
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
 
     def none():
         return None
 
   the test passes
 
+I can call a :ref:`function<functions>` but I cannot call :ref:`None`
+
 refactor: make it better
 #################################################################################
 
-* I add another line to the test
+* I add another failing line to ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3
 
-    def test_type_error_w_non_callables(self):
-        src.type_error.none()
-        src.type_error.false()
+        def test_type_error_w_non_callables(self):
+            src.type_error.none()
+            src.type_error.false()
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -150,9 +165,11 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'false'
 
-  when I add the name to ``type_error.py`` and point it to :ref:`False<test_what_is_false>`
+* I add the name to ``type_error.py`` and point it to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
 
     def none():
         return None
@@ -166,9 +183,11 @@ refactor: make it better
 
     TypeError: 'bool' object is not callable
 
-  I make it a :ref:`function<functions>`
+* I make the variable_ a :ref:`function<functions>`
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
 
     def none():
         return None
@@ -178,14 +197,16 @@ refactor: make it better
 
   the terminal_ shows green again
 
-* I add a line to test the other :ref:`boolean<Booleans>`
+* I add a line to test the other :ref:`boolean<Booleans>` in ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4
 
-    def test_type_error_w_non_callables(self):
-        src.type_error.none()
-        src.type_error.false()
-        src.type_error.true()
+        def test_type_error_w_non_callables(self):
+            src.type_error.none()
+            src.type_error.false()
+            src.type_error.true()
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -193,9 +214,11 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'true'
 
-  I add the name to ``type_error.py`` and point it to :ref:`True<test_what_is_true>`
+* I add the name and point it to :ref:`True<test_what_is_true>` in ``type_error.py``
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5
 
     def false():
         return False
@@ -209,9 +232,11 @@ refactor: make it better
 
     TypeError: 'bool' object is not callable
 
-  when I make it a :ref:`function<functions>`
+* I make it a :ref:`function<functions>`
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
 
     def false():
         return False
@@ -220,17 +245,19 @@ refactor: make it better
     def true():
         return True
 
-  the test passes
+  the test passes. I can call a :ref:`function<functions>` but I cannot call a :ref:`boolean<booleans>`
 
-* I add another line to the test
+* I add another line to ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5
 
-    def test_type_error_w_non_callables(self):
-        src.type_error.none()
-        src.type_error.false()
-        src.type_error.true()
-        src.type_error.a_list()
+        def test_type_error_w_non_callables(self):
+            src.type_error.none()
+            src.type_error.false()
+            src.type_error.true()
+            src.type_error.a_list()
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -238,9 +265,11 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'a_list'
 
-  I add the name and point it to a :ref:`list<lists>`
+* I add the name and point it to a :ref:`list<lists>` in ``type_error.py``
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5
 
     def true():
         return True
@@ -254,9 +283,11 @@ refactor: make it better
 
     TypeError: 'list' object is not callable
 
-  then I make it a :ref:`function<functions>`
+* I make `a_list` a :ref:`function<functions>`
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-6
 
     def true():
         return True
@@ -265,18 +296,21 @@ refactor: make it better
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes
+  the test passes. I can call a :ref:`function<functions>` but I cannot call a :ref:`list<lists>`
 
-* I add a new failing line
+* I add a new failing line to ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 4
 
-    def test_type_error_w_non_callables(self):
-        src.type_error.none()
-        src.type_error.false()
-        src.type_error.true()
-        src.type_error.a_list()
-        src.type_error.a_dictionary()
+          src.type_error.false()
+          src.type_error.true()
+          src.type_error.a_list()
+          src.type_error.a_dictionary()
+
+
+    # Exceptions Encountered
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -284,9 +318,11 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'a_dictionary'
 
-  I add the name and point it to a :ref:`dictionary<dictionaries>`
+* I add the name to and point it to a :ref:`dictionary<dictionaries>` in ``type_error.py``
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5
 
     def a_list():
         return [1, 2, 3, 'n']
@@ -300,9 +336,11 @@ refactor: make it better
 
     TypeError: 'dict' object is not callable
 
-  then I change it to a :ref:`function<functions>`
+* I change it to a :ref:`function<functions>`
 
   .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5-6
 
     def a_list():
         return [1, 2, 3, 'n']
@@ -311,7 +349,9 @@ refactor: make it better
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal_ shows green again. It is safe to say that I cannot call :ref:`data structures`.
+  the terminal_ shows green again.
+
+It is safe to say that I cannot call :ref:`data structures` but I can call :ref:`functions`
 
 ----
 
@@ -319,17 +359,24 @@ refactor: make it better
 test_type_error_w_function_signatures
 *********************************************************************************
 
-Calls to a :ref:`function<functions>` have to match its definition
+When I call a :ref:`function<functions>` I have to match its definition or I will have problems
 
 red: make it fail
 #################################################################################
 
-* I add a new test
+* I add a new test to ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 3-4
 
-    def test_type_error_w_function_signatures(self):
-        src.type_error.function_00('a')
+            src.type_error.a_dictionary()
+
+        def test_type_error_w_function_signatures(self):
+            src.type_error.function_00('a')
+
+
+    # Exceptions Encountered
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -337,9 +384,14 @@ red: make it fail
 
     AttributeError: module 'src.type_error' has no attribute 'function_00'
 
-  then I add the :ref:`function<functions>` to ``type_error.py``
+green: make it pass
+#################################################################################
+
+* I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 5-6
 
     def a_dictionary():
         return {'key': 'value'}
@@ -356,24 +408,26 @@ red: make it fail
 
   because ``function_00`` is called with ``'a'`` as input but the definition does not accept any inputs
 
-green: make it pass
-#################################################################################
-
-* I add an input parameter to the :ref:`function<functions>` definition
+* I add a name in parentheses to the :ref:`function<functions>` definition
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 1
 
     def function_00(the_input):
         return None
 
   the test passes
 
+I have to call a :ref:`function<functions>` in a way that matches its definition or I get :ref:`TypeError`
+
 refactor: make it better
 #################################################################################
 
-* I add a new failing line
+* I add a new failing line to ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 14
 
     def test_type_error_w_function_signatures(self):
         src.type_error.function_00('a')
@@ -385,9 +439,11 @@ refactor: make it better
 
     AttributeError: module 'src.type_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5-6
 
     def function_00(the_input):
         return None
@@ -402,25 +458,27 @@ refactor: make it better
 
     TypeError: function_01() takes 1 positional argument but 2 were given
 
-  when I make the number of inputs in the definition match the number of inputs in the call
+* I add another name in parentheses so that the call to the :ref:`function<functions>` and its definition match
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 1
 
-    def function_01(
-          argument_1, argument_2
-      ):
+    def function_01(input_1, input_2):
       return None
 
   the test passes
 
-* I add another failing line
+* I add another failing line to ``test_type_error.py``
 
   .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 4
 
-    def test_type_error_w_function_signatures(self):
-        src.type_error.function_00('a')
-        src.type_error.function_01('a', 'b')
-        src.type_error.function_02('a', 'b', 'c')
+        def test_type_error_w_function_signatures(self):
+            src.type_error.function_00('a')
+            src.type_error.function_01('a', 'b')
+            src.type_error.function_02('a', 'b', 'c')
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -433,13 +491,13 @@ refactor: make it better
   .. code-block:: python
 
     def function_01(
-            argument_1, argument_2
+            input_1, input_2
         ):
         return None
 
 
     def function_02(
-            argument_1, argument_2
+            input_1, input_2
         ):
         return None
 
@@ -454,7 +512,7 @@ refactor: make it better
   .. code-block:: python
 
     def function_02(
-            argument_1, argument_2,
+            input_1, input_2,
             argument_3
         ):
         return None
@@ -482,14 +540,14 @@ refactor: make it better
   .. code-block:: python
 
     def function_02(
-            argument_1, argument_2,
+            input_1, input_2,
             argument_3
         ):
         return None
 
 
     def function_03(
-            argument_1, argument_2,
+            input_1, input_2,
             argument_3
         ):
         return None
@@ -505,7 +563,7 @@ refactor: make it better
   .. code-block:: python
 
     def function_03(
-        argument_1, argument_2,
+        input_1, input_2,
         argument_3, argument_4
     ):
         return None

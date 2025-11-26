@@ -32,7 +32,7 @@ names
 
   .. code-block:: python
 
-    def function_name(argument_1, argument_2, keyword_argument=None):
+    def function_name(input_1, input_2, keyword_argument=None):
         ...
 
 
