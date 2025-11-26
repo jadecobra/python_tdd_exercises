@@ -456,7 +456,7 @@ refactor: make it better
     :emphasize-lines: 2
 
     def logical_negation(the_input):
-        return not argument
+        return not the_input
 
   the test passes. ``logical_negation`` returns the opposite of its input
 

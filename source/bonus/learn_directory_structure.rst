@@ -1287,7 +1287,7 @@ I can make empty files_ in a folder_ with the touch_ program
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls parent -a
+    ls -a parent
 
   the terminal_ shows
 

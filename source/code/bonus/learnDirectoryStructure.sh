@@ -76,7 +76,7 @@ touch sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_c
 cd ..
 tree parent
 pwd
-ls parent -a
+ls -a parent
 ls -a parent/child
 ls -a parent/child/child_of_child
 ls -a parent/sibling_of_child

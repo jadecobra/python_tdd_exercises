@@ -61,7 +61,7 @@ I add the :ref:`function<functions>` definition in ``truth_table.py``
   :emphasize-lines: 5-6
 
   def converse_non_implication(input_1, input_2):
-      return not p and q
+      return not input_1 and input_2
 
 
   def negate_first(input_1, input_2):
@@ -204,7 +204,7 @@ refactor: make it better
     :emphasize-lines: 2
 
     def negate_first(input_1, input_2):
-        return True if not p else False
+        return True if not input_1 else False
         if not p:
             return True
         return False
@@ -218,8 +218,8 @@ refactor: make it better
     :emphasize-lines: 2
 
     def negate_first(input_1, input_2):
-        return not p
-        return True if not p else False
+        return not input_1
+        return True if not input_1 else False
 
   the test is still green
 
@@ -229,7 +229,7 @@ refactor: make it better
     :lineno-start: 33
 
     def negate_first(input_1, input_2):
-        return not p
+        return not input_1
 
 ----
 
@@ -270,7 +270,7 @@ I add a definition for the :ref:`function<functions>` to ``truth_table.py``
   :emphasize-lines: 5-6
 
   def negate_first(input_1, input_2):
-      return not p
+      return not input_1
 
 
   def logical_nand(input_1, input_2):
@@ -334,7 +334,7 @@ refactor: make it better
     :emphasize-lines: 2-3
 
     def logical_nand(input_1, input_2):
-        if not p and q:
+        if not input_1 and input_2:
             return True
         if input_1 and not q:
             return True
@@ -370,9 +370,9 @@ refactor: make it better
     :emphasize-lines: 2-3
 
     def logical_nand(input_1, input_2):
-        if not p and not q:
+        if not input_1 and not input_2:
             return True
-        if not p and q:
+        if not input_1 and input_2:
             return True
         if input_1 and not q:
             return True
@@ -391,9 +391,9 @@ refactor: make it better
             return False
         else:
             return True
-        if not p and not q:
+        if not input_1 and not input_2:
             return True
-        if not p and q:
+        if not input_1 and input_2:
             return True
         if input_1 and not q:
             return True
@@ -409,7 +409,7 @@ refactor: make it better
     def logical_nand(input_1, input_2):
         if input_1 and q:
             return False
-        if not (p and q):
+        if not (input_1 and input_2):
         # else:
             return True
 
@@ -422,10 +422,10 @@ refactor: make it better
     :emphasize-lines: 2
 
     def logical_nand(input_1, input_2):
-        return not (p and q)
+        return not (input_1 and input_2)
         if input_1 and q:
             return False
-        if not (p and q):
+        if not (input_1 and input_2):
             return True
 
   the test is still passing
@@ -436,7 +436,7 @@ refactor: make it better
     :lineno-start: 37
 
     def logical_nand(input_1, input_2):
-        return not (p and q)
+        return not (input_1 and input_2)
 
   When there is only one `if statement`_ that returns :ref:`False<test_what_is_false>` with an else_ clause, I can return its :ref:`logical negation<test_logical_negation>` with not_
 
@@ -479,7 +479,7 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
   :emphasize-lines: 5-6
 
   def logical_nand(input_1, input_2):
-      return not (p and q)
+      return not (input_1 and input_2)
 
 
   def tautology(input_1, input_2):
@@ -635,7 +635,7 @@ refactor: make it better
     :emphasize-lines: 2-3
 
     def logical_disjunction(input_1, input_2):
-        if not p and not q:
+        if not input_1 and not input_2:
             return False
         return True
 
@@ -648,8 +648,8 @@ refactor: make it better
     :emphasize-lines: 2
 
     def logical_disjunction(input_1, input_2):
-        return not (not p and not q)
-        if not p and not q:
+        return not (not input_1 and not input_2)
+        if not input_1 and not input_2:
             return False
         return True
 
@@ -662,8 +662,8 @@ refactor: make it better
     :emphasize-lines: 2
 
     def logical_disjunction(input_1, input_2):
-        return not not p not and not not q
-        return not (not p and not q)
+        return not not input_1 not and not not q
+        return not (not input_1 and not input_2)
 
   the terminal_ shows SyntaxError_
 
@@ -690,8 +690,8 @@ refactor: make it better
     :emphasize-lines: 2
 
     def logical_disjunction(input_1, input_2):
-        return not not p or not not q
-        return not (not p and not q)
+        return not not input_1 or not not q
+        return not (not input_1 and not input_2)
 
   the test passes
 
@@ -702,7 +702,7 @@ refactor: make it better
     :emphasize-lines: 2
 
     def logical_disjunction(input_1, input_2):
-        return p or q
+        return input_1 or input_2
 
   the test is still green
 
@@ -714,13 +714,13 @@ review
 
 Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
-* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``p or q``
+* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``input_1 or input_2``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
-* :ref:`Logical NAND <test_logical_nand>` returns ``not (p and q)``
+* :ref:`Logical NAND <test_logical_nand>` returns ``not (input_1 and input_2)``
 * :ref:`Negate First<test_negate_first>` always returns ``not p``
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not input_1 and input_2``
 * :ref:`Project Second <test_project_second>` always returns ``q``
-* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``input_1 and input_2``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 and

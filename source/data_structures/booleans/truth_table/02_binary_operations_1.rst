@@ -92,11 +92,11 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
   :emphasize-lines: 5-6
 
   def logical_negation(the_input):
-      return not argument
+      return not the_input
 
 
   def contradiction(the_input):
-      return not argument
+      return not the_input
 
 the terminal_ shows :ref:`TypeError`
 
@@ -111,7 +111,7 @@ I add ``q`` as the second name in parentheses then rename ``argument`` to ``p`` 
   :emphasize-lines: 1-2
 
   def contradiction(input_1, input_2):
-      return not p
+      return not input_1
 
 the test passes
 
@@ -445,7 +445,7 @@ refactor: make it better
     :emphasize-lines: 2
 
     def logical_conjunction(input_1, input_2):
-        return p and q
+        return input_1 and input_2
         return True if input_1 and q else False
 
   still green!
@@ -456,7 +456,7 @@ refactor: make it better
     :lineno-start: 21
 
     def logical_conjunction(input_1, input_2):
-        return p and q
+        return input_1 and input_2
 
 ----
 
@@ -497,7 +497,7 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
   :emphasize-lines: 5-6
 
   def logical_conjunction(input_1, input_2):
-      return p and q
+      return input_1 and input_2
 
 
   def project_second(input_1, input_2):
@@ -745,7 +745,7 @@ refactor: make it better
     :emphasize-lines: 2-4
 
     def converse_non_implication(input_1, input_2):
-        if not p == True and bool(q):
+        if not input_1 == True and bool(q):
         # if input_1 == False and q == True:
             return True
         return False
@@ -761,7 +761,7 @@ refactor: make it better
     :emphasize-lines: 4-5
 
     def converse_non_implication(input_1, input_2):
-        if not p == True and bool(q):
+        if not input_1 == True and bool(q):
         # if input_1 == False and q == True:
             return True
         else:
@@ -777,7 +777,7 @@ refactor: make it better
 
     def converse_non_implication(input_1, input_2):
         if not bool(p) and q:
-        # if not p == True and bool(q):
+        # if not input_1 == True and bool(q):
             return True
         else:
             return False
@@ -791,7 +791,7 @@ refactor: make it better
     :emphasize-lines: 2-3
 
     def converse_non_implication(input_1, input_2):
-        if not p and q:
+        if not input_1 and input_2:
         # if not bool(p) and q:
             return True
         else:
@@ -806,8 +806,8 @@ refactor: make it better
     :emphasize-lines: 2
 
     def converse_non_implication(input_1, input_2):
-        return True if not p and q else False
-        if not p and q:
+        return True if not input_1 and input_2 else False
+        if not input_1 and input_2:
             return True
         else:
             return False
@@ -821,8 +821,8 @@ refactor: make it better
     :emphasize-lines: 2
 
     def converse_non_implication(input_1, input_2):
-        return not p and q
-        return True if not p and q else False
+        return not input_1 and input_2
+        return True if not input_1 and input_2 else False
 
   all tests are still passing
 
@@ -832,7 +832,7 @@ refactor: make it better
     :lineno-start: 29
 
     def converse_non_implication(input_1, input_2):
-        return not p and q
+        return not input_1 and input_2
 
 ----
 
@@ -842,9 +842,9 @@ review
 
 Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not p and q``
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not input_1 and input_2``
 * :ref:`Project Second <test_project_second>` always returns ``q``
-* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``p and q``
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``input_1 and input_2``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 and
