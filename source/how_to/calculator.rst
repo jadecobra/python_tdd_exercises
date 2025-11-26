@@ -583,7 +583,7 @@ refactor: make it better
     x = a_random_number()
     y = a_random_number()
 
-  once in ``test_addition`` and again in ``test_subtraction``. I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests
+  once in ``test_addition`` and again in ``test_subtraction``. I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 10
