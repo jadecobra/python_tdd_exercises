@@ -30,30 +30,30 @@ requirements
   - PyCharm_
   - `other Integrated Development Environment (IDE) options`_
 
-windows requirements
+Windows requirements
 #################################################################################
 
 * If you are using a Windows_ computer, :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`
 * If you cannot :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`, you can :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem Linux<how to make a python test driven development environment on Windows without Windows Subsystem Linux>` instead of this chapter
 
-linux/Windows Subsystem Linux requirements
+Linux/Windows Subsystem Linux requirements
 #################################################################################
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_, no need to do it on a MacOS_ computer
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_. MacOS_ users should not do this section
 
-Open a terminal_ then type this to update the `linux package manager`_
+Open a terminal_ then type this to update the `Linux package manager`_
 
 .. code-block:: shell
   :emphasize-lines: 1
 
   sudo apt update
 
-optionally, you can do a full upgrade if you want
+  ..TIP:: you can do a full upgrade if you want
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-  sudo apt full-upgrade --yes
+    sudo apt full-upgrade --yes
 
 type this in the terminal_ to install Python_
 
@@ -64,7 +64,7 @@ type this in the terminal_ to install Python_
 
 ----
 
-When I want to work on a project, I have to consider a few things
+When I want to work on a project, here are some things I think about
 
 * What is the name I want for the project?
 * What is the structure of the project?
@@ -90,7 +90,7 @@ It turns out some of this is repeatable
 how to make a python test driven development environment manually
 ********************************************************************************************
 
-I pick ``magic`` as the name of this project
+I use ``magic`` as the name for this project
 
 * I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
@@ -145,7 +145,7 @@ I pick ``magic`` as the name of this project
 
   .. admonition:: if you are using MacOS_ type this in the terminal_
 
-    first install brew_ (The Missing Package Manager for macOS), if you do not have it already
+    first install brew_ (The Missing Package Manager for MacOS), if you do not have it already
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -436,7 +436,7 @@ how to run tests manually
 
     NO TESTS RAN
 
-red: make it fail
+RED: make it fail
 #################################################################################################
 
 * I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following Python_ code in the file_
@@ -493,7 +493,7 @@ red: make it fail
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time I make a change
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) every time I make a change
 * I try the command again to run the tests in the terminal_
 
   .. code-block:: shell
@@ -542,7 +542,7 @@ how to make a Python package
         └── magic.py
 
     3 directories, 3 files
-    
+
 
 * I try to run the tests again
 
@@ -646,9 +646,9 @@ how to rename a file
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
@@ -678,7 +678,7 @@ the test passes! The terminal_ shows
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
-refactor: make it better
+REFACTOR: make it better
 ############################################################################################
 
 I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
@@ -724,7 +724,7 @@ the terminal_ shows
 
   command not found: pytest-watch
 
-I need to install `pytest-watch`_ for the computer to use it
+I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ the project needs in one place
 
 how to make a virtual environment
 ############################################################################################
@@ -1010,7 +1010,7 @@ how to install Python packages in a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1037,7 +1037,7 @@ how to install Python packages in a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1285,7 +1285,7 @@ how to make a shell script run as a command
     Collecting pip
     ...
     ================================= test session starts ==================================
-    platform linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
+    platform Linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
     rootdir: .../pumping_python/magic
     collected 1 item
 
@@ -1356,7 +1356,7 @@ how to use variables in a shell script
     Collecting pip
       ...
     ================================= test session starts ==================================
-    platform linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
+    platform Linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
     rootdir: ...
     collected 0 items
 

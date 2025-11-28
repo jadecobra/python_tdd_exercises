@@ -32,7 +32,7 @@ how to make a class in Python
 test_factory_person_introduction
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I make a new file_ called ``test_classes.py`` in the ``tests`` directory
@@ -50,7 +50,7 @@ I make a new file_ called ``test_classes.py`` in the ``tests`` directory
 
 the terminal_ shows :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
@@ -123,7 +123,7 @@ green: make it pass
   the test passes
 
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 Here is a quick review of what has happened so far
@@ -140,7 +140,7 @@ Here is a quick review of what has happened so far
 test_classy_person_introduction
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to make a class
@@ -152,7 +152,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
 
 the terminal_ shows :ref:`AttributeError`
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 
@@ -197,7 +197,7 @@ Making new objects is easier because I do not have to reinvent or rewrite things
 
 To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to make the relationship
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add another test to ``TestClasses`` in ``test_classes.py``
@@ -209,7 +209,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 
@@ -241,7 +241,7 @@ test_update_classy_person_year_of_birth
 
 I now add some tests for attributes since I know how to define a class for attributes
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 
@@ -265,7 +265,7 @@ red: make it fail
 
   the terminal_ shows :ref:`AttributeError` for a missing attribute in the newly defined class
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add an attribute to ``ClassWithAttributes``
@@ -301,10 +301,10 @@ green: make it pass
 
   the terminal_ shows all tests passed
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 Let us add more tests with the other Python_ data structures to ``test_making_a_class_w_attributes``
@@ -323,7 +323,7 @@ Let us add more tests with the other Python_ data structures to ``test_making_a_
 
 the terminal_ shows :ref:`AttributeError`
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 I add matching attributes to ``ClassWithAttributes`` to make the tests pass
@@ -352,7 +352,7 @@ test_attributes_and_methods_of_classes
 
 I can also define classes with :ref:`methods<functions>` which are :ref:`function<functions>` definitions that belong to the class
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add some tests for class methods to ``TestClasses`` in ``classes.py``
@@ -367,7 +367,7 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
 the terminal_ shows :ref:`AttributeError`
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 
@@ -427,7 +427,7 @@ green: make it pass
 
   the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I can "make this better" by adding a few more tests to ``test_making_a_class_w_methods`` for fun
@@ -465,7 +465,7 @@ test_making_a_class_w_attributes_and_methods
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add another test for a class that has both attributes and methods
@@ -484,7 +484,7 @@ I add another test for a class that has both attributes and methods
 
 the terminal_ shows :ref:`AttributeError`
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I make ``classes.py`` to make the tests pass by defining the class, attribute and methods
@@ -510,7 +510,7 @@ To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for a
 
 The dir_ :ref:`method<functions>` returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test to ``test_classes.py``
@@ -525,7 +525,7 @@ I add a test to ``test_classes.py``
 
 the terminal_ shows :ref:`AssertionError` as the expected and real values do not match
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I copy the values from the terminal_ to change the expectation of the test
@@ -578,7 +578,7 @@ test_making_a_class_w_initializer
 When making a new class, we can define an initializer which is a :ref:`method<functions>` that can receive inputs to be used to customize instances/copies of the class
 
 *********************************************************************************
-red: make it fail
+RED: make it fail
 *********************************************************************************
 
 I add a failing test to ``test_classes.py``
@@ -591,7 +591,7 @@ I add a failing test to ``test_classes.py``
 the terminal_ shows :ref:`AttributeError`
 
 *********************************************************************************
-green: make it pass
+GREEN: make it pass
 *********************************************************************************
 
 * I add a definition for the ``Boy`` class
@@ -629,7 +629,7 @@ green: make it pass
   the test passes
 
 *********************************************************************************
-refactor: make it better
+REFACTOR: make it better
 *********************************************************************************
 
 * I add another :ref:`assertion<AssertionError>` to ``test_making_a_class_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class

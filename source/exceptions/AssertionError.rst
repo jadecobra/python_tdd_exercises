@@ -66,7 +66,7 @@ requirements
 
     tests/test_assertion_error.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -87,7 +87,7 @@ requirements
 test_assertion_error_w_none
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I change ``test_failure`` to ``test_assertion_error_w_none``
@@ -118,7 +118,7 @@ red: make it fail
 
   the `assert statement`_ is :ref:`False<test_what_is_false>`, :ref:`None` is :ref:`None`
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the line to make it :ref:`True<test_what_is_true>`
@@ -132,7 +132,7 @@ I change the line to make it :ref:`True<test_what_is_true>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 I can also make assertions_ with some :ref:`methods<functions>` from the `unittest.TestCase`_ :ref:`class<classes>`
@@ -339,7 +339,7 @@ test_assertion_error_w_false
 
 I can use assertions_ to test if something is :ref:`False<test_what_is_false>`
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a failing test
@@ -362,7 +362,7 @@ the terminal_ shows AssertionError_
 
   E    assert True is False
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the line to make it :ref:`True<test_what_is_true>`
@@ -375,7 +375,7 @@ I change the line to make it :ref:`True<test_what_is_true>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 There is an assert_ :ref:`method<functions>` to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`
@@ -436,7 +436,7 @@ test_assertion_error_w_true
 
 I can also use assertions_ to test if something is :ref:`True<test_what_is_true>`
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a failing test
@@ -459,7 +459,7 @@ the terminal_ shows AssertionError_
 
   E    assert False is True
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the statement to make it :ref:`True<test_what_is_true>`
@@ -472,7 +472,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 There is an assert_ :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
@@ -539,7 +539,7 @@ test_assertion_error_w_equality
 
 I can use assertions to test if 2 things are equal
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new failing test
@@ -564,7 +564,7 @@ the terminal_ shows AssertionError_
 
 ``!=`` is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None``
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the statement to make it :ref:`True<test_what_is_true>`
@@ -582,7 +582,7 @@ the test passes.
 
 ``=`` is the symbol for assignment, it's how to give a name to something in Python_
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 There are assert_ :ref:`methods<functions>` to check if 2 things are equal or not.

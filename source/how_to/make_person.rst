@@ -44,7 +44,7 @@ requirements
 
     tests/test_person.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -65,7 +65,7 @@ requirements
 test_takes_keyword_arguments
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I change ``test_failure`` to ``test_takes_keyword_arguments``
@@ -91,7 +91,7 @@ red: make it fail
 
     NameError: name 'src' is not defined
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_person.py``
@@ -798,7 +798,7 @@ green: make it pass
 
   and the test is still green
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add an `import statement`_ at the top of ``test_person.py`` to use random values in the tests
@@ -830,7 +830,7 @@ refactor: make it better
 
             ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save ``ctrl+s`` (Windows/Linux) or ``command+s`` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -916,7 +916,7 @@ refactor: make it better
 
             ...
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save ``ctrl+s`` (Windows/Linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -959,7 +959,7 @@ refactor: make it better
 
             ...
 
-  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError`
+  I hit save ``ctrl+s`` (Windows/Linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1006,7 +1006,7 @@ refactor: make it better
 
             ...
 
-  I hit save ``ctrl+s`` (windows/linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError`
+  I hit save ``ctrl+s`` (Windows/Linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1041,10 +1041,10 @@ test_function_w_default_keyword_arguments
 
 I want to see what happens when I try to make a person without a value for the ``last_name`` argument
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
-* I select ``test_takes_keyword_arguments``, then copy (``ctrl+c`` (windows/linux) or ``command+c`` (mac)) and paste (``ctrl+v`` (windows/linux) or ``command+v`` (mac)) it below in ``test_person.py``
+* I select ``test_takes_keyword_arguments``, then copy (``ctrl+c`` (Windows/Linux) or ``command+c`` (mac)) and paste (``ctrl+v`` (Windows/Linux) or ``command+v`` (mac)) it below in ``test_person.py``
 * I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` variable_
 
   .. code-block:: python
@@ -1123,7 +1123,7 @@ red: make it fail
 
     NameError: name 'last_name' is not defined
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I comment out ``last_name`` in the call to the ``factory`` :ref:`function<functions>` in ``test_function_w_default_keyword_arguments``
@@ -1446,7 +1446,7 @@ green: make it pass
 
   the terminal_ still shows green
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * ``first_name`` and ``year_of_birth`` are made the same way in both tests, I can remove this repetition by adding :ref:`attributes<AttributeError>` to the ``TestPerson`` :ref:`class<classes>`
@@ -1719,7 +1719,7 @@ refactor: make it better
 test_person_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I close ``test_person.py``
@@ -1729,7 +1729,7 @@ red: make it fail
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the name

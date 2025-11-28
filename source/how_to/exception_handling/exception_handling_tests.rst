@@ -42,7 +42,7 @@ requirements
 
     tests/test_exceptions.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -63,7 +63,7 @@ requirements
 test_catching_module_not_found_error_in_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_
@@ -86,7 +86,7 @@ red: make it fail
 
     ModuleNotFoundError: No module named 'does_not_exist'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
@@ -117,7 +117,7 @@ green: make it pass
 test_catching_name_error_in_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add another failing test
@@ -152,7 +152,7 @@ red: make it fail
     # ModuleNotFoundError
     # NameError
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add assertRaises_
@@ -173,7 +173,7 @@ the test passes
 test_catching_attribute_error_in_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add another failing test, this time for :ref:`AttributeError`
@@ -224,7 +224,7 @@ red: make it fail
     # NameError
     # AttributeError
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 then I add the assertRaises_ :ref:`method<functions>`
@@ -245,7 +245,7 @@ the test passes
 test_catching_type_error_in_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add a failing test for :ref:`TypeError`
@@ -308,7 +308,7 @@ red: make it fail
     # AttributeError
     # TypeError
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 then I add assertRaises_ to the test
@@ -323,7 +323,7 @@ then I add assertRaises_ to the test
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * when I make ``function_name`` a :ref:`function<functions>` in ``exceptions.py``
@@ -369,7 +369,7 @@ refactor: make it better
 test_catching_index_error_in_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I want to test catching :ref:`IndexError<test_index_error>`, I add a new test with a :ref:`list<lists>`
@@ -435,7 +435,7 @@ red: make it fail
     # TypeError
     # IndexError
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * then I add assertRaises_
@@ -451,7 +451,7 @@ green: make it pass
 
   the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I can also :ref:`index<test_index_returns_first_position_of_item_in_a_list>` with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``, think reading from right to left
@@ -543,7 +543,7 @@ refactor: make it better
 test_catching_key_error_in_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add a :ref:`dictionary<dictionaries>` to a new test for :ref:`KeyError<test_key_error>`
@@ -603,7 +603,7 @@ red: make it fail
     # IndexError
     # KeyError
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add assertRaises_ to the test
@@ -622,7 +622,7 @@ the test passes
 test_catching_zero_division_error_in_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add another failing test, this time for the :ref:`Exception<errors>` that happened in :ref:`how to make a calculator` when :ref:`testing division<test_division>`
@@ -660,7 +660,7 @@ red: make it fail
     # KeyError
     # ZeroDivisionError
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add assertRaises_
@@ -681,7 +681,7 @@ the test passes
 test_catching_exceptions_in_tests
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add a failing test with the `raise statement`_
@@ -735,7 +735,7 @@ red: make it fail
 
     Exception
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the assertRaises_ :ref:`method<functions>`
@@ -750,7 +750,7 @@ I add the assertRaises_ :ref:`method<functions>`
 
 the terminal_ shows all tests are passing. The assertRaises_ :ref:`method<functions>` checks that the code under it raises the :ref:`Exception<errors>` it is given.
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I can use :ref:`Exception<errors>` to catch any of the :ref:`Exceptions<errors>` that inherit from it - its children

@@ -28,7 +28,7 @@ requirements
 test_negate_second
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test for another Binary Operation to ``test_truth_table.py
@@ -50,7 +50,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a :ref:`function<functions>` definition for it to ``truth_table.py``
@@ -68,7 +68,7 @@ I add a :ref:`function<functions>` definition for it to ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the next case to ``test_negate_second`` in ``test_truth_table.py``
@@ -176,7 +176,7 @@ refactor: make it better
 test_logical_nor
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for another Binary Operation in ``test_truth_table.py``
@@ -199,7 +199,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_nor'. Did you mean: 'logical_nand'?
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
@@ -217,7 +217,7 @@ I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the next case to ``test_logical_nor`` in ``test_truth_table.py``
@@ -321,7 +321,7 @@ refactor: make it better
 test_logical_equality
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test for the next Binary Operation in ``test_truth_table.py``
@@ -344,7 +344,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_equality'. Did you mean: 'logical_identity'?
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a :ref:`function<functions>` definition for it in ``truth_table.py``
@@ -362,7 +362,7 @@ I add a :ref:`function<functions>` definition for it in ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the next case to ``test_logical_equality`` in ``test_truth_table.py``
@@ -554,7 +554,7 @@ refactor: make it better
 test_material_implication
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test for another Binary Operation in ``test_truth_table.py``
@@ -577,7 +577,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.py``
@@ -596,7 +596,7 @@ I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.p
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the next case to ``test_material_implication`` in ``test_truth_table.py``

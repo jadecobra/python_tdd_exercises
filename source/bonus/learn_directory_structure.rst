@@ -47,7 +47,7 @@ A file_ is a collection or container for text, like paper we write or print on a
 
   a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
-how to install tree on linux/Windows Subsystem Linux requirements
+how to install tree on Linux/Windows Subsystem Linux requirements
 #################################################################################
 
 .. code-block:: shell
@@ -72,7 +72,7 @@ type this in the terminal_ to install tree_
 how to install tree on mac OS
 #################################################################################
 
-first install brew_ (The Missing Package Manager for macOS), if you do not have it already
+first install brew_ (The Missing Package Manager for MacOS), if you do not have it already
 
 .. code-block:: shell
   :emphasize-lines: 1

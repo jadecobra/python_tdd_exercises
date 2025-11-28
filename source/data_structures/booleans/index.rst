@@ -43,7 +43,7 @@ requirements
 
     tests/test_booleans.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -64,7 +64,7 @@ requirements
 test_what_is_false
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I change ``test_failure`` to ``test_what_is_false`` to check if False_ is a child of bool_
@@ -87,7 +87,7 @@ red: make it fail
 
     AssertionError: False is an instance of <class 'bool'>
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change assertNotIsInstance_ to assertIsInstance_
@@ -118,7 +118,7 @@ the test passes and I add a note
 test_what_is_true
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 
@@ -140,7 +140,7 @@ the terminal_ shows :ref:`AssertionError`
 
     AssertionError: True is an instance of <class 'bool'>
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I change the :ref:`method<functions>`
@@ -171,7 +171,7 @@ green: make it pass
 ----
 
 *********************************************************************************
-refactor: make it better
+REFACTOR: make it better
 *********************************************************************************
 
 * I add a failing line to ``test_what_is_true``
@@ -343,7 +343,7 @@ I want to test the other Python_ basic data types_ to see if any of them are Fal
 is None False or True?
 *****************************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 
@@ -364,7 +364,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: None is not true
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the :ref:`method<functions>`
@@ -377,7 +377,7 @@ I change the :ref:`method<functions>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 I move the line from ``test_what_is_true`` to ``test_what_is_false``
@@ -421,7 +421,7 @@ I add a note
 is an integer False or True?
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 
@@ -443,7 +443,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: -1 is not false
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the :ref:`method<functions>`
@@ -456,7 +456,7 @@ I change the :ref:`method<functions>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I move the line from ``test_what_is_false`` to ``test_what_is_true``
@@ -582,7 +582,7 @@ refactor: make it better
 is a float False or True?
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a line to test if floats_ are True_ or False_ in ``test_what_is_false``
@@ -603,7 +603,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: -0.1 is not false
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I change the :ref:`method<functions>`
@@ -627,7 +627,7 @@ green: make it pass
           self.assertTrue(1)
           self.assertTrue(-0.1)
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another failing line to ``test_what_is_true``
@@ -762,7 +762,7 @@ refactor: make it better
 is a string False or True?
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a failing line to ``test_what_is_true`` to test if a string_ is False_ or True_
@@ -791,7 +791,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the empty string_ is not True_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the :ref:`method<functions>`
@@ -804,7 +804,7 @@ I change the :ref:`method<functions>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I move the line to ``test_what_is_false``
@@ -890,7 +890,7 @@ refactor: make it better
 is a tuple False or True?
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a line to see if a tuple_ (anything in parentheses) is False_ or True_
@@ -920,7 +920,7 @@ The terminal_ shows :ref:`AssertionError`
 
 the empty tuple_ is not True_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I change the assert_ :ref:`method<functions>`
@@ -948,7 +948,7 @@ green: make it pass
             self.assertFalse(str())
             self.assertFalse(tuple())
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another line to ``test_what_is_false``
@@ -1026,7 +1026,7 @@ refactor: make it better
 is a list False or True?
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a line to test if a :ref:`list<lists>` (anything in square brackets (``[]``)) is False_ or True_
@@ -1047,7 +1047,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the empty :ref:`list<lists>` is not True_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I change the :ref:`method<functions>`
@@ -1070,7 +1070,7 @@ green: make it pass
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another line to ``test_what_is_false``
@@ -1157,7 +1157,7 @@ refactor: make it better
 is a set False or True?
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a line to test if a set_ is False_ or True_ in ``test_what_is_true``
@@ -1182,7 +1182,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the empty set_ is not True_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I change the :ref:`method<functions>`
@@ -1214,7 +1214,7 @@ green: make it pass
 
         def test_what_is_true(self):
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another line to ``test_what_is_false``
@@ -1304,7 +1304,7 @@ refactor: make it better
 is a dictionary False or True?
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_ in ``test_what_is_true``
@@ -1329,7 +1329,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the empty :ref:`dictionary <dictionaries>` is not True_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I change assertTrue_ to assertFalse_
@@ -1362,7 +1362,7 @@ green: make it pass
 
         def test_what_is_true(self):
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another line to test if a :ref:`dictionary <dictionaries>` with things is also False_

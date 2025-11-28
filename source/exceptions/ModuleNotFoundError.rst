@@ -43,7 +43,7 @@ requirements
 
     tests/test_module_not_found_error.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_module_not_found_error.py:7`` to open it in the :ref:`editor<2 editors>`,
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_module_not_found_error.py:7`` to open it in the :ref:`editor<2 editors>`,
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -64,7 +64,7 @@ requirements
 test_module_not_found_error
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I change ``test_failure`` to ``test_module_not_found_error``
@@ -99,12 +99,12 @@ red: make it fail
     # AssertionError
     # ModuleNotFoundError
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 * I add another `import statement`_ to ``test_module_not_found_error.py``
 

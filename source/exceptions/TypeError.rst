@@ -43,7 +43,7 @@ requirements
 
     tests/test_type_error.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -66,7 +66,7 @@ test_type_error_w_non_callables
 
 There are :ref:`objects<classes>` that can NOT be called
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add an `import statement`_ at the top of ``test_type_error.py``
@@ -105,7 +105,7 @@ red: make it fail
     # AssertionError
     # AttributeError
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I click on ``type_error.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
@@ -148,7 +148,7 @@ green: make it pass
 
 I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another failing line to ``test_type_error.py``
@@ -363,7 +363,7 @@ test_type_error_w_function_signatures
 
 When I call a :ref:`function<functions>` I have to match its definition or I will have problems
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add a new test to ``test_type_error.py``
@@ -386,7 +386,7 @@ red: make it fail
 
     AttributeError: module 'src.type_error' has no attribute 'function_00'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the :ref:`function<functions>` to ``type_error.py``
@@ -423,7 +423,7 @@ green: make it pass
 
 I have to call a :ref:`function<functions>` in a way that matches its definition or I get :ref:`TypeError`
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add a new failing line to ``test_type_error.py``
@@ -576,7 +576,7 @@ test_type_error_w_objects_that_do_not_mix
 
 Some operations do not work if the objects_ are not of the same type_
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test with a failing line
@@ -601,7 +601,7 @@ the terminal_ shows TypeError_
 
 I cannot do arithmetic_ with :ref:`None`
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the assertRaises_ :ref:`method<functions>`
@@ -614,7 +614,7 @@ I add the assertRaises_ :ref:`method<functions>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another line

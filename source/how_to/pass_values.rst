@@ -41,7 +41,7 @@ requirements
 
     tests/test_telephone.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -62,7 +62,7 @@ requirements
 test_passing_a_string
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I change ``test_failure`` to ``test_passing_a_string``
@@ -88,7 +88,7 @@ red: make it fail
 
     NameError: name 'src' is not defined
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered
@@ -214,12 +214,12 @@ green: make it pass
 
   the test passes!
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it receives and will always return ``'I received: hello'`` when it is called. I want it to return the value it receives as part of the message.
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string`` in ``test_telephone.py``
@@ -248,7 +248,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 'I received: hello' != 'I received: yes'
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 * I change the `return statement`_ in ``telephone.py``
@@ -292,7 +292,7 @@ I want to see what happens when I pass other Python_ basic :ref:`data structures
 test_passing_a_class
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a failing test for a :ref:`class <classes>` in ``test_telephone.py``
@@ -331,7 +331,7 @@ the terminal_ shows :ref:`AssertionError`
 
 :ref:`object<classes>` is the mother :ref:`class<classes>` that all Python_ :ref:`classes<classes>` come from
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I make the expectation match reality
@@ -348,7 +348,7 @@ I make the expectation match reality
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 I add another :ref:`assertion<AssertionError>` with the ``TestTelephone`` :ref:`class<classes>` to ``test_passing_a_class``
@@ -395,7 +395,7 @@ the test passes.
 test_passing_none
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new failing test for :ref:`None` in ``test_telephone.py``
@@ -426,7 +426,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 'I received: None' != "I received: 'None'"
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I remove the quotes from around :ref:`None` in the expectation
@@ -447,7 +447,7 @@ the test passes.
 test_passing_a_boolean
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>` for :ref:`True<test_what_is_true>`
@@ -476,7 +476,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: "I received: True" != "I received: 'True'"
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I change the expectation
@@ -537,7 +537,7 @@ green: make it pass
 test_passing_an_integer
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for an integer_ (a whole number)
@@ -568,7 +568,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 'I received: 1234' != "I received: '1234'"
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I remove the quotes from the expectation
@@ -589,7 +589,7 @@ the test passes.
 test_passing_a_float
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for a float_ (floating point decimal numbers)
@@ -616,7 +616,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 'I received: 1.234' != "I received: '1.234'"
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I remove the quotes from the number
@@ -637,7 +637,7 @@ the test passes.
 test_passing_a_tuple
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
@@ -664,7 +664,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: "I received: (1, 2, 3, 'n')" != "I received: '(1, 2, 3, n)'"
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the expectation
@@ -685,7 +685,7 @@ the test passes.
 test_passing_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), separated by a comma)
@@ -712,7 +712,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: "I received: [1, 2, 3, 'n']" != "I received: '[1, 2, 3, n]'"
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the expectation to match reality
@@ -733,7 +733,7 @@ the test passes.
 test_passing_a_dictionary
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly braces (``{}``), separated by a comma)
@@ -763,7 +763,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the expectation
@@ -795,7 +795,7 @@ test_telephone
 
 Time to write the program that makes the tests pass without looking at ``test_telephone.py``
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I close ``test_telephone.py``
@@ -805,7 +805,7 @@ red: make it fail
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the name to ``telephone.py``

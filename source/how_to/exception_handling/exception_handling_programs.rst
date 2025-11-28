@@ -45,7 +45,7 @@ test_catching_exceptions_w_messages
 
     AttributeError: module 'src.exceptions' has no attribute 'raise_exception'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the name to ``exceptions.py``
@@ -155,7 +155,7 @@ green: make it pass
 test_catching_failure
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new failing test in ``test_exceptions.py``
@@ -184,7 +184,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.exceptions' has no attribute 'an_exception_handler'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the name to ``exceptions.py``
@@ -270,7 +270,7 @@ test_catching_success
 
 I want ``an_exception_handler`` to process its input and return ``failed`` when an :ref:`Exception<errors>` happens or return ``success`` when an :ref:`Exception<errors>` is NOT raised.
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test to ``test_exceptions.py``
@@ -301,7 +301,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.exceptions' has no attribute 'does_not_raise_exception'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the name to ``exceptions.py``

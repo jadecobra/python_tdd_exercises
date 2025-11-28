@@ -39,7 +39,7 @@ requirements
 
     tests/test_truth_table.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -62,7 +62,7 @@ There are 2 Nullary operations, they do not take input and always return the sam
 test_logical_true
 #################################################################################
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 I change the text in ``test_truth_table.py``
@@ -89,7 +89,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_true'
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
@@ -131,7 +131,7 @@ green: make it pass
 test_logical_false
 #################################################################################
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 I add another test to ``test_truth_table.py``
@@ -155,7 +155,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_true'?
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 * I add a :ref:`function<functions>` definition to ``truth_table.py``
@@ -202,7 +202,7 @@ There are 2 unary operations, they each take one input
 test_logical_identity
 #################################################################################
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 I add a new TestCase_ and a test to ``test_truth_table.py``
@@ -229,7 +229,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_identity'
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 * I add the :ref:`function<functions>` to ``truth_table.py``
@@ -288,7 +288,7 @@ green: make it pass
 
   the test passes
 
-refactor: make it better
+REFACTOR: make it better
 ---------------------------------------------------------------------------------
 
 * I add another line to ``test_logical_identity`` in ``test_truth_table.py``
@@ -340,7 +340,7 @@ refactor: make it better
 test_logical_negation
 #################################################################################
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 I add a new test to ``test_truth_table.py``
@@ -365,7 +365,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_negation'
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 I add a definition for the :ref:`function<functions>` in ``truth_table.py``
@@ -398,7 +398,7 @@ I change the `return statement`_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 ---------------------------------------------------------------------------------
 
 * I add another line in ``test_logical_negation`` in ``test_truth_table.py``

@@ -10,7 +10,7 @@ What follows is an exercise in measuring learning. It is somewhat philosophical 
 An Infinite Learning Model
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``learning`` as the name of the project
@@ -34,7 +34,7 @@ red: make it fail
 
     tests/test_learning.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_learning.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_learning.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 * and change the text in ``test_learning.py`` with
 
@@ -47,7 +47,7 @@ red: make it fail
     AttributeError: module 'src.learning' has no attribute 'model'
 
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 If you've gone through any of the other exercises in this, then you have what you need to solve these problems

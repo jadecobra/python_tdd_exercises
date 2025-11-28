@@ -52,7 +52,7 @@ requirements
 
     tests/test_lists.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_lists.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_lists.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -75,7 +75,7 @@ requirements
 test_making_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I change ``test_failure`` to ``test_making_a_list``
@@ -97,7 +97,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: [] != None
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the expectation
@@ -108,7 +108,7 @@ I change the expectation
 
 the test passes. This is how to make an empty list_
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 I add another :ref:`assertion<AssertionError>`, this time with input to the list_ constructor_
@@ -164,7 +164,7 @@ test_attributes_and_methods_of_lists
 
 I use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a failing test
@@ -196,7 +196,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
 `maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None` it shows the entire difference
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add ``self.maxDiff`` to the test then move the terminal_ to the right
@@ -269,7 +269,7 @@ green: make it pass
 test_append_adds_item_to_end_of_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for the append_ :ref:`method<functions>`
@@ -289,7 +289,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: list.append() takes exactly one argument (0 given)
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add ``0`` as input
@@ -300,7 +300,7 @@ I add ``0`` as input
 
 the terminal_ shows green, the append_ :ref:`method<functions>` returns :ref:`None` when called
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another :ref:`assertion<AssertionError>` to see what append_ did to the list_
@@ -389,7 +389,7 @@ I add a test for the clear_ :ref:`method<functions>`
 
 the terminal_ shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when called
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add an :ref:`assertion<AssertionError>` to show what it did to the list_
@@ -408,7 +408,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the list_ is now empty
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the values to match
@@ -419,7 +419,7 @@ I change the values to match
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I change the name of the test to be more descriptive
@@ -452,7 +452,7 @@ refactor: make it better
 test_copy_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add another test
@@ -474,7 +474,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the :ref:`method<functions>` returns a copy of the list_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the list_ to the :ref:`assertion<AssertionError>`
@@ -501,7 +501,7 @@ the values are the same, I change assertIsNone_ to assertEqual_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I change the name of the test
@@ -532,7 +532,7 @@ refactor: make it better
 test_count_number_of_times_item_is_in_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for the next :ref:`method<functions>`
@@ -567,7 +567,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 1 is not None
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the value
@@ -590,7 +590,7 @@ I change assertIsNone_ to assertEqual_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * ``0`` is in the list_ 1 time, I add ``1`` to it 2 more times then add an :ref:`assertion<AssertionError>` for it
@@ -667,7 +667,7 @@ refactor: make it better
 test_extend_adds_items_from_an_iterable_to_end_of_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 time for another test
@@ -687,7 +687,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: list.extend() takes exactly one argument (0 given)
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I pass a value to the call
@@ -710,7 +710,7 @@ I change the value to an iterable_
 
 the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another :ref:`assertion<AssertionError>` to see what it did to the list_
@@ -785,7 +785,7 @@ refactor: make it better
 test_index_returns_first_position_of_item_in_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for the index_ :ref:`method<functions>`
@@ -805,7 +805,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: index expected at least 1 argument, got 0
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a value to the call
@@ -846,7 +846,7 @@ I change assertIsNone_ to assertEqual_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * it does not tell me if the :ref:`method<functions>` returned the same value I gave, so I change the list_
@@ -1079,7 +1079,7 @@ refactor: make it better
 test_insert_item_at_given_index_in_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for the next :ref:`method<functions>`
@@ -1099,7 +1099,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: insert expected 2 arguments, got 0
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add two values to the call
@@ -1112,7 +1112,7 @@ I add two values to the call
 
 the test is green
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add an :ref:`assertion<AssertionError>`
@@ -1212,7 +1212,7 @@ refactor: make it better
 test_pop_removes_and_returns_last_item_from_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test
@@ -1234,7 +1234,7 @@ the terminal_ shows :ref:`AssertionError`
 
 The pop_ :ref:`method<functions>` returns the last item in the list_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the expectation
@@ -1258,7 +1258,7 @@ I change assertIsNone_ to assertEqual_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add an :ref:`assertion<AssertionError>`
@@ -1349,7 +1349,7 @@ refactor: make it better
 test_remove_first_instance_of_item_from_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 time for the next :ref:`method<functions>`
@@ -1369,7 +1369,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: list.remove() takes exactly one argument (0 given)
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a value to the call
@@ -1380,7 +1380,7 @@ I add a value to the call
 
 the terminal_ shows green, the remove_ :ref:`method<functions>` returns :ref:`None`
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add an :ref:`assertion<AssertionError>`
@@ -1479,7 +1479,7 @@ refactor: make it better
 test_reverse_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add the next test
@@ -1508,7 +1508,7 @@ the terminal_ shows :ref:`AssertionError`
 
 it reversed the order of the items in the list_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the expectation
@@ -1519,7 +1519,7 @@ I change the expectation
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I rename the test
@@ -1544,7 +1544,7 @@ refactor: make it better
 test_sort_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test
@@ -1563,7 +1563,7 @@ the terminal_ shows :ref:`TypeError`
 
 I have to change ``'n'`` to a number or change the other numbers to a string_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I remove the things around the call, and the :ref:`variable<test_attribute_error_w_variables>` name since it is not used, then add assertRaises_
@@ -1576,7 +1576,7 @@ I remove the things around the call, and the :ref:`variable<test_attribute_error
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add a new list_ and another :ref:`assertion<AssertionError>`
@@ -1654,7 +1654,7 @@ test_getting_items_of_a_list
 
 When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``)
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a failing test
@@ -1676,7 +1676,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``0``
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the value in the test
@@ -1687,7 +1687,7 @@ I change the value in the test
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * this is the reverse of the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` :ref:`method<functions>` which takes in the item and returns its position, in this case I provide the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
@@ -1862,7 +1862,7 @@ refactor: make it better
 test_setting_items_in_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test
@@ -1885,7 +1885,7 @@ the terminal_ shows :ref:`AssertionError`
 
 I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item to change its value in a list_, the way I point a name to a value
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the expectation to match the terminal_
@@ -1902,7 +1902,7 @@ the test passes
 test_viewing_parts_of_a_list_aka_slicing
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add another test
@@ -1922,7 +1922,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['a', 'b'] != []
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the values to match
@@ -1933,7 +1933,7 @@ I change the values to match
 
 the test passes. I give two values in square brackets(``[]``), separated by a ``:``, the first value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to start from, and the second value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to stop at plus ``1``
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I can skip the first number when the starting :ref:`index<test_index_returns_first_position_of_item_in_a_list>` is ``0``
@@ -2085,7 +2085,7 @@ test_index_error
 
 IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it. When I see this :ref:`Exception<errors>` I know the underlying data structure is a list_
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a failing test
@@ -2107,7 +2107,7 @@ the terminal_ shows IndexError_
 
 when I use an index that is the same as or greater than the length of the list_ I am pointing to something that is NOT in it
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add it to the list of :ref:`Exceptions<errors>` encountered
@@ -2134,7 +2134,7 @@ I add assertRaises_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * the same thing happens when I use a negative number that is lower than the length of the list_ as a negative number

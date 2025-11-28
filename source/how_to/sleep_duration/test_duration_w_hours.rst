@@ -44,7 +44,7 @@ requirements
 
     tests/test_sleep_duration.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_sleep_duration.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_sleep_duration.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -62,7 +62,7 @@ requirements
     class TestSleepDuration(unittest.TestCase):
 
 *********************************************************************************
-red: make it fail
+RED: make it fail
 *********************************************************************************
 
 * I change the test to a new failing test
@@ -95,7 +95,7 @@ red: make it fail
     # TypeError
 
 *********************************************************************************
-green: make it pass
+GREEN: make it pass
 *********************************************************************************
 
 * I add :ref:`None` as the first and second arguments of the :ref:`assertion<AssertionError>`
@@ -289,7 +289,7 @@ green: make it pass
 
 
 *********************************************************************************
-refactor: make it better
+REFACTOR: make it better
 *********************************************************************************
 
 * I add :ref:`variables<test_attribute_error_w_variables>` to remove the repetition of the values for ``wake_time`` and ``sleep_time``
@@ -472,7 +472,7 @@ refactor: make it better
 test_string_splitting
 #################################################################################
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 I add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
@@ -495,7 +495,7 @@ the terminal_ shows :ref:`AssertionError`
 
 `str.split`_ returns a :ref:`list <lists>` when called
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 I copy the :ref:`list <lists>` from the terminal_ and paste it in the test to make it pass
@@ -508,7 +508,7 @@ I copy the :ref:`list <lists>` from the terminal_ and paste it in the test to ma
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 ---------------------------------------------------------------------------------
 
 * I change the expectation to the hours and minutes as different items

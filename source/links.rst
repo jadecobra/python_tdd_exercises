@@ -23,7 +23,7 @@
 .. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _brew: https://brew.sh
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
-.. _cd: https://man7.org/linux/man-pages/man1/cd.1p.html
+.. _cd: https://man7.org/Linux/man-pages/man1/cd.1p.html
 .. _change directory: cd_
 .. _changing directory: cd_
 .. _chmod: https://grokipedia.com/page/Chmod
@@ -47,7 +47,7 @@
 .. _folder/directory: directory_
 .. _folders: directory_
 .. _folders (directories): directory_
-.. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
+.. _echo: https://man7.org/Linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _extend: more_on_lists_
 .. _find and replace: https://code.visualstudio.com/docs/editing/codebasics#_find-and-replace
@@ -61,7 +61,7 @@
 .. _get: https://docs.python.org/3/library/stdtypes.html#dict.get
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable
-.. _history: https://man7.org/linux/man-pages/man3/history.3.html
+.. _history: https://man7.org/Linux/man-pages/man3/history.3.html
 .. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _if statements: `if statement`_
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
@@ -76,10 +76,10 @@
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
 .. _keyword arguments: arguments_
-.. _linux package manager: https://grokipedia.com/page/APT_(software)
+.. _Linux package manager: https://grokipedia.com/page/APT_(software)
 .. _ls: https://grokipedia.com/page/Ls
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
-.. _mkdir: https://man7.org/linux/man-pages/man1/mkdir.1.html
+.. _mkdir: https://man7.org/Linux/man-pages/man1/mkdir.1.html
 .. _make a directory: mkdir_
 .. _make the directory: mkdir_
 .. _modulo: https://grokipedia.com/page/Modulo
@@ -220,8 +220,8 @@
 .. _Test Driven Development by Example: https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _The Abstraction Principle: https://grokipedia.com/page/Abstraction_principle_(computer_programming)
 .. _The Do Not Repeat Yourself (DRY) Principle: `remove duplication`_
-.. _Windows: https://www.microsoft.com/en-us/windows
-.. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/windows/wsl/install
+.. _Windows: https://www.microsoft.com/en-us/Windows
+.. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/Windows/wsl/install
 
 .. _Pylance: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 .. _Python: https://docs.python.org

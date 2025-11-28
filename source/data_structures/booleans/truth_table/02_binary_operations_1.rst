@@ -35,7 +35,7 @@ requirements
 test_contradiction
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new TestCase_ to ``test_truth_table.py``
@@ -82,7 +82,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a :ref:`function<functions>` definition to ``truth_table.py``
@@ -115,7 +115,7 @@ I add ``q`` as the second name in parentheses then rename ``argument`` to ``p`` 
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the second case to ``test_contradiction`` in ``test_truth_table.py``
@@ -184,7 +184,7 @@ refactor: make it better
 test_logical_conjunction
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test in ``test_truth_table.py``
@@ -208,7 +208,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_negation'?
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the :ref:`function<functions>` in ``truth_table.py``
@@ -226,7 +226,7 @@ I add the :ref:`function<functions>` in ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the next case to ``test_logical_conjunction`` in ``test_truth_table.py``
@@ -464,7 +464,7 @@ refactor: make it better
 test_project_second
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for another Binary Operation in ``test_truth_table.py``
@@ -487,7 +487,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a definition for the :ref:`function<functions>` in ``truth_table.py``
@@ -505,7 +505,7 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the second case to ``test_project_second`` in ``test_truth_table.py``
@@ -621,7 +621,7 @@ refactor: make it better
 test_converse_non_implication
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add another test for a new Binary Operation in ``test_truth_table.py``
@@ -644,7 +644,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the :ref:`function<functions>` to ``truth_table.py``
@@ -662,7 +662,7 @@ I add the :ref:`function<functions>` to ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another case to ``test_converse_non_implication`` in ``test_truth_table.py``

@@ -43,7 +43,7 @@ requirements
 
     tests/test_none.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -64,7 +64,7 @@ requirements
 test_what_is_none
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I change ``test_failure`` to ``test_what_is_none``
@@ -86,7 +86,7 @@ red: make it fail
 
   assertIsNotNone_ checks that what is in the parentheses is NOT None_
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I change the assert_ :ref:`method<functions>` to assertIsNone_, which checks if what it gets in parentheses is None_
@@ -121,7 +121,7 @@ green: make it pass
 test_is_none_a_boolean
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add another failing test to see if None_ is a :ref:`boolean<booleans>`
@@ -144,7 +144,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: False is not None
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a note
@@ -167,7 +167,7 @@ I make the line :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another failing :ref:`assertion<AssertionError>` for the other :ref:`boolean<booleans>`
@@ -311,7 +311,7 @@ refactor: make it better
 test_is_none_an_integer
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test to see if None_ is an integer_ (a whole number)
@@ -331,7 +331,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: -1 is not None
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
@@ -344,7 +344,7 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add a new failing line with assertIsNone_
@@ -530,7 +530,7 @@ refactor: make it better
 test_is_none_a_float
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test to see if None_ is a float_ (floating point decimal number)
@@ -553,7 +553,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: -0.1 is not None
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
@@ -566,7 +566,7 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another failing line with assertIsNone_
@@ -753,7 +753,7 @@ refactor: make it better
 test_is_none_a_string
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test to see if None_ is a string_ (anything in :ref:`quotes`)
@@ -778,7 +778,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the empty string_ (``''``) is NOT :ref:`None`
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
@@ -791,7 +791,7 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another failing line with assertIsNone_
@@ -932,7 +932,7 @@ refactor: make it better
 test_is_none_a_tuple
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test to see if None_ is a tuple_ (anything in parentheses ``()``)
@@ -955,7 +955,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: () is not None
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I make the statement :ref:`True<test_what_is_true>`
@@ -968,7 +968,7 @@ I make the statement :ref:`True<test_what_is_true>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add a failing :ref:`assertion<AssertionError>`
@@ -1105,7 +1105,7 @@ refactor: make it better
 test_is_none_a_list
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test for :ref:`lists`
@@ -1128,7 +1128,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: [] is not None
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
@@ -1141,7 +1141,7 @@ I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<t
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another failing line
@@ -1275,7 +1275,7 @@ refactor: make it better
 test_is_none_a_set
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I want to see if None_ is a set_
@@ -1295,7 +1295,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: set() is not None
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I make the statement :ref:`True<test_what_is_true>`
@@ -1308,7 +1308,7 @@ I make the statement :ref:`True<test_what_is_true>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another :ref:`assertion<AssertionError>`
@@ -1415,7 +1415,7 @@ refactor: make it better
 test_is_none_a_dictionary
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 One last test to see if None_ is a :ref:`dictionary<dictionaries>`
@@ -1440,7 +1440,7 @@ the terminal_ shows :ref:`AssertionError`
 
 wait a minute! Python_ uses ``{}`` for sets_, it also uses them for :ref:`dictionaries` with a difference.
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I make the statement :ref:`True<test_what_is_true>`
@@ -1453,7 +1453,7 @@ I make the statement :ref:`True<test_what_is_true>`
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add another failing line

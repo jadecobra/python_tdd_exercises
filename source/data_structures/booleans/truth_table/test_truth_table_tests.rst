@@ -27,7 +27,7 @@ requirements
 I want to write a program that makes the tests in ``test_truth_table.py`` pass without looking at them
 
 *********************************************************************************
-red: make it fail
+RED: make it fail
 *********************************************************************************
 
 * I close ``test_truth_table.py``
@@ -38,7 +38,7 @@ red: make it fail
     AttributeError: module 'src.truth_table' has no attribute 'tautology'
 
 *********************************************************************************
-green: make it pass
+GREEN: make it pass
 *********************************************************************************
 
 * I add the name
@@ -1077,7 +1077,7 @@ green: make it pass
 
   the terminal_ shows green! All tests are passing and the world is a better place than when I started.
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 I can refactor the :ref:`functions<functions>` I have, to make them simpler since all the tests are passing

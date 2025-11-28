@@ -28,7 +28,7 @@ requirements
 test_negate_first
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_truth_table.py``
@@ -51,7 +51,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the :ref:`function<functions>` definition in ``truth_table.py``
@@ -69,7 +69,7 @@ I add the :ref:`function<functions>` definition in ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the second case to ``test_negate_first`` in ``test_truth_table.py``
@@ -237,7 +237,7 @@ refactor: make it better
 test_logical_nand
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a new test to ``test_truth_table.py``
@@ -260,7 +260,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a definition for the :ref:`function<functions>` to ``truth_table.py``
@@ -278,7 +278,7 @@ I add a definition for the :ref:`function<functions>` to ``truth_table.py``
 
 the terminal_ shows green again
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the next case to ``test_logical_nand`` in ``test_truth_table.py``
@@ -446,7 +446,7 @@ refactor: make it better
 test_tautology
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a test for the next Binary Operation in ``test_truth_table.py``
@@ -469,7 +469,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'tautology'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add a :ref:`function<functions>` definition to ``truth_table.py``
@@ -487,7 +487,7 @@ I add a :ref:`function<functions>` definition to ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the next case to ``test_tautology`` in ``test_truth_table.py``
@@ -538,7 +538,7 @@ refactor: make it better
 test_logical_disjunction
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add another test
@@ -561,7 +561,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'. Did you mean: 'logical_conjunction'?
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I add the :ref:`function<functions>` to ``truth_table.py``
@@ -579,7 +579,7 @@ I add the :ref:`function<functions>` to ``truth_table.py``
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I add the next case to ``test_logical_disjunction`` in ``test_truth_table.py``

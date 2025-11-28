@@ -36,7 +36,7 @@ this helps when I do not have an extra screen. I can stack two editors on top of
 for testing
 #################################################################################
 
-When working with just the `Integrated Development Environment (IDE)`_, I have the following windows open
+When working with just the `Integrated Development Environment (IDE)`_, I have the following Windows open
 
 explorer on left
 ---------------------------------------------------------------------------------

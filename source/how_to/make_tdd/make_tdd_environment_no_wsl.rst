@@ -343,7 +343,7 @@ how to run tests manually on Windows without WSL
 
     NO TESTS RAN
 
-red: make it fail
+RED: make it fail
 ############################################################################################
 
 * I click on ``magic/tests/test_magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following
@@ -392,7 +392,7 @@ red: make it fail
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) every time I make a change
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) every time I make a change
 * I try the command again to run the tests in the terminal_
 
   .. code-block:: PowerShell
@@ -541,9 +541,9 @@ how to rename a file on Windows without WSL
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
@@ -573,7 +573,7 @@ the test passes! The terminal_ shows
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
-refactor: make it better
+REFACTOR: make it better
 ############################################################################################
 
 I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
@@ -899,7 +899,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 
     =============== 1 passed in X.YZs =======================
 
-  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -926,7 +926,7 @@ how to install Python packages in a virtual environment on Windows without WSL
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` (windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -1139,7 +1139,7 @@ I have to tell the computer exactly where the file_ is
   Collecting pip
   ...
   ================================= test session starts ==================================
-  platform linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
+  platform Linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
   rootdir: .../pumping_python/magic
   collected 1 item
 
@@ -1209,7 +1209,7 @@ how to use variables in a PowerShell script
     Collecting pip
       ...
     ================================= test session starts ==================================
-    platform linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
+    platform Linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
     rootdir: ...
     collected 0 items
 

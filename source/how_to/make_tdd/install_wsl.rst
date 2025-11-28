@@ -8,12 +8,12 @@ This is one way `Windows Subsystem Linux`_ on a Windows computer so you can use 
 
 ----
 
-Make sure your computer runs `Windows 11 <https://www.microsoft.com/en-us/software-download/windows11>`_
+Make sure your computer runs `Windows 11 <https://www.microsoft.com/en-us/software-download/Windows11>`_
 
-As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/windows/end-of-support?r=1>`_
+As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/Windows/end-of-support?r=1>`_
 
 * click ``Search`` at bottom of your screen
-* search for ``Turn on windows features``
+* search for ``Turn on Windows features``
 * click ``Turn on or off Windows Features`` from the results
 * Make sure the following have check marks to the left of them in the dialog box that opens up
 

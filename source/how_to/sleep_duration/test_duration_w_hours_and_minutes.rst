@@ -22,7 +22,7 @@ This is part 2 of a program that calculates the difference between a given wake 
 I want to test the ``duration`` :ref:`function<functions>` with timestamps where both hours and minutes are random.
 
 *********************************************************************************
-red: make it fail
+RED: make it fail
 *********************************************************************************
 
 * I change the name of ``test_duration_w_hours``
@@ -137,7 +137,7 @@ red: make it fail
   the ``duration`` :ref:`function<functions>` returns ``00`` for the minutes part of the duration, and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``
 
 *********************************************************************************
-green: make it pass
+GREEN: make it pass
 *********************************************************************************
 
 * I make a copy of ``difference_hours`` in ``duration``, change the name, then add it to the `return statement`_
@@ -187,7 +187,7 @@ green: make it pass
   the test passes! There is something wrong with this calculation...
 
 *********************************************************************************
-refactor: make it better
+REFACTOR: make it better
 *********************************************************************************
 
 
@@ -196,7 +196,7 @@ test_duration_calculation
 
 The ``duration`` :ref:`function<functions>` returns a subtraction of hours and a subtraction of minutes which does not give the right difference between the timestamps
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of ``'02:59'``, it should return ``'00:31'`` as the difference between the timestamps
@@ -223,7 +223,7 @@ the terminal_ shows :ref:`AssertionError` when I add ``test_duration_calculation
 
 ``duration`` returns ``'01:-29'`` which is not a real duration, the calculation has to change
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 * I add a `return statement`_ to the ``duration`` :ref:`function<functions>` where I multiply ``difference_hours`` by ``60`` then add it to ``difference_minutes`` to get the total difference in minutes

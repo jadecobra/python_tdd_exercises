@@ -21,8 +21,8 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
 
 they cover the following
 
-- :ref:`windows requirements`
-- :ref:`linux/Windows Subsystem Linux requirements`
+- :ref:`Windows requirements`
+- :ref:`Linux/Windows Subsystem Linux requirements`
 - :ref:`how to make a python test driven development environment manually`
 - :ref:`how to change directory`
 - :ref:`how to make a directory`

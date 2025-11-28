@@ -41,7 +41,7 @@ requirements
 
     tests/test_calculator.py:7: AssertionError
 
-* I hold ``ctrl`` (windows/linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -118,7 +118,7 @@ test_addition
 
   because ``src`` is not defined in ``test_calculator.py``
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
@@ -246,12 +246,12 @@ green: make it pass
 
   the test passes, time for a victory lap!
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to do a calculation with the inputs and return the result
 
-red: make it fail
+RED: make it fail
 ---------------------------------------------------------------------------------
 
 To show the problem with the :ref:`function<functions>`, I add another :ref:`assertion<AssertionError>` in ``test_calculator.py``
@@ -278,7 +278,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the :ref:`function<functions>` returns ``1``, the test expects ``0``
 
-green: make it pass
+GREEN: make it pass
 ---------------------------------------------------------------------------------
 
 when I change the `return statement`_ in ``calculator.py`` to add the two inputs
@@ -292,7 +292,7 @@ when I change the `return statement`_ in ``calculator.py`` to add the two inputs
 
 the test passes
 
-refactor: make it better
+REFACTOR: make it better
 ---------------------------------------------------------------------------------
 
 * I want the test to use random numbers instead of numbers that do not change, so I add an `import statement`_ at the top of ``test_calculator.py`` to use random numbers in the test
@@ -332,7 +332,7 @@ refactor: make it better
                 0
             )
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError` with random values that look like this
+  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError` with random values that look like this
 
   .. code-block:: shell
 
@@ -456,7 +456,7 @@ refactor: make it better
 test_subtraction
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I add a test for subtraction in ``test_calculator.py``
@@ -491,7 +491,7 @@ red: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the name to ``calculator.py``
@@ -573,7 +573,7 @@ green: make it pass
 
   the test passes. SUCCESS!
 
-refactor: make it better
+REFACTOR: make it better
 #################################################################################
 
 * I have some duplication to remove, the code below happens twice
@@ -719,7 +719,7 @@ refactor: make it better
 test_multiplication
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 I add a failing test for multiplication in ``test_calculator.py``
@@ -748,7 +748,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.calculator' has no attribute 'multiply'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 using what I know so far, I add a :ref:`function<functions>` to ``calculator.py``
@@ -782,7 +782,7 @@ the test passes! I remove ``test_multiplication`` from the TODO list in ``test_c
 test_division
 *********************************************************************************
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 time for division. I add a new test to ``test_calculator.py``
@@ -811,7 +811,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.calculator' has no attribute 'divide'
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add a :ref:`function<functions>` to ``calculator.py``
@@ -836,7 +836,7 @@ green: make it pass
     def a_random_number():
         return random.randint(-1, 1)
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) a few times to run the tests, and when ``y`` is randomly ``0`` the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) a few times to run the tests, and when ``y`` is randomly ``0`` the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -867,7 +867,7 @@ green: make it pass
 how to test that ZeroDivisionError is raised
 ---------------------------------------------------------------------------------
 
-red: make it fail
+RED: make it fail
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` intentionally and comment out the code that randomly fails in ``test_calculator.py``
@@ -899,7 +899,7 @@ the terminal_ shows my expectation with a failure for any value of ``x`` since `
 
 :ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program from running. No code will run past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
-green: make it pass
+GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I can use the assertRaises_ :ref:`method<functions>` to make sure that :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when I try to divide a number by ``0``
@@ -935,7 +935,7 @@ green: make it pass
 
   the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-refactor: make it better
+REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make a never ending loop to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
@@ -984,7 +984,7 @@ refactor: make it better
                     self.x/self.y
                 )
 
-  I hit save (``ctrl+s`` (windows/linux) or ``command+s`` (mac)) in the :ref:`editor<2 editors>` a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) in the :ref:`editor<2 editors>` a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -1069,7 +1069,7 @@ test_calculator_tests
 
 Since everything is green, I can write the program that makes the tests pass without looking at them
 
-red: make it fail
+RED: make it fail
 #################################################################################
 
 * I close ``test_calculator.py``
@@ -1081,7 +1081,7 @@ red: make it fail
 
   can you tell what :ref:`Exceptions<errors>` will show up as I go along?
 
-green: make it pass
+GREEN: make it pass
 #################################################################################
 
 * I add the name to ``calculator.py``
