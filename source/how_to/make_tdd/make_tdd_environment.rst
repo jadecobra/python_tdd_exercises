@@ -64,11 +64,35 @@ type this in the terminal_ to install Python_
 
 ----
 
+When I want to work on a project. I have to consider a few things
+
+* What is the name I want for the project?
+* What is the structure of the project?
+* What files and folders does the project need?
+* What other programs does my project need?
+* What tests am I going to write for this project?
+
+It turns out some of this is repeatable
+
+* I pick a name for the project
+* I make a new folder for every project with the name
+* I place the code for the project in a ``src`` folder
+* I place the tests for the project in a ``tests`` folder
+* I try to name everything in the project with the name of the project or with something that describes what it does
+* I document what the project needs in a requirements file
+* I make a `virtual environment`_ to keep things isolated from the rest of the computer
+* I install what the project needs in the `virtual environment`_
+* I work in the `virtual environment`_
+* I run automated tests to make sure I have a `Test Driven Development`_ environment
+* I start writing code for the project
+
 ********************************************************************************************
 how to make a python test driven development environment manually
 ********************************************************************************************
 
-I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
+I pick ``magic`` as the name of this project
+
+* I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
 * I use the cd_ program_ to change `folder/directory`_ to where I will put all the projects from this book. I type it in the terminal_
 

@@ -129,7 +129,7 @@ the terminal_ shows
 
 because I am in the ``pumping_python`` folder_. pwd_ shows the path/address to the current folder_ I am in at the moment
 
-.. NOTE:: If you see a different name, you can go to the next step :ref:`how to change directory`
+.. NOTE:: If you see the same name, skip to the part where I create ``parent``. If you see a different name, continue to the next step :ref:`how to change directory`.
 
 how to change directory
 #################################################################################################
