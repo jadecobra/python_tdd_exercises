@@ -25,9 +25,9 @@ when it is installed, the terminal_ shows a tree of directories_ and files_. The
 
 .. _what_is_a_folder:
 
-A `folder/directory`_ is a container for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
+A `folder (directory)`_ is a container for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
 
-I keep every project I work on in its own `folder/directory`_. All the code from this book will be kept in a folder_ named ``pumping_python``
+I keep every project I work on in its own `folder (directory)`_. All the code from this book will be kept in a folder_ named ``pumping_python``
 
 .. _what_is_a_file:
 
@@ -152,7 +152,7 @@ this means the folder_ does not exist where I am
 how to make a directory
 #################################################################################################
 
-* I use the mkdir_ program_ to make a `folder/directory`_
+* I use the mkdir_ program_ to make a `folder (directory)`_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -168,7 +168,7 @@ how to make a directory
 
     cd pumping_python
 
-  the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
+  the terminal_ shows I am now in the ``pumping_python`` `folder (directory)`_
 
   .. code-block:: shell
 
@@ -1549,7 +1549,7 @@ I can make empty files_ in a folder_ with the touch_ program
 review
 *************************************************************************************
 
-I ran the following commands to practice `folder/directory`_ structure
+I ran the following commands to practice `folder (directory)`_ structure
 
 * mkdir_
 * cd_
@@ -1560,7 +1560,7 @@ I ran the following commands to practice `folder/directory`_ structure
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`What is a folder/directory?<what_is_a_folder>`
+* :ref:`What is a folder (directory)?<what_is_a_folder>`
 * :ref:`What is a file?<what_is_a_file>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`

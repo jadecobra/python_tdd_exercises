@@ -14,7 +14,7 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_, first :ref:`I do it manually<how to make a python test driven development environment manually on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
+This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_. First, :ref:`I do it manually<how to make a python test driven development environment manually on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
 
 ----
 
@@ -23,7 +23,7 @@ requirements
 *********************************************************************************
 
 * `download and install Python <https://www.python.org/downloads/>`_
-* get an `Integrated Development Environment (IDE)`_ . Here are a few options
+* get an `Integrated Development Environment (IDE)`_. Here are a few options
 
   - `Visual Studio Code`_
   - `Sublime Text`_
@@ -36,9 +36,11 @@ requirements
 how to make a python test driven development environment manually on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
 
-I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
+I use ``magic`` as the name for this project
 
-* I use the cd_ program_ to change `folder/directory`_ to where I will put all the projects from this book. I type it in the terminal_
+* I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
+
+* I use the cd_ program_ to change `folder (directory)`_ to where I will put all the projects from this book. I type it in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -51,9 +53,9 @@ I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the
 
     cd: no such file or directory: pumping_python
 
-  the `folder/directory`_ does NOT exist. I need to make it
+  the `folder (directory)`_ does NOT exist. I need to make it
 
-* I use the mkdir_ program_ to make a `folder/directory`_
+* I use the mkdir_ program_ to make a `folder (directory)`_
 
   .. code-block:: PowerShell
 
@@ -66,7 +68,7 @@ I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the
 
     cd pumping_python
 
-  the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
+  the terminal_ shows I am now in the ``pumping_python`` `folder (directory)`_
 
   .. code-block:: shell
 
@@ -109,7 +111,7 @@ I want to work on a project, I call it ``magic``. I click on ``Terminal`` in the
 
     mkdir magic
 
-  this makes a `folder/directory`_ for the project where its files will stay
+  this makes a `folder (directory)`_ for the project where its files will stay
 
 * I use cd_
 
@@ -302,6 +304,7 @@ how to run tests manually on Windows without WSL
 
     3 directories, 1 file
 
+
 * I use `New-Item`_ to add an empty file to the ``tests`` directory for the actual test
 
   .. code-block:: PowerShell
@@ -352,6 +355,7 @@ RED: make it fail
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1, 4, 6-7
 
     import unittest
 
@@ -1429,7 +1433,6 @@ how to use variables in a PowerShell script
             ├── lib
             ├── lib64 -> lib
             └── pyvenv.cfg
-
 
 * I can now make a `Test Driven Development`_ environment with ``makePythonTdd.ps1`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 

@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to make a python test driven development environment manually>`, making all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
+This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to make a python test driven development environment manually>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
 
 ----
 
@@ -94,7 +94,7 @@ I use ``magic`` as the name for this project
 
 * I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
-* I use the cd_ program_ to change `folder/directory`_ to where I will put all the projects from this book. I type it in the terminal_
+* I use the cd_ program_ to change `folder (directory)`_ to where I will put all the projects from this book. I type it in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -107,9 +107,9 @@ I use ``magic`` as the name for this project
 
     cd: no such file or directory: pumping_python
 
-  the `folder/directory`_ does NOT exist. I need to make it
+  the `folder (directory)`_ does NOT exist. I need to make it
 
-* I use the mkdir_ program_ to make a `folder/directory`_
+* I use the mkdir_ program_ to make a `folder (directory)`_
 
   .. code-block:: shell
 
@@ -122,7 +122,7 @@ I use ``magic`` as the name for this project
 
     cd pumping_python
 
-  the terminal_ shows I am now in the ``pumping_python`` `folder/directory`_
+  the terminal_ shows I am now in the ``pumping_python`` `folder (directory)`_
 
   .. code-block:: shell
 
@@ -282,7 +282,6 @@ how to run a Python program
 
     2 directories, 0 files
 
-
 * I try to run the ``magic`` program_ again
 
   .. code-block:: shell
@@ -320,7 +319,6 @@ how to make an empty file
         └── magic.py
 
     2 directories, 1 file
-
 
   touch_ is a program_ that makes an empty file_ with the name. I can give the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
@@ -421,7 +419,6 @@ how to run tests manually
         └── magic.py
 
     3 directories, 2 files
-
 
 * I run the test again
 
@@ -543,7 +540,6 @@ how to make a Python package
 
     3 directories, 3 files
 
-
 * I try to run the tests again
 
   .. code-block:: shell
@@ -595,7 +591,6 @@ how to rename a file
         └── test_magic.py
 
     4 directories, 3 files
-
 
   the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of  contents of the child folders_
 
@@ -772,7 +767,6 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
     4 directories, 3 files
 
-
   it does not look like anything changed. This is because the ``.`` in front of ``.venv`` means the folder_ is hidden
 
 * I try tree_ again with another option to see what changed
@@ -802,7 +796,6 @@ It means I can have a separate `virtual environment`_ for every project with onl
         └── pyvenv.cfg
 
     9 directories, 5 files
-
 
   there is now a folder_ named ``.venv`` for the `virtual environment`_
 
@@ -1471,7 +1464,6 @@ how to use variables in a shell script
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
-
 * I use echo_ instead of touch_ to add text for the first failing test to ``test_$PROJECT_NAME.py`` in ``makePythonTdd.sh``
 
   .. code-block:: shell
@@ -1589,7 +1581,6 @@ how to use variables in a shell script
             ├── lib
             ├── lib64 -> lib
             └── pyvenv.cfg
-
 
 * I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 

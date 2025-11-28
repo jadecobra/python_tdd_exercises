@@ -44,7 +44,7 @@
 .. _file: https://grokipedia.com/page/File
 .. _files: file_
 .. _folder: directory_
-.. _folder/directory: directory_
+.. _folder (directory): directory_
 .. _folders: directory_
 .. _folders (directories): directory_
 .. _echo: https://man7.org/Linux/man-pages/man1/echo.1.html
