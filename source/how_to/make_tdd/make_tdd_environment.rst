@@ -1123,7 +1123,6 @@ how to make a shell script
 
     5 directories, 2 files
 
-
 how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
 
@@ -1244,7 +1243,7 @@ I have to tell the computer exactly where the file_ is
 
   permission denied: ./makePythonTdd.sh
 
-I want to make the program_ executable so the computer can run it
+I want to make sure the computer can run the program_. I have to make it executable
 
 how to make a shell script run as a command
 --------------------------------------------------------------------------------------------
@@ -1286,11 +1285,11 @@ how to make a shell script run as a command
 
     ================================== 1 passed in X.YZs ===================================
 
-  This is a problem, ``makePythonTdd.sh`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done, and `I do not repeat myself`_
+This is a problem, ``makePythonTdd.sh`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done, and `I do not repeat myself`_
 
-  .. NOTE:: the terminal_ might show a different result for you. You can keep going, the key thing is that the program does not yet do what I want
+.. NOTE:: the terminal_ might show a different result for you. You can keep going, the key thing is that the program does not yet do what I want
 
-  I want ``makePythonTdd.sh`` to be able to make a project for any name I give. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project
+I want ``makePythonTdd.sh`` to be able to make a project for any name I give. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project
 
 how to use variables in a shell script
 --------------------------------------------------------------------------------------------
@@ -1390,7 +1389,6 @@ how to use variables in a shell script
     │       ├── lib64 -> lib
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
-
 
   I still have the same files_ and folders_ as before I ran the program_
 

@@ -1001,7 +1001,7 @@ how to make a PowerShell script
     :emphasize-lines: 1
 
     New-Item makePythonTdd.ps1
-the terminal_ goes back to the command line. I use tree_ to see what is in the ``pumping_python`` directory_
+  the terminal_ goes back to the command line. I use tree_ to see what is in the ``pumping_python`` directory_
 
   .. code-block:: PowerShell
 
