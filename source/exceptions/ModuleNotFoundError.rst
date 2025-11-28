@@ -1,5 +1,5 @@
 .. meta::
-  :description: Struggling with Python's ModuleNotFoundError? Learn to fix import errors from other `folders/directories`_& get your code running. Watch the full tutorial to solve it now!
+  :description: Struggling with Python's ModuleNotFoundError? Learn to fix import errors from other `folders (directories)`_& get your code running. Watch the full tutorial to solve it now!
   :keywords: Jacob Itegboje, python ModuleNotFoundError no module named, how to fix ModuleNotFoundError in vscode, python import error from another folder, python relative import not working, ModuleNotFoundError: No module named 'src', python can't find module in same directory, pythonpath vscode setup, fix python import errors
 
 .. include:: ../links.rst

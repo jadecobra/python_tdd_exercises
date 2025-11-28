@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project, first :ref:`I do it manually<how to make a python test driven development environment manually>` where I make all the `folders/directories`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
+This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to make a python test driven development environment manually>`, making all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically>`
 
 ----
 
@@ -64,7 +64,7 @@ type this in the terminal_ to install Python_
 
 ----
 
-When I want to work on a project. I have to consider a few things
+When I want to work on a project, I have to consider a few things
 
 * What is the name I want for the project?
 * What is the structure of the project?
@@ -183,6 +183,7 @@ I pick ``magic`` as the name of this project
 
     0 directories, 0 files
 
+
   .. NOTE:: You will see more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
@@ -222,6 +223,7 @@ I pick ``magic`` as the name of this project
     └── magic
 
     2 directories, 0 files
+
 
 * I try cd_ again
 
@@ -280,6 +282,7 @@ how to run a Python program
 
     2 directories, 0 files
 
+
 * I try to run the ``magic`` program_ again
 
   .. code-block:: shell
@@ -318,6 +321,7 @@ how to make an empty file
 
     2 directories, 1 file
 
+
   touch_ is a program_ that makes an empty file_ with the name. I can give the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
@@ -339,12 +343,12 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 * **GREEN**: make it pass - write the simplest thing that will make the failing test pass
 * **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
 
-this process can be repeated as many times as possible or until I get to my goal.
+This process can be repeated as many times as needed until I get to my goal.
 
 how to run tests manually
 #################################################################################################
 
-* I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
+* I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -389,6 +393,7 @@ how to run tests manually
 
     3 directories, 1 file
 
+
 * I use touch_ to add an empty file to the ``tests`` directory for the actual test
 
   .. code-block:: shell
@@ -416,6 +421,7 @@ how to run tests manually
         └── magic.py
 
     3 directories, 2 files
+
 
 * I run the test again
 
@@ -458,7 +464,7 @@ red: make it fail
 
   Here is an explanation of the code in the file_
 
-  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, this is what I am using for testing
+  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
     * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
@@ -501,14 +507,14 @@ red: make it fail
 
     NO TESTS RAN
 
-  I need to tell Python_ that the ``tests`` folder is a `python package`_, so it can find the tests
+  I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
 
-how to make a python package
+how to make a Python package
 --------------------------------------------------------------------------------------------
 
 * I use touch_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
 
-  .. IMPORTANT:: make sure to use 2 underscores (__) for ``__init__.py``
+  .. IMPORTANT:: make sure to use 2 underscores (__) before and after ``init`` for ``__init__.py``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -536,6 +542,7 @@ how to make a python package
         └── magic.py
 
     3 directories, 3 files
+    
 
 * I try to run the tests again
 
@@ -554,7 +561,7 @@ how to make a python package
 
 * I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. CAUTION:: if you do not close ``magic.py`` you will have 3 files in the ``tests`` folder after the next step instead of 2 because you turned on the ``Auto Save`` feature earlier
+  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file after you rename it
 
 how to rename a file
 --------------------------------------------------------------------------------------------
@@ -588,6 +595,7 @@ how to rename a file
         └── test_magic.py
 
     4 directories, 3 files
+
 
   the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of  contents of the child folders_
 
@@ -703,7 +711,7 @@ how to run tests automatically
 
 I can use `pytest-watch`_ to run tests automatically. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal_
+pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_. I type it in the terminal_
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -723,7 +731,7 @@ how to make a virtual environment
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
-A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
+A `virtual environment`_ is a separate folder where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
 It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
 
@@ -738,7 +746,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
   - ``python3`` is the Python_ program_
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
   - ``.venv`` is the name I am giving for this `virtual environment`_
 
     .. TIP:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
@@ -763,6 +771,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
         └── test_magic.py
 
     4 directories, 3 files
+
 
   it does not look like anything changed. This is because the ``.`` in front of ``.venv`` means the folder_ is hidden
 
@@ -793,6 +802,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
         └── pyvenv.cfg
 
     9 directories, 5 files
+
 
   there is now a folder_ named ``.venv`` for the `virtual environment`_
 
@@ -835,7 +845,7 @@ how to activate a virtual environment
 how to see what packages are installed in a virtual environment
 --------------------------------------------------------------------------------------------
 
-I use the `python package manager (pip)`_ to see what `python packages`_ are installed in the `virtual environment`_
+I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -851,11 +861,11 @@ the terminal_ shows
   pip     x.y
 
 - `pytest-watch`_ is not in the list
-- pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
+- pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
 
 how to write text to a file
 --------------------------------------------------------------------------------------------
-I want to make a file where I can list all the `python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
+I want to make a file where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
 * I can write text to a file_ with the echo_ program_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
 
@@ -879,8 +889,8 @@ I want to make a file where I can list all the `python packages`_ for my project
 
   - ``>`` is an operator that is used to send output from a program_ to the given file_
   - `pytest-watch`_ is a Python_ program_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
-  - pytest_ is a `python package`_ like unittest_, that is used for testing
-  - ``requirements.txt`` is the name of a file_ where I can list `python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
+  - pytest_ is a `Python package`_ like unittest_, that is used for testing
+  - ``requirements.txt`` is the name of a file_ where I can list `Python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
 
 * I run tree_ to see what the project looks like now
 
@@ -912,9 +922,10 @@ I want to make a file where I can list all the `python packages`_ for my project
 
     9 directories, 6 files
 
+
   ``requirements.txt`` is now in the ``magic`` folder_
 
-how to install python packages in a virtual environment
+how to install Python packages in a virtual environment
 --------------------------------------------------------------------------------------------
 
 * I use pip_ to install `pytest-watch`_ from the requirements file
@@ -924,7 +935,7 @@ how to install python packages in a virtual environment
 
     python3 -m pip install --requirement requirements.txt
 
-  - ``--requirement`` is an option that can be passed to the ``install`` argument for `python packages`_ in a given file_
+  - ``--requirement`` is an option that can be passed to the ``install`` argument for `Python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
   the terminal_ shows a bunch or programs_ being installed, and when I do not have the latest version of pip_ installed, it shows
@@ -941,8 +952,8 @@ how to install python packages in a virtual environment
 
     python3 -m pip install --upgrade pip
 
-  - ``install`` is an argument given to pip_ to install a given `python package`_
-  - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `python package`_
+  - ``install`` is an argument given to pip_ to install a given `Python package`_
+  - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `Python package`_
   - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself to the latest version since I did not give a version number
 
   .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
@@ -952,7 +963,7 @@ how to install python packages in a virtual environment
 
       python3 -m pip install pytest-watch
 
-* I check what `python packages`_ are now installed in the `virtual environment`_
+* I check what `Python packages`_ are now installed in the `virtual environment`_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1118,6 +1129,7 @@ how to make a shell script
     └── makePythonTdd.sh
 
     5 directories, 2 files
+
 
 how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
@@ -1386,6 +1398,7 @@ how to use variables in a shell script
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
+
   I still have the same files_ and folders_ as before I ran the program_
 
 * I run ``makePythonTdd.sh`` with a project name this time
@@ -1414,7 +1427,6 @@ how to use variables in a shell script
 
   .. code-block:: shell
     :emphasize-lines: 22-41
-
 
     .
     ├── magic
@@ -1458,6 +1470,7 @@ how to use variables in a shell script
     │       ├── lib64 -> lib
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
+
 
 * I use echo_ instead of touch_ to add text for the first failing test to ``test_$PROJECT_NAME.py`` in ``makePythonTdd.sh``
 
@@ -1625,7 +1638,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I rename a file?<how to rename a file>`
 * :ref:`How can I run a Python Program?<how to run a Python program>`
 * :ref:`How can I test for failure?<test_failure>`
-* :ref:`How can I make a python package?<how to make a python package>`
+* :ref:`How can I make a Python package?<how to make a Python package>`
 * :ref:`How can I run tests manually?<how to run tests manually>`
 * :ref:`How can I run tests automatically?<how to run tests automatically>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
@@ -1633,8 +1646,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
 * :ref:`How can I document the Python programs my project needs?<how to write text to a file>`
-* :ref:`How can I install the Python programs my project needs from a file?<how to install python packages in a virtual environment>`
-* :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment>`
+* :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment>`
+* :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a shell script?<how to make a shell script>`

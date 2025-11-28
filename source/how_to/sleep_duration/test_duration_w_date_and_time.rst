@@ -222,7 +222,7 @@ green: make it pass
 refactor: make it better
 *********************************************************************************
 
-I want something that can read dates and times from timestamps. I search `python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
+I want something that can read dates and times from timestamps. I search `Python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
 
 .. code-block:: python
 
@@ -869,7 +869,7 @@ The challenge was to write a program that calculates the difference between a gi
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time <how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time>`
 * :ref:`test_duration_w_hours_and_minutes<how to measure sleep duration: test_duration_w_hours_and_minutes>`
-* `test_datetime_objects`_ where I used `python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<functions>` which I used to change a string_ to a `datetime.datetime`_ object
+* `test_datetime_objects`_ where I used `Python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<functions>` which I used to change a string_ to a `datetime.datetime`_ object
 * `test_get_datetime`_
 * :ref:`test_duration_w_date_and_time <how to measure sleep duration: test_duration_w_date_and_time>` where I used
 

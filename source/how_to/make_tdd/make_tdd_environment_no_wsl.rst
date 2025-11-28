@@ -14,7 +14,7 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_, first :ref:`I do it manually<how to make a python test driven development environment manually on Windows without Windows SubSystem Linux>` where I make all the `folders/directories`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
+This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_, first :ref:`I do it manually<how to make a python test driven development environment manually on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
 
 ----
 
@@ -257,7 +257,7 @@ this process can be repeated as many times as possible or until I get to my goal
 how to run tests manually on Windows without WSL
 #################################################################################################
 
-* I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
+* I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -363,7 +363,7 @@ red: make it fail
 
   Here is an explanation of the code in the file_
 
-  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `python standard library`_, this is what I am using for testing
+  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
     * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
@@ -406,9 +406,9 @@ red: make it fail
 
     NO TESTS RAN
 
-  I need to tell Python_ that the ``tests`` folder is a `python package`_, so it can find the tests
+  I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
 
-how to make a python package
+how to make a Python package
 --------------------------------------------------------------------------------------------
 
 * I use `New-Item`_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
@@ -606,7 +606,7 @@ how to run tests automatically on Windows without Windows SubSystem Linux
 
 I can use `pytest-watch`_ to run tests automatically. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `python package`_ like unittest_, it is not part of the `python standard library`_. I type it in the terminal_
+pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_. I type it in the terminal_
 
 .. code-block:: PowerShell
   :emphasize-lines: 1
@@ -626,7 +626,7 @@ how to make a virtual environment on Windows without WSL
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
-A `virtual environment`_ is a separate folder where I can install `python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
+A `virtual environment`_ is a separate folder where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
 It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
 
@@ -641,7 +641,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
   - ``python`` is the Python_ program_
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to make a `virtual environment`_ with a given name
+  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
   - ``.venv`` is the name I am giving for this `virtual environment`_
 
     .. TIP:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
@@ -735,7 +735,7 @@ the ``(.venv)`` on the far left of the command line in the terminal_ shows that 
 how to see what packages are installed in a virtual environment
 --------------------------------------------------------------------------------------------
 
-I use the `python package manager (pip)`_ to see what `python packages`_ are installed in the `virtual environment`_
+I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_
 
 .. code-block:: PowerShell
   :emphasize-lines: 1
@@ -751,11 +751,11 @@ the terminal_ shows
   pip     x.y
 
 - `pytest-watch`_ is not in the list
-- pip_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_, it is used to install `python packages`_
+- pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
 
 how to write text to a file on Windows without Windows SubSystem Linux
 --------------------------------------------------------------------------------------------
-I want to make a file where I can list all the `python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
+I want to make a file where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
 * I can write text to a file_ with the echo_ program_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
 
@@ -779,8 +779,8 @@ I want to make a file where I can list all the `python packages`_ for my project
 
   - ``>`` is an operator that is used to send output from a program_ to the given file_
   - `pytest-watch`_ is a Python_ program_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
-  - pytest_ is a `python package`_ like unittest_, that is used for testing
-  - ``requirements.txt`` is the name of a file_ where I can list `python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
+  - pytest_ is a `Python package`_ like unittest_, that is used for testing
+  - ``requirements.txt`` is the name of a file_ where I can list `Python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
 
 * I run tree_ to see what the project looks like now
 
@@ -814,7 +814,7 @@ I want to make a file where I can list all the `python packages`_ for my project
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
-how to install python packages in a virtual environment on Windows without WSL
+how to install Python packages in a virtual environment on Windows without WSL
 ---------------------------------------------------------------------------------------------------
 
 * I use pip_ to install `pytest-watch`_ from the requirements file
@@ -824,7 +824,7 @@ how to install python packages in a virtual environment on Windows without WSL
 
     python -m pip install --requirement requirements.txt
 
-  - ``--requirement`` is an option that can be passed to the ``install`` argument for `python packages`_ in a given file_
+  - ``--requirement`` is an option that can be passed to the ``install`` argument for `Python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
   the terminal_ shows a bunch or programs_ being installed, and when I do not have the latest version of pip_ installed, it shows
@@ -841,8 +841,8 @@ how to install python packages in a virtual environment on Windows without WSL
 
     python -m pip install --upgrade pip
 
-  - ``install`` is an argument given to pip_ to install a given `python package`_
-  - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `python package`_
+  - ``install`` is an argument given to pip_ to install a given `Python package`_
+  - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `Python package`_
   - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself to the latest version since I did not give a version number
 
   .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
@@ -852,7 +852,7 @@ how to install python packages in a virtual environment on Windows without WSL
 
       python -m pip install pytest-watch
 
-* I check what `python packages`_ are now installed in the `virtual environment`_
+* I check what `Python packages`_ are now installed in the `virtual environment`_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -1478,7 +1478,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I rename a file?<how to rename a file on Windows without WSL>`
 * :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows SubSystem Linux>`
 * :ref:`How can I test for failure?<test_failure>`
-* :ref:`How can I make a python package?<how to make a python package>`
+* :ref:`How can I make a Python package?<how to make a Python package>`
 * :ref:`How can I run tests manually?<how to run tests manually on Windows without WSL>`
 * :ref:`How can I run tests automatically?<how to run tests automatically on Windows without Windows SubSystem Linux>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
@@ -1487,8 +1487,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
 * :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
 * :ref:`How can I document the Python programs my project needs?<how to write text to a file on Windows without Windows SubSystem Linux>`
-* :ref:`How can I install the Python programs my project needs from a file?<how to install python packages in a virtual environment on Windows without WSL>`
-* :ref:`How can I install Python packages in a Virtual Environment?<how to install python packages in a virtual environment on Windows without WSL>`
+* :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment on Windows without WSL>`
+* :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment on Windows without WSL>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`

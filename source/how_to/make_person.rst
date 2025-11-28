@@ -720,7 +720,7 @@ green: make it pass
     def this_year():
         return None
 
-  datetime_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used for dates and times
+  datetime_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used for dates and times
 
 * I change the `return statement`_ in the ``this_year`` :ref:`function <functions>`
 
@@ -814,7 +814,7 @@ refactor: make it better
     import src.person
     import unittest
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `python standard library`_ that is used to make fake random numbers. I use it for the ``year_of_birth`` variable_
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers. I use it for the ``year_of_birth`` variable_
 
   .. code-block:: python
     :lineno-start: 13

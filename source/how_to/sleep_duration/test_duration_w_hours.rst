@@ -444,7 +444,7 @@ refactor: make it better
         self.assertEqual(help(str))
     ...
 
-  the terminal_ shows `python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like what I am looking for
+  the terminal_ shows `Python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like what I am looking for
 
   .. code-block:: python
 
@@ -525,7 +525,7 @@ refactor: make it better
 
     AssertionError: Lists differ: ['01:23'] != ['01', '23']
 
-  the `documentation <python documentation for strings>`_ showed that `str.split`_ takes in a separator. I want to see what happens when I pass in ``':'`` as the separator
+  the `documentation <Python documentation for strings>`_ showed that `str.split`_ takes in a separator. I want to see what happens when I pass in ``':'`` as the separator
 
   .. code-block:: python
 

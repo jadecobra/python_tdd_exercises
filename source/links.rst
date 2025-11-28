@@ -46,7 +46,7 @@
 .. _folder: directory_
 .. _folder/directory: directory_
 .. _folders: directory_
-.. _folders/directories: directory_
+.. _folders (directories): directory_
 .. _echo: https://man7.org/linux/man-pages/man1/echo.1.html
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _extend: more_on_lists_
@@ -98,14 +98,14 @@
 .. _programs: `computer program`_
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://github.com/joeyespo/pytest-watch
-.. _python package: https://docs.python.org/3/glossary.html#term-regular-package
-.. _python package manager (pip): pip_
-.. _python package manager: pip_
-.. _python packages: `python package`_
-.. _packages: `python package`_
-.. _python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
-.. _python's online documentation: https://docs.python.org/3/search.html
-.. _python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
+.. _Python package: https://docs.python.org/3/glossary.html#term-regular-package
+.. _Python package manager (pip): pip_
+.. _Python package manager: pip_
+.. _Python packages: `Python package`_
+.. _packages: `Python package`_
+.. _Python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
+.. _Python's online documentation: https://docs.python.org/3/search.html
+.. _Python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
 .. _pwd: touch aka_current_working_directory
 .. _raises: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
 .. _raise statement: raises_

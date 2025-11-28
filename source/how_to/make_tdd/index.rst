@@ -31,14 +31,14 @@ they cover the following
 - :ref:`how to make an empty file`
 - :ref:`test_failure`
 - :ref:`how to run tests manually`
-- :ref:`how to make a python package`
+- :ref:`how to make a Python package`
 - :ref:`how to rename a file`
 - :ref:`how to run tests automatically`
 - :ref:`how to make a virtual environment`
 - :ref:`how to activate a virtual environment`
 - :ref:`how to see what packages are installed in a virtual environment`
 - :ref:`how to write text to a file`
-- :ref:`how to install python packages in a virtual environment`
+- :ref:`how to install Python packages in a virtual environment`
 - :ref:`how to make a python test driven development environment automatically`
 - :ref:`how to exit the automated tests`
 - :ref:`how to deactivate a virtual environment`
