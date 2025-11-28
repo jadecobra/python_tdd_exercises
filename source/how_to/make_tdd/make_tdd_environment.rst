@@ -1273,7 +1273,7 @@ how to make a shell script run as a command
     mkdir: cannot create directory ‘magic’: File exists
     mkdir: cannot create directory ‘src’: File exists
     mkdir: cannot create directory ‘tests’: File exists
-    Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (x.y)
+    Requirement already satisfied: pip in ./.venv/lib/python3.XY/site-packages (x.y)
     Collecting pip
     ...
     ================================= test session starts ==================================
@@ -1344,7 +1344,7 @@ how to use variables in a shell script
     Try 'mkdir --help' for more information.
     mkdir: cannot create directory ‘src’: File exists
     mkdir: cannot create directory ‘tests’: File exists
-    Requirement already satisfied: pip in ./.venv/lib/python3.13/site-packages (XY.Z)
+    Requirement already satisfied: pip in ./.venv/lib/python3.XY/site-packages (XY.Z)
     Collecting pip
       ...
     ================================= test session starts ==================================

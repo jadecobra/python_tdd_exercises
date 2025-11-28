@@ -579,7 +579,7 @@ Some operations do not work if the objects_ are not of the same type_
 RED: make it fail
 #################################################################################
 
-I add a new test with a failing line
+I add a new test with a failing line in ``test_type_error.py``
 
 .. code-block:: python
   :lineno-start: 18
@@ -607,24 +607,28 @@ GREEN: make it pass
 I add the assertRaises_ :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 20
+  :emphasize-lines: 2-3
 
-  def test_type_error_w_objects_that_do_not_mix(self):
-      with self.assertRaises(TypeError):
-          None + 1
+      def test_type_error_w_objects_that_do_not_mix(self):
+          with self.assertRaises(TypeError):
+              None + 1
 
 the test passes
 
 REFACTOR: make it better
 #################################################################################
 
-* I add another line
+* I add another failing line to the test
 
   .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4
 
-    def test_type_error_w_objects_that_do_not_mix(self):
-        with self.assertRaises(TypeError):
-            None + 1
-        'text' + 0.1
+        def test_type_error_w_objects_that_do_not_mix(self):
+            with self.assertRaises(TypeError):
+                None + 1
+            'text' + 0.1
 
   the terminal_ shows TypeError_
 
@@ -632,28 +636,32 @@ REFACTOR: make it better
 
     TypeError: can only concatenate str (not "float") to str
 
-  I cannot add something that is not a string_ to a string_. I add assertRaises_
+  I cannot add something that is not a string_ to a string_. I use assertRaises_ to handle the :ref:`Exception<errors>`
 
   .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4-5
 
-    def test_type_error_w_objects_that_do_not_mix(self):
-        with self.assertRaises(TypeError):
-            None + 1
-        with self.assertRaises(TypeError):
-            'text' + 0.1
+        def test_type_error_w_objects_that_do_not_mix(self):
+            with self.assertRaises(TypeError):
+                None + 1
+            with self.assertRaises(TypeError):
+                'text' + 0.1
 
   the test passes
 
-* then I add one more line
+* I add another failing line
 
   .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 6
 
-    def test_type_error_w_objects_that_do_not_mix(self):
-        with self.assertRaises(TypeError):
-            None + 1
-        with self.assertRaises(TypeError):
-            'text' + 0.1
-        (1, 2, 3, 'n') - {1, 2, 3, 'n'}
+        def test_type_error_w_objects_that_do_not_mix(self):
+            with self.assertRaises(TypeError):
+                None + 1
+            with self.assertRaises(TypeError):
+                'text' + 0.1
+            (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
   the terminal_ shows TypeError_
 
@@ -664,16 +672,238 @@ REFACTOR: make it better
   I add assertRaises_
 
   .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 6-7
 
-    def test_type_error_w_objects_that_do_not_mix(self):
-        with self.assertRaises(TypeError):
-            None + 1
-        with self.assertRaises(TypeError):
-            'text' + 0.1
-        with self.assertRaises(TypeError):
-            (1, 2, 3, 'n') - {1, 2, 3, 'n'}
+        def test_type_error_w_objects_that_do_not_mix(self):
+            with self.assertRaises(TypeError):
+                None + 1
+            with self.assertRaises(TypeError):
+                'text' + 0.1
+            with self.assertRaises(TypeError):
+                (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-  the terminal_ shows all tests are passing.
+    # Exceptions Encountered
+
+  the terminal_ shows all tests are passing
+
+----
+
+*********************************************************************************
+test_calculator_raises_type_error
+*********************************************************************************
+
+requirements
+#################################################################################
+
+:ref:`the calculator<how to make a calculator>` is needed for this part
+
+* I exit the tests by pressing ``ctrl+c`` on the keyboard in the terminal_
+* I `change directory`_ to the ``calculator`` folder
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd calculator
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I run the tests with `pytest-watch`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    ======================== test session starts =========================
+    platform linux -- Python 3.X.7, pytest-9.0.1, pluggy-1.6.0
+    rootdir: /workspaces/pumping_python/pumping_python/calculator
+    collected 4 items
+
+    tests/test_calculator.py ....                                  [100%]
+
+    ========================= 4 passed in 0.01s ==========================
+
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+RED: make it fail
+#################################################################################
+
+I add a new failing test to show that I can NOT do an arithmetic_ operation with something that is not a number
+
+.. code-block:: python
+  :lineno-start: 33
+  :emphasize-lines: 12-14
+
+      def test_division(self):
+          while self.y == 0:
+              with self.assertRaises(ZeroDivisionError):
+                  src.calculator.divide(self.x, self.y)
+              self.y = a_random_number()
+          else:
+              self.assertEqual(
+                  src.calculator.divide(self.x, self.y),
+                  self.x/self.y
+              )
+
+      def test_calculator_raises_type_error(self):
+          src.calculator.add(self.x, None)
+
+
+  # Exceptions Encountered
+
+the terminal_ shows :ref:`TypeError`
+
+.. code-block:: shell
+
+  TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+
+GREEN: make it pass
+#################################################################################
+
+I add assertRaises_
+
+.. code-block:: python
+  :lineno-start: 44
+  :emphasize-lines: 2-3
+
+      def test_calculator_raises_type_error(self):
+          with self.assertRaises(TypeError):
+              src.calculator.add(self.x, None)
+
+the test passes
+
+REFACTOR: make it better
+#################################################################################
+
+* I add a failing line for :ref:`subtraction<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 4
+
+        def test_calculator_raises_type_error(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add(self.x, None)
+            src.calculator.subtract(self.x, None)
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+
+  I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 4-5
+
+        def test_calculator_raises_type_error(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(self.x, None)
+
+  the test passes
+
+* I add another failing line, this time for :ref:`multiplication<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 6
+
+        def test_calculator_raises_type_error(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(self.x, None)
+            src.calculator.multiply(self.x, None)
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: unsupported operand type(s) for *: 'int' and 'NoneType'
+
+  I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 6-7
+
+        def test_calculator_raises_type_error(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(self.x, None)
+
+  the test passes
+
+* I add another one for :ref:`division<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 8
+
+        def test_calculator_raises_type_error(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(self.x, None)
+            src.calculator.divide(self.x, None)
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: unsupported operand type(s) for /: 'int' and 'NoneType'
+
+  I add the assertRaises_ :ref:`method<functions>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 8-9
+
+        def test_calculator_raises_type_error(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.divide(self.x, None)
+
+
+    # Exceptions Encountered
+
+  the test passes
 
 ----
 
@@ -681,7 +911,10 @@ REFACTOR: make it better
 review
 *********************************************************************************
 
-I ran tests for TypeError_ with objects_ that are not callable_, :ref:`function<functions>` definitions and objects_ that do not mix.
+I ran tests for TypeError_ with
+* objects_ that are not callable_
+* :ref:`function<functions>` definitions and
+* objects_ that do not mix.
 
 Would you like to :ref:`test Lists?<lists>`
 
