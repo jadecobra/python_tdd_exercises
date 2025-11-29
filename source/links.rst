@@ -68,6 +68,7 @@
 .. _import statements: `import statement`_
 .. _index: more_on_lists_
 .. _int: https://docs.python.org/3/library/functions.html#int
+.. _isinstance: https://docs.python.org/3/library/functions.html#isinstance
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: int_
 .. _integers: int_

@@ -410,8 +410,8 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
         def test_addition(self):
-            x = a_random_number()
-            y = a_random_number()
+            random_x = a_random_number()
+            random_y = a_random_number()
 
   I now only need to change the range of random numbers for the test in one place
 
@@ -468,8 +468,8 @@ RED: make it fail
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
-            x = a_random_number()
-            y = a_random_number()
+            random_x = a_random_number()
+            random_y = a_random_number()
 
             self.assertEqual(
                 src.calculator.add(first_input, second_input),
@@ -477,8 +477,8 @@ RED: make it fail
             )
 
         def test_subtraction(self):
-            x = a_random_number()
-            y = a_random_number()
+            random_x = a_random_number()
+            random_y = a_random_number()
 
             self.assertEqual(
                 src.calculator.subtract(x, y),
@@ -580,10 +580,10 @@ REFACTOR: make it better
 
   .. code-block:: python
 
-    x = a_random_number()
-    y = a_random_number()
+    random_x = a_random_number()
+    random_y = a_random_number()
 
-  once in ``test_addition`` and again in ``test_subtraction``. I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests in ``test_calculator.py``
+  once in ``test_addition`` and again ``test_subtraction``. I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -591,8 +591,8 @@ REFACTOR: make it better
 
     class TestCalculator(unittest.TestCase):
 
-        x = a_random_number()
-        y = a_random_number()
+        random_x = a_random_number()
+        random_y = a_random_number()
 
         def test_addition(self):
 
@@ -603,10 +603,10 @@ REFACTOR: make it better
     :emphasize-lines: 3, 5
 
         def test_addition(self):
-            # x = a_random_number()
-            x = self.x
-            # y = a_random_number()
-            y = self.y
+            # random_x = a_random_number()
+            x = self.random_x
+            # random_y = a_random_number()
+            y = self.random_y
 
             self.assertEqual(
                 src.calculator.add(x, y),
@@ -620,17 +620,17 @@ REFACTOR: make it better
     :emphasize-lines: 3, 5
 
         def test_subtraction(self):
-            # x = a_random_number()
-            x = self.x
-            # y = a_random_number()
-            y = self.y
+            # random_x = a_random_number()
+            x = self.random_x
+            # random_y = a_random_number()
+            y = self.random_y
 
             self.assertEqual(
                 src.calculator.subtract(x, y),
                 x-y
             )
 
-  the terminal_ shows the tests are still passing. The ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.x`` and ``self.y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal_ shows the tests are still passing. The ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_x`` and ``self.random_y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the commented lines in ``test_addition``
 
@@ -638,8 +638,8 @@ REFACTOR: make it better
     :lineno-start: 15
 
         def test_addition(self):
-            x = self.x
-            y = self.y
+            x = self.random_x
+            y = self.random_y
 
   and do the same thing in ``test_subtraction``
 
@@ -647,8 +647,8 @@ REFACTOR: make it better
     :lineno-start: 24
 
         def test_subtraction(self):
-            x = self.x
-            y = self.y
+            x = self.random_x
+            y = self.random_y
 
 * I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly in ``test_addition``
 
@@ -657,8 +657,8 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
             self.assertEqual(
-                src.calculator.add(self.x, self.y),
-                self.x+self.y
+                src.calculator.add(self.random_x, self.random_y),
+                self.random_x+self.random_y
             )
 
   the test is still green
@@ -670,8 +670,8 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
             self.assertEqual(
-                src.calculator.subtract(self.x, self.y),
-                self.x-self.y
+                src.calculator.subtract(self.random_x, self.random_y),
+                self.random_x-self.random_y
             )
 
 * I remove the ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>` from ``test_addition`` and ``test_subtraction`` since they are no longer needed
@@ -681,19 +681,19 @@ REFACTOR: make it better
 
     class TestCalculator(unittest.TestCase):
 
-        x = a_random_number()
-        y = a_random_number()
+        random_x = a_random_number()
+        random_y = a_random_number()
 
         def test_addition(self):
             self.assertEqual(
-                src.calculator.add(self.x, self.y),
-                self.x+self.y
+                src.calculator.add(self.random_x, self.random_y),
+                self.random_x+self.random_y
             )
 
         def test_subtraction(self):
             self.assertEqual(
-                src.calculator.subtract(self.x, self.y),
-                self.x-self.y
+                src.calculator.subtract(self.random_x, self.random_y),
+                self.random_x-self.random_y
             )
 
 
@@ -730,14 +730,14 @@ I add a failing test for multiplication in ``test_calculator.py``
 
       def test_subtraction(self):
           self.assertEqual(
-              src.calculator.subtract(self.x, self.y),
-              self.x-self.y
+              src.calculator.subtract(self.random_x, self.random_y),
+              self.random_x-self.random_y
           )
 
       def test_multiplication(self):
           self.assertEqual(
-              src.calculator.multiply(self.x, self.y),
-              self.x*self.y
+              src.calculator.multiply(self.random_x, self.random_y),
+              self.random_x*self.random_y
           )
 
   # TODO
@@ -793,14 +793,14 @@ time for division. I add a new test to ``test_calculator.py``
 
       def test_multiplication(self):
           self.assertEqual(
-              src.calculator.multiply(self.x, self.y),
-              self.x*self.y
+              src.calculator.multiply(self.random_x, self.random_y),
+              self.random_x*self.random_y
           )
 
       def test_division(self):
           self.assertEqual(
-              src.calculator.divide(self.x, self.y),
-              self.x/self.y
+              src.calculator.divide(self.random_x, self.random_y),
+              self.random_x/self.random_y
           )
 
   # TODO
@@ -877,11 +877,11 @@ I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_
   :emphasize-lines: 2, 4-7
 
       def test_division(self):
-          src.calculator.divide(self.x, 0)
+          src.calculator.divide(self.random_x, 0)
 
           # self.assertEqual(
-          #    src.calculator.divide(self.x, self.y),
-          #    self.x/self.y
+          #    src.calculator.divide(self.random_x, self.random_y),
+          #    self.random_x/self.random_y
           # )
 
 the terminal_ shows my expectation with a failure for any value of ``x`` since ``y`` is ``0``
@@ -910,11 +910,11 @@ GREEN: make it pass
 
         def test_division(self):
             with self.assertRaises(AssertionError):
-                src.calculator.divide(self.x, 0)
+                src.calculator.divide(self.random_x, 0)
 
             # self.assertEqual(
-            #   src.calculator.divide(self.x, self.y),
-            #   self.x/self.y
+            #   src.calculator.divide(self.random_x, self.random_y),
+            #   self.random_x/self.random_y
             # )
 
   because I used the wrong :ref:`Exception<errors>` the terminal_ still shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
@@ -931,14 +931,14 @@ GREEN: make it pass
 
         def test_division(self):
             with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.x, 0)
+                src.calculator.divide(self.random_x, 0)
 
-  the test passes, showing that ``src.calculator.divide(self.x, 0)`` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  the test passes, showing that ``src.calculator.divide(self.random_x, 0)`` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 REFACTOR: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I still have a problem because ``self.y`` can sometimes be ``0``, I use a `while statement`_ to make a never ending loop to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
+* I still have a problem because ``self.random_y`` can sometimes be ``0``, I use a `while statement`_ to make a never ending loop to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -946,26 +946,26 @@ REFACTOR: make it better
 
         def test_division(self):
             with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.x, 0)
+                src.calculator.divide(self.random_x, 0)
 
-            while self.y == 0:
-                self.y = a_random_number()
+            while self.random_y == 0:
+                self.random_random_y = a_random_number()
             else:
                 self.assertEqual(
-                    src.calculator.divide(self.x, self.y),
-                    self.x/self.y
+                    src.calculator.divide(self.random_x, self.random_y),
+                    self.random_x/self.random_y
                 )
 
   here is what it does
 
-  - when the value of ``self.y`` is ``0``
+  - when the value of ``self.random_y`` is ``0``
 
-    * it points ``self.y`` to the result of calling ``a_random_number()``
-    * then it checks if the value of ``self.y`` is ``0`` again. The process happens again non stop until ``self.y`` is not ``0``
+    * it points ``self.random_y`` to the result of calling ``a_random_number()``
+    * then it checks if the value of ``self.random_y`` is ``0`` again. The process happens again non stop until ``self.random_y`` is not ``0``
 
-  - when the value of ``self.y`` is not ``0``, it leaves the while_ loop and runs the code in the ``else`` block
+  - when the value of ``self.random_y`` is not ``0``, it leaves the while_ loop and runs the code in the ``else`` block
 
-* Since ``self.y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
+* Since ``self.random_y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
 
   .. code-block:: python
     :lineno-start: 33
@@ -973,18 +973,18 @@ REFACTOR: make it better
 
         def test_division(self):
             with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.x, 0)
+                src.calculator.divide(self.random_x, 0)
 
-            while self.y == 0:
-                src.calculator.divide(self.x, self.y)
-                self.y = a_random_number()
+            while self.random_y == 0:
+                src.calculator.divide(self.random_x, self.random_y)
+                self.random_random_y = a_random_number()
             else:
                 self.assertEqual(
-                    src.calculator.divide(self.x, self.y),
-                    self.x/self.y
+                    src.calculator.divide(self.random_x, self.random_y),
+                    self.random_x/self.random_y
                 )
 
-  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) in the :ref:`editor<2 editors>` a few times to run the tests, and when ``self.y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) in the :ref:`editor<2 editors>` a few times to run the tests, and when ``self.random_y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -998,16 +998,16 @@ REFACTOR: make it better
 
         def test_division(self):
             with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.x, 0)
+                src.calculator.divide(self.random_x, 0)
 
-            while self.y == 0:
+            while self.random_y == 0:
                 with self.assertRaises(ZeroDivisionError):
-                      src.calculator.divide(self.x, self.y)
-                self.y = a_random_number()
+                      src.calculator.divide(self.random_x, self.random_y)
+                self.random_random_y = a_random_number()
             else:
                 self.assertEqual(
-                    src.calculator.divide(self.x, self.y),
-                    self.x/self.y
+                    src.calculator.divide(self.random_x, self.random_y),
+                    self.random_x/self.random_y
                 )
 
 * I no longer need the first assertRaises_ and remove it from the test because it is now part of the while_ loop
@@ -1016,14 +1016,14 @@ REFACTOR: make it better
     :lineno-start: 33
 
         def test_division(self):
-            while self.y == 0:
+            while self.random_y == 0:
                 with self.assertRaises(ZeroDivisionError):
-                    src.calculator.divide(self.x, self.y)
-                self.y = a_random_number()
+                    src.calculator.divide(self.random_x, self.random_y)
+                self.random_random_y = a_random_number()
             else:
                 self.assertEqual(
-                    src.calculator.divide(self.x, self.y),
-                    self.x/self.y
+                    src.calculator.divide(self.random_x, self.random_y),
+                    self.random_x/self.random_y
                 )
 
 

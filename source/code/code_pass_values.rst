@@ -17,7 +17,7 @@ the code in ``tests/test_telephone.py`` from :ref:`how to pass values`
 solution
 *********************************************************************************
 
-the solution in in ``telephone.py`` from :ref:`how to pass values`
+the solution in ``telephone.py`` from :ref:`how to pass values`
 
 .. literalinclude:: solutions/telephone.py
   :language: python

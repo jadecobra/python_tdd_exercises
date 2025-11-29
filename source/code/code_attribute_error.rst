@@ -7,7 +7,7 @@ AttributeError: tests and solutions
 tests
 *********************************************************************************
 
-the code in ``tests/test_attribute_error.py`` from :ref:`AttributeError`
+the code in ``attribute_error/tests/test_attribute_error.py`` from :ref:`AttributeError`
 
 .. literalinclude:: tests/test_attribute_error.py
   :language: python

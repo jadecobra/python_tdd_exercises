@@ -1497,7 +1497,7 @@ REFACTOR: make it better
             # year_of_birth = random.randint(
             #    this_year()-120, this_year()
             # )
-            year_of_birth = self.year_of_birth
+            year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 ...
@@ -1516,7 +1516,7 @@ REFACTOR: make it better
             # year_of_birth = random.randint(
             #    this_year()-120, this_year()
             # )
-            year_of_birth = self.year_of_birth
+            year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 ...
@@ -1534,7 +1534,7 @@ REFACTOR: make it better
                 'doe', 'smith', 'blow', 'public',
             ))
             sex = random.choice(('F', 'M'))
-            year_of_birth = self.year_of_birth
+            year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 ...
@@ -1546,7 +1546,7 @@ REFACTOR: make it better
 
         def test_function_w_default_keyword_arguments(self):
             first_name = self.first_name
-            year_of_birth = self.year_of_birth
+            year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 ...
@@ -1565,20 +1565,20 @@ REFACTOR: make it better
                 'doe', 'smith', 'blow', 'public',
             ))
             sex = random.choice(('F', 'M'))
-            # year_of_birth = self.year_of_birth
+            # year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
                     last_name=last_name,
                     sex=sex,
-                    year_of_birth=self.year_of_birth,
+                    year_of_birth=self.random_year_of_birth,
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name=last_name,
                     sex=sex,
-                    age=this_year()-self.year_of_birth,
+                    age=this_year()-self.random_year_of_birth,
                 )
             )
 
@@ -1590,18 +1590,18 @@ REFACTOR: make it better
 
         def test_function_w_default_keyword_arguments(self):
             # first_name = self.first_name
-            # year_of_birth = self.year_of_birth
+            # year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
-                    year_of_birth=self.year_of_birth,
+                    year_of_birth=self.random_year_of_birth,
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name='doe',
                     sex='M',
-                    age=this_year()-self.year_of_birth,
+                    age=this_year()-self.random_year_of_birth,
                 )
             )
 
@@ -1630,13 +1630,13 @@ REFACTOR: make it better
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
-                    year_of_birth=self.year_of_birth
+                    year_of_birth=self.random_year_of_birth
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name='doe',
                     sex='M',
-                    age=this_year()-self.year_of_birth,
+                    age=this_year()-self.random_year_of_birth,
                 )
             )
 
@@ -1702,7 +1702,7 @@ REFACTOR: make it better
             self.first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
-            self.year_of_birth = random.randint(
+            self.random_year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
 
@@ -1711,7 +1711,7 @@ REFACTOR: make it better
 
   and both tests are green again!
 
-  ``self.first_name`` and ``self.year_of_birth`` are given random values before the first test, then given random values again before the second test. That was a lot, but we got through it.
+  ``self.first_name`` and ``self.random_year_of_birth`` are given random values before the first test, then given random values again before the second test. That was a lot, but we got through it.
 
 ----
 

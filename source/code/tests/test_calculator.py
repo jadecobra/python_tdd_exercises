@@ -9,36 +9,36 @@ def a_random_number():
 
 class TestCalculator(unittest.TestCase):
 
-    x = a_random_number()
-    y = a_random_number()
+    random_x = a_random_number()
+    random_y = a_random_number()
 
     def test_addition(self):
         self.assertEqual(
-            src.calculator.add(self.x, self.y),
-            self.x+self.y
+            src.calculator.add(self.random_x, self.random_y),
+            self.random_x+self.random_y
         )
 
     def test_subtraction(self):
         self.assertEqual(
-            src.calculator.subtract(self.x, self.y),
-            self.x-self.y
+            src.calculator.subtract(self.random_x, self.random_y),
+            self.random_x-self.random_y
         )
 
     def test_multiplication(self):
         self.assertEqual(
-            src.calculator.multiply(self.x, self.y),
-            self.x*self.y
+            src.calculator.multiply(self.random_x, self.random_y),
+            self.random_x*self.random_y
         )
 
     def test_division(self):
-        while self.y == 0:
+        while self.random_y == 0:
             with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.x, self.y)
-            self.y = a_random_number()
+                src.calculator.divide(self.random_x, self.random_y)
+            self.random_random_y = a_random_number()
         else:
             self.assertEqual(
-                src.calculator.divide(self.x, self.y),
-                self.x/self.y
+                src.calculator.divide(self.random_x, self.random_y),
+                self.random_x/self.random_y
             )
 
 

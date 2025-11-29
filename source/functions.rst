@@ -1066,7 +1066,7 @@ I can also make functions_ that take any number of positional and keyword argume
 RED: make it fail
 #################################################################################
 
-I add a a new test to ``test_functions.py``
+I add a new test to ``test_functions.py``
 
 .. code-block:: python
   :lineno-start: 67

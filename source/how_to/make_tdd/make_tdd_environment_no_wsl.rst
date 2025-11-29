@@ -558,7 +558,7 @@ I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on l
 
           self.assertFalse(False)
 
-I run the test again in the terminal_
+I run the test again the terminal_
 
 .. code-block:: PowerShell
   :emphasize-lines: 1
@@ -1333,7 +1333,7 @@ how to use variables in a PowerShell script
     :language: PowerShell
     :emphasize-lines: 9-20
 
-* I try the program_ again in the terminal_ with a different name for the project
+* I try the program_ again the terminal_ with a different name for the project
 
   .. code-block:: PowerShell
     :emphasize-lines: 1

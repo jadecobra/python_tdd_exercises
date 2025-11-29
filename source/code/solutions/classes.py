@@ -42,11 +42,11 @@ class Person(object):
     ):
         self.first_name = first_name
         self.last_name = last_name
-        self.year_of_birth = year_of_birth
+        self.random_year_of_birth = year_of_birth
         return None
 
     def get_age(self):
-        return this_year() - self.year_of_birth
+        return this_year() - self.random_year_of_birth
 
     def introduce(self):
         return (

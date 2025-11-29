@@ -14,7 +14,7 @@ class TestPerson(unittest.TestCase):
         self.first_name = random.choice((
             'jane', 'joe', 'john', 'person',
         ))
-        self.year_of_birth = random.randint(
+        self.random_year_of_birth = random.randint(
             this_year()-120, this_year()
         )
 
@@ -29,13 +29,13 @@ class TestPerson(unittest.TestCase):
                 first_name=self.first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=self.year_of_birth,
+                year_of_birth=self.random_year_of_birth,
             ),
             dict(
                 first_name=self.first_name,
                 last_name=last_name,
                 sex=sex,
-                age=this_year()-self.year_of_birth,
+                age=this_year()-self.random_year_of_birth,
             )
         )
 
@@ -43,13 +43,13 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(
             src.person.factory(
                 first_name=self.first_name,
-                year_of_birth=self.year_of_birth,
+                year_of_birth=self.random_year_of_birth,
             ),
             dict(
                 first_name=self.first_name,
                 last_name='doe',
                 sex='M',
-                age=this_year()-self.year_of_birth,
+                age=this_year()-self.random_year_of_birth,
             )
         )
 
