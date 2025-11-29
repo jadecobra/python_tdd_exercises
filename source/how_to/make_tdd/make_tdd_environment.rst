@@ -48,12 +48,12 @@ Open a terminal_ then type this to update the `Linux package manager`_
 
   sudo apt update
 
-  ..TIP:: you can do a full upgrade if you want
+..TIP:: you can do a full upgrade if you want
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+.. code-block:: shell
+  :emphasize-lines: 1
 
-    sudo apt full-upgrade --yes
+  sudo apt full-upgrade --yes
 
 type this in the terminal_ to install Python_
 
@@ -1640,8 +1640,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a shell script?<how to make a shell script>`
-* :ref:`What is a :ref:`variable<test_attribute_error_w_variables>`?<how to use variables in a shell script>`
-* :ref:`How can I use a :ref:`variable<test_attribute_error_w_variables>` in a shell script<how to use variables in a shell script>`
+* :ref:`What is a variable?<how to use variables in a shell script>`
+* :ref:`How can I use a variable in a shell script<how to use variables in a shell script>`
 * :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
 * :ref:`How can I run a shell script<how to run a shell script>`
 * :ref:`What is the Test Driven Development Cycle?<test_failure>`

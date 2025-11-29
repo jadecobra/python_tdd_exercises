@@ -22,3 +22,5 @@ reviews
   "Your genuine enthusiasm and passion for Python programming shone through in every class. What stood out was your patience and willingness to foster an interactive learning environment where we could freely discuss and delve into the concepts we were studying. Moreover, I greatly appreciate your approach of challenging us to think critically rather than merely providing us with answers, which has been instrumental in our growth. Thank you so much." - George Amaka
 
 ----
+
+`See more reviews on TrustPilot <https://www.trustpilot.com/review/pumpingpython.com>`_

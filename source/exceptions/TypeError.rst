@@ -908,6 +908,274 @@ REFACTOR: make it better
 ----
 
 *********************************************************************************
+how to make the calculator check if its input is correct
+*********************************************************************************
+
+I want to add a :ref:`condition<booleans>` to the calculator to make sure that what the :ref:`functions` receive are numbers. I can do this with TypeError_
+
+* I go to the :ref:`explorer<explorer on left>` in the `Integrated Development Environment (IDE)`_ to open the ``calculator`` folder_
+* I open the ``src`` folder and click on ``calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+RED: make it fail
+#################################################################################
+
+I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`add function<test_addition>` in ``calculator.py``
+
+.. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 2-
+
+  def add(input_1, input_2):
+      try:
+          return input_1 + input_2
+      except TypeError:
+          return 'Please give only numbers as input'
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: TypeError not raised
+
+because the ``add`` :ref:`function<functions>` now sends a message when :ref:`TypeError` is raised
+
+GREEN: make it pass
+#################################################################################
+
+I change the assertRaises_ to assertEqual_ in ``test_calculator.py``
+
+.. code-block:: python
+  :lineno-start: 44
+  :emphasize-lines: 2-5
+
+  def test_calculator_raises_type_error(self):
+      self.assertEqual(
+          src.calculator.add(self.x, None),
+          'Please give only numbers as input'
+      )
+      with self.assertRaises(TypeError):
+          src.calculator.subtract(self.x, None)
+      with self.assertRaises(TypeError):
+          src.calculator.multiply(self.x, None)
+      with self.assertRaises(TypeError):
+          src.calculator.divide(self.x, None)
+
+the test passes
+
+REFACTOR: make it better
+#################################################################################
+
+* I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`divide function<test_division>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2-6
+
+    def divide(input_1, input_2):
+        try:
+            return input_1 / input_2
+        except TypeError:
+            return 'Please give only numbers as input'
+
+
+    def add(input_1, input_2):
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: TypeError not raised
+
+  because the ``add`` :ref:`function<functions>` now sends a message when :ref:`TypeError` is raised
+
+* I change assertRaises_ to assertEqual_ in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 6-9
+
+        def test_calculator_raises_type_error(self):
+            self.assertEqual(
+                src.calculator.add(self.x, None),
+                'Please give only numbers as input'
+            )
+            self.assertEqual(
+                src.calculator.divide(self.x, None),
+                'Please give only numbers as input'
+            )
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(self.x, None)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(self.x, None)
+
+* I have the same :ref:`exception handler<how to use try...except...else>` in both :ref:`functions` in ``calculator.py``. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I can write a :ref:`function` that will handle TypeError_. The problem will be how it handles the lines that change
+
+  - ``result = input_1 + input_2``
+  - ``result = input_1 / input_2``
+
+  I add a new :ref:`function<functions>` to ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-7
+
+    def handle_type_error(function):
+        def wrapper(input_1, input_2):
+            try:
+                return function(input_1, input_2)
+            except TypeError:
+                return 'Please give only numbers as input'
+        return wrapper
+
+
+    def subtract(input_1, input_2):
+
+  this new :ref:`function<functions>` (``handle_type_error``) takes a :ref:`function<functions>` as input. It has a :ref:`function<functions>` inside it named ``wrapper``, which runs the input :ref:`function` and handles :ref:`TypeError` when raised
+
+* I use the new :ref:`function<functions>` as a wrapper for the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 8-10
+
+    def divide(input_1, input_2):
+        try:
+            return input_1 / input_2
+        except TypeError:
+            return 'Please give only numbers as input'
+
+
+    @handle_type_error
+    def add(input_1, input_2):
+        return input_1 + input_2
+
+  the test is still green
+
+* I wrap the :ref:`divide function<test_division>` as well
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 1-3
+
+    @handle_type_error
+    def divide(input_1, input_2):
+        return input_1 / input_2
+
+
+    @handle_type_error
+    def add(input_1, input_2):
+        return input_1 + input_2
+
+  the test is still green
+
+* I use the wrapper with the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 1-3
+
+    @handle_type_error
+    def multiply(input_1, input_2):
+        return input_1 * input_2
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: TypeError not raised
+
+  I change the assertRaises_ to assertEqual_ in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 10-13
+
+        def test_calculator_raises_type_error(self):
+            self.assertEqual(
+                src.calculator.add(self.x, None),
+                'Please give only numbers as input'
+            )
+            self.assertEqual(
+                src.calculator.divide(self.x, None),
+                'Please give only numbers as input'
+            )
+            self.assertEqual(
+                src.calculator.multiply(self.x, None),
+                'Please give only numbers as input'
+            )
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(self.x, None)
+
+  the test passes
+
+* I add the wrapper to the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 1
+
+    @handle_type_error
+    def subtract(input_1, input_2):
+        return input_1 - input_2
+
+
+    @handle_type_error
+    def multiply(input_1, input_2):
+        return input_1 * input_2
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: TypeError not raised
+
+  I change assertRaises_ to assertEqual_ in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 14-17
+
+        def test_calculator_raises_type_error(self):
+            self.assertEqual(
+                src.calculator.add(self.x, None),
+                'Please give only numbers as input'
+            )
+            self.assertEqual(
+                src.calculator.divide(self.x, None),
+                'Please give only numbers as input'
+            )
+            self.assertEqual(
+                src.calculator.multiply(self.x, None),
+                'Please give only numbers as input'
+            )
+            self.assertEqual(
+                src.calculator.subtract(self.x, None),
+                'Please give only numbers as input'
+            )
+
+
+    # Exceptions Encountered
+
+  the test passes
+
+* I change the name of the test to be more descriptive
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 1
+
+        def test_calculator_sends_a_message_when_inputs_are_not_numbers(self):
+            self.assertEqual(
+
+  The ``calculator`` now uses :ref:`TypeError` to send a message when bad inputs are passed, but there is a case I have not considered
+
+* Python_ allows using the ``+`` operator with strings_ but it does not work for the other arithmetic_ operations
+
+  .. code-block:: python
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 

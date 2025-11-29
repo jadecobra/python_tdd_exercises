@@ -35,8 +35,8 @@ how to make a python test driven development environment review
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a shell script?<how to make a shell script>`
-* :ref:`What is a :ref:`variable<test_attribute_error_w_variables>`?<how to use variables in a shell script>`
-* :ref:`How can I use a :ref:`variable<test_attribute_error_w_variables>` in a shell script<how to use variables in a shell script>`
+* :ref:`What is a variable?<how to use variables in a shell script>`
+* :ref:`How can I use a variable?<how to use variables in a shell script>`
 * :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
 * :ref:`How can I run a shell script<how to run a shell script>`
 * :ref:`What is the Test Driven Development Cycle?<test_failure>`
@@ -70,8 +70,8 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`How can I use a :ref:`variable<test_attribute_error_w_variables>` in a PowerShell script<how to use variables in a PowerShell script>`
-* :ref:`What is a :ref:`variable<test_attribute_error_w_variables>`?<how to use variables in a PowerShell script>`
+* :ref:`How can I use a variable?<how to use variables in a PowerShell script>`
+* :ref:`What is a variable?<how to use variables in a PowerShell script>`
 * :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
 * :ref:`What is the Test Driven Development Cycle?<test_failure>`
 
