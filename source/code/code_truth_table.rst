@@ -7,7 +7,7 @@ truth table: tests and solutions
 tests
 *********************************************************************************
 
-the code in ``tests/test_truth_table.py`` from :ref:`booleans: truth table`
+the code in ``truth_table/tests/test_truth_table.py`` from :ref:`booleans: truth table`
 
 .. literalinclude:: tests/test_truth_table.py
   :language: python
@@ -17,7 +17,7 @@ the code in ``tests/test_truth_table.py`` from :ref:`booleans: truth table`
 solutions
 *********************************************************************************
 
-the solutions in ``truth_table.py`` from :ref:`booleans: truth table`
+the solutions in ``truth_table/src/truth_table.py`` from :ref:`booleans: truth table`
 
 .. literalinclude:: solutions/truth_table.py
   :language: python

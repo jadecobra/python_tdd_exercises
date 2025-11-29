@@ -6,7 +6,7 @@ data structures: list comprehensions: tests and solutions
 tests
 *********************************************************************************
 
-the code in ``tests/test_list_comprehensions.py`` from :ref:`lists: list comprehensions`
+the code in ``list_comprehensions/tests/test_list_comprehensions.py`` from :ref:`lists: list comprehensions`
 
 .. literalinclude:: tests/test_list_comprehensions.py
   :language: python
@@ -16,7 +16,7 @@ the code in ``tests/test_list_comprehensions.py`` from :ref:`lists: list compreh
 solutions
 *********************************************************************************
 
-the solutions in ``list_comprehensions.py`` from :ref:`lists: list comprehensions`
+the solutions in ``list_comprehensions/src/list_comprehensions.py`` from :ref:`lists: list comprehensions`
 
 .. literalinclude:: solutions/list_comprehensions.py
   :language: python

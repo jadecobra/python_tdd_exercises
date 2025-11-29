@@ -7,7 +7,7 @@ how to make a calculator: tests and solutions
 tests
 *********************************************************************************
 
-the code in ``tests/test_calculator.py`` from :ref:`how to make a calculator`
+the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator`
 
 .. literalinclude:: tests/test_calculator.py
   :language: python
@@ -17,7 +17,7 @@ the code in ``tests/test_calculator.py`` from :ref:`how to make a calculator`
 solutions
 *********************************************************************************
 
-the solutions in ``calculator.py`` from :ref:`how to make a calculator`
+the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator`
 
 .. literalinclude:: solutions/calculator.py
   :language: python

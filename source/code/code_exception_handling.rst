@@ -7,7 +7,7 @@ how to handle Exceptions: tests and solutions
 tests
 *********************************************************************************
 
-the code in ``tests/test_exceptions.py`` from :ref:`how to handle Exceptions in programs`
+the code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions in programs`
 
 .. literalinclude:: tests/test_exceptions.py
   :language: python
@@ -17,7 +17,7 @@ the code in ``tests/test_exceptions.py`` from :ref:`how to handle Exceptions in 
 solutions
 *********************************************************************************
 
-the solutions in ``exceptions.py`` from :ref:`how to handle Exceptions in programs`
+the solutions in ``exceptions/src/exceptions.py`` from :ref:`how to handle Exceptions in programs`
 
 .. literalinclude:: solutions/exceptions.py
   :language: python

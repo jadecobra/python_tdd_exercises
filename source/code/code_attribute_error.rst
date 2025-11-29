@@ -17,7 +17,7 @@ the code in ``attribute_error/tests/test_attribute_error.py`` from :ref:`Attribu
 solutions
 *********************************************************************************
 
-the solutions in ``module.py`` from :ref:`AttributeError`
+the solutions in ``attribute_error/src/attribute_error.py`` from :ref:`AttributeError`
 
 .. literalinclude:: solutions/attribute_error.py
   :language: python
