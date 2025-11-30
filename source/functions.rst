@@ -757,7 +757,7 @@ REFACTOR: make it better
 
   the test passes. `Keyword Arguments`_ allow the input to be passed in any order
 
-* I can still call the function_ without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`, I add an assertion_ to show this
+* I can still call the function_ without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`, I add an :ref:`assertion<AssertionError>` to show this
 
   .. code-block:: python
     :lineno-start: 43
@@ -1017,7 +1017,7 @@ REFACTOR: make it better
 
   Calling the function_ without ``last_name`` - ``w_default_arguments('jane')`` - would be the same as calling it with the default value - ``w_default_arguments('jane', last_name='doe')``
 
-* I add another assertion_ to show that I can still call the function_ with different inputs
+* I add another :ref:`assertion<AssertionError>` to show that I can still call the function_ with different inputs
 
   .. code-block:: python
     :lineno-start: 62
@@ -1284,7 +1284,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I add another assertion_ to see what happens when I call the function_ without :ref:`positional arguments<test_functions_w_positional_arguments>`
+* I add another :ref:`assertion<AssertionError>` to see what happens when I call the function_ without :ref:`positional arguments<test_functions_w_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 79
@@ -1321,7 +1321,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I add one more assertion_ to see what happens when I call the function_ with no inputs
+* I add one more :ref:`assertion<AssertionError>` to see what happens when I call the function_ with no inputs
 
   .. code-block:: python
     :lineno-start: 83

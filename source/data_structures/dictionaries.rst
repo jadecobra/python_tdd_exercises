@@ -1,5 +1,5 @@
 .. meta::
-  :description: Master Python dictionaries with TDD! Learn key-value pairs, methods, and testing techniques in this hands-on guide. Start coding now!
+  :description: Master Python dictionaries with TDD! Learn :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s, methods, and testing techniques in this hands-on guide. Start coding now!
   :keywords: Jacob Itegboje, Python dictionaries, Test-Driven Development, Python programming, data structures, unit testing, Python tutorial, coding guide
 
 .. include:: ../links.rst
@@ -20,9 +20,9 @@ dictionaries
 
 ----
 
-A dictionary_ also known as a Mapping contains key-value pairs, the values can be any Python_ :ref:`object<classes>`. I will add tests for the keys to see which :ref:`data types<data structures>` I can use.
+A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s, the values can be any Python_ :ref:`object<classes>`. I will add tests for the keys to see which of the Python_ basic :ref:`data types<data structures>` I can use.
 
-I think this is the most important :ref:`data structure<data structures>` to know because they can hold all the other :ref:`data structures`. In programming I have had to work with JSON_ which I can read and write as dictionaries_ in Python
+I think this is the most important :ref:`data structure<data structures>` to know because they can hold all the other :ref:`data structures`. In programming I have had to work with JSON_ which I can read and write as dictionaries_
 
 *********************************************************************************
 requirements
@@ -75,10 +75,11 @@ test_making_a_dictionary
 RED: make it fail
 #################################################################################
 
-I change ``test_failure`` to ``test_making_a_dictionary``
+I change ``test_failure`` to ``test_making_a_dictionary`` then add an assertion_
 
 .. code-block:: python
   :linenos:
+  :emphasize-lines: 6-7
 
   import unittest
 
@@ -100,10 +101,16 @@ GREEN: make it pass
 I change the expectation to match
 
 .. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 2
 
-  self.assertEqual(dict(), {})
+      def test_making_a_dictionary(self):
+          self.assertEqual(dict(), {})
 
-the test passes. These are two ways to make an empty dictionary_
+the test passes. These are two ways to make an empty dictionary_ one
+
+* with the constructor_ - ``dict()`` and with
+* curly braces - ``{}``
 
 REFACTOR: make it better
 #################################################################################
@@ -111,10 +118,12 @@ REFACTOR: make it better
 * I add another :ref:`assertion<AssertionError>`, this time with input
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :lineno-start: 6
+    :emphasize-lines: 3
 
-    self.assertEqual(dict(), {})
-    self.assertEqual(dict(0), {})
+        def test_making_a_dictionary(self):
+            self.assertEqual(dict(), {})
+            self.assertEqual(dict(0), {})
 
   the terminal_ shows :ref:`TypeError`
 
@@ -125,6 +134,7 @@ REFACTOR: make it better
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_dictionaries.py``
 
   .. code-block:: python
+    :lineno-start: 11
     :emphasize-lines: 3
 
     # Exceptions Encountered
@@ -134,10 +144,11 @@ REFACTOR: make it better
 * I change the value to a tuple_ since it is an iterable_
 
   .. code-block:: python
+    :lineno-start: 7
     :emphasize-lines: 2
 
-    self.assertEqual(dict(), {})
-    self.assertEqual(dict((0, 1)), {})
+            self.assertEqual(dict(), {})
+            self.assertEqual(dict((0, 1)), {})
 
   the terminal_ shows :ref:`TypeError`
 
@@ -145,13 +156,14 @@ REFACTOR: make it better
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
-* I try a keyword argument
+* I try a :ref:`keyword argument<test_functions_w_keyword_arguments>`
 
   .. code-block:: python
+    :lineno-start: 7
     :emphasize-lines: 2
 
-    self.assertEqual(dict(), {})
-    self.assertEqual(dict(key='value'), {})
+            self.assertEqual(dict(), {})
+            self.assertEqual(dict(key='value'), {})
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -165,7 +177,9 @@ REFACTOR: make it better
 
     self.assertEqual(dict(key='value'), {'key': 'value'})
 
-  the terminal_ shows green again. I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``) and I used a string_ as a key in this test
+  the test passes.
+
+I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``) and I used a string_ as a :ref:`key<test_keys_of_a_dictionary>` in this test. Next I test the Python_ basic :ref:`data types<data structures>` to see which ones I can use as keys
 
 ----
 
@@ -176,15 +190,19 @@ test_making_a_dictionary_w_none_as_a_key
 RED: make it fail
 #################################################################################
 
-I add a test to see if I can use :ref:`None` as a key in a dictionary_
+I add a test to see if I can use :ref:`None` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 .. code-block:: python
+  :lineno-start: 8
+  :emphasize-lines: 3-4
 
-  def test_making_a_dictionary(self):
-      ...
+          self.assertEqual(dict(key='value'), {'key': 'value'})
 
-  def test_making_a_dictionary_w_none_as_a_key(self):
-      self.assertEqual({None: 'boom'}, {None: 'bap'})
+      def test_making_a_dictionary_w_none_as_a_key(self):
+          self.assertEqual({None: 'boom'}, {None: 'bap'})
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -198,10 +216,12 @@ GREEN: make it pass
 I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
+  :lineno-start: 11
+  :emphasize-lines: 1
 
-  self.assertEqual({None: 'boom'}, {None: 'boom'})
+          self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-the test passes. I can use :ref:`None` and strings_ as keys in a dictionary_
+the test passes. I can use :ref:`None` and strings_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
 
 ----
 
@@ -212,15 +232,20 @@ test_making_a_dictionary_w_a_boolean_as_a_key
 RED: make it fail
 #################################################################################
 
-I add a test to see if I can use a :ref:`boolean<booleans>` as a key in a dictionary_
+I add a test to see if I can use a :ref:`boolean<booleans>` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 .. code-block:: python
+  :lineno-start: 10
+  :emphasize-lines: 4-5
 
-    def test_making_a_dictionary_w_none_as_a_key(self):
-        ...
+      def test_making_a_dictionary_w_none_as_a_key(self):
+          self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-    def test_making_a_dictionary_w_a_boolean_as_a_key(self):
-        self.assertEqual({False: 'boom'}, {False: 'bap'})
+      def test_making_a_dictionary_w_a_boolean_as_a_key(self):
+          self.assertEqual({False: 'boom'}, {False: 'bap'})
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -234,23 +259,27 @@ GREEN: make it pass
 I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
+  :lineno-start: 14
+  :emphasize-lines: 1
 
-  self.assertEqual({False: 'boom'}, {False: 'boom'})
+          self.assertEqual({False: 'boom'}, {False: 'boom'})
 
-the tests passes. I can use :ref:`False<test_what_is_false>` as a key in a dictionary_
+the tests passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 REFACTOR: make it better
 #################################################################################
 
-I add :ref:`True<test_what_is_true>` to the :ref:`assertion<AssertionError>`
+I add an :ref:`assertion<AssertionError>` for the :ref:`other boolean<test_what_is_true>`
 
 .. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 3-4
 
-  def test_making_a_dictionary_w_a_boolean_as_a_key(self):
-      self.assertEqual(
-          {False: 'boom', True: 'bap'},
-          {False: 'boom'}
-      )
+      def test_making_a_dictionary_w_a_boolean_as_a_key(self):
+          self.assertEqual(
+              {False: 'boom', True: 'bap'},
+              {False: 'boom'}
+          )
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -258,16 +287,18 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: {False: 'boom', True: 'bap'} != {False: 'boom'}
 
-I add the new key-value pair to the expectation
+I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
 .. code-block:: python
+  :lineno-start: 14
+  :emphasize-lines: 3
 
-  self.assertEqual(
-      {False: 'boom', True: 'bap'},
-      {False: 'boom', True: 'bap'}
-  )
+          self.assertEqual(
+              {False: 'boom', True: 'bap'},
+              {False: 'boom', True: 'bap'}
+          )
 
-the test passes. I can use :ref:`booleans`, :ref:`None` and strings_ as keys in a dictionary_
+the test passes. I can use :ref:`booleans`, :ref:`None` and strings_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
 
 ----
 
@@ -278,15 +309,23 @@ test_making_a_dictionary_w_a_number_as_a_key
 RED: make it fail
 #################################################################################
 
-I add a failing test to see if I can use a number as a key in a dictionary_
+I add a failing test to see if I can use a number as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 .. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 4-8
 
-  def test_making_a_dictionary_w_a_boolean_as_a_key(self):
-      ...
+              {False: 'boom', True: 'bap'}
+          )
 
-  def test_making_a_dictionary_w_a_number_as_a_key(self):
-      self.assertEqual({0: 'boom'}, {0: 'bap'})
+      def test_making_a_dictionary_w_a_number_as_a_key(self):
+          self.assertEqual(
+              {0: 'boom'},
+              {0: 'bap'}
+          )
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -300,23 +339,28 @@ GREEN: make it pass
 I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
+  :lineno-start: 20
+  :emphasize-lines: 3
 
-  self.assertEqual({0: 'boom'}, {0: 'boom'})
+          self.assertEqual(
+              {0: 'boom'},
+              {0: 'boom'}
+          )
 
-the test passes. I can use an integer_ as a key in a dictionary_
+the test passes. I can use an integer_ as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 REFACTOR: make it better
 #################################################################################
 
-I want to see if I can use a float_ as a key in a dictionary_
+I want to see if I can use a float_ as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 .. code-block:: python
 
-  def test_making_a_dictionary_w_a_number_as_a_key(self):
-      self.assertEqual(
-          {0: 'boom', 0.1: 'bap'},
-          {0: 'boom'}
-      )
+      def test_making_a_dictionary_w_a_number_as_a_key(self):
+          self.assertEqual(
+              {0: 'boom', 0.1: 'bap'},
+              {0: 'boom'}
+          )
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -324,16 +368,18 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: {0: 'boom', 0.1: 'bap'} != {0: 'boom'}
 
-I add the new key-value pair to the expectation
+I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
 .. code-block:: python
+  :lineno-start: 20
+  :emphasize-lines: 3
 
-  self.assertEqual(
-      {0: 'boom', 0.1: 'bap'},
-      {0: 'boom', 0.1: 'bap'}
-  )
+          self.assertEqual(
+              {0: 'boom', 0.1: 'bap'},
+              {0: 'boom', 0.1: 'bap'}
+          )
 
-the test passes. I can use numbers, :ref:`booleans`, :ref:`None` and strings_ as keys in a dictionary_
+the test passes. I can use numbers (floats_ and integers_), :ref:`booleans`, :ref:`None` and strings_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
 
 ----
 
@@ -344,18 +390,23 @@ test_making_a_dictionary_w_a_tuple_as_a_key
 RED: make it fail
 #################################################################################
 
-I add a test to see if I can use a tuple_ as a key in a dictionary_
+I add a test to see if I can use a tuple_ (anything in parentheses (``()``)) as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 .. code-block:: python
+  :lineno-start: 22
+  :emphasize-lines: 4-8
 
-  def test_making_a_dictionary_w_a_number_as_a_key(self):
-      ...
+              {0: 'boom', 0.1: 'bap'}
+          )
 
-  def test_making_a_dictionary_w_a_tuple_as_a_key(self):
-      self.assertEqual(
-          {(0, 1): 'boom'},
-          {(0, 1): 'bap'}
-      )
+      def test_making_a_dictionary_w_a_tuple_as_a_key(self):
+          self.assertEqual(
+              {(0, 1): 'boom'},
+              {(0, 1): 'bap'}
+          )
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -369,13 +420,14 @@ GREEN: make it pass
 I change ``'bap'`` to ``'boom'``
 
 .. code-block:: python
+  :lineno-start: 26
 
-  self.assertEqual(
-      {(0, 1): 'boom'},
-      {(0, 1): 'boom'}
-  )
+          self.assertEqual(
+              {(0, 1): 'boom'},
+              {(0, 1): 'boom'}
+          )
 
-the test passes. I can use tuples_, numbers (floats_ and integers_), :ref:`booleans`, :ref:`None` and strings_ as keys in a dictionary_
+the test passes. I can use tuples_, numbers (floats_ and integers_), :ref:`booleans`, :ref:`None` and strings_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
 
 ----
 
@@ -386,17 +438,22 @@ test_making_a_dictionary_w_a_list_as_a_key
 RED: make it fail
 #################################################################################
 
-I add a test for :ref:`lists`
+I add a test for :ref:`lists` (anything in square brackets (``[]``))
 
 .. code-block:: python
+  :lineno-start: 28
+  :emphasize-lines: 4-8
 
-  def test_making_a_dictionary_w_a_tuple_as_a_key(self):
-      ...
+              {(0, 1): 'boom'}
+          )
 
-  def test_making_a_dictionary_w_a_list_as_a_key(self):
-      self.assertEqual(
-          {[0, 1]: 'boom'},
-      )
+      def test_making_a_dictionary_w_a_list_as_a_key(self):
+          self.assertEqual(
+              {[0, 1]: 'boom'},
+          )
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`TypeError`
 
@@ -407,25 +464,28 @@ the terminal_ shows :ref:`TypeError`
 GREEN: make it pass
 #################################################################################
 
-I remove the things around the new dictionary_ then change the key and value for fun
+I remove the things around the new dictionary_ then change the :ref:`key<test_keys_of_a_dictionary>` and :ref:`value<test_values_of_a_dictionary>` for fun
 
 .. code-block:: python
-  :emphasize-lines: 3
+  :lineno-start: 31
+  :emphasize-lines: 2-4
 
-  def test_making_a_dictionary_w_a_list_as_a_key(self):
+      def test_making_a_dictionary_w_a_list_as_a_key(self):
 
-      {[3, 2, 1]: 'BOOM!!!'}
-
-the terminal_ still shows :ref:`TypeError`, I add assertRaises_
-
-.. code-block:: python
-  :emphasize-lines: 2
-
-  def test_making_a_dictionary_w_a_list_as_a_key(self):
-      with self.assertRaises(TypeError):
           {[3, 2, 1]: 'BOOM!!!'}
 
-the test passes. I cannot use a :ref:`list<lists>` as a key in a dictionary_
+
+the terminal_ still shows :ref:`TypeError`. I add assertRaises_
+
+.. code-block:: python
+  :lineno-start: 31
+  :emphasize-lines: 2
+
+      def test_making_a_dictionary_w_a_list_as_a_key(self):
+          with self.assertRaises(TypeError):
+              {[3, 2, 1]: 'BOOM!!!'}
+
+the test passes. I cannot use a :ref:`list<lists>` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 ----
 
@@ -436,15 +496,19 @@ test_making_a_dictionary_w_a_set_as_a_key
 RED: make it fail
 #################################################################################
 
-I try another test with a set_ as a key in a dictionary_
+I add another test with a set_ (single items in a curly braces (``{}``)) as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
 .. code-block:: python
+  :lineno-start: 33
+  :emphasize-lines: 3-4
 
-  def test_making_a_dictionary_w_a_list_as_a_key(self):
-      ...
+              {[3, 2, 1]: 'BOOM!!!'}
 
-  def test_making_a_dictionary_w_a_set_as_a_key(self):
-      {{3, 2, 1}: 'BOOM!!!'}
+      def test_making_a_dictionary_w_a_set_as_a_key(self):
+          {{3, 2, 1}: 'BOOM!!!'}
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`TypeError`
 
@@ -455,16 +519,17 @@ the terminal_ shows :ref:`TypeError`
 GREEN: make it pass
 #################################################################################
 
-I add assertRaises_
+I add assertRaises_ to handle the :ref:`Exception<errors>`
 
 .. code-block:: python
-  :emphasize-lines: 2
+  :lineno-start: 35
+  :emphasize-lines: 2-3
 
-  def test_making_a_dictionary_w_a_set_as_a_key(self):
-      with self.assertRaises(TypeError):
-          {{3, 2, 1}: 'BOOM!!!'}
+      def test_making_a_dictionary_w_a_set_as_a_key(self):
+          with self.assertRaises(TypeError):
+              {{3, 2, 1}: 'BOOM!!!'}
 
-the test is green again. I cannot use a :ref:`lists` or sets_ as keys in a dictionary_
+the test is green again. I cannot use :ref:`lists` or sets_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
 
 ----
 
@@ -475,16 +540,20 @@ test_making_a_dictionary_w_a_dictionary_as_a_key
 RED: make it fail
 #################################################################################
 
-I add another test
+I add another test, this time for a dictionary_
 
 .. code-block:: python
+  :lineno-start: 37
+  :emphasize-lines: 3-5
 
-  def test_making_a_dictionary_w_a_set_as_a_key(self):
-      ...
+              {{3, 2, 1}: 'BOOM!!!'}
 
-  def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
-      a_dictionary = {'key': 'value'}
-      {a_dictionary: 'BOOM!!!'}
+      def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
+          a_dictionary = {'key': 'value'}
+          {a_dictionary: 'BOOM!!!'}
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`TypeError`
 
@@ -498,14 +567,18 @@ GREEN: make it pass
 I add assertRaises_
 
 .. code-block:: python
-  :emphasize-lines: 3
+  :lineno-start: 39
+  :emphasize-lines: 3-4
 
-  def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
-      a_dictionary = {'key': 'value'}
-      with self.assertRaises(TypeError):
-          {a_dictionary: 'BOOM!!!'}
+      def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
+          a_dictionary = {'key': 'value'}
+          with self.assertRaises(TypeError):
+              {a_dictionary: 'BOOM!!!'}
 
-the test passes. I cannot use a dictionaries_, sets_ or :ref:`lists` as keys in a dictionary_ they are not hashable_, which means they can change
+
+  # Exceptions Encountered
+
+the test passes. I cannot use dictionaries_, sets_ or :ref:`lists` as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_. They are not hashable_, which means they can change in their lifetime
 
 ----
 
@@ -1069,7 +1142,7 @@ REFACTOR: make it better
 
     AssertionError: 'value' != 'default'
 
-  the get_ :ref:`method<functions>` has a condition. When the key is NOT in the dictionary_, it returns the default argument, when the key is in the dictionary_, it returns its value. I change the expectation to match
+  the get_ :ref:`method<functions>` has a condition. When the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_, it returns the default argument, when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_, it returns its value. I change the expectation to match
 
   .. code-block:: python
 
@@ -1180,12 +1253,12 @@ the values are the same, I change assertIsNone_ to assertEqual_
 
   self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
 
-the test passes. This works because the items_ :ref:`method<functions>` returns an iterable_ of the key-value pairs of the dictionary_
+the test passes. This works because the items_ :ref:`method<functions>` returns an iterable_ of the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s of the dictionary_
 
 REFACTOR: make it better
 #################################################################################
 
-* I add another key-value pair to the dictionary_ to see what the :ref:`method<functions>` does when there is more than one key-value pair
+* I add another :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the dictionary_ to see what the :ref:`method<functions>` does when there is more than one :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
   .. code-block:: python
 
@@ -1324,7 +1397,7 @@ the test passes
 REFACTOR: make it better
 #################################################################################
 
-* I add another key-value pair to the dictionary_ to see what the keys_ :ref:`method<functions>` returns when there are multiple
+* I add another :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the dictionary_ to see what the keys_ :ref:`method<functions>` returns when there are multiple
 
   .. code-block:: python
 
@@ -1498,7 +1571,7 @@ REFACTOR: make it better
 
     AssertionError: {} != {'key': 'value'}
 
-  pop_ :ref:`method<functions>` removes the key-value pair and returns the value of the given key from the dictionary_. I change the expectation to match
+  pop_ :ref:`method<functions>` removes the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and returns the value of the given key from the dictionary_. I change the expectation to match
 
   .. code-block:: python
 
@@ -1553,7 +1626,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: ('key', 'value') is not None
 
-the popitem_ :ref:`method<functions>` returns the key-value pair as a tuple_
+the popitem_ :ref:`method<functions>` returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as a tuple_
 
 GREEN: make it pass
 #################################################################################
@@ -1594,7 +1667,7 @@ REFACTOR: make it better
 
     AssertionError: {} != {'key': 'value'}
 
-  popitem_ removes and returns the key-value pair from the dictionary_
+  popitem_ removes and returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from the dictionary_
 
 * I change the value
 
@@ -1658,7 +1731,7 @@ REFACTOR: make it better
 
     self.assertEqual(a_dictionary.popitem(), ('key1', 'value1'))
 
-  the test passes. popitem_ removes and returns the last key-value pair from a dictionary_
+  the test passes. popitem_ removes and returns the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a dictionary_
 
 * I change the name of the test
 
@@ -1781,7 +1854,7 @@ REFACTOR: make it better
 
   the test is green again
 
-* I add an :ref:`assertion<AssertionError>` to see what happens when the key is already in the dictionary_
+* I add an :ref:`assertion<AssertionError>` to see what happens when the :ref:`key<test_keys_of_a_dictionary>` is already in the dictionary_
 
   .. code-block:: python
 
@@ -1794,7 +1867,7 @@ REFACTOR: make it better
 
     AssertionError: 'value' is not None
 
-  setdefault_ returns the value for a key in a dictionary_ when the key is in the dictionary_. I add the value to the :ref:`assertion<AssertionError>`
+  setdefault_ returns the value for a key in a dictionary_ when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_. I add the value to the :ref:`assertion<AssertionError>`
 
   .. code-block:: Python
 
@@ -1814,7 +1887,7 @@ REFACTOR: make it better
 
   the test passes
 
-* It looks like setdefault_ has a condition where it sets a default value when the key is not in the dictionary_ and returns the value when the key is in it. I change the first :ref:`assertion<AssertionError>` to find out
+* It looks like setdefault_ has a condition where it sets a default value when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_ and returns the value when the :ref:`key<test_keys_of_a_dictionary>` is in it. I change the first :ref:`assertion<AssertionError>` to find out
 
   .. code-block:: python
 
@@ -1876,7 +1949,7 @@ REFACTOR: make it better
 
     self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
 
-  the terminal_ still shows green. setdefault_ adds a given key to the dictionary_ with a given default value and returns the default value if the key is not in the dictionary. It returns the value for a key that is already in the dictionary_
+  the terminal_ still shows green. setdefault_ adds a given key to the dictionary_ with a given default value and returns the default value if the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. It returns the value for a key that is already in the dictionary_
 
 * I rename the test
 
@@ -1988,7 +2061,7 @@ REFACTOR: make it better
 
     AssertionError: {'key': 'value', 'new_key': 'new value'} != {'key': 'value'}
 
-  I add the new key-value pair to the :ref:`assertion<AssertionError>`
+  I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
 
@@ -2041,7 +2114,7 @@ REFACTOR: make it better
 
     AssertionError: {'key': 'updated value', 'new_key': 'new value', 'another_key': 'another_value'} != {'key': 'updated value', 'new_key': 'new value'}
 
-  the update_ :ref:`method<functions>` adds the key-value pairs from the given dictionary_ to the existing one. I change the expectation to match
+  the update_ :ref:`method<functions>` adds the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s from the given dictionary_ to the existing one. I change the expectation to match
 
   .. code-block:: python
 
@@ -2347,7 +2420,7 @@ review
 
 I ran tests for dictionaries_
 
-* they contain key-value pairs
+* they contain :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s
 * any :ref:`object<classes>` can be used as values
 * strings_, :ref:`booleans`, integers_, floats_ and tuples_ can be used as keys
 * they can be represented with ``{}``

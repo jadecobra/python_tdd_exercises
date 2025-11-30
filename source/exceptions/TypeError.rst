@@ -1209,7 +1209,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I add another assertion_ for :ref:`division<test_division>`
+* I add another :ref:`assertion<AssertionError>` for :ref:`division<test_division>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -1347,7 +1347,7 @@ REFACTOR: make it better
 
   the terminal still shows green
 
-* I add another assertion_ for :ref:`multiplication<test_multiplication>` in ``test_calculator.py``
+* I add another :ref:`assertion<AssertionError>` for :ref:`multiplication<test_multiplication>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 67
