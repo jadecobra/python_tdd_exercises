@@ -897,7 +897,7 @@ the terminal_ shows my expectation with a failure for any value of ``x`` since `
                 ^^^^^^^^^^^^
   E       ZeroDivisionError: division by zero
 
-:ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program from running. No code will run past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
+:ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program from running. No code runs past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -965,7 +965,7 @@ REFACTOR: make it better
 
   - when the value of ``self.random_y`` is not ``0``, it leaves the while_ loop and runs the code in the ``else`` block
 
-* Since ``self.random_y`` is ``0`` in the first part of the `while statement`_ I can add a call to the ``divide`` :ref:`function<functions>` that will fail
+* Since ``self.random_y`` is ``0`` in the first part of the `while statement`_ I can add a call that fails to the ``divide`` :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 33
@@ -1079,7 +1079,7 @@ RED: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  can you tell what :ref:`Exceptions<errors>` will show up as I go along?
+  What :ref:`Exceptions<errors>` do you think will show up as I go along?
 
 GREEN: make it pass
 #################################################################################

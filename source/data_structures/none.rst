@@ -89,7 +89,7 @@ RED: make it fail
 GREEN: make it pass
 #################################################################################
 
-* I change the assert_ :ref:`method<functions>` to assertIsNone_, which checks if what it gets in parentheses is None_
+* I change the `assert method`_ to assertIsNone_, which checks if what it gets in parentheses is None_
 
   .. code-block:: python
     :lineno-start: 7
@@ -809,7 +809,7 @@ REFACTOR: make it better
 
     AssertionError: 'text' is not None
 
-  I change the assert_ :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
+  I change the `assert method`_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -836,7 +836,7 @@ REFACTOR: make it better
 
   because anything in :ref:`quotes` is a string_
 
-* I change the assert_ :ref:`method<functions>`
+* I change the `assert method`_
 
   .. code-block:: python
     :lineno-start: 37
@@ -863,7 +863,7 @@ REFACTOR: make it better
 
   because anything in :ref:`quotes` is a string_
 
-* I change the assert_ :ref:`method<functions>`
+* I change the `assert method`_
 
   .. code-block:: python
     :lineno-start: 38
@@ -895,7 +895,7 @@ REFACTOR: make it better
 
     AssertionError: None is not an instance of <class 'str'>
 
-  I change the assert_ :ref:`method<functions>`
+  I change the `assert method`_
 
   .. code-block:: python
     :lineno-start: 34
@@ -1040,7 +1040,7 @@ REFACTOR: make it better
 
   because anything in parentheses ``()`` in Python_ is a tuple_
 
-* I change the assert_ :ref:`method<functions>` to make the statement :ref:`True<test_what_is_true>`
+* I change the `assert method`_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1213,7 +1213,7 @@ REFACTOR: make it better
 
   because anything in square brackets ``[]`` in Python_ is a :ref:`list<lists>`
 
-* I change the assert_ :ref:`method<functions>`
+* I change the `assert method`_
 
   .. code-block:: python
     :lineno-start: 52
@@ -1498,7 +1498,7 @@ REFACTOR: make it better
 
   ``{}`` is the empty :ref:`dictionary<dictionaries>`
 
-* I change the assert_ :ref:`method<functions>`
+* I change the `assert method`_
 
   .. code-block:: python
     :lineno-start: 64

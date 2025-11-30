@@ -10,7 +10,7 @@ makePythonTdd.ps1
     :language: PowerShell
     :linenos:
 
-* give a name for the ``$PROJECT_NAME`` :ref:`variable<test_attribute_error_w_variables>` when the program is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder where ``makePythonTdd.ps1`` is saved will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`
+* give a name for the ``$PROJECT_NAME`` :ref:`variable<test_attribute_error_w_variables>` when the program is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder where ``makePythonTdd.ps1`` is saved makes a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`
 
   .. code-block:: shell
     :emphasize-lines: 1

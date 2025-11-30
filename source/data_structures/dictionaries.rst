@@ -20,7 +20,7 @@ dictionaries
 
 ----
 
-A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s, the values can be any Python_ :ref:`object<classes>`. I will add tests for the keys to see which of the Python_ basic :ref:`data types<data structures>` I can use.
+A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any Python_ :ref:`object<classes>`. I add tests for the :ref:`keys<test_keys_of_a_dictionary>` to see which of :ref:`the Python basic data types<data structures>` I can use.
 
 I think this is the most important :ref:`data structure<data structures>` to know because they can hold all the other :ref:`data structures`. In programming I have had to work with JSON_ which I can read and write as dictionaries_
 
@@ -592,12 +592,19 @@ RED: make it fail
 I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of dictionaries_
 
 .. code-block:: python
+  :lineno-start: 42
+  :emphasize-lines: 4-7
 
-  def test_attributes_and_methods_of_dictionaries(self):
-      self.assertEqual(
-          dir(dict),
-          []
-      )
+              {a_dictionary: 'BOOM!!!'}
+
+      def test_attributes_and_methods_of_dictionaries(self):
+          self.assertEqual(
+              dir(dict),
+              []
+          )
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -605,76 +612,127 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
 
-It also gives me a message to show the full difference between the two :ref:`lists`
+It also gives me a message about how to show the full difference between the two :ref:`lists`
 
 .. code-block:: python
 
   Diff is 720 characters long. Set self.maxDiff to None to see it.
 
+maxDiff_ is a :ref:`class attribute<test_attribute_error_w_class_attributes>` that is used to set the maximum length of differences between 2 items that the terminal_ shows
+
 GREEN: make it pass
 #################################################################################
 
-I move the terminal_ to right side of the screen, then add `maxDiff`_ to the test
+* I move the terminal_ to right side of the screen
+* I add maxDiff_ to the test
 
-.. code-block:: python
-  :emphasize-lines: 3
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 2
 
-  def test_attributes_and_methods_of_dictionaries(self):
-      self.maxDiff = None
-      self.assertEqual(
-          dir(dict),
-          []
-      )
+        def test_attributes_and_methods_of_dictionaries(self):
+            self.maxDiff = None
+            self.assertEqual(
+                dir(dict),
+                []
+            )
 
-the terminal_ shows the difference between the two :ref:`lists`. I copy and paste the expected values from the terminal_ then use `find and replace`_ to remove the extra characters
+  the terminal_ shows the full difference between the two :ref:`lists`. I copy (``ctrl+c``) and paste (``ctrl+v``) the expected values from the terminal_ then use `find and replace`_ to remove the extra characters
 
-.. note::
+  .. note::
 
-  results can be different because of the Python_ version
+    results can be different because of the Python_ version.
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 6-51
 
-  def test_attributes_and_methods_of_dictionaries(self):
-      self.maxDiff = None
-      self.assertEqual(
-          dir(src.dictionaries.a_dict()),
-          [
-              '__class__',
-              ...
-              '__subclasshook__',
-              'clear',
-              'copy',
-              'fromkeys',
-              'get',
-              'items',
-              'keys',
-              'pop',
-              'popitem',
-              'setdefault',
-              'update',
-              'values'
-          ]
-      )
+        def test_attributes_and_methods_of_dictionaries(self):
+            self.maxDiff = None
+            self.assertEqual(
+                dir(dict),
+                [
+                    '__class__',
+                    '__class_getitem__',
+                    '__contains__',
+                    '__delattr__',
+                    '__delitem__',
+                    '__dir__',
+                    '__doc__',
+                    '__eq__',
+                    '__format__',
+                    '__ge__',
+                    '__getattribute__',
+                    '__getitem__',
+                    '__getstate__',
+                    '__gt__',
+                    '__hash__',
+                    '__init__',
+                    '__init_subclass__',
+                    '__ior__',
+                    '__iter__',
+                    '__le__',
+                    '__len__',
+                    '__lt__',
+                    '__ne__',
+                    '__new__',
+                    '__or__',
+                    '__reduce__',
+                    '__reduce_ex__',
+                    '__repr__',
+                    '__reversed__',
+                    '__ror__',
+                    '__setattr__',
+                    '__setitem__',
+                    '__sizeof__',
+                    '__str__',
+                    '__subclasshook__',
+                    'clear',
+                    'copy',
+                    'fromkeys',
+                    'get',
+                    'items',
+                    'keys',
+                    'pop',
+                    'popitem',
+                    'setdefault',
+                    'update',
+                    'values'
+                ]
+            )
 
-the test passes and I move the terminal_ back to the bottom. I copy the names that do NOT have double underscores (__) to make a TODO list of tests
+  the test passes
 
-.. code-block:: python
+* I copy (``ctrl+c``) the names that do NOT have double underscores (__) and paste (``ctrl+v``) them below the test to make a TODO list that I use to test what I can do with dictionaries_
 
-  'clear',
-  'copy',
-  'fromkeys',
-  'get',
-  'items',
-  'keys',
-  'pop',
-  'popitem',
-  'setdefault',
-  'update',
-  'values'
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 7-17
 
-  # Exceptions Encountered
-  # AssertionError
-  # TypeError
+                    'update',
+                    'values'
+                ]
+            )
+
+
+    'clear',
+    'copy',
+    'fromkeys',
+    'get',
+    'items',
+    'keys',
+    'pop',
+    'popitem',
+    'setdefault',
+    'update',
+    'values'
+
+
+    # Exceptions Encountered
+
+  the terminal still shows green
+
+* I move the terminal_ back to the bottom of the screen
 
 ----
 
@@ -688,22 +746,34 @@ RED: make it fail
 * I add a test for the first :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 6-8
 
-      def test_attributes_and_methods_of_dictionaries(self):
-          ...
+                    'update',
+                    'values'
+                ]
+            )
 
-      def test_clear(self):
-          a_dictionary = {'key': 'value'}
-          self.assertIsNone(a_dictionary.clear())
+        def test_clear(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(a_dictionary.clear())
+
+
+    'clear',
+    'copy',
 
   the terminal_ shows green. The clear_ :ref:`method<functions>` returns :ref:`None`
 
-* I add an :ref:`assertion<AssertionError>` to see what it did to the dictionary_
+* I add an :ref:`assertion<AssertionError>` to see what clear_ did to the dictionary_
 
   .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 4
 
-    self.assertIsNone(a_dictionary.clear())
-    self.assertEqual(a_dictionary, {'key': 'value'})
+        def test_clear(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(a_dictionary.clear())
+            self.assertEqual(a_dictionary, {'key': 'value'})
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -711,7 +781,7 @@ RED: make it fail
 
     AssertionError: {} != {'key': 'value'}
 
-  the clear_ :ref:`method<functions>` emptied the dictionary_, same as it does with :ref:`lists`
+  the clear_ :ref:`method<functions>` emptied the dictionary_, :ref:`same as it does with lists<test_clear_empties_a_list>`
 
 GREEN: make it pass
 #################################################################################
@@ -719,8 +789,13 @@ GREEN: make it pass
 I change the values to match
 
 .. code-block:: python
+  :lineno-start: 98
+  :emphasize-lines: 4
 
-  self.assertEqual(a_dictionary, {})
+      def test_clear(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.clear())
+          self.assertEqual(a_dictionary, {})
 
 the test passes
 
@@ -730,15 +805,22 @@ REFACTOR: make it better
 * I rename the test
 
   .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 1
 
-    def test_clear_empties_a_dictionary(self):
-        a_dictionary = {'key': 'value'}
-        self.assertIsNone(a_dictionary.clear())
-        self.assertEqual(a_dictionary, {})
+        def test_clear_empties_a_dictionary(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(a_dictionary.clear())
+            self.assertEqual(a_dictionary, {})
+
+
+    'clear',
+    'copy',
 
 * I remove clear_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 104
 
     'copy',
     'fromkeys',
@@ -763,13 +845,18 @@ RED: make it fail
 I add a test for the next :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 101
+  :emphasize-lines: 3-5
 
-  def test_clear_empties_a_dictionary(self):
-      ...
+          self.assertEqual(a_dictionary, {})
 
-  def test_copy(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.copy())
+      def test_copy(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.copy())
+
+
+  'copy',
+  'fromkeys',
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -777,7 +864,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: {'key': 'value'} is not None
 
-this :ref:`method<functions>` returns a copy of the dictionary_
+this :ref:`method<functions>` returns a copy of the dictionary_, :ref:`same as with lists<test_copy_a_list>`
 
 GREEN: make it pass
 #################################################################################
@@ -785,8 +872,15 @@ GREEN: make it pass
 I add the value to the :ref:`assertion<AssertionError>`
 
 .. code-block:: python
+  :lineno-start: 103
+  :emphasize-lines: 3-6
 
-  self.assertIsNone(a_dictionary.copy(), {'key': 'value'})
+      def test_copy(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(
+              a_dictionary.copy(),
+              {'key': 'value'}
+          )
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -797,47 +891,42 @@ the terminal_ shows :ref:`AssertionError`
 I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
+  :lineno-start: 103
+  :emphasize-lines: 3
 
-  self.assertEqual(a_dictionary.copy(), {'key': 'value'})
+      def test_copy(self):
+          a_dictionary = {'key': 'value'}
+          self.assertEqual(
+              a_dictionary.copy(),
+              {'key': 'value'}
+          )
 
 the test passes
 
 REFACTOR: make it better
 #################################################################################
 
-* I add another :ref:`assertion<AssertionError>` to see what happens to the dictionary_ after the call
-
-  .. code-block:: python
-
-    self.assertEqual(a_dictionary.copy(), {'key': 'value'})
-    self.assertEqual(a_dictionary, {})
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: {'key': 'value'} != {}
-
-  it stays the same. I change the values to match
-
-  .. code-block:: python
-
-    self.assertEqual(a_dictionary, {'key': 'value'})
-
-  the test is green again. This :ref:`method<functions>` also works the same way with :ref:`lists`
-
 * I rename the test
 
   .. code-block:: python
+    :lineno-start: 103
+    :emphasize-lines: 1
 
-    def test_copy_a_dictionary(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.copy(), {'key': 'value'})
-        self.assertEqual(a_dictionary, {'key': 'value'})
+        def test_copy_a_dictionary(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                a_dictionary.copy(),
+                {'key': 'value'}
+            )
+
+
+    'copy',
+    'fromkeys',
 
 * I remove copy_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 111
 
     'fromkeys',
     'get',
@@ -858,16 +947,21 @@ test_fromkeys_makes_a_dictionary_from_an_iterable
 RED: make it fail
 #################################################################################
 
-I add a test
+I add a test for the next :ref:`method<functions>` from the TODO list
 
 .. code-block:: python
+  :lineno-start: 107
+  :emphasize-lines: 4-6
 
-  def test_copy_a_dictionary(self):
-      ...
+              {'key': 'value'}
+          )
 
-  def test_fromkeys(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.fromkeys())
+      def test_fromkeys(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.fromkeys())
+
+
+  'fromkeys',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -878,68 +972,86 @@ the terminal_ shows :ref:`TypeError`
 GREEN: make it pass
 #################################################################################
 
-I pass a value to the call
+* I pass a value to the call
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 3
 
-  self.assertIsNone(a_dictionary.fromkeys(0))
+        def test_fromkeys(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(a_dictionary.fromkeys(0))
 
-the terminal_ shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  TypeError: 'int' object is not iterable
+    TypeError: 'int' object is not iterable
 
-I change the value to a tuple_
+* I change the value to a tuple_
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 1
 
-  self.assertIsNone(a_dictionary.fromkeys((0, 1)))
+            self.assertIsNone(a_dictionary.fromkeys((0, 1)))
 
-the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: {0: None, 1: None} is not None
+    AssertionError: {0: None, 1: None} is not None
 
-the fromkeys_ :ref:`method<functions>` returns a dictionary_ that uses the values in the iterable_ as keys with default values of :ref:`None`. I add the expected values
+  the fromkeys_ :ref:`method<functions>` returns a dictionary_ that uses the values in the iterable_ as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None`
 
-.. code-block:: python
+* I add the dictionary_ as an expectation
 
-  self.assertIsNone(
-      a_dictionary.fromkeys((0, 1)),
-      {0: None, 1: None}
-  )
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 3-6
 
-the terminal_ shows :ref:`AssertionError`
+        def test_fromkeys(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.fromkeys((0, 1)),
+                {0: None, 1: None}
+            )
 
-.. code-block:: shell
+  the terminal_ shows :ref:`AssertionError`
 
-  AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
+  .. code-block:: shell
 
-I change assertIsNone_ to assertEqual_
+    AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
 
-.. code-block:: python
+* I change assertIsNone_ to assertEqual_
 
-  self.assertEqual(
-      a_dictionary.fromkeys((0, 1)),
-      {0: None, 1: None}
-  )
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 1
 
-the test passes
+            self.assertEqual(
+                a_dictionary.fromkeys((0, 1)),
+                {0: None, 1: None}
+            )
+
+  the test passes
 
 REFACTOR: make it better
 #################################################################################
 
-* I add another assert_ method to see what happens to the first dictionary_ in the test
+* I add another `assert method`_ to see what happens to the first dictionary_ in the test
 
   .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 7
 
-    self.assertEqual(
-        a_dictionary.fromkeys((0, 1)),
-        {0: None, 1: None}
-    )
-    self.assertEqual(a_dictionary, {})
+        def test_fromkeys(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                a_dictionary.fromkeys((0, 1)),
+                {0: None, 1: None}
+            )
+            self.assertEqual(a_dictionary, {})
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -949,27 +1061,40 @@ REFACTOR: make it better
 
   the dictionary_ did not change
 
-* I remove the :ref:`assertion<AssertionError>` then change the call to use the dict_ :ref:`class<classes>`
+* I remove the last line I added
+* I change the call fromkeys_ to use the dict_ :ref:`class<classes>` instead
 
   .. code-block:: python
+    :lineno-start: 110
     :emphasize-lines: 4
 
-    def test_fromkeys(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(
-            dict.fromkeys((0, 1)),
-            {0: None, 1: None}
-        )
+        def test_fromkeys(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                dict.fromkeys((0, 1)),
+                {0: None, 1: None}
+            )
 
-  the test is still green. I remove ``a_dictionary`` since it is not used
+
+    'fromkeys',
+
+  the test is still green
+
+* I remove ``a_dictionary`` since it is not used
 
   .. code-block:: python
+    :lineno-start: 110
 
-    def test_fromkeys(self):
-        self.assertEqual(
-            dict.fromkeys((0, 1)),
-            {0: None, 1: None}
-        )
+        def test_fromkeys(self):
+            self.assertEqual(
+                dict.fromkeys((0, 1)),
+                {0: None, 1: None}
+            )
+
+
+    'fromkeys',
+
+  still green
 
 * the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal_ showed :ref:`TypeError`
 
@@ -977,9 +1102,10 @@ REFACTOR: make it better
 
     TypeError: fromkeys expected at least 1 argument, got 0
 
-  I add a second input to see what will happen
+  I add a second input to the call to see what happens
 
   .. code-block:: python
+    :lineno-start:
 
     self.assertEqual(
         dict.fromkeys((0, 1), None),
@@ -1362,7 +1488,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   NameError: name 'dict_keys' is not defined
 
-the ``dict_keys`` :ref:`object<classes>` contains a :ref:`list<lists>`, I will use it as the expectation instead
+the ``dict_keys`` :ref:`object<classes>` contains a :ref:`list<lists>`, I use it as the expectation instead
 
 .. code-block:: python
 

@@ -16,7 +16,7 @@ TypeError
 
 ----
 
-TypeError_ is raised when an :ref:`object<classes>` is used in a way that it should not be. This will help you understand how to use :ref:`functions` and :ref:`classes`
+TypeError_ is raised when an :ref:`object<classes>` is used in a way that it should not be. This helps understand how to use :ref:`functions` and :ref:`classes`
 
 *********************************************************************************
 requirements
@@ -361,7 +361,7 @@ It is safe to say that I cannot call :ref:`data structures` but I can call :ref:
 test_type_error_w_function_signatures
 *********************************************************************************
 
-When I call a :ref:`function<functions>` I have to match its definition or I will have problems
+When I call a :ref:`function<functions>` I have to match its definition also known as its signature
 
 RED: make it fail
 #################################################################################
@@ -1008,7 +1008,7 @@ REFACTOR: make it better
             with self.assertRaises(TypeError):
                 src.calculator.subtract(self.random_x, None)
 
-* I have the same :ref:`exception handler<how to use try...except...else>` in both :ref:`functions` in ``calculator.py``. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I can write a :ref:`function` that will handle TypeError_. The problem will be how it handles the lines that change
+* I have the same :ref:`exception handler<how to use try...except...else>` in both :ref:`functions` in ``calculator.py``. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I can write a :ref:`function` that handles TypeError_. The problem is how it takes care of the lines that change, that is
 
   - ``result = input_1 + input_2``
   - ``result = input_1 / input_2``

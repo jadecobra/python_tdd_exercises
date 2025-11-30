@@ -378,7 +378,7 @@ the test passes
 REFACTOR: make it better
 #################################################################################
 
-There is an assert_ :ref:`method<functions>` to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`
+There is an `assert method`_ to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`
 
 how to test if something is False
 --------------------------------------------------------------------------------------------
@@ -475,7 +475,7 @@ the test passes
 REFACTOR: make it better
 #################################################################################
 
-There is an assert_ :ref:`method<functions>` to check if something is :ref:`True<test_what_is_true>`
+There is an `assert method`_ to check if something is :ref:`True<test_what_is_true>`
 
 how to test if something is True
 --------------------------------------------------------------------------------------------
@@ -829,7 +829,7 @@ how to test if two things are Equal
 
     AssertionError: True != False
 
-  I change the assert_ :ref:`method<functions>`
+  I change the `assert method`_
 
   .. code-block:: python
     :lineno-start: 34

@@ -1433,7 +1433,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         return not y == True
         return y != True
 
-  when ``not y`` is :ref:`True<test_what_is_true>` it means the `return statement` will be ``True == True`` which is a duplication. I remove the second part of the statement and the second `return statement`_
+  when ``not y`` is :ref:`True<test_what_is_true>` it means the `return statement` is ``True == True`` which is a duplication. I remove the second part of the statement and the second `return statement`_
 
   .. code-block:: python
     :lineno-start: 13
@@ -1515,7 +1515,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         return not x or y
         return return (first_input, second_input) != (True, False)
 
-  the test is green again, I will use "or_" the next time I see ``!=`` in these tests. I remove the other `return statement`_
+  the test is green again, I make a note to use "or_" the next time I see ``!=`` in these tests. I remove the other `return statement`_
 
   .. code-block:: python
     :lineno-start: 25

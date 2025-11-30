@@ -2209,7 +2209,7 @@ REFACTOR: make it better
     with self.assertRaises(IndexError):
         [][-1]
 
-  the test passes. Any :ref:`index<test_index_returns_first_position_of_item_in_a_list>` given to an empty list_ will raise IndexError_
+  the test passes. Any :ref:`index<test_index_returns_first_position_of_item_in_a_list>` given to an empty list_ raises IndexError_
 
 ----
 

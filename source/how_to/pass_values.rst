@@ -217,7 +217,7 @@ GREEN: make it pass
 REFACTOR: make it better
 #################################################################################
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it receives and will always return ``'I received: hello'`` when it is called. I want it to return the value it receives as part of the message.
+The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it receives and always returns ``'I received: hello'`` when called. I want it to return the value it receives as part of the message.
 
 RED: make it fail
 ---------------------------------------------------------------------------------
@@ -266,7 +266,7 @@ GREEN: make it pass
 
     AssertionError: 'I received: yes' != 'I received: hello'
 
-  this will not work, my change breaks the test that was passing before. The `return statement`_ has to use the input
+  it did not work, my change broke the test that was passing before. The `return statement`_ has to use the input
 
 * I use an `f-string`_ which allows me add any values I want to a string_
 

@@ -9,6 +9,8 @@
 .. _assertion: assert_
 .. _assertions: assert_
 .. _assert statements: assert_
+.. _assert method: https://docs.python.org/3/library/unittest.html#assert-methods
+.. _assert methods: `assert method`_
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
 .. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
 .. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse

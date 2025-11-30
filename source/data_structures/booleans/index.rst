@@ -923,7 +923,7 @@ the empty tuple_ is not True_
 GREEN: make it pass
 #################################################################################
 
-* I change the assert_ :ref:`method<functions>`
+* I change the `assert method`_
 
   .. code-block:: python
     :lineno-start: 22
