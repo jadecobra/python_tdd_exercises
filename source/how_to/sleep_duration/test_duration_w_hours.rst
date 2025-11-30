@@ -388,7 +388,7 @@ REFACTOR: make it better
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it will have a ``0`` in front of it, for example ``01``. The terminal_ shows :ref:`AssertionError`
+  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it shows have a ``0`` in front of it, for example ``01``. The terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 

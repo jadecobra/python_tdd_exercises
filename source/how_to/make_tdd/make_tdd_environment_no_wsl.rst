@@ -40,7 +40,7 @@ I use ``magic`` as the name for this project
 
 * I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
-* I use the cd_ program_ to change `folder (directory)`_ to where I will put all the projects from this book. I type it in the terminal_
+* I use the cd_ program_ to change `folder (directory)`_ to where I will keep all the projects from this book. I type it in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -89,7 +89,7 @@ I use ``magic`` as the name for this project
 
     0 directories, 0 files
 
-  .. NOTE:: You will see more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
+  .. NOTE:: There will be more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
@@ -251,7 +251,7 @@ test_failure
 The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
-* **GREEN**: make it pass - write the simplest thing that will make the failing test pass
+* **GREEN**: make it pass - write the simplest thing to make the failing test pass
 * **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
 
 this process can be repeated as many times as possible or until I get to my goal.
@@ -373,7 +373,7 @@ RED: make it fail
     * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
     * ``TestMagic`` is the name I gave this :ref:`class <classes>` and will hold the test
 
-      .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
+      .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ does NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
@@ -383,7 +383,7 @@ RED: make it fail
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
     * ``test_failure`` is the name I used :ref:`method<functions>` for :ref:`this first test<test_failure>`
 
-      .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
+      .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ does NOT run the tests in it
 
     * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
 

@@ -95,7 +95,7 @@ tree_ comes with Windows_ you do not have to do anything, but here are the thing
   * ``tree /F`` instead of tree_
   * ``dir /ah`` instead of ``ls --all/-a``
 
-The path shown when you call pwd_ or tree_ will show ``\`` instead of ``/`` for example
+The path shown when you call pwd_ or tree_ shows ``\`` instead of ``/``, for example
 
 .. code-block:: PowerShell
 

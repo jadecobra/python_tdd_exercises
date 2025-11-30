@@ -39,7 +39,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
 * Next it asks for a ``PASSWORD``, use something that is easy for you to remember later
 
-  .. attention:: the terminal_ does not show any text while you type your password, hit ``enter/return`` when done and it will ask you to retype the password to confirm it
+  .. attention:: the terminal_ does not show any text while you type your password, hit ``enter/return`` when done and it asks you to type the password again to confirm it
 
 * after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
 * Press ``F1`` on the keyboard in `Visual Studio Code`_ and select ``WSL:Connect to WSL`` to open a terminal_ in `Windows Subsystem Linux`_

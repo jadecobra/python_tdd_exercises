@@ -8,7 +8,7 @@
 how to handle Exceptions
 #################################################################################
 
-When an :ref:`error<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to stop the program, this means nothing past the line that caused the :ref:`error<errors>` will run.
+When an :ref:`error<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to stop the program, this means nothing past the line that caused the :ref:`error<errors>` runs.
 
 It is useful because there is a problem that must be solved for the program to continue, and it is a problem when it causes the program to stop early.
 

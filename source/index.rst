@@ -19,9 +19,9 @@ My name is Jacob Itegboje and this is a collection of `Test Driven Development`_
 
 This is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal.
 
-I also find that sometimes when I am working on a project and have an idea, I will remember I have a test for that idea in a previous project and can go back to run it or write a new test for the idea.
+I also find that sometimes when I am working on a project and have an idea, I remember I have a test for that idea in another project and can go back to run it or write a new test.
 
-I recommend reading `Test Driven Development by Example`_ by `Kent Beck`_ and Refactoring_ by `Martin Fowler`_, they both influenced the way I write programs.
+I recommend `Test Driven Development by Example`_ by `Kent Beck`_ and Refactoring_ by `Martin Fowler`_, they both influenced the way I write programs_.
 
 *********************************************************************************
 who is this for?

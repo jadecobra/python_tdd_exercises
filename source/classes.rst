@@ -731,7 +731,7 @@ REFACTOR: make it better
         def __init__(self, sex=None):
             pass
 
-  the terminal_ shows all tests still passing and I have now written the same thing 3 times. Earlier on I mentioned inheritance, and will now try to use it to remove this duplication so `I do not repeat myself`_
+  the terminal_ shows all tests still passing and I have now written the same thing 3 times. Earlier on I mentioned inheritance, and now try to use it to remove this duplication so `I do not repeat myself`_
 
 * I add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :ref:`method<functions>` of the classes I am trying to abstract
 

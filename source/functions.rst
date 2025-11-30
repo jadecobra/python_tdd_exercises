@@ -445,7 +445,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ################################################################################
 
-The definition for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, the test passes when :ref:`None` is given as input, will it still pass when another value is given or will it always return :ref:`None`? Time to write a test
+The definition for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, the test passes when :ref:`None` is given as input. Does it pass when another value is given or does it always return :ref:`None`? Time to write a test
 
 * I add a new :ref:`assertion<AssertionError>` to ``test_identity_function`` in ``test_functions.py``
 
@@ -618,9 +618,9 @@ REFACTOR: make it better
 test_functions_w_keyword_arguments
 *********************************************************************************
 
-There is a problem with using positional arguments, the inputs must always be supplied in the right order. which means the program_ will behave in an unexpected way when it receives input out of order.
+There is a problem with using positional arguments, the inputs must always be supplied in the right order. which means the program_ behaves in an unexpected way when it receives input out of order.
 
-To make sure the function_ behaves how I want even when I send input out of order I can use Keyword Arguments
+To make sure the function_ behave how I want even when I send input out of order I can use Keyword Arguments
 
 RED: make it fail
 ################################################################################
@@ -1061,7 +1061,7 @@ REFACTOR: make it better
 test_functions_w_unknown_arguments
 *********************************************************************************
 
-I can also make functions_ that take any number of positional and keyword arguments. This means I do not need to know how many inputs will be sent to the function_ when it is called
+I can also make functions_ that take any number of :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>` arguments. This means I do not need to know how many inputs are sent to the function_ when it is called
 
 RED: make it fail
 #################################################################################
@@ -1130,7 +1130,7 @@ GREEN: make it pass
 
   I had this same problem in :ref:`test_functions_w_positional_and_keyword_arguments`, Python_ cannot tell which arguments are positional or :ref:`keyword arguments<test_functions_w_keyword_arguments>` yet
 
-* Python_ has a way to allow passing any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many inputs will be passed. I use it to replace ``a`` in the parentheses
+* Python_ has a way to allow passing any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many they are. I use it to replace ``a`` in the parentheses
 
   .. code-block:: python
     :lineno-start: 37

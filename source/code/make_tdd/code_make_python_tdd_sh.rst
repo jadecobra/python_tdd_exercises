@@ -17,8 +17,8 @@ makePythonTdd.sh
 
     chmod +x makePythonTdd.sh
 
-* give a name for the ``$PROJECT_NAME`` :ref:`variable<test_attribute_error_w_variables>` when the program is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder where ``makePythonTdd.sh`` is saved will make a `Test Driven Development`_ environment for a project called :ref:`calculator<how to make a calculator>`
+* give a name for the ``$PROJECT_NAME`` :ref:`variable<test_attribute_error_w_variables>` when the program is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder_ where ``makePythonTdd.sh`` is saved makes a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>`
 
   .. code-block:: shell
 
-    ./makePythonTdd.sh calculator
+    ./makePythonTdd.sh assertion_error

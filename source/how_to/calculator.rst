@@ -1079,7 +1079,7 @@ RED: make it fail
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  What :ref:`Exceptions<errors>` do you think will show up as I go along?
+  What :ref:`Exceptions<errors>` do you think are raised as I go along?
 
 GREEN: make it pass
 #################################################################################
