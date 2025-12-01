@@ -846,7 +846,7 @@ GREEN: make it pass
 
         def divide(first_input, second_input):
     >       return first_input / second_input
-                   ^^^^^^^^^^^
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
     E       ZeroDivisionError: division by zero
 
   dividing by ``0`` is undefined in mathematics and raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in Python
@@ -894,7 +894,7 @@ the terminal_ shows my expectation with a failure for any value of ``x`` since `
 
       def divide(first_input, second_input):
   >       return first_input / second_input
-                ^^^^^^^^^^^^
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
   E       ZeroDivisionError: division by zero
 
 :ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program from running. No code runs past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more

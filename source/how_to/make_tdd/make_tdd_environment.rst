@@ -128,7 +128,7 @@ I use ``magic`` as the name for this project
 
     .../pumping_python $
 
-* I type tree_ in the terminal_ to see what files_ and folders_ are  in the ``pumping_python`` directory_
+* I type tree_ in the terminal_ to see what files_ and folders_ are in the ``pumping_python`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -592,7 +592,7 @@ how to rename a file
 
     4 directories, 3 files
 
-  the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of  contents of the child folders_
+  the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of contents of the child folders_
 
 * I run the tests again
 

@@ -74,7 +74,7 @@ I use ``magic`` as the name for this project
 
     .../pumping_python $
 
-* I type tree_ in the terminal_ to see what files_ and folders_ are  in the ``pumping_python`` directory_
+* I type tree_ in the terminal_ to see what files_ and folders_ are in the ``pumping_python`` directory_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1

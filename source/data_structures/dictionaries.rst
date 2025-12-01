@@ -637,7 +637,7 @@ GREEN: make it pass
                 []
             )
 
-  the terminal_ shows the full difference between the two :ref:`lists`. I copy (``ctrl+c``) and paste (``ctrl+v``) the expected values from the terminal_ then use `find and replace`_ to remove the extra characters
+  the terminal_ shows the full difference between the two :ref:`lists`. I copy and paste the expected values from the terminal_ then use `find and replace`_ to remove the extra characters
 
   .. note::
 
@@ -703,7 +703,7 @@ GREEN: make it pass
 
   the test passes
 
-* I copy (``ctrl+c``) the names that do NOT have double underscores (__) and paste (``ctrl+v``) them below the test to make a TODO list that I use to test what I can do with dictionaries_
+* I copy the names that do NOT have double underscores (__) and paste them below the test to make a TODO list that I use to test what I can do with dictionaries_
 
   .. code-block:: python
     :lineno-start: 93
@@ -1328,7 +1328,7 @@ REFACTOR: make it better
 
   the test passes.
 
-  The get_ :ref:`method<functions>` has a condition
+  The get_ :ref:`method<functions>` has a :ref:`condition<booleans>`
 
   - When the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_, it returns the default argument
   - When the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_, it returns its :ref:`value<test_values_of_a_dictionary>`.
@@ -1401,7 +1401,7 @@ the terminal_ shows :ref:`AssertionError`
 GREEN: make it pass
 #################################################################################
 
-* I copy (``ctrl+c``) the ``dict_items`` :ref:`object<classes>` from the terminal_ and paste (``ctrl+v``) it as the expectation
+* I copy the ``dict_items`` :ref:`object<classes>` from the terminal_ and paste it as the expectation
 
   .. code-block:: python
     :lineno-start: 129
@@ -1503,38 +1503,44 @@ REFACTOR: make it better
 
   .. code-block:: python
     :lineno-start: 132
-    :emphasize-lines: 
+    :emphasize-lines: 3-6
 
-    self.assertEqual(
-        list(a_dictionary.items()),
-        [
-            ('key1', 'value1'),
-            ('keyN', [0, 1, 2, 'n']),
-        ]
-    )
+            self.assertEqual(
+                list(a_dictionary.items()),
+                [
+                    ('key1', 'value1'),
+                    ('keyN', [0, 1, 2, 'n']),
+                ]
+            )
 
   the test passes
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 1
 
-    def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'keyN': [0, 1, 2, 'n'],
-        }
-        self.assertEqual(
-            list(a_dictionary.items()),
-            [
-                ('key1', 'value1'),
-                ('keyN', [0, 1, 2, 'n']),
-            ]
-        )
+        def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            self.assertEqual(
+                list(a_dictionary.items()),
+                [
+                    ('key1', 'value1'),
+                    ('keyN', [0, 1, 2, 'n']),
+                ]
+            )
+
+
+    'items',
 
 * I remove items_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 141
 
     'keys',
     'pop',
@@ -1554,16 +1560,22 @@ test_keys_of_a_dictionary
 RED: make it fail
 #################################################################################
 
-I add a test
+I add a new test
 
 .. code-block:: python
+  :lineno-start: 136
+  :emphasize-lines: 5-7
 
-  def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
-      ...
+                  ('keyN', [0, 1, 2, 'n']),
+              ]
+          )
 
-  def test_keys(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.keys())
+      def test_keys(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.keys())
+
+
+  'keys',
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -1576,49 +1588,70 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 GREEN: make it pass
 #################################################################################
 
-I copy the value from the terminal_ and paste it as the expectation
+* I copy the ``dict_keys`` :ref:`object<classes>` from the terminal_ and paste it as the expectation
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 3-6
 
-  self.assertIsNone(a_dictionary.keys(), dict_keys(['key']))
+        def test_keys(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.keys(),
+                dict_keys(['key'])
+            )
 
-the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  NameError: name 'dict_keys' is not defined
+    NameError: name 'dict_keys' is not defined
 
-the ``dict_keys`` :ref:`object<classes>` contains a :ref:`list<lists>`, I use it as the expectation instead
+  the ``dict_keys`` :ref:`object<classes>` contains a :ref:`list<lists>`
 
-.. code-block:: python
+* I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<classes>` as the expectation instead
 
-  self.assertIsNone(a_dictionary.keys(), ['key'])
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 5
 
-the terminal_ shows :ref:`AssertionError`
+        def test_keys(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.keys(),
+                ['key']
+            )
 
-.. code-block:: shell
+  the terminal_ shows :ref:`AssertionError`
 
-  AssertionError: dict_keys(['key']) is not None : ['key']
+  .. code-block:: shell
 
-I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list<lists>` constructor_
+    AssertionError: dict_keys(['key']) is not None : ['key']
 
-.. code-block:: python
+* I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list<lists>` constructor_ to see if ``dict_keys`` is iterable_
 
-  self.assertIsNone(list(a_dictionary.keys()), ['key'])
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 2
 
-the terminal_ shows :ref:`AssertionError`
+            self.assertIsNone(
+                list(a_dictionary.keys()),
+                ['key']
+            )
 
-.. code-block:: shell
+  the terminal_ shows :ref:`AssertionError`
 
-  AssertionError: ['key'] is not None : ['key']
+  .. code-block:: shell
 
-I change assertIsNone_ to assertEqual_
+    AssertionError: ['key'] is not None : ['key']
 
-.. code-block:: python
+  I change assertIsNone_ to assertEqual_
 
-  self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+  .. code-block:: python
 
-the test passes
+    self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+
+  the test passes
 
 REFACTOR: make it better
 #################################################################################
