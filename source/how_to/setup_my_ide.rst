@@ -14,7 +14,12 @@ how I setup my Integrated Development Environment (IDE)
 
 ----
 
-As of this writing I use `Visual Studio Code`_
+As of this writing I use `Visual Studio Code`_, you can download and install it or any `Integrated Development Environment (IDE)`_ of your choice. Here are a few options
+
+  - `Visual Studio Code`_
+  - `Sublime Text`_
+  - PyCharm_
+  - `other Integrated Development Environment (IDE) options`_
 
 *********************************************************************************
 Screen Layout
