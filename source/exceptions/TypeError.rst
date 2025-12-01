@@ -466,7 +466,7 @@ REFACTOR: make it better
     :lineno-start: 25
     :emphasize-lines: 1
 
-    def function_01(input_1, input_2):
+    def function_01(first_input, second_input):
       return None
 
   the test passes
@@ -494,11 +494,11 @@ REFACTOR: make it better
     :lineno-start: 25
     :emphasize-lines: 5-6
 
-    def function_01(input_1, input_2):
+    def function_01(first_input, second_input):
         return None
 
 
-    def function_02(input_1, input_2):
+    def function_02(first_input, second_input):
         return None
 
   the terminal_ shows :ref:`TypeError`
@@ -513,7 +513,7 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 1
 
-    def function_02(input_1, input_2, input_3):
+    def function_02(first_input, second_input, input_3):
         return None
 
   the test passes
@@ -542,11 +542,11 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 5-6
 
-    def function_02(input_1, input_2, input_3):
+    def function_02(first_input, second_input, input_3):
         return None
 
 
-    def function_03(input_1, input_2, input_3):
+    def function_03(first_input, second_input, input_3):
         return None
 
   the terminal_ shows :ref:`TypeError`
@@ -561,7 +561,7 @@ REFACTOR: make it better
     :lineno-start: 33
     :emphasize-lines: 1
 
-    def function_03(input_1, input_2, input_3, input_4):
+    def function_03(first_input, second_input, input_3, input_4):
         return None
 
   the test passes
@@ -760,7 +760,7 @@ I add a new failing test to show that I can NOT do an arithmetic_ operation with
           while self.random_y == 0:
               with self.assertRaises(ZeroDivisionError):
                   src.calculator.divide(self.random_x, self.random_y)
-              self.random_random_y = a_random_number()
+              self.random_y = a_random_number()
           else:
               self.assertEqual(
                   src.calculator.divide(self.random_x, self.random_y),

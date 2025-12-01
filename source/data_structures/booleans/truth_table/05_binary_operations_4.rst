@@ -59,11 +59,11 @@ I add a :ref:`function<functions>` definition for it to ``truth_table.py``
   :lineno-start: 63
   :emphasize-lines: 5-6
 
-  def converse_implication(input_1, input_2):
-      return input_1 or not input_2
+  def converse_implication(first_input, second_input):
+      return first_input or not second_input
 
 
-  def negate_second(input_1, input_2):
+  def negate_second(first_input, second_input):
       return False
 
 the test passes
@@ -93,8 +93,8 @@ REFACTOR: make it better
     :lineno-start: 67
     :emphasize-lines: 2-3
 
-    def negate_second(input_1, input_2):
-        if input_1 and not q:
+    def negate_second(first_input, second_input):
+        if first_input and not q:
             return True
         return False
 
@@ -137,10 +137,10 @@ REFACTOR: make it better
     :lineno-start: 67
     :emphasize-lines: 2-3
 
-    def negate_second(input_1, input_2):
-        if not input_1 and not input_2:
+    def negate_second(first_input, second_input):
+        if not first_input and not second_input:
             return True
-        if input_1 and not q:
+        if first_input and not q:
             return True
         return False
 
@@ -152,11 +152,11 @@ REFACTOR: make it better
     :lineno-start: 67
     :emphasize-lines: 2
 
-    def negate_second(input_1, input_2):
-        return not input_2
-        if not input_1 and not input_2:
+    def negate_second(first_input, second_input):
+        return not second_input
+        if not first_input and not second_input:
             return True
-        if input_1 and not q:
+        if first_input and not q:
             return True
         return False
 
@@ -167,8 +167,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 67
 
-    def negate_second(input_1, input_2):
-        return not input_2
+    def negate_second(first_input, second_input):
+        return not second_input
 
 ----
 
@@ -208,11 +208,11 @@ I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
   :lineno-start: 67
   :emphasize-lines: 5-6
 
-  def negate_second(input_1, input_2):
-      return not input_2
+  def negate_second(first_input, second_input):
+      return not second_input
 
 
-  def logical_nor(input_1, input_2):
+  def logical_nor(first_input, second_input):
       return False
 
 the test passes
@@ -272,8 +272,8 @@ REFACTOR: make it better
     :lineno-start: 71
     :emphasize-lines: 2
 
-        def logical_nor(input_1, input_2):
-            return not input_1 and not input_2
+        def logical_nor(first_input, second_input):
+            return not first_input and not second_input
             return False
 
   the test passes
@@ -284,9 +284,9 @@ REFACTOR: make it better
     :lineno-start: 71
     :emphasize-lines: 2
 
-    def logical_nor(input_1, input_2):
-        return not input_1 not or not q
-        return not input_1 and not input_2
+    def logical_nor(first_input, second_input):
+        return not first_input not or not q
+        return not first_input and not second_input
 
   the terminal_ shows SyntaxError_
 
@@ -300,10 +300,10 @@ REFACTOR: make it better
     :lineno-start: 71
     :emphasize-lines: 2-3
 
-    def logical_nor(input_1, input_2):
-        return not (input_1 or input_2)
-        # return not input_1 not or not q
-        return not input_1 and not input_2
+    def logical_nor(first_input, second_input):
+        return not (first_input or second_input)
+        # return not first_input not or not q
+        return not first_input and not second_input
 
   still green
 
@@ -312,8 +312,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 71
 
-    def logical_nor(input_1, input_2):
-        return not (input_1 or input_2)
+    def logical_nor(first_input, second_input):
+        return not (first_input or second_input)
 
 ----
 
@@ -353,11 +353,11 @@ I add a :ref:`function<functions>` definition for it in ``truth_table.py``
   :lineno-start: 71
   :emphasize-lines: 5-6
 
-  def logical_nor(input_1, input_2):
-      return not (input_1 or input_2)
+  def logical_nor(first_input, second_input):
+      return not (first_input or second_input)
 
 
-  def logical_equality(input_1, input_2):
+  def logical_equality(first_input, second_input):
       return True
 
 the test passes
@@ -387,8 +387,8 @@ REFACTOR: make it better
     :lineno-start: 75
     :emphasize-lines: 2-3
 
-    def logical_equality(input_1, input_2):
-        if input_1 and not q:
+    def logical_equality(first_input, second_input):
+        if first_input and not q:
             return False
         return True
 
@@ -417,10 +417,10 @@ REFACTOR: make it better
     :lineno-start: 75
     :emphasize-lines: 2-3
 
-    def logical_equality(input_1, input_2):
-        if not input_1 and input_2:
+    def logical_equality(first_input, second_input):
+        if not first_input and second_input:
             return False
-        if input_1 and not q:
+        if first_input and not q:
             return False
         return True
 
@@ -449,12 +449,12 @@ REFACTOR: make it better
     :lineno-start: 75
     :emphasize-lines: 2-3
 
-    def logical_equality(input_1, input_2):
-        if (not input_1 and input_2) or (input_1 and not input_2):
+    def logical_equality(first_input, second_input):
+        if (not first_input and second_input) or (first_input and not second_input):
             return False
-        if not input_1 and input_2:
+        if not first_input and second_input:
             return False
-        if input_1 and not q:
+        if first_input and not q:
             return False
         return True
 
@@ -465,8 +465,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 75
 
-    def logical_equality(input_1, input_2):
-        if (not input_1 and input_2) or (input_1 and not input_2):
+    def logical_equality(first_input, second_input):
+        if (not first_input and second_input) or (first_input and not second_input):
             return False
         return True
 
@@ -478,9 +478,9 @@ REFACTOR: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(input_1, input_2):
-        return not ((not input_1 and input_2) or (input_1 and not input_2))
-        if (not input_1 and input_2) or (input_1 and not input_2):
+    def logical_equality(first_input, second_input):
+        return not ((not first_input and second_input) or (first_input and not second_input))
+        if (not first_input and second_input) or (first_input and not second_input):
             return False
         return True
 
@@ -492,9 +492,9 @@ REFACTOR: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(input_1, input_2):
-        return (not not input_1 not and not q) not or (not p not and not not q)
-        return not ((not input_1 and input_2) or (input_1 and not input_2))
+    def logical_equality(first_input, second_input):
+        return (not not first_input not and not q) not or (not p not and not not q)
+        return not ((not first_input and second_input) or (first_input and not second_input))
 
   the terminal_ shows SyntaxError_
 
@@ -508,9 +508,9 @@ REFACTOR: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(input_1, input_2):
-        return (not not input_1 or not input_2) and (not p or not not q)
-        return not ((not input_1 and input_2) or (input_1 and not input_2))
+    def logical_equality(first_input, second_input):
+        return (not not first_input or not second_input) and (not p or not not q)
+        return not ((not first_input and second_input) or (first_input and not second_input))
 
   the test is green again
 
@@ -520,9 +520,9 @@ REFACTOR: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(input_1, input_2):
-        return (input_1 or not input_2) and (not input_1 or input_2)
-        return not ((not input_1 and input_2) or (input_1 and not input_2))
+    def logical_equality(first_input, second_input):
+        return (first_input or not second_input) and (not first_input or second_input)
+        return not ((not first_input and second_input) or (first_input and not second_input))
 
   still green
 
@@ -531,8 +531,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 75
 
-    def logical_equality(input_1, input_2):
-        return (input_1 or not input_2) and (not input_1 or input_2)
+    def logical_equality(first_input, second_input):
+        return (first_input or not second_input) and (not first_input or second_input)
 
   the test is still passing
 
@@ -542,9 +542,9 @@ REFACTOR: make it better
     :lineno-start: 75
     :emphasize-lines: 2
 
-    def logical_equality(input_1, input_2):
-        return input_1 == input_2
-        return (input_1 or not input_2) and (not input_1 or input_2)
+    def logical_equality(first_input, second_input):
+        return first_input == second_input
+        return (first_input or not second_input) and (not first_input or second_input)
 
   the test is still green
 
@@ -586,12 +586,12 @@ I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.p
   :lineno-start: 75
   :emphasize-lines: 6-7
 
-  def logical_equality(input_1, input_2):
-      return input_1 == input_2
-      return (input_1 or not input_2) and (not input_1 or input_2)
+  def logical_equality(first_input, second_input):
+      return first_input == second_input
+      return (first_input or not second_input) and (not first_input or second_input)
 
 
-  def material_implication(input_1, input_2):
+  def material_implication(first_input, second_input):
       return True
 
 the test passes
@@ -621,8 +621,8 @@ REFACTOR: make it better
     :lineno-start: 80
     :emphasize-lines: 2-3
 
-    def material_implication(input_1, input_2):
-        if input_1 and not q:
+    def material_implication(first_input, second_input):
+        if first_input and not q:
             return False
         return True
 
@@ -663,9 +663,9 @@ REFACTOR: make it better
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def material_implication(input_1, input_2):
-        return not (input_1 and not input_2)
-        if input_1 and not q:
+    def material_implication(first_input, second_input):
+        return not (first_input and not second_input)
+        if first_input and not q:
             return False
         return True
 
@@ -677,9 +677,9 @@ REFACTOR: make it better
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def material_implication(input_1, input_2):
-        return not input_1 not and not not q
-        return not (input_1 and not input_2)
+    def material_implication(first_input, second_input):
+        return not first_input not and not not q
+        return not (first_input and not second_input)
 
   the terminal_ shows SyntaxError_
 
@@ -693,9 +693,9 @@ REFACTOR: make it better
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def material_implication(input_1, input_2):
-        return not input_1 or not not q
-        return not (input_1 and not input_2)
+    def material_implication(first_input, second_input):
+        return not first_input or not not q
+        return not (first_input and not second_input)
 
   the test is green again
 
@@ -705,9 +705,9 @@ REFACTOR: make it better
     :lineno-start: 80
     :emphasize-lines: 2
 
-    def material_implication(input_1, input_2):
-        return not input_1 or input_2
-        return not (input_1 and not input_2)
+    def material_implication(first_input, second_input):
+        return not first_input or second_input
+        return not (first_input and not second_input)
 
   the test is still passing
 
@@ -716,8 +716,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 80
 
-    def material_implication(input_1, input_2):
-        return not input_1 or input_2
+    def material_implication(first_input, second_input):
+        return not first_input or second_input
 
 ----
 
@@ -727,21 +727,21 @@ review
 
 Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
 
-* :ref:`Material Implication  <test_material_implication>` returns ``not input_1 or input_2``
+* :ref:`Material Implication  <test_material_implication>` returns ``not first_input or second_input``
 * :ref:`Logical Equality <test_logical_equality>` returns ``p == q``
-* :ref:`Logical NOR <test_logical_nor>` returns ``not (input_1 or input_2)``
+* :ref:`Logical NOR <test_logical_nor>` returns ``not (first_input or second_input)``
 * :ref:`Negate Second <test_negate_second>` always returns ``not q``
-*  :ref:`Converse Implication <test_converse_implication>` returns ``input_1 or not input_2``
+*  :ref:`Converse Implication <test_converse_implication>` returns ``first_input or not second_input``
 * :ref:`Project First <test_project_first>` always returns ``p``
-* :ref:`Material NonImplication <test_material_non_implication>` returns ``input_1 and not input_2``
+* :ref:`Material NonImplication <test_material_non_implication>` returns ``first_input and not second_input``
 * :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``
-* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``input_1 or input_2``
+* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
-* :ref:`Logical NAND <test_logical_nand>` returns ``not (input_1 and input_2)``
+* :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``
 * :ref:`Negate First<test_negate_first>` always returns ``not p``
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not input_1 and input_2``
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
 * :ref:`Project Second <test_project_second>` always returns ``q``
-* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``input_1 and input_2``
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 and

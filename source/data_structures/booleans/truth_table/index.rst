@@ -46,9 +46,13 @@ requirements
 * I add an `import statement`_
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
 
     import unittest
     import src.truth_table
+
+* then I continue in :ref:`truth table: Nullary and Unary Operations`
 
 ----
 

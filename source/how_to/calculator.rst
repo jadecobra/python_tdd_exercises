@@ -949,7 +949,7 @@ REFACTOR: make it better
                 src.calculator.divide(self.random_x, 0)
 
             while self.random_y == 0:
-                self.random_random_y = a_random_number()
+                self.random_y = a_random_number()
             else:
                 self.assertEqual(
                     src.calculator.divide(self.random_x, self.random_y),
@@ -977,7 +977,7 @@ REFACTOR: make it better
 
             while self.random_y == 0:
                 src.calculator.divide(self.random_x, self.random_y)
-                self.random_random_y = a_random_number()
+                self.random_y = a_random_number()
             else:
                 self.assertEqual(
                     src.calculator.divide(self.random_x, self.random_y),
@@ -1003,7 +1003,7 @@ REFACTOR: make it better
             while self.random_y == 0:
                 with self.assertRaises(ZeroDivisionError):
                       src.calculator.divide(self.random_x, self.random_y)
-                self.random_random_y = a_random_number()
+                self.random_y = a_random_number()
             else:
                 self.assertEqual(
                     src.calculator.divide(self.random_x, self.random_y),
@@ -1019,7 +1019,7 @@ REFACTOR: make it better
             while self.random_y == 0:
                 with self.assertRaises(ZeroDivisionError):
                     src.calculator.divide(self.random_x, self.random_y)
-                self.random_random_y = a_random_number()
+                self.random_y = a_random_number()
             else:
                 self.assertEqual(
                     src.calculator.divide(self.random_x, self.random_y),
@@ -1133,7 +1133,7 @@ GREEN: make it pass
     :linenos:
     :emphasize-lines: 1
 
-    def subtract(input_1, input_2):
+    def subtract(first_input, second_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -1148,8 +1148,8 @@ GREEN: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def subtract(input_1, input_2):
-        return input_1, input_2
+    def subtract(first_input, second_input):
+        return first_input, second_input
 
   the terminal_ shows random numbers with :ref:`AssertionError` that look like this
 
@@ -1165,8 +1165,8 @@ GREEN: make it pass
     :linenos:
     :emphasize-lines: 2
 
-    def subtract(input_1, input_2):
-        return input_1 - input_2
+    def subtract(first_input, second_input):
+        return first_input - second_input
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -1180,8 +1180,8 @@ GREEN: make it pass
     :linenos:
     :emphasize-lines: 5-6
 
-    def subtract(input_1, input_2):
-        return input_1 - input_2
+    def subtract(first_input, second_input):
+        return first_input - second_input
 
 
     def multiply():
@@ -1199,7 +1199,7 @@ GREEN: make it pass
     :lineno-start: 5
     :emphasize-lines: 1
 
-    def multiply(input_1, input_2):
+    def multiply(first_input, second_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -1214,8 +1214,8 @@ GREEN: make it pass
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def multiply(input_1, input_2):
-        return input_1, input_2
+    def multiply(first_input, second_input):
+        return first_input, second_input
 
   the terminal_ shows random numbers with :ref:`AssertionError` that look like this
 
@@ -1229,8 +1229,8 @@ GREEN: make it pass
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def multiply(input_1, input_2):
-        return input_1 * input_2
+    def multiply(first_input, second_input):
+        return first_input * second_input
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -1244,12 +1244,12 @@ GREEN: make it pass
     :lineno-start: 5
     :emphasize-lines: 5-6
 
-    def multiply(input_1, input_2):
-        return input_1 * input_2
+    def multiply(first_input, second_input):
+        return first_input * second_input
 
 
-    def divide(input_1, input_2):
-        return input_1, input_2
+    def divide(first_input, second_input):
+        return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError` with random numbers that look like this
 
@@ -1272,8 +1272,8 @@ GREEN: make it pass
     :lineno-start: 9
     :emphasize-lines: 2
 
-    def divide(input_1, input_2):
-        return input_1 / input_2
+    def divide(first_input, second_input):
+        return first_input / second_input
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -1287,20 +1287,20 @@ GREEN: make it pass
     :linenos:
     :emphasize-lines: 13-14
 
-    def subtract(input_1, input_2):
-        return input_1 - input_2
+    def subtract(first_input, second_input):
+        return first_input - second_input
 
 
-    def multiply(input_1, input_2):
-        return input_1 * input_2
+    def multiply(first_input, second_input):
+        return first_input * second_input
 
 
-    def divide(input_1, input_2):
-        return input_1 / input_2
+    def divide(first_input, second_input):
+        return first_input / second_input
 
 
-    def add(input_1, input_2):
-        return input_1 + input_2
+    def add(first_input, second_input):
+        return first_input + second_input
 
   and all the tests are passing with no random failures. Lovely! I am a Programmer!
 

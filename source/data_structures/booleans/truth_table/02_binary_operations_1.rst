@@ -110,8 +110,8 @@ I add ``q`` as the second name in parentheses then rename ``argument`` to ``p`` 
   :lineno-start: 17
   :emphasize-lines: 1-2
 
-  def contradiction(input_1, input_2):
-      return not input_1
+  def contradiction(first_input, second_input):
+      return not first_input
 
 the test passes
 
@@ -156,7 +156,7 @@ REFACTOR: make it better
     :lineno-start: 17
     :emphasize-lines: 2
 
-    def contradiction(input_1, input_2):
+    def contradiction(first_input, second_input):
         return False
 
   the test is green again
@@ -217,11 +217,11 @@ I add the :ref:`function<functions>` in ``truth_table.py``
   :lineno-start: 17
   :emphasize-lines: 5-6
 
-  def contradiction(input_1, input_2):
+  def contradiction(first_input, second_input):
       return False
 
 
-  def logical_conjunction(input_1, input_2):
+  def logical_conjunction(first_input, second_input):
       return True
 
 the test passes
@@ -251,7 +251,7 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2
 
-    def logical_conjunction(input_1, input_2):
+    def logical_conjunction(first_input, second_input):
         return False
         return True
 
@@ -269,9 +269,9 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2-4
 
-    def logical_conjunction(input_1, input_2):
-        if input_1 == True:
-            if input_2 == False:
+    def logical_conjunction(first_input, second_input):
+        if first_input == True:
+            if second_input == False:
                 return False
         return True
 
@@ -300,12 +300,12 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2-4
 
-    def logical_conjunction(input_1, input_2):
-        if input_1 == False:
-            if input_2 == True:
+    def logical_conjunction(first_input, second_input):
+        if first_input == False:
+            if second_input == True:
                 return False
-        if input_1 == True:
-            if input_2 == False:
+        if first_input == True:
+            if second_input == False:
                 return False
         return True
 
@@ -338,14 +338,14 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2-3
 
-    def logical_conjunction(input_1, input_2):
-        if input_1 == False:
-            if input_2 == False:
+    def logical_conjunction(first_input, second_input):
+        if first_input == False:
+            if second_input == False:
                 return False
-            if input_2 == True:
+            if second_input == True:
                 return False
-        if input_1 == True:
-            if input_2 == False:
+        if first_input == True:
+            if second_input == False:
                 return False
         return True
 
@@ -357,16 +357,16 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 10-11
 
-    def logical_conjunction(input_1, input_2):
-        if input_1 == False:
-            if input_2 == False:
+    def logical_conjunction(first_input, second_input):
+        if first_input == False:
+            if second_input == False:
                 return False
-            if input_2 == True:
+            if second_input == True:
                 return False
-        if input_1 == True:
-            if input_2 == False:
+        if first_input == True:
+            if second_input == False:
                 return False
-            if input_2 == True:
+            if second_input == True:
                 return True
 
 * there are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I use an `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` and an else_ clause for the other cases
@@ -375,20 +375,20 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2-5
 
-    def logical_conjunction(input_1, input_2):
-        if input_1 == True and q == True:
+    def logical_conjunction(first_input, second_input):
+        if first_input == True and second_input == True:
             return True
         else:
             return False
-        if input_1 == False:
-            if input_2 == False:
+        if first_input == False:
+            if second_input == False:
                 return False
-            if input_2 == True:
+            if second_input == True:
                 return False
-        if input_1 == True:
-            if input_2 == False:
+        if first_input == True:
+            if second_input == False:
                 return False
-            if input_2 == True:
+            if second_input == True:
                 return True
 
   the test is still green
@@ -399,9 +399,9 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2-3
 
-    def logical_conjunction(input_1, input_2):
+    def logical_conjunction(first_input, second_input):
         if bool(p) and bool(q):
-        # if input_1 == True and q == True:
+        # if first_input == True and second_input == True:
             return True
         else:
             return False
@@ -414,14 +414,14 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2-3
 
-    def logical_conjunction(input_1, input_2):
-        if input_1 and q:
+    def logical_conjunction(first_input, second_input):
+        if first_input and second_input:
         # if bool(p) and bool(q):
             return True
         else:
             return False
 
-  the test is still green. With ``if input_1 and q``,  Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background. I remove the commented line
+  the test is still green. With ``if first_input and second_input``,  Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background. I remove the commented line
 
 * Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
@@ -429,9 +429,9 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2
 
-    def logical_conjunction(input_1, input_2):
-        return True if input_1 and q else False
-        if input_1 and q:
+    def logical_conjunction(first_input, second_input):
+        return True if first_input and second_input else False
+        if first_input and second_input:
             return True
         else:
             return False
@@ -444,9 +444,9 @@ REFACTOR: make it better
     :lineno-start: 21
     :emphasize-lines: 2
 
-    def logical_conjunction(input_1, input_2):
-        return input_1 and input_2
-        return True if input_1 and q else False
+    def logical_conjunction(first_input, second_input):
+        return first_input and second_input
+        return True if first_input and second_input else False
 
   still green!
 
@@ -455,8 +455,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 21
 
-    def logical_conjunction(input_1, input_2):
-        return input_1 and input_2
+    def logical_conjunction(first_input, second_input):
+        return first_input and second_input
 
 ----
 
@@ -496,11 +496,11 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
   :lineno-start: 21
   :emphasize-lines: 5-6
 
-  def logical_conjunction(input_1, input_2):
-      return input_1 and input_2
+  def logical_conjunction(first_input, second_input):
+      return first_input and second_input
 
 
-  def project_second(input_1, input_2):
+  def project_second(first_input, second_input):
       return True
 
 the test passes
@@ -530,9 +530,9 @@ REFACTOR: make it better
     :lineno-start: 25
     :emphasize-lines: 2-4
 
-    def project_second(input_1, input_2):
-        if input_1 == True:
-            if input_2 == False:
+    def project_second(first_input, second_input):
+        if first_input == True:
+            if second_input == False:
                 return False
         return True
 
@@ -578,12 +578,12 @@ REFACTOR: make it better
     :lineno-start: 25
     :emphasize-lines: 2-4
 
-    def project_second(input_1, input_2):
-        if input_1 == False:
-            if input_2 == False:
+    def project_second(first_input, second_input):
+        if first_input == False:
+            if second_input == False:
                 return False
-        if input_1 == True:
-            if input_2 == False:
+        if first_input == True:
+            if second_input == False:
                 return False
         return True
 
@@ -595,13 +595,13 @@ REFACTOR: make it better
     :lineno-start: 25
     :emphasize-lines: 2
 
-    def project_second(input_1, input_2):
-        return q
-        if input_1 == False:
-            if input_2 == False:
+    def project_second(first_input, second_input):
+        return second_input
+        if first_input == False:
+            if second_input == False:
                 return False
-        if input_1 == True:
-            if input_2 == False:
+        if first_input == True:
+            if second_input == False:
                 return False
         return True
 
@@ -612,8 +612,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 25
 
-    def project_second(input_1, input_2):
-        return q
+    def project_second(first_input, second_input):
+        return second_input
 
 ----
 
@@ -653,11 +653,11 @@ I add the :ref:`function<functions>` to ``truth_table.py``
   :lineno-start: 25
   :emphasize-lines: 5-6
 
-  def project_second(input_1, input_2):
-      return q
+  def project_second(first_input, second_input):
+      return second_input
 
 
-  def converse_non_implication(input_1, input_2):
+  def converse_non_implication(first_input, second_input):
       return False
 
 the test passes
@@ -698,9 +698,9 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 2-4
 
-    def converse_non_implication(input_1, input_2):
-        if input_1 == False:
-            if input_2 == True:
+    def converse_non_implication(first_input, second_input):
+        if first_input == False:
+            if second_input == True:
                 return True
         return False
 
@@ -729,10 +729,10 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: -4
 
-    def converse_non_implication(input_1, input_2):
-        if input_1 == False and q == True:
-        # if input_1 == False:
-        #    if input_2 == True:
+    def converse_non_implication(first_input, second_input):
+        if first_input == False and second_input == True:
+        # if first_input == False:
+        #    if second_input == True:
                 return True
         return False
 
@@ -744,9 +744,9 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 2-4
 
-    def converse_non_implication(input_1, input_2):
-        if not input_1 == True and bool(q):
-        # if input_1 == False and q == True:
+    def converse_non_implication(first_input, second_input):
+        if not first_input == True and bool(q):
+        # if first_input == False and second_input == True:
             return True
         return False
 
@@ -760,9 +760,9 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 4-5
 
-    def converse_non_implication(input_1, input_2):
-        if not input_1 == True and bool(q):
-        # if input_1 == False and q == True:
+    def converse_non_implication(first_input, second_input):
+        if not first_input == True and bool(q):
+        # if first_input == False and second_input == True:
             return True
         else:
             return False
@@ -775,9 +775,9 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 2-3
 
-    def converse_non_implication(input_1, input_2):
-        if not bool(p) and q:
-        # if not input_1 == True and bool(q):
+    def converse_non_implication(first_input, second_input):
+        if not bool(p) and second_input:
+        # if not first_input == True and bool(q):
             return True
         else:
             return False
@@ -790,9 +790,9 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 2-3
 
-    def converse_non_implication(input_1, input_2):
-        if not input_1 and input_2:
-        # if not bool(p) and q:
+    def converse_non_implication(first_input, second_input):
+        if not first_input and second_input:
+        # if not bool(p) and second_input:
             return True
         else:
             return False
@@ -805,9 +805,9 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 2
 
-    def converse_non_implication(input_1, input_2):
-        return True if not input_1 and input_2 else False
-        if not input_1 and input_2:
+    def converse_non_implication(first_input, second_input):
+        return True if not first_input and second_input else False
+        if not first_input and second_input:
             return True
         else:
             return False
@@ -820,9 +820,9 @@ REFACTOR: make it better
     :lineno-start: 29
     :emphasize-lines: 2
 
-    def converse_non_implication(input_1, input_2):
-        return not input_1 and input_2
-        return True if not input_1 and input_2 else False
+    def converse_non_implication(first_input, second_input):
+        return not first_input and second_input
+        return True if not first_input and second_input else False
 
   all tests are still passing
 
@@ -831,8 +831,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 29
 
-    def converse_non_implication(input_1, input_2):
-        return not input_1 and input_2
+    def converse_non_implication(first_input, second_input):
+        return not first_input and second_input
 
 ----
 
@@ -842,9 +842,9 @@ review
 
 Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
 
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not input_1 and input_2``
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
 * :ref:`Project Second <test_project_second>` always returns ``q``
-* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``input_1 and input_2``
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 and

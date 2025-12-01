@@ -60,11 +60,11 @@ I add the :ref:`function<functions>` for ``exclusive_disjunction`` in ``truth_ta
   :lineno-start: 45
   :emphasize-lines: 5-6
 
-  def logical_disjunction(input_1, input_2):
-      return input_1 or input_2
+  def logical_disjunction(first_input, second_input):
+      return first_input or second_input
 
 
-  def exclusive_disjunction(input_1, input_2):
+  def exclusive_disjunction(first_input, second_input):
       return False
 
 the test passes
@@ -94,8 +94,8 @@ REFACTOR: make it better
     :lineno-start: 45
     :emphasize-lines: 2-3
 
-    def exclusive_disjunction(input_1, input_2):
-        if input_1 and not q:
+    def exclusive_disjunction(first_input, second_input):
+        if first_input and not q:
             return True
         return False
 
@@ -124,10 +124,10 @@ REFACTOR: make it better
     :lineno-start: 49
     :emphasize-lines: 2-3
 
-    def exclusive_disjunction(input_1, input_2):
-        if not input_1 and input_2:
+    def exclusive_disjunction(first_input, second_input):
+        if not first_input and second_input:
             return True
-        if input_1 and not q:
+        if first_input and not q:
             return True
         return False
 
@@ -156,12 +156,12 @@ REFACTOR: make it better
     :lineno-start: 49
     :emphasize-lines: 2-3
 
-    def exclusive_disjunction(input_1, input_2):
-        if (not input_1 and input_2) or (input_1 and not input_2):
+    def exclusive_disjunction(first_input, second_input):
+        if (not first_input and second_input) or (first_input and not second_input):
             return True
-        if not input_1 and input_2:
+        if not first_input and second_input:
             return True
-        if input_1 and not q:
+        if first_input and not q:
             return True
         return False
 
@@ -172,8 +172,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 49
 
-    def exclusive_disjunction(input_1, input_2):
-        if (not input_1 and input_2) or (input_1 and not input_2):
+    def exclusive_disjunction(first_input, second_input):
+        if (not first_input and second_input) or (first_input and not second_input):
             return True
         return False
 
@@ -185,9 +185,9 @@ REFACTOR: make it better
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def exclusive_disjunction(input_1, input_2):
-        return (not input_1 and input_2) or (input_1 and not input_2)
-        if (not input_1 and input_2) or (input_1 and not input_2):
+    def exclusive_disjunction(first_input, second_input):
+        return (not first_input and second_input) or (first_input and not second_input)
+        if (not first_input and second_input) or (first_input and not second_input):
             return True
         return False
 
@@ -198,8 +198,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 49
 
-    def exclusive_disjunction(input_1, input_2):
-        return (not input_1 and input_2) or (input_1 and not input_2)
+    def exclusive_disjunction(first_input, second_input):
+        return (not first_input and second_input) or (first_input and not second_input)
 
   still green
 
@@ -209,12 +209,12 @@ REFACTOR: make it better
     :lineno-start: 49
     :emphasize-lines: 2-5
 
-    def exclusive_disjunction(input_1, input_2):
-        if input_1 == q:
+    def exclusive_disjunction(first_input, second_input):
+        if first_input == q:
             return False
         else:
             return True
-        return (not input_1 and input_2) or (input_1 and not input_2)
+        return (not first_input and second_input) or (first_input and not second_input)
 
 * I change it to a simple `return statement`_
 
@@ -222,13 +222,13 @@ REFACTOR: make it better
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def exclusive_disjunction(input_1, input_2):
-        return not input_1 == input_2
-        if input_1 == q:
+    def exclusive_disjunction(first_input, second_input):
+        return not first_input == second_input
+        if first_input == q:
             return False
         else:
             return True
-        return (not input_1 and input_2) or (input_1 and not input_2)
+        return (not first_input and second_input) or (first_input and not second_input)
 
   the test is still green
 
@@ -238,10 +238,10 @@ REFACTOR: make it better
     :lineno-start: 49
     :emphasize-lines: 2
 
-    def exclusive_disjunction(input_1, input_2):
-        return input_1 != input_2
-        return not input_1 == input_2
-        return (not input_1 and input_2) or (input_1 and not input_2)
+    def exclusive_disjunction(first_input, second_input):
+        return first_input != second_input
+        return not first_input == second_input
+        return (not first_input and second_input) or (first_input and not second_input)
 
   the terminal_ still shows green. ``!=`` is the symbol for NOT equal
 
@@ -283,13 +283,13 @@ I add a :ref:`function<functions>` for ``material_non_implication`` in ``truth_t
   :lineno-start: 49
   :emphasize-lines: 7-8
 
-  def exclusive_disjunction(input_1, input_2):
-      return input_1 != input_2
-      return not input_1 == input_2
-      return (not input_1 and input_2) or (input_1 and not input_2)
+  def exclusive_disjunction(first_input, second_input):
+      return first_input != second_input
+      return not first_input == second_input
+      return (not first_input and second_input) or (first_input and not second_input)
 
 
-  def material_non_implication(input_1, input_2):
+  def material_non_implication(first_input, second_input):
       return False
 
 the test passes
@@ -319,8 +319,8 @@ REFACTOR: make it better
     :lineno-start: 55
     :emphasize-lines: 2-3
 
-    def material_non_implication(input_1, input_2):
-        if input_1 and not q:
+    def material_non_implication(first_input, second_input):
+        if first_input and not q:
             return True
         return False
 
@@ -362,9 +362,9 @@ REFACTOR: make it better
     :lineno-start: 55
     :emphasize-lines: 2
 
-    def material_non_implication(input_1, input_2):
-        return input_1 and not input_2
-        if input_1 and not q:
+    def material_non_implication(first_input, second_input):
+        return first_input and not second_input
+        if first_input and not q:
             return True
         return False
 
@@ -375,8 +375,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 55
 
-    def material_non_implication(input_1, input_2):
-        return input_1 and not input_2
+    def material_non_implication(first_input, second_input):
+        return first_input and not second_input
 
 ----
 
@@ -416,11 +416,11 @@ I add a :ref:`function<functions>` definition for ``project_first`` in ``truth_t
   :lineno-start: 55
   :emphasize-lines: 5-6
 
-  def material_non_implication(input_1, input_2):
-      return input_1 and not input_2
+  def material_non_implication(first_input, second_input):
+      return first_input and not second_input
 
 
-  def project_first(input_1, input_2):
+  def project_first(first_input, second_input):
       return True
 
 the test passes
@@ -463,8 +463,8 @@ REFACTOR: make it better
     :lineno-start: 59
     :emphasize-lines: 2-3
 
-    def project_first(input_1, input_2):
-        if not input_1 and input_2:
+    def project_first(first_input, second_input):
+        if not first_input and second_input:
             return False
         return True
 
@@ -497,10 +497,10 @@ REFACTOR: make it better
     :lineno-start: 59
     :emphasize-lines: 2-3
 
-    def project_first(input_1, input_2):
-        if not input_1 and not input_2:
+    def project_first(first_input, second_input):
+        if not first_input and not second_input:
             return False
-        if not input_1 and input_2:
+        if not first_input and second_input:
             return False
         return True
 
@@ -512,11 +512,11 @@ REFACTOR: make it better
     :lineno-start: 59
     :emphasize-lines: 2
 
-    def project_first(input_1, input_2):
-        return input_1
-        if not input_1 and not input_2:
+    def project_first(first_input, second_input):
+        return first_input
+        if not first_input and not second_input:
             return False
-        if not input_1 and input_2:
+        if not first_input and second_input:
             return False
         return True
 
@@ -527,8 +527,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 59
 
-    def project_first(input_1, input_2):
-        return input_1
+    def project_first(first_input, second_input):
+        return first_input
 
 ----
 
@@ -568,11 +568,11 @@ I add a :ref:`function<functions>` definition for ``converse_implication`` in ``
   :lineno-start: 59
   :emphasize-lines: 5-6
 
-  def project_first(input_1, input_2):
-      return input_1
+  def project_first(first_input, second_input):
+      return first_input
 
 
-  def converse_implication(input_1, input_2):
+  def converse_implication(first_input, second_input):
       return True
 
 the test passes
@@ -615,8 +615,8 @@ REFACTOR: make it better
     :lineno-start: 63
     :emphasize-lines: 2-3
 
-    def converse_implication(input_1, input_2):
-        if not input_1 and input_2:
+    def converse_implication(first_input, second_input):
+        if not first_input and second_input:
             return False
         return True
 
@@ -645,9 +645,9 @@ REFACTOR: make it better
     :lineno-start: 63
     :emphasize-lines: 2
 
-    def converse_implication(input_1, input_2):
-        return not (not input_1 and input_2)
-        if not input_1 and input_2:
+    def converse_implication(first_input, second_input):
+        return not (not first_input and second_input)
+        if not first_input and second_input:
             return False
         return True
 
@@ -659,9 +659,9 @@ REFACTOR: make it better
     :lineno-start: 63
     :emphasize-lines: 2
 
-    def converse_implication(input_1, input_2):
-        return not not input_1 not and not q
-        return not (not input_1 and input_2)
+    def converse_implication(first_input, second_input):
+        return not not first_input not and not q
+        return not (not first_input and second_input)
 
   the terminal_ shows SyntaxError_
 
@@ -675,9 +675,9 @@ REFACTOR: make it better
     :lineno-start: 63
     :emphasize-lines: 2
 
-    def converse_implication(input_1, input_2):
-        return not not input_1 or not input_2
-        return not (not input_1 and input_2)
+    def converse_implication(first_input, second_input):
+        return not not first_input or not second_input
+        return not (not first_input and second_input)
 
   back to green
 
@@ -687,9 +687,9 @@ REFACTOR: make it better
     :lineno-start: 63
     :emphasize-lines: 2
 
-    def converse_implication(input_1, input_2):
-        return input_1 or not input_2
-        return not (not input_1 and input_2)
+    def converse_implication(first_input, second_input):
+        return first_input or not second_input
+        return not (not first_input and second_input)
 
   the tests is still green
 
@@ -698,8 +698,8 @@ REFACTOR: make it better
   .. code-block:: python
     :lineno-start: 63
 
-    def converse_implication(input_1, input_2):
-        return input_1 or not input_2
+    def converse_implication(first_input, second_input):
+        return first_input or not second_input
 
 ----
 
@@ -709,17 +709,17 @@ review
 
 Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
 
-* :ref:`Converse Implication <test_converse_implication>` returns ``input_1 or not input_2``
+* :ref:`Converse Implication <test_converse_implication>` returns ``first_input or not second_input``
 * :ref:`Project First <test_project_first>` always returns ``p``
-* :ref:`Material NonImplication <test_material_non_implication>` returns ``input_1 and not input_2``
+* :ref:`Material NonImplication <test_material_non_implication>` returns ``first_input and not second_input``
 * :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``
-* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``input_1 or input_2``
+* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
-* :ref:`Logical NAND <test_logical_nand>` returns ``not (input_1 and input_2)``
+* :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``
 * :ref:`Negate First<test_negate_first>` always returns ``not p``
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not input_1 and input_2``
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
 * :ref:`Project Second <test_project_second>` always returns ``q``
-* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``input_1 and input_2``
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
 and

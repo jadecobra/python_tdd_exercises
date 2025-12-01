@@ -34,7 +34,7 @@ class TestCalculator(unittest.TestCase):
         while self.random_y == 0:
             with self.assertRaises(ZeroDivisionError):
                 src.calculator.divide(self.random_x, self.random_y)
-            self.random_random_y = a_random_number()
+            self.random_y = a_random_number()
         else:
             self.assertEqual(
                 src.calculator.divide(self.random_x, self.random_y),
