@@ -48,7 +48,7 @@ Open a terminal_ then type this to update the `Linux package manager`_
 
   sudo apt update
 
-..TIP:: you can do a full upgrade if you want
+.. TIP:: you can do a full upgrade if you want
 
 .. code-block:: shell
   :emphasize-lines: 1
