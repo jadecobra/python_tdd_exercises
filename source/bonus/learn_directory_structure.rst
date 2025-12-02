@@ -81,11 +81,11 @@ continue in :ref:`how to work in directories`
 how to install tree on Windows without Windows Subsystem Linux
 ---------------------------------------------------------------------------------
 
-tree_ comes with Windows_ you do not have to do anything, but here are the things you would type in place of what I have in the chapter
+tree_ comes with Windows_ you do not have to do anything. The following are things you would type in place of what I have in the chapter
 
-  * `New-Item`_ instead of touch_
-  * ``tree /F`` instead of tree_
-  * ``dir /ah`` instead of ``ls --all/-a``
+* `New-Item`_ instead of touch_
+* ``tree /F`` instead of tree_
+* ``dir /ah`` instead of ``ls --all/-a``
 
 The path shown when you call pwd_ or tree_ shows ``\`` instead of ``/``, for example
 
@@ -99,12 +99,12 @@ instead of
 
   .../pumping_python
 
-continue in :ref:`how to work in directories`
+continue with :ref:`how to work in directories`
 
 how to install tree on mac OS
 ---------------------------------------------------------------------------------
 
-* first install brew_ (The Missing Package Manager for MacOS), if you do not have it already
+* install brew_ (The Missing Package Manager for MacOS), if you do not have it already
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -113,16 +113,16 @@ how to install tree on mac OS
 
   the terminal_ shows instructions about how to add brew_ to your path
 
-* Copy and Paste the 3 lines it shows in the terminal_ then hit ``return`` to run it, the terminal_ will not show anything if the commands run successfully
+* copy and paste the 3 lines it shows in the terminal_ then hit ``return`` to run it, the terminal_ will not show anything if the commands run successfully
 
-* then use brew_ to install tree_
+* use brew_ to install tree_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     brew install tree
 
-* continue in :ref:`how to work in directories`
+* continue with :ref:`how to work in directories`
 
 ********************************************************************************************
 how to work in directories
