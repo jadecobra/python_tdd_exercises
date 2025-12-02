@@ -12,6 +12,7 @@ requirements
 I open a terminal_ to make sure the tree_ program is installed by typing this
 
 .. code-block:: shell
+  :emphasize-lines: 1
 
   tree
 
@@ -189,7 +190,7 @@ how to make a directory
 
   .. code-block:: shell
 
-    .../
+    .../pumping_python
 
   .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
 
