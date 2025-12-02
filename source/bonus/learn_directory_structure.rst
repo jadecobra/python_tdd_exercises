@@ -47,8 +47,15 @@ A file_ is a collection or container for text, like paper we write or print on a
 
   a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
-how to install tree on Linux/Windows Subsystem Linux requirements
+how to install tree
 #################################################################################
+
+* :ref:`how to install tree on Linux/Windows Subsystem Linux`
+* :ref:`how to install tree on mac OS`
+* :ref:`how to install tree on Windows without Windows Subsystem Linux`
+
+how to install tree on Linux/Windows Subsystem Linux
+---------------------------------------------------------------------------------
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -69,25 +76,10 @@ type this in the terminal_ to install tree_
 
   sudo apt install tree
 
-how to install tree on mac OS
-#################################################################################
-
-first install brew_ (The Missing Package Manager for MacOS), if you do not have it already
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-then use brew_ to install tree_
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  brew install tree
+continue in :ref:`how to work in directories`
 
 how to install tree on Windows without Windows Subsystem Linux
-#################################################################################
+---------------------------------------------------------------------------------
 
 tree_ comes with Windows_ you do not have to do anything, but here are the things you would type in place of what I have in the chapter
 
@@ -106,6 +98,31 @@ instead of
 .. code-block:: shell
 
   .../pumping_python
+
+continue in :ref:`how to work in directories`
+
+how to install tree on mac OS
+---------------------------------------------------------------------------------
+
+* first install brew_ (The Missing Package Manager for MacOS), if you do not have it already
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  the terminal_ shows instructions about how to add brew_ to your path
+
+* Copy and Paste the 3 lines it shows in the terminal_ then hit ``return`` to run it, the terminal_ will not show anything if the commands run successfully
+
+* then use brew_ to install tree_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    brew install tree
+
+* continue in :ref:`how to work in directories`
 
 ********************************************************************************************
 how to work in directories
@@ -172,7 +189,16 @@ how to make a directory
 
   .. code-block:: shell
 
-    .../pumping_python
+    .../
+
+  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code .
+
+    a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
 * I want to work in a directory named ``parent``
 
