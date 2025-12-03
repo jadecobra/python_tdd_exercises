@@ -1226,7 +1226,7 @@ how to use variables in a PowerShell script
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -1277,7 +1277,7 @@ how to use variables in a PowerShell script
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -1364,7 +1364,7 @@ how to use variables in a PowerShell script
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
