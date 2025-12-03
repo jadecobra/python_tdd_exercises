@@ -86,7 +86,7 @@ tree_ comes with Windows_ you do not have to do anything. The following are thin
 
 * `New-Item`_ instead of touch_
 * ``tree /F`` instead of tree_
-* ``dir /ah`` instead of ``ls --all/-a``
+* ``dir`` instead of ``ls --all/-a``
 
 The path shown when you call pwd_ or tree_ shows ``\`` instead of ``/``, for example
 

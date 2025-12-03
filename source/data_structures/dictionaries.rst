@@ -1735,16 +1735,21 @@ test_pop_removes_given_key_from_a_dictionary_and_returns_its_value
 RED: make it fail
 #################################################################################
 
-I wonder if the next :ref:`method<functions>` is the same as the one in :ref:`test_pop_removes_and_returns_last_item_from_a_list`, I add a test for it
+I wonder if the next :ref:`method<functions>` behaves the same in :ref:`test_pop_removes_and_returns_last_item_from_a_list`, I add a test for it
 
 .. code-block:: python
+  :lineno-start: 147
+  :emphasize-lines: 
 
-  def test_keys_of_a_dictionary(self):
-      ...
+              ['key1', 'keyN']
+          )
 
-  def test_pop(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.pop())
+      def test_pop(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.pop())
+
+
+  'pop',
 
 the terminal_ shows :ref:`TypeError`
 
