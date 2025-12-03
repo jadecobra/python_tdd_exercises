@@ -243,5 +243,4 @@ class TestDictionaries(unittest.TestCase):
 # Exceptions Encountered
 # AssertionError
 # TypeError
-# NameError
 # KeyError

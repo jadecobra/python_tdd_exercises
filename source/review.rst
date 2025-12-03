@@ -8,9 +8,9 @@ pumping python review
 
 You have made it to the end of the book, time to check how much you have learned
 
-#################################################################################
+*********************************************************************************
 how to make a python test driven development environment review
-#################################################################################
+*********************************************************************************
 
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to make a python test driven development environment manually>`
 * :ref:`How can I make a Python Test Driven Development Environment automatically?<how to make a python test driven development environment automatically>`
@@ -42,9 +42,9 @@ how to make a python test driven development environment review
 * :ref:`What is the Test Driven Development Cycle?<test_failure>`
 * :ref:`What is a Virtual Environment?<how to make a virtual environment>`
 
-###########################################################################################################
+*********************************************************************************
 how to make a python test driven development environment on Windows without Windows Subsystem Linux review
-###########################################################################################################
+*********************************************************************************
 
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to make a python test driven development environment manually on Windows without Windows SubSystem Linux>`
 * :ref:`How can I make a Python Test Driven Development Environment automatically?<how to make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
