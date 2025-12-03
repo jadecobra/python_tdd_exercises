@@ -557,9 +557,9 @@ how to make a Python package
 
 * I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file after you rename it
+  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file after you change its name
 
-how to rename a file
+how to change the name of a file
 --------------------------------------------------------------------------------------------
 
 * I use the mv_ program_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
@@ -1624,7 +1624,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I see directory structure?<how to look at directory structure>`
 * :ref:`How can I make an empty file?<how to make an empty file>`
 * :ref:`How can I write text to a file?<how to write text to a file>`
-* :ref:`How can I rename a file?<how to rename a file>`
+* :ref:`How can I change the name of a file?<how to change the name of a file>`
 * :ref:`How can I run a Python Program?<how to run a Python program>`
 * :ref:`How can I test for failure?<test_failure>`
 * :ref:`How can I make a Python package?<how to make a Python package>`

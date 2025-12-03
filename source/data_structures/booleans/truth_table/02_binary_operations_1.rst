@@ -104,7 +104,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: contradiction() takes 1 positional argument but 2 were given
 
-I add ``q`` as the second name in parentheses then rename ``argument`` to ``p`` for the first input given when the :ref:`function<functions>` is called by the test
+I add ``q`` as the second name in parentheses then change ``argument`` to ``p`` for the first input given when the :ref:`function<functions>` is called by the test
 
 .. code-block:: python
   :lineno-start: 17

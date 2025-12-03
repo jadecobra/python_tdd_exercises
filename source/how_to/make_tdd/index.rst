@@ -32,7 +32,7 @@ they cover the following
 - :ref:`test_failure`
 - :ref:`how to run tests manually`
 - :ref:`how to make a Python package`
-- :ref:`how to rename a file`
+- :ref:`how to change the name of a file`
 - :ref:`how to run tests automatically`
 - :ref:`how to make a virtual environment`
 - :ref:`how to activate a virtual environment`

@@ -102,7 +102,7 @@ RED: make it fail
 GREEN: make it pass
 #################################################################################
 
-I rename ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the test passes
+I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the test passes
 
 REFACTOR: make it better
 #################################################################################

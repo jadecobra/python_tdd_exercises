@@ -465,7 +465,7 @@ how to make a Python package
 
   .. CAUTION:: if you do not close ``magic.py`` you will have 3 files in the ``tests`` folder after the next step instead of 2 because you turned on the ``Auto Save`` feature earlier
 
-how to rename a file on Windows without WSL
+how to change the name of a file on Windows without WSL
 --------------------------------------------------------------------------------------------
 
 * I use the `Move-Item`_ command to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
@@ -1478,7 +1478,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I see directory structure?<how to look at directory structure>`
 * :ref:`How can I make an empty file?<how to make an empty file on Windows without Windows SubSystem Linux>`
 * :ref:`How can I write text to a file?<how to write text to a file on Windows without Windows SubSystem Linux>`
-* :ref:`How can I rename a file?<how to rename a file on Windows without WSL>`
+* :ref:`How can I change the name of a file?<how to change the name of a file on Windows without WSL>`
 * :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows SubSystem Linux>`
 * :ref:`How can I test for failure?<test_failure>`
 * :ref:`How can I make a Python package?<how to make a Python package>`

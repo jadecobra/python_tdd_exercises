@@ -345,7 +345,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -638,7 +638,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1054,7 +1054,7 @@ REFACTOR: make it better
 
   the test is still green
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1185,7 +1185,7 @@ REFACTOR: make it better
 
   the test passes, it moved everything from the given :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and after to the right
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1323,7 +1323,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1453,7 +1453,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1522,7 +1522,7 @@ the test passes
 REFACTOR: make it better
 #################################################################################
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :emphasize-lines: 1

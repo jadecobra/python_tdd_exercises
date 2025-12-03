@@ -802,7 +802,7 @@ the test passes
 REFACTOR: make it better
 #################################################################################
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :lineno-start: 98
@@ -906,7 +906,7 @@ the test passes
 REFACTOR: make it better
 #################################################################################
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :lineno-start: 103
@@ -1145,7 +1145,7 @@ REFACTOR: make it better
 
   the test is green again. This is like a dict_ comprehension because it made a dictionary_ using the items from the iterable_ as :ref:`keys<test_keys_of_a_dictionary>`
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :lineno-start: 110
@@ -1948,7 +1948,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
     :lineno-start: 150
@@ -2167,13 +2167,20 @@ test_setdefault_adds_given_key_to_a_dictionary
 RED: make it fail
 #################################################################################
 
-I add a test
+I add a test for the next :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 174
+  :emphasize-lines: 3-5
 
-  def test_setdefault(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.setdefault())
+          self.assertEqual(a_dictionary, {'key1': 'value1'})
+
+      def test_setdefault(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.setdefault())
+
+
+  'setdefault',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -2187,121 +2194,33 @@ GREEN: make it pass
 I pass a value in the call
 
 .. code-block:: python
+  :lineno-start: 178
+  :emphasize-lines: 1
 
-  self.assertIsNone(a_dictionary.setdefault(0))
+          self.assertIsNone(a_dictionary.setdefault(0))
 
 the test passes
 
 REFACTOR: make it better
 #################################################################################
 
-* I add an :ref:`assertion<AssertionError>` to see what it did to the dictionary_
+* The error message showed that the :ref:`method<functions>` expects at least 1 argument, I add a second argument
 
   .. code-block:: python
+    :lineno-start: 178
+    :emphasize-lines: 1
 
-    self.assertIsNone(a_dictionary.setdefault(0))
-    self.assertEqual(a_dictionary, {'key': 'value'})
+            self.assertIsNone(a_dictionary.setdefault(0, None))
 
-  the terminal_ shows :ref:`AssertionError`
+  the test is still green
 
-  .. code-block:: shell
-
-    AssertionError: {'key': 'value', 0: None} != {'key': 'value'}
-
-  setdefault_ adds the given key to the dictionary_ with a default value of :ref:`None` and returns the default value
-
-* I change the expectation to match
+* I change the second argument expecting a failure
 
   .. code-block:: python
+    :lineno-start: 178
+    :emphasize-lines: 1
 
-    self.assertEqual(
-        a_dictionary,
-        {
-            'key': 'value',
-            0: None,
-        }
-    )
-
-  the test passes
-
-* I change the name of the value given
-
-  .. code-block:: python
-
-    a_dictionary = {'key': 'value'}
-    self.assertIsNone(a_dictionary.setdefault('new_key'))
-    self.assertEqual(
-        a_dictionary,
-        {
-            'key': 'value',
-            0: None,
-        }
-    )
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: {'key': 'value', 'new_key': None} != {'key': 'value', 0: None}
-
-  I change the expectation to match
-
-  .. code-block:: python
-
-    self.assertEqual(
-        a_dictionary,
-        {
-            'key': 'value',
-            'new_key': None,
-        }
-    )
-
-  the test is green again
-
-* I add an :ref:`assertion<AssertionError>` to see what happens when the :ref:`key<test_keys_of_a_dictionary>` is already in the dictionary_
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.setdefault('new_key'))
-    self.assertIsNone(a_dictionary.setdefault('key'))
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: 'value' is not None
-
-  setdefault_ returns the value for a key in a dictionary_ when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_. I add the value to the :ref:`assertion<AssertionError>`
-
-  .. code-block:: Python
-
-    self.assertIsNone(a_dictionary.setdefault('key'), 'value')
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: 'value' is not None : value
-
-  I change assertIsNone_ to assertEqual_
-
-  .. code-block:: python
-
-    self.assertEqual(a_dictionary.setdefault('key'), 'value')
-
-  the test passes
-
-* It looks like setdefault_ has a condition where it sets a default value when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_ and returns the value when the :ref:`key<test_keys_of_a_dictionary>` is in it. I change the first :ref:`assertion<AssertionError>` to find out
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.setdefault('new_key', None))
-
-  the terminal_ still shows green. I change the given default value expecting a failure
-
-  .. code-block:: python
-
-    self.assertIsNone(a_dictionary.setdefault('new_key', 'default'))
+            self.assertIsNone(a_dictionary.setdefault(0, 'default'))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2309,11 +2228,17 @@ REFACTOR: make it better
 
     AssertionError: 'default' is not None
 
-  I add the expected value
+* I add the expectation
 
   .. code-block:: python
+    :lineno-start: 177
+    :emphasize-lines: 2-5
 
-    self.assertIsNone(a_dictionary.setdefault('new_key', 'default'), 'default')
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.setdefault(0, 'default'),
+                'default'
+            )
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2321,59 +2246,176 @@ REFACTOR: make it better
 
     AssertionError: 'default' is not None : default
 
-  I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
+    :lineno-start: 178
+    :emphasize-lines: 1
 
-    self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
+            self.assertEqual(
+                a_dictionary.setdefault(0, 'default'),
+                'default'
+            )
+
+  the test passes
+
+* I add an :ref:`assertion<AssertionError>` to see what setdefault_ did to the dictionary_
+
+  .. code-block:: python
+    :lineno-start: 178
+    :emphasize-lines: 5
+
+            self.assertEqual(
+                a_dictionary.setdefault(0, 'default'),
+                'default'
+            )
+            self.assertEqual(a_dictionary, {'key': 'value'})
 
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
-    AssertionError: {'key': 'value', 'new_key': 'default'} != {'key': 'value', 'new_key': None}
+    AssertionError: {'key': 'value', 0: 'default'} != {'key': 'value'}
+
+  setdefault_ adds the given :ref:`key<test_keys_of_a_dictionary>` to the dictionary_ with the default :ref:`value<test_values_of_a_dictionary>` and returns the default value
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 176
+    :emphasize-lines: 7-13
+
+        def test_setdefault(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                a_dictionary.setdefault(0, 'default'),
+                'default'
+            )
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'value',
+                    0: None,
+                }
+            )
+
+  the test passes
+
+* I change the ``0`` given to the call to be more descriptive
+
+  .. code-block:: python
+    :lineno-start: 178
+    :emphasize-lines: 2
+
+            self.assertEqual(
+                a_dictionary.setdefault('new_key', 'default'),
+                'default'
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: {'key': 'value', 'new_key': 'default'} != {'key': 'value', 0: 'default'}
 
   I change the expectation to match
 
   .. code-block:: python
+    :lineno-start: 182
+    :emphasize-lines: 5
 
-    self.assertEqual(
-        a_dictionary,
-        {
-            'key': 'value',
-            'new_key': 'default',
-        }
-    )
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'value',
+                    'new_key': 'default',
+                }
+            )
+
+  the test is green again
+
+* I add an :ref:`assertion<AssertionError>` to see what happens when I use setdefault_ with a :ref:`key<test_keys_of_a_dictionary>` that is already in the dictionary_
+
+  .. code-block:: python
+    :lineno-start: 178
+    :emphasize-lines: 7-10
+
+        def test_setdefault(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                a_dictionary.setdefault('new_key', 'default'),
+                'default'
+            )
+            self.assertEqual(
+                a_dictionary.setdefault('key', 'default'),
+                'default'
+            )
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'value',
+                    'new_key': 'default',
+                }
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 'value' != 'default'
+
+  I get ``'value'`` back. setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_ when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 182
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                a_dictionary.setdefault('key', 'default'),
+                'value'
+            )
 
   the test passes
 
-* I try the same thing with the second :ref:`assertion<AssertionError>`
+* setdefault_ has a :ref:`condition<booleans>`
+
+  - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_ it adds it with a default value of :ref:`None` and returns :ref:`None`
+  - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_ and I call setdefault_ with a second argument, it adds the :ref:`key<test_keys_of_a_dictionary>` to the dictionary_ with the second argument as the :ref:`value<test_values_of_a_dictionary>` and returns the second argument
+  - when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_ it returns :ref:`value<test_values_of_a_dictionary>` from the dictionary_
+
+* I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 176
+    :emphasize-lines: 1
 
-    self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
+        def test_setdefault_adds_given_key_to_a_dictionary(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(
+                a_dictionary.setdefault('new_key', 'default'),
+                'default'
+            )
+            self.assertEqual(
+                a_dictionary.setdefault('key', 'default'),
+                'value'
+            )
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'value',
+                    'new_key': 'default',
+                }
+            )
 
-  the terminal_ still shows green. setdefault_ adds a given key to the dictionary_ with a given default value and returns the default value if the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. It returns the value for a key that is already in the dictionary_
 
-* I rename the test
-
-  .. code-block:: python
-
-    def test_setdefault_adds_given_key_to_a_dictionary(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.setdefault('new_key', 'default'), 'default')
-        self.assertEqual(a_dictionary.setdefault('key', 'default'), 'value')
-        self.assertEqual(
-            a_dictionary,
-            {
-                'key': 'value',
-                'new_key': 'default',
-            }
-        )
+    'setdefault',
 
 * I remove setdefault_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 195
 
     'update',
     'values'
@@ -2533,7 +2575,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
 
@@ -2663,7 +2705,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I rename the test
+* I change the name of the test
 
   .. code-block:: python
 

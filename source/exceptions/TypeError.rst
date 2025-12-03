@@ -1306,9 +1306,9 @@ REFACTOR: make it better
 
   the test is still green
 
-* I change the name to be more descriptive in ``calculator.py``
+* I change the name from ``handle_type_error`` to be more descriptive in ``calculator.py``
 
-  .. TIP:: you can use the ``Rename Symbol`` function of the `Integrated Development Environment (IDE)`_ to rename all at once
+  .. TIP:: you can use the ``Rename Symbol`` function of the `Integrated Development Environment (IDE)`_ to change everywhere ``handle_type_error`` is at once
 
   .. code-block:: python
     :linenos:
