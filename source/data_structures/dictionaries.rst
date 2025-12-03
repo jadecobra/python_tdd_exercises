@@ -2081,14 +2081,22 @@ REFACTOR: make it better
 
   the test passes
 
-* this operation does not take input, I change the dictionary_ to see how it responds
+* this operation does not take input, I change the dictionary_ to see what happens
 
   .. code-block:: python
+    :lineno-start: 165
+    :emphasize-lines: 2-5
 
-    a_dictionary = {
-        'key1': 'value1',
-        'keyN': [0, 1, 2, 'n'],
-    }
+        def test_popitem(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            self.assertEqual(
+                a_dictionary.popitem(),
+                ('key', 'value')
+            )
+            self.assertEqual(a_dictionary, {})
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2096,11 +2104,16 @@ REFACTOR: make it better
 
     AssertionError: Tuples differ: ('keyN', [0, 1, 2, 'n']) != ('key', 'value')
 
-  I change the expectation to match
+  I change the expectation in the first assertEqual_ to match
 
   .. code-block:: python
+    :lineno-start: 170
+    :emphasize-lines: 3
 
-    self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
+            self.assertEqual(
+                a_dictionary.popitem(),
+                ('keyN', [0, 1, 2, 'n'])
+            )
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2108,51 +2121,38 @@ REFACTOR: make it better
 
     AssertionError: {'key1': 'value1'} != {'key': 'value'}
 
-  I change the value to match
+* I change the value in the second assertEqual_ to match
 
   .. code-block:: python
 
-    self.assertEqual(a_dictionary, {'key1': 'value1'})
-
-  the test passes
-
-* I add another call to the :ref:`method<functions>`
-
-  .. code-block:: python
-
-    self.assertEqual(a_dictionary, {'key1': 'value1'})
-    self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: Tuples differ: ('key1', 'value1') != ('keyN', [0, 1, 2, 'n'])
-
-  I change the expectation
-
-  .. code-block:: python
-
-    self.assertEqual(a_dictionary.popitem(), ('key1', 'value1'))
+            self.assertEqual(a_dictionary, {'key1': 'value1'})
 
   the test passes. popitem_ removes and returns the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a dictionary_
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 165
+    :emphasize-lines: 1
 
-    def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'keyN': [0, 1, 2, 'n'],
-        }
-        self.assertEqual(a_dictionary.popitem(), ('keyN', [0, 1, 2, 'n']))
-        self.assertEqual(a_dictionary, {'key1': 'value1'})
-        self.assertEqual(a_dictionary.popitem(), ('key1', 'value1'))
+        def test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            self.assertEqual(
+                a_dictionary.popitem(),
+                ('keyN', [0, 1, 2, 'n'])
+            )
+            self.assertEqual(a_dictionary, {'key1': 'value1'})
+
+
+    'popitem',
 
 * I remove popitem_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 177
 
     'setdefault',
     'update',
