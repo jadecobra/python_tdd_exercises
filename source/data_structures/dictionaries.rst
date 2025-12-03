@@ -1918,12 +1918,17 @@ REFACTOR: make it better
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>` to see what the :ref:`method<functions>` did to the dictionary_
+* I add another :ref:`assertion<AssertionError>` to see what the pop_ :ref:`method<functions>` did to the dictionary_
 
   .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 5-8
 
-    self.assertEqual(a_dictionary.pop('key'), 'value')
-    self.assertEqual(a_dictionary, {'key': 'value'})
+            self.assertEqual(
+                a_dictionary.pop('key', 'default'),
+                'value'
+            )
+            self.assertEqual(a_dictionary, {'key': 'value'})
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1931,9 +1936,13 @@ REFACTOR: make it better
 
     AssertionError: {} != {'key': 'value'}
 
-  pop_ :ref:`method<functions>` removes the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and returns the value of the given key from the dictionary_. I change the expectation to match
+  the pop_ :ref:`method<functions>` removes the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and returns the :ref:`value<test_values_of_a_dictionary>` of the given :ref:`key<test_keys_of_a_dictionary>` from the dictionary_
+
+* I change the expectation to match
 
   .. code-block:: python
+    :lineno-start: 163
+    :emphasize-lines: 1
 
     self.assertEqual(a_dictionary, {})
 
@@ -1942,18 +1951,31 @@ REFACTOR: make it better
 * I rename the test
 
   .. code-block:: python
+    :lineno-start: 150
+    :emphasize-lines: 1
 
-    def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary.pop('key'), 'value')
-        self.assertEqual(a_dictionary, {})
+        def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
+            a_dictionary = {'key': 'value'}
 
-        with self.assertRaises(KeyError):
-            a_dictionary.pop('not in dictionary')
+            with self.assertRaises(KeyError):
+                a_dictionary.pop('not_in_dictionary')
+            self.assertEqual(
+                a_dictionary.pop('not_in_dictionary', 'default'),
+                'default'
+            )
+            self.assertEqual(
+                a_dictionary.pop('key', 'default'),
+                'value'
+            )
+            self.assertEqual(a_dictionary, {})
+
+
+    'pop',
 
 * I remove pop_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 166
 
     'popitem',
     'setdefault',
