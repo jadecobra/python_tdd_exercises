@@ -2665,13 +2665,19 @@ RED: make it fail
 I add a test for the last :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 204
+  :emphasize-lines: 5-7
 
-  def test_update_a_dictionary(self):
-      ...
+                  'another_key': {0, 1, 2, 'n'},
+              }
+          )
 
-  def test_values(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.values())
+      def test_values(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.values())
+
+
+  'values'
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -2684,61 +2690,86 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 GREEN: make it pass
 #################################################################################
 
-I add the expected value
+* I add the expected value
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 208
+    :emphasize-lines: 3-6
 
-  self.assertIsNone(a_dictionary.values, dict_values(['value']))
+        def test_values(self):
+            a_dictionary = {'key': 'value'}
+            self.assertIsNone(
+                a_dictionary.values,
+                dict_values(['value'])
+            )
 
-the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  NameError: name 'dict_values' is not defined
+    NameError: name 'dict_values' is not defined
 
-I use the :ref:`list<lists>` in the ``dict_values`` :ref:`object<classes>`
+* I remove the things around the :ref:`list<lists>` in the ``dict_values`` :ref:`object<classes>`
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 210
+    :emphasize-lines: 3
 
-  self.assertIsNone(a_dictionary.values(), ['value'])
+            self.assertIsNone(
+                a_dictionary.values(),
+                ['value']
+            )
 
-the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+* I use the :ref:`list<lists>` constructor_ to see if ``dict_values`` is iterable_
 
-  AssertionError: dict_values(['value']) is not None : ['value']
+  .. code-block:: python
+    :lineno-start: 210
+    :emphasize-lines: 2
 
-I change assertIsNone_ to assertEqual_
+            self.assertIsNone(
+                list(a_dictionary.values()),
+                ['value']
+            )
 
-.. code-block:: python
+  the terminal_ shows :ref:`AssertionError`
 
-  self.assertEqual(a_dictionary.values(), ['value'])
+  .. code-block:: shell
 
-the terminal_ shows :ref:`AssertionError`
+    AssertionError: ['value'] is not None : ['value']
 
-.. code-block:: shell
+* I change assertIsNone_ to assertEqual_
 
-  AssertionError: dict_values(['value']) != ['value']
+  .. code-block:: python
+    :lineno-start: 210
+    :emphasize-lines: 2
 
-I pass the call to the :ref:`list<lists>` constructor_
+            self.assertEqual(
+                list(a_dictionary.values()),
+                ['value']
+            )
 
-.. code-block:: python
-
-  self.assertEqual(list(a_dictionary.values()), ['value'])
-
-the test passes
+  the test passes
 
 REFACTOR: make it better
 #################################################################################
 
-* I change the dictionary_
+* I change the dictionary_ to see what happens when it has more than one :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
   .. code-block:: python
+    :lineno-start: 208
+    :emphasize-lines: 2-5
 
-    a_dictionary = {
-        'key1': 'value1',
-        'keyN': [0, 1, 2, 'n'],
-    }
+        def test_values(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            self.assertEqual(
+                list(a_dictionary.values()),
+                ['value']
+            )
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2746,30 +2777,43 @@ REFACTOR: make it better
 
     AssertionError: Lists differ: ['value1', [0, 1, 2, 'n']] != ['value']
 
-  I change the values in the expectation
+* I change the values in the expectation
 
   .. code-block:: python
+    :lineno-start: 213
+    :emphasize-lines: 3
 
-        self.assertEqual(
-            list(a_dictionary.values()),
-            ['value1', [0, 1, 2, 'n']]
-        )
+            self.assertEqual(
+                list(a_dictionary.values()),
+                [
+                    'value1',
+                    [0, 1, 2, 'n'],
+                ]
+            )
 
   the test passes
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 208
+    :emphasize-lines: 1
 
-    def test_values_of_a_dictionary(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'keyN': [0, 1, 2, 'n'],
-        }
-        self.assertEqual(
-            list(a_dictionary.values()),
-            ['value1', [0, 1, 2, 'n']]
-        )
+        def test_values(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            self.assertEqual(
+                list(a_dictionary.values()),
+                [
+                    'value1',
+                    [0, 1, 2, 'n'],
+                ]
+            )
+
+
+    'values'
 
 * I remove values_ from the TODO list
 
