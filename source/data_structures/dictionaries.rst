@@ -1735,11 +1735,11 @@ test_pop_removes_given_key_from_a_dictionary_and_returns_its_value
 RED: make it fail
 #################################################################################
 
-I wonder if the next :ref:`method<functions>` behaves the same in :ref:`test_pop_removes_and_returns_last_item_from_a_list`, I add a test for it
+I wonder if the next :ref:`method<functions>` behaves the same way as it did in :ref:`test_pop_removes_and_returns_last_item_from_a_list`, I add a test for it
 
 .. code-block:: python
   :lineno-start: 147
-  :emphasize-lines:4-6
+  :emphasize-lines: 4-6
 
               ['key1', 'keyN']
           )
@@ -1765,8 +1765,10 @@ GREEN: make it pass
 * I pass a value to the call
 
   .. code-block:: python
+    :lineno-start: 152
+    :emphasize-lines: 1
 
-    self.assertIsNone(a_dictionary.pop(0))
+            self.assertIsNone(a_dictionary.pop(0))
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
@@ -1774,21 +1776,26 @@ GREEN: make it pass
 
     KeyError: 0
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_dictionaries.py``
+* I add it to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
+    :lineno-start: 162
+    :emphasize-lines: 4
 
     # Exceptions Encountered
     # AssertionError
     # TypeError
     # KeyError
 
-* I remove the things around the call and change the value given to be more descriptive
+* I remove the things around the call in the test and change the value given to be more descriptive
 
   .. code-block:: python
+    :lineno-start: 150
+    :emphasize-lines: 3
 
-    a_dictionary = {'key': 'value'}
-    a_dictionary.pop('not in dictionary')
+        def test_pop(self):
+            a_dictionary = {'key': 'value'}
+            a_dictionary.pop('not_in_dictionary')
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
@@ -1799,50 +1806,115 @@ GREEN: make it pass
   I add assertRaises_
 
   .. code-block:: python
+    :lineno-start: 150
+    :emphasize-lines: 3-5
 
-    a_dictionary = {'key': 'value'}
+        def test_pop(self):
+            a_dictionary = {'key': 'value'}
 
-    with self.assertRaises(KeyError):
-        a_dictionary.pop('not in dictionary')
+            with self.assertRaises(KeyError):
+                a_dictionary.pop('not_in_dictionary')
 
-  the test passes, calling the pop_ :ref:`method<functions>` with a key that is not in the dictionary_ raises a :ref:`KeyError <test_key_error>`
+  the test passes. When I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_ it raises :ref:`KeyError <test_key_error>`
 
 REFACTOR: make it better
 #################################################################################
 
-* I add another :ref:`assertion<AssertionError>`
+* When I called the pop_ :ref:`method<functions>` without input, the terminal_ showed :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: pop expected at least 1 argument, got 0
+
+  I add another :ref:`assertion<AssertionError>` to see what happens when I call it with 2 arguments
 
   .. code-block:: python
+    :lineno-start: 153
+    :emphasize-lines: 3
 
-    a_dictionary = {'key': 'value'}
-    self.assertIsNone(a_dictionary.pop('key'))
+            with self.assertRaises(KeyError):
+                a_dictionary.pop('not_in_dictionary')
+            self.assertIsNone(a_dictionary.pop('not_in_dictionary', None))
 
-    with self.assertRaises(KeyError):
-        a_dictionary.pop('not in dictionary')
+  the test is still green
+
+* I change the second argument, expecting a failure
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 1
+
+            self.assertIsNone(a_dictionary.pop('not_in_dictionary', 'default'))
 
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
-    AssertionError: 'value' is not None
+    AssertionError: 'default' is not None
 
-  the pop_ :ref:`method<functions>` returns the value of the given key from the dictionary_. I add the expectation
+  I add the expectation
 
   .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 1-4
 
-    self.assertIsNone(a_dictionary.pop('key'), 'value')
+            self.assertIsNone(
+                a_dictionary.pop('not_in_dictionary', 'default'),
+                'default'
+            )
 
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
-    AssertionError: 'value' is not None : value
+    AssertionError: 'default' is not None : default
 
-  I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 1
 
-    self.assertEqual(a_dictionary.pop('key'), 'value')
+            self.assertEqual(
+                a_dictionary.pop('not_in_dictionary', 'default'),
+                'default'
+            )
+
+  the test passes
+
+* I add another :ref:`assertion<AssertionError>` to see what happens when I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                a_dictionary.pop('not_in_dictionary', 'default'),
+                'default'
+            )
+            self.assertEqual(
+                a_dictionary.pop('key', 'default'),
+                'default'
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 'value' != 'default'
+
+  I get ``'value'`` back. The pop_ :ref:`method<functions>` returns the value of the given :ref:`key<test_keys_of_a_dictionary>` from the dictionary_
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                a_dictionary.pop('key', 'default'),
+                'value'
+            )
 
   the test passes
 
