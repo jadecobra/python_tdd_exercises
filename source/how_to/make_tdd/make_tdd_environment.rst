@@ -436,7 +436,7 @@ how to run tests manually
 RED: make it fail
 #################################################################################################
 
-* I click on ``magic/tests/magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following Python_ code in the file_
+* I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following Python_ code in the file_
 
   .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
 
@@ -444,6 +444,8 @@ RED: make it fail
       :emphasize-lines: 1
 
       code tests/magic.py
+
+    If you are on MacOS_ and using `Visual Studio Code`_, make sure you `Configure the path <https://code.visualstudio.com/docs/setup/mac#_configure-the-path-with-vs-code>`_ for the above command to work
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
