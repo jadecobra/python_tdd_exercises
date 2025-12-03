@@ -1648,8 +1648,13 @@ GREEN: make it pass
   I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 1
 
-    self.assertEqual(list(a_dictionary.items()), [('key', 'value')])
+            self.assertEqual(
+                list(a_dictionary.keys()),
+                ['key']
+            )
 
   the test passes
 
@@ -1659,13 +1664,18 @@ REFACTOR: make it better
 * I add another :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the dictionary_ to see what the keys_ :ref:`method<functions>` returns when there are multiple
 
   .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 2-5
 
-    def test_keys(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'keyN': [0, 1, 2, 'n'],
-        }
-        self.assertEqual(list(a_dictionary.keys()), ['key'])
+        def test_keys(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            self.assertEqual(
+                list(a_dictionary.keys()),
+                ['key']
+            )
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1676,25 +1686,39 @@ REFACTOR: make it better
   I change the expectation to match
 
   .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 3
 
-    self.assertEqual(list(a_dictionary.keys()), ['key1', 'keyN'])
+            self.assertEqual(
+                list(a_dictionary.keys()),
+                ['key1', 'keyN']
+            )
 
   the test passes
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 1
 
-    def test_keys_of_a_dictionary(self):
-        a_dictionary = {
-            'key1': 'value1',
-            'keyN': [0, 1, 2, 'n'],
-        }
-        self.assertEqual(list(a_dictionary.keys()), ['key1', 'keyN'])
+        def test_keys_of_a_dictionary(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            self.assertEqual(
+                list(a_dictionary.keys()),
+                ['key1', 'keyN']
+            )
+
+
+    'keys',
 
 * I remove keys_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 151
 
     'pop',
     'popitem',
