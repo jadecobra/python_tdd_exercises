@@ -1173,7 +1173,13 @@ I can make empty files_ in a folder_ with the touch_ program
 
     5 directories, 7 files
 
-* I can add an empty file_ in 1 step in any directory_ as long as I know its path, its relation to where I am and I have permission to write to the folder_. I add another empty file_ in ``child``
+* I can add an empty file_ in 1 step in any directory_ as long as
+
+  - I know its path
+  - I know its relation to where I am and
+  - I have permission to write to the folder_
+
+  I add another empty file_ in ``child``
 
   .. code-block:: shell
     :emphasize-lines: 1
