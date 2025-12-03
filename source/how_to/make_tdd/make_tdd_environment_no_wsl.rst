@@ -705,6 +705,25 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
 how to activate a virtual environment on Windows without WSL
 ############################################################################################
+* I run PowerShell_ in Administrator mode and set the Execution Policy for the activation script to work
+
+  .. code-block:: PowerShell
+
+    Set-ExecutionPolicy RemoteSigned
+
+  the terminal_ may show the following message if you have never run this command before
+
+  .. code-block:: text
+
+    The execution policy helps protect you from scripts that you do not trust.
+    Changing the execution policy might expose you to the security risks
+    described in the about_Execution_Policies help topic at
+    https:/go.microsoft.com/fwlink/?LinkID=135170.
+    Do you want to change the execution policy?
+
+    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+
+  Type ``Y`` to accept the change and it enables scripts that have been signed by a verified publisher to run on your computer, you can read more at `Set-ExecutionPolicy`_
 
 * When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
 
