@@ -79,7 +79,7 @@ I use ``magic`` as the name for this project
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
 * the terminal_ shows
 
@@ -127,7 +127,7 @@ I use ``magic`` as the name for this project
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -184,7 +184,7 @@ the terminal_ goes back to the command line
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -221,7 +221,7 @@ how to make an empty file on Windows without Windows SubSystem Linux
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -291,7 +291,7 @@ how to run tests manually on Windows without WSL
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -319,7 +319,7 @@ how to run tests manually on Windows without WSL
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -431,7 +431,7 @@ how to make a Python package
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -482,7 +482,7 @@ how to rename a file on Windows without WSL
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -655,7 +655,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -678,7 +678,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -791,7 +791,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    tree
+    tree /F
 
   the terminal_ shows
 
@@ -1005,7 +1005,7 @@ how to make a PowerShell script
 
   .. code-block:: PowerShell
 
-    tree
+    tree /F
 
   the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
 
@@ -1040,39 +1040,39 @@ how to view all the commands I typed in a terminal
     cd pumping_python
     mkdir pumping_python
     cd pumping_python
-    tree
+    tree /F
     cd magic
     mkdir magic
-    tree
+    tree /F
     cd magic
     python src/magic.py
     mkdir src
-    tree
+    tree /F
     python src/magic.py
     New-Item src/magic.py
-    tree
+    tree /F
     python src/magic.py
     python -m unittest
     mkdir tests
-    tree
+    tree /F
     New-Item tests/magic.py
-    tree
+    tree /F
     python -m unittest
     New-Item tests/__init__.py
-    tree
+    tree /F
     python -m unittest
     mv tests/magic.py tests/test_magic.py
-    tree
+    tree /F
     python -m unittest
     pytest-watch
     python -m venv .venv
-    tree
-    tree
+    tree /F
+    tree /F
     .venv/scripts/activate.ps1
     pytest-watch
     pip list
     "pytest-watch" | Out-File requirements.txt -Encoding UTF8
-    tree
+    tree /F
     python -m pip install --requirement requirements.txt
     python -m pip install --upgrade pip
     pip list
@@ -1081,7 +1081,7 @@ how to view all the commands I typed in a terminal
     pytest-watch
     cd ..
     New-Item makePythonTdd.ps1
-    tree
+    tree /F
 
   the history_ program_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
