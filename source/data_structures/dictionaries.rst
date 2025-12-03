@@ -1991,16 +1991,20 @@ test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary
 RED: make it fail
 #################################################################################
 
-I add a failing test
+I add a failing test for the next item in the TODO list
 
 .. code-block:: python
+  :lineno-start: 163
+  :emphasize-lines: 3-5
 
-  def test_pop_removes_given_key_from_a_dictionary_and_returns_its_value(self):
-      ...
+          self.assertEqual(a_dictionary, {})
 
-  def test_pop_item(self):
-      a_dictionary = {'key': 'value'}
-      self.assertIsNone(a_dictionary.popitem())
+      def test_popitem(self):
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(a_dictionary.popitem())
+
+
+  'popitem',
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -2008,16 +2012,22 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: ('key', 'value') is not None
 
-the popitem_ :ref:`method<functions>` returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as a tuple_
+the popitem_ :ref:`method<functions>` returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the dictionary_ as a tuple_
 
 GREEN: make it pass
 #################################################################################
 
-I add the value from the terminal_ as an expectation
+I add the value from the terminal_ as the expectation
 
 .. code-block:: python
+  :lineno-start: 166
+  :emphasize-lines: 2-4
 
-  self.assertIsNone(a_dictionary.popitem(), ('key', 'value'))
+          a_dictionary = {'key': 'value'}
+          self.assertIsNone(
+              a_dictionary.popitem(),
+              ('key', 'value')
+          )
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -2027,21 +2037,31 @@ the terminal_ shows :ref:`AssertionError`
 
 I change assertIsNone_ to assertEqual_
 
-.. code-block:: python
+.. code-block::
+  :lineno-start: 167
+  :emphasize-lines: 1
 
-  self.assertEqual(a_dictionary.popitem(), ('key', 'value'))
+          self.assertEqual(
+              a_dictionary.popitem(),
+              ('key', 'value')
+          )
 
 the test passes
 
 REFACTOR: make it better
 #################################################################################
 
-* I want to know what the popitem_ :ref:`method<functions>` did to the dictionary_
+* I want to know what the popitem_ :ref:`method<functions>` did to the dictionary_. I add another :ref:`assertion<AssertionError>`
 
   .. code-block:: python
+    :lineno-start: 167
+    :emphasize-lines: 5
 
-    self.assertEqual(a_dictionary.popitem(), ('key', 'value'))
-    self.assertEqual(a_dictionary, {'key': 'value'})
+            self.assertEqual(
+                a_dictionary.popitem(),
+                ('key', 'value')
+            )
+            self.assertEqual(a_dictionary, {'key': 'value'})
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2051,11 +2071,13 @@ REFACTOR: make it better
 
   popitem_ removes and returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from the dictionary_
 
-* I change the value
+* I change the value to match
 
   .. code-block:: python
+    :lineno-start: 171
+    :emphasize-lines: 1
 
-    self.assertEqual(a_dictionary, {})
+            self.assertEqual(a_dictionary, {})
 
   the test passes
 

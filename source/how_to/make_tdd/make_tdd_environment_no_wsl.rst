@@ -468,12 +468,12 @@ how to make a Python package
 how to rename a file on Windows without WSL
 --------------------------------------------------------------------------------------------
 
-* I use the `Rename-Item`_ command to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
+* I use the `Move-Item`_ command to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    Rename-Item -Path tests/magic.py -NewName tests/test_magic.py
+    Move-Item tests/magic.py tests/test_magic.py
 
   the terminal_ goes back to the command line
 
