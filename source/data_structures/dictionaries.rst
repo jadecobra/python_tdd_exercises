@@ -1739,7 +1739,7 @@ I wonder if the next :ref:`method<functions>` behaves the same in :ref:`test_pop
 
 .. code-block:: python
   :lineno-start: 147
-  :emphasize-lines: 
+  :emphasize-lines:4-6
 
               ['key1', 'keyN']
           )

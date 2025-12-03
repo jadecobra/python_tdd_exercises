@@ -50,7 +50,10 @@ Start with :ref:`how to make a python test driven development environment <how t
 
 Here are a few things I would do if I were in your shoes to make the process more fun
 
-* type out the code portions of a chapter without copying and pasting - this increases your typing speed and grow your ability to spot the difference between two things
+* type out the code portions of a chapter without copying and pasting - this increases your typing speed and helps you see the difference between two things faster
+
+  .. TIP:: You can take a typing test at https://www.keybr.com/typing-test before and after you go through the book to see how it affects your typing speed
+
 * at the end of a chapter, delete the tests and try to write them from memory or use the solution as a guide - this builds your memory skills
 * close the tests at the end of a chapter, delete the solution and try to write one with the terminal_ response as a guide - this helps you build a better relationship with the terminal_ (your best friend when programming)
 * try to write solutions using the tests from the :ref:`catalog_of_tests` as a guide

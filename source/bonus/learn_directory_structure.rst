@@ -85,7 +85,7 @@ how to install tree on Windows without Windows Subsystem Linux
 tree_ comes with Windows_ you do not have to do anything. The following are things you would type in place of what I have in the chapter
 
 * `New-Item`_ instead of touch_
-* ``tree /F`` instead of tree_
+* ``tree`` instead of tree_
 * ``dir`` instead of ``ls --all/-a``
 
 The path shown when you call pwd_ or tree_ shows ``\`` instead of ``/``, for example
@@ -292,12 +292,12 @@ how to list what is in a directory
 
       ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      dir /ah
+      dir
 
     the terminal_ does not show ``.`` and ``..``
 
@@ -365,12 +365,12 @@ how to look at directory structure
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      tree /F
+      tree
 
   the terminal_ shows
 
@@ -413,12 +413,12 @@ how to look at directory structure
 
     ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      dir /ah
+      dir
 
   the terminal_ shows
 
@@ -731,12 +731,12 @@ how to look at directory structure
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      tree /F
+      tree
 
   the terminal_ shows
 
@@ -779,12 +779,12 @@ I can make empty files_ in a folder_ with the touch_ program
 
     ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      dir /ah
+      dir
 
     the terminal_ does not show ``.`` and ``..``
 
@@ -1146,12 +1146,12 @@ I can make empty files_ in a folder_ with the touch_ program
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      tree /F
+      tree
 
   the terminal_ shows
 
