@@ -113,7 +113,7 @@ class TestDictionaries(unittest.TestCase):
             {0: 'default', 1: 'default'}
         )
 
-    def test_get_value_of_a_given_key_in_a_dictionary(self):
+    def test_get_value_of_a_key_in_a_dictionary(self):
         a_dictionary = {'key': 'value'}
         self.assertEqual(
             a_dictionary.get('not_in_dictionary', 'default'),

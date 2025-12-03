@@ -8,9 +8,13 @@
 .. _copy: https://docs.python.org/3/library/stdtypes.html#dict.copy
 .. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
 .. _popitem: https://docs.python.org/3/library/stdtypes.html#dict.popitem
-.. _dictionary: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-.. _dictionaries: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 .. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+.. _dictionary: dict_
+.. _dictionaries: dictionary_
+.. _clear method: clear_
+.. _copy method: copy_
+.. _pop method: pop_
+.. _popitem method: popitem_
 
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
@@ -2799,7 +2803,7 @@ REFACTOR: make it better
     :lineno-start: 208
     :emphasize-lines: 1
 
-        def test_values(self):
+        def test_values_of_a_dictionary(self):
             a_dictionary = {
                 'key1': 'value1',
                 'keyN': [0, 1, 2, 'n'],
@@ -2823,21 +2827,27 @@ REFACTOR: make it better
 test_key_error
 *********************************************************************************
 
-The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<errors>` to know when working with a dictionary_
+The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<errors>` to know when working with a dictionary_. It happened earlier in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value`
 
 RED: make it fail
 #################################################################################
 
-I add a test for getting the value of a key that is in a dictionary_
+I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref:`key<test_keys_of_a_dictionary>` that is in a dictionary_
 
 .. code-block:: python
+  :lineno-start: 217
+  :emphasize-lines: 5-7
 
-    def test_values_of_a_dictionary(self):
-        ...
+                  [0, 1, 2, 'n'],
+              ]
+          )
 
-    def test_key_error(self):
-        a_dictionary = {'key': 'value'}
-        self.assertEqual(a_dictionary['key'], '')
+      def test_key_error(self):
+          a_dictionary = {'key': 'value'}
+          self.assertEqual(a_dictionary['key'], '')
+
+
+  # Exceptions Encountered
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -2845,7 +2855,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 'value' != ''
 
-I can get the value for a key in a dictionary_ by giving it in ``[]``, this is like :ref:`viewing items in a list <test_getting_items_of_a_list>`
+I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a dictionary_ by giving the :ref:`key<test_key_error>` in ``[]``, just like :ref:`viewing items in a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>`
 
 GREEN: make it pass
 #################################################################################
@@ -2853,66 +2863,87 @@ GREEN: make it pass
 I change the value in the expectation to match the terminal_
 
 .. code-block:: python
+  :lineno-start: 223
+  :emphasize-lines: 1
 
-  self.assertEqual(a_dictionary['key'], 'value')
+          self.assertEqual(a_dictionary['key'], 'value')
 
 the test passes
 
 REFACTOR: make it better
 #################################################################################
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<AssertionError>`, this time for a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_
 
   .. code-block:: python
+    :lineno-start: 224
+    :emphasize-lines: 2
 
-    self.assertEqual(a_dictionary['key'], 'value')
-    self.assertEqual(a_dictionary['not_in_dictionary'])
+            self.assertEqual(a_dictionary['key'], 'value')
+            self.assertEqual(a_dictionary['not_in_dictionary'])
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
-    KeyError: 'key_not_in_dictionary'
+    KeyError: 'not_in_dictionary'
 
   I change the assertEqual_ to assertRaises_
 
   .. code-block:: python
+    :lineno-start: 223
+    :emphasize-lines: 3-4
 
-    self.assertEqual(a_dictionary['key'], 'value')
+            self.assertEqual(a_dictionary['key'], 'value')
 
-    with self.assertRaises(KeyError):
-        a_dictionary['not_in_dictionary']
+            with self.assertRaises(KeyError):
+                a_dictionary['not_in_dictionary']
 
   the test passes
 
-* I add an :ref:`assertion<AssertionError>` to show that I can use the get_ :ref:`method<functions>` if I do not want to get :ref:`KeyError<test_key_error>` with a key that is not in a dictionary_
+* I can use the get_ :ref:`method<functions>` if I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a dictionary_
 
   .. code-block:: python
+    :lineno-start: 225
+    :emphasize-lines: 3-6
 
-    self.assertEqual(a_dictionary['key'], 'value')
-    self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'value')
+            with self.assertRaises(KeyError):
+                a_dictionary['not_in_dictionary']
+            self.assertEqual(
+                a_dictionary.get('not_in_dictionary', 'default'),
+                ''
+            )
 
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
-    AssertionError: 'default' != 'value'
+    AssertionError: 'default' != ''
 
   I change the expectation
 
   .. code-block:: python
+    :lineno-start: 227
+    :emphasize-lines: 3
 
-    self.assertEqual(a_dictionary.get('not_in_dictionary', 'default'), 'default')
+            self.assertEqual(
+                a_dictionary.get('not_in_dictionary', 'default'),
+                'default'
+            )
 
-  the test passes
+  the test passes. This is a repetition of :ref:`test_get_value_of_a_key_in_a_dictionary`, here is another repetition
 
-* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` with a key that was not in the dictionary_, I add an :ref:`assertion<AssertionError>` for it
+* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` when I gave it a :ref:`key<test_keys_of_a_dictionary>` that was not in the dictionary_, I add another :ref:`assertion<AssertionError>` for it
 
   .. code-block:: python
+    :lineno-start: 227
+    :emphasize-lines:
 
-    with self.assertRaises(KeyError):
-        a_dictionary['not_in_dictionary']
-    a_dictionary.pop('not_in_dictionary')
+            self.assertEqual(
+                a_dictionary.get('not_in_dictionary', 'default'),
+                'default'
+            )
+            a_dictionary.pop('not_in_dictionary')
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
@@ -2923,21 +2954,62 @@ REFACTOR: make it better
   I add assertRaises_
 
   .. code-block:: python
+    :lineno-start: 227
+    :emphasize-lines: 6-7
 
-    with self.assertRaises(KeyError):
-        a_dictionary['not_in_dictionary']
-    with self.assertRaises(KeyError):
-        a_dictionary.pop('not_in_dictionary')
+            self.assertEqual(
+                a_dictionary.get('not_in_dictionary', 'default'),
+                'default'
+            )
+
+            with self.assertRaises(KeyError):
+                a_dictionary.pop('not_in_dictionary')
+
+  the test passes
+
+* I can give a second argument if I do not want the pop_ :ref:`method<functions>` to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. I add an :ref:`assertion<AssertionError>`
+
+  .. code-block:: python
+    :lineno-start: 232
+    :emphasize-lines: 3-6
+
+            with self.assertRaises(KeyError):
+                a_dictionary.pop('not_in_dictionary')
+            self.assertEqual(
+                a_dictionary.pop('not_in_dictionary', 'default'),
+                ''
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 'default' != ''
+
+  I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 234
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                a_dictionary.pop('not_in_dictionary', 'default'),
+                'default'
+            )
 
   the test passes
 
 * The popitem_ :ref:`method<functions>` also raises :ref:`KeyError<test_key_error>` when called on an empty dictionary_
 
   .. code-block::
+    :lineno-start: 234
+    :emphasize-lines: 5
 
-    with self.assertRaises(KeyError):
-        a_dictionary.pop('not_in_dictionary')
-    {}.popitem()
+            self.assertEqual(
+                a_dictionary.pop('not_in_dictionary', 'default'),
+                'default'
+            )
+            {}.popitem()
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
@@ -2948,11 +3020,37 @@ REFACTOR: make it better
   I add assertRaises_
 
   .. code-block:: python
+    :lineno-start: 221
+    :emphasize-lines: 19-20
 
-    with self.assertRaises(KeyError):
-        a_dictionary.pop('not_in_dictionary')
-    with self.assertRaises(KeyError):
-        {}.popitem()
+        def test_key_error(self):
+            a_dictionary = {'key': 'value'}
+            self.assertEqual(a_dictionary['key'], 'value')
+
+            with self.assertRaises(KeyError):
+                a_dictionary['not_in_dictionary']
+            self.assertEqual(
+                a_dictionary.get('not_in_dictionary', 'default'),
+                'default'
+            )
+
+            with self.assertRaises(KeyError):
+                a_dictionary.pop('not_in_dictionary')
+            self.assertEqual(
+                a_dictionary.pop('not_in_dictionary', 'default'),
+                'default'
+            )
+
+            with self.assertRaises(KeyError):
+                {}.popitem()
+
+
+    # Exceptions Encountered
+    # AssertionError
+    # TypeError
+    # KeyError
+
+  the test passes
 
 ----
 
@@ -2962,7 +3060,7 @@ review
 
 I ran tests for dictionaries_
 
-* they contain :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s
+* they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 * any :ref:`object<classes>` can be used as values
 * strings_, :ref:`booleans`, integers_, floats_ and tuples_ can be used as keys
 * they can be represented with ``{}``
