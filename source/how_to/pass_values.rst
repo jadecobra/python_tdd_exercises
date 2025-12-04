@@ -912,7 +912,7 @@ GREEN: make it pass
     :emphasize-lines: 2
 
     def text(the_input):
-        return f'I received: {argument}'
+        return f'I received: {the_input}'
 
   and all the tests are passing! Once again! I am a programmer!!
 

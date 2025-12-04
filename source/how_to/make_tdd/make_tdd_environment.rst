@@ -1138,14 +1138,16 @@ how to deactivate a virtual environment
 how to make a shell script
 ############################################################################################
 
-* I use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will make a `Test Driven Development`_ environment automatically
+* I use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     touch makePythonTdd.sh
 
-  the terminal_ goes back to the command line. I use tree_ to see what is in the ``pumping_python`` directory_
+  the terminal_ goes back to the command line
+
+* I use tree_ to see what is in the ``pumping_python`` directory_
 
   .. code-block:: shell
 
@@ -1154,6 +1156,7 @@ how to make a shell script
   the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
 
   .. code-block:: shell
+    :emphasize-lines: 7
 
     .
     ├── magic
@@ -1169,7 +1172,7 @@ how to make a shell script
 how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
 
-* I type history_ in the terminal_
+* I type history_ in the terminal_ to see all the commands I have typed so far
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1179,7 +1182,7 @@ how to view all the commands I typed in a terminal
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 8, 10, 12, 15, 19, 21, 24, 31, 34, 38, 40, 41, 45
+    :emphasize-lines: 8, 10, 12, 15, 19, 21, 24, 31, 34, 38, 41, 42, 44
 
     cd pumping_python
     mkdir pumping_python
@@ -1220,6 +1223,7 @@ how to view all the commands I typed in a terminal
     echo "pytest-watch"
     echo "pytest-watch" > requirements.txt
     tree -a -L 2
+    cat requirements.txt
     python3 -m pip install --requirement requirements.txt
     python3 -m pip install --upgrade pip
     pip list
@@ -1232,7 +1236,7 @@ how to view all the commands I typed in a terminal
 
   the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* I click on ``makePythonTdd.sh`` to open it in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
+* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -1257,7 +1261,7 @@ how to view all the commands I typed in a terminal
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
-* I use echo_ instead of touch_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.sh``
+* I change touch_ to echo_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.sh``
 
   .. code-block:: shell
     :lineno-start: 8
@@ -1265,13 +1269,13 @@ how to view all the commands I typed in a terminal
 
     echo "" > tests/test_magic.py
 
-  I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``
+* I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``
 
   .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
 
   .. code-block:: shell
     :linenos:
-    :emphasize-lines: 10-21
+    :emphasize-lines: 8-21
 
     #!/bin/bash
     mkdir magic
@@ -1280,10 +1284,7 @@ how to view all the commands I typed in a terminal
     touch src/magic.py
     mkdir tests
     touch tests/__init__.py
-    touch tests/test_magic.py
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
+
     echo "import unittest
 
 
@@ -1293,10 +1294,14 @@ how to view all the commands I typed in a terminal
             self.assertFalse(True)
 
 
-
     # Exceptions Encountered
     # AssertionError
-    " > requirements.txt
+    " > tests/test_magic.py
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    echo "pytest-watch" > requirements.txt
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
@@ -1316,14 +1321,14 @@ the terminal_ shows
 
   command not found: makePythonTdd.sh
 
-I have to tell the computer exactly where the file_ is
+I have to tell the computer where the file_ is
 
 .. code-block:: shell
   :emphasize-lines: 1
 
   ./makePythonTdd.sh
 
-``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few directories_ by default when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
+``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few directories_ when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
 
 .. code-block:: shell
 
@@ -1341,7 +1346,7 @@ how to make a shell script run as a command
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program_ that changes the mode of the given file_, the terminal_ goes back to the command line. I use it to make the file_ executable so the computer can run it
+  chmod_ is a program_ that changes the mode of the given file_, the terminal_ goes back to the command line. I use chmod_ to make the file_ executable so the computer can run it
 
 * I try the command again
 
@@ -1353,66 +1358,330 @@ how to make a shell script run as a command
   the terminal_ shows
 
   .. code-block:: shell
-    :force:
-    :emphasize-lines: 1-3
+    :emphasize-lines: 10
 
-    mkdir: cannot create directory ‘magic’: File exists
-    mkdir: cannot create directory ‘src’: File exists
-    mkdir: cannot create directory ‘tests’: File exists
-    Requirement already satisfied: pip in ./.venv/lib/python3.XY/site-packages (x.y)
-    Collecting pip
-    ...
-    ================================= test session starts ==================================
-    platform Linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
-    rootdir: .../pumping_python/magic
-    collected 1 item
+    ======================================= FAILURES =======================================
+    ________________________________ TestMagic.test_failure ________________________________
 
-    tests/test_magic.py .                                                            [100%]
+    self = <tests.test_magic.TestMagic testMethod=test_failure>
 
-    ================================== 1 passed in X.YZs ===================================
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
 
-This is a problem, ``makePythonTdd.sh`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done, and `I do not repeat myself`_
+    tests/test_magic.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
 
-.. NOTE:: the terminal_ might show a different result for you. You can keep going, the key thing is that the program does not yet do what I want
+  Success! I just made a program that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
 
-I want ``makePythonTdd.sh`` to be able to make a project for any name I give. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project
+* I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
+
+* I hit ``ctrl+c`` in the terminal_ to stop the test
+
+* I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 3, 5, 12, 20
+
+    #!/bin/bash
+    mkdir magic_again
+    cd magic_again
+    mkdir src
+    touch src/magic_again.py
+    mkdir tests
+    touch tests/__init__.py
+
+    echo "import unittest
+
+
+    class TestMagicAgain(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+    " > tests/test_magic_again.py
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    echo "pytest-watch" > requirements.txt
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
+
+* I run ``makePythonTdd.sh`` in the terminal to make a project named ``magic_again``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ./makePythonTdd.sh
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+    :emphasize-lines: 10
+
+    ======================================= FAILURES =======================================
+    _____________________________ TestMagicAgain.test_failure ______________________________
+
+    self = <tests.test_magic.TestMagicAgain testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_magic_again.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
+
+  I make the test pass
+
+* I hit ``ctrl+c`` to exit the tests in the terminal_
+* I run tree_ to see what I have in ``pumping_python`` now
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree -a -L 3
+
+  the terminal_ shows
+
+  .. code-block::
+    :emphasize-lines: 22-41
+
+    .
+    ├── magic
+    │   ├── .pytest_cache
+    │   │   ├── CACHEDIR.TAG
+    │   │   ├── .gitignore
+    │   │   ├── README.md
+    │   │   └── v
+    │   ├── requirements.txt
+    │   ├── src
+    │   │   └── magic.py
+    │   ├── tests
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   └── test_magic.py
+    │   └── .venv
+    │       ├── bin
+    │       ├── .gitignore
+    │       ├── include
+    │       ├── lib
+    │       ├── lib64 -> lib
+    │       └── pyvenv.cfg
+    ├── magic_again
+    │   ├── .pytest_cache
+    │   │   ├── CACHEDIR.TAG
+    │   │   ├── .gitignore
+    │   │   ├── README.md
+    │   │   └── v
+    │   ├── requirements.txt
+    │   ├── src
+    │   │   └── magic_again.py
+    │   ├── tests
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   └── test_magic_again.py
+    │   └── .venv
+    │       ├── bin
+    │       ├── .gitignore
+    │       ├── include
+    │       ├── lib
+    │       ├── lib64 -> lib
+    │       └── pyvenv.cfg
+    └── makePythonTdd.sh
+
+    23 directories, 19 files
+
+  the program works and can reliably make a Python_ `Test Driven Development` environment the way I want it, but there is a problem
 
 how to use variables in a shell script
 --------------------------------------------------------------------------------------------
 
-* I change ``magic`` to a :ref:`variable<test_attribute_error_w_variables>` in ``makePythonTdd.sh`` so I can give it any name when I want to make a project
+I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I am trying to follow the `Do not Repeat Yourself (DRY)` principle. I need the program to take a project name once and use that name when making the project to make the following
+
+  - the project folder_
+  - the program in the ``src`` folder_
+  - the test file_ in the ``tests`` folder_
+  - the test :ref:`class<classes>` in the test file_
+
+* First, I add a name to represent any project name that I give to ``makePythonTdd.sh`` when I want it to make a project
+
+  .. code-block:: shell
+    :linenos:
+    :emphasize-lines: 2
+
+    #!/bin/bash
+    PROJECT_NAME="magic again"
+    mkdir magic_again
+    cd magic_again
+    mkdir src
+    touch src/magic_again.py
+    mkdir tests
+    touch tests/__init__.py
+
+    echo "import unittest
+
+
+    class TestMagicAgain(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+    " > tests/test_magic_again.py
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    echo "pytest-watch" > requirements.txt
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
+
+  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example, we can use ``woman`` to represent any woman or ``man`` to represent any man. In this case I use ``PROJECT_NAME`` to represent any name of a project
+
+* I change every where I have ``magic_again`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
 
   .. code-block:: shell
     :linenos:
-    :emphasize-lines: 2-4,6,9
+    :emphasize-lines: 3-4, 6, 13, 21
 
     #!/bin/bash
-    PROJECT_NAME=$1
+    PROJECT_NAME="magic_again"
     mkdir $PROJECT_NAME
     cd $PROJECT_NAME
     mkdir src
     touch src/$PROJECT_NAME.py
     mkdir tests
     touch tests/__init__.py
-    touch tests/test_$PROJECT_NAME.py
+
+    echo "import unittest
+
+
+    class Test$PROJECT_NAME(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+    " > tests/test_$PROJECT_NAME.py
+
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
-    echo pytest-watch > requirements.txt
+    echo "pytest-watch" > requirements.txt
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example in mathematics we can use ``x`` to represent any number. In this case I use ``PROJECT_NAME`` to represent any name of a project
+* I run the program again in the terminal_
 
-  .. NOTE:: ``$1`` represents the first argument given when a program_ is called, I can use it in place of ``$PROJECT_NAME`` for example,
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-    .. code-block:: shell
+    ./makePythonTdd.sh
 
-      command argument
+  the terminal_ shows
 
-    in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be the value of  ``argument``
+  .. code-block:: shell
+    :emphasize-lines: 2, 4, 10, 12
+
+    ======================================= FAILURES =======================================
+    ____________________________ Testmagic_again.test_failure ______________________________
+
+    self = <tests.test_magic.Testmagic_again testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_magic_again.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_magic_again.py::Testmagic_again::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
+
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_magic_again.py`` to make the test pass
+
+* I hit ``ctrl+c`` in the terminal to stop the test
+
+* The program works as I expect, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
+
+  .. code-block:: shell
+
+    command argument
+
+  in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be ``argument`` or whatever name I give
+
+  Here are a few other examples
+
+  .. code-block:: shell
+
+    mkdir name_of_folder
+
+  ``mkdir`` is the command, and ``$1`` is ``name_of_folder``
+
+  .. code-block:: shell
+
+    touch name_of_file
+
+  ``touch`` is the command, and ``$`` is ``name_of_file``
+
+  .. code-block:: shell
+
+    echo "anything"
+
+  ``echo`` is the command, and ``$1`` is ``"anything"``
+
+  .. code-block:: shell
+
+    tree -a
+
+  ``tree`` is the command and ``$`` is ``-a``
+
+* I change ``magic_again`` to ``$1`` in ``makePythonTdd.sh``
+
+  .. code-block:: shell
+    :lineno-start: 2
+    :emphasize-lines: 1
+
+    PROJECT_NAME=$1
+
+* I try the program again, this time with a different name for the project in the terminal_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ./makePythonTdd.sh more_magic
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    ========================================== FAILURES ==========================================
+    ________________________________ Testmore_magic.test_failure _________________________________
+
+    self = <tests.test_more_magic.Testmore_magic testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_more_magic.py:7: AssertionError
+    ================================== short test summary info ===================================
+    FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
+    ===================================== 1 failed in 0.04s ======================================
+
 
 * I use ``ctrl+c`` on the keyboard in the terminal_ to stop the test from running then I run the ``makePythonTdd.sh`` again
 
