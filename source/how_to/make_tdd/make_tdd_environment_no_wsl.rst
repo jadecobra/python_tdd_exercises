@@ -32,25 +32,23 @@ requirements
 
 ----
 
-----
+Here are some things I think about when I want to start a project
 
-When I want to work on a project, here are some things I think about
-
-* What is the name I want for the project?
+* What name will I give the project?
 * What is the structure of the project?
-* What files and folders does the project need?
-* What other programs does my project need?
+* What files_ and folders_ does the project need?
+* What other programs_ does my project need?
 * What tests am I going to write for this project?
 
 It turns out some of this is repeatable
 
 * I pick a name for the project
-* I make a new folder for every project with the name
-* I place the code for the project in a ``src`` folder
-* I place the tests for the project in a ``tests`` folder
+* I make a new folder_ for every project with the name I picked
+* I place the code for the project in a ``src`` folder_
+* I place the tests for the project in a ``tests`` folder_
 * I try to name everything in the project with the name of the project or with something that describes what it does
-* I document what the project needs in a requirements file
-* I make a `virtual environment`_ to keep things isolated from the rest of the computer
+* I write what the project needs in a requirements file_
+* I make a `virtual environment`_ to keep things separate from the rest of the computer
 * I install what the project needs in the `virtual environment`_
 * I work in the `virtual environment`_
 * I run automated tests to make sure I have a `Test Driven Development`_ environment
@@ -60,11 +58,13 @@ It turns out some of this is repeatable
 how to make a python test driven development environment manually on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
 
-I use ``magic`` as the name for this project
+I pick ``magic`` as the name for this project
 
 * I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
-* I use the `cd program`_ to change `folder (directory)`_ to where I will keep all the projects from this book. I type it in the terminal_
+* I `change directory`_ to where I will put all the projects from this book. I type cd_ in the terminal_
+
+  .. NOTE:: You can skip this step if you are already in the ``pumping_python`` directory_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -79,13 +79,15 @@ I use ``magic`` as the name for this project
 
   the `folder (directory)`_ does NOT exist. I need to make it
 
-* I use the `mkdir program`_ to make a `folder (directory)`_
+* I use the `mkdir program`_ to make the ``pumping_python`` `folder (directory)`_
 
   .. code-block:: PowerShell
 
     mkdir pumping_python
 
-  the terminal_ goes back to the command line. I try `changing directory`_ again
+the terminal_ goes back to the command line
+
+* I try `changing directory`_ again
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -128,14 +130,16 @@ I use ``magic`` as the name for this project
 
     cd: no such file or directory: magic
 
-  the ``magic`` folder does not yet exist. I `make the directory`_
+  the ``magic`` folder does NOT exist yet
+
+* I make the ``magic`` directory_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
     mkdir magic
 
-  this makes a `folder (directory)`_ for the project where its files will stay
+  this makes a `folder (directory)`_ for the project where its files_ will stay
 
 * I use tree_ again
 
@@ -147,6 +151,7 @@ I use ``magic`` as the name for this project
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 2
 
     .
     └── magic
@@ -160,7 +165,7 @@ I use ``magic`` as the name for this project
 
     cd magic
 
-  the terminal_ shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
+  the terminal_ shows I am now in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
   .. code-block:: shell
 
@@ -183,7 +188,7 @@ how to run a Python program on Windows without Windows SubSystem Linux
 
     python: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program_ because it does not exist.
+  the computer cannot find the program_ because it does not exist, yet
 
 * I make a child folder_ in the ``magic`` directory_ for the program_
 
@@ -192,7 +197,7 @@ how to run a Python program on Windows without Windows SubSystem Linux
 
     mkdir src
 
-the terminal_ goes back to the command line
+  the terminal_ goes back to the command line
 
 * I use tree_ to see what changed in the ``magic`` directory_
 
@@ -204,6 +209,7 @@ the terminal_ goes back to the command line
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 2
 
     .
     └── src
@@ -222,7 +228,7 @@ the terminal_ goes back to the command line
 how to make an empty file on Windows without Windows SubSystem Linux
 #################################################################################################
 
-* I use `New-Item`_ to make an empty file in the ``src`` folder
+* I use `New-Item`_ to make an empty file_ in the ``src`` folder_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -241,6 +247,7 @@ how to make an empty file on Windows without Windows SubSystem Linux
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 3
 
     .
     └── src
@@ -248,7 +255,7 @@ how to make an empty file on Windows without Windows SubSystem Linux
 
     2 directories, 1 file
 
-  `New-Item`_ is a command that makes an empty file_ with the name. I can give the directory_ I want to put the file_ in as part of the name, in this case ``New-Item src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  `New-Item`_ is a command that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``New-Item src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -257,7 +264,7 @@ how to make an empty file on Windows without Windows SubSystem Linux
 
     python src/magic.py
 
-  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it.
+  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it exists.
 
 ********************************************************************************************
 test_failure
@@ -265,9 +272,9 @@ test_failure
 
 The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
-* **RED**: make it fail - write a failing test to make sure the test works
+* **RED**: make it fail - write a test that fails to make sure the test works
 * **GREEN**: make it pass - write the simplest thing that will make the failing test pass
-* **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
+* **REFACTOR**: make it better - write a better solution, test or both, usually by `removing duplication`_
 
 This process can be repeated as many times as needed until I get to my goal.
 

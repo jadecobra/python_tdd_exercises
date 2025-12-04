@@ -400,7 +400,7 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
     def logical_conjunction(first_input, second_input):
-        if bool(p) and bool(q):
+        if bool(first_input) and bool(second_input):
         # if first_input == True and second_input == True:
             return True
         else:
@@ -416,7 +416,7 @@ REFACTOR: make it better
 
     def logical_conjunction(first_input, second_input):
         if first_input and second_input:
-        # if bool(p) and bool(q):
+        # if bool(first_input) and bool(second_input):
             return True
         else:
             return False
@@ -747,7 +747,7 @@ REFACTOR: make it better
     :emphasize-lines: 2-4
 
     def converse_non_implication(first_input, second_input):
-        if not first_input == True and bool(q):
+        if not first_input == True and bool(second_input):
         # if first_input == False and second_input == True:
             return True
         return False
@@ -763,7 +763,7 @@ REFACTOR: make it better
     :emphasize-lines: 4-5
 
     def converse_non_implication(first_input, second_input):
-        if not first_input == True and bool(q):
+        if not first_input == True and bool(second_input):
         # if first_input == False and second_input == True:
             return True
         else:
@@ -778,8 +778,8 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
     def converse_non_implication(first_input, second_input):
-        if not bool(p) and second_input:
-        # if not first_input == True and bool(q):
+        if not bool(first_input) and second_input:
+        # if not first_input == True and bool(second_input):
             return True
         else:
             return False
@@ -794,7 +794,7 @@ REFACTOR: make it better
 
     def converse_non_implication(first_input, second_input):
         if not first_input and second_input:
-        # if not bool(p) and second_input:
+        # if not bool(first_input) and second_input:
             return True
         else:
             return False

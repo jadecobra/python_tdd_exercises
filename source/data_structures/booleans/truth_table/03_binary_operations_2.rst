@@ -176,7 +176,7 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
     def negate_first(first_input, second_input):
-        if not bool(p):
+        if not bool(first_input):
         # if first_input == False:
             return True
         return False
@@ -191,7 +191,7 @@ REFACTOR: make it better
 
     def negate_first(first_input, second_input):
         if not p:
-        # if not bool(p):
+        # if not bool(first_input):
             return True
         return False
 

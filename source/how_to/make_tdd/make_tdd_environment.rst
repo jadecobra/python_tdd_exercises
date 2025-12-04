@@ -63,7 +63,7 @@ Linux/Windows Subsystem Linux requirements
 
 ----
 
-When I want to start a project, here are some things I think about
+Here are some things I think about when I want to start a project
 
 * What name will I give the project?
 * What is the structure of the project?
@@ -210,7 +210,7 @@ I pick ``magic`` as the name for this project
 
     mkdir magic
 
-  this makes a `folder (directory)`_ for the project where its files will stay
+  this makes a `folder (directory)`_ for the project where its files_ will stay
 
 * I use tree_ again
 
@@ -299,7 +299,7 @@ how to run a Python program
 how to make an empty file
 #################################################################################################
 
-* I use touch_ to make an empty file in the ``src`` folder
+* I use touch_ to make an empty file_ in the ``src`` folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -335,7 +335,7 @@ how to make an empty file
 
     python3 src/magic.py
 
-  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it exists
+  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it exists.
 
 ********************************************************************************************
 test_failure
