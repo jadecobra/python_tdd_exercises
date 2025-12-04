@@ -35,4 +35,4 @@ def w_default_arguments(first_name, last_name='doe'):
 
 
 def w_unknown_arguments(*arguments, **keyword_arguments):
-    return the_inputs, keyword_arguments
+    return arguments, keyword_arguments
