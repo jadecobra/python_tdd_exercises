@@ -152,7 +152,7 @@ because I am in the ``pumping_python`` folder_. pwd_ shows the path/address to t
 how to change directory
 #################################################################################################
 
-I use the cd_ program_ to change directories_
+I use the `cd program`_ to change directories_
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -358,7 +358,7 @@ how to list what is in a directory
 how to look at directory structure
 #################################################################################################
 
-* I can use the tree_ program_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``parent`` directory_
+* I can use the `tree program`_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``parent`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1

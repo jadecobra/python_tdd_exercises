@@ -64,7 +64,7 @@ I use ``magic`` as the name for this project
 
 * I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
-* I use the cd_ program_ to change `folder (directory)`_ to where I will keep all the projects from this book. I type it in the terminal_
+* I use the `cd program`_ to change `folder (directory)`_ to where I will keep all the projects from this book. I type it in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -290,7 +290,7 @@ how to run tests manually on Windows without WSL
 
     NO TESTS RAN
 
-  - ``python`` is the Python_ program_
+  - ``python`` is the `Python program`_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
   - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends with ``.py``, this means somewhere on the computer there is a file named ``unittest.py``, `see the source code for unittest here <https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py>`_
 
@@ -630,7 +630,7 @@ This means I have to run ``python -m unittest`` for each part of the `Test Drive
 how to run tests automatically on Windows without Windows SubSystem Linux
 ********************************************************************************************
 
-I can use `pytest-watch`_ to run tests automatically. It is a Python_ program_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change.
+I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change.
 
 pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_. I type it in the terminal_
 
@@ -665,7 +665,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
   the terminal_ goes back to the command line
 
-  - ``python`` is the Python_ program_
+  - ``python`` is the `Python program`_
   - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
   - ``.venv`` is the name I am giving for this `virtual environment`_
@@ -802,7 +802,7 @@ how to write text to a file on Windows without Windows SubSystem Linux
 --------------------------------------------------------------------------------------------
 I want to make a file where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
-* I can write text to a file_ with the echo_ program_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
+* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -822,7 +822,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
     echo "pytest-watch" > requirements.txt
 
   - ``>`` is an operator that is used to send output from a program_ to the given file_
-  - `pytest-watch`_ is a Python_ program_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
+  - `pytest-watch`_ is a `Python program`_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
   - pytest_ is a `Python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file_ where I can list `Python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
 
@@ -1123,7 +1123,7 @@ how to view all the commands I typed in a terminal
     New-Item makePythonTdd.ps1
     tree /F
 
-  the history_ program_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
+  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
 * I click on ``makePythonTdd.ps1`` to open it in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
 

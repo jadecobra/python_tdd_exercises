@@ -26,6 +26,7 @@
 .. _brew: https://brew.sh
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
 .. _cd: https://man7.org/Linux/man-pages/man1/cd.1p.html
+.. _cd program: cd_
 .. _change directory: cd_
 .. _changing directory: cd_
 .. _chmod: https://grokipedia.com/page/Chmod
@@ -50,6 +51,7 @@
 .. _folders: directory_
 .. _folders (directories): directory_
 .. _echo: https://man7.org/Linux/man-pages/man1/echo.1.html
+.. _echo program: echo_
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _extend: more_on_lists_
 .. _find and replace: https://code.visualstudio.com/docs/editing/codebasics#_find-and-replace
@@ -64,6 +66,7 @@
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable
 .. _history: https://man7.org/Linux/man-pages/man3/history.3.html
+.. _history program: history_
 .. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _if statements: `if statement`_
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
@@ -90,6 +93,7 @@
 .. _module: https://docs.python.org/3/glossary.html#term-module
 .. _modules: module_
 .. _mv: https://grokipedia.com/page/Mv_(Unix)
+.. _mv program: mv_
 .. _not: https://docs.python.org/3/reference/expressions.html#not
 .. _nots: not_
 .. _object: https://docs.python.org/3/glossary.html#term-object
@@ -145,6 +149,7 @@
 .. _the greatest programmer in the world: https://www.reddit.com/r/ProgrammerHumor/comments/f8duna/the_two_states_of_every_programmer/
 .. _touch: https://en.wikipedia.org/wiki/Touch_(command)
 .. _tree: https://grokipedia.com/page/Tree_(command)
+.. _tree program: tree_
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
 .. _tuple: https://docs.python.org/3/library/stdtypes.html#tuple
 .. _tuples: tuple_
@@ -230,6 +235,7 @@
 
 .. _Pylance: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 .. _Python: https://docs.python.org
+.. _Python program: Python_
 .. _Python Extension: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 .. _PyCharm: https://www.jetbrains.com/pycharm/download
 .. _Sublime Text: https://www.sublimetext.com

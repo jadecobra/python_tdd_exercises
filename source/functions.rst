@@ -552,6 +552,7 @@ GREEN: make it pass
 * I make ``w_positional_arguments`` take another input by adding another name in parentheses
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     def w_positional_arguments(first_input, last_input):
         return None
