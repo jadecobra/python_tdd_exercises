@@ -1615,6 +1615,35 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
 
 * I hit ``ctrl+c`` in the terminal to stop the test
 
+* I run tree_ to see what I have in the ``pumping_python`` folder_ now
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree -a -L 2
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 8-13
+
+    .
+    ├── magic
+    │   ├── .pytest_cache
+    │   ├── requirements.txt
+    │   ├── src
+    │   ├── tests
+    │   └── .venv
+    ├── magic_again
+    │   ├── .pytest_cache
+    │   ├── requirements.txt
+    │   ├── src
+    │   ├── tests
+    │   └── .venv
+    └── makePythonTdd.sh
+
+    11 directories, 3 files
+
 * The program works as I expect, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
 
   .. code-block:: shell
@@ -1667,170 +1696,10 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
   the terminal_ shows
 
   .. code-block:: shell
-
-    ========================================== FAILURES ==========================================
-    ________________________________ Testmore_magic.test_failure _________________________________
-
-    self = <tests.test_more_magic.Testmore_magic testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_more_magic.py:7: AssertionError
-    ================================== short test summary info ===================================
-    FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
-    ===================================== 1 failed in 0.04s ======================================
-
-
-* I use ``ctrl+c`` on the keyboard in the terminal_ to stop the test from running then I run the ``makePythonTdd.sh`` again
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 1-4
-
-    mkdir: missing operand
-    Try 'mkdir --help' for more information.
-    mkdir: cannot create directory ‘src’: File exists
-    mkdir: cannot create directory ‘tests’: File exists
-    Requirement already satisfied: pip in ./.venv/lib/python3.XY/site-packages (XY.Z)
-    Collecting pip
-      ...
-    ================================= test session starts ==================================
-    platform Linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
-    rootdir: ...
-    collected 0 items
-
-    ================================ no tests ran in 0.00s =================================
-
-  it did not work. No tests ran and there were errors with making the folders_. I did not give ``./makePythonTdd.sh`` a name for the project when I called it so mkdir_ and cd_ were tried with no name and did not work
-
-* I stop `pytest-watch`_ from running by hitting ``ctrl+c`` on the keyboard in the terminal_. I run tree_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -a -L 3
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
-    │   ├── requirements.txt
-    │   ├── src
-    │   │   └── magic.py
-    │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
-    │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
-    └── makePythonTdd.sh
-
-  I still have the same files_ and folders_ as before I ran the program_
-
-* I run ``makePythonTdd.sh`` with a project name this time
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh magic_again
-
-  the terminal_ shows no errors because no tests ran
-
-  .. code-block:: shell
-
-    ================================ no tests ran in X.YZs ================================
-
-  I need to add code for :ref:`the first failing test<test_failure>` to the test file_
-
-* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder_ now
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -a -L 3
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 22-41
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
-    │   ├── requirements.txt
-    │   ├── src
-    │   │   └── magic.py
-    │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
-    │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
-    │   ├── requirements.txt
-    │   ├── src
-    │   │   └── magic_again.py
-    │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic_again.py
-    │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
-    └── makePythonTdd.sh
-
-* I try the program_ again the terminal_ with a different name for the project
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh more_magic
-
-  the terminal_ shows
-
-  .. code-block:: shell
     :emphasize-lines: 10
 
-    ====================================== FAILURES =======================================
-    __________________________ Testmore_magic.test_failure ___________________________
+    ======================================= FAILURES =======================================
+    _____________________________ Testmore_magic.test_failure ______________________________
 
     self = <tests.test_more_magic.Testmore_magic testMethod=test_failure>
 
@@ -1839,84 +1708,48 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
     E       AssertionError: True is not false
 
     tests/test_more_magic.py:7: AssertionError
-    ============================== short test summary info ================================
+    =============================== short test summary info ================================
     FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
-    ================================= 1 failed in X.YZs ===================================
+    ================================== 1 failed in 0.04s ===================================
 
-* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder now
+* I hold ``ctrl`` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
+
+* I use ``ctrl+c`` on the keyboard in the terminal_ to stop the tests
+
+* I run tree_ to see what I have in the ``pumping_python`` folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree -a -L 3
+    tree -a -L 2
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 43-
+    :emphasize-lines: 15-20
 
     .
     ├── magic
     │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic.py
     │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
     │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
     ├── magic_again
     │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic_again.py
     │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic_again.py
     │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
     ├── makePythonTdd.sh
     └── more_magic
         ├── .pytest_cache
-        │   ├── CACHEDIR.TAG
-        │   ├── .gitignore
-        │   ├── README.md
-        │   └── v
         ├── requirements.txt
         ├── src
-        │   └── more_magic.py
         ├── tests
-        │   ├── __init__.py
-        │   ├── __pycache__
-        │   └── test_more_magic.py
         └── .venv
-            ├── bin
-            ├── .gitignore
-            ├── include
-            ├── lib
-            ├── lib64 -> lib
-            └── pyvenv.cfg
+
+    16 directories, 4 files
 
 * I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 
