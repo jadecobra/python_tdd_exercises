@@ -391,7 +391,7 @@ how to run tests manually
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
     .
     ├── src

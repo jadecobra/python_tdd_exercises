@@ -309,7 +309,7 @@ RED: make it fail
 I add a test to ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 13
+  :lineno-start: 16
   :emphasize-lines: 4-5
 
     def test_making_a_function_w_return_none(self):
