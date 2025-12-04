@@ -1222,10 +1222,10 @@ REFACTOR: make it better
 
   .. code-block:: python
     :lineno-start: 37
-    :emphasize-lines: 1
+    :emphasize-lines: 2
 
     def w_unknown_arguments(*arguments, **keyword_arguments):
-        return the_inputs, keyword_arguments
+        return arguments, keyword_arguments
 
   the terminal_ shows
 
