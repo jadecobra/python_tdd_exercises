@@ -643,7 +643,7 @@ I add a new test to ``test_functions.py``
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                first='first', last='last',
+                first_input='first', last_input='last',
             ),
             ('first', 'last')
         )
@@ -729,13 +729,13 @@ REFACTOR: make it better
         def test_functions_w_keyword_arguments(self):
             self.assertEqual(
                 src.functions.w_keyword_arguments(
-                    first='first', last='last',
+                    first_input='first', last_input='last',
                 ),
                 ('first', 'last')
             )
             self.assertEqual(
                 src.functions.w_keyword_arguments(
-                    last='last', first='first',
+                    last_input='last', first_input='first',
                 ),
                 ('last', 'first')
             )
@@ -754,7 +754,7 @@ REFACTOR: make it better
 
             self.assertEqual(
                 src.functions.w_keyword_arguments(
-                    last='last', first='first',
+                    last_input='last', first_input='first',
                 ),
                 ('first', 'last')
             )
@@ -768,7 +768,7 @@ REFACTOR: make it better
 
           self.assertEqual(
               src.functions.w_keyword_arguments(
-                  last='last', first='first',
+                  last_input='last', first_input='first',
               ),
               ('first', 'last')
           )
@@ -824,7 +824,7 @@ I add a failing test to ``test_functions.py``
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
               src.functions.w_positional_and_keyword_arguments(
-                  'first', last='last',
+                  'first', last_input='last',
               ),
               ('first', 'last')
           )
@@ -947,7 +947,7 @@ I add a failing test to ``test_functions.py``
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
               src.functions.w_positional_and_keyword_arguments(
-                  'first', last='last',
+                  'first', last_input='last',
               ),
               ('first', 'last')
           )

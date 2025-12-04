@@ -599,7 +599,7 @@ how to change the name of a file
 
   the terminal_ shows
 
-  .. NOTE:: if you do not see ``__pycache__`` in the list do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to 
+  .. NOTE:: if you do not see ``__pycache__`` in the list do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to
 
   .. code-block:: shell
     :emphasize-lines: 7
@@ -626,6 +626,7 @@ how to change the name of a file
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
+    :emphasize-lines: 9
 
     F
     =============================================================
@@ -668,7 +669,7 @@ how to change the name of a file
 GREEN: make it pass
 #################################################################################
 
-I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
+I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py`` in the :ref:`editor<2 editors>`
 
 .. code-block:: shell
   :lineno-start: 7
@@ -698,7 +699,7 @@ the test passes! The terminal_ shows
 REFACTOR: make it better
 ############################################################################################
 
-I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
+I recommend keeping a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
 .. code-block:: python
   :linenos:
@@ -718,7 +719,9 @@ I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you g
 
 I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I want.
 
-This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python3 -m unittest`` again, it is better for a `computer program`_ to run the tests so that `I do not repeat myself`_.
+This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change.
+
+I do not want to type ``python3 -m unittest`` again, it is better for a `computer program`_ to run the tests so that `I do not repeat myself`_.
 
 ----
 
@@ -726,9 +729,11 @@ This means I have to run ``python3 -m unittest`` for each part of the `Test Driv
 how to run tests automatically
 ********************************************************************************************
 
-I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change.
+I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_. I type it in the terminal_
+pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
+
+I type it in the terminal_
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -741,18 +746,18 @@ the terminal_ shows
 
   command not found: pytest-watch
 
-I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ the project needs in one place
+I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
 
 how to make a virtual environment
 ############################################################################################
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
-A `virtual environment`_ is a separate folder where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
+A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
 It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
 
-* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
+* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_
 
   .. code-block:: shell
     :emphasize-lines: 1
