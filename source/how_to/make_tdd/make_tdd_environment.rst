@@ -1795,6 +1795,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I see directory structure?<how to look at directory structure>`
 * :ref:`How can I make an empty file?<how to make an empty file>`
 * :ref:`How can I write text to a file?<how to write text to a file>`
+* :ref:`How can I see what is inside a file?<how to see what is inside a file>`
 * :ref:`How can I change the name of a file?<how to change the name of a file>`
 * :ref:`How can I run a Python Program?<how to run a Python program>`
 * :ref:`How can I test for failure?<test_failure>`

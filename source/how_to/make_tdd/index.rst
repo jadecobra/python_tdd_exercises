@@ -38,6 +38,7 @@ they cover the following
 - :ref:`how to activate a virtual environment`
 - :ref:`how to see what packages are installed in a virtual environment`
 - :ref:`how to write text to a file`
+- :ref:`how to see what is inside a file`
 - :ref:`how to install Python packages in a virtual environment`
 - :ref:`how to make a python test driven development environment automatically`
 - :ref:`how to exit the automated tests`

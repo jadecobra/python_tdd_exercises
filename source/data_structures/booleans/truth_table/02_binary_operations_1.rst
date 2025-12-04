@@ -680,6 +680,8 @@ REFACTOR: make it better
 * I add the third case
 
   .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 4
 
         def test_converse_non_implication(self):
             self.assertFalse(src.truth_table.converse_non_implication(True, True))
