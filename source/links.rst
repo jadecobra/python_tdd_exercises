@@ -25,6 +25,8 @@
 .. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _brew: https://brew.sh
 .. _callable: https://docs.python.org/3/glossary.html#term-callable
+.. _cat: https://grokipedia.com/page/Cat_(Unix)
+.. _cat program: cat_
 .. _cd: https://man7.org/Linux/man-pages/man1/cd.1p.html
 .. _cd program: cd_
 .. _change directory: cd_

@@ -806,6 +806,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 8
 
     .
     ├── src
@@ -900,7 +901,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
     pytest-watch
 
-* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
+* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as what is inside it
 
   .. code-block:: shell
 
@@ -921,7 +922,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
   the terminal_ shows
 
   .. code-block:: shell
-    :force:
+    :emphasize-lines: 2
 
     .
     ├── requirements.txt
@@ -941,8 +942,23 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
     9 directories, 6 files
 
-
   ``requirements.txt`` is now in the ``magic`` folder_
+
+how to see what is inside a file
+--------------------------------------------------------------------------------------------
+
+I can use the `cat program` to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
+
+.. code-block:: shell
+  :emphasize-lines: 1
+
+  cat requirements.txt
+
+the terminal_ shows
+
+.. code-block:: shell
+
+  pytest-watch
 
 how to install Python packages in a virtual environment
 --------------------------------------------------------------------------------------------
@@ -954,17 +970,17 @@ how to install Python packages in a virtual environment
 
     python3 -m pip install --requirement requirements.txt
 
-  - ``--requirement`` is an option that can be passed to the ``install`` argument for `Python packages`_ in a given file_
+  - ``--requirement`` is an option that can be given to the ``install`` argument for `Python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
-  the terminal_ shows a bunch or programs_ being installed, and when I do not have the latest version of pip_ installed, it shows
+  the terminal_ shows programs_ being installed, and when I do not have the latest version of pip_ installed, it shows this at the end
 
   .. code-block:: shell
 
     [notice] A new release of pip is available: XY.Z -> AB.C
     [notice] To update, run: pip install --upgrade pip
 
-  I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
+* I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -978,7 +994,6 @@ how to install Python packages in a virtual environment
   .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
 
     .. code-block:: shell
-      :emphasize-lines: 1
 
       python3 -m pip install pytest-watch
 
@@ -1008,6 +1023,8 @@ how to install Python packages in a virtual environment
 
   `pytest-watch`_ is in the list. Yes!
 
+  .. NOTE:: imagine that the `pytest-watch`_ project also has a requirements file_ with colorama, docopt, iniconfig, packaging, pluggy, Pygments, pytest and watchdog as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch` from the ``requirements.txt`` file_
+
 * I try to run the tests again
 
   .. code-block:: shell
@@ -1029,7 +1046,7 @@ how to install Python packages in a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1064,7 +1081,7 @@ how to install Python packages in a virtual environment
 
           self.assertFalse(False)
 
-  the test passes and I can write the rest of the code for the project as the tests run automatically in response to my changes
+  the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
 
   .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back to the command line
 
