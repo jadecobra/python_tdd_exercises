@@ -170,7 +170,7 @@ this means the folder_ does not exist where I am
 how to make a directory
 #################################################################################################
 
-* I use the mkdir_ program_ to make a `folder (directory)`_
+* I use the `mkdir program`_ to make a `folder (directory)`_
 
   .. code-block:: shell
     :emphasize-lines: 1

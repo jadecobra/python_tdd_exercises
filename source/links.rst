@@ -83,6 +83,7 @@
 .. _ls: https://grokipedia.com/page/Ls
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/Linux/man-pages/man1/mkdir.1.html
+.. _mkdir program: mkdir_
 .. _make a directory: mkdir_
 .. _make the directory: mkdir_
 .. _modulo: https://grokipedia.com/page/Modulo
@@ -130,6 +131,7 @@
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
 .. _sort: more_on_lists_
 .. _source code: https://grokipedia.com/page/Source_code
+.. _source code for unittest: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split

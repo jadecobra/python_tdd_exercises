@@ -216,7 +216,7 @@ I add a new function_ to ``functions.py``
       pass
 
 
-  def w_return(self):
+  def w_return():
       pass
 
 the test passes

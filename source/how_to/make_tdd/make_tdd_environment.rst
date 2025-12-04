@@ -41,46 +41,45 @@ Linux/Windows Subsystem Linux requirements
 
 .. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_. MacOS_ users should not do this section
 
-Open a terminal_ then type this to update the `Linux package manager`_
+* Open a terminal_ then type this to update the `Linux package manager`_
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-  sudo apt update
+    sudo apt update
 
-.. TIP:: you can do a full upgrade if you want
+  .. TIP:: you can do a full upgrade if you want
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: shell
 
-  sudo apt full-upgrade --yes
+    sudo apt full-upgrade --yes
 
-type this in the terminal_ to install Python_
+* type this in the terminal_ to install Python_
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-  sudo apt install python3 python3-venv --yes
+    sudo apt install python3 python3-venv --yes
 
 ----
 
-When I want to work on a project, here are some things I think about
+When I want to start a project, here are some things I think about
 
-* What is the name I want for the project?
+* What name will I give the project?
 * What is the structure of the project?
-* What files and folders does the project need?
-* What other programs does my project need?
+* What files_ and folders_ does the project need?
+* What other programs_ does my project need?
 * What tests am I going to write for this project?
 
 It turns out some of this is repeatable
 
 * I pick a name for the project
-* I make a new folder for every project with the name
-* I place the code for the project in a ``src`` folder
-* I place the tests for the project in a ``tests`` folder
+* I make a new folder_ for every project with the name I picked
+* I place the code for the project in a ``src`` folder_
+* I place the tests for the project in a ``tests`` folder_
 * I try to name everything in the project with the name of the project or with something that describes what it does
-* I document what the project needs in a requirements file
-* I make a `virtual environment`_ to keep things isolated from the rest of the computer
+* I write what the project needs in a requirements file_
+* I make a `virtual environment`_ to keep things separate from the rest of the computer
 * I install what the project needs in the `virtual environment`_
 * I work in the `virtual environment`_
 * I run automated tests to make sure I have a `Test Driven Development`_ environment
@@ -90,11 +89,13 @@ It turns out some of this is repeatable
 how to make a python test driven development environment manually
 ********************************************************************************************
 
-I use ``magic`` as the name for this project
+I pick ``magic`` as the name for this project
 
 * I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
-* I use the cd_ program_ to change `folder (directory)`_ to where I will put all the projects from this book. I type it in the terminal_
+* I `change directory`_ to where I will put all the projects from this book. I type cd_ in the terminal_
+
+  .. NOTE:: You can skip this step if you are already in the ``pumping_python`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -109,13 +110,15 @@ I use ``magic`` as the name for this project
 
   the `folder (directory)`_ does NOT exist. I need to make it
 
-* I use the mkdir_ program_ to make a `folder (directory)`_
+* I use the `mkdir program`_ to make the ``pumping_python`` `folder (directory)`_
 
   .. code-block:: shell
 
     mkdir pumping_python
 
-  the terminal_ goes back to the command line. I try `changing directory`_ again
+  the terminal_ goes back to the command line
+
+* I try `changing directory`_ again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -183,7 +186,6 @@ I use ``magic`` as the name for this project
 
     0 directories, 0 files
 
-
   .. NOTE:: You will see more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
@@ -199,14 +201,16 @@ I use ``magic`` as the name for this project
 
     cd: no such file or directory: magic
 
-  the ``magic`` folder does not yet exist. I `make the directory`_
+  the ``magic`` folder does NOT exist yet
+
+* I make the ``magic`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     mkdir magic
 
-  the terminal_ goes back to the command line
+  this makes a `folder (directory)`_ for the project where its files will stay
 
 * I use tree_ again
 
@@ -218,12 +222,12 @@ I use ``magic`` as the name for this project
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 2
 
     .
     └── magic
 
     2 directories, 0 files
-
 
 * I try cd_ again
 
@@ -232,11 +236,11 @@ I use ``magic`` as the name for this project
 
     cd magic
 
-  the terminal_ shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
+  the terminal_ shows I am now in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
   .. code-block:: shell
 
-    .../pumping_python/magic $
+    .../pumping_python/magic
 
 how to run a Python program
 #################################################################################################
@@ -255,7 +259,7 @@ how to run a Python program
 
     python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program_ because it does not exist.
+  the computer cannot find the program_ because it does not exist, yet
 
 * I make a child folder_ in the ``magic`` directory_ for the program_
 
@@ -276,6 +280,7 @@ how to run a Python program
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 2
 
     .
     └── src
@@ -313,6 +318,7 @@ how to make an empty file
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 3
 
     .
     └── src
@@ -320,7 +326,7 @@ how to make an empty file
 
     2 directories, 1 file
 
-  touch_ is a program_ that makes an empty file_ with the name. I can give the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  touch_ is a program_ that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -329,7 +335,7 @@ how to make an empty file
 
     python3 src/magic.py
 
-  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it.
+  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it exists
 
 ********************************************************************************************
 test_failure
@@ -337,9 +343,9 @@ test_failure
 
 The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
-* **RED**: make it fail - write a failing test to make sure the test works
+* **RED**: make it fail - write a test that fails to make sure the test works
 * **GREEN**: make it pass - write the simplest thing that will make the failing test pass
-* **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
+* **REFACTOR**: make it better - write a better solution, test or both, usually by `removing duplication`_
 
 This process can be repeated as many times as needed until I get to my goal.
 
@@ -364,16 +370,18 @@ how to run tests manually
 
   - ``python3`` is the Python_ program_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
-  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends with ``.py``, this means somewhere on the computer there is a file named ``unittest.py``, `see the source code for unittest here <https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py>`_
+  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends with ``.py``, this means somewhere on the computer there is a file named ``unittest.py``, see the `source code for unittest`_
 
-* I do not have any tests yet, that is why none ran. I make a child folder_ to keep the tests separate from the actual program_
+* I do not have any tests yet, so there is nothing to run. I make a child folder_ to keep the tests separate from the actual program_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     mkdir tests
 
-  the terminal_ goes back to the command line, I use tree_ to see what my project now looks like
+  the terminal_ goes back to the command line
+
+* I use tree_ to see what my project looks like
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -383,6 +391,7 @@ how to run tests manually
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 3
 
     .
     ├── src
@@ -391,8 +400,7 @@ how to run tests manually
 
     3 directories, 1 file
 
-
-* I use touch_ to add an empty file to the ``tests`` directory for the actual test
+* I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -436,7 +444,7 @@ how to run tests manually
 RED: make it fail
 #################################################################################################
 
-* I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following Python_ code in the file_
+* I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
   .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
 
@@ -446,6 +454,10 @@ RED: make it fail
       code tests/magic.py
 
     If you are on MacOS_ and using `Visual Studio Code`_, make sure you `Configure the path <https://code.visualstudio.com/docs/setup/mac#_configure-the-path-with-vs-code>`_ for the above command to work
+
+    I can also open a file_ by using ``ctrl`` (Windows_/Linux_) or ``command`` (MacOS_) on the keyboard and clicking with the mouse on the name of the file_
+
+* I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -461,12 +473,12 @@ RED: make it fail
         def test_failure(self):
             self.assertFalse(True)
 
-  Here is an explanation of the code in the file_
+  Here is an explanation of the code I typed in the file_
 
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
+    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, do not worry it is covered in more detail in the :ref:`classes chapter<classes>`
     * ``TestMagic`` is the name I gave this :ref:`class <classes>` and will hold the test
 
       .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
@@ -481,7 +493,7 @@ RED: make it fail
 
       .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
-    * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self.`` lets me use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
 
       .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name but it is easier to stick with convention for this concept
 
@@ -493,6 +505,9 @@ RED: make it fail
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) every time I make a change
+
+  .. IMPORTANT:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
+
 * I try the command again to run the tests in the terminal_
 
   .. code-block:: shell
@@ -532,6 +547,7 @@ how to make a Python package
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 4
 
     .
     ├── src
@@ -878,7 +894,6 @@ I want to make a file where I can list all the `Python packages`_ for my project
 * I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
 
   .. code-block:: shell
-    :emphasize-lines: 1
 
     echo "pytest-watch" > requirements.txt
 
@@ -1216,6 +1231,49 @@ how to view all the commands I typed in a terminal
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
+* I use echo_ instead of touch_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.sh``
+
+  .. code-block:: shell
+    :lineno-start: 8
+    :emphasize-lines: 1
+
+    echo "" > tests/test_magic.py
+
+  I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``
+
+  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
+
+  .. code-block:: shell
+    :linenos:
+    :emphasize-lines: 10-21
+
+    #!/bin/bash
+    mkdir magic
+    cd magic
+    mkdir src
+    touch src/magic.py
+    mkdir tests
+    touch tests/__init__.py
+    touch tests/test_magic.py
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    echo "import unittest
+
+
+    class TestMagic(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+
+    # Exceptions Encountered
+    # AssertionError
+    " > requirements.txt
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
+
 how to run a shell script
 --------------------------------------------------------------------------------------------
 
@@ -1463,23 +1521,6 @@ how to use variables in a shell script
     │       ├── lib64 -> lib
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
-
-* I use echo_ instead of touch_ to add text for the first failing test to ``test_$PROJECT_NAME.py`` in ``makePythonTdd.sh``
-
-  .. code-block:: shell
-    :lineno-start: 9
-    :emphasize-lines: 1
-
-    echo "" > tests/test_$PROJECT_NAME.py
-
-  I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>`
-
-  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
-
-  .. literalinclude:: /code/make_tdd/makePythonTdd.sh
-    :language: shell
-    :linenos:
-    :emphasize-lines: 10-21
 
 * I try the program_ again the terminal_ with a different name for the project
 

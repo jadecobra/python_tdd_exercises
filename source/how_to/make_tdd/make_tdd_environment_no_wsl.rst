@@ -32,6 +32,30 @@ requirements
 
 ----
 
+----
+
+When I want to work on a project, here are some things I think about
+
+* What is the name I want for the project?
+* What is the structure of the project?
+* What files and folders does the project need?
+* What other programs does my project need?
+* What tests am I going to write for this project?
+
+It turns out some of this is repeatable
+
+* I pick a name for the project
+* I make a new folder for every project with the name
+* I place the code for the project in a ``src`` folder
+* I place the tests for the project in a ``tests`` folder
+* I try to name everything in the project with the name of the project or with something that describes what it does
+* I document what the project needs in a requirements file
+* I make a `virtual environment`_ to keep things isolated from the rest of the computer
+* I install what the project needs in the `virtual environment`_
+* I work in the `virtual environment`_
+* I run automated tests to make sure I have a `Test Driven Development`_ environment
+* I start writing code for the project
+
 ****************************************************************************************************************
 how to make a python test driven development environment manually on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
@@ -55,7 +79,7 @@ I use ``magic`` as the name for this project
 
   the `folder (directory)`_ does NOT exist. I need to make it
 
-* I use the mkdir_ program_ to make a `folder (directory)`_
+* I use the `mkdir program`_ to make a `folder (directory)`_
 
   .. code-block:: PowerShell
 
@@ -113,15 +137,6 @@ I use ``magic`` as the name for this project
 
   this makes a `folder (directory)`_ for the project where its files will stay
 
-* I use cd_
-
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    cd magic
-
-  the terminal_ goes back to the command line
-
 * I use tree_ again
 
   .. code-block:: PowerShell
@@ -149,7 +164,7 @@ I use ``magic`` as the name for this project
 
   .. code-block:: shell
 
-    .../pumping_python/magic $
+    ...\pumping_python\magic >
 
 how to run a Python program on Windows without Windows SubSystem Linux
 #################################################################################################
@@ -251,10 +266,10 @@ test_failure
 The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 * **RED**: make it fail - write a failing test to make sure the test works
-* **GREEN**: make it pass - write the simplest thing to make the failing test pass
+* **GREEN**: make it pass - write the simplest thing that will make the failing test pass
 * **REFACTOR**: make it better - write a better solution, test or both. Usually by `removing duplication`_
 
-this process can be repeated as many times as possible or until I get to my goal.
+This process can be repeated as many times as needed until I get to my goal.
 
 how to run tests manually on Windows without WSL
 #################################################################################################
@@ -349,7 +364,14 @@ how to run tests manually on Windows without WSL
 RED: make it fail
 ############################################################################################
 
-* I click on ``magic/tests/test_magic.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following
+* I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following Python_ code in the file_
+
+  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code tests/magic.py
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -796,7 +818,6 @@ I want to make a file where I can list all the `Python packages`_ for my project
 * I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
 
   .. code-block:: PowerShell
-    :emphasize-lines: 1
 
     echo "pytest-watch" > requirements.txt
 
@@ -1125,6 +1146,46 @@ how to view all the commands I typed in a terminal
     "pytest-watch" | Out-File requirements.txt -Encoding UTF8
     python -m pip install --requirement requirements.txt
     pytest-watch
+
+* I use `Out-FIle`_ instead of `New-Item`_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.ps1``
+
+  .. code-block:: shell
+    :lineno-start: 7
+    :emphasize-lines: 1
+
+    "" || tests/test_magic.py
+
+  I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.ps1``
+
+  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
+
+  .. code-block:: shell
+    :linenos:
+    :emphasize-lines: 10-21
+    mkdir magic
+    cd magic
+    mkdir src
+    New-Item src/magic.py
+    mkdir tests
+    New-Item tests/__init__.py
+    New-Item tests/test_magic.py
+    python -m venv .venv
+    .venv/scripts/activate.ps1
+    python -m pip install --upgrade pip
+    "import unittest
+
+
+    class TestMagic(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+
+    # Exceptions Encountered
+    # AssertionError" | Out-File requirements.txt -Encoding UTF8
+    python -m pip install --requirement requirements.txt
+    pytest-watch
 how to run a PowerShell script
 --------------------------------------------------------------------------------------------
 
@@ -1146,9 +1207,9 @@ I have to tell the computer exactly where the file_ is
 .. code-block:: PowerShell
   :emphasize-lines: 1
 
-  ./makePythonTdd.ps1
+  .\makePythonTdd.ps1
 
-``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.ps1`` is saved. The computer checks a few directories_ by default when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
+``.\`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.ps1`` is saved. The computer checks a few directories_ by default when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
 
 
 .. code-block:: PowerShell
