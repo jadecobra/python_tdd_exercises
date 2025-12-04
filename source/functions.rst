@@ -310,7 +310,7 @@ I add a test to ``test_functions.py``
 
 .. code-block:: python
   :lineno-start: 16
-  :emphasize-lines: 4-5
+  :emphasize-lines: 4-8
 
     def test_making_a_function_w_return_none(self):
         self.assertIsNone(src.functions.w_return_none())

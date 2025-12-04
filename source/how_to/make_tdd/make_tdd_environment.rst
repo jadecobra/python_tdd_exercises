@@ -419,6 +419,7 @@ how to run tests manually
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 5
 
     .
     ├── src
@@ -547,7 +548,7 @@ how to make a Python package
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     .
     ├── src
