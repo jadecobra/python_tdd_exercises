@@ -370,7 +370,7 @@ how to run tests manually
 
   - ``python3`` is the `Python program`_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
-  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends with ``.py``, this means somewhere on the computer there is a file named ``unittest.py``, see the `source code for unittest`_
+  - a Python_ :ref:`module<ModuleNotFoundError>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
 
 * I do not have any tests yet, so there is nothing to run. I make a child folder_ to keep the tests separate from the actual program_
 

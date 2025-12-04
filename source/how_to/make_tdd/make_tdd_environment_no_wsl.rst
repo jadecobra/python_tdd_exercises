@@ -299,16 +299,18 @@ how to run tests manually on Windows without WSL
 
   - ``python`` is the `Python program`_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
-  - a Python_ :ref:`module<ModuleNotFoundError>` is any file that ends with ``.py``, this means somewhere on the computer there is a file named ``unittest.py``, `see the source code for unittest here <https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py>`_
+  - a Python_ :ref:`module<ModuleNotFoundError>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
 
-* I do not have any tests yet, that is why none ran. I make a child folder_ to keep the tests separate from the actual program_
+* I do not have any tests yet, so there is nothing to run. I make a child folder_ to keep the tests separate from the actual program_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
     mkdir tests
 
-  the terminal_ goes back to the command line, I use tree_ to see what my project now looks like
+the terminal_ goes back to the command line
+
+* I use tree_ to see what my project looks like
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -318,6 +320,7 @@ how to run tests manually on Windows without WSL
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 4
 
     .
     ├── src

@@ -336,7 +336,7 @@ REFACTOR: make it better
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 2-3
+    :emphasize-lines: 3-4
 
     def logical_conjunction(first_input, second_input):
         if first_input == False:

@@ -137,7 +137,7 @@
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
 .. _sort: more_on_lists_
 .. _source code: https://grokipedia.com/page/Source_code
-.. _source code for unittest: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
+.. _see the source code for unittest here: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
 .. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
