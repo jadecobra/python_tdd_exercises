@@ -141,12 +141,14 @@ REFACTOR: make it better
 
   the test is still green
 
-* I add an `assert statement`_
+* I add another `assert statement`_
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 7
+    :emphasize-lines: 2
 
-    assert '1' + '1' == '2'
+            assert 1 + 1 == 2
+            assert '1' + '1' == '2'
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -993,13 +995,12 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
     AssertionError: True != False
 
-  I change the `assert method`_
+* I change the `assert method`_ to assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 2
+    :lineno-start: 40
+    :emphasize-lines: 1
 
-            assert True != False
             self.assertNotEqual(True, False)
 
   the test passes
@@ -1007,7 +1008,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
 * I add a note
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 43
     :emphasize-lines: 5
 
     # NOTES
@@ -1023,13 +1024,12 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # Exceptions Encountered
     # AssertionError
 
-* on to the next failing :ref:`assertion<AssertionError>`
+* on to the next failing assertion_
 
   .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 4
+    :lineno-start: 40
+    :emphasize-lines: 3
 
-            assert True != False
             self.assertNotEqual(True, False)
 
             assert False != False
@@ -1043,20 +1043,20 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
     E    assert False != False
 
-  I make the line :ref:`True<test_what_is_true>`
+* I make the assertion_ :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 1
 
             assert False == False
 
   the test passes
 
-* I add another failing line with assertNotEqual_
+* I add another failing `assert statement`_ with assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 2
 
             assert False == False
@@ -1068,10 +1068,10 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
     AssertionError: False == False
 
-  I change the line to use assertEqual_
+* I change assertNotEqual_ to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 43
     :emphasize-lines: 1
 
             self.assertEqual(False, False)
@@ -1081,7 +1081,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
 * I add a note
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 46
     :emphasize-lines: 4
 
     # NOTES
@@ -1097,13 +1097,12 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # Exceptions Encountered
     # AssertionError
 
-* I add a failing :ref:`assertion<AssertionError>`
+* I add a failing `assert statement`_
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 4
+    :lineno-start: 43
+    :emphasize-lines: 3
 
-            assert False == False
             self.assertEqual(False, False)
 
             assert False == True
@@ -1117,20 +1116,20 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
     E    assert False == True
 
-  I change the line to make it :ref:`True<test_what_is_true>`
+* I change the assertion_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 45
     :emphasize-lines: 1
 
             assert False != True
 
   the test passes
 
-* I add a failing line with assertEqual_
+* I add another failing line with the `assertEqual method`_
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 45
     :emphasize-lines: 2
 
             assert False != True
@@ -1142,13 +1141,12 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
     AssertionError: False != True
 
-  I make the line :ref:`True<test_what_is_true>` with assertNotEqual_
+* I make the statement :ref:`True<test_what_is_true>` with assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 2
+    :lineno-start: 46
+    :emphasize-lines: 1
 
-            assert False != True
             self.assertNotEqual(False, True)
 
   the test passes
@@ -1156,8 +1154,8 @@ There are `assert methods`_ to check if 2 things are equal or not.
 * I add another note
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 3
+    :lineno-start: 49
+    :emphasize-lines:  3
 
     # NOTES
     # True is True
