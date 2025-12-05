@@ -23,7 +23,7 @@ they cover the following
 
 - :ref:`Windows requirements`
 - :ref:`Linux/Windows Subsystem Linux requirements`
-- :ref:`how to make a python test driven development environment manually`
+- :ref:`how to manually make a python test driven development environment`
 - :ref:`how to change directory`
 - :ref:`how to make a directory`
 - :ref:`how to look at directory structure`
@@ -40,7 +40,7 @@ they cover the following
 - :ref:`how to write text to a file`
 - :ref:`how to see what is inside a file`
 - :ref:`how to install Python packages in a virtual environment`
-- :ref:`how to make a python test driven development environment automatically`
+- :ref:`how to automatically make a python test driven development environment automatically`
 - :ref:`how to exit the automated tests`
 - :ref:`how to deactivate a virtual environment`
 - :ref:`how to make a shell script`

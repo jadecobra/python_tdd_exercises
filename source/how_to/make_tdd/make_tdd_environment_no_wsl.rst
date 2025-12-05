@@ -14,7 +14,13 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_. First, :ref:`I do it manually<how to make a python test driven development environment manually on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
+This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
+
+Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`, it is only 28 lines of code, with spaces
+
+  .. literalinclude:: ../../code/make_tdd/makePythonTdd.sh
+    :language: shell
+    :linenos:
 
 ----
 
@@ -65,7 +71,7 @@ Here is what that structure should look like if the name of the project is ``PRO
       └── PROJECT_NAME.py
 
 ****************************************************************************************************************
-how to make a python test driven development environment manually on Windows without Windows Subsystem Linux
+how to manually make a python test driven development environment on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
 
 I pick ``magic`` as the name for this project
@@ -1023,7 +1029,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 ----
 
 *******************************************************************************************************************
-how to make a python test driven development environment automatically on Windows without Windows SubSystem Linux
+how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux
 *******************************************************************************************************************
 
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
@@ -1760,8 +1766,8 @@ review
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`How can I make a Python Test Driven Development Environment manually?<how to make a python test driven development environment manually on Windows without Windows SubSystem Linux>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
+* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>`
+* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`

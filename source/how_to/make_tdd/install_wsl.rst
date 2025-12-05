@@ -57,7 +57,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
     sudo apt install python3 python3-venv --yes
 
-you can continue with :ref:`how to make a python test driven development environment manually`.
+you can continue with :ref:`how to manually make a python test driven development environment`.
 
 If installing `Windows Subsystem Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead
 
