@@ -1101,7 +1101,7 @@ how to view all the commands I typed in a terminal
   the terminal_ shows
 
   .. code-block:: PowerShell
-    :emphasize-lines: 6, 8, 10, 13, 19, 22, 29, 32, 35, 37, 38, 40
+    :emphasize-lines: 6, 8, 10, 13, 19, 22, 29, 32, 37, 39-40, 44
 
     cd pumping_python
     mkdir pumping_python
@@ -1137,6 +1137,8 @@ how to view all the commands I typed in a terminal
     .venv/scripts/activate.ps1
     pytest-watch
     pip list
+    echo "pytest-watch"
+    echo "pytest-watch" > requirements.txt
     "pytest-watch" | Out-File requirements.txt -Encoding UTF8
     tree /F
     python -m pip install --requirement requirements.txt
@@ -1185,9 +1187,9 @@ how to view all the commands I typed in a terminal
 
   .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
     :linenos:
-    :emphasize-lines: 10-21
+    :emphasize-lines: 8-21
     mkdir magic
     cd magic
     mkdir src
@@ -1195,9 +1197,6 @@ how to view all the commands I typed in a terminal
     mkdir tests
     New-Item tests/__init__.py
     New-Item tests/test_magic.py
-    python -m venv .venv
-    .venv/scripts/activate.ps1
-    python -m pip install --upgrade pip
 
     "import unittest
 
@@ -1296,7 +1295,7 @@ how to run a PowerShell script
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF 8
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
@@ -1389,30 +1388,144 @@ how to run a PowerShell script
 how to use variables in a PowerShell script
 --------------------------------------------------------------------------------------------
 
+I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I am trying to follow the `Do not Repeat Yourself (DRY)` principle. I need the program to take a project name once and use that name when making the project to make the following
+
+  - the project folder_
+  - the program in the ``src`` folder_
+  - the test file_ in the ``tests`` folder_
+  - the test :ref:`class<classes>` in the test file_
+
+* First, I add a name to represent any project name that I give to ``makePythonTdd.sh`` when I want it to make a project
 * I change ``magic`` to a :ref:`variable<test_attribute_error_w_variables>` in ``makePythonTdd.ps1`` so I can give it any name when I want to make a project
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
   .. code-block:: PowerShell
     :linenos:
-    :emphasize-lines: 1-3,5,8
+    :emphasize-lines: 1
 
-    $PROJECT_NAME=$args[0]
+    $PROJECT_NAME="magic_again"
+    mkdir magic_again
+    cd magic_again
+    mkdir src
+    touch src/magic_again.py
+    mkdir tests
+    touch tests/__init__.py
+
+    "import unittest
+
+
+    class TestMagicAgain(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+    " | Out-File "tests/test_magic_again.py" - Encoding UTF8
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF 8
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
+
+  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example in mathematics we can use ``x`` to represent any number. In this case I use ``$PROJECT_NAME`` to represent any name of a project
+
+* I change every where I have ``magic_again`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
+
+  .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
+
+  .. code-block:: shell
+    :linenos:
+    :emphasize-lines: 2-3, 5, 12, 20
+
+    $PROJECT_NAME="magic_again"
     mkdir $PROJECT_NAME
     cd $PROJECT_NAME
     mkdir src
-    New-Item "src/$PROJECT_NAME.py"
+    touch src/$PROJECT_NAME.py
     mkdir tests
-    New-Item tests/__init__.py
-    New-Item tests/test_$PROJECT_NAME.py
-    python -m venv .venv
-    .venv/scripts/activate.ps1
-    python -m pip install --upgrade pip
-    "pytest-watch" | Out-File requirements.txt -Encoding UTF8
-    python -m pip install --requirement requirements.txt
+    touch tests/__init__.py
+
+    "import unittest
+
+
+    class Test$PROJECT_NAME(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+    " | Out-File "tests/test_$PROJECT_NAME.py" - Encoding UTF8
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF 8
+    python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example in mathematics we can use ``x`` to represent any number. In this case I use ``PROJECT_NAME`` to represent any name of a project
+* I run the program again in the terminal_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ./makePythonTdd.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 4, 10, 12
+
+    ======================================= FAILURES =======================================
+    ____________________________ Testmagic_again.test_failure ______________________________
+
+    self = <tests.test_magic.Testmagic_again testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_magic_again.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_magic_again.py::Testmagic_again::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
+
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_magic_again.py`` to make the test pass
+
+* I hit ``ctrl+c`` in the terminal to stop the test
+
+* I run tree_ to see what I have in the ``pumping_python`` folder_ now
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree -a -L 2
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 8-13
+
+    .
+    ├── magic
+    │   ├── .pytest_cache
+    │   ├── requirements.txt
+    │   ├── src
+    │   ├── tests
+    │   └── .venv
+    ├── magic_again
+    │   ├── .pytest_cache
+    │   ├── requirements.txt
+    │   ├── src
+    │   ├── tests
+    │   └── .venv
+    └── makePythonTdd.sh
 
   .. ADMONITION:: ``$args[0]`` is for the first argument given when the program is called, I can use it in place of ``$PROJECT_NAME`` for example
 
