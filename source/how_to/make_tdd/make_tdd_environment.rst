@@ -18,7 +18,7 @@ how to make a python test driven development environment
 What is a Test Driven Development Environment?
 *********************************************************************************
 
-A `Test Driven Development` environment is a collection of files_ and folders_ in a project where I can write automated tests and code and see the results of running them immediately.
+A `Test Driven Development`_ environment is a collection of files_ and folders_ in a project where I can write automated tests and code and see the results of running them immediately.
 
 This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to manually make a python test driven development environment>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment automatically>`
 
