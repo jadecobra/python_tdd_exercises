@@ -223,7 +223,7 @@ REFACTOR: make it better
 
   :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
 
-* I make the statement :ref:`True<test_what_is_true>` with the assertIsInstance_ :ref:`method<functions>` which checks if the first item (:ref:`False<test_what_is_false>`) it is given is a child/instance of the second item (the bool_ :ref:`class<classes>`)
+* I make the statement :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item (:ref:`False<test_what_is_false>`) it is given is a child/instance of the second item (the bool_ :ref:`class<classes>`)
 
   .. code-block:: python
     :lineno-start: 12
@@ -1223,7 +1223,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I add one more failing line with the assertIsInstance_ :ref:`method<functions>`
+* I add one more failing line with the `assertIsInstance method`_
 
   .. code-block:: python
     :lineno-start: 52

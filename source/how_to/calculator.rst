@@ -104,7 +104,7 @@ test_addition
                 1
             )
 
-  - the assertEqual_ :ref:`method<functions>` from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the `assertEqual method`_ from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is
 
     - ``reality`` - ``src.calculator.add(0, 1)``, and the other is my

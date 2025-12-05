@@ -508,7 +508,7 @@ test_attributes_and_methods_of_objects
 
 To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<classes>` I can call dir_ on the :ref:`object<classes>`.
 
-The dir_ :ref:`method<functions>` returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
+The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
 
 RED: make it fail
 #################################################################################

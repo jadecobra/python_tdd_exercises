@@ -12,15 +12,25 @@
 .. _assert method: https://docs.python.org/3/library/unittest.html#assert-methods
 .. _assert methods: `assert method`_
 .. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
+.. _assertEqual method: assertEqual_
 .. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
+.. _assertNotEqual method: assertNotEqual_
 .. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
+.. _assertFalse method: assertFalse_
 .. _assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
+.. _assertTrue method: assertTrue_
 .. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
+.. _assertNotIsInstance method: assertNotIsInstance_
 .. _assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
+.. _assertIsInstance method: assertIsInstance_
 .. _assertIsNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone
+.. _assertIsNone method: assertIsNone_
 .. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
+.. _assertIsNotNone method: assertIsNotNone_
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
+.. _assertRaises method: assertRaises_
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
+.. _assertRaisesRegex method: assertRaisesRegex_
 .. _bash: https://www.gnu.org/software/bash/
 .. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _brew: https://brew.sh
@@ -46,6 +56,7 @@
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dir: https://docs.python.org/3/library/functions.html#dir
+.. _dir built-in function: dir_
 .. _file: https://grokipedia.com/page/File
 .. _files: file_
 .. _folder: directory_
