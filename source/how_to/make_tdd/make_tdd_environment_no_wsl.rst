@@ -1303,6 +1303,8 @@ how to run a PowerShell script
 
 * I want to use ``makePythonTdd.ps1`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
 
+  .. NOTE:: The lines that are changing in the code are highlighted
+
   .. code-block:: PowerShell
     :linenos:
     :emphasize-lines: 1, 2, 4, 11, 19
@@ -1479,11 +1481,11 @@ Time to use a variable_ for the name of the project
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example in mathematics we can use ``x`` to represent any number. In this case I use ``$PROJECT_NAME`` to represent any name of a project
+  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example in we use ``woman`` to represent any woman or ``man`` to represent any man. In this case I use ``$PROJECT_NAME`` to represent any name of a project
 
 * I change every where I have ``magic_again`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
 
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
+  .. NOTE:: The lines that are changing in the code are highlighted
 
   .. code-block:: shell
     :linenos:
@@ -1601,28 +1603,29 @@ Time to use a variable_ for the name of the project
 
     command argument
 
-  in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will be ``argument`` or whatever name I give
+  in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will be ``argument`` or whatever name I give.
+
   Here are a few other examples
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
     mkdir name_of_folder
 
   ``mkdir`` is the command, and ``$args[0]`` is ``name_of_folder``
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
     New-Item name_of_file
 
   ``New-Item`` is the command, and ``$args[0]`` is ``name_of_file``
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
     echo "anything"
 
   ``echo`` is the command, and ``$args[0]`` is ``"anything"``
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
     tree /F
 

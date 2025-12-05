@@ -1385,6 +1385,8 @@ how to make a shell script run as a command
 
 * I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
 
+  .. NOTE:: The lines that are changing in the code are highlighted
+
   .. code-block::
     :linenos:
     :emphasize-lines: 2, 3, 5, 12, 20
@@ -1563,11 +1565,11 @@ Time to use a variable_ for the name of the project
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example, we can use ``woman`` to represent any woman or ``man`` to represent any man. In this case I use ``PROJECT_NAME`` to represent any name of a project
+  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example in we use ``woman`` to represent any woman or ``man`` to represent any man. In this case I use ``$PROJECT_NAME`` to represent any name of a project
 
 * I change every where I have ``magic_again`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
 
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them. The lines that are changing in the code are highlighted
+  .. NOTE:: The lines that are changing in the code are highlighted
 
   .. code-block:: shell
     :linenos:
@@ -1665,7 +1667,7 @@ Time to use a variable_ for the name of the project
 
     command argument
 
-  in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be ``argument`` or whatever name I give
+  in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be ``argument`` or whatever name I give.
 
   Here are a few other examples
 
