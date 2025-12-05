@@ -1376,7 +1376,8 @@ how to make a shell script run as a command
 
 * I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
 
-  .. code-block:: shell
+  .. code-block::
+    :linenos:
     :emphasize-lines: 2, 3, 5, 12, 20
 
     #!/bin/bash

@@ -815,13 +815,22 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
     pytest-watch
 
-* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
+  I can use it to write text to a file by giving the file name with an operator
 
   .. code-block:: PowerShell
 
     echo "pytest-watch" > requirements.txt
 
-  - ``>`` is an operator that is used to send output from a program_ to the given file_
+  ``>`` is an operator that is used to send output from a program_ to the given file_
+
+* I can also use `Out-File`_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
+
+  .. code-block:: PowerShell
+
+    "pytest-watch" | Out-File requirements.txt
+
+  - ``|`` is an operator that is used to send output to a program_
+  - `Out-File`_ is a program_ that can be used to write text to a file_
   - `pytest-watch`_ is a `Python program`_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
   - pytest_ is a `Python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file_ where I can list `Python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
@@ -1170,7 +1179,7 @@ how to view all the commands I typed in a terminal
     :lineno-start: 7
     :emphasize-lines: 1
 
-    "" || Out-File "tests/test_magic.py" -Encoding UTF8
+    "" | Out-File "tests/test_magic.py" -Encoding UTF8
 
 * I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.ps1``
 
@@ -1261,6 +1270,7 @@ how to run a PowerShell script
 * I want to use ``makePythonTdd.ps1`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
 
   .. code-block:: PowerShell
+    :linenos:
     :emphasize-lines: 1, 2, 4, 11, 19
 
     mkdir magic_again
