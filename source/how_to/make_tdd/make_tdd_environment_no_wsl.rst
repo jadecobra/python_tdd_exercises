@@ -1505,7 +1505,7 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree -a -L 2
+    tree /F
 
   the terminal_ shows
 
@@ -1527,155 +1527,48 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
     │   └── .venv
     └── makePythonTdd.sh
 
-  .. ADMONITION:: ``$args[0]`` is for the first argument given when the program is called, I can use it in place of ``$PROJECT_NAME`` for example
-
-    .. code-block:: PowerShell
-
-      command argument
-
-    in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will be the value of  ``argument``
-
-* I use ``ctrl+c`` on the keyboard in the terminal_ to stop the test from running then I run the ``makePythonTdd.ps1`` again
+* The program works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program and give it a name for the project from the command line. I can do this with ``$args[0]`` in PowerShell_, it represents the first argument given when a program_ is called. For example,
 
   .. code-block:: PowerShell
-    :emphasize-lines: 1
 
-    ./makePythonTdd.ps1
+    command argument
 
-  the terminal_ shows
+  in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will be ``argument`` or whatever name I give
+  Here are a few other examples
 
   .. code-block:: shell
-    :emphasize-lines: 1-4
 
-    mkdir: missing operand
-    Try 'mkdir --help' for more information.
-    mkdir: cannot create directory ‘src’: File exists
-    mkdir: cannot create directory ‘tests’: File exists
-    Requirement already satisfied: pip in ./.venv/lib/python.13/site-packages (XY.Z)
-    Collecting pip
-      ...
-    ================================= test session starts ==================================
-    platform Linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
-    rootdir: ...
-    collected 0 items
+    mkdir name_of_folder
 
-    ================================ no tests ran in 0.00s =================================
+  ``mkdir`` is the command, and ``$args[0]`` is ``name_of_folder``
 
-  it did not work. No tests ran and there were errors with making the folders_. I did not give ``./makePythonTdd.ps1`` a name for the project when I called it so mkdir_ and cd_ were tried with no name and did not work
+  .. code-block:: shell
 
-* I stop `pytest-watch`_ from running by hitting ``ctrl+c`` on the keyboard in the terminal_. I run tree_
+    New-Item name_of_file
 
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
+  ``New-Item`` is the command, and ``$args[0]`` is ``name_of_file``
+
+  .. code-block:: shell
+
+    echo "anything"
+
+  ``echo`` is the command, and ``$args[0]`` is ``"anything"``
+
+  .. code-block:: shell
 
     tree /F
 
-  the terminal_ shows
+  ``tree`` is the command and ``$args[0]`` is ``/F``
+
+* I change ``magic_again`` to ``$args[0]`` in ``makePythonTdd.ps1``
 
   .. code-block:: shell
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
-    │   ├── requirements.txt
-    │   ├── src
-    │   │   └── magic.py
-    │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
-    │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
-    └── makePythonTdd.ps1
-
-  I still have the same files_ and folders_ as before I ran the program_
-
-* I run ``makePythonTdd.ps1`` with a project name this time
-
-  .. code-block:: PowerShell
+    :lineno-start: 1
     :emphasize-lines: 1
 
-    ./makePythonTdd.ps1 magic_again
+    $PROJECT_NAME=$args[0]
 
-  the terminal_ shows no errors because no tests ran
-
-  .. code-block:: PowerShell
-
-    ================================ no tests ran in X.YZs ================================
-
-  I need to add code for :ref:`the first failing test<test_failure>` to the test file_
-
-* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder_ now
-
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    tree /F
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 22-41
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
-    │   ├── requirements.txt
-    │   ├── src
-    │   │   └── magic.py
-    │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
-    │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
-    │   ├── requirements.txt
-    │   ├── src
-    │   │   └── magic_again.py
-    │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic_again.py
-    │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
-    └── makePythonTdd.ps1
-* I use the `Out-File`_ program to add text for the first failing test to ``test_$PROJECT_NAME.py``
-
-  .. literalinclude:: /code/make_tdd/makePythonTdd.ps1
-    :linenos:
-    :language: PowerShell
-    :emphasize-lines: 9-20
-
-* I try the program_ again the terminal_ with a different name for the project
+* I try the program again, this time with a different name for the project in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -1684,11 +1577,11 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
 
   the terminal_ shows
 
-  .. code-block:: PowerShell
+  .. code-block:: shell
     :emphasize-lines: 10
 
-    ====================================== FAILURES =======================================
-    __________________________ Testmore_magic.test_failure ___________________________
+    ======================================= FAILURES =======================================
+    _____________________________ Testmore_magic.test_failure ______________________________
 
     self = <tests.test_more_magic.Testmore_magic testMethod=test_failure>
 
@@ -1697,13 +1590,17 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
     E       AssertionError: True is not false
 
     tests/test_more_magic.py:7: AssertionError
-    ============================== short test summary info ================================
+    =============================== short test summary info ================================
     FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
-    ================================= 1 failed in X.YZs ===================================
+    ================================== 1 failed in 0.04s ===================================
 
-* I hit ``ctrl+c`` on the keyboard in the terminal_ to stop `pytest-watch`_ then check what is in the ``pumping_python`` folder now
+* I hold ``ctrl`` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
 
-  .. code-block:: PowerShell
+* I use ``ctrl+c`` on the keyboard in the terminal_ to stop the tests
+
+* I run tree_ to see what I have in the ``pumping_python`` folder_
+
+  .. code-block:: shell
     :emphasize-lines: 1
 
     tree /F
@@ -1711,70 +1608,28 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 43-
+    :emphasize-lines: 15-20
 
     .
     ├── magic
     │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic.py
     │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
     │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
     ├── magic_again
     │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic_again.py
     │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic_again.py
     │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
-    ├── makePythonTdd.ps1
+    ├── makePythonTdd.sh
     └── more_magic
         ├── .pytest_cache
-        │   ├── CACHEDIR.TAG
-        │   ├── .gitignore
-        │   ├── README.md
-        │   └── v
         ├── requirements.txt
         ├── src
-        │   └── more_magic.py
         ├── tests
-        │   ├── __init__.py
-        │   ├── __pycache__
-        │   └── test_more_magic.py
         └── .venv
-            ├── bin
-            ├── .gitignore
-            ├── include
-            ├── lib
-            ├── lib64 -> lib
-            └── pyvenv.cfg
 
 * I can now make a `Test Driven Development`_ environment with ``makePythonTdd.ps1`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 
@@ -1837,6 +1692,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
+* :ref:`What is a variable?<how to use variables in a shell script>`
 * :ref:`How can I use a variable in a PowerShell script<how to use variables in a PowerShell script>`
 * :ref:`What is a variable?<how to use variables in a PowerShell script>`
 * :ref:`How can I run a PowerShell script<how to run a PowerShell script>`

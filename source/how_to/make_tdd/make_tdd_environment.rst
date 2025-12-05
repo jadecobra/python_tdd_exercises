@@ -1635,8 +1635,7 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
     │   └── .venv
     └── makePythonTdd.sh
 
-
-* The program works as I expect, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
+* The program works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
 
   .. code-block:: shell
 
@@ -1656,7 +1655,7 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
 
     touch name_of_file
 
-  ``touch`` is the command, and ``$`` is ``name_of_file``
+  ``touch`` is the command, and ``$1`` is ``name_of_file``
 
   .. code-block:: shell
 
@@ -1740,8 +1739,6 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
         ├── src
         ├── tests
         └── .venv
-
-    16 directories, 4 files
 
 * I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 
