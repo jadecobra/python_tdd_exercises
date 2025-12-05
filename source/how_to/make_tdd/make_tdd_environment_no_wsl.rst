@@ -547,7 +547,7 @@ how to change the name of a file on Windows without WSL
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: PowerShell
+  .. code-block:: shell
     :emphasize-lines: 9
 
     F
@@ -835,7 +835,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
   the terminal_ shows
 
-  .. code-block:: PowerShell
+  .. code-block:: shell
     :force:
     :emphasize-lines: 2
 
@@ -1170,7 +1170,7 @@ how to view all the commands I typed in a terminal
     :lineno-start: 7
     :emphasize-lines: 1
 
-    "" || tests/test_magic.py
+    "" || Out-File "tests/test_magic.py" -Encoding UTF8
 
 * I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.ps1``
 
@@ -1189,6 +1189,7 @@ how to view all the commands I typed in a terminal
     python -m venv .venv
     .venv/scripts/activate.ps1
     python -m pip install --upgrade pip
+
     "import unittest
 
 
@@ -1200,7 +1201,12 @@ how to view all the commands I typed in a terminal
 
 
     # Exceptions Encountered
-    # AssertionError" | Out-File requirements.txt -Encoding UTF8
+    # AssertionError" | Out-File "tests/test_magic.py" -Encoding UTF8
+
+    python -m venv .venv
+    .venv/Scripts/activate.ps1
+    python -m pip install --upgrade pip
+    "pytest-watch" | Out-File requirements.txt -Encoding UTF 8
     python -m pip install --requirement requirements.txt
     pytest-watch
 how to run a PowerShell script
@@ -1264,7 +1270,7 @@ how to run a PowerShell script
     mkdir tests
     touch tests/__init__.py
 
-    echo "import unittest
+    "import unittest
 
 
     class TestMagicAgain(unittest.TestCase):
@@ -1275,7 +1281,7 @@ how to run a PowerShell script
 
     # Exceptions Encountered
     # AssertionError
-    " > tests/test_magic_again.py
+    " | Out-File "tests/test_magic_again.py" - Encoding UTF8
 
     python3 -m venv .venv
     source .venv/bin/activate
@@ -1367,8 +1373,6 @@ how to run a PowerShell script
     │       ├── lib64 -> lib
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
-
-    23 directories, 19 files
 
   the program works and can reliably make a Python_ `Test Driven Development` environment the way I want it, but there is a problem
 

@@ -1491,8 +1491,6 @@ how to make a shell script run as a command
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
-    23 directories, 19 files
-
   the program works and can reliably make a Python_ `Test Driven Development` environment the way I want it, but there is a problem
 
 how to use variables in a shell script
