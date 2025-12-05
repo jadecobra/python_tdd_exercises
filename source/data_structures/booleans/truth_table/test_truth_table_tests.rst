@@ -1193,7 +1193,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def converse_non_implicationreturn (first_input, second_input):
         return return (first_input, second_input) == (False, True)
 
-* :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement` for it
+* :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
   .. code-block:: python
     :lineno-start: 60
@@ -1433,7 +1433,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         return not y == True
         return y != True
 
-  when ``not y`` is :ref:`True<test_what_is_true>` it means the `return statement` is ``True == True`` which is a duplication. I remove the second part of the statement and the second `return statement`_
+  when ``not y`` is :ref:`True<test_what_is_true>` it means the `return statement`_ is ``True == True`` which is a duplication. I remove the second part of the statement and the second `return statement`_
 
   .. code-block:: python
     :lineno-start: 13
@@ -1667,7 +1667,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def exclusive_disjunctionreturn (first_input, second_input):
 
-* I add a `return statement` to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+* I add a `return statement`_ to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 49

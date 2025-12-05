@@ -604,7 +604,7 @@ I cannot do arithmetic_ with :ref:`None`
 GREEN: make it pass
 #################################################################################
 
-I add the assertRaises_ :ref:`method<functions>`
+I add the `assertRaises method`_
 
 .. code-block:: python
   :lineno-start: 20
@@ -884,7 +884,7 @@ REFACTOR: make it better
 
     TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
 
-  I add the assertRaises_ :ref:`method<functions>`
+  I add the `assertRaises method`_
 
   .. code-block:: python
     :lineno-start: 44

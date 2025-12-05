@@ -136,7 +136,7 @@ GREEN: make it pass
 
     AssertionError: "BOOM!" does not match ""
 
-  the assertRaisesRegex_ :ref:`method<functions>` checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. The default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the test expects ``"BOOM!"``
+  the `assertRaisesRegex method`_ checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. The default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the test expects ``"BOOM!"``
 
 * the :ref:`Exception<errors>` is right, the message is not, I add the expected message in ``exceptions.py``
 

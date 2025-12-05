@@ -1493,7 +1493,7 @@ Time to use a variable_ for the name of the project
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example in we use ``woman`` to represent any woman or ``man`` to represent any man. In this case I use ``$PROJECT_NAME`` to represent any name of a project
+  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example, we use the word ``woman`` to represent any woman, ``man`` to represent any man, ``child`` to represent any child, and ``parent`` to represent anyone with a child. In this case I use ``$PROJECT_NAME`` to represent any name of a project
 
 * I change every where I have ``magic_again`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
 
