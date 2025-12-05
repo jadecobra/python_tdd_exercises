@@ -1170,13 +1170,12 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # Exceptions Encountered
     # AssertionError
 
-* time for the last statements
+* time for the last `assert statements`_
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 46
     :emphasize-lines: 4
 
-            assert False != True
             self.assertNotEqual(False, True)
 
             assert True != True
@@ -1190,20 +1189,20 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
     E    assert True != True
 
-  I make the statement :ref:`True<test_what_is_true>`
+* I make the assertion_ :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 48
     :emphasize-lines: 1
 
               assert True == True
 
   the test passes
 
-* I add a failing line with the `assertNotEqual method`_
+* I add a assertion_ line with the `assertNotEqual method`_
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 48
     :emphasize-lines: 2
 
               assert True == True
@@ -1215,33 +1214,33 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
     AssertionError: True == True
 
-  I change the :ref:`method<functions>` to assertEqual_
+* I change the `assertNotEqual method`_ to the `assertEqual method`_
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 29
     :emphasize-lines: 21
 
-          def test_assertion_error_w_equality(self):
-              assert None == None
-              self.assertEqual(None, None)
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
 
-              assert False != None
-              self.assertNotEqual(False, None)
+            assert False != None
+            self.assertNotEqual(False, None)
 
-              assert True != None
-              self.assertNotEqual(True, None)
+            assert True != None
+            self.assertNotEqual(True, None)
 
-              assert True != False
-              self.assertNotEqual(True, False)
+            assert True != False
+            self.assertNotEqual(True, False)
 
-              assert False == False
-              self.assertEqual(False, False)
+            assert False == False
+            self.assertEqual(False, False)
 
-              assert False != True
-              self.assertNotEqual(False, True)
+            assert False != True
+            self.assertNotEqual(False, True)
 
-              assert True == True
-              self.assertEqual(True, True)
+            assert True == True
+            self.assertEqual(True, True)
 
 
     # NOTES
@@ -1251,7 +1250,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
 * I add a note for the last statement
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 52
     :emphasize-lines: 2
 
     # NOTES
@@ -1267,8 +1266,100 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # Exceptions Encountered
     # AssertionError
 
-----
+* I add calls to the `assertEqual method`_ in :ref:`test_what_is_an_assertion`
 
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 5
+
+    class TestAssertionError(unittest.TestCase):
+
+        def test_what_is_an_assertion(self):
+            assert 1 + 1 == 2
+            self.assertEqual(1+1, 3)
+
+            assert '1' + '1' == '11'
+            assert 'I am' + ' a programmer' == 'I am a programmer'
+
+        def test_assertion_error_w_none(self):
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 2 != 3
+
+* I change the expectation in the call to the `assertEqual method`_ to make the assertion_ :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1
+
+            self.assertEqual(1+1, 2)
+
+  the test passes
+
+* I add assertEqual_ for the next assertion_
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 4
+
+            self.assertEqual(1+1, 2)
+
+            assert '1' + '1' == '11'
+            self.assertEqual('1'+'1', '2')
+
+            assert 'I am' + ' a programmer' == 'I am a programmer'
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    AssertionError: '11' != '2'
+
+* I change the expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 1
+
+            self.assertEqual('1'+'1', '11')
+
+  the test passes
+
+* I add assertEqual_ for the last assertion_ in :ref:`test_what_is_an_assertion`
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 4
+
+            self.assertEqual('1'+'1', '11')
+
+            assert 'I am' + ' a programmer' == 'I am a programmer'
+            self.assertEqual('I am'+' a programmer', '11')
+
+        def test_assertion_error_w_none(self):
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 'I am a programmer' != '11'
+
+* I make the expectation match reality
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 1
+
+            self.assertEqual('I am'+' a programmer', 'I am a programmer')
+
+  the test passes
+
+I can use assertions_ to test if 2 things are equal
+
+----
 
 *********************************************************************************
 review
