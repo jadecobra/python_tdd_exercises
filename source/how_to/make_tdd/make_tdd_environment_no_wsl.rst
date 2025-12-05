@@ -1190,6 +1190,7 @@ how to view all the commands I typed in a terminal
   .. code-block:: PowerShell
     :linenos:
     :emphasize-lines: 8-21
+
     mkdir magic
     cd magic
     mkdir src
