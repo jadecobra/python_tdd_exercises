@@ -599,7 +599,7 @@ how to change the name of a file
 
   the terminal_ shows
 
-  .. NOTE:: if you do not see ``__pycache__`` in the list do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to
+  .. NOTE:: if you do not see ``__pycache__`` in the list do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test
 
   .. code-block:: shell
     :emphasize-lines: 7
@@ -611,8 +611,6 @@ how to change the name of a file
         ├── __init__.py
         ├── __pycache__
         └── test_magic.py
-
-    4 directories, 3 files
 
   the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of contents of the child folders_
 
