@@ -54,6 +54,16 @@ It turns out some of this is repeatable
 * I run automated tests to make sure I have a `Test Driven Development`_ environment
 * I start writing code for the project
 
+Here is what that structure should look like if the name of the project is ``PROJECT_NAME``
+
+.. code-block:: shell
+
+  PROJECT_NAME
+  ├── src
+  │   └── PROJECT_NAME.py
+  └── tests
+      └── PROJECT_NAME.py
+
 ****************************************************************************************************************
 how to make a python test driven development environment manually on Windows without Windows Subsystem Linux
 ****************************************************************************************************************
@@ -98,7 +108,7 @@ the terminal_ goes back to the command line
 
   .. code-block:: shell
 
-    .../pumping_python $
+    ...\pumping_python >
 
 * I type tree_ in the terminal_ to see what files_ and folders_ are in the ``pumping_python`` directory_
 
@@ -167,7 +177,7 @@ the terminal_ goes back to the command line
 
   the terminal_ shows I am now in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
     ...\pumping_python\magic >
 
@@ -184,9 +194,8 @@ how to run a Python program on Windows without Windows SubSystem Linux
   the terminal_ shows
 
   .. code-block:: text
-    :force:
 
-    python: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
+    python: can't open file '...\pumping_python\magic\src\magic.py': [Errno 2] No such file or directory
 
   the computer cannot find the program_ because it does not exist, yet
 
@@ -432,7 +441,7 @@ RED: make it fail
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) every time I make a change
 
-  .. IMPORTANT:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
+  .. ATTENTION:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
 
 * I try the command again to run the tests in the terminal_
 
@@ -454,7 +463,7 @@ how to make a Python package
 
 * I use `New-Item`_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
 
-  .. IMPORTANT:: make sure to use 2 underscores (__) before and after ``init`` for ``__init__.py``
+  .. ATTENTION:: make sure to use 2 underscores (__) before and after ``init`` for ``__init__.py``
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -692,7 +701,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
   - ``.venv`` is the name I am giving for this `virtual environment`_
 
-    .. TIP:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
+    .. IMPORTANT:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
 
 * I run tree_
 
@@ -729,12 +738,14 @@ how to activate a virtual environment on Windows without WSL
 * I run PowerShell_ in Administrator mode and set the Execution Policy for the activation script to work
 
   .. code-block:: PowerShell
+    :emphasize-lines: 1
 
     Set-ExecutionPolicy RemoteSigned
 
   the terminal_ may show the following message if you have never run this command before
 
   .. code-block:: text
+    :emphasize-lines: 7
 
     The execution policy helps protect you from scripts that you do not trust.
     Changing the execution policy might expose you to the security risks
@@ -825,6 +836,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 * I can also use `Out-File`_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as its text
 
   .. code-block:: PowerShell
+    :emphasize-lines: 1
 
     "pytest-watch" | Out-File requirements.txt
 
@@ -868,7 +880,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 how to see what is inside a file
 --------------------------------------------------------------------------------------------
 
-I can use the `cat program` to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
+I can use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -880,6 +892,8 @@ the terminal_ shows
 .. code-block:: shell
 
   pytest-watch
+
+life is good
 
 how to install Python packages in a virtual environment on Windows without WSL
 ---------------------------------------------------------------------------------------------------
@@ -944,7 +958,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 
   `pytest-watch`_ is in the list. Yes!
 
-  .. NOTE:: imagine that the `pytest-watch`_ project also has a requirements file_ with colorama, docopt, iniconfig, packaging, pluggy, Pygments, pytest and watchdog as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch` from the ``requirements.txt`` file_
+  .. TIP:: imagine that the `pytest-watch`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch`_ from the ``requirements.txt`` file_
 
 * I try to run the tests again
 
@@ -994,7 +1008,7 @@ how to install Python packages in a virtual environment on Windows without WSL
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` (Windows_/Linux_) or ``option`` (MacOS_) or ``command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -1004,7 +1018,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 
   the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
 
-  .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back to the command line
+  .. IMPORTANT:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back to the command line
 
 ----
 
@@ -1050,9 +1064,9 @@ how to deactivate a virtual environment
 
   ``..`` is shorthand for the parent of any directory_ you are in. The terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: PowerShell
 
-    .../pumping_python $
+    ...\pumping_python >
 
   I am back in the ``pumping_python`` folder_
 
@@ -1077,7 +1091,7 @@ how to make a PowerShell script
   the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
 
   .. code-block:: shell
-    :emphasize-lines: 7
+    :emphasize-lines: 8
 
     .
     ├── magic
@@ -1185,11 +1199,11 @@ how to view all the commands I typed in a terminal
 
 * I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.ps1``
 
-  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
+  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see rge :PEP:`Python Style Guide <8>` for more
 
   .. code-block:: PowerShell
     :linenos:
-    :emphasize-lines: 8-21
+    :emphasize-lines: 7-20
 
     mkdir magic
     cd magic
@@ -1197,7 +1211,6 @@ how to view all the commands I typed in a terminal
     New-Item src/magic.py
     mkdir tests
     New-Item tests/__init__.py
-    New-Item tests/test_magic.py
 
     "import unittest
 
@@ -1241,7 +1254,7 @@ how to run a PowerShell script
 
     .\makePythonTdd.ps1
 
-  ``.\`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.ps1`` is saved. The computer checks a few directories_ when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
+  ``.\`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.ps1`` is saved. The terminal_ shows
 
 
   .. code-block:: PowerShell
@@ -1266,6 +1279,27 @@ how to run a PowerShell script
 * I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
 * I hit ``ctrl+c`` in the terminal_ to stop the test
+* I deactivate the `virtual environment`_
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line
+
+* I leave the ``magic`` folder to go back to the ``pumping_python`` folder_
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: PowerShell
+
+    ...\pumping_python >
 
 * I want to use ``makePythonTdd.ps1`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
 
@@ -1384,22 +1418,34 @@ how to run a PowerShell script
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
-  the program works and can reliably make a Python_ `Test Driven Development` environment the way I want it, but there is a problem
+  the program works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
 
 how to use variables in a PowerShell script
 --------------------------------------------------------------------------------------------
 
-I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I am trying to follow the `Do not Repeat Yourself (DRY)` principle. I need the program to take a project name once and use that name when making the project to make the following
+I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program to take a project name once and use that name when making the project to make the following
 
-  - the project folder_
-  - the program in the ``src`` folder_
-  - the test file_ in the ``tests`` folder_
-  - the test :ref:`class<classes>` in the test file_
+- the project folder_
+- the file_ for the program in the ``src`` folder_
+- the file_ for the test in the ``tests`` folder_
+- the test :ref:`class<classes>` in the test file_
+- the `virtual environment`_ in the ``.venv`` folder_
 
-* First, I add a name to represent any project name that I give to ``makePythonTdd.sh`` when I want it to make a project
-* I change ``magic`` to a :ref:`variable<test_attribute_error_w_variables>` in ``makePythonTdd.ps1`` so I can give it any name when I want to make a project
+The program_ should always make this structure
 
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+.. code-block:: shell
+
+  PROJECT_NAME
+  ├── src
+  │   └── PROJECT_NAME.py
+  ├── tests
+  │   ├── __init__.py
+  │   └── test_PROJECT_NAME.py
+  └── .venv
+
+Time to use a variable_ for the name of the project
+
+* I add a name to represent any project name that I give to ``makePythonTdd.ps1`` when I want it to make a project
 
   .. code-block:: PowerShell
     :linenos:
@@ -1500,6 +1546,27 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_magic_again.py`` to make the test pass
 
 * I hit ``ctrl+c`` in the terminal to stop the test
+* I deactivate the `virtual environment`_
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line
+
+* I leave the ``magic_again`` folder to go back to the ``pumping_python`` folder_
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: PowerShell
+
+    ...\pumping_python
 
 * I run tree_ to see what I have in the ``pumping_python`` folder_ now
 
@@ -1598,6 +1665,27 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
 * I hold ``ctrl`` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
 
 * I use ``ctrl+c`` on the keyboard in the terminal_ to stop the tests
+* I deactivate the `virtual environment`_
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line
+
+* I leave the ``more_magic`` folder to go back to the ``pumping_python`` folder_
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: PowerShell
+
+    ...\pumping_python >
 
 * I run tree_ to see what I have in the ``pumping_python`` folder_
 

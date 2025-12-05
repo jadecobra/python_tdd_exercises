@@ -85,6 +85,16 @@ It turns out some of this is repeatable
 * I run automated tests to make sure I have a `Test Driven Development`_ environment
 * I start writing code for the project
 
+Here is what that structure should look like if the name of the project is ``PROJECT_NAME``
+
+.. code-block:: shell
+
+  PROJECT_NAME
+  ├── src
+  │   └── PROJECT_NAME.py
+  └── tests
+      └── PROJECT_NAME.py
+
 ********************************************************************************************
 how to make a python test driven development environment manually
 ********************************************************************************************
@@ -255,7 +265,6 @@ how to run a Python program
   the terminal_ shows
 
   .. code-block:: text
-    :force:
 
     python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
@@ -507,7 +516,7 @@ RED: make it fail
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) every time I make a change
 
-  .. IMPORTANT:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
+  .. ATTENTION:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
 
 * I try the command again to run the tests in the terminal_
 
@@ -529,7 +538,7 @@ how to make a Python package
 
 * I use touch_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
 
-  .. IMPORTANT:: make sure to use 2 underscores (__) before and after ``init`` for ``__init__.py``
+  .. ATTENTION:: make sure to use 2 underscores (__) before and after ``init`` for ``__init__.py``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -662,7 +671,7 @@ how to change the name of a file
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` (Windows/Linux) or ``option`` (MacOS_) or ``command`` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold ``ctrl`` (Windows/Linux) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 GREEN: make it pass
 #################################################################################
@@ -769,7 +778,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
   - venv_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
   - ``.venv`` is the name I am giving for this `virtual environment`_
 
-    .. TIP:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
+    .. IMPORTANT:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
 
 * I run tree_
 
@@ -941,7 +950,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 how to see what is inside a file
 --------------------------------------------------------------------------------------------
 
-I can use the `cat program` to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
+I can use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -953,6 +962,8 @@ the terminal_ shows
 .. code-block:: shell
 
   pytest-watch
+
+life is good
 
 how to install Python packages in a virtual environment
 --------------------------------------------------------------------------------------------
@@ -1017,7 +1028,7 @@ how to install Python packages in a virtual environment
 
   `pytest-watch`_ is in the list. Yes!
 
-  .. NOTE:: imagine that the `pytest-watch`_ project also has a requirements file_ with colorama, docopt, iniconfig, packaging, pluggy, Pygments, pytest and watchdog as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch` from the ``requirements.txt`` file_
+  .. TIP:: imagine that the `pytest-watch`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch`_ from the ``requirements.txt`` file_
 
 * I try to run the tests again
 
@@ -1040,7 +1051,7 @@ how to install Python packages in a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-* I hold ``ctrl`` (Windows_/Linux_) or ``option`` (MacOS_) or ``command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
+* I hold ``ctrl`` (Windows_/Linux_) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1067,7 +1078,7 @@ how to install Python packages in a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` (Windows_/Linux_) or ``option`` (MacOS_) or ``command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows_/Linux_) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1077,7 +1088,7 @@ how to install Python packages in a virtual environment
 
   the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
 
-  .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back to the command line
+  .. IMPORTANT:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back to the command line
 
 ----
 
@@ -1150,7 +1161,7 @@ how to make a shell script
   the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
 
   .. code-block:: shell
-    :emphasize-lines: 7
+    :emphasize-lines: 8
 
     .
     ├── magic
@@ -1263,7 +1274,7 @@ how to view all the commands I typed in a terminal
 
 * I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``
 
-  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
+  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
 
   .. code-block:: shell
     :linenos:
@@ -1490,26 +1501,41 @@ how to make a shell script run as a command
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
-  the program works and can reliably make a Python_ `Test Driven Development` environment the way I want it, but there is a problem
+  the program works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
 
 how to use variables in a shell script
 --------------------------------------------------------------------------------------------
 
-I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I am trying to follow the `Do not Repeat Yourself (DRY)` principle. I need the program to take a project name once and use that name when making the project to make the following
+I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`. I want the program to take a project name once and use that name when making the project to make the following
 
-  - the project folder_
-  - the program in the ``src`` folder_
-  - the test file_ in the ``tests`` folder_
-  - the test :ref:`class<classes>` in the test file_
+- the project folder_
+- the file_ for the program in the ``src`` folder_
+- the file_ for the test in the ``tests`` folder_
+- the test :ref:`class<classes>` in the test file_
+- the `virtual environment`_ in the ``.venv`` folder_
 
-* First, I add a name to represent any project name that I give to ``makePythonTdd.sh`` when I want it to make a project
+The program_ should always make this structure
+
+.. code-block:: shell
+
+  PROJECT_NAME
+  ├── src
+  │   └── PROJECT_NAME.py
+  ├── tests
+  │   ├── __init__.py
+  │   └── test_PROJECT_NAME.py
+  └── .venv
+
+Time to use a variable_ for the name of the project
+
+* I add a name to represent any project name that I give to ``makePythonTdd.sh`` when I want it to make a project
 
   .. code-block:: shell
     :linenos:
     :emphasize-lines: 2
 
     #!/bin/bash
-    PROJECT_NAME="magic again"
+    PROJECT_NAME="magic_again"
     mkdir magic_again
     cd magic_again
     mkdir src
