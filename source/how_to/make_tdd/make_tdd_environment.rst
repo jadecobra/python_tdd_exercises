@@ -479,7 +479,7 @@ RED: make it fail
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, do not worry it is covered in more detail in the :ref:`classes chapter<classes>`
+    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, I cover this in more detail in the :ref:`classes chapter<classes>`
     * ``TestMagic`` is the name I gave this :ref:`class <classes>` and will hold the test
 
       .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
@@ -647,14 +647,14 @@ how to change the name of a file
 
 * This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
 
-  * ``FAILED (failures=1)`` the number of failures
-  * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-  * ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
-  * ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError`
-  * ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
-  * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
-  * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
-  * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
+  - ``FAILED (failures=1)`` the number of failures
+  - ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
+  - ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  - ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError`
+  - ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
+  - ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
+  - ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
+  - ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
 
     - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
     -  ``tests`` is the ``tests`` folder_
@@ -664,7 +664,7 @@ how to change the name of a file
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (MacOS_) or ``command`` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 GREEN: make it pass
 #################################################################################
@@ -677,7 +677,7 @@ I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on l
 
           self.assertFalse(False)
 
-I run the test again the terminal_
+I run the test again in the terminal_
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -699,7 +699,7 @@ the test passes! The terminal_ shows
 REFACTOR: make it better
 ############################################################################################
 
-I recommend keeping a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
+Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
 .. code-block:: python
   :linenos:
@@ -823,8 +823,6 @@ It means I can have a separate `virtual environment`_ for every project with onl
         ├── lib64 -> lib
         └── pyvenv.cfg
 
-    9 directories, 5 files
-
   there is now a folder_ named ``.venv`` for the `virtual environment`_
 
   - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
@@ -866,7 +864,7 @@ how to activate a virtual environment
 how to see what packages are installed in a virtual environment
 --------------------------------------------------------------------------------------------
 
-I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_
+I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_ I just made
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -940,8 +938,6 @@ I want to make a file where I can list all the `Python packages`_ for my project
         ├── lib64 -> lib
         └── pyvenv.cfg
 
-    9 directories, 6 files
-
   ``requirements.txt`` is now in the ``magic`` folder_
 
 how to see what is inside a file
@@ -973,7 +969,7 @@ how to install Python packages in a virtual environment
   - ``--requirement`` is an option that can be given to the ``install`` argument for `Python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
-  the terminal_ shows programs_ being installed, and when I do not have the latest version of pip_ installed, it shows this at the end
+  the terminal_ shows programs_ being downloaded and installed, and when I do not have the latest version of pip_ installed, it shows this at the end
 
   .. code-block:: shell
 
@@ -1046,7 +1042,7 @@ how to install Python packages in a virtual environment
 
     =============== 1 passed in X.YZs =======================
 
-  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
+* I hold ``ctrl`` (Windows_/Linux_) or ``option`` (MacOS_) or ``command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1073,7 +1069,7 @@ how to install Python packages in a virtual environment
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows_/Linux_) or ``option`` (MacOS_) or ``command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1166,8 +1162,6 @@ how to make a shell script
     │   ├── tests
     │   └── .venv
     └── makePythonTdd.sh
-
-    5 directories, 2 files
 
 how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
@@ -1413,7 +1407,7 @@ how to make a shell script run as a command
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* I run ``makePythonTdd.sh`` in the terminal to make a project named ``magic_again``
+* I run ``makePythonTdd.sh`` in the terminal_ to make a project named ``magic_again``
 
   .. code-block:: shell
     :emphasize-lines: 1

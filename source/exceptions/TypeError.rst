@@ -43,7 +43,7 @@ requirements
 
     tests/test_type_error.py:7: AssertionError
 
-* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -745,7 +745,7 @@ requirements
 
     ========================= 4 passed in 0.01s ==========================
 
-* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
 RED: make it fail
 #################################################################################

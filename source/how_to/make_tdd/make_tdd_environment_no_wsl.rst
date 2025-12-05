@@ -329,7 +329,6 @@ the terminal_ goes back to the command line
 
     3 directories, 1 file
 
-
 * I use `New-Item`_ to add an empty file to the ``tests`` directory for the actual test
 
   .. code-block:: PowerShell
@@ -349,6 +348,7 @@ the terminal_ goes back to the command line
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 5
 
     .
     ├── src
@@ -374,7 +374,7 @@ the terminal_ goes back to the command line
 RED: make it fail
 ############################################################################################
 
-* I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`, then type the following Python_ code in the file_
+* I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
   .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
 
@@ -382,6 +382,8 @@ RED: make it fail
       :emphasize-lines: 1
 
       code tests/magic.py
+
+* I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -397,15 +399,15 @@ RED: make it fail
         def test_failure(self):
             self.assertFalse(True)
 
-  Here is an explanation of the code in the file_
+  Here is an explanation of the code I typed in the file_
 
   - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, see :ref:`classes` for more
+    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, I cover this in more detail in the :ref:`classes chapter<classes>`
     * ``TestMagic`` is the name I gave this :ref:`class <classes>` and will hold the test
 
-      .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ does NOT run the tests in it
+      .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
@@ -417,7 +419,7 @@ RED: make it fail
 
       .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ does NOT run the tests in it
 
-    * ``self.`` allows me to use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self.`` lets me use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase`_ :ref:`class<classes>`, instead of using ``TestMagic().`` or ``unittest.TestCase().``
 
       .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name but it is easier to stick with convention for this concept
 
@@ -429,6 +431,9 @@ RED: make it fail
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) every time I make a change
+
+  .. IMPORTANT:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
+
 * I try the command again to run the tests in the terminal_
 
   .. code-block:: PowerShell
@@ -449,7 +454,7 @@ how to make a Python package
 
 * I use `New-Item`_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
 
-  .. IMPORTANT:: make sure to use 2 underscores (__) for ``__init__.py``
+  .. IMPORTANT:: make sure to use 2 underscores (__) before and after ``init`` for ``__init__.py``
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -468,6 +473,7 @@ how to make a Python package
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 5
 
     .
     ├── src
@@ -495,7 +501,7 @@ how to make a Python package
 
 * I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. CAUTION:: if you do not close ``magic.py`` you will have 3 files in the ``tests`` folder after the next step instead of 2 because you turned on the ``Auto Save`` feature earlier
+  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file after you change its name
 
 how to change the name of a file on Windows without WSL
 --------------------------------------------------------------------------------------------
@@ -517,6 +523,8 @@ how to change the name of a file on Windows without WSL
     tree /F
 
   the terminal_ shows
+
+  .. NOTE:: if you do not see ``__pycache__`` in the list do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to
 
   .. code-block:: shell
 
@@ -540,6 +548,7 @@ how to change the name of a file on Windows without WSL
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: PowerShell
+    :emphasize-lines: 9
 
     F
     =============================================================
@@ -560,14 +569,14 @@ how to change the name of a file on Windows without WSL
 
 * This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
 
-  * ``FAILED (failures=1)`` the number of failures
-  * ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-  * ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
-  * ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError`
-  * ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
-  * ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
-  * ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
-  * ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
+  - ``FAILED (failures=1)`` the number of failures
+  - ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
+  - ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  - ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError`
+  - ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
+  - ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
+  - ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
+  - ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
 
     - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
     -  ``tests`` is the ``tests`` folder_
@@ -577,12 +586,12 @@ how to change the name of a file on Windows without WSL
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) or ``command`` (mac) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold ``ctrl`` on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 GREEN: make it pass
 #################################################################################
 
-I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
+I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py`` in the :ref:`editor<2 editors>`
 
 .. code-block:: PowerShell
   :lineno-start: 7
@@ -590,7 +599,7 @@ I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on l
 
           self.assertFalse(False)
 
-I run the test again the terminal_
+I run the test again in the terminal_
 
 .. code-block:: PowerShell
   :emphasize-lines: 1
@@ -612,7 +621,7 @@ the test passes! The terminal_ shows
 REFACTOR: make it better
 ############################################################################################
 
-I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you go through this book to become familiar with them, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
+Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
 .. code-block:: python
   :linenos:
@@ -632,7 +641,9 @@ I recommend keeping a list of :ref:`Errors/Exceptions<errors>` you meet as you g
 
 I ran ``python -m unittest`` a few times to see the test fail, I ran ``python -m unittest`` again to see the test pass. I will have to run ``python -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I want.
 
-This means I have to run ``python -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change. I do not want to type ``python -m unittest`` again, it is better for a `computer program`_ to run the tests so that `I do not repeat myself`_.
+This means I have to run ``python -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change.
+
+I do not want to type ``python -m unittest`` again, it is better for a `computer program`_ to run the tests so that `I do not repeat myself`_.
 
 ----
 
@@ -640,9 +651,11 @@ This means I have to run ``python -m unittest`` for each part of the `Test Drive
 how to run tests automatically on Windows without Windows SubSystem Linux
 ********************************************************************************************
 
-I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file in the folder it is watching changes, this means it will run the tests for me every time I make a change.
+I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_. I type it in the terminal_
+pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
+
+I type it in the terminal_
 
 .. code-block:: PowerShell
   :emphasize-lines: 1
@@ -655,18 +668,18 @@ the terminal_ shows
 
   command not found: pytest-watch
 
-I need to install `pytest-watch`_ for the computer to use it
+I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
 
 how to make a virtual environment on Windows without WSL
 ############################################################################################
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
-A `virtual environment`_ is a separate folder where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
+A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
 It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
 
-* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>`
+* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -689,32 +702,11 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
     tree /F
 
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    ├── src
-    │   └── magic.py
-    └── tests
-        ├── __init__.py
-        ├── __pycache__
-        └── test_magic.py
-
-    4 directories, 3 files
-
-  it does not look like anything changed. This is because the ``.`` in front of ``.venv`` means the folder_ is hidden
-
-* I try tree_ again with another option to see what changed
-
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    tree /F
 
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 8
 
     .
     ├── src
@@ -730,8 +722,6 @@ It means I can have a separate `virtual environment`_ for every project with onl
         ├── lib
         ├── lib64 -> lib
         └── pyvenv.cfg
-
-    9 directories, 5 files
 
   there is now a folder_ named ``.venv`` for the `virtual environment`_
 
@@ -770,7 +760,7 @@ how to activate a virtual environment on Windows without WSL
 
       (.venv) .../magic $
 
-the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
+  the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
 
 * I run `pytest-watch`_ again
 
@@ -790,7 +780,7 @@ the ``(.venv)`` on the far left of the command line in the terminal_ shows that 
 how to see what packages are installed in a virtual environment
 --------------------------------------------------------------------------------------------
 
-I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_
+I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_ I just made
 
 .. code-block:: PowerShell
   :emphasize-lines: 1
@@ -847,6 +837,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
   .. code-block:: PowerShell
     :force:
+    :emphasize-lines: 2
 
     .
     ├── requirements.txt
@@ -864,9 +855,23 @@ I want to make a file where I can list all the `Python packages`_ for my project
         ├── lib64 -> lib
         └── pyvenv.cfg
 
-    9 directories, 6 files
-
   ``requirements.txt`` is now in the ``magic`` folder_
+
+how to see what is inside a file
+--------------------------------------------------------------------------------------------
+
+I can use the `cat program` to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
+
+.. code-block:: shell
+  :emphasize-lines: 1
+
+  cat requirements.txt
+
+the terminal_ shows
+
+.. code-block:: shell
+
+  pytest-watch
 
 how to install Python packages in a virtual environment on Windows without WSL
 ---------------------------------------------------------------------------------------------------
@@ -881,14 +886,14 @@ how to install Python packages in a virtual environment on Windows without WSL
   - ``--requirement`` is an option that can be passed to the ``install`` argument for `Python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
-  the terminal_ shows a bunch or programs_ being installed, and when I do not have the latest version of pip_ installed, it shows
+  the terminal_ shows programs_ being downloaded and installed, and when I do not have the latest version of pip_ installed, it shows this at the end
 
   .. code-block:: PowerShell
 
     [notice] A new release of pip is available: XY.Z -> AB.C
     [notice] To update, run: pip install --upgrade pip
 
-  I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
+* I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -902,7 +907,6 @@ how to install Python packages in a virtual environment on Windows without WSL
   .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
 
     .. code-block:: PowerShell
-      :emphasize-lines: 1
 
       python -m pip install pytest-watch
 
@@ -932,6 +936,8 @@ how to install Python packages in a virtual environment on Windows without WSL
 
   `pytest-watch`_ is in the list. Yes!
 
+  .. NOTE:: imagine that the `pytest-watch`_ project also has a requirements file_ with colorama, docopt, iniconfig, packaging, pluggy, Pygments, pytest and watchdog as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch` from the ``requirements.txt`` file_
+
 * I try to run the tests again
 
   .. code-block:: PowerShell
@@ -953,7 +959,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 
     =============== 1 passed in X.YZs =======================
 
-  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` in ``test_magic.py``
+* I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -980,7 +986,7 @@ how to install Python packages in a virtual environment on Windows without WSL
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` (Windows) or ``option`` (mac) or ``command`` (mac) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows_/Linux_) or ``option`` (MacOS_) or ``command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -988,7 +994,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 
           self.assertFalse(False)
 
-  the test passes and I can write the rest of the code for the project as the tests run automatically in response to my changes
+  the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
 
   .. TIP:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back to the command line
 
@@ -1045,13 +1051,15 @@ how to deactivate a virtual environment
 how to make a PowerShell script
 ############################################################################################
 
-* I use `New-Item`_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will make a `Test Driven Development`_ environment automatically
+* I use `New-Item`_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
     New-Item makePythonTdd.ps1
-  the terminal_ goes back to the command line. I use tree_ to see what is in the ``pumping_python`` directory_
+  the terminal_ goes back to the command line
+
+* I use tree_ to see what is in the ``pumping_python`` directory_
 
   .. code-block:: PowerShell
 
@@ -1060,6 +1068,7 @@ how to make a PowerShell script
   the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
 
   .. code-block:: shell
+    :emphasize-lines: 7
 
     .
     ├── magic
@@ -1070,12 +1079,10 @@ how to make a PowerShell script
     │   └── .venv
     └── makePythonTdd.ps1
 
-    5 directories, 2 files
-
 how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
 
-* I type history_ in the terminal_
+* I type history_ in the terminal_ to see all the commands I have typed so far
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -1085,7 +1092,7 @@ how to view all the commands I typed in a terminal
   the terminal_ shows
 
   .. code-block:: PowerShell
-    :emphasize-lines: 6, 8, 10, 13, 22, 29, 32, 35, 37, 38, 40
+    :emphasize-lines: 6, 8, 10, 13, 19, 22, 29, 32, 35, 37, 38, 40
 
     cd pumping_python
     mkdir pumping_python
@@ -1135,7 +1142,7 @@ how to view all the commands I typed in a terminal
 
   the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* I click on ``makePythonTdd.ps1`` to open it in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
+* I open ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
 
   .. NOTE:: the line numbers below are a guide, you do not need to copy them
 
@@ -1157,7 +1164,7 @@ how to view all the commands I typed in a terminal
     python -m pip install --requirement requirements.txt
     pytest-watch
 
-* I use `Out-FIle`_ instead of `New-Item`_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.ps1``
+* I change `New-Item`_ to `Out-File`_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.ps1``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1165,7 +1172,7 @@ how to view all the commands I typed in a terminal
 
     "" || tests/test_magic.py
 
-  I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.ps1``
+* I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.ps1``
 
   .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see :PEP:`Python Style Guide <8>` for more
 
@@ -1199,53 +1206,171 @@ how to view all the commands I typed in a terminal
 how to run a PowerShell script
 --------------------------------------------------------------------------------------------
 
-I go back to the terminal_ to run the program_
+* I go back to the terminal_ to run the program_
 
-.. code-block:: PowerShell
-  :emphasize-lines: 1
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
 
-  makePythonTdd.ps1
+    makePythonTdd.ps1
 
-the terminal_ shows
+  the terminal_ shows
 
-.. code-block:: PowerShell
+  .. code-block:: PowerShell
 
-  command not found: makePythonTdd.ps1
+    command not found: makePythonTdd.ps1
 
-I have to tell the computer exactly where the file_ is
+  I have to tell the computer where the file_ is
 
-.. code-block:: PowerShell
-  :emphasize-lines: 1
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
 
-  .\makePythonTdd.ps1
+    .\makePythonTdd.ps1
 
-``.\`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.ps1`` is saved. The computer checks a few directories_ by default when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
+  ``.\`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.ps1`` is saved. The computer checks a few directories_ when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
 
 
-.. code-block:: PowerShell
-  :force:
-  :emphasize-lines: 1-3
+  .. code-block:: PowerShell
+    :emphasize-lines: 10
 
-  mkdir: cannot create directory ‘magic’: File exists
-  mkdir: cannot create directory ‘src’: File exists
-  mkdir: cannot create directory ‘tests’: File exists
-  Requirement already satisfied: pip in ./.venv/lib/python.13/site-packages (x.y)
-  Collecting pip
-  ...
-  ================================= test session starts ==================================
-  platform Linux -- Python 3.XY.Z, pytest-X.Y.Z, pluggy-X.Y.Z
-  rootdir: .../pumping_python/magic
-  collected 1 item
+    ======================================= FAILURES =======================================
+    ________________________________ TestMagic.test_failure ________________________________
 
-  tests/test_magic.py .                                                            [100%]
+    self = <tests.test_magic.TestMagic testMethod=test_failure>
 
-  ================================== 1 passed in X.YZs ===================================
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
 
-This is a problem, ``makePythonTdd.ps1`` just made the same ``magic`` project I made earlier and so I get no failing test as my first test. It is repeating what I have already done, and `I do not repeat myself`_
+    tests/test_magic.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
 
-.. NOTE:: the terminal_ might show a different result for you. You can keep going, the key thing is that the program does not yet do what I want
+  Success! I just made a program that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
 
-I want ``makePythonTdd.ps1`` to be able to make a project for any name I give. It should take a name and use it as the name for the project, then make the same structure I had for the ``magic`` project
+* I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
+
+* I hit ``ctrl+c`` in the terminal_ to stop the test
+
+* I want to use ``makePythonTdd.ps1`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1, 2, 4, 11, 19
+
+    mkdir magic_again
+    cd magic_again
+    mkdir src
+    touch src/magic_again.py
+    mkdir tests
+    touch tests/__init__.py
+
+    echo "import unittest
+
+
+    class TestMagicAgain(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+    " > tests/test_magic_again.py
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python3 -m pip install --upgrade pip
+    echo "pytest-watch" > requirements.txt
+    python3 -m pip install --requirement requirements.txt
+    pytest-watch
+
+* I run ``makePythonTdd.ps1`` in the terminal_ to make a project named ``magic_again``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ./makePythonTdd.ps1
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 10
+
+    ======================================= FAILURES =======================================
+    _____________________________ TestMagicAgain.test_failure ______________________________
+
+    self = <tests.test_magic.TestMagicAgain testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
+    E       AssertionError: True is not false
+
+    tests/test_magic_again.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
+
+  I make the test pass
+
+* I hit ``ctrl+c`` to exit the tests in the terminal_
+* I run tree_ to see what I have in ``pumping_python`` now
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree /F
+
+  the terminal_ shows
+
+  .. code-block::
+    :emphasize-lines: 22-41
+
+    .
+    ├── magic
+    │   ├── .pytest_cache
+    │   │   ├── CACHEDIR.TAG
+    │   │   ├── .gitignore
+    │   │   ├── README.md
+    │   │   └── v
+    │   ├── requirements.txt
+    │   ├── src
+    │   │   └── magic.py
+    │   ├── tests
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   └── test_magic.py
+    │   └── .venv
+    │       ├── bin
+    │       ├── .gitignore
+    │       ├── include
+    │       ├── lib
+    │       ├── lib64 -> lib
+    │       └── pyvenv.cfg
+    ├── magic_again
+    │   ├── .pytest_cache
+    │   │   ├── CACHEDIR.TAG
+    │   │   ├── .gitignore
+    │   │   ├── README.md
+    │   │   └── v
+    │   ├── requirements.txt
+    │   ├── src
+    │   │   └── magic_again.py
+    │   ├── tests
+    │   │   ├── __init__.py
+    │   │   ├── __pycache__
+    │   │   └── test_magic_again.py
+    │   └── .venv
+    │       ├── bin
+    │       ├── .gitignore
+    │       ├── include
+    │       ├── lib
+    │       ├── lib64 -> lib
+    │       └── pyvenv.cfg
+    └── makePythonTdd.sh
+
+    23 directories, 19 files
+
+  the program works and can reliably make a Python_ `Test Driven Development` environment the way I want it, but there is a problem
 
 how to use variables in a PowerShell script
 --------------------------------------------------------------------------------------------

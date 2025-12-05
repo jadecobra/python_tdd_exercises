@@ -66,7 +66,7 @@ requirements
 
     tests/test_assertion_error.py:7: AssertionError
 
-* I hold ``ctrl`` (Windows/Linux) or ``option`` (mac) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -443,7 +443,7 @@ I add a failing test
 
 .. code-block:: python
   :lineno-start: 18
-  :emphasize-lines: 4
+  :emphasize-lines: 3-4
 
           self.assertFalse(False)
 
