@@ -26,3 +26,11 @@ the chapters below cover handling Exceptions_ in :ref:`tests<how to test that an
 
   /how_to/exception_handling/exception_handling_tests
   /how_to/exception_handling/exception_handling_programs
+
+
+Here are some questions you can answer after going through these chapter
+
+* :ref:`How can I test if something is None?<how to test if something is None>`
+* :ref:`How can I test if something is False?<how to test if something is False>`
+* :ref:`How can I test if something is True?<how to test if something is True>`
+* :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
