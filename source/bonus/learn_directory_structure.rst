@@ -4,6 +4,28 @@
 BONUS: learn directory structure
 #################################################################################
 
+This is an exercise in how your computer is organized into directories_ (folders_) and files_. You will build the structure below step by step to see how files_ and folders_ are related like a family tree, and at the end will know how to move around in the structure because you will understand the relationships.
+
+.. code-block:: shell
+
+  parent
+  ├── a_file_in_parent
+  ├── aka_grandparent_of_child_of_child
+  ├── aka_grandparent_of_child_of_sibling_of_child
+  ├── child
+  │   ├── a_file_in_child
+  │   ├── aunt_or_uncle_of_another_grandchild_of_parent
+  │   └── child_of_child
+  │       ├── a_file_in_child_of_child
+  │       ├── a_grandchild_of_parent
+  │       └── cousin_of_child_of_sibling_of_child
+  └── sibling_of_child
+      ├── a_file_in_sibling_of_child
+      ├── aunt_or_uncle_of_a_grandchild_of_parent
+      └── child_of_sibling_of_child
+          ├── a_file_in_child_of_sibling_of_child
+          ├── another_grandchild_of_parent
+          └── cousin_of_child_of_child
 
 *********************************************************************************
 requirements

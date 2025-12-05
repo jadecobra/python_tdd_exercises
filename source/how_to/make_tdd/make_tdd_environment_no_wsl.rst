@@ -14,13 +14,19 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 
+*********************************************************************************
+What is a Test Driven Development Environment?
+*********************************************************************************
+
+A `Test Driven Development` environment is a collection of files_ and folders_ in a project where I can write automated tests and code and see the results of running them immediately.
+
 This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
 
-Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`, it is only 28 lines of code, with spaces
+Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`, it is only 27 lines of code, with spaces
 
-  .. literalinclude:: ../../code/make_tdd/makePythonTdd.sh
-    :language: shell
-    :linenos:
+.. literalinclude:: ../../code/make_tdd/makePythonTdd.ps1
+  :language: PowerShell
+  :linenos:
 
 ----
 
@@ -1766,6 +1772,7 @@ review
 
 Here are questions you can answer after going through this chapter
 
+* :ref:`What is a Test Driven Development Environment?`
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>`
 * :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
 * :ref:`How can I change directories?<how to change directory>`
