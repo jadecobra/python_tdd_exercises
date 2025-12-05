@@ -2937,7 +2937,7 @@ REFACTOR: make it better
 
   .. code-block:: python
     :lineno-start: 227
-    :emphasize-lines:
+    :emphasize-lines: 5
 
             self.assertEqual(
                 a_dictionary.get('not_in_dictionary', 'default'),
