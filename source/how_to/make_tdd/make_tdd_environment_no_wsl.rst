@@ -187,8 +187,9 @@ the terminal_ goes back to the command line
 
     ...\pumping_python\magic >
 
+=================================================================================
 how to run a Python program_ on Windows without Windows SubSystem Linux
-#################################################################################################
+=================================================================================
 
 * I use Python_ to run the ``magic`` program_
 
@@ -240,8 +241,9 @@ how to run a Python program_ on Windows without Windows SubSystem Linux
 
   the terminal_ shows the same error from before. I have to make the file_
 
+=================================================================================
 how to make an empty file on Windows without Windows SubSystem Linux
-#################################################################################################
+=================================================================================
 
 * I use `New-Item`_ to make an empty file_ in the ``src`` folder_
 
@@ -293,8 +295,9 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 This process can be repeated as many times as needed until I get to my goal.
 
+=================================================================================
 how to run tests manually on Windows without WSL
-#################################################################################################
+=================================================================================
 
 * I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
 
@@ -385,9 +388,10 @@ the terminal_ goes back to the command line
   .. code-block:: PowerShell
 
     NO TESTS RAN
+
 =================================================================================
 RED: make it fail
-=================================================================================###########
+=================================================================================
 
 * I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
@@ -464,6 +468,7 @@ RED: make it fail
 
   I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
 
+--------------------------------------------------------------------------------------------
 how to make a Python package
 --------------------------------------------------------------------------------------------
 
@@ -518,6 +523,7 @@ how to make a Python package
 
   .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file after you change its name
 
+--------------------------------------------------------------------------------------------
 how to change the name of a file on Windows without WSL
 --------------------------------------------------------------------------------------------
 
@@ -601,6 +607,7 @@ how to change the name of a file on Windows without WSL
   * ``F`` shows a failure
 
 * I hold ``ctrl`` on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -631,9 +638,10 @@ the test passes! The terminal_ shows
   OK
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
+
 =================================================================================
 REFACTOR: make it better
-=================================================================================###########
+=================================================================================
 
 Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
@@ -684,8 +692,9 @@ the terminal_ shows
 
 I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
 
+=================================================================================
 how to make a virtual environment on Windows without WSL
-############################################################################################
+=================================================================================
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
@@ -739,8 +748,9 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
   there is now a folder_ named ``.venv`` for the `virtual environment`_
 
+=================================================================================
 how to activate a virtual environment on Windows without WSL
-############################################################################################
+=================================================================================
 * I run PowerShell_ in Administrator mode and set the Execution Policy for the activation script to work
 
   .. code-block:: PowerShell
@@ -793,6 +803,7 @@ how to activate a virtual environment on Windows without WSL
 
   I have to install `pytest-watch`_ in the `virtual environment`_ to use it in the `virtual environment`_
 
+--------------------------------------------------------------------------------------------
 how to see what packages are installed in a virtual environment
 --------------------------------------------------------------------------------------------
 
@@ -814,6 +825,7 @@ the terminal_ shows
 - `pytest-watch`_ is not in the list
 - pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
 
+--------------------------------------------------------------------------------------------
 how to write text to a file on Windows without Windows SubSystem Linux
 --------------------------------------------------------------------------------------------
 I want to make a file where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
@@ -883,6 +895,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
+--------------------------------------------------------------------------------------------
 how to see what is inside a file
 --------------------------------------------------------------------------------------------
 
@@ -899,8 +912,9 @@ the terminal_ shows
 
   pytest-watch
 
-life is good
+life is good!
 
+--------------------------------------------------------------------------------------------
 how to install Python packages in a virtual environment on Windows without WSL
 ---------------------------------------------------------------------------------------------------
 
@@ -1028,18 +1042,20 @@ how to install Python packages in a virtual environment on Windows without WSL
 
 ----
 
-*******************************************************************************************************************
+****************************************************************************************************************************************
 how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux
-*******************************************************************************************************************
+****************************************************************************************************************************************
 
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
+=================================================================================
 how to exit the automated tests
-############################################################################################
+=================================================================================
 I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 
+=================================================================================
 how to deactivate a virtual environment
-############################################################################################
+=================================================================================
 
 * I leave the `virtual environment`_ by typing this in the terminal_
 
@@ -1076,8 +1092,9 @@ how to deactivate a virtual environment
 
   I am back in the ``pumping_python`` folder_
 
+=================================================================================
 how to make a PowerShell script
-############################################################################################
+=================================================================================
 
 * I use `New-Item`_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
 
@@ -1108,8 +1125,9 @@ how to make a PowerShell script
     │   └── .venv
     └── makePythonTdd.ps1
 
+=================================================================================
 how to view all the commands I typed in a terminal
---------------------------------------------------------------------------------------------
+=================================================================================
 
 * I type history_ in the terminal_ to see all the commands I have typed so far
 
@@ -1237,6 +1255,8 @@ how to view all the commands I typed in a terminal
     "pytest-watch" | Out-File requirements.txt -Encoding UTF 8
     python -m pip install --requirement requirements.txt
     pytest-watch
+
+--------------------------------------------------------------------------------------------
 how to run a PowerShell script
 --------------------------------------------------------------------------------------------
 
@@ -1428,6 +1448,7 @@ how to run a PowerShell script
 
   the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
 
+--------------------------------------------------------------------------------------------
 how to use variables in a PowerShell script
 --------------------------------------------------------------------------------------------
 
