@@ -245,7 +245,7 @@
 .. _The Abstraction Principle: https://grokipedia.com/page/Abstraction_principle_(computer_programming)
 .. _The Do Not Repeat Yourself (DRY) Principle: `remove duplication`_
 .. _Windows: https://www.microsoft.com/en-us/Windows
-.. _Windows Subsystem Linux: https://learn.microsoft.com/en-us/Windows/wsl/install
+.. _Windows Subsystem for Linux: https://learn.microsoft.com/en-us/Windows/wsl/install
 
 .. _Pylance: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 .. _Python: https://docs.python.org

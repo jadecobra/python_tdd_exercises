@@ -80,11 +80,11 @@ A file_ is a collection or container for text, like paper we write or print on a
 how to install tree
 #################################################################################
 
-* :ref:`how to install tree on Linux/Windows Subsystem Linux`
+* :ref:`how to install tree on Linux/Windows Subsystem for Linux`
 * :ref:`how to install tree on mac OS`
-* :ref:`how to install tree on Windows without Windows Subsystem Linux`
+* :ref:`how to install tree on Windows without Windows Subsystem for Linux`
 
-how to install tree on Linux/Windows Subsystem Linux
+how to install tree on Linux/Windows Subsystem for Linux
 ---------------------------------------------------------------------------------
 
 .. code-block:: shell
@@ -108,7 +108,7 @@ type this in the terminal_ to install tree_
 
 continue in :ref:`how to work in directories`
 
-how to install tree on Windows without Windows Subsystem Linux
+how to install tree on Windows without Windows Subsystem for Linux
 ---------------------------------------------------------------------------------
 
 tree_ comes with Windows_ you do not have to do anything. The following are things you would type in place of what I have in the chapter
@@ -321,7 +321,7 @@ how to list what is in a directory
 
       ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -394,7 +394,7 @@ how to look at directory structure
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -442,7 +442,7 @@ how to look at directory structure
 
     ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -760,7 +760,7 @@ how to look at directory structure
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -792,7 +792,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     touch a_file_in_parent
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -808,7 +808,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1175,7 +1175,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``tree /F`` instead of ``tree``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1215,7 +1215,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     touch child/aunt_or_uncle_of_another_grandchild_of_parent
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of ``touch``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1278,7 +1278,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     touch sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use `New-Item`_ instead of touch_
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of touch_
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1580,7 +1580,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     rm -rf parent
 
-  .. ADMONITION:: on Windows without `Windows Subsystem Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm -rf``
+  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm -rf``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1

@@ -1,10 +1,10 @@
 .. include:: ../../links.rst
 
 #################################################################################
-how to install Windows Subsystem Linux on Windows
+how to install Windows Subsystem for Linux on Windows
 #################################################################################
 
-This is one way `Windows Subsystem Linux`_ on a Windows computer so you can use Linux_
+This is one way `Windows Subsystem for Linux`_ on a Windows computer so you can use Linux_
 
 ----
 
@@ -19,7 +19,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
   - Hyper V (this might not be in the list, you can skip it if it is not)
   - Virtual Machine Platform
-  - Windows Subsystem Linux
+  - Windows Subsystem for Linux
   - Windows Hypervisor Platform
 
   Click ``OK`` to apply the changes if any
@@ -31,7 +31,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
     :width: 600
     :alt: Debian in Microsoft Store
 
-  .. TIP:: You can use any Linux Distribution you want, `Windows Subsystem Linux`_ installs Ubuntu by default
+  .. TIP:: You can use any Linux Distribution you want, `Windows Subsystem for Linux`_ installs Ubuntu by default
 
 * Click ``Get`` to install
 
@@ -41,8 +41,8 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
   .. attention:: the terminal_ does not show any text while you type your password, hit ``enter/return`` when done and it asks you to type the password again to confirm it
 
-* after installing `Windows Subsystem Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
-* Press ``F1`` on the keyboard in `Visual Studio Code`_ and select ``WSL:Connect to WSL`` to open a terminal_ in `Windows Subsystem Linux`_
+* after installing `Windows Subsystem for Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
+* Press ``F1`` on the keyboard in `Visual Studio Code`_ and select ``WSL:Connect to WSL`` to open a terminal_ in `Windows Subsystem for Linux`_
 * then type this in the terminal_ to update the Linux_ `package manager <https://manpages.debian.org/trixie/apt/apt.8.en.html>`_
 
   .. code-block:: shell
@@ -59,7 +59,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
 you can continue with :ref:`how to manually make a python test driven development environment`.
 
-If installing `Windows Subsystem Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem Linux` instead
+If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux` instead
 
 ----
 

@@ -14,9 +14,9 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to manually make a python test driven development environment>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program_ to do it for me<how to automatically make a python test driven development environment automatically>`
+This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to manually make a python test driven development environment>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program_ to do it for me<how to automatically make a python test driven development environment>`
 
-Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically>`, it is only 28 lines of code, with spaces
+Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment>`, it is only 28 lines of code, with spaces
 
 .. literalinclude:: ../../code/make_tdd/makePythonTdd.sh
   :language: shell
@@ -41,14 +41,14 @@ Windows requirements
 =================================================================================
 
 
-* If you are using a Windows_ computer, :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`
-* If you cannot :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`, you can :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem Linux<how to make a python test driven development environment on Windows without Windows Subsystem Linux>` instead of this chapter
+* If you are using a Windows_ computer, :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`
+* If you cannot :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`, you can :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux<how to make a python test driven development environment on Windows without Windows Subsystem for Linux>` instead of this chapter
 
 =================================================================================
-Linux/Windows Subsystem Linux requirements
+Linux/Windows Subsystem for Linux requirements
 =================================================================================
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_. MacOS_ users should not do this section
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. MacOS_ users should not do this section
 
 * Open a terminal_ then type this to update the `Linux package manager`_
 
@@ -183,7 +183,7 @@ I pick ``magic`` as the name for this project
 
   or
 
-  .. admonition:: if you are using Linux_ or `Windows Subsystem Linux`_ type this in the terminal_
+  .. admonition:: if you are using Linux_ or `Windows Subsystem for Linux`_ type this in the terminal_
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -360,14 +360,6 @@ how to make an empty file
 ********************************************************************************************
 test_failure
 ********************************************************************************************
-
-The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
-
-* **RED**: make it fail - write a test that fails to make sure the test works
-* **GREEN**: make it pass - write the simplest thing that will make the failing test pass
-* **REFACTOR**: make it better - write a better solution, test or both, usually by `removing duplication`_
-
-This process can be repeated as many times as needed until I get to my goal.
 
 =================================================================================
 how to run tests manually
@@ -1116,7 +1108,7 @@ how to install Python packages in a virtual environment
 ----
 
 ********************************************************************************************
-how to automatically make a python test driven development environment automatically
+how to automatically make a python test driven development environment
 ********************************************************************************************
 
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
@@ -1124,6 +1116,7 @@ You made it this far and have become `the greatest programmer in the world`_. To
 =================================================================================
 how to exit the automated tests
 =================================================================================
+
 I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 
 =================================================================================
@@ -1835,7 +1828,7 @@ Here are questions you can answer after going through this chapter
 
 * :ref:`What is a Test Driven Development Environment?`
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment automatically>`
+* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`
@@ -1849,6 +1842,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I run tests manually?<how to run tests manually>`
 * :ref:`How can I run tests automatically?<how to run tests automatically>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
+* :ref:`What is a Virtual Environment?<how to make a virtual environment>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
@@ -1862,8 +1856,6 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I use a variable in a shell script<how to use variables in a shell script>`
 * :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
 * :ref:`How can I run a shell script<how to run a shell script>`
-* :ref:`What is the Test Driven Development Cycle?<test_failure>`
-* :ref:`What is a Virtual Environment?<how to make a virtual environment>`
 
 Would you like to test :ref:`test AssertionError?<AssertionError>`
 

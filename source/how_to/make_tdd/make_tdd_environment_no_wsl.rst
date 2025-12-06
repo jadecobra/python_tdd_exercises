@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 ########################################################################################################
-how to make a python test driven development environment on Windows without Windows Subsystem Linux
+how to make a python test driven development environment on Windows without Windows Subsystem for Linux
 ########################################################################################################
 
 .. raw:: html
@@ -14,9 +14,9 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 s
-This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program_ to do it for me<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
+This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program_ to do it for me<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
 
-Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`, it is only 27 lines of code, with spaces
+Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`, it is only 27 lines of code, with spaces
 
 .. literalinclude:: ../../code/make_tdd/makePythonTdd.ps1
   :language: PowerShell
@@ -71,7 +71,7 @@ Here is what that structure should look like if the name of the project is ``PRO
       └── PROJECT_NAME.py
 
 ****************************************************************************************************************
-how to manually make a python test driven development environment on Windows without Windows Subsystem Linux
+how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux
 ****************************************************************************************************************
 
 I pick ``magic`` as the name for this project
@@ -188,7 +188,7 @@ the terminal_ goes back to the command line
     ...\pumping_python\magic >
 
 =================================================================================
-how to run a Python program_ on Windows without Windows SubSystem Linux
+how to run a Python program on Windows without Windows Subsystem for Linux
 =================================================================================
 
 * I use Python_ to run the ``magic`` program_
@@ -242,7 +242,7 @@ how to run a Python program_ on Windows without Windows SubSystem Linux
   the terminal_ shows the same error from before. I have to make the file_
 
 =================================================================================
-how to make an empty file on Windows without Windows SubSystem Linux
+how to make an empty file on Windows without Windows Subsystem for Linux
 =================================================================================
 
 * I use `New-Item`_ to make an empty file_ in the ``src`` folder_
@@ -284,16 +284,8 @@ how to make an empty file on Windows without Windows SubSystem Linux
   the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it exists.
 
 ********************************************************************************************
-test_failure
+test_failure on Windows without WSL
 ********************************************************************************************
-
-The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
-
-* **RED**: make it fail - write a test that fails to make sure the test works
-* **GREEN**: make it pass - write the simplest thing that will make the failing test pass
-* **REFACTOR**: make it better - write a better solution, test or both, usually by `removing duplication`_
-
-This process can be repeated as many times as needed until I get to my goal.
 
 =================================================================================
 how to run tests manually on Windows without WSL
@@ -469,7 +461,7 @@ RED: make it fail
   I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
 
 --------------------------------------------------------------------------------------------
-how to make a Python package
+how to make a Python package on Windows without WSL
 --------------------------------------------------------------------------------------------
 
 * I use `New-Item`_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
@@ -670,7 +662,7 @@ I do not want to type ``python -m unittest`` again, it is better for a `computer
 ----
 
 ********************************************************************************************
-how to run tests automatically on Windows without Windows SubSystem Linux
+how to run tests automatically on Windows without Windows Subsystem for Linux
 ********************************************************************************************
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
@@ -804,7 +796,7 @@ how to activate a virtual environment on Windows without WSL
   I have to install `pytest-watch`_ in the `virtual environment`_ to use it in the `virtual environment`_
 
 --------------------------------------------------------------------------------------------
-how to see what packages are installed in a virtual environment
+how to see what packages are installed in a virtual environment on Windows without WSL
 --------------------------------------------------------------------------------------------
 
 I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_ I just made
@@ -826,7 +818,7 @@ the terminal_ shows
 - pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
 
 --------------------------------------------------------------------------------------------
-how to write text to a file on Windows without Windows SubSystem Linux
+how to write text to a file on Windows without Windows Subsystem for Linux
 --------------------------------------------------------------------------------------------
 I want to make a file where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
@@ -896,7 +888,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
   ``requirements.txt`` is now in the ``magic`` folder_
 
 --------------------------------------------------------------------------------------------
-how to see what is inside a file
+how to see what is inside a file on Windows without WSL
 --------------------------------------------------------------------------------------------
 
 I can use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
@@ -1043,18 +1035,19 @@ how to install Python packages in a virtual environment on Windows without WSL
 ----
 
 ****************************************************************************************************************************************
-how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux
+how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux
 ****************************************************************************************************************************************
 
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
 =================================================================================
-how to exit the automated tests
+how to exit the automated tests on Windows without WSL
 =================================================================================
+
 I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 
 =================================================================================
-how to deactivate a virtual environment
+how to deactivate a virtual environment on Windows without WSL
 =================================================================================
 
 * I leave the `virtual environment`_ by typing this in the terminal_
@@ -1126,7 +1119,7 @@ how to make a PowerShell script
     └── makePythonTdd.ps1
 
 =================================================================================
-how to view all the commands I typed in a terminal
+how to view all the commands I typed in a terminal on Windows without WSL
 =================================================================================
 
 * I type history_ in the terminal_ to see all the commands I have typed so far
@@ -1783,40 +1776,39 @@ Time to use a variable_ for the name of the project
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.ps1>` to do it for you on any Windows_ computer without `Windows SubSystem Linux`_.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.ps1>` to do it for you on any Windows_ computer without `Windows Subsystem for Linux`_.
 
 Here are questions you can answer after going through this chapter
 
 * :ref:`What is a Test Driven Development Environment?`
-* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
+* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`
-* :ref:`How can I make an empty file?<how to make an empty file on Windows without Windows SubSystem Linux>`
-* :ref:`How can I write text to a file?<how to write text to a file on Windows without Windows SubSystem Linux>`
+* :ref:`How can I make an empty file?<how to make an empty file on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I write text to a file?<how to write text to a file on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I change the name of a file?<how to change the name of a file on Windows without WSL>`
-* :ref:`How can I run a Python Program?<how to run a Python program_ on Windows without Windows SubSystem Linux>`
-* :ref:`How can I test for failure?<test_failure>`
-* :ref:`How can I make a Python package?<how to make a Python package>`
+* :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I test for failure?<test_failure on Windows without WSL>`
+* :ref:`How can I make a Python package?<how to make a Python package on Windows without WSL>`
 * :ref:`How can I run tests manually?<how to run tests manually on Windows without WSL>`
-* :ref:`How can I run tests automatically?<how to run tests automatically on Windows without Windows SubSystem Linux>`
-* :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
+* :ref:`How can I run tests automatically?<how to run tests automatically on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I stop automated Python tests from running?<how to exit the automated tests on Windows without WSL>`
 * :ref:`What is a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
-* :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
-* :ref:`How can I document the Python programs my project needs?<how to write text to a file on Windows without Windows SubSystem Linux>`
+* :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment on Windows without WSL>`
+* :ref:`How can I document the Python programs my project needs?<how to write text to a file on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment on Windows without WSL>`
 * :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment on Windows without WSL>`
-* :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
-* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
+* :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
+* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal on Windows without WSL>`
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
 * :ref:`What is a variable?<how to use variables in a shell script>`
 * :ref:`How can I use a variable in a PowerShell script<how to use variables in a PowerShell script>`
 * :ref:`What is a variable?<how to use variables in a PowerShell script>`
 * :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
-* :ref:`What is the Test Driven Development Cycle?<test_failure>`
 
 Would you like to test :ref:`test AssertionError?<AssertionError>`
 
