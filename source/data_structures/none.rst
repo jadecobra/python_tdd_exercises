@@ -43,7 +43,7 @@ requirements
 
     tests/test_none.py:7: AssertionError
 
-* I hold ``ctrl`` (Windows/Linux) or ``option`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -52,7 +52,7 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -206,7 +206,7 @@ REFACTOR: make it better
 
   the test passes
 
-* The `unittest.TestCase`_ :ref:`class<classes>` has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child/instance of a :ref:`class<classes>` or not. I add assertNotIsInstance_
+* The `unittest.TestCase class`_ has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child/instance of a :ref:`class<classes>` or not. I add assertNotIsInstance_
 
   .. code-block:: python
     :lineno-start: 11

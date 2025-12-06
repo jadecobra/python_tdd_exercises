@@ -41,7 +41,7 @@ requirements
 
     tests/test_calculator.py:7: AssertionError
 
-* I hold ``ctrl`` (Windows/Linux) or ``option`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold ``ctrl`` (Windows/Linux) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change ``True`` to ``False`` to make the test pass
 
   .. code-block:: python
@@ -50,7 +50,7 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format
+* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -104,7 +104,7 @@ test_addition
                 1
             )
 
-  - the `assertEqual method`_ from the `unittest.TestCase`_ :ref:`class<classes>` checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the `assertEqual method`_ from the `unittest.TestCase class`_ checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is
 
     - ``reality`` - ``src.calculator.add(0, 1)``, and the other is my

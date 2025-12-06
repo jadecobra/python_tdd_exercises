@@ -183,6 +183,7 @@
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
+.. _unittest.TestCase class: `unittest.TestCase`_
 .. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
 .. _variable: https://grokipedia.com/page/Variable_(computer_science)
 .. _variables: https://grokipedia.com/page/Variable_(computer_science)
