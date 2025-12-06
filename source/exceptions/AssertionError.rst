@@ -307,8 +307,9 @@ REFACTOR: make it better
 
 I can also make assertions_ with `assert methods`_ from the `unittest.TestCase class`_, they have more descriptive messages
 
+---------------------------------------------------------------------------------
 how to test if something is None
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 * I add another failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses (``()``) is NOT :ref:`None`
 
@@ -546,8 +547,9 @@ REFACTOR: make it better
 
 There is an `assert method`_ to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`
 
+---------------------------------------------------------------------------------
 how to test if something is False
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 * I add a failing line with the `assertFalse method`_
 
@@ -649,8 +651,9 @@ REFACTOR: make it better
 
 There is an `assert method`_ to check if something is :ref:`True<test_what_is_true>`
 
+---------------------------------------------------------------------------------
 how to test if something is True
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 * I add a failing assertion_ with the `assertTrue method`_
 
@@ -756,9 +759,9 @@ the test passes.
 REFACTOR: make it better
 =================================================================================
 
-
+---------------------------------------------------------------------------------
 What is the difference between ``=`` and ``==``?
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 * ``=`` is the symbol for assignment, it's how to give a name to something in Python_, for example
 
@@ -770,8 +773,9 @@ What is the difference between ``=`` and ``==``?
 
 * ``==`` checks if the thing on the left of the symbol is equal to the thing on the right of the symbol
 
+---------------------------------------------------------------------------------
 how to test if two things are Equal
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 There are `assert methods`_ to check if 2 things are equal or not.
 
