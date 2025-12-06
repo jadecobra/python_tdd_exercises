@@ -683,7 +683,7 @@ how to change the name of a file
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` (Windows/Linux) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold ``ctrl`` (Windows_/Linux_) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 GREEN: make it pass
 #################################################################################

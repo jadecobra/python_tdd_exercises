@@ -34,8 +34,8 @@ RED: make it fail
 
     tests/test_learning.py:7: AssertionError
 
-* I hold ``ctrl`` (Windows/Linux) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_learning.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change ``True`` to ``False`` to make the test pass
+* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_learning.py:7`` to open it in the :ref:`editor<2 editors>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
 * and change the text in ``test_learning.py`` with
 
   .. literalinclude:: /code/tests/test_learning_models.py

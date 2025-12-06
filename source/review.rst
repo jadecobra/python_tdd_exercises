@@ -90,6 +90,15 @@ exceptions review
 * :ref:`What data structure has IndexError?<test_index_error>`
 * :ref:`What data structure has KeyError?<test_key_error>`
 
+*********************************************************************************
+AssertionError review
+*********************************************************************************
+
+* :ref:`How can I test if something is None?<how to test if something is None>`
+* :ref:`How can I test if something is False?<how to test if something is False>`
+* :ref:`How can I test if something is True?<how to test if something is True>`
+* :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
+
 ----
 
 .. raw:: html
