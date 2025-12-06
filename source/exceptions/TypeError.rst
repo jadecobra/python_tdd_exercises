@@ -1430,7 +1430,7 @@ The :ref:`calculator program<how to make a calculator>` can take 2 inputs and :r
 * :ref:`multiplication<test_multiplication>` and
 * :ref:`division<test_division>`
 
-Even though the program claims to only work with numbers, I did not add a test for floats_, do you want to add those tests?
+Even though the program_ claims to only work with numbers, I did not add a test for floats_, do you want to add those tests?
 
 I ran tests for TypeError_ with
 * objects_ that are not callable_

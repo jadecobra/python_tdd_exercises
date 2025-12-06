@@ -15,7 +15,7 @@ how to measure sleep duration: test_duration_w_date_and_time
 
 ----
 
-This is part 4 of a program that calculates the difference between a given wake and sleep time.
+This is part 4 of a program_ that calculates the difference between a given wake and sleep time.
 
 ----
 
@@ -859,7 +859,7 @@ and the test is still green
 review
 *********************************************************************************
 
-The challenge was to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that does it
+The challenge was to write a program_ that calculates the difference between a given wake and sleep time. I ran the following tests to get something that does it
 
 * :ref:`test_string_splitting`
 * :ref:`test_converting_strings_to_numbers`

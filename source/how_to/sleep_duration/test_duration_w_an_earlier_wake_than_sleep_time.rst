@@ -15,7 +15,7 @@ how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time
 
 ----
 
-This is part 3 of a program that calculates the difference between a given wake and sleep time.
+This is part 3 of a program_ that calculates the difference between a given wake and sleep time.
 
 ----
 
@@ -446,7 +446,7 @@ REFACTOR: make it better
 review
 *********************************************************************************
 
-The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
+The challenge is to write a program_ that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 
 
 * :ref:`test_string_splitting`

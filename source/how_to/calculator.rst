@@ -14,7 +14,7 @@ how to make a calculator
 
 ----
 
-I want to write a program that can ``add``, ``subtract``, ``multiply`` and ``divide``
+I want to write a program_ that can ``add``, ``subtract``, ``multiply`` and ``divide``
 
 *********************************************************************************
 requirements
@@ -897,7 +897,7 @@ the terminal_ shows my expectation with a failure for any value of ``x`` since `
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
   E       ZeroDivisionError: division by zero
 
-:ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program from running. No code runs past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
+:ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program_ from running. No code runs past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
 GREEN: make it pass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1067,7 +1067,7 @@ REFACTOR: make it better
 test_calculator_tests
 *********************************************************************************
 
-Since everything is green, I can write the program that makes the tests pass without looking at them
+Since everything is green, I can write the program_ that makes the tests pass without looking at them
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1310,7 +1310,7 @@ GREEN: make it pass
 review
 *********************************************************************************
 
-I wrote the following tests for a program that can :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` and :ref:`divide<test_division>`
+I wrote the following tests for a program_ that can :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` and :ref:`divide<test_division>`
 
 * `test_addition`_
 * `test_subtraction`_

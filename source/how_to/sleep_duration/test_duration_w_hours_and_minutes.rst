@@ -15,7 +15,7 @@ how to measure sleep duration: test_duration_w_hours_and_minutes
 
 ----
 
-This is part 2 of a program that calculates the difference between a given wake and sleep time.
+This is part 2 of a program_ that calculates the difference between a given wake and sleep time.
 
 ----
 
@@ -504,7 +504,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 review
 *********************************************************************************
 
-The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
+The challenge is to write a program_ that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 
 
 * :ref:`test_string_splitting`

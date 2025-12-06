@@ -8,7 +8,7 @@
 how to measure sleep duration
 #################################################################################
 
-The following tests help write a program that calculates the difference between a given sleep and wake time.
+The following tests help write a program_ that calculates the difference between a given sleep and wake time.
 
 .. toctree::
   :titlesonly:

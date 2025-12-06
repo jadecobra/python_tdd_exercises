@@ -14,7 +14,7 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 s
-This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
+This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program_ to do it for me<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
 
 Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`, it is only 27 lines of code, with spaces
 
@@ -187,7 +187,7 @@ the terminal_ goes back to the command line
 
     ...\pumping_python\magic >
 
-how to run a Python program on Windows without Windows SubSystem Linux
+how to run a Python program_ on Windows without Windows SubSystem Linux
 #################################################################################################
 
 * I use Python_ to run the ``magic`` program_
@@ -1280,7 +1280,7 @@ how to run a PowerShell script
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ===================================
 
-  Success! I just made a program that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
+  Success! I just made a program_ that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
 
 * I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
@@ -1426,15 +1426,15 @@ how to run a PowerShell script
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
-  the program works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
+  the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
 
 how to use variables in a PowerShell script
 --------------------------------------------------------------------------------------------
 
-I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program to take a project name once and use that name when making the project to make the following
+I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
 
 - the project folder_
-- the file_ for the program in the ``src`` folder_
+- the file_ for the program_ in the ``src`` folder_
 - the file_ for the test in the ``tests`` folder_
 - the test :ref:`class<classes>` in the test file_
 - the `virtual environment`_ in the ``.venv`` folder_
@@ -1525,7 +1525,7 @@ Time to use a variable_ for the name of the project
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* I run the program again in the terminal_
+* I run the program_ again in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1603,7 +1603,7 @@ Time to use a variable_ for the name of the project
     │   └── .venv
     └── makePythonTdd.sh
 
-* The program works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program and give it a name for the project from the command line. I can do this with ``$args[0]`` in PowerShell_, it represents the first argument given when a program_ is called. For example,
+* The program_ works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program_ and give it a name for the project from the command line. I can do this with ``$args[0]`` in PowerShell_, it represents the first argument given when a program_ is called. For example,
 
   .. code-block:: PowerShell
 
@@ -1645,7 +1645,7 @@ Time to use a variable_ for the name of the project
 
     $PROJECT_NAME=$args[0]
 
-* I try the program again, this time with a different name for the project in the terminal_
+* I try the program_ again, this time with a different name for the project in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -1775,7 +1775,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I make an empty file?<how to make an empty file on Windows without Windows SubSystem Linux>`
 * :ref:`How can I write text to a file?<how to write text to a file on Windows without Windows SubSystem Linux>`
 * :ref:`How can I change the name of a file?<how to change the name of a file on Windows without WSL>`
-* :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows SubSystem Linux>`
+* :ref:`How can I run a Python Program?<how to run a Python program_ on Windows without Windows SubSystem Linux>`
 * :ref:`How can I test for failure?<test_failure>`
 * :ref:`How can I make a Python package?<how to make a Python package>`
 * :ref:`How can I run tests manually?<how to run tests manually on Windows without WSL>`
@@ -1801,7 +1801,7 @@ Would you like to test :ref:`test AssertionError?<AssertionError>`
 
 ----
 
-:ref:`Click Here to see the code for the program to make a Python Test Driven Development environment for any Linux or MacOS computers<makePythonTdd.ps1>`
+:ref:`Click Here to see the code for the program_ to make a Python Test Driven Development environment for any Linux or MacOS computers<makePythonTdd.ps1>`
 
 ----
 

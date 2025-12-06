@@ -15,11 +15,11 @@ how to measure sleep duration: test_duration_tests
 
 ----
 
-This is part 5 of a program that calculates the difference between a given wake and sleep time.
+This is part 5 of a program_ that calculates the difference between a given wake and sleep time.
 
 ----
 
-I want to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them
+I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pass without looking at them
 
 *********************************************************************************
 RED: make it fail
@@ -533,7 +533,7 @@ REFACTOR: make it better
 review
 *********************************************************************************
 
-The challenge was to write a program that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<errors>` from the terminal_
+The challenge was to write a program_ that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<errors>` from the terminal_
 
 * :ref:`AttributeError`
 * :ref:`NameError<test_catching_name_error_in_tests>`

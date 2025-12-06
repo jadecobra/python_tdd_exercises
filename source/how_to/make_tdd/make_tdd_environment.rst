@@ -14,7 +14,7 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to manually make a python test driven development environment>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment automatically>`
+This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to manually make a python test driven development environment>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program_ to do it for me<how to automatically make a python test driven development environment automatically>`
 
 Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically>`, it is only 28 lines of code, with spaces
 
@@ -546,6 +546,7 @@ RED: make it fail
 
   I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
 
+--------------------------------------------------------------------------------------------
 how to make a Python package
 --------------------------------------------------------------------------------------------
 
@@ -600,6 +601,7 @@ how to make a Python package
 
   .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file after you change its name
 
+--------------------------------------------------------------------------------------------
 how to change the name of a file
 --------------------------------------------------------------------------------------------
 
@@ -885,6 +887,7 @@ how to activate a virtual environment
 
   I have to install `pytest-watch`_ in the `virtual environment`_ to use it in the `virtual environment`_
 
+--------------------------------------------------------------------------------------------
 how to see what packages are installed in a virtual environment
 --------------------------------------------------------------------------------------------
 
@@ -906,6 +909,7 @@ the terminal_ shows
 - `pytest-watch`_ is not in the list
 - pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
 
+--------------------------------------------------------------------------------------------
 how to write text to a file
 --------------------------------------------------------------------------------------------
 I want to make a file where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
@@ -964,6 +968,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
+--------------------------------------------------------------------------------------------
 how to see what is inside a file
 --------------------------------------------------------------------------------------------
 
@@ -980,8 +985,9 @@ the terminal_ shows
 
   pytest-watch
 
-life is good
+life is good!
 
+--------------------------------------------------------------------------------------------
 how to install Python packages in a virtual environment
 --------------------------------------------------------------------------------------------
 
@@ -1192,6 +1198,7 @@ how to make a shell script
     │   └── .venv
     └── makePythonTdd.sh
 
+--------------------------------------------------------------------------------------------
 how to view all the commands I typed in a terminal
 --------------------------------------------------------------------------------------------
 
@@ -1328,6 +1335,7 @@ how to view all the commands I typed in a terminal
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
+--------------------------------------------------------------------------------------------
 how to run a shell script
 --------------------------------------------------------------------------------------------
 
@@ -1359,6 +1367,7 @@ I have to tell the computer where the file_ is
 
 I want to make sure the computer can run the program_. I have to make it executable
 
+--------------------------------------------------------------------------------------------
 how to make a shell script run as a command
 --------------------------------------------------------------------------------------------
 
@@ -1397,7 +1406,7 @@ how to make a shell script run as a command
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ===================================
 
-  Success! I just made a program that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
+  Success! I just made a program_ that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
 
 * I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
@@ -1523,15 +1532,16 @@ how to make a shell script run as a command
     │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
-  the program works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
+  the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
 
+--------------------------------------------------------------------------------------------
 how to use variables in a shell script
 --------------------------------------------------------------------------------------------
 
-I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`. I want the program to take a project name once and use that name when making the project to make the following
+I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`. I want the program_ to take a project name once and use that name when making the project to make the following
 
 - the project folder_
-- the file_ for the program in the ``src`` folder_
+- the file_ for the program_ in the ``src`` folder_
 - the file_ for the test in the ``tests`` folder_
 - the test :ref:`class<classes>` in the test file_
 - the `virtual environment`_ in the ``.venv`` folder_
@@ -1624,7 +1634,7 @@ Time to use a variable_ for the name of the project
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* I run the program again in the terminal_
+* I run the program_ again in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1681,7 +1691,7 @@ Time to use a variable_ for the name of the project
     │   └── .venv
     └── makePythonTdd.sh
 
-* The program works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
+* The program_ works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file_ to give it the project name. I want to be able to just call the program_ and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
 
   .. code-block:: shell
 
@@ -1723,7 +1733,7 @@ Time to use a variable_ for the name of the project
 
     PROJECT_NAME=$1
 
-* I try the program again, this time with a different name for the project in the terminal_
+* I try the program_ again, this time with a different name for the project in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1859,7 +1869,7 @@ Would you like to test :ref:`test AssertionError?<AssertionError>`
 
 ----
 
-:ref:`Click Here to see the code for the program to make a Python Test Driven Development environment for any Linux or MacOS computers<makePythonTdd.sh>`
+:ref:`Click Here to see the code for the program_ to make a Python Test Driven Development environment for any Linux or MacOS computers<makePythonTdd.sh>`
 
 ----
 

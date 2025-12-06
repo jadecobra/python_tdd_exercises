@@ -14,7 +14,7 @@ how to pass values
 
 ----
 
-I want to test passing values to programs. When testing, I want to be able to send input from my test to the program and see the results. This helps me see what is the same, and what is different, the difference gives helps me know what to change to get what I want.
+I want to test passing values to programs. When testing, I want to be able to send input from my test to the program_ and see the results. This helps me see what is the same, and what is different, the difference gives helps me know what to change to get what I want.
 
 *********************************************************************************
 requirements
@@ -793,7 +793,7 @@ the terminal_ shows all tests are passing.
 test_telephone
 *********************************************************************************
 
-Time to write the program that makes the tests pass without looking at ``test_telephone.py``
+Time to write the program_ that makes the tests pass without looking at ``test_telephone.py``
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -922,7 +922,7 @@ GREEN: make it pass
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass Python_ basic :ref:`data structures` from a test to a program and place them in an `f-string`_
+Here are the tests I ran to see what happens when I pass Python_ basic :ref:`data structures` from a test to a program_ and place them in an `f-string`_
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_

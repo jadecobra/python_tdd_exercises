@@ -17,7 +17,7 @@ A function_ is a unit or block of code that is callable_. This means I can write
 
 .. code-block:: python
 
-    input_data -> program -> output_data
+    input_data -> program_ -> output_data
 
 I think of it mathematically as mapping a :ref:`function<test_functions>` ``f`` with inputs ``x`` and an output of ``y``
 

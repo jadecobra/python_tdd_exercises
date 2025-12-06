@@ -1,5 +1,5 @@
 .. meta::
-  :description: Learn how Python's boolean data type, operators (and, or, not), and truthiness work in conditional statements to control program flow. Watch the tutorial!
+  :description: Learn how Python's boolean data type, operators (and, or, not), and truthiness work in conditional statements to control program_ flow. Watch the tutorial!
   :keywords: Jacob Itegboje, python boolean tutorial for beginners, python boolean operators and or not, python if statement with boolean, python truthiness and falsiness explained, what is boolean in python with example, how to use bool() in python, python boolean return function, common python boolean mistakes, python boolean best practices
 
 .. include:: ../../links.rst

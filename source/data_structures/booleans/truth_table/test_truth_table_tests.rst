@@ -24,7 +24,7 @@ requirements
 
 ----
 
-I want to write a program that makes the tests in ``test_truth_table.py`` pass without looking at them
+I want to write a program_ that makes the tests in ``test_truth_table.py`` pass without looking at them
 
 *********************************************************************************
 RED: make it fail

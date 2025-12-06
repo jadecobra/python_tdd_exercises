@@ -15,7 +15,7 @@ how to measure sleep duration: test_duration_w_hours
 
 ----
 
-This is part 1 of a program that calculates the difference between a given wake and sleep time.
+This is part 1 of a program_ that calculates the difference between a given wake and sleep time.
 
 ----
 
@@ -837,7 +837,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 review
 *********************************************************************************
 
-The challenge is to write a program that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
+The challenge is to write a program_ that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
 
 
 * `test_string_splitting`_ where I

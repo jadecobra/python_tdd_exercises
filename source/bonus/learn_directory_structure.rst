@@ -31,7 +31,7 @@ This is an exercise in how your computer is organized into directories_ (folders
 requirements
 *********************************************************************************
 
-I open a terminal_ to make sure the tree_ program is installed by typing this
+I open a terminal_ to make sure the tree_ program_ is installed by typing this
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -44,7 +44,7 @@ when it is not installed on the computer, the terminal_ shows
 
     tree: command not found
 
-when it is installed, the terminal_ shows a tree of directories_ and files_. The tree_ program shows how files_ and folders_ on a computer are related.
+when it is installed, the terminal_ shows a tree of directories_ and files_. The tree_ program_ shows how files_ and folders_ on a computer are related.
 
 .. _what_is_a_folder:
 
