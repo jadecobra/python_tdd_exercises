@@ -66,6 +66,7 @@ requirements
 *********************************************************************************
 test_making_a_list_w_a_for_loop
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -99,6 +100,7 @@ the terminal_ shows :ref:`AssertionError`
 - ``iterable = range(0, 4)`` makes a range_ :ref:`object<classes>` that goes from the first given number to the second given number minus 1, in this case it goes from ``0`` to ``3``
 - ``for item in iterable:`` goes over every item in the range_ :ref:`object<classes>`
 - ``a_list.append(item)`` gets called every time the `for loop`_ runs
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -110,6 +112,7 @@ I change the expectation to match the values in the terminal_
   self.assertEqual(a_list, [0, 1, 2, 3])
 
 the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`object<classes>` after the `for loop`_ runs
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -301,6 +304,7 @@ test_making_a_list_w_extend
 ****************************************************************************************
 
 I can use the :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` :ref:`method<functions>` to make a :ref:`list<lists>` from an iterable_
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -322,6 +326,7 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: list.extend() takes exactly one argument (0 given)
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -333,6 +338,7 @@ I add the iterable_
   self.assertIsNone(a_list.extend(iterable))
 
 the terminal_ shows green again
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -391,6 +397,7 @@ test_making_a_list_w_a_list_comprehension
 ****************************************************************************************
 
 I can use a `list comprehension`_ to make a :ref:`list<lists>` from an iterable_
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -413,6 +420,7 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -427,6 +435,7 @@ The `list comprehension`_ is like the `for loop`_ without the :ref:`append<test_
   )
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -495,6 +504,7 @@ test_making_a_list_w_conditions
 ****************************************************************************************
 
 What if I had to make a :ref:`list<lists>` from an iterable_ based on a condition?
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -522,6 +532,7 @@ the terminal_ shows :ref:`AssertionError`
 
 * ``if item % 2 == 0:`` checks if the item in ``iterable`` leaves a remainder of ``0`` when divided by ``2``
 * ``%`` is the modulo_ operator, which divides the number on the left by the number on the right and returns a remainder, there's a test for it in :ref:`test_the_modulo_operation`
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -551,6 +562,7 @@ I add the condition
   )
 
 the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using the :ref:`list<lists>` constructor_
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -829,6 +841,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_making_a_list_w_processes
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -855,6 +868,7 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: Lists differ: [0, 1, 4, 9, ...] != [0, 1, 2, 3, ...]
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -869,6 +883,7 @@ I add the calculation to the `list comprehension`_
   )
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -949,6 +964,7 @@ test_making_a_list_w_processes_and_conditions
 *********************************************************************************
 
 I can use both :ref:`processes<test_making_a_list_w_processes>` and :ref:`conditions<test_making_a_list_w_conditions>` in a `list comprehension`_
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -978,6 +994,7 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 1, 2, 3, 4, ...]
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1009,6 +1026,7 @@ I add a call to ``process``
   )
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================

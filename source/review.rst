@@ -23,8 +23,8 @@ how to make a python test driven development environment review
 * :ref:`How can I run a Python Program?<how to run a Python program>`
 * :ref:`How can I test for failure?<test_failure>`
 * :ref:`How can I make a Python package?<how to make a Python package>`
-* :ref:`How can I run tests manually?<how to run tests manually>`
-* :ref:`How can I run tests automatically?<how to run tests automatically>`
+* :ref:`How can I run tests manually?<how to manually run tests>`
+* :ref:`How can I run tests automatically?<how to automatically run tests>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
@@ -57,8 +57,8 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I test for failure?<test_failure>`
 * :ref:`How can I make a Python package?<how to make a Python package>`
-* :ref:`How can I run tests manually?<how to run tests manually on Windows without WSL>`
-* :ref:`How can I run tests automatically?<how to run tests automatically on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I run tests manually?<how to manually run tests on Windows without WSL>`
+* :ref:`How can I run tests automatically?<how to automatically run tests on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
 * :ref:`What is a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`

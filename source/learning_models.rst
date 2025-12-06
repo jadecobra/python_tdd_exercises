@@ -9,6 +9,7 @@ What follows is an exercise in measuring learning. It is somewhat philosophical 
 *********************************************************************************
 An Infinite Learning Model
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -45,6 +46,7 @@ RED: make it fail
   .. code-block:: shell
 
     AttributeError: module 'src.learning' has no attribute 'model'
+
 
 =================================================================================
 GREEN: make it pass

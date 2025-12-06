@@ -56,8 +56,8 @@ on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_
 * :ref:`how to run a Python program`
 * :ref:`the first failing test<test_failure>`
 * :ref:`how to make a Python package`
-* :ref:`how to run tests manually`
-* :ref:`how to run tests automatically`
+* :ref:`how to manually run tests`
+* :ref:`how to automatically run tests`
 * :ref:`how to exit the automated tests`
 * :ref:`how to make a virtual environment`
 * :ref:`how to activate a virtual environment`
@@ -81,8 +81,8 @@ On Windows_ without `Windows Subsystem for Linux`
 * :ref:`how to run a Python program on Windows without Windows Subsystem for Linux`
 * :ref:`test_failure on Windows without WSL`
 * :ref:`how to make a Python package on Windows without WSL`
-* :ref:`how to run tests manually on Windows without WSL`
-* :ref:`how to run tests automatically on Windows without Windows Subsystem for Linux`
+* :ref:`how to manually run tests on Windows without WSL`
+* :ref:`how to automatically run tests on Windows without Windows Subsystem for Linux`
 * :ref:`how to exit the automated tests on Windows without WSL`
 * :ref:`how to make a virtual environment on Windows without WSL`
 * :ref:`how to make a virtual environment on Windows without WSL`

@@ -63,6 +63,7 @@ test_what_is_an_assertion
 *********************************************************************************
 
 We know that the result of ``1 + 1`` is ``2``, but what if I said that ``'1' + '1'`` is ``'11'``? I can use assertions_ to have the computer check if these statements are :ref:`True<test_what_is_true>`
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -110,6 +111,7 @@ RED: make it fail
   .. code-block:: shell
 
     E       assert (1 + 1) == 3
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -123,6 +125,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
           assert 1 + 1 == 2
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -255,6 +258,7 @@ test_assertion_error_w_none
 *********************************************************************************
 
 :ref:`None` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use assertions_ to test if something is :ref:`None`.
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -282,6 +286,7 @@ RED: make it fail
     tests/test_assertion_error.py:7: AssertionError
 
   the `assert statement`_ is :ref:`False<test_what_is_false>`
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -295,6 +300,7 @@ I change the line to make it :ref:`True<test_what_is_true>`
           assert None is None
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -495,6 +501,7 @@ test_assertion_error_w_false
 *********************************************************************************
 
 :ref:`False<test_what_is_false>` is a simple :ref:`data structures` , it is one of the two :ref:`boolean<booleans>` and is not :ref:`None`. I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -518,6 +525,7 @@ the terminal_ shows AssertionError_
 .. code-block:: python
 
   E    assert True is False
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -531,6 +539,7 @@ I change the `assertion`_ to make it :ref:`True<test_what_is_true>`
           assert True is not False
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -595,6 +604,7 @@ test_assertion_error_w_true
 *********************************************************************************
 
 :ref:`True<test_what_is_true>` is a simple :ref:`data structures`, it the other :ref:`boolean<booleans>` and is not :ref:`False<test_what_is_false>` or :ref:`None`. I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or not
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -618,6 +628,7 @@ the terminal_ shows AssertionError_
 .. code-block:: python
 
   E    assert False is True
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -631,6 +642,7 @@ I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
           assert False is not True
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -698,6 +710,7 @@ test_assertion_error_w_equality
 *********************************************************************************
 
 I can use assertions_ to test if 2 things are equal, like I did in :ref:`test_what_is_an_assertion`
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -723,6 +736,7 @@ the terminal_ shows AssertionError_
   E    assert None != None
 
 ``!=`` is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None`` or "DO NOT CONTINUE unless None is NOT equal to None"
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -736,6 +750,7 @@ I change the assertion_ to make it :ref:`True<test_what_is_true>`
           assert None == None
 
 the test passes.
+
 
 =================================================================================
 REFACTOR: make it better

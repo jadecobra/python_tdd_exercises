@@ -67,6 +67,7 @@ requirements
 *********************************************************************************
 test_attribute_error_w_variables
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -110,6 +111,7 @@ RED: make it fail
     # Exceptions Encountered
     # AssertionError
     # AttributeError
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -148,6 +150,7 @@ GREEN: make it pass
     variable_00 = None
 
   the test passes. ``variable_00`` is now an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.variable_00``
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -263,6 +266,7 @@ A variable_ in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:
 *********************************************************************************
 test_attribute_error_w_functions
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -286,6 +290,7 @@ the terminal_ shows AttributeError_
 .. code-block:: shell
 
   AttributeError: module 'src.attribute_error' has no attribute 'function_00'
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -332,6 +337,7 @@ GREEN: make it pass
         return None
 
   the test passes. ``function_00`` is now an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can call it by using ``src.attribute_error.function_00()``
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -443,6 +449,7 @@ test_attribute_error_w_class_attributes
 *********************************************************************************
 
 We know that variables_ and :ref:`functions` defined in a :ref:`module<ModuleNotFoundError>` are attributes. variables_ defined inside a :ref:`class<classes>` are also attributes.
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -464,6 +471,7 @@ the terminal_ shows AttributeError_
 .. code-block:: shell
 
   AttributeError: module 'src.attribute_error' has no attribute 'AClass'
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -541,6 +549,7 @@ GREEN: make it pass
         attribute_00 = None
 
   the test passes. ``attribute_00`` is now an attribute/property of ``AClass`` which is an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.AClass.attribute_00()``
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -653,6 +662,7 @@ test_attribute_error_w_class_methods
 We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`module<ModuleNotFoundError>` are attributes. We also know that variables_ defined inside a :ref:`class<classes>` are attributes.
 
 :ref:`functions<functions>` defined inside a :ref:`class<classes>` are also attributes, they are known as :ref:`methods<functions>`
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -676,6 +686,7 @@ RED: make it fail
   .. code-block:: shell
 
     AttributeError: type object 'AClass' has no attribute 'method_00'
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -713,6 +724,7 @@ GREEN: make it pass
             return None
 
   the test passes. ``method_00`` is now an attribute/property of ``AClass`` which is an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.AClass.method_00()``
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================

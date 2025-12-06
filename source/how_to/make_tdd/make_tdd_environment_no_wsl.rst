@@ -288,7 +288,7 @@ test_failure on Windows without WSL
 ********************************************************************************************
 
 =================================================================================
-how to run tests manually on Windows without WSL
+how to manually run tests on Windows without WSL
 =================================================================================
 
 * I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
@@ -380,6 +380,7 @@ the terminal_ goes back to the command line
   .. code-block:: PowerShell
 
     NO TESTS RAN
+
 
 =================================================================================
 RED: make it fail
@@ -631,6 +632,7 @@ the test passes! The terminal_ shows
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -662,7 +664,7 @@ I do not want to type ``python -m unittest`` again, it is better for a `computer
 ----
 
 ********************************************************************************************
-how to run tests automatically on Windows without Windows Subsystem for Linux
+how to automatically run tests on Windows without Windows Subsystem for Linux
 ********************************************************************************************
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
@@ -1030,16 +1032,6 @@ how to install Python packages in a virtual environment on Windows without WSL
 
   the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
 
-  .. IMPORTANT:: press ``ctrl+c`` on the keyboard in the terminal_ when you want to stop the tests to get back to the command line
-
-----
-
-****************************************************************************************************************************************
-how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux
-****************************************************************************************************************************************
-
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
-
 =================================================================================
 how to exit the automated tests on Windows without WSL
 =================================================================================
@@ -1085,6 +1077,14 @@ how to deactivate a virtual environment on Windows without WSL
 
   I am back in the ``pumping_python`` folder_
 
+----
+
+****************************************************************************************************************************************
+how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux
+****************************************************************************************************************************************
+
+You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
+
 =================================================================================
 how to make a PowerShell script
 =================================================================================
@@ -1118,9 +1118,9 @@ how to make a PowerShell script
     │   └── .venv
     └── makePythonTdd.ps1
 
-=================================================================================
+--------------------------------------------------------------------------------------------
 how to view all the commands I typed in a terminal on Windows without WSL
-=================================================================================
+--------------------------------------------------------------------------------------------
 
 * I type history_ in the terminal_ to see all the commands I have typed so far
 
@@ -1792,8 +1792,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I test for failure?<test_failure on Windows without WSL>`
 * :ref:`How can I make a Python package?<how to make a Python package on Windows without WSL>`
-* :ref:`How can I run tests manually?<how to run tests manually on Windows without WSL>`
-* :ref:`How can I run tests automatically?<how to run tests automatically on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I run tests manually?<how to manually run tests on Windows without WSL>`
+* :ref:`How can I run tests automatically?<how to automatically run tests on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests on Windows without WSL>`
 * :ref:`What is a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`

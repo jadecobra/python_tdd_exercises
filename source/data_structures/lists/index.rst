@@ -74,6 +74,7 @@ requirements
 *********************************************************************************
 test_making_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -96,6 +97,7 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: [] != None
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -107,6 +109,7 @@ I change the expectation
   self.assertEqual(list(), [])
 
 the test passes. This is how to make an empty list_
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -163,6 +166,7 @@ test_attributes_and_methods_of_lists
 *********************************************************************************
 
 I use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -195,6 +199,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
   Diff is 748 characters long. Set self.maxDiff to None to see it
 
 `maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None` it shows the entire difference
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -268,6 +273,7 @@ GREEN: make it pass
 *********************************************************************************
 test_append_adds_item_to_end_of_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -288,6 +294,7 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: list.append() takes exactly one argument (0 given)
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -299,6 +306,7 @@ I add ``0`` as input
   self.assertIsNone(a_list.append(0))
 
 the terminal_ shows green, the append_ :ref:`method<functions>` returns :ref:`None` when called
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -388,6 +396,7 @@ I add a test for the clear_ :ref:`method<functions>`
       self.assertIsNone(a_list.clear())
 
 the terminal_ shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when called
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -407,6 +416,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: Lists differ: [] != [0, 1, 2, 'n']
 
 the list_ is now empty
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -418,6 +428,7 @@ I change the values to match
   self.assertEqual(a_list, [])
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -451,6 +462,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_copy_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -473,6 +485,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: [0, 1, 2, 'n'] is not None
 
 the :ref:`method<functions>` returns a copy of the list_
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -500,6 +513,7 @@ the values are the same, I change assertIsNone_ to assertEqual_
   self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -531,6 +545,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_count_number_of_times_item_is_in_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -566,6 +581,7 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: 1 is not None
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -589,6 +605,7 @@ I change assertIsNone_ to assertEqual_
   self.assertEqual(a_list.count(0), 1)
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -666,6 +683,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_extend_adds_items_from_an_iterable_to_end_of_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -686,6 +704,7 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: list.extend() takes exactly one argument (0 given)
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -709,6 +728,7 @@ I change the value to an iterable_
   self.assertIsNone(a_list.extend((0, 1)))
 
 the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -784,6 +804,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_index_returns_first_position_of_item_in_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -804,6 +825,7 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: index expected at least 1 argument, got 0
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -845,6 +867,7 @@ I change assertIsNone_ to assertEqual_
       self.assertEqual(a_list.index(0), 0)
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -1078,6 +1101,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_insert_item_at_given_index_in_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1098,6 +1122,7 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: insert expected 2 arguments, got 0
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1111,6 +1136,7 @@ I add two values to the call
       self.assertIsNone(a_list.insert(0, 1))
 
 the test is green
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -1211,6 +1237,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_pop_removes_and_returns_last_item_from_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1233,6 +1260,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: 'n' is not None
 
 The pop_ :ref:`method<functions>` returns the last item in the list_
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1257,6 +1285,7 @@ I change assertIsNone_ to assertEqual_
   self.assertEqual(a_list.pop(), 'n')
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -1348,6 +1377,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_remove_first_instance_of_item_from_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1368,6 +1398,7 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: list.remove() takes exactly one argument (0 given)
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1379,6 +1410,7 @@ I add a value to the call
   self.assertIsNone(a_list.remove(0))
 
 the terminal_ shows green, the remove_ :ref:`method<functions>` returns :ref:`None`
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -1478,6 +1510,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_reverse_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1507,6 +1540,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
 
 it reversed the order of the items in the list_
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1518,6 +1552,7 @@ I change the expectation
   self.assertEqual(a_list, ['n', 2, 1, 0])
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -1543,6 +1578,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_sort_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1562,6 +1598,7 @@ the terminal_ shows :ref:`TypeError`
   TypeError: '<' not supported between instances of 'str' and 'int'
 
 I have to change ``'n'`` to a number or change the other numbers to a string_
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1575,6 +1612,7 @@ I remove the things around the call, and the :ref:`variable<test_attribute_error
           [0, 1, 2, 'n'].sort()
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -1653,6 +1691,7 @@ test_getting_items_of_a_list
 *********************************************************************************
 
 When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``)
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1675,6 +1714,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: '1st' != ''
 
 the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``0``
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1686,6 +1726,7 @@ I change the value in the test
   self.assertEqual(a_list[0], '1st')
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -1861,6 +1902,7 @@ REFACTOR: make it better
 *********************************************************************************
 test_setting_items_in_a_list
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1884,6 +1926,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
 
 I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item to change its value in a list_, the way I point a name to a value
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1901,6 +1944,7 @@ the test passes
 *********************************************************************************
 test_viewing_parts_of_a_list_aka_slicing
 *********************************************************************************
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -1921,6 +1965,7 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: Lists differ: ['a', 'b'] != []
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -1932,6 +1977,7 @@ I change the values to match
   self.assertEqual(a_list[0:2], ['a', 'b'])
 
 the test passes. I give two values in square brackets(``[]``), separated by a ``:``, the first value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to start from, and the second value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to stop at plus ``1``
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
@@ -2084,6 +2130,7 @@ test_index_error
 *********************************************************************************
 
 IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it. When I see this :ref:`Exception<errors>` I know the underlying data structure is a list_
+
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -2106,6 +2153,7 @@ the terminal_ shows IndexError_
   IndexError: list index out of range
 
 when I use an index that is the same as or greater than the length of the list_ I am pointing to something that is NOT in it
+
 =================================================================================
 GREEN: make it pass
 =================================================================================
@@ -2133,6 +2181,7 @@ I add assertRaises_
           a_list[4]
 
 the test passes
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
