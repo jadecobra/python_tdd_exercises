@@ -14,12 +14,6 @@ how to make a python test driven development environment
 
 ----
 
-*********************************************************************************
-What is a Test Driven Development Environment?
-*********************************************************************************
-
-A `Test Driven Development`_ environment is a collection of files_ and folders_ in a project where I can write automated tests and code and see the results of running them immediately.
-
 This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to manually make a python test driven development environment>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment automatically>`
 
 Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically>`, it is only 28 lines of code, with spaces
@@ -42,14 +36,17 @@ requirements
   - PyCharm_
   - `other Integrated Development Environment (IDE) options`_
 
+=================================================================================
 Windows requirements
-#################################################################################
+=================================================================================
+
 
 * If you are using a Windows_ computer, :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`
 * If you cannot :ref:`install Windows Subsystem Linux<how to install Windows Subsystem Linux on Windows>`, you can :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem Linux<how to make a python test driven development environment on Windows without Windows Subsystem Linux>` instead of this chapter
 
+=================================================================================
 Linux/Windows Subsystem Linux requirements
-#################################################################################
+=================================================================================
 
 .. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem Linux`_. MacOS_ users should not do this section
 
@@ -264,8 +261,9 @@ I pick ``magic`` as the name for this project
 
     .../pumping_python/magic
 
+=================================================================================
 how to run a Python program
-#################################################################################################
+=================================================================================
 
 * I use Python_ to run the ``magic`` program_
 
@@ -317,8 +315,9 @@ how to run a Python program
 
   the terminal_ shows the same error from before. I have to make the file_
 
+=================================================================================
 how to make an empty file
-#################################################################################################
+=================================================================================
 
 * I use touch_ to make an empty file_ in the ``src`` folder_
 
@@ -370,8 +369,9 @@ The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
 
 This process can be repeated as many times as needed until I get to my goal.
 
+=================================================================================
 how to run tests manually
-#################################################################################################
+=================================================================================
 
 * I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
 
@@ -463,8 +463,9 @@ how to run tests manually
 
     NO TESTS RAN
 
+=================================================================================
 RED: make it fail
-#################################################################################################
+=================================================================================
 
 * I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
@@ -685,8 +686,9 @@ how to change the name of a file
 
 * I hold ``ctrl`` (Windows_/Linux_) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py`` in the :ref:`editor<2 editors>`
 
@@ -715,8 +717,9 @@ the test passes! The terminal_ shows
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
+=================================================================================
 REFACTOR: make it better
-############################################################################################
+=================================================================================
 
 Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
@@ -767,8 +770,9 @@ the terminal_ shows
 
 I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
 
+=================================================================================
 how to make a virtual environment
-############################################################################################
+=================================================================================
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
@@ -847,8 +851,9 @@ It means I can have a separate `virtual environment`_ for every project with onl
   - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
   - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to keep it to the first level of what is in the children folders_ of ``magic``
 
+=================================================================================
 how to activate a virtual environment
-############################################################################################
+=================================================================================
 
 * When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
 
@@ -1110,12 +1115,14 @@ how to automatically make a python test driven development environment automatic
 
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
 
+=================================================================================
 how to exit the automated tests
-############################################################################################
+=================================================================================
 I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 
+=================================================================================
 how to deactivate a virtual environment
-############################################################################################
+=================================================================================
 
 * I leave the `virtual environment`_ by typing this in the terminal_
 
@@ -1152,8 +1159,9 @@ how to deactivate a virtual environment
 
   I am back in the ``pumping_python`` folder_
 
+=================================================================================
 how to make a shell script
-############################################################################################
+=================================================================================
 
 * I use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
 

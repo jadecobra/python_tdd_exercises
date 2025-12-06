@@ -5,6 +5,13 @@
 .. include:: ../../links.rst
 
 #################################################################################
+What is a Test Driven Development Environment?
+#################################################################################
+
+A `Test Driven Development`_ environment is a collection of files_ and folders_ in a project where I can write automated tests and code and see the results of running them immediately.
+
+
+#################################################################################
 how to make a test driven development environment
 #################################################################################
 

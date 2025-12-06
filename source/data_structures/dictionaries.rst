@@ -75,9 +75,9 @@ requirements
 *********************************************************************************
 test_making_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I change ``test_failure`` to ``test_making_a_dictionary`` then add an assertion_
 
@@ -98,9 +98,9 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: {} != None
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change the expectation to match
 
@@ -115,9 +115,9 @@ the test passes. These are two ways to make an empty dictionary_ one
 
 * with the constructor_ - ``dict()`` and with
 * curly braces - ``{}``
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add another :ref:`assertion<AssertionError>`, this time with input
 
@@ -190,9 +190,9 @@ I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``) and
 *********************************************************************************
 test_making_a_dictionary_w_none_as_a_key
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test to see if I can use :ref:`None` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
@@ -213,9 +213,9 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: {None: 'boom'} != {None: 'bap'}
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change ``'bap'`` to ``'boom'``
 
@@ -232,9 +232,9 @@ the test passes. I can use :ref:`None` and strings_ as :ref:`keys<test_keys_of_a
 *********************************************************************************
 test_making_a_dictionary_w_a_boolean_as_a_key
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test to see if I can use a :ref:`boolean<booleans>` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
@@ -256,9 +256,9 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: {False: 'boom'} != {False: 'bap'}
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change ``'bap'`` to ``'boom'``
 
@@ -269,9 +269,9 @@ I change ``'bap'`` to ``'boom'``
           self.assertEqual({False: 'boom'}, {False: 'boom'})
 
 the tests passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 I add an :ref:`assertion<AssertionError>` for the :ref:`other boolean<test_what_is_true>`
 
@@ -309,9 +309,9 @@ the test passes. I can use :ref:`booleans`, :ref:`None` and strings_ as :ref:`ke
 *********************************************************************************
 test_making_a_dictionary_w_a_number_as_a_key
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a failing test to see if I can use a number as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
@@ -336,9 +336,9 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: {0: 'boom'} != {0: 'bap'}
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change ``'bap'`` to ``'boom'``
 
@@ -352,9 +352,9 @@ I change ``'bap'`` to ``'boom'``
           )
 
 the test passes. I can use an integer_ as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 I want to see if I can use a float_ as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
@@ -390,9 +390,9 @@ the test passes. I can use numbers (floats_ and integers_), :ref:`booleans`, :re
 *********************************************************************************
 test_making_a_dictionary_w_a_tuple_as_a_key
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test to see if I can use a tuple_ (anything in parentheses (``()``)) as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
@@ -417,9 +417,9 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: {(0, 1): 'boom'} != {(0, 1): 'bap'}
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change ``'bap'`` to ``'boom'``
 
@@ -438,9 +438,9 @@ the test passes. I can use tuples_, numbers (floats_ and integers_), :ref:`boole
 *********************************************************************************
 test_making_a_dictionary_w_a_list_as_a_key
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test for :ref:`lists` (anything in square brackets (``[]``))
 
@@ -464,9 +464,9 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: unhashable type: 'list'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I remove the things around the new dictionary_ then change the :ref:`key<test_keys_of_a_dictionary>` and :ref:`value<test_values_of_a_dictionary>` for fun
 
@@ -496,9 +496,9 @@ the test passes. I cannot use a :ref:`list<lists>` as a :ref:`key<test_keys_of_a
 *********************************************************************************
 test_making_a_dictionary_w_a_set_as_a_key
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add another test with a set_ (single items in a curly braces (``{}``)) as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
 
@@ -519,9 +519,9 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: unhashable type: 'set'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add assertRaises_ to handle the :ref:`Exception<errors>`
 
@@ -540,9 +540,9 @@ the test is green again. I cannot use :ref:`lists` or sets_ as :ref:`keys<test_k
 *********************************************************************************
 test_making_a_dictionary_w_a_dictionary_as_a_key
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add another test, this time for a dictionary_
 
@@ -564,9 +564,9 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: unhashable type: 'dict'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add assertRaises_
 
@@ -589,9 +589,9 @@ the test passes. I cannot use dictionaries_, sets_ or :ref:`lists` as :ref:`keys
 *********************************************************************************
 test_attributes_and_methods_of_dictionaries
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of dictionaries_
 
@@ -623,9 +623,9 @@ It also gives me a message about how to show the full difference between the two
   Diff is 720 characters long. Set self.maxDiff to None to see it.
 
 maxDiff_ is a :ref:`class attribute<test_attribute_error_w_class_attributes>` that is used to set the maximum length of differences between 2 items that the terminal_ shows
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I move the terminal_ to right side of the screen
 * I add maxDiff_ to the test
@@ -743,9 +743,9 @@ GREEN: make it pass
 *********************************************************************************
 test_clear_empties_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I add a test for the first :ref:`method<functions>`
 
@@ -786,9 +786,9 @@ RED: make it fail
     AssertionError: {} != {'key': 'value'}
 
   the clear_ :ref:`method<functions>` emptied the dictionary_, :ref:`same as it does with lists<test_clear_empties_a_list>`
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change the values to match
 
@@ -802,9 +802,9 @@ I change the values to match
           self.assertEqual(a_dictionary, {})
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I change the name of the test
 
@@ -842,9 +842,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_copy_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test for the next :ref:`method<functions>`
 
@@ -869,9 +869,9 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: {'key': 'value'} is not None
 
 this :ref:`method<functions>` returns a copy of the dictionary_, :ref:`same as with lists<test_copy_a_list>`
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add the value to the :ref:`assertion<AssertionError>`
 
@@ -906,9 +906,9 @@ I change assertIsNone_ to assertEqual_
           )
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I change the name of the test
 
@@ -947,9 +947,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_fromkeys_makes_a_dictionary_from_an_iterable
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test for the next :ref:`method<functions>` from the TODO list
 
@@ -972,9 +972,9 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: fromkeys expected at least 1 argument, got 0
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I pass a value to the call
 
@@ -1039,9 +1039,9 @@ GREEN: make it pass
             )
 
   the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add another `assert method`_ to see what happens to the first dictionary_ in the test
 
@@ -1184,9 +1184,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_get_value_of_a_key_in_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test for the get_ :ref:`method<functions>`
 
@@ -1209,9 +1209,9 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: get expected at least 1 argument, got 0
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add a value to the call
 
@@ -1222,9 +1222,9 @@ I add a value to the call
           self.assertIsNone(a_dictionary.get(0))
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * the get_ :ref:`method<functions>` also expected at least 1 argument, I add :ref:`None` to the call
 
@@ -1377,9 +1377,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_items_returns_iterable_of_key_value_pairs_of_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add the next test from the TODO list
 
@@ -1401,9 +1401,9 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: dict_items([('key', 'value')]) is not None
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I copy the ``dict_items`` :ref:`object<classes>` from the terminal_ and paste it as the expectation
 
@@ -1474,9 +1474,9 @@ GREEN: make it pass
   the test passes.
 
   This works because the items_ :ref:`method<functions>` returns an iterable_ of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<classes>` is iterable_
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add another key-value pair to the dictionary_ to see what the :ref:`method<functions>` does when there is more than one
 
@@ -1560,9 +1560,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_keys_of_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new test
 
@@ -1588,9 +1588,9 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: dict_keys(['key']) is not None
 
 this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary`
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I copy the ``dict_keys`` :ref:`object<classes>` from the terminal_ and paste it as the expectation
 
@@ -1661,9 +1661,9 @@ GREEN: make it pass
             )
 
   the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add another :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the dictionary_ to see what the keys_ :ref:`method<functions>` returns when there are multiple
 
@@ -1735,9 +1735,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_pop_removes_given_key_from_a_dictionary_and_returns_its_value
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I wonder if the next :ref:`method<functions>` behaves the same way as it did in :ref:`test_pop_removes_and_returns_last_item_from_a_list`, I add a test for it
 
@@ -1762,9 +1762,9 @@ the terminal_ shows :ref:`TypeError`
   TypeError: pop expected at least 1 argument, got 0
 
 this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I pass a value to the call
 
@@ -1820,9 +1820,9 @@ GREEN: make it pass
                 a_dictionary.pop('not_in_dictionary')
 
   the test passes. When I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_ it raises :ref:`KeyError <test_key_error>`
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * When I called the pop_ :ref:`method<functions>` without input, the terminal_ showed :ref:`TypeError`
 
@@ -1991,9 +1991,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a failing test for the next item in the TODO list
 
@@ -2017,9 +2017,9 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: ('key', 'value') is not None
 
 the popitem_ :ref:`method<functions>` returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the dictionary_ as a tuple_
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add the value from the terminal_ as the expectation
 
@@ -2051,9 +2051,9 @@ I change assertIsNone_ to assertEqual_
           )
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I want to know what the popitem_ :ref:`method<functions>` did to the dictionary_. I add another :ref:`assertion<AssertionError>`
 
@@ -2167,9 +2167,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_setdefault_adds_given_key_to_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test for the next :ref:`method<functions>`
 
@@ -2191,9 +2191,9 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: setdefault expected at least 1 argument, got 0
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I pass a value in the call
 
@@ -2204,9 +2204,9 @@ I pass a value in the call
           self.assertIsNone(a_dictionary.setdefault(0))
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * The error message showed that the :ref:`method<functions>` expects at least 1 argument, I add a second argument
 
@@ -2429,9 +2429,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_update_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I add a test for the next :ref:`method<functions>` from the TODO list
 
@@ -2470,9 +2470,9 @@ RED: make it fail
     AssertionError: {'key': 'value'} != {}
 
   the dictionary_ did not change
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change the values in the expectation to match the terminal_
 
@@ -2483,9 +2483,9 @@ I change the values in the expectation to match the terminal_
           self.assertEqual(a_dictionary, {'key': 'value'})
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add a value to the call to the update_ :ref:`method<functions>` to see what happens
 
@@ -2662,9 +2662,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_values_of_a_dictionary
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test for the last :ref:`method<functions>`
 
@@ -2690,9 +2690,9 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: dict_values(['value']) is not None
 
 this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary` and  :ref:`test_keys_of_a_dictionary`
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add the expected value
 
@@ -2755,9 +2755,9 @@ GREEN: make it pass
             )
 
   the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I change the dictionary_ to see what happens when it has more than one :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
@@ -2828,9 +2828,9 @@ test_key_error
 *********************************************************************************
 
 The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<errors>` to know when working with a dictionary_. It happened earlier in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value`
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref:`key<test_keys_of_a_dictionary>` that is in a dictionary_
 
@@ -2856,9 +2856,9 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: 'value' != ''
 
 I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a dictionary_ by giving the :ref:`key<test_key_error>` in ``[]``, just like :ref:`viewing items in a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>`
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change the value in the expectation to match the terminal_
 
@@ -2869,9 +2869,9 @@ I change the value in the expectation to match the terminal_
           self.assertEqual(a_dictionary['key'], 'value')
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add another :ref:`assertion<AssertionError>`, this time for a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_
 

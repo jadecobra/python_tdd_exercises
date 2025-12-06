@@ -117,9 +117,9 @@ test_addition
     NameError: name 'src' is not defined
 
   because ``src`` is not defined in ``test_calculator.py``
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
 
@@ -245,9 +245,9 @@ GREEN: make it pass
         return 1
 
   the test passes, time for a victory lap!
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to do a calculation with the inputs and return the result
 
@@ -455,9 +455,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_subtraction
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I add a test for subtraction in ``test_calculator.py``
 
@@ -490,9 +490,9 @@ RED: make it fail
   .. code-block:: shell
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add the name to ``calculator.py``
 
@@ -572,9 +572,9 @@ GREEN: make it pass
         return first_input - second_input
 
   the test passes. SUCCESS!
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I have some duplication to remove, the code below happens twice
 
@@ -718,9 +718,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_multiplication
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a failing test for multiplication in ``test_calculator.py``
 
@@ -747,9 +747,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.calculator' has no attribute 'multiply'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 using what I know so far, I add a :ref:`function<functions>` to ``calculator.py``
 
@@ -781,9 +781,9 @@ the test passes! I remove ``test_multiplication`` from the TODO list in ``test_c
 *********************************************************************************
 test_division
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 time for division. I add a new test to ``test_calculator.py``
 
@@ -810,9 +810,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.calculator' has no attribute 'divide'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add a :ref:`function<functions>` to ``calculator.py``
 
@@ -1068,9 +1068,9 @@ test_calculator_tests
 *********************************************************************************
 
 Since everything is green, I can write the program that makes the tests pass without looking at them
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I close ``test_calculator.py``
 * then delete all the text in ``calculator.py``, the terminal_ shows 4 failures, I start with the last :ref:`AttributeError`
@@ -1080,9 +1080,9 @@ RED: make it fail
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
   What :ref:`Exceptions<errors>` do you think are raised as I go along?
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add the name to ``calculator.py``
 

@@ -13,13 +13,7 @@ how to make a python test driven development environment on Windows without Wind
   <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/CLC1YAHHbjU?si=0agM3_IhWmUYpTln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
-
-*********************************************************************************
-What is a Test Driven Development Environment?
-*********************************************************************************
-
-A `Test Driven Development`_ environment is a collection of files_ and folders_ in a project where I can write automated tests and code and see the results of running them immediately.
-
+s
 This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows SubSystem Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`
 
 Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment automatically on Windows without Windows SubSystem Linux>`, it is only 27 lines of code, with spaces
@@ -391,9 +385,9 @@ the terminal_ goes back to the command line
   .. code-block:: PowerShell
 
     NO TESTS RAN
-
+=================================================================================
 RED: make it fail
-############################################################################################
+=================================================================================###########
 
 * I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
@@ -607,9 +601,9 @@ how to change the name of a file on Windows without WSL
   * ``F`` shows a failure
 
 * I hold ``ctrl`` on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py`` in the :ref:`editor<2 editors>`
 
@@ -637,9 +631,9 @@ the test passes! The terminal_ shows
   OK
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
-
+=================================================================================
 REFACTOR: make it better
-############################################################################################
+=================================================================================###########
 
 Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 

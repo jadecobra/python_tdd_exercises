@@ -48,11 +48,18 @@ when it is installed, the terminal_ shows a tree of directories_ and files_. The
 
 .. _what_is_a_folder:
 
+What is a Folder?
+#################################################################################
+
+
 A `folder (directory)`_ is a container for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
 
 I keep every project I work on in its own `folder (directory)`_. All the code from this book is kept in a folder_ named ``pumping_python``
 
 .. _what_is_a_file:
+
+What is a File?
+#################################################################################
 
 A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an extension (optionally) to show the type of file_. For example
 

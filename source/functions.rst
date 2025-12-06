@@ -86,9 +86,9 @@ test_making_a_function_w_pass
 *********************************************************************************
 
 I can make a function_ with the pass_ keyword
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I change ``test_failure`` to ``test_making_a_function_w_pass``
 
@@ -122,9 +122,9 @@ RED: make it fail
     # Exceptions Encountered
     # AssertionError
     # NameError
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add an `import statement`_ at the top of the file
 
@@ -178,9 +178,9 @@ test_making_a_function_w_return
 *********************************************************************************
 
 I can make a function with a `return statement`_
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new failing test in ``test_functions.py``
 
@@ -202,9 +202,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.functions' has no attribute 'function_w_return'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add a new function_ to ``functions.py``
 
@@ -220,9 +220,9 @@ I add a new function_ to ``functions.py``
       pass
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 I change pass_ to a `return statement`_
 
@@ -302,9 +302,9 @@ test_constant_function
 *********************************************************************************
 
 constant functions_ always return the same thing when called
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test to ``test_functions.py``
 
@@ -326,9 +326,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.functions' has no attribute 'constant'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add the function_ to ``functions.py``
 
@@ -1066,9 +1066,9 @@ test_functions_w_unknown_arguments
 *********************************************************************************
 
 I can also make functions_ that take any number of :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>` arguments. This means I do not need to know how many inputs are sent to the function_ when it is called
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new test to ``test_functions.py``
 
@@ -1094,9 +1094,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.functions' has no attribute 'w_unknown_arguments'. Did you mean: 'w_keyword_arguments'?
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add a function_ to ``functions.py``
 
@@ -1203,9 +1203,9 @@ GREEN: make it pass
         return None
 
   the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * ``*args, **kwargs`` is Python_ convention. I change the names to be more descriptive
 

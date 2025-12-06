@@ -1076,9 +1076,9 @@ GREEN: make it pass
         return False
 
   the terminal_ shows green! All tests are passing and the world is a better place than when I started.
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 I can refactor the :ref:`functions<functions>` I have, to make them simpler since all the tests are passing
 

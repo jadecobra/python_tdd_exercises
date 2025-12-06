@@ -27,9 +27,9 @@ requirements
 *********************************************************************************
 test_negate_second
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new test for another Binary Operation to ``test_truth_table.py
 
@@ -49,9 +49,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'negate_second'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add a :ref:`function<functions>` definition for it to ``truth_table.py``
 
@@ -67,9 +67,9 @@ I add a :ref:`function<functions>` definition for it to ``truth_table.py``
       return False
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add the next case to ``test_negate_second`` in ``test_truth_table.py``
 
@@ -175,9 +175,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_logical_nor
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a test for another Binary Operation in ``test_truth_table.py``
 
@@ -198,9 +198,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_nor'. Did you mean: 'logical_nand'?
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
 
@@ -216,9 +216,9 @@ I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
       return False
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add the next case to ``test_logical_nor`` in ``test_truth_table.py``
 
@@ -320,9 +320,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_logical_equality
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new test for the next Binary Operation in ``test_truth_table.py``
 
@@ -343,9 +343,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_equality'. Did you mean: 'logical_identity'?
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add a :ref:`function<functions>` definition for it in ``truth_table.py``
 
@@ -361,9 +361,9 @@ I add a :ref:`function<functions>` definition for it in ``truth_table.py``
       return True
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add the next case to ``test_logical_equality`` in ``test_truth_table.py``
 
@@ -553,9 +553,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_material_implication
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new test for another Binary Operation in ``test_truth_table.py``
 
@@ -576,9 +576,9 @@ the terminal_ shows :ref:`AttributeError`
 .. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'material_implication'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.py``
 
@@ -595,9 +595,9 @@ I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.p
       return True
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add the next case to ``test_material_implication`` in ``test_truth_table.py``
 

@@ -65,9 +65,9 @@ test_type_error_w_non_callables
 *********************************************************************************
 
 There are :ref:`objects<classes>` that can NOT be called
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I add an `import statement`_ at the top of ``test_type_error.py``
 
@@ -104,9 +104,9 @@ RED: make it fail
     # Exceptions Encountered
     # AssertionError
     # AttributeError
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I click on ``type_error.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
 
@@ -147,9 +147,9 @@ GREEN: make it pass
   the test passes
 
 I can call a :ref:`function<functions>` but I cannot call :ref:`None`
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add another failing line to ``test_type_error.py``
 
@@ -362,9 +362,9 @@ test_type_error_w_function_signatures
 *********************************************************************************
 
 When I call a :ref:`function<functions>` I have to match its definition also known as its signature
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I add a new test to ``test_type_error.py``
 
@@ -385,9 +385,9 @@ RED: make it fail
   .. code-block:: shell
 
     AttributeError: module 'src.type_error' has no attribute 'function_00'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add the :ref:`function<functions>` to ``type_error.py``
 
@@ -422,9 +422,9 @@ GREEN: make it pass
   the test passes
 
 I have to call a :ref:`function<functions>` in a way that matches its definition or I get :ref:`TypeError`
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add a new failing line to ``test_type_error.py``
 
@@ -575,9 +575,9 @@ test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
 Some operations do not work if the objects_ are not of the same type_
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new test with a failing line in ``test_type_error.py``
 
@@ -600,9 +600,9 @@ the terminal_ shows TypeError_
   TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 
 I cannot do arithmetic_ with :ref:`None`
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add the `assertRaises method`_
 
@@ -615,9 +615,9 @@ I add the `assertRaises method`_
               None + 1
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add another failing line to the test
 
@@ -746,9 +746,9 @@ requirements
     ========================= 4 passed in 0.01s ==========================
 
 * I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add a new failing test to show that I can NOT do an arithmetic_ operation with something that is not a number
 
@@ -778,9 +778,9 @@ the terminal_ shows :ref:`TypeError`
 .. code-block:: shell
 
   TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I add assertRaises_
 
@@ -793,9 +793,9 @@ I add assertRaises_
               src.calculator.add(self.random_x, None)
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add a failing line for :ref:`division<test_division>`
 
@@ -915,9 +915,9 @@ I want to add a :ref:`condition<booleans>` to the calculator to make sure that w
 
 * I go to the :ref:`explorer<explorer on left>` in the `Integrated Development Environment (IDE)`_ to open the ``calculator`` folder_
 * I open the ``src`` folder and click on ``calculator.py`` to open it in the :ref:`editor<2 editors>`
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`add function<test_addition>` in ``calculator.py``
 
@@ -938,9 +938,9 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: TypeError not raised
 
 because the ``add`` :ref:`function<functions>` now sends a message when :ref:`TypeError` is raised
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 I change the assertRaises_ to assertEqual_ in ``test_calculator.py``
 
@@ -961,9 +961,9 @@ I change the assertRaises_ to assertEqual_ in ``test_calculator.py``
           src.calculator.subtract(self.random_x, None)
 
 the test passes
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`divide function<test_division>` in ``calculator.py``
 

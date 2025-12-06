@@ -64,9 +64,9 @@ requirements
 *********************************************************************************
 test_takes_keyword_arguments
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I change ``test_failure`` to ``test_takes_keyword_arguments``
 
@@ -90,9 +90,9 @@ RED: make it fail
   .. code-block:: shell
 
     NameError: name 'src' is not defined
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_person.py``
 
@@ -797,9 +797,9 @@ GREEN: make it pass
             )
 
   and the test is still green
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * I add an `import statement`_ at the top of ``test_person.py`` to use random values in the tests
 
@@ -1040,9 +1040,9 @@ test_function_w_default_keyword_arguments
 *************************************************************************************
 
 I want to see what happens when I try to make a person without a value for the ``last_name`` argument
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I select ``test_takes_keyword_arguments``, then copy (``ctrl+c`` (Windows/Linux) or ``command+c`` (mac)) and paste (``ctrl+v`` (Windows/Linux) or ``command+v`` (mac)) it below in ``test_person.py``
 * I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` variable_
@@ -1122,9 +1122,9 @@ RED: make it fail
   .. code-block:: shell
 
     NameError: name 'last_name' is not defined
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I comment out ``last_name`` in the call to the ``factory`` :ref:`function<functions>` in ``test_function_w_default_keyword_arguments``
 
@@ -1445,9 +1445,9 @@ GREEN: make it pass
             )
 
   the terminal_ still shows green
-
+=================================================================================
 REFACTOR: make it better
-#################################################################################
+=================================================================================
 
 * ``first_name`` and ``year_of_birth`` are made the same way in both tests, I can remove this repetition by adding :ref:`attributes<AttributeError>` to the ``TestPerson`` :ref:`class<classes>`
 
@@ -1718,9 +1718,9 @@ REFACTOR: make it better
 *********************************************************************************
 test_person_tests
 *********************************************************************************
-
+=================================================================================
 RED: make it fail
-#################################################################################
+=================================================================================
 
 * I close ``test_person.py``
 * I want to write the solution without looking at the tests and delete all the text in ``person.py``. The terminal_ shows :ref:`AttributeError`
@@ -1728,9 +1728,9 @@ RED: make it fail
   .. code-block:: shell
 
     AttributeError: module 'src.person' has no attribute 'factory'
-
+=================================================================================
 GREEN: make it pass
-#################################################################################
+=================================================================================
 
 * I add the name
 
