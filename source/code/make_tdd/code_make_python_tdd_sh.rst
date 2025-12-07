@@ -4,7 +4,7 @@
 makePythonTdd.sh
 #################################################################################
 
-* Here is the ``./makePythonTdd.sh`` program_ from :ref:`how to make a python test driven development environment`
+* Here is the ``makePythonTdd.sh`` program_ from :ref:`how to make a python test driven development environment`
 
   .. literalinclude:: makePythonTdd.sh
     :language: shell
@@ -17,8 +17,9 @@ makePythonTdd.sh
 
     chmod +x makePythonTdd.sh
 
-* give a name for the ``$PROJECT_NAME`` :ref:`variable<test_attribute_error_w_variables>` when the program_ is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder_ where ``makePythonTdd.sh`` is saved makes a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>`
+* give a name for the ``PROJECT_NAME`` :ref:`variable<test_attribute_error_w_variables>` when the program_ is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder_ where ``makePythonTdd.sh`` is saved makes a `Test Driven Development`_ environment for a project with the name :ref:`assertion_error<AssertionError>`
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     ./makePythonTdd.sh assertion_error
