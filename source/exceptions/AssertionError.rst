@@ -1387,10 +1387,10 @@ review
 
 I can use `assert statements`_ and `assert methods`_ to test if something is
 
-* :ref:`None` or not
-* :ref:`False<test_what_is_false>` or not
-* :ref:`True<test_what_is_true>` or not
-* :ref:`equal or not<test_assertion_error_w_equality>`
+* :ref:`None or not<test_assertion_error_w_none>` with assertIsNone_ and assertIsNotNone_
+* :ref:`False or not<test_assertion_error_w_none>` with assertFalse_
+* :ref:`True or not<test_assertion_error_w_none>` with assertTrue_
+* :ref:`equal or not<test_assertion_error_w_equality>` with assertEqual_ or assertNotEqual_
 
 Here are questions you can answer after going through this chapter
 
@@ -1399,7 +1399,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I test if something is True?<how to test if something is True>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 
-Would you like to :ref:`test None?<None>`
+Next up I use `assert methods`_ to test :ref:`Python's data structures<data structures>`, would you like to :ref:`test None?<None>`, it is the simplest :ref:`data structure<data structures>`
 
 ----
 
