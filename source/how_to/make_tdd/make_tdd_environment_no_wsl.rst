@@ -1399,10 +1399,10 @@ how to run a PowerShell script
   the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
 
 --------------------------------------------------------------------------------------------
-how to use variables in a PowerShell script
+how to use a variable in a PowerShell script
 --------------------------------------------------------------------------------------------
 
-I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
+I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `TThe Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
 
 - the project folder_
 - the file_ for the program_ in the ``src`` folder_
@@ -1763,9 +1763,9 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal on Windows without WSL>`
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`What is a variable?<how to use variables in a shell script>`
-* :ref:`How can I use a variable in a PowerShell script<how to use variables in a PowerShell script>`
-* :ref:`What is a variable?<how to use variables in a PowerShell script>`
+* :ref:`What is a variable?<how to use a variable in a shell script>`
+* :ref:`How can I use a variable in a PowerShell script<how to use a variable in a PowerShell script>`
+* :ref:`What is a variable?<how to use a variable in a PowerShell script>`
 * :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
 
 Would you like to test :ref:`test AssertionError?<AssertionError>`

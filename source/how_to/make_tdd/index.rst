@@ -12,7 +12,7 @@ how to make a test driven development environment
 what is a Test Driven Development Environment?
 *********************************************************************************
 
-A `Test Driven Development`_ environment is a collection of files_ and folders_ in a project where I can write automated tests and code and see the results of running them immediately.
+A `Test Driven Development`_ environment is a collection of files_ and folders_ in a project where I can write tests and code and they automatically run so I see the results immediately.
 
 *********************************************************************************
 what is the Test Driven Development cycle?
@@ -103,7 +103,8 @@ on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_ computers
 * :ref:`how to see what packages are installed in a virtual environment`
 * :ref:`how to view all the commands I typed in a terminal`
 * :ref:`how to make a shell script`
-* :ref:`how to use variables in a shell script`
+* :ref:`how to run a shell script`
+* :ref:`how to use a variable in a shell script`
 * :ref:`how to make a shell script run as a command`
 * :ref:`how to run a shell script`
 
@@ -129,9 +130,7 @@ On Windows_ computers without `Windows Subsystem for Linux`
 * :ref:`how to see what packages are installed in a virtual environment on Windows without WSL`
 * :ref:`how to view all the commands I typed in a terminal on Windows without WSL`
 * :ref:`how to make a PowerShell script`
-* :ref:`how to use variables in a shell script`
-* :ref:`how to use variables in a PowerShell script`
-* :ref:`how to use variables in a PowerShell script`
+* :ref:`how to use a variable in a PowerShell script`
 * :ref:`how to run a PowerShell script`
 * :ref:`test_failure on Windows without WSL`
 
