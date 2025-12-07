@@ -39,15 +39,15 @@ Some things I think about when I want to start a project
 * What other programs_ does my project need?
 * What tests am I going to write for this project?
 
-It turns out some of this is repeatable
+It turns out some of this is the same for every project
 
 * I pick a name for the project
 * I make a new folder_ for every project with the name I picked
 * I place the code for the project in a ``src`` folder_
 * I place the tests for the project in a ``tests`` folder_
 * I try to name everything in the project with the name of the project or with something that describes what it does
-* I write what the project needs in a requirements file_
-* I make a `virtual environment`_ to keep things separate from the rest of the computer
+* I write what programs the project needs (its dependencies) in a requirements file_
+* I make a `virtual environment`_ to keep the dependencies separate from the rest of the computer
 * I install what the project needs in the `virtual environment`_
 * I work in the `virtual environment`_
 * I run automated tests to make sure I have a `Test Driven Development`_ environment
@@ -58,11 +58,11 @@ Here is what that structure looks like if the name of the project is ``PROJECT_N
 .. code-block:: shell
 
   PROJECT_NAME
+  ├── requirements.txt
   ├── src
   │   └── PROJECT_NAME.py
   └── tests
       └── PROJECT_NAME.py
-
 
 These chapters show how I setup a project in Python_ on any computer (Linux_, Windows_, MacOS_) to help you get started with `Test Driven Development`_ right now
 
@@ -78,7 +78,7 @@ they cover the following
 * :ref:`Windows requirements`
 * :ref:`Linux/Windows Subsystem for Linux requirements`
 
-on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_
+on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_ computers
 
 * :ref:`how to manually make a python test driven development environment`
 * :ref:`how to automatically make a python test driven development environment`
@@ -107,7 +107,7 @@ on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_
 * :ref:`how to make a shell script run as a command`
 * :ref:`how to run a shell script`
 
-On Windows_ without `Windows Subsystem for Linux`
+On Windows_ computers without `Windows Subsystem for Linux`
 
 * :ref:`how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux`
 * :ref:`how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux`
@@ -137,7 +137,7 @@ On Windows_ without `Windows Subsystem for Linux`
 
 ----
 
-the programs to automatically setup a Python_ `Test Driven Development`_ project
+at the end you will have these programs to automatically setup a Python_ `Test Driven Development`_ project
 
 * :ref:`makePythonTdd.sh` - for MacOS_, Linux_ and `Windows Subsystem for Linux`_
 * :ref:`makePythonTdd.ps1` - for Windows_ without `Windows Subsystem for Linux`_
