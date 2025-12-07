@@ -28,6 +28,25 @@ This is an exercise in how your computer is organized into directories_ (folders
           └── cousin_of_child_of_child
 
 *********************************************************************************
+what is a folder?
+*********************************************************************************
+
+A `folder (directory)`_ is a container for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
+
+I keep every project I work on in its own `folder (directory)`_. All the code from this book is kept in a folder_ named ``pumping_python``
+
+*********************************************************************************
+what is a file?
+*********************************************************************************
+
+A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an extension (optionally) to show the type of file_. For example
+
+* ``.txt`` for a `plain text`_ file_
+* ``.sh`` for a bash_ file_
+* ``.ps1`` for a PowerShell_ file_
+* ``.py`` for a :ref:`Python module<ModuleNotFoundError>`
+
+*********************************************************************************
 requirements
 *********************************************************************************
 
@@ -46,28 +65,6 @@ when it is not installed on the computer, the terminal_ shows
 
 when it is installed, the terminal_ shows a tree of directories_ and files_. The tree_ program_ shows how files_ and folders_ on a computer are related.
 
-.. _what_is_a_folder:
-
-What is a Folder?
-#################################################################################
-
-
-A `folder (directory)`_ is a container for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
-
-I keep every project I work on in its own `folder (directory)`_. All the code from this book is kept in a folder_ named ``pumping_python``
-
-.. _what_is_a_file:
-
-What is a File?
-#################################################################################
-
-A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an extension (optionally) to show the type of file_. For example
-
-* ``.txt`` for a `plain text`_ file_
-* ``.sh`` for a bash_ file_
-* ``.ps1`` for a PowerShell_ file_
-* ``.py`` for a :ref:`Python module<ModuleNotFoundError>`
-
 .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
 
   .. code-block:: shell
@@ -77,13 +74,15 @@ A file_ is a collection or container for text, like paper we write or print on a
 
   a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
+=================================================================================
 how to install tree
-#################################################################################
+=================================================================================
 
 * :ref:`how to install tree on Linux/Windows Subsystem for Linux`
 * :ref:`how to install tree on mac OS`
 * :ref:`how to install tree on Windows without Windows Subsystem for Linux`
 
+---------------------------------------------------------------------------------
 how to install tree on Linux/Windows Subsystem for Linux
 ---------------------------------------------------------------------------------
 
@@ -108,6 +107,7 @@ type this in the terminal_ to install tree_
 
 continue in :ref:`how to work in directories`
 
+---------------------------------------------------------------------------------
 how to install tree on Windows without Windows Subsystem for Linux
 ---------------------------------------------------------------------------------
 
@@ -131,6 +131,7 @@ instead of
 
 continue with :ref:`how to work in directories`
 
+---------------------------------------------------------------------------------
 how to install tree on mac OS
 ---------------------------------------------------------------------------------
 
@@ -158,8 +159,9 @@ how to install tree on mac OS
 how to work in directories
 ********************************************************************************************
 
-how to see the current directory
-#################################################################################################
+=================================================================================
+how to see the directory I am in
+=================================================================================
 
 I start by checking where I am in the terminal_. I can do this with the pwd_ program
 
@@ -178,8 +180,9 @@ because I am in the ``pumping_python`` folder_. pwd_ shows the path/address to t
 
 .. NOTE:: If you see the same name, skip to the part where I create ``parent``. If you see a different name, continue to the next step :ref:`how to change directory`.
 
+=================================================================================
 how to change directory
-#################################################################################################
+=================================================================================
 
 I use the `cd program`_ to change directories_
 
@@ -196,8 +199,9 @@ the terminal_ shows
 
 this means the folder_ does not exist where I am
 
+=================================================================================
 how to make a directory
-#################################################################################################
+=================================================================================
 
 * I use the `mkdir program`_ to make a `folder (directory)`_
 
@@ -285,8 +289,9 @@ how to make a directory
 
     .../pumping_python/parent
 
+=================================================================================
 how to list what is in a directory
-#################################################################################################
+=================================================================================
 
 * I can use ls_ to show what is in a directory_ and see information about the files_ in it
 
@@ -384,8 +389,9 @@ how to list what is in a directory
 
     .../pumping_python/parent
 
+=================================================================================
 how to look at directory structure
-#################################################################################################
+=================================================================================
 
 * I can use the `tree program`_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``parent`` directory_
 
@@ -780,8 +786,9 @@ how to look at directory structure
 
     5 directories, 0 files
 
+=================================================================================
 how to make an empty file
-#################################################################################################
+=================================================================================
 
 I can make empty files_ in a folder_ with the touch_ program
 
@@ -969,6 +976,10 @@ I can make empty files_ in a folder_ with the touch_ program
   .. code-block:: shell
 
     .../parent/child/child_of_child
+
+=================================================================================
+how to use directory relationships
+=================================================================================
 
 * I can go from ``child_of_child`` to ``parent`` in 1 step by using ``..``
 
@@ -1571,9 +1582,15 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .../pumping_python
+    .../
+
+=================================================================================
+how to remove a directory and all its contents
+=================================================================================
 
 * I remove ``parent`` and all its descendants
+
+  .. DANGER:: This is a desctructive operation that CANNOT be undone on MacOS_ or Linux_/`Windows Subsystem for Linux`_, use it wisely
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1592,7 +1609,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   - rm_ is used to remove files_ and folders_
   - ``-r/-Recurse`` means remove child directories_ and what is in them recursively, it goes through each child directory_ and removes everything include their children
-  - ``-f/-Force`` means "force", do not ask me any questions, just remove the file_ or folder_
+  - ``-f/-Force`` means "force", do not ask me any questions, just remove the file_ or folder_ and all its children with extreme prejudice
 
 * I try to go back to the ``parent`` directory_
 
@@ -1622,13 +1639,20 @@ I ran the following commands to practice `folder (directory)`_ structure
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`What is a folder (directory)?<what_is_a_folder>`
-* :ref:`What is a file?<what_is_a_file>`
+* :ref:`What is a folder (directory)?<what is a folder?>`
+* :ref:`what is a file?<what is a file?>`
+* :ref:`How can I tell what directory I am in?<how to see the directory I am in>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory relationships?<how to look at directory structure>`
 * :ref:`How can I list what is in a directory?<how to list what is in a directory>`
 * :ref:`How can I make an empty file?<how to make an empty file>`
+* :ref:`How can I use directory relationships?<how to use directory relationships>`
+* :ref:`How can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
+
+:ref:`Are you ready to see me make a Test Driven Development Environment<how to make a test driven development environment>`
+
+----
 
 :ref:`Click here to see all the code I typed in this chapter<learnDirectoryStructure.sh>`
 

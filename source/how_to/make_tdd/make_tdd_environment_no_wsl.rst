@@ -38,38 +38,6 @@ requirements
 
 ----
 
-Here are some things I think about when I want to start a project
-
-* What name will I give the project?
-* What is the structure of the project?
-* What files_ and folders_ does the project need?
-* What other programs_ does my project need?
-* What tests am I going to write for this project?
-
-It turns out some of this is repeatable
-
-* I pick a name for the project
-* I make a new folder_ for every project with the name I picked
-* I place the code for the project in a ``src`` folder_
-* I place the tests for the project in a ``tests`` folder_
-* I try to name everything in the project with the name of the project or with something that describes what it does
-* I write what the project needs in a requirements file_
-* I make a `virtual environment`_ to keep things separate from the rest of the computer
-* I install what the project needs in the `virtual environment`_
-* I work in the `virtual environment`_
-* I run automated tests to make sure I have a `Test Driven Development`_ environment
-* I start writing code for the project
-
-Here is what that structure should look like if the name of the project is ``PROJECT_NAME``
-
-.. code-block:: shell
-
-  PROJECT_NAME
-  ├── src
-  │   └── PROJECT_NAME.py
-  └── tests
-      └── PROJECT_NAME.py
-
 ****************************************************************************************************************
 how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux
 ****************************************************************************************************************
@@ -172,8 +140,6 @@ the terminal_ goes back to the command line
     .
     └── magic
 
-    2 directories, 0 files
-
 * I try cd_ again
 
   .. code-block:: PowerShell
@@ -230,8 +196,6 @@ how to run a Python program on Windows without Windows Subsystem for Linux
     .
     └── src
 
-    2 directories, 0 files
-
 * I try to run the ``magic`` program_ again
 
   .. code-block:: PowerShell
@@ -269,8 +233,6 @@ how to make an empty file on Windows without Windows Subsystem for Linux
     .
     └── src
         └── magic.py
-
-    2 directories, 1 file
 
   `New-Item`_ is a command that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``New-Item src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
@@ -337,8 +299,6 @@ the terminal_ goes back to the command line
     │   └── magic.py
     └── tests
 
-    3 directories, 1 file
-
 * I use `New-Item`_ to add an empty file to the ``tests`` directory for the actual test
 
   .. code-block:: PowerShell
@@ -366,8 +326,6 @@ the terminal_ goes back to the command line
     └── tests
         └── magic.py
 
-    3 directories, 2 files
-
 * I run the test again
 
   .. code-block:: PowerShell
@@ -381,7 +339,6 @@ the terminal_ goes back to the command line
 
     NO TESTS RAN
 
-
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -394,6 +351,8 @@ RED: make it fail
       :emphasize-lines: 1
 
       code tests/magic.py
+
+    I can also open a file_ by using ``ctrl`` on the keyboard and clicking with the mouse on the name of the file_
 
 * I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
@@ -494,8 +453,6 @@ how to make a Python package on Windows without WSL
     └── tests
         ├── __init__.py
         └── magic.py
-
-    3 directories, 3 files
 
 * I try to run the tests again
 
@@ -1458,6 +1415,7 @@ The program_ should always make this structure
 .. code-block:: shell
 
   PROJECT_NAME
+  ├── requirements.txt
   ├── src
   │   └── PROJECT_NAME.py
   ├── tests
@@ -1780,7 +1738,7 @@ review
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`What is a Test Driven Development Environment?`
+* :ref:`what is a Test Driven Development Environment?`
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I change directories?<how to change directory>`

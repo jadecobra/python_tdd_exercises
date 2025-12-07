@@ -32,6 +32,9 @@ requirements
 * get an `Integrated Development Environment (IDE)`_. Here are a few options
 
   - `Visual Studio Code`_
+
+    - If you are on MacOS_ and using `Visual Studio Code`_, `Configure the path <https://code.visualstudio.com/docs/setup/mac#_configure-the-path-with-vs-code>`_ so you can open `Visual Studio Code`_ from the command line later
+
   - `Sublime Text`_
   - PyCharm_
   - `other Integrated Development Environment (IDE) options`_
@@ -71,38 +74,6 @@ Linux/Windows Subsystem for Linux requirements
     sudo apt install python3 python3-venv --yes
 
 ----
-
-Here are some things I think about when I want to start a project
-
-* What name will I give the project?
-* What is the structure of the project?
-* What files_ and folders_ does the project need?
-* What other programs_ does my project need?
-* What tests am I going to write for this project?
-
-It turns out some of this is repeatable
-
-* I pick a name for the project
-* I make a new folder_ for every project with the name I picked
-* I place the code for the project in a ``src`` folder_
-* I place the tests for the project in a ``tests`` folder_
-* I try to name everything in the project with the name of the project or with something that describes what it does
-* I write what the project needs in a requirements file_
-* I make a `virtual environment`_ to keep things separate from the rest of the computer
-* I install what the project needs in the `virtual environment`_
-* I work in the `virtual environment`_
-* I run automated tests to make sure I have a `Test Driven Development`_ environment
-* I start writing code for the project
-
-Here is what that structure should look like if the name of the project is ``PROJECT_NAME``
-
-.. code-block:: shell
-
-  PROJECT_NAME
-  ├── src
-  │   └── PROJECT_NAME.py
-  └── tests
-      └── PROJECT_NAME.py
 
 ********************************************************************************************
 how to manually make a python test driven development environment
@@ -246,8 +217,6 @@ I pick ``magic`` as the name for this project
     .
     └── magic
 
-    2 directories, 0 files
-
 * I try cd_ again
 
   .. code-block:: shell
@@ -304,8 +273,6 @@ how to run a Python program
     .
     └── src
 
-    2 directories, 0 files
-
 * I try to run the ``magic`` program_ again
 
   .. code-block:: shell
@@ -343,8 +310,6 @@ how to make an empty file
     .
     └── src
         └── magic.py
-
-    2 directories, 1 file
 
   touch_ is a program_ that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
@@ -411,8 +376,6 @@ how to manually run tests
     │   └── magic.py
     └── tests
 
-    3 directories, 1 file
-
 * I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
   .. code-block:: shell
@@ -440,8 +403,6 @@ how to manually run tests
     └── tests
         └── magic.py
 
-    3 directories, 2 files
-
 * I run the test again
 
   .. code-block:: shell
@@ -455,7 +416,6 @@ how to manually run tests
 
     NO TESTS RAN
 
-
 =================================================================================
 RED: make it fail
 =================================================================================
@@ -468,8 +428,6 @@ RED: make it fail
       :emphasize-lines: 1
 
       code tests/magic.py
-
-    If you are on MacOS_ and using `Visual Studio Code`_, make sure you `Configure the path <https://code.visualstudio.com/docs/setup/mac#_configure-the-path-with-vs-code>`_ for the above command to work
 
     I can also open a file_ by using ``ctrl`` (Windows_/Linux_) or ``command`` (MacOS_) on the keyboard and clicking with the mouse on the name of the file_
 
@@ -572,8 +530,6 @@ how to make a Python package
     └── tests
         ├── __init__.py
         └── magic.py
-
-    3 directories, 3 files
 
 * I try to run the tests again
 
@@ -810,8 +766,6 @@ It means I can have a separate `virtual environment`_ for every project with onl
         ├── __init__.py
         ├── __pycache__
         └── test_magic.py
-
-    4 directories, 3 files
 
   it does not look like anything changed. This is because the ``.`` in front of ``.venv`` means the folder_ is hidden
 
@@ -1475,7 +1429,7 @@ how to make a shell script run as a command
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree -a -L 3
+    tree -a -L 2
 
   the terminal_ shows
 
@@ -1544,6 +1498,7 @@ The program_ should always make this structure
 .. code-block:: shell
 
   PROJECT_NAME
+  ├── requirements.txt
   ├── src
   │   └── PROJECT_NAME.py
   ├── tests
@@ -1826,7 +1781,7 @@ review
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`What is a Test Driven Development Environment?`
+* :ref:`what is a Test Driven Development Environment?`
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment>`
 * :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment>`
 * :ref:`How can I change directories?<how to change directory>`
