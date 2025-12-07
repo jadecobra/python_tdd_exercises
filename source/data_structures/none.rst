@@ -16,7 +16,15 @@ None
 
 ----
 
+In :ref:`AssertionError`, I used assertIsNone_ and assertIsNotNone_ to :ref:`test_assertion_error_w_none`, that experiment showed that
+
+* :ref:`True<test_what_is_true>` is not None_ and not equal to None_
+* :ref:`False<test_what_is_true>` is not None_ and not equal to None_
+* None_ is None_ and equal to None_
+
 None_ is used when there is no value. It is the simplest :ref:`data structure<data structures>` in Python_
+
+I use `assert methods`_ to compare None_ with the other Python_ :ref:`data structures` to see what it is and what it is not
 
 *********************************************************************************
 requirements
@@ -91,31 +99,34 @@ RED: make it fail
 GREEN: make it pass
 =================================================================================
 
-* I change the `assert method`_ to assertIsNone_, which checks if what it gets in parentheses is None_
+I change the assertIsNotNone_ to assertIsNone_, which checks if what it gets in parentheses is None_
 
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+.. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 1
 
-            self.assertIsNone(None)
+          self.assertIsNone(None)
+
+the test passes
+
+=================================================================================
+REFACTOR: make it better
+=================================================================================
+
+I add a note
+
+.. code-block:: python
+  :lineno-start: 10
+  :emphasize-lines: 1-2
+
+  # NOTES
+  # None is None
 
 
-    # NOTES
+  # Exceptions Encountered
+  # AssertionError
 
-  the test passes
-
-* I add a note
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 1-2
-
-    # NOTES
-    # None is None
-
-
-    # Exceptions Encountered
-    # AssertionError
+so far this is a repetition of :ref:`AssertionError`
 
 ----
 
@@ -151,17 +162,7 @@ the terminal_ shows :ref:`AssertionError`
 GREEN: make it pass
 =================================================================================
 
-I add a note
-
-.. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 2
-
-  # NOTES
-  # False is NOT None
-  # None is None
-
-I make the line :ref:`True<test_what_is_true>` with assertIsNotNone_
+I make the assertion_ :ref:`True<test_what_is_true>` with the `assertIsNotNone method`_
 
 .. code-block:: python
   :lineno-start: 10
@@ -174,6 +175,18 @@ the test passes
 =================================================================================
 REFACTOR: make it better
 =================================================================================
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
+
+    # NOTES
+    # False is NOT None
+    # None is None
+
+  Still a repetition of what I learned in :ref:`AssertionError`
 
 * I add another failing :ref:`assertion<AssertionError>` for the other :ref:`boolean<booleans>`
 
@@ -190,6 +203,16 @@ REFACTOR: make it better
 
     AssertionError: True is not None
 
+* I make the assertion_ :ref:`True<test_what_is_true>` with assertIsNotNone_
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 1
+
+            self.assertIsNotNone(True)
+
+  the test passes
+
 * I add a note
 
   .. code-block:: python
@@ -201,17 +224,15 @@ REFACTOR: make it better
     # False is NOT None
     # None is None
 
-* I make the line :ref:`True<test_what_is_true>` with assertIsNotNone_
+  more repetition
 
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 1
+---------------------------------------------------------------------------------
+how to test if something is an instance of a class
+---------------------------------------------------------------------------------
 
-            self.assertIsNotNone(True)
+The `unittest.TestCase class`_ has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child/instance of a :ref:`class<classes>` or not - assertIsInstance_ and assertNotIsInstance_
 
-  the test passes
-
-* The `unittest.TestCase class`_ has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child/instance of a :ref:`class<classes>` or not. I add assertNotIsInstance_
+* I add the `assertNotIsInstance method`_ to test if :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -220,7 +241,10 @@ REFACTOR: make it better
             self.assertIsNotNone(True)
             self.assertNotIsInstance(False, bool)
 
-  assertNotIsInstance_ checks if the first item (:ref:`False<test_what_is_false>`) it is given is NOT a child/instance of the second item (the :ref:`bool<booleans>` :ref:`class<classes>`). It is like asking the question ``is False NOT a child of the bool class?``. bool_ is the :ref:`class<classes>` for :ref:`booleans<booleans>`. The terminal_ shows :ref:`AssertionError`
+  - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question ``is False NOT a child of the bool class?``. Okay, this is new
+  - bool_ is the :ref:`class<classes>` for :ref:`booleans<booleans>`
+
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -228,7 +252,7 @@ REFACTOR: make it better
 
   :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
 
-* I make the statement :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item (:ref:`False<test_what_is_false>`) it is given is a child/instance of the second item (the bool_ :ref:`class<classes>`)
+* I make the assertion_ :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``is False a child of the bool class?``
 
   .. code-block:: python
     :lineno-start: 12
@@ -300,7 +324,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I change the last 2 notes I added
+* Since this is about None_, I change the last 2 notes I added
 
   .. code-block:: python
     :lineno-start: 17
@@ -309,6 +333,21 @@ REFACTOR: make it better
     # NOTES
     # None is NOT a boolean
     # None is None
+
+I know two new `assert methods`_
+
+* assertIsInstance_ to see if something is an instance of a :ref:`class<classes>`
+* assertNotIsInstance_ to see if something is NOT an instance of a :ref:`class<classes>`
+
+.. CAUTION:: the naming of the `assert methods`_ can be confusing, there is
+
+                  assertIsNotNone_
+
+  where ``Not`` comes after ``Is`` and then there is
+
+                  assertNotIsInstance_
+
+  where ``Is`` comes after ``Not``. Maybe ``assertIsNotInstance`` would have been better, since ``assertNotIsNone`` does not sound better than ``assertIsNotNone``. Naming things is its own challenge
 
 ----
 
@@ -486,7 +525,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I add one more failing line with assertIsInstance_
+* I add one more failing line with to test if None_ is an integer_ with assertIsInstance_
 
   .. code-block:: python
     :lineno-start: 22
@@ -711,7 +750,7 @@ REFACTOR: make it better
 
   the test passes
 
-* I add one more failing line with assertIsInstance_
+* I add one more failing line with the `assertIsInstance method`_
 
   .. code-block:: python
     :lineno-start: 31
@@ -726,7 +765,7 @@ REFACTOR: make it better
 
     AssertionError: None is not an instance of <class 'float'>
 
-  I make the statement :ref:`True<test_what_is_true>` with assertNotIsInstance_
+  I make the statement :ref:`True<test_what_is_true>` with the `assertNotIsInstance method`_
 
   .. code-block:: python
     :lineno-start: 25
@@ -768,7 +807,7 @@ test_is_none_a_string
 RED: make it fail
 =================================================================================
 
-I add a test to see if None_ is a string_ (anything in :ref:`quotes`)
+I add a test to see if None_ is a string_ (anything inside :ref:`quotes`)
 
 .. code-block:: python
   :lineno-start: 32
@@ -950,7 +989,7 @@ test_is_none_a_tuple
 RED: make it fail
 =================================================================================
 
-I add a test to see if None_ is a tuple_ (anything in parentheses ``()``)
+I add a test to see if None_ is a tuple_ (anything in parentheses (``()``))
 
 .. code-block:: python
   :lineno-start: 39
@@ -1028,7 +1067,7 @@ REFACTOR: make it better
 
     AssertionError: () is an instance of <class 'tuple'>
 
-  because anything in parentheses ``()`` in Python_ is a tuple_
+  because anything in parentheses (``()``) in Python_ is a tuple_
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -1055,7 +1094,7 @@ REFACTOR: make it better
 
     AssertionError: (1, 2, 3, 'n') is an instance of <class 'tuple'>
 
-  because anything in parentheses ``()`` in Python_ is a tuple_
+  because anything in parentheses (``()``) in Python_ is a tuple_
 
 * I change the `assert method`_ to make the statement :ref:`True<test_what_is_true>`
 
@@ -1126,7 +1165,7 @@ test_is_none_a_list
 RED: make it fail
 =================================================================================
 
-I add a new test for :ref:`lists`
+I add a new test to see if None_ is a :ref:`list<lists>` (anything in square brackets (``[]``))
 
 .. code-block:: python
   :lineno-start: 46
@@ -1204,7 +1243,7 @@ REFACTOR: make it better
 
     AssertionError: [] is an instance of <class 'list'>
 
-  because anything in square brackets ``[]`` in Python_ is a :ref:`list<lists>`
+  because anything in square brackets (``[]``) in Python_ is a :ref:`list<lists>`
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -1231,7 +1270,7 @@ REFACTOR: make it better
 
     AssertionError: [1, 2, 3, 'n'] is an instance of <class 'list'>
 
-  because anything in square brackets ``[]`` in Python_ is a :ref:`list<lists>`
+  because anything in square brackets (``[]``) in Python_ is a :ref:`list<lists>`
 
 * I change the `assert method`_
 
@@ -1462,7 +1501,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: {} is not None
 
-wait a minute! Python_ uses ``{}`` for sets_, it also uses them for :ref:`dictionaries` with a difference.
+wait a minute! Python_ uses ``{}`` for sets_. it also uses them for :ref:`dictionaries` with a difference.
 
 =================================================================================
 GREEN: make it pass
@@ -1511,7 +1550,7 @@ REFACTOR: make it better
 
   .. code-block:: python
     :lineno-start: 63
-    :emphasize-lines: 1
+    :emphasize-lines: 2
 
             self.assertIsNotNone({'key': 'value'})
             self.assertNotIsInstance({}, dict)
@@ -1549,7 +1588,7 @@ REFACTOR: make it better
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
-  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the key on the left from the value on the right, I can add more key-value pairs separating them with commas. sets_ do NOT have key-value pairs.
+  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right, I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas. sets_ do NOT have key-value pairs.
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -1580,6 +1619,7 @@ REFACTOR: make it better
 
   .. code-block:: python
     :lineno-start: 61
+    :emphasize-lines: 6
 
         def test_is_none_a_dictionary(self):
             self.assertIsNotNone(dict())
@@ -1596,6 +1636,8 @@ REFACTOR: make it better
 * I add the last note
 
   .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 2
 
     # NOTES
     # None is NOT a dictionary
@@ -1614,7 +1656,43 @@ REFACTOR: make it better
 review
 *********************************************************************************
 
-I ran tests to show what None_ is and what it is NOT. Would you like to :ref:`test what is True and False?<booleans>`
+I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were introduced in :ref:`AssertionError`
+
+* assertIsNone_ - which tests if the thing in parentheses is None_
+* assertIsNotNone_ - which tests if the thing in parentheses is not None_
+
+and 2 new `assert methods`_
+
+* assertIsInstance_ which checks if something is an instance of a given :ref:`class<classes>`
+* assertNotIsInstance_ which checks if something is NOT an instance of a given :ref:`class<classes>`
+
+I also showed the basic Python_ :ref:`data structures`
+
+* None_ - the simplest
+* integers_ - whole numbers, negative and positive
+* floats_ - floating point decimal numbers
+* strings_ - anything characters inside :ref:`quotes`
+* :ref:`booleans` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
+* tuples_ - anything in parentheses (``()``) separated by commas
+* :ref:`lists` - anything in square brackets (``[]``) separated by commas
+* sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+* :ref:`dictionaries` - :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``)
+
+Here are questions you can answer from the chapters covered so far
+
+* :ref:`What is None?<test_what_is_none>`
+* :ref:`Is None a boolean?<test_is_none_a_boolean>`
+* :ref:`Is None an integer?<test_is_none_an_integer>`
+* :ref:`Is None a float?<test_is_none_a_float>`
+* :ref:`Is None a string?<test_is_none_a_string>`
+* :ref:`Is None a tuple?<test_is_none_a_tuple>`
+* :ref:`Is None a list?<test_is_none_a_list>`
+* :ref:`Is None a set?<test_is_none_a_set>`
+* :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
+* :ref:`How can I test if something is None or not?<how to test if something is None>`
+* :ref:`How can I test if something is an instance of a class or not?<how to test if something is an instance of a class>`
+
+Would you like to :ref:`test what is True and False?<booleans>`
 
 ----
 

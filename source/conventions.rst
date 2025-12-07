@@ -86,14 +86,14 @@ Quotes represent strings_ and can be single, double, triple single or triple dou
 
   'Single Quotes'
 
-  """Multiline Text
+  """Text on different lines
   with
   triple double quotes
   """
 
-  '''Multiline Text
+  '''Text on different lines
   with
-  triple single quotes
+  triple double quotes
   '''
 
 .. _conventions_tuples:
@@ -102,7 +102,7 @@ Quotes represent strings_ and can be single, double, triple single or triple dou
 tuples
 *********************************************************************************
 
-A tuple_ is a sequence or container of objects_ that cannot be changed later, it is immutable and represented with parentheses/brackets for example
+A tuple_ is a sequence or container of objects_ that cannot be changed later, it is immutable (cannot be changed later) and represented with parentheses/brackets (``()``), for example
 
 .. code-block:: python
 
@@ -114,7 +114,7 @@ A tuple_ is a sequence or container of objects_ that cannot be changed later, it
 lists
 *********************************************************************************
 
-A :ref:`list/array<lists>` is a sequence or container of objects_ that can be changed after it is defined, it is mutable and represented with square brackets for example
+A :ref:`list/array<lists>` is a sequence or container of objects_ that can be changed after it is defined, it is mutable (can change later) and represented with square brackets (``[]``), for example
 
 .. code-block:: python
 
@@ -126,7 +126,7 @@ A :ref:`list/array<lists>` is a sequence or container of objects_ that can be ch
 sets
 *********************************************************************************
 
-A set_ is a container of objects_ that have no duplicates, are represented with curly braces/brackets
+A set_ is a container of objects_ that have no duplicates, and are represented with curly braces/brackets (``{}``)
 
 .. code-block:: python
 
@@ -138,7 +138,7 @@ A set_ is a container of objects_ that have no duplicates, are represented with 
 dictionaries/mappings
 *********************************************************************************
 
-:ref:`Dictionaries/Mappings<dictionaries>` are also represented with curly braces/brackets but have key/value pairs
+:ref:`Dictionaries/Mappings<dictionaries>` are also represented with curly braces/brackets (``{}``) but have :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, for example
 
 .. code-block:: python
 

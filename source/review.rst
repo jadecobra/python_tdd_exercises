@@ -6,7 +6,7 @@
 pumping python review
 #################################################################################
 
-You have made it to the end of the book, time to check how much you have learned
+You have made it to the end of the book, Here are questions you can answer from each chapter
 
 ************************************************************************************************************
 how to make a python test driven development environment review
@@ -42,9 +42,9 @@ how to make a python test driven development environment review
 * :ref:`what is the Test Driven Development cycle?<test_failure>`
 * :ref:`What is a Virtual Environment?<how to make a virtual environment>`
 
-************************************************************************************************************
+****************************************************************************************************************
 how to make a python test driven development environment on Windows without Windows Subsystem for Linux review
-************************************************************************************************************
+****************************************************************************************************************
 
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
@@ -98,6 +98,22 @@ AssertionError review
 * :ref:`How can I test if something is False?<how to test if something is False>`
 * :ref:`How can I test if something is True?<how to test if something is True>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
+
+*********************************************************************************
+None review
+*********************************************************************************
+
+* :ref:`What is None?<test_what_is_none>`
+* :ref:`Is None a boolean?<test_is_none_a_boolean>`
+* :ref:`Is None an integer?<test_is_none_an_integer>`
+* :ref:`Is None a float?<test_is_none_a_float>`
+* :ref:`Is None a string?<test_is_none_a_string>`
+* :ref:`Is None a tuple?<test_is_none_a_tuple>`
+* :ref:`Is None a list?<test_is_none_a_list>`
+* :ref:`Is None a set?<test_is_none_a_set>`
+* :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
+* :ref:`How can I test if something is None or not?<how to test if something is None>`
+* :ref:`How can I test if something is an instance of a class or not?<how to test if something is an instance of a class>`
 
 ----
 

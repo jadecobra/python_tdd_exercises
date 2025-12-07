@@ -16,10 +16,10 @@ The following chapters test Python_ basic data structures, which are a way to re
   :titlesonly:
   :maxdepth: 1
 
-  None: the simplest data structure<none>
+  None: the simplest<none>
   Booleans: there are only 2<booleans/index>
-  Lists: anything in parentheses ``()``<lists/index>
-  Dictionaries: key-value pairs in curly braces ``{}``<dictionaries>
+  Lists: anything in ``[]``<lists/index>
+  Dictionaries: key-value pairs<dictionaries>
 
 ----
 

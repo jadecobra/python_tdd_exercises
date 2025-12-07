@@ -178,13 +178,13 @@ REFACTOR: make it better
 
 * It is important to note that these 2 statements are not the same
 
-  * ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the ``==`` symbol
-  * ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is any characters in :ref:`quotes`, for example
+  - ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the ``==`` symbol
+  - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is any characters inside :ref:`quotes`, for example
 
-    - ``'characters'`` - single :ref:`quotes`
-    - ``"characters"`` - double :ref:`quotes`
-    - ``'''characters'''`` - triple single :ref:`quotes`
-    - ``"""characters"""`` - triple double :ref:`quotes`
+    * ``'single quotes'``
+    * ``'''triple single quotes'''``
+    * ``"double quotes"``
+    * ``"""triple double quotes"""``
 
   I add another statement to show this
 
