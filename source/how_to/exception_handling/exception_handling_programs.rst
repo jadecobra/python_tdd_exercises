@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-how to handle Exceptions in programs
+how to handle Exceptions (Errors) in programs
 #################################################################################
 
 .. raw:: html
@@ -541,7 +541,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  the terminal_ shows green again! I know :ref:`how to test that an Exception is raised` and :ref:`how to handle Exceptions in programs`. I am a master!!
+  the terminal_ shows green again! I know :ref:`how to test that an Exception is raised` and :ref:`how to handle Exceptions (Errors) in programs`. I am a master!!
 
 ----
 
@@ -557,7 +557,7 @@ Would you like to :ref:`test TypeError?<TypeError>`
 
 ----
 
-:ref:`Click Here to see the code from this chapter<how to handle Exceptions: tests and solutions>`
+:ref:`Click Here to see the code from this chapter<how to handle Exceptions (Errors): tests and solutions>`
 
 ----
 

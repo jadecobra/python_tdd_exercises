@@ -1,7 +1,7 @@
 .. meta::
   :trustpilot-one-time-domain-verification-id: 00471299-b9f2-45a0-a5e5-c5cfc356c9a1
   :description: Learn Test-Driven Development in Python with hands-on exercises for beginners. Solve problems, handle exceptions, and master TDD. Watch the full tutorial now!
-  :keywords: Jacob Itegboje, python test driven development tutorial for beginners, how to solve problems with python tdd, python tdd exercises and solutions, learn test driven development with python examples, python unit testing for beginners, tdd python calculator example, how to handle exceptions in python tdd, what is test driven development in python
+  :keywords: Jacob Itegboje, python test driven development tutorial for beginners, how to solve problems with python tdd, python tdd exercises and solutions, learn test driven development with python examples, python unit testing for beginners, tdd python calculator example, how to handle Exceptions (Errors) in python tdd, what is test driven development in python
 
 .. include:: /links.rst
 

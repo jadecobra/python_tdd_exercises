@@ -19,7 +19,7 @@ The tests in this chapter cover the following Exceptions_
   AttributeError
   TypeError
 
-the chapters below cover handling Exceptions_ in :ref:`tests<how to test that an Exception is raised>` and :ref:`programs<how to handle Exceptions in programs>`
+the chapters below cover handling Exceptions_ in :ref:`tests<how to test that an Exception is raised>` and :ref:`programs<how to handle Exceptions (Errors) in programs>`
 
 .. toctree::
   :maxdepth: 1

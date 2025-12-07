@@ -22,7 +22,7 @@
 - [how to make a calculator: tests and solutions](https://www.pumpingpython.com/code/code_calculator.html)
 - [classes: tests and solutions](https://www.pumpingpython.com/code/code_classes.html)
 - [data structures: Dictionaries: tests](https://www.pumpingpython.com/code/code_dictionaries.html)
-- [how to handle Exceptions: tests and solutions](https://www.pumpingpython.com/code/code_exception_handling.html)
+- [how to handle Exceptions (Errors): tests and solutions](https://www.pumpingpython.com/code/code_exception_handling.html)
 - [functions: tests and solutions](https://www.pumpingpython.com/code/code_functions.html)
 - [data structures: List Comprehensions: tests and solutions](https://www.pumpingpython.com/code/code_list_comprehensions.html)
 - [data structures: Lists: tests](https://www.pumpingpython.com/code/code_lists.html)
@@ -75,7 +75,7 @@
 ## How_to
 
 - [how to make a calculator](https://www.pumpingpython.com/how_to/calculator.html)
-- [how to handle Exceptions in programs](https://www.pumpingpython.com/how_to/exception_handling_programs.html)
+- [how to handle Exceptions (Errors) in programs](https://www.pumpingpython.com/how_to/exception_handling_programs.html)
 - [how to test that an Exception is raised](https://www.pumpingpython.com/how_to/exception_handling_tests.html)
 - [how to make a person](https://www.pumpingpython.com/how_to/make_person.html)
 - [how to make a python test driven development environment](https://www.pumpingpython.com/how_to/make_tdd_environment.html)
@@ -111,5 +111,3 @@
 ## Search.html
 
 - [Search](https://www.pumpingpython.com/search.html)
-
-

@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-how to handle Exceptions
+how to handle Exceptions (Errors)
 #################################################################################
 
 When an :ref:`error<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to stop the program, this means nothing past the line that caused the :ref:`error<errors>` runs.
@@ -16,7 +16,7 @@ What if I want the program_ to run even with errors? I might want to give messag
 
 :ref:`Exception<errors>` Handling is a way to deal with this, it allows programs to do something different when an :ref:`error<errors>` happens.
 
-These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<how to test that an Exception is raised>` and in :ref:`programs<how to handle Exceptions in programs>`
+These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<how to test that an Exception is raised>` and in :ref:`programs<how to handle Exceptions (Errors) in programs>`
 
 .. toctree::
   :titlesonly:
@@ -38,4 +38,4 @@ These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<
 
 ----
 
-:ref:`Click Here to see the code from this chapter<how to handle Exceptions: tests and solutions>`
+:ref:`Click Here to see the code from this chapter<how to handle Exceptions (Errors): tests and solutions>`

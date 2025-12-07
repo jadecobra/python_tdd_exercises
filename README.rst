@@ -60,8 +60,8 @@ howtos
 * `how to make a calculator <https://www.pumpingpython.com/how_to/calculator.html>`_
 * `how to pass values <https://www.pumpingpython.com/how_to/pass_values.html>`_
 * `how to make a person <https://www.pumpingpython.com/how_to/make_person.html>`_
-* `how to handle Exceptions in tests <https://www.pumpingpython.com/how_to/exception_handling_tests.html>`_
-* `how to handle Exceptions in programs <https://www.pumpingpython.com/how_to/exception_handling_programs.html>`_
+* `how to handle Exceptions (Errors) in tests <https://www.pumpingpython.com/how_to/exception_handling_tests.html>`_
+* `how to handle Exceptions (Errors) in programs <https://www.pumpingpython.com/how_to/exception_handling_programs.html>`_
 * `how to measure sleep duration <https://www.pumpingpython.com/how_to/sleep_duration/sleep_duration.html>`_
 
 *********************************************************************************

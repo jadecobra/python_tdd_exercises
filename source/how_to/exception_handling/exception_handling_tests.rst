@@ -944,11 +944,11 @@ I have a way to catch :ref:`Exceptions<errors>` in tests and tested the followin
 * :ref:`KeyError <test_key_error>`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-Would you like to :ref:`test handling Exceptions in programs?<how to handle Exceptions in programs>`
+Would you like to :ref:`test handling Exceptions in programs?<how to handle Exceptions (Errors) in programs>`
 
 ----
 
-:ref:`Click Here to see the code from this chapter<how to handle Exceptions: tests and solutions>`
+:ref:`Click Here to see the code from this chapter<how to handle Exceptions (Errors): tests and solutions>`
 
 ----
 
