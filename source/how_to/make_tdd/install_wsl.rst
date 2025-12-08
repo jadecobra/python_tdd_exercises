@@ -4,11 +4,11 @@
 how to install Windows Subsystem for Linux on Windows
 #################################################################################
 
-This is one way `Windows Subsystem for Linux`_ on a Windows computer so you can use Linux_
+This is one way to install `Windows Subsystem for Linux`_ on a Windows computer so you can use Linux_ on your Windows_ computer. It gives you more control, and your programming experience will be the same as mine in the book
 
 ----
 
-Make sure your computer runs `Windows 11 <https://www.microsoft.com/en-us/software-download/Windows11>`_
+Make sure your computer runs `Windows 11`_. If you cannot upgrade to `Windows 11`_, still try the steps below, if they do not work skip to :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
 
 As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/Windows/end-of-support?r=1>`_
 
