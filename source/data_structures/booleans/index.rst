@@ -1544,7 +1544,7 @@ Would you like to :ref:`test the truth table?<booleans: truth table>` It will he
 
 ----
 
-:ref:`data structures: booleans: tests`
+:ref:`Click Here to see the code I wrote in this chapter<data structures: booleans: tests>`
 
 ----
 

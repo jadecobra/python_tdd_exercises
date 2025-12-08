@@ -14,8 +14,8 @@ booleans: truth table
 
 Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with `if statements`_. For example, If I want to know if a person can vote, the conditions could be
 
-* Is the person alive
-* Is the person old enough
+* Is the person alive?
+* Is the person old enough?
 
 I can add these to a program so that when it gets information about the person, it can make a decision or return output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote"
 
@@ -57,7 +57,14 @@ requirements
     tests/test_truth_table.py:7: AssertionError
 
 * I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
+* then I change assertFalse_ to assertTrue_ to make the test pass
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
+
+            self.assertTrue(True)
+
 * I add an `import statement`_
 
   .. code-block:: python
@@ -67,7 +74,7 @@ requirements
     import unittest
     import src.truth_table
 
-* then I continue in :ref:`truth table: Nullary and Unary Operations`
+* I click on :ref:`truth table: Nullary and Unary Operations` to continue to the :ref:`next chapter<truth table: Nullary and Unary Operations>`
 
 ----
 
@@ -92,11 +99,26 @@ truth table operations
 how to run automated tests after you exit the tests
 *********************************************************************************
 
-.. code-block:: shell
+* Make sure you are in the ``pumping_python`` folder_, then `change directory` to ``truth_table``
 
-  cd truth_table
-  source .venv/bin/activate
-  pytest-watch
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd truth_table
+
+* Activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+* Run the automated tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
 
 *********************************************************************************
 how to run automated tests on Windows_ without WSL after you exit the tests
@@ -104,12 +126,27 @@ how to run automated tests on Windows_ without WSL after you exit the tests
 
 .. warning:: This is for Windows_ without `Windows Subsystem for Linux`_
 
-.. code-block:: shell
+* Make sure you are in the ``pumping_python`` folder_, then `change directory` to ``truth_table``
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
 
   cd truth_table
-  .venv/scripts/activate.ps1
-  pytest-watch
+
+* Activate the `virtual environment`_
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
+
+    .venv/scripts/activate.ps1
+
+* Run the automated tests
+
+  .. code-block:: PowerShell
+    :emphasize-lines: 1
+
+    pytest-watch
 
 ----
 
-:ref:`truth table: tests and solutions`
+:ref:`Click here for the tests and solutions from the Truth Table chapters<truth table: tests and solutions>`
