@@ -173,18 +173,11 @@ the terminal_ shows
 
   .../pumping_python
 
-because I am in the ``pumping_python`` folder_. pwd_ shows the path/address to the current folder_ I am in at the moment
+because I am in the ``pumping_python`` folder_
+
+pwd_ shows the path/address to the current folder_ I am in at the moment
 
 .. NOTE:: If you see the same name, skip to the part where I create ``parent``. If you see a different name, continue to the next step :ref:`how to change directory`.
-
-.. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    code .
-
-  a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
 =================================================================================
 how to change directory
