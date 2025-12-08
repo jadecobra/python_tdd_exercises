@@ -50,6 +50,13 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
     sudo apt update
 
+* type this to upgrade Linux_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    sudo apt full-upgrade --yes
+
 * type this in the terminal_ to install Python_
 
   .. code-block:: shell
