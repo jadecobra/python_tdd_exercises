@@ -86,7 +86,7 @@ If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`ho
     - F12
     - Alternately you can hold ``shift`` when your computer is restarting to enter ``Windows Recovery Mode`` then select ``UEFI Firmware Settings``
 
-  * In BIOS mode, 
+  * In BIOS mode select any variation of ``System Configuration`` and Enable ``Virtualization``
 
 ----
 
