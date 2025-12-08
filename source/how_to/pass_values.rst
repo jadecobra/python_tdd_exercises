@@ -136,7 +136,7 @@ GREEN: make it pass
     # NameError
     # AttributeError
 
-* I click on ``telephone.py`` in the ``src`` folder to open it in the :ref:`editor<2 editors>`, then add a name
+* I open ``telephone.py`` from the ``src`` folder to open it in the :ref:`editor<2 editors>`, then add a name
 
   .. code-block:: python
     :linenos:

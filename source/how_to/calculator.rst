@@ -173,7 +173,7 @@ GREEN: make it pass
     # NameError
     # AttributeError
 
-* then I click on ``calculator.py`` in the ``src`` folder to open it in the :ref:`editor<2 editors>`, and I type the name
+* then I open ``calculator.py`` from the ``src`` folder to open it in the :ref:`editor<2 editors>`, and I type the name
 
   .. code-block:: python
     :linenos:

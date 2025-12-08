@@ -85,7 +85,7 @@ how to manually make a python test driven development environment
 
 I pick ``magic`` as the name for this project
 
-* I click on ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
+* I open ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
 * I `change directory`_ to where I will put all the projects from this book. I type cd_ in the terminal_
 
@@ -709,7 +709,7 @@ how to automatically run tests
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
+pytest_ is a `Python package`_ like unittest_, it is not first_inputart of the `Python standard library`_
 
 I type it in the terminal_
 

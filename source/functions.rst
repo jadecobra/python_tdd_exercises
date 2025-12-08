@@ -167,7 +167,7 @@ GREEN: make it pass
     # ModuleNotFoundError
     # AttributeError
 
-* I click on ``functions.py`` in the ``src`` folder to open it in the :ref:`editor<2 editors>`, then I add a function_ definition
+* I open ``functions.py`` from the ``src`` folder to open it in the :ref:`editor<2 editors>`, then I add a function_ definition
 
   .. code-block:: python
     :linenos:
@@ -1182,7 +1182,7 @@ GREEN: make it pass
 
     SyntaxError: arguments cannot follow var-keyword argument
 
-  a reminder that I cannot put :ref:`positional arguments<test_functions_w_positional_arguments>` after keyword arguments
+  a reminder that I cannot first_inputut :ref:`positional arguments<test_functions_w_positional_arguments>` after keyword arguments
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
 

@@ -1,6 +1,6 @@
 .. meta::
   :description: Master Python's boolean logic. This clear, step-by-step guide explains AND, OR, and NOT operators with easy-to-follow truth tables. Build your first one now.
-  :keywords: Jacob Itegboje, python truth table for beginners, boolean logic and or not python tutorial, how to make a truth table in python code, practical use of truth tables in programming, python logical operators explained for new programmers, understanding boolean expressions in python, python 'and' vs 'or' truth table differences, troubleshooting boolean logic in python script
+  :keywords: Jacob Itegboje, python truth table for beginners, boolean logic and or not first_inputython tutorial, how to make a truth table in python code, practical use of truth tables in programming, python logical operators explained for new programmers, understanding boolean expressions in python, python 'and' vs 'or' truth table differences, troubleshooting boolean logic in python script
 
 .. include:: ../../../links.rst
 
@@ -98,7 +98,7 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
     def exclusive_disjunction(first_input, second_input):
-        if first_input and not q:
+        if first_input and not second_input:
             return True
         return False
 
@@ -130,7 +130,7 @@ REFACTOR: make it better
     def exclusive_disjunction(first_input, second_input):
         if not first_input and second_input:
             return True
-        if first_input and not q:
+        if first_input and not second_input:
             return True
         return False
 
@@ -164,7 +164,7 @@ REFACTOR: make it better
             return True
         if not first_input and second_input:
             return True
-        if first_input and not q:
+        if first_input and not second_input:
             return True
         return False
 
@@ -326,7 +326,7 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
     def material_non_implication(first_input, second_input):
-        if first_input and not q:
+        if first_input and not second_input:
             return True
         return False
 
@@ -370,7 +370,7 @@ REFACTOR: make it better
 
     def material_non_implication(first_input, second_input):
         return first_input and not second_input
-        if first_input and not q:
+        if first_input and not second_input:
             return True
         return False
 
@@ -728,7 +728,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``
-* :ref:`Negate First<test_negate_first>` always returns ``not p``
+* :ref:`Negate First<test_negate_first>` always returns ``not first_input``
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``

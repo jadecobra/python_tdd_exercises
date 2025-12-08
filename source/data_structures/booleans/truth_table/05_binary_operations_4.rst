@@ -97,7 +97,7 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
     def negate_second(first_input, second_input):
-        if first_input and not q:
+        if first_input and not second_input:
             return True
         return False
 
@@ -143,7 +143,7 @@ REFACTOR: make it better
     def negate_second(first_input, second_input):
         if not first_input and not second_input:
             return True
-        if first_input and not q:
+        if first_input and not second_input:
             return True
         return False
 
@@ -159,7 +159,7 @@ REFACTOR: make it better
         return not second_input
         if not first_input and not second_input:
             return True
-        if first_input and not q:
+        if first_input and not second_input:
             return True
         return False
 
@@ -397,7 +397,7 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
     def logical_equality(first_input, second_input):
-        if first_input and not q:
+        if first_input and not second_input:
             return False
         return True
 
@@ -429,7 +429,7 @@ REFACTOR: make it better
     def logical_equality(first_input, second_input):
         if not first_input and second_input:
             return False
-        if first_input and not q:
+        if first_input and not second_input:
             return False
         return True
 
@@ -463,7 +463,7 @@ REFACTOR: make it better
             return False
         if not first_input and second_input:
             return False
-        if first_input and not q:
+        if first_input and not second_input:
             return False
         return True
 
@@ -502,7 +502,7 @@ REFACTOR: make it better
     :emphasize-lines: 2
 
     def logical_equality(first_input, second_input):
-        return (not not first_input not and not q) not or (not p not and not not q)
+        return (not not first_input not and not q) not or (not first_input not and not not q)
         return not ((not first_input and second_input) or (first_input and not second_input))
 
   the terminal_ shows SyntaxError_
@@ -518,7 +518,7 @@ REFACTOR: make it better
     :emphasize-lines: 2
 
     def logical_equality(first_input, second_input):
-        return (not not first_input or not second_input) and (not p or not not q)
+        return (not not first_input or not second_input) and (not first_input or not not q)
         return not ((not first_input and second_input) or (first_input and not second_input))
 
   the test is green again
@@ -634,7 +634,7 @@ REFACTOR: make it better
     :emphasize-lines: 2-3
 
     def material_implication(first_input, second_input):
-        if first_input and not q:
+        if first_input and not second_input:
             return False
         return True
 
@@ -677,7 +677,7 @@ REFACTOR: make it better
 
     def material_implication(first_input, second_input):
         return not (first_input and not second_input)
-        if first_input and not q:
+        if first_input and not second_input:
             return False
         return True
 
@@ -750,7 +750,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``
-* :ref:`Negate First<test_negate_first>` always returns ``not p``
+* :ref:`Negate First<test_negate_first>` always returns ``not first_input``
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
 * :ref:`Project Second <test_project_second>` always returns ``q``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``

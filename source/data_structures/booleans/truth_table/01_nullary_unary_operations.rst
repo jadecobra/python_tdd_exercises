@@ -18,35 +18,7 @@ truth table: Nullary and Unary Operations
 requirements
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``truth_table`` as the name of the project
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh truth_table
-
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
-
-    .. code-block:: python
-
-      ./makePythonTdd.ps1 truth_table
-
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    E       AssertionError: True is not false
-
-    tests/test_truth_table.py:7: AssertionError
-
-* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
-
-            self.assertFalse(False)
+:ref:`booleans: truth table`
 
 ----
 
@@ -59,17 +31,19 @@ There are 2 Nullary operations, they do not take input and always return the sam
 * :ref:`Logical True<test_logical_true>`
 * :ref:`Logical False<test_logical_false>`
 
+=================================================================================
 test_logical_true
-#################################################################################
+=================================================================================
 
+---------------------------------------------------------------------------------
 RED: make it fail
 ---------------------------------------------------------------------------------
 
-I change the text in ``test_truth_table.py``
+I change the :ref:`class<classes>` and :ref:`method<functions>` in ``test_truth_table.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 2, 5, 7-8
+  :emphasize-lines: 5, 7-8
 
   import unittest
   import src.truth_table
@@ -89,6 +63,9 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_true'
 
+I have not added a definition for ``logical_true`` to ``truth_table.py`` in the ``src`` folder_
+
+---------------------------------------------------------------------------------
 GREEN: make it pass
 ---------------------------------------------------------------------------------
 
@@ -102,7 +79,7 @@ GREEN: make it pass
     # AssertionError
     # AttributeError
 
-* I click on ``truth_table.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>`, then I add a :ref:`function<functions>`
+* I open ``truth_table.py`` from the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a :ref:`function<functions>`
 
   .. code-block:: python
     :linenos:
@@ -128,13 +105,19 @@ GREEN: make it pass
 
   the test passes
 
-test_logical_false
-#################################################################################
+* Adding the ``logical_true`` :ref:`function<functions>` to ``truth_table.py`` solved the :ref:`AttributeError`
+* ``logical_true`` always returns :ref:`True<test_what_is_true>`
+* ``logical_true`` does not take any input
 
+=================================================================================
+test_logical_false
+=================================================================================
+
+---------------------------------------------------------------------------------
 RED: make it fail
 ---------------------------------------------------------------------------------
 
-I add another test to ``test_truth_table.py``
+I add another test in ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 7
@@ -155,10 +138,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_true'?
 
+I have not added a definition for ``logical_true`` to ``truth_table.py``
+
+---------------------------------------------------------------------------------
 GREEN: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a :ref:`function<functions>` definition to ``truth_table.py``
+* I add a :ref:`function<functions>` definition in ``truth_table.py``
 
   .. code-block:: python
     :linenos:
@@ -199,9 +185,11 @@ There are 2 unary operations, they each take one input
 * :ref:`Logical Identity<test_logical_identity>`
 * :ref:`Logical Negation<test_logical_negation>`
 
+=================================================================================
 test_logical_identity
-#################################################################################
+=================================================================================
 
+---------------------------------------------------------------------------------
 RED: make it fail
 ---------------------------------------------------------------------------------
 
@@ -229,6 +217,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_identity'
 
+---------------------------------------------------------------------------------
 GREEN: make it pass
 ---------------------------------------------------------------------------------
 
@@ -288,6 +277,7 @@ GREEN: make it pass
 
   the test passes
 
+---------------------------------------------------------------------------------
 REFACTOR: make it better
 ---------------------------------------------------------------------------------
 
@@ -337,9 +327,11 @@ REFACTOR: make it better
 
 ----
 
+=================================================================================
 test_logical_negation
-#################################################################################
+=================================================================================
 
+---------------------------------------------------------------------------------
 RED: make it fail
 ---------------------------------------------------------------------------------
 
@@ -365,6 +357,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_negation'
 
+---------------------------------------------------------------------------------
 GREEN: make it pass
 ---------------------------------------------------------------------------------
 
@@ -398,6 +391,7 @@ I change the `return statement`_
 
 the test passes
 
+---------------------------------------------------------------------------------
 REFACTOR: make it better
 ---------------------------------------------------------------------------------
 
@@ -496,6 +490,11 @@ for :ref:`Unary operations<Unary Operations>`
 
 * :ref:`test_logical_identity`
 * :ref:`test_logical_negation`
+
+Here are questions you can answer after going through this chapter
+
+:ref:`What is a function that returns its input as output?<test_logical_identity>`
+:ref:`What is a function that returns the negation of its input?<test_logical_negation>`
 
 Would you like to :ref:`test binary operations?<truth table: Binary Operations part 1>`
 

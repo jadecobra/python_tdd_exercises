@@ -87,7 +87,7 @@ the terminal_ shows :ref:`AttributeError`
 GREEN: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition to ``truth_table.py``
+I add a :ref:`function<functions>` definition in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 13

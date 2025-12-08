@@ -19,7 +19,9 @@ Sometimes I want programs to make decisions based on inputs or conditions, and c
 
 I can add these to a program so that when it gets information about the person, it can make a decision or return output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote"
 
-The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics
+The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics and the assertFalse_ and assertTrue_ :ref:`methods<functions>` from :ref:`AssertionError`, :ref:`None` and :ref:`booleans`.
+
+All operations from the `Truth Table`_ always result in :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 *********************************************************************************
 preview
@@ -124,14 +126,14 @@ how to run automated tests after you exit the tests
 how to run automated tests on Windows_ without WSL after you exit the tests
 *********************************************************************************
 
-.. warning:: This is for Windows_ without `Windows Subsystem for Linux`_
+.. warning:: This is ONLY for Windows_ without `Windows Subsystem for Linux`_, if you have MacOS_ or successfully installed `Windows Subsystem for Linux`_ on a Windows_ computer, skip this part
 
 * Make sure you are in the ``pumping_python`` folder_, then `change directory` to ``truth_table``
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-  cd truth_table
+    cd truth_table
 
 * Activate the `virtual environment`_
 

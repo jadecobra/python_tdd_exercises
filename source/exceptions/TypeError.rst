@@ -120,7 +120,7 @@ RED: make it fail
 GREEN: make it pass
 =================================================================================
 
-* I click on ``type_error.py`` in the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
+* I open ``type_error.py`` from the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
 
   .. code-block:: python
     :linenos:

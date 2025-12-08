@@ -130,6 +130,14 @@ booleans review
 * :ref:`Is a set False or True?<is a set False or True?>`
 * :ref:`Is a dictionary False or True?<is a dictionary False or True?>`
 
+*********************************************************************************
+testing
+*********************************************************************************
+
+:ref:`How can I run automated tests after I exit them in the terminal?<how to run automated tests after you exit the tests>`
+:ref:`How can I run automated tests after I exit them in the terminal on Windows without Windows Subsystem for Linux?<how to run automated tests on Windows_ without WSL after you exit the tests>`
+
+
 ----
 
 .. raw:: html

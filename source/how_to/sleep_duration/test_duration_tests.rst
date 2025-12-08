@@ -306,7 +306,7 @@ GREEN: make it pass
 
   .. code-block:: shell
 
-    SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+    SyntaxError: leading zeros in decimal integer literals are not first_inputermitted; use an 0o prefix for octal integers
 
   Python_ does not know where the string ends or begins because the message has double quotes inside double quotes. I add the error to the list of :ref:`Exceptions<errors>`
 
