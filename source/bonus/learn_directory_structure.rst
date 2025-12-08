@@ -1468,7 +1468,7 @@ how to use directory relationships
     ├── another_grandchild_of_parent
     └── cousin_of_child_of_child
 
-  1 directory, 3 files
+    1 directory, 3 files
 
 * I can use the same thing to `change directory`_ to ``child_of_sibling_of_child`` from ``child_of_child``
 

@@ -890,6 +890,10 @@ REFACTOR: make it better
 * I move the line to ``test_what_is_true``
 
   .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 10
+
+            self.assertFalse(str())
 
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
@@ -936,7 +940,7 @@ is a tuple False or True?
 RED: make it fail
 =================================================================================
 
-I add a line to see if a tuple_ (anything in parentheses (``()``)) is True_
+I add a line to ``test_what_is_true`` to see if a tuple_ (anything in parentheses (``()``)) is True_
 
 .. code-block:: python
   :lineno-start: 14
@@ -992,17 +996,19 @@ GREEN: make it pass
             self.assertFalse(str())
             self.assertFalse(tuple())
 
+        def test_what_is_true(self):
+
 =================================================================================
 REFACTOR: make it better
 =================================================================================
 
-* I add another line to ``test_what_is_false``
+* I add another line to ``test_what_is_false`` to see if a tuple_ with things is False_
 
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 2
 
-            self.assertTrue(tuple())
+            self.assertFalse(tuple())
             self.assertFalse((1, 2, 3, 'n'))
 
   the terminal_ shows :ref:`AssertionError`
@@ -1011,11 +1017,13 @@ REFACTOR: make it better
 
     AssertionError: (1, 2, 3, 'n') is not false
 
-  I change the :ref:`method<functions>`
+  a tuple_ with things is NOT False_
+
+* I change the :ref:`method<functions>`
 
   .. code-block:: python
     :lineno-start: 14
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
             self.assertTrue((1, 2, 3, 'n'))
 
@@ -1024,10 +1032,9 @@ REFACTOR: make it better
 * I move the line to ``test_what_is_true``
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 12
+    :lineno-start: 13
+    :emphasize-lines: 11
 
-            self.assertFalse(str())
             self.assertFalse(tuple())
 
         def test_what_is_true(self):
@@ -1075,13 +1082,12 @@ is a list False or True?
 RED: make it fail
 =================================================================================
 
-I add a line to test if a :ref:`list<lists>` (anything in square brackets (``[]``)) is False_ or True_
+I add a line to test if a :ref:`list<lists>` (anything in square brackets (``[]``)) is True_
 
 .. code-block:: python
-  :lineno-start: 22
-  :emphasize-lines: 3
+  :lineno-start: 23
+  :emphasize-lines: 2
 
-      self.assertTrue('text')
       self.assertTrue((1, 2, 3, 'n'))
       self.assertTrue(list())
 
@@ -1091,7 +1097,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: [] is not true
 
-the empty :ref:`list<lists>` is not True_
+the empty :ref:`list<lists>` is NOT True_
 
 =================================================================================
 GREEN: make it pass
@@ -1115,13 +1121,12 @@ GREEN: make it pass
             self.assertFalse(list())
 
         def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
 
 =================================================================================
 REFACTOR: make it better
 =================================================================================
 
-* I add another line to ``test_what_is_false``
+* I add another line to ``test_what_is_false`` to see if a :ref:`list<lists>` with things is False_
 
   .. code-block:: python
     :lineno-start: 14
