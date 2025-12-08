@@ -68,7 +68,7 @@ test_what_is_false
 RED: make it fail
 =================================================================================
 
-* I change ``test_failure`` to ``test_what_is_false`` to check if False_ is a child of bool_
+* I change ``test_failure`` to ``test_what_is_false``, then use the `assertNotIsInstance method`_ from :ref:`testing None<None>` to check if False_ is a child/instance of the bool_ :ref:`class<classes>` expecting a failure
 
   .. code-block:: python
     :linenos:
@@ -95,10 +95,9 @@ GREEN: make it pass
 I change assertNotIsInstance_ to assertIsInstance_
 
 .. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 2
+  :lineno-start: 7
+  :emphasize-lines: 1
 
-      def test_what_is_false(self):
           self.assertIsInstance(False, bool)
 
 the test passes and I add a note
@@ -112,7 +111,8 @@ the test passes and I add a note
 
 
   # Exceptions Encountered
-  # AssertionError
+
+so far this is going over what I already know from :ref:`testing None<None>`
 
 ----
 
@@ -120,12 +120,13 @@ the test passes and I add a note
 test_what_is_true
 *********************************************************************************
 
+I do the same thing with True_
+
 =================================================================================
 RED: make it fail
 =================================================================================
 
-
-I add another test
+I add another failing test
 
 .. code-block:: python
   :lineno-start: 6
@@ -137,6 +138,9 @@ I add another test
       def test_what_is_true(self):
           self.assertNotIsInstance(True, bool)
 
+
+  # NOTES
+
 the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: shell
@@ -147,13 +151,12 @@ the terminal_ shows :ref:`AssertionError`
 GREEN: make it pass
 =================================================================================
 
-* I change the :ref:`method<functions>`
+* I change the `assert method`_
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 2
+    :lineno-start: 10
+    :emphasize-lines: 1
 
-        def test_what_is_true(self):
             self.assertIsInstance(True, bool)
 
   the test passes
@@ -170,13 +173,14 @@ GREEN: make it pass
 
 
     # Exceptions Encountered
-    # AssertionError
 
 ----
 
 *********************************************************************************
 REFACTOR: make it better
 *********************************************************************************
+
+There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<functions>` to test which of the :ref:`basic data structures<data structures>` covered so far - integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
 
 * I add a failing line to ``test_what_is_true``
 
@@ -188,11 +192,26 @@ REFACTOR: make it better
             self.assertIsInstance(True, bool)
             self.assertTrue(False)
 
+
+    # NOTES
+
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: False is not true
+
+* I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertFalse(False)
+
+  the test passes
 
 * I add a note
 
@@ -209,19 +228,7 @@ REFACTOR: make it better
     # Exceptions Encountered
     # AssertionError
 
-* I change assertTrue_ to assertFalse_
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertFalse(False)
-
-  the test passes
-
-* I move the line to the from the ``test_what_is_true`` to the ``test_what_is_false`` :ref:`method<functions>`
+* I move the line from ``test_what_is_true`` to the ``test_what_is_false`` :ref:`method<functions>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -233,6 +240,8 @@ REFACTOR: make it better
 
       def test_what_is_true(self):
           self.assertIsInstance(True, bool)
+
+  .. TIP:: You do not need to copy and paste to move a line. If you are using `Visual Studio Code`_ you can use ``alt`` (Windows_/Linux_) or ``option`` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
 
 * I add a note
 
@@ -248,7 +257,6 @@ REFACTOR: make it better
 
 
     # Exceptions Encountered
-    # AssertionError
 
 * I add a failing line to ``test_what_is_false``
 
@@ -267,6 +275,19 @@ REFACTOR: make it better
 
     AssertionError: True is not false
 
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertTrue(True)
+
+  the test passes
+
 * I add a note
 
   .. code-block:: python
@@ -282,20 +303,6 @@ REFACTOR: make it better
 
 
     # Exceptions Encountered
-    # AssertionError
-
-* I change assertFalse_ to assertTrue_
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 4
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
-            self.assertTrue(True)
-
-  the test passes
 
 * I move the line from ``test_what_is_false`` to the ``test_what_is_true`` :ref:`method<functions>`
 
@@ -311,7 +318,7 @@ REFACTOR: make it better
             self.assertIsInstance(True, bool)
             self.assertTrue(True)
 
-  then I add another note
+* I add another note
 
   .. code-block:: python
     :lineno-start: 15
@@ -330,7 +337,7 @@ REFACTOR: make it better
     # Exceptions Encountered
     # AssertionError
 
-I want to test the other Python_ basic data types_ to see if any of them are False_ or True_
+All of this is still a repetition of what I did in :ref:`AssertionError`. Next up, I test the other Python_ basic data types_ to see which of are False_ or True_
 
 * is :ref:`None` False_ or True_?
 * is an integer_ False_ or True_?
@@ -352,7 +359,7 @@ RED: make it fail
 =================================================================================
 
 
-I add a line
+I add a line in ``test_what_is_true`` to test if :ref:`None` is True_
 
 .. code-block:: python
   :lineno-start: 10
@@ -405,7 +412,7 @@ I move the line from ``test_what_is_true`` to ``test_what_is_false``
 I add a note
 
 .. code-block:: python
-  :lineno-start: 15
+  :lineno-start: 16
   :emphasize-lines: 5
 
 
@@ -420,7 +427,8 @@ I add a note
 
 
   # Exceptions Encountered
-  # AssertionError
+
+:ref:`None` is False_ though I learned in :ref:`test_assertion_error_w_false` that False_ is not :ref:`None`
 
 ----
 
@@ -433,17 +441,19 @@ RED: make it fail
 =================================================================================
 
 
-I add a failing line to see if an integer_ is False_ or True_
+I add a failing line to see if an integer_ is False_
 
 .. code-block:: python
   :lineno-start: 6
   :emphasize-lines: 5
 
-  def test_what_is_false(self):
-      self.assertIsInstance(False, bool)
-      self.assertFalse(False)
-      self.assertFalse(None)
-      self.assertFalse(-1)
+      def test_what_is_false(self):
+          self.assertIsInstance(False, bool)
+          self.assertFalse(False)
+          self.assertFalse(None)
+          self.assertFalse(-1)
+
+      def test_what_is_true(self):
 
 the terminal_ shows :ref:`AssertionError`
 

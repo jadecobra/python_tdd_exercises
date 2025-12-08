@@ -8,7 +8,7 @@ data structures
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=D9RB6h8rSFPCseER&amp;list=PL5lANtH-CRODOaNWHFCcddzYhOzvjcWIO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Programming involves taking input and doing something with it to give back output. The input and output are called data.
+Programming involves taking some information and doing something with the information to give back information. The input and output are called data.
 
 The following chapters test Python_ basic data structures, which are a way to represent information.
 
@@ -23,4 +23,4 @@ The following chapters test Python_ basic data structures, which are a way to re
 
 ----
 
-:ref:`Would you like to test None?<None>`
+you have seen how to use :ref:`assertions<AssertionError>`, would you like to :ref:`test None?<None>`

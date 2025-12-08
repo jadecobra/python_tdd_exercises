@@ -1399,7 +1399,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I test if something is True?<how to test if something is True>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 
-Next up I use `assert methods`_ to test :ref:`Python's data structures<data structures>`, would you like to :ref:`test None?<None>`, it is the simplest :ref:`data structure<data structures>`
+you know :ref:`how to make a test driven development environment`, would you like to use the `assert methods`_ from this chapter to :ref:`test Python's data structures?<data structures>`
 
 ----
 

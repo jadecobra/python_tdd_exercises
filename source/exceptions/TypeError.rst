@@ -1023,7 +1023,7 @@ REFACTOR: make it better
             with self.assertRaises(TypeError):
                 src.calculator.subtract(self.random_x, None)
 
-* I have the same :ref:`exception handler<how to use try...except...else>` in both :ref:`functions` in ``calculator.py``. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I can write a :ref:`function` that handles TypeError_. The problem is how it takes care of the lines that change, that is
+* I have the same :ref:`exception handler<how to use try...except...else>` in both :ref:`functions` in ``calculator.py``. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I can write a :ref:`function<functions>` that handles TypeError_. The problem is how it takes care of the lines that change, that is
 
   - ``result = input_1 + input_2``
   - ``result = input_1 / input_2``

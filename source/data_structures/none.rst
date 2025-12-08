@@ -1694,7 +1694,7 @@ Here are questions you can answer from the chapters covered so far
 * :ref:`How can I test if something is None or not?<how to test if something is None>`
 * :ref:`How can I test if something is an instance of a class or not?<how to test if something is an instance of a class>`
 
-Would you like to :ref:`test what is True and False?<booleans>`
+You have :ref:`tested AssertionError<AssertionError>`, would you like to :ref:`test what is True and False?<booleans>`
 
 ----
 
