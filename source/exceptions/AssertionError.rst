@@ -16,6 +16,21 @@ AssertionError
 
 ----
 
+I can use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program_ behaves, for example when it is given inputs.
+
+Assertions_ can help catch things that break passing tests when I add new lines of code. They also help me answer 2 questions
+
+* what is the same?
+* what is different?
+
+The difference between my expectations (tests and ideas) and reality (what happens when the program_ runs), tells me what to change to make them match. The closer my program_ is to reality, the better.
+
+Here are the tests I have at the end of the chapter
+
+.. literalinclude:: ../../code/test_assertion_error.py
+  :language: python
+  :linenos:
+
 *********************************************************************************
 requirements
 *********************************************************************************
@@ -241,15 +256,6 @@ which is like this `assertion`_
   assert True is False
 
 I think of an `assert statement`_ as a command to the computer saying "DO NOT CONTINUE, UNLESS THIS STATEMENT IS TRUE". The statement above can be thought of as "DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
-
-I can use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program_ behaves, for example when it is given inputs.
-
-Assertions_ can help catch things that break passing tests when I add new lines of code. They also help me answer 2 questions
-
-* what is the same?
-* what is different?
-
-The difference between my expectations (tests and ideas) and reality (what happens when the program_ runs), tells me what to change to make them match. The closer my program_ is to reality, the better.
 
 ----
 

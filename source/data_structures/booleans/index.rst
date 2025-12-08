@@ -358,7 +358,6 @@ is None False or True?
 RED: make it fail
 =================================================================================
 
-
 I add a line in ``test_what_is_true`` to test if :ref:`None` is True_
 
 .. code-block:: python
@@ -440,8 +439,7 @@ is an integer False or True?
 RED: make it fail
 =================================================================================
 
-
-I add a failing line to see if an integer_ is False_
+I add a failing line ``test_what_is_false`` to see if an integer_ (a whole number) is False_
 
 .. code-block:: python
   :lineno-start: 6
@@ -495,7 +493,9 @@ REFACTOR: make it better
             self.assertTrue(True)
             self.assertTrue(-1)
 
-* I add a new failing line to ``test_what_is_true``
+  I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``. Negative integers_ are True_ in Python_
+
+* I add a new failing line to ``test_what_is_true`` to see if ``0`` is True_
 
   .. code-block:: python
     :lineno-start: 14
@@ -533,7 +533,9 @@ REFACTOR: make it better
 
         def test_what_is_true(self):
 
-* I add another failing line to ``test_what_is_false``
+  ``0`` is False_ in Python_
+
+* I add another failing line to ``test_what_is_false`` to see if ``1`` is False
 
   .. code-block:: python
     :lineno-start: 10
@@ -575,6 +577,8 @@ REFACTOR: make it better
             self.assertTrue(-1)
             self.assertTrue(1)
 
+  I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``. Positive and negative integers_ are True_ in Python_
+
 * I add notes
 
   .. code-block:: python
@@ -606,17 +610,16 @@ is a float False or True?
 RED: make it fail
 =================================================================================
 
-I add a line to test if floats_ are True_ or False_ in ``test_what_is_false``
+I add a line to test if floats_ (floating point decimal numbers) are False_ in ``test_what_is_false``
 
 .. code-block:: python
   :lineno-start: 10
   :emphasize-lines: 2
 
-            self.assertFalse(0)
-            self.assertFalse(-0.1)
+          self.assertFalse(0)
+          self.assertFalse(-0.1)
 
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
+      def test_what_is_true(self):
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -644,16 +647,18 @@ GREEN: make it pass
     :lineno-start: 14
     :emphasize-lines: 4
 
-          self.assertTrue(True)
-          self.assertTrue(-1)
-          self.assertTrue(1)
-          self.assertTrue(-0.1)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(1)
+            self.assertTrue(-0.1)
+
+  I use ``-0.1`` for all the floating point numbers that are smaller than ``0.0``. Negative floats_ are True_ in Python_
 
 =================================================================================
 REFACTOR: make it better
 =================================================================================
 
-* I add another failing line to ``test_what_is_true``
+* I add another failing line to ``test_what_is_true`` to see if ``0.0`` is True_
 
   .. code-block:: python
     :lineno-start: 17
@@ -693,7 +698,9 @@ REFACTOR: make it better
 
         def test_what_is_true(self):
 
-* I add another line to ``test_what_is_false``
+  ``0.0`` is False_ in Python_
+
+* I add another line to ``test_what_is_false`` to see if ``0.1`` is False_ in Python_
 
   .. code-block:: python
     :lineno-start: 11
@@ -705,14 +712,13 @@ REFACTOR: make it better
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
 
-
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
     AssertionError: 0.1 is not false
 
-  when I change the :ref:`method<functions>`
+* I change the :ref:`method<functions>`
 
   .. code-block:: python
 
@@ -738,6 +744,8 @@ REFACTOR: make it better
 
 
     # NOTES
+
+  I use ``0.1`` for all the floating point numbers that are bigger than ``0.0``. Positive and negative floats_ are also True_ in Python_
 
 * I add notes
 
@@ -777,7 +785,6 @@ REFACTOR: make it better
 
 
     # Exceptions Encountered
-    # AssertionError
 
 -----
 
@@ -789,7 +796,7 @@ is a string False or True?
 RED: make it fail
 =================================================================================
 
-I add a failing line to ``test_what_is_true`` to test if a string_ is False_ or True_
+I add a failing line to ``test_what_is_true`` to test if a string_ (anything in :ref:`quotes`) is True_
 
 .. code-block:: python
   :lineno-start: 13
@@ -813,7 +820,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: '' is not true
 
-the empty string_ is not True_
+the empty string_ ('') is not True_
 
 =================================================================================
 GREEN: make it pass
@@ -843,7 +850,8 @@ REFACTOR: make it better
             self.assertTrue(str())
 
         def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
+
+  the empty string_ ('') is not False_
 
 * I add a failing line to ``test_what_is_false``
 
@@ -920,7 +928,7 @@ is a tuple False or True?
 RED: make it fail
 =================================================================================
 
-I add a line to see if a tuple_ (anything in parentheses) is False_ or True_
+I add a line to see if a tuple_ (anything in parentheses (``()``)) is True_
 
 .. code-block:: python
   :lineno-start: 14

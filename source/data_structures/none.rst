@@ -461,7 +461,7 @@ REFACTOR: make it better
 
     AssertionError: -1 is an instance of <class 'int'>
 
-  I use ``-1`` for all the integers_ that are smaller than ``0``
+  I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
 
 * I make the line :ref:`True<test_what_is_true>` with assertIsInstance_
 
@@ -515,7 +515,7 @@ REFACTOR: make it better
 
     AssertionError: 1 is an instance of <class 'int'>
 
-  I use ``1`` for all the integers_ that are bigger than ``0``
+  I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``
 
 * I make the failing line :ref:`True<test_what_is_true>` with assertIsInstance_
 
