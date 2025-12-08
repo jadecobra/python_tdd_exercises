@@ -36,7 +36,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
     :width: 600
     :alt: Debian in Microsoft Store
 
-  .. TIP:: You can use any Linux Distribution you want, `Windows Subsystem for Linux`_ installs Ubuntu by default
+  .. TIP:: You can use any Linux Distribution you want, `Windows Subsystem for Linux`_ installs Ubuntu_ by default
 
 * Click ``Get`` to install
 

@@ -244,6 +244,7 @@
 .. _Test Driven Development by Example: https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530/?_encoding=UTF8&pd_rd_w=dbNYL&content-id=amzn1.sym.579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_p=579192ca-1482-4409-abe7-9e14f17ac827&pf_rd_r=133-9769820-0728336&pd_rd_wg=bMVBp&pd_rd_r=c84a5de8-ec36-4bd1-9196-8fa05de41794&ref_=aufs_ap_sc_dsk
 .. _The Abstraction Principle: https://grokipedia.com/page/Abstraction_principle_(computer_programming)
 .. _The Do Not Repeat Yourself (DRY) Principle: `remove duplication`_
+.. _Ubuntu: https://ubuntu.com/
 .. _Windows: https://www.microsoft.com/en-us/Windows
 .. _Windows 11: https://www.microsoft.com/en-us/software-download/Windows11
 .. _Windows Subsystem for Linux: https://learn.microsoft.com/en-us/Windows/wsl/install

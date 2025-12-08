@@ -12,9 +12,24 @@ booleans: truth table
 
 ----
 
-Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with `if statements`_.
+Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with `if statements`_. For example, If I want to know if a person can vote, the conditions could be
 
-These are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics
+* Is the person alive
+* Is the person old enough
+
+I can add these to a program so that when it gets information about the person, it can make a decision or return output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote"
+
+The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have at the end of the chapters
+
+.. literalinclude:: ../../../code/tests/test_truth_table.py
+  :language: python
+  :linenos:
 
 *********************************************************************************
 requirements
