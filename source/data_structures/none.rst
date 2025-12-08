@@ -1689,7 +1689,7 @@ I also showed the basic Python_ :ref:`data structures`
 * sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 * :ref:`dictionaries` - :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``)
 
-Here are questions you can answer from the chapters covered so far
+Here are questions you can answer after going through this chapter
 
 * :ref:`What is None?<test_what_is_none>`
 * :ref:`Is None a boolean?<test_is_none_a_boolean>`

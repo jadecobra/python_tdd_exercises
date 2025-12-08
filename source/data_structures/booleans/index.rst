@@ -1527,6 +1527,19 @@ From the tests I can see that in Python_
 
 these things come in handy when I write :ref:`conditions<truth table operations>` in programs_, because I can make decisions on whether the :ref:`data<data structures>` is empty or has something in it
 
+Here are the questions you can answer after going through this chapter
+
+* :ref:`What is False?<test_what_is_false>`
+* :ref:`What is True?<test_what_is_true>`
+* :ref:`Is None False or True?<is None False or True?>`
+* :ref:`Is an integer False or True?<is an integer False or True?>`
+* :ref:`Is a float False or True?<is a float False or True?>`
+* :ref:`Is a string False or True?<is a string False or True?>`
+* :ref:`Is a tuple False or True?<is a tuple False or True?>`
+* :ref:`Is a list False or True?<is a list False or True?>`
+* :ref:`Is a set False or True?<is a set False or True?>`
+* :ref:`Is a dictionary False or True?<is a dictionary False or True?>`
+
 Would you like to :ref:`test the truth table?<booleans: truth table>` It will help you understand writing programs_ that can make decisions based on :ref:`conditions<booleans: truth table>`
 
 ----

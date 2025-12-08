@@ -115,6 +115,21 @@ None review
 * :ref:`How can I test if something is None or not?<how to test if something is None>`
 * :ref:`How can I test if something is an instance of a class or not?<how to test if something is an instance of a class>`
 
+*********************************************************************************
+booleans review
+*********************************************************************************
+
+* :ref:`What is False?<test_what_is_false>`
+* :ref:`What is True?<test_what_is_true>`
+* :ref:`Is None False or True?<is None False or True?>`
+* :ref:`Is an integer False or True?<is an integer False or True?>`
+* :ref:`Is a float False or True?<is a float False or True?>`
+* :ref:`Is a string False or True?<is a string False or True?>`
+* :ref:`Is a tuple False or True?<is a tuple False or True?>`
+* :ref:`Is a list False or True?<is a list False or True?>`
+* :ref:`Is a set False or True?<is a set False or True?>`
+* :ref:`Is a dictionary False or True?<is a dictionary False or True?>`
+
 ----
 
 .. raw:: html
