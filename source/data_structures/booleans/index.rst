@@ -1050,6 +1050,8 @@ REFACTOR: make it better
 
     # NOTES
 
+  .. TIP:: If you are using `Visual Studio Code`_ you can use ``alt`` (Windows_/Linux_) or ``option`` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
+
 * I add notes
 
   .. code-block:: python
@@ -1157,10 +1159,9 @@ REFACTOR: make it better
 * I move the line to ``test_what_is_true``
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 13
+    :lineno-start: 14
+    :emphasize-lines: 12
 
-            self.assertFalse(tuple())
             self.assertFalse(list())
 
         def test_what_is_true(self):
@@ -1204,6 +1205,8 @@ REFACTOR: make it better
     # Exceptions Encountered
     # AssertionError
 
+I can see a pattern forming
+
 -----
 
 *********************************************************************************
@@ -1214,14 +1217,12 @@ is a set False or True?
 RED: make it fail
 =================================================================================
 
-I add a line to test if a set_ is False_ or True_ in ``test_what_is_true``
+I add a line to in ``test_what_is_true`` to see if a set_ is True_
 
 .. code-block:: python
-  :lineno-start: 23
-  :emphasize-lines: 4
+  :lineno-start: 25
+  :emphasize-lines: 2
 
-          self.assertTrue('text')
-          self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue(set())
 
@@ -1234,7 +1235,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: set() is not true
 
-the empty set_ is not True_
+the empty set_ is NOT True_
 
 =================================================================================
 GREEN: make it pass
@@ -1253,17 +1254,9 @@ GREEN: make it pass
 * I move the line to ``test_what_is_false``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 10
+    :lineno-start: 14
+    :emphasize-lines: 2
 
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
-            self.assertFalse(None)
-            self.assertFalse(0)
-            self.assertFalse(0.0)
-            self.assertFalse(str())
-            self.assertFalse(tuple())
             self.assertFalse(list())
             self.assertFalse(set())
 
@@ -1273,7 +1266,7 @@ GREEN: make it pass
 REFACTOR: make it better
 =================================================================================
 
-* I add another line to ``test_what_is_false``
+* I add another line to ``test_what_is_false`` to see if a set_ with things is False_
 
   .. code-block:: python
     :lineno-start: 15
@@ -1283,8 +1276,6 @@ REFACTOR: make it better
             self.assertFalse({1, 2, 3, 'n'})
 
         def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1292,7 +1283,9 @@ REFACTOR: make it better
 
     AssertionError: {1, 2, 3, 'n'} is not false
 
-  I change the :ref:`method<functions>`
+  a set_ with things is NOT False_
+
+* I change the :ref:`method<functions>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1325,7 +1318,7 @@ REFACTOR: make it better
 
     # NOTES
 
-* I add more notes
+* I add to the notes
 
   .. code-block:: python
     :lineno-start: 30
@@ -1364,14 +1357,12 @@ is a dictionary False or True?
 RED: make it fail
 =================================================================================
 
-I add a line to test if a :ref:`dictionary <dictionaries>` is False_ or True_ in ``test_what_is_true``
+I add a line to ``test_what_is_true`` to test if a :ref:`dictionary <dictionaries>` is True_
 
 .. code-block:: python
-  :lineno-start: 24
-  :emphasize-lines: 4
+  :lineno-start: 26
+  :emphasize-lines: 2
 
-          self.assertTrue((1, 2, 3, 'n'))
-          self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue({1, 2, 3, 'n'})
           self.assertTrue(dict())
 
@@ -1384,7 +1375,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: {} is not true
 
-the empty :ref:`dictionary <dictionaries>` is not True_
+the empty :ref:`dictionary <dictionaries>` is NOT True_
 
 =================================================================================
 GREEN: make it pass
@@ -1441,7 +1432,9 @@ REFACTOR: make it better
 
     AssertionError: {'key': 'value'} is not false
 
-  I change assertFalse_ to assertTrue_
+  a :ref:`dictionary<dictionaries>` with things is NOT False_
+
+* I change assertFalse_ to assertTrue_
 
   .. code-block:: python
     :lineno-start: 17
@@ -1532,7 +1525,9 @@ From the tests I can see that in Python_
 * True_ is not False_
 * True_ and False_ are booleans_
 
-Would you like to :ref:`test the truth table? <booleans: truth table>`
+these things come in handy when I write :ref:`conditions<truth table operations>` in programs_, because I can make decisions on whether the :ref:`data<data structures>` is empty or has something in it
+
+Would you like to :ref:`test the truth table?<booleans: truth table>` It will help you understand writing programs_ that can make decisions based on :ref:`conditions<booleans: truth table>`
 
 ----
 
