@@ -292,6 +292,16 @@ GREEN: make it pass
 I want to see what happens when I pass other Python_ basic :ref:`data structures` to the program
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_telephone.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
 test_passing_a_class
 *********************************************************************************
 

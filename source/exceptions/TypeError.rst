@@ -19,6 +19,16 @@ TypeError
 TypeError_ is raised when an :ref:`object<classes>` is used in a way that it should not be. This helps understand how to use :ref:`functions` and :ref:`classes`
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_type_error.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
 requirements
 *********************************************************************************
 

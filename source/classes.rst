@@ -10,7 +10,15 @@ classes
 
 ``classes`` are definitions that represent an object. I think of them as :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that belong together
 
-----
+*********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: code/tests/test_classes.py
+  :language: python
+  :linenos:
 
 *********************************************************************************
 requirements

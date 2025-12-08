@@ -17,6 +17,16 @@ how to make a calculator
 I want to write a program_ that can ``add``, ``subtract``, ``multiply`` and ``divide``
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_calculator.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
 requirements
 *********************************************************************************
 

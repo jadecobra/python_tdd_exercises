@@ -20,7 +20,15 @@ AttributeError_ is raised when there is a reference to a name that is NOT in an 
 
 An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color. They are also known as properties
 
-----
+*********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_attribute_error.py
+  :language: python
+  :linenos:
 
 *********************************************************************************
 requirements

@@ -20,6 +20,16 @@ lists: list comprehensions
 `List Comprehensions`_ are a simple way to make a :ref:`list <lists>` from an iterable_ with one line
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../../code/tests/test_list_comprehensions.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
 requirements
 *********************************************************************************
 

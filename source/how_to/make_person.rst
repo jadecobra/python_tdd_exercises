@@ -20,6 +20,16 @@ how to make a person
 This is an exercise in making :ref:`dictionaries` with :ref:`functions`. I think these are the 2 most important concepts in Python_
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_person.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
 requirements
 *********************************************************************************
 

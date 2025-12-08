@@ -40,6 +40,16 @@ functions_ are made with the def_ keyword, a name, parentheses and a colon at th
   def name_of_function():
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: code/tests/test_functions.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
 requirements
 *********************************************************************************
 

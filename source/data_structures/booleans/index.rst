@@ -24,8 +24,8 @@ preview
 
 Here are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_assertion_error.py
-  :language: Python
+.. literalinclude:: ../../code/tests/test_booleans.py
+  :language: python
   :linenos:
 
 *********************************************************************************

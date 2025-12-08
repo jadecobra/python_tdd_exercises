@@ -28,6 +28,16 @@ A list_ is a container :ref:`object<classes>` that can hold any objects_
 * they can be changed by performing an operation - they are mutable
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../../code/tests/test_lists.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
 requirements
 *********************************************************************************
 

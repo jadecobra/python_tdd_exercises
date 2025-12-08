@@ -19,6 +19,16 @@ ModuleNotFoundError
 ModuleNotFoundError_ is raised when Python_ cannot find a module_ that is given in an `import statement`_. A Python_ module_ is a file that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_module_not_found_error.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
 requirements
 *********************************************************************************
 
