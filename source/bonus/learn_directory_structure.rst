@@ -4,7 +4,13 @@
 BONUS: learn directory structure
 #################################################################################
 
-This is an exercise in how your computer is organized into directories_ (folders_) and files_. You will build the structure below step by step to see how files_ and folders_ are related like a family tree, and at the end will know how to move around in the structure because you will understand the relationships.
+This is an exercise in how your computer is organized into directories_ (folders_) and files_
+
+*************************************************************************************
+review
+*************************************************************************************
+
+I will build the structure below step by step to see how files_ and folders_ are related like a family tree, and at the end will know how to move around in the structure because I will understand the relationships.
 
 .. code-block:: shell
 
@@ -64,15 +70,6 @@ when it is not installed on the computer, the terminal_ shows
     tree: command not found
 
 when it is installed, the terminal_ shows a tree of directories_ and files_. The tree_ program_ shows how files_ and folders_ on a computer are related.
-
-.. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    code .
-
-  a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
 =================================================================================
 how to install tree
@@ -179,6 +176,15 @@ the terminal_ shows
 because I am in the ``pumping_python`` folder_. pwd_ shows the path/address to the current folder_ I am in at the moment
 
 .. NOTE:: If you see the same name, skip to the part where I create ``parent``. If you see a different name, continue to the next step :ref:`how to change directory`.
+
+.. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    code .
+
+  a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
 
 =================================================================================
 how to change directory

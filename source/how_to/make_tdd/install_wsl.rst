@@ -12,7 +12,7 @@ Make sure your computer runs `Windows 11`_. If you cannot upgrade to `Windows 11
 
 As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/Windows/end-of-support?r=1>`_
 
-* click ``Search`` at bottom of your screen
+* click ``Search`` at the bottom of your screen
 * search for ``Turn on Windows features``
 * click ``Turn on or off Windows Features`` from the results
 * Make sure the following have check marks to the left of them in the dialog box that opens up
@@ -23,9 +23,14 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
   - Windows Hypervisor Platform
 
   Click ``OK`` to apply the changes if any
+* Restart the computer when the installation finishes. You can go to the next steps while the above is installing
 
+* click ``Search`` at the bottom of your screen
+* type ``PowerShell``
+* select ``Run as Administrator`` and a PowerShell_ terminal_ will open up
+* type ``wsl --update`` to make sure you have the latest version of `Windows Subsystem for Linux`_
 * Open the `Microsoft Store`_
-* Search for ``Debian``
+* Search for Debian_
 
   .. image:: /_static/microsoft_store_debian.png
     :width: 600
@@ -67,6 +72,21 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 you can continue with :ref:`how to manually make a python test driven development environment`.
 
 If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux` instead
+
+.. NOTE::
+
+  In some cases your `Windows Subsystem for Linux`_ installation might succeed and you will have errors with Debian_, you might have to enable virtualization from your BIOS, here's how to do that
+
+  * restart your computer
+  * as soon as it restarts, press the key to enter setup mode, this varies by manufacturer but is one of the following
+
+    - Esc
+    - F2
+    - F10
+    - F12
+    - Alternately you can hold ``shift`` when your computer is restarting to enter ``Windows Recovery Mode`` then select ``UEFI Firmware Settings``
+
+  * In BIOS mode, 
 
 ----
 
