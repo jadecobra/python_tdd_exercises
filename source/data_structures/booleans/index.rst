@@ -16,7 +16,17 @@ booleans
 
 ----
 
-There are 2 booleans_ - True_ and False_
+There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<functions>` to test which of the :ref:`basic data structures<data structures>` seen so far - integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_assertion_error.py
+  :language: Python
+  :linenos:
 
 *********************************************************************************
 requirements
@@ -179,8 +189,6 @@ GREEN: make it pass
 *********************************************************************************
 REFACTOR: make it better
 *********************************************************************************
-
-There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<functions>` to test which of the :ref:`basic data structures<data structures>` covered so far - integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
 
 * I add a failing line to ``test_what_is_true``
 

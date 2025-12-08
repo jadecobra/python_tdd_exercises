@@ -25,10 +25,14 @@ Assertions_ can help catch things that break passing tests when I add new lines 
 
 The difference between my expectations (tests and ideas) and reality (what happens when the program_ runs), tells me what to change to make them match. The closer my program_ is to reality, the better.
 
-Here are the tests I have at the end of the chapter
+*********************************************************************************
+preview
+*********************************************************************************
 
-.. literalinclude:: ../../code/test_assertion_error.py
-  :language: python
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_assertion_error.py
+  :language: Python
   :linenos:
 
 *********************************************************************************
