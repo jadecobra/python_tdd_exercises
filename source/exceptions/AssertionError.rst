@@ -544,7 +544,7 @@ GREEN: make it pass
 I change the `assertion`_ to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 21
+  :lineno-start: 22
   :emphasize-lines: 1
 
           assert True is not False
@@ -648,7 +648,7 @@ GREEN: make it pass
 I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 25
+  :lineno-start: 26
   :emphasize-lines: 1
 
           assert False is not True
