@@ -11,8 +11,10 @@ def rst_files(filename):
 
 @sniffer.api.runnable
 def run_tests(*args):
-    # pdf = subprocess.run('make latexpdf', shell=True).returncode == 0
-    if process('make clean html'):
+    make_html = 'make clean html'
+    prep_pdf = 'sphinx-build -b latex source build/latex'
+    make_pdf = 'make latexpdf'
+    if process(prep_pdf) and process(make_pdf) and process(make_html):
         # message = input('\nenter a commit message: ')
         # process(f'git commit -am {message}')
         return True

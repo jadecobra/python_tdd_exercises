@@ -1402,7 +1402,7 @@ how to run a PowerShell script
 how to use a variable in a PowerShell script
 --------------------------------------------------------------------------------------------
 
-I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `TThe Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
+I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
 
 - the project folder_
 - the file_ for the program_ in the ``src`` folder_

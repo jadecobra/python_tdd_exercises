@@ -72,6 +72,8 @@ requirements
 test_what_is_none
 *********************************************************************************
 
+We need a way to represent nothing or the absence of a value. In mathematics we use ``0`` to represent no quantity. In some languages or domains we use ``null``, in forms we use ``N/A`` when the options do not apply. In Python_ we use None_
+
 =================================================================================
 RED: make it fail
 =================================================================================
