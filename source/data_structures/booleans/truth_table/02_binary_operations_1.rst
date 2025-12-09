@@ -156,7 +156,7 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the second case which is when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` to ``test_contradiction`` in ``test_truth_table.py``
+* I add the second case to ``test_contradiction`` in ``test_truth_table.py``, this is when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -166,9 +166,9 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
             self.assertFalse(src.truth_table.contradiction(True, True))
             self.assertFalse(src.truth_table.contradiction(True, False))
 
-  the test is still green
+  the test is still green. ``contradiction`` returns :ref:`False<test_what_is_true>` in the two cases where the first input is :ref:`True<test_what_is_true>`
 
-* I add the next case
+* I add the third case, which is when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -186,9 +186,13 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 
     AssertionError: True is not false
 
-  all three cases of the test expect :ref:`False<test_what_is_false>`
+  so far all three cases of the test expect :ref:`False<test_what_is_false>`, which means ``contradiction`` should return :ref:`False<test_what_is_false>` when
 
-* I change the `return statement`_ in the ``contradiction`` :ref:`function<functions>` in ``truth_table.py``
+  - the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+
+* I change the `return statement`_ in the ``contradiction`` :ref:`function<functions>` in ``truth_table.py`` to return the expectation
 
   .. code-block:: python
     :lineno-start: 17
@@ -197,9 +201,9 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
     def contradiction(first_input, second_input):
         return False
 
-  the test is green again
+  the test passes
 
-* I add the fourth case to ``test_contradiction`` in ``test_truth_table.py``
+* I add the fourth case to ``test_contradiction`` in ``test_truth_table.py``, this is when both inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -214,7 +218,9 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 
     # Exceptions Encountered
 
-  the test is still green! :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
+  the test is still green!
+
+:ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>` it does not matter what inputs it gets
 
 ----
 
@@ -226,13 +232,12 @@ test_logical_conjunction
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test in ``test_truth_table.py``
+I add a test for ``logical_conjunction`` in ``test_truth_table.py`` with the first case where both inputs are :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 30
-  :emphasize-lines: 4-5
+  :lineno-start: 31
+  :emphasize-lines: 3-4
 
-            self.assertFalse(src.truth_table.contradiction(False, True))
             self.assertFalse(src.truth_table.contradiction(False, False))
 
         def test_logical_conjunction(self):
@@ -264,13 +269,13 @@ I add the :ref:`function<functions>` in ``truth_table.py``
   def logical_conjunction(first_input, second_input):
       return True
 
-the test passes
+the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when the first and second input are both :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the next case to ``test_logical_conjunction`` in ``test_truth_table.py``
+* I add the next case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to ``test_logical_conjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -304,7 +309,20 @@ the test passes
 
   The line that was passing before is now failing
 
-* ``logical_conjunction`` has to choose whether to return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` based on the inputs. I can make it do that with `if statements`_
+``logical_conjunction`` has to make a choice. It should return
+
+- :ref:`False<test_what_is_false>` when the first input and second input are both :ref:`True<test_what_is_true>`
+- :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+
+I can make it do that with `if statements`_
+
+---------------------------------------------------------------------------------
+if statements
+---------------------------------------------------------------------------------
+
+An `if statement`_ is a way for a program_ to do something based on something else. I can use them to make a :ref:`function<functions>` choose between options
+
+* I add an `if statement`_ to the ``logical_conjunction`` :ref:`function<functions>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -316,9 +334,9 @@ the test passes
                 return False
         return True
 
-  the test passes.  The :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`,  otherwise it returns :ref:`True<test_what_is_true>`
+  the test passes. The :ref:`function<functions>` now returns :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`. It returns :ref:`True<test_what_is_true>` in all other cases
 
-* I add the next case to ``test_logical_conjunction`` in ``test_truth_table.py``
+* I add the case where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_logical_conjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -753,7 +771,7 @@ the test passes
                 return True
         return False
 
-  the test is green again
+  the test passes
 
 * I add the next case to ``test_converse_non_implication`` in ``test_truth_table.py``
 

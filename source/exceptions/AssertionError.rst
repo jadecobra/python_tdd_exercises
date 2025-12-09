@@ -247,6 +247,8 @@ the test passes
 
   the test passes
 
+.. _what_causes_assertion_error:
+
 AssertionError_ happens when the statement after assert_ is :ref:`False<test_what_is_false>`. It was in :ref:`how to make a python test driven development environment` with :ref:`the first failing test<test_failure>`
 
 .. code-block:: python
@@ -1397,16 +1399,22 @@ review
 
 I can use `assert statements`_ and `assert methods`_ to test if something is
 
-* :ref:`None or not<test_assertion_error_w_none>` with assertIsNone_ and assertIsNotNone_
+* :ref:`None or NOT None<test_assertion_error_w_none>` with assertIsNone_ and assertIsNotNone_
 * :ref:`False or not<test_assertion_error_w_none>` with assertFalse_
 * :ref:`True or not<test_assertion_error_w_none>` with assertTrue_
-* :ref:`equal or not<test_assertion_error_w_equality>` with assertEqual_ or assertNotEqual_
+* and to test if 2 things are :ref:`Equal or NOT Equal<test_assertion_error_w_equality>` with assertEqual_ and assertNotEqual_
+
+for a total of 6 `assert methods`_ I can use when testing
 
 Here are questions you can answer after going through this chapter
 
+* :ref:`What is an assertion?<test_what_is_an_assertion>`
+* :ref:`What causes AssertionError?<what_causes_assertion_error>`
 * :ref:`How can I test if something is None?<how to test if something is None>`
+* :ref:`How can I test if something is NOT None?<how to test if something is None>`
 * :ref:`How can I test if something is False?<how to test if something is False>`
 * :ref:`How can I test if something is True?<how to test if something is True>`
+* :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are Equal>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 
 you know :ref:`how to make a test driven development environment`, would you like to use the `assert methods`_ from this chapter to :ref:`test Python's data structures?<data structures>`
