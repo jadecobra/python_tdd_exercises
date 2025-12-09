@@ -1413,7 +1413,9 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I test if something is None?<how to test if something is None>`
 * :ref:`How can I test if something is NOT None?<how to test if something is None>`
 * :ref:`How can I test if something is False?<how to test if something is False>`
+* :ref:`How can I test if something is NOT False?<how to test if something is False>`
 * :ref:`How can I test if something is True?<how to test if something is True>`
+* :ref:`How can I test if something is NOT True?<how to test if something is True>`
 * :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are Equal>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 

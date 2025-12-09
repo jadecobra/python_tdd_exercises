@@ -23,9 +23,9 @@ what is the Test Driven Development cycle?
 
 The `Test Driven Development`_ cycle is **RED** **GREEN** **REFACTOR**
 
-* **RED**: make it fail - write a test that fails to make sure the test works
-* **GREEN**: make it pass - write the simplest thing that will make the failing test pass
-* **REFACTOR**: make it better - write a better solution, test or both, usually by `removing duplication`_
+* :red:`RED`: make it fail - write a test that fails to make sure the test works
+* :green:`GREEN`: make it pass - write the simplest thing that will make the failing test pass
+* :yellow:`REFACTOR`: make it better - write a better solution, test or both, usually by `removing duplication`_
 
 This process can be repeated as many times as needed until I get to my goal.
 
