@@ -639,7 +639,7 @@ REFACTOR: make it better
 test_functions_w_keyword_arguments
 *********************************************************************************
 
-There is a problem with using positional arguments, the inputs must always be supplied in the right order. which means the program_ behaves in an unexpected way when it receives input out of order.
+There is a problem with using positional arguments, the inputs must always be supplied in the right order. which means the program_ behaves in an unexpected way when it gets input out of order.
 
 To make sure the function_ behave how I want even when I send input out of order I can use Keyword Arguments
 

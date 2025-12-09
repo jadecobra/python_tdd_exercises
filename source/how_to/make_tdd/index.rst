@@ -2,6 +2,9 @@
   :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with a single script in just 5 minutes.
   :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watch for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
 
+.. role:: red-text
+.. role:: blue-text
+
 .. include:: ../../links.rst
 
 #################################################################################
@@ -18,7 +21,7 @@ A `Test Driven Development`_ environment is a collection of files_ and folders_ 
 what is the Test Driven Development cycle?
 *********************************************************************************
 
-The `Test Driven Development`_ cycle is ``RED GREEN REFACTOR``
+The `Test Driven Development`_ cycle is **RED** **GREEN** **REFACTOR**
 
 * **RED**: make it fail - write a test that fails to make sure the test works
 * **GREEN**: make it pass - write the simplest thing that will make the failing test pass

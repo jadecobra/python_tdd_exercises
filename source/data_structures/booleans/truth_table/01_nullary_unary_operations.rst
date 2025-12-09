@@ -26,10 +26,12 @@ requirements
 Nullary Operations
 *********************************************************************************
 
-There are 2 Nullary operations, they do not take input and always return the same value
+There are 2 Nullary operations
 
-* :ref:`Logical True<test_logical_true>`
+* :ref:`Logical True<test_logical_true>` and
 * :ref:`Logical False<test_logical_false>`
+
+they take no input and return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 =================================================================================
 test_logical_true
@@ -138,7 +140,7 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_true'?
 
-I have not added a definition for ``logical_true`` to ``truth_table.py``
+I have not added a definition for ``logical_false`` to ``truth_table.py``, I only added one for ``logical_true``
 
 ---------------------------------------------------------------------------------
 GREEN: make it pass
@@ -174,16 +176,23 @@ GREEN: make it pass
 
   the test passes
 
+* Adding the ``logical_true`` and ``logical_false``:ref:`function<functions>` to ``truth_table.py`` solved the :ref:`AttributeError` in both cases
+* ``logical_true`` always returns :ref:`True<test_what_is_true>`
+* ``logical_false`` always returns :ref:`False<test_what_is_false>`
+* both Nullary Operations do not take input
+
 ----
 
 *********************************************************************************
 Unary Operations
 *********************************************************************************
 
-There are 2 unary operations, they each take one input
+There are 2 unary operations
 
-* :ref:`Logical Identity<test_logical_identity>`
+* :ref:`Logical Identity<test_logical_identity>` and
 * :ref:`Logical Negation<test_logical_negation>`
+
+they each take one input and return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 =================================================================================
 test_logical_identity
@@ -193,7 +202,7 @@ test_logical_identity
 RED: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new TestCase_ and a test to ``test_truth_table.py``
+I add a new TestCase_ and a test for Unary Operations to ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 10
@@ -217,6 +226,8 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_identity'
 
+I need to add a definition for it
+
 ---------------------------------------------------------------------------------
 GREEN: make it pass
 ---------------------------------------------------------------------------------
@@ -239,6 +250,8 @@ GREEN: make it pass
   .. code-block:: shell
 
     TypeError: logical_identity() takes 0 positional arguments but 1 was given
+
+  I need to make the :ref:`function<functions>` accept input since the test sends :ref:`True<test_what_is_true>` as input
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
 
@@ -281,7 +294,7 @@ GREEN: make it pass
 REFACTOR: make it better
 ---------------------------------------------------------------------------------
 
-* I add another line to ``test_logical_identity`` in ``test_truth_table.py``
+* I add another line to ``test_logical_identity`` in ``test_truth_table.py`` for the case when ``logical_identity`` gets :ref:`False<test_what_is_false>` as input
 
   .. code-block:: python
     :lineno-start: 16
@@ -323,7 +336,9 @@ REFACTOR: make it better
     def logical_identity(the_input):
         return the_input
 
-  the test passes. ``logical_identity`` returns its input as output.
+  the test passes.
+
+``logical_identity`` returns its input as output. I think of it as a passthrough :ref:`function<functions>`, it does not process the input it gets, it just passes it along.
 
 ----
 
@@ -335,7 +350,7 @@ test_logical_negation
 RED: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new test to ``test_truth_table.py``
+I add a new test to ``test_truth_table.py`` for ``logical_negation``
 
 .. code-block:: python
   :lineno-start: 16
@@ -395,7 +410,7 @@ the test passes
 REFACTOR: make it better
 ---------------------------------------------------------------------------------
 
-* I add another line in ``test_logical_negation`` in ``test_truth_table.py``
+* I add another line to ``test_logical_negation`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 20
@@ -443,7 +458,13 @@ REFACTOR: make it better
 
     AssertionError: True is not false
 
-  the expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`, I can make that happen with the "not_" keyword. I add it to the `return statement`_
+  the expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+how to return the opposite of a boolean
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* I can make this happen with the "not_" keyword which returns the opposite of the :ref:`boolean<booleans>` after it. I add it to the `return statement`_
 
   .. code-block:: python
     :lineno-start: 13
@@ -452,7 +473,8 @@ REFACTOR: make it better
     def logical_negation(the_input):
         return not the_input
 
-  the test passes. ``logical_negation`` returns the opposite of its input
+  the test passes
+
 
 * I change the name of the test
 
@@ -472,6 +494,11 @@ REFACTOR: make it better
 
 
     # Exceptions Encountered
+
+``logical_negation`` aka not_ returns the opposite of its input
+
+* when it receives :ref:`True<test_what_is_true>` it returns :ref:`False<test_what_is_false>`
+* when it receives :ref:`False<test_what_is_false>` it returns :ref:`True<test_what_is_true>`
 
 ----
 
@@ -493,8 +520,13 @@ for :ref:`Unary operations<Unary Operations>`
 
 Here are questions you can answer after going through this chapter
 
-:ref:`What is a function that returns its input as output?<test_logical_identity>`
-:ref:`What is a function that returns the negation of its input?<test_logical_negation>`
+* :ref:`What are the Nullary Operations?<Nullary Operations>`
+* :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`
+* :ref:`What are the Unary Operations?<Unary Operations>`
+* :ref:`How many inputs do Unary Operations take?<Unary Operations>`
+* :ref:`What is a function that returns its input as output?<test_logical_identity>`
+* :ref:`What is a function that returns the negation of its input?<test_logical_negation>`
+* :ref:`How can I return thre opposite of a boolean?<how to return the opposite of a boolean>`
 
 Would you like to :ref:`test binary operations?<truth table: Binary Operations part 1>`
 

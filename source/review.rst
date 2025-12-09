@@ -131,12 +131,28 @@ booleans review
 * :ref:`Is a dictionary False or True?<is a dictionary False or True?>`
 
 *********************************************************************************
+Nullary Operations review
+*********************************************************************************
+
+* :ref:`What are the Nullary Operations?<Nullary Operations>`
+* :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`
+* :ref:`What are the Unary Operations?<Unary Operations>`
+
+*********************************************************************************
+Unary Operations review
+*********************************************************************************
+
+* :ref:`How many inputs do Unary Operations take?<Unary Operations>`
+* :ref:`What is a function that returns its input as output?<test_logical_identity>`
+* :ref:`What is a function that returns the negation of its input?<test_logical_negation>`
+* :ref:`How can I return thre opposite of a boolean?<how to return the opposite of a boolean>`
+
+*********************************************************************************
 testing
 *********************************************************************************
 
 :ref:`How can I run automated tests after I exit them in the terminal?<how to run automated tests after you exit the tests>`
 :ref:`How can I run automated tests after I exit them in the terminal on Windows without Windows Subsystem for Linux?<how to run automated tests on Windows_ without WSL after you exit the tests>`
-
 
 ----
 

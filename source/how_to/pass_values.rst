@@ -220,7 +220,7 @@ GREEN: make it pass
 REFACTOR: make it better
 =================================================================================
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it receives and always returns ``'I received: hello'`` when called. I want it to return the value it receives as part of the message.
+The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it gets and always returns ``'I received: hello'`` when called. I want it to return the value it gets as part of the message.
 
 RED: make it fail
 ---------------------------------------------------------------------------------

@@ -16,6 +16,8 @@ truth table: Binary Operations part 1
 
 ----
 
+The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input and :ref:`Unary Operations` which take 1 input. There are also Binary Operations, these take which take 2 inputs, they are called Binary Operations
+
 There are 16 binary operations, they all take 2 inputs and each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`. This gives four cases or ways the inputs can be given to the operation
 
 * :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
