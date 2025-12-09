@@ -22,7 +22,7 @@ This is part 4 of a program_ that calculates the difference between a given wake
 I want to test the ``duration`` :ref:`function<functions>` with timestamps that have dates
 
 *********************************************************************************
-RED: make it fail
+:red:`RED`: make it fail
 *********************************************************************************
 
 * I make a copy of ``random_timestamp``, change the name of the copy, then add a date to the `return statement`_
@@ -75,7 +75,7 @@ RED: make it fail
 
 
 *********************************************************************************
-GREEN: make it pass
+:green:`GREEN`: make it pass
 *********************************************************************************
 
 * I add the `unittest.skip decorator`_ to ``test_duration_w_date_and_time``
@@ -219,7 +219,7 @@ GREEN: make it pass
   the test passes
 
 *********************************************************************************
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 *********************************************************************************
 
 I want something that can read dates and times from timestamps. I search `Python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
@@ -235,7 +235,7 @@ I want something that can read dates and times from timestamps. I search `Python
 test_datetime_objects
 #################################################################################
 
-RED: make it fail
+:red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
 I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_ for `datetime.datetime`_ objects
@@ -260,7 +260,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
 I add an `import statement`_ for the datetime_ module
@@ -325,7 +325,7 @@ The `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.d
 
 there are more details in `strftime() and strptime() behavior <https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior>`_
 
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------
 
 * I change the order in the date to test the pattern
@@ -520,7 +520,7 @@ REFACTOR: make it better
 test_get_datetime
 #################################################################################
 
-RED: make it fail
+:red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
 I want a test for the ``get_datetime`` :ref:`function<functions>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it call ``src.sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<functions>`
@@ -577,7 +577,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: datetime.datetime(1999, 12, 31, 9, 16) != datetime.datetime(2006, 11, 21, 16, 30)
   AssertionError: datetime.datetime(1999, 12, 31, 15, 5) != datetime.datetime(2006, 11, 21, 16, 30)
 
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
 I add the :ref:`variable<test_attribute_error_w_variables>` to the expectation
@@ -598,7 +598,7 @@ I add the :ref:`variable<test_attribute_error_w_variables>` to the expectation
 
 the terminal_ shows green again
 
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------
 
 I change the calls to `datetime.datetime.strptime`_ to ``src.sleep_duration.get_datetime``

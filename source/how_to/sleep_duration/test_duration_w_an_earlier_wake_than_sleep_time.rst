@@ -22,7 +22,7 @@ This is part 3 of a program_ that calculates the difference between a given wake
 I want to test the ``duration`` :ref:`function<functions>` with a ``wake_time`` that is earlier than the ``sleep_time``
 
 *********************************************************************************
-RED: make it fail
+:red:`RED`: make it fail
 *********************************************************************************
 
 I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to make sure ``wake_time`` is always earlier than ``sleep_time``
@@ -56,7 +56,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: '-10:57' != ''
 
 *********************************************************************************
-GREEN: make it pass
+:green:`GREEN`: make it pass
 *********************************************************************************
 
 
@@ -181,7 +181,7 @@ GREEN: make it pass
   the test passes with no more random failures, green, green, green, green all the way!
 
 *********************************************************************************
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 *********************************************************************************
 
 * I copy the `assertRaisesRegex`_ statement from ``test_duration_w_an_earlier_wake_than_sleep_time`` then add it to the `while statement`_ to run when ``wake_time`` is earlier than ``sleep_time``

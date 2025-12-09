@@ -25,8 +25,6 @@ extensions = [
     'notfound.extension',
 ]
 
-pygments_style = "tango"
-pygments_dark_style = "monokai"
 
 # -- Section Header Options ----------------------------------------------------
 text_sectionchars = '#*=-~"+`'
@@ -34,12 +32,15 @@ text_sectionchars = '#*=-~"+`'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+# html_theme = 'press'
+html_theme = 'furo'
+pygments_style = "tango"
+
+pygments_dark_style = "monokai"
 html_extra_path = ['robots.txt', 'llms.txt']
 html_baseurl = 'https://www.pumpingpython.com/'
 html_favicon = '_static/dry_favicon_16x16.png'
 html_logo = "_static/dry_favicon_16x16.png"
-# html_theme = 'press'
-html_theme = 'furo'
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
 html_static_path = ['_static']

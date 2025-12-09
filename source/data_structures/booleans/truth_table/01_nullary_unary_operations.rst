@@ -38,7 +38,7 @@ test_logical_true
 =================================================================================
 
 ---------------------------------------------------------------------------------
-RED: make it fail
+:red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
 I change the :ref:`class<classes>` and :ref:`method<functions>` in ``test_truth_table.py``
@@ -68,7 +68,7 @@ the terminal_ shows :ref:`AttributeError`
 I have not added a definition for ``logical_true`` to ``truth_table.py`` in the ``src`` folder_
 
 ---------------------------------------------------------------------------------
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
@@ -116,7 +116,7 @@ test_logical_false
 =================================================================================
 
 ---------------------------------------------------------------------------------
-RED: make it fail
+:red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
 I add another test in ``test_truth_table.py``
@@ -143,7 +143,7 @@ the terminal_ shows :ref:`AttributeError`
 I have not added a definition for ``logical_false`` to ``truth_table.py``, I only added one for ``logical_true``
 
 ---------------------------------------------------------------------------------
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
 * I add a :ref:`function<functions>` definition in ``truth_table.py``
@@ -199,7 +199,7 @@ test_logical_identity
 =================================================================================
 
 ---------------------------------------------------------------------------------
-RED: make it fail
+:red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
 I add a new TestCase_ and a test for Unary Operations to ``test_truth_table.py``
@@ -229,7 +229,7 @@ the terminal_ shows :ref:`AttributeError`
 I need to add a definition for it
 
 ---------------------------------------------------------------------------------
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
 * I add the :ref:`function<functions>` to ``truth_table.py``
@@ -291,7 +291,7 @@ GREEN: make it pass
   the test passes
 
 ---------------------------------------------------------------------------------
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------
 
 * I add another line to ``test_logical_identity`` in ``test_truth_table.py`` for the case when ``logical_identity`` gets :ref:`False<test_what_is_false>` as input
@@ -347,7 +347,7 @@ test_logical_negation
 =================================================================================
 
 ---------------------------------------------------------------------------------
-RED: make it fail
+:red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
 I add a new test to ``test_truth_table.py`` for ``logical_negation``
@@ -373,7 +373,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'logical_negation'
 
 ---------------------------------------------------------------------------------
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
 I add a definition for the :ref:`function<functions>` in ``truth_table.py``
@@ -407,7 +407,7 @@ I change the `return statement`_
 the test passes
 
 ---------------------------------------------------------------------------------
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------
 
 * I add another line to ``test_logical_negation`` in ``test_truth_table.py``

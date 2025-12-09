@@ -129,7 +129,7 @@ test_addition
   because ``src`` is not defined in ``test_calculator.py``
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
@@ -258,12 +258,12 @@ GREEN: make it pass
   the test passes, time for a victory lap!
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to do a calculation with the inputs and return the result
 
-RED: make it fail
+:red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
 To show the problem with the :ref:`function<functions>`, I add another :ref:`assertion<AssertionError>` in ``test_calculator.py``
@@ -290,7 +290,7 @@ the terminal_ shows :ref:`AssertionError`
 
 the :ref:`function<functions>` returns ``1``, the test expects ``0``
 
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
 when I change the `return statement`_ in ``calculator.py`` to add the two inputs
@@ -304,7 +304,7 @@ when I change the `return statement`_ in ``calculator.py`` to add the two inputs
 
 the test passes
 
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------
 
 * I want the test to use random numbers instead of numbers that do not change, so I add an `import statement`_ at the top of ``test_calculator.py`` to use random numbers in the test
@@ -469,7 +469,7 @@ test_subtraction
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 * I add a test for subtraction in ``test_calculator.py``
@@ -505,7 +505,7 @@ RED: make it fail
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the name to ``calculator.py``
@@ -588,7 +588,7 @@ GREEN: make it pass
   the test passes. SUCCESS!
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I have some duplication to remove, the code below happens twice
@@ -735,7 +735,7 @@ test_multiplication
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a failing test for multiplication in ``test_calculator.py``
@@ -765,7 +765,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.calculator' has no attribute 'multiply'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 using what I know so far, I add a :ref:`function<functions>` to ``calculator.py``
@@ -800,7 +800,7 @@ test_division
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 time for division. I add a new test to ``test_calculator.py``
@@ -830,7 +830,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.calculator' has no attribute 'divide'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add a :ref:`function<functions>` to ``calculator.py``
@@ -886,7 +886,7 @@ GREEN: make it pass
 how to test that ZeroDivisionError is raised
 ---------------------------------------------------------------------------------
 
-RED: make it fail
+:red:`RED`: make it fail
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` intentionally and comment out the code that randomly fails in ``test_calculator.py``
@@ -918,7 +918,7 @@ the terminal_ shows my expectation with a failure for any value of ``x`` since `
 
 :ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program_ from running. No code runs past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
 
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I can use the `assertRaises method`_ to make sure that :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when I try to divide a number by ``0``
@@ -954,7 +954,7 @@ GREEN: make it pass
 
   the test passes, showing that ``src.calculator.divide(self.random_x, 0)`` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I still have a problem because ``self.random_y`` can sometimes be ``0``, I use a `while statement`_ to make a never ending loop to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
@@ -1089,7 +1089,7 @@ test_calculator_tests
 Since everything is green, I can write the program_ that makes the tests pass without looking at them
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 * I close ``test_calculator.py``
@@ -1102,7 +1102,7 @@ RED: make it fail
   What :ref:`Exceptions<errors>` do you think are raised as I go along?
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the name to ``calculator.py``

@@ -78,7 +78,7 @@ test_making_a_list_w_a_for_loop
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I change ``test_failure``
@@ -112,7 +112,7 @@ the terminal_ shows :ref:`AssertionError`
 - ``a_list.append(item)`` gets called every time the `for loop`_ runs
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change the expectation to match the values in the terminal_
@@ -124,7 +124,7 @@ I change the expectation to match the values in the terminal_
 the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`object<classes>` after the `for loop`_ runs
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another :ref:`assertion<AssertionError>` to show that I can do the same thing with the :ref:`list<lists>` constructor_
@@ -316,7 +316,7 @@ test_making_a_list_w_extend
 I can use the :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` :ref:`method<functions>` to make a :ref:`list<lists>` from an iterable_
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test
@@ -338,7 +338,7 @@ the terminal_ shows :ref:`TypeError`
   TypeError: list.extend() takes exactly one argument (0 given)
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the iterable_
@@ -350,7 +350,7 @@ I add the iterable_
 the terminal_ shows green again
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another :ref:`assertion<AssertionError>` to see what changed in the :ref:`list<lists>`
@@ -409,7 +409,7 @@ test_making_a_list_w_a_list_comprehension
 I can use a `list comprehension`_ to make a :ref:`list<lists>` from an iterable_
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a failing test
@@ -432,7 +432,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 The `list comprehension`_ is like the `for loop`_ without the :ref:`append<test_append_adds_item_to_end_of_a_list>`. I add one as the expectation
@@ -447,7 +447,7 @@ The `list comprehension`_ is like the `for loop`_ without the :ref:`append<test_
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another :ref:`assertion<AssertionError>` for practice
@@ -516,7 +516,7 @@ test_making_a_list_w_conditions
 What if I had to make a :ref:`list<lists>` from an iterable_ based on a condition?
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a failing test
@@ -544,7 +544,7 @@ the terminal_ shows :ref:`AssertionError`
 * ``%`` is the modulo_ operator, which divides the number on the left by the number on the right and returns a remainder, there's a test for it in :ref:`test_the_modulo_operation`
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the iterable_? Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_. I change the expectation
@@ -574,7 +574,7 @@ I add the condition
 the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using the :ref:`list<lists>` constructor_
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another :ref:`assertion<AssertionError>` for practice
@@ -853,7 +853,7 @@ test_making_a_list_w_processes
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a test to show I can do other operations in a `list comprehension`_ not just :ref:`append<test_append_adds_item_to_end_of_a_list>`
@@ -880,7 +880,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 1, 4, 9, ...] != [0, 1, 2, 3, ...]
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the calculation to the `list comprehension`_
@@ -895,7 +895,7 @@ I add the calculation to the `list comprehension`_
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another :ref:`assertion<AssertionError>`
@@ -976,7 +976,7 @@ test_making_a_list_w_processes_and_conditions
 I can use both :ref:`processes<test_making_a_list_w_processes>` and :ref:`conditions<test_making_a_list_w_conditions>` in a `list comprehension`_
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a failing test
@@ -1006,7 +1006,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 1, 2, 3, 4, ...]
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add a call to ``condition``
@@ -1038,7 +1038,7 @@ I add a call to ``process``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 I add another :ref:`assertion<AssertionError>`

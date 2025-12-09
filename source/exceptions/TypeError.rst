@@ -77,7 +77,7 @@ test_type_error_w_non_callables
 There are :ref:`objects<classes>` that can NOT be called
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 * I add an `import statement`_ at the top of ``test_type_error.py``
@@ -117,7 +117,7 @@ RED: make it fail
     # AttributeError
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I open ``type_error.py`` from the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
@@ -161,7 +161,7 @@ GREEN: make it pass
 I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another failing line to ``test_type_error.py``
@@ -377,7 +377,7 @@ test_type_error_w_function_signatures
 When I call a :ref:`function<functions>` I have to match its definition also known as its signature
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 * I add a new test to ``test_type_error.py``
@@ -401,7 +401,7 @@ RED: make it fail
     AttributeError: module 'src.type_error' has no attribute 'function_00'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the :ref:`function<functions>` to ``type_error.py``
@@ -439,7 +439,7 @@ GREEN: make it pass
 I have to call a :ref:`function<functions>` in a way that matches its definition or I get :ref:`TypeError`
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add a new failing line to ``test_type_error.py``
@@ -593,7 +593,7 @@ test_type_error_w_objects_that_do_not_mix
 Some operations do not work if the objects_ are not of the same type_
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test with a failing line in ``test_type_error.py``
@@ -619,7 +619,7 @@ the terminal_ shows TypeError_
 I cannot do arithmetic_ with :ref:`None`
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the `assertRaises method`_
@@ -635,7 +635,7 @@ I add the `assertRaises method`_
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another failing line to the test
@@ -767,7 +767,7 @@ requirements
 * I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new failing test to show that I can NOT do an arithmetic_ operation with something that is not a number
@@ -800,7 +800,7 @@ the terminal_ shows :ref:`TypeError`
   TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add assertRaises_
@@ -816,7 +816,7 @@ I add assertRaises_
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add a failing line for :ref:`division<test_division>`
@@ -939,7 +939,7 @@ I want to add a :ref:`condition<booleans>` to the calculator to make sure that w
 * I open the ``src`` folder and click on ``calculator.py`` to open it in the :ref:`editor<2 editors>`
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`add function<test_addition>` in ``calculator.py``
@@ -963,7 +963,7 @@ the terminal_ shows :ref:`AssertionError`
 because the ``add`` :ref:`function<functions>` now sends a message when :ref:`TypeError` is raised
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change the assertRaises_ to assertEqual_ in ``test_calculator.py``
@@ -987,7 +987,7 @@ I change the assertRaises_ to assertEqual_ in ``test_calculator.py``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`divide function<test_division>` in ``calculator.py``

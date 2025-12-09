@@ -29,7 +29,7 @@ test_exclusive_disjunction
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to ``test_truth_table.py``
@@ -53,7 +53,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the :ref:`function<functions>` for ``exclusive_disjunction`` in ``truth_table.py``
@@ -72,7 +72,7 @@ I add the :ref:`function<functions>` for ``exclusive_disjunction`` in ``truth_ta
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the next case to ``test_exclusive_disjunction`` in ``test_truth_table.py``
@@ -255,7 +255,7 @@ test_material_non_implication
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add another test to ``test_truth_table.py``
@@ -279,7 +279,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'. Did you mean: 'converse_non_implication'?
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add a :ref:`function<functions>` for ``material_non_implication`` in ``truth_table.py``
@@ -300,7 +300,7 @@ I add a :ref:`function<functions>` for ``material_non_implication`` in ``truth_t
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another case to ``test_material_non_implication`` in ``test_truth_table.py``
@@ -391,7 +391,7 @@ test_project_first
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test for the next Binary Operation in ``test_truth_table.py``
@@ -415,7 +415,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'project_first'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add a :ref:`function<functions>` definition for ``project_first`` in ``truth_table.py``
@@ -434,7 +434,7 @@ I add a :ref:`function<functions>` definition for ``project_first`` in ``truth_t
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the second case to ``test_project_first`` in ``test_truth_table.py``
@@ -546,7 +546,7 @@ test_converse_implication
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to ``test_truth_table.py``
@@ -570,7 +570,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add a :ref:`function<functions>` definition for ``converse_implication`` in ``truth_table.py``
@@ -589,7 +589,7 @@ I add a :ref:`function<functions>` definition for ``converse_implication`` in ``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the second case to ``test_converse_implication`` in ``test_truth_table.py``

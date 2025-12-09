@@ -77,7 +77,7 @@ test_attribute_error_w_variables
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 * I add an `import statement`_ at the top of  ``test_attribute_error.py``
@@ -121,7 +121,7 @@ RED: make it fail
     # AttributeError
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I open ``attribute_error.py`` from the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a name
@@ -160,7 +160,7 @@ GREEN: make it pass
   the test passes. ``variable_00`` is now an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.variable_00``
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I do the same test a few more times as a drill in ``test_attribute_error.py``
@@ -276,7 +276,7 @@ test_attribute_error_w_functions
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to ``test_attribute_error.py``
@@ -300,7 +300,7 @@ the terminal_ shows AttributeError_
   AttributeError: module 'src.attribute_error' has no attribute 'function_00'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the name and point it to :ref:`None` in ``attribute_error.py``
@@ -347,7 +347,7 @@ GREEN: make it pass
   the test passes. ``function_00`` is now an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can call it by using ``src.attribute_error.function_00()``
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * time to do it as a drill, I add another call in ``test_attribute_error.py``
@@ -459,7 +459,7 @@ test_attribute_error_w_class_attributes
 We know that variables_ and :ref:`functions` defined in a :ref:`module<ModuleNotFoundError>` are attributes. variables_ defined inside a :ref:`class<classes>` are also attributes.
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to ``test_attribute_error.py``
@@ -481,7 +481,7 @@ the terminal_ shows AttributeError_
   AttributeError: module 'src.attribute_error' has no attribute 'AClass'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add a :ref:`function<functions>` to ``attribute_error.py``
@@ -559,7 +559,7 @@ GREEN: make it pass
   the test passes. ``attribute_00`` is now an attribute/property of ``AClass`` which is an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.AClass.attribute_00()``
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another failing line to ``test_attribute_error.py``
@@ -672,7 +672,7 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
 :ref:`functions<functions>` defined inside a :ref:`class<classes>` are also attributes, they are known as :ref:`methods<functions>`
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 * I add a new test to ``test_attribute_error.py``
@@ -696,7 +696,7 @@ RED: make it fail
     AttributeError: type object 'AClass' has no attribute 'method_00'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the name to ``AClass`` and point it to :ref:`None` in ``attribute_error.py``
@@ -734,7 +734,7 @@ GREEN: make it pass
   the test passes. ``method_00`` is now an attribute/property of ``AClass`` which is an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.AClass.method_00()``
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * You know the "drill", I add a new failing line to ``test_attribute_error.py``

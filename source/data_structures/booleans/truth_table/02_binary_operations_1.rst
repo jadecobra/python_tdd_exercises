@@ -86,7 +86,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add a :ref:`function<functions>` definition in ``truth_table.py``
@@ -120,7 +120,7 @@ I add ``q`` as the second name in parentheses then change ``argument`` to ``p`` 
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the second case to ``test_contradiction`` in ``test_truth_table.py``
@@ -190,7 +190,7 @@ test_logical_conjunction
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test in ``test_truth_table.py``
@@ -215,7 +215,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_negation'?
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the :ref:`function<functions>` in ``truth_table.py``
@@ -234,7 +234,7 @@ I add the :ref:`function<functions>` in ``truth_table.py``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the next case to ``test_logical_conjunction`` in ``test_truth_table.py``
@@ -473,7 +473,7 @@ test_project_second
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a test for another Binary Operation in ``test_truth_table.py``
@@ -497,7 +497,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add a definition for the :ref:`function<functions>` in ``truth_table.py``
@@ -516,7 +516,7 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the second case to ``test_project_second`` in ``test_truth_table.py``
@@ -633,7 +633,7 @@ test_converse_non_implication
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add another test for a new Binary Operation in ``test_truth_table.py``
@@ -657,7 +657,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the :ref:`function<functions>` to ``truth_table.py``
@@ -676,7 +676,7 @@ I add the :ref:`function<functions>` to ``truth_table.py``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another case to ``test_converse_non_implication`` in ``test_truth_table.py``

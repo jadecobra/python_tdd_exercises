@@ -29,7 +29,7 @@ test_negate_first
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_truth_table.py``
@@ -53,7 +53,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the :ref:`function<functions>` definition in ``truth_table.py``
@@ -72,7 +72,7 @@ I add the :ref:`function<functions>` definition in ``truth_table.py``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the second case to ``test_negate_first`` in ``test_truth_table.py``
@@ -241,7 +241,7 @@ test_logical_nand
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to ``test_truth_table.py``
@@ -265,7 +265,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add a definition for the :ref:`function<functions>` to ``truth_table.py``
@@ -284,7 +284,7 @@ I add a definition for the :ref:`function<functions>` to ``truth_table.py``
 the terminal_ shows green again
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the next case to ``test_logical_nand`` in ``test_truth_table.py``
@@ -453,7 +453,7 @@ test_tautology
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a test for the next Binary Operation in ``test_truth_table.py``
@@ -477,7 +477,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'tautology'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add a :ref:`function<functions>` definition in ``truth_table.py``
@@ -496,7 +496,7 @@ I add a :ref:`function<functions>` definition in ``truth_table.py``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the next case to ``test_tautology`` in ``test_truth_table.py``
@@ -548,7 +548,7 @@ test_logical_disjunction
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add another test
@@ -572,7 +572,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'. Did you mean: 'logical_conjunction'?
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the :ref:`function<functions>` to ``truth_table.py``
@@ -591,7 +591,7 @@ I add the :ref:`function<functions>` to ``truth_table.py``
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add the next case to ``test_logical_disjunction`` in ``test_truth_table.py``

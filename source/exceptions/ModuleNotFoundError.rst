@@ -75,7 +75,7 @@ test_module_not_found_error
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 * I change ``test_failure`` to ``test_module_not_found_error``
@@ -111,13 +111,13 @@ RED: make it fail
     # ModuleNotFoundError
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 * I add another `import statement`_ to ``test_module_not_found_error.py``
 

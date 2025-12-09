@@ -62,7 +62,7 @@ requirements
     class TestSleepDuration(unittest.TestCase):
 
 *********************************************************************************
-RED: make it fail
+:red:`RED`: make it fail
 *********************************************************************************
 
 * I change the test to a new failing test
@@ -95,7 +95,7 @@ RED: make it fail
     # TypeError
 
 *********************************************************************************
-GREEN: make it pass
+:green:`GREEN`: make it pass
 *********************************************************************************
 
 * I add :ref:`None` as the first and second arguments of the :ref:`assertion<AssertionError>`
@@ -289,7 +289,7 @@ GREEN: make it pass
 
 
 *********************************************************************************
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 *********************************************************************************
 
 * I add :ref:`variables<test_attribute_error_w_variables>` to remove the repetition of the values for ``wake_time`` and ``sleep_time``
@@ -472,7 +472,7 @@ REFACTOR: make it better
 test_string_splitting
 #################################################################################
 
-RED: make it fail
+:red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
 I add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
@@ -495,7 +495,7 @@ the terminal_ shows :ref:`AssertionError`
 
 `str.split`_ returns a :ref:`list <lists>` when called
 
-GREEN: make it pass
+:green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
 I copy the :ref:`list <lists>` from the terminal_ and paste it in the test to make it pass
@@ -508,7 +508,7 @@ I copy the :ref:`list <lists>` from the terminal_ and paste it in the test to ma
 
 the test passes
 
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------
 
 * I change the expectation to the hours and minutes as different items

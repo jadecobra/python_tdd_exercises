@@ -54,7 +54,7 @@ test_catching_exceptions_w_messages
     AttributeError: module 'src.exceptions' has no attribute 'raise_exception'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the name to ``exceptions.py``
@@ -165,7 +165,7 @@ test_catching_failure
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new failing test in ``test_exceptions.py``
@@ -195,7 +195,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.exceptions' has no attribute 'an_exception_handler'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the name to ``exceptions.py``
@@ -282,7 +282,7 @@ test_catching_success
 I want ``an_exception_handler`` to process its input and return ``failed`` when an :ref:`Exception<errors>` happens or return ``success`` when an :ref:`Exception<errors>` is NOT raised.
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to ``test_exceptions.py``
@@ -314,7 +314,7 @@ the terminal_ shows :ref:`AttributeError`
   AttributeError: module 'src.exceptions' has no attribute 'does_not_raise_exception'
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I add the name to ``exceptions.py``

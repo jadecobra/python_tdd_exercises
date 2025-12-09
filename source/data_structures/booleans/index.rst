@@ -75,7 +75,7 @@ test_what_is_false
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 * I change ``test_failure`` to ``test_what_is_false``, then use the `assertNotIsInstance method`_ from :ref:`testing None<None>` to check if False_ is a child/instance of the bool_ :ref:`class<classes>` expecting a failure
@@ -99,7 +99,7 @@ RED: make it fail
     AssertionError: False is an instance of <class 'bool'>
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change assertNotIsInstance_ to assertIsInstance_
@@ -133,7 +133,7 @@ test_what_is_true
 I do the same thing with True_
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add another failing test
@@ -158,7 +158,7 @@ the terminal_ shows :ref:`AssertionError`
     AssertionError: True is an instance of <class 'bool'>
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I change the `assert method`_
@@ -187,7 +187,7 @@ GREEN: make it pass
 ----
 
 *********************************************************************************
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 *********************************************************************************
 
 * I add a failing line to ``test_what_is_true``
@@ -363,7 +363,7 @@ is None False or True?
 *****************************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a line in ``test_what_is_true`` to test if :ref:`None` is True_
@@ -384,7 +384,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: None is not true
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change the :ref:`method<functions>`
@@ -398,7 +398,7 @@ I change the :ref:`method<functions>`
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 I move the line from ``test_what_is_true`` to ``test_what_is_false``
@@ -444,7 +444,7 @@ is an integer False or True?
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a failing line ``test_what_is_false`` to see if an integer_ (a whole number) is False_
@@ -468,7 +468,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: -1 is not false
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change the :ref:`method<functions>`
@@ -482,7 +482,7 @@ I change the :ref:`method<functions>`
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I move the line from ``test_what_is_false`` to ``test_what_is_true``
@@ -615,7 +615,7 @@ is a float False or True?
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a line to test if floats_ (floating point decimal numbers) are False_ in ``test_what_is_false``
@@ -636,7 +636,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: -0.1 is not false
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I change the :ref:`method<functions>`
@@ -663,7 +663,7 @@ GREEN: make it pass
   I use ``-0.1`` for all the floating point numbers that are smaller than ``0.0``. Negative floats_ are True_ in Python_
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another failing line to ``test_what_is_true`` to see if ``0.0`` is True_
@@ -801,7 +801,7 @@ is a string False or True?
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a failing line to ``test_what_is_true`` to test if a string_ (anything in :ref:`quotes`) is True_
@@ -831,7 +831,7 @@ the terminal_ shows :ref:`AssertionError`
 the empty string_ ('') is not True_
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change the :ref:`method<functions>`
@@ -845,7 +845,7 @@ I change the :ref:`method<functions>`
 the test passes
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I move the line to ``test_what_is_false``
@@ -937,7 +937,7 @@ is a tuple False or True?
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a line to ``test_what_is_true`` to see if a tuple_ (anything in parentheses (``()``)) is True_
@@ -968,7 +968,7 @@ The terminal_ shows :ref:`AssertionError`
 the empty tuple_ is not True_
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I change the `assert method`_
@@ -999,7 +999,7 @@ GREEN: make it pass
         def test_what_is_true(self):
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another line to ``test_what_is_false`` to see if a tuple_ with things is False_
@@ -1081,7 +1081,7 @@ is a list False or True?
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a line to test if a :ref:`list<lists>` (anything in square brackets (``[]``)) is True_
@@ -1102,7 +1102,7 @@ the terminal_ shows :ref:`AssertionError`
 the empty :ref:`list<lists>` is NOT True_
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I change the :ref:`method<functions>`
@@ -1125,7 +1125,7 @@ GREEN: make it pass
         def test_what_is_true(self):
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another line to ``test_what_is_false`` to see if a :ref:`list<lists>` with things is False_
@@ -1214,7 +1214,7 @@ is a set False or True?
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a line to in ``test_what_is_true`` to see if a set_ is True_
@@ -1238,7 +1238,7 @@ the terminal_ shows :ref:`AssertionError`
 the empty set_ is NOT True_
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I change the :ref:`method<functions>`
@@ -1263,7 +1263,7 @@ GREEN: make it pass
         def test_what_is_true(self):
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another line to ``test_what_is_false`` to see if a set_ with things is False_
@@ -1354,7 +1354,7 @@ is a dictionary False or True?
 *********************************************************************************
 
 =================================================================================
-RED: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a line to ``test_what_is_true`` to test if a :ref:`dictionary <dictionaries>` is True_
@@ -1378,7 +1378,7 @@ the terminal_ shows :ref:`AssertionError`
 the empty :ref:`dictionary <dictionaries>` is NOT True_
 
 =================================================================================
-GREEN: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 * I change assertTrue_ to assertFalse_
@@ -1412,7 +1412,7 @@ GREEN: make it pass
         def test_what_is_true(self):
 
 =================================================================================
-REFACTOR: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another line to test if a :ref:`dictionary <dictionaries>` with things is also False_
