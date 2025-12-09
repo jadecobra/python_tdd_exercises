@@ -1360,44 +1360,16 @@ how to run a PowerShell script
     .
     ├── magic
     │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic.py
     │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
     │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
     ├── magic_again
     │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic_again.py
     │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic_again.py
     │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
   the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem

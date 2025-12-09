@@ -35,8 +35,8 @@ text_sectionchars = '#*=-~"+`'
 # html_theme = 'press'
 html_theme = 'furo'
 pygments_style = "tango"
-
 pygments_dark_style = "monokai"
+
 html_extra_path = ['robots.txt', 'llms.txt']
 html_baseurl = 'https://www.pumpingpython.com/'
 html_favicon = '_static/dry_favicon_16x16.png'

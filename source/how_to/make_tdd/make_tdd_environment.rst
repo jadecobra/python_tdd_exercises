@@ -1242,7 +1242,7 @@ how to view all the commands I typed in a terminal
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
-* I change touch_ to echo_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.sh``
+* I change touch_ then use echo_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.sh``
 
   .. code-block:: shell
     :lineno-start: 8
@@ -1443,44 +1443,16 @@ how to make a shell script run as a command
     .
     ├── magic
     │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic.py
     │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic.py
     │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
     ├── magic_again
     │   ├── .pytest_cache
-    │   │   ├── CACHEDIR.TAG
-    │   │   ├── .gitignore
-    │   │   ├── README.md
-    │   │   └── v
     │   ├── requirements.txt
     │   ├── src
-    │   │   └── magic_again.py
     │   ├── tests
-    │   │   ├── __init__.py
-    │   │   ├── __pycache__
-    │   │   └── test_magic_again.py
     │   └── .venv
-    │       ├── bin
-    │       ├── .gitignore
-    │       ├── include
-    │       ├── lib
-    │       ├── lib64 -> lib
-    │       └── pyvenv.cfg
     └── makePythonTdd.sh
 
   the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem

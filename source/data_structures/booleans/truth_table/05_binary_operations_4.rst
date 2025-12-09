@@ -149,7 +149,7 @@ the test passes
 
   the test passes
 
-* the ``negate_second`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases where ``q`` is :ref:`False<test_what_is_false>`, I add a `return statement`_ to show this
+* the ``negate_second`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases where ``second_input`` is :ref:`False<test_what_is_false>`, I add a `return statement`_ to show this
 
   .. code-block:: python
     :lineno-start: 67
@@ -291,7 +291,7 @@ the test passes
     :emphasize-lines: 2
 
     def logical_nor(first_input, second_input):
-        return not first_input not or not q
+        return not first_input not or not second_input
         return not first_input and not second_input
 
   the terminal_ shows SyntaxError_
@@ -308,7 +308,7 @@ the test passes
 
     def logical_nor(first_input, second_input):
         return not (first_input or second_input)
-        # return not first_input not or not q
+        # return not first_input not or not second_input
         return not first_input and not second_input
 
   still green
@@ -502,7 +502,7 @@ the test passes
     :emphasize-lines: 2
 
     def logical_equality(first_input, second_input):
-        return (not not first_input not and not q) not or (not first_input not and not not q)
+        return (not not first_input not and not second_input) not or (not first_input not and not not second_input)
         return not ((not first_input and second_input) or (first_input and not second_input))
 
   the terminal_ shows SyntaxError_
@@ -518,7 +518,7 @@ the test passes
     :emphasize-lines: 2
 
     def logical_equality(first_input, second_input):
-        return (not not first_input or not second_input) and (not first_input or not not q)
+        return (not not first_input or not second_input) and (not first_input or not not second_input)
         return not ((not first_input and second_input) or (first_input and not second_input))
 
   the test is green again
@@ -545,7 +545,7 @@ the test passes
 
   the test is still passing
 
-* The 2 cases that return :ref:`True<test_what_is_true>` are when ``p`` and ``q`` are the same, which means I can write an even simpler `return statement`_
+* The 2 cases that return :ref:`True<test_what_is_true>` are when ``first_input`` and ``second_input`` are the same, which means I can write an even simpler `return statement`_
 
   .. code-block:: python
     :lineno-start: 75
@@ -690,7 +690,7 @@ the test passes
     :emphasize-lines: 2
 
     def material_implication(first_input, second_input):
-        return not first_input not and not not q
+        return not first_input not and not not second_input
         return not (first_input and not second_input)
 
   the terminal_ shows SyntaxError_
@@ -706,7 +706,7 @@ the test passes
     :emphasize-lines: 2
 
     def material_implication(first_input, second_input):
-        return not first_input or not not q
+        return not first_input or not not second_input
         return not (first_input and not second_input)
 
   the test is green again
@@ -737,22 +737,22 @@ the test passes
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``first_input`` and the second one ``second_input``, the tests show that
 
 * :ref:`Material Implication  <test_material_implication>` returns ``not first_input or second_input``
-* :ref:`Logical Equality <test_logical_equality>` returns ``p == q``
+* :ref:`Logical Equality <test_logical_equality>` returns ``first_input == second_input``
 * :ref:`Logical NOR <test_logical_nor>` returns ``not (first_input or second_input)``
-* :ref:`Negate Second <test_negate_second>` always returns ``not q``
+* :ref:`Negate Second <test_negate_second>` always returns ``not second_input``
 *  :ref:`Converse Implication <test_converse_implication>` returns ``first_input or not second_input``
-* :ref:`Project First <test_project_first>` always returns ``p``
+* :ref:`Project First <test_project_first>` always returns ``first_input``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``first_input and not second_input``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``first_input != second_input``
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``
 * :ref:`Negate First<test_negate_first>` always returns ``not first_input``
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
-* :ref:`Project Second <test_project_second>` always returns ``q``
+* :ref:`Project Second <test_project_second>` always returns ``second_input``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 

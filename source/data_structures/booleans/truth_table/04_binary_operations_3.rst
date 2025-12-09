@@ -206,7 +206,7 @@ the test passes
 
   still green
 
-* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases where ``p`` and ``q`` are the same. I add an `if statement`_ to show this
+* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases where ``first_input`` and ``second_input`` are the same. I add an `if statement`_ to show this
 
   .. code-block:: python
     :lineno-start: 49
@@ -515,7 +515,7 @@ the test passes
 
   the test passes
 
-* I add a `return statement`_ to show that this :ref:`function<functions>` returns the same value as ``p`` in every case
+* I add a `return statement`_ to show that this :ref:`function<functions>` returns the same value as ``first_input`` in every case
 
   .. code-block:: python
     :lineno-start: 59
@@ -672,7 +672,7 @@ the test passes
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
-        return not not first_input not and not q
+        return not not first_input not and not second_input
         return not (not first_input and second_input)
 
   the terminal_ shows SyntaxError_
@@ -719,18 +719,18 @@ the test passes
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second one ``q``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``first_input`` and the second one ``second_input``, the tests show that
 
 * :ref:`Converse Implication <test_converse_implication>` returns ``first_input or not second_input``
-* :ref:`Project First <test_project_first>` always returns ``p``
+* :ref:`Project First <test_project_first>` always returns ``first_input``
 * :ref:`Material NonImplication <test_material_non_implication>` returns ``first_input and not second_input``
-* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``p != q``
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``first_input != second_input``
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
 * :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``
 * :ref:`Negate First<test_negate_first>` always returns ``not first_input``
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
-* :ref:`Project Second <test_project_second>` always returns ``q``
+* :ref:`Project Second <test_project_second>` always returns ``second_input``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 

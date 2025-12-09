@@ -16,14 +16,39 @@ truth table: Binary Operations part 1
 
 ----
 
-The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input and :ref:`Unary Operations` which take 1 input. There are also Binary Operations, these take which take 2 inputs, they are called Binary Operations
+The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input and :ref:`Unary Operations` which take 1 input.
 
-There are 16 binary operations, they all take 2 inputs and each of the inputs can be :ref:`True <test_what_is_true>` or :ref:`False <test_what_is_false>`. This gives four cases or ways the inputs can be given to the operation
+There are also Binary Operations, these take 2 inputs. Each of the inputs in this exercise will be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to an :ref:`operation<functions>`
 
 * :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
 * :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`
 * :ref:`False <test_what_is_false>`, :ref:`True <test_what_is_true>`
 * :ref:`False <test_what_is_false>`, :ref:`False <test_what_is_false>`
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+These combinations give 16 binary operations each of which returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` based on the inputs it receives. Here are the 16 operations that are covered in these chapters and what they return
+
+* :ref:`Material Implication  <test_material_implication>` returns ``not first_input or second_input``
+* :ref:`Logical Equality <test_logical_equality>` returns ``first_input == second_input``
+* :ref:`Logical NOR <test_logical_nor>` returns ``not (first_input or second_input)``
+* :ref:`Negate Second <test_negate_second>` always returns ``not second_input``
+*  :ref:`Converse Implication <test_converse_implication>` returns ``first_input or not second_input``
+* :ref:`Project First <test_project_first>` always returns ``first_input``
+* :ref:`Material NonImplication <test_material_non_implication>` returns ``first_input and not second_input``
+* :ref:`Exclusive Disjunction <test_exclusive_disjunction>` returns ``first_input != second_input``
+* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
+* :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
+* :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``
+* :ref:`Negate First<test_negate_first>` always returns ``not first_input``
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
+* :ref:`Project Second <test_project_second>` always returns ``second_input``
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``
+* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+
+----
 
 *********************************************************************************
 requirements
@@ -89,7 +114,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition in ``truth_table.py``
+I add a :ref:`function<functions>` definition to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 13
@@ -108,7 +133,15 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: contradiction() takes 1 positional argument but 2 were given
 
-I add ``q`` as the second name in parentheses then change ``argument`` to ``p`` for the first input given when the :ref:`function<functions>` is called by the test
+The definition only takes one input, but the test sent two. I add ``second_input`` as the second name in parentheses then change ``argument`` to ``first_input`` for the first input given when the :ref:`function<functions>` is called by the test
+
+.. TIP:: In `Visual Studio Code`_ I can change everywhere a name is by using
+
+  * Find and Replace - ``ctrl+H`` on Windows_ or ``option+command+F`` on MacOS_
+  * Rename Symbol
+
+    - Right click on the name you want to change, for example ``the_input`` then select ``Rename Symbol`` or
+    - Select the name you want to change then hit ``F2`` to rename it
 
 .. code-block:: python
   :lineno-start: 17
@@ -117,13 +150,13 @@ I add ``q`` as the second name in parentheses then change ``argument`` to ``p`` 
   def contradiction(first_input, second_input):
       return not first_input
 
-the test passes
+the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as its first input and :ref:`True<test_what_is_true>` as its second input, it returns the :ref:`opposite<test_logical_negation>` of the first input, that means it returns not_ :ref:`True<test_what_is_true>` which is :ref:`False<test_what_is_false>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the second case to ``test_contradiction`` in ``test_truth_table.py``
+* I add the second case which is when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` to ``test_contradiction`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 27
@@ -283,7 +316,7 @@ the test passes
                 return False
         return True
 
-  the test passes.  The :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when ``p`` is :ref:`True<test_what_is_true>` and ``q`` is :ref:`False<test_what_is_false>`,  otherwise it returns :ref:`True<test_what_is_true>`
+  the test passes.  The :ref:`function<functions>` returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`,  otherwise it returns :ref:`True<test_what_is_true>`
 
 * I add the next case to ``test_logical_conjunction`` in ``test_truth_table.py``
 
@@ -429,7 +462,7 @@ the test passes
         else:
             return False
 
-  the test is still green. With ``if first_input and second_input``,  Python_ tests if ``p`` and ``q`` are :ref:`True<test_what_is_true>` in the background. I remove the commented line
+  the test is still green. With ``if first_input and second_input``,  Python_ tests if ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>` in the background. I remove the commented line
 
 * Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
@@ -600,7 +633,7 @@ the test passes
 
   the test passes
 
-* ``project_second`` returns :ref:`False<test_what_is_false>` when ``q`` is :ref:`False<test_what_is_false>` and returns :ref:`True<test_what_is_true>` when ``q`` is :ref:`True<test_what_is_true>`. I add a new `return statement`_ to show this
+* ``project_second`` returns :ref:`False<test_what_is_false>` when ``second_input`` is :ref:`False<test_what_is_false>` and returns :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`True<test_what_is_true>`. I add a new `return statement`_ to show this
 
   .. code-block:: python
     :lineno-start: 25
@@ -856,10 +889,10 @@ the test passes
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``p`` and the second ``q``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``first_input`` and the second ``second_input``, the tests show that
 
 * :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``
-* :ref:`Project Second <test_project_second>` always returns ``q``
+* :ref:`Project Second <test_project_second>` always returns ``second_input``
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
