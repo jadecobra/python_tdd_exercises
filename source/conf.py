@@ -1,6 +1,12 @@
 project = 'pumping python'
 copyright = '2023, JadeCobra LLC'
 author = 'Jacob Itegboje'
+
+rst_prolog = """
+.. role:: red
+.. role:: green
+.. role:: yellow
+"""
 master_doc = 'index'
 
 templates_path = ['_templates']
@@ -19,6 +25,9 @@ extensions = [
     'notfound.extension',
 ]
 
+pygments_style = "tango"
+pygments_dark_style = "monokai"
+
 # -- Section Header Options ----------------------------------------------------
 text_sectionchars = '#*=-~"+`'
 
@@ -36,6 +45,9 @@ html_short_title = 'pumping python'
 html_static_path = ['_static']
 html_js_files = [
     '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js',
+]
+html_css_files = [
+    'custom.css',
 ]
 
 sitemap_url_scheme = '{link}'

@@ -132,7 +132,7 @@ I pick ``magic`` as the name for this project
 
     tree
 
-* when tree_ is not installed on the computer, the terminal_ shows
+  when tree_ is not installed on the computer, the terminal_ shows
 
   .. code-block:: shell
 
@@ -172,7 +172,7 @@ I pick ``magic`` as the name for this project
 
     tree
 
-* when tree_ is installed on the computer, the terminal_ shows
+  when tree_ is installed on the computer, the terminal_ shows
 
   .. code-block:: shell
 
