@@ -21,11 +21,11 @@ A `Test Driven Development`_ environment is a collection of files_ and folders_ 
 what is the Test Driven Development cycle?
 *********************************************************************************
 
-The `Test Driven Development`_ cycle is **RED** **GREEN** **REFACTOR**
+The `Test Driven Development`_ cycle is :red:`RED` :green:`GREEN` :yellow:`REFACTOR`
 
-* :red:`RED`: make it fail - write a test that fails to make sure the test works
-* :green:`GREEN`: make it pass - write the simplest thing that will make the failing test pass
-* :yellow:`REFACTOR`: make it better - write a better solution, test or both, usually by `removing duplication`_
+* :red:`RED`: make it :red:`fail` - write a test that :red:`fails` to make sure the test works
+* :green:`GREEN`: make it :green:`pass` - write the simplest thing that will make the failing test :green:`pass`
+* :yellow:`REFACTOR`: make it :yellow:`better` - write a :yellow:`better` solution, test or both, usually by `removing duplication`_
 
 This process can be repeated as many times as needed until I get to my goal.
 
