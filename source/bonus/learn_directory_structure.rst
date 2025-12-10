@@ -269,7 +269,6 @@ how to make a directory
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1
 
     .../pumping_python/parent
 
