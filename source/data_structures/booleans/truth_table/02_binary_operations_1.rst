@@ -787,7 +787,12 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
 
   the test passes
 
-* ``project_second`` returns :ref:`False<test_what_is_false>` when ``second_input`` is :ref:`False<test_what_is_false>` and returns :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`True<test_what_is_true>`. I add a new `return statement`_ to show this
+* ``project_second`` returns
+
+  - :ref:`False<test_what_is_false>` when ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`True<test_what_is_true>`
+
+  It returns the same value as the second input. I add a new `return statement`_ to show this
 
   .. code-block:: python
     :lineno-start: 25

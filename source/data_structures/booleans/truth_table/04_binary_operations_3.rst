@@ -94,7 +94,7 @@ the test passes
 * I add an `if statement`_ to ``exclusive_disjunction`` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 49
     :emphasize-lines: 2-3
 
     def exclusive_disjunction(first_input, second_input):
