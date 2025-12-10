@@ -99,9 +99,8 @@ the terminal_ goes back to the command line
 
   .. code-block:: shell
 
-    .
-
-    0 directories, 0 files
+    C:.
+    No subfolders exist
 
   .. NOTE:: There will be more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
 
