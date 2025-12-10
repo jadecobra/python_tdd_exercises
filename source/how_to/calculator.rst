@@ -328,11 +328,11 @@ the test passes
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
+            random_x = random.randint(-1, 1)
+            random_y = random.randint(-1, 1)
 
             self.assertEqual(
-                src.calculator.add(x, y),
+                src.calculator.add(random_x, random_y),
                 x+x
             )
             self.assertEqual(
@@ -357,7 +357,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.add(x, y),
+                src.calculator.add(random_x, random_y),
                 x+y
             )
 
@@ -377,11 +377,11 @@ the test passes
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
-            x = random.randint(-1, 1)
-            y = random.randint(-1, 1)
+            random_x = random.randint(-1, 1)
+            random_y = random.randint(-1, 1)
 
             self.assertEqual(
-                src.calculator.add(x, y),
+                src.calculator.add(random_x, random_y),
                 x+y
             )
 
@@ -494,7 +494,7 @@ test_subtraction
             random_y = a_random_number()
 
             self.assertEqual(
-                src.calculator.subtract(x, y),
+                src.calculator.subtract(random_x, random_y),
                 x-y
             )
 
@@ -624,7 +624,7 @@ test_subtraction
             y = self.random_y
 
             self.assertEqual(
-                src.calculator.add(x, y),
+                src.calculator.add(random_x, random_y),
                 x+y
             )
 
@@ -641,7 +641,7 @@ test_subtraction
             y = self.random_y
 
             self.assertEqual(
-                src.calculator.subtract(x, y),
+                src.calculator.subtract(random_x, random_y),
                 x-y
             )
 

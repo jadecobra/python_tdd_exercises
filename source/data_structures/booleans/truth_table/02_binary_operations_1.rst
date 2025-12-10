@@ -611,40 +611,44 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
 .. IMPORTANT:: All of these statements gave the same result
 
-  .. code-block:: python
+  * this checks if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
 
-    if first_input == True and second_input == True:
-        return True
-    else:
-        return False
+    .. code-block:: python
 
-  this checks if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+      if first_input == True and second_input == True:
+          return True
+      else:
+          return False
 
-  .. code-block:: python
+  * this uses bool_ to check if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
 
-    if bool(first_input) and bool(second_input):
-        return True
-    else:
-        return False
+    .. code-block:: python
 
-this checks if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+      if bool(first_input) and bool(second_input):
+          return True
+      else:
+          return False
 
-  .. code-block:: python
+  * this checks if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>` in the background
 
-    if first_input and second_input:
-        return True
-    else:
-        return False
+    .. code-block:: python
 
-  .. code-block:: python
+      if first_input and second_input:
+          return True
+      else:
+          return False
 
-    return True if first_input and second_input else False
+  * this returns :ref:`True<test_what_is_true>` if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    return first_input and second_input
+      return True if first_input and second_input else False
 
-  this will come in handy later on
+  * this also returns :ref:`True<test_what_is_true>` after checking if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>` in the background
+
+    .. code-block:: python
+
+      return first_input and second_input
 
 ----
 
@@ -693,13 +697,13 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
   def project_second(first_input, second_input):
       return True
 
-the test passes
+the test passes. When the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, this :ref:`function<functions>` returns :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the second case to ``test_project_second`` in ``test_truth_table.py``
+* I add the second case - where the first input is :ref:`True<test_what_is_true>` and the second input :ref:`False<test_what_is_false>`, to ``test_project_second`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -715,7 +719,7 @@ the test passes
 
     AssertionError: True is not false
 
-* I add an `if statement`_ to ``project_second`` in ``truth_table.py``
+* I add an `if statement`_ for the case to ``project_second`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -727,9 +731,12 @@ the test passes
                 return False
         return True
 
-  the test passes
+  the test
 
-* I add the next case to ``test_project_second`` in ``test_truth_table.py``
+  - ``project_second`` returns :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input :ref:`False<test_what_is_false>`
+  - it returns :ref:`True<test_what_is_true>` in every other case
+
+* I add the next case, which is when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_project_second`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -742,7 +749,7 @@ the test passes
 
   the test is still green
 
-* I add the last case
+* I add the last case - when both inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 39
@@ -763,7 +770,7 @@ the test passes
 
     AssertionError: True is not false
 
-* I add another `if statement`_ to ``project_second`` in ``truth_table.py``
+* I add an `if statement`_ for this case to ``project_second`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 25
