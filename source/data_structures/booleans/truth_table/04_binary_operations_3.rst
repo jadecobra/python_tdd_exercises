@@ -213,7 +213,7 @@ the test passes
     :emphasize-lines: 2-5
 
     def exclusive_disjunction(first_input, second_input):
-        if first_input == q:
+        if first_input == second_input:
             return False
         else:
             return True
@@ -227,7 +227,7 @@ the test passes
 
     def exclusive_disjunction(first_input, second_input):
         return not first_input == second_input
-        if first_input == q:
+        if first_input == second_input:
             return False
         else:
             return True
