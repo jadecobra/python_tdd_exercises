@@ -333,7 +333,7 @@ the test passes
 
             self.assertEqual(
                 src.calculator.add(random_x, random_y),
-                x+x
+                random_x+random_x
             )
             self.assertEqual(
                 src.calculator.add(0, 1),
@@ -358,7 +358,7 @@ the test passes
 
             self.assertEqual(
                 src.calculator.add(random_x, random_y),
-                x+y
+                random_x+random_y
             )
 
   the test passes
@@ -382,7 +382,7 @@ the test passes
 
             self.assertEqual(
                 src.calculator.add(random_x, random_y),
-                x+y
+                random_x+random_y
             )
 
 
@@ -395,8 +395,8 @@ the test passes
     :emphasize-lines: 2-3
 
         def test_addition(self):
-            x = random.randint(-10, 10)
-            y = random.randint(-10, 10)
+            random_x = random.randint(-10, 10)
+            random_y = random.randint(-10, 10)
 
   I add a :ref:`function<functions>` to remove the repetition
 
@@ -415,7 +415,7 @@ the test passes
 
     class TestCalculator(unittest.TestCase):
 
-  then I use the new :ref:`function<functions>` for the ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>` in ``test_addition``
+  then I use the new :ref:`function<functions>` for the ``random_x`` and ``random_y`` :ref:`variables<test_attribute_error_w_variables>` in ``test_addition``
 
   .. code-block:: python
     :lineno-start: 12
@@ -486,7 +486,7 @@ test_subtraction
 
             self.assertEqual(
                 src.calculator.add(first_input, second_input),
-                x+y
+                random_x+random_y
             )
 
         def test_subtraction(self):
@@ -495,7 +495,7 @@ test_subtraction
 
             self.assertEqual(
                 src.calculator.subtract(random_x, random_y),
-                x-y
+                random_x-random_y
             )
 
   the terminal_ shows :ref:`AttributeError`
@@ -565,16 +565,17 @@ test_subtraction
     def subtract(first_input, second_input):
         return None
 
+  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError` with random values that look like this
+
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
-    AssertionError: None != -17
-    AssertionError: None != -4
-    AssertionError: None != 7
-    AssertionError: None != 10
+    AssertionError: None != X
 
-  ``subtract`` returns :ref:`None`, the test expects ``x-y``
+  where ``X`` is a random number.
+
+  ``subtract`` returns :ref:`None`, the test expects ``random_x-random_y`` or ``first_input-second_input`` - the difference between the 2 numbers
 
 * I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
 
@@ -619,13 +620,13 @@ test_subtraction
 
         def test_addition(self):
             # random_x = a_random_number()
-            x = self.random_x
+            random_x = self.random_x
             # random_y = a_random_number()
-            y = self.random_y
+            random_y = self.random_y
 
             self.assertEqual(
                 src.calculator.add(random_x, random_y),
-                x+y
+                random_x+random_y
             )
 
   and in ``test_subtraction``
@@ -636,13 +637,13 @@ test_subtraction
 
         def test_subtraction(self):
             # random_x = a_random_number()
-            x = self.random_x
+            random_x = self.random_x
             # random_y = a_random_number()
-            y = self.random_y
+            random_y = self.random_y
 
             self.assertEqual(
                 src.calculator.subtract(random_x, random_y),
-                x-y
+                random_x-random_y
             )
 
   the terminal_ shows the tests are still passing. The ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_x`` and ``self.random_y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
