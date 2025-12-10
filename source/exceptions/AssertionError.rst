@@ -81,7 +81,9 @@ requirements
 test_what_is_an_assertion
 *********************************************************************************
 
-We know that the result of ``1 + 1`` is ``2``, but what if I said that ``'1' + '1'`` is ``'11'``? I can use assertions_ to have the computer check if these statements are :ref:`True<test_what_is_true>`
+We know that the result of ``1 + 1`` is ``2``, but what if I said that ``'1' + '1'`` is ``'11'``, would you agree?
+
+I can use assertions_ to make the computer check if these statements are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -113,7 +115,7 @@ We know that the result of ``1 + 1`` is ``2``, but what if I said that ``'1' + '
     :lineno-start: 7
     :emphasize-lines: 1
 
-            1 + 1 == 3
+            1 + 1 == 11
 
   the terminal_ still shows green.
 
@@ -123,13 +125,13 @@ We know that the result of ``1 + 1`` is ``2``, but what if I said that ``'1' + '
     :lineno-start: 7
     :emphasize-lines: 1
 
-            assert 1 + 1 == 3
+            assert 1 + 1 == 11
 
   the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
-    E       assert (1 + 1) == 3
+    E       assert (1 + 1) == 11
 
 =================================================================================
 :green:`GREEN`: make it pass
