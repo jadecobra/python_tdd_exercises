@@ -76,7 +76,7 @@ how to install tree
 =================================================================================
 
 * :ref:`how to install tree on Linux/Windows Subsystem for Linux`
-* :ref:`how to install tree on mac OS`
+* :ref:`how to install tree on Mac OS`
 * :ref:`how to install tree on Windows without Windows Subsystem for Linux`
 
 ---------------------------------------------------------------------------------
@@ -129,7 +129,7 @@ instead of
 continue with :ref:`how to work in directories`
 
 ---------------------------------------------------------------------------------
-how to install tree on mac OS
+how to install tree on Mac OS
 ---------------------------------------------------------------------------------
 
 * install brew_ (The Missing Package Manager for MacOS), if you do not have it already
