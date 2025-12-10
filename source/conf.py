@@ -34,7 +34,9 @@ text_sectionchars = '#*=-~"+`'
 
 # html_theme = 'press'
 html_theme = 'furo'
+# pygments_style = "default"
 pygments_style = "tango"
+# pygments_dark_style = "ayu-dark"
 pygments_dark_style = "monokai"
 
 html_extra_path = ['robots.txt', 'llms.txt']

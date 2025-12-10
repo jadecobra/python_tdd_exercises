@@ -1375,7 +1375,7 @@ the test passes
 
   the test passes.
 
-  The get_ :ref:`method<functions>` has a :ref:`condition<booleans>`
+  The get_ :ref:`method<functions>` has a :ref:`condition<if statements (conditionals)>`
 
   - When the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_, it returns the default argument
   - When the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_, it returns its :ref:`value<test_values_of_a_dictionary>`.
@@ -2441,7 +2441,7 @@ the test passes
 
   the test passes
 
-* setdefault_ has a :ref:`condition<booleans>`
+* setdefault_ has a :ref:`condition<if statements (conditionals)>`
 
   - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_ it adds it with a default value of :ref:`None` and returns :ref:`None`
   - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_ and I call setdefault_ with a second argument, it adds the :ref:`key<test_keys_of_a_dictionary>` to the dictionary_ with the second argument as the :ref:`value<test_values_of_a_dictionary>` and returns the second argument

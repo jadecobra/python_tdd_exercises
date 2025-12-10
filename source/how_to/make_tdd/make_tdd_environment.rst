@@ -20,7 +20,7 @@ This is one way to make a Python_ `Test Driven Development`_ project. First, :re
 preview
 *********************************************************************************
 
-Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment>`, it is only 28 lines of code, with spaces
+Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment>`, it is only 28 lines of code, with spaces
 
 .. literalinclude:: ../../code/make_tdd/makePythonTdd.sh
   :language: shell

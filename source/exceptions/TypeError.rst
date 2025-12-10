@@ -933,7 +933,7 @@ the test passes
 how to check if input is good
 *********************************************************************************
 
-I want to add a :ref:`condition<booleans>` to the calculator to make sure that what the :ref:`functions` receive are numbers. I can do this with TypeError_
+I want to add a :ref:`condition<if statements (conditionals)>` to the calculator to make sure that what the :ref:`functions` receive are numbers. I can do this with TypeError_
 
 * I go to the :ref:`explorer<explorer on left>` in the `Integrated Development Environment (IDE)`_ to open the ``calculator`` folder_
 * I open the ``src`` folder and click on ``calculator.py`` to open it in the :ref:`editor<2 editors>`
@@ -1270,7 +1270,7 @@ the test passes
 
   the test passes
 
-* I want the :ref:`add function<test_addition>` to show the same message when it gets a string_. I add a :ref:`condition<booleans>` to ``handle_type_error`` in ``calculator.py``
+* I want the :ref:`add function<test_addition>` to show the same message when it gets a string_. I add a :ref:`condition<if statements (conditionals)>` to ``handle_type_error`` in ``calculator.py``
 
   .. code-block:: python
     :linenos:

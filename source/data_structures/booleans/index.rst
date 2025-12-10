@@ -1525,7 +1525,7 @@ From the tests I can see that in Python_
 * True_ is not False_
 * True_ and False_ are booleans_
 
-these things come in handy when I write :ref:`conditions<truth table operations>` in programs_, because I can make decisions on whether the :ref:`data<data structures>` is empty or has something in it
+these things come in handy when I write :ref:`condition<if statements (conditionals)>` in programs_, because I can make decisions on whether the :ref:`data<data structures>` is empty or has something in it
 
 Here are the questions you can answer after going through this chapter
 

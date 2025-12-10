@@ -20,7 +20,7 @@ This is one way to make a Python_ `Test Driven Development`_ project on a Window
 preview
 *********************************************************************************
 
-Here is the program_ I will have at the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`, it is only 27 lines of code, with spaces
+Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`, it is only 27 lines of code, with spaces
 
 .. literalinclude:: ../../code/make_tdd/makePythonTdd.ps1
   :language: PowerShell
