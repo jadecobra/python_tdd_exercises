@@ -336,7 +336,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   the test passes.
 
-  - When the ``logical_conjunction`` :ref:`function<functions>` gets :ref:`True<test_what_is_true>` as the first input and :ref:`False<test_what_is_false>` as the second input, it returns :ref:`False<test_what_is_false>`
+  - when the ``logical_conjunction`` :ref:`function<functions>` gets :ref:`True<test_what_is_true>` as the first input and :ref:`False<test_what_is_false>` as the second input, it returns :ref:`False<test_what_is_false>`
   - it returns :ref:`True<test_what_is_true>` in all other cases
 
 * I add the case where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_logical_conjunction`` in ``test_truth_table.py``
@@ -373,8 +373,8 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   the test passes
 
-  - When the ``logical_conjunction`` :ref:`function<functions>` gets :ref:`False<test_what_is_false>` as the first input and :ref:`True<test_what_is_true>` as the second input, it returns :ref:`False<test_what_is_false>`
-  - When the :ref:`function<functions>` gets :ref:`True<test_what_is_true>` as the first input and :ref:`False<test_what_is_false>` as the second input, it returns :ref:`False<test_what_is_false>`
+  - when the ``logical_conjunction`` :ref:`function<functions>` gets :ref:`False<test_what_is_false>` as the first input and :ref:`True<test_what_is_true>` as the second input, it returns :ref:`False<test_what_is_false>`
+  - when the :ref:`function<functions>` gets :ref:`True<test_what_is_true>` as the first input and :ref:`False<test_what_is_false>` as the second input, it returns :ref:`False<test_what_is_false>`
   - it returns :ref:`True<test_what_is_true>` in all other cases
 
 * I add the last case, which is when both inputs are :ref:`False<test_what_is_false>`, to ``test_logical_conjunction`` in ``test_truth_table.py``
@@ -398,11 +398,11 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
     AssertionError: True is not false
 
-* I add an `if statement`_ for the new case to ``logical_conjunction`` in ``truth_table.py``
+* I add `if statements`_ for the new case to ``logical_conjunction`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 3-4
+    :emphasize-lines: 2-4
 
     def logical_conjunction(first_input, second_input):
         if first_input == False:
@@ -418,11 +418,33 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   the test passes
 
-* there is a duplicate `if statement`_, I remove it
+  - when the ``logical_conjunction`` :ref:`function<functions>` gets :ref:`False<test_what_is_false>` as the first and second inputs it returns :ref:`False<test_what_is_false>`
+  - when the :ref:`function<functions>` gets :ref:`False<test_what_is_false>` as the first input and :ref:`True<test_what_is_true>` as the second input, it returns :ref:`False<test_what_is_false>`
+  - when it gets :ref:`True<test_what_is_true>` as the first input and :ref:`False<test_what_is_false>` as the second input, it returns :ref:`False<test_what_is_false>`
+  - it returns :ref:`True<test_what_is_true>` in the last case
+
+* I have the same `if statement`_ twice - ``if first_input == False`` for the 3rd and 4th cases where the first input is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 3-4
+    :emphasize-lines: 2, 5
+
+    def logical_conjunction(first_input, second_input):
+        if first_input == False:
+            if second_input == False:
+                return False
+        if first_input == False:
+            if second_input == True:
+                return False
+        if first_input == True:
+            if second_input == False:
+                return False
+        return True
+
+  I remove the second one
+
+  .. code-block:: python
+    :lineno-start: 21
 
     def logical_conjunction(first_input, second_input):
         if first_input == False:
@@ -435,9 +457,9 @@ An `if statement`_ is a way for a program_ to do something based on something el
                 return False
         return True
 
-  the test passes
+  the test is still green
 
-* I add an `if statement`_ for the first case
+* I add an `if statement`_ for the first case, where the first and second inputs are both :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -455,7 +477,40 @@ An `if statement`_ is a way for a program_ to do something based on something el
             if second_input == True:
                 return True
 
-* there are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>` and in the other 3 cases it returns :ref:`False <test_what_is_false>`. I use an `if statement`_ for the case where the result is :ref:`True <test_what_is_true>` and an else_ clause for the other cases
+  the terminal still shows green
+
+* there are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>`. In the other 3 cases it returns :ref:`False <test_what_is_false>`.
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4, 6, 9, 11
+
+    def logical_conjunction(first_input, second_input):
+        if first_input == False:
+            if second_input == False:
+                return False
+            if second_input == True:
+                return False
+        if first_input == True:
+            if second_input == False:
+                return False
+            if second_input == True:
+                return True
+
+* I can put two `if statements`_ together when one is under the other. For example
+
+  .. code-block:: python
+
+    if something:
+        if something_else:
+
+  can be written as
+
+  .. code-block:: python
+
+    if something and something_else:
+
+  I put the two `if statements`_ for the one case where the result is :ref:`True <test_what_is_true>` together and use an else_ clause for the other cases where the first and second inputs are not both :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -479,7 +534,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   the test is still green
 
-* I remove the other `if statements`_ then change the first statement with bool_
+* I remove the other `if statements`_ then use bool_ in the first `if statement`_
 
   .. code-block:: python
     :lineno-start: 21
@@ -492,7 +547,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
         else:
             return False
 
-  still green. ``bool(x)`` checks if ``x`` is :ref:`True <test_what_is_true>`
+  still green. bool_ checks if the thing in parentheses is :ref:`True <test_what_is_true>` in the background
 
 * I remove the commented line then change the first line to make it simpler
 
@@ -507,7 +562,17 @@ An `if statement`_ is a way for a program_ to do something based on something el
         else:
             return False
 
-  the test is still green. With ``if first_input and second_input``,  Python_ tests if ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>` in the background. I remove the commented line
+  the test is still green
+
+  .. TIP:: these 3 `if statements`_ are the same
+
+    - ``if something:``
+    - ``if bool(something):``
+    - ``if something == True:``
+
+    Python_ checks if ``something`` is :ref:`True<test_what_is_true>` in the background when I type ``if something:``
+
+  I remove the commented line
 
 * Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
@@ -522,9 +587,9 @@ An `if statement`_ is a way for a program_ to do something based on something el
         else:
             return False
 
-  the terminal_ shows green, I remove the other `if statements`_
+  the terminal_ shows green. the format is ``return True if something else False``
 
-* I change the `return statement`_ to a simpler statement
+* I remove the other `if statements`_ then change the `return statement`_ to a simpler statement
 
   .. code-block:: python
     :lineno-start: 21
@@ -543,6 +608,43 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
     def logical_conjunction(first_input, second_input):
         return first_input and second_input
+
+.. IMPORTANT:: All of these statements gave the same result
+
+  .. code-block:: python
+
+    if first_input == True and second_input == True:
+        return True
+    else:
+        return False
+
+  this checks if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+    if bool(first_input) and bool(second_input):
+        return True
+    else:
+        return False
+
+this checks if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+    if first_input and second_input:
+        return True
+    else:
+        return False
+
+  .. code-block:: python
+
+    return True if first_input and second_input else False
+
+  .. code-block:: python
+
+    return first_input and second_input
+
+  this will come in handy later on
 
 ----
 
