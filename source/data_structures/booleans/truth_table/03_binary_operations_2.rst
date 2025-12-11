@@ -309,7 +309,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
     def negate_first(first_input, second_input):
         return not first_input
 
-`Negate First<test_negate_first>` always returns ``not first_input`` which means it always returns the :ref:`Logical Negation<test_logical_negation>` of the first input or it always returns the opposite of the first input, which means it returns :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and returns :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_false>`
+:ref:`Negate First<test_negate_first>` always returns ``not first_input`` which means it always returns the :ref:`Logical Negation<test_logical_negation>` of the first input or it always returns the opposite of the first input, which means it returns :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and returns :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_false>`
 
 ----
 

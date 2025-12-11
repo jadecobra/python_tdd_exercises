@@ -60,6 +60,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I make a shell script?<how to make a shell script>`
 * :ref:`What is a variable?<how to use a variable in a shell script>`
 * :ref:`How can I use a variable in a shell script<how to use a variable in a shell script>`
+* :ref:`How can I view the permissions of a file?<how to view the permissions of a file>`
 * :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
 * :ref:`How can I run a shell script<how to run a shell script>`
 
@@ -1362,17 +1363,65 @@ I have to tell the computer where the file_ is
 I want to make sure the computer can run the program_. I have to make it executable
 
 --------------------------------------------------------------------------------------------
+how to view the permissions of a file
+--------------------------------------------------------------------------------------------
+
+I use ls_ to check the permissions of the file_
+
+.. code-block:: shell
+  :emphasize-lines: 1
+
+  ls -l makePythonTdd.sh
+
+``-l`` is the option to show the long listing format which includes permissions for the file_
+
+the terminal_ shows
+
+.. code-block:: shell
+
+  -rw-r--r-- 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
+
+here is what each one of the characters before the folder_ means
+
+* ``-`` means this is a regular file_, it is not a directory_
+* ``rw-`` means the owner of the file_ can read and write to the file_ but not execute it
+* ``r--`` means the group on the computer the owner of the file_ belongs to can only read the file_, they cannot write to it or execute it, and the second
+* ``r--`` means other users can only read the file_, they cannot write to it or execute it
+
+I want to add execute permissions so I can run the file
+
+--------------------------------------------------------------------------------------------
 how to make a shell script run as a command
 --------------------------------------------------------------------------------------------
 
-* I change the mode of the file_
+* I change the mode of the file_ to add executable permissions
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program_ that changes the mode of the given file_, the terminal_ goes back to the command line. I use chmod_ to make the file_ executable so the computer can run it
+  chmod_ is a program_ that changes the mode (permissions) of the given file_, the terminal_ goes back to the command line. I use chmod_ to make the file_ executable so the computer can run it
+
+* I list the permissions again with ls_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls -l makePythonTdd.sh
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    -rwxr-xr-x 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
+
+  here is what each one of the characters before the folder_ means
+
+  * ``-`` means this is a regular file_, it is not a directory_
+  * ``rwx`` means the owner of the file_ has permissions to read, write to and execute it
+  * ``r-x`` means the group the owner of the file_ belongs to has permissions to read and execute the file_ they cannot write to it, and the second
+  * ``r-x`` means other users have permissions to read and execute the file_, they cannot write to it
 
 * I try the command again
 
