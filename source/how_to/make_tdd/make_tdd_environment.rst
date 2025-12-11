@@ -919,6 +919,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 * I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as what is inside it
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     echo "pytest-watch" > requirements.txt
 
