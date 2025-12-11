@@ -1170,6 +1170,7 @@ how to make a shell script
 * I use tree_ to see what is in the ``pumping_python`` directory_
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     tree -a -L 2
 

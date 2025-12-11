@@ -32,7 +32,7 @@ test_negate_first
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_truth_table.py``
+I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_truth_table.py`` for another binary operation
 
 .. code-block:: python
   :lineno-start: 49
@@ -69,7 +69,7 @@ I add the :ref:`function<functions>` definition in ``truth_table.py``
   def negate_first(first_input, second_input):
       return False
 
-the test passes
+the test passes. ``negate_first`` returns :
 
 =================================================================================
 :yellow:`REFACTOR`: make it better

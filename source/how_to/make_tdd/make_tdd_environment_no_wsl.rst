@@ -1097,6 +1097,7 @@ how to make a PowerShell script
 * I use tree_ to see what is in the ``pumping_python`` directory_
 
   .. code-block:: PowerShell
+    :emphasize-lines: 1
 
     tree /F
 
