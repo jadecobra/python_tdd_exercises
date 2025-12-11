@@ -13,7 +13,7 @@ how to make a python test driven development environment on Windows without Wind
   <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/CLC1YAHHbjU?si=0agM3_IhWmUYpTln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
-s
+
 This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
 
 *********************************************************************************
@@ -25,6 +25,12 @@ Here is the program_ I have by the end of the chapter to :ref:`automatically mak
 .. literalinclude:: ../../code/make_tdd/makePythonTdd.ps1
   :language: PowerShell
   :linenos:
+
+*************************************************************************************************************************
+questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux
+*************************************************************************************************************************
+
+Here are questions you can answer after going through this chapter
 
 * :ref:`what is a Test Driven Development Environment?`
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>`
@@ -1741,37 +1747,7 @@ review
 
 `Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.ps1>` to do it for you on any Windows_ computer without `Windows Subsystem for Linux`_.
 
-Here are questions you can answer after going through this chapter
-
-* :ref:`what is a Test Driven Development Environment?`
-* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I change directories?<how to change directory>`
-* :ref:`How can I make a directory?<how to make a directory>`
-* :ref:`How can I see directory structure?<how to look at directory structure>`
-* :ref:`How can I make an empty file?<how to make an empty file on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I write text to a file?<how to write text to a file on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I change the name of a file?<how to change the name of a file on Windows without WSL>`
-* :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I test for failure?<test_failure on Windows without WSL>`
-* :ref:`How can I make a Python package?<how to make a Python package on Windows without WSL>`
-* :ref:`How can I run tests manually?<how to manually run tests on Windows without WSL>`
-* :ref:`How can I run tests automatically?<how to automatically run tests on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I stop automated Python tests from running?<how to exit the automated tests on Windows without WSL>`
-* :ref:`What is a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
-* :ref:`How can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
-* :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
-* :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment on Windows without WSL>`
-* :ref:`How can I document the Python programs my project needs?<how to write text to a file on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment on Windows without WSL>`
-* :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment on Windows without WSL>`
-* :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
-* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal on Windows without WSL>`
-* :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`What is a variable?<how to use a variable in a shell script>`
-* :ref:`How can I use a variable in a PowerShell script<how to use a variable in a PowerShell script>`
-* :ref:`What is a variable?<how to use a variable in a PowerShell script>`
-* :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
+:ref:`How many questions can you answer after going through this chapter<questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux>`
 
 Would you like to test :ref:`test AssertionError?<AssertionError>`
 

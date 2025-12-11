@@ -36,6 +36,10 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+*********************************************************************************
+questions about None
+*********************************************************************************
+
 Here are questions you can answer after going through this chapter
 
 * :ref:`What is None?<test_what_is_none>`
@@ -1015,7 +1019,7 @@ test_is_none_a_tuple
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to see if None_ is a tuple_ (anything in parentheses (``()``))
+I add a test to see if None_ is a tuple_ (anything in parentheses (``()``)), pronounced ``two-pull``
 
 .. code-block:: python
   :lineno-start: 39
@@ -1704,19 +1708,7 @@ I also showed the basic Python_ :ref:`data structures`
 * sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 * :ref:`dictionaries` - :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``)
 
-Here are questions you can answer after going through this chapter
-
-* :ref:`What is None?<test_what_is_none>`
-* :ref:`Is None a boolean?<test_is_none_a_boolean>`
-* :ref:`Is None an integer?<test_is_none_an_integer>`
-* :ref:`Is None a float?<test_is_none_a_float>`
-* :ref:`Is None a string?<test_is_none_a_string>`
-* :ref:`Is None a tuple?<test_is_none_a_tuple>`
-* :ref:`Is None a list?<test_is_none_a_list>`
-* :ref:`Is None a set?<test_is_none_a_set>`
-* :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
-* :ref:`How can I test if something is None or not?<how to test if something is None>`
-* :ref:`How can I test if something is an instance of a class or not?<how to test if something is an instance of a class>`
+:ref:`How many questions can you answer about None?<questions about None>`
 
 You have :ref:`tested AssertionError<AssertionError>`, would you like to :ref:`test what is True and False?<booleans>`
 

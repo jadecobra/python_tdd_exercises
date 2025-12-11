@@ -35,6 +35,10 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+*********************************************************************************
+questions about AssertionError
+*********************************************************************************
+
 Here are questions you can answer after going through this chapter
 
 * :ref:`What is an assertion?<test_what_is_an_assertion>`
@@ -1421,18 +1425,7 @@ I can use `assert statements`_ and `assert methods`_ to test if something is
 
 for a total of 6 `assert methods`_ I can use when testing
 
-Here are questions you can answer after going through this chapter
-
-* :ref:`What is an assertion?<test_what_is_an_assertion>`
-* :ref:`What causes AssertionError?<what_causes_assertion_error>`
-* :ref:`How can I test if something is NOT None?<how to test if something is None>`
-* :ref:`How can I test if something is None?<how to test if something is None>`
-* :ref:`How can I test if something is False?<how to test if something is False>`
-* :ref:`How can I test if something is NOT False?<how to test if something is False>`
-* :ref:`How can I test if something is True?<how to test if something is True>`
-* :ref:`How can I test if something is NOT True?<how to test if something is True>`
-* :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are Equal>`
-* :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
+:ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 
 you know :ref:`how to make a test driven development environment`, would you like to use the `assert methods`_ from this chapter to :ref:`test Python's data structures?<data structures>`
 
