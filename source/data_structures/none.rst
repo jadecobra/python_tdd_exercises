@@ -1708,7 +1708,7 @@ I also showed the basic Python_ :ref:`data structures`
 * sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 * :ref:`dictionaries` - :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``)
 
-:ref:`How many questions can you answer about None?<questions about None>`
+:ref:`How many questions can you answer after going through this chapter?<questions about None>`
 
 You have :ref:`tested AssertionError<AssertionError>`, would you like to :ref:`test what is True and False?<booleans>`
 

@@ -48,7 +48,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I run tests manually?<how to manually run tests>`
 * :ref:`How can I run tests automatically?<how to automatically run tests>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
-* :ref:`What is a Virtual Environment?<how to make a virtual environment>`
+* :ref:`What is a Virtual Environment?<what is a virtual environment?>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
@@ -768,6 +768,10 @@ how to make a virtual environment
 =================================================================================
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
+
+---------------------------------------------------------------------------------
+what is a virtual environment?
+---------------------------------------------------------------------------------
 
 A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
@@ -1794,7 +1798,7 @@ review
 
 `Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
-:ref:`How many questions can you answer after going through this chapter<questions about making a Python Test Driven Development Environment>`
+:ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 
 Would you like to test :ref:`test AssertionError?<AssertionError>`
 

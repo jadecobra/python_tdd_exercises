@@ -1431,7 +1431,7 @@ you know :ref:`how to make a test driven development environment`, would you lik
 
 ----
 
-:ref:`Click here for all the tests from this chapter<AssertionError: tests>`
+:ref:`How many questions can you answer after going through this chapter?<AssertionError: tests>`
 
 ----
 

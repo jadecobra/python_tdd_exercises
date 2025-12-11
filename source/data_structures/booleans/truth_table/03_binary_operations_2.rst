@@ -69,13 +69,13 @@ I add the :ref:`function<functions>` definition in ``truth_table.py``
   def negate_first(first_input, second_input):
       return False
 
-the test passes. ``negate_first`` returns :
+the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the second case to ``test_negate_first`` in ``test_truth_table.py``
+* I add the second case - where the first input is :ref:`True<test_what_is_true>` and the second input :ref:`False<test_what_is_false>`, to ``test_negate_first`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -85,9 +85,12 @@ the test passes. ``negate_first`` returns :
             self.assertFalse(src.truth_table.negate_first(True, True))
             self.assertFalse(src.truth_table.negate_first(True, False))
 
-  the test is still green
+  the test is still green. ``negate_first`` returns
 
-* I add the next case
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when both the first and second inputs are :ref:`True<test_what_is_true>`
+
+* I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -104,20 +107,45 @@ the test passes. ``negate_first`` returns :
 
     AssertionError: False is not true
 
-  I add an `if statement`_ to ``negate_first`` in ``truth_table.py``
+  I add `if statements`_  for the case to ``negate_first`` in ``truth_table.py``
+
+  .. code-block:: python
+      :lineno-start: 33
+      :emphasize-lines: 2-4
+
+      def negate_first(first_input, second_input):
+          if first_input == False:
+              if second_input == True:
+                  return True
+          return False
+
+  the test passes
+
+* this looks like the first `if statement`_ in :ref:`converse_non_implication<test_converse_non_implication>`. I change the two `if statements`_ to one `if statement`_ with :ref:`Logical Conjunction<test_logical_conjunction>` (and_)
 
   .. code-block:: python
     :lineno-start: 33
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-4
+
+    def negate_first(first_input, second_input):
+        if first_input == False and second_input == True:
+        # if first_input == False:
+        #     if second_input == True:
+                return True
+        return False
+
+  the test is still green. I remove the commented lines and move the first `return statement`_ to the left
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 3
 
     def negate_first(first_input, second_input):
         if first_input == False and second_input == True:
             return True
         return False
 
-  the test passes
-
-* I add the last case to ``test_negate_first`` in ``test_truth_table.py``
+* I add the last case - when the first and second inputs are both :ref:`False<test_what_is_false>`, to ``test_negate_first`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -138,22 +166,51 @@ the test passes. ``negate_first`` returns :
 
     AssertionError: False is not true
 
-* I add an `if statement`_ for the case to the ``negate_first`` :ref:`function<functions>` in ``truth_table.py``
+  I add `if statements`_ for the case to the ``negate_first`` :ref:`function<functions>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 33
-    :emphasize-lines: 2-3
+    :emphasize-lines: 4-6
 
     def negate_first(first_input, second_input):
-        if first_input == False and second_input == False:
+        if first_input == False and second_input == True:
+            return True
+        if first_input == False:
+            if second_input == False:
+                return True
+        return False
+
+  the test passes
+
+* I change the two `if statements`_ to one `if statement`_ with and_
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 5-6
+
+    def negate_first(first_input, second_input):
+        if first_input == False and second_input == True:
+            return True
+        if first_input == False and second_input == True:
+        # if first_input == False:
+        #     if second_input == False:
+                return True
+        return False
+
+  the test is still green. I remove the commented lines and move the second `return statement`_ to the left
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 5
+
+    def negate_first(first_input, second_input):
+        if first_input == False and second_input == True:
             return True
         if first_input == False and second_input == True:
             return True
         return False
 
-  the test is green again
-
-* The 2 cases where the :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when ``first_input`` is :ref:`False<test_what_is_false>`. I add a new `if statement`_ with an else_ clause
+* The 2 cases where the ``negate_first`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when the first input is :ref:`False<test_what_is_false>`. I add a new `if statement`_ with an else_ clause
 
   .. code-block:: python
     :lineno-start: 33
@@ -172,7 +229,22 @@ the test passes. ``negate_first`` returns :
 
   the test is still green
 
-* I remove the other `if statements`_ then use bool_ with not_
+* I remove the other `if statements`_ then use :ref:`logical_negation<test_logical_negation>` aka not_ to change the first `if statement`_
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 2-3
+
+    def negate_first(first_input, second_input):
+        if not first_input == True:
+        # if first_input == False:
+            return True
+        else:
+            return False
+
+  the test is still passing
+
+* I remove the commented line and use bool_ with the `if statement`_
 
   .. code-block:: python
     :lineno-start: 33
@@ -180,13 +252,14 @@ the test passes. ``negate_first`` returns :
 
     def negate_first(first_input, second_input):
         if not bool(first_input):
-        # if first_input == False:
+        # if not first_input == True:
             return True
-        return False
+        else:
+            return False
 
-  the test is still passing
+  still green
 
-* I remove the commented line and simplify the `if statement`_
+* I remove the commented line make the `if statement`_ simpler
 
   .. code-block:: python
     :lineno-start: 33
@@ -196,11 +269,12 @@ the test passes. ``negate_first`` returns :
         if not first_input:
         # if not bool(first_input):
             return True
-        return False
+        else:
+            return False
 
   the test is still green
 
-* I add a `ternary operator`_
+* I remove the commented line then add a `ternary operator`_ (`conditional expression`_)
 
   .. code-block:: python
     :lineno-start: 33
@@ -210,11 +284,12 @@ the test passes. ``negate_first`` returns :
         return True if not first_input else False
         if not first_input:
             return True
-        return False
+        else:
+            return False
 
-  the test is still passing
+  the terminal_ shows green
 
-* I change the `return statement`_ to the simpler form
+* I remove the `if statement`_ and else_ clause, then use the simpler form of the `return statement`_
 
   .. code-block:: python
     :lineno-start: 33
@@ -233,6 +308,8 @@ the test passes. ``negate_first`` returns :
 
     def negate_first(first_input, second_input):
         return not first_input
+
+`Negate First<test_negate_first>` always returns ``not first_input`` which means it always returns the :ref:`Logical Negation<test_logical_negation>`
 
 ----
 
