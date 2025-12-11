@@ -25,6 +25,7 @@ In :ref:`AssertionError`, I used assertIsNone_ and assertIsNotNone_ to :ref:`tes
 None_ is used when there is no value. It is the simplest :ref:`data structure<data structures>` in Python_
 
 I use `assert methods`_ to compare None_ with the other Python_ :ref:`data structures` to see what it is and what it is not
+
 *********************************************************************************
 preview
 *********************************************************************************
@@ -34,6 +35,20 @@ Here are the tests I have by the end of the chapter
 .. literalinclude:: ../code/tests/test_none.py
   :language: python
   :linenos:
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`What is None?<test_what_is_none>`
+* :ref:`Is None a boolean?<test_is_none_a_boolean>`
+* :ref:`Is None an integer?<test_is_none_an_integer>`
+* :ref:`Is None a float?<test_is_none_a_float>`
+* :ref:`Is None a string?<test_is_none_a_string>`
+* :ref:`Is None a tuple?<test_is_none_a_tuple>`
+* :ref:`Is None a list?<test_is_none_a_list>`
+* :ref:`Is None a set?<test_is_none_a_set>`
+* :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
+* :ref:`How can I test if something is None or not?<how to test if something is None>`
+* :ref:`How can I test if something is an instance of a class or not?<how to test if something is an instance of a class>`
 
 *********************************************************************************
 requirements
