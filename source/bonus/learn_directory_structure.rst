@@ -31,20 +31,7 @@ I will build the structure below step by step to see how files_ and folders_ are
       └── child_of_sibling_of_child
           ├── a_file_in_child_of_sibling_of_child
           ├── another_grandchild_of_parent
-          └──
-
-Here are questions you can answer after going through this chapter
-
-* :ref:`What is a folder (directory)?<what is a folder?>`
-* :ref:`what is a file?<what is a file?>`
-* :ref:`How can I tell what directory I am in?<how to see the directory I am in>`
-* :ref:`How can I change directories?<how to change directory>`
-* :ref:`How can I make a directory?<how to make a directory>`
-* :ref:`How can I see directory relationships?<how to look at directory structure>`
-* :ref:`How can I list what is in a directory?<how to list what is in a directory>`
-* :ref:`How can I make an empty file?<how to make an empty file>`
-* :ref:`How can I use directory relationships?<how to use directory relationships>`
-* :ref:`How can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
+          └── cousin_of_child_of_child
 
 *********************************************************************************
 what is a folder?

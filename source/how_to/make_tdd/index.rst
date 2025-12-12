@@ -12,7 +12,7 @@ how to make a test driven development environment
 what is a Test Driven Development Environment?
 *********************************************************************************
 
-A `Test Driven Development`_ environment is a collection of files_ and folders_ in a project where I can write tests and code and they automatically run so I see the results immediately.
+A `Test Driven Development`_ environment is a group of files_ and folders_ in a project where I can write tests and code and they automatically run so I see the results immediately.
 
 *********************************************************************************
 what is the Test Driven Development cycle?
@@ -112,7 +112,7 @@ on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_ computers
 * :ref:`how to make a shell script run as a command`
 * :ref:`how to run a shell script`
 
-On Windows_ computers without `Windows Subsystem for Linux`
+On Windows_ computers without `Windows Subsystem for Linux`_
 
 * :ref:`how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux`
 * :ref:`how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux`
