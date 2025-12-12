@@ -288,10 +288,74 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when both inputs are :ref:`True<test_what_is_true>`
 
-* I write the `if statements`_ simpler
+* I write the `if statements`_ in terms of :ref:`True<test_what_is_true>`
 
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2-3, 5-6
 
-* I can use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two `if statements`_ that return :ref:`True<test_what_is_true>` together
+    def exclusive_disjunction(first_input, second_input):
+        if not first_input == True and second_input == True:
+        # if first_input == False and second_input == True:
+            return True
+        if first_input == True and not second_input == True:
+        # if first_input == True and second_input == False:
+            return True
+        return False
+
+  is green the color of money?
+
+* I remove the commented lines and make the statements simpler with bool_
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2-3, 5-6
+
+    def exclusive_disjunction(first_input, second_input):
+        if not bool(first_input) and bool(second_input):
+        # if not first_input == True and second_input == True:
+            return True
+        if bool(first_input) and not bool(second_input):
+        # if first_input == True and not second_input == True:
+            return True
+        return False
+
+  still green
+
+* I remove the commented lines and make the `if statements`_ simpler
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2-3, 5-6
+
+    def exclusive_disjunction(first_input, second_input):
+        if not first_input and second_input:
+        # if not bool(first_input) and bool(second_input):
+            return True
+        if first_input and not second_input:
+        # if bool(first_input) and not bool(second_input):
+            return True
+        return False
+
+  the test is still passing
+
+  .. TIP:: I can put two `if statements`_ together with :ref:`Logical Disjunction<test_logical_disjunction>` (or_) when they are at the same indentation level and return the same thing. For example
+
+    .. code-block:: python
+
+      if something:
+          return this
+      if something_else:
+          return this
+
+    can also be written as
+
+    .. code-block:: python
+
+      if something or something_else:
+          return this
+
+* I use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two `if statements`_ that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
     :lineno-start: 49
@@ -300,15 +364,15 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
     def exclusive_disjunction(first_input, second_input):
         if (not first_input and second_input) or (first_input and not second_input):
             return True
-        if not first_input and second_input:
-            return True
-        if first_input and not second_input:
-            return True
+        # if not first_input and second_input:
+        #     return True
+        # if first_input and not second_input:
+        #     return True
         return False
 
   the test is still green
 
-* I remove the other `if statements`_
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 49
@@ -318,9 +382,23 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             return True
         return False
 
-  still green
+  the test is still passing
 
-* I use a simple `return statement`_
+* I use a `conditional expression`_
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 2
+
+    def exclusive_disjunction(first_input, second_input):
+        return True if (not first_input and second_input) or (first_input and not second_input) else False
+        if (not first_input and second_input) or (first_input and not second_input):
+            return True
+        return False
+
+  why is the grass greener on the other side?
+
+* I remove the other statements and make the `ternary operator`_ simpler
 
   .. code-block:: python
     :lineno-start: 49
@@ -328,13 +406,11 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
     def exclusive_disjunction(first_input, second_input):
         return (not first_input and second_input) or (first_input and not second_input)
-        if (not first_input and second_input) or (first_input and not second_input):
-            return True
-        return False
+        return True if (not first_input and second_input) or (first_input and not second_input) else False
 
   the terminal_ still shows green
 
-* I remove the other statements
+* I remove the second `return statement`_
 
   .. code-block:: python
     :lineno-start: 49
@@ -344,7 +420,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   still green
 
-* This :ref:`function<functions>` returns :ref:`False<test_what_is_false>` in the 2 cases where ``first_input`` and ``second_input`` are the same. I add an `if statement`_ to show this
+* ``exclusive_disjunction`` returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are the same and returns :ref:`True<test_what_is_true>` when they are NOT. I add an `if statement`_ to show this with the equality symbol (``==``)
 
   .. code-block:: python
     :lineno-start: 49
@@ -357,23 +433,25 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             return True
         return (not first_input and second_input) or (first_input and not second_input)
 
-* I change it to a simple `return statement`_
+  the terminal_ still shows green
+
+* I change the new `if statement`_ to a simple `return statement`_
 
   .. code-block:: python
     :lineno-start: 49
     :emphasize-lines: 2
 
     def exclusive_disjunction(first_input, second_input):
-        return not first_input == second_input
-        if first_input == second_input:
-            return False
-        else:
-            return True
+        return not (first_input == second_input)
+        # if first_input == second_input:
+        #     return False
+        # else:
+        #     return True
         return (not first_input and second_input) or (first_input and not second_input)
 
   the test is still green
 
-* I use an even simpler `return statement`_
+* I remove the commented lines, then use an even simpler `return statement`_ with the NOT equal symbol (``!=``)
 
   .. code-block:: python
     :lineno-start: 49
@@ -381,10 +459,21 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
     def exclusive_disjunction(first_input, second_input):
         return first_input != second_input
-        return not first_input == second_input
+        return not (first_input == second_input)
         return (not first_input and second_input) or (first_input and not second_input)
 
-  the terminal_ still shows green. ``!=`` is the symbol for NOT equal
+:ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns
+
+* :ref:`True<test_what_is_true>` when the two inputs are NOT equal
+* :ref:`False<test_what_is_false>` when the two inputs are equal
+* ``first_input != second_input`` - which reads as first input is NOT equal to second input
+* ``not (first_input == second_input)`` - which reads as the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Equality<test_logical_equality>` of the first input and the second input
+* ``(not first_input and second_input) or (first_input and not second_input)`` which is the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input and the second input, and the :ref:`Logical Conjunction<test_logical_conjunction>` of first input and the :ref:`Logical Negation<test_logical_negation>` of the second input. Wow! That's a lot
+
+all of the above statements mean the same thing. Would "Logical Inequality" be a better name for :ref:`Exclusive Disjunction<test_exclusive_disjunction>`?
+
+:ref:`Exclusive Disjunction<test_exclusive_disjunction>` is also known as `Exclusive OR <https://grokipedia.com/page/Exclusive_or>`_
+
 
 ----
 

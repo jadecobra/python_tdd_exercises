@@ -566,7 +566,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
       if something:
           if something_else:
 
-    can be written as
+    can also be written as
 
     .. code-block:: python
 
