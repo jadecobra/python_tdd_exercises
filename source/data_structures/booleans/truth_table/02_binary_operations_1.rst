@@ -497,20 +497,20 @@ An `if statement`_ is a way for a program_ to do something based on something el
             if second_input == True:
                 return True
 
-* I can put two `if statements`_ together when one is under the other. For example
+  .. TIP:: I can put two `if statements`_ together when one is under the other. For example
 
-  .. code-block:: python
+    .. code-block:: python
 
-    if something:
-        if something_else:
+      if something:
+          if something_else:
 
-  can be written as
+    can be written as
 
-  .. code-block:: python
+    .. code-block:: python
 
-    if something and something_else:
+      if something and something_else:
 
-  I put the two `if statements`_ for the one case where the result is :ref:`True <test_what_is_true>` together and use an else_ clause for the other cases where the first and second inputs are not both :ref:`True<test_what_is_true>`
+* I put the two `if statements`_ for the one case where the result is :ref:`True <test_what_is_true>` together and use an else_ clause for the other cases where the first and second inputs are not both :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -566,9 +566,9 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   .. TIP:: these 3 `if statements`_ are the same
 
-    - ``if something:``
-    - ``if bool(something):``
     - ``if something == True:``
+    - ``if bool(something):``
+    - ``if something:``
 
     Python_ checks if ``something`` is :ref:`True<test_what_is_true>` in the background when I type ``if something:``
 
@@ -587,9 +587,9 @@ An `if statement`_ is a way for a program_ to do something based on something el
         else:
             return False
 
-  the terminal_ shows green. the format is ``return True if something else False``
+  the terminal_ shows green
 
-* I remove the other `if statements`_ then change the `return statement`_ to a simpler statement
+* I remove the other `if statements`_ then change the `return statement`_ to a simpler form
 
   .. code-block:: python
     :lineno-start: 21
@@ -600,6 +600,29 @@ An `if statement`_ is a way for a program_ to do something based on something el
         return True if first_input and second_input else False
 
   still green!
+
+  .. TIP:: an `if statement`_ can be written as a `ternary operator`_ or `conditional expression`_ by putting return before the `if statement` and removing the colons ``:``, for example
+
+    .. code-block:: python
+
+      if condition:
+          return True
+      else:
+          return False
+
+    can be written as
+
+    .. code-block:: python
+
+      return True if something else False
+
+    which can then be written as
+
+    .. code-block:: python
+
+      return something
+
+    this works because Python_ tests if ``something`` is :ref:`True<test_what_is_true>` in the background same as it does when I type ``if something:``
 
 * I remove the second `return statement`_
 

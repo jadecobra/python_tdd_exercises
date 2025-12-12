@@ -137,7 +137,9 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
                 return True
         return False
 
-  the test is still green. I remove the commented lines and move the first `return statement`_ to the left
+  the test is still green
+
+* I remove the commented lines and move the first `return statement`_ to the left
 
   .. code-block:: python
     :lineno-start: 33
@@ -205,7 +207,9 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
             return True
         return False
 
-  the test is still green. I remove the commented lines and move the new `return statement`_ to the left
+  the test is still green
+
+* I remove the commented lines and move the new `return statement`_ to the left
 
   .. code-block:: python
     :lineno-start: 33
@@ -362,6 +366,8 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
 
+there is no definition for ``logical_nand`` in ``truth_table.py``
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
@@ -421,7 +427,7 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 37
-    :emphasize-lines: 3-5
+    :emphasize-lines: 2-4
 
     def logical_nand(first_input, second_input):
         if first_input == True and second_input == False:
@@ -575,7 +581,7 @@ the test passes.
 
   the test is still green
 
-* I remove the comments and move the `return statement`_ to the left
+* I remove the comments and move the new `return statement`_ to the left
 
   .. code-block:: python
     :lineno-start: 37
@@ -597,7 +603,7 @@ the test passes.
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
-* I add one `if statement`_ for the case that returns :ref:`False<test_what_is_false>` with an else_ clause for the other 3 since they all return :ref:`True<test_what_is_true>`
+* I add one `if statement`_ for the one case that returns :ref:`False<test_what_is_false>` with an else_ clause for the other three cases since they all return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -618,7 +624,7 @@ the test passes.
 
   the test is still green
 
-* I remove the other `if statements`_ and use bool_ to change the `if statement`
+* I remove the other `if statements`_ and use bool_ to change the new `if statement`_
 
   .. code-block:: python
     :lineno-start: 37
@@ -648,7 +654,7 @@ the test passes.
 
   still green
 
-* I want to use a single `return statement`_ (a `conditional expression`_), which means I have to use an `if statement`_ that returns :ref:`True<test_what_is_true>`. use :ref:`logical negation<test_logical_negation>` aka not_ to change the else_ clause to the opposite of the `if statement`_
+* I want to use one `return statement`_ (a `conditional expression`_) for everything, which means I need an `if statement`_ that returns :ref:`True<test_what_is_true>`. I use :ref:`logical negation<test_logical_negation>` (not_) to change the else_ clause to the opposite of the `if statement`_
 
   .. code-block:: python
     :lineno-start: 37
@@ -663,7 +669,7 @@ the test passes.
 
   the test is still green
 
-* I remove the `else`_ clause and move the new `if statement`_ to the top
+* I remove the commented line and move the new `if statement`_ to the top
 
   .. code-block:: python
     :lineno-start: 37
@@ -707,7 +713,7 @@ the test passes.
 
   still green
 
-* I remove the `if statements` and use the simpler form of the `ternary operator`_
+* I remove the `if statements`_ and use the simpler form of the `ternary operator`_
 
   .. code-block:: python
     :lineno-start: 37
@@ -730,8 +736,8 @@ the test passes.
 :ref:`Logical Nand<test_logical_nand>`
 
 * returns :ref:`False<test_what_is_false>` only when the first input and second input are both :ref:`True<test_what_is_true>`
-* returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input
-* in other words is the not_ of the and_ of the first input and second input
+* returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
+* is the not_ of the and_ of the first input and second input, confusing?
 * it is the opposite of :ref:`Logical Conjunction<test_what_is_true>` which only returns :ref:`True<test_what_is_true>` when the first input and second input are both :ref:`True<test_what_is_true>` or returns ``first_input and second_input``
 
 .. TIP::
