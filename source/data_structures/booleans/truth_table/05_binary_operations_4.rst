@@ -22,6 +22,69 @@ requirements
 
 :ref:`Binary Operations part 3<truth table: Binary Operations part 3>`
 
+*********************************************************************************
+how to get back to the automated tests
+*********************************************************************************
+
+If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations part 3>`, heres's how to get back to the tests
+
+* Make sure you are in the ``pumping_python`` folder_ with pwd_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pwd
+
+  if the terminal_ shows anything other than
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  you need to `change directory`_ to the ``pumping_python`` folder
+
+* Once in the ``pumping_python`` directory_, `change directory`_ to the project
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd truth_table
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/truth_table
+
+* activate the `Virtual Environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/scripts/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  when the `Virtual Environment`_ is activated, the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/truth_table
+
+* run the automated tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+
+
 ----
 
 *********************************************************************************
