@@ -1022,18 +1022,34 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     AssertionError: True is not false
 
-* I add an `if statement`_ to ``converse_implication`` in ``truth_table.py``
+* I add `if statements`_ to ``converse_implication`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 63
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
-        if not first_input and second_input:
-            return False
+        if first_input == False:
+            if second_input == True:
+                return False
         return True
 
   the test passes
+
+* I change the two `if statements`_ to one `if statement`_
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 2-3
+
+    def converse_implication(first_input, second_input):
+        if first_input == False:
+            if second_input == True:
+                return False
+        return True
+
+  the test is green
+
 
 * I add another case to ``test_converse_implication`` in ``test_truth_table.py``
 
