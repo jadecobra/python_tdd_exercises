@@ -704,13 +704,12 @@ the test passes.
     def logical_nand(first_input, second_input):
         return not (first_input and second_input)
 
-`Logical Nand<test_logical_nand>` returns
+:ref:`Logical Nand<test_logical_nand>`
 
-* ``not (first_input and second_input)`` which is the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input
-* in other words it is the not_ of the and_ of the first input and second input or
-* it only returns :ref:`False<test_what_is_false>` when the first input and second input are both :ref:`True<test_what_is_true>`
+* returns :ref:`False<test_what_is_false>` only when the first input and second input are both :ref:`True<test_what_is_true>`
+* returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input
+* in other words is the not_ of the and_ of the first input and second input
 * it is the opposite of :ref:`Logical Conjunction<test_what_is_true>` which only returns :ref:`True<test_what_is_true>` when the first input and second input are both :ref:`True<test_what_is_true>` or returns ``first_input and second_input``
-
 
 .. TIP::
 
@@ -726,7 +725,7 @@ test_tautology
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the next Binary Operation in ``test_truth_table.py``
+I add a test for the next Binary Operation in ``test_truth_table.py`` with the first case where both inputs are :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 61
@@ -763,13 +762,13 @@ I add a :ref:`function<functions>` definition in ``truth_table.py``
   def tautology(first_input, second_input):
       return True
 
-the test passes
+the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the next case to ``test_tautology`` in ``test_truth_table.py``
+* I add the next case to ``test_tautology`` in ``test_truth_table.py`` - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -779,9 +778,9 @@ the test passes
             self.assertTrue(src.truth_table.tautology(True, True))
             self.assertTrue(src.truth_table.tautology(True, False))
 
-  the terminal_ still shows green
+  the terminal_ still shows green. ``tautology`` returns :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
-* I add another case
+* I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -792,9 +791,12 @@ the test passes
             self.assertTrue(src.truth_table.tautology(True, False))
             self.assertTrue(src.truth_table.tautology(False, True))
 
-  the test is still green
+  the test is still green. ``tautology`` returns :ref:`True<test_what_is_true>`
 
-* I add the last case
+  - when the first input is :ref:`True<test_what_is_true>`
+  - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+
+* I add the last case - when both inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -809,7 +811,7 @@ the test passes
 
     # Exceptions Encountered
 
-  still green, there is only one result for this operation.
+  still green, there is only one result for this operation. :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`, it is the opposite of :ref:`Contradiction<test_contradiction>` which always returns :ref:`False<test_what_is_false>`
 
 ----
 
