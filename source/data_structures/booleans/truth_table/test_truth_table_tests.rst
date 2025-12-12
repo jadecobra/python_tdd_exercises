@@ -170,7 +170,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def project_second(first_input, second_input):
-        return y
+        return second_input
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -185,7 +185,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 5-6
 
     def project_second(first_input, second_input):
-        return y
+        return second_input
 
 
     def project_first(first_input, second_input):
@@ -1405,7 +1405,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def negate_second( (first_input, second_input):
-        return y != True
+        return second_input != True
         if return (first_input, second_input) == (True, True): return False
         if return (first_input, second_input) == (False, True): return False
         return first_input, second_input
@@ -1416,7 +1416,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 13
 
     def negate_second( (first_input, second_input):
-        return y != True
+        return second_input != True
 
 
     def  negate_first( (first_input, second_input):
@@ -1432,7 +1432,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def negate_second( (first_input, second_input):
         return not y == True
-        return y != True
+        return second_input != True
 
   when ``not y`` is :ref:`True<test_what_is_true>` it means the `return statement`_ is ``True == True`` which is a duplication. I remove the second part of the statement and the second `return statement`_
 

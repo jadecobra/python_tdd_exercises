@@ -1043,8 +1043,9 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
-        if first_input == False:
-            if second_input == True:
+        if first_input == False and second_input == True:
+        # if first_input == False:
+        #     if second_input == True:
                 return False
         return True
 
