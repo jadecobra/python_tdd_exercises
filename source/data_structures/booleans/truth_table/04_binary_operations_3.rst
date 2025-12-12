@@ -1040,7 +1040,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 63
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-4
 
     def converse_implication(first_input, second_input):
         if first_input == False and second_input == True:
@@ -1049,7 +1049,23 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
                 return False
         return True
 
-  the test is green
+  the test is still green
+
+* I remove the commented lines and move the `return statement`_ to the left
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 3
+
+    def converse_implication(first_input, second_input):
+        if first_input == False and second_input == True:
+            return False
+        return True
+
+  still green. ``converse_implication`` returns
+
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
 
 * I add another case to ``test_converse_implication`` in ``test_truth_table.py``

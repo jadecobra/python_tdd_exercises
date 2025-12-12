@@ -646,7 +646,7 @@ test_subtraction
                 random_x-random_y
             )
 
-  the terminal_ shows the tests are still passing. The ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_x`` and ``self.random_y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal_ shows the tests are still passing. The ``first_input`` and ``second_input`` :ref:`variables<test_attribute_error_w_variables>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_x`` and ``self.random_y``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the commented lines in ``test_addition``
 
@@ -690,7 +690,7 @@ test_subtraction
                 self.random_x-self.random_y
             )
 
-* I remove the ``x`` and ``y`` :ref:`variables<test_attribute_error_w_variables>` from ``test_addition`` and ``test_subtraction`` since they are no longer needed
+* I remove the ``first_input`` and ``second_input`` :ref:`variables<test_attribute_error_w_variables>` from ``test_addition`` and ``test_subtraction`` since they are no longer needed
 
   .. code-block:: python
     :lineno-start: 10
@@ -856,7 +856,7 @@ the terminal_ shows :ref:`AttributeError`
     def a_random_number():
         return random.randint(-1, 1)
 
-  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) a few times to run the tests, and when ``y`` is randomly ``0`` the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) a few times to run the tests, and when ``second_input`` is randomly ``0`` the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -904,7 +904,7 @@ I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_
           #    self.random_x/self.random_y
           # )
 
-the terminal_ shows my expectation with a failure for any value of ``x`` since ``y`` is ``0``
+the terminal_ shows my expectation with a failure for any value of ``first_input`` since ``second_input`` is ``0``
 
 .. code-block:: python
 

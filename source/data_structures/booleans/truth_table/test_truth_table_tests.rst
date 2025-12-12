@@ -163,7 +163,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  ``y`` is :ref:`False<test_what_is_false>`, I remove ``x`` from the `return statement`_
+  ``second_input`` is :ref:`False<test_what_is_false>`, I remove ``first_input`` from the `return statement`_
 
   .. code-block:: python
     :lineno-start: 5
@@ -197,7 +197,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  ``x`` is :ref:`False<test_what_is_false>`, I remove ``y`` from the `return statement`_
+  ``first_input`` is :ref:`False<test_what_is_false>`, I remove ``second_input`` from the `return statement`_
 
   .. code-block:: python
     :lineno-start: 9
@@ -949,7 +949,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     TypeError: logical_negation() missing 1 required positional argument: 'y'
 
-  I remove ``y`` from the parentheses, to make the :ref:`function<functions>` take only 1 input
+  I remove ``second_input`` from the parentheses, to make the :ref:`function<functions>` take only 1 input
 
   .. code-block:: python
     :lineno-start: 93
@@ -1032,7 +1032,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     TypeError: logical_true() missing 1 required positional argument: 'x'
 
-  I remove ``x`` from the parentheses, this :ref:`function<functions>` does not take input, I change the `return statement`_
+  I remove ``first_input`` from the parentheses, this :ref:`function<functions>` does not take input, I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 101
@@ -1363,7 +1363,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def material_implicationreturn (first_input, second_input):
         return return (first_input, second_input) != (True, False)
 
-* ``x`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an `if statement`_ for them
+* ``first_input`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an `if statement`_ for them
 
   .. code-block:: python
     :lineno-start: 19
@@ -1398,7 +1398,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def material_non_implicationreturn (first_input, second_input):
         return return (first_input, second_input) == (True, False)
 
-* ``y`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
+* ``second_input`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1759,7 +1759,7 @@ I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or
   - :ref:`Logical Identity<test_logical_identity>` returns its input as output
   - :ref:`Logical Negation<test_logical_negation>` returns the negation of its input as output
 
-* there are 16 binary operations, they each take 2 inputs, in this case I named the second input ``y`` and the first one ``x``
+* there are 16 binary operations, they each take 2 inputs, in this case I named the second input ``second_input`` and the first one ``first_input``
 
   - :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
   - :ref:`Converse Implication<test_converse_implication>` returns ``x or not y``
@@ -1774,8 +1774,8 @@ I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or
   - :ref:`Material NonImplication <test_material_non_implication>` returns ``x and not y``
   - :ref:`Negate First<test_negate_first>` always returns ``not x``
   - :ref:`Negate Second<test_negate_second>` always returns ``not y``
-  - :ref:`Project First<test_project_first>` always returns ``x``
-  - :ref:`Project Second<test_project_second>` always returns ``y``
+  - :ref:`Project First<test_project_first>` always returns ``first_input``
+  - :ref:`Project Second<test_project_second>` always returns ``second_input``
   - :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`
 
 and
