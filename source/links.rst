@@ -218,6 +218,7 @@
 .. _Algebra: https://grokipedia.com/page/Algebra
 .. _Computer Programming: https://grokipedia.com/page/Computer_programming
 .. _Debian: https://www.debian.org
+.. _Exclusive OR: https://grokipedia.com/page/Exclusive_or
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _removing duplication: `remove duplication`_
@@ -231,6 +232,7 @@
 .. _Linux distributions: https://grokipedia.com/page/List_of_Linux_distributions
 .. _Logical Identity: https://grokipedia.com/page/Identity_function
 .. _Logical Negation: https://grokipedia.com/page/Negation
+.. _Logical NAND: https://grokipedia.com/page/Nand
 .. _MacOS: https://www.apple.com/macos
 .. _Martin Fowler: https://grokipedia.com/page/Martin_Fowler_(software_engineer)
 .. _Microsoft Store: https://apps.microsoft.com/home
@@ -248,6 +250,7 @@
 .. _Windows: https://www.microsoft.com/en-us/Windows
 .. _Windows 11: https://www.microsoft.com/en-us/software-download/Windows11
 .. _Windows Subsystem for Linux: https://learn.microsoft.com/en-us/Windows/wsl/install
+.. _XOR: `Exclusive OR`_
 
 .. _Pylance: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 .. _Python: https://docs.python.org
