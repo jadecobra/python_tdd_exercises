@@ -90,7 +90,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :linenos:
     :emphasize-lines: 1
 
-    def tautologyreturn (first_input, second_input):
+    def tautology(first_input, second_input):
         return None
 
   the terminal_ shows :ref:`AssertionError`
@@ -105,7 +105,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :linenos:
     :emphasize-lines: 2
 
-    def tautologyreturn (first_input, second_input):
+    def tautology(first_input, second_input):
         return True
 
   the terminal_ shows :ref:`AttributeError`
@@ -120,11 +120,11 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :linenos:
     :emphasize-lines: 5-6
 
-    def tautologyreturn (first_input, second_input):
+    def tautology(first_input, second_input):
         return True
 
 
-    def project_secondreturn (first_input, second_input):
+    def project_second(first_input, second_input):
         return True
 
   the terminal_ shows :ref:`AssertionError`
@@ -139,7 +139,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def project_secondreturn (first_input, second_input):
+    def project_second(first_input, second_input):
         return False
 
   the terminal_ shows :ref:`AssertionError`
@@ -154,7 +154,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def project_secondreturn (first_input, second_input):
+    def project_second(first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -169,7 +169,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 5
     :emphasize-lines: 2
 
-    def project_secondreturn (first_input, second_input):
+    def project_second(first_input, second_input):
         return y
 
   the terminal_ shows :ref:`AttributeError`
@@ -184,11 +184,11 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 5
     :emphasize-lines: 5-6
 
-    def project_secondreturn (first_input, second_input):
+    def project_second(first_input, second_input):
         return y
 
 
-    def project_firstreturn (first_input, second_input):
+    def project_first(first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -203,7 +203,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 9
     :emphasize-lines: 2
 
-    def project_firstreturn (first_input, second_input):
+    def project_first(first_input, second_input):
         return x
 
   the terminal_ shows :ref:`AttributeError`
@@ -218,7 +218,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 9
     :emphasize-lines: 5-6
 
-    def project_firstreturn (first_input, second_input):
+    def project_first(first_input, second_input):
         return x
 
 
