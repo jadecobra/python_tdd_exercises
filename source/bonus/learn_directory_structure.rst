@@ -34,6 +34,23 @@ I will build the structure below step by step to see how files_ and folders_ are
           └── cousin_of_child_of_child
 
 *********************************************************************************
+questions about directory structure
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`What is a folder (directory)?<what is a folder?>`
+* :ref:`what is a file?<what is a file?>`
+* :ref:`How can I tell what directory I am in?<how to see the directory I am in>`
+* :ref:`How can I change directories?<how to change directory>`
+* :ref:`How can I make a directory?<how to make a directory>`
+* :ref:`How can I see directory relationships?<how to look at directory structure>`
+* :ref:`How can I list what is in a directory?<how to list what is in a directory>`
+* :ref:`How can I make an empty file?<how to make an empty file>`
+* :ref:`How can I use directory relationships?<how to use directory relationships>`
+* :ref:`How can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
+
+*********************************************************************************
 what is a folder?
 *********************************************************************************
 
@@ -1626,7 +1643,7 @@ how to remove a directory and all its contents
 review
 *************************************************************************************
 
-I ran the following commands to practice `folder (directory)`_ structure
+I ran the following commands to play with `folder (directory)`_ structure
 
 * mkdir_
 * cd_
@@ -1635,18 +1652,7 @@ I ran the following commands to practice `folder (directory)`_ structure
 * touch_
 * rm_
 
-Here are questions you can answer after going through this chapter
-
-* :ref:`What is a folder (directory)?<what is a folder?>`
-* :ref:`what is a file?<what is a file?>`
-* :ref:`How can I tell what directory I am in?<how to see the directory I am in>`
-* :ref:`How can I change directories?<how to change directory>`
-* :ref:`How can I make a directory?<how to make a directory>`
-* :ref:`How can I see directory relationships?<how to look at directory structure>`
-* :ref:`How can I list what is in a directory?<how to list what is in a directory>`
-* :ref:`How can I make an empty file?<how to make an empty file>`
-* :ref:`How can I use directory relationships?<how to use directory relationships>`
-* :ref:`How can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
+:ref:`How many questions can you answer after going through this chapter?<questions about Directory Structure>`
 
 :ref:`Are you ready to see me make a Test Driven Development Environment<how to make a test driven development environment>`
 
