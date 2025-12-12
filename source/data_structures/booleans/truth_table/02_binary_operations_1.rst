@@ -166,7 +166,7 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
             self.assertFalse(src.truth_table.contradiction(True, True))
             self.assertFalse(src.truth_table.contradiction(True, False))
 
-  the test is still green. ``contradiction`` returns :ref:`False<test_what_is_true>` in the two cases where the first input is :ref:`True<test_what_is_true>`
+  the test is still green. ``contradiction`` returns :ref:`False<test_what_is_false>` in the two cases where the first input is :ref:`True<test_what_is_true>`
 
 * I add the third case, which is when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
@@ -820,7 +820,10 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
     def project_second(first_input, second_input):
         return second_input
 
-:ref:`Project Second<test_project_second>` always returns the second input it receives
+:ref:`Project Second<test_project_second>` returns the second input, it always returns
+
+* :ref:`True<test_what_is_true>` when the second input is :ref:`True<test_what_is_true>`
+* :ref:`False<test_what_is_false>` when the second input is :ref:`False<test_what_is_false>`
 
 ----
 

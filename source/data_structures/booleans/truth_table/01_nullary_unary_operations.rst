@@ -325,7 +325,7 @@ I need to add a definition for it
 
     AssertionError: False is not true
 
-  there is a failure for the test that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_true>`
+  there is a failure for the test that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_false>`
 
 * I change the `return statement`_ of the :ref:`function<functions>`
 
