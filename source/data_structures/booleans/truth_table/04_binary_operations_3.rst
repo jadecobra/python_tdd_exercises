@@ -710,7 +710,7 @@ test_project_first
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test for the next Binary Operation in ``test_truth_table.py``
+I add a new test in ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 85
@@ -747,7 +747,7 @@ I add a :ref:`function<functions>` definition for ``project_first`` in ``truth_t
   def project_first(first_input, second_input):
       return True
 
-the test passes
+the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -763,7 +763,11 @@ the test passes
             self.assertTrue(src.truth_table.project_first(True, True))
             self.assertTrue(src.truth_table.project_first(True, False))
 
-  the test is still green
+  the test is still green. ``project_first`` returns
+
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
 * on to the next case
 
@@ -782,18 +786,50 @@ the test passes
 
     AssertionError: True is not false
 
-* I add an `if statement`_ for this case to ``project_first`` in ``truth_table.py``
+* I add `if statements`_ for this case to ``project_first`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 59
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-4
 
     def project_first(first_input, second_input):
-        if not first_input and second_input:
+        if first_input == False:
+            if second_input == True:
+                return False
+        return True
+
+  the test passes. ``project_first`` returns
+
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+
+* I change the `if statements`_ to one `if statement`_
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 2-4
+
+    def project_first(first_input, second_input):
+        if first_input == False and second_input == True:
+        # if first_input == False:
+        #     if second_input == True:
+                return False
+        return True
+
+  the terminal_ still shows green
+
+* I remove the commented line and move the `return statement`_ to the left
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 3
+
+    def project_first(first_input, second_input):
+        if first_input == False and second_input == True:
             return False
         return True
 
-  the test passes
+  the test is still green
 
 * I add the last case to ``test_project_first`` in ``test_truth_table.py``
 
@@ -816,20 +852,58 @@ the test passes
 
     AssertionError: True is not false
 
-* I add another `if statement`_ to ``project_first`` in ``truth_table.py``
+* I add `if statements`_ to ``project_first`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 59
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-4
 
     def project_first(first_input, second_input):
-        if not first_input and not second_input:
-            return False
-        if not first_input and second_input:
+        if first_input == False:
+            if second_input == False:
+                return False
+        if first_input == False and second_input == True:
             return False
         return True
 
   the test passes
+
+* I change the `if statements`_ to one `if statement`_
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 2-4
+
+    def project_first(first_input, second_input):
+        if first_input == False and second_input == False:
+        # if first_input == False:
+        #     if second_input == False:
+                return False
+        if first_input == False and second_input == True:
+            return False
+        return True
+
+  the test is still green
+
+* I remove the commented lines, and move the `return statement`_ to the left
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 3
+
+    def project_first(first_input, second_input):
+        if first_input == False and second_input == False:
+            return False
+        if first_input == False and second_input == True:
+            return False
+        return True
+
+  the test is still green. ``project_first`` returns
+
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
 * I add a `return statement`_ to show that this :ref:`function<functions>` returns the same value as ``first_input`` in every case
 
@@ -839,9 +913,9 @@ the test passes
 
     def project_first(first_input, second_input):
         return first_input
-        if not first_input and not second_input:
+        if first_input == False and second_input == False:
             return False
-        if not first_input and second_input:
+        if first_input == False and second_input == True:
             return False
         return True
 
@@ -854,6 +928,13 @@ the test passes
 
     def project_first(first_input, second_input):
         return first_input
+
+:ref:`Project First<test_project_first>` returns the first input, it always returns
+
+* :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+* :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
+
+it is like :ref:`Project Second<test_project_second>` which always returns the second input
 
 ----
 
@@ -902,7 +983,7 @@ I add a :ref:`function<functions>` definition for ``converse_implication`` in ``
   def converse_implication(first_input, second_input):
       return True
 
-the test passes
+the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -918,7 +999,11 @@ the test passes
             self.assertTrue(src.truth_table.converse_implication(True, True))
             self.assertTrue(src.truth_table.converse_implication(True, False))
 
-  the test is still green
+  the test is still green. ``converse_implication`` returns
+
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
 * time for the next case
 

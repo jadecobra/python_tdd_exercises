@@ -275,7 +275,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if return (first_input, second_input) == (False, True): return False
         return x, y
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
         return x, y
 
   the terminal_ shows :ref:`AssertionError`
@@ -290,7 +290,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 19
     :emphasize-lines: 2
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
         if return (first_input, second_input) == (True, True): return False
         return x, y
 
@@ -306,7 +306,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 19
     :emphasize-lines: 3
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
         if return (first_input, second_input) == (True, True): return False
         if return (first_input, second_input) == (True, False): return False
         return x, y
@@ -1369,7 +1369,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 19
     :emphasize-lines: 2
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
         if x == True: return False
         if return (first_input, second_input) == (True, True): return False
         if return (first_input, second_input) == (True, False): return False
@@ -1381,7 +1381,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 19
     :emphasize-lines: 2
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
         return x != True
         if x == True: return False
         return x, y
@@ -1391,7 +1391,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
     :lineno-start: 19
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
         return x != True
 
 
@@ -1419,7 +1419,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         return y != True
 
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
         return x != True
 
 * :ref:`project_second<test_project_second>`, :ref:`project_first<test_project_first>` and :ref:`tautology<test_tautology>` are already simple
@@ -1444,7 +1444,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         return not y
 
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
 
   the test is still green
 
@@ -1454,7 +1454,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 17
     :emphasize-lines: 2
 
-    def negate_firstreturn (first_input, second_input):
+    def def negate_first( (first_input, second_input):
         return not x
         return x != True
 
@@ -1463,7 +1463,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   .. code-block:: python
       :lineno-start: 17
 
-      def negate_firstreturn (first_input, second_input):
+      def def negate_first( (first_input, second_input):
           return not x
 
 
