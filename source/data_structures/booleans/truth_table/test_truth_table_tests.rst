@@ -204,7 +204,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def project_first(first_input, second_input):
-        return x
+        return first_input
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -219,7 +219,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 5-6
 
     def project_first(first_input, second_input):
-        return x
+        return first_input
 
 
     def negate_second( (first_input, second_input):
@@ -956,7 +956,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 1-2
 
     def logical_negation(x):
-        return x
+        return first_input
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1005,7 +1005,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def logical_identity(x):
-        return x
+        return first_input
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -1020,11 +1020,11 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 5-6
 
     def logical_identity(x):
-        return x
+        return first_input
 
 
     def logical_true(x):
-        return x
+        return first_input
 
   the terminal_ shows :ref:`TypeError`
 
@@ -1382,7 +1382,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def  negate_first( (first_input, second_input):
-        return x != True
+        return first_input != True
         if x == True: return False
         return first_input, second_input
 
@@ -1392,7 +1392,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 19
 
     def  negate_first( (first_input, second_input):
-        return x != True
+        return first_input != True
 
 
     def material_non_implicationreturn (first_input, second_input):
@@ -1420,7 +1420,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
 
     def  negate_first( (first_input, second_input):
-        return x != True
+        return first_input != True
 
 * :ref:`project_second<test_project_second>`, :ref:`project_first<test_project_first>` and :ref:`tautology<test_tautology>` are already simple
 
@@ -1456,7 +1456,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def  negate_first( (first_input, second_input):
         return not x
-        return x != True
+        return first_input != True
 
   still green. I remove the second `return statement`_
 
@@ -1476,7 +1476,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def material_non_implicationreturn (first_input, second_input):
-        return x and not y
+        return first_input and not y
         return return (first_input, second_input) == (True, False)
 
   the terminal_ shows all tests are still passing. I remove the second `return statement`_
@@ -1485,7 +1485,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 21
 
     def material_non_implicationreturn (first_input, second_input):
-        return x and not y
+        return first_input and not y
 
 
     def material_implicationreturn (first_input, second_input):
@@ -1633,7 +1633,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def logical_disjunctionreturn (first_input, second_input):
-        return x or y
+        return first_input or y
         return return (first_input, second_input) != (False, False)
 
   still green. I remove the other `return statement`_
@@ -1642,7 +1642,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 41
 
     def logical_disjunctionreturn (first_input, second_input):
-        return x or y
+        return first_input or y
 
 
     def logical_conjunctionreturn (first_input, second_input):
@@ -1654,7 +1654,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def logical_conjunctionreturn (first_input, second_input):
-        return x and y
+        return first_input and y
         return return (first_input, second_input) == (True, True)
 
   the terminal_ still shows green. I remove the other `return statement`_
@@ -1663,7 +1663,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 45
 
     def logical_conjunctionreturn (first_input, second_input):
-        return x and y
+        return first_input and y
 
 
     def exclusive_disjunctionreturn (first_input, second_input):
@@ -1727,7 +1727,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def converse_implicationreturn (first_input, second_input):
-        return x or not y
+        return first_input or not y
         return return (first_input, second_input) != (False, True)
 
   I remove the second `return statement`_
@@ -1736,7 +1736,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 57
 
     def converse_implicationreturn (first_input, second_input):
-        return x or not y
+        return first_input or not y
 
 
     def contradictionreturn (first_input, second_input):
