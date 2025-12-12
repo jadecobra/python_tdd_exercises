@@ -713,7 +713,26 @@ the test passes.
 
 .. TIP::
 
-  When there is only one `if statement`_ that returns :ref:`False<test_what_is_false>` with an else_ clause, I can return its :ref:`logical negation<test_logical_negation>` with not_
+  When there is only one `if statement`_ that returns :ref:`False<test_what_is_false>` with an else_ clause, for example
+
+  .. code-block:: python
+
+    if condition:
+        return False
+    else:
+        return True
+
+  I can return its :ref:`logical negation<test_logical_negation>` with not_
+
+  .. code-block:: python
+
+    return True if not (condition) else False
+
+  which can be made simpler as
+
+  .. code-block:: python
+
+    return not (condition)
 
 ----
 
@@ -823,7 +842,7 @@ test_logical_disjunction
 :red:`RED`: make it fail
 =================================================================================
 
-I add another test
+I add another test to ``test_truth_table.py`` with the first case, where the two inputs are :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 67
@@ -843,6 +862,8 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'. Did you mean: 'logical_conjunction'?
 
+there is no definition for ``logical_disjunction`` in ``truth_table.py`` in the ``src`` folder_ yet
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
@@ -860,13 +881,13 @@ I add the :ref:`function<functions>` to ``truth_table.py``
   def logical_disjunction(first_input, second_input):
       return True
 
-the test passes
+the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the next case to ``test_logical_disjunction`` in ``test_truth_table.py``
+* I add the next case - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`, to ``test_logical_disjunction`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 69
@@ -876,9 +897,9 @@ the test passes
             self.assertTrue(src.truth_table.logical_disjunction(True, True))
             self.assertTrue(src.truth_table.logical_disjunction(True, False))
 
-  the terminal_ still shows green
+  the terminal_ still shows green. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`, so far this is the same as :ref:`Tautology<test_tautology>`
 
-* I add the next case
+* I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -889,9 +910,12 @@ the test passes
             self.assertTrue(src.truth_table.logical_disjunction(True, False))
             self.assertTrue(src.truth_table.logical_disjunction(False, True))
 
-  the test is still green
+  the test is still green. ``logical_disjunction`` still looks like :ref:`Tautology<test_tautology>`, it returns
 
-* I add the fourth case
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+
+* I add the fourth case, where both inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -912,7 +936,77 @@ the test passes
 
     AssertionError: True is not false
 
-* I add an `if statement`_ for the new case to ``logical_disjunction`` in ``truth_table.py``
+* I add `if statements`_ for the new case to ``logical_disjunction`` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2-4
+
+    def logical_disjunction(first_input, second_input):
+        if first_input == False:
+            if second_input == False:
+                return False
+        return True
+
+  the test passes. ``logical_disjunction`` only returns :ref:`False<test_what_is_false>` when both inputs are :ref:`False<test_what_is_false>`
+
+* I change the two `if statements`_ to one `if statement`_ with and_
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2-4
+
+    def logical_disjunction(first_input, second_input):
+        if first_input == False and second_input == False:
+        # if first_input == False:
+        #     if second_input == False:
+                return False
+        return True
+
+  the test is still green
+
+* I remove the commented line and move the first `return statement`_ to the left
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 3
+
+    def logical_disjunction(first_input, second_input):
+        if first_input == False and second_input == False:
+            return False
+        return True
+
+  still green
+
+* I use not_ to write the statements in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2-3
+
+    def logical_disjunction(first_input, second_input):
+        if not first_input == True and not second_input == True:
+        # if first_input == False and second_input == False:
+            return False
+        return True
+
+  the terminal_ still shows green
+
+* I use bool_ to make the `if statement`_ simpler
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2-3
+
+    def logical_disjunction(first_input, second_input):
+        if not bool(first_input) and not bool(second_input):
+        # if not first_input == True and not second_input == True:
+            return False
+        return True
+
+  the terminal_ shows green
+
+* I use a simpler `if statement`
 
   .. code-block:: python
     :lineno-start: 45
@@ -920,12 +1014,65 @@ the test passes
 
     def logical_disjunction(first_input, second_input):
         if not first_input and not second_input:
+        # if not bool(first_input) and not bool(second_input):
             return False
         return True
 
-  the test passes
+  green
 
-* I know from :ref:`Logical NAND<test_logical_nand>` that I can return the negation of an `if statement`_ that returns :ref:`False<test_what_is_false>`
+* I add a second `if statement`_ for the cases where the ``logical_disjunction`` returns :ref:`True<test_what_is_true>` like I did with :ref:`Logical NAND<test_logical_nand>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 4-5
+
+    def logical_disjunction(first_input, second_input):
+        if not first_input and not second_input:
+            return False
+        if not (not first_input and not second_input):
+            return True
+
+  the test is still green
+
+* I move the new `if statement`_ to the top
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2-3
+
+    def logical_disjunction(first_input, second_input):
+        if not (not first_input and not second_input):
+            return True
+        if not first_input and not second_input:
+            return False
+
+* I change the second `if statement`_ to an else_ clause
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 3-4
+
+    def logical_disjunction(first_input, second_input):
+        if not (not first_input and not second_input):
+            return True
+        else:
+        # if not first_input and not second_input:
+            return False
+
+* I add a `conditional expression`_
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2
+
+    def logical_disjunction(first_input, second_input):
+        return True if not (not first_input and not second_input) else False
+        if not (not first_input and not second_input):
+            return True
+        else:
+            return False
+
+* I make the `return statement`_ simpler
 
   .. code-block:: python
     :lineno-start: 45
@@ -933,20 +1080,18 @@ the test passes
 
     def logical_disjunction(first_input, second_input):
         return not (not first_input and not second_input)
-        if not first_input and not second_input:
-            return False
-        return True
+        return True if not (not first_input and not second_input) else False
 
-  the test is still green, ``not`` appears 3 times in this statement
+  the terminal_ still shows green. A reminder that I can return the negation of an `if statement`_ that returns :ref:`False<test_what_is_false>` like I did in :ref:`Logical NAND<test_logical_nand>`
 
-* I remove the other statements then "multiply" ``not`` by each symbol in the parentheses to try to make the statement simpler
+* "not_" appears 3 times in this statement, I want to change that. I "multiply" it by each thing in the parentheses to try to make the statement simpler
 
   .. code-block:: python
     :lineno-start: 45
     :emphasize-lines: 2
 
     def logical_disjunction(first_input, second_input):
-        return not not first_input not and not not second_input
+        return (not not first_input) (not and) (not not second_input)
         return not (not first_input and not second_input)
 
   the terminal_ shows SyntaxError_
@@ -974,12 +1119,24 @@ the test passes
     :emphasize-lines: 2
 
     def logical_disjunction(first_input, second_input):
-        return not not first_input or not not second_input
+        return (not not first_input) or (not not second_input)
         return not (not first_input and not second_input)
 
   the test passes
 
-* I remove the second `return statement`_ and "not_ not_" from the statement because it cancels out
+* I remove "not_ not_" from the `return statement`_ because it cancels out
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2
+
+    def logical_disjunction(first_input, second_input):
+        return first_input or second_input
+        return (not not first_input) or (not not second_input)
+
+  the test is still green. Two nots_ don't make a right
+
+* I remove the the second `return statement`_
 
   .. code-block:: python
     :lineno-start: 45
@@ -988,7 +1145,10 @@ the test passes
     def logical_disjunction(first_input, second_input):
         return first_input or second_input
 
-  the test is still green
+:ref:`Logical Disjunction<test_logical_disjunction>` aka or_ returns
+
+* :ref:`False<test_what_is_false>` only when both inputs are :ref:`False<test_what_is_false>`
+* ``first_input or second_input``
 
 ----
 
@@ -996,7 +1156,7 @@ the test passes
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``first_input`` and the second ``second_input``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if the first input is named``first_input`` and the second input is named ``second_input``, the tests show that
 
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
