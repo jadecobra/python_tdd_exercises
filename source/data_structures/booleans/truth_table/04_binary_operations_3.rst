@@ -1134,7 +1134,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 63
-    :emphasize-lines: 3-4
+    :emphasize-lines: 4-5
 
     def converse_implication(first_input, second_input):
         if not first_input and second_input:
@@ -1148,7 +1148,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 63
-    :emphasize-lines: 3-4
+    :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
         if not (not first_input and second_input):
@@ -1213,7 +1213,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   back to green
 
-* I remove the other `return statement`_ then remove  "not_ not_" since it cancels out, the negation of a negation is the original thing
+* I remove the other `return statement`_ then remove  "not_ not_" since it cancels out - the negation of a negation is the original thing
 
   .. code-block:: python
     :lineno-start: 63
@@ -1236,11 +1236,10 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 :ref:`Converse Implication<test_converse_implication>` returns
 
 - ``first_input or not second_input``
-- :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
-- :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-- :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+- :ref:`False<test_what_is_false>` only when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+- the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 
-
+It is the opposite of :ref:`Converse NonImplication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`False<test_what_is_true>` only when 
 
 ----
 
