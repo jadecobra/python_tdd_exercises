@@ -802,6 +802,8 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'tautology'
 
+``truth_table.py`` does not have ``tautology`` defined inside it
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
@@ -835,7 +837,11 @@ the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when both
             self.assertTrue(src.truth_table.tautology(True, True))
             self.assertTrue(src.truth_table.tautology(True, False))
 
-  the terminal_ still shows green. ``tautology`` returns :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+  the terminal_ still shows green. ``tautology`` returns
+
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
@@ -850,8 +856,8 @@ the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when both
 
   the test is still green. ``tautology`` returns :ref:`True<test_what_is_true>`
 
-  - when the first input is :ref:`True<test_what_is_true>`
   - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - when the first input is :ref:`True<test_what_is_true>`
 
 * I add the last case - when both inputs are :ref:`False<test_what_is_false>`
 
@@ -868,7 +874,16 @@ the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when both
 
     # Exceptions Encountered
 
-  still green, there is only one result for this operation. :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`, it is the opposite of :ref:`Contradiction<test_contradiction>` which always returns :ref:`False<test_what_is_false>`
+  still green, there is only one result for this operation.
+
+:ref:`Tautology<test_tautology>` returns :ref:`True<test_what_is_true>`
+
+* when both inputs are :ref:`False<test_what_is_false>`
+* when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+* when the first input is :ref:`False<test_what_is_false>`
+* when the first input is :ref:`True<test_what_is_true>`
+
+It always returns :ref:`True<test_what_is_true>`, it is the opposite of :ref:`Contradiction<test_contradiction>` which always returns :ref:`False<test_what_is_false>`
 
 ----
 
@@ -935,7 +950,13 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
             self.assertTrue(src.truth_table.logical_disjunction(True, True))
             self.assertTrue(src.truth_table.logical_disjunction(True, False))
 
-  the terminal_ still shows green. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`, so far this is the same as :ref:`Tautology<test_tautology>`
+  the terminal_ still shows green. ``logical_disjunction`` returns
+
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+
+  so far this is the same as :ref:`Tautology<test_tautology>`
 
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 

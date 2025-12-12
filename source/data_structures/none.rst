@@ -950,7 +950,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 38
-    :emphasize-lines: 5
+    :emphasize-lines: 1
 
             self.assertIsInstance("text", str)
 
