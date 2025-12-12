@@ -1239,7 +1239,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 - :ref:`False<test_what_is_false>` only when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 - the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 
-It is the opposite of :ref:`Converse NonImplication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`False<test_what_is_true>` only when 
+It is the opposite of :ref:`Converse NonImplication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`True<test_what_is_true>` only when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
 ----
 

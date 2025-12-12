@@ -1119,7 +1119,11 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
     def converse_non_implication(first_input, second_input):
         return not first_input and second_input
 
-:ref:`Converse NonImplication<test_converse_non_implication>` always returns the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Negation<test_logical_negation>` of the first input and the second input, which means it returns :ref:`True<test_what_is_true>` only when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+:ref:`Converse NonImplication<test_converse_non_implication>` always returns
+
+* ``not first_input and second_input``
+* the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Negation<test_logical_negation>` of the first input and the second input
+* :ref:`True<test_what_is_true>` only when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
 ----
 
