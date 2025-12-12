@@ -1082,9 +1082,9 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
             return False
         return True
 
-  10 green bottles standing on a wall
+  how many green bottles standing on a wall?
 
-* I add a second `if statement`_ for the cases where the ``logical_disjunction`` returns :ref:`True<test_what_is_true>` like I did with :ref:`Logical NAND<test_logical_nand>`
+* I add a second `if statement`_ for the cases where ``logical_disjunction`` returns :ref:`True<test_what_is_true>` like I did with :ref:`Logical NAND<test_logical_nand>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1158,7 +1158,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
     def logical_disjunction(first_input, second_input):
         return (not not first_input) (not and) (not not second_input)
-        return not (not first_input and not second_input)
+        return not ((not first_input) and (not second_input))
 
   the terminal_ shows SyntaxError_
 
@@ -1186,7 +1186,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
     def logical_disjunction(first_input, second_input):
         return (not not first_input) or (not not second_input)
-        return not (not first_input and not second_input)
+        return not ((not first_input) and (not second_input))
 
   the test passes
 
@@ -1200,7 +1200,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
         return first_input or second_input
         return (not not first_input) or (not not second_input)
 
-  the test is still green. Two nots_ don't make a right
+  the test is still green. Do two nots_ make a right?
 
 * I remove the the second `return statement`_
 
@@ -1209,6 +1209,8 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
     def logical_disjunction(first_input, second_input):
         return first_input or second_input
+
+  green everywhere
 
 :ref:`Logical Disjunction<test_logical_disjunction>` aka or_ returns
 
@@ -1221,7 +1223,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if the first input is named``first_input`` and the second input is named ``second_input``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if the first input is named ``first_input`` and the second input is named ``second_input``, the tests show that
 
 * :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``
 * :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
