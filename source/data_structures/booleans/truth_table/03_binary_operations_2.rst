@@ -751,7 +751,16 @@ the test passes.
     else:
         return True
 
-  I can return its :ref:`logical negation<test_logical_negation>` with not_
+  I can rewrite it in terms of :ref:`True<test_what_is_true>` with its :ref:`logical negation<test_logical_negation>` with not_
+
+  .. code-block:: python
+
+    if not condition:
+        return True
+    else:
+        return False
+
+  I can then write it as a `ternary operator`_ (`conditional expression`_)
 
   .. code-block:: python
 

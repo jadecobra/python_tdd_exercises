@@ -601,29 +601,6 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   still green!
 
-  .. TIP:: an `if statement`_ can be written as a `ternary operator`_ or `conditional expression`_ by putting return before the `if statement` and removing the colons ``:``, for example
-
-    .. code-block:: python
-
-      if condition:
-          return True
-      else:
-          return False
-
-    can be written as
-
-    .. code-block:: python
-
-      return True if something else False
-
-    which can then be written as
-
-    .. code-block:: python
-
-      return something
-
-    this works because Python_ tests if ``something`` is :ref:`True<test_what_is_true>` in the background same as it does when I type ``if something:``
-
 * I remove the second `return statement`_
 
   .. code-block:: python
@@ -632,48 +609,53 @@ An `if statement`_ is a way for a program_ to do something based on something el
     def logical_conjunction(first_input, second_input):
         return first_input and second_input
 
-:ref:`Logical Conjunction<test_logical_conjunction>` also known as and_ only returns :ref:`True<test_what_is_true>` when the two inputs are both :ref:`True<test_what_is_true>`
+:ref:`Logical Conjunction<test_logical_conjunction>` also known as and_, returns
 
-.. IMPORTANT:: All of the statements below give the same result
+* ``first_input and second_input``
+* :ref:`True<test_what_is_true>` when the two inputs are both :ref:`True<test_what_is_true>`
 
-  * this checks if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+.. TIP:: All of the statements below give the same result
+
+  * this checks if ``something`` is :ref:`True<test_what_is_true>`
 
     .. code-block:: python
 
-      if first_input == True and second_input == True:
+      if something == True:
           return True
       else:
           return False
 
-  * this uses bool_ to check if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+  * this uses bool_ to check if ``something`` is :ref:`True<test_what_is_true>`
 
     .. code-block:: python
 
-      if bool(first_input) and bool(second_input):
+      if bool(something):
           return True
       else:
           return False
 
-  * this checks if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>` in the background
+  * this checks if ``something`` is :ref:`True<test_what_is_true>` in the background
 
     .. code-block:: python
 
-      if first_input and second_input:
+      if something:
           return True
       else:
           return False
 
-  * this returns :ref:`True<test_what_is_true>` if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+  * this returns :ref:`True<test_what_is_true>` if ``something`` is :ref:`True<test_what_is_true>`
 
     .. code-block:: python
 
-      return True if first_input and second_input else False
+      return True if something else False
 
-  * this also returns :ref:`True<test_what_is_true>` after checking if ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>` in the background
+  * this also returns :ref:`True<test_what_is_true>` after checking if ``something`` is :ref:`True<test_what_is_true>` in the background
 
     .. code-block:: python
 
-      return first_input and second_input
+      return something
+
+  the last one works because Python_ tests if ``something`` is :ref:`True<test_what_is_true>` in the background same as it does when I type ``if something:``
 
 ----
 
