@@ -1348,6 +1348,8 @@ the test passes
 * I add a new note
 
   .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 2
 
     # NOTES
     # None is NOT a list

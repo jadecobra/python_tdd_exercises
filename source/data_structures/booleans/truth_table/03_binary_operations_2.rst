@@ -952,13 +952,13 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   the terminal_ still shows green. ``logical_disjunction`` returns
 
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
   so far this is the same as :ref:`Tautology<test_tautology>`
 
-* I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+* I add the next case - where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -971,8 +971,8 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   the test is still green. ``logical_disjunction`` still looks like :ref:`Tautology<test_tautology>`, it returns
 
-  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
 * I add the fourth case, where both inputs are :ref:`False<test_what_is_false>`
 
@@ -1007,7 +1007,12 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
                 return False
         return True
 
-  the test passes. ``logical_disjunction`` only returns :ref:`False<test_what_is_false>` when both inputs are :ref:`False<test_what_is_false>`
+  the test passes. ``logical_disjunction`` returns
+
+  - :ref:`False<test_what_is_false>` when both inputs are :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when both inputs are NOT :ref:`False<test_what_is_false>`
 
 * I change the two `if statements`_ to one `if statement`_ with and_
 
@@ -1044,7 +1049,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
     :emphasize-lines: 2-3
 
     def logical_disjunction(first_input, second_input):
-        if not first_input == True and not second_input == True:
+        if (not first_input == True) and (not second_input == True):
         # if first_input == False and second_input == False:
             return False
         return True
@@ -1058,8 +1063,8 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
     :emphasize-lines: 2-3
 
     def logical_disjunction(first_input, second_input):
-        if not bool(first_input) and not bool(second_input):
-        # if not first_input == True and not second_input == True:
+        if (not bool(first_input)) and (not bool(second_input)):
+        # if (not first_input == True) and (not second_input == True):
             return False
         return True
 
@@ -1072,12 +1077,12 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
     :emphasize-lines: 2-3
 
     def logical_disjunction(first_input, second_input):
-        if not first_input and not second_input:
-        # if not bool(first_input) and not bool(second_input):
+        if (not first_input) and (not second_input):
+        # if (not bool(first_input)) and (not bool(second_input)):
             return False
         return True
 
-  green
+  10 green bottles standing on a wall
 
 * I add a second `if statement`_ for the cases where the ``logical_disjunction`` returns :ref:`True<test_what_is_true>` like I did with :ref:`Logical NAND<test_logical_nand>`
 
@@ -1086,9 +1091,9 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
     :emphasize-lines: 4-5
 
     def logical_disjunction(first_input, second_input):
-        if not first_input and not second_input:
+        if (not first_input) and (not second_input):
             return False
-        if not (not first_input and not second_input):
+        if not ((not first_input) and (not second_input)):
             return True
 
   the test is still green
@@ -1100,22 +1105,24 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
     :emphasize-lines: 2-3
 
     def logical_disjunction(first_input, second_input):
-        if not (not first_input and not second_input):
+        if not ((not first_input) and (not second_input)):
             return True
-        if not first_input and not second_input:
+        if (not first_input) and (not second_input):
             return False
+
+  green
 
 * I change the second `if statement`_ to an else_ clause
 
   .. code-block:: python
     :lineno-start: 45
-    :emphasize-lines: 3-4
+    :emphasize-lines: 4-5
 
     def logical_disjunction(first_input, second_input):
-        if not (not first_input and not second_input):
+        if not ((not first_input) and (not second_input)):
             return True
         else:
-        # if not first_input and not second_input:
+        # if (not first_input) and (not second_input):
             return False
 
 * I add a `conditional expression`_
@@ -1125,8 +1132,8 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
     :emphasize-lines: 2
 
     def logical_disjunction(first_input, second_input):
-        return True if not (not first_input and not second_input) else False
-        if not (not first_input and not second_input):
+        return True if not ((not first_input) and (not second_input)) else False
+        if not ((not first_input) and (not second_input)):
             return True
         else:
             return False
@@ -1138,12 +1145,12 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
     :emphasize-lines: 2
 
     def logical_disjunction(first_input, second_input):
-        return not (not first_input and not second_input)
-        return True if not (not first_input and not second_input) else False
+        return not ((not first_input) and (not second_input))
+        return True if not ((not first_input) and (not second_input)) else False
 
-  the terminal_ still shows green. A reminder that I can return the negation of an `if statement`_ that returns :ref:`False<test_what_is_false>` like I did in :ref:`Logical NAND<test_logical_nand>`
+  the terminal_ still shows green. A reminder that I can return the :ref:`Logical Negation<test_logical_negation>` (not_) of an `if statement`_ that returns :ref:`False<test_what_is_false>` like I did in :ref:`Logical NAND<test_logical_nand>`
 
-* "not_" appears 3 times in this statement, I want to change that. I "multiply" it by each thing in the parentheses to try to make the statement simpler
+* "not_" appears 3 times in this statement, I want to change that. I "multiply" it by each thing inside the parentheses to try to make the statement simpler
 
   .. code-block:: python
     :lineno-start: 45
@@ -1205,8 +1212,8 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
 :ref:`Logical Disjunction<test_logical_disjunction>` aka or_ returns
 
-* :ref:`False<test_what_is_false>` only when both inputs are :ref:`False<test_what_is_false>`
 * ``first_input or second_input``
+* :ref:`False<test_what_is_false>` only when both inputs are :ref:`False<test_what_is_false>`
 
 ----
 
