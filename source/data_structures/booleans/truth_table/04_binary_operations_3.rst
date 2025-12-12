@@ -1064,11 +1064,10 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   still green. ``converse_implication`` returns
 
-  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
-
-* I add another case to ``test_converse_implication`` in ``test_truth_table.py``
+* I add the last case to ``test_converse_implication`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 93
@@ -1083,9 +1082,41 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     # Exceptions Encountered
 
-  the terminal_ still shows green
+  the terminal_ still shows green. ``converse_implication`` returns
 
-* I add a `return statement`_ to replace the `if statement_` in ``converse_implication`` in ``truth_table.py``
+  - :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+
+* I change the `if statement`_ in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 2-3
+
+    def converse_implication(first_input, second_input):
+        if not first_input == False and second_input == True:
+        # if first_input == False and second_input == True:
+            return False
+        return True
+
+  the test is still green
+
+* I remove the commented line and use bool_
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 2-3
+
+    def converse_implication(first_input, second_input):
+        if not first_input == False and second_input == True:
+        # if first_input == False and second_input == True:
+            return False
+        return True
+
+  do you like green eggs and ham?
+
+* I add a `return statement`_ to replace the `if statement`_ in ``converse_implication`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 63

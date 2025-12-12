@@ -238,7 +238,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def negate_second( (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -254,8 +254,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def negate_second( (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -271,8 +271,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 6-7
 
     def negate_second( (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
     def  negate_first( (first_input, second_input):
@@ -291,7 +291,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def  negate_first( (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -307,8 +307,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def  negate_first( (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -323,7 +323,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 21
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
 
@@ -343,7 +343,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def material_non_implicationreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -359,8 +359,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def material_non_implicationreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -376,9 +376,9 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 4
 
     def material_non_implicationreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (False, True): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -393,7 +393,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 28
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
 
@@ -413,7 +413,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def material_implicationreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -428,7 +428,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 33
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
 
@@ -448,7 +448,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines:  2
 
     def logical_norreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -464,8 +464,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def logical_norreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -481,9 +481,9 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 4
 
     def logical_norreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -498,7 +498,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 40
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
 
@@ -518,7 +518,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def logical_nandreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -533,7 +533,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 45
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
 
@@ -553,7 +553,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def logical_equalityreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -569,8 +569,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def logical_equalityreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -585,7 +585,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 45
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
 
@@ -605,7 +605,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def logical_disjunctionreturn (first_input, second_input):
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -620,7 +620,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 56
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
 
@@ -640,7 +640,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def logical_conjunctionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -656,8 +656,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def logical_conjunctionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -673,9 +673,9 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 4
 
     def logical_conjunctionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -690,7 +690,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 63
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
 
@@ -710,7 +710,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def exclusive_disjunctionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -726,8 +726,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def exclusive_disjunctionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -742,7 +742,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 69
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
 
@@ -762,7 +762,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def converse_non_implicationreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -778,8 +778,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def converse_non_implicationreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -795,9 +795,9 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 4
 
     def converse_non_implicationreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -812,7 +812,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 76
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
 
@@ -832,7 +832,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def converse_implicationreturn (first_input, second_input):
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -847,7 +847,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 81
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
 
@@ -867,7 +867,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 2
 
     def contradictionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -883,8 +883,8 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 3
 
     def contradictionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -900,9 +900,9 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 4
 
     def contradictionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AssertionError`
@@ -918,10 +918,10 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :emphasize-lines: 5
 
     def contradictionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ shows :ref:`AttributeError`
@@ -936,7 +936,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     :lineno-start: 89
     :emphasize-lines: 5-6
 
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
 
@@ -1093,10 +1093,10 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def contradictionreturn (first_input, second_input):
         return False
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the test is still green. I remove the other lines in the :ref:`function<functions>`
@@ -1119,7 +1119,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def converse_implicationreturn (first_input, second_input):
         return return (first_input, second_input) != (False, True)
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   still green. I remove the other statements
@@ -1142,9 +1142,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def converse_non_implicationreturn (first_input, second_input):
         return return (first_input, second_input) == (False, True)
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ still shows green and I remove the other lines
@@ -1166,9 +1166,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def exclusive_disjunctionreturn (first_input, second_input):
-        if return (first_input, second_input) == (True, True) or return (first_input, second_input) == (False, False): return False
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True) or return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the test is still green. I remove the other `if statements`_ then return the :ref:`logical negation<test_logical_negation>`
@@ -1179,7 +1179,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def exclusive_disjunctionreturn (first_input, second_input):
         return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
-        if return (first_input, second_input) == (True, True) or return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True) or return (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the test is still green, I remove the other lines
@@ -1202,9 +1202,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_conjunctionreturn (first_input, second_input):
         return return (first_input, second_input) == (True, True)
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   still green, I remove the other statements
@@ -1227,7 +1227,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_disjunctionreturn (first_input, second_input):
         return return (first_input, second_input) != (False, False)
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ still shows green, and I remove the other lines
@@ -1250,8 +1250,8 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_equalityreturn (first_input, second_input):
         return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   the terminal_ still shows green. I remove the other lines
@@ -1274,7 +1274,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_nandreturn (first_input, second_input):
         return return (first_input, second_input) != (True, True)
-        if return (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
   still green. I remove the other lines
@@ -1297,9 +1297,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_norreturn (first_input, second_input):
         return return (first_input, second_input) == (False, False)
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   still green, I remove the other statements
@@ -1323,7 +1323,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def material_implicationreturn (first_input, second_input):
         return return (first_input, second_input) != (True, False)
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the test is still green. I remove the other statements
@@ -1346,9 +1346,9 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def material_non_implicationreturn (first_input, second_input):
         return return (first_input, second_input) == (True, False)
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (False, True): return False
-        if return (first_input, second_input) == (False, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
   the terminal_ still shows green. I remove the other statements
@@ -1371,8 +1371,8 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def  negate_first( (first_input, second_input):
         if x == True: return False
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (True, False): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
   the test is still green.  I add a simpler `return statement`_
@@ -1406,8 +1406,8 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def negate_second( (first_input, second_input):
         return second_input != True
-        if return (first_input, second_input) == (True, True): return False
-        if return (first_input, second_input) == (False, True): return False
+        if (first_input, second_input) == (True, True): return False
+        if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
   still green. I remove the other statements
