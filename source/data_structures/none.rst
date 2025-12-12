@@ -1703,7 +1703,7 @@ I also showed the basic Python_ :ref:`data structures`
 * None_ - the simplest
 * integers_ - whole numbers, negative and positive
 * floats_ - floating point decimal numbers
-* strings_ - anything characters inside :ref:`quotes`
+* strings_ - anything inside :ref:`quotes`
 * :ref:`booleans` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
 * tuples_ - anything in parentheses (``()``) separated by commas
 * :ref:`lists` - anything in square brackets (``[]``) separated by commas
