@@ -1209,7 +1209,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
         return not ((not first_input) and (not second_input))
         return True if not ((not first_input) and (not second_input)) else False
 
-  the terminal_ still shows green. A reminder that I can return the :ref:`Logical Negation<test_logical_negation>` (not_) of an `if statement`_ that returns :ref:`False<test_what_is_false>` like I did in :ref:`Logical NAND<test_logical_nand>`
+  the terminal_ still shows green. A reminder that I can return the :ref:`Logical Negation<test_logical_negation>` (not_) of an `if statement`_ that returns :ref:`False<test_what_is_false>` like I did with :ref:`Logical NAND<test_logical_nand>`
 
 * "not_" appears 3 times in this statement, I want to change that. I "multiply" it by each thing inside the parentheses to try to make the statement simpler
 

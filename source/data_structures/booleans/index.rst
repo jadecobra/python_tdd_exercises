@@ -362,7 +362,7 @@ the terminal_ shows :ref:`AssertionError`
     # Exceptions Encountered
     # AssertionError
 
-All of this is still a repetition of what I did in :ref:`AssertionError`. Next up, I test the other Python_ basic data types_ to see which of are False_ or True_
+All of this is still a repetition of what I did with :ref:`AssertionError`. Next up, I test the other Python_ basic data types_ to see which of are False_ or True_
 
 * is :ref:`None` False_ or True_?
 * is an integer_ False_ or True_?

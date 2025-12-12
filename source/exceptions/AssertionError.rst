@@ -743,7 +743,7 @@ All the assertions_ I have typed so far show that, :ref:`True<test_what_is_true>
 test_assertion_error_w_equality
 *********************************************************************************
 
-I can use assertions_ to test if 2 things are equal, like I did in :ref:`test_what_is_an_assertion`
+I can use assertions_ to test if 2 things are equal, like I did with :ref:`test_what_is_an_assertion`
 
 =================================================================================
 :red:`RED`: make it fail

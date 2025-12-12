@@ -1095,7 +1095,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
-        if not first_input == False and second_input == True:
+        if not first_input == True and second_input == True:
         # if first_input == False and second_input == True:
             return False
         return True
@@ -1109,14 +1109,71 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
-        if not first_input == False and second_input == True:
-        # if first_input == False and second_input == True:
+        if not bool(first_input) and bool(second_input):
+        # if not first_input == True and second_input == True:
             return False
         return True
 
   do you like green eggs and ham?
 
-* I add a `return statement`_ to replace the `if statement`_ in ``converse_implication`` in ``truth_table.py``
+* I remove the commented line and make the `if statement`_ simpler
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 2-3
+
+    def converse_implication(first_input, second_input):
+        if not first_input and second_input:
+        # if not bool(first_input) and bool(second_input):
+            return False
+        return True
+
+  the terminal_ still shows green
+
+* I add the opposite of the `if statement`_ for the second `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 3-4
+
+    def converse_implication(first_input, second_input):
+        if not first_input and second_input:
+            return False
+        if not (not first_input and second_input):
+            return True
+
+  the test is still passing
+
+* I move the new `if statement`_ to the top
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 3-4
+
+    def converse_implication(first_input, second_input):
+        if not (not first_input and second_input):
+            return True
+        if not first_input and second_input:
+            return False
+
+  green
+
+* I add a `conditional expression`_
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 2
+
+    def converse_implication(first_input, second_input):
+        return True if not (not first_input and second_input) else False
+        if not (not first_input and second_input):
+            return True
+        if not first_input and second_input:
+            return False
+
+  the test is still green
+
+* I remove the other if statements and write a simpler `conditional expression`_
 
   .. code-block:: python
     :lineno-start: 63
@@ -1124,20 +1181,18 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     def converse_implication(first_input, second_input):
         return not (not first_input and second_input)
-        if not first_input and second_input:
-            return False
-        return True
+        return True if not (not first_input and second_input) else False
 
-  the test is still green
+  the terminal_ still shows green
 
-* I "multiply not_" by the symbols in the parentheses
+* I remove the commented lines and "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
     :lineno-start: 63
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
-        return not not first_input not and not second_input
+        return (not not first_input) (not and) (not second_input)
         return not (not first_input and second_input)
 
   the terminal_ shows SyntaxError_
@@ -1146,19 +1201,19 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     SyntaxError: invalid syntax
 
-  I change "not_ and_" to "or_" to be correct
+* I change "not_ and_" to "or_" to be correct
 
   .. code-block:: python
     :lineno-start: 63
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
-        return not not first_input or not second_input
+        return (not not first_input) or (not second_input)
         return not (not first_input and second_input)
 
   back to green
 
-* I remove "not_ not_" since it cancels out, the negation of a negation is the original thing
+* I remove the other `return statement`_ then remove  "not_ not_" since it cancels out, the negation of a negation is the original thing
 
   .. code-block:: python
     :lineno-start: 63
@@ -1166,17 +1221,26 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     def converse_implication(first_input, second_input):
         return first_input or not second_input
-        return not (not first_input and second_input)
+        return (not not first_input) or (not second_input)
 
   the tests is still green
 
-* I remove the other statements
+* I remove the other `return statement`_
 
   .. code-block:: python
     :lineno-start: 63
 
     def converse_implication(first_input, second_input):
         return first_input or not second_input
+
+:ref:`Converse Implication<test_converse_implication>` returns
+
+- ``first_input or not second_input``
+- :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
+- :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+- :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+
+
 
 ----
 

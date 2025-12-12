@@ -778,7 +778,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the test passes. `Keyword Arguments`_ allow the input to be passed in any order
 
-* I can still call the function_ without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`, I add an :ref:`assertion<AssertionError>` to show this
+* I can still call the function_ without using the names, the same way I did with :ref:`test_functions_w_positional_arguments`, I add an :ref:`assertion<AssertionError>` to show this
 
   .. code-block:: python
     :lineno-start: 43
