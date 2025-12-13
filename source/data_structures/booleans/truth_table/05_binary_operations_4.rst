@@ -519,7 +519,7 @@ I add a :ref:`function<functions>` definition for it in ``truth_table.py``
   def logical_equality(first_input, second_input):
       return True
 
-the test passes
+the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -552,9 +552,12 @@ the test passes
             return False
         return True
 
-  the test passes
+  the test passes. ``logical_equality`` returns
 
-* I add another case to ``test_logical_equality`` in ``test_truth_table.py``
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+
+* I add the next case to ``test_logical_equality`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 111
@@ -584,9 +587,13 @@ the test passes
             return False
         return True
 
-  the test passes
+  the test passes. ``logical_equality`` returns
 
-* I add the last case ``test_logical_equality`` in ``test_truth_table.py``
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+
+* I add the last case to ``test_logical_equality`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 111
@@ -601,7 +608,14 @@ the test passes
 
     # Exceptions Encountered
 
-  the test is still green
+  the test is still green. ``logical_equality`` returns
+
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when both inputs are the same
+  - :ref:`False<test_what_is_false>` when both inputs are NOT the same
 
 * I use "or_" to put the 2 statements that return :ref:`False<test_what_is_false>` together, since they are at the same level in ``logical_equality`` in ``truth_table.py``
 
@@ -612,15 +626,15 @@ the test passes
     def logical_equality(first_input, second_input):
         if (not first_input and second_input) or (first_input and not second_input):
             return False
-        if not first_input and second_input:
-            return False
-        if first_input and not second_input:
-            return False
+        # if not first_input and second_input:
+        #     return False
+        # if first_input and not second_input:
+        #     return False
         return True
 
   still green
 
-* I remove the other `if statements`_
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 75
@@ -646,14 +660,18 @@ the test passes
 
   the test is still green
 
-* I "multiply not_" by every symbol in the parentheses
+* I remove the other statements then "multiply not_" by every symbol in the parentheses
 
   .. code-block:: python
     :lineno-start: 75
-    :emphasize-lines: 2
+    :emphasize-lines: 2-6
 
     def logical_equality(first_input, second_input):
-        return (not not first_input not and not second_input) not or (not first_input not and not not second_input)
+        return (
+            (not (not first_input and second_input))
+            (not or)
+            (not (first_input and not second_input))
+        )
         return not ((not first_input and second_input) or (first_input and not second_input))
 
   the terminal_ shows SyntaxError_
@@ -662,41 +680,110 @@ the test passes
 
     SyntaxError: invalid syntax
 
-  I change "not_ and_" to "or_" in both parentheses and "not_ or_" to "and_" in between them
+  I change "not_ or_" to "and_"
 
   .. code-block:: python
     :lineno-start: 75
-    :emphasize-lines: 2
+    :emphasize-lines: 4
 
     def logical_equality(first_input, second_input):
-        return (not not first_input or not second_input) and (not first_input or not not second_input)
+        return (
+            (not (not first_input and second_input))
+            and
+            (not (first_input and not second_input))
+        )
         return not ((not first_input and second_input) or (first_input and not second_input))
 
   the test is green again
 
-* I remove "not_ not_" from both parentheses
+* I remove the other `return statement`_ then "multiply" " not_ in the first parentheses
 
   .. code-block:: python
     :lineno-start: 75
-    :emphasize-lines: 2
+    :emphasize-lines: 3
 
     def logical_equality(first_input, second_input):
-        return (first_input or not second_input) and (not first_input or second_input)
-        return not ((not first_input and second_input) or (first_input and not second_input))
+        return (
+            (not not first_input not and not second_input)
+            # (not (not first_input and second_input))
+            and
+            (not (first_input and not second_input))
+        )
+
+  the terminal shows SyntaxError_
+
+  .. code-block:: shell
+
+    SyntaxError: invalid syntax
+
+  I change "not_ and_" to "or_"
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 3
+
+    def logical_equality(first_input, second_input):
+        return (
+            (not not first_input or not second_input)
+            # (not (not first_input and second_input))
+            and
+            (not (first_input and not second_input))
+        )
+
+  green again
+
+* I remove the commented line and "multiply" not_ in the next statement
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 5
+
+    def logical_equality(first_input, second_input):
+        return (
+            (not not first_input or not second_input)
+            and
+            (not first_input not and not not second_input)
+            # (not (first_input and not second_input))
+        )
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: shell
+
+    SyntaxError: invalid syntax
+
+* I change "not_ and_" to "or_"
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 5
+
+    def logical_equality(first_input, second_input):
+        return (
+            (not not first_input or not second_input)
+            and
+            (not first_input or not not second_input)
+            # (not (first_input and not second_input))
+        )
+
+  the test is green again
+
+* I remove the commented line and the "not_ not_" from both parentheses since they cancel out
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 3, 5
+
+    def logical_equality(first_input, second_input):
+        return (
+            (first_input or not second_input)
+            and
+            (not first_input or second_input)
+        )
 
   still green
 
-* I remove the second `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 75
-
-    def logical_equality(first_input, second_input):
-        return (first_input or not second_input) and (not first_input or second_input)
-
-  the test is still passing
-
-* The 2 cases that return :ref:`True<test_what_is_true>` are when ``first_input`` and ``second_input`` are the same, which means I can write an even simpler `return statement`_
+* The 2 cases where ``logical_equality`` returns :ref:`True<test_what_is_true>` are when ``first_input`` and ``second_input`` are the same, which means I can write a much simpler `return statement`_ thanks to the equality symbol
 
   .. code-block:: python
     :lineno-start: 75
@@ -704,9 +791,21 @@ the test passes
 
     def logical_equality(first_input, second_input):
         return first_input == second_input
-        return (first_input or not second_input) and (not first_input or second_input)
+        return (
+            (first_input or not second_input)
+            and
+            (not first_input or second_input)
+        )
 
   the test is still green
+
+:ref:`Logical Equality<test_logical_equality>` returns
+
+* ``first_input == second_input``
+* :ref:`True<test_what_is_true>` when both inputs are the same
+* :ref:`False<test_what_is_false>` when both inputs are NOT the same
+* the :ref:`Logical Conjunction<test_logical_conjunction>` of the result of :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input, and the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the the :ref:`Logical Negation<test_logical_negation>` of the first input and the second input
+* is the opposite of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>` when both inputs are the same
 
 ----
 
@@ -718,7 +817,7 @@ test_material_implication
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test for another Binary Operation in ``test_truth_table.py``
+I add a new test for one more Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 115
@@ -746,17 +845,21 @@ I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.p
 
 .. code-block:: python
   :lineno-start: 75
-  :emphasize-lines: 6-7
+  :emphasize-lines: 10-11
 
   def logical_equality(first_input, second_input):
       return first_input == second_input
-      return (first_input or not second_input) and (not first_input or second_input)
+      return (
+          (first_input or not second_input)
+          and
+          (not first_input or second_input)
+      )
 
 
   def material_implication(first_input, second_input):
       return True
 
-the test passes
+the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -789,7 +892,10 @@ the test passes
             return False
         return True
 
-  the test passes
+  the test passes. ``material_implication`` returns
+
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 * I add the next case to ``test_material_implication`` in ``test_truth_table.py``
 
@@ -802,7 +908,11 @@ the test passes
             self.assertFalse(src.truth_table.material_implication(True, False))
             self.assertTrue(src.truth_table.material_implication(False, True))
 
-  the test is still green
+  the test is still green. ``material_implication`` returns
+
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 * I add the fourth case
 
@@ -818,7 +928,12 @@ the test passes
 
     # Exceptions Encountered
 
-  the test is still passing
+  the test is still passing. ``material_implication`` returns
+
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 * there is only one case where ``material_implication`` returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it in ``truth_table.py``
 
