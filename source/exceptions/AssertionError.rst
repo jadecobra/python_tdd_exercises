@@ -314,8 +314,6 @@ test_assertion_error_w_none
 
     E    assert None is not None
 
-    tests/test_assertion_error.py:7: AssertionError
-
   the `assert statement`_ is :ref:`False<test_what_is_false>`
 
 =================================================================================

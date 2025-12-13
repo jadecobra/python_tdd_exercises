@@ -249,6 +249,12 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
     def negate_second(first_input, second_input):
         return not second_input
 
+:ref:`Negate Second<test_negate_second>` always returns
+
+* ``not second_input``
+* the :ref:`Logical Negation<test_logical_negation>` of the second input
+* it is the opposite or :ref:`Logical Negation<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
+
 ----
 
 *********************************************************************************
