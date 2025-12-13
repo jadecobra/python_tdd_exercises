@@ -169,7 +169,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when both inputs are :ref:`True<test_what_is_true>`
 
-* I add the third case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_negate_second`` in ``test_truth_table.py``
+* I add the third case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, to ``test_negate_second`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 99
@@ -180,9 +180,14 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
             self.assertTrue(src.truth_table.negate_second(True, False))
             self.assertFalse(src.truth_table.negate_second(False, True))
 
-  the test is still passing
+  the test is still passing. ``negate_second`` returns
 
-* I add another case
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second _input`` is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when both ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when ``second_input`` is :ref:`True<test_what_is_true>`
+
+* I add the last case - when both inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 99
@@ -207,15 +212,20 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
     :emphasize-lines: 2-3
 
     def negate_second(first_input, second_input):
-        if not first_input and not second_input:
+        if first_input == False and second_input == False:
             return True
-        if first_input and not second_input:
+        if first_input == True and second_input == False:
             return True
         return False
 
-  the test passes
+  the test passes. ``negate_second`` returns
 
-* the ``negate_second`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` in the two cases where ``second_input`` is :ref:`False<test_what_is_false>`, I add a `return statement`_ to show this
+  - :ref:`True<test_what_is_true>` when both the first input and second input are :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when the second input is :ref:`True<test_what_is_true>`
+
+* I add a `return statement`_ to show that ``negate_second`` always returns the opposite of the second input
 
   .. code-block:: python
     :lineno-start: 67
@@ -223,9 +233,9 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 
     def negate_second(first_input, second_input):
         return not second_input
-        if not first_input and not second_input:
+        if first_input == False and second_input == False:
             return True
-        if first_input and not second_input:
+        if first_input == True and second_input == False:
             return True
         return False
 
