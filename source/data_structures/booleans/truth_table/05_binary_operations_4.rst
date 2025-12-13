@@ -253,7 +253,8 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 
 * ``not second_input``
 * the :ref:`Logical Negation<test_logical_negation>` of the second input
-* it is the opposite or :ref:`Logical Negation<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
+
+it is the opposite or :ref:`Logical Negation<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
 
 ----
 
@@ -265,7 +266,7 @@ test_logical_nor
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for another Binary Operation in ``test_truth_table.py``
+I add a test for ``logical_nor`` in ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 103
@@ -289,7 +290,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
+I add the :ref:`function<functions>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 67
@@ -302,13 +303,13 @@ I add a :ref:`function<functions>` for ``logical_nor`` to ``truth_table.py``
   def logical_nor(first_input, second_input):
       return False
 
-the test passes
+the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the next case to ``test_logical_nor`` in ``test_truth_table.py``
+* I add the next case to ``test_logical_nor`` in ``test_truth_table.py`` - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 105
@@ -318,9 +319,13 @@ the test passes
             self.assertFalse(src.truth_table.logical_nor(True, True))
             self.assertFalse(src.truth_table.logical_nor(True, False))
 
-  the terminal_ still shows green
+  the terminal_ still shows green. ``logical_nor`` returns
 
-* on to the next case
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>`
+
+* on to the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 105
@@ -331,9 +336,12 @@ the test passes
             self.assertFalse(src.truth_table.logical_nor(True, False))
             self.assertFalse(src.truth_table.logical_nor(False, True))
 
-  the test is still green
+  the test is still green. ``logical_nor`` returns
 
-* I add the last case
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>`
+
+* I add the last case - when both inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 105
@@ -354,26 +362,80 @@ the test passes
 
     AssertionError: False is not true
 
-  this is the only case that returns :ref:`True<test_what_is_true>`. I add a `return statement`_ for it in ``truth_table.py``
+  this is the only case where ``logical_nor`` returns :ref:`True<test_what_is_true>`
 
-  .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 2
-
-        def logical_nor(first_input, second_input):
-            return not first_input and not second_input
-            return False
-
-  the test passes
-
-* I factor out "not_" since it happens 2 times
+* I add a `conditional expression`_ for it in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 71
     :emphasize-lines: 2
 
     def logical_nor(first_input, second_input):
-        return not first_input not or not second_input
+        return True if (first_input == False and second_input == False) else False
+        return False
+
+  the test passes. ``logical_nor`` returns
+
+  - :ref:`True<test_what_is_true>` when both inputs are :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>`
+
+* I remove the second `return statement`_ then use the simpler form of the `conditional expression`_
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2
+
+    def logical_nor(first_input, second_input):
+        return first_input == False and second_input == False
+        return True if (first_input == False and second_input == False) else False
+
+  the test is still green
+
+* I remove the second `return statement`_ and write the first one in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2
+
+    def logical_nor(first_input, second_input):
+        return not first_input == True and not second_input == True
+        return first_input == False and second_input == False
+
+  still green
+
+* I remove the second `return statement`_ and make the first one simpler with bool_
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2
+
+    def logical_nor(first_input, second_input):
+        return not bool(first_input) and not bool(second_input)
+        return not first_input == True and not second_input == True
+
+  the terminal_ still shows green
+
+* I make the statement simpler again
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2
+
+    def logical_nor(first_input, second_input):
+        return not first_input and not second_input
+        return not bool(first_input) and not bool(second_input)
+
+  green
+
+* I remove the second `return statement`_ then factor out "not_" since it happens 2 times in the first statement
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2
+
+    def logical_nor(first_input, second_input):
+        return (not first_input) (not or) (not second_input)
         return not first_input and not second_input
 
   the terminal_ shows SyntaxError_
@@ -390,10 +452,10 @@ the test passes
 
     def logical_nor(first_input, second_input):
         return not (first_input or second_input)
-        # return not first_input not or not second_input
+        # return (not first_input) (not or) (not second_input)
         return not first_input and not second_input
 
-  still green
+  green, green, green again
 
 * I remove the other statements
 
@@ -402,6 +464,13 @@ the test passes
 
     def logical_nor(first_input, second_input):
         return not (first_input or second_input)
+
+:ref:`Logical NOR<test_logical_nor>` returns
+
+* ``not (first_input or second_input)``
+* the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Disjunction (or)<test_logical_disjunction>` of the first input and second input
+* not_ or_ of the first and second inputs
+* :ref:`True<test_what_is_true>` when both inputs are :ref:`False<test_what_is_false>`
 
 ----
 
