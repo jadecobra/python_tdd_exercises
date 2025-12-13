@@ -83,8 +83,6 @@ If your tests stopped after the :ref:`previous chapter<truth table: Binary Opera
 
     pytest-watch
 
-
-
 ----
 
 *********************************************************************************
@@ -95,7 +93,7 @@ test_negate_second
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test for another Binary Operation to ``test_truth_table.py
+I add a new test for another Binary Operation to ``test_truth_table.py`` with the first case where both ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 97
@@ -114,11 +112,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
+there is no definition for it yet
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition for it to ``truth_table.py``
+I add a :ref:`function<functions>` definition for ``negate_second`` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 63
@@ -131,13 +131,13 @@ I add a :ref:`function<functions>` definition for it to ``truth_table.py``
   def negate_second(first_input, second_input):
       return False
 
-the test passes
+the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when both inputs are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add the next case to ``test_negate_second`` in ``test_truth_table.py``
+* I add the next case - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`, to ``test_negate_second`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 99
@@ -160,13 +160,16 @@ the test passes
     :emphasize-lines: 2-3
 
     def negate_second(first_input, second_input):
-        if first_input and not second_input:
+        if first_input == True and second_input == False:
             return True
         return False
 
-  the test passes
+  the test passes. ``negate_second`` returns
 
-* I add the third case to ``test_negate_second`` in ``test_truth_table.py``
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when both inputs are :ref:`True<test_what_is_true>`
+
+* I add the third case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_negate_second`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 99

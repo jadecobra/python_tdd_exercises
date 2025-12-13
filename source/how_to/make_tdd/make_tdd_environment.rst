@@ -1849,7 +1849,7 @@ review
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 
-Would you like to test :ref:`test AssertionError?<AssertionError>`
+Would you like to :ref:`test AssertionError?<AssertionError>`
 
 ----
 

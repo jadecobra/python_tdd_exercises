@@ -1753,7 +1753,7 @@ review
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux>`
 
-Would you like to test :ref:`test AssertionError?<AssertionError>`
+Would you like to :ref:`test AssertionError?<AssertionError>`
 
 ----
 
