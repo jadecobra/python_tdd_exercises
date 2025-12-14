@@ -185,7 +185,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   the test passes
 
-* this is the same as the first :ref:`if statement<if statements (conditionals)>` in :ref:`converse_non_implication<test_converse_non_implication>`. I change the two :ref:`if statement<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with :ref:`Logical Conjunction<test_logical_conjunction>` (and_)
+* this is the same as the first :ref:`if statement<if statements (conditionals)>` in :ref:`converse_non_implication<test_converse_non_implication>`. I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with :ref:`Logical Conjunction<test_logical_conjunction>` (and_)
 
   .. code-block:: python
     :lineno-start: 33
@@ -253,7 +253,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   the test passes
 
-* I change the two :ref:`if statement<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with and_
+* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with and_
 
   .. code-block:: python
     :lineno-start: 33
@@ -484,7 +484,7 @@ the test passes.
 
   the test passes
 
-* I comment out the two :ref:`if statement<if statements (conditionals)>`, and change them to one :ref:`if statement<if statements (conditionals)>`
+* I comment out the two :ref:`if statements<if statements (conditionals)>`, and change them to one :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -532,7 +532,7 @@ the test passes.
 
     AssertionError: False is not true
 
-* I add two :ref:`if statement<if statements (conditionals)>` to ``logical_nand`` in ``truth_table.py``
+* I add two :ref:`if statements<if statements (conditionals)>` to ``logical_nand`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -548,7 +548,7 @@ the test passes.
 
   the test passes
 
-* I change the two :ref:`if statement<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with :ref:`logical_conjunction<test_logical_conjunction>` (and_)
+* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with :ref:`logical_conjunction<test_logical_conjunction>` (and_)
 
   .. code-block:: python
     :lineno-start: 37
@@ -605,7 +605,7 @@ the test passes.
 
     AssertionError: False is not true
 
-* I add two :ref:`if statement<if statements (conditionals)>` to ``logical_nand`` in ``truth_table.py``
+* I add two :ref:`if statements<if statements (conditionals)>` to ``logical_nand`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -623,7 +623,7 @@ the test passes.
 
   the test passes
 
-* I change the two :ref:`if statement<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
+* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -1075,7 +1075,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when the two inputs are NOT :ref:`False<test_what_is_false>`
 
-* I change the two :ref:`if statement<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with and_
+* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with and_
 
   .. code-block:: python
     :lineno-start: 45

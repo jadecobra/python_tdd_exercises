@@ -166,7 +166,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   the test passes
 
-* I change the two :ref:`if statement<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
+* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -339,7 +339,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   the test is still passing
 
-  .. TIP:: I can put two :ref:`if statement<if statements (conditionals)>` together with :ref:`Logical Disjunction<test_logical_disjunction>` (or_) when they are at the same indentation level and return the same thing. For example
+  .. TIP:: I can put two :ref:`if statements<if statements (conditionals)>` together with :ref:`Logical Disjunction<test_logical_disjunction>` (or_) when they are at the same indentation level and return the same thing. For example
 
     .. code-block:: python
 
@@ -355,7 +355,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
       if something or something_else:
           return this
 
-* I use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two :ref:`if statement<if statements (conditionals)>` that return :ref:`True<test_what_is_true>` together
+* I use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two :ref:`if statements<if statements (conditionals)>` that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
     :lineno-start: 49
@@ -559,7 +559,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
   the test passes
 
-* I change the two :ref:`if statement<if statements (conditionals)>` to one
+* I change the two :ref:`if statements<if statements (conditionals)>` to one
 
   .. code-block:: python
     :lineno-start: 55
@@ -1037,7 +1037,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   the test passes
 
-* I change the two :ref:`if statement<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
+* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 63
