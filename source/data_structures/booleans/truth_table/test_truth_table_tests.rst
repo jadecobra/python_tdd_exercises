@@ -1724,7 +1724,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 37
 
     def logical_equality(first_input, second_input):
-        return (not first_input or second_input) and (x or not second_input)
+        return (not first_input or second_input) and (first_input or not second_input)
 
 
     def logical_disjunction(first_input, second_input):
@@ -1881,16 +1881,16 @@ I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or
 * there are 16 binary operations, they each take 2 inputs, in this case I named the second input ``second_input`` and the first one ``first_input``
 
   - :ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>`
-  - :ref:`Converse Implication<test_converse_implication>` returns ``x or not second_input``
-  - :ref:`Converse NonImplication<test_converse_non_implication>` returns ``not first_input and y``
-  - :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns ``not (first_input and second_input) and (first_input or second_input)``
-  - :ref:`Logical Conjunction<test_logical_conjunction>` returns ``x and y``
-  - :ref:`Logical Disjunction<test_logical_disjunction>` returns ``x or y``
-  - :ref:`Logical Equality<test_logical_equality>` returns ``(not first_input or second_input) and (x or not second_input)``
-  - :ref:`Logical NAND<test_logical_nand>` returns ``not (first_input and second_input)``
-  - :ref:`Logical NOR<test_logical_nor>` returns ``not (first_input or second_input)``
-  - :ref:`Material Implication<test_material_implication>` returns ``not first_input or y``
-  - :ref:`Material NonImplication <test_material_non_implication>` returns ``x and not second_input``
+  - :ref:`Converse Implication<test_converse_implication>` returns ``first_input or not second_input``, it only returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`Converse NonImplication<test_converse_non_implication>` returns ``not first_input and second_input``, it only returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns ``not (first_input and second_input) and (first_input or second_input)``, it only returns :ref:`True<test_what_is_true>` when the two inputs are NOT equal
+  - :ref:`Logical Conjunction<test_logical_conjunction>` returns ``first_input and second_input``, it only returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+  - :ref:`Logical Disjunction<test_logical_disjunction>` returns ``first_input or second_input``, it only returns :ref:`False<test_what_is_False>` when the two inputs are :ref:`False<test_what_is_false>`
+  - :ref:`Logical Equality<test_logical_equality>` returns ``(not first_input or second_input) and (first_input or not second_input)``, it only returns :ref:`True<test_what_is_true>` when the two inputs are equal
+  - :ref:`Logical NAND<test_logical_nand>` returns ``not (first_input and second_input)``, it only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
+  - :ref:`Logical NOR<test_logical_nor>` returns ``not (first_input or second_input)``, it only returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
+  - :ref:`Material Implication<test_material_implication>` returns ``not first_input or second_input``, it only returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`Material NonImplication <test_material_non_implication>` returns ``first_input and not second_input``, it only returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and  ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`Negate First<test_negate_first>` always returns ``not first_input``
   - :ref:`Negate Second<test_negate_second>` always returns ``not second_input``
   - :ref:`Project First<test_project_first>` always returns ``first_input``
@@ -1903,7 +1903,7 @@ and
 * :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
 * :ref:`Logical Negation <test_logical_negation>` is "not_"
 
-All the logic statements or conditions have been written with some or all of the above 3
+All the logic statements or conditions have been written with some or all of the above 3.
 
 Would you like to :ref:`test functions?<functions>`
 
