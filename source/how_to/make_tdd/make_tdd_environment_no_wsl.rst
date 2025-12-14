@@ -760,7 +760,7 @@ how to activate a virtual environment on Windows without WSL
     Changing the execution policy might expose you to the security risks
     described in the about_Execution_Policies help topic at
     https:/go.microsoft.com/fwlink/?LinkID=135170.
-    Do you want to change the execution policy?
+    Would you like to change the execution policy?
 
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 

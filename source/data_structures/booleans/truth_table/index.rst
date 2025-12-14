@@ -12,7 +12,7 @@ booleans: truth table
 
 ----
 
-Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with `if statements`_. For example, If I want to know if a person can vote, the conditions could be
+Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with :ref:`if statement<if statements (conditionals)>`. For example, If I want to know if a person can vote, the conditions could be
 
 * Is the person alive?
 * Is the person old enough?
@@ -32,6 +32,17 @@ Here are the tests I have at the end of the chapters
 .. literalinclude:: ../../../code/tests/test_truth_table.py
   :language: python
   :linenos:
+
+*********************************************************************************
+questions about The Truth Table
+*********************************************************************************
+
+* :ref:`What is not?<test_logical_negation>`
+* :ref:`What is and?<test_logical_conjunction>`
+* :ref:`What is or?<test_logical_disjunction>`
+* :ref:`What is an if statement<if statements (conditionals)>`
+* :ref:`What is a conditional expression?<conditional expressions>`
+* :ref:`What is a ternary operator?<conditional expressions>`
 
 *********************************************************************************
 requirements

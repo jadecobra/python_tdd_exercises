@@ -231,7 +231,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`_ to ``negate_second``
+  I add an :ref:`if statement<if statements (conditionals)>` to ``negate_second``
 
   .. code-block:: python
     :lineno-start: 13
@@ -247,7 +247,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -284,7 +284,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True)
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -300,7 +300,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -336,7 +336,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -352,7 +352,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -369,7 +369,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add an `if statement`_ for it
+  I add an :ref:`if statement<if statements (conditionals)>` for it
 
   .. code-block:: python
     :lineno-start: 25
@@ -406,7 +406,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -441,7 +441,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -457,7 +457,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -474,7 +474,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -511,7 +511,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 44
@@ -546,7 +546,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -562,7 +562,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -598,7 +598,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -633,7 +633,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -649,7 +649,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -666,7 +666,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -703,7 +703,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -719,7 +719,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -755,7 +755,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -771,7 +771,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -788,7 +788,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -825,7 +825,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 80
@@ -860,7 +860,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -876,7 +876,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -893,7 +893,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add another `if statement`_
+  I add another :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -911,7 +911,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add an `if statement`_
+  I add an :ref:`if statement<if statements (conditionals)>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -1111,14 +1111,14 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def logical_negation(x):
         return not x
 
-* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the `if statement`_, for the 3 cases that return :ref:`True<test_what_is_true>`
+* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements (conditionals)>`, for the 3 cases that return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 80
     :emphasize-lines: 2
 
     def converse_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) != (False, True)
+        return (first_input, second_input) != (False, True)
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
@@ -1128,7 +1128,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 80
 
     def converse_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) != (False, True)
+        return (first_input, second_input) != (False, True)
 
 
     def contradictionreturn (first_input, second_input):
@@ -1141,7 +1141,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def converse_non_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) == (False, True)
+        return (first_input, second_input) == (False, True)
         if (first_input, second_input) == (True, True): return False
         if (first_input, second_input) == (True, False): return False
         if (first_input, second_input) == (False, False): return False
@@ -1153,13 +1153,13 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 73
 
     def converse_non_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) == (False, True)
+        return (first_input, second_input) == (False, True)
 
 
     def converse_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) != (False, True)
+        return (first_input, second_input) != (False, True)
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two `if statements`_ I can put them together as one
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two :ref:`if statement<if statements (conditionals)>` I can put them together as one
 
   .. code-block:: python
     :lineno-start: 67
@@ -1171,14 +1171,14 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the test is still green. I remove the other `if statements`_ then return the :ref:`logical negation<test_logical_negation>`
+  the test is still green. I remove the other :ref:`if statement<if statements (conditionals)>` then return the :ref:`logical negation<test_logical_negation>`
 
   .. code-block:: python
     :lineno-start: 67
     :emphasize-lines: 2
 
     def exclusive_disjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
         if (first_input, second_input) == (True, True) or return (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
@@ -1188,11 +1188,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 67
 
     def exclusive_disjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
 
 
     def converse_non_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) == (False, True)
+        return (first_input, second_input) == (False, True)
 
 * :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
@@ -1201,7 +1201,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def logical_conjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) == (True, True)
+        return (first_input, second_input) == (True, True)
         if (first_input, second_input) == (True, False): return False
         if (first_input, second_input) == (False, True): return False
         if (first_input, second_input) == (False, False): return False
@@ -1213,11 +1213,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 60
 
     def logical_conjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) == (True, True)
+        return (first_input, second_input) == (True, True)
 
 
     def exclusive_disjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
 
 * :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the opposite of it which covers the other 3 cases
 
@@ -1226,7 +1226,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def logical_disjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (False, False)
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
@@ -1236,20 +1236,20 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 55
 
     def logical_disjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (False, False)
 
 
     def logical_conjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) == (True, True)
+        return (first_input, second_input) == (True, True)
 
-* :ref:`logical_equality<test_logical_equality>` has two `if statements`_, I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>` to add a `return statement`
+* :ref:`logical_equality<test_logical_equality>` has two :ref:`if statement<if statements (conditionals)>`, I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>` to add a `return statement`
 
   .. code-block:: python
     :lineno-start: 49
     :emphasize-lines: 2
 
     def logical_equalityreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
+        return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
         if (first_input, second_input) == (True, False): return False
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
@@ -1260,11 +1260,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 49
 
     def logical_equalityreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
+        return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
 
 
     def logical_disjunctionreturn (first_input, second_input):
-        return return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (False, False)
 
 * :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for its opposite which covers the other 3 cases
 
@@ -1273,7 +1273,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def logical_nandreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, True)
+        return (first_input, second_input) != (True, True)
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
@@ -1283,11 +1283,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 44
 
     def logical_nandreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, True)
+        return (first_input, second_input) != (True, True)
 
 
     def logical_equalityreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
+        return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
 
 * :ref:`logical_nor<test_logical_nor>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
@@ -1296,7 +1296,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def logical_norreturn (first_input, second_input):
-        return return (first_input, second_input) == (False, False)
+        return (first_input, second_input) == (False, False)
         if (first_input, second_input) == (True, True): return False
         if (first_input, second_input) == (True, False): return False
         if (first_input, second_input) == (False, True): return False
@@ -1309,11 +1309,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def logical_norreturn (first_input, second_input):
-        return return (first_input, second_input) == (False, False)
+        return (first_input, second_input) == (False, False)
 
 
     def logical_nandreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, True)
+        return (first_input, second_input) != (True, True)
 
 * :ref:`material_implication<test_material_implication>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the other 3
 
@@ -1322,7 +1322,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def material_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, False)
+        return (first_input, second_input) != (True, False)
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
@@ -1332,11 +1332,11 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 25
 
     def material_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, False)
+        return (first_input, second_input) != (True, False)
 
 
     def logical_norreturn (first_input, second_input):
-        return return (first_input, second_input) == (False, False)
+        return (first_input, second_input) == (False, False)
 
 * :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the 1 case that returns :ref:`True<test_what_is_true>`
 
@@ -1345,7 +1345,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :emphasize-lines: 2
 
     def material_non_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) == (True, False)
+        return (first_input, second_input) == (True, False)
         if (first_input, second_input) == (True, True): return False
         if (first_input, second_input) == (False, True): return False
         if (first_input, second_input) == (False, False): return False
@@ -1357,13 +1357,13 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 25
 
     def material_non_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) == (True, False)
+        return (first_input, second_input) == (True, False)
 
 
     def material_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) != (True, False)
+        return (first_input, second_input) != (True, False)
 
-* ``first_input`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an `if statement`_ for them
+* ``first_input`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an :ref:`if statement<if statements (conditionals)>` for them
 
   .. code-block:: python
     :lineno-start: 19
@@ -1396,7 +1396,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
 
     def material_non_implicationreturn (first_input, second_input):
-        return return (first_input, second_input) == (True, False)
+        return (first_input, second_input) == (True, False)
 
 * ``second_input`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
 
@@ -1477,7 +1477,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def material_non_implicationreturn (first_input, second_input):
         return first_input and not y
-        return return (first_input, second_input) == (True, False)
+        return (first_input, second_input) == (True, False)
 
   the terminal_ shows all tests are still passing. I remove the second `return statement`_
 
@@ -1498,7 +1498,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def material_implicationreturn (first_input, second_input):
         return not x and y
-        return return (first_input, second_input) != (True, False)
+        return (first_input, second_input) != (True, False)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1514,7 +1514,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def material_implicationreturn (first_input, second_input):
         return not x or y
-        return return (first_input, second_input) != (True, False)
+        return (first_input, second_input) != (True, False)
 
   the test is green again, I make a note to use "or_" the next time I see ``!=`` in these tests. I remove the other `return statement`_
 
@@ -1535,7 +1535,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_norreturn (first_input, second_input):
         return not x and not y
-        return return (first_input, second_input) == (False, False)
+        return (first_input, second_input) == (False, False)
 
   the test is still green. I remove the second `return statement`_ and change the first `return statement`_ in terms of "not_" since it happens 2 times
 
@@ -1583,7 +1583,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_nandreturn (first_input, second_input):
         return not x or not y
-        return return (first_input, second_input) != (True, True)
+        return (first_input, second_input) != (True, True)
 
   the test is still green, I factor out "not_"
 
@@ -1594,7 +1594,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def logical_nandreturn (first_input, second_input):
         return not (x and y)
         return not x or not y
-        return return (first_input, second_input) != (True, True)
+        return (first_input, second_input) != (True, True)
 
   still green. I remove the other `return statements`_
 
@@ -1613,7 +1613,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_equalityreturn (first_input, second_input):
         return (not x or y) and (x or not y)
-        return return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
+        return (first_input, second_input) != (True, False) and return (first_input, second_input) != (False, True)
 
   the test is still green, I remove the other `return statement`_
 
@@ -1634,7 +1634,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_disjunctionreturn (first_input, second_input):
         return first_input or y
-        return return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (False, False)
 
   still green. I remove the other `return statement`_
 
@@ -1655,7 +1655,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def logical_conjunctionreturn (first_input, second_input):
         return first_input and y
-        return return (first_input, second_input) == (True, True)
+        return (first_input, second_input) == (True, True)
 
   the terminal_ still shows green. I remove the other `return statement`_
 
@@ -1675,7 +1675,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def exclusive_disjunctionreturn (first_input, second_input):
         return (not x or not y) and (x or y)
-        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
 
   still green, I can factor out "not_" from the first part of the statement
 
@@ -1686,7 +1686,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def exclusive_disjunctionreturn (first_input, second_input):
         return not (x and y) and (x or y)
         return (not x or not y) and (x or y)
-        return return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
 
   the test is still green. I remove the other statements
 
@@ -1707,7 +1707,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def converse_non_implicationreturn (first_input, second_input):
         return not x and y
-        return return (first_input, second_input) == (False, True)
+        return (first_input, second_input) == (False, True)
 
   still green. I remove the other line
 
@@ -1728,7 +1728,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
     def converse_implicationreturn (first_input, second_input):
         return first_input or not y
-        return return (first_input, second_input) != (False, True)
+        return (first_input, second_input) != (False, True)
 
   I remove the second `return statement`_
 

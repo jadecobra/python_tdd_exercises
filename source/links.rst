@@ -80,8 +80,6 @@
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable
 .. _history: https://man7.org/Linux/man-pages/man3/history.3.html
 .. _history program: history_
-.. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
-.. _if statements: `if statement`_
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _import statements: `import statement`_
 .. _index: more_on_lists_

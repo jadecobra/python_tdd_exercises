@@ -3,6 +3,8 @@
   :keywords: Jacob Itegboje, python truth table for if statements, python truth table generator from expression, python logical operators truth table, python truth table for two variables, how to make a truth table in python, python contradiction function, python logical conjunction truth table
 
 .. include:: ../../../links.rst
+.. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
+.. _if statements: `if statement`_
 
 .. _binary_operations_i:
 
@@ -382,7 +384,12 @@ I can make it do that with `if statements`_
 if statements (conditionals)
 ---------------------------------------------------------------------------------
 
-An `if statement`_ is a way for a program_ to do something based on something else. I can use them to make a :ref:`function<functions>` choose between 2 things
+An `if statement`_ is a way for a program_ to do something based on something else. I can use them to make a :ref:`function<functions>` choose between 2 things, there are written as
+
+.. code-block:: python
+
+  if something:
+      do this
 
 * I add `if statements`_ to the ``logical_conjunction`` :ref:`function<functions>` in ``truth_table.py``
 
@@ -396,10 +403,10 @@ An `if statement`_ is a way for a program_ to do something based on something el
                 return False
         return True
 
-  the test passes.
+  the test passes. ``logical_conjunction`` returns
 
-  - when the ``logical_conjunction`` :ref:`function<functions>` gets :ref:`True<test_what_is_true>` as the first input and :ref:`False<test_what_is_false>` as the second input, it returns :ref:`False<test_what_is_false>`
-  - it returns :ref:`True<test_what_is_true>` in all other cases
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 * I add the case where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_logical_conjunction`` in ``test_truth_table.py``
 
@@ -433,11 +440,11 @@ An `if statement`_ is a way for a program_ to do something based on something el
                 return False
         return True
 
-  the test passes
+  the test passes. ``logical_conjunction`` returns
 
-  - when the ``logical_conjunction`` :ref:`function<functions>` gets :ref:`False<test_what_is_false>` as the first input and :ref:`True<test_what_is_true>` as the second input, it returns :ref:`False<test_what_is_false>`
-  - when the :ref:`function<functions>` gets :ref:`True<test_what_is_true>` as the first input and :ref:`False<test_what_is_false>` as the second input, it returns :ref:`False<test_what_is_false>`
-  - it returns :ref:`True<test_what_is_true>` in all other cases
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 * I add the last case, which is when the two inputs are :ref:`False<test_what_is_false>`, to ``test_logical_conjunction`` in ``test_truth_table.py``
 
@@ -478,12 +485,12 @@ An `if statement`_ is a way for a program_ to do something based on something el
                 return False
         return True
 
-  the test passes
+  the test passes. ``logical_conjunction`` returns
 
-  - when the ``logical_conjunction`` :ref:`function<functions>` gets :ref:`False<test_what_is_false>` as the first and second inputs it returns :ref:`False<test_what_is_false>`
-  - when the :ref:`function<functions>` gets :ref:`False<test_what_is_false>` as the first input and :ref:`True<test_what_is_true>` as the second input, it returns :ref:`False<test_what_is_false>`
-  - when it gets :ref:`True<test_what_is_true>` as the first input and :ref:`False<test_what_is_false>` as the second input, it returns :ref:`False<test_what_is_false>`
-  - it returns :ref:`True<test_what_is_true>` in the last case
+  - :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 * I have the same `if statement`_ twice - ``if first_input == False`` for the 3rd and 4th cases where the first input is :ref:`False<test_what_is_false>`
 
@@ -635,6 +642,10 @@ An `if statement`_ is a way for a program_ to do something based on something el
     Python_ checks if ``something`` is :ref:`True<test_what_is_true>` in the background when I type ``if something:``
 
   I remove the commented line
+
+---------------------------------------------------------------------------------
+conditional expressions
+---------------------------------------------------------------------------------
 
 * Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
 
@@ -1143,7 +1154,9 @@ and
 * :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
 * :ref:`Logical Negation <test_logical_negation>` is "not_"
 
-do you want to :ref:`test more binary operations? <binary_operations_ii>`
+All the logic statements or conditions have been written with some or all of the above 2.
+
+Would you like to :ref:`test more binary operations? <binary_operations_ii>`
 
 ----
 
