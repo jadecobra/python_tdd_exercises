@@ -1784,6 +1784,8 @@ and
 * :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
 * :ref:`Logical Negation <test_logical_negation>` is "not_"
 
+All the logic statements or conditions have been written with some or all of the above 3
+
 Would you like to :ref:`test functions?<functions>`
 
 ----

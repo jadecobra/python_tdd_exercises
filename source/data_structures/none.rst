@@ -18,8 +18,8 @@ None
 
 In :ref:`AssertionError`, I used assertIsNone_ and assertIsNotNone_ to :ref:`test_assertion_error_w_none`, that experiment showed that
 
-* :ref:`True<test_what_is_true>` is not None_ and not equal to None_
-* :ref:`False<test_what_is_false>` is not None_ and not equal to None_
+* :ref:`True<test_what_is_true>` is NOT None_ and NOT equal to None_
+* :ref:`False<test_what_is_false>` is NOT None_ and NOT equal to None_
 * None_ is None_ and equal to None_
 
 None_ is used when there is no value. It is the simplest :ref:`data structure<data structures>` in Python_

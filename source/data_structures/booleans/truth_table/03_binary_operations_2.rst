@@ -843,7 +843,7 @@ test_tautology
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the next Binary Operation in ``test_truth_table.py`` with the first case where both inputs are :ref:`True<test_what_is_true>`
+I add a test for the next Binary Operation in ``test_truth_table.py`` with the first case where the two inputs are :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 61
@@ -882,7 +882,7 @@ I add a :ref:`function<functions>` definition in ``truth_table.py``
   def tautology(first_input, second_input):
       return True
 
-the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -901,7 +901,7 @@ the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when both
   the terminal_ still shows green. ``tautology`` returns
 
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
@@ -920,7 +920,7 @@ the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when both
   - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - when the first input is :ref:`True<test_what_is_true>`
 
-* I add the last case - when both inputs are :ref:`False<test_what_is_false>`
+* I add the last case - when the two inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -939,7 +939,7 @@ the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when both
 
 :ref:`Tautology<test_tautology>` returns :ref:`True<test_what_is_true>`
 
-* when both inputs are :ref:`False<test_what_is_false>`
+* when the two inputs are :ref:`False<test_what_is_false>`
 * when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 * when the first input is :ref:`False<test_what_is_false>`
 * when the first input is :ref:`True<test_what_is_true>`
@@ -995,7 +995,7 @@ I add the :ref:`function<functions>` to ``truth_table.py``
   def logical_disjunction(first_input, second_input):
       return True
 
-the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1014,7 +1014,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
   the terminal_ still shows green. ``logical_disjunction`` returns
 
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when both inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
   so far this is the same as :ref:`Tautology<test_tautology>`
@@ -1035,7 +1035,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
-* I add the fourth case, where both inputs are :ref:`False<test_what_is_false>`
+* I add the fourth case, where the two inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -1070,10 +1070,10 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   the test passes. ``logical_disjunction`` returns
 
-  - :ref:`False<test_what_is_false>` when both inputs are :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when both inputs are NOT :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the two inputs are NOT :ref:`False<test_what_is_false>`
 
 * I change the two `if statements`_ to one `if statement`_ with and_
 
@@ -1276,7 +1276,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 :ref:`Logical Disjunction<test_logical_disjunction>` aka or_ returns
 
 * ``first_input or second_input``
-* :ref:`False<test_what_is_false>` only when both inputs are :ref:`False<test_what_is_false>`
+* :ref:`False<test_what_is_false>` only when the two inputs are :ref:`False<test_what_is_false>`
 
 ----
 
@@ -1286,14 +1286,14 @@ review
 
 Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if the first input is named ``first_input`` and the second input is named ``second_input``, the tests show that
 
-* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``, which means it returns :ref:`False<test_what_is_false>` only when both ``first_input`` and ``second_input`` are :ref:`False<test_what_is_false>`
-* :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>`
-* :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``, which means it returns :ref:`False<test_what_is_false>` only when both ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`, it is the opposite or :ref:`Logical Negation(not)<test_logical_negation>` of :ref:`Logical Conjunction(and)<test_logical_conjunction>`
-* :ref:`Negate First<test_negate_first>` always returns ``not first_input``, which means it returns :ref:`True<test_what_is_true>` only when ``first_input`` is :ref:`False<test_what_is_false>`
-* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``, which means it returns :ref:`True<test_what_is_true>` only when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-* :ref:`Project Second <test_project_second>` always returns ``second_input``, which means it returns :ref:`True<test_what_is_true>` only when ``second_input`` is :ref:`True<test_what_is_true>`
-* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``, which means it returns :ref:`True<test_what_is_true>` only when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
-* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
+* :ref:`Logical Disjunction <test_logical_disjunction>` returns ``first_input or second_input``, which means it returns :ref:`False<test_what_is_false>` only when both ``first_input`` and ``second_input`` are :ref:`False<test_what_is_false>`. It is the  :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which only returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
+* :ref:`Tautology <test_tautology>` always returns :ref:`True<test_what_is_true>` it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Contradiction<test_contradiction>` which always returns :ref:`False<test_what_is_false>`
+* :ref:`Logical NAND <test_logical_nand>` returns ``not (first_input and second_input)``, which means it returns :ref:`False<test_what_is_false>` only when both ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`. It is the :ref:`opposite or Logical Negation(not)<test_logical_negation>` of :ref:`Logical Conjunction(and)<test_logical_conjunction>` which only returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+* :ref:`Negate First<test_negate_first>` always returns ``not first_input``, which means it returns :ref:`True<test_what_is_true>` only when ``first_input`` is :ref:`False<test_what_is_false>`. It is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Project First<test_project_first>` which only returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+* :ref:`Converse NonImplication <test_converse_non_implication>` returns ``not first_input and second_input``, which means it returns :ref:`True<test_what_is_true>` only when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`. It is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which only returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+* :ref:`Project Second <test_project_second>` always returns ``second_input``, which means it returns :ref:`True<test_what_is_true>` only when ``second_input`` is :ref:`True<test_what_is_true>`. It is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which only returns :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`False<test_what_is_false>`
+* :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``, which means it returns :ref:`True<test_what_is_true>` only when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`. It is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
+* :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`. It is the opposite or :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
 
 
 
@@ -1304,6 +1304,8 @@ and
 * :ref:`Logical Disjunction <test_logical_disjunction>` is "or_"
 * :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
 * :ref:`Logical Negation <test_logical_negation>` is "not_"
+
+All the logic statements or conditions have been written with some or all of the above 3
 
 do you want to :ref:`test more binary operations? <binary_operations_iii>`
 
