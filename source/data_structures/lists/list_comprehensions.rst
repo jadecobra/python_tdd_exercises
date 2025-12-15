@@ -1103,8 +1103,36 @@ I can also do this with :ref:`dictionaries`, it is called a dict comprehension a
 
   {a_process(key): another_process(value) for key/value in iterable if condition/NOT condition}
 
-Would you like to test :ref:`dictionaries`?
+----
+
+:ref:`Click Here for the code from this chapter<data structures: list comprehensions: tests and solutions>`
 
 ----
 
-:ref:`data structures: list comprehensions: tests and solutions`
+you know
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is True and False in Python<booleans>`
+* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to raise TypeError<TypeError>`
+* :ref:`what you can do with Lists<lists>`
+* :ref:`how to use list comprehensions<lists: list comprehensions>`
+
+Would you like to test :ref:`making a person?<how to make a person>`
+
+-----
+
+.. raw:: html
+
+  <!-- TrustBox widget - Review Collector -->
+  <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">Click Here to leave a 5 star review on TrustPilot, if you found this helpful</a>
+  </div>
+  <!-- End TrustBox widget -->

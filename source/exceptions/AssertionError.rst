@@ -1425,11 +1425,9 @@ for a total of 6 `assert methods`_ I can use when testing
 
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 
-you know :ref:`how to make a test driven development environment`, would you like to use the `assert methods`_ from this chapter to :ref:`test Python's data structures?<data structures>`
+-----
 
-----
-
-:ref:`How many questions can you answer after going through this chapter?<AssertionError: tests>`
+you know :ref:`how to make a test driven development environment`. Would you like to :ref:`test functions?<functions>`
 
 ----
 

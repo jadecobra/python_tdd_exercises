@@ -188,11 +188,35 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 review
 *********************************************************************************
 
-I ran a test for ModuleNotFoundError_ to practice making Python_ modules_. Would you like to :ref:`test AttributeError?<AttributeError>`
+I ran a test for ModuleNotFoundError_ to practice making Python_ modules_
 
 ----
 
 :ref:`Click Here for the code I wrote in this chapter<ModuleNotFoundError: test>`
+
+----
+
+you have gone through a lot of information and know
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is True and False in Python<booleans>`
+* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to raise TypeError<TypeError>`
+* :ref:`what you can do with Lists<lists>`
+* :ref:`how to use list comprehensions<lists: list comprehensions>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`what you can do with dictionaries<dictionaries>`
+* :ref:`what you can do with classes<classes>`
+* :ref:`how to raise ModuleNotFoundError<ModuleNotFoundError>`
+
+Would you like to :ref:`test AttributeError?<AttributeError>`
 
 ----
 

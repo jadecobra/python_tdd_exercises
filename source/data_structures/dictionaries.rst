@@ -3137,7 +3137,29 @@ Would you like to :ref:`test How to make a Person?<how to make a person>`
 
 ----
 
-:ref:`data structures: dictionaries: tests`
+:ref:`Click Here for the code from this chapter<data structures: dictionaries: tests>`
+
+----
+
+you know
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is True and False in Python<booleans>`
+* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to raise TypeError<TypeError>`
+* :ref:`what you can do with Lists<lists>`
+* :ref:`how to use list comprehensions<lists: list comprehensions>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`what you can do with dictionaries<dictionaries>`
+
+Would you like to :ref:`put it all together in Classes?<classes>`
 
 ----
 

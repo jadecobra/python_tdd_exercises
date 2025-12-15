@@ -2139,11 +2139,31 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`TypeError`
 * SyntaxError_
 
-Would you like to :ref:`test Classes?<classes>`
 
 ----
 
 :ref:`Click Here to see the code from this chapter<how to make a person: tests and solution>`
+
+----
+
+you know
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is True and False in Python<booleans>`
+* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to raise TypeError<TypeError>`
+* :ref:`what you can do with Lists<lists>`
+* :ref:`how to use list comprehensions<lists: list comprehensions>`
+* :ref:`how to make dictionaries with functions<how to make a person>` - this chapter
+
+Would you like to :ref:`test dictionaries?<dictionaries>`
 
 ----
 

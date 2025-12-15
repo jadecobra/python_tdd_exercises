@@ -1712,7 +1712,27 @@ I also showed the basic Python_ :ref:`data structures`
 
 :ref:`How many questions can you answer after going through this chapter?<questions about None>`
 
-You have :ref:`tested AssertionError<AssertionError>`, would you like to :ref:`test what is True and False?<booleans>`
+----
+
+so far you have covered
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`what is None and NOT None and learned new assert methods<None>`
+
+Would you like to :ref:`test what is True and False?<booleans>`
+
+
+Would you like to test :ref:`making a person?<how to make a person>`
+
+
+
+Would you like to :ref:`test making a calculator?<how to make a calculator>`
+
+
+You have :ref:`tested AssertionError<AssertionError>`,
 
 ----
 

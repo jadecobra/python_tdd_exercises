@@ -1407,7 +1407,15 @@ as a reminder
 * :ref:`constant functions<test_constant_function>` always return the same thing
 * functions_ return :ref:`None` by default
 
-Would you like to :ref:`test making a calculator?<how to make a calculator>`
+----
+
+you have covered a bit so far and know
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>` from this chapter,
+
+Would you like to :ref:`test how to pass values from tests to functions with assert methods?<how to pass values>`
 
 ----
 

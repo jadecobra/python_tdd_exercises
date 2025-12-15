@@ -856,11 +856,34 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`TypeError` and
 * SyntaxError_
 
-:ref:`can we measure learning?`
-
 ----
 
 :ref:`Click here to see the code I typed in this chapter<AttributeError: tests and solutions>`
+
+----
+
+you made it to the end and know
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is True and False in Python<booleans>`
+* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to raise TypeError<TypeError>`
+* :ref:`what you can do with Lists<lists>`
+* :ref:`how to use list comprehensions<lists: list comprehensions>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`what you can do with dictionaries<dictionaries>`
+* :ref:`what you can do with classes<classes>`
+* :ref:`how to raise ModuleNotFoundError<ModuleNotFoundError>`
+* :ref:`how to raise AttributeError<AttributeError>`
+
+:ref:`do you think we can measure learning?<can we measure learning?>`
 
 ----
 

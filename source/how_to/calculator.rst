@@ -1347,13 +1347,27 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`TypeError`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-Would you like to know :ref:`how to test that an Exception is raised?<how to test that an Exception is raised>`
-
 ----
 
 :ref:`Click Here to see the code from this chapter<how to make a calculator: tests and solutions>`
 
 ----
+
+you know a lot
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is True and False in Python<booleans>`
+* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+
+Would you like to know :ref:`how to test that an Exception is raised?<how to test that an Exception is raised>`
+
+-----
+
 
 .. raw:: html
 

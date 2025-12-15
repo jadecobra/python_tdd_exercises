@@ -973,7 +973,16 @@ I also ran into the following :ref:`Exceptions<errors>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 
-Would you like to test :ref:`making a person?<how to make a person>`
+----
+
+you have covered a bit so far and know
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+
+Would you like to use some of the `assert methods`_ from :ref:`AssertionError` to :ref:`test Python's data structures?<data structures>`
 
 ----
 

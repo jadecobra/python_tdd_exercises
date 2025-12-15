@@ -952,13 +952,27 @@ I have a way to catch :ref:`Exceptions<errors>` in tests and tested the followin
 * :ref:`KeyError <test_key_error>`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-Would you like to :ref:`test handling Exceptions in programs?<how to handle Exceptions (Errors) in programs>`
-
 ----
 
 :ref:`Click Here to see the code from this chapter<how to handle Exceptions (Errors): tests and solutions>`
 
 ----
+
+you know
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is True and False in Python<booleans>`
+* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+
+Would you like to :ref:`test handling Exceptions in programs?<how to handle Exceptions (Errors) in programs>`
+
+-----
 
 .. raw:: html
 
