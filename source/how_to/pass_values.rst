@@ -136,7 +136,7 @@ test_passing_a_string
     # NameError
     # AttributeError
 
-* I open ``telephone.py`` from the ``src`` folder to open it in the :ref:`editor<2 editors>`, then add a name
+* I open ``telephone.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add a name
 
   .. code-block:: python
     :linenos:

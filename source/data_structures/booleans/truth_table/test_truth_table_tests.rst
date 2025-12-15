@@ -258,7 +258,9 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  ``first_input`` is :ref:`False<test_what_is_false>`, I remove ``second_input`` from the `return statement`_
+  ``first_input`` is :ref:`False<test_what_is_false>`
+
+* I remove ``second_input`` from the `return statement`_
 
   .. code-block:: python
     :lineno-start: 9
@@ -1011,7 +1013,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     TypeError: logical_negation() missing 1 required positional argument: 'second_input'
 
-  I remove ``second_input`` from the parentheses, to make the :ref:`function<functions>` take only 1 input,
+* I remove ``second_input`` from the parentheses, to make the :ref:`function<functions>` take only 1 input,
 
   .. code-block:: python
     :lineno-start: 93

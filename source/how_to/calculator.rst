@@ -173,7 +173,7 @@ test_addition
     # NameError
     # AttributeError
 
-* then I open ``calculator.py`` from the ``src`` folder to open it in the :ref:`editor<2 editors>`, and I type the name
+* then I open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, and I type the name
 
   .. code-block:: python
     :linenos:

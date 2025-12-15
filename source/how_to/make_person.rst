@@ -142,7 +142,7 @@ test_takes_keyword_arguments
     # NameError
     # AttributeError
 
-* I open ``person.py`` from the ``src`` folder to open it in the :ref:`editor<2 editors>` then I add a :ref:`function<functions>`
+* I open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>` then I add a :ref:`function<functions>`
 
   .. code-block:: python
     :linenos:

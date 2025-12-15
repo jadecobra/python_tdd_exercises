@@ -13,7 +13,7 @@ functions
 
 A function_ is a unit or block of code that is callable_. This means I can write statements that I can use to do something at a different time from when I write them. They can make code smaller, easier to read, test, reuse, maintain and improve.
 
-`Computer Programming` involves providing a process with input data and the process returning output data, for example
+`Computer Programming`_ involves providing a process with input data and the process returning output data, for example
 
 .. code-block:: python
 
@@ -154,7 +154,9 @@ I can make a function_ with the pass_ keyword
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'function_w_pass'
+    AttributeError: module 'src.functions' has no attribute 'w_pass'
+
+  ``functions.py`` in the ``src`` folder_ does not have anything named ``w_pass`` inside it
 
 * I add to the list of :ref:`Exceptions<errors>` encountered
 
@@ -167,7 +169,7 @@ I can make a function_ with the pass_ keyword
     # ModuleNotFoundError
     # AttributeError
 
-* I open ``functions.py`` from the ``src`` folder to open it in the :ref:`editor<2 editors>`, then I add a function_ definition
+* I open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then I add a function_ definition
 
   .. code-block:: python
     :linenos:

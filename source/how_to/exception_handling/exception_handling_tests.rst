@@ -282,7 +282,7 @@ test_catching_type_error_in_tests
 
     AttributeError: module 'src.exceptions' has no attribute 'function_name'
 
-* I open ``exceptions.py`` from the ``src`` folder to open it in the :ref:`editor<2 editors>`, then add the name
+* I open ``exceptions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add the name
 
   .. code-block:: python
     :linenos:
