@@ -26,7 +26,7 @@ Here are a few exercises that get you up and running in Python right now, they b
 
 ----
 
-Here's the code in the chapters
+Here is the code you will have at the end of the above chapters
 
 * :ref:`makePythonTdd.sh`
 * :ref:`makePythonTdd.ps1`

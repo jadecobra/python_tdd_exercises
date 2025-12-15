@@ -497,7 +497,7 @@ how to manually run tests
     * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, I cover this in more detail in the :ref:`classes chapter<classes>`
     * ``TestMagic`` is the name I gave this :ref:`class <classes>` and will hold the test
 
-      .. IMPORTANT:: I can use any name for the test :ref:`class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
+      .. IMPORTANT:: I can use any name for the :ref:`test class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
@@ -507,7 +507,7 @@ how to manually run tests
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
     * ``test_failure`` is the name I used :ref:`method<functions>` for :ref:`this first test<test_failure>`
 
-      .. IMPORTANT:: I can use any name for the test :ref:`method<functions>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
+      .. IMPORTANT:: I can use any name for the :ref:`test method<functions>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
     * ``self.`` lets me use :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().``
 
@@ -667,7 +667,7 @@ how to change the name of a file
   - ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
   - ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
   - ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
-  - ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing test :ref:`method<functions>`
+  - ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing :ref:`test method<functions>`
 
     - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
     -  ``tests`` is the ``tests`` folder_
@@ -1558,7 +1558,7 @@ I changed ``magic`` to ``magic_again`` in 4 places in ``makePythonTdd.sh``. I wo
 - the project folder_
 - the file_ for the program_ in the ``src`` folder_
 - the file_ for the test in the ``tests`` folder_
-- the test :ref:`class<classes>` in the test file_
+- the :ref:`test class<classes>` in the test file_
 - the `virtual environment`_ in the ``.venv`` folder_
 
 The program_ should always make this structure

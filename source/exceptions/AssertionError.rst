@@ -1427,7 +1427,12 @@ for a total of 6 `assert methods`_ I can use when testing
 
 -----
 
-you know :ref:`how to make a test driven development environment`. Would you like to :ref:`test functions?<functions>`
+Congratulations! You now know
+
+* :ref:`how to make a test driven development environment any time you want<how to make a test driven development environment>` and
+* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+
+Would you like to :ref:`test functions?<functions>`
 
 ----
 

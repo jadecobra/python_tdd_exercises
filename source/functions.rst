@@ -1409,6 +1409,10 @@ as a reminder
 
 ----
 
+:ref:`Click Here to see the code from this chapter<functions: tests and solutions>`
+
+----
+
 you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment`
@@ -1416,10 +1420,6 @@ you have covered a bit so far and know
 * :ref:`how to write functions<functions>` from this chapter,
 
 Would you like to :ref:`test how to pass values from tests to functions with assert methods?<how to pass values>`
-
-----
-
-:ref:`Click Here to see the code from this chapter<functions: tests and solutions>`
 
 ----
 

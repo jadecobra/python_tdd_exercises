@@ -1115,7 +1115,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>` and
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
-* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
@@ -1125,7 +1125,7 @@ you know
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<lists: list comprehensions>`
 
-Would you like to test :ref:`making a person?<how to make a person>`
+Would you like to :ref:`test making a person?<how to make a person>`
 
 -----
 

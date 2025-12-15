@@ -964,7 +964,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>` and
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
-* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`

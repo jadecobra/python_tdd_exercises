@@ -1548,6 +1548,10 @@ these things come in handy when I write :ref:`condition<if statements (condition
 
 ----
 
+:ref:`Click Here to see the code I wrote in this chapter<data structures: booleans: tests>`
+
+----
+
 you now know
 
 * :ref:`how to make a test driven development environment`
@@ -1558,10 +1562,6 @@ you now know
 * :ref:`what is True and False in Python<booleans>`
 
 Would you like to :ref:`test the truth table?<booleans: truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements (conditionals)>`
-
-----
-
-:ref:`Click Here to see the code I wrote in this chapter<data structures: booleans: tests>`
 
 ----
 

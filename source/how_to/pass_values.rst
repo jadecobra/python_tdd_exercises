@@ -975,6 +975,10 @@ I also ran into the following :ref:`Exceptions<errors>`
 
 ----
 
+:ref:`Click Here to see the code from this chapter<how to pass values: tests and solution>`
+
+----
+
 you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment`
@@ -983,10 +987,6 @@ you have covered a bit so far and know
 * :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
 
 Would you like to use some of the `assert methods`_ from :ref:`AssertionError` to :ref:`test Python's data structures?<data structures>`
-
-----
-
-:ref:`Click Here to see the code from this chapter<how to pass values: tests and solution>`
 
 ----
 
