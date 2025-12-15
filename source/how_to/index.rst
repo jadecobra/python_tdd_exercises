@@ -23,7 +23,6 @@ Here are a few exercises that get you up and running in Python right now, they b
   pass_values
   make_person
   exception_handling/index
-  sleep_duration/index
 
 ----
 

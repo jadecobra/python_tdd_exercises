@@ -1849,13 +1849,15 @@ review
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 
-Would you like to :ref:`test AssertionError?<AssertionError>`
-
 ----
 
 :ref:`Click Here to see the code for the program to make a Python Test Driven Development environment for any Linux or MacOS computers<makePythonTdd.sh>`
 
 ----
+
+Would you like to :ref:`test AssertionError?<AssertionError>`
+
+-----
 
 .. raw:: html
 
