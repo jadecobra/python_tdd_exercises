@@ -746,8 +746,10 @@ the terminal_ shows :ref:`AssertionError`
 * I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 1
 
-    self.assertTrue(0.1)
+            self.assertTrue(0.1)
 
   the test passes
 
