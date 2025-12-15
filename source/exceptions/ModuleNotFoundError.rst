@@ -34,7 +34,7 @@ requirements
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     ./makePythonTdd.sh module_not_found_error

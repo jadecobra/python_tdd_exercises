@@ -36,7 +36,7 @@ requirements
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``attribute_error`` as the name of the project
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     ./makePythonTdd.sh attribute_error

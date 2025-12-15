@@ -51,7 +51,7 @@ requirements
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``booleans`` as the name of the project
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     ./makePythonTdd.sh booleans
@@ -1127,6 +1127,8 @@ the empty :ref:`list<lists>` is NOT True_
 * I change the :ref:`method<functions>`
 
   .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 1
 
             self.assertFalse(list())
 

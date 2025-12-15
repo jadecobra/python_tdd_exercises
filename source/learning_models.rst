@@ -16,7 +16,7 @@ An Infinite Learning Model
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``learning`` as the name of the project
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     ./makePythonTdd.sh learning

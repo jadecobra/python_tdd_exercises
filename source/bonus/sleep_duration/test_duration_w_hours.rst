@@ -25,7 +25,7 @@ requirements
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the name of the project
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     ./makePythonTdd.sh sleep_duration
