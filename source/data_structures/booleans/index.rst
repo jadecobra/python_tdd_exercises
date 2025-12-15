@@ -1381,7 +1381,7 @@ is a dictionary False or True?
 I add a line to ``test_what_is_true`` to test if a :ref:`dictionary <dictionaries>` is True_
 
 .. code-block:: python
-  :lineno-start: 26
+  :lineno-start: 27
   :emphasize-lines: 2
 
           self.assertTrue({1, 2, 3, 'n'})
