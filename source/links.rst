@@ -2,8 +2,6 @@
 .. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _append: more_on_lists_
 .. _arithmetic: https://grokipedia.com/page/Arithmetic
-.. _argument: https://docs.python.org/3/glossary.html#term-argument
-.. _arguments: argument_
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statement: assert_
 .. _assertion: assert_
@@ -92,7 +90,6 @@
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
-.. _keyword arguments: arguments_
 .. _Linux package manager: https://grokipedia.com/page/APT_(software)
 .. _ls: https://grokipedia.com/page/Ls
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff

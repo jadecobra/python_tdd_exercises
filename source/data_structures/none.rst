@@ -192,7 +192,7 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I make the assertion_ :ref:`True<test_what_is_true>` with the `assertIsNotNone method`_
+I make the :ref:`assertion<AssertionError>` :ref:`True<test_what_is_true>` with the `assertIsNotNone method`_
 
 .. code-block:: python
   :lineno-start: 10
@@ -233,7 +233,7 @@ the test passes
 
     AssertionError: True is not None
 
-* I make the assertion_ :ref:`True<test_what_is_true>` with assertIsNotNone_
+* I make the :ref:`assertion<AssertionError>` :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
     :lineno-start: 11
@@ -282,7 +282,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<functions>` I can use to test
 
   :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
 
-* I make the assertion_ :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``is False a child of the bool class?``
+* I make the :ref:`assertion<AssertionError>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``is False a child of the bool class?``
 
   .. code-block:: python
     :lineno-start: 12
