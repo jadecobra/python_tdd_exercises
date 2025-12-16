@@ -1192,6 +1192,9 @@ I add a new test to ``test_functions.py``
               None
           )
 
+
+  # Exceptions Encountered
+
 the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: shell
@@ -1253,9 +1256,10 @@ the terminal_ shows :ref:`AttributeError`
 
     TypeError: w_unknown_arguments() takes 0 positional arguments but 4 were given
 
-* I add a name for the first positional argument
+* I add a name for the first :ref:`positional argument<test_functions_w_positional_arguments>`
 
   .. code-block:: python
+    :lineno-start: 37
     :emphasize-lines: 1
 
     def w_unknown_arguments(**kwargs, x):
@@ -1297,7 +1301,7 @@ the terminal_ shows :ref:`AttributeError`
 
     TypeError: w_unknown_arguments() takes 1 positional argument but 4 were given
 
-* I can add names for the other :ref:`positional arguments<test_functions_w_positional_arguments>`, or I can do a similar thing to what I did with the :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+* I can add names for the other :ref:`positional arguments<test_functions_w_positional_arguments>`, or I can do something like what I did with the :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -1408,7 +1412,7 @@ the terminal_ shows :ref:`AttributeError`
                 ()
             )
 
-  the terminal_
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1462,9 +1466,18 @@ the terminal_ shows :ref:`AttributeError`
                 ((), {})
             )
 
+
+    # Exceptions Encountered
+
+
   the test passes
 
-The function_ reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_ and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`. This is why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input
+The function_ reads
+
+* :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_ and
+* :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`.
+
+This is why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input
 
 ----
 
@@ -1484,9 +1497,9 @@ I ran tests to show that I can make functions_ with
 as a reminder
 
 * :ref:`positional arguments<test_functions_w_positional_arguments>` must come before :ref:`keyword arguments<test_functions_w_keyword_arguments>`
-* I can use ``**kwargs`` when I do not know how many:ref:`keyword arguments<test_functions_w_keyword_arguments>` the function_ has to handle
+* I can use ``**kwargs`` when I do not know how many :ref:`keyword arguments<test_functions_w_keyword_arguments>` the function_ has to take
 * :ref:`keyword arguments<test_functions_w_keyword_arguments>` are represented as :ref:`dictionaries`
-* I can use ``*args`` when I do not know how many :ref:`positional arguments<test_functions_w_positional_arguments>` the function_ has to handle
+* I can use ``*args`` when I do not know how many :ref:`positional arguments<test_functions_w_positional_arguments>` the function_ has to take
 * :ref:`positional arguments<test_functions_w_positional_arguments>` are represented as tuples_
 * the :ref:`identity function<test_identity_function>` returns its input
 * :ref:`constant functions<test_constant_function>` always return the same thing
@@ -1502,7 +1515,7 @@ you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>` and
-* :ref:`how to write functions<functions>` from this chapter,
+* :ref:`how to write functions<functions>`
 
 Would you like to :ref:`test how to pass values from tests to functions with assert methods?<how to pass values>`
 
