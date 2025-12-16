@@ -1823,7 +1823,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 * I add a simpler `return statement`_ to :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 57
     :emphasize-lines: 2
 
     def converse_non_implication(first_input, second_input):
@@ -1833,7 +1833,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   still green. I remove the other line
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 57
 
     def converse_non_implication(first_input, second_input):
         return not first_input and second_input
@@ -1844,7 +1844,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 * time for :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 61
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
@@ -1854,7 +1854,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
   I remove the second `return statement`_
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 61
 
     def converse_implication(first_input, second_input):
         return first_input or not second_input

@@ -794,7 +794,7 @@ the test passes.
     def logical_nand(first_input, second_input):
         return not (first_input and second_input)
 
-:ref:`Logical Nand<test_logical_nand>`
+:ref:`Logical NAND<test_logical_nand>`
 
 * returns :ref:`False<test_what_is_false>` only when the first input and second input are both :ref:`True<test_what_is_true>`
 * returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
