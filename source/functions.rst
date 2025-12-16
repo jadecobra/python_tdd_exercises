@@ -54,6 +54,24 @@ Here are the tests I have by the end of the chapter
   :linenos:
 
 *********************************************************************************
+questions about functions
+*********************************************************************************
+
+Here are the questions you can answer after going through this chapter
+
+* :ref:`What is a Function?<functions>`
+* :ref:`What do functions return by default?<test_making_a_function_w_return_none>`
+* :ref:`What is a constant function?<test_constant_function>`
+* :ref:`What is the identity function?<test_identity_function>`
+* :ref:`What is a positional argument?<test_functions_w_positional_arguments>`
+* :ref:`What is a keyword argument?<test_functions_w_keyword_arguments>`
+* :ref:`How can I make arguments optional in a function?<test_functions_w_default_arguments>`
+* :ref:`How can I make a function take an unknown number of positional arguments?<test_functions_w_unknown_arguments>`
+* :ref:`How can I make a function take an unknown number of keyword arguments?<test_functions_w_unknown_arguments>`
+* :ref:`How are positional arguments represented in a function?<test_functions_w_unknown_arguments>`
+* :ref:`How are keyword arguments represented in a function?<test_functions_w_unknown_arguments>`
+
+*********************************************************************************
 requirements
 *********************************************************************************
 
@@ -520,7 +538,9 @@ The requirement for the :ref:`identity function<test_logical_identity>` is that 
 
   the test passes
 
-The :ref:`Identity Function<test_identity_function>` takes one input, the following tests are for functions_ that take more than one input
+I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing connections to see if my test is connected to what I am testing. If I can send input and received the same input back then I can start making changes to see what results I get.
+
+The :ref:`Identity Function<test_identity_function>` takes one input, the following tests are for functions_ that take more than one.
 
 ----
 

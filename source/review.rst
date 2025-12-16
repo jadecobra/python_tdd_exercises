@@ -87,8 +87,8 @@ exceptions review
 * :ref:`What causes NameError?<test_catching_name_error_in_tests>`
 * What is the difference between :ref:`AttributeError` and :ref:`NameError<test_catching_name_error_in_tests>`?
 * :ref:`What causes TypeError?<TypeError>`
-* :ref:`What data structure has IndexError?<test_index_error>`
-* :ref:`What data structure has KeyError?<test_key_error>`
+* :ref:`What causes IndexError?<test_index_error>`
+* :ref:`What causes KeyError?<test_key_error>`
 
 *********************************************************************************
 AssertionError review
@@ -104,6 +104,24 @@ AssertionError review
 * :ref:`How can I test if something is NOT True?<how to test if something is True>`
 * :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are Equal>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
+
+*********************************************************************************
+functions review
+*********************************************************************************
+
+Here are the questions you can answer after going through this chapter
+
+* :ref:`What is a Function?<functions>`
+* :ref:`What do functions return by default?<test_making_a_function_w_return_none>`
+* :ref:`What is a constant function?<test_constant_function>`
+* :ref:`What is the identity function?<test_identity_function>`
+* :ref:`What is a positional argument?<test_functions_w_positional_arguments>`
+* :ref:`What is a keyword argument?<test_functions_w_keyword_arguments>`
+* :ref:`How can I make arguments optional in a function?<test_functions_w_default_arguments>`
+* :ref:`How can I make a function take an unknown number of positional arguments?<test_functions_w_unknown_arguments>`
+* :ref:`How can I make a function take an unknown number of keyword arguments?<test_functions_w_unknown_arguments>`
+* :ref:`How are positional arguments represented in a function?<test_functions_w_unknown_arguments>`
+* :ref:`How are keyword arguments represented in a function?<test_functions_w_unknown_arguments>`
 
 *********************************************************************************
 None review
@@ -151,7 +169,7 @@ Unary Operations review
 * :ref:`How many inputs do Unary Operations take?<Unary Operations>`
 * :ref:`What is a function that returns its input as output?<test_logical_identity>`
 * :ref:`What is a function that returns the negation of its input?<test_logical_negation>`
-* :ref:`How can I return thre opposite of a boolean?<how to return the opposite of a boolean>`
+* :ref:`How can I return the opposite of a boolean?<how to return the opposite of a boolean>`
 
 *********************************************************************************
 testing
