@@ -12,9 +12,19 @@ how to pass values
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/QEiyAO7aEVQ?si=gN_vRO0VrSyWR7R6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+I want to be able to send things from tests to the program_ I am testing and compare what I think will happen with the results I get. This helps me see what is the same, and what is different, the difference helps me know what to change to get what I want.
+
 ----
 
-I want to test passing values to programs. When testing, I want to be able to send input from my test to the program_ and see the results. This helps me see what is the same, and what is different, the difference gives helps me know what to change to get what I want.
+*********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/tests/test_telephone.py
+  :language: python
+  :linenos:
 
 *********************************************************************************
 requirements
@@ -66,34 +76,39 @@ test_passing_a_string
 :red:`RED`: make it fail
 =================================================================================
 
-* I change ``test_failure`` to ``test_passing_a_string``
+I change ``test_failure`` to ``test_passing_a_string``
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-10
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 6-10
 
-    import unittest
+  import unittest
 
 
-    class TestTelephone(unittest.TestCase):
+  class TestTelephone(unittest.TestCase):
 
-        def test_passing_a_string(self):
-            self.assertEqual(
-                src.telephone.text("hello"),
-                "I received: hello"
-            )
+      def test_passing_a_string(self):
+          self.assertEqual(
+              src.telephone.text("hello"),
+              "I received: hello"
+          )
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  # Exceptions Encountered
 
-    NameError: name 'src' is not defined
+the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: shell
+
+  NameError: name 'src' is not defined
+
+there is no definition for ``src`` in ``test_telephone.py``
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add the error to the list of :ref:`Exceptions<errors>` encountered
 
   .. code-block:: python
     :lineno-start: 13
@@ -103,13 +118,11 @@ test_passing_a_string
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ for the ``telephone`` module at the top of the file
-
-  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+* then I add an `import statement`_ for the ``telephone`` :ref:`module<ModuleNotFoundError>` which is in the ``src`` folder_, at the top of the file_
 
   .. code-block:: python
-    :emphasize-lines: 1
     :linenos:
+    :emphasize-lines: 1
 
     import src.telephone
     import unittest
@@ -117,13 +130,13 @@ test_passing_a_string
 
     class TestTelephone(unittest.TestCase):
 
-        ...
-
   the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: shell
 
     AttributeError: module 'src.telephone' has no attribute 'text'
+
+  there is no definition for ``text`` in ``telephone.py`` in the ``src`` folder_
 
 * I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
 
