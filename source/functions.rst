@@ -1525,6 +1525,8 @@ as a reminder
 * :ref:`constant functions<test_constant_function>` always return the same thing
 * functions_ return :ref:`None` by default
 
+:ref:`How many questions can you answer after going through this chapter?<questions about functions>`
+
 ----
 
 :ref:`Click Here to see the code from this chapter<functions: tests and solutions>`
