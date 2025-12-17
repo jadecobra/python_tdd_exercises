@@ -1926,6 +1926,10 @@ I also showed the basic Python_ :ref:`data structures`
 
 ----
 
+*********************************************************************************
+what is next?
+*********************************************************************************
+
 so far you have covered
 
 * :ref:`how to make a test driven development environment`

@@ -1915,6 +1915,10 @@ Would you like to :ref:`test functions?<functions>`
 
 ----
 
+*********************************************************************************
+what is next?
+*********************************************************************************
+
 you now know
 
 * :ref:`how to make a test driven development environment`

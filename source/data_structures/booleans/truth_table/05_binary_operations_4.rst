@@ -1038,11 +1038,17 @@ and
 
 All the logic statements or conditions have been written with some or all of the above 3.
 
-Would you like to :ref:`test the truth table tests?<test_truth_table_tests>`
+----
+
+:ref:`Click Here for the code<truth table: tests and solutions>`
 
 ----
 
-:ref:`truth table: tests and solutions`
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+Would you like to :ref:`test the truth table tests?<test_truth_table_tests>`
 
 ----
 

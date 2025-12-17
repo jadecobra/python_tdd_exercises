@@ -1762,6 +1762,10 @@ these things come in handy when I write :ref:`conditions<if statements (conditio
 
 ----
 
+*********************************************************************************
+what is next?
+*********************************************************************************
+
 you now know
 
 * :ref:`how to make a test driven development environment`

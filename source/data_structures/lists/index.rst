@@ -2284,6 +2284,10 @@ I ran tests to show that I can make a list_ with the constructor_ or square brac
 
 ----
 
+*********************************************************************************
+what is next?
+*********************************************************************************
+
 you know
 
 * :ref:`how to make a test driven development environment`

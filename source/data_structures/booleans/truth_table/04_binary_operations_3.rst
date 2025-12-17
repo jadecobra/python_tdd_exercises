@@ -1271,11 +1271,17 @@ and
 
 All the logic statements or conditions have been written with some or all of the above 3.
 
-Would you like to :ref:`test the last binary operations?<binary_operations_iv>`
+----
+
+:ref:`Click Here for the code<truth table: tests and solutions>`
 
 ----
 
-:ref:`truth table: tests and solutions`
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+Would you like to :ref:`test the last binary operations?<binary_operations_iv>`
 
 ----
 

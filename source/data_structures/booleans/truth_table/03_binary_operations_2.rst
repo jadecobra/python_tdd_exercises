@@ -1295,10 +1295,6 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns ``first_input and second_input``, which means it returns :ref:`True<test_what_is_true>` only when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`. It is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`. It is the opposite or :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
 
-
-
-
-
 and
 
 * :ref:`Logical Disjunction <test_logical_disjunction>` is "or_"
@@ -1307,11 +1303,17 @@ and
 
 All the logic statements or conditions have been written with some or all of the above 3.
 
-Would you like to :ref:`test even more binary operations? <binary_operations_iii>`
+----
+
+:ref:`Click here for the code<truth table: tests and solutions>`
 
 ----
 
-:ref:`truth table: tests and solutions`
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+Would you like to :ref:`test even more binary operations? <binary_operations_iii>`
 
 ----
 

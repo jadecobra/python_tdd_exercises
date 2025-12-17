@@ -1156,13 +1156,20 @@ and
 
 All the logic statements or conditions have been written with some or all of the above 2.
 
+----
+
+:ref:`Click here for the code<truth table: tests and solutions>`
+
+----
+
+*********************************************************************************
+what is next?
+*********************************************************************************
+
 Would you like to :ref:`test more binary operations? <binary_operations_ii>`
 
 ----
 
-:ref:`truth table: tests and solutions`
-
-----
 
 .. raw:: html
 

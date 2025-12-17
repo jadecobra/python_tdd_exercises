@@ -1030,7 +1030,7 @@ and it shows results without going back to the command line
   =============== 1 passed in X.YZs =======================
 
 --------------------------------------------------------------------------------------------
-how to open the test file in the editor from the terminal
+how to open the test file in the editor from the terminal on Windows without WSL
 --------------------------------------------------------------------------------------------
 
 * I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7

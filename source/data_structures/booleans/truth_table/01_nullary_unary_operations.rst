@@ -518,6 +518,7 @@ for :ref:`Unary operations<Unary Operations>`
 * :ref:`test_logical_identity`
 * :ref:`test_logical_negation`
 
+
 Here are questions you can answer after going through this chapter
 
 * :ref:`What are the Nullary Operations?<Nullary Operations>`
@@ -528,11 +529,17 @@ Here are questions you can answer after going through this chapter
 * :ref:`What is a function that returns the negation of its input?<test_logical_negation>`
 * :ref:`How can I return the opposite of a boolean?<how to return the opposite of a boolean>`
 
-Would you like to :ref:`test binary operations?<truth table: Binary Operations part 1>`
+----
+
+:ref:`Click Here for the code<truth table: tests and solutions>`
 
 ----
 
-:ref:`truth table: tests and solutions`
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+Would you like to :ref:`test binary operations?<truth table: Binary Operations part 1>`
 
 ----
 
