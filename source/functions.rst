@@ -618,7 +618,7 @@ the terminal_ shows :ref:`AttributeError`
 * I make ``w_positional_arguments`` take another input by adding another name in parentheses
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 21
     :emphasize-lines: 1
 
     def w_positional_arguments(first_input, last_input):
