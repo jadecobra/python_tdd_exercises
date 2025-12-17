@@ -630,10 +630,10 @@ the terminal_ shows :ref:`AttributeError`
 
     AssertionError: None != ('first', 'last')
 
-* I change the `return statement`
+* I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 21
     :emphasize-lines: 2
 
     def w_positional_arguments(first_input, last_input):
