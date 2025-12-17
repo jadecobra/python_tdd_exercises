@@ -309,7 +309,7 @@ I use an `f-string`_ which lets me add any values I want to a string_
   :emphasize-lines: 2
 
   def text(the_input):
-      return f'I received: {value}'
+      return f'I received: {the_input}'
 
 the test passes.
 

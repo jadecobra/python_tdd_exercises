@@ -14,17 +14,29 @@ how to make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to manually make a python test driven development environment>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment>`
+This is one way to make a Python_ `Test Driven Development`_ project. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`
 
 *********************************************************************************
 preview
 *********************************************************************************
 
-Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment>`, it is only 28 lines of code, with spaces
+By the end of the chapter you will be familiar with the following commands
 
-.. literalinclude:: ../../code/make_tdd/makePythonTdd.sh
-  :language: shell
-  :linenos:
+.. code-block:: shell
+
+  mkdir
+  cd
+  touch
+  echo
+  cat
+  python3 -m venv .venv
+  source .venv/bin/activate
+  python3 -m pip install --upgrade pip
+  python3 -m pip install --requirement requirements.txt
+  pytest-watch
+  deactivate
+
+----
 
 *********************************************************************************
 questions about making a Python Test Driven Development Environment
@@ -34,7 +46,6 @@ Here are questions you can answer after going through this chapter
 
 * :ref:`what is a Test Driven Development Environment?`
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`
@@ -57,12 +68,6 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
-* :ref:`How can I make a shell script?<how to make a shell script>`
-* :ref:`What is a variable?<how to use a variable in a shell script>`
-* :ref:`How can I use a variable in a shell script<how to use a variable in a shell script>`
-* :ref:`How can I view the permissions of a file?<how to view the permissions of a file>`
-* :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
-* :ref:`How can I run a shell script<how to run a shell script>`
 
 ----
 
@@ -220,6 +225,10 @@ I pick ``magic`` as the name for this project
 
   .. NOTE:: You will see more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
 
+=================================================================================
+how to make a directory for the project
+=================================================================================
+
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
   .. code-block:: shell
@@ -259,37 +268,45 @@ I pick ``magic`` as the name for this project
     .
     └── magic
 
-* I try cd_ again
+=================================================================================
+how to change directory to the project
+=================================================================================
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+I try cd_ again
 
-    cd magic
+.. code-block:: shell
+  :emphasize-lines: 1
 
-  the terminal_ shows I am now in the ``magic`` folder_ I just made in the ``pumping_python`` folder
+  cd magic
 
-  .. code-block:: shell
+the terminal_ shows I am now in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
-    .../pumping_python/magic
+.. code-block:: shell
+
+  .../pumping_python/magic
 
 =================================================================================
 how to run a Python program
 =================================================================================
 
-* I use Python_ to run the ``magic`` program_
+I use Python_ to run the ``magic`` program_
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+.. code-block:: shell
+  :emphasize-lines: 1
 
-    python3 src/magic.py
+  python3 src/magic.py
 
-  the terminal_ shows
+the terminal_ shows
 
-  .. code-block:: text
+.. code-block:: text
 
-    python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
+  python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-  the computer cannot find the program_ because it does not exist, yet
+the computer cannot find the program_ because it does not exist, yet
+
+--------------------------------------------------------------------------------------------
+how to make a directory for the source code
+--------------------------------------------------------------------------------------------
 
 * I make a child folder_ in the ``magic`` directory_ for the program_
 
@@ -392,7 +409,13 @@ how to manually run tests
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
   - a Python_ :ref:`module<ModuleNotFoundError>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
 
-* I do not have any tests yet, so there is nothing to run. I make a child folder_ to keep the tests separate from the actual program_
+I do not have any tests yet, so there is nothing to run
+
+--------------------------------------------------------------------------------------------
+how to make a directory for the tests
+--------------------------------------------------------------------------------------------
+
+* I make a child folder_ to keep the tests separate from the actual program_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1003,6 +1026,10 @@ how to install Python packages in a virtual environment
     [notice] A new release of pip is available: XY.Z -> AB.C
     [notice] To update, run: pip install --upgrade pip
 
+--------------------------------------------------------------------------------------------
+how to upgrade the Python package manager in a virtual environment
+--------------------------------------------------------------------------------------------
+
 * I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
 
   .. code-block:: shell
@@ -1048,26 +1075,34 @@ how to install Python packages in a virtual environment
 
   .. TIP:: imagine that the `pytest-watch`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch`_ from the ``requirements.txt`` file_
 
-* I try to run the tests again
+--------------------------------------------------------------------------------------------
+how to run the automated tests
+--------------------------------------------------------------------------------------------
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+I try to run the tests again
 
-    pytest-watch
+.. code-block:: shell
+  :emphasize-lines: 1
 
-  and it shows results without going back to the command line
+  pytest-watch
 
-  .. code-block:: shell
-    :emphasize-lines: 6
+and it shows results without going back to the command line
 
-    ================== test session starts===================
-    ...
-    rootdir: .../magic
-    collected 1 item
+.. code-block:: shell
+  :emphasize-lines: 6
 
-    tests/test_magic.py .                              [100%]
+  ================== test session starts===================
+  ...
+  rootdir: .../magic
+  collected 1 item
 
-    =============== 1 passed in X.YZs =======================
+  tests/test_magic.py .                              [100%]
+
+  =============== 1 passed in X.YZs =======================
+
+--------------------------------------------------------------------------------------------
+how to open the test file in the editor from the terminal
+--------------------------------------------------------------------------------------------
 
 * I hold ``ctrl`` (Windows_/Linux_) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
@@ -1154,44 +1189,10 @@ how to deactivate a virtual environment
 ----
 
 ********************************************************************************************
-how to automatically make a python test driven development environment
+review
 ********************************************************************************************
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
-
-=================================================================================
-how to make a shell script
-=================================================================================
-
-* I use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch makePythonTdd.sh
-
-  the terminal_ goes back to the command line
-
-* I use tree_ to see what is in the ``pumping_python`` directory_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -a -L 2
-
-  the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
-
-  .. code-block:: shell
-    :emphasize-lines: 8
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    └── makePythonTdd.sh
+I gave the computer some commands to make a Python_ `Test Driven Development`_ environment. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then automated the running of the tests.
 
 --------------------------------------------------------------------------------------------
 how to view all the commands I typed in a terminal
@@ -1261,601 +1262,54 @@ how to view all the commands I typed in a terminal
 
   the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
-
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+* these are the commands_ I used to help make a Python_ `Test Driven Development`_ environment
 
   .. code-block:: shell
-    :linenos:
-    :emphasize-lines: 1-
 
-    #!/bin/bash
-    mkdir magic
-    cd magic
+    mkdir NAME_OF_THE_PROJECT
+    cd NAME_OF_THE_PROJECT
     mkdir src
-    touch src/magic.py
+    touch src/NAME_OF_THE_PROJECT.py
     mkdir tests
     touch tests/__init__.py
-    touch tests/test_magic.py
+    touch tests/test_NAME_OF_THE_PROJECT.py
     python3 -m venv .venv
     source .venv/bin/activate
-    python3 -m pip install --upgrade pip
     echo "pytest-watch" > requirements.txt
+    python3 -m pip install --upgrade pip
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-  ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
-
-* I change touch_ then use echo_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.sh``
-
-  .. code-block:: shell
-    :lineno-start: 8
-    :emphasize-lines: 1
-
-    echo "" > tests/test_magic.py
-
-* I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``
-
-  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
-
-  .. code-block:: shell
-    :linenos:
-    :emphasize-lines: 8-21
-
-    #!/bin/bash
-    mkdir magic
-    cd magic
-    mkdir src
-    touch src/magic.py
-    mkdir tests
-    touch tests/__init__.py
-
-    echo "import unittest
-
-
-    class TestMagic(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions Encountered
-    # AssertionError
-    " > tests/test_magic.py
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
-
---------------------------------------------------------------------------------------------
-how to run a shell script
---------------------------------------------------------------------------------------------
-
-I go back to the terminal_ to run the program_
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  makePythonTdd.sh
-
-the terminal_ shows
-
-.. code-block:: shell
-
-  command not found: makePythonTdd.sh
-
-I have to tell the computer where the file_ is
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  ./makePythonTdd.sh
-
-``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few directories_ when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. The terminal_ shows
-
-.. code-block:: shell
-
-  permission denied: ./makePythonTdd.sh
-
-I want to make sure the computer can run the program_. I have to make it executable
-
---------------------------------------------------------------------------------------------
-how to view the permissions of a file
---------------------------------------------------------------------------------------------
-
-I use ls_ to check the permissions of the file_
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  ls -l makePythonTdd.sh
-
-``-l`` is the option to show the long listing format which includes permissions for the file_
-
-the terminal_ shows
-
-.. code-block:: shell
-
-  -rw-r--r-- 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
-
-here is what each one of the characters before the folder_ means
-
-* ``-`` means this is a regular file_, it is not a directory_
-* ``rw-`` means the owner of the file_ can read and write to the file_ but not execute it
-* ``r--`` means the group on the computer the owner of the file_ belongs to can only read the file_, they cannot write to it or execute it, and the second
-* ``r--`` means other users can only read the file_, they cannot write to it or execute it
-
-I want to add execute permissions so I can run the file
-
---------------------------------------------------------------------------------------------
-how to make a shell script run as a command
---------------------------------------------------------------------------------------------
-
-* I change the mode of the file_ to add executable permissions
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    chmod +x makePythonTdd.sh
-
-  chmod_ is a program_ that changes the mode (permissions) of the given file_, the terminal_ goes back to the command line. I use chmod_ to make the file_ executable so the computer can run it
-
-* I list the permissions again with ls_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ls -l makePythonTdd.sh
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    -rwxr-xr-x 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
-
-  here is what each one of the characters before the folder_ means
-
-  * ``-`` means this is a regular file_, it is not a directory_
-  * ``rwx`` means the owner of the file_ has permissions to read, write to and execute it
-  * ``r-x`` means the group the owner of the file_ belongs to has permissions to read and execute the file_ they cannot write to it, and the second
-  * ``r-x`` means other users have permissions to read and execute the file_, they cannot write to it
-
-* I try the command again
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 10
-
-    ======================================= FAILURES =======================================
-    ________________________________ TestMagic.test_failure ________________________________
-
-    self = <tests.test_magic.TestMagic testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_magic.py:7: AssertionError
-    =============================== short test summary info ================================
-    FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
-
-  Success! I just made a program_ that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
-
-* I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
-
-* I hit ``ctrl+c`` in the terminal_ to stop the test
-
-* I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
-
-  .. NOTE:: The lines that are changing in the code are highlighted
-
-  .. code-block::
-    :linenos:
-    :emphasize-lines: 2, 3, 5, 12, 20
-
-    #!/bin/bash
-    mkdir magic_again
-    cd magic_again
-    mkdir src
-    touch src/magic_again.py
-    mkdir tests
-    touch tests/__init__.py
-
-    echo "import unittest
-
-
-    class TestMagicAgain(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions Encountered
-    # AssertionError
-    " > tests/test_magic_again.py
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
-
-* I run ``makePythonTdd.sh`` in the terminal_ to make a project named ``magic_again``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-    :emphasize-lines: 10
-
-    ======================================= FAILURES =======================================
-    _____________________________ TestMagicAgain.test_failure ______________________________
-
-    self = <tests.test_magic.TestMagicAgain testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_magic_again.py:7: AssertionError
-    =============================== short test summary info ================================
-    FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
-
-  I make the test pass
-
-* I hit ``ctrl+c`` to exit the tests in the terminal_
-* I run tree_ to see what I have in ``pumping_python`` now
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -a -L 2
-
-  the terminal_ shows
-
-  .. code-block::
-    :emphasize-lines: 22-41
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    └── makePythonTdd.sh
-
-  the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
-
---------------------------------------------------------------------------------------------
-how to use a variable in a shell script
---------------------------------------------------------------------------------------------
-
-I changed ``magic`` to ``magic_again`` in 5 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
-
-- the project folder_
-- the file_ for the program_ in the ``src`` folder_
-- the file_ for the test in the ``tests`` folder_
-- the :ref:`test class<classes>` in the test file_
-- the `virtual environment`_ in the ``.venv`` folder_
-
-The program_ should always make this structure
-
-.. code-block:: shell
-
-  PROJECT_NAME
-  ├── requirements.txt
-  ├── src
-  │   └── PROJECT_NAME.py
-  ├── tests
-  │   ├── __init__.py
-  │   └── test_PROJECT_NAME.py
-  └── .venv
-
-Time to use a variable_ for the name of the project
-
-* I add a name to represent any project name that I give to ``makePythonTdd.sh`` when I want it to make a project
-
-  .. code-block:: shell
-    :linenos:
-    :emphasize-lines: 2
-
-    #!/bin/bash
-    PROJECT_NAME="magic_again"
-    mkdir magic_again
-    cd magic_again
-    mkdir src
-    touch src/magic_again.py
-    mkdir tests
-    touch tests/__init__.py
-
-    echo "import unittest
-
-
-    class TestMagicAgain(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions Encountered
-    # AssertionError
-    " > tests/test_magic_again.py
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
-
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example, we use the word ``woman`` to represent any woman, ``man`` to represent any man, ``child`` to represent any child, and ``parent`` to represent anyone with a child. In this case I use ``$PROJECT_NAME`` to represent any name of a project
-
-* I change every where I have ``magic_again`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
-
-  .. NOTE:: The lines that are changing in the code are highlighted
-
-  .. code-block:: shell
-    :linenos:
-    :emphasize-lines: 3-4, 6, 13, 21
-
-    #!/bin/bash
-    PROJECT_NAME="magic_again"
-    mkdir $PROJECT_NAME
-    cd $PROJECT_NAME
-    mkdir src
-    touch src/$PROJECT_NAME.py
-    mkdir tests
-    touch tests/__init__.py
-
-    echo "import unittest
-
-
-    class Test$PROJECT_NAME(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions Encountered
-    # AssertionError
-    " > tests/test_$PROJECT_NAME.py
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
-
-* I run the program_ again in the terminal_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 2, 4, 10, 12
-
-    ======================================= FAILURES =======================================
-    ____________________________ Testmagic_again.test_failure ______________________________
-
-    self = <tests.test_magic.Testmagic_again testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_magic_again.py:7: AssertionError
-    =============================== short test summary info ================================
-    FAILED tests/test_magic_again.py::Testmagic_again::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
-
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_magic_again.py`` to make the test pass
-
-* I hit ``ctrl+c`` in the terminal to stop the test
-
-* I run tree_ to see what I have in the ``pumping_python`` folder_ now
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -a -L 2
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 8-13
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    └── makePythonTdd.sh
-
-* The program_ works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file_ to give it the project name. I want to be able to just call the program_ and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
-
-  .. code-block:: shell
-
-    command argument
-
-  in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be ``argument`` or whatever name I give.
-
-  Here are a few other examples
-
-  .. code-block:: shell
-
-    mkdir name_of_folder
-
-  ``mkdir`` is the command, and ``$1`` is ``name_of_folder``
-
-  .. code-block:: shell
-
-    touch name_of_file
-
-  ``touch`` is the command, and ``$1`` is ``name_of_file``
-
-  .. code-block:: shell
-
-    echo "anything"
-
-  ``echo`` is the command, and ``$1`` is ``"anything"``
-
-  .. code-block:: shell
-
-    tree -a
-
-  ``tree`` is the command and ``$`` is ``-a``
-
-* I change ``magic_again`` to ``$1`` in ``makePythonTdd.sh``
-
-  .. code-block:: shell
-    :lineno-start: 2
-    :emphasize-lines: 1
-
-    PROJECT_NAME=$1
-
-* I try the program_ again, this time with a different name for the project in the terminal_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh more_magic
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 10
-
-    ======================================= FAILURES =======================================
-    _____________________________ Testmore_magic.test_failure ______________________________
-
-    self = <tests.test_more_magic.Testmore_magic testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_more_magic.py:7: AssertionError
-    =============================== short test summary info ================================
-    FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
-    ================================== 1 failed in 0.04s ===================================
-
-* I hold ``ctrl`` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
-
-* I use ``ctrl+c`` on the keyboard in the terminal_ to stop the tests
-
-* I run tree_ to see what I have in the ``pumping_python`` folder_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -a -L 2
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 15-20
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── makePythonTdd.sh
-    └── more_magic
-        ├── .pytest_cache
-        ├── requirements.txt
-        ├── src
-        ├── tests
-        └── .venv
-
-* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh assertion_error
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    ====================================== FAILURES =======================================
-    __________________________ Testassertion_error.test_failure ___________________________
-
-    self = <tests.test_assertion_error.Testassertion_error testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_assertion_error.py:7: AssertionError
-    =============================== short test summary info ===============================
-    FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ==================================
-
-  the computer makes a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError`
+  where ``NAME_OF_THE_PROJECT`` is the name I give the project
+
+* to review, I did the following to make a Python_ `Test Driven Development`
+
+  - pick a name for the project
+  - :ref:`make a directory for the project<how to make a directory for the project>`
+  - :ref:`change directory to the project<how to change directory to the project>`
+  - :ref:`make a directory for the source code<how to make a directory for the source code>`
+  - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
+  - :ref:`make a directory for the tests<how to make a directory for the tests>`
+  - :ref:`make the 'tests' folder a Python package<how to make a Python package>`
+  - :ref:`make a Python file to hold the tests in the 'tests' folder<test_failure>`
+  - :ref:`add the first failing test to the test file<test_failure>`
+  - :ref:`make a virtual environment<how to make a virtual environment>`
+  - :ref:`activate the virtual environment<how to activate a virtual environment>`
+  - :ref:`make a requirements file for the needed Python packages<how to write text to a file>`
+  - :ref:`upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
+  - :ref:`install the packages listed in the requirements file<how to install Python packages in a virtual environment>`
+  - :ref:`run the automated tests<how to run the automated tests>`
+  - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
+  - make the test pass
 
 ----
 
-********************************************************************************************
-review
-********************************************************************************************
-
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 
 ----
 
-:ref:`Click Here to see the code for the program to make a Python Test Driven Development environment for any Linux or MacOS computers<makePythonTdd.sh>`
-
-----
-
-Would you like to :ref:`test AssertionError?<AssertionError>`
+You have seen me make a `Test Driven Development`_ environment for a project called ``magic`` on any Linux_, Windows_ with `Windows Subsystem for Linux`_ or MacOS_ computers. Would you like to :ref:`test AssertionError next?<AssertionError>`
 
 -----
 
