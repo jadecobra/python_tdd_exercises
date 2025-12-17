@@ -860,7 +860,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 =================================================================================
 
 * I close ``test_telephone.py``
-* then delete all the text in ``telephone.py``, the terminal_ shows :ref:`AttributeError`
+* then delete all the text in ``telephone.py``, the terminal_ shows 9 failures, I start with the last :ref:`AttributeError`
 
   .. code-block:: shell
 
@@ -984,7 +984,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass Python_ basic :ref:`data structures` from a test to a program_ and place them in an `f-string`_
+Here are the tests I ran to see what happens when I pass Python_ basic :ref:`data structures` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation`_
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_
