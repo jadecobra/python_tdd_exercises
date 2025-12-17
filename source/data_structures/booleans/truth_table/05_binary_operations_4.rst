@@ -76,7 +76,7 @@ If your tests stopped after the :ref:`previous chapter<truth table: Binary Opera
 
     (.venv) .../pumping_python/truth_table
 
-* run the automated tests
+* run the tests
 
   .. code-block:: shell
     :emphasize-lines: 1

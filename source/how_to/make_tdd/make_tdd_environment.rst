@@ -166,7 +166,7 @@ I pick ``magic`` as the name for this project
 
   .. code-block:: shell
 
-    .../pumping_python $
+    .../pumping_python
 
 * I type tree_ in the terminal_ to see what files_ and folders_ are in the ``pumping_python`` directory_
 
@@ -1090,7 +1090,7 @@ how to upgrade the Python package manager in a virtual environment
   .. TIP:: imagine that the `pytest-watch`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch`_ from the ``requirements.txt`` file_
 
 =================================================================================
-how to run the automated tests in a virtual environment
+how to run the tests automatically in a virtual environment
 =================================================================================
 
 I try to run the tests again
@@ -1206,7 +1206,7 @@ how to deactivate a virtual environment
 review
 ********************************************************************************************
 
-I gave the computer some commands to make a Python_ `Test Driven Development`_ environment. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then automated the running of the tests.
+I gave the computer some commands to make a Python_ `Test Driven Development`_ environment. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
 
 --------------------------------------------------------------------------------------------
 how to view all the commands I typed in a terminal
@@ -1296,7 +1296,7 @@ how to view all the commands I typed in a terminal
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
-* I did the following steps to make a Python_ `Test Driven Development`_ environment
+* these I the steps I took to make a Python_ `Test Driven Development`_ environment
 
   - pick a name for the project
   - :ref:`make a directory for the project<how to make a directory for the project>`
@@ -1312,7 +1312,7 @@ how to view all the commands I typed in a terminal
   - :ref:`upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
   - :ref:`make a requirements file for the needed Python packages<how to write text to a file>`
   - :ref:`install the packages listed in the requirements file<how to install Python packages in a virtual environment>`
-  - :ref:`run the automated tests<how to run the automated tests in a virtual environment>`
+  - :ref:`run the tests automatically<how to run the tests automatically in a virtual environment>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
   - make the test pass
 
