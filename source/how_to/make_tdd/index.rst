@@ -95,7 +95,7 @@ on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_ computers
 * :ref:`how to change the name of a file`
 * :ref:`how to run a Python program`
 * :ref:`the first failing test<test_failure>`
-* :ref:`how to make a Python package`
+* :ref:`how to make the tests a Python package`
 * :ref:`how to manually run tests`
 * :ref:`how to automatically run tests`
 * :ref:`how to exit the automated tests`
@@ -121,7 +121,7 @@ On Windows_ computers without `Windows Subsystem for Linux`_
 * :ref:`how to change the name of a file on Windows without WSL`
 * :ref:`how to run a Python program on Windows without Windows Subsystem for Linux`
 * :ref:`test_failure on Windows without WSL`
-* :ref:`how to make a Python package on Windows without WSL`
+* :ref:`how to make the tests a Python package on Windows without WSL`
 * :ref:`how to manually run tests on Windows without WSL`
 * :ref:`how to automatically run tests on Windows without Windows Subsystem for Linux`
 * :ref:`how to exit the automated tests on Windows without WSL`
@@ -144,4 +144,3 @@ at the end you will have these programs to automatically setup a Python_ `Test D
 
 * :ref:`makePythonTdd.sh` - for MacOS_, Linux_ and `Windows Subsystem for Linux`_
 * :ref:`makePythonTdd.ps1` - for Windows_ without `Windows Subsystem for Linux`_
-

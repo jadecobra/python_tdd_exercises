@@ -891,12 +891,16 @@ the tests show
 
 ----
 
+*********************************************************************************
+what is next?
+*********************************************************************************
+
 you have gone through a lot of things and know
 
 * :ref:`how to make a test driven development environment`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>` and
 * :ref:`how to write functions<functions>`
-* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`

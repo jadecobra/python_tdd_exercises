@@ -14,7 +14,7 @@ how to pass values
 
 I want to be able to send things from tests to the program_ I am testing and compare what I think will happen with the results I get. This helps me see what is the same, and what is different, the difference helps me know what to change to get what I want.
 
-In this chapter I use :ref:`the identity function<test_identity_function>` to test what happens when I send input from a test to a :ref:`function<functions>` in a :ref:`module<ModuleNotFoundError>`
+I use :ref:`the identity function<test_identity_function>` to show how input is passed from a test to a :ref:`function<functions>` in a :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -41,7 +41,7 @@ requirements
 
   .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
-    .. code-block:: python
+    .. code-block:: shell
 
       ./makePythonTdd.ps1 telephone
 
@@ -62,7 +62,7 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+* I change the name of the :ref:`class<classes>` to ``TestTelephone`` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -984,7 +984,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass Python_ basic :ref:`data structures` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation`_
+Here are the tests I ran to see what happens when I pass Python_ basic :ref:`data structures` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation`
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_
@@ -1009,12 +1009,16 @@ I also ran into the following :ref:`Exceptions<errors>`
 
 ----
 
+*********************************************************************************
+what is next?
+*********************************************************************************
+
 you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
-* :ref:`how to write functions<functions>`
-* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to write functions<functions>` and
+* :ref:`how to pass values from tests to functions<how to pass values>`
 
 Would you like to use some of the `assert methods`_ from :ref:`AssertionError` to :ref:`test Python's data structures?<data structures>`
 

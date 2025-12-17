@@ -43,7 +43,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I change the name of a file?<how to change the name of a file on Windows without WSL>`
 * :ref:`How can I run a Python Program?<how to run a Python program on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I test for failure?<test_failure on Windows without WSL>`
-* :ref:`How can I make a Python package?<how to make a Python package on Windows without WSL>`
+* :ref:`How can I make a Python package?<how to make the tests a Python package on Windows without WSL>`
 * :ref:`How can I run tests manually?<how to manually run tests on Windows without WSL>`
 * :ref:`How can I run tests automatically?<how to automatically run tests on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests on Windows without WSL>`
@@ -459,7 +459,7 @@ the terminal_ goes back to the command line
   I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
 
 --------------------------------------------------------------------------------------------
-how to make a Python package on Windows without WSL
+how to make the tests a Python package on Windows without WSL
 --------------------------------------------------------------------------------------------
 
 * I use `New-Item`_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
@@ -664,7 +664,7 @@ how to automatically run tests on Windows without Windows Subsystem for Linux
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `Python package`_ like unittest_, it is not first_inputart of the `Python standard library`_
+pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
 
 I type it in the terminal_
 

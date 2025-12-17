@@ -84,7 +84,7 @@ requirements
 
   .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
-    .. code-block:: python
+    .. code-block:: shell
 
       ./makePythonTdd.ps1 functions
 
@@ -1556,6 +1556,10 @@ as a reminder
 :ref:`Click Here to see the code from this chapter<functions: tests and solutions>`
 
 ----
+
+*********************************************************************************
+what is next?
+*********************************************************************************
 
 you have covered a bit so far and know
 

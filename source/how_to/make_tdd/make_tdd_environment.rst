@@ -55,7 +55,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I change the name of a file?<how to change the name of a file>`
 * :ref:`How can I run a Python Program?<how to run a Python program>`
 * :ref:`How can I test for failure?<test_failure>`
-* :ref:`How can I make a Python package?<how to make a Python package>`
+* :ref:`How can I make a Python package?<how to make the tests a Python package>`
 * :ref:`How can I run tests manually?<how to manually run tests>`
 * :ref:`How can I run tests automatically?<how to automatically run tests>`
 * :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
@@ -528,7 +528,7 @@ how to make a directory for the tests
   - ``def test_failure``
 
     * def_ is the Python_ keyword for making :ref:`methods (functions) <functions>`, see :ref:`functions` for more
-    * ``test_failure`` is the name I used :ref:`method<functions>` for :ref:`this first test<test_failure>`
+    * ``test_failure`` is the name of the :ref:`method<functions>` I used for :ref:`this first test<test_failure>`
 
       .. IMPORTANT:: I can use any name for the :ref:`test method<functions>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
@@ -563,12 +563,12 @@ how to make a directory for the tests
   I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
 
 --------------------------------------------------------------------------------------------
-how to make a Python package
+how to make the tests a Python package
 --------------------------------------------------------------------------------------------
 
 * I use touch_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
 
-  .. ATTENTION:: make sure to use 2 underscores (__) before and after ``init`` for ``__init__.py``
+  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -700,7 +700,7 @@ how to change the name of a file
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` (Windows_/Linux_) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -770,7 +770,7 @@ how to automatically run tests
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `Python package`_ like unittest_, it is not first_inputart of the `Python standard library`_
+pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
 
 I type it in the terminal_
 
@@ -788,18 +788,18 @@ the terminal_ shows
 I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
 
 =================================================================================
-how to make a virtual environment
+what is a virtual environment?
 =================================================================================
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
----------------------------------------------------------------------------------
-what is a virtual environment?
----------------------------------------------------------------------------------
-
 A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
 It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
+
+=================================================================================
+how to make a virtual environment
+=================================================================================
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_
 
@@ -1037,6 +1037,7 @@ how to upgrade the Python package manager in a virtual environment
 
     python3 -m pip install --upgrade pip
 
+  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
   - ``install`` is an argument given to pip_ to install a given `Python package`_
   - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `Python package`_
   - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself to the latest version since I did not give a version number
@@ -1075,9 +1076,9 @@ how to upgrade the Python package manager in a virtual environment
 
   .. TIP:: imagine that the `pytest-watch`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch`_ from the ``requirements.txt`` file_
 
---------------------------------------------------------------------------------------------
-how to run the automated tests
---------------------------------------------------------------------------------------------
+=================================================================================
+how to run the automated tests in a virtual environment
+=================================================================================
 
 I try to run the tests again
 
@@ -1104,7 +1105,7 @@ and it shows results without going back to the command line
 how to open the test file in the editor from the terminal
 --------------------------------------------------------------------------------------------
 
-* I hold ``ctrl`` (Windows_/Linux_) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
+* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1131,7 +1132,7 @@ how to open the test file in the editor from the terminal
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` (Windows_/Linux_) or (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1282,7 +1283,7 @@ how to view all the commands I typed in a terminal
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
-* to review, I did the following to make a Python_ `Test Driven Development`
+* I did the following steps to make a Python_ `Test Driven Development`_ environment
 
   - pick a name for the project
   - :ref:`make a directory for the project<how to make a directory for the project>`
@@ -1290,15 +1291,15 @@ how to view all the commands I typed in a terminal
   - :ref:`make a directory for the source code<how to make a directory for the source code>`
   - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
   - :ref:`make a directory for the tests<how to make a directory for the tests>`
-  - :ref:`make the 'tests' folder a Python package<how to make a Python package>`
+  - :ref:`make the 'tests' folder a Python package<how to make the tests a Python package>`
   - :ref:`make a Python file to hold the tests in the 'tests' folder<test_failure>`
   - :ref:`add the first failing test to the test file<test_failure>`
   - :ref:`make a virtual environment<how to make a virtual environment>`
   - :ref:`activate the virtual environment<how to activate a virtual environment>`
-  - :ref:`make a requirements file for the needed Python packages<how to write text to a file>`
   - :ref:`upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
+  - :ref:`make a requirements file for the needed Python packages<how to write text to a file>`
   - :ref:`install the packages listed in the requirements file<how to install Python packages in a virtual environment>`
-  - :ref:`run the automated tests<how to run the automated tests>`
+  - :ref:`run the automated tests<how to run the automated tests in a virtual environment>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
   - make the test pass
 
@@ -1308,6 +1309,10 @@ how to view all the commands I typed in a terminal
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 
 ----
+
+*********************************************************************************
+what is next?
+*********************************************************************************
 
 You have seen me make a `Test Driven Development`_ environment for a project called ``magic`` on any Linux_, Windows_ with `Windows Subsystem for Linux`_ or MacOS_ computers. Would you like to :ref:`test AssertionError next?<AssertionError>`
 

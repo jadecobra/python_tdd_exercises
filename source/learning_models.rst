@@ -23,7 +23,7 @@ An Infinite Learning Model
 
   .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
-    .. code-block:: python
+    .. code-block:: shell
 
       ./makePythonTdd.ps1 learning
 

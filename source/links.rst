@@ -96,6 +96,7 @@
 .. _mkdir: https://man7.org/Linux/man-pages/man1/mkdir.1.html
 .. _mkdir program: mkdir_
 .. _make a directory: mkdir_
+.. _make a folder: mkdir_
 .. _make the directory: mkdir_
 .. _modulo: https://grokipedia.com/page/Modulo
 .. _module: https://docs.python.org/3/glossary.html#term-module

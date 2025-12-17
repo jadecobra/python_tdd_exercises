@@ -56,7 +56,159 @@ Here are questions you can answer after going through this chapter
 requirements
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the name of the project
+* I pick ``assertion_error`` as the name of this project
+* I open a terminal_
+* then I `make a directory`_ for the project
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir assertion_error
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+* I `change directory`_ to the project
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd assertion_error
+
+  the terminal_ shows I am now in the ``assertion_error`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/assertion_error
+
+* I `make a folder`_ for the source code
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir src
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python/assertion_error
+
+* I use touch_ to make an empty file for the program_ in the ``src`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch src/assertion_error.py
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python/assertion_error
+
+* I `make a directory`_ for the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir tests
+
+  the terminal_ goes back to the command line
+
+* I use touch_ to make an empty file_ in the ``tests`` folder_ to tell Python_ that it is a `Python package`_
+
+  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch tests/__init__.py
+
+  the terminal_ goes back to the command line
+
+* I click on ``test_assertion_error.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
+
+  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code tests/test_assertion_error.py
+
+  the file_ opens up in the :ref:`editor<2 editors>`
+
+* I add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
+
+  .. code-block:: python
+    :emphasize-lines: 1-11
+
+    import unittest
+
+
+    class TestAssertionError(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+
+* I make a `virtual environment`
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    python3 -m venv .venv
+
+  the terminal_ takes some time then returns to the command line
+
+* I activate the `virtual environment`
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of `source .venv/bin/activate`
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/assertion_error
+
+* I upgrade the `Python package manager (pip)`_ to the latest version
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    python3 -m pip install --upgrade pip
+
+  the terminal_ shows pip_ being uninstalled then installs the new version or shows that it is already the latest version
+
+* I make an empty file_ for the actual test
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch tests/test_assertion_error.py
+
+  the terminal_ goes back to the command line
+
+
+
+
+* to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the name of the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -65,7 +217,7 @@ requirements
 
   .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
-    .. code-block:: python
+    .. code-block:: shell
 
       ./makePythonTdd.ps1 assertion_error
 
@@ -1426,6 +1578,10 @@ for a total of 6 `assert methods`_ I can use when testing
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 
 -----
+
+*********************************************************************************
+what is next?
+*********************************************************************************
 
 Congratulations! You now know
 

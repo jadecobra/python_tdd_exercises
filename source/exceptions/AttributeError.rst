@@ -43,7 +43,7 @@ requirements
 
   .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
-    .. code-block:: python
+    .. code-block:: shell
 
       ./makePythonTdd.ps1 attribute_error
 
@@ -862,12 +862,16 @@ I also ran into the following :ref:`Exceptions<errors>`
 
 ----
 
+*********************************************************************************
+what is next?
+*********************************************************************************
+
 you made it to the end and know
 
 * :ref:`how to make a test driven development environment`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>` and
 * :ref:`how to write functions<functions>`
-* :ref:`how to pass values from tests to functions with assert methods?<how to pass values>`
+* :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
