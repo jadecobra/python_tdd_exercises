@@ -136,8 +136,10 @@ None review
 * :ref:`Is None a list?<test_is_none_a_list>`
 * :ref:`Is None a set?<test_is_none_a_set>`
 * :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
-* :ref:`How can I test if something is None or not?<how to test if something is None>`
-* :ref:`How can I test if something is an instance of a class or not?<how to test if something is an instance of a class>`
+* :ref:`How can I test if something is None?<how to test if something is None>`
+* :ref:`How can I test if something is NOT None?<how to test if something is None>`
+* :ref:`How can I test if something is an instance of a class?<how to test if something is an instance of a class>`
+* :ref:`How can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
 
 *********************************************************************************
 booleans review
