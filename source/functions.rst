@@ -922,7 +922,7 @@ I add a failing test to ``test_functions.py``
       def test_functions_w_positional_and_keyword_arguments(self):
           self.assertEqual(
               src.functions.w_positional_and_keyword_arguments(
-                  'first', last_input='last',
+                  last_input='last', 'first',
               ),
               ('first', 'last')
           )
@@ -930,15 +930,38 @@ I add a failing test to ``test_functions.py``
 
   # Exceptions Encountered
 
-the terminal_ shows :ref:`AttributeError`
+
+the terminal_ shows SyntaxError_
 
 .. code-block:: shell
 
-  AttributeError: module 'src.functions' has no attribute 'w_positional_and_keyword_arguments'
+  SyntaxError: positional argument follows keyword argument
+
+I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` before a :ref:`positional argument<test_functions_w_positional_arguments>` in Python_
 
 *********************************************************************************
 :green:`GREEN`: make it pass
 *********************************************************************************
+
+* I change the order of the arguments to follow Python_ rules
+
+  .. code-block:: python
+    :lineno-start: 54
+    :emphasize-lines: 4
+
+        def test_functions_w_positional_and_keyword_arguments(self):
+            self.assertEqual(
+                src.functions.w_positional_and_keyword_arguments(
+                    'first', last_input='last',
+                ),
+                ('first', 'last')
+            )
+
+  the terminal_ shows :ref:`AttributeError`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.functions' has no attribute 'w_positional_and_keyword_arguments'
 
 * I add a function_ to ``functions.py``
 
