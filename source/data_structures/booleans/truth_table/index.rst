@@ -375,3 +375,13 @@ how to run automated tests on Windows_ without WSL after you exit the tests
 ----
 
 :ref:`Click here for the tests and solutions from the Truth Table chapters<truth table: tests and solutions>`
+
+----
+
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+Would you like to :ref:`test Nullary and Unary Operations?<truth table: Nullary and Unary Operations>`
+
+----

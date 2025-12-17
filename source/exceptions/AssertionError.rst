@@ -1620,10 +1620,15 @@ review
 
 I can use `assert statements`_ and `assert methods`_ to test if something is
 
-* :ref:`None or NOT None<test_assertion_error_w_none>` with assertIsNone_ and assertIsNotNone_
-* :ref:`False or not<test_assertion_error_w_none>` with assertFalse_
-* :ref:`True or not<test_assertion_error_w_none>` with assertTrue_
-* and to test if 2 things are :ref:`Equal or NOT Equal<test_assertion_error_w_equality>` with assertEqual_ and assertNotEqual_
+* :ref:`NOT None<test_assertion_error_w_none>` with assertIsNotNone_
+* :ref:`None<test_assertion_error_w_none>` with assertIsNone_
+* :ref:`False or NOT False<test_assertion_error_w_none>` with assertFalse_
+* :ref:`True or NOT True<test_assertion_error_w_none>` with assertTrue_
+
+and to test if 2 things are
+
+* :ref:`NOT Equal<test_assertion_error_w_equality>` with assertNotEqual_
+* :ref:`Equal<test_assertion_error_w_equality>` with assertEqual_
 
 for a total of 6 `assert methods`_ I can use when testing
 
