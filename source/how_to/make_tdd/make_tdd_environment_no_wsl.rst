@@ -14,17 +14,30 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_. First, :ref:`I do it manually<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>` where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
+This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`
 
 *********************************************************************************
 preview
 *********************************************************************************
 
-Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`, it is only 27 lines of code, with spaces
+By the end of the chapter you will be familiar with the following commands
 
-.. literalinclude:: ../../code/make_tdd/makePythonTdd.ps1
-  :language: PowerShell
-  :linenos:
+.. code-block:: PowerShell
+
+  mkdir
+  cd
+  touch
+  echo
+  cat
+  python -m venv .venv
+  .venv/scripts/activate
+  python -m pip install --upgrade pip
+  python -m pip install --requirement requirements.txt
+  pytest-watch
+  deactivate
+  history
+
+----
 
 *************************************************************************************************************************
 questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux
@@ -34,7 +47,6 @@ Here are questions you can answer after going through this chapter
 
 * :ref:`what is a Test Driven Development Environment?`
 * :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`
@@ -56,10 +68,6 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment on Windows without WSL>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
 * :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal on Windows without WSL>`
-* :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`What is a variable?<how to use a variable in a shell script>`
-* :ref:`How can I use a variable in a PowerShell script<how to use a variable in a PowerShell script>`
-* :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
 
 ----
 
@@ -137,7 +145,7 @@ the terminal_ goes back to the command line
     C:.
     No subfolders exist
 
-  .. NOTE:: There will be more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
+  .. NOTE:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 

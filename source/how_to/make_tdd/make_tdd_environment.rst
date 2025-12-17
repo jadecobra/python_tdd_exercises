@@ -35,6 +35,7 @@ By the end of the chapter you will be familiar with the following commands
   python3 -m pip install --requirement requirements.txt
   pytest-watch
   deactivate
+  history
 
 ----
 
@@ -89,7 +90,6 @@ requirements
 =================================================================================
 Windows requirements
 =================================================================================
-
 
 * If you are using a Windows_ computer, :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`
 * If you cannot :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`, you can :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux<how to make a python test driven development environment on Windows without Windows Subsystem for Linux>` instead of this chapter
@@ -223,7 +223,7 @@ I pick ``magic`` as the name for this project
 
     0 directories, 0 files
 
-  .. NOTE:: You will see more files_ and folders_ if you have done other work in the ``pumping_python`` folder_
+  .. NOTE:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
 
 =================================================================================
 how to make a directory for the project
