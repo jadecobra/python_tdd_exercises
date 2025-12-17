@@ -844,7 +844,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
 
   .. code-block:: python
     :lineno-start: 43
-    :emphasize-lines: 6
+    :emphasize-lines: 5
 
             self.assertEqual(
                 src.functions.w_keyword_arguments(
