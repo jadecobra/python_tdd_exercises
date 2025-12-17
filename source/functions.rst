@@ -238,7 +238,7 @@ the terminal_ shows :ref:`AttributeError`
 
 .. code-block:: shell
 
-  AttributeError: module 'src.functions' has no attribute 'function_w_return'
+  AttributeError: module 'src.functions' has no attribute 'w_return'
 
 ``functions.py`` in the ``src`` folder_ does not have ``w_return`` in it
 
