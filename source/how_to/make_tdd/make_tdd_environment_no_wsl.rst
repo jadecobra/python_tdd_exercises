@@ -383,7 +383,7 @@ the terminal_ goes back to the command line
 
 * I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
-  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
+  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_ with
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -937,7 +937,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 
   - ``install`` is an argument given to pip_ to install a given `Python package`_
   - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `Python package`_
-  - ``pip`` is the Python_ package I am giving pip_ to install, in this case it upgrades itself to the latest version since I did not give a version number
+  - ``pip`` is the `Python package`_ I am giving pip_ to install, in this case it upgrades itself to the latest version since I did not give a version number
 
   .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
 

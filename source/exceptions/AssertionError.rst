@@ -97,12 +97,19 @@ requirements
 
     .../pumping_python/assertion_error
 
-* I use touch_ to make an empty file for the program_ in the ``src`` folder_
+* I use touch_ to make an empty file_ for the program_ in the ``src`` folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     touch src/assertion_error.py
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item src/assertion_error.py`` instead of ``touch src/assertion_error.py``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      New-Item src/assertion_error.py
 
   the terminal_ goes back to the command line
 
@@ -128,22 +135,46 @@ requirements
 
     touch tests/__init__.py
 
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      New-Item tests/__init__.py
+
+  the terminal_ goes back to the command line
+
+* I make an empty file_ for the actual test
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch tests/test_assertion_error.py
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/test_assertion_error.py`` instead of ``touch tests/test_assertion_error.py``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      New-Item tests/test_assertion_error.py
+
   the terminal_ goes back to the command line
 
 * I click on ``test_assertion_error.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
-  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
+  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_ with
 
     .. code-block:: shell
       :emphasize-lines: 1
 
       code tests/test_assertion_error.py
 
-  the file_ opens up in the :ref:`editor<2 editors>`
+  ``test_assertion_error.py`` opens up in the :ref:`editor<2 editors>`
 
 * I add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1-11
 
     import unittest
@@ -158,23 +189,30 @@ requirements
     # Exceptions Encountered
     # AssertionError
 
-* I make a `virtual environment`
+* I make a `virtual environment`_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     python3 -m venv .venv
 
-  the terminal_ takes some time then returns to the command line
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
 
-* I activate the `virtual environment`
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      python -m venv .venv
+
+  the terminal_ takes some time then goes back to the command line
+
+* I activate the `virtual environment`_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     source .venv/bin/activate
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of `source .venv/bin/activate`
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -194,43 +232,61 @@ requirements
 
     python3 -m pip install --upgrade pip
 
-  the terminal_ shows pip_ being uninstalled then installs the new version or shows that it is already the latest version
+  the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
 
-* I make an empty file_ for the actual test
+* I make a ``requirements.txt`` file for the `Python programs`_ my project needs
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch tests/test_assertion_error.py
+    echo "pytest-watch" > requirements.txt
 
   the terminal_ goes back to the command line
 
-
-
-
-* to run :ref:`makePythonTdd.sh` with ``assertion_error`` as the name of the project
+* I use pip_ to use the requirements file_ to install ``pytest-watch``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh assertion_error
+    python3 -m pip install --requirement requirements.txt
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
-      ./makePythonTdd.ps1 assertion_error
+      python -m pip install --requirement requirements.txt
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
 
-  .. code-block:: python
+* I run the automated tests
 
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 8, 10
+
+    ================================ FAILURES ================================
+    ____________________ TestAssertionError.test_failure _____________________
+
+    self = <tests.test_assertion_error.TestAssertionError testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
     E       AssertionError: True is not false
 
     tests/test_assertion_error.py:7: AssertionError
+    ======================== short test summary info =========================
+    FAILED tests/test_assertion_error.py::TestAssertionError::test_failure - AssertionError: True is not false
+    =========================== 1 failed in X.YZs ============================
 
 * I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -238,13 +294,9 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+  the test passes
 
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
-
-    class TestAssertionError(unittest.TestCase):
+----
 
 *********************************************************************************
 test_what_is_an_assertion

@@ -250,7 +250,8 @@
 
 .. _Pylance: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 .. _Python: https://docs.python.org
-.. _Python program: Python_
+.. _Python program: `Python package`_
+.. _Python programs: `Python package`_
 .. _Python Extension: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 .. _PyCharm: https://www.jetbrains.com/pycharm/download
 .. _Sublime Text: https://www.sublimetext.com
