@@ -19,11 +19,11 @@ A function_ is a unit or block of code that is callable_. This means I can write
 
 `Computer Programming`_ involves providing a process with input data and the process returning output data, for example
 
-.. code-block:: none
+.. code-block:: python
 
-    input_data -> program -> output_data
+    input_data -> process -> output_data
 
-I think of it mathematically as mapping a :ref:`function<test_functions>` ``f`` with inputs ``x`` and an output of ``y``
+I think of it like the concept of mapping a function ``f`` with inputs ``x`` and an output of ``y``
 
 .. math::
 
@@ -31,13 +31,13 @@ I think of it mathematically as mapping a :ref:`function<test_functions>` ``f`` 
 
 in other words
 
-.. math:
+.. code-block:: python
 
   function(input_data) -> output_data
 
-the function_ processes ``input_data`` and returns ``output_data`` as the result
+the function_ processes ``input_data`` and returns ``output_data`` as the result.
 
-functions_ are made with the def_ keyword, a name, parentheses and a colon at the end
+In Python_ functions_ are made with the def_ keyword, a name, parentheses and a colon at the end
 
 .. code-block:: python
 
@@ -68,8 +68,8 @@ Here are the questions you can answer after going through this chapter
 * :ref:`How can I make arguments optional in a function?<test_functions_w_default_arguments>`
 * :ref:`How can I make a function take an unknown number of positional arguments?<test_functions_w_unknown_arguments>`
 * :ref:`How can I make a function take an unknown number of keyword arguments?<test_functions_w_unknown_arguments>`
-* :ref:`How are positional arguments represented in a function?<test_functions_w_unknown_arguments>`
-* :ref:`How are keyword arguments represented in a function?<test_functions_w_unknown_arguments>`
+* :ref:`How are positional arguments represented in a function?<how Python reads positional arguments>`
+* :ref:`How are keyword arguments represented in a function?<how Python reads keyword arguments>`
 
 ----
 
@@ -745,6 +745,8 @@ The requirement for the :ref:`identity function<test_logical_identity>` is that 
   the test passes
 
 I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing connections to see if my test is connected to what I am testing. If I can send input and received the same input back then I can start making changes to see what results I get.
+
+----
 
 The :ref:`Identity Function<test_identity_function>` takes one input, the following tests are for functions_ that take more than one.
 
@@ -1608,81 +1610,91 @@ the terminal_ shows :ref:`AttributeError`
 
   the test passes
 
-* I want to see what happens when I call the function_ without :ref:`keyword arguments<test_functions_w_keyword_arguments>`. I add a new :ref:`assertion<AssertionError>`
+--------------------------------------------------------------------------------------------
+how Python reads positional arguments
+--------------------------------------------------------------------------------------------
 
-  .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 7-10
+I want to see what happens when I call the function_ with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add a new :ref:`assertion<AssertionError>`
 
-            self.assertEqual(
-                src.functions.w_unknown_arguments(
-                    0, 1, 2, 3, a=4, b=5, c=6, d=7,
-                ),
-                ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
-            )
-            self.assertEqual(
-                src.functions.w_unknown_arguments(0, 1, 2, 3),
-                ()
-            )
+.. code-block:: python
+  :lineno-start: 73
+  :emphasize-lines: 7-10
 
-  the terminal_ shows :ref:`AssertionError`
+          self.assertEqual(
+              src.functions.w_unknown_arguments(
+                  0, 1, 2, 3, a=4, b=5, c=6, d=7,
+              ),
+              ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+          )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(0, 1, 2, 3),
+              ()
+          )
 
-  .. code-block:: shell
+the terminal_ shows :ref:`AssertionError`
 
-    AssertionError: Tuples differ: ((0, 1, 2, 3), {}) != ()
+.. code-block:: shell
 
-  I change the expectation to match
+  AssertionError: Tuples differ: ((0, 1, 2, 3), {}) != ()
 
-  .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 3
+I change the expectation to match
 
-            self.assertEqual(
-                src.functions.w_unknown_arguments(0, 1, 2, 3),
-                ((0, 1, 2, 3), {})
-            )
+.. code-block:: python
+  :lineno-start: 79
+  :emphasize-lines: 3
 
-
-    # Exceptions Encountered
-
-  the test passes
-
-* I add another :ref:`assertion<AssertionError>` to see what happens when I call the function_ without :ref:`positional arguments<test_functions_w_positional_arguments>`
-
-  .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 5-8
-
-            self.assertEqual(
-                src.functions.w_unknown_arguments(0, 1, 2, 3),
-                ((0, 1, 2, 3), {})
-            )
-            self.assertEqual(
-                src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-                ()
-            )
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    AssertionError: Tuples differ: ((), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != ()
-
-  I change the expectation to match
-
-  .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 3
-
-            self.assertEqual(
-                src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-                ((), dict(a=4, b=5, c=6, d=7))
-            )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(0, 1, 2, 3),
+              ((0, 1, 2, 3), {})
+          )
 
 
-    # Exceptions Encountered
+  # Exceptions Encountered
 
-  the test passes
+the test passes. The function_ reads the :ref:`positional arguments<test_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
+
+--------------------------------------------------------------------------------------------
+how Python reads keyword arguments
+--------------------------------------------------------------------------------------------
+
+I add another :ref:`assertion<AssertionError>` to see what happens when I call the function_ with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+
+.. code-block:: python
+  :lineno-start: 79
+  :emphasize-lines: 5-8
+
+          self.assertEqual(
+              src.functions.w_unknown_arguments(0, 1, 2, 3),
+              ((0, 1, 2, 3), {})
+          )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+              ()
+          )
+
+the terminal_ shows
+
+.. code-block:: shell
+
+  AssertionError: Tuples differ: ((), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != ()
+
+I change the expectation to match
+
+.. code-block:: python
+  :lineno-start: 83
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+              ((), dict(a=4, b=5, c=6, d=7))
+          )
+
+
+  # Exceptions Encountered
+
+the test passes. The function_ reads the :ref:`keyword arguments<test_keywords_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
+
+----
 
 * I add one more :ref:`assertion<AssertionError>` to see what happens when I call the function_ with no inputs
 

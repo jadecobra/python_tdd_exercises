@@ -733,7 +733,6 @@ the test passes! The terminal_ shows
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
-
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
@@ -764,9 +763,9 @@ I do not want to type ``python3 -m unittest`` again, it is better for a `compute
 
 ----
 
-********************************************************************************************
+--------------------------------------------------------------------------------------------
 how to automatically run tests
-********************************************************************************************
+--------------------------------------------------------------------------------------------
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
@@ -787,9 +786,9 @@ the terminal_ shows
 
 I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
 
-=================================================================================
+--------------------------------------------------------------------------------------------
 what is a virtual environment?
-=================================================================================
+--------------------------------------------------------------------------------------------
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
@@ -797,9 +796,9 @@ A `virtual environment`_ is a separate folder_ where I can install `Python packa
 
 It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
 
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to make a virtual environment
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_
 
@@ -870,9 +869,9 @@ how to make a virtual environment
   - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
   - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to keep it to the first level of what is in the children folders_ of ``magic``
 
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to activate a virtual environment
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
 
@@ -904,9 +903,9 @@ how to activate a virtual environment
 
   I have to install `pytest-watch`_ in the `virtual environment`_ to use it in the `virtual environment`_
 
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to see what packages are installed in a virtual environment
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_ I just made
 
@@ -926,9 +925,9 @@ the terminal_ shows
 - `pytest-watch`_ is not in the list
 - pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
 
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to write text to a file
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 I want to make a file where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
 * I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
@@ -986,9 +985,9 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to see what is inside a file
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I can use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
 
@@ -1005,9 +1004,9 @@ the terminal_ shows
 
 life is good!
 
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to install Python packages in a virtual environment
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I use pip_ to install `pytest-watch`_ from the requirements file
 
@@ -1026,9 +1025,9 @@ how to install Python packages in a virtual environment
     [notice] A new release of pip is available: XY.Z -> AB.C
     [notice] To update, run: pip install --upgrade pip
 
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to upgrade the Python package manager in a virtual environment
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
 
@@ -1089,9 +1088,9 @@ how to upgrade the Python package manager in a virtual environment
 
   .. TIP:: imagine that the `pytest-watch`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch`_ from the ``requirements.txt`` file_
 
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to run the tests automatically in a virtual environment
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I try to run the tests again
 
@@ -1114,9 +1113,9 @@ and it shows results without going back to the command line
 
   =============== 1 passed in X.YZs =======================
 
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to open the test file in the editor from the terminal
---------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
@@ -1155,15 +1154,15 @@ how to open the test file in the editor from the terminal
 
   the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
 
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to exit the automated tests
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
 
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to deactivate a virtual environment
-=================================================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I leave the `virtual environment`_ by typing this in the terminal_
 
