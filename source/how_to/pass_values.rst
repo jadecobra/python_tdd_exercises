@@ -28,33 +28,243 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+----
+
 *********************************************************************************
 requirements
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``telephone`` as the name of the project
+* I pick ``telephone`` as the name of this project
+* I open a terminal_
+* then I `make a directory`_ for the project
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh telephone
+    mkdir telephone
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+* I `change directory`_ to the project
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd telephone
+
+  the terminal_ shows I am now in the ``telephone`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/telephone
+
+* I `make a folder`_ for the source code
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir src
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python/telephone
+
+* I use touch_ to make an empty file_ for the program_ in the ``src`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch src/telephone.py
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item src/telephone.py`` instead of ``touch src/telephone.py``
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
-      ./makePythonTdd.ps1 telephone
+      New-Item src/telephone.py
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python/telephone
+
+* I `make a directory`_ for the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir tests
+
+  the terminal_ goes back to the command line
+
+* I use touch_ to make an empty file_ in the ``tests`` folder_ to tell Python_ that it is a `Python package`_
+
+  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch tests/__init__.py
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      New-Item tests/__init__.py
+
+  the terminal_ goes back to the command line
+
+* I make an empty file_ for the actual test
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch tests/test_telephone.py
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/test_telephone.py`` instead of ``touch tests/test_telephone.py``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      New-Item tests/test_telephone.py
+
+  the terminal_ goes back to the command line
+
+* I click on ``test_telephone.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
+
+  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_ with
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code tests/test_telephone.py
+
+  ``test_telephone.py`` opens up in the :ref:`editor<2 editors>`
+
+* I add :ref:`the first failing test<test_failure>` to ``test_telephone.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-11
 
+    import unittest
+
+
+    class TestTelephone(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+
+* I make a `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    python3 -m venv .venv
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      python -m venv .venv
+
+  the terminal_ takes some time then goes back to the command line
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/telephone
+
+* I upgrade the `Python package manager (pip)`_ to the latest version
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    python3 -m pip install --upgrade pip
+
+  the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
+
+* I make a ``requirements.txt`` file for the `Python programs`_ my project needs
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    echo "pytest-watch" > requirements.txt
+
+  the terminal_ goes back to the command line
+
+* I use pip_ to use the requirements file_ to install ``pytest-watch``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    python3 -m pip install --requirement requirements.txt
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      python -m pip install --requirement requirements.txt
+
+  the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
+
+* I run the automated tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 8, 10
+
+    ================================ FAILURES ================================
+    ______________________ TestTelephone.test_failure ________________________
+
+    self = <tests.test_telephone.TestTelephone testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
     E       AssertionError: True is not false
 
     tests/test_telephone.py:7: AssertionError
+    ======================== short test summary info =========================
+    FAILED tests/test_telephone.py::TestTelephone::test_failure - AssertionError: True is not false
+    =========================== 1 failed in X.YZs ============================
 
 * I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -62,13 +272,9 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to ``TestTelephone`` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+  the test passes
 
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
-
-    class TestTelephone(unittest.TestCase):
+----
 
 *********************************************************************************
 test_passing_a_string
