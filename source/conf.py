@@ -1,3 +1,6 @@
+import sphinxawesome_theme
+
+
 project = 'pumping python'
 copyright = '2023, JadeCobra LLC'
 author = 'Jacob Itegboje'
@@ -32,12 +35,18 @@ text_sectionchars = '#*=-~"+`'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-# html_theme = 'press'
-html_theme = 'furo'
-# pygments_style = "default"
+# html_theme = 'furo'
+# pygments_style = "tango"
+# pygments_dark_style = "monokai" # for furo
+html_theme = "sphinxawesome_theme"
+html_theme_options = {
+    "logo_dark": "_static/dry_favicon_16x16.png"
+}
+html_permalinks_icon = sphinxawesome_theme.postprocess.Icons.permalinks_icon
+
+# syntax highlighting
 pygments_style = "tango"
-# pygments_dark_style = "ayu-dark"
-pygments_dark_style = "monokai"
+pygments_style_dark = "monokai"
 
 html_extra_path = ['robots.txt', 'llms.txt']
 html_baseurl = 'https://www.pumpingpython.com/'
