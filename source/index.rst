@@ -82,6 +82,7 @@ table of contents
   :maxdepth: 2
   :titlesonly:
 
+  self
   videos <https://www.youtube.com/@JacobItegboje>
   how_to/index
   conventions
