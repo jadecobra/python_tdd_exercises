@@ -14,9 +14,6 @@ how I setup my Integrated Development Environment (IDE)
 
 ----
 
-.. contents:: On this page
-  :local:
-
 As of this writing I use `Visual Studio Code`_, you can download and install it or any `Integrated Development Environment (IDE)`_ of your choice. Here are a few options
 
 * `Visual Studio Code`_
@@ -105,7 +102,7 @@ Here are extensions I use in `Visual Studio Code`_
 BONUS!!!
 *********************************************************************************
 
-Since you made it this far, I have a gift for you, it makes using your computer easier and :ref:`how to make a test driven development environment` as well. This is how your computer is organized. :ref:`Click here for the BONUS!<BONUS: learn directory structure>`
+Since you made it this far, I have a :ref:`GIFT<BONUS: learn directory structure>` for you, it makes using your computer easier and :ref:`how to make a test driven development environment` as well. This is how your computer is organized. :ref:`Click here for the BONUS!<BONUS: learn directory structure>`
 
 ----
 

@@ -294,7 +294,7 @@ how to make an empty file on Windows without Windows Subsystem for Linux
     └── src
         └── magic.py
 
-  `New-Item`_ is a command_ that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``New-Item src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  `New-Item`_ is a command that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``New-Item src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -1193,7 +1193,7 @@ how to view all the commands I typed in a terminal on Windows without WSL
 
   the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* these are the commands_ I used to help make a Python_ `Test Driven Development`_ environment
+* these are the commands I used to help make a Python_ `Test Driven Development`_ environment
 
   .. code-block:: shell
 

@@ -1278,7 +1278,7 @@ how to view all the commands I typed in a terminal
 
   the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
 
-* these are the commands_ I used to help make a Python_ `Test Driven Development`_ environment
+* these are the commands I used to help make a Python_ `Test Driven Development`_ environment
 
   .. code-block:: shell
 

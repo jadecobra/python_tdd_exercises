@@ -28,6 +28,10 @@ This process can be repeated as many times as needed until I get to my goal.
 
 ----
 
+*********************************************************************************
+preview
+*********************************************************************************
+
 I set up an environment for every Python_ project, this way I keep all the things that belong to the project in the same place. I can do this manually, which means I have to do the same exact steps for every project or I could do it automatically where I give the computer a command and it does all those steps for me.
 
 Some things I think about when I want to start a project
@@ -64,14 +68,6 @@ Here is what that structure looks like if the name of the project is ``PROJECT_N
   └── tests
       └── PROJECT_NAME.py
 
-----
-
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/CLC1YAHHbjU?si=0agM3_IhWmUYpTln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-----
-
 These chapters show how I setup a project in Python_ on any computer (Linux_, Windows_, MacOS_) to help you get started with `Test Driven Development`_ right now
 
 .. toctree::
@@ -86,7 +82,9 @@ they cover the following
 * :ref:`Windows requirements`
 * :ref:`Linux/Windows Subsystem for Linux requirements`
 
+=================================================================================
 on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_ computers
+=================================================================================
 
 * :ref:`how to manually make a python test driven development environment`
 * :ref:`how to automatically make a python test driven development environment`
@@ -116,7 +114,9 @@ on Linux_, MacOS_ and Windows_ with `Windows Subsystem for Linux`_ computers
 * :ref:`how to make a shell script run as a command`
 * :ref:`how to run a shell script`
 
+=================================================================================
 On Windows_ computers without `Windows Subsystem for Linux`_
+=================================================================================
 
 * :ref:`how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux`
 * :ref:`how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux`
@@ -144,7 +144,21 @@ On Windows_ computers without `Windows Subsystem for Linux`_
 
 ----
 
-at the end you will have these programs to automatically setup a Python_ `Test Driven Development`_ project
+at the end of the chapter you will know how to make a Python_ `Test Driven Development`_ project for MacOS_, Linux_, `Windows Subsystem for Linux`_ and Windows_ without `Windows Subsystem for Linux`_
 
-* :ref:`makePythonTdd.sh` - for MacOS_, Linux_ and `Windows Subsystem for Linux`_
-* :ref:`makePythonTdd.ps1` - for Windows_ without `Windows Subsystem for Linux`_
+----
+
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+* if you have MacOS_, Linux_ or successfully :ref:`installed Windows Subsystem for Linux<>` you can do :ref:`how to make a python test driven development environment` or
+* if you are not able to install `Windows Subsystem for Linux` check out :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
+
+-----
+
+.. raw:: html
+
+  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/CLC1YAHHbjU?si=0agM3_IhWmUYpTln" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+----

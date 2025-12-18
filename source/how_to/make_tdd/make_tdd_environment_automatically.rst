@@ -70,7 +70,7 @@ Here are questions you can answer after going through this chapter
 requirements
 *********************************************************************************
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands_ to make  a Python_ `Test Driven Development`_ Environment anytime I want so I do not have to remember every step of the process or do them manually.
+You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ `Test Driven Development`_ Environment anytime I want so I do not have to remember every step of the process or do them manually.
 
 To review, here are steps I take to make the environment for every project
 

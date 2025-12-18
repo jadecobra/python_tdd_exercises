@@ -330,5 +330,3 @@ what is next?
 *********************************************************************************
 
 Would you like to :ref:`test Nullary and Unary Operations?<truth table: Nullary and Unary Operations>`
-
-----
