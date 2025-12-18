@@ -2,7 +2,7 @@ import sphinxawesome_theme
 
 
 project = 'pumping python'
-copyright = '2023, JadeCobra LLC'
+copyright = '%Y, JadeCobra LLC'
 author = 'Jacob Itegboje'
 
 rst_prolog = """
@@ -39,12 +39,15 @@ text_sectionchars = '#*=-~"+`'
 # pygments_style = "tango"
 # pygments_dark_style = "monokai" # for furo
 html_theme = "sphinxawesome_theme"
+html_permalinks_icon = sphinxawesome_theme.postprocess.Icons.permalinks_icon
 html_theme_options = {
     "logo_light": "_static/dry_favicon_16x16.png",
     "logo_dark": "_static/dry_favicon_16x16.png",
     "show_prev_next": True,
 }
-html_permalinks_icon = sphinxawesome_theme.postprocess.Icons.permalinks_icon
+html_sidebars = {
+  "**": ["sidebar_main_nav_links.html", "sidebar_toc.html", "localtoc.html"]
+}
 
 # syntax highlighting
 pygments_style = "tango"

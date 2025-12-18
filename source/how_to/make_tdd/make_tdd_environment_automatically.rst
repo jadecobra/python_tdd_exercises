@@ -101,6 +101,8 @@ I want to give one command for the program to do every step except
 
 this way I only need to do 3 steps instead of 18
 
+----
+
 *********************************************************************************
 how to make a shell script
 *********************************************************************************
