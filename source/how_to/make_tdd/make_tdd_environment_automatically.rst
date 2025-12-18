@@ -108,98 +108,7 @@ how to make a shell script
 
   the terminal_ goes back to the command line
 
-* I use tree_ to see what is in the ``pumping_python`` directory_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -a -L 2
-
-  the terminal_ shows my new file_ is in the same parent directory_ of the ``magic`` project
-
-  .. code-block:: shell
-    :emphasize-lines: 8
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    └── makePythonTdd.sh
-
---------------------------------------------------------------------------------------------
-how to view all the commands I typed in a terminal
---------------------------------------------------------------------------------------------
-
-* I type history_ in the terminal_ to see all the commands I have typed so far
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    history
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 8, 10, 12, 15, 19, 21, 24, 31, 34, 38, 41, 42, 44
-
-    cd pumping_python
-    mkdir pumping_python
-    cd pumping_python
-    tree
-    sudo apt install tree --yes
-    tree
-    cd magic
-    mkdir magic
-    tree
-    cd magic
-    python3 src/magic.py
-    mkdir src
-    tree
-    python3 src/magic.py
-    touch src/magic.py
-    tree
-    python3 src/magic.py
-    python3 -m unittest
-    mkdir tests
-    tree
-    touch tests/magic.py
-    tree
-    python3 -m unittest
-    touch tests/__init__.py
-    tree
-    python3 -m unittest
-    mv tests/magic.py tests/test_magic.py
-    tree -L 2
-    python3 -m unittest
-    pytest-watch
-    python3 -m venv .venv
-    tree
-    tree -a -L 2
-    source .venv/bin/activate
-    pytest-watch
-    pip list
-    echo "pytest-watch"
-    echo "pytest-watch" > requirements.txt
-    tree -a -L 2
-    cat requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    python3 -m pip install --upgrade pip
-    pip list
-    pytest-watch
-    deactivate
-    pytest-watch
-    cd ..
-    touch makePythonTdd.sh
-    tree -a -L 2
-
-  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
-
-* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
-
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make the Python_ `Test Driven Development`_ environment
 
   .. code-block:: shell
     :linenos:
@@ -222,15 +131,21 @@ how to view all the commands I typed in a terminal
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
-* I change touch_ then use echo_ to add text for the first failing test to ``test_magic.py`` in ``makePythonTdd.sh``
+* ``test_magic.py`` is an empty file_ because I used touch_. I want it to have the text for :ref:`the first failure<test_failure>` so I do not have to open the :ref:`editor<2 editors>` to add the text for each project. I use echo_ instead of touch_ to make the ``makePythonTdd.sh`` program_ add the text to ``test_magic.py`` when it makes the file in the ``tests`` folder_
 
   .. code-block:: shell
-    :lineno-start: 8
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+    mkdir tests
+    touch tests/__init__.py
 
     echo "" > tests/test_magic.py
 
-* I add the text for the test like I did with ``test_magic.py`` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``
+    python3 -m venv .venv
+    source .venv/bin/activate
+
+* I add the text for the test inside the :ref:`quotes ("")<quotes>`, the way I do with echo_ when I add ``"pytest-watch"`` as text in ``requirements.txt`` I just added to ``makePythonTdd.sh``
 
   .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
 

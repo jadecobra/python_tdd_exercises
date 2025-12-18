@@ -690,10 +690,11 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   the test is still green
 
-  .. TIP:: these 3 `if statements`_ are the same
+  .. TIP:: these `if statements`_ are the same
 
     - ``if something == True:``
-    - ``if bool(something):``
+    - ``if bool(something): == True``
+    - ``if bool(something):
     - ``if something:``
 
     Python_ checks if ``something`` is :ref:`True<test_what_is_true>` in the background when I type ``if something:``
@@ -755,7 +756,16 @@ conditional expressions
       else:
           return False
 
-  * this uses bool_ to check if ``something`` is :ref:`True<test_what_is_true>`
+  * this first uses bool_ to get the boolean_ version of ``something`` then checks if the boolean_ ` is :ref:`True<test_what_is_true>`
+
+    .. code-block:: python
+
+      if bool(something) == True:
+          return True
+      else:
+          return False
+
+  * this checks if ``bool(something)`` is :ref:`True<test_what_is_true>` in the background
 
     .. code-block:: python
 

@@ -1187,6 +1187,42 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 ----
 
 *********************************************************************************
+close the project
+*********************************************************************************
+
+* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/telephone
+
+* I `change directory`_ to the parent of ``telephone``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 
