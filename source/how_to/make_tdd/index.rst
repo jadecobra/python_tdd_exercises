@@ -70,11 +70,16 @@ Here is what that structure looks like if the name of the project is ``PROJECT_N
 
 ----
 
+*********************************************************************************
+table of contents
+*********************************************************************************
+
 These chapters show how I setup a project in Python_ on any computer (Linux_, Windows_, MacOS_) to help you get started with `Test Driven Development`_ right now
 
 .. toctree::
   :titlesonly:
 
+  self
   make_tdd_environment
   install_wsl
   make_tdd_environment_no_wsl
@@ -85,7 +90,7 @@ they cover the following
 * :ref:`Linux/Windows Subsystem for Linux requirements`
 
 =================================================================================
-on Linux, MacOS and Windows with `Window Subsystem for Linux computers
+on Linux, MacOS and Windows with Window Subsystem for Linux computers
 =================================================================================
 
 * :ref:`how to manually make a python test driven development environment`
