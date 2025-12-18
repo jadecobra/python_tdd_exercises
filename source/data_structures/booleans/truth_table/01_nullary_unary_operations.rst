@@ -26,12 +26,7 @@ requirements
 Nullary Operations
 *********************************************************************************
 
-There are 2 Nullary operations
-
-* :ref:`Logical True<test_logical_true>` and
-* :ref:`Logical False<test_logical_false>`
-
-they take no input and return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+There are 2 Nullary operations - :ref:`Logical True<test_logical_true>` and :ref:`Logical False<test_logical_false>`. They do NOT take input and return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 =================================================================================
 test_logical_true

@@ -43,6 +43,7 @@ questions about The Truth Table
 * :ref:`What is an if statement<if statements (conditionals)>`
 * :ref:`What is a conditional expression?<conditional expressions>`
 * :ref:`What is a ternary operator?<conditional expressions>`
+* What are the possible combinations of two inputs?
 
 ----
 
