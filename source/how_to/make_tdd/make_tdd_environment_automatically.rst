@@ -14,62 +14,6 @@ how to automatically make a python test driven development environment
 
 ----
 
-This is one way to make a Python_ `Test Driven Development`_ project. First, :ref:`I do it manually<how to manually make a python test driven development environment>`, where I make all the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`, then :ref:`I write a program to do it for me<how to automatically make a python test driven development environment>`
-
-*********************************************************************************
-preview
-*********************************************************************************
-
-Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment>`, it is only 28 lines of code, with spaces
-
-.. literalinclude:: ../../code/make_tdd/makePythonTdd.sh
-  :language: shell
-  :linenos:
-
-*********************************************************************************
-questions about making a Python Test Driven Development Environment
-*********************************************************************************
-
-Here are questions you can answer after going through this chapter
-
-* :ref:`what is a Test Driven Development Environment?`
-* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment>`
-* :ref:`How can I change directories?<how to change directory>`
-* :ref:`How can I make a directory?<how to make a directory>`
-* :ref:`How can I see directory structure?<how to look at directory structure>`
-* :ref:`How can I make an empty file?<how to make an empty file>`
-* :ref:`How can I write text to a file?<how to write text to a file>`
-* :ref:`How can I see what is inside a file?<how to see what is inside a file>`
-* :ref:`How can I change the name of a file?<how to change the name of a file>`
-* :ref:`How can I run a Python Program?<how to run a Python program>`
-* :ref:`How can I test for failure?<test_failure>`
-* :ref:`How can I make a Python package?<how to make the tests a Python package>`
-* :ref:`How can I run tests manually?<how to manually run tests>`
-* :ref:`How can I run tests automatically?<how to automatically run tests>`
-* :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
-* :ref:`What is a Virtual Environment?<what is a virtual environment?>`
-* :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
-* :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
-* :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
-* :ref:`How can I document the Python programs my project needs?<how to write text to a file>`
-* :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment>`
-* :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment>`
-* :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
-* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
-* :ref:`How can I make a shell script?<how to make a shell script>`
-* :ref:`What is a variable?<how to use a variable in a shell script>`
-* :ref:`How can I use a variable in a shell script<how to use a variable in a shell script>`
-* :ref:`How can I view the permissions of a file?<how to view the permissions of a file>`
-* :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
-* :ref:`How can I run a shell script<how to run a shell script>`
-
-----
-
-*********************************************************************************
-requirements
-*********************************************************************************
-
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ `Test Driven Development`_ Environment anytime I want so I do not have to remember every step of the process or do them manually.
 
 To review, here are steps I take to make the environment for every project
@@ -101,13 +45,61 @@ I want to give one command for the program to do every step except
 
 this way I only need to do 3 steps instead of 18
 
+*********************************************************************************
+preview
+*********************************************************************************
+
+Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment>`, it is only 28 lines of code, with spaces
+
+.. literalinclude:: ../../code/make_tdd/makePythonTdd.sh
+  :language: shell
+  :linenos:
+
+*********************************************************************************
+questions about automatically making a Python Test Driven Development Environment
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`what is a Test Driven Development Environment?`
+* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment>`
+* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment>`
+* :ref:`How can I change directories?<how to change directory>`
+* :ref:`How can I make a directory?<how to make a directory>`
+* :ref:`How can I see directory structure?<how to look at directory structure>`
+* :ref:`How can I make an empty file?<how to make an empty file>`
+* :ref:`How can I write text to a file?<how to write text to a file>`
+* :ref:`How can I see what is inside a file?<how to see what is inside a file>`
+* :ref:`How can I change the name of a file?<how to change the name of a file>`
+* :ref:`How can I run a Python Program?<how to run a Python program>`
+* :ref:`How can I test for failure?<test_failure>`
+* :ref:`How can I make a Python package?<how to make the tests a Python package>`
+* :ref:`How can I run tests manually?<how to manually run tests>`
+* :ref:`How can I run tests automatically?<how to automatically run tests>`
+* :ref:`How can I stop automated Python tests from running?<how to stop the automated tests>`
+* :ref:`What is a Virtual Environment?<what is a virtual environment?>`
+* :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
+* :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
+* :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
+* :ref:`How can I document the Python programs my project needs?<how to write text to a file>`
+* :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment>`
+* :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment>`
+* :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
+* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
+* :ref:`How can I make a shell script?<how to make a shell script>`
+* :ref:`What is a variable?<how to use a variable in a shell script>`
+* :ref:`How can I use a variable in a shell script<how to use a variable in a shell script>`
+* :ref:`How can I view the permissions of a file?<how to view the permissions of a file>`
+* :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
+* :ref:`How can I run a shell script<how to run a shell script>`
+
 ----
 
 *********************************************************************************
 how to make a shell script
 *********************************************************************************
 
-* I use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
+* I go to the terminal_ and use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
 
   .. code-block:: shell
     :emphasize-lines: 1

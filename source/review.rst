@@ -27,7 +27,7 @@ how to make a python test driven development environment review
 * :ref:`How can I make a Python package?<how to make the tests a Python package>`
 * :ref:`How can I run tests manually?<how to manually run tests>`
 * :ref:`How can I run tests automatically?<how to automatically run tests>`
-* :ref:`How can I stop automated Python tests from running?<how to exit the automated tests>`
+* :ref:`How can I stop automated Python tests from running?<how to stop the automated tests>`
 * :ref:`What is a Virtual Environment?<what is a virtual environment?>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
@@ -62,7 +62,7 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`How can I make a Python package?<how to make the tests a Python package on Windows without WSL>`
 * :ref:`How can I run tests manually?<how to manually run tests on Windows without WSL>`
 * :ref:`How can I run tests automatically?<how to automatically run tests on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I stop automated Python tests from running?<how to exit the automated tests on Windows without WSL>`
+* :ref:`How can I stop automated Python tests from running?<how to stop the automated tests on Windows without WSL>`
 * :ref:`What is a Virtual Environment?<what is a virtual environment?>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`

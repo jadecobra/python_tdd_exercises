@@ -58,7 +58,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I make a Python package?<how to make the tests a Python package on Windows without WSL>`
 * :ref:`How can I run tests manually?<how to manually run tests on Windows without WSL>`
 * :ref:`How can I run tests automatically?<how to automatically run tests on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I stop automated Python tests from running?<how to exit the automated tests on Windows without WSL>`
+* :ref:`How can I stop automated Python tests from running?<how to stop the automated tests on Windows without WSL>`
 * :ref:`What is a Virtual Environment?<what is a virtual environment?>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
 * :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
@@ -1075,7 +1075,7 @@ how to open the test file in the editor from the terminal on Windows without WSL
   the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-how to exit the automated tests on Windows without WSL
+how to stop the automated tests on Windows without WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
@@ -1213,7 +1213,7 @@ how to view all the commands I typed in a terminal on Windows without WSL
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
-* these I the steps I took to make a Python_ `Test Driven Development`_ environment
+* these are the steps I took to make a Python_ `Test Driven Development`_ environment
 
   - pick a name for the project
   - :ref:`make a directory for the project<how to make a directory for the project on Windows without WSL>`

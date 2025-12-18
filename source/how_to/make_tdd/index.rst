@@ -107,7 +107,7 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 * :ref:`how to make the tests a Python package`
 * :ref:`how to manually run tests`
 * :ref:`how to automatically run tests`
-* :ref:`how to exit the automated tests`
+* :ref:`how to stop the automated tests`
 * :ref:`how to make a virtual environment`
 * :ref:`how to activate a virtual environment`
 * :ref:`how to deactivate a virtual environment`
@@ -135,7 +135,7 @@ On Windows computers without Windows Subsystem for Linux
 * :ref:`how to make the tests a Python package on Windows without WSL`
 * :ref:`how to manually run tests on Windows without WSL`
 * :ref:`how to automatically run tests on Windows without Windows Subsystem for Linux`
-* :ref:`how to exit the automated tests on Windows without WSL`
+* :ref:`how to stop the automated tests on Windows without WSL`
 * :ref:`how to make a virtual environment on Windows without WSL`
 * :ref:`how to make a virtual environment on Windows without WSL`
 * :ref:`how to activate a virtual environment on Windows without WSL`
