@@ -40,7 +40,9 @@ text_sectionchars = '#*=-~"+`'
 # pygments_dark_style = "monokai" # for furo
 html_theme = "sphinxawesome_theme"
 html_theme_options = {
-    "logo_dark": "_static/dry_favicon_16x16.png"
+    # "logo_light": "_static/dry_favicon_16x16.png",
+    "logo_dark": "_static/dry_favicon_16x16.png",
+    "show_prev_next": True,
 }
 html_permalinks_icon = sphinxawesome_theme.postprocess.Icons.permalinks_icon
 
@@ -51,7 +53,7 @@ pygments_style_dark = "monokai"
 html_extra_path = ['robots.txt', 'llms.txt']
 html_baseurl = 'https://www.pumpingpython.com/'
 html_favicon = '_static/dry_favicon_16x16.png'
-html_logo = "_static/dry_favicon_16x16.png"
+# html_logo = "_static/dry_favicon_16x16.png"
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
 html_static_path = ['_static']
@@ -65,7 +67,7 @@ html_css_files = [
 sitemap_url_scheme = '{link}'
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
-notfound_template = '_templates/layout.html'
+# notfound_template = '_templates/layout.html'
 
 # -- Options for ePub output -------------------------------------------------
 epub_theme = 'epub'
