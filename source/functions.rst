@@ -301,7 +301,7 @@ requirements
     >       self.assertFalse(True)
     E       Functions: True is not false
 
-    tests/test_functions.py:7: Functions
+    tests/test_functions.py:7: AssertionError
     ======================== short test summary info =========================
     FAILED tests/test_functions.py::TestFunctions::test_failure - Functions: True is not false
     =========================== 1 failed in X.YZs ============================
