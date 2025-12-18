@@ -261,7 +261,7 @@ requirements
     FAILED tests/test_calculator.py::TestCalculator::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_calculator.py``
 
   .. code-block:: python
@@ -550,7 +550,7 @@ the test passes
                 0
             )
 
-  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError` with random values that look like this
+  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError` with random values that look like this
 
   .. code-block:: shell
 
@@ -771,7 +771,7 @@ test_subtraction
     def subtract(first_input, second_input):
         return None
 
-  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError` with random values that look like this
+  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError` with random values that look like this
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1062,7 +1062,7 @@ the terminal_ shows :ref:`AttributeError`
     def a_random_number():
         return random.randint(-1, 1)
 
-  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) a few times to run the tests, and when ``second_input`` is randomly ``0`` the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times to run the tests, and when ``second_input`` is randomly ``0`` the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -1210,7 +1210,7 @@ the terminal_ shows my expectation with a failure for any value of ``first_input
                     self.random_x/self.random_y
                 )
 
-  I hit save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) in the :ref:`editor<2 editors>` a few times to run the tests, and when ``self.random_y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) in the :ref:`editor<2 editors>` a few times to run the tests, and when ``self.random_y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 

@@ -40,7 +40,7 @@ text_sectionchars = '#*=-~"+`'
 # pygments_dark_style = "monokai" # for furo
 html_theme = "sphinxawesome_theme"
 html_theme_options = {
-    # "logo_light": "_static/dry_favicon_16x16.png",
+    "logo_light": "_static/dry_favicon_16x16.png",
     "logo_dark": "_static/dry_favicon_16x16.png",
     "show_prev_next": True,
 }

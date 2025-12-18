@@ -422,7 +422,7 @@ how to make make a Python file to hold the tests in the 'tests' folder on Window
 
       code tests/magic.py
 
-    I can also open a file_ by using ``ctrl`` on the keyboard and clicking with the mouse on the name of the file_
+    I can also open a file_ by using :kbd:`ctrl` on the keyboard and clicking with the mouse on the name of the file_
 
 * I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
@@ -471,7 +471,7 @@ how to make make a Python file to hold the tests in the 'tests' folder on Window
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) every time I make a change
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by saving (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) every time I make a change
 
   .. ATTENTION:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
 
@@ -626,7 +626,7 @@ how to change the name of a file on Windows without WSL
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold :kbd:`ctrl` on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1037,7 +1037,7 @@ and it shows results without going back to the command line
 how to open the test file in the editor from the terminal on Windows without WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -1064,7 +1064,7 @@ how to open the test file in the editor from the terminal on Windows without WSL
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -1078,7 +1078,7 @@ how to open the test file in the editor from the terminal on Windows without WSL
 how to exit the automated tests on Windows without WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
+I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to deactivate a virtual environment on Windows without WSL

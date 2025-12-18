@@ -54,7 +54,7 @@ requirements
 
     tests/test_person.py:7: AssertionError
 
-* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
 
   .. code-block:: python
@@ -843,7 +843,7 @@ test_takes_keyword_arguments
 
             ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save ``ctrl+s`` (Windows/Linux) or ``command+s`` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -929,7 +929,7 @@ test_takes_keyword_arguments
 
             ...
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save ``ctrl+s`` (Windows/Linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -972,7 +972,7 @@ test_takes_keyword_arguments
 
             ...
 
-  I hit save ``ctrl+s`` (Windows/Linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError`
+  I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1019,7 +1019,7 @@ test_takes_keyword_arguments
 
             ...
 
-  I hit save ``ctrl+s`` (Windows/Linux) or ``command+s`` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError`
+  I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1058,7 +1058,7 @@ I want to see what happens when I try to make a person without a value for the `
 :red:`RED`: make it fail
 =================================================================================
 
-* I select ``test_takes_keyword_arguments``, then copy (``ctrl+c`` (Windows/Linux) or ``command+c`` (mac)) and paste (``ctrl+v`` (Windows/Linux) or ``command+v`` (mac)) it below in ``test_person.py``
+* I select ``test_takes_keyword_arguments``, then copy (:kbd:`ctrl+c` (Windows/Linux) or ``command+c`` (mac)) and paste (:kbd:`ctrl+v` (Windows/Linux) or ``command+v`` (mac)) it below in ``test_person.py``
 * I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` variable_
 
   .. code-block:: python

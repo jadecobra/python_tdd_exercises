@@ -393,9 +393,9 @@ how to make a shell script run as a command
 
   Success! I just made a program_ that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
 
-* I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
-* I hit ``ctrl+c`` in the terminal_ to stop the test
+* I hit :kbd:`ctrl+c` in the terminal_ to stop the test
 
 * I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
 
@@ -461,7 +461,7 @@ how to make a shell script run as a command
 
   I make the test pass
 
-* I hit ``ctrl+c`` to exit the tests in the terminal_
+* I hit :kbd:`ctrl+c` to exit the tests in the terminal_
 * I run tree_ to see what I have in ``pumping_python`` now
 
   .. code-block:: shell
@@ -620,7 +620,7 @@ Time to use a variable_ for the name of the project
 
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_magic_again.py`` to make the test pass
 
-* I hit ``ctrl+c`` in the terminal to stop the test
+* I hit :kbd:`ctrl+c` in the terminal to stop the test
 
 * I run tree_ to see what I have in the ``pumping_python`` folder_ now
 
@@ -655,7 +655,7 @@ Time to use a variable_ for the name of the project
 
     command argument
 
-  in the code above, ``command`` will be ``./makePythonTdd.sh`` and ``$1`` will be ``argument`` or whatever name I give.
+  in the code above, :kbd:`command` will be ``./makePythonTdd.sh`` and ``$1`` will be ``argument`` or whatever name I give.
 
   Here are a few other examples
 
@@ -717,9 +717,9 @@ Time to use a variable_ for the name of the project
     FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
     ================================== 1 failed in 0.04s ===================================
 
-* I hold ``ctrl`` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
+* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
 
-* I use ``ctrl+c`` on the keyboard in the terminal_ to stop the tests
+* I use :kbd:`ctrl+c` on the keyboard in the terminal_ to stop the tests
 
 * I run tree_ to see what I have in the ``pumping_python`` folder_
 

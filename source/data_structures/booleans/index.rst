@@ -280,7 +280,7 @@ requirements
     FAILED tests/test_booleans.py::TestBooleans::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_booleans.py``
 
   .. code-block:: python
@@ -472,7 +472,7 @@ the terminal_ shows :ref:`AssertionError`
       def test_what_is_true(self):
           self.assertIsInstance(True, bool)
 
-  .. TIP:: You do not need to copy and paste to move a line. If you are using `Visual Studio Code`_ you can use ``alt`` (Windows_/Linux_) or ``option`` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
+  .. TIP:: You do not need to copy and paste to move a line. If you are using `Visual Studio Code`_ you can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
 
 * I add a note
 
@@ -1275,7 +1275,7 @@ the empty tuple_ is not True_
 
     # NOTES
 
-  .. TIP:: If you are using `Visual Studio Code`_ you can use ``alt`` (Windows_/Linux_) or ``option`` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
+  .. TIP:: If you are using `Visual Studio Code`_ you can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
 
 * I add notes
 

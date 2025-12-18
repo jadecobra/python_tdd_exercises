@@ -390,7 +390,7 @@ the terminal_ goes back to the command line
 
       code tests/magic.py
 
-    I can also open a file_ by using ``ctrl`` on the keyboard and clicking with the mouse on the name of the file_
+    I can also open a file_ by using :kbd:`ctrl` on the keyboard and clicking with the mouse on the name of the file_
 
 * I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
@@ -439,7 +439,7 @@ the terminal_ goes back to the command line
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by hitting save (``ctrl+s`` (Windows/Linux) or ``command+s`` (mac)) every time I make a change
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by saving (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) every time I make a change
 
   .. ATTENTION:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
 
@@ -594,7 +594,7 @@ how to change the name of a file on Windows without WSL
 
   * ``F`` shows a failure
 
-* I hold ``ctrl`` on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold :kbd:`ctrl` on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -994,7 +994,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 
     =============== 1 passed in X.YZs =======================
 
-* I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -1021,7 +1021,7 @@ how to install Python packages in a virtual environment on Windows without WSL
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 
-  I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -1035,7 +1035,7 @@ how to install Python packages in a virtual environment on Windows without WSL
 how to exit the automated tests on Windows without WSL
 =================================================================================
 
-I exit the tests in the terminal_ by pressing ``ctrl+c`` on the keyboard
+I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
 
 =================================================================================
 how to deactivate a virtual environment on Windows without WSL
@@ -1295,9 +1295,9 @@ how to run a PowerShell script
 
   Success! I just made a program_ that can make the ``magic`` project anytime I want and it automatically does the steps I did manually.
 
-* I hold ``ctrl`` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
-* I hit ``ctrl+c`` in the terminal_ to stop the test
+* I hit :kbd:`ctrl+c` in the terminal_ to stop the test
 * I deactivate the `virtual environment`_
 
   .. code-block:: PowerShell
@@ -1383,7 +1383,7 @@ how to run a PowerShell script
 
   I make the test pass
 
-* I hit ``ctrl+c`` to exit the tests in the terminal_
+* I hit :kbd:`ctrl+c` to exit the tests in the terminal_
 * I run tree_ to see what I have in ``pumping_python`` now
 
   .. code-block:: shell
@@ -1540,7 +1540,7 @@ Time to use a variable_ for the name of the project
 
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_magic_again.py`` to make the test pass
 
-* I hit ``ctrl+c`` in the terminal to stop the test
+* I hit :kbd:`ctrl+c` in the terminal to stop the test
 * I deactivate the `virtual environment`_
 
   .. code-block:: PowerShell
@@ -1596,7 +1596,7 @@ Time to use a variable_ for the name of the project
 
     command argument
 
-  in the code above, ``command`` will be ``makePythonTdd.ps1`` and ``$args[0]`` will be ``argument`` or whatever name I give.
+  in the code above, :kbd:`command` will be ``makePythonTdd.ps1`` and ``$args[0]`` will be ``argument`` or whatever name I give.
 
   Here are a few other examples
 
@@ -1658,9 +1658,9 @@ Time to use a variable_ for the name of the project
     FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
     ================================== 1 failed in 0.04s ===================================
 
-* I hold ``ctrl`` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
+* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
 
-* I use ``ctrl+c`` on the keyboard in the terminal_ to stop the tests
+* I use :kbd:`ctrl+c` on the keyboard in the terminal_ to stop the tests
 * I deactivate the `virtual environment`_
 
   .. code-block:: PowerShell

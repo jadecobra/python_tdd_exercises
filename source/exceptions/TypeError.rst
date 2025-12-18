@@ -53,7 +53,7 @@ requirements
 
     tests/test_type_error.py:7: AssertionError
 
-* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
 
   .. code-block:: python
@@ -717,7 +717,7 @@ requirements
 
 :ref:`the calculator<how to make a calculator>` is needed for this part
 
-* I exit the tests by pressing ``ctrl+c`` on the keyboard in the terminal_
+* I exit the tests with :kbd:`ctrl+c` on the keyboard in the terminal_
 * I `change directory`_ to the ``calculator`` folder
 
   .. code-block:: shell
@@ -764,7 +764,7 @@ requirements
 
     ========================= 4 passed in 0.01s ==========================
 
-* I hold ``ctrl`` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
 =================================================================================
 :red:`RED`: make it fail
