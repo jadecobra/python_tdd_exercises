@@ -582,9 +582,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
     def material_non_implication(first_input, second_input):
         if first_input == True and second_input ==False:
-        # if first_input == True:
-        #     if second_input == False:
-                return True
+            return True
         return False
 
   the test is still green. ``material_non_implication`` returns
