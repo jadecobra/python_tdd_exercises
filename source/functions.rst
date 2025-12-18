@@ -484,15 +484,17 @@ the test is still green.
 
 I have 2 functions_ with different statements in their body but they both return :ref:`None`, because "all functions_ return :ref:`None` by default, as if the function_ has an invisible line that says ``return None``", which leads me to the next test
 
+----
+
 *********************************************************************************
 test_making_a_function_w_return_none
 *********************************************************************************
 
 I can make a function_ with a `return statement`_ that says what the function_ returns
 
-*********************************************************************************
+=================================================================================
 :red:`RED`: make it fail
-*********************************************************************************
+=================================================================================
 
 I add another failing test to ``test_functions.py``
 
@@ -517,9 +519,9 @@ the terminal_ shows :ref:`AttributeError`
 
 ``w_return_none`` is not defined in ``functions.py`` in the ``src`` folder_
 
-*********************************************************************************
+=================================================================================
 :green:`GREEN`: make it pass
-*********************************************************************************
+=================================================================================
 
 I add a function_ definition to ``functions.py``
 
@@ -536,9 +538,9 @@ I add a function_ definition to ``functions.py``
 
 the test passes
 
-*********************************************************************************
+=================================================================================
 :yellow:`REFACTOR`: make it better
-*********************************************************************************
+=================================================================================
 
 I add :ref:`None` to the `return statement`_
 
@@ -633,9 +635,9 @@ test_identity_function
 
 The identity function_ returns its input as output, it's also in the :ref:`Truth Table<booleans: truth table>` chapter in :ref:`test_logical_identity`
 
-*********************************************************************************
+=================================================================================
 :red:`RED`: make it fail
-*********************************************************************************
+=================================================================================
 
 I add a failing test in ``test_functions.py``
 
@@ -661,9 +663,9 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.functions' has no attribute 'identity'
 
-*********************************************************************************
+=================================================================================
 :green:`GREEN`: make it pass
-*********************************************************************************
+=================================================================================
 
 * I add a function_ to ``functions.py``
 
@@ -709,9 +711,9 @@ the terminal_ shows :ref:`AttributeError`
 
   the test passes. I am genius
 
-*********************************************************************************
+=================================================================================
 :yellow:`REFACTOR`: make it better
-*********************************************************************************
+=================================================================================
 
 The requirement for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, the test is currently passing when :ref:`None` is given as input. Does it pass when another value is given or does it always return :ref:`None`? Time to write a test
 
@@ -756,9 +758,9 @@ The :ref:`Identity Function<test_identity_function>` takes one input, the follow
 test_functions_w_positional_arguments
 *********************************************************************************
 
-*********************************************************************************
+=================================================================================
 :red:`RED`: make it fail
-*********************************************************************************
+=================================================================================
 
 I add a failing test to ``test_functions.py``
 
@@ -785,9 +787,9 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.functions' has no attribute 'w_positional_arguments'
 
-*********************************************************************************
+=================================================================================
 :green:`GREEN`: make it pass
-*********************************************************************************
+=================================================================================
 
 * I add a function_ to  ``functions.py``
 
@@ -849,9 +851,9 @@ the terminal_ shows :ref:`AttributeError`
 
   the test passes
 
-*********************************************************************************
+=================================================================================
 :yellow:`REFACTOR`: make it better
-*********************************************************************************
+=================================================================================
 
 * The problem with giving arguments this way is that they have to be in the order the function_ expects or I get a different behavior. I add a test to ``test_functions.py`` to show this
 
@@ -903,9 +905,9 @@ There is a problem with using positional arguments, the inputs must always be su
 
 I can use `Keyword Arguments`_ to make sure it behaves how I want even when I send input out of order
 
-*********************************************************************************
+=================================================================================
 :red:`RED`: make it fail
-*********************************************************************************
+=================================================================================
 
 I add a new test to ``test_functions.py``
 
@@ -937,9 +939,9 @@ the terminal_ shows :ref:`AttributeError`
 
 ``functions.py`` in the ``src`` folder_ is missing a definition for ``w_keyword_arguments``
 
-*********************************************************************************
+=================================================================================
 :green:`GREEN`: make it pass
-*********************************************************************************
+=================================================================================
 
 * I add a function_ definition to ``functions.py``
 
@@ -1016,9 +1018,9 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
 
   w_keyword_arguments(first_input='first', last_input='last')
 
-*********************************************************************************
+=================================================================================
 :yellow:`REFACTOR`: make it better
-*********************************************************************************
+=================================================================================
 
 * I add another test with the `keyword arguments`_ given out of order in ``test_functions.py``
 
@@ -1112,9 +1114,9 @@ test_functions_w_positional_and_keyword_arguments
 
 I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and `keyword arguments<test_functions_w_keyword_arguments>`
 
-*********************************************************************************
+=================================================================================
 :red:`RED`: make it fail
-*********************************************************************************
+=================================================================================
 
 I add a failing test to ``test_functions.py``
 
@@ -1147,9 +1149,9 @@ the terminal_ shows SyntaxError_
 
 I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` before a :ref:`positional argument<test_functions_w_positional_arguments>` in Python_
 
-*********************************************************************************
+=================================================================================
 :green:`GREEN`: make it pass
-*********************************************************************************
+=================================================================================
 
 * I change the order of the arguments to follow Python_ rules
 
@@ -1276,9 +1278,9 @@ test_functions_w_default_arguments
 
 I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want a function_ to take inputs that are needed and inputs that are NOT needed
 
-*********************************************************************************
+=================================================================================
 :red:`RED`: make it fail
-*********************************************************************************
+=================================================================================
 
 I add a failing test to ``test_functions.py``
 
@@ -1309,9 +1311,9 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.functions' has no attribute 'w_default_arguments'. Did you mean: 'w_keyword_arguments'?
 
-*********************************************************************************
+=================================================================================
 :green:`GREEN`: make it pass
-*********************************************************************************
+=================================================================================
 
 I add a function_ to ``functions.py``
 
@@ -1328,9 +1330,9 @@ I add a function_ to ``functions.py``
 
 the test passes
 
-*********************************************************************************
+=================================================================================
 :yellow:`REFACTOR`: make it better
-*********************************************************************************
+=================================================================================
 
 * I remove ``last_name='doe'`` from the call to ``w_default_arguments`` in ``test_functions.py``
 
