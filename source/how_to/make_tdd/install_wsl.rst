@@ -34,6 +34,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
   .. image:: /_static/microsoft_store_debian.png
     :width: 600
+    :align: center
     :alt: Debian in Microsoft Store
 
   .. TIP:: You can use any Linux Distribution you want, `Windows Subsystem for Linux`_ installs Ubuntu_ by default

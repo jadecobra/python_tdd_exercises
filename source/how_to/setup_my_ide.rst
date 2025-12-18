@@ -34,6 +34,7 @@ I put references on the left and the `Integrated Development Environment (IDE)`_
 
 .. image:: /_static/setup_my_ide/reference_on_left.png
   :width: 600
+  :align: center
   :alt: Reference on the left
 
 this helps when I do not have an extra screen. I can stack two editors on top of one another, `source code`_ on top, tests below, and the terminal_ below the tests
@@ -49,6 +50,7 @@ explorer on the left to see files/folder structure at once, and I can drag and d
 
 .. image:: /_static/setup_my_ide/explorer_w_editors.png
   :width: 600
+  :align: center
   :alt: Explorer with Editors
 
 2 editors
@@ -57,6 +59,7 @@ editors side by side - `source code`_ on the left with tests on the right
 
 .. image:: /_static/setup_my_ide/2_editors.png
   :width: 600
+  :align: center
   :alt: Editors side by side
 
 the terminal
@@ -68,12 +71,14 @@ the terminal_ to show results of the tests
 
   .. image:: /_static/setup_my_ide/terminal_on_bottom.png
     :width: 600
+    :align: center
     :alt: terminal_ Window at the bottom
 
 * to the right - when the results I am looking at in the terminal_ are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries`
 
   .. image:: /_static/setup_my_ide/terminal_on_right.png
     :width: 600
+    :align: center
     :alt: terminal_ Window on the right
 
 This setup helps me answer 2 questions
