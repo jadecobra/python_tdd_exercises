@@ -1636,7 +1636,7 @@ I think I know how to make a Python_ `Test Driven Development`_ environment. I a
 Would you like to know how to make a Python Test Driven Development environment automatically on a computer with
 
 * :ref:`MacOS, Linux or Windows with Subsystem for Linux?<how to make a Python Test Driven Development environment automatically>` or
-* :ref:`Windows without Windows Subsystem Linux<how to make a Python Test Driven Development environment automatically on Windows without WSL>`
+* :ref:`Windows without Windows Subsystem Linux<how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`
 
 -----
 
