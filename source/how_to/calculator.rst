@@ -1631,9 +1631,12 @@ There is a problem, I have done the same steps for each of the 8 chapters covere
 * I make the test pass
 * then I start working on the project
 
-I think I know how to make a Python_ `Test Driven Development`_ environment. I am going to :ref:`write a program that will do all the steps for making a project for me<how to automatically make a python test driven development environment>`, so I never have to do those steps again
+I think I know how to make a Python_ `Test Driven Development`_ environment. I am going to :ref:`write a program that will do all the steps for making a project for me<how to make a Python Test Driven Development environment automatically>`, so I never have to do those steps again
 
-:ref:`Would you like to know how to automatically make a Python Test Driven Development environment?<how to automatically make a python test driven development environment>`
+Would you like to know how to make a Python Test Driven Development environment automatically on a computer with
+
+* :ref:`MacOS, Linux or Windows with Subsystem for Linux?<how to make a Python Test Driven Development environment automatically>` or
+* :ref:`Windows without Windows Subsystem Linux<how to make a Python Test Driven Development environment automatically on Windows without WSL>`
 
 -----
 

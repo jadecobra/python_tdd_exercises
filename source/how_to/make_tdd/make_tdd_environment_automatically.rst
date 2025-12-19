@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-how to automatically make a Python Test Driven Development environment
+how to make a Python Test Driven Development environment automatically
 #################################################################################
 
 .. raw:: html
@@ -41,7 +41,7 @@ I want to give one command for the program to do every step except
 
 * pick the name for the project
 * make the test pass and
-* work on the project, though I can now use an LLM_ to help with this
+* work on the project, though I can now use what is currently popularly called `Artifical Intelligence`_ to help with this
 
 this way I only need to do 3 steps instead of 18
 
@@ -49,46 +49,20 @@ this way I only need to do 3 steps instead of 18
 preview
 *********************************************************************************
 
-Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to automatically make a python test driven development environment>`, it is only 28 lines of code, with spaces
+Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to make a Python Test Driven Development environment automatically>`, it is only 28 lines of code, with spaces
 
 .. literalinclude:: ../../code/make_tdd/makePythonTdd.sh
   :language: shell
   :linenos:
 
 *********************************************************************************
-questions about automatically making a Python Test Driven Development Environment
+questions about making a Python Test Driven Development Environment automatically
 *********************************************************************************
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`what is a Test Driven Development Environment?`
-* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment>`
-* :ref:`How can I change directories?<how to change directory>`
-* :ref:`How can I make a directory?<how to make a directory>`
-* :ref:`How can I see directory structure?<how to look at directory structure>`
-* :ref:`How can I make an empty file?<how to make an empty file>`
-* :ref:`How can I write text to a file?<how to write text to a file>`
-* :ref:`How can I see what is inside a file?<how to see what is inside a file>`
-* :ref:`How can I change the name of a file?<how to change the name of a file>`
-* :ref:`How can I run a Python Program?<how to run a Python program>`
-* :ref:`How can I test for failure?<test_failure>`
-* :ref:`How can I make a Python package?<how to make the tests a Python package>`
-* :ref:`How can I run tests manually?<how to manually run tests>`
-* :ref:`How can I run tests automatically?<how to automatically run tests>`
-* :ref:`How can I stop automated Python tests from running?<how to stop the automated tests>`
-* :ref:`What is a Virtual Environment?<what is a virtual environment?>`
-* :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
-* :ref:`How can I activate a Virtual Environment?<how to activate a virtual environment>`
-* :ref:`How can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
-* :ref:`How can I document the Python programs my project needs?<how to write text to a file>`
-* :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment>`
-* :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment>`
-* :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
-* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
+
 * :ref:`How can I make a shell script?<how to make a shell script>`
-* :ref:`What is a variable?<how to use a variable in a shell script>`
-* :ref:`How can I use a variable in a shell script<how to use a variable in a shell script>`
 * :ref:`How can I view the permissions of a file?<how to view the permissions of a file>`
 * :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
 * :ref:`How can I run a shell script<how to run a shell script>`
@@ -99,7 +73,7 @@ Here are questions you can answer after going through this chapter
 how to make a shell script
 *********************************************************************************
 
-* I go to the terminal_ and use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
+* I go to the terminal_ and use touch_ to make an empty file_ with a name that is easy to remember later. I want the name to also describe the program_ that will automatically make a `Test Driven Development`_ environment for me
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -108,7 +82,7 @@ how to make a shell script
 
   the terminal_ goes back to the command line
 
-* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make the Python_ `Test Driven Development`_ environment
+* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make a Python_ `Test Driven Development`_ environment for a project
 
   .. code-block:: shell
     :linenos:
@@ -131,7 +105,7 @@ how to make a shell script
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
-* ``test_magic_again.py`` is an empty file_ because I used touch_. I want it to have the text for :ref:`the first failure<test_failure>` so I do not have to open the :ref:`editor<2 editors>` to add the text for it in each project. I use echo_ instead of touch_ to make the ``makePythonTdd.sh`` program_ add the text to ``test_magic_again.py`` when it makes the file in the ``tests`` folder_
+* ``test_magic_again.py`` is an empty file_ because I used touch_. I want it to have the text for :ref:`the first failure<test_failure>` so I do not have to open the :ref:`editor<2 editors>` to add the text for it in each project. I use echo_ instead of touch_ to make the ``makePythonTdd.sh`` program_ add the text to ``test_magic_again.py`` when it makes the file_ in the ``tests`` folder_, the same I do with the ``requirements.txt`` file_
 
   .. code-block:: shell
     :lineno-start: 6
@@ -145,21 +119,13 @@ how to make a shell script
     python3 -m venv .venv
     source .venv/bin/activate
 
-* I add the text for the test inside the :ref:`quotes ("")<quotes>`, the way I do with echo_ when I add ``"pytest-watch"`` as text in ``requirements.txt`` I just added to ``makePythonTdd.sh``
+* I add the text for the test inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``, the way I do with echo_ when I add ``"pytest-watch"`` as text in ``requirements.txt``
 
   .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
 
   .. code-block:: shell
-    :linenos:
-    :emphasize-lines: 9-20
-
-    #!/bin/bash
-    mkdir magic_again
-    cd magic_again
-    mkdir src
-    touch src/magic_again.py
-    mkdir tests
-    touch tests/__init__.py
+    :lineno-start: 9
+    :emphasize-lines: 1-11
 
     echo "import unittest
 
@@ -173,13 +139,6 @@ how to make a shell script
     # Exceptions Encountered
     # AssertionError
     " > tests/test_magic_again.py
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
 
 --------------------------------------------------------------------------------------------
 how to run a shell script
@@ -416,7 +375,7 @@ Here is what we have gone through together so far
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to automatically make a Python Test Driven Development environment`
+* :ref:`how to make a Python Test Driven Development environment automatically`
 
 :ref:`Would you like use makePythonTdd.sh to make a Python Test Driven Development environment to test that an Exceptions is raised?<how to test that an Exception is raised>`
 

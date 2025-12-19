@@ -46,7 +46,7 @@ questions about making a Python Test Driven Development Environment
 Here are questions you can answer after going through this chapter
 
 * :ref:`what is a Test Driven Development Environment?`
-* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment>`
+* :ref:`How can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`
@@ -123,7 +123,7 @@ Linux/Windows Subsystem for Linux requirements
 ----
 
 ********************************************************************************************
-how to manually make a python test driven development environment
+how to make a Python Test Driven Development environment manually
 ********************************************************************************************
 
 I pick ``magic`` as the name for this project

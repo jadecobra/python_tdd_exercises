@@ -13,8 +13,8 @@ how to make a python test driven development environment review
 ************************************************************************************************************
 
 * :ref:`what is a Test Driven Development Environment?`
-* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment>`
+* :ref:`How can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually>`
+* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to make a Python Test Driven Development environment automatically>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`
@@ -49,8 +49,8 @@ how to make a python test driven development environment on Windows without Wind
 ****************************************************************************************************************
 
 * :ref:`what is a Test Driven Development Environment?`
-* :ref:`How can I make a Python Test Driven Development Environment manually?<how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux>`
-* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I make a Python Test Driven Development Environment automatically?<how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory structure?<how to look at directory structure>`

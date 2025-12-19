@@ -9,6 +9,12 @@ how to make a test driven development environment
 #################################################################################
 
 *********************************************************************************
+what is Test Driven Development (TDD)?
+*********************************************************************************
+
+This is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal.
+
+*********************************************************************************
 what is a Test Driven Development Environment?
 *********************************************************************************
 
@@ -93,8 +99,8 @@ they cover the following
 on Linux, MacOS and Windows with Window Subsystem for Linux computers
 =================================================================================
 
-* :ref:`how to manually make a python test driven development environment`
-* :ref:`how to automatically make a python test driven development environment`
+* :ref:`how to make a Python Test Driven Development environment manually`
+* :ref:`how to make a Python Test Driven Development environment automatically`
 * :ref:`how to change directory`
 * :ref:`how to make a directory`
 * :ref:`how to look at directory structure`
@@ -125,8 +131,8 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 On Windows computers without Windows Subsystem for Linux
 =================================================================================
 
-* :ref:`how to manually make a python test driven development environment on Windows without Windows Subsystem for Linux`
-* :ref:`how to automatically make a python test driven development environment on Windows without Windows Subsystem for Linux`
+* :ref:`how to make a Python Test Driven Development environment manually on Windows without Windows Subsystem for Linux`
+* :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`
 * :ref:`how to make an empty file on Windows without Windows Subsystem for Linux`
 * :ref:`how to write text to a file on Windows without Windows Subsystem for Linux`
 * :ref:`how to change the name of a file on Windows without WSL`
