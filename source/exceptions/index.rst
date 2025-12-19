@@ -19,6 +19,10 @@ The tests in this chapter cover the following Exceptions_
   AttributeError
   TypeError
 
+*********************************************************************************
+what is covered?
+*********************************************************************************
+
 the chapters below cover handling Exceptions_ in :ref:`tests<how to test that an Exception is raised>` and :ref:`programs<how to handle Exceptions (Errors) in programs>`
 
 .. toctree::
@@ -27,10 +31,17 @@ the chapters below cover handling Exceptions_ in :ref:`tests<how to test that an
   /how_to/exception_handling/exception_handling_tests
   /how_to/exception_handling/exception_handling_programs
 
+*********************************************************************************
+questions about Exceptions
+*********************************************************************************
 
 Here are some questions you can answer after going through these chapters
 
-* :ref:`How can I test if something is None?<how to test if something is None>`
-* :ref:`How can I test if something is False?<how to test if something is False>`
-* :ref:`How can I test if something is True?<how to test if something is True>`
-* :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
+* :ref:`What causes AssertionError?<AssertionError>`
+* :ref:`What causes AttributeError?<AttributeError>`
+* :ref:`What causes TypeError?<TypeError>`
+* :ref:`What causes ModuleNotFoundError?<ModuleNotFoundError>`
+* :ref:`What causes NameError?<test_catching_name_error_in_tests>`
+* :ref:`What causes IndexError?<test_index_error>`
+* :ref:`What causes KeyError?<test_key_error>`
+* :ref:`How can I handle exceptions in a program<how to use try…except…else>`

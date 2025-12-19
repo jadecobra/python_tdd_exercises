@@ -71,7 +71,7 @@ Here is what that structure looks like if the name of the project is ``PROJECT_N
 ----
 
 *********************************************************************************
-table of contents
+what is covered?
 *********************************************************************************
 
 These chapters show how I setup a project in Python_ on any computer (Linux_, Windows_, MacOS_) to help you get started with `Test Driven Development`_ right now
@@ -160,7 +160,7 @@ what is next?
 *********************************************************************************
 
 * if you have MacOS_, Linux_ or successfully :ref:`installed Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>` you can do :ref:`how to make a python test driven development environment` or
-* if you are not able to install `Windows Subsystem for Linux` check out :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
+* if you are not able to install `Windows Subsystem for Linux`_ check out :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
 
 -----
 

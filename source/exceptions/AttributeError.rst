@@ -869,7 +869,7 @@ what is next?
 you made it to the end and know
 
 * :ref:`how to make a test driven development environment`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`

@@ -1805,10 +1805,10 @@ what is next?
 you now know
 
 * :ref:`how to make a test driven development environment`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what None is<None>`
 * :ref:`what is True and False in Python<booleans>`
 
 Would you like to :ref:`test the truth table?<booleans: truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements (conditionals)>`
