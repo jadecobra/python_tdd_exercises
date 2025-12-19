@@ -8,13 +8,22 @@
 how to handle Exceptions (Errors)
 #################################################################################
 
-When an :ref:`error<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to stop the program, this means nothing past the line that caused the :ref:`error<errors>` runs.
+When an :ref:`error<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to stop the program, this means nothing past the line that caused the :ref:`error<errors>` will run.
 
 It is useful because there is a problem that must be solved for the program_ to continue, and it is a problem when it causes the program_ to stop early.
 
 What if I want the program_ to run even with errors? I might want to give messages to the user who does not care about or understand the details of the error.
 
 :ref:`Exception<errors>` Handling is a way to deal with this, it allows programs to do something different when an :ref:`error<errors>` happens.
+
+----
+
+*************************************************************************************
+the chapters
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to handle Exceptions (Errors): tests and solutions>`
+
 
 These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<how to test that an Exception is raised>` and in :ref:`programs<how to handle Exceptions (Errors) in programs>`
 
@@ -26,20 +35,34 @@ These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<
 
 ----
 
-.. raw:: html
+*************************************************************************************
+videos
+*************************************************************************************
 
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQALevkVBWw?si=G9wK6OfhYF79-ORx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+* How to test that an Exception is Raised
 
-----
+  .. raw:: html
 
-.. raw:: html
+    <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQALevkVBWw?si=G9wK6OfhYF79-ORx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/xjfTE33FZyM?si=QGhkDEvHmMaJKLXB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+* How to handle Exceptions in Programs
+
+  .. raw:: html
+
+    <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/xjfTE33FZyM?si=QGhkDEvHmMaJKLXB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 
 *************************************************************************************
-code from the chapter
+code from the chapters
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to handle Exceptions (Errors): tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in these chapters?<how to handle Exceptions (Errors): tests and solutions>`
+
+----
+
+*************************************************************************************
+what is next?
+*************************************************************************************
+
+:ref:`Would you like to know how to test that an Exception is raised<how to test that an Exception is raised>`

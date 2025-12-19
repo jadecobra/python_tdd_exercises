@@ -31,20 +31,37 @@ Here are the tests I have by the end of the chapter
 requirements
 *********************************************************************************
 
-* I pick ``exceptions`` as the name of this project
+* :ref:`makePythonTdd.sh<how to make a Python Test Driven Development environment automatically>` or :ref:`makePythonTdd.ps1<how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`
 * I open a terminal_
-* then I `make a directory`_ for the project
+* I type pwd_ to make sure I am in the ``pumping_python`` folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    mkdir exceptions
+    pwd
 
   the terminal_ goes back to the command line
 
   .. code-block:: shell
 
     .../pumping_python
+
+  .. NOTE:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
+
+* I pick ``exceptions`` as the name of this project
+* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
+
+  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` with `Visual Studio Code`_
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code makePythonTdd.sh
+
+    on `Windows`_ without `Windows Subsystem for Linux`_
+
+    .. code-block:: python
+
 
 * I `change directory`_ to the project
 
