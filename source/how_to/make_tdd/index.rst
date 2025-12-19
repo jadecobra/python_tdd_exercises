@@ -18,7 +18,7 @@ This is a way to write software with a focus on tests. I write tests for ideas t
 what is a Test Driven Development Environment?
 *********************************************************************************
 
-A `Test Driven Development`_ environment is a group of files_ and folders_ in a project where I can write tests and code and they automatically run so I see the results immediately.
+A :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` is a group of files_ and folders_ in a project where I can write tests and code and they automatically run so I see the results immediately.
 
 *********************************************************************************
 what is the Test Driven Development cycle?
@@ -60,7 +60,7 @@ It turns out some of this is the same for every project
 * I make a `virtual environment`_ to keep the dependencies separate from the rest of the computer
 * I install what the project needs in the `virtual environment`_
 * I work in the `virtual environment`_
-* I run automated tests to make sure I have a `Test Driven Development`_ environment
+* I run automated tests to make sure I have a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
 * I start writing code for the project
 
 Here is what that structure looks like if the name of the project is ``PROJECT_NAME``

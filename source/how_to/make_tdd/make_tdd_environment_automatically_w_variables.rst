@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-how to make a Python Test Driven Development environment automatically
+how to make a Python Test Driven Development environment automatically with variables
 #################################################################################
 
 .. raw:: html
@@ -14,7 +14,7 @@ how to make a Python Test Driven Development environment automatically
 
 ----
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ `Test Driven Development`_ Environment anytime I want so I do not have to remember every step of the process or do them manually.
+You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` anytime I want so I do not have to remember every step of the process or do them manually.
 
 To review, here are steps I take to make the environment for every project
 
@@ -99,7 +99,7 @@ Here are questions you can answer after going through this chapter
 how to make a shell script
 *********************************************************************************
 
-* I go to the terminal_ and use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
+* I go to the terminal_ and use touch_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for me
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -108,7 +108,7 @@ how to make a shell script
 
   the terminal_ goes back to the command line
 
-* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make the Python_ `Test Driven Development`_ environment
+* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make the Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
 
   .. code-block:: shell
     :linenos:
@@ -384,7 +384,7 @@ how to make a shell script run as a command
 
 * I hit :kbd:`ctrl+c` to exit the tests in the terminal_
 
-the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
+the program_ works and can reliably make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
 
 --------------------------------------------------------------------------------------------
 how to use a variable in a shell script
@@ -649,7 +649,7 @@ Time to use a variable_ for the name of the project
         ├── tests
         └── .venv
 
-* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
+* I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -674,7 +674,7 @@ Time to use a variable_ for the name of the project
     FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
-  the computer makes a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError`
+  the computer makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`assertion_error<AssertionError>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError`
 
 ----
 
@@ -682,7 +682,7 @@ Time to use a variable_ for the name of the project
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 

@@ -14,7 +14,7 @@ how to make a Python Test Driven Development environment automatically on Window
 
 ----
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ `Test Driven Development`_ Environment on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_ anytime I want so I do not have to remember every step of the process or do them manually.
+You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_ anytime I want so I do not have to remember every step of the process or do them manually.
 
 To review, here are steps I take to make the environment for every project
 
@@ -70,7 +70,7 @@ Here are questions you can answer after going through this chapter
 how to make a PowerShell script
 *********************************************************************************
 
-* I go to the terminal_ and use `New-Item`_ to make an empty file_ with a name that is easy to remember later. I want the name to also describe the program_ that will automatically make a `Test Driven Development`_ environment for me
+* I go to the terminal_ and use `New-Item`_ to make an empty file_ with a name that is easy to remember later. I want the name to also describe the program_ that will automatically make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for me
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -79,7 +79,7 @@ how to make a PowerShell script
 
   the terminal_ goes back to the command line
 
-* I open ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make a Python_ `Test Driven Development`_ environment for a project
+* I open ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project
 
   .. code-block:: PowerShell
     :linenos:
@@ -233,13 +233,6 @@ how to run a PowerShell script
     # AssertionError
     " | Out-File "tests/test_more_magic.py" - Encoding UTF8
 
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    "pytest-watch" | Out-File requirements.txt -Encoding UTF 8
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
-
 * I run ``makePythonTdd.ps1`` in the terminal_ to make a project named ``more_magic``
 
   .. code-block:: shell
@@ -270,7 +263,7 @@ how to run a PowerShell script
 
 * I hit :kbd:`ctrl+c` to exit the tests in the terminal_
 
-the program_ works and can make a Python_ `Test Driven Development`_ environment automatically the way I want every time
+the program_ works and can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically the way I want every time
 
 ----
 
@@ -278,7 +271,7 @@ the program_ works and can make a Python_ `Test Driven Development`_ environment
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way I can make a Python_ `Test Driven Development`_ Environment, with a :ref:`program<makePythonTdd.ps1>` to do it on any Windows_ computer without `Windows Subsystem for Linux`_.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way I can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`, with a :ref:`program<makePythonTdd.ps1>` to do it on any Windows_ computer without `Windows Subsystem for Linux`_.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux>`
 

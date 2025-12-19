@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 ########################################################################################################
-how to make a python test driven development environment on Windows without Windows Subsystem for Linux
+how to make a python test driven development environment on Windows without Windows Subsystem for Linux with variables
 ########################################################################################################
 
 .. raw:: html
@@ -1082,13 +1082,13 @@ how to deactivate a virtual environment on Windows without WSL
 how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux
 ****************************************************************************************************************************************
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a `Test Driven Development`_ Environment anytime I want and not have to remember every step of the process
+You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ that has all the commands it took to get here, then I can use that program_ to make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` anytime I want and not have to remember every step of the process
 
 =================================================================================
 how to make a PowerShell script
 =================================================================================
 
-* I use `New-Item`_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a `Test Driven Development`_ environment for me
+* I use `New-Item`_ to make an empty file_ with a name that is easy to remember later and describes the program_ that will automatically make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for me
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -1182,7 +1182,7 @@ how to view all the commands I typed in a terminal on Windows without WSL
     New-Item makePythonTdd.ps1
     tree /F
 
-  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
+  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for me
 
 * I open ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I used to make the ``magic`` project to the file_
 
@@ -1411,7 +1411,7 @@ how to run a PowerShell script
     │   └── .venv
     └── makePythonTdd.sh
 
-  the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
+  the program_ works and can reliably make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
 
 --------------------------------------------------------------------------------------------
 how to use a variable in a PowerShell script
@@ -1716,7 +1716,7 @@ Time to use a variable_ for the name of the project
         ├── tests
         └── .venv
 
-* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.ps1`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
+* I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd.ps1`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -1741,7 +1741,7 @@ Time to use a variable_ for the name of the project
     FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
-  the computer makes a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError`
+  the computer makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`assertion_error<AssertionError>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError`
 
 ----
 
@@ -1749,7 +1749,7 @@ Time to use a variable_ for the name of the project
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.ps1>` to do it for you on any Windows_ computer without `Windows Subsystem for Linux`_.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`, and have a :ref:`program<makePythonTdd.ps1>` to do it for you on any Windows_ computer without `Windows Subsystem for Linux`_.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux>`
 

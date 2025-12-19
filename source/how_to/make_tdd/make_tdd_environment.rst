@@ -1208,7 +1208,7 @@ how to deactivate a virtual environment
 review
 ********************************************************************************************
 
-I gave the computer some commands to make a Python_ `Test Driven Development`_ environment. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
+I gave the computer some commands to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
 
 =================================================================================
 how to view all the commands I typed in a terminal
@@ -1276,9 +1276,9 @@ how to view all the commands I typed in a terminal
     touch makePythonTdd.sh
     tree -a -L 2
 
-  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ `Test Driven Development`_ environment for me
+  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for me
 
-* these are the commands I used to help make a Python_ `Test Driven Development`_ environment
+* these are the commands I used to help make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
 
   .. code-block:: shell
 
@@ -1298,7 +1298,7 @@ how to view all the commands I typed in a terminal
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
-* these are the steps I took to make a Python_ `Test Driven Development`_ environment
+* these are the steps I took to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
 
   - pick a name for the project
   - :ref:`make a directory for the project<how to make a directory for the project>`
@@ -1328,7 +1328,7 @@ how to view all the commands I typed in a terminal
 what is next?
 *********************************************************************************
 
-You have seen me make a `Test Driven Development`_ environment for a project called ``magic`` on any Linux_, Windows_ with `Windows Subsystem for Linux`_ or MacOS_ computers. Would you like to :ref:`test AssertionError next?<AssertionError>`
+You have seen me make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Linux_, Windows_ with `Windows Subsystem for Linux`_ or MacOS_ computers. Would you like to :ref:`test AssertionError next?<AssertionError>`
 
 -----
 
