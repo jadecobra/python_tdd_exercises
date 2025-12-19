@@ -192,7 +192,11 @@ I ran a test for ModuleNotFoundError_ to practice making Python_ modules_
 
 ----
 
-:ref:`Click Here for the code I wrote in this chapter<ModuleNotFoundError: test>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<ModuleNotFoundError: test>`
 
 ----
 

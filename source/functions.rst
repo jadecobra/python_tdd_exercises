@@ -1809,7 +1809,11 @@ as a reminder
 
 ----
 
-:ref:`Click Here to see the code from this chapter<functions: tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<functions: tests and solutions>`
 
 ----
 
@@ -1823,7 +1827,7 @@ you have covered a bit so far and know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>` and
 * :ref:`how to write functions<functions>`
 
-Would you like to :ref:`test how to pass values from tests to functions with assert methods?<how to pass values>`
+:ref:`Would you like to test how to pass values from tests to functions with assert methods?<how to pass values>`
 
 ----
 

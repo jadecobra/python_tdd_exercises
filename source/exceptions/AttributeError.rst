@@ -858,7 +858,11 @@ I also ran into the following :ref:`Exceptions<errors>`
 
 ----
 
-:ref:`Click here to see the code I typed in this chapter<AttributeError: tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<AttributeError: tests and solutions>`
 
 ----
 

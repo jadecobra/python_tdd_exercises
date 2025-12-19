@@ -1160,7 +1160,11 @@ I have a way to catch :ref:`Exceptions<errors>` in tests and tested the followin
 
 ----
 
-:ref:`Click Here to see the code from this chapter<how to handle Exceptions (Errors): tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to handle Exceptions (Errors): tests and solutions>`
 
 ----
 

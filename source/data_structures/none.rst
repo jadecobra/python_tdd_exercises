@@ -1958,7 +1958,11 @@ I also showed the basic Python_ :ref:`data structures`
 
 ----
 
-:ref:`Click Here for the code from this chapter<data structures: None: tests>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: None: tests>`
 
 ----
 

@@ -1692,5 +1692,3 @@ please leave a review
     <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 5 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->
-
-----

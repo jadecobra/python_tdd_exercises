@@ -318,7 +318,11 @@ review
 
 ----
 
-:ref:`Click Here to see the code for the program to make a Python Test Driven Development environment for any Linux or MacOS computers<makePythonTdd.sh>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<makePythonTdd.sh>`
 
 ----
 

@@ -1670,7 +1670,15 @@ for a total of 6 `assert methods`_ I can use when testing
 
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 
------
+----
+
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<AssertionError: tests>
+
+----
 
 *********************************************************************************
 what is next?

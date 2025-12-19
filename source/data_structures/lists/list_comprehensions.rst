@@ -1105,7 +1105,11 @@ I can also do this with :ref:`dictionaries`, it is called a dict comprehension a
 
 ----
 
-:ref:`Click Here for the code from this chapter<data structures: list comprehensions: tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: list comprehensions: tests and solutions>`
 
 ----
 

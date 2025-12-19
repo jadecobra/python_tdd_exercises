@@ -1591,7 +1591,11 @@ I also ran into the following :ref:`Exceptions<errors>`
 
 ----
 
-:ref:`Click Here to see the code from this chapter<how to make a calculator: tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator: tests and solutions>`
 
 ----
 

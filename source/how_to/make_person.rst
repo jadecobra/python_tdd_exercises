@@ -2142,7 +2142,11 @@ I also ran into the following :ref:`Exceptions<errors>`
 
 ----
 
-:ref:`Click Here to see the code from this chapter<how to make a person: tests and solution>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a person: tests and solution>`
 
 ----
 

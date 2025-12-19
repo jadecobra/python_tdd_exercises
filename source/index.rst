@@ -98,6 +98,12 @@ table of contents
   review
   reviews
 
+----
+
+`Check out what people have said about the book on TrustPilot <https://www.trustpilot.com/review/pumpingpython.com>`_
+
+----
+
 *********************************************************************************
 music
 *********************************************************************************

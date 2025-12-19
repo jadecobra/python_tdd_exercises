@@ -565,7 +565,11 @@ I ran tests to show how to cause any :ref:`Exceptions<errors>`, and catch or han
 
 ----
 
-:ref:`Click Here to see the code from this chapter<how to handle Exceptions (Errors): tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to handle Exceptions (Errors): tests and solutions>`
 
 ----
 

@@ -887,7 +887,11 @@ the tests show
 
 ----
 
-:ref:`Click Here to see the code from this chapter<classes: tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
 
 ----
 

@@ -1467,7 +1467,11 @@ Would you like to :ref:`test Lists?<lists>`
 
 ----
 
-:ref:`Click Here for the code I typed in this Chapter<TypeError: tests and solution>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<TypeError: tests and solution>`
 
 ----
 

@@ -2280,7 +2280,11 @@ I ran tests to show that I can make a list_ with the constructor_ or square brac
 
 ----
 
-:ref:`Click Here for the code from this chapter<data structures: lists: tests>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: lists: tests>`
 
 ----
 

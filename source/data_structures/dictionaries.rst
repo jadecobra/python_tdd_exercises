@@ -3137,7 +3137,11 @@ Would you like to :ref:`test How to make a Person?<how to make a person>`
 
 ----
 
-:ref:`Click Here for the code from this chapter<data structures: dictionaries: tests>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: dictionaries: tests>`
 
 ----
 

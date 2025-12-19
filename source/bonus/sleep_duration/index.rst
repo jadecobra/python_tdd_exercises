@@ -21,4 +21,8 @@ The following tests help write a program_ that calculates the difference between
 
 ----
 
-:ref:`Click Here to see the code from this chapter<how to measure sleep duration: tests and solution>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to measure sleep duration: tests and solution>`
