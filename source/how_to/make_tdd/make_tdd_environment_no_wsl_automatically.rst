@@ -119,7 +119,7 @@ how to make a PowerShell script
 
   .. code-block:: PowerShell
     :lineno-start: 8
-    :emphasize-lines: 1-11
+    :emphasize-lines: 1-12
 
     "import unittest
 

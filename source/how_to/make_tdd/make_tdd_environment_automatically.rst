@@ -125,7 +125,7 @@ how to make a shell script
 
   .. code-block:: shell
     :lineno-start: 9
-    :emphasize-lines: 1-11
+    :emphasize-lines: 1-12
 
     echo "import unittest
 

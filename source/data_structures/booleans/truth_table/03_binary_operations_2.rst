@@ -28,7 +28,7 @@ how to get back to the automated tests
 
 If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations part 1>`, heres's how to get back to the tests
 
-* Make sure you are in the ``pumping_python`` folder_ with pwd_
+* Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
