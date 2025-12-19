@@ -14,6 +14,12 @@ Here are a few exercises that get you up and running in Python right now, they b
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=zvJLrMw7HQQmS8SI&amp;list=PL5lANtH-CROBGwVZryCOovtR4RYSurpSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+----
+
+*********************************************************************************
+the chapters
+*********************************************************************************
+
 .. toctree::
   :titlesonly:
 
@@ -26,6 +32,10 @@ Here are a few exercises that get you up and running in Python right now, they b
 
 ----
 
+*********************************************************************************
+code from the chapters
+*********************************************************************************
+
 Here is the code you will have at the end of the above chapters
 
 * :ref:`makePythonTdd.sh`
@@ -35,3 +45,13 @@ Here is the code you will have at the end of the above chapters
 * :ref:`how to measure sleep duration: tests and solution`
 * :ref:`how to pass values: tests and solution`
 * :ref:`how to handle Exceptions (Errors): tests and solutions`
+
+----
+
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+:ref:`Would you like to see me make a Python Test Driven Development environment?<how to make a test driven development environment>`
+
+----

@@ -23,4 +23,4 @@ The following chapters test Python_ basic data structures/types, which are a way
 
 ----
 
-Would you like to :ref:`test None: the simplest data structure?<None>`
+:ref:`Would you like to test None: the simplest data structure?<None>`

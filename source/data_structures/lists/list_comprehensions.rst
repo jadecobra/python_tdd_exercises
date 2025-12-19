@@ -1129,14 +1129,18 @@ you know
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<lists: list comprehensions>`
 
-Would you like to :ref:`test making a person?<how to make a person>`
+:ref:`Would you like to test making a person?<how to make a person>`
 
 -----
+
+*********************************************************************************
+please leave a review
+*********************************************************************************
 
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">Click Here to leave a 5 star review on TrustPilot, if you found this helpful</a>
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 5 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->

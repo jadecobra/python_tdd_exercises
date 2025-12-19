@@ -321,7 +321,11 @@ truth table operations
 
 ----
 
-:ref:`Click here for the tests and solutions from the Truth Table chapters<truth table: tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed for the Truth Table?<truth table: tests and solutions>`
 
 ----
 
@@ -329,4 +333,6 @@ truth table operations
 what is next?
 *********************************************************************************
 
-Would you like to :ref:`test Nullary and Unary Operations?<truth table: Nullary and Unary Operations>`
+:ref:`Would you like to test Nullary and Unary Operations?<truth table: Nullary and Unary Operations>`
+
+----

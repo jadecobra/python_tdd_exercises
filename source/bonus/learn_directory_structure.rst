@@ -33,6 +33,15 @@ I will build the structure below step by step to see how files_ and folders_ are
           ├── another_grandchild_of_parent
           └── cousin_of_child_of_child
 
+You will become familiar with these commands
+
+* mkdir_
+* cd_
+* ls_
+* tree_
+* touch_
+* rm_
+
 *********************************************************************************
 questions about directory structure
 *********************************************************************************
@@ -1654,18 +1663,34 @@ I ran the following commands to play with `folder (directory)`_ structure
 
 :ref:`How many questions can you answer after going through this chapter?<questions about Directory Structure>`
 
-:ref:`Are you ready to see me make a Test Driven Development Environment<how to make a test driven development environment>`
+----
+
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<learnDirectoryStructure.sh>`
 
 ----
 
-:ref:`Click here to see all the code I typed in this chapter<learnDirectoryStructure.sh>`
+*************************************************************************************
+what is next?
+*************************************************************************************
+
+:ref:`Would you like to see me make a Test Driven Development Environment<how to make a test driven development environment>`
 
 ----
+
+*********************************************************************************
+please leave a review
+*********************************************************************************
 
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">Click Here to leave a 5 star review on TrustPilot, if you found this helpful</a>
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 5 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->
+
+----

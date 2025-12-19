@@ -8,6 +8,10 @@ This is one way to install `Windows Subsystem for Linux`_ on a Windows computer 
 
 ----
 
+*********************************************************************************
+install Windows Subsystem for Linux
+*********************************************************************************
+
 Make sure your computer runs `Windows 11`_. If you cannot upgrade to `Windows 11`_, still try the steps below, if they do not work skip to :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
 
 As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/Windows/end-of-support?r=1>`_
@@ -91,10 +95,19 @@ If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`ho
 
 ----
 
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+:ref:`Would you like to see me make a Python Test Driven Development environment?<how to make a Python Test Driven Development environment manually>`
+
+----
+
+
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">Click Here to leave a 5 star review on TrustPilot, if you found this helpful</a>
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 5 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->

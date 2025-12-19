@@ -2021,11 +2021,13 @@ and
 
 All the logic statements or conditions have been written with some or all of the above 3.
 
-Would you like to :ref:`test functions?<functions>`
-
 ----
 
-:ref:`Click Here for the code for the Truth Table tests and solutions<truth table: tests and solutions>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed for the Truth Table?<truth table: tests and solutions>`
 
 ----
 
@@ -2043,14 +2045,18 @@ you now know
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 
-Would you like to :ref:`test making a calculator?<how to make a calculator>`
+:ref:`Would you like to test making a calculator?<how to make a calculator>`
 
 ----
+
+*********************************************************************************
+please leave a review
+*********************************************************************************
 
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">Click Here to leave a 5 star review on TrustPilot, if you found this helpful</a>
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 5 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->

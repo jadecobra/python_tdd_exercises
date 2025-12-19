@@ -1794,7 +1794,11 @@ these things come in handy when I write :ref:`conditions<if statements (conditio
 
 ----
 
-:ref:`Click Here to see the code I wrote in this chapter<data structures: booleans: tests>`
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: booleans: tests>`
 
 ----
 
@@ -1811,14 +1815,18 @@ you now know
 * :ref:`what None is<None>`
 * :ref:`what is True and False in Python<booleans>`
 
-Would you like to :ref:`test the truth table?<booleans: truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements (conditionals)>`
+:ref:`Would you like to test the truth table?<booleans: truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements (conditionals)>`
 
 ----
+
+*********************************************************************************
+please leave a review
+*********************************************************************************
 
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">Click Here to leave a 5 star review on TrustPilot, if you found this helpful</a>
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 5 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->

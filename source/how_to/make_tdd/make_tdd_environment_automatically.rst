@@ -340,6 +340,42 @@ the program_ works and can make a Python_ :ref:`Test Driven Development environm
 
 ----
 
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close the ``test_more_magic.py`` in the :ref:`editor<2 editors>` I had open
+* I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/more_magic
+
+* I `change directory`_ to the parent of ``more_magic``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+----
+
 ********************************************************************************************
 review
 ********************************************************************************************
@@ -374,10 +410,14 @@ Here is what we have gone through together so far
 
 -----
 
+*********************************************************************************
+please leave a review
+*********************************************************************************
+
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">Click Here to leave a 5 star review on TrustPilot, if you found this helpful</a>
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 5 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->
