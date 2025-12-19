@@ -51,125 +51,36 @@ requirements
 * I pick ``exceptions`` as the name of this project
 * I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` with `Visual Studio Code`_
+  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
     .. code-block:: shell
       :emphasize-lines: 1
 
       code makePythonTdd.sh
 
-    on `Windows`_ without `Windows Subsystem for Linux`_
-
-    .. code-block:: python
-
-
-* I `change directory`_ to the project
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd exceptions
-
-  the terminal_ shows I am now in the ``exceptions`` folder_
-
-  .. code-block:: shell
-
-    .../pumping_python/exceptions
-
-* I `make a folder`_ for the source code
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line
-
-  .. code-block:: shell
-
-    .../pumping_python/exceptions
-
-* I use touch_ to make an empty file_ for the program_ in the ``src`` folder_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch src/exceptions.py
-
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item src/exceptions.py`` instead of ``touch src/exceptions.py``
+    on `Windows`_ without `Windows Subsystem for Linux` use
 
     .. code-block:: shell
       :emphasize-lines: 1
 
-      New-Item src/exceptions.py
+      code makePythonTdd.ps1
 
-  the terminal_ goes back to the command line
-
-  .. code-block:: shell
-
-    .../pumping_python/exceptions
-
-* I `make a directory`_ for the tests
+* I change everywhere I have ``more_magic`` in ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` to the name of this project
 
   .. code-block:: shell
-    :emphasize-lines: 1
+    :linenos:
+    :emphasize-lines: 2,3, 5, 12, 20
+    :emphasize-text: exceptions, Exceptions
 
+    #!/bin/bash
+    mkdir exceptions
+    cd exceptions
+    mkdir src
+    touch src/exceptions.py
     mkdir tests
-
-  the terminal_ goes back to the command line
-
-* I use touch_ to make an empty file_ in the ``tests`` folder_ to tell Python_ that it is a `Python package`_
-
-  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
     touch tests/__init__.py
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      New-Item tests/__init__.py
-
-  the terminal_ goes back to the command line
-
-* I make an empty file_ for the actual test
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch tests/test_exceptions.py
-
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/test_exceptions.py`` instead of ``touch tests/test_exceptions.py``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      New-Item tests/test_exceptions.py
-
-  the terminal_ goes back to the command line
-
-* I click on ``test_exceptions.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
-
-  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_ with
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      code tests/test_exceptions.py
-
-  ``test_exceptions.py`` opens up in the :ref:`editor<2 editors>`
-
-* I add :ref:`the first failing test<test_failure>` to ``test_exceptions.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-11
-
-    import unittest
+    echo "import unittest
 
 
     class TestExceptions(unittest.TestCase):
@@ -180,91 +91,30 @@ requirements
 
     # Exceptions Encountered
     # AssertionError
+    " > tests/test_exceptions.py
 
-* I make a `virtual environment`_
+* I run the program_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    python3 -m venv .venv
+    ./makePythonTdd.sh
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
 
     .. code-block:: shell
       :emphasize-lines: 1
 
-      python -m venv .venv
+      ./makePythonTdd.ps1
 
-  the terminal_ takes some time then goes back to the command line
-
-* I activate the `virtual environment`_
+  the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
-    :emphasize-lines: 1
+    :emphasize-lines: 10
+    :emphasize-text: tests/test_exceptions.py:7
 
-    source .venv/bin/activate
-
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/exceptions
-
-* I upgrade the `Python package manager (pip)`_ to the latest version
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m pip install --upgrade pip
-
-  the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
-
-* I make a ``requirements.txt`` file for the `Python programs`_ my project needs
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    echo "pytest-watch" > requirements.txt
-
-  the terminal_ goes back to the command line
-
-* I use pip_ to use the requirements file_ to install ``pytest-watch``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m pip install --requirement requirements.txt
-
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      python -m pip install --requirement requirements.txt
-
-  the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
-
-* I run the tests
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    pytest-watch
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 8, 10
-
-    ================================ FAILURES ================================
-    _____________________ TestExceptions.test_failure ________________________
+    ======================================= FAILURES =======================================
+    _____________________________ TestExceptions.test_failure ______________________________
 
     self = <tests.test_exceptions.TestExceptions testMethod=test_failure>
 
@@ -273,9 +123,9 @@ requirements
     E       AssertionError: True is not false
 
     tests/test_exceptions.py:7: AssertionError
-    ======================== short test summary info =========================
-    FAILED tests/test_exceptions.py::TestExceptions::test_failure - AssertionError: True is not false
-    =========================== 1 failed in X.YZs ============================
+    =============================== short test summary info ================================
+    FAILED tests/test_exceptions.py::TestMagic::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_exceptions.py``
@@ -298,31 +148,33 @@ test_catching_module_not_found_error_in_tests
 :red:`RED`: make it fail
 =================================================================================
 
-* I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_
+I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_ in ``test_exceptions.py``
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-7
+.. code-block:: python
+  :lineno-start:
+  :emphasize-lines: 3-4
 
-    import unittest
+  class TestExceptions(unittest.TestCase):
+
+      def test_catching_module_not_found_error_in_tests(self):
+          import does_not_exist
 
 
-    class TestExceptions(unittest.TestCase):
+  # Exceptions Encountered
 
-        def test_catching_module_not_found_error_in_tests(self):
-            import does_not_exist
+the terminal_ shows :ref:`ModuleNotFoundError`
 
-  the terminal_ shows :ref:`ModuleNotFoundError`
+.. code-block:: shell
 
-  .. code-block:: shell
+  ModuleNotFoundError: No module named 'does_not_exist'
 
-    ModuleNotFoundError: No module named 'does_not_exist'
+I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref:`module<ModuleNotFoundError>` is any file_ that ends in ``.py``
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
+* I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -332,7 +184,7 @@ test_catching_module_not_found_error_in_tests
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` in the ``src`` `folder (directory)`_ to solve the problem but I want to catch/handle it in the test to show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file does NOT exist. I add the `assertRaises method`_ which checks that the code below it the :ref:`Exception<errors>` it is given
+* I can make ``does_not_exist.py`` in the ``src`` `folder (directory)`_ to solve the problem but I want to catch/handle it in the test. This way I can show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file does NOT exist. I add the `assertRaises method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -342,7 +194,9 @@ test_catching_module_not_found_error_in_tests
             with self.assertRaises(ModuleNotFoundError):
                 import does_not_exist
 
-  the test passes
+  the test passes.
+
+assertRaises_ checks that the code in its context, raises the :ref:`Exception<errors>` it is given in parentheses
 
 ----
 
@@ -400,7 +254,7 @@ I add assertRaises_
             with self.assertRaises(NameError):
                 does_not_exist
 
-the test passes
+the test passes, showing that the failing line raises NameError_
 
 ----
 
@@ -446,9 +300,15 @@ test_catching_attribute_error_in_tests
 
     AttributeError: module 'src.exceptions' has no attribute 'does_not_exist'
 
-  because I tried to get something that does NOT exist from something that exists
+  ``src.exceptions.does_not_exist`` is like an address
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
+  - ``src`` is the ``src`` folder_
+  - ``exceptions`` is ``exceptions.py`` in the ``src`` folder_
+  - ``src.exceptions.does_not_exist`` is pointing to something named ``does_not_exist`` in ``exceptions.py`` in the ``src`` folder_
+
+  the failure happened because Python_ cannot find ``does_not_exist`` in ``exceptions.py`` in the ``src`` folder_. tried to get something that does NOT exist from something that exists
+
+* I add the :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 19
