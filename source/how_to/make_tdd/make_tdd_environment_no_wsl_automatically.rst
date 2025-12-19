@@ -41,7 +41,7 @@ I want to give one command for the program to do every step except
 
 * pick the name for the project
 * make the test pass and
-* work on the project, though I can now use what is currently popularly called `Artificial Intelligence`_ to help with this
+* work on the project, though I can now use an `Artificial Intelligence Large Language Model`_ to help with this
 
 this way I only need to do 3 steps instead of 18
 
@@ -205,7 +205,7 @@ how to run a PowerShell script
 
     ...\pumping_python >
 
-* I want to use ``makePythonTdd.ps1`` to make another project with a different name. I change ``magic`` to the name of the new project in the :ref:`editor<2 editors>`
+* I want to use ``makePythonTdd.ps1`` to make another project with a different name. I change ``magic_again`` to the name of the new project in the :ref:`editor<2 editors>`
 
   .. NOTE:: The lines that are changing in the code are highlighted
 
@@ -213,17 +213,17 @@ how to run a PowerShell script
     :linenos:
     :emphasize-lines: 1, 2, 4, 11, 19
 
-    mkdir magic_again
-    cd magic_again
+    mkdir more_magic
+    cd more_magic
     mkdir src
-    touch src/magic_again.py
+    touch src/more_magic.py
     mkdir tests
     touch tests/__init__.py
 
     "import unittest
 
 
-    class TestMagicAgain(unittest.TestCase):
+    class TestMoreMagic(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
@@ -231,7 +231,7 @@ how to run a PowerShell script
 
     # Exceptions Encountered
     # AssertionError
-    " | Out-File "tests/test_magic_again.py" - Encoding UTF8
+    " | Out-File "tests/test_more_magic.py" - Encoding UTF8
 
     python3 -m venv .venv
     source .venv/bin/activate
@@ -240,7 +240,7 @@ how to run a PowerShell script
     python3 -m pip install --requirement requirements.txt
     pytest-watch
 
-* I run ``makePythonTdd.ps1`` in the terminal_ to make a project named ``magic_again``
+* I run ``makePythonTdd.ps1`` in the terminal_ to make a project named ``more_magic``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -253,286 +253,9 @@ how to run a PowerShell script
     :emphasize-lines: 10
 
     ======================================= FAILURES =======================================
-    _____________________________ TestMagicAgain.test_failure ______________________________
+    _____________________________ TestMoreMagic.test_failure ______________________________
 
-    self = <tests.test_magic.TestMagicAgain testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_magic_again.py:7: AssertionError
-    =============================== short test summary info ================================
-    FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
-
-  I make the test pass
-
-* I hit :kbd:`ctrl+c` to exit the tests in the terminal_
-* I run tree_ to see what I have in ``pumping_python`` now
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree /F
-
-  the terminal_ shows
-
-  .. code-block::
-    :emphasize-lines: 22-41
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    └── makePythonTdd.sh
-
-  the program_ works and can reliably make a Python_ `Test Driven Development`_ environment the way I want it, but there is a problem
-
---------------------------------------------------------------------------------------------
-how to use a variable in a PowerShell script
---------------------------------------------------------------------------------------------
-
-I changed ``magic`` to ``magic_again`` in 5 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
-
-- the project folder_
-- the file_ for the program_ in the ``src`` folder_
-- the file_ for the test in the ``tests`` folder_
-- the :ref:`test class<classes>` in the test file_
-- the `virtual environment`_ in the ``.venv`` folder_
-
-The program_ should always make this structure
-
-.. code-block:: shell
-
-  PROJECT_NAME
-  ├── requirements.txt
-  ├── src
-  │   └── PROJECT_NAME.py
-  ├── tests
-  │   ├── __init__.py
-  │   └── test_PROJECT_NAME.py
-  └── .venv
-
-Time to use a variable_ for the name of the project
-
-* I add a name to represent any project name that I give to ``makePythonTdd.ps1`` when I want it to make a project
-
-  .. code-block:: PowerShell
-    :linenos:
-    :emphasize-lines: 1
-
-    $PROJECT_NAME="magic_again"
-    mkdir magic_again
-    cd magic_again
-    mkdir src
-    touch src/magic_again.py
-    mkdir tests
-    touch tests/__init__.py
-
-    "import unittest
-
-
-    class TestMagicAgain(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions Encountered
-    # AssertionError
-    " | Out-File "tests/test_magic_again.py" - Encoding UTF8
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    "pytest-watch" | Out-File requirements.txt -Encoding UTF 8
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
-
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example, we use the word ``woman`` to represent any woman, ``man`` to represent any man, ``child`` to represent any child, and ``parent`` to represent anyone with a child. In this case I use ``$PROJECT_NAME`` to represent any name of a project
-
-* I change every where I have ``magic_again`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
-
-  .. NOTE:: The lines that are changing in the code are highlighted
-
-  .. code-block:: shell
-    :linenos:
-    :emphasize-lines: 2-3, 5, 12, 20
-
-    $PROJECT_NAME="magic_again"
-    mkdir $PROJECT_NAME
-    cd $PROJECT_NAME
-    mkdir src
-    touch src/$PROJECT_NAME.py
-    mkdir tests
-    touch tests/__init__.py
-
-    "import unittest
-
-
-    class Test$PROJECT_NAME(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions Encountered
-    # AssertionError
-    " | Out-File "tests/test_$PROJECT_NAME.py" - Encoding UTF8
-
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    "pytest-watch" | Out-File requirements.txt -Encoding UTF 8
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
-
-* I run the program_ again in the terminal_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.ps1
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 2, 4, 10, 12
-
-    ======================================= FAILURES =======================================
-    ____________________________ Testmagic_again.test_failure ______________________________
-
-    self = <tests.test_magic.Testmagic_again testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_magic_again.py:7: AssertionError
-    =============================== short test summary info ================================
-    FAILED tests/test_magic_again.py::Testmagic_again::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
-
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_magic_again.py`` to make the test pass
-
-* I hit :kbd:`ctrl+c` in the terminal to stop the test
-* I deactivate the `virtual environment`_
-
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line
-
-* I leave the ``magic_again`` folder to go back to the ``pumping_python`` folder_
-
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: PowerShell
-
-    ...\pumping_python
-
-* I run tree_ to see what I have in the ``pumping_python`` folder_ now
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree /F
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 8-13
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    └── makePythonTdd.sh
-
-* The program_ works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file to give it the project name. I want to be able to just call the program_ and give it a name for the project from the command line. I can do this with ``$args[0]`` in PowerShell_, it represents the first argument given when a program_ is called. For example,
-
-  .. code-block:: PowerShell
-
-    command argument
-
-  in the code above, :kbd:`command` will be ``makePythonTdd.ps1`` and ``$args[0]`` will be ``argument`` or whatever name I give.
-
-  Here are a few other examples
-
-  .. code-block:: PowerShell
-
-    mkdir name_of_folder
-
-  ``mkdir`` is the command, and ``$args[0]`` is ``name_of_folder``
-
-  .. code-block:: PowerShell
-
-    New-Item name_of_file
-
-  ``New-Item`` is the command, and ``$args[0]`` is ``name_of_file``
-
-  .. code-block:: PowerShell
-
-    echo "anything"
-
-  ``echo`` is the command, and ``$args[0]`` is ``"anything"``
-
-  .. code-block:: PowerShell
-
-    tree /F
-
-  ``tree`` is the command and ``$args[0]`` is ``/F``
-
-* I change ``magic_again`` to ``$args[0]`` in ``makePythonTdd.ps1``
-
-  .. code-block:: shell
-    :lineno-start: 1
-    :emphasize-lines: 1
-
-    $PROJECT_NAME=$args[0]
-
-* I try the program_ again, this time with a different name for the project in the terminal_
-
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.ps1 more_magic
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 10
-
-    ======================================= FAILURES =======================================
-    _____________________________ Testmore_magic.test_failure ______________________________
-
-    self = <tests.test_more_magic.Testmore_magic testMethod=test_failure>
+    self = <tests.test_more_magic.TestMoreMagic testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
@@ -540,93 +263,14 @@ Time to use a variable_ for the name of the project
 
     tests/test_more_magic.py:7: AssertionError
     =============================== short test summary info ================================
-    FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
-    ================================== 1 failed in 0.04s ===================================
+    FAILED tests/test_more_magic.py::TestMoreMagic::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
 
-* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_more_magic.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
+  I make the test pass
 
-* I use :kbd:`ctrl+c` on the keyboard in the terminal_ to stop the tests
-* I deactivate the `virtual environment`_
+* I hit :kbd:`ctrl+c` to exit the tests in the terminal_
 
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line
-
-* I leave the ``more_magic`` folder to go back to the ``pumping_python`` folder_
-
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: PowerShell
-
-    ...\pumping_python >
-
-* I run tree_ to see what I have in the ``pumping_python`` folder_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree /F
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 15-20
-
-    .
-    ├── magic
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── makePythonTdd.sh
-    └── more_magic
-        ├── .pytest_cache
-        ├── requirements.txt
-        ├── src
-        ├── tests
-        └── .venv
-
-* I can now make a `Test Driven Development`_ environment with ``makePythonTdd.ps1`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
-
-  .. code-block:: PowerShell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.ps1 assertion_error
-
-  the terminal_ shows
-
-  .. code-block:: PowerShell
-
-    ====================================== FAILURES =======================================
-    __________________________ Testassertion_error.test_failure ___________________________
-
-    self = <tests.test_assertion_error.Testassertion_error testMethod=test_failure>
-
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_assertion_error.py:7: AssertionError
-    =============================== short test summary info ===============================
-    FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ==================================
-
-  the computer makes a `Test Driven Development`_ environment for a project called :ref:`assertion_error<AssertionError>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError`
+the program_ works and can make a Python_ `Test Driven Development`_ environment automatically the way I want every time
 
 ----
 
@@ -634,17 +278,35 @@ Time to use a variable_ for the name of the project
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, and have a :ref:`program<makePythonTdd.ps1>` to do it for you on any Windows_ computer without `Windows Subsystem for Linux`_.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way I can make a Python_ `Test Driven Development`_ Environment, with a :ref:`program<makePythonTdd.ps1>` to do it on any Windows_ computer without `Windows Subsystem for Linux`_.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux>`
-
-Would you like to :ref:`test AssertionError?<AssertionError>`
 
 ----
 
 :ref:`Click Here to see the code for the program to make a Python Test Driven Development environment for any Linux or MacOS computers<makePythonTdd.ps1>`
 
 ----
+
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+Here is what we have gone through together so far
+
+* :ref:`how to make a test driven development environment`
+* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to write functions<functions>`
+* :ref:`how to pass values from tests to functions<how to pass values>`
+* :ref:`what is None and NOT None<None>`
+* :ref:`what is True and False in Python<booleans>`
+* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsytem for Linux`
+
+:ref:`Would you like to use makePythonTdd.ps1 to make a Python Test Driven Development environment to test that an Exception is raised?<how to test that an Exception is raised>`
+
+-----
 
 .. raw:: html
 

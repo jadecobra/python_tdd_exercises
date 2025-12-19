@@ -85,10 +85,11 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
 .. toctree::
   :titlesonly:
 
-  self
   make_tdd_environment
+  make_tdd_environment_automatically
   install_wsl
   make_tdd_environment_no_wsl
+  make_tdd_environment_no_wsl_automatically
 
 they cover the following
 

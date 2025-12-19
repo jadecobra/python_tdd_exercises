@@ -41,7 +41,7 @@ I want to give one command for the program to do every step except
 
 * pick the name for the project
 * make the test pass and
-* work on the project, though I can now use what is currently popularly called `Artifical Intelligence`_ to help with this
+* work on the project, though I can now use an `Artificial Intelligence Large Language Model`_ to help with this
 
 this way I only need to do 3 steps instead of 18
 
@@ -343,7 +343,7 @@ how to make a shell script run as a command
 
 * I hit :kbd:`ctrl+c` to exit the tests in the terminal_
 
-the program_ works and can automatically make a Python_ `Test Driven Development`_ environment the way I want every time
+the program_ works and can make a Python_ `Test Driven Development`_ environment automatically the way I want every time
 
 ----
 
@@ -351,7 +351,7 @@ the program_ works and can automatically make a Python_ `Test Driven Development
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ `Test Driven Development`_ Environment, with a :ref:`program<makePythonTdd.sh>` to do it on any Linux_, Windows_ or MacOS_ computers.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way I can make a Python_ `Test Driven Development`_ Environment, with a :ref:`program<makePythonTdd.sh>` to do it on any Linux_, Windows_ or MacOS_ computers.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 
@@ -377,7 +377,7 @@ Here is what we have gone through together so far
 * :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to make a Python Test Driven Development environment automatically`
 
-:ref:`Would you like use makePythonTdd.sh to make a Python Test Driven Development environment to test that an Exceptions is raised?<how to test that an Exception is raised>`
+:ref:`Would you like to use makePythonTdd.sh to make a Python Test Driven Development environment to test that an Exception is raised?<how to test that an Exception is raised>`
 
 -----
 
