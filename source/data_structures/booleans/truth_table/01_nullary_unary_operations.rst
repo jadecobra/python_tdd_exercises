@@ -438,7 +438,7 @@ the test passes
 
   the test fails for the line that passed before
 
-* I make the :ref:`function<functions>` return its input
+* I make the :ref:`function<functions>` return its input, remember the :ref:`identity function<test_identity_function>`
 
   .. code-block:: python
     :lineno-start: 13

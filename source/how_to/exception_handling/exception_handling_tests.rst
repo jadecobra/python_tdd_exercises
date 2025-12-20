@@ -24,6 +24,7 @@ Here are the tests I have by the end of the chapter
 .. literalinclude:: ../../code/tests/test_exceptions.py
   :language: python
   :linenos:
+  :lines: 1-40
 
 ----
 
@@ -870,7 +871,7 @@ test_catching_exceptions_in_tests
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the `assertRaises method` to catch it
+I add the `assertRaises method`_ to catch it
 
 .. code-block:: python
   :lineno-start: 38
@@ -879,6 +880,9 @@ I add the `assertRaises method` to catch it
       def test_catching_exceptions_in_tests(self):
           with self.assertRaises(Exception):
               raise Exception
+
+
+  # Exceptions Encountered
 
 the terminal_ shows all tests are passing. The `assertRaises method`_ checks that the code under it raises the :ref:`Exception<errors>` it is given in parentheses
 
@@ -937,6 +941,7 @@ the terminal_ shows all tests are passing. The `assertRaises method`_ checks tha
   because it is not :ref:`ModuleNotFoundError` even though they are both :ref:`Exceptions<errors>`. I undo the change
 
   .. code-block:: python
+    :lineno-start: 30
     :emphasize-lines: 2
 
         def test_catching_key_error_in_tests(self):
@@ -1062,7 +1067,7 @@ I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested t
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError<test_key_error>`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` and
-* :ref:`The Mother of all Exceptions<test_catching_>`
+* :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
 
 ----
 

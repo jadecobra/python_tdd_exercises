@@ -1570,7 +1570,7 @@ the terminal_ shows :ref:`AttributeError`
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* ``*args, **kwargs`` is Python_ convention. I change the names to be more descriptive
+* ``*args, **kwargs`` is Python_ convention. I change the names to be clearer
 
   .. code-block:: python
     :lineno-start: 37
@@ -1581,7 +1581,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the test is still green
 
-* I want the function_ to return its input, I change the `return statement`_
+* I want the function_ to return its input, remember the :ref:`identity function<test_identity_function>`, I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 37

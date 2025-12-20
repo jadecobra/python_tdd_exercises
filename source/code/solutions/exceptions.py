@@ -3,7 +3,7 @@ def function_name():
 
 
 def raise_exception():
-    raise Exception('BOOM!')
+    raise Exception('BOOM!!!')
 
 
 def does_not_raise_exception():

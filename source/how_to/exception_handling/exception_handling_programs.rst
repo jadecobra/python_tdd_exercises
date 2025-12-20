@@ -100,7 +100,7 @@ test_catching_exceptions_w_messages
 
   the test passes
 
-* I want the :ref:`function<functions>` to raise an :ref:`Exception<errors>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
+* I want the :ref:`function<functions>` to raise :ref:`Exception<errors>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 42
@@ -135,7 +135,7 @@ test_catching_exceptions_w_messages
 
         def test_catching_exceptions_w_messages(self):
             with self.assertRaisesRegex(
-                Exception, 'BOOM!'
+                Exception, 'BOOM!!!'
             ):
                 src.exceptions.raise_exception()
 
@@ -143,9 +143,9 @@ test_catching_exceptions_w_messages
 
   .. code-block:: shell
 
-    AssertionError: "BOOM!" does not match ""
+    AssertionError: "BOOM!!!" does not match ""
 
-  the `assertRaisesRegex method`_ checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. The default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the test expects ``"BOOM!"``
+  the `assertRaisesRegex method`_ checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. The default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the test expects ``"BOOM!!!"``
 
 * the :ref:`Exception<errors>` is right, the message is not, I add the expected message in ``exceptions.py``
 
@@ -154,7 +154,7 @@ test_catching_exceptions_w_messages
     :emphasize-lines: 2
 
     def raise_exception():
-        raise Exception('BOOM!')
+        raise Exception('BOOM!!!')
 
   the test passes. Time to add an :ref:`Exception<errors>` to the program
 
@@ -176,7 +176,7 @@ I add a new failing test in ``test_exceptions.py``
 
         def test_catching_exceptions_w_messages(self):
             with self.assertRaisesRegex(
-                Exception, 'BOOM!'
+                Exception, 'BOOM!!!'
             ):
                 src.exceptions.raise_exception()
 
@@ -205,7 +205,7 @@ the terminal_ shows :ref:`AttributeError`
     :emphasize-lines: 5
 
     def raise_exception():
-        raise Exception('BOOM!')
+        raise Exception('BOOM!!!')
 
 
     an_exception_handler
@@ -324,7 +324,7 @@ the terminal_ shows :ref:`AttributeError`
     :emphasize-lines: 5
 
     def raise_exception():
-        raise Exception('BOOM!')
+        raise Exception('BOOM!!!')
 
 
     does_not_raise_exception
@@ -355,7 +355,7 @@ the terminal_ shows :ref:`AttributeError`
 
   ``src.exceptions.an_exception_handler`` still returns ``'failed'``, the test expects ``'succeeded'``
 
-* I make ``an_exception_handler`` return its input
+* I make ``an_exception_handler``, remember the :ref:`identity function<test_identity_function>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -378,7 +378,7 @@ the terminal_ shows :ref:`AttributeError`
   - ``test_catching_failure`` fails because ``an_exception_handler`` returns the name (``raise_exception``) and address in the computer(``0xabcd12e34567``) of the :ref:`function<functions>` it gets
   - ``test_catching_success`` fails because ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
-* I change the name of the input parameter to be more descriptive
+* I change the name of the input parameter to be clearer
 
   .. code-block:: python
     :lineno-start: 12
@@ -388,7 +388,7 @@ the terminal_ shows :ref:`AttributeError`
         return a_function
         return 'failed'
 
-  then I make ``an_exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
+* I make ``an_exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -398,46 +398,51 @@ the terminal_ shows :ref:`AttributeError`
         return a_function()
         return 'failed'
 
-  - the terminal_ shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
-    .. code-block:: python
+  .. code-block:: python
 
-      a_function = None
+    a_function = None
 
-          def an_exception_handler(a_function):
-      >       return a_function()
-      E       TypeError: 'NoneType' object is not callable
+        def an_exception_handler(a_function):
+    >       return a_function()
+    E       TypeError: 'NoneType' object is not callable
 
-    because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_. I make it a :ref:`function<functions>` to make it callable_
+  because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_
 
-    .. code-block:: python
-      :lineno-start: 9
-      :emphasize-lines: 1-2
+* I make it a :ref:`function<functions>` to make it callable_
 
-      def does_not_raise_exception():
-          return None
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1-2
+
+    def does_not_raise_exception():
+        return None
 
 
-      def an_exception_handler(a_function):
-          return a_function()
-          return 'failed'
+    def an_exception_handler(a_function):
+        return a_function()
+        return 'failed'
 
-    the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-    .. code-block:: python
+  .. code-block:: python
 
-      AssertionError: None != 'succeeded'
+    AssertionError: None != 'succeeded'
 
-  - the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an :ref:`Exception<errors>` with a message
+  the result of calling ``src.exceptions.raise_exception`` in ``test_catching_failure`` is an :ref:`Exception<errors>` with a message
 
-    .. code-block:: python
+  .. code-block:: python
 
-      Exception: 'BOOM!'
+    Exception: 'BOOM!!!'
 
+I need a way for the :ref:`function<functions>` to choose what to do when an :ref:`Exception<errors>` is raised and when one is NOT raised. I can use the `try statement`_ to do this
+
+---------------------------------------------------------------------------------
 how to use try...except...else
 ---------------------------------------------------------------------------------
 
-* I add a `try statement`_ to ``exceptions.py``
+* I add a `try statement`_ to ``an_exception_handler`` in ``exceptions.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -449,7 +454,7 @@ how to use try...except...else
         except Exception:
             return 'failed'
 
-  ``test_catching_failure`` passes, the terminal_ still shows :ref:`AssertionError` for ``test_catching_success``
+  ``test_catching_failure`` passes. The terminal_ still shows :ref:`AssertionError` for ``test_catching_success``
 
   .. code-block:: shell
 
@@ -477,7 +482,9 @@ how to use try...except...else
 
     AssertionError: None != 'succeeded'
 
-  I change the `return statement`_ in the else_ clause
+  this is still the same :ref:`Exception<errors>` and message
+
+* I change the `return statement`_ in the else_ clause
 
   .. code-block:: python
     :lineno-start: 13
@@ -493,7 +500,7 @@ how to use try...except...else
 
   the test passes.
 
-  The `try statement`_ is used to catch/handle :ref:`exceptions<errors>` in Python_. It allows the program_ to choose what it does when it runs into an :ref:`Exception<errors>`. I think of it as
+  The `try statement`_ is used to catch or handle :ref:`Exceptions<errors>` in Python_. It allows the program_ to choose what it does when it runs into an :ref:`Exception<errors>`. I think of it as
 
   - ``try`` running **this**
   - ``except Exception`` - when running **this** raises ``Exception``, run the code in this block
@@ -511,7 +518,7 @@ how to use try...except...else
   -  if it fails, try something else
   -  do this as many times as you can until you get what you want
 
-  or in the words of a famous singer
+  or in the words of a famous singer ...
 
 * I can be more specific with the :ref:`Exception<errors>` in the ``except`` block, for example
 
@@ -531,7 +538,7 @@ how to use try...except...else
 
   .. code-block:: shell
 
-    Exception: BOOM!
+    Exception: BOOM!!!!
 
   because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError`. The `try statement`_ only catches the :ref:`Exception<errors>` given in the ``except`` block and its children, all others are raised
 
@@ -559,9 +566,22 @@ how to use try...except...else
 review
 *********************************************************************************
 
-I ran tests to show how to cause any :ref:`Exceptions<errors>`, and catch or handle them in tests and programs.
+I ran tests to show that
 
-:ref:`Would you like to test TypeError?<TypeError>`
+* I can cause any :ref:`Exception<errors>` I want with the raise_ keyword
+* I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested the following
+
+  - :ref:`ModuleNotFoundError`
+  - :ref:`NameError<test_catching_name_error_in_tests>`
+  - :ref:`AttributeError`
+  - :ref:`TypeError`
+  - :ref:`IndexError<test_index_error>`
+  - :ref:`KeyError<test_key_error>`
+  - :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  - :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
+
+* I can use assertRaisesRegex_ to catch :ref:`Exceptions<errors>` with messages
+* I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<errors>` are raised
 
 ----
 

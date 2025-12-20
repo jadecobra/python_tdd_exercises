@@ -443,7 +443,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I change the name of the test to be more descriptive
+* I change the name of the test to be clearer
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -907,7 +907,7 @@ the test passes
     # TypeError
     # ValueError
 
-  I remove the things around the call and change the value to be more descriptive
+  I remove the things around the call and change the value to be clearer
 
   .. code-block:: python
     :emphasize-lines: 3

@@ -397,7 +397,7 @@ requirements
     AssertionError: Tuples differ: ('09:00', '06:00') != ('07:00', '03:00')
     AssertionError: Tuples differ: ('09:00', '06:00') != ('00:00', '22:00')
 
-  ``duration`` still returns ``('09:00', '06:00')`` but the test now uses random timestamps. I change it to return its inputs
+  ``duration`` still returns ``('09:00', '06:00')`` but the test now uses random timestamps. I change it to return its inputs remember the :ref:`identity function<test_identity_function>`
 
   .. code-block:: python
 

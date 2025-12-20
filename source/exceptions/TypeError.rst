@@ -1183,7 +1183,7 @@ the test passes
 
   the test passes
 
-* I change the name of the test to be more descriptive
+* I change the name of the test to be clearer
 
   .. code-block:: python
     :lineno-start: 44
@@ -1331,7 +1331,7 @@ the test passes
 
   the test is still green
 
-* I change the name from ``handle_type_error`` to be more descriptive in ``calculator.py``
+* I change the name from ``handle_type_error`` to be clearer in ``calculator.py``
 
   .. TIP:: you can use the ``Rename Symbol`` function of the `Integrated Development Environment (IDE)`_ to change everywhere ``handle_type_error`` is at once
 

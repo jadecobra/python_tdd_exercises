@@ -41,7 +41,7 @@ class TestExceptions(unittest.TestCase):
 
     def test_catching_exceptions_w_messages(self):
         with self.assertRaisesRegex(
-            Exception, 'BOOM!'
+            Exception, 'BOOM!!!'
         ):
             src.exceptions.raise_exception()
 

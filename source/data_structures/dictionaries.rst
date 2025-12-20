@@ -1325,7 +1325,7 @@ the test passes
 
   the test passes
 
-* I change ``0`` in the call to get_ to be more descriptive
+* I change ``0`` in the call to get_ to be clearer
 
   .. code-block:: python
     :lineno-start: 118
@@ -1842,7 +1842,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
     # TypeError
     # KeyError
 
-* I remove the things around the call in the test and change the value given to be more descriptive
+* I remove the things around the call in the test and change the value given to be clearer
 
   .. code-block:: python
     :lineno-start: 150
@@ -2363,7 +2363,7 @@ the test passes
 
   the test passes
 
-* I change the ``0`` given to the call to be more descriptive
+* I change the ``0`` given to the call to be clearer
 
   .. code-block:: python
     :lineno-start: 178
