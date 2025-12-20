@@ -1870,7 +1870,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
             with self.assertRaises(KeyError):
                 a_dictionary.pop('not_in_dictionary')
 
-  the test passes. When I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_ it raises :ref:`KeyError <test_key_error>`
+  the test passes. When I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_ it raises :ref:`KeyError<test_key_error>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better

@@ -36,7 +36,7 @@ who is this for?
   - :ref:`AssertionError`
   - :ref:`AttributeError`
   - :ref:`IndexError<test_index_error>`
-  - :ref:`KeyError <test_key_error>`
+  - :ref:`KeyError<test_key_error>`
   - :ref:`ModuleNotFoundError`
   - :ref:`NameError<test_catching_name_error_in_tests>`
   - :ref:`TypeError`
