@@ -159,7 +159,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I click on ``test_booleans.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
+* I open ``test_booleans.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
   .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_ with
 
@@ -168,13 +168,13 @@ start the project
 
       code tests/test_booleans.py
 
-  ``test_booleans.py`` opens up in the :ref:`editor<2 editors>`
+    ``test_booleans.py`` opens up in the :ref:`editor<2 editors>`
 
 * I add :ref:`the first failing test<test_failure>` to ``test_booleans.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-7
+    :emphasize-lines: 1, 4, 6-7
 
     import unittest
 
@@ -184,7 +184,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a `virtual environment`_
+* I make a `virtual environment`_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -254,7 +254,7 @@ start the project
 
   the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
 
-* I run the tests
+* I run `pytest-watch`_
 
   .. code-block:: shell
     :emphasize-lines: 1

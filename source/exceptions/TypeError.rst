@@ -1050,7 +1050,7 @@ the test passes
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-7
+    :emphasize-lines: 1, 4, 6-7
 
     def handle_type_error(function):
         def wrapper(input_1, input_2):

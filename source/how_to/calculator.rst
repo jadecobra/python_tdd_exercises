@@ -136,7 +136,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I click on ``test_calculator.py`` in the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
+* I open ``test_calculator.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
   .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_ with
 
@@ -145,13 +145,13 @@ start the project
 
       code tests/test_calculator.py
 
-  ``test_calculator.py`` opens up in the :ref:`editor<2 editors>`
+    ``test_calculator.py`` opens up in the :ref:`editor<2 editors>`
 
 * I add :ref:`the first failing test<test_failure>` to ``test_calculator.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-7
+    :emphasize-lines: 1, 4, 6-7
 
     import unittest
 
@@ -161,7 +161,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a `virtual environment`_
+* I make a `virtual environment`_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -231,7 +231,7 @@ start the project
 
   the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
 
-* I run the tests
+* I run `pytest-watch`_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1062,229 +1062,9 @@ the terminal_ shows :ref:`AttributeError`
     def divide(first_input, second_input):
         return first_input / second_input
 
-  then I make the range of numbers for the tests smaller in ``test_calculator.py``
+  the test passes
 
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2
-
-    def a_random_number():
-        return random.randint(-1, 1)
-
-  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times to run the tests, and when ``second_input`` is randomly ``0`` the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
-
-  .. code-block:: python
-
-    x = -1, y = 0
-    x = 0, y = 0
-    x = 1, y = 0
-
-        def divide(first_input, second_input):
-    >       return first_input / second_input
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
-    E       ZeroDivisionError: division by zero
-
-  dividing by ``0`` is undefined in mathematics and raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in Python
-
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 6
-
-    # Exceptions Encountered
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # ZeroDivisionError
-
-how to test that ZeroDivisionError is raised
----------------------------------------------------------------------------------
-
-:red:`RED`: make it fail
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-I add a line to cause :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` intentionally and comment out the code that randomly fails in ``test_calculator.py``
-
-.. code-block:: python
-  :lineno-start: 33
-  :emphasize-lines: 2, 4-7
-
-      def test_division(self):
-          src.calculator.divide(self.random_x, 0)
-
-          # self.assertEqual(
-          #    src.calculator.divide(self.random_x, self.random_y),
-          #    self.random_x/self.random_y
-          # )
-
-the terminal_ shows my expectation with a failure for any value of ``first_input`` since ``second_input`` is ``0``
-
-.. code-block:: python
-
-  x = -1, y = 0
-  x = 0, y = 0
-  x = 1, y = 0
-
-      def divide(first_input, second_input):
-  >       return first_input / second_input
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  E       ZeroDivisionError: division by zero
-
-:ref:`Exceptions(Errors)<errors>` like :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` stop a program_ from running. No code runs past the line that causes an :ref:`Exception(Error)<errors>`, which means I have to take care of this problem. See :ref:`how to test that an Exception is raised` for more
-
-:green:`GREEN`: make it pass
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* I can use the `assertRaises method`_ to make sure that :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when I try to divide a number by ``0``
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2-3
-
-        def test_division(self):
-            with self.assertRaises(AssertionError):
-                src.calculator.divide(self.random_x, 0)
-
-            # self.assertEqual(
-            #   src.calculator.divide(self.random_x, self.random_y),
-            #   self.random_x/self.random_y
-            # )
-
-  because I used the wrong :ref:`Exception<errors>` the terminal_ still shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
-
-  .. code-block:: python
-
-    ZeroDivisionError: division by zero
-
-* I change it to the right :ref:`Exception<errors>`
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2
-
-        def test_division(self):
-            with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.random_x, 0)
-
-  the test passes, showing that ``src.calculator.divide(self.random_x, 0)`` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
-
-:yellow:`REFACTOR`: make it better
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* I still have a problem because ``self.random_y`` can sometimes be ``0``, I use a `while statement`_ to make a never ending loop to make sure it never happens in the :ref:`assertion<AssertionError>` in ``test_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 5-11
-
-        def test_division(self):
-            with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.random_x, 0)
-
-            while self.random_y == 0:
-                self.random_y = a_random_number()
-            else:
-                self.assertEqual(
-                    src.calculator.divide(self.random_x, self.random_y),
-                    self.random_x/self.random_y
-                )
-
-  here is what it does
-
-  - when the value of ``self.random_y`` is ``0``
-
-    * it points ``self.random_y`` to the result of calling ``a_random_number()``
-    * then it checks if the value of ``self.random_y`` is ``0`` again. The process happens again non stop until ``self.random_y`` is not ``0``
-
-  - when the value of ``self.random_y`` is not ``0``, it leaves the while_ loop and runs the code in the ``else`` block
-
-* Since ``self.random_y`` is ``0`` in the first part of the `while statement`_ I can add a call that fails to the ``divide`` :ref:`function<functions>`
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 6
-
-        def test_division(self):
-            with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.random_x, 0)
-
-            while self.random_y == 0:
-                src.calculator.divide(self.random_x, self.random_y)
-                self.random_y = a_random_number()
-            else:
-                self.assertEqual(
-                    src.calculator.divide(self.random_x, self.random_y),
-                    self.random_x/self.random_y
-                )
-
-  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) in the :ref:`editor<2 editors>` a few times to run the tests, and when ``self.random_y`` is randomly ``0``, the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
-
-  .. code-block:: python
-
-    ZeroDivisionError: division by zero
-
-* I add assertRaises_ to catch the :ref:`Exception<errors>` in the `while statement`_
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 6-7
-
-        def test_division(self):
-            with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.random_x, 0)
-
-            while self.random_y == 0:
-                with self.assertRaises(ZeroDivisionError):
-                      src.calculator.divide(self.random_x, self.random_y)
-                self.random_y = a_random_number()
-            else:
-                self.assertEqual(
-                    src.calculator.divide(self.random_x, self.random_y),
-                    self.random_x/self.random_y
-                )
-
-* I no longer need the first assertRaises_ and remove it from the test because it is now part of the while_ loop
-
-  .. code-block:: python
-    :lineno-start: 33
-
-        def test_division(self):
-            while self.random_y == 0:
-                with self.assertRaises(ZeroDivisionError):
-                    src.calculator.divide(self.random_x, self.random_y)
-                self.random_y = a_random_number()
-            else:
-                self.assertEqual(
-                    src.calculator.divide(self.random_x, self.random_y),
-                    self.random_x/self.random_y
-                )
-
-
-    # TODO
-
-  the terminal_ shows all tests are passing with no random failures
-
-* I use a bigger range of numbers for the tests
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2
-
-    def a_random_number():
-        return random.randint(-10**1000000, 10**1000000)
-
-  the terminal_ still shows green and it takes longer to run the tests. I change the range back to ``-10, 10`` to keep the tests fast
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2
-
-    def a_random_number():
-        return random.randint(-10, 10)
-
-* then I remove the TODO list
+* I remove the TODO list
 
   .. code-block:: python
     :lineno-start: 45
