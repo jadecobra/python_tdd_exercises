@@ -16,7 +16,13 @@ ModuleNotFoundError
 
 ----
 
+*********************************************************************************
+what causes ModuleNotFoundError?
+*********************************************************************************
+
 ModuleNotFoundError_ is raised when Python_ cannot find a module_ that is given in an `import statement`_. A Python_ module_ is a file that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_
+
+----
 
 *********************************************************************************
 preview
@@ -28,8 +34,10 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+----
+
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
@@ -181,6 +189,42 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 * I add the file to the ``src`` folder_ and the test passes
 
 * I close the file
+
+----
+
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/module_not_found_error
+
+* I `change directory`_ to the parent of ``module_not_found_error``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 

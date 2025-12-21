@@ -24,9 +24,15 @@ dictionaries
 
 ----
 
+*********************************************************************************
+what is a dictionary?
+*********************************************************************************
+
 A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any Python_ :ref:`object<classes>`. I add tests for the :ref:`keys<test_keys_of_a_dictionary>` to see which of :ref:`the Python basic data types<data structures>` I can use.
 
 I think this is the most important :ref:`data structure<data structures>` to know because they can hold all the other :ref:`data structures`. In programming I have had to work with JSON_ which I can read and write as dictionaries_
+
+----
 
 *********************************************************************************
 preview
@@ -3118,6 +3124,42 @@ the test passes
     # KeyError
 
   the test passes
+
+----
+
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/dictionaries
+
+* I `change directory`_ to the parent of ``dictionaries``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 

@@ -29,7 +29,7 @@ Here are the tests I have by the end of the chapter
 ----
 
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
 * I pick ``calculator`` as the name of this project

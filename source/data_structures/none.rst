@@ -16,11 +16,9 @@ None
 
 ----
 
-In :ref:`AssertionError`, I used assertIsNone_ and assertIsNotNone_ to :ref:`test_assertion_error_w_none`, that experiment showed that
-
-* :ref:`True<test_what_is_true>` is NOT None_ and NOT equal to None_
-* :ref:`False<test_what_is_false>` is NOT None_ and NOT equal to None_
-* None_ is None_ and equal to None_
+*********************************************************************************
+what is None?
+*********************************************************************************
 
 None_ is used when there is no value. It is the simplest :ref:`data structure<data structures>` in Python_
 
@@ -29,6 +27,12 @@ I use `assert methods`_ to compare None_ with the other Python_ :ref:`data struc
 *********************************************************************************
 preview
 *********************************************************************************
+
+In :ref:`AssertionError`, I used assertIsNone_ and assertIsNotNone_ to :ref:`test_assertion_error_w_none`, that experiment showed that
+
+* :ref:`True<test_what_is_true>` is NOT None_ and NOT equal to None_
+* :ref:`False<test_what_is_false>` is NOT None_ and NOT equal to None_
+* None_ is None_ and equal to None_
 
 Here are the tests I have by the end of the chapter
 
@@ -1932,7 +1936,7 @@ close the project
 review
 *********************************************************************************
 
-I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were introduced in :ref:`AssertionError`
+I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were say_hellod in :ref:`AssertionError`
 
 * assertIsNone_ - which tests if the thing in parentheses is None_
 * assertIsNotNone_ - which tests if the thing in parentheses is not None_

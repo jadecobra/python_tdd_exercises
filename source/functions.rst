@@ -15,6 +15,10 @@
 functions
 #################################################################################
 
+*********************************************************************************
+what is a function?
+*********************************************************************************
+
 A function_ is a unit or block of code that is callable_. This means I can write statements that I can use to do something at a different time from when I write them. They can make code smaller, easier to read, test, reuse, maintain and improve.
 
 `Computer Programming`_ involves providing a process with input data and the process returning output data, for example
@@ -42,6 +46,8 @@ In Python_ functions_ are made with the def_ keyword, a name, parentheses and a 
 .. code-block:: python
 
   def name_of_function():
+
+----
 
 *********************************************************************************
 preview
@@ -74,7 +80,7 @@ Here are the questions you can answer after going through this chapter
 ----
 
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
 * I pick ``functions`` as the name of this project

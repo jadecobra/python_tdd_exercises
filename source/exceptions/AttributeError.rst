@@ -16,9 +16,21 @@ AttributeError
 
 ----
 
+*********************************************************************************
+what causes AttributeError?
+*********************************************************************************
+
 AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists.
 
+----
+
+*********************************************************************************
+what is an attribute?
+*********************************************************************************
+
 An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color. They are also known as properties
+
+----
 
 *********************************************************************************
 preview
@@ -30,8 +42,10 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+----
+
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``attribute_error`` as the name of the project
@@ -835,6 +849,42 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
 
 * A :ref:`function<functions>` in a :ref:`class<classes>` is called a :ref:`method<functions>` and is an attribute of the :ref:`class<classes>`
 * A :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+
+----
+
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/attribute_error
+
+* I `change directory`_ to the parent of ``attribute_error``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 

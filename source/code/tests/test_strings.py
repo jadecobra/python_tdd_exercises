@@ -155,8 +155,8 @@ class TestStrings(unittest.TestCase):
     def test_format_allows_passing_values_to_a_string(self):
         name = 'joe'
         self.assertEqual(
-            'Hi, my name is {name}'.format(name=name),
-            'Hi, my name is joe'
+            'Hello, my name is {name}'.format(name=name),
+            'Hello, my name is joe'
         )
 
     def test_format_map_uses_a_dictionary_to_pass_values_to_a_string(self):

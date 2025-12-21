@@ -21,6 +21,10 @@ lists
 
 ----
 
+*********************************************************************************
+what is a list?
+*********************************************************************************
+
 A list_ is a container :ref:`object<classes>` that can hold any objects_
 
 * they are represented with ``[]``
@@ -37,8 +41,10 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+----
+
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``lists`` as the name of the project
@@ -2269,6 +2275,42 @@ the test passes
         [][-1]
 
   the test passes. Any :ref:`index<test_index_returns_first_position_of_item_in_a_list>` given to an empty list_ raises IndexError_
+
+----
+
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/lists
+
+* I `change directory`_ to the parent of ``lists``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 

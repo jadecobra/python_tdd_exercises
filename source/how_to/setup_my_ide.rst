@@ -27,8 +27,9 @@ Screen Layout
 
 I split my screen in the following ways depending on the use case, try different layouts to see what works best for you.
 
+=================================================================================
 for references
-#################################################################################
+=================================================================================
 
 I put references on the left and the `Integrated Development Environment (IDE)`_ on the right
 
@@ -39,11 +40,13 @@ I put references on the left and the `Integrated Development Environment (IDE)`_
 
 this helps when I do not have an extra screen. I can stack two editors on top of one another, `source code`_ on top, tests below, and the terminal_ below the tests
 
+=================================================================================
 for testing
-#################################################################################
+=================================================================================
 
 When working with just the `Integrated Development Environment (IDE)`_, I have the following Windows open
 
+---------------------------------------------------------------------------------
 explorer on left
 ---------------------------------------------------------------------------------
 explorer on the left to see files/folder structure at once, and I can drag and drop files directly into the editor
@@ -53,6 +56,7 @@ explorer on the left to see files/folder structure at once, and I can drag and d
   :align: center
   :alt: Explorer with Editors
 
+---------------------------------------------------------------------------------
 2 editors
 ---------------------------------------------------------------------------------
 editors side by side - `source code`_ on the left with tests on the right
@@ -62,6 +66,7 @@ editors side by side - `source code`_ on the left with tests on the right
   :align: center
   :alt: Editors side by side
 
+---------------------------------------------------------------------------------
 the terminal
 ---------------------------------------------------------------------------------
 
@@ -86,6 +91,8 @@ This setup helps me answer 2 questions
 * what is the same?
 * what is different?
 
+----
+
 *********************************************************************************
 Visual Studio Extensions
 *********************************************************************************
@@ -98,11 +105,13 @@ Here are extensions I use in `Visual Studio Code`_
 * `Dark Rainbow Theme`_  - did I mention I like pretty colors?
 * `Remote Development`_ - This allows me to work with `Windows Subsystem for Linux`_ or Linux_ on any computer
 
+----
+
 *********************************************************************************
 BONUS!!!
 *********************************************************************************
 
-I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made it this far. It makes going through your computer easier and :ref:`the next chapter<how to make a test driven development environment>` as well. This is how your computer is organized. :ref:`Click here for the BONUS!<BONUS: learn directory structure>`
+I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made it this far. It makes going through your computer easier and :ref:`the next chapter<how to make a test driven development environment>` as well. This is how your computer is organized. :ref:`Click HERE for the BONUS!<BONUS: learn directory structure>`
 
 ----
 

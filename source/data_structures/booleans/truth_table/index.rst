@@ -12,6 +12,10 @@ booleans: truth table
 
 ----
 
+*********************************************************************************
+preview
+*********************************************************************************
+
 Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with :ref:`if statement<if statements (conditionals)>`. For example, If I want to know if a person can vote, the conditions could be
 
 * Is the person alive?
@@ -22,10 +26,6 @@ I can add these to a program so that when it gets information about the person, 
 The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics and the assertFalse_ and assertTrue_ :ref:`methods<functions>` from :ref:`AssertionError`, :ref:`None` and :ref:`booleans`.
 
 All operations from the `Truth Table`_ always result in :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
-
-*********************************************************************************
-preview
-*********************************************************************************
 
 Here are the tests I have at the end of the chapters
 
@@ -48,7 +48,7 @@ questions about The Truth Table
 ----
 
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
 * I pick ``truth_table`` as the name of this project
@@ -300,7 +300,7 @@ requirements
     import unittest
     import src.truth_table
 
-* I click on :ref:`truth table: Nullary and Unary Operations` to continue to the :ref:`next chapter<truth table: Nullary and Unary Operations>`
+* :ref:`I CLICK HERE to continue to Truth Table: Nullary and Unary Operations<truth table: Nullary and Unary Operations>`
 
 ----
 

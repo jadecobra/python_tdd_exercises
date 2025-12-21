@@ -32,7 +32,14 @@ Here are the tests I have by the end of the chapter
 requirements
 *********************************************************************************
 
-* :ref:`makePythonTdd.sh<how to make a Python Test Driven Development environment automatically>` or :ref:`makePythonTdd.ps1<how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`
+:ref:`makePythonTdd.sh<how to make a Python Test Driven Development environment automatically>` or :ref:`makePythonTdd.ps1<how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`
+
+----
+
+*********************************************************************************
+start the project
+*********************************************************************************
+
 * I open a terminal_
 * I type pwd_ to make sure I am in the ``pumping_python`` folder_
 

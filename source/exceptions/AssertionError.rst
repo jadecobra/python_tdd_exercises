@@ -52,8 +52,10 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are Equal>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 
+----
+
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
 * I pick ``assertion_error`` as the name of this project

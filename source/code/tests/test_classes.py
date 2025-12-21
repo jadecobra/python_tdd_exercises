@@ -69,9 +69,9 @@ class TestPerson(unittest.TestCase):
 
     def test_factory_person_introduction(self):
         self.assertEqual(
-            src.person.introduce(self.random_factory_person),
+            src.person.say_hello(self.random_factory_person),
             (
-                f'Hi, my name is {self.random_first_name} '
+                f'Hello, my name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
@@ -79,9 +79,9 @@ class TestPerson(unittest.TestCase):
 
     def test_classy_person_introduction(self):
         self.assertEqual(
-            self.random_classy_person.introduce(),
+            self.random_classy_person.say_hello(),
             (
-                f'Hi, my name is {self.random_first_name} '
+                f'Hello, my name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
@@ -165,7 +165,7 @@ class TestPerson(unittest.TestCase):
                 '__subclasshook__',
                 '__weakref__',
                 'get_age',
-                'introduce'
+                'say_hello'
             ]
         )
 
