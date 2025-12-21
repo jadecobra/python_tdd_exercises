@@ -177,7 +177,7 @@ start the project
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-11
+    :emphasize-lines: 1-7
 
     import unittest
 
@@ -186,10 +186,6 @@ start the project
 
         def test_failure(self):
             self.assertFalse(True)
-
-
-    # Exceptions Encountered
-    # AssertionError
 
 * I make a `virtual environment`_
 
@@ -288,7 +284,20 @@ start the project
     =========================== 1 failed in X.YZs ============================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_assertion_error.py``
+
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` encountered in ``test_assertion_error.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4-5
+
+            self.assertFalse(True)
+
+
+    # Exceptions Encountered
+    # AssertionError
+
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 7

@@ -136,6 +136,15 @@ start the project
     ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` encountered in ``test_.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4-5
+
+    # Exceptions Encountered
+    # AssertionError
+
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_exceptions.py``
 
   .. code-block:: python
@@ -159,7 +168,7 @@ test_catching_module_not_found_error_in_tests
 I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_ in ``test_exceptions.py``
 
 .. code-block:: python
-  :lineno-start:
+  :lineno-start: 5
   :emphasize-lines: 3-4
 
   class TestExceptions(unittest.TestCase):

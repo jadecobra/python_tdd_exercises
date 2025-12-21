@@ -124,7 +124,8 @@
 .. _Python's online documentation: https://docs.python.org/3/search.html
 .. _Python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
 .. _pwd: touch aka_current_working_directory
-.. _raises: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
+.. _raise: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
+.. _raises: raise_
 .. _raise statement: raises_
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
@@ -216,6 +217,7 @@
 .. _Debian: https://www.debian.org
 .. _Exclusive OR: https://grokipedia.com/page/Exclusive_or
 .. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
+.. _Mathematics: https://grokipedia.com/page/Mathematics
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _removing duplication: `remove duplication`_
 .. _I do not repeat myself: `remove duplication`_
