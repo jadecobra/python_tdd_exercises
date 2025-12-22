@@ -53,7 +53,7 @@ These combinations give 16 binary operations each of which returns :ref:`True<te
   - ``not second_input``
   - :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`True<test_what_is_true>`
 
-*  :ref:`Converse Implication <test_converse_implication>` returns
+* :ref:`Converse Implication <test_converse_implication>` returns
 
   - ``first_input or not second_input``
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`

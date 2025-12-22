@@ -1248,7 +1248,7 @@ review
 
 Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``first_input`` and the second one ``second_input``, the tests show that
 
-*  :ref:`Converse Implication <test_converse_implication>`
+* :ref:`Converse Implication <test_converse_implication>`
 
   - returns ``first_input or not second_input``
   - returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`

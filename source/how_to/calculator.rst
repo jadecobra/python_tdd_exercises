@@ -804,20 +804,20 @@ A variable_ is a name that is used for values that change. For example, in the t
 
 .. code-block:: python
 
-  src.calculator.add(0, 1) == 0+1 == 1
-  src.calculator.add(0, 2) == 0+2 == 2
-  src.calculator.add(0, 3) == 0+3 == 3
-  src.calculator.add(1, 3) == 1+3 == 4
-  src.calculator.add(123456, 789012) == 123456+789012 == 912468
-  src.calculator.add(-1, 0) == -1+0 == -1
-  src.calculator.add(-2, -3) == -2+-3 == -5
-  src.calculator.add(0.1234, -5.6789) == 0.1234+-5.6789 == -5.555499999999999
+  src.calculator.add(0, 1) returns 0+1 returns 1
+  src.calculator.add(0, 2) returns 0+2 returns 2
+  src.calculator.add(0, 3) returns 0+3 returns 3
+  src.calculator.add(1, 3) returns 1+3 returns 4
+  src.calculator.add(123456, 789012) returns 123456+789012 returns 912468
+  src.calculator.add(-1, 0) returns -1+0 returns -1
+  src.calculator.add(-2, -3) returns -2+-3 returns -5
+  src.calculator.add(0.1234, -5.6789) returns 0.1234+-5.6789 returns -5.555499999999999
 
 all of these lines can be written using ``first_number`` as the name of the first number and ``second_number`` as the name for the second number, like this
 
 .. code-block:: python
 
-  src.calculator.add(first_number, second_number) == first_number+second_number == first_number+second_number
+  src.calculator.add(first_number, second_number) returns first_number+second_number
 
 * I add a new test at the beginning of ``test_addition`` with names for the values
 
