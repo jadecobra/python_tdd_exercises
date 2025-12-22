@@ -640,7 +640,7 @@ what the ``constant`` function_ returns and what the test expects are different.
 
 the test passes.
 
-A constant function_ always return the same thing when called, I can use them in place of variables_, though the number of cases where they are faster than :ref:`variables<test_attribute_error_w_variables>` is pretty small. It is something like if the function_ is called less than 10 times, but who's counting?
+A constant function_ always return the same thing when called, I can use them in place of variables_, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the function_ is called less than 10 times, but who's counting?
 
 ----
 
@@ -1027,7 +1027,7 @@ In the first case I use :ref:`positional arguments<test_functions_w_positional_a
   w_positional_arguments('first', 'last')
   w_positional_arguments('last', 'first')
 
-in the second case I use `keyword arguments`_ which use the names of the :ref:`variables<test_attribute_error_w_variables>` in parentheses in the function_ definition when calling the it
+in the second case I use `keyword arguments`_ which use the names of the :ref:`variables<what is a variable?>` in parentheses in the function_ definition when calling the it
 
 .. code-block:: python
 

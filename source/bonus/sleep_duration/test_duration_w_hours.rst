@@ -292,7 +292,7 @@ requirements
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* I add :ref:`variables<test_attribute_error_w_variables>` to remove the repetition of the values for ``wake_time`` and ``sleep_time``
+* I add :ref:`variables<what is a variable?>` to remove the repetition of the values for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -362,7 +362,7 @@ requirements
     import src.sleep_duration
     import unittest
 
-  then add :ref:`variables<test_attribute_error_w_variables>` for random hours in a day
+  then add :ref:`variables<what is a variable?>` for random hours in a day
 
   .. code-block:: python
 

@@ -1074,7 +1074,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
     class TestCalculator(unittest.TestCase):
 
-  then I use the new :ref:`function<functions>` to get random values for the ``random_first_number`` and ``random_second_number`` :ref:`variables<test_attribute_error_w_variables>`
+  then I use the new :ref:`function<functions>` to get random values for the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1124,7 +1124,8 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
     OverflowError: (34, 'Numerical result out of range')
 
-  ``10.0**100000`` is how to write ``10`` raised to the power of ``100,000``
+  - ``**`` is the symbol for raise to the power (exponents)
+  - ``10.0**100000`` is how to write ``10`` raised to the power of ``100,000``
 
   I make the range smaller
 
@@ -1337,7 +1338,7 @@ test_subtraction
                 random_first_number-random_second_number
             )
 
-  the terminal_ shows the tests are still passing. The ``random_first_number`` and ``random_second_number`` :ref:`variables<test_attribute_error_w_variables>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal_ shows the tests are still passing. The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the commented lines in ``test_addition``
 
@@ -1415,7 +1416,7 @@ test_subtraction
                 self.random_first_number-self.random_second_number
             )
 
-* I remove the ``first_random_number`` and ``second_random_number`` :ref:`variables<test_attribute_error_w_variables>` from ``test_addition`` and ``test_subtraction`` since they are no longer needed
+* I remove the ``first_random_number`` and ``second_random_number`` :ref:`variables<what is a variable?>` from ``test_addition`` and ``test_subtraction`` since they are no longer needed
 
   .. code-block:: python
     :lineno-start: 10
@@ -1451,7 +1452,7 @@ test_subtraction
 * I remove ``test subtraction`` from the TODO list
 
   .. code-block:: python
-    :lineno-start: 28
+    :lineno-start: 34
 
     # TODO
     # test multiplication
@@ -1473,20 +1474,27 @@ test_multiplication
 I add a failing test for multiplication in ``test_calculator.py``
 
 .. code-block:: python
-  :lineno-start: 21
-  :emphasize-lines: 7-11
+  :lineno-start: 24
+  :emphasize-lines: 10-17
 
       def test_subtraction(self):
           self.assertEqual(
-              src.calculator.subtract(self.random_first_number, self.random_second_number),
+              src.calculator.subtract(
+                  self.random_first_number,
+                  self.random_second_number
+              ),
               self.random_first_number-self.random_second_number
           )
 
       def test_multiplication(self):
           self.assertEqual(
-              src.calculator.multiply(self.random_first_number, self.random_second_number),
+              src.calculator.multiply(
+                  self.random_first_number,
+                  self.random_second_number
+              ),
               self.random_first_number*self.random_second_number
           )
+
 
   # TODO
 
@@ -1516,7 +1524,7 @@ using what I know so far, I add a :ref:`function<functions>` to ``calculator.py`
 the test passes! I remove ``test_multiplication`` from the TODO list in ``test_calculator.py``
 
 .. code-block:: python
-  :lineno-start: 34
+  :lineno-start: 43
 
 
   # TODO
@@ -1524,6 +1532,9 @@ the test passes! I remove ``test_multiplication`` from the TODO list in ``test_c
 
 
   # Exceptions seen
+
+* ``*`` is the symbol for multiplication
+* ``**`` is the symbol for raise to the power (exponent)
 
 ----
 
@@ -1535,23 +1546,30 @@ test_division
 :red:`RED`: make it fail
 =================================================================================
 
-time for division. I add a new test to ``test_calculator.py``
+Time for division. I add a new test to ``test_calculator.py``
 
 .. code-block:: python
-  :lineno-start: 27
-  :emphasize-lines: 7-11
+  :lineno-start: 33
+  :emphasize-lines: 10-17
 
       def test_multiplication(self):
           self.assertEqual(
-              src.calculator.multiply(self.random_first_number, self.random_second_number),
+              src.calculator.multiply(
+                  self.random_first_number,
+                  self.random_second_number
+              ),
               self.random_first_number*self.random_second_number
           )
 
       def test_division(self):
           self.assertEqual(
-              src.calculator.divide(self.random_first_number, self.random_second_number),
+              src.calculator.divide(
+                  self.random_first_number,
+                  self.random_second_number
+              ),
               self.random_first_number/self.random_second_number
           )
+
 
   # TODO
 
@@ -1669,13 +1687,13 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def subtract(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError` with random numbers
 
   .. code-block:: shell
 
-    AssertionError: None != X
+    AssertionError: None != X.YZABCDEFGHIJKL
 
-* I change the `return statement`_ to see the difference between the inputs and expected output
+* I change the `return statement`_ to see the difference between the inputs and expected output, remember the :ref:`identity function<test_identity_function>`
 
   .. code-block:: python
     :linenos:
@@ -1684,11 +1702,11 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def subtract(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows random numbers with :ref:`AssertionError` that look like this
+  the terminal_ shows :ref:`AssertionError` with random numbers that look like this
 
   .. code-block:: shell
 
-    AssertionError: (X, Y) != Z
+    AssertionError: (X.YZABCDEFGHIJKL, Y.ZABCDEFGHIJKLM) != Z.ABCDEFGHIJKLMN
 
   the name of the :ref:`function<functions>` is ``subtract`` and the test expects the difference between the 2 inputs
 
@@ -1726,7 +1744,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
-  I add 2 :ref:`variables<test_attribute_error_w_variables>` for the positional arguments
+  I add 2 :ref:`variables<what is a variable?>` for the positional arguments
 
   .. code-block:: python
     :lineno-start: 5
@@ -1739,7 +1757,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   .. code-block:: shell
 
-    AssertionError: None != X
+    AssertionError: None != XY.ZABCDEFGHIJKLM
 
 * I change the `return statement`_ to see the difference between the inputs and the expected output
 
@@ -1750,11 +1768,11 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def multiply(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows random numbers with :ref:`AssertionError` that look like this
+  the terminal_ shows :ref:`AssertionError` with random numbers that look like this
 
   .. code-block:: shell
 
-    AssertionError: (X, Y) != Z
+    AssertionError: (X.YZABCDEFGHIJKLM, -Y.ZABCDEFGHIJKLMNO) != -Z.ABCDEFGHIJKLMNO
 
   I change it to the multiplication of the inputs to match the name of the :ref:`function<functions>`
 
@@ -1788,16 +1806,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   .. code-block:: shell
 
-    AssertionError: (-10, 6) != -1.6666666666666667
-    AssertionError: (-6, -6) != 1.0
-    AssertionError: (5, 7) != 0.7142857142857143
-    AssertionError: (10, 9) != 1.1111111111111112
-
-  or
-
-  .. code-block:: shell
-
-    AssertionError: ZeroDivisionError not raised
+    AssertionError: (-X.YZABCDEFGHIJKLM, Y.ZABCDEFGHIJKLMNO) != -Z.ABCDEFGHIJKLMNO
 
   when I change the `return statement`_ to match the expectation
 
