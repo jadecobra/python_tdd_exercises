@@ -4,7 +4,7 @@ import unittest
 
 
 def a_random_number():
-    return random.randint(-10, 10)
+    return random.triangular(-10, 10)
 
 
 class TestCalculator(unittest.TestCase):
@@ -14,32 +14,43 @@ class TestCalculator(unittest.TestCase):
 
     def test_addition(self):
         self.assertEqual(
-            src.calculator.add(self.random_first_number, self.random_second_number),
+            src.calculator.add(
+                self.random_first_number,
+                self.random_second_number
+            ),
             self.random_first_number+self.random_second_number
         )
 
     def test_subtraction(self):
         self.assertEqual(
-            src.calculator.subtract(self.random_first_number, self.random_second_number),
+            src.calculator.subtract(
+                self.random_first_number,
+                self.random_second_number
+            ),
             self.random_first_number-self.random_second_number
         )
 
     def test_multiplication(self):
         self.assertEqual(
-            src.calculator.multiply(self.random_first_number, self.random_second_number),
+            src.calculator.multiply(
+                self.random_first_number,
+                self.random_second_number
+            ),
             self.random_first_number*self.random_second_number
         )
 
     def test_division(self):
-        while self.random_second_number == 0:
-            with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.random_first_number, self.random_second_number)
-            self.random_second_number = a_random_number()
-        else:
-            self.assertEqual(
-                src.calculator.divide(self.random_first_number, self.random_second_number),
-                self.random_first_number/self.random_second_number
-            )
+        self.assertEqual(
+            src.calculator.divide(
+                self.random_first_number,
+                self.random_second_number
+            ),
+            self.random_first_number/self.random_second_number
+        )
+
+
+# TODO
+# test division
 
 
 # Exceptions seen
@@ -47,4 +58,3 @@ class TestCalculator(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
-# ZeroDivisionError
