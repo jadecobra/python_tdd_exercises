@@ -199,6 +199,7 @@
 .. _Exceptions: Exception_
 .. _IndentationError: https://docs.python.org/3/library/exceptions.html#IndentationError
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html#SyntaxError
+.. _OverflowError: https://docs.python.org/3/library/exceptions.html#OverflowError
 .. _PowerShell: https://learn.microsoft.com/en-us/powershell/
 .. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
 .. _ValueError: https://docs.python.org/3/library/exceptions.html#ValueError

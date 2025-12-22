@@ -510,7 +510,7 @@ the terminal_ shows :ref:`AssertionError`
 
   E    AssertionError: 1 != 2
 
-the :ref:`function<functions>` returns ``1``, the test expects ``0``
+the :ref:`function<functions>` returns ``1``, the test expects ``2``
 
 ---------------------------------------------------------------------------------
 :green:`GREEN`: make it pass
@@ -794,11 +794,15 @@ I change the expectation
                 -5.555499999999999
             )
 
-the test passes. I just the same kind of calculation 8 times in a row, there is a better way to this, which we learn in Algebra_. I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers. I can do this with a variable_
+the test passes.
 
 =================================================================================
 what is a variable?
 =================================================================================
+
+I just did the same kind of calculation 8 times in a row, there is a better way to this, which we learn in Algebra_.
+
+I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers. I can do this with a variable_
 
 A variable_ is a name that is used for values that change. For example, in the tests so far, I have
 
@@ -1024,17 +1028,36 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   still green
 
-* There is some duplication, I have to make a change in more than one place when I want to use a different range of random numbers for the test
+* I change the name of the variables to be more clear
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2-3, 6-7
+
+    def test_addition(self):
+        random_first_number = random.triangular(-0.1, 1.0)
+        random_second_number = random.triangular(-0.1, 1.0)
+
+        self.assertEqual(
+            src.calculator.add(random_first_number, random_second_number),
+            random_first_number+random_second_number
+        )
+
+  the test is still green
+
+* There is some duplication, I have to make a change in more than one place when I want to use a different range of random numbers for the test, for example
 
   .. code-block:: python
     :lineno-start: 8
     :emphasize-lines: 2-3
 
         def test_addition(self):
-            random_first_input = random.randint(-10, 10)
-            random_second_input = random.randint(-10, 10)
+            random_first_number = random.triangular(-10, 10)
+            random_second_number = random.triangular(-10, 10)
 
-  I add a :ref:`function<functions>` to remove the repetition
+  the test is still green
+
+* I add a :ref:`function<functions>` to remove the repetition
 
   .. code-block:: python
     :linenos:
@@ -1046,47 +1069,73 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
 
     def a_random_number():
-        return random.randint(0, 2)
+        return random.triangular(-10, 10)
 
 
     class TestCalculator(unittest.TestCase):
 
-  then I use the new :ref:`function<functions>` for the ``random_first_input`` and ``random_second_input`` :ref:`variables<test_attribute_error_w_variables>` in ``test_addition``
+  then I use the new :ref:`function<functions>` to get random values for the ``random_first_number`` and ``random_second_number`` :ref:`variables<test_attribute_error_w_variables>`
 
   .. code-block:: python
     :lineno-start: 12
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
         def test_addition(self):
-            random_first_input = a_random_number()
-            random_second_input = a_random_number()
+            # random_first_number = random.triangular(-10, 10)
+            random_first_number = a_random_number()
+            # random_second_number = random.triangular(-10, 10)
+            random_second_number = a_random_number()
 
-  I now only need to change the range of random numbers for the test in one place
+  the terminal_ still shows green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 2-5
+
+        def test_addition(self):
+            random_first_number = a_random_number()
+            random_second_number = a_random_number()
+
+* I now only need to change the range of random numbers for the test in one place
 
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 2
 
     def a_random_number():
-        return random.randint(-10, 10)
+        return random.triangular(-10000, 10000)
 
-  and the terminal_ still shows green. I can use any range of numbers the computer can handle, for example
+  and the terminal_ still shows green
 
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2
-
-    def a_random_number():
-        return random.randint(-10**100000, 10**100000)
-
-  the test is still green and takes longer to run. ``10**100000`` is how to write ``10`` raised to the power of ``100,000``. I change the range back to ``-10, 10`` to keep the test running fast
+* I can use any range of numbers the computer can handle, for example
 
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 2
 
     def a_random_number():
-        return random.randint(-10, 10)
+        return random.triangular(-10.0**100000, 10.0**100000)
+
+  the terminal_ shows OverflowError_
+
+  .. code-block:: python
+
+    OverflowError: (34, 'Numerical result out of range')
+
+  ``10.0**100000`` is how to write ``10`` raised to the power of ``100,000``
+
+  I make the range smaller
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 2
+
+    def a_random_number():
+        return random.triangular(-1000.0, 1000.0)
+
+  the test is still green, though the test takes a little longer to run
 
 * then I remove ``test addition`` from the TODO list
 
