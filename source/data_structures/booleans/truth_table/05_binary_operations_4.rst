@@ -1129,7 +1129,7 @@ code from the chapter
 what is next?
 *********************************************************************************
 
-Would you like to :ref:`test the truth table tests?<test_truth_table_tests>`
+:ref:`Would you like to test the truth table tests?<test_truth_table_tests>`
 
 ----
 

@@ -1354,7 +1354,7 @@ code from the chapter
 what is next?
 *********************************************************************************
 
-Would you like to :ref:`test even more binary operations? <binary_operations_iii>`
+:ref:`Would you like test even more binary operations? <binary_operations_iii>`
 
 ----
 

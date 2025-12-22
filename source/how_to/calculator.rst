@@ -804,20 +804,20 @@ A variable_ is a name that is used for values that change. For example, in the t
 
 .. code-block:: python
 
-  src.calculator.add(0, 1) returns 0+1 returns 1
-  src.calculator.add(0, 2) returns 0+2 returns 2
-  src.calculator.add(0, 3) returns 0+3 returns 3
-  src.calculator.add(1, 3) returns 1+3 returns 4
-  src.calculator.add(123456, 789012) returns 123456+789012 returns 912468
-  src.calculator.add(-1, 0) returns -1+0 returns -1
-  src.calculator.add(-2, -3) returns -2+-3 returns -5
-  src.calculator.add(0.1234, -5.6789) returns 0.1234+-5.6789 returns -5.555499999999999
+  src.calculator.add(0, 1) return 0+1 return 1
+  src.calculator.add(0, 2) return 0+2 return 2
+  src.calculator.add(0, 3) return 0+3 return 3
+  src.calculator.add(1, 3) return 1+3 return 4
+  src.calculator.add(123456, 789012) return 123456+789012 return 912468
+  src.calculator.add(-1, 0) return -1+0 return -1
+  src.calculator.add(-2, -3) return -2+-3 return -5
+  src.calculator.add(0.1234, -5.6789) return 0.1234+-5.6789 return -5.555499999999999
 
 all of these lines can be written using ``first_number`` as the name of the first number and ``second_number`` as the name for the second number, like this
 
 .. code-block:: python
 
-  src.calculator.add(first_number, second_number) returns first_number+second_number
+  src.calculator.add(first_number, second_number) return first_number+second_number
 
 * I add a new test at the beginning of ``test_addition`` with names for the values
 
@@ -837,7 +837,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
                 1
             )
 
-  the terminal_ shows NameError_
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -859,7 +859,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
                 first_number+second_number
             )
 
-  the terminal_ shows NameError_
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -888,7 +888,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 * I remove the next test since it is now covered by this new :ref:`assertion<AssertionError>` that uses a variable_
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 11
 
         self.assertEqual(
             src.calculator.add(first_number, second_number),
