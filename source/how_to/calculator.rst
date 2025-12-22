@@ -336,8 +336,8 @@ test_addition
   - the `assertEqual method`_ from :ref:`AssertionError` checks if the 2 things in parentheses are the the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is
 
-    - ``reality`` - ``src.calculator.add(0, 1)``, and the other is my
-    - ``expectation`` - ``1``, because ``0 + 1`` is ``1``
+    - ``reality`` - ``src.calculator.add(0, 1)``, and the other is
+    - my ``expectation`` - ``1``, because ``0 + 1`` is ``1``
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -351,7 +351,7 @@ test_addition
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add NameError_ to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 20
@@ -396,6 +396,7 @@ test_addition
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     add
 
@@ -411,6 +412,7 @@ test_addition
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     add = None
 
@@ -438,6 +440,7 @@ test_addition
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1-2
 
     def add():
         return None
@@ -448,7 +451,7 @@ test_addition
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-  the definition of ``add`` does not take input, but 2 were given in the call ``src.calculator.add(0, 1)``: ``0`` and ``1``
+  the definition of ``add`` does not allow it take input, but 2 were given in the call ``src.calculator.add(0, 1)``: ``0`` and ``1``
 
 * I make the ``add`` :ref:`function<functions>` take 2 inputs
 
@@ -482,7 +485,7 @@ test_addition
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to do a calculation with the inputs and return the result
+The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to return the result of a calculation with the inputs
 
 ---------------------------------------------------------------------------------
 :red:`RED`: make it fail
@@ -626,7 +629,7 @@ I change the expectation to match reality
               4
           )
 
-the test passes. So far the ``add`` :ref:`function<functions>` looks good
+the test passes. The ``add`` :ref:`function<functions>` looks good so far
 
 ---------------------------------------------------------------------------------
 :red:`RED`: make it fail
@@ -794,15 +797,13 @@ I change the expectation
                 -5.555499999999999
             )
 
-the test passes.
+the test passes. `Why is the result -5.555499999999999 instead of 5.5555?<https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
 
 =================================================================================
 what is a variable?
 =================================================================================
 
-I just did the same kind of calculation 8 times in a row, there is a better way to this, which we learn in Algebra_.
-
-I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers. I can do this with a variable_
+I just did the same kind of calculation 8 times in a row, there is a better way to this, you have seen this in Algebra_. I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers. I can do this with a variable_.
 
 A variable_ is a name that is used for values that change. For example, in the tests so far, I have
 
@@ -941,7 +942,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test is still passing. The problem with this is I lose the test for the previous number, everytime I change a number. I need a better way
 
-* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that my ``add`` :ref:`function<functions>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the random_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
+* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that the ``add`` :ref:`function<functions>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the random_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
 
   .. code-block:: python
     :linenos:

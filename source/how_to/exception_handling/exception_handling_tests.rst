@@ -238,7 +238,7 @@ test_catching_name_error_in_tests
         def test_catching_name_error_in_tests(self):
             does_not_exist
 
-  the terminal_ shows NameError_
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -271,7 +271,7 @@ I add assertRaises_
             with self.assertRaises(NameError):
                 does_not_exist
 
-the test passes, showing that NameError_ is raised when I used a name that has no definition for it
+the test passes, showing that :ref:`NameError<test_catching_name_error_in_tests>` is raised when I used a name that has no definition for it
 
 ----
 
@@ -296,7 +296,7 @@ test_catching_attribute_error_in_tests
         def test_catching_attribute_error_in_tests(self):
             src.exceptions.does_not_exist
 
-  the terminal_ shows NameError_
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -390,7 +390,7 @@ test_catching_type_error_in_tests
 
     function_name
 
-  the terminal_ shows NameError_
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 

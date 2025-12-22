@@ -49,10 +49,6 @@ class TestCalculator(unittest.TestCase):
         )
 
 
-# TODO
-# test division
-
-
 # Exceptions seen
 # AssertionError
 # NameError
