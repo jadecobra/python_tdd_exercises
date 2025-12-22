@@ -902,15 +902,42 @@ all of these lines can be written using ``first_number`` as the name of the firs
 * I can do the same thing for all the other tests by changing the values for ``first_input`` and ``second_input``, for example
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 8
     :emphasize-lines: 2
 
             first_number = 0
-            second_input = 1
+            second_number = 2
 
-  the test is still green. The problem with this change is I lose the test for the previous number. I need a better way
+  the test is still green
 
-* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that my ``add`` :ref:`function<functions>` always returns the result of adding the two numbers. I can do this with the random_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1-2
+
+            first_number = 1
+            second_number = 3
+
+  still green
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1-2
+
+            first_number = 123456
+            second_number = 789012
+
+  the terminal_ still shows green
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1-2
+
+            first_number = 0.1234
+            second_number = -5.6789
+
+  the test is still passing. The problem with this is I lose the test for the previous number, everytime I change a number. I need a better way
+
+* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that my ``add`` :ref:`function<functions>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the random_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -922,74 +949,80 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers
 
-* I add :ref:`variables <test_attribute_error_w_variables>` and a new :ref:`assertion<AssertionError>`
+* I use a random value for ``first_number``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 4-5, 7-10
-
-    class TestCalculator(unittest.TestCase):
+    :lineno-start: 8
+    :emphasize-lines: 2-3
 
         def test_addition(self):
-            random_first_input = random.randint(0, 2)
-            random_second_input = random.randint(0, 2)
+            # first_number = 0.1234
+            first_number = random.triangular(-0.1, 1.0)
+            second_number = -5.6789
 
-            self.assertEqual(
-                src.calculator.add(random_first_input, random_second_input),
-                random_first_input+random_first_input
-            )
-            self.assertEqual(
-                src.calculator.add(0, 1),
-                1
-            )
-            self.assertEqual(
-                src.calculator.add(0, 2),
-                0
-            )
+  the test is still green. `random.triangular`_ returns a random float_ that could be any number ``-0.1`` to ``1.0``
 
-  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows random success or :ref:`AssertionError` with random values that look like this
-
-  .. code-block:: shell
-
-    AssertionError: X != Y
-
-  I change the expectation of the :ref:`assertion<AssertionError>` in the test to the correct calculation
+* I want to see the test fail to be sure everything works as expected. I change the expectation in the first :ref:`assertion<AssertionError>`
 
   .. code-block:: python
-    :lineno-start: 12
+    :lineno-start: 13
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.add(random_first_input, random_second_input),
-                random_first_input+random_second_input
+                src.calculator.add(first_number, second_number),
+                first_number+first_number
             )
 
-  the test passes
+  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ :ref:`AssertionError` with random values that look like this
 
-  - ``random.randint(0, 2)`` returns a random number from ``-1`` up to and including ``1``
+  .. code-block:: shell
 
-    - ``-1`` for negative numbers
-    - ``0`` for ``0``
-    - ``1`` for positive numbers
+    AssertionError: -X.YZABCDEFGHIJKLM != A.BCDEFGHIJKLMNOPQ
 
-* I remove the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers. I do not need them anymore
+* I change the expectation of the :ref:`assertion<AssertionError>` back to the right calculation
 
   .. code-block:: python
-    :lineno-start: 6
-
-    class TestCalculator(unittest.TestCase):
-
-        def test_addition(self):
-            random_first_input = random.randint(0, 2)
-            random_second_input = random.randint(0, 2)
+    :lineno-start: 13
+    :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.add(random_first_input, random_second_input),
-                random_first_input+random_second_input
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+  the test is green again
+
+* I remove the commented line then use a random value for ``second_number``
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2-3
+
+        def test_addition(self):
+            first_number = random.triangular(-0.1, 1.0)
+            # second_number = -5.6789
+            second_number = random.triangular(-0.1, 1.0)
+
+  the test is still green
+
+* I remove the commented line and the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers. I do not need them anymore
+
+  .. code-block:: python
+    :lineno-start: 8
+
+        def test_addition(self):
+            first_number = random.triangular(-0.1, 1.0)
+            second_number = random.triangular(-0.1, 1.0)
+
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
             )
 
 
     # TODO
+
+  still green
 
 * There is some duplication, I have to make a change in more than one place when I want to use a different range of random numbers for the test
 

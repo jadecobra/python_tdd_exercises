@@ -128,8 +128,9 @@
 .. _raises: raise_
 .. _raise statement: raises_
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
-.. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
+.. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
+.. _random.triangular: https://docs.python.org/3/library/random.html#random.triangular
 .. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
 .. _remove: more_on_lists_
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement

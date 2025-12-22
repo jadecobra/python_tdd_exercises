@@ -16,6 +16,10 @@ AssertionError
 
 ----
 
+*********************************************************************************
+what is an assertion?
+*********************************************************************************
+
 I can use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program_ behaves, for example when it is given inputs.
 
 Assertions_ can help catch things that break passing tests when I add new lines of code. They also help me answer 2 questions
@@ -41,15 +45,15 @@ questions about AssertionError
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`What is an assertion?<test_what_is_an_assertion>`
-* :ref:`What causes AssertionError?<what_causes_assertion_error>`
-* :ref:`How can I test if something is NOT None?<how to test if something is None>`
+* :ref:`What is an assertion?<what is an assertion?>`
+* :ref:`What causes AssertionError?<what causes AssertionError?>`
+* :ref:`How can I test if something is NOT None?<how to test if something is NOT None>`
 * :ref:`How can I test if something is None?<how to test if something is None>`
 * :ref:`How can I test if something is False?<how to test if something is False>`
-* :ref:`How can I test if something is NOT False?<how to test if something is False>`
+* :ref:`How can I test if something is NOT False?<how to test if something is True>`
 * :ref:`How can I test if something is True?<how to test if something is True>`
-* :ref:`How can I test if something is NOT True?<how to test if something is True>`
-* :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are Equal>`
+* :ref:`How can I test if something is NOT True?<how to test if something is False>`
+* :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are NOT Equal>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 
 ----
@@ -481,7 +485,9 @@ the test passes
 
   the test passes
 
-.. _what_causes_assertion_error:
+---------------------------------------------------------------------------------
+what causes AssertionError?
+---------------------------------------------------------------------------------
 
 AssertionError_ happens when the statement after assert_ is :ref:`False<test_what_is_false>`. It was in :ref:`how to make a python test driven development environment` with :ref:`the first failing test<test_failure>`
 
@@ -552,24 +558,28 @@ the test passes
 I can also make assertions_ with `assert methods`_ from the `unittest.TestCase class`_, they have more descriptive messages
 
 ---------------------------------------------------------------------------------
-how to test if something is None
+how to test if something is NOT None
 ---------------------------------------------------------------------------------
 
-* I add another failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses (``()``) is NOT :ref:`None`
+I add another failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses (``()``) is NOT :ref:`None`
 
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3
+.. code-block:: python
+  :lineno-start: 11
+  :emphasize-lines: 3
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNotNone(None)
+      def test_assertion_error_w_none(self):
+          assert None is None
+          self.assertIsNotNone(None)
 
-  the terminal_ shows :ref:`AssertionError` with a more descriptive message
+the terminal_ shows :ref:`AssertionError` with a more descriptive message
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    AssertionError: unexpectedly None
+  AssertionError: unexpectedly None
+
+---------------------------------------------------------------------------------
+how to test if something is None
+---------------------------------------------------------------------------------
 
 * I change the statement to use the `assertIsNone method`_ which checks if the thing in parentheses is :ref:`None`
 
@@ -998,7 +1008,6 @@ I change the assertion_ to make it :ref:`True<test_what_is_true>`
 
 the test passes.
 
-
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
@@ -1018,7 +1027,7 @@ What is the difference between ``=`` and ``==``?
 * ``==`` checks if the thing on the left of the symbol is equal to the thing on the right of the symbol
 
 ---------------------------------------------------------------------------------
-how to test if two things are Equal
+how to test if two things are NOT Equal
 ---------------------------------------------------------------------------------
 
 There are `assert methods`_ to check if 2 things are equal or not.
@@ -1038,6 +1047,10 @@ There are `assert methods`_ to check if 2 things are equal or not.
   .. code-block:: shell
 
     AssertionError: None == None
+
+---------------------------------------------------------------------------------
+how to test if two things are Equal
+---------------------------------------------------------------------------------
 
 * I change assertNotEqual_ to assertEqual_ which checks if the 2 things in the parentheses are equal
 
@@ -1687,7 +1700,7 @@ for a total of 6 `assert methods`_ I can use when testing
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<AssertionError: tests>
+:ref:`Do you want to see all the CODE I typed in this chapter?<AssertionError: tests>`
 
 ----
 
