@@ -94,15 +94,15 @@ exceptions review
 AssertionError review
 *********************************************************************************
 
-* :ref:`What is an assertion?<test_what_is_an_assertion>`
-* :ref:`What causes AssertionError?<what_causes_assertion_error>`
-* :ref:`How can I test if something is NOT None?<how to test if something is None>`
+* :ref:`What is an assertion?<what is an assertion?>`
+* :ref:`What causes AssertionError?<what causes AssertionError?>`
+* :ref:`How can I test if something is NOT None?<how to test if something is NOT None>`
 * :ref:`How can I test if something is None?<how to test if something is None>`
 * :ref:`How can I test if something is False?<how to test if something is False>`
-* :ref:`How can I test if something is NOT False?<how to test if something is False>`
+* :ref:`How can I test if something is NOT False?<how to test if something is True>`
 * :ref:`How can I test if something is True?<how to test if something is True>`
-* :ref:`How can I test if something is NOT True?<how to test if something is True>`
-* :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are Equal>`
+* :ref:`How can I test if something is NOT True?<how to test if something is False>`
+* :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are NOT Equal>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
 
 *********************************************************************************
