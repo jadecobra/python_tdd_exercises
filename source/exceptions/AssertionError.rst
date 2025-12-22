@@ -339,7 +339,7 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
     # Exceptions seen
     # AssertionError
 
-  ``==`` is the symbol for ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``. The terminal_ still shows green
+  ``==`` (:kbd:`=+=`)  is the symbol for ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``. The terminal_ still shows green
 
 * I change the statement to make it :ref:`False<test_what_is_false>`
 
@@ -982,7 +982,7 @@ the terminal_ shows AssertionError_
 
   E    assert None != None
 
-``!=`` is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None`` or "DO NOT CONTINUE unless None is NOT equal to None"
+``!=`` (:kbd:`!+=`) is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None`` or "DO NOT CONTINUE unless None is NOT equal to None"
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1007,7 +1007,7 @@ the test passes.
 What is the difference between ``=`` and ``==``?
 ---------------------------------------------------------------------------------
 
-* ``=`` is the symbol for assignment, it's how to give a name to something in Python_, for example
+* ``=`` is the symbol for assignment or pointing, it's how to give a name to something in Python_, for example
 
   .. code-block:: python
 

@@ -804,22 +804,113 @@ A variable_ is a name that is used for values that change. For example, in the t
 
 .. code-block:: python
 
-  src.calculator.add(0, 1)
-  src.calculator.add(0, 2)
-  src.calculator.add(0, 3)
-  src.calculator.add(1, 3)
-  src.calculator.add(123456, 789012)
-  src.calculator.add(-1, 0)
-  src.calculator.add(-2, -3)
-  src.calculator.add(0.1234, -5.6789)
+  src.calculator.add(0, 1) == 0+1 == 1
+  src.calculator.add(0, 2) == 0+2 == 2
+  src.calculator.add(0, 3) == 0+3 == 3
+  src.calculator.add(1, 3) == 1+3 == 4
+  src.calculator.add(123456, 789012) == 123456+789012 == 912468
+  src.calculator.add(-1, 0) == -1+0 == -1
+  src.calculator.add(-2, -3) == -2+-3 == -5
+  src.calculator.add(0.1234, -5.6789) == 0.1234+-5.6789 == -5.555499999999999
 
-all of these lines can be written using ``first_input`` as the name of the first number and ``second_input`` as the name for the second number, like this
+all of these lines can be written using ``first_number`` as the name of the first number and ``second_number`` as the name for the second number, like this
 
 .. code-block:: python
 
-  src.calculator.add(first_input, second_input)
+  src.calculator.add(first_number, second_number) == first_number+second_number == first_number+second_number
 
-* I want the test to use random numbers instead of numbers that do not change, so I add an `import statement`_ at the top of ``test_calculator.py`` to use random numbers in the test
+* I add a new test at the beginning of ``test_addition`` with names for the values
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 4-7
+
+    class TestCalculator(unittest.TestCase):
+
+        def test_addition(self):
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+            self.assertEqual(
+                src.calculator.add(0, 1),
+                1
+            )
+
+  the terminal_ shows NameError_
+
+  .. code-block:: shell
+
+    NameError: name 'first_number' is not defined
+
+  I have to tell Python_ what the value of ``first_number`` is
+
+* I point ``first_number`` to ``0`` before the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 2
+
+        def test_addition(self):
+            first_number = 0
+
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+  the terminal_ shows NameError_
+
+  .. code-block:: shell
+
+    NameError: name 'second_number' is not defined
+
+  I have to tell Python_ what the value of ``second_number`` is
+
+* I point ``second_number`` to ``1`` before the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3
+
+
+        def test_addition(self):
+            first_number = 0
+            second_number = 1
+
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+  the test passes
+
+* I remove the next test since it is now covered by this new :ref:`assertion<AssertionError>` that uses a variable_
+
+  .. code-block:: python
+    :lineno-start: 7
+
+        self.assertEqual(
+            src.calculator.add(first_number, second_number),
+            first_number+second_number
+        )
+        self.assertEqual(
+            src.calculator.add(0, 2),
+            2
+        )
+
+* I can do the same thing for all the other tests by changing the values for ``first_input`` and ``second_input``, for example
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
+
+            first_number = 0
+            second_input = 1
+
+  the test is still green. The problem with this change is I lose the test for the previous number. I need a better way
+
+* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that my ``add`` :ref:`function<functions>` always returns the result of adding the two numbers. I can do this with the random_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
 
   .. code-block:: python
     :linenos:
