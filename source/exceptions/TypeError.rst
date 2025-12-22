@@ -785,18 +785,18 @@ I add a new failing test to show that I can NOT do an arithmetic_ operation with
   :emphasize-lines: 12-14
 
       def test_division(self):
-          while self.random_y == 0:
+          while self.random_second_input == 0:
               with self.assertRaises(ZeroDivisionError):
-                  src.calculator.divide(self.random_x, self.random_y)
-              self.random_y = a_random_number()
+                  src.calculator.divide(self.random_first_input, self.random_second_input)
+              self.random_second_input = a_random_number()
           else:
               self.assertEqual(
-                  src.calculator.divide(self.random_x, self.random_y),
-                  self.random_x/self.random_y
+                  src.calculator.divide(self.random_first_input, self.random_second_input),
+                  self.random_first_input/self.random_second_input
               )
 
       def test_calculator_raises_type_error(self):
-          src.calculator.add(self.random_x, None)
+          src.calculator.add(self.random_first_input, None)
 
 
   # Exceptions seen
@@ -819,7 +819,7 @@ I add assertRaises_
 
       def test_calculator_raises_type_error(self):
           with self.assertRaises(TypeError):
-              src.calculator.add(self.random_x, None)
+              src.calculator.add(self.random_first_input, None)
 
 the test passes
 
@@ -835,8 +835,8 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_x, None)
-            src.calculator.divide(self.random_x, None)
+                src.calculator.add(self.random_first_input, None)
+            src.calculator.divide(self.random_first_input, None)
 
   the terminal_ shows :ref:`TypeError`
 
@@ -852,9 +852,9 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_x, None)
+                src.calculator.add(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_x, None)
+                src.calculator.divide(self.random_first_input, None)
 
   the test passes
 
@@ -866,10 +866,10 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_x, None)
+                src.calculator.add(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_x, None)
-            src.calculator.multiply(self.random_x, None)
+                src.calculator.divide(self.random_first_input, None)
+            src.calculator.multiply(self.random_first_input, None)
 
   the terminal_ shows :ref:`TypeError`
 
@@ -885,11 +885,11 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_x, None)
+                src.calculator.add(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_x, None)
+                src.calculator.divide(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.multiply(self.random_x, None)
+                src.calculator.multiply(self.random_first_input, None)
 
   the test passes
 
@@ -901,12 +901,12 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_x, None)
+                src.calculator.add(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_x, None)
+                src.calculator.divide(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.multiply(self.random_x, None)
-            src.calculator.subtract(self.random_x, None)
+                src.calculator.multiply(self.random_first_input, None)
+            src.calculator.subtract(self.random_first_input, None)
 
   the terminal_ shows :ref:`TypeError`
 
@@ -922,13 +922,13 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_x, None)
+                src.calculator.add(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_x, None)
+                src.calculator.divide(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.multiply(self.random_x, None)
+                src.calculator.multiply(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.subtract(self.random_x, None)
+                src.calculator.subtract(self.random_first_input, None)
 
 
     # Exceptions seen
@@ -982,15 +982,15 @@ I change the assertRaises_ to assertEqual_ in ``test_calculator.py``
 
   def test_calculator_raises_type_error(self):
       self.assertEqual(
-          src.calculator.add(self.random_x, None),
+          src.calculator.add(self.random_first_input, None),
           'I only work with numbers'
       )
       with self.assertRaises(TypeError):
-          src.calculator.divide(self.random_x, None)
+          src.calculator.divide(self.random_first_input, None)
       with self.assertRaises(TypeError):
-          src.calculator.multiply(self.random_x, None)
+          src.calculator.multiply(self.random_first_input, None)
       with self.assertRaises(TypeError):
-          src.calculator.subtract(self.random_x, None)
+          src.calculator.subtract(self.random_first_input, None)
 
 the test passes
 
@@ -1029,17 +1029,17 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             self.assertEqual(
-                src.calculator.add(self.random_x, None),
+                src.calculator.add(self.random_first_input, None),
                 'I only work with numbers'
             )
             self.assertEqual(
-                src.calculator.divide(self.random_x, None),
+                src.calculator.divide(self.random_first_input, None),
                 'I only work with numbers'
             )
             with self.assertRaises(TypeError):
-                src.calculator.multiply(self.random_x, None)
+                src.calculator.multiply(self.random_first_input, None)
             with self.assertRaises(TypeError):
-                src.calculator.subtract(self.random_x, None)
+                src.calculator.subtract(self.random_first_input, None)
 
 * I have the same :ref:`exception handler<how to use try...except...else>` in both :ref:`functions` in ``calculator.py``. To follow `The Do Not Repeat Yourself (DRY) Principle`_ I can write a :ref:`function<functions>` that handles TypeError_. The problem is how it takes care of the lines that change, that is
 
@@ -1125,19 +1125,19 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             self.assertEqual(
-                src.calculator.add(self.random_x, None),
+                src.calculator.add(self.random_first_input, None),
                 'I only work with numbers'
             )
             self.assertEqual(
-                src.calculator.divide(self.random_x, None),
+                src.calculator.divide(self.random_first_input, None),
                 'I only work with numbers'
             )
             self.assertEqual(
-                src.calculator.multiply(self.random_x, None),
+                src.calculator.multiply(self.random_first_input, None),
                 'I only work with numbers'
             )
             with self.assertRaises(TypeError):
-                src.calculator.subtract(self.random_x, None)
+                src.calculator.subtract(self.random_first_input, None)
 
   the test passes
 
@@ -1170,19 +1170,19 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             self.assertEqual(
-                src.calculator.add(self.random_x, None),
+                src.calculator.add(self.random_first_input, None),
                 'I only work with numbers'
             )
             self.assertEqual(
-                src.calculator.divide(self.random_x, None),
+                src.calculator.divide(self.random_first_input, None),
                 'I only work with numbers'
             )
             self.assertEqual(
-                src.calculator.multiply(self.random_x, None),
+                src.calculator.multiply(self.random_first_input, None),
                 'I only work with numbers'
             )
             self.assertEqual(
-                src.calculator.subtract(self.random_x, None),
+                src.calculator.subtract(self.random_first_input, None),
                 'I only work with numbers'
             )
 
@@ -1209,7 +1209,7 @@ the test passes
     :emphasize-lines: 6-10
 
             self.assertEqual(
-                src.calculator.subtract(self.random_x, None),
+                src.calculator.subtract(self.random_first_input, None),
                 'I only work with numbers'
             )
 
@@ -1458,7 +1458,7 @@ close the project
 *********************************************************************************
 
 * I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
-* I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell

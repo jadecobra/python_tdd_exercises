@@ -1517,7 +1517,7 @@ I want to see what happens when I try to make a person without a value for the `
             # year_of_birth = random.randint(
             #    this_year()-120, this_year()
             # )
-            year_of_birth = self.random_year_of_birth
+            year_of_birth = self.random_second_inputear_of_birth
 
             self.assertEqual(
                 ...
@@ -1536,7 +1536,7 @@ I want to see what happens when I try to make a person without a value for the `
             # year_of_birth = random.randint(
             #    this_year()-120, this_year()
             # )
-            year_of_birth = self.random_year_of_birth
+            year_of_birth = self.random_second_inputear_of_birth
 
             self.assertEqual(
                 ...
@@ -1554,7 +1554,7 @@ I want to see what happens when I try to make a person without a value for the `
                 'doe', 'smith', 'blow', 'public',
             ))
             sex = random.choice(('F', 'M'))
-            year_of_birth = self.random_year_of_birth
+            year_of_birth = self.random_second_inputear_of_birth
 
             self.assertEqual(
                 ...
@@ -1566,7 +1566,7 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_function_w_default_keyword_arguments(self):
             first_name = self.first_name
-            year_of_birth = self.random_year_of_birth
+            year_of_birth = self.random_second_inputear_of_birth
 
             self.assertEqual(
                 ...
@@ -1585,20 +1585,20 @@ I want to see what happens when I try to make a person without a value for the `
                 'doe', 'smith', 'blow', 'public',
             ))
             sex = random.choice(('F', 'M'))
-            # year_of_birth = self.random_year_of_birth
+            # year_of_birth = self.random_second_inputear_of_birth
 
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
                     last_name=last_name,
                     sex=sex,
-                    year_of_birth=self.random_year_of_birth,
+                    year_of_birth=self.random_second_inputear_of_birth,
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name=last_name,
                     sex=sex,
-                    age=this_year()-self.random_year_of_birth,
+                    age=this_year()-self.random_second_inputear_of_birth,
                 )
             )
 
@@ -1610,18 +1610,18 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_function_w_default_keyword_arguments(self):
             # first_name = self.first_name
-            # year_of_birth = self.random_year_of_birth
+            # year_of_birth = self.random_second_inputear_of_birth
 
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
-                    year_of_birth=self.random_year_of_birth,
+                    year_of_birth=self.random_second_inputear_of_birth,
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name='doe',
                     sex='M',
-                    age=this_year()-self.random_year_of_birth,
+                    age=this_year()-self.random_second_inputear_of_birth,
                 )
             )
 
@@ -1650,13 +1650,13 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
-                    year_of_birth=self.random_year_of_birth
+                    year_of_birth=self.random_second_inputear_of_birth
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name='doe',
                     sex='M',
-                    age=this_year()-self.random_year_of_birth,
+                    age=this_year()-self.random_second_inputear_of_birth,
                 )
             )
 
@@ -1722,7 +1722,7 @@ I want to see what happens when I try to make a person without a value for the `
             self.first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
-            self.random_year_of_birth = random.randint(
+            self.random_second_inputear_of_birth = random.randint(
                 this_year()-120, this_year()
             )
 
@@ -1731,7 +1731,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   and both tests are green again!
 
-  ``self.first_name`` and ``self.random_year_of_birth`` are given random values before the first test, then given random values again before the second test. That was a lot, but we got through it.
+  ``self.first_name`` and ``self.random_second_inputear_of_birth`` are given random values before the first test, then given random values again before the second test. That was a lot, but we got through it.
 
 ----
 
@@ -2136,7 +2136,7 @@ close the project
 *********************************************************************************
 
 * I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
-* I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell

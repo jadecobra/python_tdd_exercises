@@ -783,7 +783,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 
   still green
 
-* The 2 cases where ``logical_equality`` returns :ref:`True<test_what_is_true>` are when ``first_input`` and ``second_input`` are the same, which means I can write a much simpler `return statement`_ thanks to the equality symbol (2 equal signs together ``==``)
+* The 2 cases where ``logical_equality`` returns :ref:`True<test_what_is_true>` are when ``first_input`` and ``second_input`` are the same, which means I can write a much simpler `return statement`_ thanks to the equality symbol (2 equal signs together :kbd:`=+=`)
 
   .. code-block:: python
     :lineno-start: 75

@@ -420,7 +420,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   still green
 
-* ``exclusive_disjunction`` returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are the same and returns :ref:`True<test_what_is_true>` when they are NOT. I add an :ref:`if statement<if statements (conditionals)>` to show this with the equality symbol (2 equal signs together ``==``)
+* ``exclusive_disjunction`` returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are the same and returns :ref:`True<test_what_is_true>` when they are NOT. I add an :ref:`if statement<if statements (conditionals)>` to show this with the equality symbol (2 equal signs together :kbd:`=+=`)
 
   .. code-block:: python
     :lineno-start: 49
@@ -451,7 +451,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   the test is still green
 
-* I remove the commented lines, then use an even simpler `return statement`_ with the NOT equal symbol (``!=``)
+* I remove the commented lines, then use an even simpler `return statement`_ with the NOT equal symbol (exclamation mark and equal symbol :kbd:`!+=`)
 
   .. code-block:: python
     :lineno-start: 49

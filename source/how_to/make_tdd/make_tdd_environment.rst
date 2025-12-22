@@ -1161,7 +1161,7 @@ how to open the test file in the editor from the terminal
 how to stop the automated tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-I exit the tests in the terminal_ with :kbd:`Ctrl+C` on the keyboard
+I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to deactivate a virtual environment
