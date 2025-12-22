@@ -9,53 +9,53 @@ def a_random_number():
 
 class TestCalculator(unittest.TestCase):
 
-    random_first_input = a_random_number()
-    random_second_input = a_random_number()
+    random_first_number = a_random_number()
+    random_second_number = a_random_number()
 
     def test_addition(self):
         self.assertEqual(
-            src.calculator.add(self.random_first_input, self.random_second_input),
-            self.random_first_input+self.random_second_input
+            src.calculator.add(self.random_first_number, self.random_second_number),
+            self.random_first_number+self.random_second_number
         )
 
     def test_subtraction(self):
         self.assertEqual(
-            src.calculator.subtract(self.random_first_input, self.random_second_input),
-            self.random_first_input-self.random_second_input
+            src.calculator.subtract(self.random_first_number, self.random_second_number),
+            self.random_first_number-self.random_second_number
         )
 
     def test_multiplication(self):
         self.assertEqual(
-            src.calculator.multiply(self.random_first_input, self.random_second_input),
-            self.random_first_input*self.random_second_input
+            src.calculator.multiply(self.random_first_number, self.random_second_number),
+            self.random_first_number*self.random_second_number
         )
 
     def test_division(self):
-        while self.random_second_input == 0:
+        while self.random_second_number == 0:
             with self.assertRaises(ZeroDivisionError):
-                src.calculator.divide(self.random_first_input, self.random_second_input)
-            self.random_second_input = a_random_number()
+                src.calculator.divide(self.random_first_number, self.random_second_number)
+            self.random_second_number = a_random_number()
         else:
             self.assertEqual(
-                src.calculator.divide(self.random_first_input, self.random_second_input),
-                self.random_first_input/self.random_second_input
+                src.calculator.divide(self.random_first_number, self.random_second_number),
+                self.random_first_number/self.random_second_number
             )
 
     def test_calculator_raises_type_error(self):
         self.assertEqual(
-            src.calculator.add(self.random_first_input, None),
+            src.calculator.add(self.random_first_number, None),
             'I only work with numbers'
         )
         self.assertEqual(
-            src.calculator.divide(self.random_first_input, None),
+            src.calculator.divide(self.random_first_number, None),
             'I only work with numbers'
         )
         self.assertEqual(
-            src.calculator.multiply(self.random_first_input, None),
+            src.calculator.multiply(self.random_first_number, None),
             'I only work with numbers'
         )
         self.assertEqual(
-            src.calculator.subtract(self.random_first_input, None),
+            src.calculator.subtract(self.random_first_number, None),
             'I only work with numbers'
         )
 

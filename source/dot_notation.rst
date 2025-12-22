@@ -127,7 +127,7 @@ module.AClass.attribute
       instance = module.AClass()
       instance.attribute
 
-- or the definition in ``module.py``
+- or the name in ``module.py``
 
   .. code-block:: python
 

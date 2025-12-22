@@ -808,20 +808,20 @@ A variable_ is a name that is used for values that change. For example, in the t
 
 .. code-block:: python
 
-  src.calculator.add(0, 1) return 0+1 return 1
-  src.calculator.add(0, 2) return 0+2 return 2
-  src.calculator.add(0, 3) return 0+3 return 3
-  src.calculator.add(1, 3) return 1+3 return 4
-  src.calculator.add(123456, 789012) return 123456+789012 return 912468
-  src.calculator.add(-1, 0) return -1+0 return -1
-  src.calculator.add(-2, -3) return -2+-3 return -5
-  src.calculator.add(0.1234, -5.6789) return 0.1234+-5.6789 return -5.555499999999999
+  src.calculator.add(0, 1) is 0+1 is 1
+  src.calculator.add(0, 2) is 0+2 is 2
+  src.calculator.add(0, 3) is 0+3 is 3
+  src.calculator.add(1, 3) is 1+3 is 4
+  src.calculator.add(123456, 789012) is 123456+789012 is 912468
+  src.calculator.add(-1, 0) is -1+0 is -1
+  src.calculator.add(-2, -3) is -2+-3 is -5
+  src.calculator.add(0.1234, -5.6789) is 0.1234+-5.6789 is -5.555499999999999
 
 all of these lines can be written using ``first_number`` as the name of the first number and ``second_number`` as the name for the second number, like this
 
 .. code-block:: python
 
-  src.calculator.add(first_number, second_number) return first_number+second_number
+  src.calculator.add(first_number, second_number) is first_number+second_number
 
 * I add a new test at the beginning of ``test_addition`` with names for the values
 
@@ -1166,28 +1166,33 @@ test_subtraction
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
-            random_first_input = a_random_number()
-            random_second_input = a_random_number()
+            random_first_number = a_random_number()
+            random_second_number = a_random_number()
 
             self.assertEqual(
                 src.calculator.add(first_input, second_input),
-                random_first_input+random_second_input
+                random_first_number+random_second_number
             )
 
         def test_subtraction(self):
-            random_first_input = a_random_number()
-            random_second_input = a_random_number()
+            random_first_number = a_random_number()
+            random_second_number = a_random_number()
 
             self.assertEqual(
-                src.calculator.subtract(random_first_input, random_second_input),
-                random_first_input-random_second_input
+                src.calculator.subtract(random_first_number, random_second_number),
+                random_first_number-random_second_number
             )
+
+
+    # TODO
 
   the terminal_ shows :ref:`AttributeError`
 
   .. code-block:: shell
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
+
+``calculator.py`` in the ``src`` folder_ does not have anything named ``subtract`` in it
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1215,6 +1220,7 @@ test_subtraction
 
   .. code-block:: python
     :lineno-start: 5
+    :emphasize-lines: 1
 
     subtract = None
 
@@ -1256,11 +1262,9 @@ test_subtraction
 
   .. code-block:: shell
 
-    AssertionError: None != X
+    AssertionError: None != X.YZABCDEFGHIJKLM
 
-  where ``X`` is a random number.
-
-  ``subtract`` returns :ref:`None`, the test expects ``random_first_input-random_second_input`` or ``first_input-second_input`` - the difference between the 2 numbers
+  ``subtract`` returns :ref:`None`, the test expects ``random_first_number-random_second_number`` or ``first_input-second_input`` - the difference between the 2 numbers
 
 * I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
 
@@ -1277,14 +1281,16 @@ test_subtraction
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I have some duplication to remove, the code below happens twice
+* I have some duplication to remove, the code below happens twice in ``test_calculator.py``
 
   .. code-block:: python
 
-    random_first_input = a_random_number()
-    random_second_input = a_random_number()
+    random_first_number = a_random_number()
+    random_second_number = a_random_number()
 
-  once in ``test_addition`` and again ``test_subtraction``. I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests in ``test_calculator.py``
+  once in ``test_addition`` and again in ``test_subtraction``
+
+* I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests
 
   .. code-block:: python
     :lineno-start: 10
@@ -1292,26 +1298,26 @@ test_subtraction
 
     class TestCalculator(unittest.TestCase):
 
-        random_first_input = a_random_number()
-        random_second_input = a_random_number()
+        random_first_number = a_random_number()
+        random_second_number = a_random_number()
 
         def test_addition(self):
 
-  I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in ``test_addition``
+* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in ``test_addition``
 
   .. code-block:: python
     :lineno-start: 15
     :emphasize-lines: 3, 5
 
         def test_addition(self):
-            # random_first_input = a_random_number()
-            random_first_input = self.random_first_input
-            # random_second_input = a_random_number()
-            random_second_input = self.random_second_input
+            # random_first_number = a_random_number()
+            random_first_number = self.random_first_number
+            # random_second_number = a_random_number()
+            random_second_number = self.random_second_number
 
             self.assertEqual(
-                src.calculator.add(random_first_input, random_second_input),
-                random_first_input+random_second_input
+                src.calculator.add(random_first_number, random_second_number),
+                random_first_number+random_second_number
             )
 
   and in ``test_subtraction``
@@ -1321,17 +1327,17 @@ test_subtraction
     :emphasize-lines: 3, 5
 
         def test_subtraction(self):
-            # random_first_input = a_random_number()
-            random_first_input = self.random_first_input
-            # random_second_input = a_random_number()
-            random_second_input = self.random_second_input
+            # random_first_number = a_random_number()
+            random_first_number = self.random_first_number
+            # random_second_number = a_random_number()
+            random_second_number = self.random_second_number
 
             self.assertEqual(
-                src.calculator.subtract(random_first_input, random_second_input),
-                random_first_input-random_second_input
+                src.calculator.subtract(random_first_number, random_second_number),
+                random_first_number-random_second_number
             )
 
-  the terminal_ shows the tests are still passing. The ``first_input`` and ``second_input`` :ref:`variables<test_attribute_error_w_variables>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_first_input`` and ``self.random_second_input``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal_ shows the tests are still passing. The ``random_first_number`` and ``random_second_number`` :ref:`variables<test_attribute_error_w_variables>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the commented lines in ``test_addition``
 
@@ -1339,8 +1345,8 @@ test_subtraction
     :lineno-start: 15
 
         def test_addition(self):
-            x = self.random_first_input
-            y = self.random_second_input
+            random_first_number = self.random_first_number
+            random_second_number = self.random_second_number
 
   and do the same thing in ``test_subtraction``
 
@@ -1348,53 +1354,93 @@ test_subtraction
     :lineno-start: 24
 
         def test_subtraction(self):
-            x = self.random_first_input
-            y = self.random_second_input
+            random_first_number = self.random_first_number
+            random_second_number = self.random_second_number
 
 * I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly in ``test_addition``
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-8
 
             self.assertEqual(
-                src.calculator.add(self.random_first_input, self.random_second_input),
-                self.random_first_input+self.random_second_input
+                # src.calculator.add(random_first_number, random_second_number),
+                src.calculator.add(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                # random_first_number+random_second_number
+                self.random_first_number+self.random_second_number
             )
 
-  the test is still green
+  the test is still green. I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+            self.assertEqual(
+                src.calculator.add(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number+self.random_second_number
+            )
 
 * I do the same thing in ``test_subtraction``
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 2-3
+    :lineno-start: 31
+    :emphasize-lines: 2-8
 
             self.assertEqual(
-                src.calculator.subtract(self.random_first_input, self.random_second_input),
-                self.random_first_input-self.random_second_input
+                # src.calculator.subtract(random_first_number, random_second_number),
+                src.calculator.subtract(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                # random_first_number-random_second_number
+                self.random_first_number-self.random_second_number
             )
 
-* I remove the ``first_input`` and ``second_input`` :ref:`variables<test_attribute_error_w_variables>` from ``test_addition`` and ``test_subtraction`` since they are no longer needed
+  the test is still passing. I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 31
+
+            self.assertEqual(
+                src.calculator.subtract(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number-self.random_second_number
+            )
+
+* I remove the ``first_random_number`` and ``second_random_number`` :ref:`variables<test_attribute_error_w_variables>` from ``test_addition`` and ``test_subtraction`` since they are no longer needed
 
   .. code-block:: python
     :lineno-start: 10
 
     class TestCalculator(unittest.TestCase):
 
-        random_first_input = a_random_number()
-        random_second_input = a_random_number()
+        random_first_number = a_random_number()
+        random_second_number = a_random_number()
 
         def test_addition(self):
             self.assertEqual(
-                src.calculator.add(self.random_first_input, self.random_second_input),
-                self.random_first_input+self.random_second_input
+                src.calculator.add(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number+self.random_second_number
             )
 
         def test_subtraction(self):
             self.assertEqual(
-                src.calculator.subtract(self.random_first_input, self.random_second_input),
-                self.random_first_input-self.random_second_input
+                src.calculator.subtract(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number-self.random_second_number
             )
 
 
@@ -1432,14 +1478,14 @@ I add a failing test for multiplication in ``test_calculator.py``
 
       def test_subtraction(self):
           self.assertEqual(
-              src.calculator.subtract(self.random_first_input, self.random_second_input),
-              self.random_first_input-self.random_second_input
+              src.calculator.subtract(self.random_first_number, self.random_second_number),
+              self.random_first_number-self.random_second_number
           )
 
       def test_multiplication(self):
           self.assertEqual(
-              src.calculator.multiply(self.random_first_input, self.random_second_input),
-              self.random_first_input*self.random_second_input
+              src.calculator.multiply(self.random_first_number, self.random_second_number),
+              self.random_first_number*self.random_second_number
           )
 
   # TODO
@@ -1497,14 +1543,14 @@ time for division. I add a new test to ``test_calculator.py``
 
       def test_multiplication(self):
           self.assertEqual(
-              src.calculator.multiply(self.random_first_input, self.random_second_input),
-              self.random_first_input*self.random_second_input
+              src.calculator.multiply(self.random_first_number, self.random_second_number),
+              self.random_first_number*self.random_second_number
           )
 
       def test_division(self):
           self.assertEqual(
-              src.calculator.divide(self.random_first_input, self.random_second_input),
-              self.random_first_input/self.random_second_input
+              src.calculator.divide(self.random_first_number, self.random_second_number),
+              self.random_first_number/self.random_second_number
           )
 
   # TODO

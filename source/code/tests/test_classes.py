@@ -8,7 +8,7 @@ def this_year():
     return datetime.datetime.now().year
 
 
-def random_second_inputear_of_birth():
+def random_second_numberear_of_birth():
     return random.randint(
         this_year()-120, this_year()
     )
@@ -24,9 +24,9 @@ class TestPerson(unittest.TestCase):
         self.random_first_name = random.choice((
             'jane', 'joe', 'john', 'person',
         ))
-        self.random_second_inputear_of_birth = random_second_inputear_of_birth()
-        self.random_new_year_of_birth = random_second_inputear_of_birth()
-        self.original_age = get_age(self.random_second_inputear_of_birth)
+        self.random_second_numberear_of_birth = random_second_numberear_of_birth()
+        self.random_new_year_of_birth = random_second_numberear_of_birth()
+        self.original_age = get_age(self.random_second_numberear_of_birth)
         self.new_age = get_age(self.random_new_year_of_birth)
         self.random_last_name = random.choice((
             'doe', 'smith', 'blow', 'public',
@@ -36,13 +36,13 @@ class TestPerson(unittest.TestCase):
             first_name=self.random_first_name,
             last_name=self.random_last_name,
             sex=self.random_sex,
-            year_of_birth=self.random_second_inputear_of_birth,
+            year_of_birth=self.random_second_numberear_of_birth,
         )
         self.random_classy_person = src.person.Person(
             first_name=self.random_first_name,
             last_name=self.random_last_name,
             sex=self.random_sex,
-            year_of_birth=self.random_second_inputear_of_birth,
+            year_of_birth=self.random_second_numberear_of_birth,
         )
 
     def test_takes_keyword_arguments(self):
