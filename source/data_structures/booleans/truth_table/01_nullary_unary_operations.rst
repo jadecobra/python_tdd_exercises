@@ -52,7 +52,7 @@ I change the :ref:`class<classes>` and :ref:`method<functions>` in ``test_truth_
           self.assertTrue(src.truth_table.logical_true())
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -66,13 +66,13 @@ I have not added a definition for ``logical_true`` to ``truth_table.py`` in the 
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
 
@@ -127,7 +127,7 @@ I add another test in ``test_truth_table.py``
           self.assertFalse(src.truth_table.logical_false())
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -213,7 +213,7 @@ I add a new TestCase_ and a test for Unary Operations to ``test_truth_table.py``
           self.assertTrue(src.truth_table.logical_identity(True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -248,13 +248,13 @@ I need to add a definition for it
 
   I need to make the :ref:`function<functions>` accept input since the test sends :ref:`True<test_what_is_true>` as input
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 20
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
     # TypeError
@@ -359,7 +359,7 @@ I add a new test to ``test_truth_table.py`` for ``logical_negation``
           self.assertFalse(src.truth_table.logical_negation(True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -488,7 +488,7 @@ how to return the opposite of a boolean
             self.assertTrue(src.truth_table.logical_negation(False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
 ``logical_negation`` aka not_ returns the opposite of its input
 

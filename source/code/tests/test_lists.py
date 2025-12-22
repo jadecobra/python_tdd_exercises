@@ -174,7 +174,7 @@ class TestLists(unittest.TestCase):
             [][-1]
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # TypeError
 # ValueError

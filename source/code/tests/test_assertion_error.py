@@ -64,5 +64,5 @@ class TestAssertionError(unittest.TestCase):
 # None is None and equal to None
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError

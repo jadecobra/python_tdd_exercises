@@ -10,6 +10,6 @@ class TestModuleNotFoundError(unittest.TestCase):
         import src.module_03
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # ModuleNotFoundError

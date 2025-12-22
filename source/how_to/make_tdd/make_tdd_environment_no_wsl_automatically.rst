@@ -130,7 +130,7 @@ how to make a PowerShell script
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     " | Out-File "tests/test_magic_again.py" -Encoding UTF8
 
@@ -229,7 +229,7 @@ how to run a PowerShell script
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     " | Out-File "tests/test_more_magic.py" - Encoding UTF8
 

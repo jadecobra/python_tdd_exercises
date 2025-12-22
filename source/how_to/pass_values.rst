@@ -261,7 +261,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -270,10 +270,10 @@ start the project
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -311,7 +311,7 @@ I change ``test_failure`` to ``test_passing_a_string``
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -325,13 +325,13 @@ there is no definition for ``src`` in ``test_telephone.py``
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered
+* I add the error to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
 
@@ -355,13 +355,13 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   there is no definition for ``text`` in ``telephone.py`` in the ``src`` folder_
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
@@ -398,13 +398,13 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   I cannot call :ref:`None` the way I can call a :ref:`function<functions>`
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_telephone.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 5
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
@@ -482,7 +482,7 @@ I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string`` in ``t
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -565,7 +565,7 @@ I add a failing test in ``test_telephone.py`` to see what happens when I pass a 
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -689,7 +689,7 @@ I remove the :ref:`quotes` from around :ref:`None` in the expectation
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the test passes.
 
@@ -784,7 +784,7 @@ the terminal_ shows :ref:`AssertionError`
             )
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test passes.
 
@@ -838,7 +838,7 @@ I remove the :ref:`quotes` from the expectation
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the test passes.
 
@@ -852,7 +852,7 @@ test_passing_a_float
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for a float_ (floating point decimal numbers)
+I add a test for a float_ (binary floating point decimal numbers)
 
 .. code-block:: python
   :lineno-start: 43
@@ -893,7 +893,7 @@ I remove the :ref:`quotes` from the number
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the test passes.
 
@@ -1058,7 +1058,7 @@ I change the expectation
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows all tests are passing.
 

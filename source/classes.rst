@@ -67,19 +67,19 @@ the terminal_ shows :ref:`ModuleNotFoundError` because I have an import statemen
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
+* I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
 
   .. code-block:: python
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
 
-* I make Python_ module called ``classes.py`` the terminal_ shows :ref:`AttributeError` which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
+* I make Python_ module called ``classes.py`` the terminal_ shows :ref:`AttributeError` which I add to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
 
   .. code-block:: python
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # AttributeError
@@ -92,11 +92,11 @@ the terminal_ shows :ref:`ModuleNotFoundError` because I have an import statemen
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>` because ``ClassWithPass`` is not defined anywhere
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
 
   .. code-block:: python
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # AttributeError
@@ -115,11 +115,11 @@ the terminal_ shows :ref:`ModuleNotFoundError` because I have an import statemen
     class ClassWithPass:
 
   the terminal_ shows IndentationError_ because I declared a class without adding any indented text
-* I add the new error to the list of :ref:`Exceptions<errors>` encountered in ``test_classes.py``
+* I add the new error to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
 
   .. code-block:: python
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # AttributeError

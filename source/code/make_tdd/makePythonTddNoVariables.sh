@@ -15,7 +15,7 @@ class TestMoreMagic(unittest.TestCase):
         self.assertFalse(True)
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 " > tests/test_more_magic.py
 

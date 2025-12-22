@@ -26,7 +26,7 @@ class TestTypeError(unittest.TestCase):
             (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # AttributeError
 # TypeError

@@ -105,7 +105,7 @@ I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_tru
           self.assertFalse(src.truth_table.negate_first(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -229,7 +229,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
             self.assertTrue(src.truth_table.negate_first(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -419,7 +419,7 @@ I add a new test to ``test_truth_table.py``
           self.assertFalse(src.truth_table.logical_nand(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -597,7 +597,7 @@ the test passes.
             self.assertTrue(src.truth_table.logical_nand(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -855,7 +855,7 @@ I add a test for the next Binary Operation in ``test_truth_table.py`` with the f
           self.assertTrue(src.truth_table.tautology(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -933,7 +933,7 @@ the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when the 
             self.assertTrue(src.truth_table.tautology(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   still green, there is only one result for this operation.
 
@@ -968,7 +968,7 @@ I add another test to ``test_truth_table.py`` with the first case, where the two
           self.assertTrue(src.truth_table.logical_disjunction(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -1048,7 +1048,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
             self.assertFalse(src.truth_table.logical_disjunction(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1227,13 +1227,13 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
     SyntaxError: invalid syntax
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_truth_table.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 76
     :emphasize-lines: 5
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
     # TypeError

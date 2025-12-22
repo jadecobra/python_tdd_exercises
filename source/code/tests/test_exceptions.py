@@ -62,7 +62,7 @@ class TestExceptions(unittest.TestCase):
         )
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # ModuleNotFoundError
 # NameError

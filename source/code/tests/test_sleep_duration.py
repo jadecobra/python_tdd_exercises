@@ -81,7 +81,7 @@ class TestSleepDuration(unittest.TestCase):
             )
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # TypeError
 # NameError

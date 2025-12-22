@@ -285,7 +285,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` encountered in ``test_assertion_error.py``
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -294,10 +294,10 @@ start the project
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -336,7 +336,7 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
             1 + 1 == 2
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
   ``==`` is the symbol for ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``. The terminal_ still shows green
@@ -393,7 +393,7 @@ the test passes
             '1' + '1' == '2'
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test is still green
 
@@ -521,7 +521,7 @@ test_assertion_error_w_none
             assert None is not None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows AssertionError_
 
@@ -596,7 +596,7 @@ how to test if something is None
     # None is None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * I add a new :ref:`assertion<AssertionError>` to compare :ref:`None` with :ref:`False<test_what_is_false>`, another simple :ref:`data structure<data structures>`
@@ -661,7 +661,7 @@ how to test if something is None
     # None is None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * I add another :ref:`assertion<AssertionError>` to compare :ref:`None` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
@@ -734,7 +734,7 @@ how to test if something is None
     # None is None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 I can use assertions_ to test if something is :ref:`None`
@@ -838,7 +838,7 @@ how to test if something is False
     # None is None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or :ref:`None`
@@ -943,7 +943,7 @@ how to test if something is True
     # None is None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` or :ref:`None`
@@ -1065,7 +1065,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # None is None and equal to None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * I add a new failing assertion_ to compare :ref:`False<test_what_is_false>` with :ref:`None`
@@ -1138,7 +1138,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # None is None and equal to None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * I add the next failing assertion_
@@ -1211,7 +1211,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # None is None and equal to None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * I add another failing assertion_
@@ -1285,7 +1285,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # None is None and equal to None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * on to the next failing assertion_
@@ -1358,7 +1358,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # None is None and equal to None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * I add a failing `assert statement`_
@@ -1431,7 +1431,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # None is None and equal to None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * time for the last `assert statements`_
@@ -1527,7 +1527,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
     # None is None and equal to None
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * I add calls to the `assertEqual method`_ in :ref:`test_what_is_an_assertion`

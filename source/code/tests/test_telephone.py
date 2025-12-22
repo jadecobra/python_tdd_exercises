@@ -70,7 +70,7 @@ class TestTelephone(unittest.TestCase):
         )
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # NameError
 # AttributeError

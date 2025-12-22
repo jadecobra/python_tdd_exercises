@@ -223,7 +223,7 @@ I add a new TestCase_ to ``test_truth_table.py``
           self.assertFalse(src.truth_table.contradiction(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -337,7 +337,7 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
             self.assertFalse(src.truth_table.contradiction(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test is still green!
 
@@ -365,7 +365,7 @@ I add a test for ``logical_conjunction`` in ``test_truth_table.py`` with the fir
             self.assertTrue(src.truth_table.logical_conjunction(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -516,7 +516,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
             self.assertFalse(src.truth_table.logical_conjunction(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -819,7 +819,7 @@ I add a test for another Binary Operation in ``test_truth_table.py``
           self.assertTrue(src.truth_table.project_second(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -909,7 +909,7 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
             self.assertFalse(src.truth_table.project_second(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -992,7 +992,7 @@ I add a test for ``converse_non_implication`` in ``test_truth_table.py``
           self.assertFalse(src.truth_table.converse_non_implication(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -1082,7 +1082,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
             self.assertFalse(src.truth_table.converse_non_implication(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test is still passing
 

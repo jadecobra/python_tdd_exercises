@@ -97,7 +97,7 @@ start the project
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     " > tests/test_exceptions.py
 
@@ -136,13 +136,13 @@ start the project
     ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` encountered in ``test_.py``
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_.py``
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 4-5
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_exceptions.py``
@@ -177,7 +177,7 @@ I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` w
           import does_not_exist
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`ModuleNotFoundError`
 
@@ -191,13 +191,13 @@ I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` encountered
+* I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
 
@@ -246,13 +246,13 @@ test_catching_name_error_in_tests
 
   because there is no definition for `does_not_exist` in ``test_exceptions.py``
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # NameError
@@ -325,13 +325,13 @@ test_catching_attribute_error_in_tests
 
   the failure happened because Python_ cannot find ``does_not_exist`` in ``exceptions.py`` in the ``src`` folder_. tried to get something that does NOT exist from something that exists
 
-* I add the :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` encountered
+* I add the :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 5
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # NameError
@@ -412,13 +412,13 @@ test_catching_type_error_in_tests
 
   a reminder that I cannot call :ref:`None` like a :ref:`function<functions>`
 
-* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` encountered in ``test_exceptions.py``
+* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 23
     :emphasize-lines: 6
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # NameError
@@ -549,13 +549,13 @@ test_catching_index_error_in_tests
 
   I cannot use a number that is bigger than the index of the last item in a :ref:`list<lists>` or that is greater than or equal to the length of the list
 
-* I add :ref:`IndexError<test_index_error>` to the list of :ref:`Exceptions<errors>` encountered
+* I add :ref:`IndexError<test_index_error>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 28
     :emphasize-lines: 7
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # NameError
@@ -730,13 +730,13 @@ test_catching_key_error_in_tests
 
     KeyError: 'not_in_dictionary'
 
-* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<errors>` encountered
+* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 8
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # NameError
@@ -790,13 +790,13 @@ test_catching_zero_division_error_in_tests
 
   I cannot divide a number by ``0``
 
-* I add ZeroDivisionError_ to the list of :ref:`Exceptions<errors>` encountered
+* I add ZeroDivisionError_ to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 38
     :emphasize-lines: 9
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # NameError
@@ -898,7 +898,7 @@ I add the `assertRaises method`_ to catch it
               raise Exception
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows all tests are passing. The `assertRaises method`_ checks that the code under it raises the :ref:`Exception<errors>` it is given in parentheses
 

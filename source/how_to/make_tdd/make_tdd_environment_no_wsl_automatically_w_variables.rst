@@ -66,7 +66,7 @@ Time to use a variable_ for the name of the project
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     " | Out-File "tests/test_more_magic.py" - Encoding UTF8
 
@@ -104,7 +104,7 @@ Time to use a variable_ for the name of the project
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     " | Out-File "tests/test_$PROJECT_NAME.py" - Encoding UTF8
 

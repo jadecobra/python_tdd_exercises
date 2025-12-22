@@ -136,7 +136,7 @@ how to make a shell script
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     " > tests/test_magic_again.py
 
@@ -302,7 +302,7 @@ how to make a shell script run as a command
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     " > tests/test_more_magic.py
 

@@ -114,7 +114,7 @@ test_attribute_error_w_variables
             src.attribute_error.variable_00
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` which is in the ``src`` folder. Since the file is empty, the variable_ is not in it.
 
@@ -124,13 +124,13 @@ test_attribute_error_w_variables
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_00'
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
 
@@ -152,13 +152,13 @@ test_attribute_error_w_variables
 
     NameError: name 'variable_00' is not defined
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
     # NameError
@@ -305,7 +305,7 @@ I add a new test to ``test_attribute_error.py``
           src.attribute_error.function_00()
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows AttributeError_
 
@@ -334,13 +334,13 @@ the terminal_ shows AttributeError_
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 17
     :emphasize-lines: 5
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
     # NameError
@@ -439,7 +439,7 @@ the terminal_ shows AttributeError_
             src.attribute_error.function_03()
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows AttributeError_
 
@@ -486,7 +486,7 @@ I add a new test to ``test_attribute_error.py``
           src.attribute_error.AClass.attribute_00
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows AttributeError_
 
@@ -549,13 +549,13 @@ the terminal_ shows AttributeError_
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_attribute_error.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 23
     :emphasize-lines: 6
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
     # NameError
@@ -649,7 +649,7 @@ the terminal_ shows AttributeError_
             src.attribute_error.AClass.attribute_03
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows AttributeError_
 
@@ -701,7 +701,7 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
             src.attribute_error.AClass.method_00()
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows AttributeError_
 
@@ -825,7 +825,7 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
             src.attribute_error.AClass.method_03()
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows AttributeError_
 

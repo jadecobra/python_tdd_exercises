@@ -104,7 +104,7 @@ I add a new test for another Binary Operation to ``test_truth_table.py`` with th
       def test_negate_second(self):
           self.assertFalse(src.truth_table.negate_second(True, True))
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -278,7 +278,7 @@ I add a test for ``logical_nor`` in ``test_truth_table.py``
           self.assertFalse(src.truth_table.logical_nor(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -354,7 +354,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when t
             self.assertTrue(src.truth_table.logical_nor(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -494,7 +494,7 @@ I add a new test for the next Binary Operation in ``test_truth_table.py``
           self.assertTrue(src.truth_table.logical_equality(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -606,7 +606,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
             self.assertTrue(src.truth_table.logical_equality(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test is still green. ``logical_equality`` returns
 
@@ -829,7 +829,7 @@ I add a new test for one more Binary Operation in ``test_truth_table.py``
           self.assertTrue(src.truth_table.material_implication(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -926,7 +926,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
             self.assertTrue(src.truth_table.material_implication(False, True))
             self.assertTrue(src.truth_table.material_implication(False, False))
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test is still passing. ``material_implication`` returns
 

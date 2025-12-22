@@ -42,7 +42,7 @@ class TestCalculator(unittest.TestCase):
             )
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # NameError
 # AttributeError

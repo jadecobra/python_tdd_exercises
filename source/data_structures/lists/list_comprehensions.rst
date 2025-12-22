@@ -172,12 +172,12 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     NameError: name 'src' is not defined
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_list_comprehensions.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
 
@@ -195,12 +195,12 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_list_comprehensions.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError

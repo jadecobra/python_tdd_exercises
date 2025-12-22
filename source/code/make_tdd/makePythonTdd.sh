@@ -16,7 +16,7 @@ class Test$PROJECT_NAME(unittest.TestCase):
         self.assertFalse(True)
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 " > tests/test_$PROJECT_NAME.py
 

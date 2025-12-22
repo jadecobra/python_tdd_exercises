@@ -51,5 +51,5 @@ class TestBooleans(unittest.TestCase):
 # False is a boolean
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError

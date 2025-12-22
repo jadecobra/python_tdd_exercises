@@ -110,13 +110,13 @@ test_takes_keyword_arguments
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_person.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
 
@@ -135,13 +135,13 @@ test_takes_keyword_arguments
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
@@ -176,13 +176,13 @@ test_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_person.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 16
     :emphasize-lines: 5
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
@@ -1192,13 +1192,13 @@ I want to see what happens when I try to make a person without a value for the `
 
     SyntaxError: parameter without a default follows parameter with a default
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_person.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 68
     :emphasize-lines: 6
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError

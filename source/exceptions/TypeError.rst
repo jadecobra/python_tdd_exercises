@@ -114,13 +114,13 @@ There are :ref:`objects<classes>` that can NOT be called
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
 
@@ -144,13 +144,13 @@ There are :ref:`objects<classes>` that can NOT be called
 
   the ``()`` to the right of ``src.type_error.none`` makes it a call, and the name ``none`` points to :ref:`None` which is NOT callable_
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_type_error.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # AttributeError
     # TypeError
@@ -333,7 +333,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
           src.type_error.a_dictionary()
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -400,7 +400,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
             src.type_error.function_00('a')
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -616,7 +616,7 @@ I add a new test with a failing line in ``test_type_error.py``
           None + 1
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows TypeError_
 
@@ -710,7 +710,7 @@ the test passes
             with self.assertRaises(TypeError):
                 (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows all tests are passing
 
@@ -799,7 +799,7 @@ I add a new failing test to show that I can NOT do an arithmetic_ operation with
           src.calculator.add(self.random_x, None)
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`TypeError`
 
@@ -931,7 +931,7 @@ the test passes
                 src.calculator.subtract(self.random_x, None)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test passes
 
@@ -1187,7 +1187,7 @@ the test passes
             )
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test passes
 
@@ -1220,7 +1220,7 @@ the test passes
             )
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows
 
@@ -1447,7 +1447,7 @@ the test passes
             )
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test passes
 

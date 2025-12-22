@@ -282,7 +282,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` encountered in ``test_booleans.py``
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_booleans.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -291,10 +291,10 @@ start the project
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -356,7 +356,7 @@ the test passes and I add a note
   # False is a boolean
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 so far this is going over what I already know from :ref:`testing None<None>`
 
@@ -418,7 +418,7 @@ the terminal_ shows :ref:`AssertionError`
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
 ----
 
@@ -469,7 +469,7 @@ the terminal_ shows :ref:`AssertionError`
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 * I move the line from ``test_what_is_true`` to the ``test_what_is_false`` :ref:`method<functions>`
@@ -500,7 +500,7 @@ the terminal_ shows :ref:`AssertionError`
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
 * I add a failing line to ``test_what_is_false``
 
@@ -546,7 +546,7 @@ the terminal_ shows :ref:`AssertionError`
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
 * I move the line from ``test_what_is_false`` to the ``test_what_is_true`` :ref:`method<functions>`
 
@@ -578,7 +578,7 @@ the terminal_ shows :ref:`AssertionError`
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 All of this is still a repetition of what I did with :ref:`AssertionError`. Next up, I test the other Python_ basic data types_ to see which of are False_ or True_
@@ -669,7 +669,7 @@ I add a note
   # False is a boolean
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 :ref:`None` is False_ though I learned in :ref:`test_assertion_error_w_false` that False_ is not :ref:`None`
 
@@ -841,7 +841,7 @@ the test passes
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 -----
@@ -854,7 +854,7 @@ is a float False or True?
 :red:`RED`: make it fail
 =================================================================================
 
-I add a line to test if floats_ (floating point decimal numbers) are False_ in ``test_what_is_false``
+I add a line to test if floats_ (binary floating point decimal numbers) are False_ in ``test_what_is_false``
 
 .. code-block:: python
   :lineno-start: 10
@@ -1030,7 +1030,7 @@ the terminal_ shows :ref:`AssertionError`
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
 -----
 
@@ -1165,7 +1165,7 @@ the test passes
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 ----
@@ -1442,7 +1442,7 @@ the empty :ref:`list<lists>` is NOT True_
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 I can see a pattern forming
@@ -1584,7 +1584,7 @@ the empty set_ is NOT True_
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 ----
@@ -1746,7 +1746,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
     # False is a boolean
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 ----

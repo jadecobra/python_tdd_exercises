@@ -105,7 +105,7 @@ I add a new test to ``test_truth_table.py``
           self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -279,7 +279,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test is still green. ``exclusive_disjunction`` returns
 
@@ -496,7 +496,7 @@ I add another test to ``test_truth_table.py``
           self.assertFalse(src.truth_table.material_non_implication(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -620,7 +620,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
             self.assertFalse(src.truth_table.material_non_implication(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ still shows green. ``material_non_implication`` returns
 
@@ -721,7 +721,7 @@ I add a new test in ``test_truth_table.py``
           self.assertTrue(src.truth_table.project_first(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -843,7 +843,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
             self.assertFalse(src.truth_table.project_first(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -957,7 +957,7 @@ I add a new test to ``test_truth_table.py``
           self.assertTrue(src.truth_table.converse_implication(True, True))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -1079,7 +1079,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
             self.assertTrue(src.truth_table.converse_implication(False, False))
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ still shows green. ``converse_implication`` returns
 

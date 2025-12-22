@@ -29,7 +29,7 @@ class TestAttributeError(unittest.TestCase):
         src.attribute_error.AClass.method_03()
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # AttributeError
 # NameError

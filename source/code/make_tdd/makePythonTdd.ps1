@@ -15,7 +15,7 @@ class Test$($PROJECT_NAME)(unittest.TestCase):
         self.assertFalse(True)
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 " | Out-File "tests/test_$PROJECT_NAME.py" -Encoding UTF8
 

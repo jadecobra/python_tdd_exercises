@@ -78,5 +78,5 @@ class TestNone(unittest.TestCase):
 # None is None
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError

@@ -275,7 +275,7 @@ class TestStrings(unittest.TestCase):
 
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # TypeError
 # ValueError

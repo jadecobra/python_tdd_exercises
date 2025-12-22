@@ -108,13 +108,13 @@ test_module_not_found_error
 
   because Python_ cannot find ``module_00.py`` in the ``src`` folder
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_module_not_found_error.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_module_not_found_error.py``
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
 

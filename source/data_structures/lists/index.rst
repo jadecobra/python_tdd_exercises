@@ -144,12 +144,12 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: 'int' object is not iterable
 
-I add the error to the list of :ref:`Exceptions<errors>` encountered
+I add the error to the list of :ref:`Exceptions<errors>` seen
 
 .. code-block:: python
   :emphasize-lines: 3
 
-  # Exceptions Encountered
+  # Exceptions seen
   # AssertionError
   # TypeError
 
@@ -280,7 +280,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     'reverse',
     'sort'
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # TypeError
 
@@ -903,12 +903,12 @@ the test passes
 
     ValueError: 0 is not in list
 
-  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_. I add it to the list of :ref:`Exceptions<errors>` encountered
+  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_. I add it to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # TypeError
     # ValueError
@@ -2174,12 +2174,12 @@ when I use an index that is the same as or greater than the length of the list_ 
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add it to the list of :ref:`Exceptions<errors>` encountered
+I add it to the list of :ref:`Exceptions<errors>` seen
 
 .. code-block:: python
   :emphasize-lines: 5
 
-  # Exceptions Encountered
+  # Exceptions seen
   # AssertionError
   # TypeError
   # ValueError

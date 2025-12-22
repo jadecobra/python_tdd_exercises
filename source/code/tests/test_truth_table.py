@@ -121,7 +121,7 @@ class TestBinaryOperations(unittest.TestCase):
         self.assertTrue(src.truth_table.material_implication(False, False))
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # AttributeError
 # TypeError

@@ -86,11 +86,11 @@ requirements
 
     TypeError: TestCase.assertEqual() missing 2 required positional arguments: 'first' and 'second'
 
-  which I add to the list of :ref:`Exceptions<errors>` encountered in ``test_sleep_duration.py``
+  which I add to the list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
 
   .. code-block:: python
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # TypeError
 
@@ -122,11 +122,11 @@ requirements
 
     NameError: name 'src' is not defined
 
-  I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_sleep_duration.py``
+  I add it to the list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
 
   .. code-block:: python
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # TypeError
     # NameError
@@ -163,11 +163,11 @@ requirements
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration'
 
-  I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_sleep_duration.py``
+  I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
 
   .. code-block:: python
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # TypeError
     # NameError

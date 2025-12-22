@@ -310,7 +310,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_functions.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -319,10 +319,10 @@ start the project
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -359,7 +359,7 @@ I can make a function_ with the pass_ keyword
             self.assertIsNone(src.functions.w_pass())
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -367,13 +367,13 @@ I can make a function_ with the pass_ keyword
 
     NameError: name 'src' is not defined
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
 
@@ -401,13 +401,13 @@ I can make a function_ with the pass_ keyword
 
   ``functions.py`` in the ``src`` folder_ does not have anything named ``w_pass`` inside it
 
-* I add to the list of :ref:`Exceptions<errors>` encountered
+* I add to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # ModuleNotFoundError
     # AttributeError
@@ -453,7 +453,7 @@ I add a new failing test in ``test_functions.py``
           self.assertIsNone(src.functions.w_return())
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -524,7 +524,7 @@ I add another failing test to ``test_functions.py``
           self.assertIsNone(src.functions.w_return_none())
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -596,7 +596,7 @@ I add a test to ``test_functions.py``
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -670,7 +670,7 @@ I add a failing test in ``test_functions.py``
           self.assertIsNone(src.functions.identity(None))
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -703,13 +703,13 @@ the terminal_ shows :ref:`AttributeError`
 
   the definition for ``identity`` does not allow inputs and the test sends :ref:`None` as input
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 26
     :emphasize-lines: 5
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
@@ -794,7 +794,7 @@ I add a failing test to ``test_functions.py``
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -887,7 +887,7 @@ the terminal_ shows :ref:`AttributeError`
             )
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -944,7 +944,7 @@ I add a new test to ``test_functions.py``
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -1115,7 +1115,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
           )
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the test passes
 
@@ -1153,7 +1153,7 @@ I add a failing test to ``test_functions.py``
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 
 the terminal_ shows SyntaxError_
@@ -1318,7 +1318,7 @@ I add a failing test to ``test_functions.py``
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -1409,7 +1409,7 @@ the test passes
             )
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1462,7 +1462,7 @@ I add a new test to ``test_functions.py``
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError`
 
@@ -1542,13 +1542,13 @@ the terminal_ shows :ref:`AttributeError`
 
   a reminder that I cannot put :ref:`positional arguments<test_functions_w_positional_arguments>` after :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` encountered in ``test_functions.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 81
     :emphasize-lines: 6
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
@@ -1666,7 +1666,7 @@ I change the expectation to match
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the test passes. The function_ reads the :ref:`positional arguments<test_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
 
@@ -1707,7 +1707,7 @@ I change the expectation to match
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the test passes. The function_ reads the :ref:`keyword arguments<test_keywords_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
 
@@ -1746,7 +1746,7 @@ the test passes. The function_ reads the :ref:`keyword arguments<test_keywords_a
             )
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
 
   the test passes

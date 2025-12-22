@@ -240,7 +240,7 @@ class TestDictionaries(unittest.TestCase):
             {}.popitem()
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError
 # TypeError
 # KeyError

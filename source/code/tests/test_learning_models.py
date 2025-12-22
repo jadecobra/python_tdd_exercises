@@ -43,5 +43,5 @@ class TestInfiniteLearningModel(unittest.TestCase):
         )
 
 
-# Exceptions Encountered
+# Exceptions seen
 # AssertionError

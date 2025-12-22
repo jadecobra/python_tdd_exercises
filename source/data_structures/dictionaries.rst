@@ -154,13 +154,13 @@ the test passes. These are two ways to make an empty dictionary_ one
 
     TypeError: 'int' object is not iterable
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_dictionaries.py``
+* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_dictionaries.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # TypeError
 
@@ -226,7 +226,7 @@ I add a test to see if I can use :ref:`None` as a :ref:`key<test_keys_of_a_dicti
           self.assertEqual({None: 'boom'}, {None: 'bap'})
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -271,7 +271,7 @@ I add a test to see if I can use a :ref:`boolean<booleans>` as a :ref:`key<test_
           self.assertEqual({False: 'boom'}, {False: 'bap'})
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -354,7 +354,7 @@ I add a failing test to see if I can use a number as a :ref:`key<test_keys_of_a_
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -438,7 +438,7 @@ I add a test to see if I can use a tuple_ (anything in parentheses (``()``)) as 
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -487,7 +487,7 @@ I add a test for :ref:`lists` (anything in square brackets (``[]``))
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`TypeError`
 
@@ -544,7 +544,7 @@ I add another test with a set_ (single items in a curly braces (``{}``)) as a :r
           {{3, 2, 1}: 'BOOM!!!'}
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`TypeError`
 
@@ -591,7 +591,7 @@ I add another test, this time for a dictionary_
           {a_dictionary: 'BOOM!!!'}
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`TypeError`
 
@@ -615,7 +615,7 @@ I add assertRaises_
               {a_dictionary: 'BOOM!!!'}
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the test passes. I cannot use dictionaries_, sets_ or :ref:`lists` as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_. They are not hashable_, which means they can change in their lifetime
 
@@ -644,7 +644,7 @@ I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attri
           )
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -769,7 +769,7 @@ maxDiff_ is a :ref:`class attribute<test_attribute_error_w_class_attributes>` th
     'values'
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
   the terminal still shows green
 
@@ -1837,13 +1837,13 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
     KeyError: 0
 
-* I add it to the list of :ref:`Exceptions<errors>` encountered
+* I add it to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 162
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # TypeError
     # KeyError
@@ -2918,7 +2918,7 @@ I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref
           self.assertEqual(a_dictionary['key'], '')
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -3118,7 +3118,7 @@ the test passes
                 {}.popitem()
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # TypeError
     # KeyError

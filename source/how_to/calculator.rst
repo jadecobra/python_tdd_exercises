@@ -259,7 +259,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -268,10 +268,10 @@ start the project
             self.assertFalse(True)
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -305,12 +305,16 @@ start the project
     # test division
 
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
 
 *********************************************************************************
 test_addition
 *********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
 * I change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
 
@@ -329,11 +333,11 @@ test_addition
                 1
             )
 
-  - the `assertEqual method`_ from the `unittest.TestCase class`_ checks if its 2 inputs are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the `assertEqual method`_ from :ref:`AssertionError` checks if the 2 things in parentheses are the the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is
 
     - ``reality`` - ``src.calculator.add(0, 1)``, and the other is my
-    - ``expectation`` - ``1``, because ``0`` plus ``1`` is ``1``
+    - ``expectation`` - ``1``, because ``0 + 1`` is ``1``
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -347,17 +351,17 @@ test_addition
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
+* I add NameError_ to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 20
     :emphasize-lines: 3
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ at the top of the file
+* I add an `import statement`_ at the top of the file for the ``calculator`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
     :linenos:
@@ -377,18 +381,18 @@ test_addition
 
   I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file from the ``src`` `folder (directory)`_
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
+* I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 4
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
 
-* then I open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, and I type the name
+* I open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, and I type the name
 
   .. code-block:: python
     :linenos:
@@ -400,6 +404,8 @@ test_addition
   .. code-block:: shell
 
     NameError: name 'add' is not defined
+
+  I have to tell Python_ what the name ``add`` stands for or means
 
 * I point it to :ref:`None`
 
@@ -414,21 +420,21 @@ test_addition
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` :ref:`variable<test_attribute_error_w_variables>` is :ref:`None` which is not callable_
+  because the ``add`` :ref:`variable<test_attribute_error_w_variables>` is now a name for :ref:`None` which I cannot use like a :ref:`function<functions>`
 
-* I add the error to the list of :ref:`Exceptions<errors>` encountered in ``test_calculator.py``
+* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 5
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
     # TypeError
 
-* then I change ``add`` to a :ref:`function<functions>` to make it callable_ with the def_ keyword in ``calculator.py``
+* I use the def_ keyword in ``calculator.py`` to make ``add`` a :ref:`function<functions>` so it is callable_
 
   .. code-block:: python
     :linenos:
@@ -442,9 +448,9 @@ test_addition
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-  the definition of ``add`` does not take input, but 2 were given in the call ``src.calculator.add(0, 1)`` - ``0`` and ``1``
+  the definition of ``add`` does not take input, but 2 were given in the call ``src.calculator.add(0, 1)``: ``0`` and ``1``
 
-* I make it take 2 arguments
+* I make the ``add`` :ref:`function<functions>` take 2 inputs
 
   .. code-block:: python
     :linenos:
@@ -478,6 +484,7 @@ test_addition
 
 The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to do a calculation with the inputs and return the result
 
+---------------------------------------------------------------------------------
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
@@ -493,34 +500,326 @@ To show the problem with the :ref:`function<functions>`, I add another :ref:`ass
                 1
             )
             self.assertEqual(
-                src.calculator.add(-1, 1),
-                0
+                src.calculator.add(0, 2),
+                2
             )
 
 the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  E    AssertionError: 1 != 0
+  E    AssertionError: 1 != 2
 
 the :ref:`function<functions>` returns ``1``, the test expects ``0``
 
+---------------------------------------------------------------------------------
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
-when I change the `return statement`_ in ``calculator.py`` to add the two inputs
+* when I change the `return statement`_ in ``calculator.py`` to match the expectation
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def add(first_input, second_input):
+        return 2
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 2 != 1
+
+  this makes the :ref:`assertion<AssertionError>` that was passing before now fail. I need a solution that can make the two tests pass
+
+* I make the :ref:`function<functions>` return the result of adding the two inputs
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    def add(first_input, second_input):
+        return first_input + second_input
+
+  the test passes. The ``add`` :ref:`function<functions>` passes the two tests
+
+---------------------------------------------------------------------------------
+:red:`RED`: make it fail
+---------------------------------------------------------------------------------
+
+I add another test to make sure the :ref:`function<functions>` works for other numbers
 
 .. code-block:: python
-  :linenos:
-  :emphasize-lines: 2
+  :lineno-start: 12
+  :emphasize-lines: 5-8
 
-  def add(first_input, second_input):
-      return first_input + second_input
+          self.assertEqual(
+              src.calculator.add(0, 2),
+              2
+          )
+          self.assertEqual(
+              src.calculator.add(0, 3),
+              2
+          )
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: 3 != 2
+
+---------------------------------------------------------------------------------
+:green:`GREEN`: make it pass
+---------------------------------------------------------------------------------
+
+I change the expectation in the test
+
+.. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.add(0, 3),
+              3
+          )
 
 the test passes
 
-:yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------
+:red:`RED`: make it fail
+---------------------------------------------------------------------------------
+
+I add another test with a different number for the first input
+
+.. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 5-8
+
+          self.assertEqual(
+              src.calculator.add(0, 3),
+              3
+          )
+          self.assertEqual(
+              src.calculator.add(1, 3),
+              3
+          )
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: 4 != 3
+
+---------------------------------------------------------------------------------
+:green:`GREEN`: make it pass
+---------------------------------------------------------------------------------
+
+I change the expectation to match reality
+
+.. code-block:: python
+  :lineno-start: 20
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.add(1, 3),
+              4
+          )
+
+the test passes. So far the ``add`` :ref:`function<functions>` looks good
+
+---------------------------------------------------------------------------------
+:red:`RED`: make it fail
+---------------------------------------------------------------------------------
+
+I add a test with bigger numbers
+
+.. code-block:: python
+  :lineno-start: 20
+  :emphasize-lines: 5-8
+
+          self.assertEqual(
+              src.calculator.add(1, 3),
+              4
+          )
+          self.assertEqual(
+              src.calculator.add(123456, 789012),
+              4
+          )
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: 912468 != 4
+
+---------------------------------------------------------------------------------
+:green:`GREEN`: make it pass
+---------------------------------------------------------------------------------
+
+I change the expectation to match reality
+
+.. code-block:: python
+  :lineno-start: 24
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.add(123456, 789012),
+              912468
+          )
+
+the test passes
+
+---------------------------------------------------------------------------------
+:red:`RED`: make it fail
+---------------------------------------------------------------------------------
+
+I add another test, this time with a negative number
+
+.. code-block:: python
+  :lineno-start: 24
+  :emphasize-lines: 5-8
+
+          self.assertEqual(
+              src.calculator.add(123456, 789012),
+              912468
+          )
+          self.assertEqual(
+              src.calculator.add(-1, 0),
+              912468
+          )
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: -1 != 912468
+
+---------------------------------------------------------------------------------
+:green:`GREEN`: make it pass
+---------------------------------------------------------------------------------
+
+I change the expectation to match reality
+
+.. code-block:: python
+  :lineno-start: 28
+  :emphasize-lines: 3
+
+      self.assertEqual(
+          src.calculator.add(-1, 0),
+          -1
+      )
+
+the test passes
+
+---------------------------------------------------------------------------------
+:red:`RED`: make it fail
+---------------------------------------------------------------------------------
+
+I try another test with two negative numbers
+
+.. code-block:: python
+  :lineno-start: 28
+  :emphasize-lines: 5-8
+
+          self.assertEqual(
+              src.calculator.add(-1, 0),
+              -1
+          )
+          self.assertEqual(
+              src.calculator.add(-2, -3),
+              -1
+          )
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: -5 != -1
+
+---------------------------------------------------------------------------------
+:green:`GREEN`: make it pass
+---------------------------------------------------------------------------------
+
+I make the expectation match reality
+
+.. code-block:: python
+  :lineno-start: 32
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.add(-2, -3),
+              -5
+          )
+
+the test passes. The ``add`` :ref:`function<functions>` can handle positive and negative numbers
+
+---------------------------------------------------------------------------------
+:red:`RED`: make it fail
+---------------------------------------------------------------------------------
+
+I add another test with floats_ (binary floating point decimal numbers)
+
+.. code-block:: python
+  :lineno-start: 32
+  :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.add(-2, -3),
+                -5
+            )
+            self.assertEqual(
+                src.calculator.add(0.1234, -5.6789),
+                -5
+            )
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: -5.555499999999999 != -5
+
+---------------------------------------------------------------------------------
+:green:`GREEN`: make it pass
+---------------------------------------------------------------------------------
+
+I change the expectation
+
+.. code-block:: python
+  :lineno-start: 36
+  :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.add(0.1234, -5.6789),
+                -5.555499999999999
+            )
+
+the test passes. I just the same kind of calculation 8 times in a row, there is a better way to this, which we learn in Algebra_. I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers. I can do this with a variable_
+
+=================================================================================
+what is a variable?
+=================================================================================
+
+A variable_ is a name that is used for values that change. For example, in the tests so far, I have
+
+.. code-block:: python
+
+  src.calculator.add(0, 1)
+  src.calculator.add(0, 2)
+  src.calculator.add(0, 3)
+  src.calculator.add(1, 3)
+  src.calculator.add(123456, 789012)
+  src.calculator.add(-1, 0)
+  src.calculator.add(-2, -3)
+  src.calculator.add(0.1234, -5.6789)
+
+all of these lines can be written using ``first_input`` as the name of the first number and ``second_input`` as the name for the second number, like this
+
+.. code-block:: python
+
+  src.calculator.add(first_input, second_input)
+
+-----
 
 * I want the test to use random numbers instead of numbers that do not change, so I add an `import statement`_ at the top of ``test_calculator.py`` to use random numbers in the test
 
@@ -543,8 +842,8 @@ the test passes
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
-            random_x = random.randint(-1, 1)
-            random_y = random.randint(-1, 1)
+            random_x = random.randint(0, 2)
+            random_y = random.randint(0, 2)
 
             self.assertEqual(
                 src.calculator.add(random_x, random_y),
@@ -555,7 +854,7 @@ the test passes
                 1
             )
             self.assertEqual(
-                src.calculator.add(-1, 1),
+                src.calculator.add(0, 2),
                 0
             )
 
@@ -578,7 +877,7 @@ the test passes
 
   the test passes
 
-  - ``random.randint(-1, 1)`` returns a random number from ``-1`` up to and including ``1``
+  - ``random.randint(0, 2)`` returns a random number from ``-1`` up to and including ``1``
 
     - ``-1`` for negative numbers
     - ``0`` for ``0``
@@ -592,8 +891,8 @@ the test passes
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
-            random_x = random.randint(-1, 1)
-            random_y = random.randint(-1, 1)
+            random_x = random.randint(0, 2)
+            random_y = random.randint(0, 2)
 
             self.assertEqual(
                 src.calculator.add(random_x, random_y),
@@ -625,7 +924,7 @@ the test passes
 
 
     def a_random_number():
-        return random.randint(-1, 1)
+        return random.randint(0, 2)
 
 
     class TestCalculator(unittest.TestCase):
@@ -942,7 +1241,7 @@ test_subtraction
     # test division
 
 
-    # Exceptions Encountered
+    # Exceptions seen
 
 ----
 
@@ -1007,7 +1306,7 @@ the test passes! I remove ``test_multiplication`` from the TODO list in ``test_c
   # test division
 
 
-  # Exceptions Encountered
+  # Exceptions seen
 
 ----
 
@@ -1069,7 +1368,7 @@ the terminal_ shows :ref:`AttributeError`
   .. code-block:: python
     :lineno-start: 45
 
-    # Exceptions Encountered
+    # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError

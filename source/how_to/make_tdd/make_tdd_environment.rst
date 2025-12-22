@@ -755,7 +755,7 @@ Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as
           self.assertFalse(True)
 
 
-  # Exceptions Encountered
+  # Exceptions seen
   # AssertionError
 
 I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I want.
