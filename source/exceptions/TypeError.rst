@@ -136,7 +136,7 @@ There are :ref:`objects<classes>` that can NOT be called
 
     none = None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -200,7 +200,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
     false = False
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -249,7 +249,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
     true = True
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -300,7 +300,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
     a_list = [1, 2, 3, 'n']
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -353,7 +353,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
     a_dictionary = {'key': 'value'}
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -425,7 +425,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
     def function_00():
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -478,7 +478,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
     def function_01(the_input):
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -525,7 +525,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
     def function_02(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -573,7 +573,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
     def function_03(first_input, second_input, input_3):
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -753,7 +753,7 @@ close the project
 ----
 
 *********************************************************************************
-test handling TypeError in the calculator
+test_calculator_raises_type_error
 *********************************************************************************
 
 I want to use :ref:`TypeError` with :ref:`exception handlers<how to use try...except...else>` to make sure that the :ref:`calculator program<how to make a calculator>` only works with numbers, just like it would in the real world
@@ -847,7 +847,7 @@ I add a new failing test to show that I can NOT do arithmetic_ operations with s
 
   # Exceptions seen
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ shows TypeError_
 
 .. code-block:: shell
 
@@ -884,7 +884,7 @@ the test passes
                 src.calculator.add(None None)
             src.calculator.divide(None, None)
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -913,7 +913,7 @@ the test passes
                 src.calculator.divide(None, None)
             src.calculator.multiply(None, None)
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -942,7 +942,7 @@ the test passes
                 src.calculator.multiply(self.random_first_number, None)
             src.calculator.subtract(self.random_first_number, None)
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows TypeError_
 
   .. code-block:: shell
 
@@ -964,20 +964,36 @@ the test passes
 
   the test passes
 
-The ``calculator`` raises :ref:`TypeError` when given :ref:`None` as input. There is a case I have not considered, I only used :ref:`None` to test the input but did not use booleans_, strings_, tuples_, :ref:`lists`, sets_ or :ref:`dictionaries`
-
-
-----
+The ``calculator`` raises :ref:`TypeError` when given :ref:`None` as input, what does it do when the input is a boolean_, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
 
 *********************************************************************************
-test handling TypeError in the calculator
+test_calculator_with_strings
 *********************************************************************************
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+I add a new test with an :ref:`assertion<AssertionError>` from :ref:`test_what_is_an_assertion`  to :ref:`test_addition`
+
+.. code-block:: python
+  :lineno-start: 64
+  :emphasize-lines: 4-5
+
+          with self.assertRaises(TypeError):
+              src.calculator.subtract(None, None)
+
+      def test_calculator_with_strings(self):
+          self.assertEqual(src.calculator.add('1', '1'), '2')
 
 
+  # Exceptions seen
 
+the terminal_ shows :ref:`AssertionError`
 
+.. code-block:: shell
 
+  AssertionError: '11' != '2'
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -986,7 +1002,7 @@ test handling TypeError in the calculator
 I change the expectation to match reality
 
 .. code-block:: python
-  :lineno-start: 23
+  :lineno-start: 68
   :emphasize-lines: 1
 
           self.assertEqual(src.calculator.add('1', '1'), '11')
@@ -997,7 +1013,82 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I add an :ref:`assertion<AssertionError>` for the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 3
+
+        def test_calculator_with_strings(self):
+            self.assertEqual(src.calculator.add('1', '1'), '11')
+            self.assertEqual(src.calculator.divide('1', '1'), '11')
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: unsupported operand type(s) for /: 'str' and 'str'
+
+  I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 68
+    :emphasize-lines: 3-4
+
+        def test_calculator_with_strings(self):
+            self.assertEqual(src.calculator.add('1', '1'), '11')
+            with self.assertRaises(TypeError):
+                src.calculator.divide('1', '1')
+
+  the test passes
+
+* I try it with the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 3
+
+            with self.assertRaises(TypeError):
+                src.calculator.divide('1', '1')
+            src.calculator.multiply('1', '1')
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: can't multiply sequence by non-int of type 'str'
+
+  I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 3-4
+
+            with self.assertRaises(TypeError):
+                src.calculator.divide('1', '1')
+            with self.assertRaises(TypeError):
+                src.calculator.multiply('1', '1')
+
+* I think the same thing will happen with the :ref:`subtract function<test_subtraction>`. I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<fucntions>`
 
   .. code-block:: python
@@ -1588,27 +1679,6 @@ the test passes
   the test passes
 
 
-I add an :ref:`assertion<AssertionError>` from :ref:`test_what_is_an_assertion`  to :ref:`test_addition`
-
-.. code-block:: python
-  :lineno-start: 15
-  :emphasize-lines: 9
-
-      def test_addition(self):
-          self.assertEqual(
-              src.calculator.add(
-                  self.random_first_number,
-                  self.random_second_number
-              ),
-              self.random_first_number+self.random_second_number
-          )
-          self.assertEqual(src.calculator.add('1', '1'), '2')
-
-the terminal_ shows :ref:`AssertionError`
-
-.. code-block:: shell
-
-  AssertionError: '11' != '2'
 
 
 ----

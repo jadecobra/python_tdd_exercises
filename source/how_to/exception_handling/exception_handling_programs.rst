@@ -657,7 +657,7 @@ close the project
 ----
 
 *********************************************************************************
-test handling ZeroDivisionError in the calculator
+test_division_handles_zero_division_error
 *********************************************************************************
 
 I want the :ref:`divide function<test_division>` in the :ref:`calculator project<how to make a calculator>` to return ``undefined`` when :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised so that the program_ can continue to work after ``0`` is given as the second number
