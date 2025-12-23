@@ -769,7 +769,75 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
       except ZeroDivisionError:
           return 'undefined: I cannot divide by 0'
 
-the test passes
+the test passes. There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first part of ``test_division`` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+* I add a `return statement`_ to the ``a_random_number`` :ref:`function` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 2
+
+    def a_random_number():
+        return 0
+        return random.triangular(-1000.0, 1000.0)
+
+  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    >           self.random_first_number/self.random_second_number
+            )
+    E       ZeroDivisionError: division by zero
+
+  the expectation calculation in ``test_division`` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'undefined: I cannot divide by 0'
+
+* I add an :ref:`exception handler<how to use try...except...else>` to the test
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 2-14
+
+      def test_division(self):
+          try:
+              self.assertEqual(
+                  src.calculator.divide(
+                      self.random_first_number,
+                      self.random_second_number
+                  ),
+                  self.random_first_number/self.random_second_number
+              )
+          except ZeroDivisionError:
+              self.assertEqual(
+                  src.calculator.divide(self.random_first_number, 0),
+                  'undefined: I cannot divide by 0'
+              )
+
+  the test passes
+
+* I remove the `return statement`_ from ``a_random_number`` to go back to testing with a range of numbers
+
+  .. code-block:: python
+    :linenos:
+
+    import random
+    import src.calculator
+    import unittest
+
+
+    def a_random_number():
+        return random.triangular(-1000.0, 1000.0)
+
+
+    class TestCalculator(unittest.TestCase):
+
+  the test is still green
+
+----
 
 =================================================================================
 close the project

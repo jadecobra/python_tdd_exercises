@@ -40,17 +40,19 @@ class TestCalculator(unittest.TestCase):
         )
 
     def test_division(self):
-        self.assertEqual(
-            src.calculator.divide(
-                self.random_first_number,
-                self.random_second_number
-            ),
-            self.random_first_number/self.random_second_number
-        )
-        self.assertEqual(
-            src.calculator.divide(self.random_first_number, 0),
-            'undefined: I cannot divide by 0'
-        )
+        try:
+            self.assertEqual(
+                src.calculator.divide(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number/self.random_second_number
+            )
+        except ZeroDivisionError:
+            self.assertEqual(
+                src.calculator.divide(self.random_first_number, 0),
+                'undefined: I cannot divide by 0'
+            )
 
 
 # Exceptions seen
