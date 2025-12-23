@@ -759,23 +759,25 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
 * I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 * I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<fucntions>`
 
-.. code-block:: python
-  :lineno-start: 9
-  :emphasize-lines: 2-5
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2-5
 
-  def divide(first_input, second_input):
-      try:
-          return first_input / second_input
-      except ZeroDivisionError:
-          return 'undefined: I cannot divide by 0'
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'undefined: I cannot divide by 0'
 
-the test passes. There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first part of ``test_division`` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  the test passes.
+
+There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first part of ``test_division`` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add a `return statement`_ to the ``a_random_number`` :ref:`function` in ``test_calculator.py``
+* I add a `return statement`_ to the ``a_random_number`` :ref:`function` in ``test_calculator.py`` to make it happen
 
   .. code-block:: python
     :lineno-start: 6
@@ -794,7 +796,7 @@ the test passes. There is a problem, the test uses random numbers, which means a
             )
     E       ZeroDivisionError: division by zero
 
-  the expectation calculation in ``test_division`` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'undefined: I cannot divide by 0'
+  the expectation calculation in ``test_division`` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'undefined: I cannot divide by 0'``
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the test
 

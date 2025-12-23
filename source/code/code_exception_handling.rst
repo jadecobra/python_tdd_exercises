@@ -13,6 +13,14 @@ the code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exc
   :language: python
   :linenos:
 
+----
+
+the code in ``calculator/tests/test_calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+
+.. literalinclude:: tests/test_calculator_exceptions_programs.py
+  :language: python
+  :linenos:
+
 *********************************************************************************
 solutions
 *********************************************************************************
@@ -20,5 +28,13 @@ solutions
 the solutions in ``exceptions/src/exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
 
 .. literalinclude:: solutions/exceptions.py
+  :language: python
+  :linenos:
+
+----
+
+the solutions in ``calculator/src/calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+
+.. literalinclude:: solutions/calculator_exceptions_programs.py
   :language: python
   :linenos:
