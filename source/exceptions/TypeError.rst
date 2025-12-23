@@ -1069,39 +1069,401 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.multiply('1', '1')
 
-* I think the same thing will happen with the :ref:`subtract function<test_subtraction>`. I add an :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
-  .. code-block::
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 3
+
+            with self.assertRaises(TypeError):
+                src.calculator.multiply('1', '1')
+            src.calculator.subtract('1', '1')
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+  I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 3-4
+
+            with self.assertRaises(TypeError):
+                src.calculator.multiply('1', '1')
+            with self.assertRaises(TypeError):
+                src.calculator.subtract('1', '1')
+
+  the test passes
+
+---------------------------------------------------------------------------------
+how to test if something is an instance of an object in a program
+---------------------------------------------------------------------------------
+
+I want the :ref:`add function<test_addition>` to raise TypeError_ when it is given a string_ like the other :ref:`functions`. I can do this with the `isinstance function`_ it is like the `assertIsInstance method`_ from when I tested :ref:`None`
+
+* I add an :ref:`if statement<if statements (conditionals)>` to the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2-5
+
+    def add(first_input, second_input):
+        if isinstance(first_input, str) or isinstance(second_input, str):
+            raise TypeError(
+                'I am a calculator, I only work with numbers'
+            )
+        else:
+            return first_input + second_input
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: I am a calculator, I only work with numbers
+
+  the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance of the :ref:`object<classes>` it is given as the second input. It is part of `Python's Built-in Functions`_
+
+* I change the assertEqual_ in ``test_calculator_with_strings`` to assertRaises_ in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 2-3
+
+        def test_calculator_with_strings(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add('1', '1')
+
+  the test passes
+
+* I change the name of the test to be clearer
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 1
+
+        def test_calculator_raises_type_error_when_given_strings(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add('1', '1')
+            with self.assertRaises(TypeError):
+                src.calculator.divide('1', '1')
+            with self.assertRaises(TypeError):
+                src.calculator.multiply('1', '1')
+            with self.assertRaises(TypeError):
+                src.calculator.subtract('1', '1')
 
 
+    # Exceptions seen
 
+----
 
+*********************************************************************************
+how to use TypeError to check input
+*********************************************************************************
 
+I want the :ref:`calculator functions<how to make a calculator>` to send a message when input is bad, instead of just raising TypeError_ which causes the program to stop, I want the user to be able to try again with different input
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
+I change the assertRaises_ to assertEqual_ in ``test_calculator_raises_type_error`` in ``test_calculator.py``
 
+.. code-block:: python
+  :lineno-start: 57
+  :emphasize-lines:
 
+  def test_calculator_raises_type_error(self):
+      self.assertEqual(
+          src.calculator.add(None, None),
+          'I am a calculator, I only work with numbers'
+      )
+      with self.assertRaises(TypeError):
+          src.calculator.divide(None, None)
+      with self.assertRaises(TypeError):
+          src.calculator.multiply(None, None)
+      with self.assertRaises(TypeError):
+          src.calculator.subtract(None, None)
 
+the terminal_ shows TypeError_
 
+.. code-block:: shell
 
+  TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
+I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`add function<test_addition>` in ``calculator.py``
 
+.. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 7-10
 
+  def add(first_input, second_input):
+      if isinstance(first_input, str) or isinstance(second_input, str):
+          raise TypeError(
+              'I am a calculator, I only work with numbers'
+          )
+      else:
+          try:
+              return first_input + second_input
+          except TypeError:
+              return 'I am a calculator, I only work with numbers'
 
-* I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<fucntions>`
+the test passes
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+* I want the same thing to happen with the :ref:`divide function<test_division>`. I change assertRaises_ to assertEqual_ in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 6-9
+
+        def test_calculator_raises_type_error(self):
+            self.assertEqual(
+                src.calculator.add(None, None),
+                'I am a calculator, I only work with numbers'
+            )
+            self.assertEqual(
+                src.calculator.divide(None, None),
+                'I am a calculator, I only work with numbers'
+            )
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: unsupported operand type(s) for /: 'NoneType' and 'NoneType'
+
+  I add an :ref:`except clause<how to use try...except...else>` to the :ref:`exception handler<how to use try...except...else>` in the :ref:`divide function<test_division>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 2-5
+    :emphasize-lines: 6-7
 
     def divide(first_input, second_input):
         try:
             return first_input / second_input
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
+        except TypeError:
+            return 'I am a calculator, I only work with numbers'
 
-  the test passes.
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: TypeError not raised
+
+  ``test_calculator_raises_type_error_when_given_strings`` fails because the :ref:`divide function<test_division>` now returns a message when TypeError_ is raised. I add the :ref:`if statement<if statements (conditionals)>` from the :ref:`add function<test_addition>` to the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2-12
+
+    def divide(first_input, second_input):
+        if isinstance(first_input, str) or isinstance(second_input, str):
+            raise TypeError(
+                'I am a calculator, I only work with numbers'
+            )
+        else:
+            try:
+                return first_input / second_input
+            except ZeroDivisionError:
+                return 'undefined: I cannot divide by 0'
+            except TypeError:
+                return 'I am a calculator, I only work with numbers'
+
+  the test passes. I have some repetition to remove
+
+* Both the :ref:`add<test_addition>` and :ref:`divide<test_division>` :ref:`functions` have the same error message twice
+
+  .. code-block:: python
+
+    'I am a calculator, I only work with numbers'
+
+* I add a :ref:`variable<what_is_a_variable>` for the error message to the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 2, 4, 9
+
+    def add(first_input, second_input):
+        error_message = 'I am a calculator, I only work with numbers'
+        if isinstance(first_input, str) or isinstance(second_input, str):
+            raise TypeError(error_message)
+        else:
+            try:
+                return first_input + second_input
+            except TypeError:
+                return error_message
+
+  the test is still green
+
+* I do the same thing with the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2, 4, 11
+
+    def divide(first_input, second_input):
+        error_message = 'I am a calculator, I only work with numbers'
+        if isinstance(first_input, str) or isinstance(second_input, str):
+            raise TypeError(error_message)
+        else:
+            try:
+                return first_input / second_input
+            except ZeroDivisionError:
+                return 'undefined: I cannot divide by 0'
+            except TypeError:
+                return error_message
+
+  the terminal_ shows all tests are still passing
+
+* I do the same thing in ``test_calculator_raises_type_error`` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 2, 5, 9
+
+        def test_calculator_raises_type_error(self):
+            error_message = 'I am a calculator, I only work with numbers'
+            self.assertEqual(
+                src.calculator.add(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide(None, None),
+                error_message
+            )
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(None, None)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(None, None)
+
+  still green
+
+* The :ref:`add<test_addition>` and :ref:`divide<test_division>` :ref:`functions` have the same :ref:`if statement<if statements
+
+  .. code-block:: python
+
+    if isinstance(first_input, str) or isinstance(second_input, str):
+        raise TypeError(
+            'I am a calculator, I only work with numbers'
+        )
+    else:
+        ...
+
+---------------------------------------------------------------------------------
+how to make a wrapper function
+---------------------------------------------------------------------------------
+
+I want a way to check if the input is a string for both :ref:`functions`. I can do this with a wrapper, which is a :ref:`function<functions>` that takes other :ref:`functions` as input.
+
+* I add a :ref:`function<functions>` to ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-9
+
+    def reject_strings(function):
+        def wrapper(first_input, second_input):
+            if isinstance(first_input, str) or isinstance(second_input, str):
+                raise TypeError(
+                    'I am a calculator, I only work with numbers'
+                )
+            else:
+                return function(first_input, second_input)
+        return wrapper
+
+
+    def subtract(first_input, second_input):
+
+* I use the new :ref:`function<functions>` to wrap the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 1
+
+
+    @reject_strings
+    def add(first_input, second_input):
+        error_message = 'I am a calculator, I only work with numbers'
+        if isinstance(first_input, str) or isinstance(second_input, str):
+            raise TypeError(error_message)
+        else:
+            try:
+                return first_input + second_input
+            except TypeError:
+                return error_message
+
+  the test is still green.
+
+  The ``reject_strings`` :ref:`function<functions>` takes a :ref:`function<functions>` as input
+
+  - if any of the two inputs are strings_ it returns an error message
+  - if none of the two inputs are strings_ it returns the result of the :ref:`function<functions>` working on the two inputs
+
+* I remove the :ref:`if statement<if statements (conditions)>` from the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 3-6
+
+    @reject_strings
+    def add(first_input, second_input):
+        try:
+            return first_input + second_input
+        except TypeError:
+            return 'I am a calculator, I only work with numbers'
+
+  still green
+
+* I use ``reject_strings`` with the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 1
+
+    @reject_strings
+    def divide(first_input, second_input):
+        error_message = 'I am a calculator, I only work with numbers'
+        if isinstance(first_input, str) or isinstance(second_input, str):
+            raise TypeError(error_message)
+        else:
+            try:
+                return first_input / second_input
+            except ZeroDivisionError:
+                return 'undefined: I cannot divide by 0'
+            except TypeError:
+                return error_message
+
+  the test is still green
+
+* I remove the :ref:`if statement<if statements (conditions)>` from the :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 2-7
+
+    @reject_strings
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'undefined: I cannot divide by 0'
+        except TypeError:
+            return 'I am a calculator, I only work with numbers'
+
+  all tests are still passing
+
+* both
 
 There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first part of ``test_division`` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 

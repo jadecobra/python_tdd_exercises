@@ -116,6 +116,8 @@
 .. _programs: `computer program`_
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://github.com/joeyespo/pytest-watch
+.. _Python Built-in Functions: https://docs.python.org/3/library/functions.html
+.. _Python's Built-in Functions: `Python Built-in Functions`_
 .. _Python package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _Python package manager (pip): pip_
 .. _Python package manager: pip_
