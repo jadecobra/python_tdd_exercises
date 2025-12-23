@@ -980,7 +980,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 * I remove "not_ not_"
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 84
     :emphasize-lines: 2
 
     def material_implication(first_input, second_input):
@@ -992,7 +992,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 * I remove the other statement
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 84
 
     def material_implication(first_input, second_input):
         return not first_input or second_input

@@ -717,23 +717,59 @@ the test passes
 ----
 
 *********************************************************************************
-test_calculator_raises_type_error
+close the project
 *********************************************************************************
 
-requirements
-#################################################################################
+* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
+* I deactivate the `virtual environment`_
 
-:ref:`the calculator<how to make a calculator>` is needed for this part
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-* I exit the tests with :kbd:`ctrl+c` on the keyboard in the terminal_
-* I `change directory`_ to the ``calculator`` folder
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/type_error
+
+* I `change directory`_ to the parent of ``type_error``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+----
+
+*********************************************************************************
+test handling TypeError in the calculator
+*********************************************************************************
+
+I want to use :ref:`TypeError` with :ref:`exception handlers<how to use try...except...else>` to make sure that the :ref:`calculator program<how to make a calculator>` only works with numbers, just like it would in the real world
+
+=================================================================================
+open the project
+=================================================================================
+
+* I `change directory`_ to the ``calculator`` folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     cd calculator
 
-  the terminal_ shows
+  the terminal_ shows I am in the ``calculator`` folder_
 
   .. code-block:: shell
 
@@ -746,13 +782,20 @@ requirements
 
     source .venv/bin/activate
 
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
   the terminal_ shows
 
   .. code-block:: shell
 
     (.venv) .../pumping_python/calculator
 
-* I run the tests with `pytest-watch`_
+* I use ``pytest-watch`` to run the tests
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -762,41 +805,44 @@ requirements
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-lines: 4
 
-    ======================== test session starts =========================
-    platform linux -- Python 3.X.7, pytest-9.0.1, pluggy-1.6.0
-    rootdir: /workspaces/pumping_python/pumping_python/calculator
+    rootdir: .../pumping_python/calculator
     collected 4 items
 
-    tests/test_calculator.py ....                                  [100%]
+    tests/test_calculator.py ....                                        [100%]
 
-    ========================= 4 passed in 0.01s ==========================
+    ============================ 4 passed in X.YZs =============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new failing test to show that I can NOT do an arithmetic_ operation with something that is not a number
+I add a new failing test to show that I can NOT do arithmetic_ operations with something that is not a number
 
 .. code-block:: python
-  :lineno-start: 33
-  :emphasize-lines: 12-14
+  :lineno-start: 42
+  :emphasize-lines: 16-17
 
       def test_division(self):
-          while self.random_second_number == 0:
-              with self.assertRaises(ZeroDivisionError):
-                  src.calculator.divide(self.random_first_number, self.random_second_number)
-              self.random_second_number = a_random_number()
-          else:
+          try:
               self.assertEqual(
-                  src.calculator.divide(self.random_first_number, self.random_second_number),
+                  src.calculator.divide(
+                      self.random_first_number,
+                      self.random_second_number
+                  ),
                   self.random_first_number/self.random_second_number
+              )
+          except ZeroDivisionError:
+              self.assertEqual(
+                  src.calculator.divide(self.random_first_number, 0),
+                  'undefined: I cannot divide by 0'
               )
 
       def test_calculator_raises_type_error(self):
-          src.calculator.add(self.random_first_number, None)
+          src.calculator.add(None, None)
 
 
   # Exceptions seen
@@ -805,7 +851,7 @@ the terminal_ shows :ref:`TypeError`
 
 .. code-block:: shell
 
-  TypeError: unsupported operand type(s) for +: 'int' and 'NoneType'
+  TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -814,12 +860,12 @@ the terminal_ shows :ref:`TypeError`
 I add assertRaises_
 
 .. code-block:: python
-  :lineno-start: 44
+  :lineno-start: 57
   :emphasize-lines: 2-3
 
       def test_calculator_raises_type_error(self):
           with self.assertRaises(TypeError):
-              src.calculator.add(self.random_first_number, None)
+              src.calculator.add(None, None)
 
 the test passes
 
@@ -835,22 +881,21 @@ the test passes
 
         def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_first_number, None)
-            src.calculator.divide(self.random_first_number, None)
+                src.calculator.add(None None)
+            src.calculator.divide(None, None)
 
   the terminal_ shows :ref:`TypeError`
 
   .. code-block:: shell
 
-    TypeError: unsupported operand type(s) for /: 'int' and 'NoneType'
+    TypeError: unsupported operand type(s) for /: 'NoneType' and 'NoneType'
 
   I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 4-5
+    :lineno-start: 58
+    :emphasize-lines: 3-4
 
-        def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
                 src.calculator.add(self.random_first_number, None)
             with self.assertRaises(TypeError):
@@ -861,49 +906,38 @@ the test passes
 * I add another failing line, this time for :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 6
+    :lineno-start: 60
+    :emphasize-lines: 3
 
-        def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_first_number, None)
-            with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_first_number, None)
-            src.calculator.multiply(self.random_first_number, None)
+                src.calculator.divide(None, None)
+            src.calculator.multiply(None, None)
 
   the terminal_ shows :ref:`TypeError`
 
   .. code-block:: shell
 
-    TypeError: unsupported operand type(s) for *: 'int' and 'NoneType'
+    TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
 
   I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 6-7
+    :lineno-start: 60
+    :emphasize-lines: 3-4
 
-        def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(self.random_first_number, None)
+                src.calculator.divide(None, None)
             with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_first_number, None)
-            with self.assertRaises(TypeError):
-                src.calculator.multiply(self.random_first_number, None)
+                src.calculator.multiply(None, None)
 
   the test passes
 
 * I add another one for :ref:`subtraction<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 8
+    :lineno-start: 62
+    :emphasize-lines: 3
 
-        def test_calculator_raises_type_error(self):
-            with self.assertRaises(TypeError):
-                src.calculator.add(self.random_first_number, None)
-            with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_first_number, None)
             with self.assertRaises(TypeError):
                 src.calculator.multiply(self.random_first_number, None)
             src.calculator.subtract(self.random_first_number, None)
@@ -912,19 +946,14 @@ the test passes
 
   .. code-block:: shell
 
-    TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+    TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
   I add the `assertRaises method`_
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 8-9
+    :lineno-start: 62
+    :emphasize-lines: 3-4
 
-        def test_calculator_raises_type_error(self):
-            with self.assertRaises(TypeError):
-                src.calculator.add(self.random_first_number, None)
-            with self.assertRaises(TypeError):
-                src.calculator.divide(self.random_first_number, None)
             with self.assertRaises(TypeError):
                 src.calculator.multiply(self.random_first_number, None)
             with self.assertRaises(TypeError):
@@ -935,20 +964,127 @@ the test passes
 
   the test passes
 
+The ``calculator`` raises :ref:`TypeError` when given :ref:`None` as input. There is a case I have not considered, I only used :ref:`None` to test the input but did not use booleans_, strings_, tuples_, :ref:`lists`, sets_ or :ref:`dictionaries`
+
+
 ----
 
 *********************************************************************************
-how to check if input is good
+test handling TypeError in the calculator
 *********************************************************************************
 
-I want to add a :ref:`condition<if statements (conditionals)>` to the calculator to make sure that what the :ref:`functions` receive are numbers. I can do this with TypeError_
 
-* I go to the :ref:`explorer<explorer on left>` in the `Integrated Development Environment (IDE)`_ to open the ``calculator`` folder_
-* I open the ``src`` folder and click on ``calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+
+
+
 
 =================================================================================
-:red:`RED`: make it fail
+:green:`GREEN`: make it pass
 =================================================================================
+
+I change the expectation to match reality
+
+.. code-block:: python
+  :lineno-start: 23
+  :emphasize-lines: 1
+
+          self.assertEqual(src.calculator.add('1', '1'), '11')
+
+the test passes
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<fucntions>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2-5
+
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'undefined: I cannot divide by 0'
+
+  the test passes.
+
+There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first part of ``test_division`` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+
+* I add a `return statement`_ to the ``a_random_number`` :ref:`function` in ``test_calculator.py`` to make it happen
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 2
+
+    def a_random_number():
+        return 0
+        return random.triangular(-1000.0, 1000.0)
+
+  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    >           self.random_first_number/self.random_second_number
+            )
+    E       ZeroDivisionError: division by zero
+
+  the expectation calculation in ``test_division`` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'undefined: I cannot divide by 0'``
+
+* I add an :ref:`exception handler<how to use try...except...else>` to the test
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 2-14
+
+      def test_division(self):
+          try:
+              self.assertEqual(
+                  src.calculator.divide(
+                      self.random_first_number,
+                      self.random_second_number
+                  ),
+                  self.random_first_number/self.random_second_number
+              )
+          except ZeroDivisionError:
+              self.assertEqual(
+                  src.calculator.divide(self.random_first_number, 0),
+                  'undefined: I cannot divide by 0'
+              )
+
+  the test passes
+
+* I remove the `return statement`_ from ``a_random_number`` to go back to testing with a range of numbers
+
+  .. code-block:: python
+    :linenos:
+
+    import random
+    import src.calculator
+    import unittest
+
+
+    def a_random_number():
+        return random.triangular(-1000.0, 1000.0)
+
+
+    class TestCalculator(unittest.TestCase):
+
+  the test is still green
+
+
+
+
+
+
+
+
+
 
 I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`add function<test_addition>` in ``calculator.py``
 
@@ -1451,11 +1587,35 @@ the test passes
 
   the test passes
 
+
+I add an :ref:`assertion<AssertionError>` from :ref:`test_what_is_an_assertion`  to :ref:`test_addition`
+
+.. code-block:: python
+  :lineno-start: 15
+  :emphasize-lines: 9
+
+      def test_addition(self):
+          self.assertEqual(
+              src.calculator.add(
+                  self.random_first_number,
+                  self.random_second_number
+              ),
+              self.random_first_number+self.random_second_number
+          )
+          self.assertEqual(src.calculator.add('1', '1'), '2')
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: '11' != '2'
+
+
 ----
 
-*********************************************************************************
+=================================================================================
 close the project
-*********************************************************************************
+=================================================================================
 
 * I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
 * I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
@@ -1470,9 +1630,9 @@ close the project
 
   .. code-block:: shell
 
-    .../pumping_python/type_error
+    .../pumping_python/calculator
 
-* I `change directory`_ to the parent of ``type_error``
+* I `change directory`_ to the parent of ``calculator``
 
   .. code-block:: shell
     :emphasize-lines: 1
