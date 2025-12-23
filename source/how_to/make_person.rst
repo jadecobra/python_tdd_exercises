@@ -2173,7 +2173,7 @@ review
 
 I ran tests to make a :ref:`function<functions>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary <dictionaries>` as output
 
-I also ran into the following :ref:`Exceptions<errors>`
+I also saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * :ref:`NameError<test_catching_name_error_in_tests>`

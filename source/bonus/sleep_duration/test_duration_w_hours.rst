@@ -852,7 +852,7 @@ The challenge is to write a program_ that calculates the difference between a gi
   - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values` them in the timestamps
   - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
-I also ran into the following :ref:`Exceptions<errors>`
+I also saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * :ref:`TypeError`

@@ -899,7 +899,7 @@ I ran tests for AttributeError_ with
 * :ref:`variables in classes aka class attributes<test_attribute_error_w_class_attributes>`
 * :ref:`functions in classes aka methods<test_attribute_error_w_class_methods>`
 
-I also ran into the following :ref:`Exceptions<errors>`
+I also saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * :ref:`NameError<test_catching_name_error_in_tests>`

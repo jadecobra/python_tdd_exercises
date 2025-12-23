@@ -965,7 +965,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
             first_number = random.triangular(-0.1, 1.0)
             second_number = -5.6789
 
-  the test is still green. `random.triangular`_ returns a random float_ that could be any number ``-0.1`` to ``1.0``
+  the test is still green. `random.triangular`_ returns a random float_ that could be any number from ``-0.1`` to ``1.0`` in this case
 
 * I want to see the test fail to be sure everything works as expected. I change the expectation in the first :ref:`assertion<AssertionError>`
 
@@ -1033,14 +1033,17 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 2-3, 6-7
+    :emphasize-lines: 2-3, 7-8, 10
 
     def test_addition(self):
         random_first_number = random.triangular(-0.1, 1.0)
         random_second_number = random.triangular(-0.1, 1.0)
 
         self.assertEqual(
-            src.calculator.add(random_first_number, random_second_number),
+            src.calculator.add(
+                random_first_number,
+                random_second_number
+            ),
             random_first_number+random_second_number
         )
 
@@ -1053,8 +1056,8 @@ all of these lines can be written using ``first_number`` as the name of the firs
     :emphasize-lines: 2-3
 
         def test_addition(self):
-            random_first_number = random.triangular(-10, 10)
-            random_second_number = random.triangular(-10, 10)
+            random_first_number = random.triangular(-10.0, 10.0)
+            random_second_number = random.triangular(-10.0, 10.0)
 
   the test is still green
 
@@ -1070,7 +1073,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
 
     def a_random_number():
-        return random.triangular(-10, 10)
+        return random.triangular(-10.0, 10.0)
 
 
     class TestCalculator(unittest.TestCase):
@@ -1082,9 +1085,9 @@ all of these lines can be written using ``first_number`` as the name of the firs
     :emphasize-lines: 2-5
 
         def test_addition(self):
-            # random_first_number = random.triangular(-10, 10)
+            # random_first_number = random.triangular(-10.0, 10.0)
             random_first_number = a_random_number()
-            # random_second_number = random.triangular(-10, 10)
+            # random_second_number = random.triangular(-10.0, 10.0)
             random_second_number = a_random_number()
 
   the terminal_ still shows green
@@ -1106,7 +1109,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
     :emphasize-lines: 2
 
     def a_random_number():
-        return random.triangular(-10000, 10000)
+        return random.triangular(-10000.0, 10000.0)
 
   and the terminal_ still shows green
 
@@ -1125,8 +1128,10 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
     OverflowError: (34, 'Numerical result out of range')
 
+  because the numbers are too big to be used
+
   - ``**`` is the symbol for raise to the power (exponents)
-  - ``10.0**100000`` is how to write ``10`` raised to the power of ``100,000``
+  - ``10.0**100000`` is how to write ``10.0`` raised to the power of ``100,000``
 
   I make the range smaller
 
@@ -1159,40 +1164,44 @@ test_subtraction
 :red:`RED`: make it fail
 =================================================================================
 
-* I add a test for subtraction in ``test_calculator.py``
+I add a test for subtraction in ``test_calculator.py``
 
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 12-19
+.. code-block:: python
+  :lineno-start: 12
+  :emphasize-lines: 13-23
 
-    class TestCalculator(unittest.TestCase):
+      def test_addition(self):
+          random_first_number = a_random_number()
+          random_second_number = a_random_number()
 
-        def test_addition(self):
-            random_first_number = a_random_number()
-            random_second_number = a_random_number()
+          self.assertEqual(
+              src.calculator.add(
+                  random_first_number,
+                  random_second_number
+              ),
+              random_first_number+random_second_number
+          )
 
-            self.assertEqual(
-                src.calculator.add(first_input, second_input),
-                random_first_number+random_second_number
-            )
+      def test_subtraction(self):
+          random_first_number = a_random_number()
+          random_second_number = a_random_number()
 
-        def test_subtraction(self):
-            random_first_number = a_random_number()
-            random_second_number = a_random_number()
-
-            self.assertEqual(
-                src.calculator.subtract(random_first_number, random_second_number),
-                random_first_number-random_second_number
-            )
+          self.assertEqual(
+              src.calculator.subtract(
+                  random_first_number,
+                  random_second_number
+              ),
+              random_first_number-random_second_number
+          )
 
 
-    # TODO
+  # TODO
 
-  the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    AttributeError: module 'src.calculator' has no attribute 'subtract'
+  AttributeError: module 'src.calculator' has no attribute 'subtract'
 
 ``calculator.py`` in the ``src`` folder_ does not have anything named ``subtract`` in it
 
@@ -1264,7 +1273,7 @@ test_subtraction
 
   .. code-block:: shell
 
-    AssertionError: None != X.YZABCDEFGHIJKLM
+    AssertionError: None != XYZ.ABCDEFGHIJKLMNOP
 
   ``subtract`` returns :ref:`None`, the test expects ``random_first_number-random_second_number`` or ``first_input-second_input`` - the difference between the 2 numbers
 
@@ -1292,7 +1301,7 @@ test_subtraction
 
   once in ``test_addition`` and again in ``test_subtraction``
 
-* I add :ref:`class <classes>` :ref:`attributes (variables)<AttributeError>` to remove the duplication and use the same numbers for both tests
+* I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the duplication and use the same numbers for both tests
 
   .. code-block:: python
     :lineno-start: 10
@@ -1304,6 +1313,8 @@ test_subtraction
         random_second_number = a_random_number()
 
         def test_addition(self):
+            random_first_number = a_random_number()
+            random_second_number = a_random_number()
 
 * I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in ``test_addition``
 
@@ -1318,14 +1329,17 @@ test_subtraction
             random_second_number = self.random_second_number
 
             self.assertEqual(
-                src.calculator.add(random_first_number, random_second_number),
+                src.calculator.add(
+                    random_first_number,
+                    random_second_number
+                ),
                 random_first_number+random_second_number
             )
 
   and in ``test_subtraction``
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 29
     :emphasize-lines: 3, 5
 
         def test_subtraction(self):
@@ -1335,11 +1349,14 @@ test_subtraction
             random_second_number = self.random_second_number
 
             self.assertEqual(
-                src.calculator.subtract(random_first_number, random_second_number),
+                src.calculator.subtract(
+                    random_first_number,
+                    random_second_number
+                ),
                 random_first_number-random_second_number
             )
 
-  the terminal_ shows the tests are still passing. The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class <classes>` :ref:`attributes<AttributeError>` (variables) and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal_ shows the tests are still passing. The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class attributes<test_attribute_error_w_class_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
 
 * I remove the commented lines in ``test_addition``
 
@@ -1353,7 +1370,7 @@ test_subtraction
   and do the same thing in ``test_subtraction``
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 27
 
         def test_subtraction(self):
             random_first_number = self.random_first_number
@@ -1363,12 +1380,13 @@ test_subtraction
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2-8
+    :emphasize-lines: 3-6, 8
 
             self.assertEqual(
-                # src.calculator.add(random_first_number, random_second_number),
                 src.calculator.add(
+                    # random_first_number,
                     self.random_first_number,
+                    # random_second_number
                     self.random_second_number
                 ),
                 # random_first_number+random_second_number
@@ -1392,12 +1410,13 @@ test_subtraction
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 2-8
+    :emphasize-lines: 3-6, 8
 
             self.assertEqual(
-                # src.calculator.subtract(random_first_number, random_second_number),
                 src.calculator.subtract(
+                    # random_first_number,
                     self.random_first_number,
+                    # random_second_number
                     self.random_second_number
                 ),
                 # random_first_number-random_second_number
@@ -1417,7 +1436,7 @@ test_subtraction
                 self.random_first_number-self.random_second_number
             )
 
-* I remove the ``first_random_number`` and ``second_random_number`` :ref:`variables<what is a variable?>` from ``test_addition`` and ``test_subtraction`` since they are no longer needed
+* I remove the ``first_random_number`` and ``second_random_number`` :ref:`variables<what is a variable?>` from ``test_addition`` and ``test_subtraction`` because they are no longer used
 
   .. code-block:: python
     :lineno-start: 10
@@ -1602,7 +1621,17 @@ the terminal_ shows :ref:`AttributeError`
 * I remove the TODO list
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 42
+
+        def test_division(self):
+            self.assertEqual(
+                src.calculator.divide(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number/self.random_second_number
+            )
+
 
     # Exceptions seen
     # AssertionError
@@ -1630,7 +1659,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  What :ref:`Exceptions<errors>` do you think are raised as I go along?
+  What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1692,9 +1721,9 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   .. code-block:: shell
 
-    AssertionError: None != X.YZABCDEFGHIJKL
+    AssertionError: None != XYZ.ABCDEFGHIJKLMN
 
-* I change the `return statement`_ to see the difference between the inputs and expected output, remember the :ref:`identity function<test_identity_function>`
+* I change the `return statement`_ to see the difference between the inputs and expected output, remember the :ref:`identity function?<test_identity_function>`
 
   .. code-block:: python
     :linenos:
@@ -1707,7 +1736,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   .. code-block:: shell
 
-    AssertionError: (X.YZABCDEFGHIJKL, Y.ZABCDEFGHIJKLM) != Z.ABCDEFGHIJKLMN
+    AssertionError: (XYZ.ABCDEFGHIJKLMN, YZA.BCDEFGHIJKLMNO) != ZAB.CDEFGHIJKLMNOP
 
   the name of the :ref:`function<functions>` is ``subtract`` and the test expects the difference between the 2 inputs
 
@@ -1760,7 +1789,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AssertionError: None != XY.ZABCDEFGHIJKLM
 
-* I change the `return statement`_ to see the difference between the inputs and the expected output
+* I change the `return statement`_ to see the difference between the inputs and the expected output, :ref:`identity function again<test_identity_function>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1773,7 +1802,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   .. code-block:: shell
 
-    AssertionError: (X.YZABCDEFGHIJKLM, -Y.ZABCDEFGHIJKLMNO) != -Z.ABCDEFGHIJKLMNO
+    AssertionError: (XYZ.ABCDEFGHIJKLMNO, -YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
   I change it to the multiplication of the inputs to match the name of the :ref:`function<functions>`
 
@@ -1807,7 +1836,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   .. code-block:: shell
 
-    AssertionError: (-X.YZABCDEFGHIJKLM, Y.ZABCDEFGHIJKLMNO) != -Z.ABCDEFGHIJKLMNO
+    AssertionError: (-XYZ.ABCDEFGHIJKLMNO, YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
   when I change the `return statement`_ to match the expectation
 
@@ -1845,7 +1874,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def add(first_input, second_input):
         return first_input + second_input
 
-  and all the tests are passing with no random failures. Lovely! I am a Programmer!
+  and all the tests are passing with no random failures, or are they?
 
 ----
 
@@ -1896,7 +1925,7 @@ I wrote the following tests for a program_ that can :ref:`add<test_addition>`, :
 * `test_multiplication`_
 * `test_division`_
 
-I also ran into the following :ref:`Exceptions<errors>`
+I also saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError`
 * :ref:`NameError<test_catching_name_error_in_tests>`
@@ -1929,7 +1958,7 @@ you know a lot
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
 
-There is a problem, I have done the same steps for each of the 8 chapters covered so far
+There is a problem though, I have done the same steps for each of the 8 chapters covered so far
 
 * I pick a name for the project
 * :ref:`I make a directory for the project<how to make a directory for the project>`
