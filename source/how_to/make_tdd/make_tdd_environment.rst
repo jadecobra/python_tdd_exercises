@@ -891,7 +891,7 @@ how to activate a virtual environment
 
   the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
 
-* I run `pytest-watch`_ again
+* I use `pytest-watch`_ to run the test again
 
   .. code-block:: shell
     :emphasize-lines: 1

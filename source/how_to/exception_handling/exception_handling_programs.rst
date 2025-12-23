@@ -657,6 +657,157 @@ close the project
 ----
 
 *********************************************************************************
+test handling ZeroDivisionError in the calculator
+*********************************************************************************
+
+I want the :ref:`divide function<test_division>` in the :ref:`calculator project<how to make a calculator>` to return ``undefined`` when :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised so that the program_ can continue to work after ``0`` is given as the second number
+
+=================================================================================
+open the project
+=================================================================================
+
+* I `change directory`_ to the ``calculator`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd calculator
+
+  the terminal_ shows I am in the ``calculator`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    rootdir: .../pumping_python/calculator
+    collected 4 items
+
+    tests/test_calculator.py ....                                        [100%]
+
+    ============================ 4 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+I change the last :ref:`assertion<AssertionError>` in ``test_division``
+
+.. code-block:: python
+  :lineno-start: 42
+  :emphasize-lines: 9-12
+
+      def test_division(self):
+          self.assertEqual(
+              src.calculator.divide(
+                  self.random_first_number,
+                  self.random_second_number
+              ),
+              self.random_first_number/self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.divide(self.random_first_number, 0),
+              'undefined: I cannot divide by 0'
+          )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+.. code-block:: shell
+
+  ZeroDivisionError: float division by zero
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<fucntions>`
+
+.. code-block:: python
+  :lineno-start: 9
+  :emphasize-lines: 2-5
+
+  def divide(first_input, second_input):
+      try:
+          return first_input / second_input
+      except ZeroDivisionError:
+          return 'undefined: I cannot divide by 0'
+
+the test passes
+
+=================================================================================
+close the project
+=================================================================================
+
+* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 

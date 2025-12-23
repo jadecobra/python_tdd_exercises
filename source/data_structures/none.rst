@@ -265,7 +265,7 @@ requirements
 
   the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
 
-* I run `pytest-watch`_
+* I use `pytest-watch`_ to run the test
 
   .. code-block:: shell
     :emphasize-lines: 1

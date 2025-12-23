@@ -1107,7 +1107,7 @@ close the project
 ----
 
 *********************************************************************************
-test_catching_zero_division_error_in_test_calculator
+test catching ZeroDivisionError in test_calculator.py
 *********************************************************************************
 
 I want to add an exception handler to the :ref:`calculator project<how to make a calculator>` for :ref:`ZeroDivisionError<test_catching_zero_division_error>` in :ref:`test_division`
