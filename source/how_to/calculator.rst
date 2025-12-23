@@ -1956,9 +1956,9 @@ you know a lot
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to make a calculator`
 
-There is a problem though, I have done the same steps for each of the 8 chapters covered so far
+There is a problem, I have done the same steps for each of the 8 chapters covered so far
 
 * I pick a name for the project
 * :ref:`I make a directory for the project<how to make a directory for the project>`

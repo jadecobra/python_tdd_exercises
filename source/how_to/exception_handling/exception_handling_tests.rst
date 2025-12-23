@@ -57,7 +57,7 @@ start the project
   .. NOTE:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
 
 * I pick ``exceptions`` as the name of this project
-* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
+* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
   .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
@@ -769,7 +769,7 @@ test_catching_zero_division_error_in_tests
 :red:`RED`: make it fail
 =================================================================================
 
-* I add another failing test, this time for the :ref:`Exception<errors>` that happened in :ref:`how to make a calculator` when :ref:`testing division<test_division>`
+* I add another failing test
 
   .. code-block:: python
     :lineno-start: 30
@@ -820,7 +820,7 @@ I add assertRaises_
           with self.assertRaises(ZeroDivisionError):
               1 / 0
 
-the test passes. ZeroDivisionError_ is raised when I try to divide any number by ``0``, same as I get ``undefined`` when I try it with a calculator, because dividing by ``0`` is underfined in Mathematics_
+the test passes. ZeroDivisionError_ is raised when I try to divide any number by ``0``, same as I get ``undefined`` when I try it with a calculator, because dividing by ``0`` is underfined in Mathematics_, I can use this with :ref:`test_division` in the ``calculator`` project
 
 ----
 
@@ -1071,6 +1071,191 @@ I know :ref:`how to test that an Exception is raised`. As a rule of thumb I writ
 ----
 
 *********************************************************************************
+close the project
+*********************************************************************************
+
+* I close ``test_exceptions.py`` in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/exceptions
+
+* I `change directory`_ to the parent of ``exceptions``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+----
+
+*********************************************************************************
+test_catching_zero_division_error_in_test_calculator
+*********************************************************************************
+
+I want to add an exception handler to the :ref:`calculator project<how to make a calculator>` for :ref:`ZeroDivisionError<test_catching_zero_division_error>` in :ref:`test_division`
+
+=================================================================================
+open the project
+=================================================================================
+
+* I `change directory`_ to the ``calculator`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd calculator
+
+  the terminal_ shows I am in the ``calculator`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    rootdir: .../pumping_python/calculator
+    collected 4 items
+
+    tests/test_calculator.py ....                                        [100%]
+
+    ============================ 4 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+I add a new :ref:`assertion<AssertionError>` to show that the ``divide`` :ref:`function<functions>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error>` in
+
+.. code-block:: python
+  :lineno-start: 42
+  :emphasize-lines: 9
+
+      def test_division(self):
+          self.assertEqual(
+              src.calculator.divide(
+                  self.random_first_number,
+                  self.random_second_number
+              ),
+              self.random_first_number/self.random_second_number
+          )
+          src.calculator.divide(self.random_first_number, 0)
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+.. code-block:: shell
+
+  ZeroDivisionError: float division by zero
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+I add assertRaises_
+
+.. code-block:: python
+  :lineno-start: 48
+  :emphasize-lines: 3-4
+
+              self.random_first_number/self.random_second_number
+          )
+          with self.assertRaises(ZeroDivisionError):
+              src.calculator.divide(self.random_first_number, 0)
+
+
+  # Exceptions seen
+
+the test passes
+
+=================================================================================
+close the project
+=================================================================================
+
+* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 
@@ -1108,7 +1293,7 @@ you know
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to make a calculator`
 * :ref:`how to make a Python Test Driven Development environment automatically` or :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux` and
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 

@@ -30,6 +30,64 @@ requirements
 
 :ref:`how to test that an Exception is raised`
 
+=================================================================================
+open the project
+=================================================================================
+
+* I `change directory`_ to the ``exceptions`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd exception
+
+  the terminal_ shows I am in the ``exceptions`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/exceptions
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/exceptions
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    rootdir: .../pumping_python/exceptions
+    collected 8 items
+
+    tests/test_exceptions.py ....                                        [100%]
+
+    ============================ 8 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_exceptions.py`` to open it in the :ref:`editor<2 editors>`
+
 ----
 
 *********************************************************************************
@@ -642,7 +700,7 @@ you know
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to make a calculator`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 

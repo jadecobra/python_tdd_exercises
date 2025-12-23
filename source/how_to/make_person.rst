@@ -2205,7 +2205,7 @@ you know
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to make a calculator`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`
