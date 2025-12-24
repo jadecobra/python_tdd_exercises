@@ -754,7 +754,9 @@ the test passes
 
     TypeError: can only concatenate str (not "float") to str
 
-  I cannot add something that is not a string_ to a string_. I use assertRaises_ to handle the :ref:`Exception<errors>`
+  I cannot add something that is not a string_ to a string_
+
+* I use assertRaises_ to handle the :ref:`Exception<errors>`
 
   .. code-block:: python
     :lineno-start: 20
@@ -812,7 +814,7 @@ close the project
 *********************************************************************************
 
 * I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
-* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell
@@ -1954,7 +1956,7 @@ close the project
 =================================================================================
 
 * I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
-* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell

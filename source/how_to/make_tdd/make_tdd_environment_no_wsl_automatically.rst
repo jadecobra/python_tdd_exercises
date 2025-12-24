@@ -272,7 +272,7 @@ close the project
 *********************************************************************************
 
 * I close the ``test_more_magic.py`` in the :ref:`editor<2 editors>` I had open
-* I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell
