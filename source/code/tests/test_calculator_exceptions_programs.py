@@ -60,3 +60,4 @@ class TestCalculator(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
+# ZeroDivisionError

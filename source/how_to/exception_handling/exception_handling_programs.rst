@@ -756,6 +756,19 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
 :green:`GREEN`: make it pass
 =================================================================================
 
+* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 6
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # ZeroDivisionError
+
 * I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 * I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<fucntions>`
 

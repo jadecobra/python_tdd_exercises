@@ -1,30 +1,34 @@
-def check_input(function):
-    def wrapper(input_1, input_2):
-        error_message = 'I only work with numbers'
-        if isinstance(input_1, str) or isinstance(input_2, str):
+def take_numbers_only(function):
+    def wrapper(first_input, second_input):
+        error_message = 'I am a calculator, I only work with numbers'
+        if isinstance(first_input, str) or isinstance(second_input, str):
             return error_message
-        try:
-            return function(input_1, input_2)
-        except TypeError:
-            return error_message
+        else:
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
     return wrapper
 
 
-@check_input
-def subtract(input_1, input_2):
-    return input_1 - input_2
+@take_numbers_only
+def subtract(first_input, second_input):
+    return first_input - second_input
 
 
-@check_input
-def multiply(input_1, input_2):
-    return input_1 * input_2
+@take_numbers_only
+def multiply(first_input, second_input):
+    return first_input * second_input
 
 
-@check_input
-def divide(input_1, input_2):
-    return input_1 / input_2
+@take_numbers_only
+def divide(first_input, second_input):
+    try:
+        return first_input / second_input
+    except ZeroDivisionError:
+        return 'undefined: I cannot divide by 0'
 
 
-@check_input
-def add(input_1, input_2):
-    return input_1 + input_2
+@take_numbers_only
+def add(first_input, second_input):
+    return first_input + second_input
