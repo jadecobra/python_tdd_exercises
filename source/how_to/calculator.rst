@@ -333,7 +333,7 @@ test_addition
                 1
             )
 
-  - the `assertEqual method`_ from :ref:`AssertionError` checks if the 2 things in parentheses are the the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the `assertEqual method`_ from :ref:`AssertionError` checks if the 2 things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is
 
     - ``reality`` - ``src.calculator.add(0, 1)``, and the other is

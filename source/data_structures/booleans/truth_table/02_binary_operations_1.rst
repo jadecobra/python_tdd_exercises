@@ -256,9 +256,9 @@ the terminal_ shows :ref:`TypeError`
 
 The definition only takes one input, but the test sent two. I add ``second_input`` as the second name in parentheses then change ``argument`` to ``first_input`` for the first input given when the :ref:`function<functions>` is called by the test
 
-.. TIP:: In `Visual Studio Code`_ I can change everywhere a name is by using
+.. TIP:: In `Visual Studio Code`_ I can change all the places that a name is in the file_, by using
 
-  * Find and Replace - ``ctrl+H`` on Windows_ or ``option+command+F`` on MacOS_
+  * Find and Replace - ``ctrl+H`` on Windows_ or ``option+command+F`` on MacOS_ or with
   * Rename Symbol
 
     - Right click on the name you want to change, for example ``the_input`` then select ``Rename Symbol`` or
@@ -438,7 +438,7 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
 I can make it do that with `if statements`_
 
 ---------------------------------------------------------------------------------
-if statements (conditionals)
+if statements
 ---------------------------------------------------------------------------------
 
 An `if statement`_ is a way for a program_ to do something based on something else. I can use them to make a :ref:`function<functions>` choose between 2 things, there are written as

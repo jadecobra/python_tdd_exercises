@@ -152,7 +152,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
     AssertionError: False is not true
 
-* I add :ref:`if statements<if statements (conditionals)>` to ``exclusive_disjunction`` in ``truth_table.py``
+* I add :ref:`if statements` to ``exclusive_disjunction`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 49
@@ -166,7 +166,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   the test passes
 
-* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -214,7 +214,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
     AssertionError: False is not true
 
-* I add :ref:`if statements<if statements (conditionals)>` to ``exclusive_disjunction`` in ``truth_table.py``
+* I add :ref:`if statements` to ``exclusive_disjunction`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 49
@@ -230,7 +230,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   the test passes
 
-* I change the new statements to one :ref:`if statement<if statements (conditionals)>`
+* I change the new statements to one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -288,7 +288,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
 
-* I write the :ref:`if statements<if statements (conditionals)>` in terms of :ref:`True<test_what_is_true>`
+* I write the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -322,7 +322,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   still green
 
-* I remove the commented lines and make the :ref:`if statements<if statements (conditionals)>` simpler
+* I remove the commented lines and make the :ref:`if statements` simpler
 
   .. code-block:: python
     :lineno-start: 49
@@ -339,7 +339,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   the test is still passing
 
-  .. TIP:: I can put two :ref:`if statements<if statements (conditionals)>` together with :ref:`Logical Disjunction<test_logical_disjunction>` (or_) when they are at the same indentation level and return the same thing. For example
+  .. TIP:: I can put two :ref:`if statements` together with :ref:`Logical Disjunction<test_logical_disjunction>` (or_) when they are at the same indentation level and return the same thing. For example
 
     .. code-block:: python
 
@@ -355,7 +355,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
       if something or something_else:
           return this
 
-* I use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two :ref:`if statements<if statements (conditionals)>` that return :ref:`True<test_what_is_true>` together
+* I use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two :ref:`if statements` that return :ref:`True<test_what_is_true>` together
 
   .. code-block:: python
     :lineno-start: 49
@@ -420,7 +420,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   still green
 
-* ``exclusive_disjunction`` returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are the same and returns :ref:`True<test_what_is_true>` when they are NOT. I add an :ref:`if statement<if statements (conditionals)>` to show this with the equality symbol (2 equal signs together :kbd:`=+=`)
+* ``exclusive_disjunction`` returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are the same and returns :ref:`True<test_what_is_true>` when they are NOT. I add an :ref:`if statement<if statements>` to show this with the equality symbol (2 equal signs together :kbd:`=+=`)
 
   .. code-block:: python
     :lineno-start: 49
@@ -435,7 +435,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   the terminal_ still shows green
 
-* I change the new :ref:`if statement<if statements (conditionals)>` to a simple `return statement`_
+* I change the new :ref:`if statement<if statements>` to a simple `return statement`_
 
   .. code-block:: python
     :lineno-start: 49
@@ -545,7 +545,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
     AssertionError: False is not true
 
-* I add an :ref:`if statement<if statements (conditionals)>` to ``material_non_implication`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to ``material_non_implication`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 55
@@ -559,7 +559,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
   the test passes
 
-* I change the two :ref:`if statements<if statements (conditionals)>` to one
+* I change the two :ref:`if statements` to one
 
   .. code-block:: python
     :lineno-start: 55
@@ -629,7 +629,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
 
-* there is only one case where ``material_non_implication`` returns :ref:`True<test_what_is_true>`. I write the :ref:`if statement<if statements (conditionals)>` in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
+* there is only one case where ``material_non_implication`` returns :ref:`True<test_what_is_true>`. I write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 55
@@ -643,7 +643,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
   the test is still passing
 
-* I remove the commented line and change the :ref:`if statement<if statements (conditionals)>` with bool_
+* I remove the commented line and change the :ref:`if statement<if statements>` with bool_
 
   .. code-block:: python
     :lineno-start: 55
@@ -657,7 +657,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
   green is a primary color
 
-* I remove the commented line and write a simpler :ref:`if statement<if statements (conditionals)>`
+* I remove the commented line and write a simpler :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -785,7 +785,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
     AssertionError: True is not false
 
-* I add :ref:`if statements<if statements (conditionals)>` for this case to ``project_first`` in ``truth_table.py``
+* I add :ref:`if statements` for this case to ``project_first`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 59
@@ -802,7 +802,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
   - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
-* I change the :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
+* I change the :ref:`if statements` to one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 59
@@ -851,7 +851,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
     AssertionError: True is not false
 
-* I add :ref:`if statements<if statements (conditionals)>` to ``project_first`` in ``truth_table.py``
+* I add :ref:`if statements` to ``project_first`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 59
@@ -867,7 +867,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
   the test passes
 
-* I change the :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
+* I change the :ref:`if statements` to one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 59
@@ -1021,7 +1021,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     AssertionError: True is not false
 
-* I add :ref:`if statements<if statements (conditionals)>` to ``converse_implication`` in ``truth_table.py``
+* I add :ref:`if statements` to ``converse_implication`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 63
@@ -1035,7 +1035,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   the test passes
 
-* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -1087,7 +1087,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
-* I change the :ref:`if statement<if statements (conditionals)>` in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
+* I change the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 63
@@ -1115,7 +1115,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   do you like green eggs and ham?
 
-* I remove the commented line and make the :ref:`if statement<if statements (conditionals)>` simpler
+* I remove the commented line and make the :ref:`if statement<if statements>` simpler
 
   .. code-block:: python
     :lineno-start: 63
@@ -1129,7 +1129,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   the terminal_ still shows green
 
-* I add the opposite of the :ref:`if statement<if statements (conditionals)>` for the second `return statement`_
+* I add the opposite of the :ref:`if statement<if statements>` for the second `return statement`_
 
   .. code-block:: python
     :lineno-start: 63
@@ -1143,7 +1143,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   the test is still passing
 
-* I move the new :ref:`if statement<if statements (conditionals)>` to the top
+* I move the new :ref:`if statement<if statements>` to the top
 
   .. code-block:: python
     :lineno-start: 63

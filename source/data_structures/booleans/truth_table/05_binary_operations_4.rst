@@ -153,7 +153,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 
     AssertionError: False is not true
 
-* I add an :ref:`if statement<if statements (conditionals)>` to ``negate_second`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to ``negate_second`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 67
@@ -205,7 +205,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 
     AssertionError: False is not true
 
-* I add an :ref:`if statement<if statements (conditionals)>` for the case to ``negate_second`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for the case to ``negate_second`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 67
@@ -541,7 +541,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 
     AssertionError: True is not false
 
-* I add an :ref:`if statement<if statements (conditionals)>` to ``logical_equality`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to ``logical_equality`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 75
@@ -574,7 +574,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 
     AssertionError: True is not false
 
-* I add another :ref:`if statement<if statements (conditionals)>` to ``logical_equality`` in ``truth_table.py``
+* I add another :ref:`if statement<if statements>` to ``logical_equality`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 75
@@ -646,7 +646,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 
   the test is still passing
 
-* I write a new `return statement`_ with not_ to replace the :ref:`if statement<if statements (conditionals)>`
+* I write a new `return statement`_ with not_ to replace the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 75
@@ -804,7 +804,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 * ``first_input == second_input``
 * :ref:`True<test_what_is_true>` when the two inputs are the same
 * :ref:`False<test_what_is_false>` when the two inputs are NOT the same
-* the :ref:`Logical Conjunction<test_logical_conjunction>` of the result of :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input, and the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the the :ref:`Logical Negation<test_logical_negation>` of the first input and the second input
+* the :ref:`Logical Conjunction<test_logical_conjunction>` of the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input, and the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input and the second input
 * is the opposite of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>` when the two inputs are the same
 
 ----
@@ -881,7 +881,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 
     AssertionError: True is not false
 
-* I add an :ref:`if statement<if statements (conditionals)>` to ``material_implication`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to ``material_implication`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 84
@@ -935,7 +935,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
-* there is only one case where ``material_implication`` returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it with :ref:`Logical Negation<test_logical_negation>` since the :ref:`if statement<if statements (conditionals)>` returns :ref:`False<test_what_is_false>` in ``truth_table.py``
+* there is only one case where ``material_implication`` returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it with :ref:`Logical Negation<test_logical_negation>` since the :ref:`if statement<if statements>` returns :ref:`False<test_what_is_false>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 84

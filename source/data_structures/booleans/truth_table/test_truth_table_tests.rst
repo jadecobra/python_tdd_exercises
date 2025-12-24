@@ -294,7 +294,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>` to ``negate_second``
+  I add an :ref:`if statement<if statements>` to ``negate_second``
 
   .. code-block:: python
     :lineno-start: 13
@@ -310,7 +310,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -348,7 +348,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True)
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -364,7 +364,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -400,7 +400,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -416,7 +416,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -433,7 +433,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>` for it
+  I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
     :lineno-start: 25
@@ -470,7 +470,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -505,7 +505,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -521,7 +521,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -538,7 +538,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -575,7 +575,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 44
@@ -610,7 +610,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -626,7 +626,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -662,7 +662,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -697,7 +697,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -713,7 +713,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -730,7 +730,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -767,7 +767,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -783,7 +783,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -819,7 +819,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -835,7 +835,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -852,7 +852,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -889,7 +889,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 80
@@ -924,7 +924,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -940,7 +940,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (True, False) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -957,7 +957,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, True) is not false
 
-  I add another :ref:`if statement<if statements (conditionals)>`
+  I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -975,7 +975,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: (False, False) is not false
 
-  I add an :ref:`if statement<if statements (conditionals)>`
+  I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -1192,7 +1192,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def logical_negation(first_input):
         return not first_input
 
-* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements (conditionals)>`, for the 3 cases that return :ref:`True<test_what_is_true>`
+* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>`, for the 3 cases that return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 80
@@ -1240,7 +1240,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def converse_implication(first_input, second_input):
         return (first_input, second_input) != (False, True)
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two :ref:`if statements<if statements (conditionals)>`. I put them together to make one :ref:`if statement<if statements (conditionals)>`
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two :ref:`if statements`. I put them together to make one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -1256,7 +1256,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the test is still green. I remove the other :ref:`if statements<if statements (conditionals)>` then return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements (conditionals)>`
+  the test is still green. I remove the other :ref:`if statements` then return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -1334,7 +1334,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def logical_conjunction(first_input, second_input):
         return (first_input, second_input) == (True, True)
 
-* :ref:`logical_equality<test_logical_equality>` has two :ref:`if statements<if statements (conditionals)>`.  I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>` to add a `return statement`_
+* :ref:`logical_equality<test_logical_equality>` has two :ref:`if statements`.  I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>` to add a `return statement`_
 
   .. code-block:: python
     :lineno-start: 49
@@ -1463,7 +1463,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def material_implication(first_input, second_input):
         return (first_input, second_input) != (True, False)
 
-* ``first_input`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an :ref:`if statement<if statements (conditionals)>` for them
+* ``first_input`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an :ref:`if statement<if statements>` for them
 
   .. code-block:: python
     :lineno-start: 19
@@ -1475,7 +1475,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the test is still green. I remove the other :ref:`if statements<if statements (conditionals)>`, then add a simpler `return statement`_
+  the test is still green. I remove the other :ref:`if statements`, then add a simpler `return statement`_
 
   .. code-block:: python
     :lineno-start: 19

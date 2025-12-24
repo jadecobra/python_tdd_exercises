@@ -171,7 +171,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
     AssertionError: False is not true
 
-* I add :ref:`if statements<if statements (conditionals)>`  for this case to ``negate_first`` in ``truth_table.py``
+* I add :ref:`if statements`  for this case to ``negate_first`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -185,7 +185,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   the test passes
 
-* this is the same as the first :ref:`if statement<if statements (conditionals)>` in :ref:`converse_non_implication<test_converse_non_implication>`. I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with :ref:`Logical Conjunction<test_logical_conjunction>` (and_)
+* this is the same as the first :ref:`if statement<if statements>` in :ref:`converse_non_implication<test_converse_non_implication>`. I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with :ref:`Logical Conjunction<test_logical_conjunction>` (and_)
 
   .. code-block:: python
     :lineno-start: 33
@@ -237,7 +237,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
     AssertionError: False is not true
 
-* I add :ref:`if statements<if statements (conditionals)>` for this case to the ``negate_first`` :ref:`function<functions>` in ``truth_table.py``
+* I add :ref:`if statements` for this case to the ``negate_first`` :ref:`function<functions>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -253,7 +253,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   the test passes
 
-* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with and_
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with and_
 
   .. code-block:: python
     :lineno-start: 33
@@ -290,7 +290,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
   - :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
-* since the 2 cases where the ``negate_first`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when the first input is :ref:`False<test_what_is_false>`. I can write it as an :ref:`if statement<if statements (conditionals)>` with an else_ clause
+* since the 2 cases where the ``negate_first`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when the first input is :ref:`False<test_what_is_false>`. I can write it as an :ref:`if statement<if statements>` with an else_ clause
 
   .. code-block:: python
     :lineno-start: 33
@@ -309,7 +309,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   the test is still green
 
-* I remove the other :ref:`if statement<if statements (conditionals)>` then use :ref:`logical_negation<test_logical_negation>` (not_) to write the first :ref:`if statement<if statements (conditionals)>` in terms of :ref:`True<test_what_is_true>`
+* I remove the other :ref:`if statement<if statements>` then use :ref:`logical_negation<test_logical_negation>` (not_) to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 33
@@ -324,7 +324,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   the test is still passing
 
-* I remove the commented line and use bool_ with the :ref:`if statement<if statements (conditionals)>`
+* I remove the commented line and use bool_ with the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 33
@@ -339,7 +339,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   still green
 
-* I remove the commented line and make the :ref:`if statement<if statements (conditionals)>` simpler
+* I remove the commented line and make the :ref:`if statement<if statements>` simpler
 
   .. code-block:: python
     :lineno-start: 33
@@ -369,7 +369,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   still green
 
-* I remove the :ref:`if statement<if statements (conditionals)>` and else_ clause, then use the simpler form of the `return statement`_
+* I remove the :ref:`if statement<if statements>` and else_ clause, then use the simpler form of the `return statement`_
 
   .. code-block:: python
     :lineno-start: 33
@@ -470,7 +470,7 @@ the test passes.
 
     AssertionError: False is not true
 
-* I add :ref:`if statements<if statements (conditionals)>` to the ``logical_nand`` :ref:`function<functions>` in ``truth_table.py``
+* I add :ref:`if statements` to the ``logical_nand`` :ref:`function<functions>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -484,7 +484,7 @@ the test passes.
 
   the test passes
 
-* I comment out the two :ref:`if statements<if statements (conditionals)>`, and change them to one :ref:`if statement<if statements (conditionals)>`
+* I comment out the two :ref:`if statements`, and change them to one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -532,7 +532,7 @@ the test passes.
 
     AssertionError: False is not true
 
-* I add two :ref:`if statements<if statements (conditionals)>` to ``logical_nand`` in ``truth_table.py``
+* I add two :ref:`if statements` to ``logical_nand`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -548,7 +548,7 @@ the test passes.
 
   the test passes
 
-* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with :ref:`logical_conjunction<test_logical_conjunction>` (and_)
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with :ref:`logical_conjunction<test_logical_conjunction>` (and_)
 
   .. code-block:: python
     :lineno-start: 37
@@ -605,7 +605,7 @@ the test passes.
 
     AssertionError: False is not true
 
-* I add two :ref:`if statements<if statements (conditionals)>` to ``logical_nand`` in ``truth_table.py``
+* I add two :ref:`if statements` to ``logical_nand`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -623,7 +623,7 @@ the test passes.
 
   the test passes
 
-* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>`
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -664,7 +664,7 @@ the test passes.
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
-* I add one :ref:`if statement<if statements (conditionals)>` for the one case that returns :ref:`False<test_what_is_false>` with an else_ clause for the other three cases since they all return :ref:`True<test_what_is_true>`
+* I add one :ref:`if statement<if statements>` for the one case that returns :ref:`False<test_what_is_false>` with an else_ clause for the other three cases since they all return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -685,7 +685,7 @@ the test passes.
 
   the test is still green
 
-* I remove the other :ref:`if statement<if statements (conditionals)>` and use bool_ to change the new :ref:`if statement<if statements (conditionals)>`
+* I remove the other :ref:`if statement<if statements>` and use bool_ to change the new :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -700,7 +700,7 @@ the test passes.
 
   the terminal_ still shows green
 
-* I remove the commented line and use the simpler :ref:`if statement<if statements (conditionals)>` that checks if the inputs are :ref:`True<test_what_is_true>` behind the scenes
+* I remove the commented line and use the simpler :ref:`if statement<if statements>` that checks if the inputs are :ref:`True<test_what_is_true>` behind the scenes
 
   .. code-block:: python
     :lineno-start: 37
@@ -715,7 +715,7 @@ the test passes.
 
   still green
 
-* I want to use one `return statement`_ (a `conditional expression`_) for everything, which means I need an :ref:`if statement<if statements (conditionals)>` that returns :ref:`True<test_what_is_true>`. I use :ref:`logical negation<test_logical_negation>` (not_) to change the else_ clause to the opposite of the :ref:`if statement<if statements (conditionals)>`
+* I want to use one `return statement`_ (a `conditional expression`_) for everything, which means I need an :ref:`if statement<if statements>` that returns :ref:`True<test_what_is_true>`. I use :ref:`logical negation<test_logical_negation>` (not_) to change the else_ clause to the opposite of the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -730,7 +730,7 @@ the test passes.
 
   the test is still green
 
-* I remove the commented line and move the new :ref:`if statement<if statements (conditionals)>` to the top
+* I remove the commented line and move the new :ref:`if statement<if statements>` to the top
 
   .. code-block:: python
     :lineno-start: 37
@@ -744,7 +744,7 @@ the test passes.
 
   the terminal_ still shows green
 
-* I change the second :ref:`if statement<if statements (conditionals)>` to an else_ clause
+* I change the second :ref:`if statement<if statements>` to an else_ clause
 
   .. code-block:: python
     :lineno-start: 37
@@ -774,7 +774,7 @@ the test passes.
 
   still green
 
-* I remove the :ref:`if statement<if statements (conditionals)>` and use the simpler form of the `ternary operator`_
+* I remove the :ref:`if statement<if statements>` and use the simpler form of the `ternary operator`_
 
   .. code-block:: python
     :lineno-start: 37
@@ -803,7 +803,7 @@ the test passes.
 
 .. TIP::
 
-  When there is only one :ref:`if statement<if statements (conditionals)>` that returns :ref:`False<test_what_is_false>` with an else_ clause, for example
+  When there is only one :ref:`if statement<if statements>` that returns :ref:`False<test_what_is_false>` with an else_ clause, for example
 
   .. code-block:: python
 
@@ -1056,7 +1056,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
     AssertionError: True is not false
 
-* I add :ref:`if statements<if statements (conditionals)>` for the new case to ``logical_disjunction`` in ``truth_table.py``
+* I add :ref:`if statements` for the new case to ``logical_disjunction`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 45
@@ -1075,7 +1075,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when the two inputs are NOT :ref:`False<test_what_is_false>`
 
-* I change the two :ref:`if statements<if statements (conditionals)>` to one :ref:`if statement<if statements (conditionals)>` with and_
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with and_
 
   .. code-block:: python
     :lineno-start: 45
@@ -1117,7 +1117,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   the terminal_ still shows green
 
-* I use bool_ to make the :ref:`if statement<if statements (conditionals)>` simpler
+* I use bool_ to make the :ref:`if statement<if statements>` simpler
 
   .. code-block:: python
     :lineno-start: 45
@@ -1145,7 +1145,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   how many green bottles standing on a wall?
 
-* I add a second :ref:`if statement<if statements (conditionals)>` for the cases where ``logical_disjunction`` returns :ref:`True<test_what_is_true>` like I did with :ref:`Logical NAND<test_logical_nand>`
+* I add a second :ref:`if statement<if statements>` for the cases where ``logical_disjunction`` returns :ref:`True<test_what_is_true>` like I did with :ref:`Logical NAND<test_logical_nand>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1159,7 +1159,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   the test is still green
 
-* I move the new :ref:`if statement<if statements (conditionals)>` to the top
+* I move the new :ref:`if statement<if statements>` to the top
 
   .. code-block:: python
     :lineno-start: 45
@@ -1173,7 +1173,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   green
 
-* I change the second :ref:`if statement<if statements (conditionals)>` to an else_ clause
+* I change the second :ref:`if statement<if statements>` to an else_ clause
 
   .. code-block:: python
     :lineno-start: 45
@@ -1209,7 +1209,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
         return not ((not first_input) and (not second_input))
         return True if not ((not first_input) and (not second_input)) else False
 
-  the terminal_ still shows green. A reminder that I can return the :ref:`Logical Negation<test_logical_negation>` (not_) of an :ref:`if statement<if statements (conditionals)>` that returns :ref:`False<test_what_is_false>` like I did with :ref:`Logical NAND<test_logical_nand>`
+  the terminal_ still shows green. A reminder that I can return the :ref:`Logical Negation<test_logical_negation>` (not_) of an :ref:`if statement<if statements>` that returns :ref:`False<test_what_is_false>` like I did with :ref:`Logical NAND<test_logical_nand>`
 
 * "not_" appears 3 times in this statement, I want to change that. I "multiply" it by each thing inside the parentheses to try to make the statement simpler
 
@@ -1263,7 +1263,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   the test is still green. Do two nots_ make a right?
 
-* I remove the the second `return statement`_
+* I remove the second `return statement`_
 
   .. code-block:: python
     :lineno-start: 45

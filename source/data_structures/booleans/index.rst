@@ -1801,7 +1801,7 @@ From the tests I can see that in Python_
 * True_ is not False_
 * True_ and False_ are booleans_
 
-these things come in handy when I write :ref:`conditions<if statements (conditionals)>` in programs_, because I can make decisions on whether the :ref:`data<data structures>` is empty or has something in it
+these things come in handy when I write :ref:`conditions<if statements>` in programs_, because I can make decisions on whether the :ref:`data<data structures>` is empty or has something in it
 
 :ref:`How many questions can you answer after going through this chapter?<questions about Booleans>`
 
@@ -1828,7 +1828,7 @@ you now know
 * :ref:`what None is<None>`
 * :ref:`what is True and False in Python<booleans>`
 
-:ref:`Would you like to test the truth table?<booleans: truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements (conditionals)>`
+:ref:`Would you like to test the truth table?<booleans: truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`
 
 ----
 
