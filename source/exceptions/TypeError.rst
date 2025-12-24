@@ -815,25 +815,6 @@ close the project
 
 * I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
-* I deactivate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/type_error
-
-* I `change directory`_ to the parent of ``type_error``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
 
   the terminal_ shows
 
@@ -842,6 +823,36 @@ close the project
     .../pumping_python
 
   I am back in the ``pumping_python`` directory_
+
+  .. NOTE:: on Windows_ without `Windows Subsytem for Linux`
+
+    * I deactivate the `virtual environment`_
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        deactivate
+
+      the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+      .. code-block:: shell
+
+        ...\pumping_python\type_error
+
+    * I `change directory`_ to the parent of ``type_error``
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        cd ..
+
+      the terminal_ shows
+
+      .. code-block:: shell
+
+        ...\pumping_python
+
+      I am back in the ``pumping_python`` directory_
 
 ----
 
