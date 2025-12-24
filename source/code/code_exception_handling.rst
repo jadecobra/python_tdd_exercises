@@ -4,7 +4,7 @@ how to handle Exceptions (Errors): tests and solutions
 #################################################################################
 
 *********************************************************************************
-tests
+Exception Handling tests
 *********************************************************************************
 
 the code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
@@ -13,16 +13,8 @@ the code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exc
   :language: python
   :linenos:
 
-----
-
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
-
-.. literalinclude:: tests/test_calculator_exceptions_programs.py
-  :language: python
-  :linenos:
-
 *********************************************************************************
-solutions
+Exception Handling solutions
 *********************************************************************************
 
 the solutions in ``exceptions/src/exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
@@ -32,6 +24,20 @@ the solutions in ``exceptions/src/exceptions.py`` from :ref:`how to handle Excep
   :linenos:
 
 ----
+
+*********************************************************************************
+Exception Handling with the Calculator tests
+*********************************************************************************
+
+the code in ``calculator/tests/test_calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+
+.. literalinclude:: tests/test_calculator_exceptions_programs.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
+Exception Handling with the Calculator solutions
+*********************************************************************************
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
 

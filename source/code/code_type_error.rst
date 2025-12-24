@@ -4,7 +4,7 @@ TypeError: tests and solution
 #################################################################################
 
 *********************************************************************************
-tests
+TypeError tests
 *********************************************************************************
 
 the code in ``type_error/tests/test_type_error.py`` from :ref:`TypeError`
@@ -13,15 +13,8 @@ the code in ``type_error/tests/test_type_error.py`` from :ref:`TypeError`
   :language: python
   :linenos:
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`TypeError`
-
-.. literalinclude:: tests/test_calculator_type_error.py
-  :language: python
-  :linenos:
-
-
 *********************************************************************************
-solutions
+TypeError solutions
 *********************************************************************************
 
 the solution in ``type_error/src/type_error.py`` from :ref:`TypeError`
@@ -29,6 +22,22 @@ the solution in ``type_error/src/type_error.py`` from :ref:`TypeError`
 .. literalinclude:: solutions/type_error.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+TypeError with the Calculator tests
+*********************************************************************************
+
+the code in ``calculator/tests/test_calculator.py`` from :ref:`TypeError`
+
+.. literalinclude:: tests/test_calculator_type_error.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
+TypeError with the Calculator solutions
+*********************************************************************************
 
 the solution in ``calculator/src/calculator.py`` from :ref:`TypeError`
 
