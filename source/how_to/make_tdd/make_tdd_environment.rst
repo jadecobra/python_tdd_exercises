@@ -126,7 +126,7 @@ Linux/Windows Subsystem for Linux requirements
 how to make a Python Test Driven Development environment manually
 ********************************************************************************************
 
-I pick ``magic`` as the name for this project
+I choose ``magic`` as the name for this project
 
 * I open ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 

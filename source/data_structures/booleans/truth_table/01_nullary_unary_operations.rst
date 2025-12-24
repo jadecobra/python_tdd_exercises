@@ -76,7 +76,7 @@ I have not added a definition for ``logical_true`` to ``truth_table.py`` in the 
     # AssertionError
     # AttributeError
 
-* I open ``truth_table.py`` from the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a :ref:`function<functions>`
+* I open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a :ref:`function<functions>`
 
   .. code-block:: python
     :linenos:

@@ -138,7 +138,7 @@ test_attribute_error_w_variables
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I open ``attribute_error.py`` from the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a name
+* I open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a name
 
   .. code-block:: python
     :linenos:

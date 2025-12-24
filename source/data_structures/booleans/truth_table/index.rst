@@ -51,7 +51,7 @@ questions about The Truth Table
 start the project
 *********************************************************************************
 
-* I pick ``truth_table`` as the name of this project
+* I choose ``truth_table`` as the name of this project
 * I open a terminal_
 * then I `make a directory`_ for the project
 

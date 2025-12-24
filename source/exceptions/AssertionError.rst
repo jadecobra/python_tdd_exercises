@@ -62,7 +62,7 @@ Here are questions you can answer after going through this chapter
 start the project
 *********************************************************************************
 
-* I pick ``assertion_error`` as the name of this project
+* I choose ``assertion_error`` as the name of this project
 * I open a terminal_
 * then I `make a directory`_ for the project
 
@@ -289,7 +289,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_assertion_error.py``
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 7

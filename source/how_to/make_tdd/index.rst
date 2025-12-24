@@ -51,8 +51,8 @@ Some things I think about when I want to start a project
 
 It turns out some of this is the same for every project
 
-* I pick a name for the project
-* I make a new folder_ for every project with the name I picked
+* I choose a name for the project
+* I make a new folder_ for every project with the name I chooseed
 * I place the code for the project in a ``src`` folder_
 * I place the tests for the project in a ``tests`` folder_
 * I try to name everything in the project with the name of the project or with something that describes what it does

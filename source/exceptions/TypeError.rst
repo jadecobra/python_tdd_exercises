@@ -40,29 +40,111 @@ Here are the tests I have by the end of the chapter
 start the project
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``type_error`` as the name of the project
+* I open a terminal_
+* I type pwd_ to make sure I am in the ``pumping_python`` folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh type_error
+    pwd
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  .. NOTE:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
+
+* I choose ``type_error`` as the name of this project
+* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
+
+  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
-      ./makePythonTdd.ps1 type_error
+      code makePythonTdd.sh
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
+    on `Windows`_ without `Windows Subsystem for Linux`_ use
 
-  .. code-block:: python
+    .. code-block:: shell
+      :emphasize-lines: 1
 
+      code makePythonTdd.ps1
+
+* I change everywhere I have ``exceptions`` in ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` to the name of this project
+
+  .. code-block:: shell
+    :linenos:
+    :emphasize-lines: 2, 3, 5, 12, 20
+
+    #!/bin/bash
+    mkdir type_error
+    cd type_error
+    mkdir src
+    touch src/type_error.py
+    mkdir tests
+    touch tests/__init__.py
+
+    echo "import unittest
+
+
+    class TestTypeError(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions seen
+    # AssertionError
+    " > tests/test_type_error.py
+
+* I run the program_ in the terminal_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ./makePythonTdd.sh
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      ./makePythonTdd.ps1
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+    :emphasize-lines: 10
+    :emphasize-text: tests/test_type_error.py:7
+
+    ======================================= FAILURES =======================================
+    _____________________________ TestTypeError.test_failure ______________________________
+
+    self = <tests.test_exceptions.TestTypeError testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
     E       AssertionError: True is not false
 
     tests/test_type_error.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_type_error.py::TestMagic::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4-5
+
+    # Exceptions seen
+    # AssertionError
+
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -70,13 +152,9 @@ start the project
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+  the test passes
 
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
-
-    class TestTypeError(unittest.TestCase):
+----
 
 *********************************************************************************
 test_type_error_w_non_callables
@@ -92,10 +170,10 @@ There are :ref:`objects<classes>` that can NOT be called
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-    import unittest
     import src.type_error
+    import unittest
 
 * I change ``test_failure`` to ``test_type_error_w_non_callables``
 
@@ -114,7 +192,9 @@ There are :ref:`objects<classes>` that can NOT be called
 
     AttributeError: module 'src.type_error' has no attribute 'none'
 
-* I add it to the list of :ref:`Exceptions<errors>` seen
+  there is nothing in ``type_error.py`` in the ``src`` folder_ yet
+
+* I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -128,7 +208,7 @@ There are :ref:`objects<classes>` that can NOT be called
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I open ``type_error.py`` from the ``src`` folder_ to open it in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
+* I open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
 
   .. code-block:: python
     :linenos:
@@ -142,9 +222,12 @@ There are :ref:`objects<classes>` that can NOT be called
 
     TypeError: 'NoneType' object is not callable
 
-  the ``()`` to the right of ``src.type_error.none`` makes it a call, and the name ``none`` points to :ref:`None` which is NOT callable_
+  - the ``()`` to the right of ``src.type_error.none`` makes it a call
+  - the name ``none`` points to :ref:`None` which is NOT callable_
 
-* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
+  I cannot call :ref:`None` like a :ref:`function<functions>`
+
+* I add TypeError_ to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -188,6 +271,8 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
     AttributeError: module 'src.type_error' has no attribute 'false'
 
+  nothing is named ``false`` in ``type_error.py``
+
 * I add the name to ``type_error.py`` and point it to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
@@ -205,6 +290,8 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
   .. code-block:: shell
 
     TypeError: 'bool' object is not callable
+
+  I cannot call a :ref:`boolean<booleans>` they way I can call a :ref:`function<functions>`
 
 * I make the variable_ a :ref:`function<functions>`
 
@@ -237,6 +324,8 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
     AttributeError: module 'src.type_error' has no attribute 'true'
 
+  there is nothing named ``true`` in ``type_error.py``
+
 * I add the name and point it to :ref:`True<test_what_is_true>` in ``type_error.py``
 
   .. code-block:: python
@@ -268,7 +357,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
     def true():
         return True
 
-  the test passes. I can call a :ref:`function<functions>` but I cannot call a :ref:`boolean<booleans>`
+  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`boolean<booleans>`
 
 * I add another line to ``test_type_error.py``
 
@@ -306,7 +395,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
     TypeError: 'list' object is not callable
 
-* I make `a_list` a :ref:`function<functions>`
+* I make ``a_list`` a :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -319,7 +408,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes. I can call a :ref:`function<functions>` but I cannot call a :ref:`list<lists>`
+  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`list<lists>`
 
 * I add a new failing line to ``test_type_error.py``
 
@@ -374,7 +463,7 @@ I can call a :ref:`function<functions>` but I cannot call :ref:`None`
 
   the terminal_ shows green again.
 
-It is safe to say that I cannot call :ref:`data structures` but I can call :ref:`functions`
+It is safe to say that I cannot call :ref:`data structures`, they are not callable_. I can call :ref:`functions`
 
 ----
 
@@ -431,7 +520,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
 
     TypeError: function_00() takes 0 positional arguments but 1 was given
 
-  because ``function_00`` is called with ``'a'`` as input but the definition does not accept any inputs
+  because ``function_00`` is called with ``'a'`` as input and the definition does not allow any inputs
 
 * I add a name in parentheses to the :ref:`function<functions>` definition
 
@@ -484,13 +573,15 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
     TypeError: function_01() takes 1 positional argument but 2 were given
 
+  the definition only allows one input, and the test sent two
+
 * I add another name in parentheses so that the call to the :ref:`function<functions>` and its definition match
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 1
 
-    def function_01(first_input, second_input):
+    def function_01(first, second):
       return None
 
   the test passes
@@ -518,11 +609,11 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
     :lineno-start: 25
     :emphasize-lines: 5-6
 
-    def function_01(first_input, second_input):
+    def function_01(first, second):
         return None
 
 
-    def function_02(first_input, second_input):
+    def function_02(first, second):
         return None
 
   the terminal_ shows TypeError_
@@ -531,13 +622,13 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
-* I add another name in parentheses to make the number of inputs match in ``type_error.p``
+* I change the name of the first input, then add another name in parentheses to make the number of inputs match in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 29
     :emphasize-lines: 1
 
-    def function_02(first_input, second_input, input_3):
+    def function_02(first, second, third):
         return None
 
   the test passes
@@ -566,11 +657,11 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
     :lineno-start: 29
     :emphasize-lines: 5-6
 
-    def function_02(first_input, second_input, input_3):
+    def function_02(first, second, third):
         return None
 
 
-    def function_03(first_input, second_input, input_3):
+    def function_03(first, second, third):
         return None
 
   the terminal_ shows TypeError_
@@ -585,7 +676,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
     :lineno-start: 33
     :emphasize-lines: 1
 
-    def function_03(first_input, second_input, input_3, input_4):
+    def function_03(first, second, third, fourth):
         return None
 
   the test passes
@@ -1110,13 +1201,13 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it is giv
     :lineno-start: 16
     :emphasize-lines: 2-5
 
-    def add(first_input, second_input):
-        if isinstance(first_input, str) or isinstance(second_input, str):
+    def add(first, second):
+        if isinstance(first, str) or isinstance(second, str):
             raise TypeError(
                 'I am a calculator, I only work with numbers'
             )
         else:
-            return first_input + second_input
+            return first + second
 
   the terminal_ shows :ref:`TypeError`
 
@@ -1203,14 +1294,14 @@ I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`a
   :lineno-start: 16
   :emphasize-lines: 7-10
 
-  def add(first_input, second_input):
-      if isinstance(first_input, str) or isinstance(second_input, str):
+  def add(first, second):
+      if isinstance(first, str) or isinstance(second, str):
           raise TypeError(
               'I am a calculator, I only work with numbers'
           )
       else:
           try:
-              return first_input + second_input
+              return first + second
           except TypeError:
               return 'I am a calculator, I only work with numbers'
 
@@ -1248,9 +1339,9 @@ the test passes
     :lineno-start: 9
     :emphasize-lines: 6-7
 
-    def divide(first_input, second_input):
+    def divide(first, second):
         try:
-            return first_input / second_input
+            return first / second
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
         except TypeError:
@@ -1268,14 +1359,14 @@ the test passes
     :lineno-start: 9
     :emphasize-lines: 2-12
 
-    def divide(first_input, second_input):
-        if isinstance(first_input, str) or isinstance(second_input, str):
+    def divide(first, second):
+        if isinstance(first, str) or isinstance(second, str):
             raise TypeError(
                 'I am a calculator, I only work with numbers'
             )
         else:
             try:
-                return first_input / second_input
+                return first / second
             except ZeroDivisionError:
                 return 'undefined: I cannot divide by 0'
             except TypeError:
@@ -1295,13 +1386,13 @@ the test passes
     :lineno-start: 23
     :emphasize-lines: 2, 4, 9
 
-    def add(first_input, second_input):
+    def add(first, second):
         error_message = 'I am a calculator, I only work with numbers'
-        if isinstance(first_input, str) or isinstance(second_input, str):
+        if isinstance(first, str) or isinstance(second, str):
             raise TypeError(error_message)
         else:
             try:
-                return first_input + second_input
+                return first + second
             except TypeError:
                 return error_message
 
@@ -1313,13 +1404,13 @@ the test passes
     :lineno-start: 9
     :emphasize-lines: 2, 4, 11
 
-    def divide(first_input, second_input):
+    def divide(first, second):
         error_message = 'I am a calculator, I only work with numbers'
-        if isinstance(first_input, str) or isinstance(second_input, str):
+        if isinstance(first, str) or isinstance(second, str):
             raise TypeError(error_message)
         else:
             try:
-                return first_input / second_input
+                return first / second
             except ZeroDivisionError:
                 return 'undefined: I cannot divide by 0'
             except TypeError:
@@ -1354,7 +1445,7 @@ the test passes
 
   .. code-block:: python
 
-    if isinstance(first_input, str) or isinstance(second_input, str):
+    if isinstance(first, str) or isinstance(second, str):
         raise TypeError(
             'I am a calculator, I only work with numbers'
         )
@@ -1374,17 +1465,17 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1-9
 
     def reject_strings(function):
-        def wrapper(first_input, second_input):
-            if isinstance(first_input, str) or isinstance(second_input, str):
+        def wrapper(first, second):
+            if isinstance(first, str) or isinstance(second, str):
                 raise TypeError(
                     'I am a calculator, I only work with numbers'
                 )
             else:
-                return function(first_input, second_input)
+                return function(first, second)
         return wrapper
 
 
-    def subtract(first_input, second_input):
+    def subtract(first, second):
 
 * I use the new :ref:`function<functions>` to wrap the :ref:`add function<test_addition>`
 
@@ -1394,13 +1485,13 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 
 
     @reject_strings
-    def add(first_input, second_input):
+    def add(first, second):
         error_message = 'I am a calculator, I only work with numbers'
-        if isinstance(first_input, str) or isinstance(second_input, str):
+        if isinstance(first, str) or isinstance(second, str):
             raise TypeError(error_message)
         else:
             try:
-                return first_input + second_input
+                return first + second
             except TypeError:
                 return error_message
 
@@ -1418,9 +1509,9 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 3-6
 
     @reject_strings
-    def add(first_input, second_input):
+    def add(first, second):
         try:
-            return first_input + second_input
+            return first + second
         except TypeError:
             return 'I am a calculator, I only work with numbers'
 
@@ -1433,13 +1524,13 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1
 
     @reject_strings
-    def divide(first_input, second_input):
+    def divide(first, second):
         error_message = 'I am a calculator, I only work with numbers'
-        if isinstance(first_input, str) or isinstance(second_input, str):
+        if isinstance(first, str) or isinstance(second, str):
             raise TypeError(error_message)
         else:
             try:
-                return first_input / second_input
+                return first / second
             except ZeroDivisionError:
                 return 'undefined: I cannot divide by 0'
             except TypeError:
@@ -1453,9 +1544,9 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :lineno-start: 2-7
 
     @reject_strings
-    def divide(first_input, second_input):
+    def divide(first, second):
         try:
-            return first_input / second_input
+            return first / second
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
         except TypeError:
@@ -1469,14 +1560,14 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1, 5-6, 8, 10-11
 
     try:
-        return first_input / second_input
+        return first / second
     except ZeroDivisionError:
         return 'undefined: I cannot divide by 0'
     except TypeError:
         return 'I am a calculator, I only work with numbers'
 
     try:
-        return first_input + second_input
+        return first + second
     except TypeError:
         return 'I am a calculator, I only work with numbers'
 
@@ -1484,8 +1575,8 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 
   .. code-block:: python
 
-        return first_input / second_input
-        return first_input + second_input
+        return first / second
+        return first + second
 
   I add the :ref:`exception handlers<how to use try...except...else>` for TypeError_ to the ``reject_strings`` :ref:`function<functions>`
 
@@ -1494,13 +1585,13 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 3, 7-10
 
     def reject_strings(function):
-        def wrapper(first_input, second_input):
+        def wrapper(first, second):
             error_message = 'I am a calculator, I only work with numbers'
-            if isinstance(first_input, str) or isinstance(second_input, str):
+            if isinstance(first, str) or isinstance(second, str):
                 raise TypeError(error_message)
             else:
                 try:
-                    return function(first_input, second_input)
+                    return function(first, second)
                 except TypeError:
                     return error_message
         return wrapper
@@ -1513,9 +1604,9 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :lineno-start: 22
 
     @reject_strings
-    def divide(first_input, second_input):
+    def divide(first, second):
         try:
-            return first_input / second_input
+            return first / second
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
 
@@ -1528,8 +1619,8 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 2
 
     @reject_strings
-    def add(first_input, second_input):
-        return first_input + second_input
+    def add(first, second):
+        return first + second
 
   still green
 
@@ -1540,7 +1631,7 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1
 
     def take_numbers_only(function):
-        def wrapper(first_input, second_input):
+        def wrapper(first, second):
 
   and when wrapping the :ref:`divide function<test_division>`
 
@@ -1549,7 +1640,7 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1
 
     @take_numbers_only
-    def divide(first_input, second_input):
+    def divide(first, second):
 
   I do the same thing with the :ref:`add function<test_division>`
 
@@ -1558,7 +1649,7 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1
 
     @take_numbers_only
-    def add(first_input, second_input):
+    def add(first, second):
 
   .. TIP:: In `Visual Studio Code`_ I can change all the places that a name is in the file_, by using
 
@@ -1577,8 +1668,8 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1
 
     @take_numbers_only
-    def multiply(first_input, second_input):
-        return first_input * second_input
+    def multiply(first, second):
+        return first * second
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1610,8 +1701,8 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1
 
     @take_numbers_only
-    def subtract(first_input, second_input):
-        return first_input - second_input
+    def subtract(first, second):
+        return first - second
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1713,13 +1804,13 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 5
 
     def take_numbers_only(function):
-        def wrapper(first_input, second_input):
+        def wrapper(first, second):
             error_message = 'I am a calculator, I only work with numbers'
-            if isinstance(first_input, str) or isinstance(second_input, str):
+            if isinstance(first, str) or isinstance(second, str):
                 return error_message
             else:
                 try:
-                    return function(first_input, second_input)
+                    return function(first, second)
                 except TypeError:
                     return error_message
         return wrapper
@@ -1904,10 +1995,10 @@ The :ref:`calculator program<how to make a calculator>` can take 2 inputs and :r
 * :ref:`multiplication<test_multiplication>` and
 * :ref:`division<test_division>`
 
-Even though the program_ says it only works with numbers, I did not add tests for tuples_, :ref:`lists`, sets_, and :ref:`dictionaries`. Do you want to add them?
+Even though the program_ says it only works with numbers, I did not add tests for tuples_, :ref:`lists`, sets_, and :ref:`dictionaries`, though they are touched in :ref:`test_type_error_w_objects_that_do_not_mix` Do you want to add them?
 
 I ran tests for TypeError_ with
-* :ref:`objects that are not callable<test_type_error_w_non_callables>`
+* :ref:`objects that are not  callable<test_type_error_w_non_callables>`
 * :ref:`function definitions<test_type_error_w_function_signatures>`
 * :ref:`objects that do not mix<test_type_error_w_objects_that_do_not_mix>` and
 * :ref:`used TypeError, an if statement, exception handler and wrapper function to make sure the calculator program only works with numbers<test_calculator_sends_message_when_input_is_not_a_number>`

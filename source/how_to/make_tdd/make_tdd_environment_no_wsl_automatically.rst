@@ -18,7 +18,7 @@ You made it this far and have become `the greatest programmer in the world`_. To
 
 To review, here are steps I take to make the environment for every project
 
-#. I pick a name for the project
+#. I choose a name for the project
 #. :ref:`I make a directory for the project<how to make a directory for the project on Windows without WSL>`
 #. :ref:`I change directory to the project<how to change directory to the project on Windows without WSL>`
 #. :ref:`I make a directory for the source code<how to make a directory for the source code on Windows without WSL>`

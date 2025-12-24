@@ -56,7 +56,7 @@ start the project
 
   .. NOTE:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
 
-* I pick ``exceptions`` as the name of this project
+* I choose ``exceptions`` as the name of this project
 * I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
   .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
@@ -66,7 +66,7 @@ start the project
 
       code makePythonTdd.sh
 
-    on `Windows`_ without `Windows Subsystem for Linux` use
+    on `Windows`_ without `Windows Subsystem for Linux`_ use
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -136,7 +136,7 @@ start the project
     ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_.py``
+* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 7
@@ -145,7 +145,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_exceptions.py``
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 7

@@ -34,7 +34,7 @@ Here are the tests I have by the end of the chapter
 start the project
 *********************************************************************************
 
-* I pick ``telephone`` as the name of this project
+* I choose ``telephone`` as the name of this project
 * I open a terminal_
 * then I `make a directory`_ for the project
 

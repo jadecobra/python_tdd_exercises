@@ -32,7 +32,7 @@ Here are the tests I have by the end of the chapter
 start the project
 *********************************************************************************
 
-* I pick ``calculator`` as the name of this project
+* I choose ``calculator`` as the name of this project
 * I open a terminal_
 * then I `make a directory`_ for the project
 
@@ -1960,7 +1960,7 @@ you know a lot
 
 There is a problem, I have done the same steps for each of the 8 chapters covered so far
 
-* I pick a name for the project
+* I choose a name for the project
 * :ref:`I make a directory for the project<how to make a directory for the project>`
 * :ref:`I change directory to the project<how to change directory to the project>`
 * :ref:`I make a directory for the source code<how to make a directory for the source code>`
