@@ -1157,7 +1157,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     * Rename Symbol
 
       - Right click on the name you want to change, for example ``first_input`` then select ``Rename Symbol`` or
-      - Select the name you want to change then hit ``F2`` to rename it
+      - Select the name you want to change then hit :kbd:``F2`` on your keyboard to rename it
 
   .. code-block:: python
     :lineno-start: 93
@@ -1944,13 +1944,13 @@ I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or
   * :ref:`Logical Conjunction <test_logical_conjunction>` returns
 
     - returns ``first_input and second_input``
-    - returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>`
+    - returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
     - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
 
   * :ref:`Logical Disjunction <test_logical_disjunction>`
 
     - returns ``first_input or second_input``
-    - returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
+    - returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
     - is the  :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which only returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
 
   * :ref:`Logical Equality <test_logical_equality>`

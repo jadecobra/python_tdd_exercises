@@ -262,7 +262,7 @@ The definition only takes one input, but the test sent two. I add ``second_input
   * Rename Symbol
 
     - Right click on the name you want to change, for example ``the_input`` then select ``Rename Symbol`` or
-    - Select the name you want to change then hit ``F2`` to rename it
+    - Select the name you want to change then hit :kbd:``F2`` on your keyboard to rename it
 
 .. code-block:: python
   :lineno-start: 17

@@ -1043,8 +1043,8 @@ the test passes
     :emphasize-lines: 3
 
             with self.assertRaises(TypeError):
-                src.calculator.multiply(self.random_first_number, None)
-            src.calculator.subtract(self.random_first_number, None)
+                src.calculator.multiply(None, None)
+            src.calculator.subtract(None, None)
 
   the terminal_ shows TypeError_
 
@@ -1055,30 +1055,35 @@ the test passes
   I add the `assertRaises method`_
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 3-4
+    :lineno-start: 57
+    :emphasize-lines: 8-9
 
+        def test_calculator_raises_type_error(self):
             with self.assertRaises(TypeError):
-                src.calculator.multiply(self.random_first_number, None)
+                src.calculator.add(None, None)
             with self.assertRaises(TypeError):
-                src.calculator.subtract(self.random_first_number, None)
+                src.calculator.divide(None, None)
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(None, None)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(None, None)
 
 
     # Exceptions seen
 
   the test passes
 
-The ``calculator`` raises :ref:`TypeError` when given :ref:`None` as input, what does it do when the input is a boolean_, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
+The ``calculator`` raises :ref:`TypeError` when given :ref:`None` as input. What does it do when the input is a :ref:`boolean<booleans>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
 
 *********************************************************************************
-test_calculator_with_strings
+test_calculator_raises_type_error_when_given_strings
 *********************************************************************************
 
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test with an :ref:`assertion<AssertionError>` from :ref:`test_what_is_an_assertion`  to :ref:`test_addition`
+I add a new test with an :ref:`assertion<AssertionError>` from :ref:`test_what_is_an_assertion`  to test the :ref:`add function<test_addition>` with strings_
 
 .. code-block:: python
   :lineno-start: 64
@@ -1133,7 +1138,7 @@ the test passes
 
     TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
-  I add assertRaises_
+  I change assertEqual_ to assertRaises_
 
   .. code-block:: python
     :lineno-start: 68
@@ -1158,7 +1163,7 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: none
 
     TypeError: can't multiply sequence by non-int of type 'str'
 
@@ -1192,9 +1197,14 @@ the test passes
   I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 3-4
+    :lineno-start: 57
+    :emphasize-lines: 6-9
 
+        def test_calculator_raises_type_error(self):
+            with self.assertRaises(TypeError):
+                src.calculator.add(None, None)
+            with self.assertRaises(TypeError):
+                src.calculator.divide(None, None)
             with self.assertRaises(TypeError):
                 src.calculator.multiply('1', '1')
             with self.assertRaises(TypeError):
@@ -1206,29 +1216,7 @@ the test passes
 how to test if something is an instance of an object in a program
 ---------------------------------------------------------------------------------
 
-I want the :ref:`add function<test_addition>` to raise TypeError_ when it is given a string_ like the other :ref:`functions`. I can do this with the `isinstance function`_ it is like the `assertIsInstance method`_ from when I tested :ref:`None`
-
-* I add an :ref:`if statement<if statements>` to the :ref:`add function<test_addition>`
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 2-5
-
-    def add(first, second):
-        if isinstance(first, str) or isinstance(second, str):
-            raise TypeError(
-                'I am a calculator, I only work with numbers'
-            )
-        else:
-            return first + second
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: shell
-
-    TypeError: I am a calculator, I only work with numbers
-
-  the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance of the :ref:`object<classes>` it is given as the second input. It is part of `Python's Built-in Functions`_
+I want the :ref:`add function<test_addition>` to raise TypeError_ when it is given a string_, the same way the other :ref:`functions` raise TypeError_ when they received a string_ as input. I can use the `isinstance function`_ which is like the `assertIsInstance method`_ from when I tested :ref:`None`
 
 * I change the assertEqual_ in ``test_calculator_with_strings`` to assertRaises_ in ``test_calculator.py``
 
@@ -1239,8 +1227,43 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it is giv
         def test_calculator_with_strings(self):
             with self.assertRaises(TypeError):
                 src.calculator.add('1', '1')
+            with self.assertRaises(TypeError):
+                src.calculator.divide('1', '1')
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: TypeError not raised
+
+* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+
+* then I add an :ref:`if statement<if statements>` to the :ref:`add function<test_addition>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2-5
+
+    def add(first_input, second_input):
+        if isinstance(first_input, str) or isinstance(second_input, str):
+            raise TypeError(
+                'I am a calculator, I only work with numbers'
+            )
+        else:
+            return first_input + second_input
 
   the test passes
+
+  .. NOTE::
+
+    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance (child) of the :ref:`object<classes>` it is given as the second input. It is part of `Python's Built-in Functions`_
+    - the :ref:`if statement<if statements>` ``if isinstance(first_input, str) or isinstance(second_input, str):`` is :ref:`True<test_what_is_true>` if
+
+      * ``first_input`` is a string_
+      * ``second_input`` is a string_
+      * the two inputs are strings_
+
+      the statement is only :ref:`False<test_what_is_false>` if the two inputs are not strings_. Do you remember :ref:`Logical Disjunction from the Truth Table?<test_logical_disjunction>`
 
 * I change the name of the test to be clearer
 
@@ -1273,11 +1296,11 @@ I want the :ref:`calculator functions<how to make a calculator>` to send a messa
 :red:`RED`: make it fail
 =================================================================================
 
-I change the assertRaises_ to assertEqual_ in ``test_calculator_raises_type_error`` in ``test_calculator.py``
+I change the assertRaises_ to assertEqual_ in ``test_calculator_raises_type_error``
 
 .. code-block:: python
   :lineno-start: 57
-  :emphasize-lines:
+  :emphasize-lines: 2-5
 
   def test_calculator_raises_type_error(self):
       self.assertEqual(
@@ -1307,14 +1330,14 @@ I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`a
   :lineno-start: 16
   :emphasize-lines: 7-10
 
-  def add(first, second):
-      if isinstance(first, str) or isinstance(second, str):
+  def add(first_input, second_input):
+      if isinstance(first_input, str) or isinstance(second_input, str):
           raise TypeError(
               'I am a calculator, I only work with numbers'
           )
       else:
           try:
-              return first + second
+              return first_input + second_input
           except TypeError:
               return 'I am a calculator, I only work with numbers'
 
@@ -1352,9 +1375,9 @@ the test passes
     :lineno-start: 9
     :emphasize-lines: 6-7
 
-    def divide(first, second):
+    def divide(first_input, second_input):
         try:
-            return first / second
+            return first_input / second_input
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
         except TypeError:
@@ -1372,14 +1395,14 @@ the test passes
     :lineno-start: 9
     :emphasize-lines: 2-12
 
-    def divide(first, second):
-        if isinstance(first, str) or isinstance(second, str):
+    def divide(first_input, second_input):
+        if isinstance(first_input, str) or isinstance(second_input, str):
             raise TypeError(
                 'I am a calculator, I only work with numbers'
             )
         else:
             try:
-                return first / second
+                return first_input / second_input
             except ZeroDivisionError:
                 return 'undefined: I cannot divide by 0'
             except TypeError:
@@ -1393,19 +1416,19 @@ the test passes
 
     'I am a calculator, I only work with numbers'
 
-* I add a :ref:`variable<what_is_a_variable>` for the error message to the :ref:`add function<test_addition>`
+  I add a :ref:`variable<what is a variable?>` for the error message to the :ref:`add function<test_addition>`
 
   .. code-block:: python
     :lineno-start: 23
     :emphasize-lines: 2, 4, 9
 
-    def add(first, second):
+    def add(first_input, second_input):
         error_message = 'I am a calculator, I only work with numbers'
-        if isinstance(first, str) or isinstance(second, str):
+        if isinstance(first_input, str) or isinstance(second_input, str):
             raise TypeError(error_message)
         else:
             try:
-                return first + second
+                return first_input + second_input
             except TypeError:
                 return error_message
 
@@ -1417,13 +1440,13 @@ the test passes
     :lineno-start: 9
     :emphasize-lines: 2, 4, 11
 
-    def divide(first, second):
+    def divide(first_input, second_input):
         error_message = 'I am a calculator, I only work with numbers'
-        if isinstance(first, str) or isinstance(second, str):
+        if isinstance(first_input, str) or isinstance(second_input, str):
             raise TypeError(error_message)
         else:
             try:
-                return first / second
+                return first_input / second_input
             except ZeroDivisionError:
                 return 'undefined: I cannot divide by 0'
             except TypeError:
@@ -1454,43 +1477,46 @@ the test passes
 
   still green
 
-* The :ref:`add<test_addition>` and :ref:`divide<test_division>` :ref:`functions` have the same :ref:`if statement<if statements
+* The :ref:`add<test_addition>` and :ref:`divide<test_division>` :ref:`functions` have the same :ref:`if statement<if statements>`
 
   .. code-block:: python
 
-    if isinstance(first, str) or isinstance(second, str):
-        raise TypeError(
-            'I am a calculator, I only work with numbers'
-        )
+    if isinstance(first_input, str) or isinstance(second_input, str):
+        raise TypeError(error_message)
     else:
-        ...
 
 ---------------------------------------------------------------------------------
 how to make a wrapper function
 ---------------------------------------------------------------------------------
 
-I want a way to check if the input is a string for both :ref:`functions`. I can do this with a wrapper, which is a :ref:`function<functions>` that takes other :ref:`functions` as input.
+I can use a wrapper :ref:`function<functions>` to remove the repetition, it can check if the input is a string for both :ref:`functions`. A wrapper or decorator :ref:`function<functions>` takes other :ref:`functions` as input.
 
-* I add a :ref:`function<functions>` to ``calculator.py``
+
+* I add a wrapper :ref:`function<functions>` to ``calculator.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1-9
 
     def reject_strings(function):
-        def wrapper(first, second):
-            if isinstance(first, str) or isinstance(second, str):
+        def wrapper(first_input, second_input):
+            if isinstance(first_input, str) or isinstance(second_input, str):
                 raise TypeError(
                     'I am a calculator, I only work with numbers'
                 )
             else:
-                return function(first, second)
+                return function(first_input, second_input)
         return wrapper
 
 
-    def subtract(first, second):
+    def subtract(first_input, second_input):
 
-* I use the new :ref:`function<functions>` to wrap the :ref:`add function<test_addition>`
+  The ``reject_strings`` :ref:`function<functions>` takes a :ref:`function<functions>` as input
+
+  - if any of the two inputs are strings_ it returns an error message
+  - if none of the two inputs are strings_ it returns the result of the :ref:`function<functions>` working on the two inputs
+
+* I use the new :ref:`function<functions>` to decorate the :ref:`add function<test_addition>`
 
   .. code-block:: python
     :lineno-start: 33
@@ -1498,22 +1524,17 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 
 
     @reject_strings
-    def add(first, second):
+    def add(first_input, second_input):
         error_message = 'I am a calculator, I only work with numbers'
-        if isinstance(first, str) or isinstance(second, str):
+        if isinstance(first_input, str) or isinstance(second_input, str):
             raise TypeError(error_message)
         else:
             try:
-                return first + second
+                return first_input + second_input
             except TypeError:
                 return error_message
 
-  the test is still green.
-
-  The ``reject_strings`` :ref:`function<functions>` takes a :ref:`function<functions>` as input
-
-  - if any of the two inputs are strings_ it returns an error message
-  - if none of the two inputs are strings_ it returns the result of the :ref:`function<functions>` working on the two inputs
+  the test is still green
 
 * I remove the :ref:`if statement<if statements>` from the :ref:`add function<test_addition>`
 
@@ -1522,9 +1543,9 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 3-6
 
     @reject_strings
-    def add(first, second):
+    def add(first_input, second_input):
         try:
-            return first + second
+            return first_input + second_input
         except TypeError:
             return 'I am a calculator, I only work with numbers'
 
@@ -1537,13 +1558,13 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1
 
     @reject_strings
-    def divide(first, second):
+    def divide(first_input, second_input):
         error_message = 'I am a calculator, I only work with numbers'
-        if isinstance(first, str) or isinstance(second, str):
+        if isinstance(first_input, str) or isinstance(second_input, str):
             raise TypeError(error_message)
         else:
             try:
-                return first / second
+                return first_input / second_input
             except ZeroDivisionError:
                 return 'undefined: I cannot divide by 0'
             except TypeError:
@@ -1554,12 +1575,13 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 * I remove the :ref:`if statement<if statements>` from the :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 2-7
+    :lineno-start: 27
+    :emphasize-lines: 1
 
     @reject_strings
-    def divide(first, second):
+    def divide(first_input, second_input):
         try:
-            return first / second
+            return first_input / second_input
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
         except TypeError:
@@ -1573,14 +1595,14 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 1, 5-6, 8, 10-11
 
     try:
-        return first / second
+        return first_input / second_input
     except ZeroDivisionError:
         return 'undefined: I cannot divide by 0'
     except TypeError:
         return 'I am a calculator, I only work with numbers'
 
     try:
-        return first + second
+        return first_input + second_input
     except TypeError:
         return 'I am a calculator, I only work with numbers'
 
@@ -1588,8 +1610,8 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 
   .. code-block:: python
 
-        return first / second
-        return first + second
+        return first_input / second_input
+        return first_input + second_input
 
   I add the :ref:`exception handlers<how to use try...except...else>` for TypeError_ to the ``reject_strings`` :ref:`function<functions>`
 
@@ -1598,13 +1620,13 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :emphasize-lines: 3, 7-10
 
     def reject_strings(function):
-        def wrapper(first, second):
+        def wrapper(first_input, second_input):
             error_message = 'I am a calculator, I only work with numbers'
-            if isinstance(first, str) or isinstance(second, str):
+            if isinstance(first_input, str) or isinstance(second_input, str):
                 raise TypeError(error_message)
             else:
                 try:
-                    return function(first, second)
+                    return function(first_input, second_input)
                 except TypeError:
                     return error_message
         return wrapper
@@ -1617,9 +1639,9 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :lineno-start: 22
 
     @reject_strings
-    def divide(first, second):
+    def divide(first_input, second_input):
         try:
-            return first / second
+            return first_input / second_input
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
 
@@ -1629,22 +1651,22 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 
   .. code-block:: python
     :lineno-start: 30
-    :emphasize-lines: 2
+    :emphasize-lines: 3
 
     @reject_strings
-    def add(first, second):
-        return first + second
+    def add(first_input, second_input):
+        return first_input + second_input
 
   still green
 
-* I change the name of the :ref:`function<functions>` from ``reject_strings`` to ``take_numbers_only``
+* I change the name of the wrapper :ref:`function<functions>` from ``reject_strings`` to ``only_takes_numbers``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def take_numbers_only(function):
-        def wrapper(first, second):
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
 
   and when wrapping the :ref:`divide function<test_division>`
 
@@ -1652,8 +1674,8 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :lineno-start: 22
     :emphasize-lines: 1
 
-    @take_numbers_only
-    def divide(first, second):
+    @only_takes_numbers
+    def divide(first_input, second_input):
 
   I do the same thing with the :ref:`add function<test_division>`
 
@@ -1661,28 +1683,28 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     :lineno-start: 30
     :emphasize-lines: 1
 
-    @take_numbers_only
-    def add(first, second):
+    @only_takes_numbers
+    def add(first_input, second_input):
 
   .. TIP:: In `Visual Studio Code`_ I can change all the places that a name is in the file_, by using
 
     * Find and Replace - ``ctrl+H`` on Windows_ or ``option+command+F`` on MacOS_ or with
     * Rename Symbol
 
-      - Right click on the name you want to change, for example ``the_input`` then select ``Rename Symbol`` or
-      - Select the name you want to change then hit ``F2`` to rename it
+      - Right click on the name you want to change, for example ``reject_strings`` then select ``Rename Symbol`` or
+      - Select the name you want to change then hit :kbd:``F2`` on your keyboard to rename it
 
   all tests are still passing.
 
-* I use the ``takes_numbers_only`` :ref:`function<functions>` to wrap the :ref:`multiply function<test_multiplication>`
+* I use the ``only_takes_numbers`` :ref:`function<functions>` to decorate the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
     :lineno-start: 18
     :emphasize-lines: 1
 
-    @take_numbers_only
-    def multiply(first, second):
-        return first * second
+    @only_takes_numbers
+    def multiply(first_input, second_input):
+        return first_input * second_input
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1690,7 +1712,7 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 
     AssertionError: TypeError not raised
 
-  the :ref:`multiply function<test_multiplication>` now returns a message and does not stop the program when it receives bad input. I change the assertRaises_ to assertEqual_ in ``test_calculator.py``
+  the :ref:`multiply function<test_multiplication>` now returns a message and does not stop the program when it receives bad input. I change the assertRaises_ to assertEqual_ in ``test_calculator_raises_type_error`` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 63
@@ -1707,15 +1729,15 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 
   the test is green again
 
-* I do the same thing with the :ref:`subtract function<functions>` in ``calculator.py``
+* I decorate the :ref:`subtract function<functions>` with the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 1
 
-    @take_numbers_only
-    def subtract(first, second):
-        return first - second
+    @only_takes_numbers
+    def subtract(first_input, second_input):
+        return first_input - second_input
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1810,20 +1832,20 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
 
     TypeError: I am a calculator, I only work with numbers
 
-* I change the `raise statement`_ in the `if statement<if statements>` of ``take_numbers_only`` in ``calculator.py``
+* I change the `raise statement`_ to a `return statement`_ in the :ref:`if statement<if statements>` of the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 5
 
-    def take_numbers_only(function):
-        def wrapper(first, second):
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
             error_message = 'I am a calculator, I only work with numbers'
-            if isinstance(first, str) or isinstance(second, str):
+            if isinstance(first_input, str) or isinstance(second_input, str):
                 return error_message
             else:
                 try:
-                    return function(first, second)
+                    return function(first_input, second_input)
                 except TypeError:
                     return error_message
         return wrapper
@@ -1959,6 +1981,61 @@ I want a way to check if the input is a string for both :ref:`functions`. I can 
     # Exceptions seen
 
   the terminal_ shows green again
+
+* because I am a programmer, I can have fun and make a :ref:`function<functions>` for each condition in the :ref:`if statement<if statements>` in ``only_takes_numbers`` :ref:`function<functions>` a :ref:`function<functions>` in ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2, 8
+
+    def is_string(something):
+        return isinstance(something, str)
+
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            error_message = 'I am a calculator, I only work with numbers'
+            if is_string(first_input) or is_string(second_input):
+                return error_message
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return error_message
+        return wrapper
+
+  the test is still green. This removes the duplication of ``str`` in the call to the `isinstance method`_
+
+  .. code-block:: python
+
+    isinstance(first_input, str)
+    isinstance(second_input, str):
+
+* or I could make a :ref:`function<functions>` for the whole :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2, 8
+
+    def one_input_is_a_string(first_input, second_input):
+        return isinstance(first_input, str) or isinstance(second_input, str)
+
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            error_message = 'I am a calculator, I only work with numbers'
+            if one_input_is_a_string(first_input, second_input):
+                return error_message
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return error_message
+        return wrapper
+
+  the test is still green
+
+The world is my oyster!
 
 ----
 

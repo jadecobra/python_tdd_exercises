@@ -46,7 +46,7 @@ Here are some questions you can answer after going through these chapters
 * :ref:`What causes NameError?<test_catching_name_error_in_tests>`
 * :ref:`What causes IndexError?<test_index_error>`
 * :ref:`What causes KeyError?<test_key_error>`
-* :ref:`How can I handle exceptions in a program<how to use try…except…else>`
+* :ref:`How can I handle exceptions in a program<how to use try...except...else>`
 
 *********************************************************************************
 what is next?

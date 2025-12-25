@@ -1289,7 +1289,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Logical Disjunction <test_logical_disjunction>`
 
   - returns ``first_input or second_input``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
+  - returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
   - is the  :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which only returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
 
 * :ref:`Tautology <test_tautology>`
