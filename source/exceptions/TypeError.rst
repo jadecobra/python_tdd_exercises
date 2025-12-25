@@ -2079,21 +2079,16 @@ close the project
 review
 *********************************************************************************
 
-The :ref:`calculator program<how to make a calculator>` can take 2 inputs and :ref:`check if the inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>` then do
-* :ref:`addition<test_addition>`
-* :ref:`subtraction<test_subtraction>`
-* :ref:`multiplication<test_multiplication>` and
-* :ref:`division<test_division>`
+The :ref:`calculator program<how to make a calculator>` can take 2 inputs and :ref:`check if they are both numbers<test_calculator_sends_message_when_input_is_not_a_number>`, :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` and :ref:`divide<test_division>` them
 
 Even though the program_ says it only works with numbers, I did not add tests for tuples_, :ref:`lists`, sets_, and :ref:`dictionaries`, though they are touched in :ref:`test_type_error_w_objects_that_do_not_mix` Do you want to add them?
 
 I ran tests for TypeError_ with
+
 * :ref:`objects that are not  callable<test_type_error_w_non_callables>`
 * :ref:`function definitions<test_type_error_w_function_signatures>`
 * :ref:`objects that do not mix<test_type_error_w_objects_that_do_not_mix>` and
 * :ref:`used TypeError, an if statement, exception handler and wrapper function to make sure the calculator program only works with numbers<test_calculator_sends_message_when_input_is_not_a_number>`
-
-Would you like to :ref:`test Lists?<lists>`
 
 ----
 
@@ -2119,6 +2114,7 @@ you know
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`
+* :ref:`how to make a Python Test Driven Development environment automatically` or :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`
