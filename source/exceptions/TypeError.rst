@@ -73,7 +73,7 @@ start the project
 
       code makePythonTdd.ps1
 
-* I change everywhere I have ``exceptions`` in ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` to the name of this project
+* I change everywhere I have ``exceptions`` to the name of this project in ``makePythonTdd.sh``
 
   .. code-block:: shell
     :linenos:
@@ -99,6 +99,31 @@ start the project
     # Exceptions seen
     # AssertionError
     " > tests/test_type_error.py
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+
+    .. code-block:: PowerShell
+      :linenos:
+      :emphasize-lines: 1-2, 4, 11, 18
+
+      mkdir type_error
+      cd type_error
+      mkdir src
+      New-Item src/type_error.py
+      mkdir tests
+      New-Item tests/__init__.py
+
+      "import unittest
+
+
+      class TestTypeError(unittest.TestCase):
+
+          def test_failure(self):
+              self.assertFalse(True)
+
+      # Exceptions seen
+      # AssertionError
+      " | Out-File tests/test_type_error.py
 
 * I run the program_ in the terminal_
 
