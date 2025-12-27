@@ -522,7 +522,7 @@ how to use try...except...else
 
   the `try statement`_ is used to handle :ref:`Exceptions<errors>` in programs
 
-* I add an else_ clause for when ``a_function()`` runs without raising an :ref:`Exception<errors>`
+* I add an `else clause`_ for when ``a_function()`` runs without raising an :ref:`Exception<errors>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -544,7 +544,7 @@ how to use try...except...else
 
   this is still the same :ref:`Exception<errors>` and message
 
-* I change the `return statement`_ in the else_ clause
+* I change the `return statement`_ in the `else clause`_
 
   .. code-block:: python
     :lineno-start: 13
@@ -624,7 +624,7 @@ how to use try...except...else
 close the project
 *********************************************************************************
 
-* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
@@ -858,7 +858,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 close the project
 =================================================================================
 
-* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 
   the terminal_ shows
@@ -869,7 +869,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-  .. NOTE:: on Windows_ without `Windows Subsytem for Linux`
+  .. NOTE:: on Windows_ without `Windows Subsytem for Linux`_
 
     * I deactivate the `virtual environment`_
 

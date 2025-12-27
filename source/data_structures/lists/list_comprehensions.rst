@@ -753,7 +753,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   ``even_numbers, odd_numbers = [], []`` makes 2 empty :ref:`lists` and names them
 
-* I add an else_ clause in the `for loop`_
+* I add an `else clause`_ in the `for loop`_
 
   .. code-block:: python
     :emphasize-lines: 4-5
@@ -1117,7 +1117,7 @@ I can also do this with :ref:`dictionaries`, it is called a dict comprehension a
 close the project
 *********************************************************************************
 
-* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 

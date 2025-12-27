@@ -636,7 +636,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
       if something and something_else:
 
-* I put the two `if statements`_ for the one case where the result is :ref:`True <test_what_is_true>` together and use an else_ clause for the other cases where the first and second inputs are not both :ref:`True<test_what_is_true>`
+* I put the two `if statements`_ for the one case where the result is :ref:`True <test_what_is_true>` together and use an `else clause`_ for the other cases where the first and second inputs are not both :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -705,7 +705,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 conditional expressions
 ---------------------------------------------------------------------------------
 
-* Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the else_ clause as one line
+* Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the `else clause`_ as one line
 
   .. code-block:: python
     :lineno-start: 21
@@ -1115,7 +1115,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 
   still green
 
-* I add an else_ clause
+* I add an `else clause`_
 
   .. code-block:: python
 

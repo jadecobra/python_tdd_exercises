@@ -1010,7 +1010,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test is still green
 
-* I remove the commented line and the other :ref:`assertions<AssertionError>` because they are covered by the one that uses random numbers. I do not need them anymore
+* I remove the commented line and the other :ref:`assertions<what is an assertion?>` because they are covered by the one that uses random numbers. I do not need them anymore
 
   .. code-block:: python
     :lineno-start: 8
@@ -1882,7 +1882,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 close the project
 *********************************************************************************
 
-* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 

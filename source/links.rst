@@ -64,6 +64,7 @@
 .. _echo: https://man7.org/Linux/man-pages/man1/echo.1.html
 .. _echo program: echo_
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
+.. _else clause: else_
 .. _extend: more_on_lists_
 .. _find and replace: https://code.visualstudio.com/docs/editing/codebasics#_find-and-replace
 .. _float: https://docs.python.org/3/library/functions.html#float

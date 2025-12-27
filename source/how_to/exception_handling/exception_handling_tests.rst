@@ -136,14 +136,6 @@ start the project
     ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4-5
-
-    # Exceptions seen
-    # AssertionError
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
@@ -1223,7 +1215,7 @@ the test passes
 close the project
 =================================================================================
 
-* I close the file(s) I had open in the :ref:`editor(s)<2 editors>`
+* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 

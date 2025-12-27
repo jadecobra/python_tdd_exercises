@@ -290,7 +290,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
   - :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
-* since the 2 cases where the ``negate_first`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when the first input is :ref:`False<test_what_is_false>`. I can write it as an :ref:`if statement<if statements>` with an else_ clause
+* since the 2 cases where the ``negate_first`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when the first input is :ref:`False<test_what_is_false>`. I can write it as an :ref:`if statement<if statements>` with an `else clause`_
 
   .. code-block:: python
     :lineno-start: 33
@@ -369,7 +369,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
   still green
 
-* I remove the :ref:`if statement<if statements>` and else_ clause, then use the simpler form of the `return statement`_
+* I remove the :ref:`if statement<if statements>` and `else clause`_, then use the simpler form of the `return statement`_
 
   .. code-block:: python
     :lineno-start: 33
@@ -664,7 +664,7 @@ the test passes.
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
-* I add one :ref:`if statement<if statements>` for the one case that returns :ref:`False<test_what_is_false>` with an else_ clause for the other three cases since they all return :ref:`True<test_what_is_true>`
+* I add one :ref:`if statement<if statements>` for the one case that returns :ref:`False<test_what_is_false>` with an `else clause`_ for the other three cases since they all return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -715,7 +715,7 @@ the test passes.
 
   still green
 
-* I want to use one `return statement`_ (a `conditional expression`_) for everything, which means I need an :ref:`if statement<if statements>` that returns :ref:`True<test_what_is_true>`. I use :ref:`logical negation<test_logical_negation>` (not_) to change the else_ clause to the opposite of the :ref:`if statement<if statements>`
+* I want to use one `return statement`_ (a `conditional expression`_) for everything, which means I need an :ref:`if statement<if statements>` that returns :ref:`True<test_what_is_true>`. I use :ref:`logical negation<test_logical_negation>` (not_) to change the `else clause`_ to the opposite of the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -744,7 +744,7 @@ the test passes.
 
   the terminal_ still shows green
 
-* I change the second :ref:`if statement<if statements>` to an else_ clause
+* I change the second :ref:`if statement<if statements>` to an `else clause`_
 
   .. code-block:: python
     :lineno-start: 37
@@ -803,7 +803,7 @@ the test passes.
 
 .. TIP::
 
-  When there is only one :ref:`if statement<if statements>` that returns :ref:`False<test_what_is_false>` with an else_ clause, for example
+  When there is only one :ref:`if statement<if statements>` that returns :ref:`False<test_what_is_false>` with an `else clause`_, for example
 
   .. code-block:: python
 
@@ -1173,7 +1173,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   green
 
-* I change the second :ref:`if statement<if statements>` to an else_ clause
+* I change the second :ref:`if statement<if statements>` to an `else clause`_
 
   .. code-block:: python
     :lineno-start: 45
