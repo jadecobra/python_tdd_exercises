@@ -1443,7 +1443,7 @@ the test passes
 
     AssertionError: TypeError not raised
 
-  ``test_calculator_raises_type_error_when_given_none`` now fails because it expects TypeError_ when the inputs are not numbers
+  ``test_calculator_raises_type_error_when_given_none`` fails because it expects TypeError_ when the inputs are not numbers
 
 *  I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_when_given_none`` in ``test_calculator.py``
 
@@ -1451,19 +1451,19 @@ the test passes
     :lineno-start: 57
     :emphasize-lines: 6-9
 
-        def test_calculator_raises_type_error_when_given_none(self):
-            self.assertEqual(
-                src.calculator.add(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
-            )
-            self.assertEqual(
-                src.calculator.divide(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
-            )
+    def test_calculator_raises_type_error_when_given_none(self):
+        self.assertEqual(
+            src.calculator.add(None, None),
+            'Excuse me?! I only work with numbers, Please try again...'
+        )
+        self.assertEqual(
+            src.calculator.divide(None, None),
+            'Excuse me?! I only work with numbers, Please try again...'
+        )
 
   the test passes
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiply>` in ``test_calculator_raises_type_error_when_given_none``
+* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in ``test_calculator_raises_type_error_when_given_none``
 
   .. code-block:: python
     :lineno-start: 62
@@ -1682,7 +1682,7 @@ the test passes
                 error_message
             )
 
-  still green. All these tests :ref:`assertions<what is an assertion>` the same
+  still green. All these tests :ref:`assertions<what is an assertion?>` the same
 
   .. code-block:: python
 
@@ -1691,7 +1691,7 @@ the test passes
         error_message
     )
 
-  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<list_comprehensions>`
+  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<lists: list comprehensions>`
 
 ----
 
@@ -1957,7 +1957,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
             return function(first_input, second_input)
         return wrapper
 
-  I add the :ref:`if statement` to the ``only_takes_numbers`` :ref:`function<functions>`
+  I add the :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 10
