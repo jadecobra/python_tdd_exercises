@@ -869,7 +869,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-  .. NOTE:: on Windows_ without `Windows Subsytem for Linux`_
+  .. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
 
     * I deactivate the `virtual environment`_
 

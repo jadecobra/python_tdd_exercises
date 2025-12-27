@@ -797,7 +797,7 @@ I change the expectation
                 -5.555499999999999
             )
 
-the test passes. `Why is the result -5.555499999999999 instead of 5.5555?<https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
+the test passes. `Why is the result -5.555499999999999 instead of 5.5555? <https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
 
 =================================================================================
 what is a variable?

@@ -841,7 +841,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-  .. NOTE:: on Windows_ without `Windows Subsytem for Linux`_
+  .. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
 
     * I deactivate the `virtual environment`_
 
@@ -1489,7 +1489,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines:
+    :emphasize-lines: 2-5
 
     def multiply(first_input, second_input):
         try:
@@ -1600,7 +1600,7 @@ the test passes
 
   the test passes
 
-* That was a lot of doing the same thing over and over again. ``test_calculator_raises_type_error_when_given_none`` and ``test_calculator_raises_type_error_when_given_strings`` both look the same and the :ref:`calculator<how to make a calculator>` no longer raises TypeError_ when any of the inputs are NOT a number. I remove the name of ``test_calculator_raises_type_error_when_given_strings`` to make its :ref:`assertions<what is an assertion>` part of ``test_calculator_raises_type_error_when_given_none``
+* That was a lot of doing the same thing over and over again. ``test_calculator_raises_type_error_when_given_none`` and ``test_calculator_raises_type_error_when_given_strings`` both look the same and the :ref:`calculator<how to make a calculator>` no longer raises TypeError_ when any of the inputs are NOT a number. I remove the name of ``test_calculator_raises_type_error_when_given_strings`` to make its :ref:`assertions<what is an assertion?>` part of ``test_calculator_raises_type_error_when_given_none``
 
   .. code-block:: python
     :lineno-start: 70
@@ -1874,11 +1874,12 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
 
   the test is still green
 
-  - This removes the duplication of ``str`` in the call to the `isinstance method`_
-  .. code-block:: python
+  - This removes the duplication of ``str`` in the call to the `isinstance function`_
 
-    isinstance(first_input, str)
-    isinstance(second_input, str):
+    .. code-block:: python
+
+      isinstance(first_input, str)
+      isinstance(second_input, str):
 
   - it adds 2 lines of code to remove 6 characters. WOW!
 
@@ -1961,7 +1962,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
 
   .. code-block:: python
     :lineno-start: 10
-    :emphasize-lines:
+    :emphasize-lines: 2-8
 
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
