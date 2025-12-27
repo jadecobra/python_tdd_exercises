@@ -174,7 +174,7 @@ start the project
 ----
 
 *********************************************************************************
-test_type_error_w_non_callables
+test_type_error_w_the_uncallables
 *********************************************************************************
 
 There are :ref:`objects<classes>` that can NOT be called
@@ -192,7 +192,7 @@ There are :ref:`objects<classes>` that can NOT be called
     import src.type_error
     import unittest
 
-* I change ``test_failure`` to ``test_type_error_w_non_callables`` with a failing line
+* I change ``test_failure`` to ``test_type_error_w_the_uncallables`` with a failing line
 
   .. code-block:: python
     :lineno-start: 5
@@ -200,7 +200,7 @@ There are :ref:`objects<classes>` that can NOT be called
 
     class TestTypeError(unittest.TestCase):
 
-        def test_type_error_w_non_callables(self):
+        def test_type_error_w_the_uncallables(self):
             src.type_error.none()
 
   the terminal_ shows :ref:`AttributeError`
@@ -278,7 +278,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     :lineno-start: 7
     :emphasize-lines: 3
 
-        def test_type_error_w_non_callables(self):
+        def test_type_error_w_the_uncallables(self):
             src.type_error.none()
             src.type_error.false()
 
@@ -330,7 +330,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     :lineno-start: 7
     :emphasize-lines: 4
 
-        def test_type_error_w_non_callables(self):
+        def test_type_error_w_the_uncallables(self):
             src.type_error.none()
             src.type_error.false()
             src.type_error.true()
@@ -374,18 +374,123 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def true():
         return True
 
-  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`boolean<booleans>`
+  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`boolean<booleans>` or :ref:`None`
 
-* I add another line to ``test_type_error.py``
+* I add a line for a string_
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 5
 
-        def test_type_error_w_non_callables(self):
+        def test_type_error_w_the_uncallables(self):
             src.type_error.none()
             src.type_error.false()
             src.type_error.true()
+            src.type_error.a_string()
+
+  the terminal_ shows :ref:`AttributeError`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error' has no attribute 'a_string'
+
+* I add the name and point it to a string_ in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5
+
+    def true():
+        return True
+
+
+    a_string = 'a string'
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'str' object is not callable
+
+* I change ``a_string`` to a :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-6
+
+    def true():
+        return True
+
+
+    def a_string():
+        return 'a string'
+
+  the test passes. I can call a :ref:`function<functions>`. I cannot call a string_, a :ref:`boolean<booleans>` or :ref:`None`
+
+* I add a failing line for a tuple_ (anything in parentheses ``()``, separated by a comma)
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6
+
+        def test_type_error_w_the_uncallables(self):
+            src.type_error.none()
+            src.type_error.false()
+            src.type_error.true()
+            src.type_error.a_string()
+            src.type_error.a_tuple()
+
+  the terminal_ shows :ref:`AttributeError`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error' has no attribute 'a_tuple'
+
+* I add the name and point it to a tuple_
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5
+
+    def a_string():
+        return 'a string'
+
+
+    a_tuple = (1, 2, 3, 'n')
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'tuple' object is not callable
+
+* I change it to a :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5-6
+
+    def a_string():
+        return 'a string'
+
+
+    def a_tuple():
+        return (1, 2, 3, 'n')
+
+  the test passes. I can call a :ref:`function<functions>`. I cannot call a tuple_, string_, :ref:`boolean<booleans>` or :ref:`None`
+
+* I add another line to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 7
+
+        def test_type_error_w_the_uncallables(self):
+            src.type_error.none()
+            src.type_error.false()
+            src.type_error.true()
+            src.type_error.a_string()
+            src.type_error.a_tuple()
             src.type_error.a_list()
 
   the terminal_ shows :ref:`AttributeError`
@@ -397,11 +502,11 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I add the name and point it to a :ref:`list<lists>` in ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 17
     :emphasize-lines: 5
 
-    def true():
-        return True
+    def a_tuple():
+        return (1, 2, 3, 'n')
 
 
     a_list = [1, 2, 3, 'n']
@@ -415,28 +520,78 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I change ``a_list`` to a :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 17
     :emphasize-lines: 5-6
 
-    def true():
-        return True
+    def a_tuple():
+        return (1, 2, 3, 'n')
 
 
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`list<lists>`
+  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`list<lists>`, tuple_, string_, :ref:`boolean<booleans>` or :ref:`None`
 
-* I add a new failing line to ``test_type_error.py``
+* I add another failing line to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 11
     :emphasize-lines: 4
 
-          src.type_error.false()
-          src.type_error.true()
-          src.type_error.a_list()
-          src.type_error.a_dictionary()
+            src.type_error.a_string()
+            src.type_error.a_tuple()
+            src.type_error.a_list()
+            src.type_error.a_set()
+
+  the terminal_ shows :ref:`AttributeError`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error' has no attribute 'a_set'
+
+* I add the name and point it to a set_ in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5
+
+    def a_list():
+        return [1, 2, 3, 'n']
+
+
+    a_set = {1, 2, 3, 'n'}
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'set' object is not callable
+
+* I make it a :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5-6
+
+    def a_list():
+        return [1, 2, 3, 'n']
+
+
+    def a_set():
+        return {1, 2, 3, 'n'}
+
+  the test passes. I can call a :ref:`function<functions>`. I cannot call a set_, :ref:`list<lists>`, tuple_, string_, :ref:`boolean<booleans>` or :ref:`None`
+
+* I add the last failing line for this test to ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 4
+
+            src.type_error.a_tuple()
+            src.type_error.a_list()
+            src.type_error.a_set()
+            src.type_error.a_dictionary()
 
 
     # Exceptions seen
@@ -450,11 +605,11 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I add the name and point it to a :ref:`dictionary<dictionaries>` in ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 25
     :emphasize-lines: 5
 
-    def a_list():
-        return [1, 2, 3, 'n']
+    def a_set():
+        return {1, 2, 3, 'n'}
 
 
     a_dictionary = {'key': 'value'}
@@ -471,16 +626,16 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     :lineno-start: 13
     :emphasize-lines: 5-6
 
-    def a_list():
-        return [1, 2, 3, 'n']
+    def a_set():
+        return {1, 2, 3, 'n'}
 
 
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal_ shows green again.
+  the terminal_ shows green again. I can call a :ref:`function<functions>`. I cannot call a :ref:`dictioanry<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, :ref:`boolean<booleans>` or :ref:`None`
 
-It is safe to say that I cannot call :ref:`data structures`, they are not callable_. I can call :ref:`functions`
+It is safe to say that I cannot call :ref:`data structures` because they are not callable_. I can call :ref:`functions`, they are callable_
 
 ----
 
@@ -1445,7 +1600,7 @@ the test passes
 
   ``test_calculator_raises_type_error_when_given_none`` fails because it expects TypeError_ when the inputs are not numbers
 
-*  I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_when_given_none`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_when_given_none`` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 57
@@ -2048,7 +2203,7 @@ Even though the program_ says it only works with numbers, I did not add tests fo
 
 I ran tests for TypeError_ with
 
-* :ref:`objects that are not  callable<test_type_error_w_non_callables>`
+* :ref:`objects that are not  callable<test_type_error_w_the_uncallables>`
 * :ref:`function definitions<test_type_error_w_function_signatures>`
 * :ref:`objects that do not mix<test_type_error_w_objects_that_do_not_mix>` and
 * :ref:`used TypeError, an if statement, exception handler and wrapper function to make sure the calculator program only works with numbers<test_calculator_sends_message_when_input_is_not_a_number>`

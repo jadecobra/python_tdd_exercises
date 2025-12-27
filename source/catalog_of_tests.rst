@@ -92,7 +92,7 @@ test_attribute_error
 test_type_error
 *********************************************************************************
 
-#. :ref:`test_type_error_w_non_callables`
+#. :ref:`test_type_error_w_the_uncallables`
 #. :ref:`test_type_error_w_function_signatures`
 #. :ref:`test_type_error_w_objects_that_do_not_mix`
 

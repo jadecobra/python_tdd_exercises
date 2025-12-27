@@ -4,7 +4,7 @@ import src.type_error
 
 class TestTypeError(unittest.TestCase):
 
-    def test_type_error_w_non_callables(self):
+    def test_type_error_w_the_uncallables(self):
         src.type_error.none()
         src.type_error.false()
         src.type_error.true()
