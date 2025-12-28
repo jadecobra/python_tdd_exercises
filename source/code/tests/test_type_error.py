@@ -8,7 +8,10 @@ class TestTypeError(unittest.TestCase):
         src.type_error.none()
         src.type_error.false()
         src.type_error.true()
+        src.type_error.a_string()
+        src.type_error.a_tuple()
         src.type_error.a_list()
+        src.type_error.a_set()
         src.type_error.a_dictionary()
 
     def test_type_error_w_function_signatures(self):
@@ -19,11 +22,13 @@ class TestTypeError(unittest.TestCase):
 
     def test_type_error_w_objects_that_do_not_mix(self):
         with self.assertRaises(TypeError):
-            None + 1
+            None + False
         with self.assertRaises(TypeError):
-            'text' + 0.1
+            True - 'text'
         with self.assertRaises(TypeError):
-            (1, 2, 3, 'n') - {1, 2, 3, 'n'}
+            (0, 1, 2, 'n') * [0, 1, 2, 'n']
+        with self.assertRaises(TypeError):
+            {0, 1, 2, 'n'} / {'key': 'value'}
 
 
 # Exceptions seen
