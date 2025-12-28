@@ -16,10 +16,10 @@ I want to sign up for a time slot that fits my schedule. The maximum number of p
                <li>Max 5 Students</li>
                <li>Live Coding on Day 1</li>
            </ul>
-           <a href="#morning-marauders-booking" class="enroll-btn">Select Slot</a>
+           <a href="#morning-marauders-booking" class="enroll-btn">join this HATCH</a>
        </div>
 
-       <div class="price-card highlight">
+       <div class="price-card">
            <h3>Sunlight Soldiers</h3>
            <div class="price">$100<span>/seat</span></div>
            <p class="time-slot">1PM - 3PM CST</p>
@@ -28,7 +28,7 @@ I want to sign up for a time slot that fits my schedule. The maximum number of p
                <li>Max 5 Students</li>
                <li>Live Coding on Day 1</li>
            </ul>
-           <a href="#sunlight-soldiers-booking" class="enroll-btn">Select Slot</a>
+           <a href="#sunlight-soldiers-booking" class="enroll-btn">join this HATCH</a>
        </div>
 
        <div class="price-card">
@@ -40,7 +40,7 @@ I want to sign up for a time slot that fits my schedule. The maximum number of p
                <li>Max 5 Students</li>
                <li>Live Coding on Day 1</li>
            </ul>
-           <a href="#happy-hour-heroes-booking" class="enroll-btn">Select Slot</a>
+           <a href="#happy-hour-heroes-booking" class="enroll-btn">join this HATCH</a>
        </div>
 
        <div class="price-card">
@@ -52,6 +52,6 @@ I want to sign up for a time slot that fits my schedule. The maximum number of p
                <li>Max 5 Students</li>
                <li>Live Coding on Day 1</li>
            </ul>
-           <a href="#nighttime-ninjas-booking" class="enroll-btn">Select Slot</a>
+           <a href="#nighttime-ninjas-booking" class="enroll-btn">join this HATCH</a>
        </div>
    </div>
