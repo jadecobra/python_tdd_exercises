@@ -6,34 +6,50 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 2rem 0;
+    margin: 3rem 0;
     justify-content: center;
+    align-items: stretch;
 }
 
 .price-card {
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 24px;
-    width: 250px;
+    background-color: var(--color-background-secondary, #ffffff);
+    border-radius: 16px;
+    padding: 32px 24px;
+    width: 200px;
     text-align: center;
-    background-color: var(--color-background-secondary);
-    transition: transform 0.2s;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .price-card.highlight {
-    border: 2px solid #306998; /* Python Blue */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid #306998;
+    transform: scale(1.05); /* Slightly larger than others */
+    z-index: 1;
+}
+
+.price-card.highlight:hover {
+    transform: scale(1.05) translateY(-8px);
 }
 
 .price-card h3 {
-    margin-top: 0;
-    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: var(--color-text, #333);
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
 }
 
 .price {
     font-size: 2.5rem;
     font-weight: bold;
     margin: 10px 0;
+    color: #ffd43b;
 }
 
 .price span {
@@ -44,20 +60,28 @@
 .time-slot {
     font-weight: 600;
     color: #306998;
+    background-color: #ffd43b;
 }
 
 .price-card ul {
     list-style: none;
     padding: 0;
     margin: 20px 0;
-    text-align: left;
+    text-align: center;
     font-size: 0.9rem;
 }
 
+.price-card li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+}
+
 .enroll-btn {
-    display: block;
+    display: inline-block;
+    width: 100%;
     background-color: #306998;
-    color: white !important;
+    /* color: white !important; */
+    color: #ffd43b !important;
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;

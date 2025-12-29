@@ -12,7 +12,9 @@ You will learn how to read, write and test Python_ like a professional.
 
 Sign up TODAY for a time slot that fits your schedule. The maximum number of people in each Hatch is **5 students** to make sure I can give you one-on-one attention in a group learning environment.
 
-Here is what you get
+*********************************************************************************
+what do I get?
+*********************************************************************************
 
 * 30 chapters
 * 11 hours of video
@@ -20,57 +22,64 @@ Here is what you get
 * improved typing skills
 * better comparison skills (your ability to spot the difference will grow)
 * daily 1 on 1 with me in a group with 4 other Python PUMPERS like you to crush your Python pain
+* access to a growing WhatsApp community of people like you who have gone through or are going through the course
+
+*********************************************************************************
+what is next?
+*********************************************************************************
+
+Pick a time that works best for you
 
 .. raw:: html
 
     <div class="pricing-container">
         <div class="price-card">
-            <h3>Morning Marauders</h3>
+            <h3>morning marauders</h3>
             <div class="price">$99.99</div>
             <p class="time-slot">10AM - 12PM CST</p>
             <ul>
-                <li>Monday to Friday</li>
-                <li>Max 5 Students</li>
-                <li>Live Coding on Day 1</li>
+                <li>monday to friday</li>
+                <li>5 students MAX</li>
+                <li>code from day 1</li>
             </ul>
-            <a href="#morning-marauders-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-morning-marauders" data-cal-namespace="pumping-python-morning-marauders" data-cal-config='{"layout":"month_view"}'>join this HATCH</a>
+            <a href="#morning-marauders-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-morning-marauders" data-cal-namespace="pumping-python-morning-marauders" data-cal-config='{"layout":"month_view"}'>join Morning Marauders</a>
         </div>
 
         <div class="price-card">
-            <h3>Sunlight Soldiers</h3>
+            <h3>sunlight soldiers</h3>
             <div class="price">$99.99</div>
             <p class="time-slot">1PM - 3PM CST</p>
             <ul>
-                <li>Monday to Friday</li>
-                <li>Max 5 Students</li>
-                <li>Live Coding on Day 1</li>
+                <li>monday to friday</li>
+                <li>5 students MAX</li>
+                <li>code from day 1</li>
             </ul>
-            <a href="#sunlight-soldiers-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-sunlight-soldiers" data-cal-namespace="pumping-python-sunlight-soldiers" data-cal-config='{"layout":"month_view"}'>join this HATCH</a>
+            <a href="#sunlight-soldiers-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-sunlight-soldiers" data-cal-namespace="pumping-python-sunlight-soldiers" data-cal-config='{"layout":"month_view"}'>join sunlight soldiers</a>
 
         </div>
 
         <div class="price-card">
-            <h3>Happy Hour Heroes</h3>
+            <h3>happy hour heroes</h3>
             <div class="price">$99.99</div>
             <p class="time-slot">5PM - 7PM CST</p>
             <ul>
-                <li>Monday to Friday</li>
-                <li>Max 5 Students</li>
-                <li>Live Coding on Day 1</li>
+                <li>monday to friday</li>
+                <li>5 students MAX</li>
+                <li>code from day 1</li>
             </ul>
-            <a href="#happy-hour-heroes-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-happy-hour-heroes" data-cal-namespace="pumping-python-happy-hour-heroes" data-cal-config='{"layout":"month_view"}'>join this HATCH</a>
+            <a href="#happy-hour-heroes-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-happy-hour-heroes" data-cal-namespace="pumping-python-happy-hour-heroes" data-cal-config='{"layout":"month_view"}'>join happy hour heroes</a>
         </div>
 
         <div class="price-card">
-            <h3>Nighttime Ninjas</h3>
+            <h3>nighttime ninjas</h3>
             <div class="price">$99.99</div>
             <p class="time-slot">8PM - 10PM CST</p>
             <ul>
-                <li>Monday to Friday</li>
-                <li>Max 5 Students</li>
-                <li>Live Coding on Day 1</li>
+                <li>monday to friday</li>
+                <li>5 students MAX</li>
+                <li>code from day 1</li>
             </ul>
-            <a href="#nighttime-ninjas-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-nighttime-ninjas" data-cal-namespace="pumping-python-nighttime-ninjas" data-cal-config='{"layout":"month_view"}'>join this HATCH</a>
+            <a href="#nighttime-ninjas-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-nighttime-ninjas" data-cal-namespace="pumping-python-nighttime-ninjas" data-cal-config='{"layout":"month_view"}'>join nighttime ninjas</a>
         </div>
     </div>
 
