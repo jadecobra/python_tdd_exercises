@@ -1196,6 +1196,8 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
 
 * :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>`, for the 3 cases that return :ref:`True<test_what_is_true>`
 
+  .. NOTE:: "!=" is the NOT Equal Symbol made with :kbd:`!+=`
+
   .. code-block:: python
     :lineno-start: 80
     :emphasize-lines: 2
