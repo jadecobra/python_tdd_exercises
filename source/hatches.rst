@@ -1,8 +1,25 @@
+.. include:: /links.rst
+
 #################################################################################
 join a HATCH
 #################################################################################
 
+If you’ve ever thought to yourself “I will/should learn Python one day”. Today is the day! You can learn with me as your guide/coach for $100
+
+It’s 8 weeks of HARD work writing Python code everyday, not for the faint of heart or weak of mind. Don’t worry no math required 🤔
+
+You will learn how to read, write and test Python_ like a professional.
+
 Sign up TODAY for a time slot that fits your schedule. The maximum number of people in each Hatch is **5 students** to make sure I can give you one-on-one attention in a group learning environment.
+
+Here is what you get
+
+* 30 chapters
+* 11 hours of video
+* over 100 tests
+* improved typing skills
+* better comparison skills (your ability to spot the difference will grow)
+* daily 1 on 1 with me in a group with 4 other Python PUMPERS like you to crush your Python pain
 
 .. raw:: html
 

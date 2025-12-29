@@ -62,6 +62,7 @@ Here are a few things I would do if I were in your shoes to make the process mor
 
 `Read reviews of the book here <https://www.trustpilot.com/review/pumpingpython.com>`_
 
+If you would like to work with me personally. I teach this course everyday from Monday to Friday. You can :ref:`sign up for the 8-week course for $100 here<join a HATCH>`
 
 
 `There are videos for every chapter, check them out here <https://www.youtube.com/@JacobItegboje>`_
