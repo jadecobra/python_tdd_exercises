@@ -41,7 +41,7 @@ The program_ should always make this structure
   │   └── test_PROJECT_NAME.py
   └── .venv
 
-Time to use a variable_ for the name of the project
+Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I add a name to represent any project name that I give to ``makePythonTdd.ps1`` when I want it to make a project
 

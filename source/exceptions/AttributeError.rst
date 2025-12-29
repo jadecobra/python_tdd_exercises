@@ -116,7 +116,7 @@ test_attribute_error_w_variables
 
     # Exceptions seen
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` which is in the ``src`` folder. Since the file is empty, the variable_ is not in it.
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` which is in the ``src`` folder. Since the file is empty, the :ref:`variable<what is a variable?>` is not in it.
 
   The terminal_ shows AttributeError_
 
@@ -281,7 +281,7 @@ test_attribute_error_w_variables
 
   the test passes
 
-A variable_ in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+A :ref:`variable<what is a variable?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -517,7 +517,7 @@ the terminal_ shows AttributeError_
 
     AttributeError: 'function' object has no attribute 'attribute_00'
 
-* I define a variable_ inside the :ref:`function <functions>`
+* I define a :ref:`variable<what is a variable?>` inside the :ref:`function <functions>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -528,7 +528,7 @@ the terminal_ shows AttributeError_
         attribute_00 = None
         return None
 
-  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot access a variable_ that belongs to a :ref:`function<functions>` from outside of the :ref:`function<functions>`
+  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot access a :ref:`variable<what is a variable?>` that belongs to a :ref:`function<functions>` from outside of the :ref:`function<functions>`
 
 * I use the :ref:`class<classes>` keyword instead of the def_ keyword to make ``AClass`` a :ref:`class<classes>`
 
@@ -672,7 +672,7 @@ the terminal_ shows AttributeError_
 
   the test passes
 
-* A variable_ in a :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`class<classes>`.
+* A :ref:`variable<what is a variable?>` in a :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`class<classes>`.
 * A :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
 
 ----

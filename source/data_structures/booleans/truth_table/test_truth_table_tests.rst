@@ -1166,6 +1166,8 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     def logical_negation(the_input):
         return not the_input
 
+  the test is still green
+
 * :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in 4 cases, with 2 inputs there are only 4 cases. I add a `return statement`_
 
   .. code-block:: python

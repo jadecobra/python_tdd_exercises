@@ -310,11 +310,11 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
   I cannot call a :ref:`boolean<booleans>` the way I can call a :ref:`function<functions>`
 
-* I change the variable_ to a :ref:`function<functions>`
+* I change the :ref:`variable<what is a variable?>` to a :ref:`function<functions>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 4-5
 
     def none():
         return None
@@ -376,16 +376,111 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
   the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`boolean<booleans>` or :ref:`None`
 
-* I add a line for a string_
+* I add a failing line to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 5
+    :lineno-start: 8
+    :emphasize-lines: 4
 
-        def test_type_error_w_the_uncallables(self):
             src.type_error.none()
             src.type_error.false()
             src.type_error.true()
+            src.type_error.an_integer()
+
+  the terminal_ shows :ref:`AttributeError`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error' has no attribute 'an_integer'
+
+* I add the name and point it to an integer_ in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5
+
+    def true():
+        return True
+
+
+    an_integer = 1234
+
+  the terminal_ shows TypeError_
+
+* I change the :ref:`variable<what is a variable?>` to a :ref:`funcion<functions>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-6
+
+    def true():
+        return True
+
+
+    def an_integer():
+        return 1234
+
+  the test passes. I can call a :ref:`function<functions>`, I cannot call an integer_, a :ref:`boolean<booleans>` or :ref:`None`
+
+* I add a line for a float_ in ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 4
+
+            src.type_error.false()
+            src.type_error.true()
+            src.type_error.an_integer()
+            src.type_error.a_float()
+
+  the terminal_ shows :ref:`AttributeError`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.type_error' has no attribute 'a_float'
+
+* I add the name and point it to a float_ in ``type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5
+
+    def an_integer():
+        return 1234
+
+
+    a_float = 1.234
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: shell
+
+    TypeError: 'float' object is not callable
+
+* I make ``a_float`` a :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5-6
+
+    def an_integer():
+        return 1234
+
+
+    def a_float():
+        return 1.234
+
+  the test passes. I can call a :ref:`function<functions>`, I cannot call a float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+
+* I add a line for a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 4
+
+            src.type_error.true()
+            src.type_error.an_integer()
+            src.type_error.a_float()
             src.type_error.a_string()
 
   the terminal_ shows :ref:`AttributeError`
@@ -397,11 +492,11 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I add the name and point it to a string_ in ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 17
     :emphasize-lines: 5
 
-    def true():
-        return True
+    def a_float():
+        return 1.234
 
 
     a_string = 'a string'
@@ -415,28 +510,26 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I change ``a_string`` to a :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 17
     :emphasize-lines: 5-6
 
-    def true():
-        return True
+    def a_float():
+        return 1.234
 
 
     def a_string():
         return 'a string'
 
-  the test passes. I can call a :ref:`function<functions>`. I cannot call a string_, a :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<functions>`. I cannot call a string_, a float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
-* I add a failing line for a tuple_ (anything in parentheses ``()``, separated by a comma)
+* I add a failing line for a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 6
+    :lineno-start: 11
+    :emphasize-lines: 4
 
-        def test_type_error_w_the_uncallables(self):
-            src.type_error.none()
-            src.type_error.false()
-            src.type_error.true()
+            src.type_error.an_integer()
+            src.type_error.a_float()
             src.type_error.a_string()
             src.type_error.a_tuple()
 
@@ -446,10 +539,10 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     AttributeError: module 'src.type_error' has no attribute 'a_tuple'
 
-* I add the name and point it to a tuple_
+* I add the name and point it to a tuple_ in ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 21
     :emphasize-lines: 5
 
     def a_string():
@@ -467,7 +560,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I change it to a :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 21
     :emphasize-lines: 5-6
 
     def a_string():
@@ -477,18 +570,15 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_tuple():
         return (1, 2, 3, 'n')
 
-  the test passes. I can call a :ref:`function<functions>`. I cannot call a tuple_, string_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<functions>`. I cannot call a tuple_, string_, float_, integer_ :ref:`boolean<booleans>` or :ref:`None`
 
 * I add another line to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 7
+    :lineno-start: 12
+    :emphasize-lines: 4
 
-        def test_type_error_w_the_uncallables(self):
-            src.type_error.none()
-            src.type_error.false()
-            src.type_error.true()
+            src.type_error.a_float()
             src.type_error.a_string()
             src.type_error.a_tuple()
             src.type_error.a_list()
@@ -499,10 +589,10 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     AttributeError: module 'src.type_error' has no attribute 'a_list'
 
-* I add the name and point it to a :ref:`list<lists>` in ``type_error.py``
+* I add the name and point it to a :ref:`list<lists>` (anything in square brackets (``[]``) in ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 25
     :emphasize-lines: 5
 
     def a_tuple():
@@ -520,7 +610,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I change ``a_list`` to a :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 25
     :emphasize-lines: 5-6
 
     def a_tuple():
@@ -530,12 +620,12 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`list<lists>`, tuple_, string_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
 * I add another failing line to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 13
     :emphasize-lines: 4
 
             src.type_error.a_string()
@@ -552,7 +642,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I add the name and point it to a set_ in ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 29
     :emphasize-lines: 5
 
     def a_list():
@@ -570,7 +660,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I make it a :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 29
     :emphasize-lines: 5-6
 
     def a_list():
@@ -580,12 +670,12 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_set():
         return {1, 2, 3, 'n'}
 
-  the test passes. I can call a :ref:`function<functions>`. I cannot call a set_, :ref:`list<lists>`, tuple_, string_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<functions>`, I cannot call a set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
 * I add the last failing line for this test to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 12
+    :lineno-start: 14
     :emphasize-lines: 4
 
             src.type_error.a_tuple()
@@ -605,7 +695,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I add the name and point it to a :ref:`dictionary<dictionaries>` in ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 33
     :emphasize-lines: 5
 
     def a_set():
@@ -623,7 +713,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I change it to a :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 33
     :emphasize-lines: 5-6
 
     def a_set():
@@ -633,9 +723,9 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal_ shows green again. I can call a :ref:`function<functions>`. I cannot call a :ref:`dictioanry<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, :ref:`boolean<booleans>` or :ref:`None`
+  the terminal_ shows green again. I can call a :ref:`function<functions>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
-It is safe to say that I cannot call :ref:`data structures` because they are not callable_. I can call :ref:`functions`, they are callable_
+It is safe to say that I cannot call :ref:`data structures` because they are NOT callable_. I can call :ref:`functions`, they are callable_
 
 ----
 
@@ -652,7 +742,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
 * I add a new test to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 12
+    :lineno-start: 17
     :emphasize-lines: 3-4
 
             src.type_error.a_dictionary()
@@ -676,7 +766,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
 * I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 37
     :emphasize-lines: 5-6
 
     def a_dictionary():
@@ -697,7 +787,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
 * I add a name in parentheses to the :ref:`function<functions>` definition
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 41
     :emphasize-lines: 1
 
     def function_00(the_input):
@@ -714,7 +804,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 * I add a new failing line to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 19
 
     def test_type_error_w_function_signatures(self):
         src.type_error.function_00('a')
@@ -729,7 +819,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 * I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 41
     :emphasize-lines: 5-6
 
     def function_00(the_input):
@@ -750,18 +840,18 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 * I change the first name, then add another name in parentheses so that the call to the :ref:`function<functions>` and its definition match
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 45
     :emphasize-lines: 1
 
     def function_01(first, second):
-      return None
+        return None
 
   the test passes
 
 * I add another failing line to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 19
     :emphasize-lines: 4
 
         def test_type_error_w_function_signatures(self):
@@ -778,7 +868,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 * I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 45
     :emphasize-lines: 5-6
 
     def function_01(first, second):
@@ -794,10 +884,10 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
-* I change the name of the first input, then add another name in parentheses to make the number of inputs match in ``type_error.py``
+* I change the name of the first input, then add another name in parentheses to make the number of inputs match
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 49
     :emphasize-lines: 1
 
     def function_02(first, second, third):
@@ -805,10 +895,10 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
   the test passes
 
-* I add one more failing line in ``test_type_error.py``
+* I add one more failing line to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 19
     :emphasize-lines: 5
 
         def test_type_error_w_function_signatures(self):
@@ -826,7 +916,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 * I add the :ref:`function<functions>` to ``type_error.py``
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 49
     :emphasize-lines: 5-6
 
     def function_02(first, second, third):
@@ -845,7 +935,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 * I add a 4th name in parentheses to the definition
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 53
     :emphasize-lines: 1
 
     def function_03(first, second, third, fourth):
@@ -861,7 +951,7 @@ I have to call a :ref:`function<functions>` with the same number of inputs its d
 test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
-Some operations do not work if the objects_ are not of the same type_
+Some operations do not work if the objects_ are NOT the same type_
 
 =================================================================================
 :red:`RED`: make it fail
@@ -870,13 +960,13 @@ Some operations do not work if the objects_ are not of the same type_
 I add a new test with a failing line in ``test_type_error.py``
 
 .. code-block:: python
-  :lineno-start: 18
+  :lineno-start: 23
   :emphasize-lines: 3-4
 
           src.type_error.function_03('a', 'b', 'c', 'd')
 
       def test_type_error_w_objects_that_do_not_mix(self):
-          None + 1
+          None + False
 
 
   # Exceptions seen
@@ -885,7 +975,7 @@ the terminal_ shows TypeError_
 
 .. code-block:: shell
 
-  TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+  TypeError: unsupported operand type(s) for +: 'NoneType' and 'bool'
 
 I cannot do arithmetic_ with :ref:`None`
 
@@ -896,12 +986,12 @@ I cannot do arithmetic_ with :ref:`None`
 I add the `assertRaises method`_
 
 .. code-block:: python
-  :lineno-start: 20
+  :lineno-start: 25
   :emphasize-lines: 2-3
 
       def test_type_error_w_objects_that_do_not_mix(self):
           with self.assertRaises(TypeError):
-              None + 1
+              None + False
 
 the test passes
 
@@ -912,70 +1002,108 @@ the test passes
 * I add another failing line to the test
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 25
     :emphasize-lines: 4
 
         def test_type_error_w_objects_that_do_not_mix(self):
             with self.assertRaises(TypeError):
-                None + 1
-            'text' + 0.1
+                None + False
+            True - 'text'
 
   the terminal_ shows TypeError_
 
   .. code-block:: shell
 
-    TypeError: can only concatenate str (not "float") to str
-
-  I cannot add something that is not a string_ to a string_
+    TypeError: unsupported operand type(s) for -: 'bool' and 'str'
 
 * I use assertRaises_ to handle the :ref:`Exception<errors>`
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 25
     :emphasize-lines: 4-5
 
         def test_type_error_w_objects_that_do_not_mix(self):
             with self.assertRaises(TypeError):
-                None + 1
+                None + False
             with self.assertRaises(TypeError):
-                'text' + 0.1
+                True - 'text'
 
   the test passes
 
 * I add another failing line
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 25
     :emphasize-lines: 6
 
         def test_type_error_w_objects_that_do_not_mix(self):
             with self.assertRaises(TypeError):
-                None + 1
+                None + False
             with self.assertRaises(TypeError):
-                'text' + 0.1
-            (1, 2, 3, 'n') - {1, 2, 3, 'n'}
+                True - 'text'
+            (0, 1, 2, 'n') * [0, 1, 2, 'n']
+
+  the terminal_ shows TypeError_
+
+  .. code-block:: none
+
+    TypeError: can't multiply sequence by non-int of type 'list'
+
+* I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 6-7
+
+        def test_type_error_w_objects_that_do_not_mix(self):
+            with self.assertRaises(TypeError):
+                None + False
+            with self.assertRaises(TypeError):
+                True - 'text'
+            with self.assertRaises(TypeError):
+                (0, 1, 2, 'n') * [0, 1, 2, 'n']
+
+    # Exceptions seen
+
+  the test passes
+
+* I add another failing line
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 8
+
+        def test_type_error_w_objects_that_do_not_mix(self):
+            with self.assertRaises(TypeError):
+                None + False
+            with self.assertRaises(TypeError):
+                True - 'text'
+            with self.assertRaises(TypeError):
+                (0, 1, 2, 'n') * [0, 1, 2, 'n']
+            {0, 1, 2, 'n'} / {'key': 'value'}
 
   the terminal_ shows TypeError_
 
   .. code-block:: shell
 
-    TypeError: unsupported operand type(s) for -: 'tuple' and 'set'
+    TypeError: unsupported operand type(s) for /: 'set' and 'dict'
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 6-7
+    :lineno-start: 25
+    :emphasize-lines: 8-9
 
-        def test_type_error_w_objects_that_do_not_mix(self):
-            with self.assertRaises(TypeError):
-                None + 1
-            with self.assertRaises(TypeError):
-                'text' + 0.1
-            with self.assertRaises(TypeError):
-                (1, 2, 3, 'n') - {1, 2, 3, 'n'}
 
-    # Exceptions seen
+    def test_type_error_w_objects_that_do_not_mix(self):
+        with self.assertRaises(TypeError):
+            None + False
+        with self.assertRaises(TypeError):
+            True - 'text'
+        with self.assertRaises(TypeError):
+            (0, 1, 2, 'n') * [0, 1, 2, 'n']
+        with self.assertRaises(TypeError):
+            {0, 1, 2, 'n'} / {'key': 'value'}
 
   the terminal_ shows all tests are passing
 
@@ -985,8 +1113,8 @@ the test passes
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I close ``test_type_error.py``  and ``type_error.py`` in the :ref:`editor(s)<2 editors>`
+* then I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 
   the terminal_ shows
 

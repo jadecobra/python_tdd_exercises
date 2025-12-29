@@ -1022,7 +1022,7 @@ What is the difference between ``=`` and ``==``?
 
     project_name = 'assertion_error'
 
-  any time I use ``project_name`` after writing that line, Python_ will replace it with ``assertion_error`` just like in :ref:`how to make a python test driven development environment` where I give a variable_ as the name of the project in :ref:`makePythonTdd.sh` or :ref:`makePythonTdd.ps1`
+  any time I use ``project_name`` after writing that line, Python_ will replace it with ``assertion_error`` just like in :ref:`how to make a python test driven development environment` where I give a :ref:`variable<what is a variable?>` as the name of the project in :ref:`makePythonTdd.sh` or :ref:`makePythonTdd.ps1`
 
 * ``==`` checks if the thing on the left of the symbol is equal to the thing on the right of the symbol
 
