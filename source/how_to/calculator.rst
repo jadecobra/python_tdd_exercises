@@ -1963,7 +1963,7 @@ There is a problem, I have done the same steps for each of the 8 chapters covere
 * I choose a name for the project
 * :ref:`I make a directory for the project<how to make a directory for the project>`
 * :ref:`I change directory to the project<how to change directory to the project>`
-* :ref:`I make a directory for the source code<how to make a directory for the source code>`
+* :ref:`I make a directory for the source code named 'src'<how to make a directory for the source code>`
 * :ref:`I make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
 * :ref:`I make a directory for the tests<how to make a directory for the tests>`
 * :ref:`I make the 'tests' folder a Python package<how to make the tests a Python package>`
