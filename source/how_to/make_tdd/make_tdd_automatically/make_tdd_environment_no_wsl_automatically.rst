@@ -2,7 +2,7 @@
   :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with one script in just 5 minutes.
   :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watch for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
 
-.. include:: ../../links.rst
+.. include:: ../../../links.rst
 
 ########################################################################################################
 how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux
@@ -39,9 +39,9 @@ I want to give one command for the program to do every step except
 
 * give the project a name
 * make the test pass and
-* work on the project, though I can now use `Artificial Intelligence`_ to help with this
+* work on the project
 
-this way I only need to do 3 steps instead of 18
+I only want to do 3 steps not 18
 
 *********************************************************************************
 preview

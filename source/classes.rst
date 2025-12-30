@@ -958,7 +958,7 @@ you have gone through a lot of things and know
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`what you can do with classes<classes>`
 
-Would you like to `test ModuleNotFoundError?<ModuleNotFoundError>`
+Would you like to :ref:`test ModuleNotFoundError?<ModuleNotFoundError>`
 
 ----
 

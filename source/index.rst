@@ -94,27 +94,35 @@ table of contents
   videos <https://www.youtube.com/@JacobItegboje>
   how_to/setup_my_ide
   how_to/make_tdd/index
-  AssertionError
+  exceptions/AssertionError
   functions
   how_to/pass_values
   None
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   how_to/calculator
+  how_to/make_tdd/make_tdd_automatically/index
+  how_to/exception_handling/index
+  exceptions/TypeError
+  data_structures/lists/index
+  data_structures/dictionaries
+  how_to/make_person
+  classes
+  exceptions/AttributeError
+  exceptions/ModuleNotFoundError
 
   conventions
-  how_to/index
-  data_structures/index
-  exceptions/index
-
+  dot_notation
   functions
+  exceptions/index
   classes
+  data_structures/index
+  how_to/index
   catalog of tests<catalog_of_tests>
   tests and solutions<catalog_of_code>
   learning_models
-  dot_notation
   review
-  reviews
+  what people think of this<reviews>
 
 ----
 
