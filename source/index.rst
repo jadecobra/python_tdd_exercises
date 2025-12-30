@@ -117,7 +117,7 @@ table of contents
   data_structures/index
   how_to/index
   catalog of tests<catalog_of_tests>
-  tests and solutions<catalog_of_code>
+  all the code in this book<catalog_of_code>
   learning_models
   review
   hatches

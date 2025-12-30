@@ -66,7 +66,7 @@ Here are questions you can answer after going through this chapter
 requirements
 *********************************************************************************
 
-* I choose ``none`` as the name of this project
+* I name this project ``none``
 * I open a terminal_
 * then I `make a directory`_ for the project
 

@@ -56,7 +56,7 @@ start the project
 
   .. NOTE:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
 
-* I choose ``exceptions`` as the name of this project
+* I name this project ``exceptions``
 * I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
   .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
@@ -132,7 +132,7 @@ start the project
 
     tests/test_exceptions.py:7: AssertionError
     =============================== short test summary info ================================
-    FAILED tests/test_exceptions.py::TestMagic::test_failure - AssertionError: True is not false
+    FAILED tests/test_exceptions.py::TestExceptions::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`

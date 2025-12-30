@@ -173,7 +173,7 @@ how to run a PowerShell script
 
     tests/test_magic_again.py:7: AssertionError
     =============================== short test summary info ================================
-    FAILED tests/test_magic_again.py::TestMagic::test_failure - AssertionError: True is not false
+    FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ===================================
 
   Success! I just made a program_ that can make the ``magic_again`` project anytime I want and it automatically does the steps I did manually.

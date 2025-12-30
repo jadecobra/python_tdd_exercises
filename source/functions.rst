@@ -83,7 +83,7 @@ Here are the questions you can answer after going through this chapter
 start the project
 *********************************************************************************
 
-* I choose ``functions`` as the name of this project
+* I name this project ``functions``
 * I open a terminal_
 * then I `make a directory`_ for the project
 
