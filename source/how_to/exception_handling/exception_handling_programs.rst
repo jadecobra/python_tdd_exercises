@@ -624,8 +624,13 @@ how to use try...except...else
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I close ``exceptions.py`` and ``test_exceptions.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/exceptions
+
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell
@@ -858,46 +863,40 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 close the project
 =================================================================================
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) ...\pumping_python\calculator
+
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    ...\pumping_python\calculator
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .../pumping_python
+    ...\pumping_python
 
   I am back in the ``pumping_python`` directory_
-
-  .. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
-
-    * I deactivate the `virtual environment`_
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        deactivate
-
-      the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-      .. code-block:: shell
-
-        ...\pumping_python\exceptions
-
-    * I `change directory`_ to the parent of ``exceptions``
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        cd ..
-
-      the terminal_ shows
-
-      .. code-block:: shell
-
-        ...\pumping_python
-
-      I am back in the ``pumping_python`` directory_
 
 ----
 

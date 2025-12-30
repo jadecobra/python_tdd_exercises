@@ -1,5 +1,5 @@
-import unittest
 import src.type_error
+import unittest
 
 
 class TestTypeError(unittest.TestCase):
@@ -8,6 +8,8 @@ class TestTypeError(unittest.TestCase):
         src.type_error.none()
         src.type_error.false()
         src.type_error.true()
+        src.type_error.an_integer()
+        src.type_error.a_float()
         src.type_error.a_string()
         src.type_error.a_tuple()
         src.type_error.a_list()

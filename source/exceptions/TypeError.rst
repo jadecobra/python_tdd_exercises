@@ -1113,18 +1113,22 @@ the test passes
 close the project
 *********************************************************************************
 
-* I close ``test_type_error.py``  and ``type_error.py`` in the :ref:`editor(s)<2 editors>`
-* then I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
-
-  the terminal_ shows
+* I close ``test_type_error.py``  and ``type_error.py`` in the :ref:`editor<2 editors>`
+* then I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
   .. code-block:: shell
 
-    .../pumping_python
+    .../pumping_python/type_error
 
   I am back in the ``pumping_python`` directory_
 
   .. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
+
+    * the terminal_ shows
+
+      .. code-block:: shell
+
+        (.venv) ...\pumping_python\type_error
 
     * I deactivate the `virtual environment`_
 
@@ -2289,8 +2293,13 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
 close the project
 =================================================================================
 
-* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the,  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) ...\pumping_python\calculator
+
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell
