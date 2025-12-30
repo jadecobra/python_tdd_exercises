@@ -65,7 +65,7 @@ Here are a few things I would do if I were in your shoes to make the process mor
 ----
 
 *********************************************************************************
-take the course with me
+take the course with Jacob
 *********************************************************************************
 
 If you would like to work with me personally. I teach this course everyday from Monday to Friday. You can :ref:`sign up for the 8-week course for $99.99 here<join a HATCH>`
@@ -113,9 +113,7 @@ table of contents
 
   conventions
   dot_notation
-  functions
   exceptions/index
-  classes
   data_structures/index
   how_to/index
   catalog of tests<catalog_of_tests>
