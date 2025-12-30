@@ -189,7 +189,7 @@ the terminal_ shows
 
   -rw-r--r-- 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
 
-the first 10 characters above are grouped
+the first 10 characters above (``-rw-r--r--``) are grouped
 
 .. code-block:: shell
 

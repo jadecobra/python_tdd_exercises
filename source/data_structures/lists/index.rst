@@ -29,7 +29,7 @@ A list_ is a container :ref:`object<classes>` that can hold any objects_
 
 * they are represented with ``[]``
 * they can be made with the list_ constructor_ (``list()``)
-* they can be changed with an operation - they are mutable
+* they can be changed with an operation, which means they are mutable
 
 *********************************************************************************
 preview
@@ -164,46 +164,6 @@ start the project
 
 ----
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``lists`` as the name of the project
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ./makePythonTdd.sh lists
-
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
-
-    .. code-block:: shell
-
-      ./makePythonTdd.ps1 lists
-
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: python
-
-    E       AssertionError: True is not false
-
-    tests/test_lists.py:7: AssertionError
-
-* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_lists.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
-
-            self.assertFalse(False)
-
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
-
-    class TestLists(unittest.TestCase):
-
-----
-
 *********************************************************************************
 test_making_a_list
 *********************************************************************************
@@ -215,9 +175,8 @@ test_making_a_list
 I change ``test_failure`` to ``test_making_a_list``
 
 .. code-block:: python
-  :linenos:
-
-  import unittest
+  :lineno-start: 4
+  :emphasize-lines:3-4
 
 
   class TestLists(unittest.TestCase):
@@ -238,8 +197,10 @@ the terminal_ shows :ref:`AssertionError`
 I change the expectation
 
 .. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 1
 
-  self.assertEqual(list(), [])
+          self.assertEqual(list(), [])
 
 the test passes. This is how to make an empty list_
 
@@ -247,50 +208,57 @@ the test passes. This is how to make an empty list_
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-I add another :ref:`assertion<AssertionError>`, this time with input to the list_ constructor_
+* I add another :ref:`assertion<AssertionError>`, this time with input to the list_ constructor_, I want to make a list_ that has things in it
 
-.. code-block:: python
-  :emphasize-lines: 2
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 2
 
-  self.assertEqual(list(), [])
-  self.assertEqual(list(0), [])
+            self.assertEqual(list(), [])
+            self.assertEqual(list(0), [])
 
-the terminal_ shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  TypeError: 'int' object is not iterable
+    TypeError: 'int' object is not iterable
 
-I add the error to the list of :ref:`Exceptions<errors>` seen
+* I add the :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen
 
-.. code-block:: python
-  :emphasize-lines: 3
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
 
-  # Exceptions seen
-  # AssertionError
-  # TypeError
+    # Exceptions seen
+    # AssertionError
+    # TypeError
 
-I change the input to a tuple_
+* I change the input to a tuple_ (anything in parentheses (``()``), separated by a comma)
 
-.. code-block:: python
-  :emphasize-lines: 2
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 2
 
-  self.assertEqual(list(), [])
-  self.assertEqual(list((0, 1, 2, 'n')), [])
+            self.assertEqual(list(), [])
+            self.assertEqual(list((0, 1, 2, 'n')), [])
 
-the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: Lists differ: [0, 1, 2, 'n'] != []
+    AssertionError: Lists differ: [0, 1, 2, 'n'] != []
 
-I change the expectation to match
+* I change the expectation to match
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1
 
-  self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
+            self.assertEqual(list((0, 1, 2, 'n')), [0, 1, 2, 'n'])
 
-the test passes. I can make a list_ with the constructor_ or square brackets(``[]``), which uses less characters
+  the test passes.
+
+I can make a list_ with the constructor_ or square brackets(``[]``), which uses less characters
 
 ----
 
@@ -298,7 +266,11 @@ the test passes. I can make a list_ with the constructor_ or square brackets(``[
 test_attributes_and_methods_of_lists
 *********************************************************************************
 
-I use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_
+=================================================================================
+how to see the the attributes and methods of an object
+=================================================================================
+
+I want to test the things I can do with lists_. I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_, it is part of `Python's Built-in Functions`_
 
 =================================================================================
 :red:`RED`: make it fail
