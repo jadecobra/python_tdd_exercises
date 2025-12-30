@@ -2295,7 +2295,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   .. code-block:: python
     :lineno-start: 31
-    :emphasize-lines: 1, 7, 13,
+    :emphasize-lines: 1, 7, 13
 
     @only_takes_numbers_and_rejects_strings
     @only_takes_numbers
@@ -2431,7 +2431,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
     def add(first_input, second_input):
         return first_input + second_input
 
-  all the tests are still passing. The world is my oyster!
+  and all the tests are still passing. The world is my oyster!
 
 ----
 
@@ -2440,11 +2440,11 @@ close the project
 =================================================================================
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the,  the terminal_ shows
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
   .. code-block:: shell
 
-    (.venv) ...\pumping_python\calculator
+    (.venv) .../pumping_python/calculator
 
 * I deactivate the `virtual environment`_
 
@@ -2480,9 +2480,9 @@ close the project
 review
 *********************************************************************************
 
-The :ref:`calculator program<how to make a calculator>` can take 2 inputs and :ref:`check if they are both numbers<test_calculator_sends_message_when_input_is_not_a_number>`, :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` and :ref:`divide<test_division>` them
+The :ref:`calculator program<how to make a calculator>` can take 2 inputs and :ref:`check if they are both numbers<test_calculator_sends_message_when_input_is_not_a_number>`, then :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` or :ref:`divide<test_division>` them
 
-Even though the program_ says it only works with numbers, I did not add tests for tuples_, :ref:`lists`, sets_, and :ref:`dictionaries`, though they are touched in :ref:`test_type_error_w_objects_that_do_not_mix` Do you want to add them?
+Even though the program_ says it only works with numbers, I did not add tests for tuples_, :ref:`lists`, sets_, and :ref:`dictionaries`, though they are touched in :ref:`test_type_error_w_objects_that_do_not_mix`, Do you want to add them or do we already have enough tests to know what would happen?
 
 I ran tests for TypeError_ with
 
