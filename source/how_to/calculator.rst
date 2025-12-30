@@ -1960,7 +1960,7 @@ you know a lot
 
 There is a problem, I have done the same steps for each of the 8 chapters covered so far
 
-* I choose a name for the project
+* I give the project a name
 * :ref:`I make a directory for the project<how to make a directory for the project>`
 * :ref:`I change directory to the project<how to change directory to the project>`
 * :ref:`I make a directory for the source code named 'src'<how to make a directory for the source code>`

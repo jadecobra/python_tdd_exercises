@@ -232,7 +232,7 @@
 .. _Integrated Development Environment (IDE): https://grokipedia.com/page/Integrated_development_environment
 .. _JSON: https://grokipedia.com/page/JSON
 .. _Kent Beck: https://grokipedia.com/page/Kent_Beck
-.. _Artificial Intelligence Large Language Model: https://grokipedia.com/page/Large_language_model
+.. _Artificial Intelligence: https://grokipedia.com/page/Large_language_model
 .. _Linux: https://www.kernel.org/category/about.html
 .. _Linux distributions: https://grokipedia.com/page/List_of_Linux_distributions
 .. _Logical Identity: https://grokipedia.com/page/Identity_function

@@ -92,11 +92,21 @@ table of contents
 
   self
   videos <https://www.youtube.com/@JacobItegboje>
-  how_to/index
-  conventions
-  exceptions/index
-  data_structures/index
+  how_to/setup_my_ide
+  how_to/make_tdd/index
+  AssertionError
+  functions
+  how_to/pass_values
+  None
+  data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
+  how_to/calculator
+
+  conventions
+  how_to/index
+  data_structures/index
+  exceptions/index
+
   functions
   classes
   catalog of tests<catalog_of_tests>

@@ -14,11 +14,9 @@ how to make a Python Test Driven Development environment automatically on Window
 
 ----
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_ anytime I want so I do not have to remember every step of the process or do them manually.
-
 To review, here are steps I take to make the environment for every project
 
-#. I choose a name for the project
+#. I give the project a name
 #. :ref:`I make a directory for the project<how to make a directory for the project on Windows without WSL>`
 #. :ref:`I change directory to the project<how to change directory to the project on Windows without WSL>`
 #. :ref:`I make a directory for the source code named 'src'<how to make a directory for the source code on Windows without WSL>`
@@ -39,9 +37,9 @@ To review, here are steps I take to make the environment for every project
 
 I want to give one command for the program to do every step except
 
-* pick the name for the project
+* give the project a name
 * make the test pass and
-* work on the project, though I can now use an `Artificial Intelligence Large Language Model`_ to help with this
+* work on the project, though I can now use `Artificial Intelligence`_ to help with this
 
 this way I only need to do 3 steps instead of 18
 
@@ -331,7 +329,7 @@ Here is what we have gone through together so far
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`
-* :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsytem for Linux`
+* :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`
 
 :ref:`Would you like to use makePythonTdd.ps1 to make a Python Test Driven Development environment to test that an Exception is raised?<how to test that an Exception is raised>`
 

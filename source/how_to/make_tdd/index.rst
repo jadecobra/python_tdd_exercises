@@ -51,8 +51,8 @@ Some things I think about when I want to start a project
 
 It turns out some of this is the same for every project
 
-* I choose a name for the project
-* I make a new folder_ for every project with the name I chooseed
+* I give the project a name
+* I make a new folder_ for the project with the name I gave it
 * I place the code for the project in a ``src`` folder_
 * I place the tests for the project in a ``tests`` folder_
 * I try to name everything in the project with the name of the project or with something that describes what it does
@@ -72,7 +72,7 @@ Here is what that structure looks like if the name of the project is ``PROJECT_N
   ├── src
   │   └── PROJECT_NAME.py
   └── tests
-      └── PROJECT_NAME.py
+      └── test_PROJECT_NAME.py
 
 ----
 

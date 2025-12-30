@@ -14,11 +14,9 @@ how to make a Python Test Driven Development environment automatically
 
 ----
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` anytime I want so I do not have to remember every step of the process or do them manually.
-
 To review, here are steps I take to make the environment for every project
 
-#. I choose a name for the project
+#. I give the project a name
 #. :ref:`I make a directory for the project<how to make a directory for the project>`
 #. :ref:`I change directory to the project<how to change directory to the project>`
 #. :ref:`I make a directory for the source code named 'src'<how to make a directory for the source code>`
@@ -39,9 +37,9 @@ To review, here are steps I take to make the environment for every project
 
 I want to give one command for the program to do every step except
 
-* pick the name for the project
+* give the project a name
 * make the test pass and
-* work on the project, though I can now use an `Artificial Intelligence Large Language Model`_ to help with this
+* work on the project, though I can now use `Artificial Intelligence`_ to help with this
 
 this way I only need to do 3 steps instead of 18
 
