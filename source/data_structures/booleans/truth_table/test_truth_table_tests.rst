@@ -1283,7 +1283,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
     :lineno-start: 67
 
     def exclusive_disjunction(first_input, second_input):
-        return (first_input, second_input) != (True, True) and return (first_input, second_input) != (False, False)
+        return (first_input, second_input) != (True, True) and (first_input, second_input) != (False, False)
 
 
     def converse_non_implication(first_input, second_input):

@@ -270,7 +270,7 @@ test_attributes_and_methods_of_lists
 how to see the the attributes and methods of an object
 =================================================================================
 
-I want to test the things I can do with lists_. I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of lists_, it is part of `Python's Built-in Functions`_
+I want to test the things I can do with lists_. I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of :ref:`objects<classes>`, it is part of `Python's Built-in Functions`_
 
 =================================================================================
 :red:`RED`: make it fail
@@ -279,17 +279,16 @@ I want to test the things I can do with lists_. I can use the dir_ :ref:`functio
 I add a failing test
 
 .. code-block:: python
+  :lineno-start: 8
+  :emphasize-lines: 3-7
 
-  def test_making_a_list(self):
-      ...
+          self.assertEqual(list(0, 1, 2, 'n'), [0, 1, 2, 'n'])
 
-  def test_attributes_and_methods_of_lists(self):
-      self.assertEqual(
-          dir(list),
-          [
-
-          ]
-      )
+      def test_attributes_and_methods_of_lists(self):
+          self.assertEqual(
+              dir(list),
+              []
+          )
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -303,7 +302,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   Diff is 748 characters long. Set self.maxDiff to None to see it
 
-`maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase`_ :ref:`class <classes>` that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None` it shows the entire difference
+`maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase class`_ that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None` it shows the full difference
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -312,16 +311,15 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 * I add ``self.maxDiff`` to the test then move the terminal_ to the right
 
   .. code-block:: python
+    :lineno-start: 10
     :emphasize-lines: 2
 
-    def test_attributes_and_methods_of_lists(self):
-        self.maxDiff = None
-        self.assertEqual(
-            dir(list),
-            [
-
-            ]
-        )
+        def test_attributes_and_methods_of_lists(self):
+            self.maxDiff = None
+            self.assertEqual(
+                dir(list),
+                []
+            )
 
   the terminal_ shows a long list_ of items. I copy and paste them from the terminal_ then use `find and replace`_ to remove the extra characters
 
@@ -330,32 +328,71 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     results can be different because of the Python_ version
 
   .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 5-55
 
-    def test_attributes_and_methods_of_lists(self):
-        self.maxDiff = None
-        self.assertEqual(
-            dir(list),
-            [
-                '__add__',
-                ...
-                '__subclasshook__',
-                'append',
-                'clear',
-                'copy',
-                'count',
-                'extend',
-                'index',
-                'insert',
-                'pop',
-                'remove',
-                'reverse',
-                'sort'
-            ]
-        )
+        def test_attributes_and_methods_of_lists(self):
+            self.maxDiff = None
+            self.assertEqual(
+                dir(list),
+                [
+                    '__class__',
+                    '__class_getitem__',
+                    '__contains__',
+                    '__delattr__',
+                    '__delitem__',
+                    '__dir__',
+                    '__doc__',
+                    '__eq__',
+                    '__format__',
+                    '__ge__',
+                    '__getattribute__',
+                    '__getitem__',
+                    '__getstate__',
+                    '__gt__',
+                    '__hash__',
+                    '__iadd__',
+                    '__imul__',
+                    '__init__',
+                    '__init_subclass__',
+                    '__iter__',
+                    '__le__',
+                    '__len__',
+                    '__lt__',
+                    '__mul__',
+                    '__ne__',
+                    '__new__',
+                    '__reduce__',
+                    '__reduce_ex__',
+                    '__repr__',
+                    '__reversed__',
+                    '__rmul__',
+                    '__setattr__',
+                    '__setitem__',
+                    '__sizeof__',
+                    '__str__',
+                    '__subclasshook__',
+                    'append',
+                    'clear',
+                    'copy',
+                    'count',
+                    'extend',
+                    'index',
+                    'insert',
+                    'pop',
+                    'remove',
+                    'reverse',
+                    'sort'
+                ]
+            )
 
-  the test passes and I move it back to the bottom. I ignore the names with double underscores (__), then copy and paste the other names to make a TODO list
+  the test passes and I move the terminal_ back to the bottom
+
+* I do not use the names with double underscores (__), then copy and paste the other names to make a TODO list
 
   .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines:
 
     'append',
     'clear',
@@ -372,6 +409,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     # Exceptions seen
     # AssertionError
     # TypeError
+
 
 ----
 
