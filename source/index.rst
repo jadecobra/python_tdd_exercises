@@ -122,6 +122,7 @@ table of contents
   tests and solutions<catalog_of_code>
   learning_models
   review
+  hatches
   what people think of this<reviews>
 
 ----
