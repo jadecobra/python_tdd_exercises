@@ -1063,38 +1063,51 @@ I know :ref:`how to test that an Exception is raised`. As a rule of thumb I writ
 ----
 
 *********************************************************************************
-close the project
+close the exceptions project
 *********************************************************************************
 
 * I close ``test_exceptions.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
-* I deactivate the `virtual environment`_
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/exceptions
-
-* I `change directory`_ to the parent of ``exceptions``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python
+  .../pumping_python
 
   I am back in the ``pumping_python`` directory_
+
+.. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
+
+  * the terminal_ shows
+
+    .. code-block:: shell
+
+      (.venv) ...\pumping_python\type_error
+
+  * I deactivate the `virtual environment`_
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      deactivate
+
+    the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+    .. code-block:: shell
+
+      ...\pumping_python\exceptions
+
+  * I `change directory`_ to the parent of ``exceptions``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      cd ..
+
+    the terminal_ shows
+
+    .. code-block:: shell
+
+      ...\pumping_python
+
+    I am back in the ``pumping_python`` directory_
 
 ----
 
@@ -1102,7 +1115,7 @@ close the project
 test catching ZeroDivisionError in test_calculator.py
 *********************************************************************************
 
-I want to add an exception handler to the :ref:`calculator project<how to make a calculator>` for :ref:`ZeroDivisionError<test_catching_zero_division_error>` in :ref:`test_division`
+I want to add an exception handler to the :ref:`calculator project<how to make a calculator>` for ZeroDivisionError_ in :ref:`test_division`
 
 =================================================================================
 open the project
@@ -1166,7 +1179,7 @@ open the project
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new :ref:`assertion<AssertionError>` to show that the ``divide`` :ref:`function<functions>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error>` in
+I add a new :ref:`assertion<AssertionError>` to show that the ``divide`` :ref:`function<functions>` raises ZeroDivisionError_ in
 
 .. code-block:: python
   :lineno-start: 42
@@ -1185,7 +1198,7 @@ I add a new :ref:`assertion<AssertionError>` to show that the ``divide`` :ref:`f
 
   # Exceptions seen
 
-the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+the terminal_ shows ZeroDivisionError_
 
 .. code-block:: shell
 
@@ -1216,7 +1229,12 @@ close the project
 =================================================================================
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell
@@ -1259,7 +1277,7 @@ I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested t
 * :ref:`TypeError`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError<test_key_error>`
-* :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` and
+* ZeroDivisionError_ and
 * :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
 
 ----

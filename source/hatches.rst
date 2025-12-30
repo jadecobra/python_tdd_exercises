@@ -1,10 +1,16 @@
-.. meta:: :description: Stop procrastinating and master Python with Jacob Itegboje’s beginner-friendly guide. Save time and money while building confidence through practical exercises. :keywords: Jacob Itegboje, learn Python for beginners, Python Test Driven Development, beginner coding guide, fast track Python learning, affordable Python course, TDD Python tutorial, programming for novices
+.. meta:: :description: Today is the day to learn Python with Jacob Itegboje’s beginner-friendly guide. Save time and money while building confidence through practical exercises. :keywords: Jacob Itegboje, learn Python for beginners, Python Test Driven Development, beginner coding guide, fast track Python learning, affordable Python course, TDD Python tutorial, programming for novices
 
 .. include:: /links.rst
 
 #################################################################################
 join a HATCH
 #################################################################################
+
+.. raw:: html
+
+  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/fxPgowISTA4?si=fHnq4SbtySWs696z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+----
 
 If you’ve ever thought to yourself “I will/should learn Python one day”. Today is the day! You can learn with me as your guide/coach for $100
 

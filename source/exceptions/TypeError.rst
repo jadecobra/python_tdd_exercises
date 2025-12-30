@@ -675,9 +675,16 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 * I add the last failing line for this test to ``test_type_error.py``
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 4
+    :lineno-start: 7
+    :emphasize-lines: 11
 
+        def test_type_error_w_the_uncallables(self):
+            src.type_error.none()
+            src.type_error.false()
+            src.type_error.true()
+            src.type_error.an_integer()
+            src.type_error.a_float()
+            src.type_error.a_string()
             src.type_error.a_tuple()
             src.type_error.a_list()
             src.type_error.a_set()
@@ -1122,41 +1129,41 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-  .. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
+.. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
 
-    * the terminal_ shows
+  * the terminal_ shows
 
-      .. code-block:: shell
+    .. code-block:: shell
 
-        (.venv) ...\pumping_python\type_error
+      (.venv) ...\pumping_python\type_error
 
-    * I deactivate the `virtual environment`_
+  * I deactivate the `virtual environment`_
 
-      .. code-block:: shell
-        :emphasize-lines: 1
+    .. code-block:: shell
+      :emphasize-lines: 1
 
-        deactivate
+      deactivate
 
-      the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+    the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-      .. code-block:: shell
+    .. code-block:: shell
 
-        ...\pumping_python\type_error
+      ...\pumping_python\type_error
 
-    * I `change directory`_ to the parent of ``type_error``
+  * I `change directory`_ to the parent of ``type_error``
 
-      .. code-block:: shell
-        :emphasize-lines: 1
+    .. code-block:: shell
+      :emphasize-lines: 1
 
-        cd ..
+      cd ..
 
-      the terminal_ shows
+    the terminal_ shows
 
-      .. code-block:: shell
+    .. code-block:: shell
 
-        ...\pumping_python
+      ...\pumping_python
 
-      I am back in the ``pumping_python`` directory_
+    I am back in the ``pumping_python`` directory_
 
 ----
 
@@ -1164,7 +1171,7 @@ close the project
 test_calculator_raises_type_error
 *********************************************************************************
 
-I want to use TypeError_ with :ref:`exception handlers<how to use try...except...else>` to make sure that the :ref:`calculator program<how to make a calculator>` only works with numbers. Calculators in the real world only work with numbers
+I want to use TypeError_ with :ref:`exception handlers<how to use try...except...else>` to make sure that the :ref:`calculator program<how to make a calculator>` only works with numbers, the way a Calculator would in the real world.
 
 =================================================================================
 open the project
@@ -1284,7 +1291,7 @@ the test passes
 * I add a failing line for :ref:`division<test_division>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 57
     :emphasize-lines: 4
 
         def test_calculator_raises_type_error_when_given_none(self):
@@ -1482,6 +1489,8 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.multiply('1', '1')
 
+  the test passes
+
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
@@ -1520,9 +1529,9 @@ the test passes
 how to test if something is an instance of an object in a program
 ---------------------------------------------------------------------------------
 
-I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the `assertIsInstance method`_ from when I tested :ref:`None`
+I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the `assertIsInstance method`_ from when I tested :ref:`None`, it checks if one thing is an instance or child of a :ref:`class<classes>`
 
-* I change the assertEqual_ in ``test_calculator_with_strings`` to assertRaises_ in ``test_calculator.py``
+* I change the assertEqual_ to assertRaises_ in ``test_calculator_with_strings`` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 67
@@ -1550,9 +1559,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):
-            raise TypeError(
-                'Excuse me?! I only work with numbers, Please try again...'
-            )
+            raise TypeError
         else:
             return first_input + second_input
 
@@ -1560,14 +1567,14 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
   .. NOTE::
 
-    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance (child) of the :ref:`object<classes>` it is given as the second input. It is part of `Python's Built-in Functions`_
+    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance (child) of the :ref:`class<classes>` it is given as the second input. It is part of `Python's Built-in Functions`_
     - the :ref:`if statement<if statements>` ``if isinstance(first_input, str) or isinstance(second_input, str):`` is :ref:`True<test_what_is_true>` if
 
-      * ``first_input`` is a string_
-      * ``second_input`` is a string_
-      * the two inputs are strings_
+      * ``first_input`` is a string_ and ``second_input`` is NOT a string_
+      * ``first_input`` is NOT a string_ and ``second_input`` is a string_
+      * ``first_input`` is a string_ and ``second_input`` is a string_
 
-      the statement is only :ref:`False<test_what_is_false>` if the two inputs are not strings_. Remember :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`, which only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`?
+      the statement is only :ref:`False<test_what_is_false>` if ``first_input`` is NOT a string_ and ``second_input`` is NOT a string_. This is :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`, which only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
 
 * I change the name of the test to be clearer
 
@@ -1609,7 +1616,7 @@ I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addit
       def test_calculator_raises_type_error_when_given_none(self):
           self.assertEqual(
               src.calculator.add(None, None),
-              'Excuse me?! I only work with numbers, Please try again...'
+              'Excuse me?! I only work with numbers. Please try again...'
           )
           with self.assertRaises(TypeError):
               src.calculator.divide(None, None)
@@ -1632,18 +1639,16 @@ I add an :ref:`exception handler<how to use try...except...else>` to the `else c
 
 .. code-block:: python
   :lineno-start: 16
-  :emphasize-lines: 7-10
+  :emphasize-lines: 4-7
 
   def add(first_input, second_input):
       if isinstance(first_input, str) or isinstance(second_input, str):
-          raise TypeError(
-              'Excuse me?! I only work with numbers, Please try again...'
-          )
+          raise TypeError
       else:
           try:
               return first_input + second_input
           except TypeError:
-              return 'Excuse me?! I only work with numbers, Please try again...'
+              return 'Excuse me?! I only work with numbers. Please try again...'
 
 the test passes
 
@@ -1655,12 +1660,12 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 70
-    :emphasize-lines: 2, 4-5
+    :emphasize-lines: 2-5
 
         def test_calculator_raises_type_error_when_given_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             with self.assertRaises(TypeError):
                 src.calculator.divide('1', '1')
@@ -1669,7 +1674,7 @@ the test passes
 
   .. code-block:: shell
 
-    TypeError: Excuse me?! I only work with numbers, Please try again...
+    TypeError
 
 * I change the `raise statement`_ to a `return statement`_ in the :ref:`add function<test_addition>` in ``calculator.py``
 
@@ -1679,29 +1684,29 @@ the test passes
 
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):
-            return 'Excuse me?! I only work with numbers, Please try again...'
+            return 'Excuse me?! I only work with numbers. Please try again...'
         else:
             try:
                 return first_input + second_input
             except TypeError:
-                return 'Excuse me?! I only work with numbers, Please try again...'
+                return 'Excuse me?! I only work with numbers. Please try again...'
 
   the test passes
 
-* I make the same change to the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_when_given_strings`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_when_given_strings`` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 69
     :emphasize-lines: 6-9
 
         def test_calculator_raises_type_error_when_given_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.divide('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
 
   the terminal_ shows TypeError_
@@ -1722,7 +1727,7 @@ the test passes
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
         except TypeError:
-            return 'Excuse me?! I only work with numbers, Please try again...'
+            return 'Excuse me?! I only work with numbers. Please try again...'
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1741,11 +1746,11 @@ the test passes
     def test_calculator_raises_type_error_when_given_none(self):
         self.assertEqual(
             src.calculator.add(None, None),
-            'Excuse me?! I only work with numbers, Please try again...'
+            'Excuse me?! I only work with numbers. Please try again...'
         )
         self.assertEqual(
             src.calculator.divide(None, None),
-            'Excuse me?! I only work with numbers, Please try again...'
+            'Excuse me?! I only work with numbers. Please try again...'
         )
 
   the test passes
@@ -1754,16 +1759,16 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 5-6, 8
+    :emphasize-lines: 5-8
 
 
             self.assertEqual(
                 src.calculator.divide(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.multiply(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
 
   the terminal_ shows TypeError_
@@ -1782,7 +1787,7 @@ the test passes
         try:
             return first_input * second_input
         except TypeError:
-            return 'Excuse me?! I only work with numbers, Please try again...'
+            return 'Excuse me?! I only work with numbers. Please try again...'
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1793,16 +1798,16 @@ the test passes
 * I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in ``test_calculator_raises_type_error_when_given_strings`` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 5-6, 8
+    :lineno-start: 78
+    :emphasize-lines: 5-8
 
             self.assertEqual(
                 src.calculator.divide('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.multiply('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
 
   the test passes
@@ -1810,25 +1815,16 @@ the test passes
 * I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator_raises_type_error_when_given_strings``
 
   .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 14-15, 17
+    :lineno-start: 84
+    :emphasize-lines: 5-8
 
-        def test_calculator_raises_type_error_when_given_strings(self):
-            self.assertEqual(
-                src.calculator.add('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
-            )
-            self.assertEqual(
-                src.calculator.divide('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
-            )
             self.assertEqual(
                 src.calculator.multiply('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.subtract('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
 
 
@@ -1850,7 +1846,7 @@ the test passes
         try:
             return first_input - second_input
         except TypeError:
-            return 'Excuse me?! I only work with numbers, Please try again...'
+            return 'Excuse me?! I only work with numbers. Please try again...'
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1861,25 +1857,16 @@ the test passes
 * I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator_raises_type_error_when_given_none`` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 14-15, 17
+    :lineno-start: 66
+    :emphasize-lines: 5-8
 
-        def test_calculator_raises_type_error_when_given_none(self):
-            self.assertEqual(
-                src.calculator.add(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
-            )
-            self.assertEqual(
-                src.calculator.divide(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
-            )
             self.assertEqual(
                 src.calculator.multiply(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.subtract(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
 
 
@@ -1887,7 +1874,12 @@ the test passes
 
   the test passes
 
-* That was a lot of doing the same thing over and over again. ``test_calculator_raises_type_error_when_given_none`` and ``test_calculator_raises_type_error_when_given_strings`` both look the same and the :ref:`calculator<how to make a calculator>` no longer raises TypeError_ when any of the inputs are NOT a number. I remove the name of ``test_calculator_raises_type_error_when_given_strings`` to make its :ref:`assertions<what is an assertion?>` part of ``test_calculator_raises_type_error_when_given_none``
+  That was a lot of doing the same thing over and over again.
+
+  - ``test_calculator_raises_type_error_when_given_none`` and ``test_calculator_raises_type_error_when_given_strings`` both look the same
+  - the :ref:`calculator<how to make a calculator>` no longer raises TypeError_ when any of the inputs are NOT a number
+
+* I remove the name of ``test_calculator_raises_type_error_when_given_strings`` to make its :ref:`assertions<what is an assertion?>` part of ``test_calculator_raises_type_error_when_given_none``
 
   .. code-block:: python
     :lineno-start: 70
@@ -1895,23 +1887,23 @@ the test passes
 
             self.assertEqual(
                 src.calculator.subtract(None, None),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.add('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.divide('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.multiply('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
                 src.calculator.subtract('1', '1'),
-                'Excuse me?! I only work with numbers, Please try again...'
+                'Excuse me?! I only work with numbers. Please try again...'
             )
 
 
@@ -1928,14 +1920,15 @@ the test passes
 
   the tests are still green
 
-* I have the same error message 8 times in this test. I can use a :ref:`variable<what is a variable?>` to make it better
+* I have the same error message 8 times in this test. I use a :ref:`variable<what is a variable?>` to make it better
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 2, 5, 9, 13, 17, 21, 25, 29, 33
+    :emphasize-lines: 2, 6, 10, 14, 18, 22, 26, 30, 34
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'Excuse me?! I only work with numbers, Please try again...'
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
             self.assertEqual(
                 src.calculator.add(None, None),
                 error_message
@@ -1969,7 +1962,7 @@ the test passes
                 error_message
             )
 
-  still green. All these tests :ref:`assertions<what is an assertion?>` the same
+  still green. All these :ref:`assertions<what is an assertion?>` look the same, they check that the :ref:`calculator<how to make a calculator>` :ref:`functions` return an error message when they get input that is NOT a number
 
   .. code-block:: python
 
@@ -1994,7 +1987,7 @@ All the :ref:`functions` in the :ref:`calculator program<how to make a calculato
   try:
       something
   except TypeError:
-      return 'Excuse me?! I only work with numbers, Please try again...'
+      return 'Excuse me?! I only work with numbers. Please try again...'
 
 the :ref:`divide function<test_division>` is different because it has another :ref:`except clause<how to use try...except...else>`
 
@@ -2009,16 +2002,16 @@ the other part that is different for all the :ref:`functions` are the calculatio
 
   return first_input - second_input
   return first_input * second_input
-  return first_input /
+  return first_input / second_input
   return first_input + second_input
 
 =================================================================================
 what is a decorator function?
 =================================================================================
 
-A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions` as input and returns a :ref:`function<functions>`. I can use it to remove the :ref:`exception handler<how to use try...except...else>` that is the same in all of the :ref:`calculator functions<how to make a calculator>`
+A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<functions>` as input and returns a :ref:`function<functions>`. I can use it to remove the :ref:`exception handler<how to use try...except...else>` that is the same in all of the :ref:`calculator functions<how to make a calculator>`
 
-* I add a new :ref:`function<functions>` to ``calculator.py``
+* I add a new :ref:`function<functions>` add the top of ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -2029,7 +2022,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
             try:
                 return function(first_input, second_input)
             except TypeError:
-                return 'Excuse me?! I only work with numbers, Please try again...'
+                return 'Excuse me?! I only work with numbers. Please try again...'
         return wrapper
 
 
@@ -2062,6 +2055,9 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
     def subtract(first_input, second_input):
         return first_input - second_input
 
+
+    def multiply(first_input, second_input):
+
   still green
 
 * I do the same thing with the :ref:`multiply function<test_multiplication>`
@@ -2086,6 +2082,9 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
     def multiply(first_input, second_input):
         return first_input * second_input
 
+
+    def divide(first_input, second_input):
+
   the tests are still passing
 
 * on to the :ref:`divide function<test_functions>`
@@ -2103,8 +2102,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
 * I remove the :ref:`except clause<how to use try...except...else>` for TypeError_
 
   .. code-block:: python
-    :lineno-start: 2
-    :emphasize-lines: 3-6
+    :lineno-start: 20
 
     @only_takes_numbers
     def divide(first_input, second_input):
@@ -2113,9 +2111,12 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
         except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
 
+
+    def add(first_number, second_input):
+
   all the tests are still green
 
-* one more to go, I wrap the :ref:`add function<test_addition>` with the ``only_takes_numbers`` :ref:`function`
+* one more to go, I wrap the :ref:`add function<test_addition>` with the ``only_takes_numbers`` :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -2131,22 +2132,22 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
 
   .. code-block:: python
     :lineno-start: 28
-    :emphasize-lines: 5
+    :emphasize-lines: 6
 
     @only_takes_numbers
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):
-            return 'Excuse me?! I only work with numbers, Please try again...'
+            return 'Excuse me?! I only work with numbers. Please try again...'
         else:
             return first_input + second_input
 
   green! Lovely!
 
-* I can have fun and make a :ref:`function<functions>` for the condition in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
+* I can make a :ref:`function<functions>` for the condition in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 28
-    :emphasize-lines: 1-2, 8
+    :emphasize-lines: 1-2, 7
 
     def is_string(something):
         return isinstance(something, str)
@@ -2155,7 +2156,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
     @only_takes_numbers
     def add(first_input, second_input):
         if is_string(first_input) or is_string(second_input):
-            return 'Excuse me?! I only work with numbers, Please try again...'
+            return 'Excuse me?! I only work with numbers. Please try again...'
         else:
             return first_input + second_input
 
@@ -2168,7 +2169,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
       isinstance(first_input, str)
       isinstance(second_input, str):
 
-  - it adds 2 lines of code to remove 6 characters. WOW!
+  - it also adds 2 lines of code to remove 6 characters. WOW!
 
 * I can make a :ref:`function<functions>` for the whole :ref:`if statement<if statements>` in the :ref:`add function<test_addition>`
 
@@ -2183,7 +2184,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
     @only_takes_numbers
     def add(first_input, second_input):
         if one_input_is_a_string(first_input, second_input):
-            return 'Excuse me?! I only work with numbers, Please try again...'
+            return 'Excuse me?! I only work with numbers. Please try again...'
         else:
             return first_input + second_input
 
@@ -2193,7 +2194,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
   - this makes it easier to change the :ref:`condition<if statements>` later without touching the :ref:`add function<test_addition>`
   - it still adds 2 lines of code
 
-* I can also make a decorator :ref:`function<functions>` for the `if statement<if statements>` to practice making them
+* I can also make a decorator :ref:`function<functions>` for the :ref:`if statement<if statements>` to practice making a decorator :ref:`function<functions>`
 
   .. code-block:: python
     :linenos:
@@ -2202,7 +2203,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
     def reject_strings(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'Excuse me?! I only work with numbers, Please try again...'
+                return 'Excuse me?! I only work with numbers. Please try again...'
             else:
                 return function(first_input, second_input)
         return wrapper
@@ -2240,50 +2241,195 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`functions`
 
         def wrapper(first_input, second_input):
             ...
-            return 'Excuse me?! I only work with numbers, Please try again...'
+            return 'Excuse me?! I only work with numbers. Please try again...'
             ...
             return function(first_input, second_input)
         return wrapper
 
-  I add the :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<functions>`
+  I make a new :ref:`function<functions>` that has the :ref:`if statement<if statements>` from ``reject_strings`` and the :ref:`exception handler<how to use try...except...else>` from ``only_takes_numbers``
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 2-8
+    :linenos:
+    :emphasize-lines: 1-10
 
-    def only_takes_numbers(function):
+    def only_takes_numbers_and_rejects_strings(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'Excuse me?! I only work with numbers, Please try again...'
+                return 'Excuse me?! I only work with numbers. Please try again...'
             else:
                 try:
                     return function(first_input, second_input)
                 except TypeError:
-                    return 'Excuse me?! I only work with numbers, Please try again...'
+                    return 'Excuse me?! I only work with numbers. Please try again...'
         return wrapper
+
+
+    def reject_strings(function):
+
+* I use the new :ref:`function<functions>` to wrap the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 1
+
+    @only_takes_numbers_and_rejects_strings
+    @reject_strings
+    @only_takes_numbers
+    def add(first_input, second_input):
+        return first_input + second_input
 
   the test is still green
 
-* I remove the ``reject_strings`` decoration from the :ref:`add function<test_addition>`
+* I remove the other wrappers from the :ref:`add function<test_addition>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 49
 
+    @only_takes_numbers_and_rejects_strings
+    def add(first_input, second_input):
+        return first_input + second_input
+
+  still green
+
+* I wrap the other :ref:`functions<functions>` with ``only_takes_numbers_and_reject_strings``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 1, 7, 13,
+
+    @only_takes_numbers_and_rejects_strings
+    @only_takes_numbers
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @only_takes_numbers_and_rejects_strings
+    @only_takes_numbers
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @only_takes_numbers_and_rejects_strings
+    @only_takes_numbers
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'undefined: I cannot divide by 0'
+
+
+    @only_takes_numbers_and_rejects_strings
+    def add(first_input, second_input):
+
+  the terminal_ shows green
+
+* I remove ``only_takes_numbers`` from each :ref:`function`
+
+  .. code-block:: python
+    :lineno-start: 31
+
+    @only_takes_numbers_and_rejects_strings
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @only_takes_numbers_and_rejects_strings
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @only_takes_numbers_and_rejects_strings
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'undefined: I cannot divide by 0'
+
+
+    @only_takes_numbers_and_rejects_strings
+    def add(first_input, second_input):
+        return first_input + second_input
+
+  the test is still green
+
+* I remove the ``reject_strings`` and ``only_takes_numbers`` :ref:`functions`
+
+  .. code-block:: python
+    :linenos:
+
+    def only_takes_numbers_and_rejects_strings(function):
+        def wrapper(first_input, second_input):
+            if isinstance(first_input, str) or isinstance(second_input, str):
+                return 'Excuse me?! I only work with numbers. Please try again...'
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return 'Excuse me?! I only work with numbers. Please try again...'
+        return wrapper
+
+
+    @only_takes_numbers_and_rejects_strings
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @only_takes_numbers_and_rejects_strings
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @only_takes_numbers_and_rejects_strings
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'undefined: I cannot divide by 0'
+
+
+    @only_takes_numbers_and_rejects_strings
+    def add(first_input, second_input):
+        return first_input + second_input
+
+* I change the name of the new decorator :ref:`function<functions>` to make it easier
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1, 13, 18, 23, 31
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            if isinstance(first_input, str) or isinstance(second_input, str):
+                return 'Excuse me?! I only work with numbers. Please try again...'
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return 'Excuse me?! I only work with numbers. Please try again...'
+        return wrapper
+
+
+    @only_takes_numbers
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @only_takes_numbers
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @only_takes_numbers
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
             return 'undefined: I cannot divide by 0'
 
 
     @only_takes_numbers
     def add(first_input, second_input):
         return first_input + second_input
-
-  green
-
-* I remove the ``reject_strings`` :ref:`function<functions>`
-
-  .. code-block:: python
-    :linenos:
-
-    def only_takes_numbers(function):
 
   all the tests are still passing. The world is my oyster!
 
