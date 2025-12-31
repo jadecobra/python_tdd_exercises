@@ -539,7 +539,7 @@ how to make make a Python file to hold the tests in the 'tests' folder
 
       .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name but it is easier to stick with convention for this concept
 
-    * ``self.assertFalse(True)`` is an :ref:`assertion<AssertionError>`
+    * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>`
 
       - assertFalse_ is a :ref:`method<functions>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input

@@ -305,7 +305,7 @@ requirements
     # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -413,7 +413,7 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I make the :ref:`assertion<AssertionError>` :ref:`True<test_what_is_true>` with the `assertIsNotNone method`_
+I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsNotNone method`_
 
 .. code-block:: python
   :lineno-start: 10
@@ -439,7 +439,7 @@ the test passes
 
   Still a repetition of what I learned in :ref:`AssertionError`
 
-* I add another failing :ref:`assertion<AssertionError>` for the other :ref:`boolean<booleans>`
+* I add another failing :ref:`assertion<what is an assertion?>` for the other :ref:`boolean<booleans>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -454,7 +454,7 @@ the test passes
 
     AssertionError: True is not None
 
-* I make the :ref:`assertion<AssertionError>` :ref:`True<test_what_is_true>` with assertIsNotNone_
+* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
     :lineno-start: 11
@@ -503,7 +503,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<functions>` I can use to test
 
   :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
 
-* I make the :ref:`assertion<AssertionError>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``is False a child of the bool class?``
+* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``is False a child of the bool class?``
 
   .. code-block:: python
     :lineno-start: 12
@@ -670,7 +670,7 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 18
@@ -1150,7 +1150,7 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -1278,7 +1278,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add a failing :ref:`assertion<AssertionError>`
+* I add a failing :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1440,7 +1440,7 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I change the :ref:`assertion<AssertionError>` to make the statement :ref:`True<test_what_is_true>`
+I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 49
@@ -1626,7 +1626,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 56

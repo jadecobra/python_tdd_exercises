@@ -301,7 +301,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -609,7 +609,7 @@ how to test if something is None
     # Exceptions seen
     # AssertionError
 
-* I add a new :ref:`assertion<AssertionError>` to compare :ref:`None` with :ref:`False<test_what_is_false>`, another simple :ref:`data structure<data structures>`
+* I add a new :ref:`assertion<what is an assertion?>` to compare :ref:`None` with :ref:`False<test_what_is_false>`, another simple :ref:`data structure<data structures>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -674,7 +674,7 @@ how to test if something is None
     # Exceptions seen
     # AssertionError
 
-* I add another :ref:`assertion<AssertionError>` to compare :ref:`None` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
+* I add another :ref:`assertion<what is an assertion?>` to compare :ref:`None` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
 
   .. code-block:: python
     :lineno-start: 16

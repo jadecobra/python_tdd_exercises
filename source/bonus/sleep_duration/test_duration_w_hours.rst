@@ -98,7 +98,7 @@ requirements
 :green:`GREEN`: make it pass
 *********************************************************************************
 
-* I add :ref:`None` as the first and second arguments of the :ref:`assertion<AssertionError>`
+* I add :ref:`None` as the first and second arguments of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -580,7 +580,7 @@ the test passes
 
         self.assertEqual(split, ['01', '23'])
 
-  the terminal_ still shows passing tests. I add an :ref:`assertion<AssertionError>` for indexing the :ref:`list <lists>`
+  the terminal_ still shows passing tests. I add an :ref:`assertion<what is an assertion?>` for indexing the :ref:`list <lists>`
 
   .. code-block:: python
 
@@ -601,7 +601,7 @@ the test passes
 
   and it passes
 
-* I add another :ref:`assertion<AssertionError>` for the minutes
+* I add another :ref:`assertion<what is an assertion?>` for the minutes
 
   .. code-block:: python
 
@@ -688,7 +688,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>` to test a bigger number
+* I add another :ref:`assertion<what is an assertion?>` to test a bigger number
 
   .. code-block:: python
 

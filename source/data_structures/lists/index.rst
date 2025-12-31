@@ -4,12 +4,19 @@
 
 .. include:: ../../links.rst
 
-.. _clear: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _copy: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _pop: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _append: more_on_lists_
+.. _append method: more_on_lists_
+.. _clear: more_on_lists_
+.. _clear method: more_on_lists_
+.. _copy: more_on_lists_
+.. _copy method: more_on_lists_
+.. _pop: more_on_lists_
+.. _pop method: more_on_lists_
 .. _list: https://docs.python.org/3/library/stdtypes.html#list
-.. _lists: https://docs.python.org/3/library/stdtypes.html#list
+.. _lists: list_
 .. _IndexError: https://docs.python.org/3/library/exceptions.html#IndexError
+
 
 #################################################################################
 lists
@@ -208,7 +215,7 @@ the test passes. This is how to make an empty list_
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>`, this time with input to the list_ constructor_, I want to make a list_ that has things in it
+* I add another :ref:`assertion<what is an assertion?>`, this time with input to the list_ constructor_, I want to make a list_ that has things in it
 
   .. code-block:: python
     :lineno-start: 7
@@ -329,70 +336,71 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   .. code-block:: python
     :lineno-start: 10
-    :emphasize-lines: 5-55
+    :emphasize-lines: 5-54
 
         def test_attributes_and_methods_of_lists(self):
-            self.maxDiff = None
-            self.assertEqual(
-                dir(list),
-                [
-                    '__class__',
-                    '__class_getitem__',
-                    '__contains__',
-                    '__delattr__',
-                    '__delitem__',
-                    '__dir__',
-                    '__doc__',
-                    '__eq__',
-                    '__format__',
-                    '__ge__',
-                    '__getattribute__',
-                    '__getitem__',
-                    '__getstate__',
-                    '__gt__',
-                    '__hash__',
-                    '__iadd__',
-                    '__imul__',
-                    '__init__',
-                    '__init_subclass__',
-                    '__iter__',
-                    '__le__',
-                    '__len__',
-                    '__lt__',
-                    '__mul__',
-                    '__ne__',
-                    '__new__',
-                    '__reduce__',
-                    '__reduce_ex__',
-                    '__repr__',
-                    '__reversed__',
-                    '__rmul__',
-                    '__setattr__',
-                    '__setitem__',
-                    '__sizeof__',
-                    '__str__',
-                    '__subclasshook__',
-                    'append',
-                    'clear',
-                    'copy',
-                    'count',
-                    'extend',
-                    'index',
-                    'insert',
-                    'pop',
-                    'remove',
-                    'reverse',
-                    'sort'
-                ]
-            )
+                self.maxDiff = None
+                self.assertEqual(
+                    dir(list),
+                    [
+                        '__add__',
+                        '__class__',
+                        '__class_getitem__',
+                        '__contains__',
+                        '__delattr__',
+                        '__delitem__',
+                        '__dir__',
+                        '__doc__',
+                        '__eq__',
+                        '__format__',
+                        '__ge__',
+                        '__getattribute__',
+                        '__getitem__',
+                        '__getstate__',
+                        '__gt__',
+                        '__hash__',
+                        '__iadd__',
+                        '__imul__',
+                        '__init__',
+                        '__init_subclass__',
+                        '__iter__',
+                        '__le__',
+                        '__len__',
+                        '__lt__',
+                        '__mul__',
+                        '__ne__',
+                        '__new__',
+                        '__reduce__',
+                        '__reduce_ex__',
+                        '__repr__',
+                        '__reversed__',
+                        '__rmul__',
+                        '__setattr__',
+                        '__setitem__',
+                        '__sizeof__',
+                        '__str__',
+                        '__subclasshook__',
+                        'append',
+                        'clear',
+                        'copy',
+                        'count',
+                        'extend',
+                        'index',
+                        'insert',
+                        'pop',
+                        'remove',
+                        'reverse',
+                        'sort'
+                    ]
+                )
 
   the test passes and I move the terminal_ back to the bottom
 
-* I do not use the names with double underscores (__), then copy and paste the other names to make a TODO list
+* I copy and paste the names that do NOT have double underscores (__) to make a TODO list
 
   .. code-block:: python
     :lineno-start: 67
-    :emphasize-lines:
+    :emphasize-lines: 1-11
 
     'append',
     'clear',
@@ -405,6 +413,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
     'remove',
     'reverse',
     'sort'
+
 
     # Exceptions seen
     # AssertionError
@@ -421,16 +430,22 @@ test_append_adds_item_to_end_of_a_list
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the append_ :ref:`method<functions>`
+I add a test for the `append method`_
 
 .. code-block:: python
+  :lineno-start: 62
+  :emphasize-lines: 5-7
 
-    def test_attributes_and_methods_of_lists(self):
-        ...
+                    'sort'
+                ]
+            )
 
-    def test_append(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.append())
+        def test_append(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.append())
+
+
+    'append',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -445,22 +460,25 @@ the terminal_ shows :ref:`TypeError`
 I add ``0`` as input
 
 .. code-block:: python
+  :lineno-start: 68
+  :emphasize-lines: 1
 
-  self.assertIsNone(a_list.append(0))
+          self.assertIsNone(a_list.append(0))
 
-the terminal_ shows green, the append_ :ref:`method<functions>` returns :ref:`None` when called
+the terminal_ shows green, the `append method`_ returns :ref:`None` when called
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>` to see what append_ did to the list_
+* I add another :ref:`assertion<what is an assertion?>` to see what append_ did to the list_
 
   .. code-block:: python
+    :lineno-start: 68
     :emphasize-lines: 2
 
-    self.assertIsNone(a_list.append(0))
-    self.assertEqual(a_list, [0, 1, 2, 'n'])
+            self.assertIsNone(a_list.append(0))
+            self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -468,19 +486,25 @@ the terminal_ shows green, the append_ :ref:`method<functions>` returns :ref:`No
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
 
-  the :ref:`method<functions>` added a value. I change the expectation to match the values in the terminal_
+  the `append method`_ added a value
+
+* I change the expectation to match the values in the terminal_
 
   .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [0, 1, 2, 'n', 0])
+            self.assertEqual(a_list, [0, 1, 2, 'n', 0])
 
   the test passes
 
 * I change the value given to append_
 
   .. code-block:: python
+    :lineno-start: 68
+    :emphasize-lines: 1
 
-    self.assertIsNone(a_list.append('n+1'))
+            self.assertIsNone(a_list.append('n+1'))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -488,27 +512,31 @@ the terminal_ shows green, the append_ :ref:`method<functions>` returns :ref:`No
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 'n+1'] != [0, 1, 2, 'n', 0]
 
-  I change the expectation to match
+* I change the expectation to match
 
   .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
+            self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
   the test passes
 
 * I change the name of the test
 
   .. code-block:: python
+    :emphasize-lines: 66
     :emphasize-lines: 1
 
-    def test_append_adds_item_to_end_of_a_list(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.append('n+1'))
-        self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
+        def test_append_adds_item_to_end_of_a_list(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.append('n+1'))
+            self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
 * I remove append_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 72
 
     'clear',
     'copy',
@@ -527,30 +555,35 @@ the terminal_ shows green, the append_ :ref:`method<functions>` returns :ref:`No
 test_clear_empties_a_list
 *********************************************************************************
 
-I add a test for the clear_ :ref:`method<functions>`
+I add a test for the `clear method`_
 
 .. code-block:: python
+  :lineno-start: 69
+  :emphasize-lines: 3-5
 
-  def test_append_adds_item_to_end_of_a_list(self):
-      ...
+          self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
-  def test_clear(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.clear())
+      def test_clear(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.clear())
 
-the terminal_ shows green. The clear_ :ref:`method<functions>` returns :ref:`None` when called
+
+  'clear',
+
+the terminal_ shows green. The `clear method`_ returns :ref:`None` when called
 
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add an :ref:`assertion<AssertionError>` to show what it did to the list_
+I add an :ref:`assertion<what is an assertion?>` to clear_ did to the list_
 
 .. code-block:: python
+  :lineno-start: 73
   :emphasize-lines: 2
 
-  self.assertIsNone(a_list.clear())
-  self.assertEqual(a_list, [0, 1, 2, 'n'])
+          self.assertIsNone(a_list.clear())
+          self.assertEqual(a_list, [0, 1, 2, 'n'])
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -567,8 +600,10 @@ the list_ is now empty
 I change the values to match
 
 .. code-block:: python
+  :lineno-start: 74
+  :emphasize-lines: 1
 
-  self.assertEqual(a_list, [])
+          self.assertEqual(a_list, [])
 
 the test passes
 
@@ -576,19 +611,24 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I change the name of the test to be clearer
+* I change the name of the test to make it "clearer"
 
   .. code-block:: python
+    :lineno-start: 71
     :emphasize-lines: 1
 
-    def test_clear_empties_a_list(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.clear())
-        self.assertEqual(a_list, [])
+        def test_clear_empties_a_list(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.clear())
+            self.assertEqual(a_list, [])
 
 * I remove clear_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 74
+
+            self.assertEqual(a_list, [])
+
 
     'copy',
     'count',
@@ -613,13 +653,17 @@ test_copy_a_list
 I add another test
 
 .. code-block:: python
+  :lineno-start: 74
+  :emphasize-lines: 3-5
 
-  def test_clear_empties_a_list(self):
-      ...
+          self.assertEqual(a_list, [])
 
-  def test_copy(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.copy())
+      def test_copy(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.copy())
+
+
+  'copy',
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -633,13 +677,14 @@ the :ref:`method<functions>` returns a copy of the list_
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the list_ to the :ref:`assertion<AssertionError>`
+I add the list_ to the :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
+  :lineno-start: 77
   :emphasize-lines: 2
 
-  a_list = [0, 1, 2, 'n']
-  self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -647,7 +692,9 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 'n'] is not None : [0, 1, 2, 'n']
 
-the values are the same, I change assertIsNone_ to assertEqual_
+the values are the same, the problem is assertIsNone_ only takes 1 input and I gave it 2
+
+I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
   :emphasize-lines: 2
@@ -753,7 +800,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* ``0`` is in the list_ 1 time, I add ``1`` to it 2 more times then add an :ref:`assertion<AssertionError>` for it
+* ``0`` is in the list_ 1 time, I add ``1`` to it 2 more times then add an :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
     :emphasize-lines: 2, 4
@@ -876,7 +923,7 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>` to see what it did to the list_
+* I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
 
@@ -1068,7 +1115,7 @@ the test passes
 
   the test is green again
 
-* I add a new :ref:`assertion<AssertionError>`
+* I add a new :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -1094,7 +1141,7 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1115,7 +1162,7 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1136,7 +1183,7 @@ the test passes
 
   the test is green again
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1165,7 +1212,7 @@ the test passes
     def test_index(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
 
-  the terminal_ still shows green. I add an :ref:`assertion<AssertionError>`
+  the terminal_ still shows green. I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1284,7 +1331,7 @@ the test is green
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add an :ref:`assertion<AssertionError>`
+* I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1326,14 +1373,14 @@ the test is green
 
   the test is green again
 
-* I add another :ref:`assertion<AssertionError>` to see what happens when I insert_ an item in the middle of the list
+* I add another :ref:`assertion<what is an assertion?>` to see what happens when I insert_ an item in the middle of the list
 
   .. code-block:: python
 
     self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
     self.assertIsNone(a_list.insert(3, 1.5))
 
-  the terminal_ shows green. I add an :ref:`assertion<AssertionError>` to see what it did to the list
+  the terminal_ shows green. I add an :ref:`assertion<what is an assertion?>` to see what it did to the list
 
   .. code-block:: python
 
@@ -1433,7 +1480,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add an :ref:`assertion<AssertionError>`
+* I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1454,7 +1501,7 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1474,7 +1521,7 @@ the test passes
     self.assertEqual(a_list, [0, 1, 2])
     self.assertEqual(a_list.pop(), 2)
 
-  the test passes. I add another :ref:`assertion<AssertionError>`
+  the test passes. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1558,7 +1605,7 @@ the terminal_ shows green, the remove_ :ref:`method<functions>` returns :ref:`No
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add an :ref:`assertion<AssertionError>`
+* I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1669,7 +1716,7 @@ I add the next test
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.reverse())
 
-the terminal_ shows green. This :ref:`method<functions>` returns :ref:`None`. I add an :ref:`assertion<AssertionError>` to see what it did to the list_
+the terminal_ shows green. This :ref:`method<functions>` returns :ref:`None`. I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
 .. code-block:: python
 
@@ -1760,7 +1807,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add a new list_ and another :ref:`assertion<AssertionError>`
+* I add a new list_ and another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :emphasize-lines: 5,6
@@ -1773,7 +1820,7 @@ the test passes
         self.assertIsNone(a_list.sort())
 
 
-  the terminal_ still shows green, sort_ returns :ref:`None` when called. I add another :ref:`assertion<AssertionError>` to see what it did to the list_
+  the terminal_ still shows green, sort_ returns :ref:`None` when called. I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
 
@@ -1916,7 +1963,7 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1937,7 +1984,7 @@ the test passes
 
   the terminal_ shows green again
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1998,7 +2045,7 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -2019,7 +2066,7 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -2146,7 +2193,7 @@ the test passes. I give two values in square brackets(``[]``), separated by a ``
 
   the terminal_ shows green again
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 

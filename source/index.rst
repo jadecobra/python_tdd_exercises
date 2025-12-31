@@ -118,6 +118,7 @@ table of contents
   how_to/index
   catalog of tests<catalog_of_tests>
   all the code in this book<catalog_of_code>
+  questions the book answers<reviews>
   learning_models
   review
   hatches

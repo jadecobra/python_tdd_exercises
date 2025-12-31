@@ -479,7 +479,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the terminal_ shows :ref:`AttributeError`
 
-* and I change each :ref:`assertion<AssertionError>` to the right value until they all pass
+* and I change each :ref:`assertion<what is an assertion?>` to the right value until they all pass
 
 ----
 
@@ -661,7 +661,7 @@ the terminal_ shows :ref:`AttributeError`
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* I add another :ref:`assertion<AssertionError>` to ``test_making_a_class_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
+* I add another :ref:`assertion<what is an assertion?>` to ``test_making_a_class_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
 
   .. code-block:: python
 
@@ -717,7 +717,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 

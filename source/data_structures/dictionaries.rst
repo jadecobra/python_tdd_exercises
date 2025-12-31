@@ -138,7 +138,7 @@ the test passes. These are two ways to make an empty dictionary_ one
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>`, this time with input
+* I add another :ref:`assertion<what is an assertion?>`, this time with input
 
   .. code-block:: python
     :lineno-start: 6
@@ -297,7 +297,7 @@ the tests passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key<test
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-I add an :ref:`assertion<AssertionError>` for the :ref:`other boolean<test_what_is_true>`
+I add an :ref:`assertion<what is an assertion?>` for the :ref:`other boolean<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 13
@@ -806,7 +806,7 @@ test_clear_empties_a_dictionary
 
   the terminal_ shows green. The clear_ :ref:`method<functions>` returns :ref:`None`
 
-* I add an :ref:`assertion<AssertionError>` to see what clear_ did to the dictionary_
+* I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the dictionary_
 
   .. code-block:: python
     :lineno-start: 98
@@ -915,7 +915,7 @@ this :ref:`method<functions>` returns a copy of the dictionary_, :ref:`same as w
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the value to the :ref:`assertion<AssertionError>`
+I add the value to the :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :lineno-start: 103
@@ -1344,7 +1344,7 @@ the test passes
 
   the test is still green
 
-* I want to see what happens when I use the get_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_, I add another :ref:`assertion<AssertionError>`
+* I want to see what happens when I use the get_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_, I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 118
@@ -1888,7 +1888,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
     TypeError: pop expected at least 1 argument, got 0
 
-  I add another :ref:`assertion<AssertionError>` to see what happens when I call it with 2 arguments
+  I add another :ref:`assertion<what is an assertion?>` to see what happens when I call it with 2 arguments
 
   .. code-block:: python
     :lineno-start: 153
@@ -1944,7 +1944,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>` to see what happens when I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_
+* I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_
 
   .. code-block:: python
     :lineno-start: 155
@@ -1980,7 +1980,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>` to see what the pop_ :ref:`method<functions>` did to the dictionary_
+* I add another :ref:`assertion<what is an assertion?>` to see what the pop_ :ref:`method<functions>` did to the dictionary_
 
   .. code-block:: python
     :lineno-start: 159
@@ -2116,7 +2116,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I want to know what the popitem_ :ref:`method<functions>` did to the dictionary_. I add another :ref:`assertion<AssertionError>`
+* I want to know what the popitem_ :ref:`method<functions>` did to the dictionary_. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 167
@@ -2327,7 +2327,7 @@ the test passes
 
   the test passes
 
-* I add an :ref:`assertion<AssertionError>` to see what setdefault_ did to the dictionary_
+* I add an :ref:`assertion<what is an assertion?>` to see what setdefault_ did to the dictionary_
 
   .. code-block:: python
     :lineno-start: 178
@@ -2402,7 +2402,7 @@ the test passes
 
   the test is green again
 
-* I add an :ref:`assertion<AssertionError>` to see what happens when I use setdefault_ with a :ref:`key<test_keys_of_a_dictionary>` that is already in the dictionary_
+* I add an :ref:`assertion<what is an assertion?>` to see what happens when I use setdefault_ with a :ref:`key<test_keys_of_a_dictionary>` that is already in the dictionary_
 
   .. code-block:: python
     :lineno-start: 178
@@ -2517,7 +2517,7 @@ test_update_a_dictionary
 
   the test is green. The update_ :ref:`method<functions>` returns :ref:`None`
 
-* I add an :ref:`assertion<AssertionError>` to see what it did to the dictionary_
+* I add an :ref:`assertion<what is an assertion?>` to see what it did to the dictionary_
 
   .. code-block:: python
     :lineno-start: 194
@@ -2618,7 +2618,7 @@ the test passes
 
   the test passes
 
-* I add an :ref:`assertion<AssertionError>` to see what happens when I give a key that is already in the dictionary_
+* I add an :ref:`assertion<what is an assertion?>` to see what happens when I give a key that is already in the dictionary_
 
   .. code-block:: python
     :lineno-start: 194
@@ -2654,7 +2654,7 @@ the test passes
 
   the test passes
 
-* since the update_ :ref:`method<functions>` takes :ref:`keyword arguments<test_functions_w_keyword_arguments>`, I can give it a dictionary_ as input. I add another :ref:`assertion<AssertionError>`
+* since the update_ :ref:`method<functions>` takes :ref:`keyword arguments<test_functions_w_keyword_arguments>`, I can give it a dictionary_ as input. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 194
@@ -2946,7 +2946,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>`, this time for a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_
+* I add another :ref:`assertion<what is an assertion?>`, this time for a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_
 
   .. code-block:: python
     :lineno-start: 224
@@ -3006,7 +3006,7 @@ the test passes
 
   the test passes. This is a repetition of :ref:`test_get_value_of_a_key_in_a_dictionary`, here is another repetition
 
-* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` when I gave it a :ref:`key<test_keys_of_a_dictionary>` that was not in the dictionary_, I add another :ref:`assertion<AssertionError>` for it
+* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` when I gave it a :ref:`key<test_keys_of_a_dictionary>` that was not in the dictionary_, I add another :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
     :lineno-start: 227
@@ -3040,7 +3040,7 @@ the test passes
 
   the test passes
 
-* I can give a second argument if I do not want the pop_ :ref:`method<functions>` to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. I add an :ref:`assertion<AssertionError>`
+* I can give a second argument if I do not want the pop_ :ref:`method<functions>` to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 232

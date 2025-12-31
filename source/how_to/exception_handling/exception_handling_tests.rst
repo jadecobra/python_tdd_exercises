@@ -29,6 +29,21 @@ Here are the tests I have by the end of the chapter
 ----
 
 *********************************************************************************
+questions about testing Exceptions
+*********************************************************************************
+
+* :ref:`What causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
+* :ref:`What causes NameError?<test_catching_name_error_in_tests>`
+* :ref:`What causes AttributeError?<test_catching_attribute_error_in_tests>`
+* :ref:`What causes TypeError?<test_catching_type_error_in_tests>`
+* :ref:`What causes IndexError?<test_catching_index_error_in_tests>`
+* :ref:`What causes KeyError?<test_catching_key_error_in_tests>`
+* :ref:`What causes ZeroDivisionError?<test_catching_zero_division_error_in_tests>`
+* :ref:`What Exception do all the other Exceptions come from<test_catching_exceptions_in_tests>`
+
+----
+
+*********************************************************************************
 requirements
 *********************************************************************************
 
@@ -676,6 +691,8 @@ the test passes
 test_catching_key_error_in_tests
 *********************************************************************************
 
+:ref:`KeyError<test_key_error>` is raised when I try to access a :ref:`dictionary<dictionaries>` with a :ref:`key<test_keys_of_a_dictionary>` that does NOT exist
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1179,7 +1196,7 @@ open the project
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new :ref:`assertion<AssertionError>` to show that the ``divide`` :ref:`function<functions>` raises ZeroDivisionError_ in
+I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<functions>` raises ZeroDivisionError_ in
 
 .. code-block:: python
   :lineno-start: 42
@@ -1279,6 +1296,10 @@ I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested t
 * :ref:`KeyError<test_key_error>`
 * ZeroDivisionError_ and
 * :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
+
+----
+
+:ref:`How many questions can you answer after going through this chapter?<questions about testing Exceptions>`
 
 ----
 

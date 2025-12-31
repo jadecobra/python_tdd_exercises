@@ -135,7 +135,7 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>` to show that I can do the same thing with the :ref:`list<lists>` constructor_
+* I add another :ref:`assertion<what is an assertion?>` to show that I can do the same thing with the :ref:`list<lists>` constructor_
 
   .. code-block:: python
 
@@ -156,7 +156,7 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
   the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing with less characters? Sometimes one is better than the other, I show this before the end of the chapter
 
-* I add another :ref:`assertion<AssertionError>` to practice writing a `for loop`_
+* I add another :ref:`assertion<what is an assertion?>` to practice writing a `for loop`_
 
   .. code-block:: python
 
@@ -277,7 +277,7 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
   this range_ :ref:`object<classes>` now goes from ``0`` to anywhere between ``1`` and ``999``. The values change every time the test runs
 
-* I change the expectation in the first :ref:`assertion<AssertionError>`
+* I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -286,7 +286,7 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
   the test passes. I remove the line because it is a duplicate
 
-* I change the expectation of the second :ref:`assertion<AssertionError>`
+* I change the expectation of the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -361,7 +361,7 @@ the terminal_ shows green again
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>` to see what changed in the :ref:`list<lists>`
+* I add another :ref:`assertion<what is an assertion?>` to see what changed in the :ref:`list<lists>`
 
   .. code-block:: python
 
@@ -458,7 +458,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>` for practice
+* I add another :ref:`assertion<what is an assertion?>` for practice
 
   .. code-block:: python
 
@@ -585,7 +585,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>` for practice
+* I add another :ref:`assertion<what is an assertion?>` for practice
 
   .. code-block:: python
 
@@ -634,7 +634,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
-  I change the condition in the `list comprehension`_ of the first :ref:`assertion<AssertionError>`
+  I change the condition in the `list comprehension`_ of the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -644,7 +644,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         [item for item in self.iterable if item % 3 == 0]
     )
 
-  the terminal_ shows green. I change the condition in the `list comprehension`_ of the second :ref:`assertion<AssertionError>`
+  the terminal_ shows green. I change the condition in the `list comprehension`_ of the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -692,7 +692,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
             if condition(item):
                 even_numbers.append(item)
 
-  the terminal_ still shows green. I remove the commented line and do the same thing in the first :ref:`assertion<AssertionError>`
+  the terminal_ still shows green. I remove the commented line and do the same thing in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -764,7 +764,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         else:
             odd_numbers.append(item)
 
-  I add an :ref:`assertion<AssertionError>`
+  I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -783,7 +783,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [1, 3, 5, 7, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
 
-  I add the condition to the :ref:`assertion<AssertionError>`
+  I add the condition to the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -792,7 +792,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         [item for item in self.iterable if not condition(item)]
     )
 
-  the test passes. I add another :ref:`assertion<AssertionError>`
+  the test passes. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -906,7 +906,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -1049,7 +1049,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-I add another :ref:`assertion<AssertionError>`
+I add another :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
 

@@ -273,7 +273,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -465,7 +465,7 @@ The problem with this solution is that the ``text`` :ref:`function<functions>` d
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-I add a new :ref:`assertion<AssertionError>` to ``test_passing_a_string`` in ``test_telephone.py``
+I add a new :ref:`assertion<what is an assertion?>` to ``test_passing_a_string`` in ``test_telephone.py``
 
 .. code-block:: python
   :lineno-start: 7
@@ -597,7 +597,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<AssertionError>` with the ``TestTelephone`` :ref:`class<classes>` to ``test_passing_a_class`` in ``test_telephone.py``
+* I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<classes>` to ``test_passing_a_class`` in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -703,7 +703,7 @@ test_passing_a_boolean
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for :ref:`booleans`, first with an :ref:`assertion<AssertionError>` for :ref:`True<test_what_is_true>`
+I add a test for :ref:`booleans`, first with an :ref:`assertion<what is an assertion?>` for :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 27
@@ -745,7 +745,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the test passes
 
-* I add an :ref:`assertion<AssertionError>` for :ref:`False<test_what_is_false>`
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 33

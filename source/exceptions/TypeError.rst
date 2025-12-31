@@ -1394,7 +1394,7 @@ test_calculator_raises_type_error_when_given_strings
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test with an :ref:`assertion<AssertionError>` from :ref:`test_what_is_an_assertion`  to test the :ref:`add function<test_addition>` with strings_
+I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_an_assertion`  to test the :ref:`add function<test_addition>` with strings_
 
 .. code-block:: python
   :lineno-start: 64
@@ -1433,7 +1433,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add an :ref:`assertion<AssertionError>` for the :ref:`divide function<test_division>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
     :lineno-start: 67

@@ -331,7 +331,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the ``factory`` :ref:`function<functions>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation in the :ref:`assertion<AssertionError>` in ``test_person.py``
+* I want the ``factory`` :ref:`function<functions>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -1347,7 +1347,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'sex' is not defined
 
-* I comment out ``sex`` in the call to the ``factory`` :ref:`function<functions>` in the :ref:`assertion<AssertionError>` in ``test_person.py``
+* I comment out ``sex`` in the call to the ``factory`` :ref:`function<functions>` in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 49

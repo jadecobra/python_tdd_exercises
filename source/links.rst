@@ -1,6 +1,4 @@
 .. _and: https://docs.python.org/3/reference/expressions.html#and
-.. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _append: more_on_lists_
 .. _arithmetic: https://grokipedia.com/page/Arithmetic
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statement: assert_

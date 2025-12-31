@@ -303,7 +303,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
   and it passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -354,7 +354,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
   the test passes
 
-* I add another :ref:`assertion<AssertionError>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 

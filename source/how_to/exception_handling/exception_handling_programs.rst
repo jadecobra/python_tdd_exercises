@@ -39,7 +39,7 @@ open the project
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd exception
+    cd exceptions
 
   the terminal_ shows I am in the ``exceptions`` folder_
 
@@ -729,7 +729,7 @@ open the project
 :red:`RED`: make it fail
 =================================================================================
 
-I change the last :ref:`assertion<AssertionError>` in ``test_division``
+I change the last :ref:`assertion<what is an assertion?>` in ``test_division``
 
 .. code-block:: python
   :lineno-start: 42

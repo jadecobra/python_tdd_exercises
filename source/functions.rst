@@ -322,7 +322,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -732,7 +732,7 @@ the terminal_ shows :ref:`AttributeError`
 
 The requirement for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, the test is currently passing when :ref:`None` is given as input. Does it pass when another value is given or does it always return :ref:`None`? Time to write a test
 
-* I add a new :ref:`assertion<AssertionError>` to ``test_identity_function`` in ``test_functions.py``
+* I add a new :ref:`assertion<what is an assertion?>` to ``test_identity_function`` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -1080,7 +1080,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
 
   the test passes. `Keyword Arguments`_ allow the input to be passed in any order
 
-* I can still call the function_ without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`. I add an :ref:`assertion<AssertionError>` to show this
+* I can still call the function_ without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`. I add an :ref:`assertion<what is an assertion?>` to show this
 
   .. code-block:: python
     :lineno-start: 43
@@ -1392,7 +1392,7 @@ the test passes
 
     w_default_arguments('jane', last_name='doe')
 
-  I add another :ref:`assertion<AssertionError>` to ``test_functions.py`` to show that I can still call the function_ with different values
+  I add another :ref:`assertion<what is an assertion?>` to ``test_functions.py`` to show that I can still call the function_ with different values
 
   .. code-block:: python
     :lineno-start: 62
@@ -1631,7 +1631,7 @@ the terminal_ shows :ref:`AttributeError`
 how Python reads positional arguments
 --------------------------------------------------------------------------------------------
 
-I want to see what happens when I call the function_ with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add a new :ref:`assertion<AssertionError>`
+I want to see what happens when I call the function_ with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add a new :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :lineno-start: 73
@@ -1674,7 +1674,7 @@ the test passes. The function_ reads the :ref:`positional arguments<test_positio
 how Python reads keyword arguments
 --------------------------------------------------------------------------------------------
 
-I add another :ref:`assertion<AssertionError>` to see what happens when I call the function_ with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the function_ with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
 .. code-block:: python
   :lineno-start: 79
@@ -1713,7 +1713,7 @@ the test passes. The function_ reads the :ref:`keyword arguments<test_keywords_a
 
 ----
 
-* I add one more :ref:`assertion<AssertionError>` to see what happens when I call the function_ with no inputs
+* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the function_ with no inputs
 
   .. code-block:: python
     :lineno-start: 83

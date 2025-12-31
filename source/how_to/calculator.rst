@@ -271,7 +271,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<AssertionError>`
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -491,7 +491,7 @@ The ``add`` :ref:`function<functions>` passes the test but does not meet the act
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-To show the problem with the :ref:`function<functions>`, I add another :ref:`assertion<AssertionError>` in ``test_calculator.py``
+To show the problem with the :ref:`function<functions>`, I add another :ref:`assertion<what is an assertion?>` in ``test_calculator.py``
 
 .. code-block:: python
   :lineno-start: 7
@@ -534,7 +534,7 @@ the :ref:`function<functions>` returns ``1``, the test expects ``2``
 
     AssertionError: 2 != 1
 
-  this makes the :ref:`assertion<AssertionError>` that was passing before now fail. I need a solution that can make the two tests pass
+  this makes the :ref:`assertion<what is an assertion?>` that was passing before now fail. I need a solution that can make the two tests pass
 
 * I make the :ref:`function<functions>` return the result of adding the two inputs
 
@@ -890,7 +890,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test passes
 
-* I remove the next test since it is now covered by this new :ref:`assertion<AssertionError>` that uses a variable_
+* I remove the next test since it is now covered by this new :ref:`assertion<what is an assertion?>` that uses a variable_
 
   .. code-block:: python
     :lineno-start: 11
@@ -967,7 +967,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test is still green. `random.triangular`_ returns a random float_ that could be any number from ``-0.1`` to ``1.0`` in this case
 
-* I want to see the test fail to be sure everything works as expected. I change the expectation in the first :ref:`assertion<AssertionError>`
+* I want to see the test fail to be sure everything works as expected. I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -984,7 +984,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
     AssertionError: -X.YZABCDEFGHIJKLM != A.BCDEFGHIJKLMNOPQ
 
-* I change the expectation of the :ref:`assertion<AssertionError>` back to the right calculation
+* I change the expectation of the :ref:`assertion<what is an assertion?>` back to the right calculation
 
   .. code-block:: python
     :lineno-start: 13

@@ -174,6 +174,19 @@ Unary Operations review
 * :ref:`How can I return the opposite of a boolean?<how to return the opposite of a boolean>`
 
 *********************************************************************************
+questions about testing Exceptions
+*********************************************************************************
+
+* :ref:`What causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
+* :ref:`What causes NameError?<test_catching_name_error_in_tests>`
+* :ref:`What causes AttributeError?<test_catching_attribute_error_in_tests>`
+* :ref:`What causes TypeError?<test_catching_type_error_in_tests>`
+* :ref:`What causes IndexError?<test_catching_index_error_in_tests>`
+* :ref:`What causes KeyError?<test_catching_key_error_in_tests>`
+* :ref:`What causes ZeroDivisionError?<test_catching_zero_division_error_in_tests>`
+* :ref:`What Exception do all the other Exceptions come from<test_catching_exceptions_in_tests>`
+
+*********************************************************************************
 testing
 *********************************************************************************
 
