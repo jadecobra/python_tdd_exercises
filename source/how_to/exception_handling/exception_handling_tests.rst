@@ -168,6 +168,8 @@ start the project
 test_catching_module_not_found_error_in_tests
 *********************************************************************************
 
+:ref:`ModuleNotFoundError` is raised when I try to import a :ref:`module<ModuleNotFoundError>` that does NOT exist
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -228,6 +230,8 @@ assertRaises_ checks that the code in its context, raises the :ref:`Exception<er
 test_catching_name_error_in_tests
 *********************************************************************************
 
+:ref:`NameError<test_catching_name_error_in_tests>` is raised when I use a name that is not defined in the file
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -278,13 +282,15 @@ I add assertRaises_
             with self.assertRaises(NameError):
                 does_not_exist
 
-the test passes, showing that :ref:`NameError<test_catching_name_error_in_tests>` is raised when I used a name that has no definition for it
+the test passes, showing that :ref:`NameError<test_catching_name_error_in_tests>` is raised when I use a name that is not defined in the file
 
 ----
 
 *********************************************************************************
 test_catching_attribute_error_in_tests
 *********************************************************************************
+
+:ref:`AttributeError` is raised when I try to call something that does NOT exist from something that does exist
 
 =================================================================================
 :red:`RED`: make it fail
@@ -365,6 +371,8 @@ the test passes. :ref:`AttributeError` is raised when I try to call something th
 *********************************************************************************
 test_catching_type_error_in_tests
 *********************************************************************************
+
+:ref:`TypeError` is raised when I call something in a way that it should NOT be called
 
 =================================================================================
 :red:`RED`: make it fail
@@ -496,6 +504,11 @@ the test passes
 *********************************************************************************
 test_catching_index_error_in_tests
 *********************************************************************************
+
+:ref:`IndexError<test_index_error>` is raised when I try to :ref:`index a list<test_index_returns_first_position_of_item_in_a_list>` with a number that is
+
+- bigger than or the same as the number of items in the :ref:`lists`
+- smaller than the negative of the number of items in the :ref:`list<lists>`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -691,7 +704,7 @@ the test passes
 test_catching_key_error_in_tests
 *********************************************************************************
 
-:ref:`KeyError<test_key_error>` is raised when I try to access a :ref:`dictionary<dictionaries>` with a :ref:`key<test_keys_of_a_dictionary>` that does NOT exist
+:ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<dictionaries>`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -768,7 +781,7 @@ I add assertRaises_ to the test
           with self.assertRaises(KeyError):
               {'key': 'value'}['not_in_dictionary']
 
-the test passes. :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is not in a :ref:`dictionary<dictionaries>`
+the test passes. :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<dictionaries>`
 
 *********************************************************************************
 test_catching_zero_division_error_in_tests
