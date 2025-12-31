@@ -15,6 +15,12 @@ how to test that an Exception is raised
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQALevkVBWw?si=G9wK6OfhYF79-ORx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+----
+
+When an :ref:`Exception<errors>` is raised, it stops the program from running. I can use the `assertRaises method`_ from the `unittest.TestCase class`_ to test that some code raises an :ref:`Exception<errors>`.
+
+assertRaises_ checks that the code in its context, raises the :ref:`Exception<errors>` it is given in parentheses
+
 *********************************************************************************
 preview
 *********************************************************************************
@@ -32,6 +38,9 @@ Here are the tests I have by the end of the chapter
 questions about testing Exceptions
 *********************************************************************************
 
+Here are questions you can answer after going through this chapter
+
+* :ref:`How can I make sure an Exception is raised?<how to test that an Exception is raised>`
 * :ref:`What causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
 * :ref:`What causes NameError?<test_catching_name_error_in_tests>`
 * :ref:`What causes AttributeError?<test_catching_attribute_error_in_tests>`
@@ -199,6 +208,7 @@ I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+---------------------------------------------------------------------------------
 
 * I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` seen
 

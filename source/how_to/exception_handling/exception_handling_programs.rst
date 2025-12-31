@@ -25,6 +25,26 @@ Here are the tests I have by the end of the chapter
 ----
 
 *********************************************************************************
+questions about handling Exceptions
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`How can I make sure an Exception is raised?<how to test that an Exception is raised>`
+* :ref:`What causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
+* :ref:`What causes NameError?<test_catching_name_error_in_tests>`
+* :ref:`What causes AttributeError?<test_catching_attribute_error_in_tests>`
+* :ref:`What causes TypeError?<test_catching_type_error_in_tests>`
+* :ref:`What causes IndexError?<test_catching_index_error_in_tests>`
+* :ref:`What causes KeyError?<test_catching_key_error_in_tests>`
+* :ref:`What causes ZeroDivisionError?<test_catching_zero_division_error_in_tests>`
+* :ref:`What Exception do all the other Exceptions come from<test_catching_exceptions_in_tests>`
+* :ref:`How can I test an Exception with a specific message<test_catching_exceptions_w_messages>`
+* :ref:`How can a program handle an Exception so it does not stop when one is raised?<how to use try...except...else>`
+
+----
+
+*********************************************************************************
 requirements
 *********************************************************************************
 
@@ -93,6 +113,8 @@ open the project
 *********************************************************************************
 test_catching_exceptions_w_messages
 *********************************************************************************
+
+I can use the `assertRaisesRegex method`_ to test the message that is included with an :ref:`Exception<errors>`, this helps me to tell the difference when I have two :ref:`Exceptions<errors>` that have the same name
 
 * I add a failing test to ``test_exceptions.py``
 
@@ -907,7 +929,7 @@ review
 I ran tests to show that
 
 * I can cause any :ref:`Exception<errors>` I want with the raise_ keyword
-* I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested the following
+* I can use the `assertRaises method`_ to catch :ref:`Exceptions<errors>` in tests and tested the following
 
   - :ref:`ModuleNotFoundError`
   - :ref:`NameError<test_catching_name_error_in_tests>`
@@ -920,6 +942,10 @@ I ran tests to show that
 
 * I can use assertRaisesRegex_ to catch :ref:`Exceptions<errors>` with messages
 * I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<errors>` are raised
+
+----
+
+:ref:`How many questions can you answer after going through this chapter?<questions about handling Exceptions>`
 
 ----
 
