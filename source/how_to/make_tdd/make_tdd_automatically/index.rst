@@ -86,7 +86,7 @@ As a reminder here is what the structure looks like if the name of the project i
 what is covered?
 *********************************************************************************
 
-These chapters show how I setup a project in `Python Test Driven Development environment`_ automatically on any computer (Linux_, Windows_, MacOS_)
+These chapters show how I setup a Python_ `Test Driven Development environment`_ automatically on any computer (Linux_, Windows_, MacOS_)
 
 .. toctree::
   :titlesonly:

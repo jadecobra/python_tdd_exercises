@@ -208,7 +208,6 @@ I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
----------------------------------------------------------------------------------
 
 * I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` seen
 

@@ -7,7 +7,7 @@
 .. include:: /links.rst
 
 #################################################################################
-Enrollment Confirmed!
+CONGRATULATIONS!!! You joined a Pumping Python HATCH
 #################################################################################
 
 .. raw:: html
