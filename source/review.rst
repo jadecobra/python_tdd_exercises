@@ -44,6 +44,8 @@ how to make a python test driven development environment review
 * :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
 * :ref:`How can I run a shell script<how to run a shell script>`
 
+----
+
 ****************************************************************************************************************
 how to make a python test driven development environment on Windows without Windows Subsystem for Linux review
 ****************************************************************************************************************
@@ -77,6 +79,8 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`How can I use a variable in a PowerShell script<how to use a variable in a PowerShell script>`
 * :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
 
+----
+
 ************************************************************************************************************
 exceptions review
 ************************************************************************************************************
@@ -89,6 +93,8 @@ exceptions review
 * :ref:`What causes TypeError?<TypeError>`
 * :ref:`What causes IndexError?<test_index_error>`
 * :ref:`What causes KeyError?<test_key_error>`
+
+----
 
 *********************************************************************************
 AssertionError review
@@ -104,6 +110,8 @@ AssertionError review
 * :ref:`How can I test if something is NOT True?<how to test if something is False>`
 * :ref:`How can I test if 2 things are NOT Equal?<how to test if two things are NOT Equal>`
 * :ref:`How can I test if 2 things are Equal?<how to test if two things are Equal>`
+
+----
 
 *********************************************************************************
 functions review
@@ -123,6 +131,8 @@ Here are the questions you can answer after going through this chapter
 * :ref:`How are positional arguments represented in a function?<test_functions_w_unknown_arguments>`
 * :ref:`How are keyword arguments represented in a function?<test_functions_w_unknown_arguments>`
 
+----
+
 *********************************************************************************
 None review
 *********************************************************************************
@@ -141,6 +151,8 @@ None review
 * :ref:`How can I test if something is an instance of a class?<how to test if something is an instance of a class>`
 * :ref:`How can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
 
+----
+
 *********************************************************************************
 booleans review
 *********************************************************************************
@@ -156,6 +168,8 @@ booleans review
 * :ref:`Is a set False or True?<is a set False or True?>`
 * :ref:`Is a dictionary False or True?<is a dictionary False or True?>`
 
+----
+
 *********************************************************************************
 Nullary Operations review
 *********************************************************************************
@@ -163,6 +177,8 @@ Nullary Operations review
 * :ref:`What are the Nullary Operations?<Nullary Operations>`
 * :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`
 * :ref:`What are the Unary Operations?<Unary Operations>`
+
+----
 
 *********************************************************************************
 Unary Operations review
@@ -172,6 +188,8 @@ Unary Operations review
 * :ref:`What is a function that returns its input as output?<test_logical_identity>`
 * :ref:`What is a function that returns the negation of its input?<test_logical_negation>`
 * :ref:`How can I return the opposite of a boolean?<how to return the opposite of a boolean>`
+
+----
 
 *********************************************************************************
 questions about testing Exceptions
@@ -186,12 +204,25 @@ questions about testing Exceptions
 * :ref:`What causes ZeroDivisionError?<test_catching_zero_division_error_in_tests>`
 * :ref:`What Exception do all the other Exceptions come from<test_catching_exceptions_in_tests>`
 
+----
+
+*********************************************************************************
+questions about handling Exceptions
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`How can I test an Exception with a specific message<test_catching_exceptions_w_messages>`
+* :ref:`How can a program handle an Exception so it does not stop when one is raised?<how to use try...except...else>`
+
+----
+
 *********************************************************************************
 testing
 *********************************************************************************
 
-:ref:`How can I run automated tests after I exit them in the terminal?<how to run automated tests after you exit the tests>`
-:ref:`How can I run automated tests after I exit them in the terminal on Windows without Windows Subsystem for Linux?<how to run automated tests on Windows_ without WSL after you exit the tests>`
+* :ref:`How can I run automated tests after I exit them in the terminal?<how to run the tests automatically in a virtual environment>`
+* :ref:`How can I run automated tests after I exit them in the terminal on Windows without Windows Subsystem for Linux?<how to run the tests automatically in a virtual environment on Windows without WSL>`
 
 ----
 

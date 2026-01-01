@@ -122,7 +122,7 @@ table of contents
   learning_models
   review
   hatches
-  what people think of this<reviews>
+  what people think of this<review>
 
 ----
 

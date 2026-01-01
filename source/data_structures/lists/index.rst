@@ -396,7 +396,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   the test passes and I move the terminal_ back to the bottom
 
-* I copy and paste the names that do NOT have double underscores (__) to make a TODO list
+* I copy and paste the names that do NOT have double underscores (__) to use as a TODO list
 
   .. code-block:: python
     :lineno-start: 67
@@ -549,6 +549,8 @@ the terminal_ shows green, the `append method`_ returns :ref:`None` when called
     'reverse',
     'sort'
 
+:ref:`I know how to add things to the end of a list<test_append_adds_item_to_end_of_a_list>`
+
 ----
 
 *********************************************************************************
@@ -640,6 +642,8 @@ the test passes
     'reverse',
     'sort'
 
+:ref:`I know how to empty a list<test_clear_empties_a_list>`
+
 ----
 
 *********************************************************************************
@@ -677,32 +681,33 @@ the :ref:`method<functions>` returns a copy of the list_
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the list_ to the :ref:`assertion<what is an assertion?>`
+* I add the list_ to the :ref:`assertion<what is an assertion?>`
 
-.. code-block:: python
-  :lineno-start: 77
-  :emphasize-lines: 2
+  .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2
 
-          a_list = [0, 1, 2, 'n']
-          self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
 
-the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: [0, 1, 2, 'n'] is not None : [0, 1, 2, 'n']
+    AssertionError: [0, 1, 2, 'n'] is not None : [0, 1, 2, 'n']
 
-the values are the same, the problem is assertIsNone_ only takes 1 input and I gave it 2
+  the values are the same, the problem is assertIsNone_ only takes 1 input and I gave it 2
 
-I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to assertEqual_
 
-.. code-block:: python
-  :emphasize-lines: 2
+  .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2
 
-  a_list = [0, 1, 2, 'n']
-  self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+            a_list = [0, 1, 2, 'n']
+            self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
 
-the test passes
+  the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -710,16 +715,21 @@ the test passes
 
 * I change the name of the test
 
-  .. code-block::
+  .. code-block:: python
+    :lineno-start: 76
     :emphasize-lines: 1
 
-    def test_copy_a_list(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
+        def test_copy_a_list(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
 
 * I remove copy_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 78
+
+            self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
+
 
     'count',
     'extend',
@@ -729,6 +739,8 @@ the test passes
     'remove',
     'reverse',
     'sort'
+
+:ref:`I know how to copy a list<test_copy_a_list>`
 
 ----
 
@@ -743,13 +755,17 @@ test_count_number_of_times_item_is_in_a_list
 I add a test for the next :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 78
+  :emphasize-lines: 3-5
 
-  def test_copy_a_list(self):
-      ...
+          self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
 
-  def test_count(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.count())
+      def test_count(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.count())
+
+
+  'extend',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -760,11 +776,12 @@ the terminal_ shows :ref:`TypeError`
 I add a value to the call
 
 .. code-block:: python
+  :lineno-start: 80
   :emphasize-lines: 3
 
-  def test_count(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.count(0))
+      def test_count(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.count(0))
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -779,8 +796,10 @@ the terminal_ shows :ref:`AssertionError`
 I add the value
 
 .. code-block:: python
+  :lineno-start: 82
+  :emphasize-lines: 1
 
-  self.assertIsNone(a_list.count(0), 1)
+          self.assertIsNone(a_list.count(0), 1)
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -791,8 +810,10 @@ the terminal_ shows :ref:`AssertionError`
 I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
+  :lineno-start: 82
+  :emphasize-lines: 1
 
-  self.assertEqual(a_list.count(0), 1)
+          self.assertEqual(a_list.count(0), 1)
 
 the test passes
 
@@ -800,15 +821,16 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* ``0`` is in the list_ 1 time, I add ``1`` to it 2 more times then add an :ref:`assertion<what is an assertion?>` for it
+* ``0`` is in the list_ 1 time, I add ``1`` to the list_ 2 more times then add an :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
+    :lineno-start: 80
     :emphasize-lines: 2, 4
 
-    def test_count(self):
-        a_list = [0, 1, 2, 1, 'n', 1]
-        self.assertEqual(a_list.count(0), 1)
-        self.assertEqual(a_list.count(1), 1)
+        def test_count(self):
+            a_list = [0, 1, 2, 1, 'n', 1]
+            self.assertEqual(a_list.count(0), 1)
+            self.assertEqual(a_list.count(1), 1)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -816,20 +838,24 @@ the test passes
 
     AssertionError: 3 != 1
 
-  I change the value to match
+* I change the value to match
 
-  .. code-block:: python
+  .. code-block::
+    :lineno-start: 83
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list.count(1), 3)
+            self.assertEqual(a_list.count(1), 3)
 
   the test passes
 
-* I want to see what happens when I try to count an item that is not in the list_
+* I want to see what happens when I try to count something that is not in the list_
 
   .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list.count(1), 3)
-    self.assertEqual(a_list.count('not in list'), 3)
+            self.assertEqual(a_list.count(1), 3)
+            self.assertEqual(a_list.count('not in list'), 3)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -837,17 +863,22 @@ the test passes
 
     AssertionError: 0 != 3
 
-  The count_ method returns ``0`` when the item is not in the list_. I change the value to match
+  The count_ method returns ``0`` when the item is not in the list_
+
+* I change the value to match
 
   .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list.count('not in list'), 0)
+            self.assertEqual(a_list.count('not in list'), 0)
 
   the test passes
 
 * I change the name of the test
 
   .. code-block:: python
+    :emphasize-lines: 80
     :emphasize-lines: 1
 
     def test_count_number_of_times_item_is_in_a_list(self):
@@ -867,6 +898,8 @@ the test passes
     'remove',
     'reverse',
     'sort'
+
+:ref:`I know how to count how many times something is in a list<test_count_number_of_times_item_is_in_a_list>`
 
 ----
 

@@ -1,4 +1,6 @@
-.. meta:: :description: Today is the day to learn Python with Jacob Itegboje’s beginner-friendly guide. Save time and money while building confidence through practical exercises. :keywords: Jacob Itegboje, learn Python for beginners, Python Test Driven Development, beginner coding guide, fast track Python learning, affordable Python course, TDD Python tutorial, programming for novices
+.. meta::
+  :description: Today is the day to learn Python with Jacob Itegboje’s beginner-friendly guide. Save time and money while building confidence through practical exercises.
+  :keywords: Jacob Itegboje, learn Python for beginners, Python Test Driven Development, beginner coding guide, fast track Python learning, affordable Python course, TDD Python tutorial, programming for novices
 
 .. include:: /links.rst
 
