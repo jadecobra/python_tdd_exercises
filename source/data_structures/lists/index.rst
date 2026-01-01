@@ -4,7 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _append: more_on_lists_
 .. _append method: more_on_lists_
 .. _clear: more_on_lists_

@@ -43,6 +43,7 @@
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _conditional expressions: `conditional expression`_
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
+.. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
 .. _count: more_on_lists_
 .. _directory: https://grokipedia.com/page/Directory_(computing)
 .. _directories: directory_
