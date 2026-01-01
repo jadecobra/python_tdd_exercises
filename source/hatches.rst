@@ -129,6 +129,3 @@ Pick a time that works best for you
     Cal.ns["pumping-python-nighttime-ninjas"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#ffd21f"}},"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
     <!-- Cal element-click embed code ends -->
-
-
-:ref:`CONGRATULATIONS!!! You joined a Pumping Python HATCH`
