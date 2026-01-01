@@ -14,7 +14,10 @@ CONGRATULATIONS!!! You joined a Pumping Python HATCH
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/pi_jLcj6_bU?si=nn9jZn3iPbfQ1uBK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+----
+
 Congratulations! You have successfully joined a Pumping Python HATCH! I look forward to the next 8 weeks with you.
+
 
 *********************************************************************************
 what should I expect?
