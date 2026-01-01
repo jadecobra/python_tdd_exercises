@@ -10,7 +10,7 @@ join a HATCH
 
 .. raw:: html
 
-  <iframe style="border-radius:12px" width="560"  height="315" src="https://www.youtube-nocookie.com/embed/fxPgowISTA4?si=fHnq4SbtySWs696z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/XVe36BINBgY?si=dADTLfRBhT60Y_oO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
 

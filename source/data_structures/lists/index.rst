@@ -182,7 +182,7 @@ I change ``test_failure`` to ``test_making_a_list``
 
 .. code-block:: python
   :lineno-start: 4
-  :emphasize-lines:3-4
+  :emphasize-lines: 3-4
 
 
   class TestLists(unittest.TestCase):
@@ -524,7 +524,7 @@ the terminal_ shows green, the `append method`_ returns :ref:`None` when called
 * I change the name of the test
 
   .. code-block:: python
-    :emphasize-lines: 66
+    :lineno-start: 66
     :emphasize-lines: 1
 
         def test_append_adds_item_to_end_of_a_list(self):
@@ -877,7 +877,7 @@ the test passes
 * I change the name of the test
 
   .. code-block:: python
-    :emphasize-lines: 80
+    :lineno-start: 80
     :emphasize-lines: 1
 
     def test_count_number_of_times_item_is_in_a_list(self):
