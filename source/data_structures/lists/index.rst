@@ -4,6 +4,8 @@
 
 .. include:: ../../links.rst
 
+.. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
+.. _count: more_on_lists_
 .. _append: more_on_lists_
 .. _append method: more_on_lists_
 .. _clear: more_on_lists_
@@ -11,7 +13,15 @@
 .. _copy: more_on_lists_
 .. _copy method: more_on_lists_
 .. _pop: more_on_lists_
-.. _pop method: more_on_lists_
+.. _pop method:
+.. _insert: more_on_lists_
+.. _index: more_on_lists_
+.. _index method: more_on_lists_
+.. _remove:
+.. _reverse: more_on_lists_
+.. _sort: more_on_lists_
+.. _extend: more_on_lists_
+.. _extend method: more_on_lists_
 .. _list: https://docs.python.org/3/library/stdtypes.html#list
 .. _lists: list_
 .. _IndexError: https://docs.python.org/3/library/exceptions.html#IndexError
@@ -962,7 +972,7 @@ I change the value to an iterable_
 
           self.assertIsNone(a_list.extend((0, 1)))
 
-the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called
+the test passes. The `extend method`_ returns :ref:`None` when called
 
 =================================================================================
 :yellow:`REFACTOR`: make it better

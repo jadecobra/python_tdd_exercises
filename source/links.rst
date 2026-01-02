@@ -43,8 +43,6 @@
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _conditional expressions: `conditional expression`_
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
-.. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _count: more_on_lists_
 .. _directory: https://grokipedia.com/page/Directory_(computing)
 .. _directories: directory_
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
@@ -64,7 +62,6 @@
 .. _echo program: echo_
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _else clause: else_
-.. _extend: more_on_lists_
 .. _find and replace: https://code.visualstudio.com/docs/editing/codebasics#_find-and-replace
 .. _float: https://docs.python.org/3/library/functions.html#float
 .. _floats: float_
@@ -80,14 +77,12 @@
 .. _history program: history_
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _import statements: `import statement`_
-.. _index: more_on_lists_
 .. _int: https://docs.python.org/3/library/functions.html#int
 .. _isinstance: https://docs.python.org/3/library/functions.html#isinstance
 .. _isinstance function: isinstance_
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: int_
 .. _integers: int_
-.. _insert: more_on_lists_
 .. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
@@ -135,10 +130,8 @@
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _random.triangular: https://docs.python.org/3/library/random.html#random.triangular
 .. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
-.. _remove: more_on_lists_
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _return statements: `return statement`_
-.. _reverse: more_on_lists_
 .. _rm: https://grokipedia.com/page/Rm_(Unix)
 .. _script: `computer program`_
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
@@ -147,7 +140,6 @@
 .. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _shebang: https://grokipedia.com/page/Shebang_(Unix)
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
-.. _sort: more_on_lists_
 .. _source code: https://grokipedia.com/page/Source_code
 .. _see the source code for unittest here: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
 .. _static method: https://docs.python.org/3/library/functions.html#staticmethod
