@@ -880,15 +880,20 @@ the test passes
     :lineno-start: 80
     :emphasize-lines: 1
 
-    def test_count_number_of_times_item_is_in_a_list(self):
-        a_list = [0, 2, 1, 2, 3, 2]
-        self.assertEqual(a_list.count(0), 1)
-        self.assertEqual(a_list.count(2), 3)
-        self.assertEqual(a_list.count(9), 0)
+        def test_count_number_of_times_item_is_in_a_list(self):
+            a_list = [0, 2, 1, 2, 3, 2]
+            self.assertEqual(a_list.count(0), 1)
+            self.assertEqual(a_list.count(2), 3)
+            self.assertEqual(a_list.count(9), 0)
 
 * I remove count_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 4
+
+            self.assertEqual(a_list.count(9), 0)
+
 
     'extend',
     'index',
@@ -913,13 +918,17 @@ test_extend_adds_items_from_an_iterable_to_end_of_a_list
 time for another test
 
 .. code-block:: python
+  :lineno-start: 84
+  :emphasize-lines: 3-5
 
-  def test_count_number_of_times_item_is_in_a_list(self):
-      ...
+          self.assertEqual(a_list.count('not in list'), 0)
 
-  def test_extend(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.extend())
+      def test_extend(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.extend())
+
+
+  'extend',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -934,8 +943,10 @@ the terminal_ shows :ref:`TypeError`
 I pass a value to the call
 
 .. code-block:: python
+  :lineno-start: 88
+  :emphasize-lines: 1
 
-  self.assertIsNone(a_list.extend(0))
+          self.assertIsNone(a_list.extend(0))
 
 the terminal_ shows :ref:`TypeError`
 
@@ -946,8 +957,10 @@ the terminal_ shows :ref:`TypeError`
 I change the value to an iterable_
 
 .. code-block:: python
+  :lineno-start: 88
+  :emphasize-lines: 1
 
-  self.assertIsNone(a_list.extend((0, 1)))
+          self.assertIsNone(a_list.extend((0, 1)))
 
 the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when called
 
@@ -958,9 +971,11 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 * I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 2
 
-    self.assertIsNone(a_list.extend((0, 1)))
-    self.assertEqual(a_list, [0, 1, 2, 'n'])
+            self.assertIsNone(a_list.extend((0, 1)))
+            self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -968,23 +983,26 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0, 1] != [0, 1, 2, 'n']
 
-  I change the expectation to match
+* I change the expectation to match
 
   .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
+            self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
 
   the test passes
 
-* I change the values given to the extend_ :ref:`method<functions>`
+* I change the values given to the `extend method`_
 
   .. code-block:: python
+    :lineno-start: 86
     :emphasize-lines: 3
 
-    def test_extend(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.extend((2, 1, 0)))
-        self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
+        def test_extend(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.extend((2, 1, 0)))
+            self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -992,27 +1010,35 @@ the test passes. The extend_ :ref:`method<functions>` returns :ref:`None` when c
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 2, 1, 0] != [0, 1, 2, 'n', 0, 1]
 
-  I change the values to match
+* I change the values to match
 
   .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
+            self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
   the test is green again, it looks like extend_ calls append_ for each item in the iterable_
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 86
     :emphasize-lines: 1
 
-    def test_extend_adds_items_from_an_iterable_to_end_of_a_list(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.extend((2, 1, 0)))
-        self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
+        def test_extend_adds_items_from_an_iterable_to_end_of_a_list(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.extend((2, 1, 0)))
+            self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
 * I remove extend_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 89
+
+            self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
+
 
     'index',
     'insert',
@@ -1031,16 +1057,20 @@ test_index_returns_first_position_of_item_in_a_list
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the index_ :ref:`method<functions>`
+I add a test for the `index method`_
 
 .. code-block:: python
+  :lineno-start: 89
+  :emphasize-lines: 3-5
 
-  def test_extend_adds_items_from_an_iterable_to_end_of_a_list(self):
-      ...
+          self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
-  def test_index(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.index())
+      def test_index(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.index())
+
+
+  'index',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -1055,11 +1085,12 @@ the terminal_ shows :ref:`TypeError`
 I add a value to the call
 
 .. code-block:: python
+  :lineno-start: 91
   :emphasize-lines: 3
 
-  def test_index(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.index(0))
+      def test_index(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.index(0))
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -1070,8 +1101,10 @@ the terminal_ shows :ref:`AssertionError`
 I add the expectation
 
 .. code-block:: python
+  :lineno-start: 93
+  :emphasize-lines: 1
 
-  self.assertIsNone(a_list.index(0), 0)
+          self.assertIsNone(a_list.index(0), 0)
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -1082,11 +1115,12 @@ the terminal_ shows :ref:`AssertionError`
 I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
+  :lineno-start: 91
   :emphasize-lines: 3
 
-  def test_index(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertEqual(a_list.index(0), 0)
+      def test_index(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertEqual(a_list.index(0), 0)
 
 the test passes
 
@@ -1097,11 +1131,12 @@ the test passes
 * it does not tell me if the :ref:`method<functions>` returned the same value I gave, so I change the list_
 
   .. code-block:: python
+    :lineno-start: 91
     :emphasize-lines: 2
 
-    def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '...last']
-        self.assertEqual(a_list.index(0), 0)
+        def test_index(self):
+            a_list = ['1st', '2nd', '3rd', '...last']
+            self.assertEqual(a_list.index(0), 0)
 
   the terminal_ shows ValueError_
 
@@ -1109,9 +1144,12 @@ the test passes
 
     ValueError: 0 is not in list
 
-  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_. I add it to the list of :ref:`Exceptions<errors>` seen
+  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_
+
+* I add ValueError_ to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
+    :lineno-start: 4
     :emphasize-lines: 4
 
     # Exceptions seen
@@ -1119,14 +1157,15 @@ the test passes
     # TypeError
     # ValueError
 
-  I remove the things around the call and change the value to be clearer
+* I remove the things around the call and change the value to be clearer
 
   .. code-block:: python
+    :lineno-start: 91
     :emphasize-lines: 3
 
-    def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '...last']
-        a_list.index('not in list')
+        def test_index(self):
+            a_list = ['1st', '2nd', '3rd', '...last']
+            a_list.index('not in list')
 
   the terminal_ shows ValueError_
 
@@ -1134,16 +1173,17 @@ the test passes
 
     ValueError: 'not in list' is not in list
 
-  I add assertRaises_ to handle the :ref:`Exception<errors>`
+* I add assertRaises_ to handle the :ref:`Exception<errors>`
 
   .. code-block:: python
+    :lineno-start: 91
     :emphasize-lines: 4,5
 
-    def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '...last']
+        def test_index(self):
+            a_list = ['1st', '2nd', '3rd', '...last']
 
-        with self.assertRaises(ValueError):
-            a_list.index('not in list')
+            with self.assertRaises(ValueError):
+                a_list.index('not in list')
 
   the test is green again
 
@@ -1152,12 +1192,12 @@ the test passes
   .. code-block:: python
     :emphasize-lines: 3
 
-    def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '...last']
-        self.assertEqual(a_list.index('1st'), '1st')
+        def test_index(self):
+            a_list = ['1st', '2nd', '3rd', '...last']
+            self.assertEqual(a_list.index('1st'), '1st')
 
-        with self.assertRaises(ValueError):
-            a_list.index('not in list')
+            with self.assertRaises(ValueError):
+                a_list.index('not in list')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1165,20 +1205,26 @@ the test passes
 
     AssertionError: 0 != '1st'
 
-  I change the expectation
+* I change the expectation
 
   .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list.index('1st'), 0)
+        self.assertEqual(a_list.index('1st'), 0)
 
   the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 4
 
-    self.assertEqual(a_list.index('1st'), 0)
-    self.assertEqual(a_list.index('3rd'), 0)
+        def test_index(self):
+            a_list = ['1st', '2nd', '3rd', '...last']
+            self.assertEqual(a_list.index('1st'), 0)
+            self.assertEqual(a_list.index('3rd'), 0)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1186,20 +1232,27 @@ the test passes
 
     AssertionError: 2 != 0
 
-  I change the value in the test
+* I change the value in the test
 
   .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list.index('3rd'), 2)
+        self.assertEqual(a_list.index('3rd'), 2)
 
   the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list.index('3rd'), 2)
-    self.assertEqual(a_list.index('2nd'), 2)
+          self.assertEqual(a_list.index('3rd'), 2)
+          self.assertEqual(a_list.index('2nd'), 2)
+
+          with self.assertRaises(ValueError):
+              a_list.index('not in list')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1207,20 +1260,24 @@ the test passes
 
     AssertionError: 1 != 2
 
-  I change the value to match
+* I change the value to match
 
   .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list.index('2nd'), 1)
+            self.assertEqual(a_list.index('2nd'), 1)
 
   the test is green again
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list.index('2nd'), 1)
-    self.assertEqual(a_list.index('...last'), 1)
+            self.assertEqual(a_list.index('2nd'), 1)
+            self.assertEqual(a_list.index('...last'), 1)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1228,28 +1285,35 @@ the test passes
 
     AssertionError: 3 != 1
 
-  I change the value to match the terminal_
+* I change the value to match the terminal_
 
   .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list.index('...last'), 3)
+            self.assertEqual(a_list.index('...last'), 3)
 
   the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the list_. Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
 
-* I want to know what happens if I have the same item in the list_ more than once, so I add a duplicate
+* I want to know what happens when I have the same item in the list_ more than once, so I add something in the list_ again
 
   .. code-block:: python
+    :lineno-start: 91
     :emphasize-lines: 2
 
-    def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '...last', '1st']
+        def test_index(self):
+            a_list = ['1st', '2nd', '3rd', '...last', '1st']
 
-  the terminal_ still shows green. I add an :ref:`assertion<what is an assertion?>`
+  the terminal_ still shows green
+
+* I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list.index('...last'), 3)
-    self.assertEqual(a_list.index('1st'), 4)
+            self.assertEqual(a_list.index('...last'), 3)
+            self.assertEqual(a_list.index('1st'), 4)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1263,11 +1327,13 @@ the test passes
 
     TypeError: index expected at least 1 argument, got 0
 
-  I try a second argument
+* I add a second argument
 
   .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list.index('1st', 0), 4)
+            self.assertEqual(a_list.index('1st', 0), 4)
 
   the terminal_ still shows :ref:`AssertionError`
 
@@ -1275,42 +1341,53 @@ the test passes
 
     AssertionError: 0 != 4
 
-  I change the argument
+* I change the argument
 
   .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 1
 
     self.assertEqual(a_list.index('1st', 1), 4)
 
-  the test passes, the second input is the position I want the :ref:`method<functions>` to start from. I try the same thing with the other :ref:`assertions<what is an assertion?>`
+  the test passes, the second input is the position I want the :ref:`method<functions>` to start from
+
+* I try the same thing with the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 91
     :emphasize-lines: 3-6
 
-    def test_index(self):
-        a_list = ['1st', '2nd', '3rd', '...last', '1st']
-        self.assertEqual(a_list.index('1st', 0), 0)
-        self.assertEqual(a_list.index('3rd', 0), 2)
-        self.assertEqual(a_list.index('2nd', 0), 1)
-        self.assertEqual(a_list.index('...last', 0), 3)
-        self.assertEqual(a_list.index('1st', 1), 4)
+        def test_index(self):
+            a_list = ['1st', '2nd', '3rd', '...last', '1st']
+            self.assertEqual(a_list.index('1st', 0), 0)
+            self.assertEqual(a_list.index('3rd', 0), 2)
+            self.assertEqual(a_list.index('2nd', 0), 1)
+            self.assertEqual(a_list.index('...last', 0), 3)
+            self.assertEqual(a_list.index('1st', 1), 4)
 
-        with self.assertRaises(ValueError):
-            a_list.index('not in list')
+            with self.assertRaises(ValueError):
+                a_list.index('not in list')
 
   the test is still green
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 91
     :emphasize-lines: 1
 
     def test_index_returns_first_position_of_item_in_a_list(self):
         a_list = ['1st', '2nd', '3rd', '...last', '1st']
-        ...
 
 * I also remove index_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 99
+
+            with self.assertRaises(ValueError):
+                a_list.index('not in list')
+
 
     'insert',
     'pop',
