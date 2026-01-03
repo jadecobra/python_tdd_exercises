@@ -26,10 +26,12 @@ what do I get?
 
 * 30 chapters
 * 11 hours of video
+* 40 sessions
 * over 100 tests
 * improved typing skills
 * better comparison skills (your ability to spot the difference will grow)
-* daily 1 on 1 with me in a group with 4 other Python PUMPERS like you to crush your Python pain
+* daily 1 on 1 with Jacob Itegboje
+* a group with 4 other Python PUMPERS like you to crush your Python pain
 * access to a growing WhatsApp community of people like you who have gone through or are going through the course
 * someone with Python experience to help along the way
 
