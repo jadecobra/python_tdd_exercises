@@ -29,12 +29,12 @@ what do I get?
 * 40 sessions (8 weeks)
 * over 100 tests
 * writing code from day 1
-* improved typing skills
-* better comparison skills (your ability to spot the difference will grow)
-* daily 1 on 1 from Monday to Friday video calls with Jacob Itegboje
-* a group with 4 other Python PUMPERS like you to crush your Python pain
-* access to a growing WhatsApp community of people like you who have gone through or are going through the course
+* improved typing skills (`click here to take a typing test <https://www.keybr.com/typing-test>`_)
+* better comparison skills (your ability to see the difference between 2 things grow)
 * 24/7 access to someone (Jacob Itegboje) with Python_ experience to help along the way
+* daily 1 on 1 from Monday to Friday in video calls with Jacob Itegboje
+* a group with 4 other Python PUMPERS like you
+* access to a growing WhatsApp community of people like you who have gone through or are going through the `Pumping Python`_
 
 .. _sign_up:
 

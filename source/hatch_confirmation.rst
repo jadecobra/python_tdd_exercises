@@ -16,7 +16,7 @@ CONGRATULATIONS!!! You joined a Pumping Python HATCH
 
 ----
 
-Congratulations! You have successfully joined a Pumping Python HATCH! I look forward to the next 8 weeks with you.
+Congratulations! You have successfully joined a :ref:`Pumping Python HATCH<join a HATCH>`! The next 8 weeks is going to be fun.
 
 
 *********************************************************************************

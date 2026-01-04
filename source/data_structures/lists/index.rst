@@ -1447,23 +1447,24 @@ I add two values to the call
   :lineno-start: 102
   :emphasize-lines: 3
 
-  def test_insert(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.insert(0, 1))
+      def test_insert(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.insert(0, 1))
 
-the test passes
+the test passes. What did the `insert method`_ do to the list_?
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add an :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` to find out
 
   .. code-block:: python
+    :lineno-start: 104
     :emphasize-lines: 2
 
-    self.assertIsNone(a_list.insert(0, 1))
-    self.assertEqual(a_list, [0, 1, 2, 'n'])
+            self.assertIsNone(a_list.insert(0, 1))
+            self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1471,19 +1472,33 @@ the test passes
 
     AssertionError: Lists differ: [1, 0, 1, 2, 'n'] != [0, 1, 2, 'n']
 
-  I add the new value to the list_
+  there is an extra value at the beginning of the list_
+
+* I add the new value to the expectation
 
   .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [1, 0, 1, 2, 'n'])
+            self.assertEqual(a_list, [1, 0, 1, 2, 'n'])
 
-  the test passes. The insert_ :ref:`method<functions>` places the second input given at the index given as the first , it also moves the original items from that index and on in the list_ to the right
+  the test passes.
+
+  The `insert method`_
+
+  - puts the second input given at the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the list_ given as the first input
+  - it also moves the original items from that :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and after in the list_ to the right
 
 * I change the second input in the call
 
   .. code-block:: python
+    :lineno-start: 102
+    :emphasize-lines: 3
 
-    self.assertIsNone(a_list.insert(0, -1))
+        def test_insert(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.insert(0, -1))
+            self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1491,27 +1506,35 @@ the test passes
 
     AssertionError: Lists differ: [-1, 0, 1, 2, 'n'] != [1, 0, 1, 2, 'n']
 
-  I change the expectation to match
+* I change the expectation to match
 
   .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+            self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
 
   the test is green again
 
-* I add another :ref:`assertion<what is an assertion?>` to see what happens when I insert_ an item in the middle of the list
+* I add another :ref:`assertion<what is an assertion?>` to see what happens when I insert_ an item in the middle of the list_
 
   .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
-    self.assertIsNone(a_list.insert(3, 1.5))
+            self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+            self.assertIsNone(a_list.insert(3, 1.5))
 
-  the terminal_ shows green. I add an :ref:`assertion<what is an assertion?>` to see what it did to the list
+  the terminal_ shows green
+
+* I add an :ref:`assertion<what is an assertion?>` to see what it did to the list
 
   .. code-block:: python
+    :lineno-start: 106
+    :emphasize-lines: 2
 
-    self.assertIsNone(a_list.insert(3, 1.5))
-    self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+            self.assertIsNone(a_list.insert(3, 1.5))
+            self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1519,29 +1542,38 @@ the test passes
 
     AssertionError: Lists differ: [-1, 0, 1, 1.5, 2, 'n'] != [-1, 0, 1, 2, 'n']
 
-  I add the value to the expectation
+* I add the value to the expectation
 
   .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
+            self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
-  the test passes, it moved everything from the given :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and after to the right
+  the test passes, it moved everything in the list_ from the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` I gave and after to the right
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 102
     :emphasize-lines: 1
 
-    def test_insert_item_at_given_index_in_a_list(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.insert(0, -1))
-        self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
-        self.assertIsNone(a_list.insert(3, 1.5))
-        self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
+        def test_insert(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.insert(0, -1))
+            self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
+            self.assertIsNone(a_list.insert(3, 1.5))
+            self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
+
+    'insert',
 
 * I remove insert_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 107
+
+            self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
+
 
     'pop',
     'remove',
@@ -1561,13 +1593,17 @@ test_pop_removes_and_returns_last_item_from_a_list
 I add a new test
 
 .. code-block:: python
+  :lineno-start: 107
+  :emphasize-lines: 3-5
 
-  def test_insert_item_at_given_index_in_a_list(self):
-      ...
+          self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
-  def test_pop(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.pop())
+      def test_pop(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.pop())
+
+
+  'pop',
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -1584,8 +1620,10 @@ The pop_ :ref:`method<functions>` returns the last item in the list_
 I add the expectation
 
 .. code-block:: python
+  :lineno-start: 111
+  :emphasize-lines: 1
 
-  self.assertIsNone(a_list.pop(), 'n')
+          self.assertIsNone(a_list.pop(), 'n')
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -1596,9 +1634,12 @@ the terminal_ shows :ref:`AssertionError`
 I change assertIsNone_ to assertEqual_
 
 .. code-block:: python
+  :lineno-start: 109
+  :emphasize-lines: 3
 
-  a_list = [0, 1, 2, 'n']
-  self.assertEqual(a_list.pop(), 'n')
+      def test_pop(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertEqual(a_list.pop(), 'n')
 
 the test passes
 
@@ -1606,12 +1647,14 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add an :ref:`assertion<what is an assertion?>`
+* I add another :ref:`assertion<what is an assertion?>` to see what happened to the list_
 
   .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 
 
-    self.assertEqual(a_list.pop(), 'n')
-    self.assertEqual(a_list, [0, 1, 2, 'n'])
+            self.assertEqual(a_list.pop(), 'n')
+            self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal_ shows :ref:`AssertionError`
 
