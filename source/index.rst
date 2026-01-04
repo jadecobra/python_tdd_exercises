@@ -15,9 +15,9 @@ pumping python: how I solve problems with test driven development
 
 ----
 
-My name is Jacob Itegboje and this is a collection of `Test Driven Development`_ exercises that have helped me use Python_ for more than a decade. I have tried different methods of learning from books, courses, videos and exercises to working on personal projects and I find that the most effective way to learn is to build something. Of all the things I tried, the thing that helped me build and learn most effectively was `Test Driven Development`_
+Welcome to `Pumping Python`_, My name is Jacob Itegboje and these are `Test Driven Development`_ exercises that helped me use the Python_ programming language for more than a decade. I have tried different ways of learning from books, courses, videos and exercises to working on personal projects and I find that the most effective way to learn is to build something. Of all the things I tried, the thing that helped me build and learn most effectively was `Test Driven Development`_
 
-This is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal.
+This is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal. It feels like the scientific method to me.
 
 I also find that sometimes when I am working on a project and have an idea, I remember I have a test for that idea in another project and can go back to run it or write a new test.
 
