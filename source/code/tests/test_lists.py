@@ -113,7 +113,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list.pop(), 2)
         self.assertEqual(a_list, [0, 1])
 
-    def test_remove_first_instance_of_item_from_a_list(self):
+    def test_remove_first_time_something_is_in_a_list(self):
         a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])

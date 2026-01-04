@@ -1057,6 +1057,8 @@ the test passes. The `extend method`_ returns :ref:`None` when called
     'reverse',
     'sort'
 
+:ref:`I know how to add items from an iterable to a list<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
+
 ----
 
 *********************************************************************************
@@ -1405,6 +1407,8 @@ the test passes
     'reverse',
     'sort'
 
+:ref:`I know how to find the position of something in a list<test_index_returns_first_position_of_item_in_a_list>`
+
 ----
 
 *********************************************************************************
@@ -1558,7 +1562,7 @@ the test passes. What did the `insert method`_ do to the list_?
     :lineno-start: 102
     :emphasize-lines: 1
 
-        def test_insert(self):
+        def test_insert_item_at_given_index_in_a_list(self):
             a_list = [0, 1, 2, 'n']
             self.assertIsNone(a_list.insert(0, -1))
             self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
@@ -1579,6 +1583,8 @@ the test passes. What did the `insert method`_ do to the list_?
     'remove',
     'reverse',
     'sort'
+
+:ref:`I know how to put an item at a position in a list<test_insert_item_at_given_index_in_a_list>`
 
 ----
 
@@ -1651,7 +1657,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 111
-    :emphasize-lines: 
+    :emphasize-lines:
 
             self.assertEqual(a_list.pop(), 'n')
             self.assertEqual(a_list, [0, 1, 2, 'n'])
@@ -1662,20 +1668,22 @@ the test passes
 
     AssertionError: Lists differ: [0, 1, 2] != [0, 1, 2, 'n']
 
-  I change the values in the test to match
+* I change the values in the test to match
 
   .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [0, 1, 2])
+            self.assertEqual(a_list, [0, 1, 2])
 
   the test passes
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I add another :ref:`assertion<what is an assertion?>` with the `pop method`_
 
   .. code-block:: python
 
-    self.assertEqual(a_list, [0, 1, 2])
-    self.assertEqual(a_list.pop(), 'n')
+            self.assertEqual(a_list, [0, 1, 2])
+            self.assertEqual(a_list.pop(), 'n')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1683,19 +1691,24 @@ the test passes
 
     AssertionError: 2 != 'n'
 
-  I change the value
+* I change the value in the expectation
 
   .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [0, 1, 2])
-    self.assertEqual(a_list.pop(), 2)
+            self.assertEqual(a_list.pop(), 2)
 
-  the test passes. I add another :ref:`assertion<what is an assertion?>`
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>` to see what changed in the list_
 
   .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list.pop(), 2)
-    self.assertEqual(a_list, [0, 1, 2])
+            self.assertEqual(a_list.pop(), 2)
+            self.assertEqual(a_list, [0, 1, 2])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1703,11 +1716,13 @@ the test passes
 
     AssertionError: Lists differ: [0, 1] != [0, 1, 2]
 
-  I change the values in the test to match
+* I change the values in the test to match
 
   .. code-block:: python
+    :lineno-start: 114
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [0, 1])
+            self.assertEqual(a_list, [0, 1])
 
   the test passes
 
@@ -1716,25 +1731,34 @@ the test passes
   .. code-block:: python
     :emphasize-lines: 1
 
-    def test_pop_removes_and_returns_last_item_from_a_list(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertEqual(a_list.pop(), 'n')
-        self.assertEqual(a_list, [0, 1, 2])
-        self.assertEqual(a_list.pop(), 2)
-        self.assertEqual(a_list, [0, 1])
+        def test_pop_removes_and_returns_last_item_from_a_list(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertEqual(a_list.pop(), 'n')
+            self.assertEqual(a_list, [0, 1, 2])
+            self.assertEqual(a_list.pop(), 2)
+            self.assertEqual(a_list, [0, 1])
+
+
+    'pop',
 
 * I take out pop_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 114
+
+            self.assertEqual(a_list, [0, 1])
+
 
     'remove',
     'reverse',
     'sort'
 
+:ref:`I know how to get and remove the last item in a list<test_pop_removes_and_returns_last_item_from_a_list>`
+
 ----
 
 *********************************************************************************
-test_remove_first_instance_of_item_from_a_list
+test_remove_first_time_something_is_in_a_list
 *********************************************************************************
 
 =================================================================================
@@ -1744,13 +1768,17 @@ test_remove_first_instance_of_item_from_a_list
 time for the next :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 114
+  :emphasize-lines: 3-5
 
-  def test_pop_removes_and_returns_last_item_from_a_list(self):
-      ...
+          self.assertEqual(a_list, [0, 1])
 
-  def test_remove(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.remove())
+      def test_remove(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.remove())
+
+
+  'remove',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -1765,21 +1793,25 @@ the terminal_ shows :ref:`TypeError`
 I add a value to the call
 
 .. code-block:: python
+  :lineno-start: 118
+  :emphasize-lines: 1
 
-  self.assertIsNone(a_list.remove(0))
+          self.assertIsNone(a_list.remove(0))
 
-the terminal_ shows green, the remove_ :ref:`method<functions>` returns :ref:`None`
+the terminal_ shows green. The remove_ :ref:`method<functions>` returns :ref:`None`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add an :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
+    :lineno-start: 118
+    :emphasize-lines: 2
 
-    self.assertIsNone(a_list.remove(0))
-    self.assertEqual(a_list, [0, 1, 2, 'n'])
+            self.assertIsNone(a_list.remove(0))
+            self.assertEqual(a_list, [0, 1, 2, 'n'])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1787,23 +1819,28 @@ the terminal_ shows green, the remove_ :ref:`method<functions>` returns :ref:`No
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
-  the :ref:`method<functions>` removes the item given from the list_. I change the expectation
+  the :ref:`method<functions>` removes the item given from the list_
+
+* I change the expectation
 
   .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [1, 2, 'n'])
+            self.assertEqual(a_list, [1, 2, 'n'])
 
   the test passes
 
-* I change the values in the list_ to see what happens if an item is in there more than once
+* I change the values in the list_ to see what happens when an item is in there more than one time
 
   .. code-block:: python
+    :lineno-start: 116
     :emphasize-lines: 2
 
-    def test_remove(self):
-        a_list = [0, 1, 0, 2, 0, 'n']
-        self.assertIsNone(a_list.remove(0))
-        self.assertEqual(a_list, [1, 2, 'n'])
+        def test_remove(self):
+            a_list = [0, 1, 0, 2, 0, 'n']
+            self.assertIsNone(a_list.remove(0))
+            self.assertEqual(a_list, [1, 2, 'n'])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -1811,20 +1848,24 @@ the terminal_ shows green, the remove_ :ref:`method<functions>` returns :ref:`No
 
     AssertionError: Lists differ: [1, 0, 2, 0, 'n'] != [1, 2, 'n']
 
-  I change the values to match
+* I change the values to match
 
   .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
+            self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
-  the test passes
+  the test passes. The `remove method`_ only removes the first time something shows up in the list
 
-* I want to know what happens if I try to remove_ an item that is not in the list_
+* I want to see what happens when I try to remove_ something that is not in the list_
 
   .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
-    self.assertIsNone(a_list.remove('not in list'))
+            self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
+            self.assertIsNone(a_list.remove('not in list'))
 
   the terminal_ shows ValueError_
 
@@ -1832,37 +1873,52 @@ the terminal_ shows green, the remove_ :ref:`method<functions>` returns :ref:`No
 
     ValueError: list.remove(x): x not in list
 
-  I remove the things around the call then add assertRaises_
+* I remove the things around the call then add assertRaises_
 
   .. code-block:: python
-    :emphasize-lines: 3,4
+    :lineno-start: 121
+    :emphasize-lines: 3-4
 
-    self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
+            self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
-    with self.assertRaises(ValueError):
-        a_list.remove('not in list')
+            with self.assertRaises(ValueError):
+                a_list.remove('not in list')
+
+
+    'remove',
 
   the test passes
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 116
     :emphasize-lines: 1
 
-    def test_remove_first_instance_of_item_from_a_list(self):
-        a_list = [0, 1, 0, 2, 0, 'n']
-        self.assertIsNone(a_list.remove(0))
-        self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
+        def test_remove_first_time_something_is_in_a_list(self):
+            a_list = [0, 1, 0, 2, 0, 'n']
+            self.assertIsNone(a_list.remove(0))
+            self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
 
-        with self.assertRaises(ValueError):
-            a_list.remove('not in list')
+            with self.assertRaises(ValueError):
+                a_list.remove('not in list')
+
+
+    'remove'
 
 * I take out remove_ from the TODO list
 
   .. code-block:: python
+    :lineno-start: 121
+
+            with self.assertRaises(ValueError):
+                a_list.remove('not in list')
+
 
     'reverse',
     'sort'
+
+:ref:`I know how to remove the first time something is in a list<test_remove_first_time_something_is_in_a_list>`
 
 ----
 
@@ -1878,7 +1934,7 @@ I add the next test
 
 .. code-block:: python
 
-  def test_remove_first_instance_of_item_from_a_list(self):
+  def test_remove_first_time_something_is_in_a_list(self):
       ...
 
   def test_reverse(self):
