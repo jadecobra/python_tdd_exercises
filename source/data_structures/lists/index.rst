@@ -1418,13 +1418,18 @@ test_insert_item_at_given_index_in_a_list
 I add a test for the next :ref:`method<functions>`
 
 .. code-block:: python
+  :lineno-start: 99
+  :emphasize-lines: 4-6
 
-    def test_index_returns_first_position_of_item_in_a_list(self):
-        ...
+          with self.assertRaises(ValueError):
+              a_list.index('not in list')
 
-    def test_insert(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.insert())
+      def test_insert(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.insert())
+
+
+  'insert',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -1439,12 +1444,14 @@ the terminal_ shows :ref:`TypeError`
 I add two values to the call
 
 .. code-block:: python
+  :lineno-start: 102
+  :emphasize-lines: 3
 
   def test_insert(self):
       a_list = [0, 1, 2, 'n']
       self.assertIsNone(a_list.insert(0, 1))
 
-the test is green
+the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
