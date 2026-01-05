@@ -218,6 +218,31 @@ Here are questions you can answer after going through this chapter
 ----
 
 *********************************************************************************
+questions about lists
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`what is a list?`
+* :ref:`how can I add an item to the end of a list?<test_append_adds_item_to_end_of_a_list>`
+* :ref:`how can I empty a list?<test_clear_empties_a_list>`
+* :ref:`how can I copy a list?<test_copy_a_list>`
+* :ref:`how can I count the number of times an item is in a list?<test_count_number_of_times_item_is_in_a_list>`
+* :ref:`how can I add items from an iterable to the end of a list?<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
+* :ref:`how can I get the first position of an item in a list?<test_index_returns_first_position_of_item_in_a_list>`
+* :ref:`how can I put an item at an index in a list?<test_insert_item_at_given_index_in_a_list>`
+* :ref:`how can I remove the last item from a list?<test_pop_removes_and_returns_last_item_from_a_list>`
+* :ref:`how can I remove the first time an item is in a lsit<test_remove_first_time_item_is_in_a_list>`
+* :ref:`how can I reverse a list?<test_reverse_a_list>`
+* :ref:`how can I sort a list?<test_sort_a_list>`
+* :ref:`how can I get items of a list?<test_getting_items_of_a_list>`
+* :ref:`how can I change an item in a list?<test_setting_items_in_a_list>`
+* :ref:`how can I see only parts of a list?<test_looking_at_parts_of_a_list_aka_slicing>`
+* :ref:`what causes IndexError?<test_index_error>`
+
+----
+
+*********************************************************************************
 testing
 *********************************************************************************
 

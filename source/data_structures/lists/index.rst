@@ -18,12 +18,14 @@
 .. _index: more_on_lists_
 .. _index method: more_on_lists_
 .. _remove:
+.. _remove method: more_on_lists_
 .. _reverse: more_on_lists_
 .. _sort: more_on_lists_
 .. _extend: more_on_lists_
 .. _extend method: more_on_lists_
 .. _list: https://docs.python.org/3/library/stdtypes.html#list
 .. _lists: list_
+.. _slicing: https://docs.python.org/3/reference/expressions.html#slicings
 .. _IndexError: https://docs.python.org/3/library/exceptions.html#IndexError
 
 
@@ -56,6 +58,29 @@ Here are the tests I have by the end of the chapter
 .. literalinclude:: ../../code/tests/test_lists.py
   :language: python
   :linenos:
+
+*********************************************************************************
+questions about lists
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`what is a list?`
+* :ref:`how can I add an item to the end of a list?<test_append_adds_item_to_end_of_a_list>`
+* :ref:`how can I empty a list?<test_clear_empties_a_list>`
+* :ref:`how can I copy a list?<test_copy_a_list>`
+* :ref:`how can I count the number of times an item is in a list?<test_count_number_of_times_item_is_in_a_list>`
+* :ref:`how can I add items from an iterable to the end of a list?<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
+* :ref:`how can I get the first position of an item in a list?<test_index_returns_first_position_of_item_in_a_list>`
+* :ref:`how can I put an item at an index in a list?<test_insert_item_at_given_index_in_a_list>`
+* :ref:`how can I remove the last item from a list?<test_pop_removes_and_returns_last_item_from_a_list>`
+* :ref:`how can I remove the first time an item is in a lsit<test_remove_first_time_item_is_in_a_list>`
+* :ref:`how can I reverse a list?<test_reverse_a_list>`
+* :ref:`how can I sort a list?<test_sort_a_list>`
+* :ref:`how can I get items of a list?<test_getting_items_of_a_list>`
+* :ref:`how can I change an item in a list?<test_setting_items_in_a_list>`
+* :ref:`how can I see only parts of a list?<test_looking_at_parts_of_a_list_aka_slicing>`
+* :ref:`what causes IndexError?<test_index_error>`
 
 ----
 
@@ -239,7 +264,7 @@ the test passes. This is how to make an empty list_
 
     TypeError: 'int' object is not iterable
 
-* I add the :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -1758,7 +1783,7 @@ the test passes
 ----
 
 *********************************************************************************
-test_remove_first_time_something_is_in_a_list
+test_remove_first_time_item_is_in_a_list
 *********************************************************************************
 
 =================================================================================
@@ -1895,7 +1920,7 @@ the terminal_ shows green. The remove_ :ref:`method<functions>` returns :ref:`No
     :lineno-start: 116
     :emphasize-lines: 1
 
-        def test_remove_first_time_something_is_in_a_list(self):
+        def test_remove_first_time_item_is_in_a_list(self):
             a_list = [0, 1, 0, 2, 0, 'n']
             self.assertIsNone(a_list.remove(0))
             self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
@@ -1918,7 +1943,7 @@ the terminal_ shows green. The remove_ :ref:`method<functions>` returns :ref:`No
     'reverse',
     'sort'
 
-:ref:`I know how to remove the first time something is in a list<test_remove_first_time_something_is_in_a_list>`
+:ref:`I know how to remove the first time something is in a list<test_remove_first_time_item_is_in_a_list>`
 
 ----
 
@@ -1930,31 +1955,40 @@ test_reverse_a_list
 :red:`RED`: make it fail
 =================================================================================
 
-I add the next test
+* I add the next test
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 121
+    :emphasize-lines: 4-6
 
-  def test_remove_first_time_something_is_in_a_list(self):
-      ...
+            with self.assertRaises(ValueError):
+                a_list.remove('not in list')
 
-  def test_reverse(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.reverse())
+        def test_reverse(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.reverse())
 
-the terminal_ shows green. This :ref:`method<functions>` returns :ref:`None`. I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
-.. code-block:: python
+    'reverse',
 
-  self.assertIsNone(a_list.reverse())
-  self.assertEqual(a_list, [0, 1, 2, 'n'])
+  the terminal_ shows green. The `reverse method`_ returns :ref:`None`.
 
-the terminal_ shows :ref:`AssertionError`
+* I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
-.. code-block:: shell
+  .. code-block:: python
+    :lineno-start:  126
+    :emphasize-lines: 2
 
-  AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
+            self.assertIsNone(a_list.reverse())
+            self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-it reversed the order of the items in the list_
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: Lists differ: ['n', 2, 1, 0] != [0, 1, 2, 'n']
+
+  it reversed the order of the items in the list_
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1963,8 +1997,10 @@ it reversed the order of the items in the list_
 I change the expectation
 
 .. code-block:: python
+  :lineno-start: 127
+  :emphasize-lines: 1
 
-  self.assertEqual(a_list, ['n', 2, 1, 0])
+          self.assertEqual(a_list, ['n', 2, 1, 0])
 
 the test passes
 
@@ -1975,18 +2011,31 @@ the test passes
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 124
     :emphasize-lines: 1
 
-    def test_reverse_a_list(self):
-        a_list = [0, 1, 2, 'n']
-        self.assertIsNone(a_list.reverse())
-        self.assertEqual(a_list, ['n', 2, 1, 0])
+        def test_reverse_a_list(self):
+            a_list = [0, 1, 2, 'n']
+            self.assertIsNone(a_list.reverse())
+            self.assertEqual(a_list, ['n', 2, 1, 0])
+
+
+    'reverse',
 
 * I remove the name from the TODO list
 
   .. code-block:: python
+    :lineno-start: 127
+
+            self.assertEqual(a_list, ['n', 2, 1, 0])
+
 
     'sort'
+
+
+    # Exceptions seen
+
+:ref:`I know how to reverse a list<test_reverse_a_list>`
 
 ----
 
@@ -1998,13 +2047,20 @@ test_sort_a_list
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test
+I add a test for the last :ref:`method<functions>` in the TODO list
 
 .. code-block:: python
+  :lineno-start: 127
+  :emphasize-lines: 3-5
 
-  def test_sort(self):
-      a_list = [0, 1, 2, 'n']
-      self.assertIsNone(a_list.sort())
+          self.assertEqual(a_list, ['n', 2, 1, 0])
+
+      def test_sort(self):
+          a_list = [0, 1, 2, 'n']
+          self.assertIsNone(a_list.sort())
+
+
+  'sort'
 
 the terminal_ shows :ref:`TypeError`
 
@@ -2018,13 +2074,16 @@ I have to change ``'n'`` to a number or change the other numbers to a string_
 :green:`GREEN`: make it pass
 =================================================================================
 
-I remove the things around the call, and the :ref:`variable<test_attribute_error_w_variables>` name since it is not used, then add assertRaises_
+I remove the things around the call then add assertRaises_
 
 .. code-block:: python
+  :lineno-start: 129
+  :emphasize-lines: 3-4
 
-  def test_sort(self):
-      with self.assertRaises(TypeError):
-          [0, 1, 2, 'n'].sort()
+      def test_sort(self):
+          a_list = [0, 1, 2, 'n']
+          with self.assertRaises(TypeError):
+              a_list.sort()
 
 the test passes
 
@@ -2032,25 +2091,40 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add a new list_ and another :ref:`assertion<what is an assertion?>`
+* I remove the :ref:`variable<test_attribute_error_w_variables>` because it is not used, I can use the list_ directly
+
+  .. code-block:: python
+    :lineno-start: 2-3
+
+        def test_sort(self):
+            with self.assertRaises(TypeError):
+                [0, 1, 2, 'n'].sort()
+
+  the test is still green
+
+* I add a new list_ where all the items are numbers and another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :emphasize-lines: 5,6
 
-    def test_sort(self):
-        with self.assertRaises(TypeError):
-            [0, 1, 2, 'n'].sort()
+        def test_sort(self):
+            with self.assertRaises(TypeError):
+                [0, 1, 2, 'n'].sort()
 
-        a_list = [0, 1, 2, 3]
-        self.assertIsNone(a_list.sort())
+            a_list = [0, 1, 2, 3]
+            self.assertIsNone(a_list.sort())
 
+  the terminal_ still shows green, sort_ returns :ref:`None` when called
 
-  the terminal_ still shows green, sort_ returns :ref:`None` when called. I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
+* I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
   .. code-block:: python
+    :lineno-start: 133
+    :emphasize-lines: 3
 
-    self.assertIsNone(a_list.sort())
-    self.assertEqual(a_list, [])
+            a_list = [0, 1, 2, 3]
+            self.assertIsNone(a_list.sort())
+            self.assertEqual(a_list, [])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2058,17 +2132,27 @@ the test passes
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-  the list_ stayed the same. I change the expectation
+  the list_ stayed the same
+
+* I change the expectation to match
 
   .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [0, 1, 2, 3])
+            self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is sorted, I change it to see what happens when it is not sorted
+  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is sorted
+
+* I change the list_ to see what happens when it is not sorted
 
   .. code-block:: python
+    :lineno-start: 133
+    :emphasize-lines: 1
 
-    a_list = [0, 1, -1, 2, -2, 3, -3]
+            a_list = [0, 1, -1, 2, -2, 3, -3]
+            self.assertIsNone(a_list.sort())
+            self.assertEqual(a_list, [0, 1, 2, 3])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2076,28 +2160,49 @@ the test passes
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
-  the sort_ :ref:`method<functions>` arranged the list_ in ascending order. I change the values to match
+  the sort_ :ref:`method<functions>` arranged the list_ in ascending order
+
+* I change the values to match
 
   .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
+            self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
   the test passes
 
 * I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 129
     :emphasize-lines: 1
 
-    def test_sort_a_list(self):
-        with self.assertRaises(TypeError):
-            [0, 1, 2, 'n'].sort()
+        def test_sort_a_list(self):
+            with self.assertRaises(TypeError):
+                [0, 1, 2, 'n'].sort()
 
-        a_list = [0, 1, -1, 2, -2, 3, -3]
-        self.assertIsNone(a_list.sort())
-        self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
+            a_list = [0, 1, -1, 2, -2, 3, -3]
+            self.assertIsNone(a_list.sort())
+            self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
+
+
+    'sort'
 
 * I remove sort_ from the TODO list
+
+  .. code-block:: python
+    :lineno-start: 135
+
+            self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
+
+
+    # Exceptions seen
+    # AssertionError
+    # TypeError
+    # ValueError
+
+:ref:`I know how to sort a list<test_sort_a_list>`
 
 ----
 
@@ -2111,16 +2216,20 @@ When I want an item that is in a list_, I can give its :ref:`index<test_index_re
 :red:`RED`: make it fail
 =================================================================================
 
-I add a failing test
+I add a failing test to show what I mean
 
 .. code-block:: python
+  :lineno-start: 135
+  :emphasize-lines: 3-5
 
-  def test_sort_a_list(self):
-      ...
+          self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
-  def test_getting_items_of_a_list(self):
-      a_list = ['1st', '2nd', '3rd', '...last']
-      self.assertEqual(a_list[0], '')
+      def test_getting_items_of_a_list(self):
+          a_list = ['1st', '2nd', '3rd', '...last']
+          self.assertEqual(a_list[0], '')
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -2137,8 +2246,10 @@ the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a
 I change the value in the test
 
 .. code-block:: python
+  :lineno-start: 139
+  :emphasize-lines: 1
 
-  self.assertEqual(a_list[0], '1st')
+          self.assertEqual(a_list[0], '1st')
 
 the test passes
 
@@ -2146,12 +2257,14 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* this is the reverse of the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` :ref:`method<functions>` which takes in the item and returns its position, in this case I provide the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
+* this is the opposite of the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` :ref:`method<functions>` which takes in the item and returns its position, in this case I provide the :ref:`index (position)<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
 
   .. code-block:: python
+    :lineno-start: 139
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[0], '1st')
-    self.assertEqual(a_list[a_list.index('1st')], '')
+            self.assertEqual(a_list[0], '1st')
+            self.assertEqual(a_list[a_list.index('1st')], '')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2162,17 +2275,21 @@ the test passes
   I change the value to match
 
   .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[a_list.index('1st')], '1st')
+            self.assertEqual(a_list[a_list.index('1st')], '1st')
 
   the test passes
 
 * I can also use negative numbers. The last item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``-1`` and the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of negative the length of the list_
 
   .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[a_list.index('1st')], '1st')
-    self.assertEqual(a_list[-4], '')
+            self.assertEqual(a_list[a_list.index('1st')], '1st')
+            self.assertEqual(a_list[-4], '')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2183,17 +2300,21 @@ the test passes
   I change the value to match
 
   .. code-block:: python
+    :lineno-start: 141
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[-4], '1st')
+            self.assertEqual(a_list[-4], '1st')
 
   the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 141
+    :emphasize-lines:
 
-    self.assertEqual(a_list[-4], '1st')
-    self.assertEqual(a_list[2], '')
+            self.assertEqual(a_list[-4], '1st')
+            self.assertEqual(a_list[2], '')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2204,17 +2325,21 @@ the test passes
   I change the expectation to match
 
   .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[2], '3rd')
+            self.assertEqual(a_list[2], '3rd')
 
   the terminal_ shows green again
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[2], '3rd')
-    self.assertEqual(a_list[-2], '')
+            self.assertEqual(a_list[2], '3rd')
+            self.assertEqual(a_list[-2], '')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2225,17 +2350,21 @@ the test passes
   I change the expectation
 
   .. code-block:: python
+    :lineno-start: 143
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[-2], '3rd')
+            self.assertEqual(a_list[-2], '3rd')
 
   the test passes
 
 * I add another line
 
   .. code-block:: python
+    :lineno-start: 143
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[-2], '3rd')
-    self.assertEqual(a_list[1], '')
+            self.assertEqual(a_list[-2], '3rd')
+            self.assertEqual(a_list[1], '')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2243,18 +2372,22 @@ the test passes
 
     AssertionError: '2nd' != ''
 
-  I make the test pass
+  I change the expectation
 
   .. code-block:: python
+    :lineno-start: 144
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[1], '2nd')
+            self.assertEqual(a_list[1], '2nd')
 
 * I add another
 
   .. code-block:: python
+    :lineno-start: 144
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[1], '2nd')
-    self.assertEqual(a_list[-3], '')
+            self.assertEqual(a_list[1], '2nd')
+            self.assertEqual(a_list[-3], '')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2265,17 +2398,21 @@ the test passes
   I change the value
 
   .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[-3], '2nd')
+            self.assertEqual(a_list[-3], '2nd')
 
   the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[-3], '2nd')
-    self.assertEqual(a_list[3], '')
+            self.assertEqual(a_list[-3], '2nd')
+            self.assertEqual(a_list[3], '')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2286,17 +2423,21 @@ the test passes
   I change the value
 
   .. code-block:: python
+    :lineno-start: 146
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[3], '...last')
+            self.assertEqual(a_list[3], '...last')
 
   the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 146
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[3], '...last')
-    self.assertEqual(a_list[-1], '')
+            self.assertEqual(a_list[3], '...last')
+            self.assertEqual(a_list[-1], '')
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2307,10 +2448,27 @@ the test passes
   I make the values match
 
   .. code-block:: python
+    :lineno-start: 137
+    :emphasize-lines: 11
 
-    self.assertEqual(a_list[-1], '...last')
+        def test_getting_items_of_a_list(self):
+            a_list = ['1st', '2nd', '3rd', '...last']
+            self.assertEqual(a_list[0], '1st')
+            self.assertEqual(a_list[a_list.index('1st')], '1st')
+            self.assertEqual(a_list[-4], '1st')
+            self.assertEqual(a_list[2], '3rd')
+            self.assertEqual(a_list[-2], '3rd')
+            self.assertEqual(a_list[1], '2nd')
+            self.assertEqual(a_list[-3], '2nd')
+            self.assertEqual(a_list[3], '...last')
+            self.assertEqual(a_list[-1], '...last')
+
+
+    # Exceptions seen
 
   the test passes
+
+:ref:`I know how to get things that are in a list<test_getting_items_of_a_list>`
 
 ----
 
@@ -2318,21 +2476,27 @@ the test passes
 test_setting_items_in_a_list
 *********************************************************************************
 
+I can also use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item in a list_ to change the item
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test
+I add an :ref:`assertion<what_is_an_assertion?>`
 
 .. code-block:: python
+  :lineno-start: 147
+  :emphasize-lines: 3-6
 
-  def test_getting_items_of_a_list(self):
-      ...
+          self.assertEqual(a_list[-1], '...last')
 
-  def test_setting_items_in_a_list(self):
-      a_list = ['1st', '2nd', '3rd', '...last']
-      a_list[-1] = '4th'
-      self.assertEqual(a_list, ['1st', '2nd', '3rd', '...last'])
+      def test_setting_items_in_a_list(self):
+          a_list = ['1st', '2nd', '3rd', '...last']
+          a_list[-1] = '4th'
+          self.assertEqual(a_list, ['1st', '2nd', '3rd', '...last'])
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -2340,25 +2504,29 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: Lists differ: ['1st', '2nd', '3rd', '4th'] != ['1st', '2nd', '3rd', '...last']
 
-I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item to change its value in a list_, the way I point a name to a value
+I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item to change its value in a list_, the way I point a name to a value when I make a :ref:`variable<what is a variable?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-I change the expectation to match the terminal_
+I change the expectation to match the values in the terminal_
 
 .. code-block:: python
+  :lineno-start: 152
+  :emphasize-lines: 1
 
-  self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
+          self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
-the test passes
+the test passes. :ref:`I know how to change the value of an item in a list<test_setting_items_in_a_list>`
 
 ----
 
 *********************************************************************************
-test_viewing_parts_of_a_list_aka_slicing
+test_looking_at_parts_of_a_list_aka_slicing
 *********************************************************************************
+
+I can use :ref:`indices<test_index_returns_first_position_of_item_in_a_list>` to look at parts of a list_, this is called slicing_
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2367,13 +2535,17 @@ test_viewing_parts_of_a_list_aka_slicing
 I add another test
 
 .. code-block:: python
+  :lineno-start: 152
+  :emphasize-lines: 3-5
 
-  def test_setting_items_in_a_list(self):
-      ...
+            self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
-  def test_viewing_parts_of_a_list(self):
-      a_list = ['a', 'b', 'c', 'd']
-      self.assertEqual(a_list[0:2], [])
+        def test_looking_at_parts_of_a_list(self):
+            a_list = ['a', 'b', 'c', 'd']
+            self.assertEqual(a_list[0:2], [])
+
+
+    # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
@@ -2388,10 +2560,14 @@ the terminal_ shows :ref:`AssertionError`
 I change the values to match
 
 .. code-block:: python
+  :lineno-start: 156
+  :emphasize-lines: 1
 
-  self.assertEqual(a_list[0:2], ['a', 'b'])
+          self.assertEqual(a_list[0:2], ['a', 'b'])
 
-the test passes. I give two values in square brackets(``[]``), separated by a ``:``, the first value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to start from, and the second value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to stop at plus ``1``
+the test passes.
+
+I give two values in square brackets(``[]``), separated by a ``:``, the first value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to start from, and the second value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to stop at plus ``1``
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -2400,9 +2576,11 @@ the test passes. I give two values in square brackets(``[]``), separated by a ``
 * I can skip the first number when the starting :ref:`index<test_index_returns_first_position_of_item_in_a_list>` is ``0``
 
   .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[0:2], ['a', 'b'])
-    self.assertEqual(a_list[:2], [])
+            self.assertEqual(a_list[0:2], ['a', 'b'])
+            self.assertEqual(a_list[:2], [])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2413,17 +2591,21 @@ the test passes. I give two values in square brackets(``[]``), separated by a ``
   I change the values to match
 
   .. code-block:: python
+    :lineno-start: 157
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[:2], ['a', 'b'])
+            self.assertEqual(a_list[:2], ['a', 'b'])
 
-  the terminal_ shows green again
+  the terminal_ shows green again. ``[0:2]`` and ``[:2]`` are the same
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 157
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[:2], ['a', 'b'])
-    self.assertEqual(a_list[1:4], [])
+            self.assertEqual(a_list[:2], ['a', 'b'])
+            self.assertEqual(a_list[1:4], [])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2439,12 +2621,14 @@ the test passes. I give two values in square brackets(``[]``), separated by a ``
 
   the test passes
 
-* I can skip the second number when it is bigger than or the same as the length of the list_
+* I can skip the second number when it is bigger than or the same as the number of things in the list_
 
   .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
-    self.assertEqual(a_list[1:], [])
+            self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
+            self.assertEqual(a_list[1:], [])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2455,17 +2639,21 @@ the test passes. I give two values in square brackets(``[]``), separated by a ``
   I add the missing values
 
   .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[1:], ['b', 'c', 'd'])
+            self.assertEqual(a_list[1:], ['b', 'c', 'd'])
 
-  the test passes
+  the test passes. ``[1:4]`` and ``[1:]`` are the same because this list_ has 4 things
 
 * I add another line
 
   .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[1:], ['b', 'c', 'd'])
-    self.assertEqual(a_list[0:3], [])
+            self.assertEqual(a_list[1:], ['b', 'c', 'd'])
+            self.assertEqual(a_list[0:3], [])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2476,17 +2664,21 @@ the test passes. I give two values in square brackets(``[]``), separated by a ``
   I change the expectation
 
   .. code-block:: python
+    :lineno-start: 160
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
+            self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
 
-  the test is green again
+  the test passes
 
 * I add another
 
   .. code-block:: python
+    :lineno-start: 160
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
-    self.assertEqual(a_list[1:3], [])
+            self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
+            self.assertEqual(a_list[1:3], [])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2497,17 +2689,21 @@ the test passes. I give two values in square brackets(``[]``), separated by a ``
   I change the expectation
 
   .. code-block:: python
+    :lineno-start: 161
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[1:3], ['b', 'c'])
+            self.assertEqual(a_list[1:3], ['b', 'c'])
 
   the test is green again
 
 * I can also skip both numbers
 
   .. code-block:: python
+    :lineno-start: 161
+    :emphasize-lines: 2
 
-    self.assertEqual(a_list[1:3], ['b', 'c'])
-    self.assertEqual(a_list[:], [])
+            self.assertEqual(a_list[1:3], ['b', 'c'])
+            self.assertEqual(a_list[:], [])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -2515,28 +2711,34 @@ the test passes. I give two values in square brackets(``[]``), separated by a ``
 
     AssertionError: Lists differ: ['a', 'b', 'c', 'd'] != []
 
-  I get the entire list_ back or a copy_
+  I get the entire list_ back or a :ref:`copy<test_copy_a_list>`
 
   .. code-block:: python
+    :lineno-start: 162
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[:], a_list.copy())
+            self.assertEqual(a_list[:], a_list.copy())
 
   the test is green again
 
-* This is also called slicing, I change the name of the test
+* This is also called slicing_, I change the name of the test
 
   .. code-block:: python
+    :lineno-start: 154
     :emphasize-lines: 1
 
-    def test_viewing_parts_of_a_list_aka_slicing(self):
-        a_list = ['a', 'b', 'c', 'd']
-        self.assertEqual(a_list[0:2], ['a', 'b'])
-        self.assertEqual(a_list[:2], ['a', 'b'])
-        self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
-        self.assertEqual(a_list[1:], ['b', 'c', 'd'])
-        self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
-        self.assertEqual(a_list[1:3], ['b', 'c'])
-        self.assertEqual(a_list[:], a_list.copy())
+        def test_looking_at_parts_of_a_list_aka_slicing(self):
+            a_list = ['a', 'b', 'c', 'd']
+            self.assertEqual(a_list[0:2], ['a', 'b'])
+            self.assertEqual(a_list[:2], ['a', 'b'])
+            self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
+            self.assertEqual(a_list[1:], ['b', 'c', 'd'])
+            self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
+            self.assertEqual(a_list[1:3], ['b', 'c'])
+            self.assertEqual(a_list[:], a_list.copy())
+
+
+    # Exceptions seen
 
 ----
 
@@ -2553,13 +2755,17 @@ IndexError_ is raised when I try to get an item from a list_ but use a number th
 I add a failing test
 
 .. code-block:: python
+  :lineno-start: 162
+  :emphasize-lines: 3-5
 
-  def test_viewing_parts_of_a_list_aka_slicing(self):
-      ...
+          self.assertEqual(a_list[:], a_list.copy())
 
-  def test_index_error(self):
-      a_list = ['a', 'b', 'c', 'd']
-      a_list[4]
+      def test_index_error(self):
+          a_list = ['a', 'b', 'c', 'd']
+          a_list[4]
+
+
+  # Exceptions seen
 
 the terminal_ shows IndexError_
 
@@ -2567,27 +2773,17 @@ the terminal_ shows IndexError_
 
   IndexError: list index out of range
 
-when I use an index that is the same as or greater than the length of the list_ I am pointing to something that is NOT in it
+when I use an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` that is greater than or the same as the number of things in the list_, I am pointing to something that is NOT in the list_
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add it to the list of :ref:`Exceptions<errors>` seen
-
-.. code-block:: python
-  :emphasize-lines: 5
-
-  # Exceptions seen
-  # AssertionError
-  # TypeError
-  # ValueError
-  # IndexError
-
 I add assertRaises_
 
 .. code-block:: python
-  :emphasize-lines: 4,5
+  :lineno-start: 164
+  :emphasize-lines: 4-5
 
   def test_index_error(self):
       a_list = ['a', 'b', 'c', 'd']
@@ -2601,13 +2797,26 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* the same thing happens when I use a negative number that is lower than the length of the list_ as a negative number
+* I add IndexError_ to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
+    :emphasize-lines: 5
 
-    with self.assertRaises(IndexError):
-        a_list[4]
-    a_list[-5]
+    # Exceptions seen
+    # AssertionError
+    # TypeError
+    # ValueError
+    # IndexError
+
+* I get IndexError_ when I use a negative number that is smaller than the number of things in the list_ as a negative number
+
+  .. code-block:: python
+    :lineno-start: 167
+    :emphasize-lines: 3
+
+            with self.assertRaises(IndexError):
+                a_list[4]
+            a_list[-5]
 
   the terminal_ shows IndexError_
 
@@ -2615,25 +2824,33 @@ the test passes
 
     IndexError: list index out of range
 
-  I add another assertRaises_
+* I add the `assertRaises method`_
 
   .. code-block:: python
+    :lineno-start: 167
     :emphasize-lines: 3
 
-    with self.assertRaises(IndexError):
-        a_list[4]
-    with self.assertRaises(IndexError):
-        a_list[-5]
+            with self.assertRaises(IndexError):
+                a_list[4]
+            with self.assertRaises(IndexError):
+                a_list[-5]
+
+
+    # Exceptions seen
 
   the test passes
 
-* IndexError_ is also raised when I call the pop_ :ref:`method<functions>` with an empty list_
+* IndexError_ is also raised when I call the `pop method`_ with an empty list_
 
   .. code-block:: python
+    :lineno-start: 167
+    :emphasize-lines: 5
 
-    with self.assertRaises(IndexError):
-        a_list[-5]
-    [].pop()
+            with self.assertRaises(IndexError):
+                a_list[4]
+            with self.assertRaises(IndexError):
+                a_list[-5]
+            [].pop()
 
   the terminal_ shows IndexError_
 
@@ -2641,24 +2858,28 @@ the test passes
 
     IndexError: pop from empty list
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
-    :emphasize-lines: 3
+    :lineno-start: 169
+    :emphasize-lines: 3-4
 
-    with self.assertRaises(IndexError):
-        a_list[-5]
-    with self.assertRaises(IndexError):
-        [].pop()
+            with self.assertRaises(IndexError):
+                a_list[-5]
+            with self.assertRaises(IndexError):
+                [].pop()
 
-  the terminal_ shows green. I cannot remove the last item from a list_ that has no items, this is like trying to get an item from a list_ that has no items
+  the terminal_ shows green
+
+* I cannot remove the last item from a list_ that has no items, this is like trying to get an item from a list_ that has no items
 
   .. code-block:: python
+    :lineno-start: 171
     :emphasize-lines: 3
 
-    with self.assertRaises(IndexError):
-        [].pop()
-    [][-1]
+            with self.assertRaises(IndexError):
+                [].pop()
+            [][-1]
 
   the terminal_ shows IndexError_
 
@@ -2666,14 +2887,20 @@ the test passes
 
     IndexError: list index out of range
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
+    :lineno-start: 171
+    :emphasize-lines: 3-4
 
-    with self.assertRaises(IndexError):
-        [][-1]
+            with self.assertRaises(IndexError):
+                [].pop()
+            with self.assertRaises(IndexError):
+                [][-1]
 
   the test passes. Any :ref:`index<test_index_returns_first_position_of_item_in_a_list>` given to an empty list_ raises IndexError_
+
+:ref:`I know what causes IndexError<test_index_error>`
 
 ----
 
@@ -2681,29 +2908,8 @@ the test passes
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
-* I deactivate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/lists
-
-* I `change directory`_ to the parent of ``lists``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
+* I close ``test_lists.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
   .. code-block:: shell
 
@@ -2711,13 +2917,72 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
+.. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
+
+  * the terminal_ shows
+
+    .. code-block:: shell
+
+      (.venv) ...\pumping_python\lists
+
+  * I deactivate the `virtual environment`_
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      deactivate
+
+    the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+    .. code-block:: shell
+
+      ...\pumping_python\lists
+
+  * I `change directory`_ to the parent of ``lists``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      cd ..
+
+    the terminal_ shows
+
+    .. code-block:: shell
+
+      ...\pumping_python
+
+    I am back in the ``pumping_python`` directory_
+
 ----
 
 *********************************************************************************
 review
 *********************************************************************************
 
-I ran tests to show that I can make a list_ with the constructor_ or square brackets (``[]``), then tested the different :ref:`methods<functions>` from append_ to sort_, added tests for :ref:`getting items of a list<test_getting_items_of_a_list>`, :ref:`setting items in a list<test_setting_items_in_a_list>`, :ref:`slicing a list<test_viewing_parts_of_a_list_aka_slicing>` and :ref:`IndexError<test_index_error>`
+I ran tests to show that I can make a list_ with the constructor_ or square brackets (``[]``), then I ran the following tests for the :ref:`methods of lists<test_attributes_and_methods_of_lists>` from append_ to sort_
+
+* :ref:`test_append_adds_item_to_end_of_a_list`
+* :ref:`test_clear_empties_a_list`
+* :ref:`test_copy_a_list`
+* :ref:`test_count_number_of_times_item_is_in_a_list`
+* :ref:`test_extend_adds_items_from_an_iterable_to_end_of_a_list`
+* :ref:`test_index_returns_first_position_of_item_in_a_list`
+* :ref:`test_insert_item_at_given_index_in_a_list`
+* :ref:`test_pop_removes_and_returns_last_item_from_a_list`
+* :ref:`test_remove_first_time_item_is_in_a_list`
+* :ref:`test_reverse_a_list`
+* :ref:`test_sort_a_list`
+
+I also added tests for
+
+* :ref:`getting items of a list<test_getting_items_of_a_list>`
+* :ref:`setting items in a list<test_setting_items_in_a_list>`
+* :ref:`slicing a list<test_looking_at_parts_of_a_list_aka_slicing>`
+* :ref:`the Exception to know when working with lists (IndexError) <test_index_error>`
+
+----
+
+:ref:`How many questions can you answer after going through this chapter?<questions about lists>`
 
 ----
 

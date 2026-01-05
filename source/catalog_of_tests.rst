@@ -156,12 +156,12 @@ test_lists
 #. :ref:`test_index_returns_first_position_of_item_in_a_list`
 #. :ref:`test_insert_item_at_given_index_in_a_list`
 #. :ref:`test_pop_removes_and_returns_last_item_from_a_list`
-#. :ref:`test_remove_first_time_something_is_in_a_list`
+#. :ref:`test_remove_first_time_item_is_in_a_list`
 #. :ref:`test_reverse_a_list`
 #. :ref:`test_sort_a_list`
 #. :ref:`test_getting_items_of_a_list`
 #. :ref:`test_setting_items_in_a_list`
-#. :ref:`test_viewing_parts_of_a_list_aka_slicing`
+#. :ref:`test_looking_at_parts_of_a_list_aka_slicing`
 #. :ref:`test_index_error`
 
 *********************************************************************************

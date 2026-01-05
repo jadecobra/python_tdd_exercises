@@ -113,7 +113,7 @@ class TestLists(unittest.TestCase):
         self.assertEqual(a_list.pop(), 2)
         self.assertEqual(a_list, [0, 1])
 
-    def test_remove_first_time_something_is_in_a_list(self):
+    def test_remove_first_time_item_is_in_a_list(self):
         a_list = [0, 1, 0, 2, 0, 'n']
         self.assertIsNone(a_list.remove(0))
         self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
@@ -151,7 +151,7 @@ class TestLists(unittest.TestCase):
         a_list[-1] = '4th'
         self.assertEqual(a_list, ['1st', '2nd', '3rd', '4th'])
 
-    def test_viewing_parts_of_a_list_aka_slicing(self):
+    def test_looking_at_parts_of_a_list_aka_slicing(self):
         a_list = ['a', 'b', 'c', 'd']
         self.assertEqual(a_list[0:2], ['a', 'b'])
         self.assertEqual(a_list[:2], ['a', 'b'])
