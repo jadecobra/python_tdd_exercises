@@ -216,6 +216,20 @@ questions about handling Exceptions
 ----
 
 *********************************************************************************
+questions about TypeError
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`what causes TypeError?`
+* :ref:`are data structures callable?<test_type_error_w_the_uncallables>`
+* :ref:`what happens when I call a function but do not send the right number of inputs?<test_type_error_w_function_signatures>`
+* :ref:`what happens when I try objects that do not mix?<test_type_error_w_objects_that_do_not_mix>` and
+* :ref:`how can I make a decorator function?<how to make a decorator function>`
+
+----
+
+*********************************************************************************
 questions about lists
 *********************************************************************************
 

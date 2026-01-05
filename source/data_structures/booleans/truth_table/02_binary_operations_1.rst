@@ -1090,7 +1090,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: -4
+    :emphasize-lines: 2-4
 
     def converse_non_implication(first_input, second_input):
         if first_input == False and second_input == True:

@@ -2956,6 +2956,102 @@ close the project
 ----
 
 *********************************************************************************
+test_calculator_sends_message_when_input_is_a_list
+*********************************************************************************
+
+I want to see what happens when I send a list_ as input to the :ref:`calculator program<how to make a calculator>`, will it send a message or raise :ref:`TypeError`?
+
+=================================================================================
+open the project
+=================================================================================
+
+* I `change directory`_ to the ``calculator`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd calculator
+
+  the terminal_ shows I am in the ``calculator`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    rootdir: .../pumping_python/calculator
+    collected 5 items
+
+    tests/test_calculator.py ....                                        [100%]
+
+    ============================ 5 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+I add a  to see what happens when I send a list_ as input
+
+.. code-block:: python
+  :lineno-start: 88
+  :emphasize-lines: 6-11
+
+          self.assertEqual(
+              src.calculator.subtract('1', '1'),
+              error_message
+          )
+
+      def test_calculator_sends_message_when_input_is_a_list(self):
+          a_list = [0, 1, 2, 3]
+          self.assertEqual(
+              src.calculator.subtract(a_list, 1),
+              'BOOM!!!'
+          )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
+
+
+*********************************************************************************
 review
 *********************************************************************************
 
