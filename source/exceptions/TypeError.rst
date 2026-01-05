@@ -2450,11 +2450,12 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3, 5, 10
+    :emphasize-lines: 3, 6, 11
 
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
             error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
             if isinstance(first_input, str) or isinstance(second_input, str):
                 return error_message
             else:

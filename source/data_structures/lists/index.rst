@@ -3023,11 +3023,11 @@ open the project
 :red:`RED`: make it fail
 =================================================================================
 
-I add a  to see what happens when I send a list_ as input
+I add a test to see what happens when I send a list_ as input
 
 .. code-block:: python
   :lineno-start: 88
-  :emphasize-lines: 6-11
+  :emphasize-lines: 6-7, 9-12
 
           self.assertEqual(
               src.calculator.subtract('1', '1'),
@@ -3036,8 +3036,9 @@ I add a  to see what happens when I send a list_ as input
 
       def test_calculator_sends_message_when_input_is_a_list(self):
           a_list = [0, 1, 2, 3]
+
           self.assertEqual(
-              src.calculator.subtract(a_list, 1),
+              src.calculator.add(a_list, 1),
               'BOOM!!!'
           )
 
@@ -3049,6 +3050,143 @@ the terminal_ shows :ref:`AssertionError`
 .. code-block:: shell
 
   AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
+
+=================================================================================
+:green:`green`: make it pass
+=================================================================================
+
+I change the expectation to match
+
+.. code-block:: python
+  :lineno-start: 97
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.add(a_list, 1),
+              'Excuse me?! I only work with numbers. Please try again...'
+          )
+
+the test passes
+
+=================================================================================
+:yellow:`refactor`: make it better
+=================================================================================
+
+* I add another :ref:`assertion<what is an assertion?>` for the next :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.add(a_list, 1),
+                'Excuse me?! I only work with numbers. Please try again...'
+            )
+            self.assertEqual(
+                src.calculator.divide(a_list, 2),
+                'BAP!!!'
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BAP!!!'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 101
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.divide(a_list, 2),
+                'Excuse me?! I only work with numbers. Please try again...'
+            )
+
+  the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``only_takes_numbers`` :ref:`function<functions>`, never again
+
+* I add a :ref:`variable<what is a variable?>` to remove the repetition
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 3, 7, 11
+
+        def test_calculator_sends_message_when_input_is_a_list(self):
+            a_list = [0, 1, 2, 3]
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            self.assertEqual(
+                src.calculator.add(a_list, 1),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide(a_list, 2),
+                error_message
+            )
+
+  the test is still green
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 101
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.divide(a_list, 2),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.multiply(a_list, 3),
+                'BOOM!!!'
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'BOOM!!!'
+
+  I can :ref:`multiply<test_multiplication>` a list_
+
+* I change the expectation of the test to the error message
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.multiply(a_list, 3),
+                error_message
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'Excuse me?! I only work with numbers. Please try again...'
+
+* I add an :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-8, 10-13
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            if isinstance(first_input, str) or isinstance(second_input, str):
+                return error_message
+            if isinstance(first_input, list) or isinstance(second_input, list):
+                return error_message
+
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
+        return wrapper
 
 
 *********************************************************************************
