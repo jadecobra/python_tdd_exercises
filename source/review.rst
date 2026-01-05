@@ -210,8 +210,6 @@ questions about testing Exceptions
 questions about handling Exceptions
 *********************************************************************************
 
-Here are questions you can answer after going through this chapter
-
 * :ref:`How can I test an Exception with a specific message<test_catching_exceptions_w_messages>`
 * :ref:`How can a program handle an Exception so it does not stop when one is raised?<how to use try...except...else>`
 
@@ -220,8 +218,6 @@ Here are questions you can answer after going through this chapter
 *********************************************************************************
 questions about lists
 *********************************************************************************
-
-Here are questions you can answer after going through this chapter
 
 * :ref:`what is a list?`
 * :ref:`how can I add an item to the end of a list?<test_append_adds_item_to_end_of_a_list>`
