@@ -3889,6 +3889,47 @@ test_calculator_raises_type_error_when_given_more_than_two_inputs
 
 ----
 
+=================================================================================
+close the project
+=================================================================================
+
+* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+----
+
 *********************************************************************************
 review
 *********************************************************************************
@@ -3924,7 +3965,7 @@ I also added tests for
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: lists: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: lists: tests and solutions>`
 
 ----
 

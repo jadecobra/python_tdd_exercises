@@ -25,7 +25,7 @@
 - [how to handle Exceptions (Errors): tests and solutions](https://www.pumpingpython.com/code/code_exception_handling.html)
 - [functions: tests and solutions](https://www.pumpingpython.com/code/code_functions.html)
 - [data structures: List Comprehensions: tests and solutions](https://www.pumpingpython.com/code/code_list_comprehensions.html)
-- [data structures: Lists: tests](https://www.pumpingpython.com/code/code_lists.html)
+- [data structures: lists: tests and solutions](https://www.pumpingpython.com/code/code_lists.html)
 - [ModuleNotFoundError: test](https://www.pumpingpython.com/code/code_module_not_found_error.html)
 - [data structures: None: tests](https://www.pumpingpython.com/code/code_none.html)
 - [how to pass values: tests and solution](https://www.pumpingpython.com/code/code_pass_values.html)
