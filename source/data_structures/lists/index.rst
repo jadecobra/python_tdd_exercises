@@ -15,11 +15,13 @@
 .. _pop: more_on_lists_
 .. _pop method:
 .. _insert: more_on_lists_
+.. _insert method: more_on_lists_
 .. _index: more_on_lists_
 .. _index method: more_on_lists_
 .. _remove:
 .. _remove method: more_on_lists_
 .. _reverse: more_on_lists_
+.. _reverse method: more_on_lists_
 .. _sort: more_on_lists_
 .. _extend: more_on_lists_
 .. _extend method: more_on_lists_
@@ -1070,7 +1072,6 @@ the test passes. The `extend method`_ returns :ref:`None` when called
 
   .. code-block:: python
     :lineno-start: 89
-    :emphasize-lines: 89
 
             self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
@@ -1420,7 +1421,6 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines: 99
 
             with self.assertRaises(ValueError):
                 a_list.index('not in list')
@@ -1682,7 +1682,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 111
-    :emphasize-lines:
+    :emphasize-lines: 2
 
             self.assertEqual(a_list.pop(), 'n')
             self.assertEqual(a_list, [0, 1, 2, 'n'])
@@ -2094,7 +2094,8 @@ the test passes
 * I remove the :ref:`variable<test_attribute_error_w_variables>` because it is not used, I can use the list_ directly
 
   .. code-block:: python
-    :lineno-start: 2-3
+    :lineno-start: 129
+    :emphasize-lines: 2-3
 
         def test_sort(self):
             with self.assertRaises(TypeError):
@@ -2311,7 +2312,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 141
-    :emphasize-lines:
+    :emphasize-lines: 2
 
             self.assertEqual(a_list[-4], '1st')
             self.assertEqual(a_list[2], '')
@@ -3288,7 +3289,7 @@ how to multiply a list
 how to test if something is an instance of more than one type
 *********************************************************************************
 
-The `isinstance method`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<classes>` in the tuple_
+The `isinstance function`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<classes>` in the tuple_
 
 * I add a :ref:`variable<what is a variable?>` to the ``only_takes_numbers`` :ref:`function<functions>`
 
@@ -3389,7 +3390,7 @@ The `isinstance method`_ can take a tuple_ as the second input, which allows me 
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 7
+    :emphasize-lines: 3
 
             # if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
             if (not isinstance(first_input, good_types)) (not and) ((not isinstance(second_input, good_types))):
