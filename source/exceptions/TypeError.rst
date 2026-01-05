@@ -2443,6 +2443,26 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
     def add(first_input, second_input):
         return first_input + second_input
 
+  still green
+
+* There is also duplication of the error message. I add a :ref:`variable<what is a variable?>` to remove it
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3, 5, 10
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+            if isinstance(first_input, str) or isinstance(second_input, str):
+                return error_message
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return error_message
+        return wrapper
+
   and all the tests are still passing. The world is my oyster!
 
 ----
