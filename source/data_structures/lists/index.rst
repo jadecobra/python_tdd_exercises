@@ -3038,7 +3038,7 @@ I add a test to see what happens when I send a list_ as input
           a_list = [0, 1, 2, 3]
 
           self.assertEqual(
-              src.calculator.add(a_list, 1),
+              src.calculator.add(a_list, 0),
               'BOOM!!!'
           )
 
@@ -3062,7 +3062,7 @@ I change the expectation to match
   :emphasize-lines: 3
 
           self.assertEqual(
-              src.calculator.add(a_list, 1),
+              src.calculator.add(a_list, 0),
               'Excuse me?! I only work with numbers. Please try again...'
           )
 
@@ -3079,11 +3079,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.add(a_list, 1),
+                src.calculator.add(a_list, 0),
                 'Excuse me?! I only work with numbers. Please try again...'
             )
             self.assertEqual(
-                src.calculator.divide(a_list, 2),
+                src.calculator.divide(a_list, 1),
                 'BAP!!!'
             )
 
@@ -3100,7 +3100,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.divide(a_list, 2),
+                src.calculator.divide(a_list, 1),
                 'Excuse me?! I only work with numbers. Please try again...'
             )
 
@@ -3117,15 +3117,19 @@ the test passes
             error_message = 'Excuse me?! I only work with numbers. Please try again...'
 
             self.assertEqual(
-                src.calculator.add(a_list, 1),
+                src.calculator.add(a_list, 0),
                 error_message
             )
             self.assertEqual(
-                src.calculator.divide(a_list, 2),
+                src.calculator.divide(a_list, 1),
                 error_message
             )
 
   the test is still green
+
+---------------------------------------------------------------------------------
+how to multiply a list
+---------------------------------------------------------------------------------
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
@@ -3134,11 +3138,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.divide(a_list, 2),
+                src.calculator.divide(a_list, 1),
                 error_message
             )
             self.assertEqual(
-                src.calculator.multiply(a_list, 3),
+                src.calculator.multiply(a_list, 2),
                 'BOOM!!!'
             )
 
@@ -3146,9 +3150,9 @@ the test passes
 
   .. code-block:: shell
 
-    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'BOOM!!!'
+    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3] != 'BOOM!!!'
 
-  I can :ref:`multiply<test_multiplication>` a list_
+  :ref:`I know how to multiply a list<how to multiply a list>`
 
 * I change the expectation of the test to the error message
 
@@ -3157,7 +3161,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.multiply(a_list, 3),
+                src.calculator.multiply(a_list, 2),
                 error_message
             )
 
@@ -3187,6 +3191,433 @@ the test passes
             except TypeError:
                 return error_message
         return wrapper
+
+  the test passes. The ``only_takes_numbers`` :ref:`function<functions>` looks ugly now, there has to be a better way
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` to ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.multiply(a_list, 2),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.subtract(a_list, 3),
+                'BOOM!!!'
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.subtract(a_list, 3),
+                error_message
+            )
+
+  the test passes
+
+* I remove the name of the test to move the new :ref:`assertions<what is an assertion?>` to ``test_calculator_sends_message_when_input_is_not_a_number``
+
+  .. code-block:: python
+    :lineno-start: 88
+
+            self.assertEqual(
+                src.calculator.subtract('1', '1'),
+                error_message
+            )
+
+            a_list = [0, 1, 2, 3]
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            self.assertEqual(
+                src.calculator.add(a_list, 0),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide(a_list, 1),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.multiply(a_list, 2),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.subtract(a_list, 3),
+                error_message
+            )
+
+
+    # Exceptions seen
+
+  the tests are still green
+
+* I remove the duplication of the ``error_message`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 88
+
+            self.assertEqual(
+                src.calculator.subtract('1', '1'),
+                error_message
+            )
+
+            a_list = [0, 1, 2, 3]
+
+            self.assertEqual(
+                src.calculator.add(a_list, 0),
+                error_message
+            )
+
+  still green. This test looks long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<lists: list comprehensions>`
+
+----
+
+*********************************************************************************
+test_calculator_w_list_items
+*********************************************************************************
+
+I can use a list_ to test the :ref:`calculator functions<how to make a calculator>` as long as its items are numbers
+
+=================================================================================
+:red:`red`: make it fail
+=================================================================================
+
+I add a new test to use the :ref:`index of the items in the list<test_index_returns_first_position_of_item_in_a_list>` to test the :ref:`calculator<how to make a calculator>`
+
+.. code-block:: python
+  :lineno-start: 107
+  :emphasize-lines: 5-6, 7-10
+
+            self.assertEqual(
+                src.calculator.subtract(a_list, 3),
+                error_message
+            )
+
+        def test_calculator_w_list_items(self):
+            a_list = [self.random_first_number, self.random_second_number]
+
+            self.assertEqual(
+                src.calculator.add(a_list[0], a_list[1]),
+                self.random_first_number-self.random_second_number
+            )
+
+
+    # Exceptions seen
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
+
+=================================================================================
+:green:`green`: make it pass
+=================================================================================
+
+I change the expectation to the right calculation
+
+.. code-block:: python
+  :lineno-start: 115
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.add(a_list[0], a_list[1]),
+              self.random_first_number+self.random_second_number
+          )
+
+the test passes
+
+=================================================================================
+:yellow:`refactor`: make it better
+=================================================================================
+
+* I add an :ref:`assertion<what is an assertion>` for the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 115
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.add(a_list[0], a_list[1]),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(a_list[-2], a_list[-1]),
+                self.random_first_number*self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
+
+* I change the calculation
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.divide(a_list[-2], a_list[-1]),
+              self.random_first_number/self.random_second_number
+          )
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.divide(a_list[-2], a_list[-1]),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(a_list[1], a_list[-1]),
+                self.random_first_number*self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 123
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.multiply(a_list[1], a_list[-1]),
+                self.random_second_number*self.random_second_number
+            )
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 123
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.multiply(a_list[1], a_list[-1]),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(a_list[-2], a_list[0]),
+                self.random_first_number-self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 0.0 != FGH.IJKLMNOPQRSTU
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.subtract(a_list[-2], a_list[0]),
+                self.random_first_number-self.random_first_number
+            )
+
+  the test passes
+
+* Python_ allows me use a star expression like I did in :ref:`test_functions_w_unknown_arguments`. I add an :ref:`assertion<what is an assertion?>` with it
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.subtract(a_list[-2], a_list[0]),
+                self.random_first_number-self.random_first_number
+            )
+            self.assertEqual(
+                src.calculator.add(*a_list),
+                self.random_first_number-self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: GHI.JKLMNOPQRSTUVW != XYZ.ABCDEFGHIJKLMN
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 131
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.add(*a_list),
+                self.random_first_number+self.random_second_number
+            )
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 131
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.add(*a_list),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(*a_list),
+                self.random_first_number*self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
+
+* I change the calculation
+
+  .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.divide(*a_list),
+                self.random_first_number/self.random_second_number
+            )
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion>` for the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.divide(*a_list),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(*a_list),
+                self.random_first_number/self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
+
+* I change the calculation
+
+  .. code-block:: python
+    :lineno-start: 139
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.multiply(*a_list),
+                self.random_first_number*self.random_second_number
+            )
+
+  the test passes
+
+* I add the next :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 139
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.multiply(*a_list),
+                self.random_first_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(*a_list),
+                self.random_first_number+self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 143
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.subtract(*a_list),
+                self.random_first_number-self.random_second_number
+            )
+
+  the test passes
+
+* It is important to note that the star expression always gives the items from the list in order, and I cannot use a list that has more than 2 items with the :ref:`calculator functions<how to make a calculator>`. I add an assertion to show this
+
+  .. code-block:: python
+    :lineno-start: 143
+    :emphasize-lines: 6-7
+
+            self.assertEqual(
+                src.calculator.subtract(*a_list),
+                self.random_first_number-self.random_second_number
+            )
+
+            another_list = [0, 1, 2]
+            src.calculator.add(*another_list)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+
+* I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
+
+  .. code-block:: python
+    :lineno-start: 148
+    :emphasize-lines: 2-3
+
+            another_list = [0, 1, 2]
+            with self.assertRaises(TypeError):
+                src.calculator.add(*another_list)
+
+  the test passes
+
+
+
 
 
 *********************************************************************************
