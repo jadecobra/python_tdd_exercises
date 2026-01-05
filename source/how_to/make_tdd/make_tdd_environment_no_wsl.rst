@@ -57,7 +57,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I test for failure?<test_failure on Windows without WSL>`
 * :ref:`How can I make a Python package?<how to make the tests a Python package on Windows without WSL>`
 * :ref:`How can I run tests manually?<how to manually run tests on Windows without WSL>`
-* :ref:`How can I run tests automatically?<how to automatically run tests on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I run tests automatically?<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
 * :ref:`How can I stop automated Python tests from running?<how to stop the automated tests on Windows without WSL>`
 * :ref:`What is a Virtual Environment?<what is a virtual environment?>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
@@ -690,7 +690,7 @@ I do not want to type ``python -m unittest`` again, it is better for a `computer
 ----
 
 --------------------------------------------------------------------------------------------
-how to automatically run tests on Windows without Windows Subsystem for Linux
+how to run the tests automatically on Windows without Windows Subsystem for Linux
 --------------------------------------------------------------------------------------------
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.

@@ -58,7 +58,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I test for failure?<test_failure>`
 * :ref:`How can I make a Python package?<how to make the tests a Python package>`
 * :ref:`How can I run tests manually?<how to manually run tests>`
-* :ref:`How can I run tests automatically?<how to automatically run tests>`
+* :ref:`How can I run tests automatically?<how to run the tests automatically>`
 * :ref:`How can I stop automated Python tests from running?<how to stop the automated tests>`
 * :ref:`What is a Virtual Environment?<what is a virtual environment?>`
 * :ref:`How can I make a Virtual Environment?<how to make a virtual environment>`
@@ -767,7 +767,7 @@ I do not want to type ``python3 -m unittest`` again, it is better for a `compute
 ----
 
 --------------------------------------------------------------------------------------------
-how to automatically run tests
+how to run the tests automatically
 --------------------------------------------------------------------------------------------
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
