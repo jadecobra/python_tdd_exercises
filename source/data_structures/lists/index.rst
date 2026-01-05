@@ -3285,6 +3285,173 @@ how to multiply a list
 ----
 
 *********************************************************************************
+how to test if something is an instance of more than one type
+*********************************************************************************
+
+The `isinstance method`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<classes>` in the tuple_
+
+* I add a :ref:`variable<what is a variable?>` to the ``only_takes_numbers`` :ref:`function<functions>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3, 5-8, 11-12
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            bad_types = (str, list)
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            # if isinstance(first_input, str) or isinstance(second_input, str):
+            #     return error_message
+            # if isinstance(first_input, list) or isinstance(second_input, list):
+            #     return error_message
+
+            if isinstance(first_input, bad_types) or isinstance(second_input, bad_types):
+                return error_message
+
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
+        return wrapper
+
+  the tests are still green
+
+* I remove the comments
+
+  .. code-block:: python
+    :linenos:
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            bad_types = (str, list)
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            if isinstance(first_input, bad_types) or isinstance(second_input, bad_types):
+                return error_message
+
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
+        return wrapper
+
+  still green
+
+* I could write :ref:`Logical Negation (NOT)<test_logical_negation_aka_not>` to test only the types of numbers the :ref:`calculator<how to make a calculator>` can handle
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3, 7-8, 10-16
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            good_types = (int, float)
+            bad_types = (str, list)
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            # if isinstance(first_input, bad_types) or isinstance(second_input, bad_types):
+            #     return error_message
+
+            if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
+                return error_message
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return error_message
+        return wrapper
+
+  the tests are still green
+
+* I remove the comments and the ``bad_types`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :linenos:
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            good_types = (int, float)
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
+                return error_message
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return error_message
+        return wrapper
+
+  the tests are still passing
+
+* "not_" happens twice in the `if statement<if statements>`, I write the line in terms of it
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 7
+
+            # if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
+            if (not isinstance(first_input, good_types)) (not and) ((not isinstance(second_input, good_types))):
+                return error_message
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: shell
+
+    SyntaxError: invalid syntax
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 7
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # ZeroDivisionError
+    # SyntaxError
+
+* I fix the `if statement<if statement>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3
+
+            # if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
+            # if (not isinstance(first_input, good_types)) (not and) ((not isinstance(second_input, good_types))):
+            if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
+                return error_message
+
+  the test is green again
+
+* I remove the comments
+
+  .. code-block:: python
+    :linenos:
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            good_types = (int, float)
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
+                return error_message
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return error_message
+        return wrapper
+
+  all the tests are still passing. I wonder if there is a way to write this :ref:`function<functions>` with only one `return statement`_ for the error message
+
+----
+
+*********************************************************************************
 test_calculator_w_list_items
 *********************************************************************************
 
@@ -3581,18 +3748,26 @@ the test passes
 
   the test passes
 
-* It is important to note that the star expression always gives the items from the list in order, and I cannot use a list that has more than 2 items with the :ref:`calculator functions<how to make a calculator>`. I add an assertion to show this
+It is important to note that the star expression always gives the items from the list in order, and I cannot use a list_ that has more than 2 items with the :ref:`calculator functions<how to make a calculator>`
+
+*********************************************************************************
+test_calculator_raises_type_error_when_given_more_than_two_inputs
+*********************************************************************************
+
+* I add a new test to show the problem when I have more than 2 inputs and use a star expression
 
   .. code-block:: python
     :lineno-start: 143
-    :emphasize-lines: 6-7
+    :emphasize-lines: 6-7, 9
 
             self.assertEqual(
                 src.calculator.subtract(*a_list),
                 self.random_first_number-self.random_second_number
             )
 
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
             another_list = [0, 1, 2]
+
             src.calculator.add(*another_list)
 
 
@@ -3608,17 +3783,111 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 148
-    :emphasize-lines: 2-3
+    :emphasize-lines: 4-5
 
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
             another_list = [0, 1, 2]
+
             with self.assertRaises(TypeError):
                 src.calculator.add(*another_list)
 
   the test passes
 
+* I add a failing line for :ref:`division<test_division>` with the new list_
 
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 3
 
+            with self.assertRaises(TypeError):
+                src.calculator.add(*another_list)
+            src.calculator.divide(*another_list)
 
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+
+* I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 3-4
+
+            with self.assertRaises(TypeError):
+                src.calculator.add(*another_list)
+            with self.assertRaises(TypeError):
+                src.calculator.divide(*another_list)
+
+    the test passes
+
+* I add a line for :ref:`multiplication<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 153
+    :emphasize-lines: 3
+
+            with self.assertRaises(TypeError):
+                src.calculator.divide(*another_list)
+            src.calculator.multiply(*another_list)
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+
+* I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 153
+    :emphasize-lines: 3-4
+
+            with self.assertRaises(TypeError):
+                src.calculator.divide(*another_list)
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(*another_list)
+
+  the test passes
+
+* I add the last line
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 3
+
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(*another_list)
+            src.calculator.subtract(*another_list)
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+
+* I handle the :ref:`Exception<errors>`
+
+  .. code-block:: python
+    :lineno-start: 148
+    :emphasize-lines: 10-11
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            another_list = [0, 1, 2]
+
+            with self.assertRaises(TypeError):
+                src.calculator.add(*another_list)
+            with self.assertRaises(TypeError):
+                src.calculator.divide(*another_list)
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(*another_list)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(*another_list)
+
+  the test passes
+
+----
 
 *********************************************************************************
 review
