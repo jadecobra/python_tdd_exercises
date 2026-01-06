@@ -11,84 +11,84 @@ cd .
 cd ..
 cd parent
 tree
-cd child
-mkdir child
+cd jane
+mkdir jane
 ls -a
 tree
-cd sibling_of_child
-mkdir sibling_of_child
+cd john
+mkdir john
 ls -a
 tree
-cd child
+cd jane
 ls
 ls -a
 tree
-cd child_of_child
-mkdir child_of_child
-cd child_of_child
+cd baby
+mkdir baby
+cd baby
 cd ..
 cd ..
-cd sibling_of_child
+cd john
 ls
 ls -a
 tree
-cd child_of_sibling_of_child
-mkdir child_of_sibling_of_child
-cd child_of_sibling_of_child
+cd lil
+mkdir lil
+cd lil
 cd ..
 cd ..
 tree
-touch a_file_in_parent
+touch a_file_in_doe
 ls -a
-cd child
-touch a_file_in_child
-ls -a
-cd ..
-cd sibling_of_child
-touch a_file_in_sibling_of_child
+cd jane
+touch sibling_of_john
 ls -a
 cd ..
+cd john
+touch sibling_of_jane
+ls -a
+cd ..
 tree
-cd child
-cd child_of_child
+cd jane
+cd baby
 cd ../..
-cd child_of_child
-cd child/child_of_child
-touch a_grandchild_of_parent
+cd baby
+cd jane/mark
+touch a_grandchild_of_doe
 ls -a
 cd ../..
-cd sibling_of_child
-cd child_of_sibling_of_child
+cd john
+cd lil
 cd ../..
-cd child_of_sibling_of_child
-cd sibling_of_child/child_of_sibling_of_child
-touch another_grandchild_of_parent
+cd lil
+cd john/mary
+touch another_grandchild_of_doe
 ls -a
 cd ../..
-touch aka_grandparent_of_child_of_child
-touch aka_grandparent_of_child_of_sibling_of_child
+touch aka_grandparent_of_baby
+touch aka_grandparent_of_baby
 tree
-touch child/aunt_or_uncle_of_another_grandchild_of_parent
-touch sibling_of_child/aunt_or_uncle_of_a_grandchild_of_parent
+touch child/aunt_or_uncle_of_lil
+touch john/aunt_or_uncle_of_baby
 tree
-touch child/child_of_child/a_file_in_child_of_child
-touch sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
+touch child/mark/a_file_in_baby
+touch john/mary/a_file_in_lil
 cd ..
 tree parent
 pwd
 ls -a parent
 ls -a parent/child
-ls -a parent/child/child_of_child
-ls -a parent/sibling_of_child
-ls -a parent/sibling_of_child/child_of_sibling_of_child
-cd parent/child/child_of_child
-ls -a ../../sibling_of_child/child_of_sibling_of_child
-touch ../../sibling_of_child/child_of_sibling_of_child/cousin_of_child_of_child
-tree ../../sibling_of_child/child_of_sibling_of_child
-cd ../../sibling_of_child/child_of_sibling_of_child
-ls -a ../../child/child_of_child
-touch ../../child/child_of_child/cousin_of_child_of_sibling_of_child
-tree ../../child/child_of_child
+ls -a parent/child/mark
+ls -a parent/john
+ls -a parent/john/mary
+cd parent/child/mark
+ls -a ../../john/mary
+touch ../../john/mary/cousin_of_baby
+tree ../../john/mary
+cd ../../john/mary
+ls -a ../../child/mark
+touch ../../child/mark/cousin_of_mary
+tree ../../child/mark
 tree ../../../parent
 cd ../../..
 pwd
