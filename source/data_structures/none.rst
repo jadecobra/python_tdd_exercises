@@ -116,7 +116,7 @@ requirements
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``New-Item src/none.py`` instead of ``touch src/none.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/none.py`` instead of ``touch src/none.py``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -149,7 +149,7 @@ requirements
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -167,7 +167,7 @@ requirements
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/test_none.py`` instead of ``touch tests/test_none.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_none.py`` instead of ``touch tests/test_none.py``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -210,7 +210,7 @@ requirements
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -228,7 +228,7 @@ requirements
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -268,7 +268,7 @@ requirements
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
 
     .. code-block:: shell
       :emphasize-lines: 1

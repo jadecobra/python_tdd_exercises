@@ -136,7 +136,7 @@ start the project
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
 
     .. code-block:: PowerShell
       :linenos:
@@ -170,7 +170,7 @@ start the project
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -2992,7 +2992,7 @@ open the project
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1

@@ -356,7 +356,7 @@ how to list what is in a directory
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -432,7 +432,7 @@ how to look at directory structure
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -482,7 +482,7 @@ how to look at directory structure
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -802,7 +802,7 @@ how to look at directory structure
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -837,7 +837,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
+    on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -855,7 +855,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1228,7 +1228,7 @@ how to use directory relationships
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1270,7 +1270,7 @@ how to use directory relationships
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
+    on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1335,7 +1335,7 @@ how to use directory relationships
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of touch_
+    on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of touch_
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1645,7 +1645,7 @@ how to remove a directory and all its contents
 
   .. attention::
 
-    on Windows without `Windows Subsystem for Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm -rf``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm -rf``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
