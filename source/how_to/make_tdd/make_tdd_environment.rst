@@ -183,7 +183,7 @@ I choose ``magic`` as the name for this project
 
   I need to install tree_ to use it
 
-  .. admonition:: if you are using MacOS_ type this in the terminal_
+  .. attention:: if you are using MacOS_ type this in the terminal_
 
     first install brew_ (The Missing Package Manager for MacOS), if you do not have it already
 
@@ -201,7 +201,7 @@ I choose ``magic`` as the name for this project
 
   or
 
-  .. admonition:: if you are using Linux_ or `Windows Subsystem for Linux`_ type this in the terminal_
+  .. attention:: if you are using Linux_ or `Windows Subsystem for Linux`_ type this in the terminal_
 
     .. code-block:: shell
       :emphasize-lines: 1

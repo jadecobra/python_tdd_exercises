@@ -352,7 +352,7 @@ how to list what is in a directory
 
       ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -426,7 +426,7 @@ how to look at directory structure
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -474,7 +474,7 @@ how to look at directory structure
 
     ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -792,7 +792,7 @@ how to look at directory structure
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -825,7 +825,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     touch a_file_in_parent
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -841,7 +841,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     ls -a
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1212,7 +1212,7 @@ how to use directory relationships
 
     tree
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1252,7 +1252,7 @@ how to use directory relationships
 
     touch child/aunt_or_uncle_of_another_grandchild_of_parent
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1315,7 +1315,7 @@ how to use directory relationships
 
     touch sibling_of_child/child_of_sibling_of_child/a_file_in_child_of_sibling_of_child
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of touch_
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use `New-Item`_ instead of touch_
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1623,7 +1623,7 @@ how to remove a directory and all its contents
 
     rm -rf parent
 
-  .. ADMONITION:: on Windows without `Windows Subsystem for Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm -rf``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm -rf``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1

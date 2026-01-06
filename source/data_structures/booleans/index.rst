@@ -103,7 +103,7 @@ start the project
 
     touch src/booleans.py
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item src/booleans.py`` instead of ``touch src/booleans.py``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item src/booleans.py`` instead of ``touch src/booleans.py``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -134,7 +134,7 @@ start the project
 
     touch tests/__init__.py
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -150,7 +150,7 @@ start the project
 
     touch tests/test_booleans.py
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/test_booleans.py`` instead of ``touch tests/test_booleans.py``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``New-Item tests/test_booleans.py`` instead of ``touch tests/test_booleans.py``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -191,7 +191,7 @@ start the project
 
     python3 -m venv .venv
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -207,7 +207,7 @@ start the project
 
     source .venv/bin/activate
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -245,7 +245,7 @@ start the project
 
     python3 -m pip install --requirement requirements.txt
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
 
     .. code-block:: shell
       :emphasize-lines: 1

@@ -884,7 +884,7 @@ the tests show
 
 * classes by default inherit from the :ref:`object<classes>` class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an :ref:`object<classes>`
 
-.. admonition:: :PEP:`Zen of Python <20>`
+.. attention:: :PEP:`Zen of Python <20>`
 
   I prefer to use the explicit form of class definitions with the parent :ref:`object<classes>` in parentheses, from the :PEP:`Zen of Python <20>`:
   ``Explicit is better than implicit``

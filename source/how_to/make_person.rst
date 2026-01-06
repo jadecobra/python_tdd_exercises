@@ -44,7 +44,7 @@ start the project
 
     ./makePythonTdd.sh person
 
-  .. admonition:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+  .. attention:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: shell
 
@@ -749,7 +749,7 @@ test_takes_keyword_arguments
 
   ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class<classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes`
 
-  .. ADMONITION:: I can also use the today_ :ref:`method<functions>` to get the same value
+  .. attention:: I can also use the today_ :ref:`method<functions>` to get the same value
 
     .. code-block:: python
       :lineno-start: 6
@@ -1286,7 +1286,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test passes
 
-  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` definition, it is the same as calling it with ``last_name='doe'``
+  .. attention:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` definition, it is the same as calling it with ``last_name='doe'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -1415,7 +1415,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test passes
 
-  .. ADMONITION:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` definition, it is the same as calling it with ``sex='M'``
+  .. attention:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` definition, it is the same as calling it with ``sex='M'``
 
     .. code-block:: python
       :emphasize-lines: 5
