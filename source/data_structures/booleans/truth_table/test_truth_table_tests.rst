@@ -1193,8 +1193,8 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         return False
 
 
-    def logical_negation(first_input):
-        return not first_input
+    def logical_negation(the_input):
+        return not the_input
 
 * :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>`, for the 3 cases that return :ref:`True<test_what_is_true>`
 

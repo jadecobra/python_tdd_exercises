@@ -596,7 +596,9 @@ how to look at directory structure
 
     ls
 
-  the terminal_ goes back to the command line. I use ls_ with the short form of the ``--all`` option
+  the terminal_ goes back to the command line
+
+* I use ls_ with the short form of the ``--all`` option
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -609,7 +611,7 @@ how to look at directory structure
 
     .  ..
 
-  I use tree_
+* I use tree_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -658,6 +660,8 @@ how to look at directory structure
   .. code-block:: shell
 
     .../doe/jane/baby
+
+  I am in the ``baby`` folder_ which is in the ``jane`` folder_ which is in the ``doe`` folder_
 
 * I go up a level to the parent of ``baby``
 
@@ -709,7 +713,9 @@ how to look at directory structure
 
     ls
 
-  the terminal_ goes back to the command line. I use ls_ with the short form of the ``--all`` option
+  the terminal_ goes back to the command line
+
+* I use ls_ with the short form of the ``--all`` option
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -722,7 +728,7 @@ how to look at directory structure
 
     .  ..
 
-  I use tree_
+* I use tree_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -771,6 +777,8 @@ how to look at directory structure
   .. code-block:: shell
 
     .../doe/john/lil
+
+  I am in the ``lil`` folder_
 
 * I go up a level to the parent of ``lil``
 
@@ -830,6 +838,8 @@ how to look at directory structure
         └── lil
 
     5 directories, 0 files
+
+----
 
 =================================================================================
 how to make an empty file
@@ -974,6 +984,8 @@ I can make empty files_ in a folder_ with the touch_ program
   .. code-block:: shell
 
     .../pumping_python/doe
+
+  I am back in ``doe``
 
 * I use tree_
 
@@ -1148,6 +1160,8 @@ I can make empty files_ in a folder_ with the touch_ program
 
     ...pumping_python/doe
 
+  I am back in ``doe``
+
 * I use tree_ to see what I have so far
 
   .. code-block:: shell
@@ -1172,6 +1186,8 @@ I can make empty files_ in a folder_ with the touch_ program
             └── a_file_in_lil
 
     5 directories, 5 files
+
+:ref:`I know how to add empty files to folders<how to make an empty file>`
 
 =================================================================================
 how to use directory relationships
