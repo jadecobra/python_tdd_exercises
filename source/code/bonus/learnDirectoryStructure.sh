@@ -53,7 +53,7 @@ cd jane
 cd baby
 cd ../..
 cd baby
-cd jane/mark
+cd jane/baby
 touch a_grandchild_of_doe
 ls -a
 cd ../..
@@ -61,7 +61,7 @@ cd john
 cd lil
 cd ../..
 cd lil
-cd john/mary
+cd john/lil
 touch another_grandchild_of_doe
 ls -a
 cd ../..
@@ -71,24 +71,24 @@ tree
 touch child/aunt_or_uncle_of_lil
 touch john/aunt_or_uncle_of_baby
 tree
-touch child/mark/a_file_in_baby
-touch john/mary/a_file_in_lil
+touch child/baby/a_file_in_baby
+touch john/lil/a_file_in_lil
 cd ..
 tree parent
 pwd
 ls -a parent
-ls -a parent/child
-ls -a parent/child/mark
-ls -a parent/john
-ls -a parent/john/mary
-cd parent/child/mark
-ls -a ../../john/mary
-touch ../../john/mary/cousin_of_baby
-tree ../../john/mary
-cd ../../john/mary
-ls -a ../../child/mark
-touch ../../child/mark/cousin_of_mary
-tree ../../child/mark
+ls -a doe/jane
+ls -a doe/jane/baby
+ls -a doe/john
+ls -a doe/john/lil
+cd doe/jane/baby
+ls -a ../../john/lil
+touch ../../john/lil/cousin_of_baby
+tree ../../john/lil
+cd ../../john/lil
+ls -a ../../jane/baby
+touch ../../jane/baby/cousin_of_mary
+tree ../../jane/baby
 tree ../../../parent
 cd ../../..
 pwd

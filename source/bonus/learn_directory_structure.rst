@@ -20,20 +20,26 @@ I will build the structure below step by step to see how files_ and folders_ are
   ├── a_file_in_doe
   ├── aka_grandparent_of_baby
   ├── aka_grandparent_of_lil
+  ├── aka_parent_of_jane
+  ├── aka_parent_of_john
   ├── jane
-  │   ├── sibling_of_john
-  │   ├── aunt_or_uncle_of_lil
+  │   ├── a_file_in_jane
+  │   ├── aka_aunt_of_lil
+  │   ├── aka_sibling_of_john
   │   └── baby
   │       ├── a_file_in_baby
   │       ├── a_grandchild_of_doe
-  │       └── cousin_of_mary
+  │       ├── aka_child_of_jane
+  │       └── aka_cousin_of_lil
   └── john
-      ├── sibling_of_jane
-      ├── aunt_or_uncle_of_baby
+      ├── a_file_in_john
+      ├── aka_sibling_of_jane
+      ├── aka_uncle_of_baby
       └── lil
           ├── a_file_in_lil
-          ├── another_grandchild_of_doe
-          └── cousin_of_baby
+          ├── aka_child_of_john
+          ├── aka_cousin_of_baby
+          └── another_grandchild_of_doe
 
 You will become familiar with these commands
 
@@ -496,7 +502,7 @@ how to look at directory structure
 
   .. code-block:: shell
 
-    .  ..  child
+    .  ..  jane
 
 * I use tree_ to see the structure
 
@@ -511,7 +517,7 @@ how to look at directory structure
     :emphasize-lines: 2
 
     .
-    └── child
+    └── jane
 
     2 directories, 0 files
 
@@ -550,7 +556,7 @@ how to look at directory structure
 
   .. code-block:: shell
 
-    .  ..  child  john
+    .  ..  jane  john
 
 * I use tree_ to see the structure
 
@@ -565,7 +571,7 @@ how to look at directory structure
     :emphasize-lines: 3
 
     .
-    ├── child
+    ├── jane
     └── john
 
     3 directories, 0 files
@@ -581,9 +587,9 @@ how to look at directory structure
 
   .. code-block:: shell
 
-    …/pumping_python/doe/child
+    …/pumping_python/doe/jane
 
-* I list the contents of the folder_
+* I show what is in the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -629,7 +635,7 @@ how to look at directory structure
 
   .. code-block:: shell
 
-    cd: mark: No such file or directory
+    cd: no such file or directory: baby
 
   I `make the directory`_
 
@@ -640,7 +646,7 @@ how to look at directory structure
 
   the terminal_ goes back to the command line
 
-* I try to go to ``mark`` again
+* I try to go to ``baby`` again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -651,9 +657,9 @@ how to look at directory structure
 
   .. code-block:: shell
 
-    .../doe/child/mark
+    .../doe/jane/baby
 
-* I go up a level to the parent of ``mark``
+* I go up a level to the parent of ``baby``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -664,11 +670,11 @@ how to look at directory structure
 
   .. code-block:: shell
 
-    .../doe/child
+    .../doe/jane
 
-  I am back in ``child``
+  I am back in ``jane``
 
-* I go up another level to the parent of ``child``
+* I go up another level to the parent of ``jane``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -696,7 +702,7 @@ how to look at directory structure
 
     …/pumping_python/doe/john
 
-* I list the contents of the folder_
+* I show what is in the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -742,7 +748,7 @@ how to look at directory structure
 
   .. code-block:: shell
 
-    cd: mary: No such file or directory
+    cd: no such file or directory: lil
 
   I `make the directory`_
 
@@ -753,7 +759,7 @@ how to look at directory structure
 
   the terminal_ goes back to the command line
 
-* I try to go to ``mary`` again
+* I try to go to ``lil`` again
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -764,9 +770,9 @@ how to look at directory structure
 
   .. code-block:: shell
 
-    .../doe/john/mary
+    .../doe/john/lil
 
-* I go up a level to the parent of ``mary``
+* I go up a level to the parent of ``lil``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -818,10 +824,10 @@ how to look at directory structure
     :emphasize-lines: 3, 5
 
     .
-    ├── child
-    │   └── mark
+    ├── jane
+    │   └── baby
     └── john
-        └── mary
+        └── lil
 
     5 directories, 0 files
 
@@ -871,7 +877,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .  ..  a_file_in_doe  child  john
+    .  ..  a_file_in_doe  jane  john
 
 * I `change directory`_ to one of the children of ``doe``
 
@@ -884,18 +890,18 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .../pumping_python/doe/child
+    .../pumping_python/doe/jane
 
 * I add an empty file_ with touch_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch sibling_of_john
+    touch a_file_in_jane
 
   the terminal_ goes back to the command line
 
-* I list the contents of the folder_
+* I show what is in the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -906,9 +912,9 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .  ..  sibling_of_john  mark
+    .  ..  a_file_in_jane  baby
 
-* I `change directory`_ to the parent of ``child``
+* I `change directory`_ to the parent of ``jane``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -939,11 +945,11 @@ I can make empty files_ in a folder_ with the touch_ program
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch sibling_of_jane
+    touch a_file_in_john
 
   the terminal_ goes back to the command line
 
-* I list the contents of the folder_
+* I show what is in the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -954,7 +960,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    .  ..  sibling_of_jane  mary
+    .  ..  a_file_in_john  lil
 
 * I `change directory`_ to the parent of ``john``
 
@@ -983,18 +989,18 @@ I can make empty files_ in a folder_ with the touch_ program
 
     .
     ├── a_file_in_doe
-    ├── child
-    │   ├── sibling_of_john
-    │   └── mark
+    ├── jane
+    │   ├── a_file_in_jane
+    │   └── baby
     └── john
-        ├── sibling_of_jane
-        └── mary
+        ├── a_file_in_john
+        └── lil
 
     5 directories, 3 files
 
   .. TIP:: Your terminal_ may use colors to show the difference between directories_ and files_
 
-* I want to make a file in ``mark``. I use `change directory`_ to go to its parent first
+* I want to make a file_ in ``baby``. I use `change directory`_ to go to its parent first
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1005,41 +1011,9 @@ I can make empty files_ in a folder_ with the touch_ program
 
   .. code-block:: shell
 
-    /pumping_python/doe/child
+    /pumping_python/doe/jane
 
-  I `change directory`_ to ``mark``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd baby
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../doe/child/mark
-
-=================================================================================
-how to use directory relationships
-=================================================================================
-
-* I can go from ``mark`` to ``doe`` in 1 step by using ``..``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ../..
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../pumping_python/doe
-
-  Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent. I can use as many ``..``'s I need for each parent, for example ``../../../..`` would be the great great grand parent
-
-* I try to go from ``doe`` to ``mark`` in 1 step
+  I `change directory`_ to ``baby``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1050,33 +1024,18 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    cd: mark: No such file or directory
-
-  I cannot get to ``mark`` without its parent
-
-* I try to go from ``doe`` to ``mark`` in 1 step with its parent
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd jane/mark
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../doe/child/mark
+    .../doe/jane/baby
 
 * I make an empty file_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch a_grandchild_of_doe
+    touch a_file_in_baby
 
   the terminal_ goes back to the command line
 
-* I use ls_ to list the contents of the folder_
+* I use ls_ to show what is in the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1087,22 +1046,35 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    .  ..  a_grandchild_of_doe
+    .  ..  a_file_in_baby
 
-* I go back to ``doe``
+* I go back to the parent of ``baby``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd ../..
+    cd ..
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .../pumping_python/doe
+    .../doe/jane/
 
-* I want to make a file in ``mary``. I use `change directory`_ to go to its parent first
+* I go back to the parent of ``jane``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    ...pumping_python/doe
+
+* I want to make a file_ in ``lil``. I use `change directory`_ to go to its parent first
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1115,7 +1087,7 @@ how to use directory relationships
 
     /pumping_python/doe/john
 
-  I `change directory`_ to ``mary``
+  I `change directory`_ to ``lil``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1126,9 +1098,114 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    .../doe/john/mary
+    .../doe/john/lil
 
-* I go from ``mary`` to ``doe`` in 1 step
+* I make an empty file_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch a_file_in_lil
+
+  the terminal_ goes back to the command line
+
+* I use ls_ to show what is in the folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls -a
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .  ..  a_file_in_lil
+
+* I go back to the parent of ``lil``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../doe/john/
+
+* I go back to the parent of ``john``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    ...pumping_python/doe
+
+* I use tree_ to see what I have so far
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 4, 6, 8, 10
+
+    .
+    ├── a_file_in_doe
+    ├── jane
+    │   ├── a_file_in_jane
+    │   └── baby
+    │       └── a_file_in_baby
+    └── john
+        ├── a_file_in_john
+        └── lil
+            └── a_file_in_lil
+
+    5 directories, 5 files
+
+=================================================================================
+how to use directory relationships
+=================================================================================
+
+* I try to go from ``doe`` to ``baby`` in 1 step
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd baby
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    cd: no such file or directory: baby
+
+  I cannot get to ``baby`` without its parent
+
+* I try to go from ``doe`` to ``baby`` in 1 step with its parent
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd jane/baby
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../doe/jane/baby
+
+* I can go from ``baby`` to ``doe`` in 1 step with ``..``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1141,7 +1218,9 @@ how to use directory relationships
 
     .../pumping_python/doe
 
-* I try to go from ``doe`` to ``mary`` in 1 step
+  Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent. I can use as many I need for each parent, for example ``../../../..`` is the great great grand parent
+
+* I try to go from ``doe`` to ``lil`` in 1 step
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1152,33 +1231,61 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    cd: mary: No such file or directory
+    cd: no such file or directory: lil
 
-  I can only go directly to folders_ that exist where I am or use the path to the folder_ I want to go to
+  I cannot get to ``lil`` without its parent
 
-* I go from ``doe`` to ``mary`` in 1 step with its parent
+* I try to go from ``doe`` to ``lil`` in 1 step with its parent
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd john/mary
+    cd john/lil
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .../doe/john/mary
+    .../doe/john/lil
 
-* I make an empty file_
+* I go back to ``doe`` in 1 step with ``..``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch another_grandchild_of_doe
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/doe
+
+  I can only go directly to folders_ that are where I am or use the path to the folder_ I want to go to
+
+* I go from ``doe`` to ``baby`` in 1 step with its parent
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd jane/baby
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../doe/jane/baby
+
+* I make another empty file_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch aka_child_of_jane
 
   the terminal_ goes back to the command line
 
-* I use ls_ to list the contents of the folder_
+* I use ls_ to show what is in the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1189,7 +1296,7 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    .  ..  another_grandchild_of_doe
+    .  ..  a_file_in_baby  aka_child_of_jane
 
 * I go back to ``doe``
 
@@ -1204,21 +1311,60 @@ how to use directory relationships
 
     .../pumping_python/doe
 
-* I add an empty file_
+* I go from ``doe`` to ``lil`` in 1 step with its parent
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch aka_grandparent_of_baby
+    cd john/lil
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../doe/john/lil
+
+* I make an empty file_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch aka_child_of_john
 
   the terminal_ goes back to the command line
 
-* I make another empty file_
+* I use ls_ to show what is in the folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch aka_grandparent_of_baby
+    ls -a
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .  ..  a_file_in_lil  aka_child_of_john
+
+* I go back to ``doe``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python/doe
+
+* I add 2 empty files_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch aka_parent_of_jane aka_parent_of_john
 
   the terminal_ goes back to the command line
 
@@ -1241,35 +1387,37 @@ how to use directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 3-4, 8, 12
+    :emphasize-lines: 3-4, 9, 14
 
     .
     ├── a_file_in_doe
-    ├── aka_grandparent_of_baby
-    ├── aka_grandparent_of_baby
-    ├── child
-    │   ├── sibling_of_john
-    │   └── mark
-    │       └── a_grandchild_of_doe
+    ├── aka_parent_of_jane
+    ├── aka_parent_of_john
+    ├── jane
+    │   ├── a_file_in_jane
+    │   └── baby
+    │       ├── a_file_in_baby
+    │       └── aka_child_of_jane
     └── john
-        ├── sibling_of_jane
-        └── mary
-            └── another_grandchild_of_doe
+        ├── a_file_in_john
+        └── lil
+            ├── a_file_in_lil
+            └── aka_child_of_john
 
-    5 directories, 7 files
+    5 directories, 9 files
 
-* I can add an empty file_ in 1 step in any directory_ as long as
+* I can add empty files_ in 1 step in any directory_ as long as
 
   - I know its path
   - I know its relation to where I am and
   - I have permission to write to the folder_
 
-  I add another empty file_ in ``child``
+  I add 2 empty files_ in ``jane``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch child/aunt_or_uncle_of_lil
+    touch jane/a_child_of_doe jane/aka_sibling_of_john
 
   .. attention::
 
@@ -1278,72 +1426,34 @@ how to use directory relationships
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      New-Item child/aunt_or_uncle_of_lil
+      New-Item jane/a_child_of_doe jane/aka_sibling_of_john
 
   the terminal_ goes back to the command line
 
-* I add another empty file_ in ``john``
+* I add 2 empty files_ in ``john``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch john/aunt_or_uncle_of_baby
+    touch john/another_child_of_doe john/aka_sibling_of_jane
 
   the terminal_ goes back to the command line
 
-* I use tree_
+* I add an empty file_ in ``baby``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 7, 12
-
-    .
-    ├── a_file_in_doe
-    ├── aka_grandparent_of_baby
-    ├── aka_grandparent_of_baby
-    ├── child
-    │   ├── sibling_of_john
-    │   ├── aunt_or_uncle_of_lil
-    │   └── mark
-    │       └── a_grandchild_of_doe
-    └── john
-        ├── sibling_of_jane
-        ├── aunt_or_uncle_of_baby
-        └── mary
-            └── another_grandchild_of_doe
-
-    5 directories, 9 files
-
-* I add an empty file_ in ``mark``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch child/mark/a_file_in_baby
+    touch jane/baby/a_grandchild_of_doe
 
   the terminal_ goes back to the command line
 
-* I add an empty file_ in ``mary``
+* I add an empty file_ in ``lil``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch john/mary/a_file_in_lil
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of touch_
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      New-Item john/mary/a_file_in_lil
+    touch john/lil/another_grandchild_of_doe
 
   the terminal_ goes back to the command line
 
@@ -1365,31 +1475,33 @@ how to use directory relationships
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree parent
+    tree doe
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 9, 15
+    :emphasize-lines: 7, 10, 14, 18
 
-    parent
+    doe
     ├── a_file_in_doe
-    ├── aka_grandparent_of_baby
-    ├── aka_grandparent_of_baby
-    ├── child
-    │   ├── sibling_of_john
-    │   ├── aunt_or_uncle_of_lil
-    │   └── mark
+    ├── aka_parent_of_jane
+    ├── aka_parent_of_john
+    ├── jane
+    │   ├── a_file_in_jane
+    │   ├── aka_sibling_of_john
+    │   └── baby
     │       ├── a_file_in_baby
-    │       └── a_grandchild_of_doe
+    │       ├── a_grandchild_of_doe
+    │       └── aka_child_of_jane
     └── john
-        ├── sibling_of_jane
-        ├── aunt_or_uncle_of_baby
-        └── mary
+        ├── a_file_in_john
+        ├── aka_sibling_of_jane
+        └── lil
             ├── a_file_in_lil
+            ├── aka_child_of_john
             └── another_grandchild_of_doe
 
-    5 directories, 11 files
+    5 directories, 13 files
 
 * I type pwd_ to show where I am
 
@@ -1404,177 +1516,189 @@ how to use directory relationships
 
     .../pumping_python
 
-* I can list the contents of any folder_ once I know its path or relation to where I am
+* I can see what is in any folder_ once I know its path or relation to where I am
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a parent
+    ls -a doe
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .                 aka_grandparent_of_baby             john
-    ..                aka_grandparent_of_baby
-    a_file_in_doe  child
+    .  ..  a_file_in_doe  aka_parent_of_jane  aka_parent_of_john  jane  john
 
-* I list the contents of ``child``
+* I show what is in ``jane``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a parent/child
+    ls -a doe/jane
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .   sibling_of_john                                mark
-    ..  aunt_or_uncle_of_lil
+    .  ..  a_file_in_jane  aka_sibling_of_john  baby
 
-* I list the contents of ``mark``
+* I show what is in ``baby``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a parent/child/mark
+    ls -a doe/jane/baby
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .  ..  a_file_in_baby  a_grandchild_of_doe
+    .   a_file_in_baby       aka_child_of_jane
+    ..  a_grandchild_of_doe
 
-* I list the contents of ``john``
+* I show what is in ``john``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a parent/john
+    ls -a doe/john
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .   sibling_of_jane               mary
-    ..  aunt_or_uncle_of_baby
+    .  ..  a_file_in_john  aka_sibling_of_jane  lil
 
-* I list the contents of ``mary``
+* I show what is in ``lil``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a parent/john/mary
+    ls -a doe/john/lil
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .  ..  a_file_in_lil  another_grandchild_of_doe
+    .  ..  a_file_in_lil  aka_child_of_john  another_grandchild_of_doe
 
-* I `change directory`_ to ``mark``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd doe/child/mark
-
-* I want to list the contents of ``mary`` from inside ``mark`` in 1 step. ``../..`` is ``doe`` and I can go from ``doe`` to ``mary``, I use the relationship with ls_
+* I `change directory`_ to ``baby``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a ../../john/mary
+    cd doe/jane/baby
+
+* I want to see what is in ``lil`` from inside ``baby`` in 1 step. ``../..`` is ``doe`` and I can go from ``doe`` to ``lil``, I use this relationship with ls_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    ls -a ../../john/lil
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .  ..  a_file_in_lil  another_grandchild_of_doe
+    .  ..  a_file_in_lil  aka_child_of_john  another_grandchild_of_doe
 
-* I add an empty file_ to ``mary`` from ``mark``
+* I add an empty file_ to ``lil`` from ``baby``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
-    touch ../../john/mary/cousin_of_baby
+    touch ../../john/lil/aka_cousin_of_baby
 
   the terminal_ goes back to the command line
 
-* I use tree_ this time
+* I use tree_ to show the structure of ``lil``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree ../../john/mary
+    tree ../../john/lil
 
   the terminal_ shows
 
   .. code-block:: shell
     :emphasize-lines: 4
 
-    ../../john/mary
+    ../../john/lil
     ├── a_file_in_lil
-    ├── another_grandchild_of_doe
-    └── cousin_of_baby
+    ├── aka_child_of_john
+    ├── aka_cousin_of_baby
+    └── another_grandchild_of_doe
 
-    1 directory, 3 files
+    1 directory, 4 files
 
-* I can use the same thing to `change directory`_ to ``mary`` from ``mark``
+* I add 2 empty files_ from inside ``baby``, one to ``doe`` and another to ``john``
+
+  .. code-block:: shell
+
+    touch ../../aka_grandparent_of_baby ../../john/aka_uncle_of_baby
+
+* I can use the relationship to `change directory`_ to ``lil`` from ``baby``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    cd ../../john/mary
+    cd ../../john/lil
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .../doe/john/mary $
+    .../doe/john/lil $
 
-* I want to list the contents of ``mark`` from inside ``mary`` in 1 step. Since ``../..`` is ``doe`` and I can go from ``doe`` to ``mark``, I use the relationship with ls_
+* I want to see what is in ``baby`` from inside ``lil`` in 1 step. I use their relationship with ls_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ls -a ../../child/mark
+    ls -a ../../jane/baby
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    .  ..  a_file_in_baby  a_grandchild_of_doe
+    .  ..  a_file_in_baby  a_grandchild_of_doe  aka_child_of_jane
 
-* I add an empty file_ to ``mark`` from ``mary``
+* I add an empty file_ to ``baby`` from ``lil``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch ../../child/mark/cousin_of_mary
+    touch ../../jane/baby/aka_cousin_of_lil
 
   the terminal_ goes back to the command line
 
-* I use tree_ to show what is in ``mark`` now
+* I use tree_ to show what is in ``baby`` now
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree ../../child/mark
+    tree ../../jane/baby
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
-    ../../child/mark
+    ../../jane/baby
     ├── a_file_in_baby
     ├── a_grandchild_of_doe
-    └── cousin_of_mary
+    ├── aka_child_of_jane
+    └── aka_cousin_of_lil
 
-    1 directory, 3 files
+    1 directory, 4 files
 
-* I look at the structure of ``doe`` again, this time from inside ``mary``
+* I add 2 empty files_ from inside ``lil``, one to ``doe`` and another to ``jane``
+
+  .. code-block:: shell
+
+    touch ../../aka_grandparent_of_lil ../../jane/aka_aunt_of_lil
+
+* I look at the structure of ``doe`` again, this time from inside ``lil``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1584,28 +1708,34 @@ how to use directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 11, 18
+    :emphasize-lines: 3-4, 9, 15, 19, 23
 
     ../../../doe
     ├── a_file_in_doe
     ├── aka_grandparent_of_baby
-    ├── aka_grandparent_of_baby
-    ├── child
-    │   ├── sibling_of_john
-    │   ├── aunt_or_uncle_of_lil
-    │   └── mark
+    ├── aka_grandparent_of_lil
+    ├── aka_parent_of_jane
+    ├── aka_parent_of_john
+    ├── jane
+    │   ├── a_file_in_jane
+    │   ├── aka_aunt_of_lil
+    │   ├── aka_sibling_of_john
+    │   └── baby
     │       ├── a_file_in_baby
     │       ├── a_grandchild_of_doe
-    │       └── cousin_of_mary
+    │       ├── aka_child_of_jane
+    │       └── aka_cousin_of_lil
     └── john
-        ├── sibling_of_jane
-        ├── aunt_or_uncle_of_baby
-        └── mary
+        ├── a_file_in_john
+        ├── aka_sibling_of_jane
+        ├── aka_uncle_of_baby
+        └── lil
             ├── a_file_in_lil
-            ├── another_grandchild_of_doe
-            └── cousin_of_baby
+            ├── aka_child_of_john
+            ├── aka_cousin_of_baby
+            └── another_grandchild_of_doe
 
-    5 directories, 13 files
+    5 directories, 19 files
 
 * I `change directory`_ to the parent of ``doe``
 
@@ -1637,7 +1767,7 @@ how to use directory relationships
 how to remove a directory and all its contents
 =================================================================================
 
-* I remove ``doe`` and all its descendants
+* I remove ``doe`` and all its children and their children
 
   .. DANGER:: This is a desctructive operation that CANNOT be undone on MacOS_ or Linux_/`Windows Subsystem for Linux`_, use it wisely
 
