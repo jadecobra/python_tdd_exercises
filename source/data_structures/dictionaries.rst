@@ -55,7 +55,9 @@ requirements
 
     ./makePythonTdd.sh dictionaries
 
-  .. attention:: on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+  .. attention::
+
+    on Windows without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
     .. code-block:: shell
 

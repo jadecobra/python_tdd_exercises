@@ -134,7 +134,9 @@ start the project
     # AssertionError
     " > tests/test_lists.py
 
-  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+  .. attention::
+
+    on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
 
     .. code-block:: PowerShell
       :linenos:
@@ -166,7 +168,9 @@ start the project
 
     ./makePythonTdd.sh
 
-  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+  .. attention::
+
+    on Windows without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -2986,7 +2990,9 @@ open the project
 
     source .venv/bin/activate
 
-  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+  .. attention::
+
+    on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1

@@ -156,7 +156,9 @@ If your tests stopped after the :ref:`previous chapter<truth table: Nullary and 
 
     source .venv/bin/activate
 
-  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/scripts/activate.ps1`` instead of ``source .venv/bin/activate``
+  .. attention::
+
+    on Windows without `Windows Subsystem for Linux`_ use ``.venv/scripts/activate.ps1`` instead of ``source .venv/bin/activate``
 
     .. code-block:: python
       :emphasize-lines: 1

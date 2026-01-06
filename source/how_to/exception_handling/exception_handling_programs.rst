@@ -74,7 +74,9 @@ open the project
 
     source .venv/bin/activate
 
-  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+  .. attention::
+
+    on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -713,7 +715,9 @@ open the project
 
     source .venv/bin/activate
 
-  .. attention:: on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+  .. attention::
+
+    on Windows without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1
