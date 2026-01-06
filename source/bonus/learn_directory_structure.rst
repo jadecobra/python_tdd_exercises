@@ -23,6 +23,7 @@ I will build the structure below step by step to see how files_ and folders_ are
   ├── aka_parent_of_jane
   ├── aka_parent_of_john
   ├── jane
+  │   ├── a_child_of_doe
   │   ├── a_file_in_jane
   │   ├── aka_aunt_of_lil
   │   ├── aka_sibling_of_john
@@ -35,6 +36,7 @@ I will build the structure below step by step to see how files_ and folders_ are
       ├── a_file_in_john
       ├── aka_sibling_of_jane
       ├── aka_uncle_of_baby
+      ├── another_child_of_doe
       └── lil
           ├── a_file_in_lil
           ├── aka_child_of_john
