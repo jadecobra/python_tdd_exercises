@@ -62,7 +62,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory relationships?<how to look at directory structure>`
-* :ref:`How can I list what is in a directory?<how to list what is in a directory>`
+* :ref:`How can I list what is in a directory?<how to see what is in a directory>`
 * :ref:`How can I make an empty file?<how to make an empty file>`
 * :ref:`How can I use directory relationships?<how to use directory relationships>`
 * :ref:`How can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
@@ -324,8 +324,12 @@ how to make a directory
 
     .../pumping_python/doe
 
+:ref:`I know how to make a directory<how to make a directory>`
+
+----
+
 =================================================================================
-how to list what is in a directory
+how to see what is in a directory
 =================================================================================
 
 * I can use ls_ to show what is in a directory_ and see information about the files_ in it
@@ -427,6 +431,10 @@ how to list what is in a directory
   .. code-block:: shell
 
     .../pumping_python/doe
+
+:ref:`I know how to see what is in a directory<how to see what is in a directory>`
+
+----
 
 =================================================================================
 how to look at directory structure
@@ -839,6 +847,8 @@ how to look at directory structure
 
     5 directories, 0 files
 
+:ref:`I know how to look at directory structure<how to look at directory structure>`
+
 ----
 
 =================================================================================
@@ -1189,6 +1199,8 @@ I can make empty files_ in a folder_ with the touch_ program
 
 :ref:`I know how to add empty files to folders<how to make an empty file>`
 
+----
+
 =================================================================================
 how to use directory relationships
 =================================================================================
@@ -1234,7 +1246,7 @@ how to use directory relationships
 
     .../pumping_python/doe
 
-  Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent. I can use as many I need for each parent, for example ``../../../..`` is the great great grand parent
+  Since ``..`` is for the parent of a directory_, ``../..`` is for the parent of a parent, that is a grandparent. I can use as many as I need for each parent, for example ``../../../..`` is the great great grand parent
 
 * I try to go from ``doe`` to ``lil`` in 1 step
 
@@ -1426,7 +1438,7 @@ how to use directory relationships
 
   - I know its path
   - I know its relation to where I am and
-  - I have permission to write to the folder_
+  - I can :ref:`write to the folder<how to view the permissions of a file>`
 
   I add 2 empty files_ in ``jane``
 
@@ -1496,13 +1508,14 @@ how to use directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 7, 10, 14, 18
+    :emphasize-lines: 6, 8, 11, 15-16, 20
 
     doe
     ├── a_file_in_doe
     ├── aka_parent_of_jane
     ├── aka_parent_of_john
     ├── jane
+    │   ├── a_child_of_doe
     │   ├── a_file_in_jane
     │   ├── aka_sibling_of_john
     │   └── baby
@@ -1512,12 +1525,13 @@ how to use directory relationships
     └── john
         ├── a_file_in_john
         ├── aka_sibling_of_jane
+        ├── another_child_of_doe
         └── lil
             ├── a_file_in_lil
             ├── aka_child_of_john
             └── another_grandchild_of_doe
 
-    5 directories, 13 files
+    5 directories, 15 files
 
 * I type pwd_ to show where I am
 
@@ -1532,7 +1546,9 @@ how to use directory relationships
 
     .../pumping_python
 
-* I can see what is in any folder_ once I know its path or relation to where I am
+  I am in the ``pumping_python`` folder_
+
+* I can see what is in any folder_ when I know its path or relation to where I am
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1556,7 +1572,7 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    .  ..  a_file_in_jane  aka_sibling_of_john  baby
+    .  ..  a_child_of_doe  a_file_in_jane  aka_sibling_of_john  baby
 
 * I show what is in ``baby``
 
@@ -1569,8 +1585,7 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    .   a_file_in_baby       aka_child_of_jane
-    ..  a_grandchild_of_doe
+    .  ..  a_file_in_baby  a_grandchild_of_doe  aka_child_of_jane
 
 * I show what is in ``john``
 
@@ -1583,7 +1598,7 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    .  ..  a_file_in_john  aka_sibling_of_jane  lil
+    .  ..  a_file_in_john  aka_sibling_of_jane  another_child_of_doe  lil
 
 * I show what is in ``lil``
 
@@ -1650,8 +1665,11 @@ how to use directory relationships
 * I add 2 empty files_ from inside ``baby``, one to ``doe`` and another to ``john``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     touch ../../aka_grandparent_of_baby ../../john/aka_uncle_of_baby
+
+  the terminal_ goes back to the command line
 
 * I can use the relationship to `change directory`_ to ``lil`` from ``baby``
 
@@ -1664,7 +1682,7 @@ how to use directory relationships
 
   .. code-block:: shell
 
-    .../doe/john/lil $
+    .../doe/john/lil
 
 * I want to see what is in ``baby`` from inside ``lil`` in 1 step. I use their relationship with ls_
 
@@ -1711,8 +1729,11 @@ how to use directory relationships
 * I add 2 empty files_ from inside ``lil``, one to ``doe`` and another to ``jane``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
     touch ../../aka_grandparent_of_lil ../../jane/aka_aunt_of_lil
+
+  the terminal_ goes back to the command line
 
 * I look at the structure of ``doe`` again, this time from inside ``lil``
 
@@ -1724,7 +1745,7 @@ how to use directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 3-4, 9, 15, 19, 23
+    :emphasize-lines: 3-4, 10, 16, 20, 25
 
     ../../../doe
     ├── a_file_in_doe
@@ -1733,6 +1754,7 @@ how to use directory relationships
     ├── aka_parent_of_jane
     ├── aka_parent_of_john
     ├── jane
+    │   ├── a_child_of_doe
     │   ├── a_file_in_jane
     │   ├── aka_aunt_of_lil
     │   ├── aka_sibling_of_john
@@ -1745,13 +1767,14 @@ how to use directory relationships
         ├── a_file_in_john
         ├── aka_sibling_of_jane
         ├── aka_uncle_of_baby
+        ├── another_child_of_doe
         └── lil
             ├── a_file_in_lil
             ├── aka_child_of_john
             ├── aka_cousin_of_baby
             └── another_grandchild_of_doe
 
-    5 directories, 19 files
+    5 directories, 21 files
 
 * I `change directory`_ to the parent of ``doe``
 
@@ -1766,18 +1789,9 @@ how to use directory relationships
 
     .../pumping_python
 
-  I show the current working directory (where I am)
+:ref:`I know how to use directory relationships<how to use directory relationships>`
 
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .../
+----
 
 =================================================================================
 how to remove a directory and all its contents
@@ -1790,7 +1804,7 @@ how to remove a directory and all its contents
   .. code-block:: shell
     :emphasize-lines: 1
 
-    rm -rf parent
+    rm -rf doe
 
   .. attention::
 
@@ -1799,14 +1813,14 @@ how to remove a directory and all its contents
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      Remove-Item -Path parent -Recurse -Force
+      Remove-Item -Path doe -Recurse -Force
 
 
   the terminal_ goes back to the command line
 
   - rm_ is used to remove files_ and folders_
-  - ``-r/-Recurse`` means remove child directories_ and what is in them recursively, it goes through each child directory_ and removes everything include their children
-  - ``-f/-Force`` means "force", do not ask me any questions, just remove the file_ or folder_ and all its children with extreme prejudice
+  - ``-r/-Recurse`` means remove child directories_ and what is in them until there is nothing left, it goes through each child directory_ and removes everything including their children
+  - ``-f/-Force`` means do not ask me any questions, just remove the file_ or folder_ and everything inside it until there is nothing left
 
 * I try to go back to the ``doe`` directory_
 
@@ -1819,7 +1833,7 @@ how to remove a directory and all its contents
 
   .. code-block:: shell
 
-    cd: no such file or directory: parent
+    cd: no such file or directory: doe
 
 *************************************************************************************
 review
