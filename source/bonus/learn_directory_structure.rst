@@ -64,7 +64,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I change directories?<how to change directory>`
 * :ref:`How can I make a directory?<how to make a directory>`
 * :ref:`How can I see directory relationships?<how to look at directory structure>`
-* :ref:`How can I list what is in a directory?<how to see what is in a directory>`
+* :ref:`How can I see what isin a directory?<how to see what is in a directory>`
 * :ref:`How can I make an empty file?<how to make an empty file>`
 * :ref:`How can I use directory relationships?<how to use directory relationships>`
 * :ref:`How can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
