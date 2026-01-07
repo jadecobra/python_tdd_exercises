@@ -64,7 +64,7 @@ Pick a time that works best for you
             <div class="price">$99.99</div>
             <p class="time-slot">1PM - 3PM CST</p>
             <ul>
-                <li>Jan 5 - Feb 27</li>
+                <li>Jan 12 - Mar 6</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
