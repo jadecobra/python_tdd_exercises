@@ -19,6 +19,7 @@ The following chapters test Python_ basic data structures/types, which are a way
   None: the simplest<none>
   Booleans: there are only 2<booleans/index>
   Lists: anything in [ ]<lists/index>
+  List Comprehensions<lists/list_comprehensions>
   Dictionaries: key-value pairs<dictionaries>
 
 ----
