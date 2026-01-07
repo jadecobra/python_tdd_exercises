@@ -1,15 +1,15 @@
 #!bin/bash
 # Learn Directory Structure
-cd parent
-mkdir parent
-cd parent
+cd doe
+mkdir doe
+cd doe
 pwd
 ls
 ls --all
 ls -a
 cd .
 cd ..
-cd parent
+cd doe
 tree
 cd jane
 mkdir jane
@@ -17,7 +17,6 @@ ls -a
 tree
 cd john
 mkdir john
-ls -a
 tree
 cd jane
 ls
@@ -27,7 +26,6 @@ cd baby
 mkdir baby
 cd baby
 cd ..
-cd ..
 cd john
 ls
 ls -a
@@ -36,61 +34,69 @@ cd lil
 mkdir lil
 cd lil
 cd ..
-cd ..
 tree
 touch a_file_in_doe
 ls -a
 cd jane
-touch sibling_of_john
+touch a_file_in_jane
 ls -a
 cd ..
 cd john
-touch sibling_of_jane
+touch a_file_in_john
 ls -a
 cd ..
 tree
 cd jane
 cd baby
-cd ../..
-cd baby
-cd jane/baby
-touch a_grandchild_of_doe
+touch a_file_in_baby
 ls -a
-cd ../..
+cd ..
 cd john
 cd lil
+touch a_file_in_lil
+ls -a
+cd ..
+tree
+cd baby
+cd jane/baby
 cd ../..
 cd lil
 cd john/lil
-touch another_grandchild_of_doe
+cd ../..
+cd jane/baby
+touch aka_child_of_jane
 ls -a
 cd ../..
-touch aka_grandparent_of_baby
-touch aka_grandparent_of_baby
+cd john/lil
+touch aka_child_of_john
+ls -a
+cd ../..
+touch aka_parent_of_jane aka_parent_of_john
 tree
-touch child/aunt_or_uncle_of_lil
-touch john/aunt_or_uncle_of_baby
-tree
-touch child/baby/a_file_in_baby
-touch john/lil/a_file_in_lil
+touch jane/a_child_of_doe jane/aka_sibling_of_john
+touch john/another_child_of_doe john/aka_sibling_of_jane
+touch jane/baby/a_grandchild_of_doe
+touch john/lil/another_grandchild_of_doe
 cd ..
-tree parent
+tree doe
 pwd
-ls -a parent
+ls -a doe
 ls -a doe/jane
 ls -a doe/jane/baby
 ls -a doe/john
 ls -a doe/john/lil
 cd doe/jane/baby
 ls -a ../../john/lil
-touch ../../john/lil/cousin_of_baby
+touch ../../john/lil/aka_cousin_of_baby
 tree ../../john/lil
+touch ../../aka_grandparent_of_baby ../../john/aka_uncle_of_baby
 cd ../../john/lil
 ls -a ../../jane/baby
-touch ../../jane/baby/cousin_of_mary
+touch ../../jane/baby/aka_cousin_of_lil
 tree ../../jane/baby
-tree ../../../parent
+touch ../../aka_grandparent_of_lil ../../jane/aka_aunt_of_lil
+tree ../../../doe
 cd ../../..
 pwd
-rm -rf parent
-cd parent
+rm -rf doe
+cd doe
