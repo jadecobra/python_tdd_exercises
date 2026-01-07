@@ -1,3 +1,5 @@
+:orphan:
+
 .. meta::
   :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with one script in just 5 minutes.
   :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watch for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
@@ -14,11 +16,12 @@ how to make a Python Test Driven Development environment automatically with vari
 
 ----
 
-``makePythonTdd.sh`` works and always makes a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
-
 --------------------------------------------------------------------------------------------
 how to use a variable in a shell script
 --------------------------------------------------------------------------------------------
+
+``makePythonTdd.sh`` works and always makes a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
+
 
 I changed ``magic_again`` to ``more_magic`` in 5 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
 

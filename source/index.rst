@@ -97,7 +97,7 @@ table of contents
   exceptions/AssertionError
   functions
   how_to/pass_values
-  None
+  data_structures/None
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   how_to/calculator
@@ -120,7 +120,6 @@ table of contents
   all the code in this book<catalog_of_code>
   questions the book answers<reviews>
   learning_models
-  review
   hatches
   what people think of this<review>
 

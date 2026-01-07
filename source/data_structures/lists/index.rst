@@ -74,7 +74,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I count the number of times an item is in a list?<test_count_number_of_times_item_is_in_a_list>`
 * :ref:`how can I add items from an iterable to the end of a list?<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
 * :ref:`how can I get the first position of an item in a list?<test_index_returns_first_position_of_item_in_a_list>`
-* :ref:`how can I put an item at an index in a list?<test_insert_item_at_given_index_in_a_list>`
+* :ref:`how can I put an item at a position in a list?<test_insert_item_at_given_index_in_a_list>`
 * :ref:`how can I remove the last item from a list?<test_pop_removes_and_returns_last_item_from_a_list>`
 * :ref:`how can I remove the first time an item is in a lsit<test_remove_first_time_item_is_in_a_list>`
 * :ref:`how can I reverse a list?<test_reverse_a_list>`
@@ -186,7 +186,7 @@ start the project
     ======================================= FAILURES =======================================
     ________________________________ TestLists.test_failure ________________________________
 
-    self = <tests.test_exceptions.TestLists testMethod=test_failure>
+    self = <tests.test_lists.TestLists testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
@@ -197,7 +197,7 @@ start the project
     FAILED tests/test_lists.py::TestLists::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ===================================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
@@ -249,7 +249,7 @@ I change the expectation
 
           self.assertEqual(list(), [])
 
-the test passes. This is how to make an empty list_
+the test passes. I can make an empty list_ with ``list()`` or ``[]``
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -305,7 +305,7 @@ the test passes. This is how to make an empty list_
 
   the test passes.
 
-I can make a list_ with the constructor_ or square brackets(``[]``), which uses less characters
+I can make a list_ with the constructor_ (``list()``) or square brackets(``[]``) which uses less characters
 
 ----
 

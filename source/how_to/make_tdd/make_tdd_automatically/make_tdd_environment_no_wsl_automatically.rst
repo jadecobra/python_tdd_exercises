@@ -20,7 +20,7 @@ To review, here are steps I take to make the environment for every project
 #. :ref:`I make a directory for the project<how to make a directory for the project on Windows without WSL>`
 #. :ref:`I change directory to the project<how to change directory to the project on Windows without WSL>`
 #. :ref:`I make a directory for the source code named 'src'<how to make a directory for the source code on Windows without WSL>`
-#. :ref:`I make a Python file to hold the source code in the 'src' folder<how to make an empty file on Windows without WSL>`
+#. :ref:`I make a Python file to hold the source code in the 'src' folder<how to make an empty file on Windows without Windows Subsystem for Linux>`
 #. :ref:`I make a directory for the tests<how to make a directory for the tests on Windows without WSL>`
 #. :ref:`I make the 'tests' folder a Python package<how to make the tests a Python package on Windows without WSL>`
 #. :ref:`I make a Python file to hold the tests in the 'tests' folder<test_failure on Windows without WSL>`
@@ -28,9 +28,9 @@ To review, here are steps I take to make the environment for every project
 #. :ref:`I make a virtual environment<how to make a virtual environment on Windows without WSL>`
 #. :ref:`I activate the virtual environment<how to activate a virtual environment on Windows without WSL>`
 #. :ref:`I upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment on Windows without WSL>`
-#. :ref:`I make a requirements file for the needed Python packages<how to write text to a file on Windows without WSL>`
+#. :ref:`I make a requirements file for the needed Python packages<how to write text to a file on Windows without Windows Subsystem for Linux>`
 #. :ref:`I install the packages listed in the requirements file<how to install Python packages in a virtual environment on Windows without WSL>`
-#. :ref:`I run the tests automatically<how to run the tests automatically in a virtual environment on Windows without WSL>`
+#. :ref:`I run the tests automatically<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
 #. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal on Windows without WSL>`
 #. I make the test pass
 #. then I start working on the project
@@ -42,6 +42,8 @@ I want to give one command for the program to do every step except
 * work on the project
 
 I only want to do 3 steps not 18
+
+----
 
 *********************************************************************************
 preview
@@ -131,6 +133,8 @@ how to make a PowerShell script
     # Exceptions seen
     # AssertionError
     " | Out-File "tests/test_magic_again.py" -Encoding UTF8
+
+----
 
 --------------------------------------------------------------------------------------------
 how to run a PowerShell script

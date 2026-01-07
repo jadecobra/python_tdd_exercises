@@ -303,7 +303,7 @@ requirements
     FAILED tests/test_none.py::TestNone::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the :ref:`editor<2 editors>`
 
 * I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_none.py``
 

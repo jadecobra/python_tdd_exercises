@@ -1,3 +1,5 @@
+:orphan:
+
 .. meta::
   :description: Master Python list comprehensions with this hands-on TDD tutorial. Learn to create lists efficiently with code examples. Start coding now!
   :keywords: Jacob Itegboje, Python list comprehensions, test-driven development, Python programming, coding tutorials, data structures, Python for beginners
@@ -64,7 +66,7 @@ start the project
 
     tests/test_list_comprehensions.py:7: AssertionError
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or ``option or command`` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_list_comprehensions.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_list_comprehensions.py:7`` to open it in the :ref:`editor<2 editors>`
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
 
   .. code-block:: python

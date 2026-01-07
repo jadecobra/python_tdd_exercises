@@ -43,6 +43,8 @@ I want to give one command for the program to do every step except
 
 I only want to do 3 steps not 18
 
+----
+
 *********************************************************************************
 preview
 *********************************************************************************
@@ -138,6 +140,8 @@ how to make a shell script
     # AssertionError
     " > tests/test_magic_again.py
 
+----
+
 --------------------------------------------------------------------------------------------
 how to run a shell script
 --------------------------------------------------------------------------------------------
@@ -169,6 +173,8 @@ I have to tell the computer where the file_ is
   permission denied: ./makePythonTdd.sh
 
 I want to make sure the computer can run the program_. I have to make it executable
+
+----
 
 --------------------------------------------------------------------------------------------
 how to view the permissions of a file
@@ -209,6 +215,8 @@ here is what it means for ``makePythonTdd.sh``
 * this group is for other users: ``r--`` means other users can read the file_, NOT write to it or execute it
 
 I want to add execute permissions so I can run the file
+
+----
 
 --------------------------------------------------------------------------------------------
 how to make a shell script run as a command

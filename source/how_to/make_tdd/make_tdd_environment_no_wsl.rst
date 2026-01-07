@@ -147,6 +147,8 @@ the terminal_ goes back to the command line
 
   .. NOTE:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
 
+----
+
 =================================================================================
 how to make a directory for the project on Windows without WSL
 =================================================================================
@@ -190,7 +192,8 @@ how to make a directory for the project on Windows without WSL
     .
     └── magic
 
-* I try cd_ again
+
+----
 
 =================================================================================
 how to change directory to the project on Windows without WSL
@@ -208,6 +211,8 @@ I try cd_ again
   .. code-block:: PowerShell
 
     ...\pumping_python\magic >
+
+----
 
 =================================================================================
 how to run a Python program on Windows without Windows Subsystem for Linux
@@ -227,6 +232,8 @@ how to run a Python program on Windows without Windows Subsystem for Linux
     python: can't open file '...\pumping_python\magic\src\magic.py': [Errno 2] No such file or directory
 
   the computer cannot find the program_ because it does not exist, yet
+
+----
 
 --------------------------------------------------------------------------------------------
 how to make a directory for the source code on Windows without WSL
@@ -264,6 +271,8 @@ how to make a directory for the source code on Windows without WSL
     python src/magic.py
 
   the terminal_ shows the same error from before. I have to make the file_
+
+----
 
 =================================================================================
 how to make an empty file on Windows without Windows Subsystem for Linux
@@ -305,6 +314,8 @@ how to make an empty file on Windows without Windows Subsystem for Linux
 
   the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it exists.
 
+----
+
 ********************************************************************************************
 test_failure on Windows without WSL
 ********************************************************************************************
@@ -335,6 +346,8 @@ how to manually run tests on Windows without WSL
 
 * I do not have any tests yet, so there is nothing to run
 
+----
+
 --------------------------------------------------------------------------------------------
 how to make a directory for the tests on Windows without WSL
 --------------------------------------------------------------------------------------------
@@ -364,6 +377,8 @@ the terminal_ goes back to the command line
     ├── src
     │   └── magic.py
     └── tests
+
+----
 
 --------------------------------------------------------------------------------------------
 how to make make a Python file to hold the tests in the 'tests' folder on Windows without WSL
@@ -408,6 +423,8 @@ how to make make a Python file to hold the tests in the 'tests' folder on Window
   .. code-block:: PowerShell
 
     NO TESTS RAN
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -712,6 +729,8 @@ the terminal_ shows
 
 I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
 
+----
+
 --------------------------------------------------------------------------------------------
 what is a virtual environment?
 --------------------------------------------------------------------------------------------
@@ -721,6 +740,8 @@ I can install `pytest-watch`_ globally (for the entire computer), which means it
 A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
 It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
+
+----
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to make a virtual environment on Windows without WSL
@@ -771,6 +792,9 @@ how to make a virtual environment on Windows without WSL
         └── pyvenv.cfg
 
   there is now a folder_ named ``.venv`` for the `virtual environment`_
+
+
+----
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to activate a virtual environment on Windows without WSL
@@ -827,6 +851,8 @@ how to activate a virtual environment on Windows without WSL
 
   I have to install `pytest-watch`_ in the `virtual environment`_ to use it in the `virtual environment`_
 
+----
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to see what packages are installed in a virtual environment on Windows without WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -848,6 +874,8 @@ the terminal_ shows
 
 - `pytest-watch`_ is not in the list
 - pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
+
+----
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to write text to a file on Windows without Windows Subsystem for Linux
@@ -919,6 +947,8 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
+----
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to see what is inside a file on Windows without WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -937,6 +967,8 @@ the terminal_ shows
   pytest-watch
 
 life is good!
+
+----
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to install Python packages in a virtual environment on Windows without WSL
@@ -958,6 +990,8 @@ how to install Python packages in a virtual environment on Windows without WSL
 
     [notice] A new release of pip is available: XY.Z -> AB.C
     [notice] To update, run: pip install --upgrade pip
+
+----
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to upgrade the Python package manager in a virtual environment on Windows without WSL
@@ -1008,6 +1042,8 @@ how to upgrade the Python package manager in a virtual environment on Windows wi
 
   .. TIP:: imagine that the `pytest-watch`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch`_ from the ``requirements.txt`` file_
 
+----
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to run the tests automatically in a virtual environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1032,6 +1068,8 @@ and it shows results without going back to the command line
   tests/test_magic.py .                              [100%]
 
   =============== 1 passed in X.YZs =======================
+
+----
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to open the test file in the editor from the terminal on Windows without WSL
@@ -1074,11 +1112,15 @@ how to open the test file in the editor from the terminal on Windows without WSL
 
   the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
 
+----
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to stop the automated tests on Windows without WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
+
+----
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to deactivate a virtual environment on Windows without WSL
@@ -1219,7 +1261,7 @@ how to view all the commands I typed in a terminal on Windows without WSL
   - :ref:`make a directory for the project<how to make a directory for the project on Windows without WSL>`
   - :ref:`change directory to the project<how to change directory to the project on Windows without WSL>`
   - :ref:`make a directory for the source code<how to make a directory for the source code on Windows without WSL>`
-  - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file on Windows without WSL>`
+  - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file on Windows without Windows Subsystem for Linux>`
   - :ref:`make a directory for the tests<how to make a directory for the tests on Windows without WSL>`
   - :ref:`make the 'tests' folder a Python package<how to make the tests a Python package on Windows without WSL>`
   - :ref:`make a Python file to hold the tests in the 'tests' folder on Windows without WSL<how to make make a Python file to hold the tests in the 'tests' folder on Windows without WSL>`
@@ -1227,9 +1269,9 @@ how to view all the commands I typed in a terminal on Windows without WSL
   - :ref:`make a virtual environment<how to make a virtual environment on Windows without WSL>`
   - :ref:`activate the virtual environment<how to activate a virtual environment on Windows without WSL>`
   - :ref:`upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment on Windows without WSL>`
-  - :ref:`make a requirements file for the needed Python packages<how to write text to a file on Windows without WSL>`
+  - :ref:`make a requirements file for the needed Python packages<how to write text to a file on Windows without Windows Subsystem for Linux>`
   - :ref:`install the packages listed in the requirements file<how to install Python packages in a virtual environment on Windows without WSL>`
-  - :ref:`run the tests automatically<how to run the tests automatically in a virtual environment on Windows without WSL>`
+  - :ref:`run the tests automatically<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal on Windows without WSL>`
   - make the test pass
 
