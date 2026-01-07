@@ -5,9 +5,10 @@
 .. include:: ../../links.rst
 
 .. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _count: more_on_lists_
 .. _append: more_on_lists_
 .. _append method: more_on_lists_
+.. _count: more_on_lists_
+.. _count method: more_on_lists_
 .. _clear: more_on_lists_
 .. _clear method: more_on_lists_
 .. _copy: more_on_lists_
@@ -23,6 +24,7 @@
 .. _reverse: more_on_lists_
 .. _reverse method: more_on_lists_
 .. _sort: more_on_lists_
+.. _sort method: more_on_lists_
 .. _extend: more_on_lists_
 .. _extend method: more_on_lists_
 .. _list: https://docs.python.org/3/library/stdtypes.html#list
@@ -368,11 +370,9 @@ there is also a note on how to see the full difference between ``dir(list)`` and
                 []
             )
 
-  the terminal_ shows a long list_ of items. I copy and paste them from the terminal_ then use `find and replace`_ to remove the extra characters
+  the terminal_ shows a long list_ of items. I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) them from the terminal_ then use `find and replace`_ to remove the extra characters ``E`` and  ``-``
 
-  .. note::
-
-    results can be different because of the Python_ version
+  .. note:: results can be different because of the Python_ version
 
   .. code-block:: python
     :lineno-start: 10
@@ -436,7 +436,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   the test passes and I move the terminal_ back to the bottom
 
-* I copy and paste the names that do NOT have double underscores (__) to use as a TODO list
+* I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) the names that do NOT have double underscores (__) to use as a TODO list
 
   .. code-block:: python
     :lineno-start: 67
@@ -526,7 +526,7 @@ the terminal_ shows green, the `append method`_ returns :ref:`None` when called
 
     AssertionError: Lists differ: [0, 1, 2, 'n', 0] != [0, 1, 2, 'n']
 
-  the `append method`_ added a value
+  the `append method`_ added a value at the end of the list_
 
 * I change the expectation to match the values in the terminal_
 
@@ -576,7 +576,10 @@ the terminal_ shows green, the `append method`_ returns :ref:`None` when called
 * I remove append_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 69
+
+          self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
+
 
     'clear',
     'copy',
@@ -618,7 +621,7 @@ the terminal_ shows green. The `clear method`_ returns :ref:`None` when called
 :red:`RED`: make it fail
 =================================================================================
 
-I add an :ref:`assertion<what is an assertion?>` to clear_ did to the list_
+I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the list_
 
 .. code-block:: python
   :lineno-start: 73
@@ -805,7 +808,7 @@ I add a test for the next :ref:`method<functions>`
           self.assertIsNone(a_list.count())
 
 
-  'extend',
+  'count',
 
 the terminal_ shows :ref:`TypeError`
 
@@ -861,7 +864,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* ``0`` is in the list_ 1 time, I add ``1`` to the list_ 2 more times then add an :ref:`assertion<what is an assertion?>` for it
+* ``0`` is in this list_ 1 time, I add ``1`` to the list_ 2 more times then add an :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
     :lineno-start: 80
@@ -903,7 +906,7 @@ the test passes
 
     AssertionError: 0 != 3
 
-  The count_ method returns ``0`` when the item is not in the list_
+  The `count method`_ returns ``0`` when the item is not in the list_
 
 * I change the value to match
 
@@ -922,10 +925,10 @@ the test passes
     :emphasize-lines: 1
 
         def test_count_number_of_times_item_is_in_a_list(self):
-            a_list = [0, 2, 1, 2, 3, 2]
+            a_list = [0, 1, 2, 1, 'n', 1]
             self.assertEqual(a_list.count(0), 1)
-            self.assertEqual(a_list.count(2), 3)
-            self.assertEqual(a_list.count(9), 0)
+            self.assertEqual(a_list.count(1), 3)
+            self.assertEqual(a_list.count('not in list'), 0)
 
 * I remove count_ from the TODO list
 
@@ -933,7 +936,7 @@ the test passes
     :lineno-start: 84
     :emphasize-lines: 4
 
-            self.assertEqual(a_list.count(9), 0)
+            self.assertEqual(a_list.count('not in list'), 0)
 
 
     'extend',
@@ -1170,7 +1173,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* it does not tell me if the :ref:`method<functions>` returned the same value I gave, so I change the list_
+* maybe the :ref:`method<functions>` returned the same value I gave, I change the list_ to find out
 
   .. code-block:: python
     :lineno-start: 91
@@ -1186,12 +1189,12 @@ the test passes
 
     ValueError: 0 is not in list
 
-  the index_ :ref:`method<functions>` raises ValueError_ when the item is not in the list_
+  the `index method`_ raises ValueError_ when the item is not in the list_
 
 * I add ValueError_ to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 104
     :emphasize-lines: 4
 
     # Exceptions seen
@@ -1232,6 +1235,7 @@ the test passes
 * I add a new :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 91
     :emphasize-lines: 3
 
         def test_index(self):
@@ -1255,7 +1259,7 @@ the test passes
 
         self.assertEqual(a_list.index('1st'), 0)
 
-  the test passes
+  the test passes. The `index method`_ does not just return the value I give it
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -1335,7 +1339,7 @@ the test passes
 
             self.assertEqual(a_list.index('...last'), 3)
 
-  the test passes. The index_ :ref:`method<functions>` returns numbers for the position of the item in the list_. Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
+  the test passes. The `index method`_ returns numbers for the position of the item in the list_. Python_ uses `zero-based indexing`_ which means the first item has an index of ``0`` and the last item has an index of the length of the list_ minus ``1``
 
 * I want to know what happens when I have the same item in the list_ more than once, so I add something in the list_ again
 
@@ -1363,11 +1367,13 @@ the test passes
 
     AssertionError: 0 != 4
 
-  when I first called the index_ :ref:`method<functions>`, the terminal_ showed :ref:`TypeError`
+  when I first called the `index method`_, the terminal_ showed :ref:`TypeError`
 
   .. code-block:: shell
 
     TypeError: index expected at least 1 argument, got 0
+
+  which means I should be able to send more than one argument
 
 * I add a second argument
 
@@ -1418,13 +1424,13 @@ the test passes
     :lineno-start: 91
     :emphasize-lines: 1
 
-    def test_index_returns_first_position_of_item_in_a_list(self):
-        a_list = ['1st', '2nd', '3rd', '...last', '1st']
+        def test_index_returns_first_position_of_item_in_a_list(self):
+            a_list = ['1st', '2nd', '3rd', '...last', '1st']
 
 * I also remove index_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 99
 
             with self.assertRaises(ValueError):
                 a_list.index('not in list')
@@ -1520,7 +1526,7 @@ the test passes. What did the `insert method`_ do to the list_?
   The `insert method`_
 
   - puts the second input given at the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the list_ given as the first input
-  - it also moves the original items from that :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and after in the list_ to the right
+  - it also moves the original items from that :ref:`index<test_index_returns_first_position_of_item_in_a_list>` and after in the list_, to the right
 
 * I change the second input in the call
 
@@ -1583,7 +1589,7 @@ the test passes. What did the `insert method`_ do to the list_?
 
             self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
 
-  the test passes, it moved everything in the list_ from the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` I gave and after to the right
+  the test passes, it moved everything in the list_ from the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` I gave and after, to the right
 
 * I change the name of the test
 
@@ -1905,7 +1911,7 @@ the terminal_ shows green. The remove_ :ref:`method<functions>` returns :ref:`No
 * I remove the things around the call then add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 121
+    :lineno-start: 119
     :emphasize-lines: 3-4
 
             self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
@@ -2487,7 +2493,7 @@ I can also use the :ref:`index<test_index_returns_first_position_of_item_in_a_li
 :red:`RED`: make it fail
 =================================================================================
 
-I add an :ref:`assertion<what_is_an_assertion?>`
+I add an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :lineno-start: 147
