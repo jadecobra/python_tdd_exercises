@@ -3096,7 +3096,7 @@ the terminal_ shows :ref:`AssertionError`
 I change the expectation to match
 
 .. code-block:: python
-  :lineno-start: 97
+  :lineno-start: 96
   :emphasize-lines: 3
 
           self.assertEqual(
@@ -3113,7 +3113,7 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>` for the next :ref:`function<functions>`
 
   .. code-block:: python
-    :lineno-start: 97
+    :lineno-start: 96
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -3142,7 +3142,7 @@ the test passes
                 'Excuse me?! I only work with numbers. Please try again...'
             )
 
-  the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``only_takes_numbers`` :ref:`function<functions>`, never again
+  the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``only_takes_numbers`` :ref:`function<functions>`. Never again
 
 * I add a :ref:`variable<what is a variable?>` to remove the repetition
 
@@ -3164,6 +3164,8 @@ the test passes
             )
 
   the test is still green
+
+----
 
 ---------------------------------------------------------------------------------
 how to multiply a list
@@ -3208,6 +3210,8 @@ how to multiply a list
   .. code-block:: shell
 
     AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'Excuse me?! I only work with numbers. Please try again...'
+
+* I open ``calculator.py`` in the :ref:`editor<2 editors>`
 
 * I add an :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
 
@@ -3328,7 +3332,7 @@ how to test if something is an instance of more than one type
 
 The `isinstance function`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<classes>` in the tuple_
 
-* I add a :ref:`variable<what is a variable?>` to the ``only_takes_numbers`` :ref:`function<functions>`
+* I add a :ref:`variable<what is a variable?>` to the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -3376,7 +3380,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
 
   still green
 
-* I could write :ref:`Logical Negation (NOT)<test_logical_negation>` to test only the types of numbers the :ref:`calculator<how to make a calculator>` can handle
+* I can use :ref:`Logical Negation (NOT)<test_logical_negation>` to make the :ref:`if statement<if statements>` allow only the types of numbers (integers_ and floats_) that I want the :ref:`calculator<how to make a calculator>` to handle
 
   .. code-block:: python
     :linenos:
@@ -3423,14 +3427,14 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
 
   the tests are still passing
 
-* "not_" happens twice in the `if statement<if statements>`, I write the line in terms of it
+* "not_" happens twice in the :ref:`if statement<if statements>`, I write the line in terms of it
 
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 3
 
             # if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
-            if (not isinstance(first_input, good_types)) (not and) ((not isinstance(second_input, good_types))):
+            if (not isinstance(first_input, good_types)) (not and) (not isinstance(second_input, good_types)):
                 return error_message
 
   the terminal_ shows SyntaxError_
@@ -3503,7 +3507,7 @@ I add a new test to use the :ref:`index of the items in the list<test_index_retu
 
 .. code-block:: python
   :lineno-start: 107
-  :emphasize-lines: 5-6, 7-10
+  :emphasize-lines: 6-7, 9-12
 
             self.assertEqual(
                 src.calculator.subtract(a_list, 3),
@@ -3786,11 +3790,13 @@ the test passes
 
   the test passes
 
-It is important to note that the star expression always gives the items from the list in order, and I cannot use a list_ that has more than 2 items with the :ref:`calculator functions<how to make a calculator>`
+----
 
 *********************************************************************************
 test_calculator_raises_type_error_when_given_more_than_two_inputs
 *********************************************************************************
+
+It is important to note that the star expression always gives the items from the list in order, and I cannot use a list_ that has more than 2 items with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
 
 * I add a new test to show the problem when I have more than 2 inputs and use a star expression
 
