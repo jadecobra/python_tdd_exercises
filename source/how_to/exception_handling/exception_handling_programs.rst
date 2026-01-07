@@ -801,7 +801,7 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
     # ZeroDivisionError
 
 * I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
-* I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<fucntions>`
+* I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 9

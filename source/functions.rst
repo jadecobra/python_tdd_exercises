@@ -1680,7 +1680,7 @@ I change the expectation to match
 
   # Exceptions seen
 
-the test passes. The function_ reads the :ref:`positional arguments<test_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
+the test passes. The function_ reads the :ref:`positional arguments<test_functions_w_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
 
 --------------------------------------------------------------------------------------------
 how Python reads keyword arguments
@@ -1721,7 +1721,7 @@ I change the expectation to match
 
   # Exceptions seen
 
-the test passes. The function_ reads the :ref:`keyword arguments<test_keywords_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
+the test passes. The function_ reads the :ref:`keyword arguments<test_functions_w_keyword_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
 
 ----
 

@@ -3345,7 +3345,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
 
   still green
 
-* I could write :ref:`Logical Negation (NOT)<test_logical_negation_aka_not>` to test only the types of numbers the :ref:`calculator<how to make a calculator>` can handle
+* I could write :ref:`Logical Negation (NOT)<test_logical_negation>` to test only the types of numbers the :ref:`calculator<how to make a calculator>` can handle
 
   .. code-block:: python
     :linenos:
@@ -3517,7 +3517,7 @@ the test passes
 :yellow:`refactor`: make it better
 =================================================================================
 
-* I add an :ref:`assertion<what is an assertion>` for the :ref:`divide function<test_division>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
     :lineno-start: 115
@@ -3687,7 +3687,7 @@ the test passes
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion>` for the :ref:`multiply function<test_multiplication>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
     :lineno-start: 135
