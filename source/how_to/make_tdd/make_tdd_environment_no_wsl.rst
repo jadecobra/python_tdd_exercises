@@ -18,7 +18,7 @@ how to make a python test driven development environment on Windows without Wind
 preview
 *********************************************************************************
 
-This is one way to make a Python_ `Test Driven Development`_ project on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`
+This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>` on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`
 
 By the end of the chapter you will be know these commands better
 

@@ -86,7 +86,7 @@ As a reminder here is what the structure looks like if the name of the project i
 what is covered?
 *********************************************************************************
 
-These chapters show how I setup a Python_ `Test Driven Development environment`_ automatically on any computer (Linux_, Windows_, MacOS_)
+These chapters show how I setup a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically on any computer (Linux_, Windows_, MacOS_)
 
 .. toctree::
   :titlesonly:
@@ -114,7 +114,7 @@ On Windows computers without Windows Subsystem for Linux
 
 ----
 
-at the end of the chapter you will know how to automatically make a Python_ `Test Driven Development`_ project for MacOS_, Linux_, `Windows Subsystem for Linux`_ and Windows_ without `Windows Subsystem for Linux`_
+at the end of the chapter you will know how to automatically make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>` for MacOS_, Linux_, `Windows Subsystem for Linux`_ and Windows_ without `Windows Subsystem for Linux`_
 
 ----
 
