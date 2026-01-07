@@ -3798,44 +3798,56 @@ test_calculator_raises_type_error_when_given_more_than_two_inputs
 
 It is important to note that the star expression always gives the items from the list in order, and I cannot use a list_ that has more than 2 items with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
 
-* I add a new test to show the problem when I have more than 2 inputs and use a star expression
+=================================================================================
+:red:`red`: make it fail
+=================================================================================
 
-  .. code-block:: python
-    :lineno-start: 143
-    :emphasize-lines: 6-7, 9
+I add a new test to show the problem when I have more than 2 inputs and use a star expression
 
-            self.assertEqual(
-                src.calculator.subtract(*a_list),
-                self.random_first_number-self.random_second_number
-            )
+.. code-block:: python
+  :lineno-start: 143
+  :emphasize-lines: 6-7, 9
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-            another_list = [0, 1, 2]
+          self.assertEqual(
+              src.calculator.subtract(*a_list),
+              self.random_first_number-self.random_second_number
+          )
 
-            src.calculator.add(*another_list)
+      def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+          another_list = [0, 1, 2]
+
+          src.calculator.add(*another_list)
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the terminal_ shows :ref:`TypeError`
+the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+  TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
-* I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
+=================================================================================
+:green:`green`: make it pass
+=================================================================================
 
-  .. code-block:: python
-    :lineno-start: 148
-    :emphasize-lines: 4-5
+I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-            another_list = [0, 1, 2]
+.. code-block:: python
+  :lineno-start: 148
+  :emphasize-lines: 4-5
 
-            with self.assertRaises(TypeError):
-                src.calculator.add(*another_list)
+      def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+          another_list = [0, 1, 2]
 
-  the test passes
+          with self.assertRaises(TypeError):
+              src.calculator.add(*another_list)
+
+the test passes
+
+=================================================================================
+:yellow:`refactor`: make it better
+=================================================================================
 
 * I add a failing line for :ref:`division<test_division>` with the new list_
 
