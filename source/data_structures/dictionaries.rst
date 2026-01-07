@@ -1819,7 +1819,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: pop expected at least 1 argument, got 0
 
-this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
+this `pop method`_ is different from the one in :ref:`lists`
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1878,13 +1878,13 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
             with self.assertRaises(KeyError):
                 a_dictionary.pop('not_in_dictionary')
 
-  the test passes. When I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_ it raises :ref:`KeyError<test_key_error>`
+  the test passes. When I call the `pop method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_ it raises :ref:`KeyError<test_key_error>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* When I called the pop_ :ref:`method<functions>` without input, the terminal_ showed :ref:`TypeError`
+* When I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1946,7 +1946,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
   the test passes
 
-* I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the pop_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_
+* I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the `pop method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_
 
   .. code-block:: python
     :lineno-start: 155
@@ -1967,7 +1967,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
     AssertionError: 'value' != 'default'
 
-  I get ``'value'`` back. The pop_ :ref:`method<functions>` returns the value of the given :ref:`key<test_keys_of_a_dictionary>` from the dictionary_
+  I get ``'value'`` back. The `pop method`_ returns the value of the given :ref:`key<test_keys_of_a_dictionary>` from the dictionary_
 
 * I change the expectation to match
 
@@ -1982,7 +1982,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
   the test passes
 
-* I add another :ref:`assertion<what is an assertion?>` to see what the pop_ :ref:`method<functions>` did to the dictionary_
+* I add another :ref:`assertion<what is an assertion?>` to see what the `pop method`_ did to the dictionary_
 
   .. code-block:: python
     :lineno-start: 159
@@ -2000,7 +2000,7 @@ this pop_ :ref:`method<functions>` is different from the one in :ref:`lists`
 
     AssertionError: {} != {'key': 'value'}
 
-  the pop_ :ref:`method<functions>` removes the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and returns the :ref:`value<test_values_of_a_dictionary>` of the given :ref:`key<test_keys_of_a_dictionary>` from the dictionary_
+  the `pop method`_ removes the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and returns the :ref:`value<test_values_of_a_dictionary>` of the given :ref:`key<test_keys_of_a_dictionary>` from the dictionary_
 
 * I change the expectation to match
 
@@ -3008,7 +3008,7 @@ the test passes
 
   the test passes. This is a repetition of :ref:`test_get_value_of_a_key_in_a_dictionary`, here is another repetition
 
-* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value` the pop_ :ref:`method<functions>` raised :ref:`KeyError<test_key_error>` when I gave it a :ref:`key<test_keys_of_a_dictionary>` that was not in the dictionary_, I add another :ref:`assertion<what is an assertion?>` for it
+* Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value` the `pop method`_ raised :ref:`KeyError<test_key_error>` when I gave it a :ref:`key<test_keys_of_a_dictionary>` that was not in the dictionary_, I add another :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
     :lineno-start: 227
@@ -3042,7 +3042,7 @@ the test passes
 
   the test passes
 
-* I can give a second argument if I do not want the pop_ :ref:`method<functions>` to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. I add an :ref:`assertion<what is an assertion?>`
+* I can give a second argument if I do not want the `pop method`_ to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 232

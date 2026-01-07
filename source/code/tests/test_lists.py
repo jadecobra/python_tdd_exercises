@@ -99,7 +99,7 @@ class TestLists(unittest.TestCase):
         with self.assertRaises(ValueError):
             a_list.index('not in list')
 
-    def test_insert_item_at_given_index_in_a_list(self):
+    def test_insert_item_at_position_in_a_list(self):
         a_list = [0, 1, 2, 'n']
         self.assertIsNone(a_list.insert(0, -1))
         self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])

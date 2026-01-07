@@ -241,7 +241,7 @@ questions about lists
 * :ref:`how can I count the number of times an item is in a list?<test_count_number_of_times_item_is_in_a_list>`
 * :ref:`how can I add items from an iterable to the end of a list?<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
 * :ref:`how can I get the first position of an item in a list?<test_index_returns_first_position_of_item_in_a_list>`
-* :ref:`how can I put an item at a position in a list?<test_insert_item_at_given_index_in_a_list>`
+* :ref:`how can I put an item at a position in a list?<test_insert_item_at_position_in_a_list>`
 * :ref:`how can I remove the last item from a list?<test_pop_removes_and_returns_last_item_from_a_list>`
 * :ref:`how can I remove the first time an item is in a lsit<test_remove_first_time_item_is_in_a_list>`
 * :ref:`how can I reverse a list?<test_reverse_a_list>`

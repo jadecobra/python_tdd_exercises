@@ -154,7 +154,7 @@ test_lists
 #. :ref:`test_count_number_of_times_item_is_in_a_list`
 #. :ref:`test_extend_adds_items_from_an_iterable_to_end_of_a_list`
 #. :ref:`test_index_returns_first_position_of_item_in_a_list`
-#. :ref:`test_insert_item_at_given_index_in_a_list`
+#. :ref:`test_insert_item_at_position_in_a_list`
 #. :ref:`test_pop_removes_and_returns_last_item_from_a_list`
 #. :ref:`test_remove_first_time_item_is_in_a_list`
 #. :ref:`test_reverse_a_list`

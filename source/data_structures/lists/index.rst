@@ -76,7 +76,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I count the number of times an item is in a list?<test_count_number_of_times_item_is_in_a_list>`
 * :ref:`how can I add items from an iterable to the end of a list?<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
 * :ref:`how can I get the first position of an item in a list?<test_index_returns_first_position_of_item_in_a_list>`
-* :ref:`how can I put an item at a position in a list?<test_insert_item_at_given_index_in_a_list>`
+* :ref:`how can I put an item at a position in a list?<test_insert_item_at_position_in_a_list>`
 * :ref:`how can I remove the last item from a list?<test_pop_removes_and_returns_last_item_from_a_list>`
 * :ref:`how can I remove the first time an item is in a lsit<test_remove_first_time_item_is_in_a_list>`
 * :ref:`how can I reverse a list?<test_reverse_a_list>`
@@ -1447,7 +1447,7 @@ the test passes
 ----
 
 *********************************************************************************
-test_insert_item_at_given_index_in_a_list
+test_insert_item_at_position_in_a_list
 *********************************************************************************
 
 =================================================================================
@@ -1597,12 +1597,13 @@ the test passes. What did the `insert method`_ do to the list_?
     :lineno-start: 102
     :emphasize-lines: 1
 
-        def test_insert_item_at_given_index_in_a_list(self):
+        def test_insert_item_at_position_in_a_list(self):
             a_list = [0, 1, 2, 'n']
             self.assertIsNone(a_list.insert(0, -1))
             self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
             self.assertIsNone(a_list.insert(3, 1.5))
             self.assertEqual(a_list, [-1, 0, 1, 1.5, 2, 'n'])
+
 
     'insert',
 
@@ -1619,7 +1620,7 @@ the test passes. What did the `insert method`_ do to the list_?
     'reverse',
     'sort'
 
-:ref:`I know how to put an item at a position in a list<test_insert_item_at_given_index_in_a_list>`
+:ref:`I know how to put an item at a position in a list<test_insert_item_at_position_in_a_list>`
 
 ----
 
@@ -1652,7 +1653,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 'n' is not None
 
-The pop_ :ref:`method<functions>` returns the last item in the list_
+The `pop method`_ returns the last item in the list_
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1716,6 +1717,8 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>` with the `pop method`_
 
   .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 2
 
             self.assertEqual(a_list, [0, 1, 2])
             self.assertEqual(a_list.pop(), 'n')
@@ -1788,7 +1791,7 @@ the test passes
     'reverse',
     'sort'
 
-:ref:`I know how to get and remove the last item in a list<test_pop_removes_and_returns_last_item_from_a_list>`
+:ref:`I know how to get and remove the last item from a list<test_pop_removes_and_returns_last_item_from_a_list>`
 
 ----
 
@@ -1833,7 +1836,7 @@ I add a value to the call
 
           self.assertIsNone(a_list.remove(0))
 
-the terminal_ shows green. The remove_ :ref:`method<functions>` returns :ref:`None`
+the terminal_ shows green. The `remove method`_ returns :ref:`None`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1854,7 +1857,7 @@ the terminal_ shows green. The remove_ :ref:`method<functions>` returns :ref:`No
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
-  the :ref:`method<functions>` removes the item given from the list_
+  the :ref:`method<functions>` removes the item given as input from the list_
 
 * I change the expectation
 
@@ -2078,7 +2081,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: '<' not supported between instances of 'str' and 'int'
 
-I have to change ``'n'`` to a number or change the other numbers to a string_
+I have to change ``'n'`` to a number or change the other numbers to strings_
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -2101,7 +2104,20 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I remove the :ref:`variable<test_attribute_error_w_variables>` because it is not used, I can use the list_ directly
+* I can use the list_ directly in the call
+
+  .. code-block:: python
+    :lineno-start: 129
+    :emphasize-lines: 4
+
+      def test_sort(self):
+          a_list = [0, 1, 2, 'n']
+          with self.assertRaises(TypeError):
+              [0, 1, 2, 'n'].sort()
+
+  the test is still green
+
+* I remove the :ref:`variable<test_attribute_error_w_variables>` because it is no longer used
 
   .. code-block:: python
     :lineno-start: 129
@@ -2111,11 +2127,12 @@ the test passes
             with self.assertRaises(TypeError):
                 [0, 1, 2, 'n'].sort()
 
-  the test is still green
+  still green
 
 * I add a new list_ where all the items are numbers and another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 129
     :emphasize-lines: 5,6
 
         def test_sort(self):
@@ -2155,7 +2172,7 @@ the test passes
 
   the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is sorted
 
-* I change the list_ to see what happens when it is not sorted
+* I change the list_ to see what happens when it is NOT sorted
 
   .. code-block:: python
     :lineno-start: 133
@@ -2171,7 +2188,7 @@ the test passes
 
     AssertionError: Lists differ: [-3, -2, -1, 0, 1, 2, 3] != [0, 1, 2, 3]
 
-  the sort_ :ref:`method<functions>` arranged the list_ in ascending order
+  the `sort method`_ changed the order of the list_ from smallest to biggest number
 
 * I change the values to match
 
@@ -2221,13 +2238,13 @@ the test passes
 test_getting_items_of_a_list
 *********************************************************************************
 
-When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``)
+When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``) to get it
 
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add a failing test to show what I mean
+I add a failing test
 
 .. code-block:: python
   :lineno-start: 135
@@ -2268,7 +2285,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* this is the opposite of the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` :ref:`method<functions>` which takes in the item and returns its position, in this case I provide the :ref:`index (position)<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
+* this is the opposite of the `index method`_ which takes in the item and returns its position, in this case I provide the :ref:`index (position)<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
 
   .. code-block:: python
     :lineno-start: 139
@@ -2291,7 +2308,10 @@ the test passes
 
             self.assertEqual(a_list[a_list.index('1st')], '1st')
 
-  the test passes
+  the test passes because
+
+  - ``a_list.index('1st')`` returns ``0``
+  - ``a_list[0]`` returns ``1st``
 
 * I can also use negative numbers. The last item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``-1`` and the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of negative the length of the list_
 
@@ -2627,8 +2647,10 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
   I add the missing values
 
   .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
+            self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
 
   the test passes
 
@@ -2751,6 +2773,8 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
     # Exceptions seen
 
+:ref:`I know how to look at parts of a list<test_looking_at_parts_of_a_list_aka_slicing>`
+
 ----
 
 *********************************************************************************
@@ -2811,6 +2835,7 @@ the test passes
 * I add IndexError_ to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
+    :lineno-start: 171
     :emphasize-lines: 5
 
     # Exceptions seen
@@ -2819,7 +2844,7 @@ the test passes
     # ValueError
     # IndexError
 
-* I get IndexError_ when I use a negative number that is smaller than the number of things in the list_ as a negative number
+* I get IndexError_ when I use a number that is smaller than the number of things in the list_ as a negative number
 
   .. code-block:: python
     :lineno-start: 167
@@ -2882,7 +2907,7 @@ the test passes
 
   the terminal_ shows green
 
-* I cannot remove the last item from a list_ that has no items, this is like trying to get an item from a list_ that has no items
+* I cannot remove the last item from a list_ that has no items, this is the same as trying to get an item from a list_ that has no items
 
   .. code-block:: python
     :lineno-start: 171
@@ -2932,20 +2957,20 @@ close the project
 
   * the terminal_ shows
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
 
       (.venv) ...\pumping_python\lists
 
   * I deactivate the `virtual environment`_
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       deactivate
 
     the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
 
       ...\pumping_python\lists
 
@@ -2958,7 +2983,7 @@ close the project
 
     the terminal_ shows
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
 
       ...\pumping_python
 
@@ -3955,7 +3980,7 @@ I ran tests to show that I can make a list_ with the constructor_ or square brac
 * :ref:`test_count_number_of_times_item_is_in_a_list`
 * :ref:`test_extend_adds_items_from_an_iterable_to_end_of_a_list`
 * :ref:`test_index_returns_first_position_of_item_in_a_list`
-* :ref:`test_insert_item_at_given_index_in_a_list`
+* :ref:`test_insert_item_at_position_in_a_list`
 * :ref:`test_pop_removes_and_returns_last_item_from_a_list`
 * :ref:`test_remove_first_time_item_is_in_a_list`
 * :ref:`test_reverse_a_list`

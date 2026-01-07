@@ -1150,20 +1150,20 @@ close the project
 
   * the terminal_ shows
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
 
       (.venv) ...\pumping_python\type_error
 
   * I deactivate the `virtual environment`_
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       deactivate
 
     the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
 
       ...\pumping_python\type_error
 
@@ -1176,7 +1176,7 @@ close the project
 
     the terminal_ shows
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
 
       ...\pumping_python
 
