@@ -324,7 +324,7 @@ test_failure on Windows without WSL
 how to manually run tests on Windows without WSL
 =================================================================================
 
-* I use the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
+* I use the `unittest module`_ from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -341,7 +341,7 @@ how to manually run tests on Windows without WSL
     NO TESTS RAN
 
   - ``python`` is the `Python program`_
-  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>` - unittest_ in this case
+  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>`, unittest_ in this case
   - a Python_ :ref:`module<ModuleNotFoundError>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
 
 * I do not have any tests yet, so there is nothing to run
@@ -459,7 +459,7 @@ how to make make a Python file to hold the tests in the 'tests' folder on Window
 
   Here is an explanation of the code I typed in the file_
 
-  - ``import unittest`` imports the unittest_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, this is what I am using for testing
+  - ``import unittest`` imports the `unittest module`_ from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
     * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<functions>` that belong together, I cover this in more detail in the :ref:`classes chapter<classes>`
@@ -467,7 +467,7 @@ how to make make a Python file to hold the tests in the 'tests' folder on Window
 
       .. IMPORTANT:: I can use any name for the :ref:`test class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
-    * `unittest.TestCase`_ is a :ref:`class <classes>` from the unittest_ :ref:`module<ModuleNotFoundError>` that has :ref:`methods<functions>` for testing
+    * `unittest.TestCase`_ is a :ref:`class <classes>` from the `unittest module`_ that has :ref:`methods<functions>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<functions>` and :ref:`attributes<AttributeError>`
 
   - ``def test_failure``

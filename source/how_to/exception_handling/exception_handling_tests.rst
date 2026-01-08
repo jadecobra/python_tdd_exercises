@@ -241,7 +241,7 @@ assertRaises_ checks that the code in its context, raises the :ref:`Exception<er
 test_catching_name_error_in_tests
 *********************************************************************************
 
-:ref:`NameError<test_catching_name_error_in_tests>` is raised when I use a name that is not defined in the file
+NameError_ is raised when I use a name that is not defined in the file
 
 =================================================================================
 :red:`RED`: make it fail
@@ -260,7 +260,7 @@ test_catching_name_error_in_tests
         def test_catching_name_error_in_tests(self):
             does_not_exist
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows NameError_
 
   .. code-block:: shell
 
@@ -268,7 +268,7 @@ test_catching_name_error_in_tests
 
   because there is no definition for `does_not_exist` in ``test_exceptions.py``
 
-* I add it to the list of :ref:`Exceptions<errors>` seen
+* I add NameError_ to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 14
@@ -293,7 +293,7 @@ I add assertRaises_
             with self.assertRaises(NameError):
                 does_not_exist
 
-the test passes, showing that :ref:`NameError<test_catching_name_error_in_tests>` is raised when I use a name that is not defined in the file
+the test passes, showing that NameError_ is raised when I use a name that is not defined in the file
 
 ----
 

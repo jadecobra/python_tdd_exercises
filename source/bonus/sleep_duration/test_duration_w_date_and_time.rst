@@ -222,7 +222,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps that 
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-I want something that can read dates and times from timestamps. I search `Python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the datetime_ :ref:`module<ModuleNotFoundError>` from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
+I want something that can read dates and times from timestamps. I search `Python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the `datetime module`_ from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
 
 .. code-block:: python
 

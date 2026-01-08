@@ -1494,7 +1494,7 @@ the terminal_ shows :ref:`AssertionError`
 
     AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
-* I pass the call to the items_ :ref:`method<functions>` to the :ref:`list<lists>` constructor_ to see if it is iterable_
+* I pass the call to the items_ :ref:`method<functions>` to the :ref:`list constructor<test_making_a_list>` to see if it is iterable_
 
   .. code-block:: python
     :lineno-start: 129
@@ -1688,7 +1688,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: dict_keys(['key']) is not None : ['key']
 
-* I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list<lists>` constructor_ to see if ``dict_keys`` is iterable_
+* I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list constructor<test_making_a_list>` to see if ``dict_keys`` is iterable_
 
   .. code-block:: python
     :lineno-start: 142
@@ -2797,7 +2797,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   the terminal_ shows :ref:`AssertionError`
 
-* I use the :ref:`list<lists>` constructor_ to see if ``dict_values`` is iterable_
+* I use the :ref:`list constructor<test_making_a_list>` to see if ``dict_values`` is iterable_
 
   .. code-block:: python
     :lineno-start: 210

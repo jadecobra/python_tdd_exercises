@@ -48,6 +48,7 @@
 .. _directory: https://grokipedia.com/page/Directory_(computing)
 .. _directories: directory_
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
+.. _datetime module: datetime_
 .. _datetime.datetime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime-objects
 .. _datetime.datetime.strptime: https://docs.python.org/3/library/datetime.html?highlight=datetime#datetime.datetime.strptime
 .. _datetime.timedelta: https://docs.python.org/3/library/datetime.html?highlight=datetime#timedelta-objects
@@ -128,10 +129,10 @@
 .. _raises: raise_
 .. _raise statement: raises_
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
+.. _random module: random_
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _random.triangular: https://docs.python.org/3/library/random.html#random.triangular
-.. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
 .. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _return statements: `return statement`_
 .. _rm: https://grokipedia.com/page/Rm_(Unix)
@@ -164,6 +165,7 @@
 .. _type: https://docs.python.org/3/glossary.html#term-type
 .. _types: type_
 .. _unittest: https://docs.python.org/3/library/unittest.html
+.. _unittest module: unittest_
 .. _unittest.TestCase.assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
 .. _unittest.TestCase.assertEqual: assertEqual_
 .. _unittest.TestCase.assertNotEqual: assertNotEqual_

@@ -6,6 +6,8 @@
 
 .. _list comprehension: https://docs.python.org/3/glossary.html#term-list-comprehension
 .. _list comprehensions: https://docs.python.org/3/glossary.html#term-list-comprehension
+.. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
+.. _range object: range_
 
 #################################################################################
 lists: list comprehensions
@@ -18,10 +20,10 @@ lists: list comprehensions
 ----
 
 *********************************************************************************
-what is a list comprehension
+what is a list comprehension?
 *********************************************************************************
 
-`List Comprehensions`_ are a simple way to make a :ref:`list <lists>` from an iterable_ with one line
+A `List Comprehension`_ is a simple way to make a :ref:`list <lists>` from an iterable_ with one line
 
 ----
 
@@ -135,7 +137,7 @@ start the project
     :emphasize-text: tests/test_list_comprehensions.py:7
 
     ======================================= FAILURES =======================================
-    ________________________________ TestListComprehensions.test_failure ________________________________
+    _________________________ TestListComprehensions.test_failure __________________________
 
     self = <tests.test_lists.TestListComprehensions testMethod=test_failure>
 
@@ -166,62 +168,164 @@ start the project
 test_making_a_list_w_a_for_loop
 *********************************************************************************
 
+I can make a :ref:`list<lists>` with the constructor_ (``list()``) or with square brackets (``[]``), I can also add items one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`, and I can use the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I change ``test_failure``
+I change ``test_failure`` to ``test_making_a_list_w_a_for_loop`` to show what happens when I use the :ref:`append method<test_append_adds_item_to_end_of_a_list>` with more than one item
 
 .. code-block:: python
   :linenos:
+  :emphasize-lines: 6-9
 
   import unittest
 
 
   class TestListComprehensions(unittest.TestCase):
 
-    def test_making_a_list_w_a_for_loop(self):
-        a_list = []
-        iterable = range(0, 4)
-
-        for item in iterable:
-            a_list.append(item)
-
-        self.assertEqual(a_list, [])
+      def test_making_a_list_w_a_for_loop(self):
+          a_list = []
+          a_list.append(0)
+          self.assertEqual(a_list, [])
 
 the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: shell
 
-  AssertionError: Lists differ: [0, 1, 2, 3] != []
-
-- ``a_list = []`` makes an empty list and gives it a name
-- ``iterable = range(0, 4)`` makes a range_ :ref:`object<classes>` that goes from the first given number to the second given number minus 1, in this case it goes from ``0`` to ``3``
-- ``for item in iterable:`` goes over every item in the range_ :ref:`object<classes>`
-- ``a_list.append(item)`` gets called every time the `for loop`_ runs
+  AssertionError: Lists differ: [0] != []
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-I change the expectation to match the values in the terminal_
+I change the expectation to match
 
 .. code-block:: python
+  :lineno-start: 9
+  :emphasize-lines: 1
 
-  self.assertEqual(a_list, [0, 1, 2, 3])
+          self.assertEqual(a_list, [0])
 
-the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`object<classes>` after the `for loop`_ runs
+the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<what is an assertion?>` to show that I can do the same thing with the :ref:`list<lists>` constructor_
+* I use :ref:`test_append_adds_item_to_end_of_a_list` to add another item to the :ref:`list<lists>` with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 3-4
 
-    self.assertEqual(a_list, [0, 1, 2, 3])
-    self.assertEqual(a_list, list())
+            a_list.append(0)
+            self.assertEqual(a_list, [0])
+            a_list.append(1)
+            self.assertEqual(a_list, [0])
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: Lists differ: [0, 1] != [0]
+
+* I add the expected value to the test
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 1
+
+            self.assertEqual(a_list, [0, 1])
+
+  the test passes
+
+* I :ref:`test_append_adds_item_to_end_of_a_list` another number with an :ref:`assertion<what is an assertion?>` to check
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3-4
+
+            a_list.append(1)
+            self.assertEqual(a_list, [0, 1])
+            a_list.append(2)
+            self.assertEqual(a_list, [0, 1])
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: Lists differ: [0, 1, 2] != [0, 1]
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 1
+
+            self.assertEqual(a_list, [0, 1, 2])
+
+  the test passes
+
+* I add one more number with an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 3-4
+
+            a_list.append(2)
+            self.assertEqual(a_list, [0, 1, 2])
+            a_list.append(3)
+            self.assertEqual(a_list, [0, 1, 2])
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2]
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 1
+
+            self.assertEqual(a_list, [0, 1, 2, 3])
+
+  the test passes
+
+----
+
+---------------------------------------------------------------------------------
+what is a for loop?
+---------------------------------------------------------------------------------
+
+I just wrote the same things 4 times in a row, the only things that changed were the numbers I added to the :ref:`list<lists>`, there is a better way. I can use a `for loop`_.
+
+A `for loop`_ is a way to repeat the same command over an iterable_ (a collection of items)
+
+* I add a `for loop`_ to the test
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3-10, 12-13, 15
+
+        def test_making_a_list_w_a_for_loop(self):
+            a_list = []
+            # a_list.append(0)
+            # self.assertEqual(a_list, [0])
+            # a_list.append(1)
+            # self.assertEqual(a_list, [0, 1])
+            # a_list.append(2)
+            # self.assertEqual(a_list, [0, 1, 2])
+            # a_list.append(3)
+            # self.assertEqual(a_list, [0, 1, 2, 3])
+
+            for number in (0, 1, 2, 3):
+                a_list.append(number)
+
+            self.assertEqual(a_list, [])
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -229,23 +333,116 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     AssertionError: Lists differ: [0, 1, 2, 3] != []
 
-  I add the iterable_ to the call
+* I add the values
 
   .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 1
 
-    self.assertEqual(a_list, list(iterable))
+            self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. Why use a `for loop`_ when I can use the :ref:`list<lists>` constructor_ to do the same thing with less characters? Sometimes one is better than the other, I show this before the end of the chapter
+  the test passes
+
+* I remove the commented lines. This `for loop`_ removed 8 lines of code and I can use it for any number of items, the other way gets busy very quickly once I have to add more than 4 numbers
+
+  .. code-block:: python
+    :lineno-start: 6
+
+      def test_making_a_list_w_a_for_loop(self):
+          a_list = []
+
+          for number in (0, 1, 2, 3):
+              a_list.append(number)
+
+          self.assertEqual(a_list, [0, 1, 2, 3])
+
+  - ``for number in (0, 1, 2, 3):`` goes over every number in the tuple_
+  - ``a_list.append(number)`` gets called every time the `for loop`_ runs to add the number from the tuple_ to ``a_list``
+
+* Python_ has an iterable_ I can use to make a sequence of numbers, it is called the `range object`_. I add it to the `for loop`_
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4-5
+
+        def test_making_a_list_w_a_for_loop(self):
+            a_list = []
+
+            # for number in (0, 1, 2, 3):
+            for number in range(0, 4):
+                a_list.append(number)
+
+            self.assertEqual(a_list, [0, 1, 2, 3])
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        def test_making_a_list_w_a_for_loop(self):
+            a_list = []
+
+            for number in range(0, 4):
+                a_list.append(number)
+
+            self.assertEqual(a_list, [0, 1, 2, 3])
+
+  ``range(0, 4)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus 1, in this case it goes from ``0`` to ``3``
+
+* The `for loop`_ is simpler than using the :ref:`append method<test_append_adds_item_to_end_of_a_list>` one a time, but there is an easier way. I can do the same thing with with the :ref:`list constructor<test_making_a_list>`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 2
+
+            self.assertEqual(a_list, [0, 1, 2, 3])
+            self.assertEqual(list(), a_list)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: Lists differ: [] != [0, 1, 2, 3]
+
+* I add the `range object`_ to the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 1
+
+            self.assertEqual(list(range(0, 4)), a_list)
+
+  the test passes
+
+* I add a variable to remove the duplication of the `range object`_
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3, 5, 9
+
+        def test_making_a_list_w_a_for_loop(self):
+            a_list = []
+            iterable = range(0, 4)
+
+            for number in iterable:
+                a_list.append(number)
+
+            self.assertEqual(a_list, [0, 1, 2, 3])
+            self.assertEqual(list(iterable), a_list)
 
 * I add another :ref:`assertion<what is an assertion?>` to practice writing a `for loop`_
 
   .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 2-5
 
-    self.assertEqual(a_list, list(iterable))
-    self.assertEqual(
-        src.list_comprehensions.a_for_loop(iterable),
-        [0, 1, 2, 3]
-    )
+        self.assertEqual(a_list, list(iterable))
+        self.assertEqual(
+            src.list_comprehensions.a_for_loop(iterable),
+            [0, 1, 2, 3]
+        )
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -253,18 +450,20 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     NameError: name 'src' is not defined
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
+    :lineno-start: 21
     :emphasize-lines: 3
 
     # Exceptions seen
     # AssertionError
     # NameError
 
-* I add an `import statement`_
+* I add an `import statement`_ at the top of the file
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     import src.list_comprehensions
@@ -276,9 +475,10 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
+* I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
 
-  .. code-block:: python
+  .. code-block::
+    :lineno-start: 22
     :emphasize-lines: 4
 
     # Exceptions seen
@@ -286,9 +486,13 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
     # NameError
     # AttributeError
 
-* I add a :ref:`function<functions>` to ``list_comprehensions.py``
+* I open ``list_comprehensions.py`` in the :ref:`editor<2 editors>`
+
+* then add a :ref:`function<functions>` to ``list_comprehensions.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
 
     def a_for_loop():
         return None
@@ -299,9 +503,10 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     TypeError: a_for_loop() takes 0 positional arguments but 1 was given
 
-  I add the argument
+* I add a name for the argument
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     def a_for_loop(a_container):
@@ -313,9 +518,10 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     AssertionError: None != [0, 1, 2, 3]
 
-  I change the `return statement`_
+* I change the `return statement`_ to match
 
   .. code-block:: python
+    :linenos:
     :emphasize-lines: 2
 
     def a_for_loop(a_container):
@@ -323,11 +529,13 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
   the test passes
 
-* this solution does not change, the test fails when I change the values in the range_ :ref:`object<classes>`
+* this solution does not change, the test fails when I change the values in the `range object`_ in ``test_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1
 
-    iterable = range(0, 5)
+            iterable = range(0, 5)
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -335,20 +543,33 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
 
-* I undo the change then import the random_ :ref:`module<ModuleNotFoundError>` to add randomness to the test. I need a better solution
+* I undo the change
 
   .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1
+
+            iterable = range(0, 4)
+
+  the test is green again
+
+* I import the `random module`_ to use random numbers in the test. I want a solution that can take any iterable_ and return the right :ref:`list<lists>`
+
+  .. code-block:: python
+    :linenos:
     :emphasize-lines: 1
 
     import random
     import src.list_comprehensions
     import unittest
 
-* I change the second value given to the range_ :ref:`object<classes>`
+* I change the second value given to the `range object`_
 
   .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 1
 
-    iterable = range(0, random.randint(2, 1000))
+            iterable = range(0, random.randint(2, 1000))
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -356,26 +577,44 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
 
-  this range_ :ref:`object<classes>` now goes from ``0`` to anywhere between ``1`` and ``999``. The values change every time the test runs
+  this `range object`_ now goes from ``0`` to anywhere between ``1`` and ``999``. The values change every time the test runs
 
 * I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines:
 
-    self.assertEqual(a_list, list(iterable))
-    self.assertEqual(a_list, list(iterable))
+            self.assertEqual(a_list, list(iterable))
+            self.assertEqual(list(iterable), a_list)
 
-  the test passes. I remove the line because it is a duplicate
+  the test passes
+
+* I remove the second line because it is now a duplicate
+
+  .. code-block:: python
+    :lineno-start: 12
+
+            for number in iterable:
+                a_list.append(number)
+
+            self.assertEqual(a_list, list(iterable))
+            self.assertEqual(
+                src.list_comprehensions.a_for_loop(iterable),
+                [0, 1, 2, 3]
+            )
 
 * I change the expectation of the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 2-5
 
-    self.assertEqual(a_list, list(iterable))
-    self.assertEqual(
-        src.list_comprehensions.a_for_loop(iterable),
-        a_list
-    )
+            self.assertEqual(a_list, list(iterable))
+            self.assertEqual(
+                src.list_comprehensions.a_for_loop(iterable),
+                a_list
+            )
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -383,7 +622,7 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
 
     AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, 4, ...]
 
-  I change the :ref:`function<functions>`
+* I change the :ref:`function<functions>`
 
   .. code-block:: python
 
@@ -395,6 +634,10 @@ the test passes. The :ref:`list<lists>` now has the items from the range_ :ref:`
         return [0, 1, 2, 3]
 
   the test passes and I remove the second `return statement`_
+
+:ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`
+
+Why did I use a `for loop`_ when I can use the :ref:`list constructor<test_making_a_list>` to do the same thing with less characters? Sometimes one is better than the other. :ref:`I show this before the end of the chapter<test_making_a_list_w_conditions>`
 
 ----
 
@@ -461,7 +704,7 @@ the terminal_ shows green again
 
     self.assertEqual(a_list, list(iterable))
 
-  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not yet better than the :ref:`list<lists>` constructor_
+  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not yet better than the :ref:`list constructor<test_making_a_list>`
 
 * I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<lists>` and one for the iterable_, I add them to the setUp_ :ref:`method<functions>` to remove duplication and change the tests to use the new :ref:`class attributes<test_attribute_error_w_class_attributes>`
 
@@ -594,7 +837,7 @@ the test passes
   * loop through the iterable_
   * do the operation I want on every item of the iterable_
 
-  with the `list comprehension`_, I do all the steps in one line, but none of the other ways are better than using the :ref:`list<lists>` constructor_, yet.
+  with the `list comprehension`_, I do all the steps in one line, but none of the other ways are better than using the :ref:`list constructor<test_making_a_list>`, yet.
 
 ----
 
@@ -660,7 +903,7 @@ I add the condition
       [item for item in self.iterable if item % 2 == 0]
   )
 
-the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using the :ref:`list<lists>` constructor_
+the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using the :ref:`list constructor<test_making_a_list>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better

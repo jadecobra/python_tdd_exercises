@@ -954,7 +954,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test is still passing. The problem with this is I lose the test for the previous number, everytime I change a number. I need a better way
 
-* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that the ``add`` :ref:`function<functions>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the random_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
+* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that the ``add`` :ref:`function<functions>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the `random module`_ from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
 
   .. code-block:: python
     :linenos:

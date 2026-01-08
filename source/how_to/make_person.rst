@@ -749,7 +749,7 @@ test_takes_keyword_arguments
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class<classes>`, from the datetime_ :ref:`module<ModuleNotFoundError>`. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes`
+  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class<classes>`, from the `datetime module`_. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes`
 
   .. attention:: I can also use the today_ :ref:`method<functions>` to get the same value
 

@@ -135,7 +135,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-* I add an `import statement`_ for the datetime_ :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_ for the `datetime module`_
 
   .. code-block:: python
 
