@@ -86,7 +86,6 @@
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: int_
 .. _integers: int_
-.. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
 .. _Linux package manager: https://grokipedia.com/page/APT_(software)
@@ -114,8 +113,9 @@
 .. _programs: `computer program`_
 .. _pytest: https://docs.pytest.org/
 .. _pytest-watch: https://github.com/joeyespo/pytest-watch
-.. _Python Built-in Functions: https://docs.python.org/3/library/functions.html
-.. _Python's Built-in Functions: `Python Built-in Functions`_
+.. _Python Built-in Function: https://docs.python.org/3/library/functions.html
+.. _Python Built-in Functions: `Python Built-in Function`_
+.. _Python's Built-in Functions: `Python Built-in Function`_
 .. _Python package: https://docs.python.org/3/glossary.html#term-regular-package
 .. _Python package manager (pip): pip_
 .. _Python package manager: pip_
@@ -141,6 +141,7 @@
 .. _sets: set_
 .. _setdefault: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
 .. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
+.. _setUp method: setUp_
 .. _shebang: https://grokipedia.com/page/Shebang_(Unix)
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
 .. _source code: https://grokipedia.com/page/Source_code
@@ -176,6 +177,7 @@
 .. _unittest.TestCase.assertRaises: assertRaises_
 .. _unittest.TestCase.assertRaisesRegex: assertRaisesRegex_
 .. _unittest.TestCase.setUp: setUp_
+.. _unittest.TestCase.setUp method: setUp_
 .. _unittest.TestCase.assertIsInstance: assertIsInstance_
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip

@@ -821,7 +821,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add a `return statement`_ to the ``a_random_number`` :ref:`function` in ``test_calculator.py`` to make it happen
+* I add a `return statement`_ to the ``a_random_number`` :ref:`function<functions>` in ``test_calculator.py`` to make it happen
 
   .. code-block:: python
     :lineno-start: 6

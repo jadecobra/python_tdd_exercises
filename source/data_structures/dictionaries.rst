@@ -166,7 +166,7 @@ the test passes. These are two ways to make an empty dictionary_ one
     # AssertionError
     # TypeError
 
-* I change the value to a tuple_ since it is an iterable_
+* I change the value to a tuple_ since it is an :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -1053,7 +1053,7 @@ the terminal_ shows :ref:`TypeError`
 
     AssertionError: {0: None, 1: None} is not None
 
-  the fromkeys_ :ref:`method<functions>` returns a dictionary_ that uses the values in the iterable_ as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None`
+  the fromkeys_ :ref:`method<functions>` returns a dictionary_ that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None`
 
 * I add the dictionary_ as an expectation
 
@@ -1195,7 +1195,7 @@ the terminal_ shows :ref:`TypeError`
                 {0: 'default', 1: 'default'}
             )
 
-  the test is green again. This is like a dict_ comprehension because it made a dictionary_ using the items from the iterable_ as :ref:`keys<test_keys_of_a_dictionary>`
+  the test is green again. This is like a dict_ comprehension because it made a dictionary_ using the items from the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>`
 
 * I change the name of the test
 
@@ -1494,7 +1494,7 @@ the terminal_ shows :ref:`AssertionError`
 
     AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
-* I pass the call to the items_ :ref:`method<functions>` to the :ref:`list constructor<test_making_a_list>` to see if it is iterable_
+* I pass the call to the items_ :ref:`method<functions>` to the :ref:`list constructor<test_making_a_list>` to see if it is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 129
@@ -1526,7 +1526,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the test passes.
 
-  This works because the items_ :ref:`method<functions>` returns an iterable_ of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<classes>` is iterable_
+  This works because the items_ :ref:`method<functions>` returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<classes>` is :ref:`iterable<what is an iterable?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1688,7 +1688,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: dict_keys(['key']) is not None : ['key']
 
-* I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list constructor<test_making_a_list>` to see if ``dict_keys`` is iterable_
+* I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list constructor<test_making_a_list>` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 142
@@ -2797,7 +2797,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   the terminal_ shows :ref:`AssertionError`
 
-* I use the :ref:`list constructor<test_making_a_list>` to see if ``dict_values`` is iterable_
+* I use the :ref:`list constructor<test_making_a_list>` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 210

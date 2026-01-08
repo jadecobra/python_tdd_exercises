@@ -31,6 +31,7 @@
 .. _lists: list_
 .. _slicing: https://docs.python.org/3/reference/expressions.html#slicings
 .. _IndexError: https://docs.python.org/3/library/exceptions.html#IndexError
+.. _iterable: https://docs.python.org/3/glossary.html#term-iterable
 
 
 #################################################################################
@@ -281,6 +282,14 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
     # Exceptions seen
     # AssertionError
     # TypeError
+
+----
+
+---------------------------------------------------------------------------------
+what is an iterable?
+---------------------------------------------------------------------------------
+
+An iterable_ is an :ref:`object<classes>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries` are iterable_
 
 * I change the input to a tuple_ (anything in parentheses (``()``), separated by a comma)
 
