@@ -105,7 +105,7 @@ table of contents
   how_to/exception_handling/index
   exceptions/TypeError
   data_structures/lists/index
-  list comprehensions<data_structures/lists/lists_comprehensions>
+  list comprehensions<data_structures/lists/list_comprehensions>
   data_structures/dictionaries
   how_to/make_person
   classes

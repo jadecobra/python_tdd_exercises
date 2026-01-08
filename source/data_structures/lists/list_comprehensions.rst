@@ -41,31 +41,116 @@ Here are the tests I have by the end of the chapter
 start the project
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``list_comprehensions`` as the name of the project
+* I name this project ``list_comprehensions``
+* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
+
+  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code makePythonTdd.sh
+
+    on `Windows`_ without `Windows Subsystem for Linux`_ use
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code makePythonTdd.ps1
+
+* I change everywhere I have ``lists`` to the name of this project in ``makePythonTdd.sh``
+
+  .. code-block:: shell
+    :linenos:
+    :emphasize-lines: 2, 3, 5, 12, 20
+
+    #!/bin/bash
+    mkdir list_comprehensions
+    cd list_comprehensions
+    mkdir src
+    touch src/list_comprehensions.py
+    mkdir tests
+    touch tests/__init__.py
+
+    echo "import unittest
+
+
+    class TestListComprehensions(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions seen
+    # AssertionError
+    " > tests/test_list_comprehensions.py
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+
+    .. code-block:: PowerShell
+      :linenos:
+      :emphasize-lines: 1-2, 4, 11, 18
+
+      mkdir list_comprehensions
+      cd list_comprehensions
+      mkdir src
+      New-Item src/list_comprehensions.py
+      mkdir tests
+      New-Item tests/__init__.py
+
+      "import unittest
+
+
+      class TestListComprehensions(unittest.TestCase):
+
+          def test_failure(self):
+              self.assertFalse(True)
+
+      # Exceptions seen
+      # AssertionError
+      " | Out-File tests/test_list_comprehensions.py
+
+* I run the program_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh list_comprehensions
+    ./makePythonTdd.sh
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
-      ./makePythonTdd.ps1 list_comprehensions
+      ./makePythonTdd.ps1
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 10
+    :emphasize-text: tests/test_list_comprehensions.py:7
 
+    ======================================= FAILURES =======================================
+    ________________________________ TestListComprehensions.test_failure ________________________________
+
+    self = <tests.test_lists.TestListComprehensions testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
     E       AssertionError: True is not false
 
     tests/test_list_comprehensions.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_list_comprehensions.py::TestListComprehensions::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_list_comprehensions.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
+
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -73,13 +158,7 @@ start the project
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
-
-    class TestListComprehensions(unittest.TestCase):
+  the test passes
 
 ----
 
