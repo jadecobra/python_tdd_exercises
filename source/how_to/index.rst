@@ -23,7 +23,7 @@ the chapters
 .. toctree::
   :titlesonly:
 
-  setup_my_ide
+  setup/index
   make_tdd/index
   calculator
   pass_values
