@@ -1559,7 +1559,7 @@ how to test if two things are Equal
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 5-6
+    :emphasize-lines: 5
 
     class TestAssertionError(unittest.TestCase):
 
@@ -1592,7 +1592,7 @@ how to test if two things are Equal
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 4-5
+    :emphasize-lines: 4
 
             self.assertEqual(1+1, 2)
 
@@ -1621,7 +1621,7 @@ how to test if two things are Equal
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 4-5
+    :emphasize-lines: 4
 
             self.assertEqual('1'+'1', '11')
 
