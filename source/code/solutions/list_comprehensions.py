@@ -14,12 +14,17 @@ def is_even(number):
 
 
 def get_even_numbers(numbers):
+    return list(filter(is_even, numbers))
     return [number for number in numbers if is_even(number)]
 
 
 def get_odd_numbers(numbers):
+    import itertools
+    return list(itertools.filterfalse(is_even, numbers))
+    return list(filter(lambda x: not is_even(x), numbers))
     return [number for number in numbers if not is_even(number)]
 
 
 def square(numbers):
+    return list(map(lambda x: x**2, numbers))
     return [number**2 for number in numbers]

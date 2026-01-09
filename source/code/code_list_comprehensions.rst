@@ -3,7 +3,7 @@ data structures: list comprehensions: tests and solutions
 #################################################################################
 
 *********************************************************************************
-tests
+list comprehensions tests
 *********************************************************************************
 
 the code in ``list_comprehensions/tests/test_list_comprehensions.py`` from :ref:`lists: list comprehensions`
@@ -12,11 +12,22 @@ the code in ``list_comprehensions/tests/test_list_comprehensions.py`` from :ref:
   :language: python
   :linenos:
 
+----
 *********************************************************************************
-solutions
+list comprehensions with the Calculator tests
 *********************************************************************************
 
-the solutions in ``list_comprehensions/src/list_comprehensions.py`` from :ref:`lists: list comprehensions`
+the code in ``calculator/tests/test_calculator.py`` from :ref:`lists: list comprehensions`
+
+.. literalinclude:: tests/test_calculator_list_comprehensions.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
+list comprehensions with the Calculator solutions
+*********************************************************************************
+
+the solutions in ``calculator/src/calculator.py`` from :ref:`lists: list comprehensions`
 
 .. literalinclude:: solutions/list_comprehensions.py
   :language: python

@@ -28,7 +28,7 @@ the code in ``calculator/tests/test_calculator.py`` from :ref:`lists`
 lists with the Calculator solutions
 *********************************************************************************
 
-the solution in ``calculator/src/calculator.py`` from :ref:`lists`
+the solutions in ``calculator/src/calculator.py`` from :ref:`lists`
 
 .. literalinclude:: solutions/calculator_lists.py
   :language: python

@@ -18,8 +18,8 @@ class TestListComprehensions(unittest.TestCase):
         self.iterable = range(0, random.randint(2, 1000))
 
     def test_making_a_list_w_a_for_loop(self):
-        for item in self.iterable:
-            self.a_list.append(item)
+        for number in self.iterable:
+            self.a_list.append(number)
 
         self.assertEqual(self.a_list, list(self.iterable))
         self.assertEqual(

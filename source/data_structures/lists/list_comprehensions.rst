@@ -1856,6 +1856,8 @@ the numbers on the left are the squares of the even numbers from the right
 
   the test passes
 
+:ref:`I know how to make a list based on conditions (filter) with processes (transform) it with list comprehensions<test_making_a_list_w_processes_and_conditions>`
+
 ----
 
 *********************************************************************************
