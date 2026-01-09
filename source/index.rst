@@ -97,7 +97,7 @@ table of contents
   exceptions/AssertionError
   functions
   how_to/pass_values
-  data_structures/None
+  data_structures/none
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   how_to/calculator

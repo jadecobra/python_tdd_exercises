@@ -15,6 +15,8 @@
 .. _itertools module: https://docs.python.org/3/library/itertools.html
 .. _map: https://docs.python.org/3/library/functions.html#map
 .. _map object: map_
+.. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
+.. _unittest.TestCase.subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
 
 #################################################################################
 lists: list comprehensions
@@ -1860,26 +1862,6 @@ the numbers on the left are the squares of the even numbers from the right
 
 ----
 
-*********************************************************************************
-review
-*********************************************************************************
-
-The tests show I can make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with
-
-* the :ref:`list <lists>` constructor_
-* a `for loop`_
-* the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
-* and `list comprehensions`_
-
-I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
-
-I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of the following
-
-.. code-block:: shell
-
-  {a_process(key): another_process(value) for key/value in iterable if condition/NOT condition}
-
-----
 
 *********************************************************************************
 close the project
@@ -1917,11 +1899,279 @@ close the project
 
 ----
 
+*********************************************************************************
+how to make sure the calculator tests use new numbers for every test
+*********************************************************************************
+
+I used the `setUp method`_ earlier to make sure that I had a new :ref:`list<lists>` and iterable_ for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
+
+=================================================================================
+open the project
+=================================================================================
+
+* I `change directory`_ to the ``calculator`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd calculator
+
+  the terminal_ shows I am in the ``calculator`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    rootdir: .../pumping_python/calculator
+    collected 7 items
+
+    tests/test_calculator.py ....                                        [100%]
+
+    ============================ 7 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+I add the `setUp method`_ to the ``TestCalculator`` :ref:`class<classes>`
+
+.. code-block:: python
+  :lineno-start: 10
+  :emphasize-lines: 3-5
+
+  class TestCalculator(unittest.TestCase):
+
+      def setUp(self):
+          self.random_first_number = a_random_number()
+          self.random_second_number = a_random_number()
+
+      def test_addition(self):
+
+the test is still green. The `setUp method`_ runs before every test, giving ``random_first_number`` and ``random_second_number`` new random values for each test
+
+----
+
+*************************************************************************************
+a better way to test the calculator with inputs that are NOT numbers
+*************************************************************************************
+
+I have tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None`, strings_ and :ref:`lists`, I want to test them with the other the basic :ref:`Python basic data types<data structures>`: :ref:`booleans`, tuples_, sets_ and :ref:`dictionaries`. Since I know how to use a `for loop`_ and `list comprehensions`_, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
+
+=================================================================================
+:yellow:`RED`: make it fail
+=================================================================================
+
+I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_message_when_input_is_not_a_number``
+
+.. code-block:: python
+  :lineno-start: 58
+  :emphasize-lines: 4-16
+
+      def test_calculator_sends_message_when_input_is_not_a_number(self):
+          error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+          for data_type in (
+              None,
+              True,
+              False,
+              str(),
+              tuple(),
+              list(),
+              set(),
+              dict(),
+          ):
+              self.assertEqual(
+                  src.calculator.add(data_type, a_random_number()),
+                  'BOOM!!!'
+              )
+
+          self.assertEqual(
+              src.calculator.add(None, None),
+              error_message
+          )
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
+
+Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py`` is doing its job, the :ref:`calculator<how to make a calculator>` only takes numbers
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 3
+
+                self.assertEqual(
+                    src.calculator.add(data_type, a_random_number()),
+                    error_message
+                )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: ABCDE.FGHIJKLMNOPQRST != 'Excuse me?! I only work with numbers. Please try again...'
+
+  there is a problem. One of the :ref:`data types<data structures>` I am testing is being allowed by the :ref:`if statement<if statements>`, which means one of them is also either an integer_ or a float_. I need a way to tell which one is causing the problem
+
+* the `unittest.TestCase class` has a way to tell which item is causing my failure when I am using a loop, I add it to the test
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 3-7
+
+                dict(),
+            ):
+                with self.subTest(i=data_type):
+                    self.assertEqual(
+                        src.calculator.add(data_type, a_random_number()),
+                        error_message
+                    )
+
+            self.assertEqual(
+                src.calculator.add(None, None),
+                error_message
+            )
+
+  the terminal_ shows :ref:`AssertionError` for two of the :ref:`data types<data structures>` I am testing
+
+  .. code-block:: shell
+    :emphasize-lines: 3, 4
+    :emphasize-text: SUBFAILED True False
+
+    tests/test_calculator.py:72: AssertionError
+    ============= short test summary info ==============
+    SUBFAILED(i=True) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: UVW.XYZABCDEFGHIJKL != 'Excuse ...
+    SUBFAILED(i=False) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: MNO.PQRSTUVWXYZABCD != 'Excuse ...
+    =========== 2 failed, 7 passed in X.YZs ============
+
+  the `unittest.TestCase.subTest method`_ runs the code in its context as a sub test, showing the values I give in ``i=data_type`` so that I can see which one caused the error
+
+* I add a condition for :ref:`booleans` in the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-4
+
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            if isinstance(first_input, bool) or isinstance(second_input, bool):
+                return error_message
+            if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
+
+  the test passes
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+* I remove the
+
+* I add another :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 5-8
+
+                self.assertEqual(
+                    src.calculator.add(data_type, a_random_number()),
+                    error_message
+                )
+                self.assertEqual(
+                    src.calculator.divide(data_type, a_random_number()),
+                    'BOOM!!!'
+                )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
+
+* I think you can tell what will happen next. I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 3
+
+                self.assertEqual(
+                    src.calculator.divide(data_type, a_random_number()),
+                    error_message
+                )
+
+  .. the terminal_ shows :ref:`AssertionError`
+
+----
+
 *************************************************************************************
 code from the chapter
 *************************************************************************************
 
 :ref:`Do you want to see all the CODE I typed in this chapter?<data structures: list comprehensions: tests and solutions>`
+
+----
+
+*********************************************************************************
+review
+*********************************************************************************
+
+The tests show I can make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with
+
+* the :ref:`list <lists>` constructor_
+* a `for loop`_
+* the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
+* and `list comprehensions`_
+
+I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
+
+I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of the following
+
+.. code-block:: shell
+
+  {a_process(key): another_process(value) for key/value in iterable if condition/NOT condition}
 
 ----
 
