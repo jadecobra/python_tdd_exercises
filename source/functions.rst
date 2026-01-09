@@ -586,7 +586,7 @@ I like to write my functions_ this way, saying exactly what it returns, that way
 test_constant_function
 *********************************************************************************
 
-constant functions_ always return the same thing when they are called
+constant functions_ always returns the same thing when they are called
 
 =================================================================================
 :red:`RED`: make it fail

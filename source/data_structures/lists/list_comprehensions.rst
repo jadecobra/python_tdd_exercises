@@ -2057,7 +2057,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   there is a problem. One of the :ref:`data types<data structures>` I am testing is being allowed by the :ref:`if statement<if statements>`, which means one of them is also either an integer_ or a float_. I need a way to tell which one is causing the problem
 
-* the `unittest.TestCase class` has a way to tell which item is causing my failure when I am using a loop, I add it to the test
+* the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a loop, I add it to the test
 
   .. code-block:: python
     :lineno-start: 69
@@ -2108,24 +2108,23 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I remove the
-
-* I add another :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
+* I add another :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 5-8
+    :emphasize-lines: 6-9
 
-                self.assertEqual(
-                    src.calculator.add(data_type, a_random_number()),
-                    error_message
-                )
-                self.assertEqual(
-                    src.calculator.divide(data_type, a_random_number()),
-                    'BOOM!!!'
-                )
+                with self.subTest(i=data_type):
+                    self.assertEqual(
+                        src.calculator.add(data_type, a_random_number()),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.divide(data_type, a_random_number),
+                        'BOOM!!!'
+                    )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError` for all the :ref:`data types<data structures>` in the test
 
   .. code-block:: shell
 
@@ -2137,12 +2136,61 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :lineno-start: 75
     :emphasize-lines: 3
 
-                self.assertEqual(
-                    src.calculator.divide(data_type, a_random_number()),
-                    error_message
-                )
+                    self.assertEqual(
+                        src.calculator.divide(data_type, a_random_number()),
+                        error_message
+                    )
 
-  .. the terminal_ shows :ref:`AssertionError`
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`multiplication<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 5-8
+
+                    self.assertEqual(
+                        src.calculator.divide(data_type, a_random_number),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.multiply(data_type, a_random_number()),
+                        'BOOM!!!'
+                    )
+
+  the terminal_ shows :ref:`AssertionError` for each :ref:`data type<data structures>`
+
+  .. code-block:: shell
+
+    AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 80
+    :emphasize-lines: 3
+
+                    self.assertEqual(
+                        src.calculator.multiply(data_type, a_random_number()),
+                        error_message
+                    )
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`subtraction<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+                    self.assertEqual(
+                        src.calculator.multiply(data_type, a_random_number()),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.subtract(data_type, a_random_number()),
+                        'BOOM!!!'
+                    )
 
 ----
 
