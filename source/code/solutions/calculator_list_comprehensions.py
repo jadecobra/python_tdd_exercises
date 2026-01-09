@@ -3,6 +3,8 @@ def only_takes_numbers(function):
         good_types = (int, float)
         error_message = 'Excuse me?! I only work with numbers. Please try again...'
 
+        if isinstance(first_input, bool) or isinstance(second_input, bool):
+            return error_message
         if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
             return error_message
         else:
