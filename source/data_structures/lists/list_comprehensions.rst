@@ -2230,11 +2230,44 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
 ----
 
-*************************************************************************************
-code from the chapter
-*************************************************************************************
+=================================================================================
+close the project
+=================================================================================
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: list comprehensions: tests and solutions>`
+* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 
@@ -2242,12 +2275,16 @@ code from the chapter
 review
 *********************************************************************************
 
-The tests show I can make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with
+I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with
 
-* the :ref:`list <lists>` constructor_
-* a `for loop`_
-* the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
-* and `list comprehensions`_
+* :ref:`the list constructor<test_making_a_list>`
+* :ref:`a for loop<test_making_a_list_w_a_for_loop>`
+* :ref:`the extend method<test_making_a_list_w_extend>`
+* and :ref:`list comprehensions<test_making_a_list_w_a_list_comprehension>` where I can
+
+  - :ref:`filter the list based on a condition<test_making_a_list_w_conditions>`
+  - :ref:`transform the list with a process<test_making_a_list_w_processes>`
+  - :ref:`transform and filter a list<test_making_a_list_w_processes_and_conditions>`
 
 I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
 
@@ -2257,6 +2294,13 @@ I can also do this with :ref:`dictionaries`, it is called a dict comprehension a
 
   {a_process(key): another_process(value) for key/value in iterable if condition/NOT condition}
 
+----
+
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: list comprehensions: tests and solutions>`
 ----
 
 *********************************************************************************

@@ -1142,7 +1142,7 @@ close the project
 
   .. code-block:: shell
 
-    .../pumping_python/type_error
+    .../pumping_python
 
   I am back in the ``pumping_python`` directory_
 
@@ -1275,7 +1275,7 @@ I add a new failing test to show that the :ref:`calculator<how to make a calcula
                   'undefined: I cannot divide by 0'
               )
 
-      def test_calculator_raises_type_error_when_given_none(self):
+      def test_calculator_raises_type_error_w_none(self):
           src.calculator.add(None, None)
 
 
@@ -1297,7 +1297,7 @@ I add assertRaises_
   :lineno-start: 57
   :emphasize-lines: 2-3
 
-      def test_calculator_raises_type_error_when_given_none(self):
+      def test_calculator_raises_type_error_w_none(self):
           with self.assertRaises(TypeError):
               src.calculator.add(None, None)
 
@@ -1313,7 +1313,7 @@ the test passes
     :lineno-start: 57
     :emphasize-lines: 4
 
-        def test_calculator_raises_type_error_when_given_none(self):
+        def test_calculator_raises_type_error_w_none(self):
             with self.assertRaises(TypeError):
                 src.calculator.add(None None)
             src.calculator.divide(None, None)
@@ -1388,7 +1388,7 @@ the test passes
     :lineno-start: 57
     :emphasize-lines: 8-9
 
-        def test_calculator_raises_type_error_when_given_none(self):
+        def test_calculator_raises_type_error_w_none(self):
             with self.assertRaises(TypeError):
                 src.calculator.add(None, None)
             with self.assertRaises(TypeError):
@@ -1532,7 +1532,7 @@ the test passes
     :lineno-start: 57
     :emphasize-lines: 8-9
 
-        def test_calculator_raises_type_error_when_given_none(self):
+        def test_calculator_raises_type_error_w_none(self):
             with self.assertRaises(TypeError):
                 src.calculator.add(None, None)
             with self.assertRaises(TypeError):
@@ -1626,13 +1626,13 @@ I want the :ref:`calculator functions<how to make a calculator>` to send a messa
 :red:`RED`: make it fail
 =================================================================================
 
-I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in ``test_calculator_raises_type_error_when_given_none``
+I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in ``test_calculator_raises_type_error_w_none``
 
 .. code-block:: python
   :lineno-start: 57
   :emphasize-lines: 2-5
 
-      def test_calculator_raises_type_error_when_given_none(self):
+      def test_calculator_raises_type_error_w_none(self):
           self.assertEqual(
               src.calculator.add(None, None),
               'Excuse me?! I only work with numbers. Please try again...'
@@ -1754,15 +1754,15 @@ the test passes
 
     AssertionError: TypeError not raised
 
-  ``test_calculator_raises_type_error_when_given_none`` fails because it expects TypeError_ when the inputs are not numbers
+  ``test_calculator_raises_type_error_w_none`` fails because it expects TypeError_ when the inputs are not numbers
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_when_given_none`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_w_none`` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 6-9
 
-    def test_calculator_raises_type_error_when_given_none(self):
+    def test_calculator_raises_type_error_w_none(self):
         self.assertEqual(
             src.calculator.add(None, None),
             'Excuse me?! I only work with numbers. Please try again...'
@@ -1774,7 +1774,7 @@ the test passes
 
   the test passes
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in ``test_calculator_raises_type_error_when_given_none``
+* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in ``test_calculator_raises_type_error_w_none``
 
   .. code-block:: python
     :lineno-start: 62
@@ -1873,7 +1873,7 @@ the test passes
 
     AssertionError: TypeError not raised
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator_raises_type_error_when_given_none`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator_raises_type_error_w_none`` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -1895,10 +1895,10 @@ the test passes
 
   That was a lot of doing the same thing over and over again.
 
-  - ``test_calculator_raises_type_error_when_given_none`` and ``test_calculator_raises_type_error_when_given_strings`` both look the same
+  - ``test_calculator_raises_type_error_w_none`` and ``test_calculator_raises_type_error_when_given_strings`` both look the same
   - the :ref:`calculator<how to make a calculator>` no longer raises TypeError_ when any of the inputs are NOT a number
 
-* I remove the name of ``test_calculator_raises_type_error_when_given_strings`` to make its :ref:`assertions<what is an assertion?>` part of ``test_calculator_raises_type_error_when_given_none``
+* I remove the name of ``test_calculator_raises_type_error_when_given_strings`` to make its :ref:`assertions<what is an assertion?>` part of ``test_calculator_raises_type_error_w_none``
 
   .. code-block:: python
     :lineno-start: 70
@@ -1928,7 +1928,7 @@ the test passes
 
     # Exceptions seen
 
-* I change the name from ``test_calculator_raises_type_error_when_given_none`` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
+* I change the name from ``test_calculator_raises_type_error_w_none`` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
 
   .. code-block:: python
     :lineno-start: 57
