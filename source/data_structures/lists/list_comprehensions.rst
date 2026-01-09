@@ -1414,7 +1414,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test is still green
 
-* I remove the second `return statement`_ and call the new :ref:`function<functions>` in ``get_odd_numbers``
+* I remove the second `return statement`_ and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<functions>` in ``get_odd_numbers``
 
   .. code-block:: python
     :lineno-start: 17
@@ -1430,7 +1430,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
 * I remove the second `return statement`_
 
-* There is a `Python Built-in Function`_ I can use to do the same thing as the `list comprehension`_, it is called filter_, which is also a way to say "make a list based on a condition". I try it in the ``get_even_numbers`` :ref:`function<functions>`
+* There is a `Python Built-in Function`_ I can use to do the same thing as the `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition". I try it in the ``get_even_numbers`` :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1474,7 +1474,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     TypeError: 'bool' object is not callable
 
-* I do not want to write a new :ref:`function<functions>`. I can use an :ref:`function<functions>` with no name to make it work
+* I do not want to write a new :ref:`function<functions>`. I can use a :ref:`function<functions>` with no name to make it work
 
   .. code-block:: python
     :lineno-start: 21
@@ -1486,7 +1486,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes, but this is not sexy
 
-* another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of the `Python standard library`_ and needs an `import statement`
+* another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of the `Python standard library`_ and needs an `import statement`_
 
   .. code-block:: python
     :lineno-start: 21
@@ -1501,7 +1501,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the condition of the :ref:`function<functions>`
 
-I like the `list comprehension`_ of all the options, it is simpler, easier to remember, and does not need any `import statements`_. :ref:`I know how to filter a list<test_making_a_list_w_conditions>`
+I like the `list comprehension`_ from the options, it is simpler, easier to remember, and does not need any `import statements`_. :ref:`I know how to filter a list<test_making_a_list_w_conditions>`
 
 ----
 
@@ -1509,32 +1509,41 @@ I like the `list comprehension`_ of all the options, it is simpler, easier to re
 test_making_a_list_w_processes
 *********************************************************************************
 
+I can do other operations in a `list comprehension`_ not just :ref:`append<test_append_adds_item_to_end_of_a_list>`
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to show I can do other operations in a `list comprehension`_ not just :ref:`append<test_append_adds_item_to_end_of_a_list>`
+I add a failing test to ``test_list_comprehensions.py``
 
 .. code-block:: python
+  :lineno-start: 62
+  :emphasize-lines: 4-7, 9-12
 
-  def test_making_a_list_w_conditions(self):
-      ...
+              [item for item in self.iterable if not condition(item)]
+          )
 
-  def test_making_a_list_w_processes(self):
-      square_club = []
-      for item in self.iterable:
-          square_club.append(item*item)
+      def test_making_a_list_w_processes(self):
+          square_club = []
+          for item in self.iterable:
+              square_club.append(item*item)
 
-      self.assertEqual(
-          square_club,
-          [item for item in self.iterable]
-      )
+          self.assertEqual(
+              square_club,
+              [item for item in self.iterable]
+          )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: shell
 
   AssertionError: Lists differ: [0, 1, 4, 9, ...] != [0, 1, 2, 3, ...]
+
+the numbers on the left are squares of the numbers on the right
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1543,11 +1552,13 @@ the terminal_ shows :ref:`AssertionError`
 I add the calculation to the `list comprehension`_
 
 .. code-block:: python
+  :lineno-start: 70
+  :emphasize-lines: 3
 
-  self.assertEqual(
-      square_club,
-      [item*item for item in self.iterable]
-  )
+          self.assertEqual(
+              square_club,
+              [item*item for item in self.iterable]
+          )
 
 the test passes
 
@@ -1558,15 +1569,15 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 3-6
 
-    self.assertEqual(
-        square_club,
-        [item*item for item in self.iterable]
-    )
-    self.assertEqual(
-        src.list_comprehensions.square(self.iterable),
-        [item*item for item in self.iterable]
-    )
+                [item*item for item in self.iterable]
+            )
+            self.assertEqual(
+                src.list_comprehensions.square(self.iterable),
+                [item*item for item in self.iterable]
+            )
 
   the terminal_ shows :ref:`AttributeError`
 
@@ -1574,26 +1585,32 @@ the test passes
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'square'
 
-  I add the :ref:`function<functions>`
+* I add the :ref:`function<functions>` to ``list_comprehensions.py``
 
   .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 4-5
 
-    def get_odd_numbers(numbers):
-        ...
+
+        return [number for number in numbers if not is_even(number)]
 
 
     def square(numbers):
         return [number**2 for number in numbers]
 
-  the test passes. ``x**y`` is how to write ``x`` raised to the power of ``y``
+  the test passes
+
+  ``x**y`` is how to write ``x`` raised to the power of ``y``
 
   .. math::
 
     x ^ y
 
-* I add a :ref:`function<functions>` for the calculation I did 3 times in this test
+* I add a :ref:`function<functions>` for the calculation I just did 3 times in ``test_list_comprehensions.py``
 
   .. code-block:: python
+    :lineno-start: 3
+    :emphasize-lines: 4-5
 
     import unittest
 
@@ -1601,9 +1618,14 @@ the test passes
     def process(number):
         return number ** 2
 
-  I call it in the test
+
+    def condition(number):
+
+* I call the new :ref:`function<functions>` in the `for loop`_
 
   .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 4-5
 
     def test_making_a_list_w_processes(self):
         square_club = []
@@ -1611,20 +1633,58 @@ the test passes
             # square_club.append(item*item)
             square_club.append(process(item))
 
-        self.assertEqual(
-            square_club,
-            # [item*item for item in self.iterable]
-            [process(item) for item in self.iterable]
+  the test is still green
 
-        self.assertEqual(
-            src.list_comprehensions.square(self.iterable),
-            # [item*item for item in self.iterable]
-            [process(item) for item in self.iterable]
-        )
+* I remove the commented line and call the :ref:`function<functions>` in the first :ref:`assertion<what is an assertion?>`
 
-  the terminal_ still shows green. I remove the commented lines.
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 6-7
+
+            for item in self.iterable:
+                square_club.append(process(item))
+
+            self.assertEqual(
+                square_club,
+                # [item*item for item in self.iterable]
+                [process(item) for item in self.iterable]
+            )
+
+  still green
+
+* I remove the commented line and call the :ref:`function<functions>` in the second :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 6-7
+
+                square_club,
+                [process(item) for item in self.iterable]
+            )
+            self.assertEqual(
+                src.list_comprehensions.square(self.iterable),
+                # [item*item for item in self.iterable]
+                [process(item) for item in self.iterable]
+            )
+
+  the terminal_ still shows green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 78
+
+            self.assertEqual(
+                src.list_comprehensions.square(self.iterable),
+                [process(item) for item in self.iterable]
+            )
+
+
+    # Exceptions seen
 
   .. NOTE:: ``process`` is not a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
+
+:ref:`I know how to process(transform) a list with list comprehensions<test_making_a_list_w_processes>`
 
 ----
 
