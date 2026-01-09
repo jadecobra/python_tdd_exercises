@@ -13,6 +13,8 @@
 .. _filterfalse: https://docs.python.org/3/library/itertools.html#itertools.filterfalse
 .. _filterfalse method: filterfalse_
 .. _itertools module: https://docs.python.org/3/library/itertools.html
+.. _map: https://docs.python.org/3/library/functions.html#map
+.. _map object: map_
 
 #################################################################################
 lists: list comprehensions
@@ -1606,6 +1608,36 @@ the test passes
 
     x ^ y
 
+* There is a `Python Built-in Function`_ that I can use to process a :ref:`list<lists>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 2
+
+    def square(numbers):
+        return map(lambda x: x**2, numbers)
+        return [number**2 for number in numbers]
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: <map object at 0xffffa1b234c5> != [0, 1, 4, 9, ...]
+
+  I have to change the `map object`_ to a :ref:`list<lists>`
+
+* I add the :ref:`list constructor<test_making_a_list>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 2
+
+    def square(numbers):
+        return list(map(lambda x: x**2, numbers))
+        return [number**2 for number in numbers]
+
+  the test passes. map_ takes in a :ref:`function<functions>` as input, so once again I like the `list comprehension`_ better
+
 * I add a :ref:`function<functions>` for the calculation I just did 3 times in ``test_list_comprehensions.py``
 
   .. code-block:: python
@@ -1701,105 +1733,128 @@ I can use both :ref:`processes<test_making_a_list_w_processes>` and :ref:`condit
 I add a failing test
 
 .. code-block:: python
+  :lineno-start: 80
+  :emphasize-lines: 4-10, 12-15
 
-  def test_making_a_list_w_processes(self):
-      ...
+              [process(item) for item in self.iterable]
+          )
 
-  def test_making_a_list_w_processes_and_conditions(self):
-      even_squares, odd_squares = [], []
-      for item in self.iterable:
-          if condition(item):
-              even_numbers.append(process(item))
-          else:
-              odd_numbers.append(process(item))
+      def test_making_a_list_w_processes_and_conditions(self):
+          even_squares, odd_squares = [], []
+          for item in self.iterable:
+              if condition(item):
+                  even_squares.append(process(item))
+              else:
+                  odd_squares.append(process(item))
 
-      self.assertEqual(
-          even_squares,
-          [item for item in self.iterable]
-      )
+          self.assertEqual(
+              even_squares,
+              [item for item in self.iterable]
+          )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: shell
 
-  AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 1, 2, 3, 4, ...]
+  AssertionError: Lists differ: [0, 4, 16, ...] != [0, 1, 2, 3, 4, ...]
+
+the numbers on the left are the squares of the even numbers from the right
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a call to ``condition``
+* I add a call to the ``condition`` :ref:`function<functions>`
 
-.. code-block:: python
-  :emphasize-lines: 3
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 3
 
-    self.assertEqual(
-        even_squares,
-        [item for item in self.iterable if condition(item)]
-    )
+            self.assertEqual(
+                even_squares,
+                [item for item in self.iterable if condition(item)]
+            )
 
-the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 2, 4, 6, ...]
+    AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 2, 4, 6, ...]
 
-I add a call to ``process``
+  the numbers on the left are squares of the numbers on the right
 
-.. code-block:: python
-  :emphasize-lines: 3
+* I add a call to the ``process`` :ref:`function<functions>`
 
-  self.assertEqual(
-      even_squares,
-      [process(item) for item in self.iterable if condition(item)]
-  )
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 3
 
-the test passes
+            self.assertEqual(
+                even_squares,
+                [process(item) for item in self.iterable if condition(item)]
+            )
+
+  the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-I add another :ref:`assertion<what is an assertion?>`
+* I add another :ref:`assertion<what is an assertion?>`
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 3-6
 
-  self.assertEqual(
-      odd_squares,
-      [item for item in self.iterable]
-  )
+                [process(item) for item in self.iterable if condition(item)]
+            )
+            self.assertEqual(
+                odd_squares,
+                [item for item in self.iterable]
+            )
 
-the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: Lists differ: [1, 9, 25, 49, ...] != [0, 1, 2, 3, 4, 5, 6, 7, ...]
+    AssertionError: Lists differ: [1, 9, 25, 49, ...] != [0, 1, 2, 3, 4, 5, 6, 7, ...]
 
-I add a call to ``condition``
+  the numbers on the left are the squares of the odd numbers from the right
 
-.. code-block:: python
+* I add a call to ``condition`` with :ref:`logical negation(NOT)<test_logical_negation>`
 
-  self.assertEqual(
-      odd_squares,
-      [item for item in self.iterable if not condition(item)]
-  )
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 3
 
-the terminal_ shows :ref:`AssertionError`
+            self.assertEqual(
+                odd_squares,
+                [item for item in self.iterable if not condition(item)]
+            )
 
-.. code-block:: shell
+  the terminal_ shows :ref:`AssertionError`
 
-  AssertionError: Lists differ: [1, 9, 25, 49, ...] != [1, 3, 5, 7, ...]
+  .. code-block:: shell
 
-I add a call to ``process``
+    AssertionError: Lists differ: [1, 9, 25, 49, ...] != [1, 3, 5, 7, ...]
 
-.. code-block:: python
+  the numbers on the left are squares of the numbers on the right
 
-  self.assertEqual(
-      odd_squares,
-      [process(item) for item in self.iterable if not condition(item)]
-  )
+* I add a call to ``process``
 
-the test passes
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                odd_squares,
+                [process(item) for item in self.iterable if not condition(item)]
+            )
+
+  the test passes
 
 ----
 
