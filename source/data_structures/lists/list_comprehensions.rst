@@ -10,6 +10,9 @@
 .. _range object: range_
 .. _filter: https://docs.python.org/3/library/functions.html#filter
 .. _filter object: filter_
+.. _filterfalse: https://docs.python.org/3/library/itertools.html#itertools.filterfalse
+.. _filterfalse method: filterfalse_
+.. _itertools module: https://docs.python.org/3/library/itertools.html
 
 #################################################################################
 lists: list comprehensions
@@ -1256,7 +1259,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     # Exceptions seen
 
-  I do NOT recommend ``condition`` as a name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
+  .. NOTE:: ``condition`` is not a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
 
 * I change the condition in the :ref:`function<functions>` in ``test_list_comprehensions.py``
 
@@ -1427,7 +1430,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
 * I remove the second `return statement`_
 
-* There is a `Python Built-in Function`_ I can use to do the same thing as the `list comprehension`_ it is called filter_, which is also a way to say "make a list based on a condition". I try it in the ``get_even_numbers`` :ref:`function<functions>`
+* There is a `Python Built-in Function`_ I can use to do the same thing as the `list comprehension`_, it is called filter_, which is also a way to say "make a list based on a condition". I try it in the ``get_even_numbers`` :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1453,7 +1456,52 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
         return list(filter(is_even, numbers))
 
-  the test passes
+  the test passes. Which do you like better: `filter`_ or the `list comprehension`_?
+
+* If I want to use filter_ in ``get_odd_numbers``, I have to make a :ref:`function<functions>` like I did for ``is_even`` because filter_ takes a :ref:`function<functions>` as input
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
+
+    def get_odd_numbers(numbers):
+        return list(filter(not is_even, numbers))
+        return [number for number in numbers if not is_even(number)]
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: shell
+
+    TypeError: 'bool' object is not callable
+
+* I do not want to write a new :ref:`function<functions>`. I can use an :ref:`function<functions>` with no name to make it work
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
+
+    def get_odd_numbers(numbers):
+        return list(filter(lambda x: not is_even(x), numbers))
+        return [number for number in numbers if not is_even(number)]
+
+  the test passes, but this is not sexy
+
+* another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of the `Python standard library`_ and needs an `import statement`
+
+  .. code-block:: python
+    :lineno-start: 21
+
+    def get_odd_numbers(numbers):
+        import itertools
+        return list(itertools.filterfalse(is_even, numbers))
+        return list(filter(lambda x: not is_even(x), numbers))
+        return [number for number in numbers if not is_even(number)]
+
+  the test is still green
+
+  filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the condition of the :ref:`function<functions>`
+
+I like the `list comprehension`_ of all the options, it is simpler, easier to remember, and does not need any `import statements`_. :ref:`I know how to filter a list<test_making_a_list_w_conditions>`
 
 ----
 
@@ -1574,7 +1622,9 @@ the test passes
             [process(item) for item in self.iterable]
         )
 
-  the terminal_ still shows green. I remove the commented lines. I do NOT recommend using ``process`` as a name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
+  the terminal_ still shows green. I remove the commented lines.
+
+  .. NOTE:: ``process`` is not a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
 
 ----
 

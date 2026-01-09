@@ -2342,7 +2342,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   the terminal_ shows green
 
-* I remove ``only_takes_numbers`` from each :ref:`function`
+* I remove ``only_takes_numbers`` from each :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 31
