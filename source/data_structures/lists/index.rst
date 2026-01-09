@@ -3331,7 +3331,7 @@ how to multiply a list
                 error_message
             )
 
-  still green. This test looks long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<ERROR>`
+  still green. This test looks long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
 
 ----
 

@@ -1990,7 +1990,7 @@ the test passes
         error_message
     )
 
-  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<ERROR>`
+  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers`
 
 ----
 
