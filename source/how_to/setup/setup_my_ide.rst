@@ -21,6 +21,8 @@ As of this writing I use `Visual Studio Code`_, you can download and install it 
 * PyCharm_
 * `other Integrated Development Environment (IDE) options`_
 
+----
+
 *********************************************************************************
 Screen Layout
 *********************************************************************************

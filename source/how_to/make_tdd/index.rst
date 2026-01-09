@@ -44,17 +44,14 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
   :titlesonly:
 
   install_wsl
-  make_tdd_manually
-  make_tdd_environment_no_wsl
+  make_tdd_manually/index
   make_tdd_automatically/index
-  make_tdd_environment_no_wsl_automatically
 
 they cover the following
 
 * :ref:`Windows requirements`
 * :ref:`Linux/Windows Subsystem for Linux requirements`
-
-at the end of the chapters you will know how to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>` for MacOS_, Linux_, `Windows Subsystem for Linux`_ or Windows_ without `Windows Subsystem for Linux`_
+* and the steps to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>` for MacOS_, Linux_, `Windows Subsystem for Linux`_ or Windows_ without `Windows Subsystem for Linux`_
 
 ----
 
