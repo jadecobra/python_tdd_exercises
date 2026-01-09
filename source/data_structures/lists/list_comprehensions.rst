@@ -2180,8 +2180,8 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`subtraction<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 80
+    :emphasize-lines: 5-8
 
                     self.assertEqual(
                         src.calculator.multiply(data_type, a_random_number()),
@@ -2191,6 +2191,42 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
                         src.calculator.subtract(data_type, a_random_number()),
                         'BOOM!!!'
                     )
+
+  the terminal_ shows :ref:`AssertionError` for all the :ref:`data types<data structures>` I am testing
+
+  .. code-block:: shell
+
+    AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 3
+
+                    self.assertEqual(
+                        src.calculator.subtract(data_type, a_random_number()),
+                        error_message
+                    )
+
+  the test passes
+
+* I remove the other assertions in the test because they are now covered by the `for loop`_
+
+  .. code-block:: python
+    :lineno-start: 84
+
+                    self.assertEqual(
+                        src.calculator.subtract(data_type, a_random_number()),
+                        error_message
+                    )
+
+        def test_calculator_w_list_items(self):
+            a_list = [self.random_first_number, self.random_second_number]
+
+  Using a `for loop`_ saved me having to write a lot of tests
+
+:ref:`I know a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
 
 ----
 

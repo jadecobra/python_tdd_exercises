@@ -815,7 +815,7 @@ the test passes. `Why is the result -5.555499999999999 instead of 5.5555? <https
 what is a variable?
 =================================================================================
 
-I just did the same kind of calculation 8 times in a row, there is a better way to this, you have seen this in Algebra_. I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers. I can do this with a variable_.
+I just did the same kind of calculation 8 times in a row, there is a better way to do this from Algebra_. I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers, it is called a variable_.
 
 A variable_ is a name that is used for values that change. For example, in the tests so far, I have
 
