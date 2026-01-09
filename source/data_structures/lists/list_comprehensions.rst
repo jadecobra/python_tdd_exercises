@@ -1669,7 +1669,7 @@ the test passes
 
   the terminal_ still shows green
 
-* I remove the commented lines
+* I remove the commented line
 
   .. code-block:: python
     :lineno-start: 78
