@@ -1406,7 +1406,7 @@ the test passes
 The ``calculator`` raises TypeError_ when given :ref:`None` as input. What does it do when the input is a :ref:`boolean<booleans>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
 
 *********************************************************************************
-test_calculator_raises_type_error_when_given_strings
+test_calculator_raises_type_error_w_strings
 *********************************************************************************
 
 =================================================================================
@@ -1601,7 +1601,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
     :lineno-start: 67
     :emphasize-lines: 1
 
-        def test_calculator_raises_type_error_when_given_strings(self):
+        def test_calculator_raises_type_error_w_strings(self):
             with self.assertRaises(TypeError):
                 src.calculator.add('1', '1')
             with self.assertRaises(TypeError):
@@ -1675,13 +1675,13 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I want the same thing to happen when the :ref:`add function<test_addition>` gets a string_ as input. I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in ``test_calculator_raises_type_error_when_given_strings`` in ``test_calculator.py``
+* I want the same thing to happen when the :ref:`add function<test_addition>` gets a string_ as input. I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in ``test_calculator_raises_type_error_w_strings`` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 70
     :emphasize-lines: 2-5
 
-        def test_calculator_raises_type_error_when_given_strings(self):
+        def test_calculator_raises_type_error_w_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 'Excuse me?! I only work with numbers. Please try again...'
@@ -1712,13 +1712,13 @@ the test passes
 
   the test passes
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_when_given_strings`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_w_strings`` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 69
     :emphasize-lines: 6-9
 
-        def test_calculator_raises_type_error_when_given_strings(self):
+        def test_calculator_raises_type_error_w_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 'Excuse me?! I only work with numbers. Please try again...'
@@ -1814,7 +1814,7 @@ the test passes
 
     AssertionError: TypeError not raised
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in ``test_calculator_raises_type_error_when_given_strings`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in ``test_calculator_raises_type_error_w_strings`` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 78
@@ -1831,7 +1831,7 @@ the test passes
 
   the test passes
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator_raises_type_error_when_given_strings``
+* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator_raises_type_error_w_strings``
 
   .. code-block:: python
     :lineno-start: 84
@@ -1889,16 +1889,16 @@ the test passes
             )
 
 
-        def test_calculator_raises_type_error_when_given_strings(self):
+        def test_calculator_raises_type_error_w_strings(self):
 
   the test passes
 
   That was a lot of doing the same thing over and over again.
 
-  - ``test_calculator_raises_type_error_w_none`` and ``test_calculator_raises_type_error_when_given_strings`` both look the same
+  - ``test_calculator_raises_type_error_w_none`` and ``test_calculator_raises_type_error_w_strings`` both look the same
   - the :ref:`calculator<how to make a calculator>` no longer raises TypeError_ when any of the inputs are NOT a number
 
-* I remove the name of ``test_calculator_raises_type_error_when_given_strings`` to make its :ref:`assertions<what is an assertion?>` part of ``test_calculator_raises_type_error_w_none``
+* I remove the name of ``test_calculator_raises_type_error_w_strings`` to make its :ref:`assertions<what is an assertion?>` part of ``test_calculator_raises_type_error_w_none``
 
   .. code-block:: python
     :lineno-start: 70
