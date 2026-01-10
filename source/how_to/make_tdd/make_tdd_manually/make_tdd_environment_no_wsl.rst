@@ -380,9 +380,9 @@ the terminal_ goes back to the command line
 
 ----
 
---------------------------------------------------------------------------------------------
-how to make make a Python file to hold the tests in the 'tests' folder on Windows without WSL
---------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+how to make a Python file to hold the tests in the 'tests' folder on Windows without WSL
+-----------------------------------------------------------------------------------------------------
 
 * I use `New-Item`_ to add an empty file to the ``tests`` directory for the actual test
 
@@ -1264,7 +1264,7 @@ how to view all the commands I typed in a terminal on Windows without WSL
   - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file on Windows without Windows Subsystem for Linux>`
   - :ref:`make a directory for the tests<how to make a directory for the tests on Windows without WSL>`
   - :ref:`make the 'tests' folder a Python package<how to make the tests a Python package on Windows without WSL>`
-  - :ref:`make a Python file to hold the tests in the 'tests' folder on Windows without WSL<how to make make a Python file to hold the tests in the 'tests' folder on Windows without WSL>`
+  - :ref:`make a Python file to hold the tests in the 'tests' folder on Windows without WSL<how to make a Python file to hold the tests in the 'tests' folder on Windows without WSL>`
   - :ref:`add the first failing test to the test file<test_failure on Windows without WSL>`
   - :ref:`make a virtual environment<how to make a virtual environment on Windows without WSL>`
   - :ref:`activate the virtual environment<how to activate a virtual environment on Windows without WSL>`

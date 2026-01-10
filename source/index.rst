@@ -92,8 +92,7 @@ table of contents
 
   self
   videos <https://www.youtube.com/@JacobItegboje>
-  how_to/setup_my_ide
-  how_to/install_wsl
+  how_to/setup/index
   how_to/make_tdd/index
   exceptions/AssertionError
   functions

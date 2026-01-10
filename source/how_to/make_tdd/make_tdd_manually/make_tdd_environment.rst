@@ -459,7 +459,7 @@ how to make a directory for the tests
 ----
 
 --------------------------------------------------------------------------------------------
-how to make make a Python file to hold the tests in the 'tests' folder
+how to make a Python file to hold the tests in the 'tests' folder
 --------------------------------------------------------------------------------------------
 * I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
@@ -1350,7 +1350,7 @@ how to view all the commands I typed in a terminal
   - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
   - :ref:`make a directory for the tests<how to make a directory for the tests>`
   - :ref:`make the 'tests' folder a Python package<how to make the tests a Python package>`
-  - :ref:`make a Python file to hold the tests in the 'tests' folder<how to make make a Python file to hold the tests in the 'tests' folder>`
+  - :ref:`make a Python file to hold the tests in the 'tests' folder<how to make a Python file to hold the tests in the 'tests' folder>`
   - :ref:`add the first failing test to the test file<test_failure>`
   - :ref:`make a virtual environment<how to make a virtual environment>`
   - :ref:`activate the virtual environment<how to activate a virtual environment>`

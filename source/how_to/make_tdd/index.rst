@@ -43,7 +43,6 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
 .. toctree::
   :titlesonly:
 
-  install_wsl
   make_tdd_manually/index
   make_tdd_automatically/index
 
