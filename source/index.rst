@@ -68,7 +68,7 @@ Here are a few things I would do if I were in your shoes to make the process mor
 take the course with Jacob
 *********************************************************************************
 
-If you would like to work with me personally. I teach this course everyday from Monday to Friday. You can :ref:`sign up for the 8-week course for $99.99 here<join a HATCH>`
+If you would like to work with me. I teach this course everyday from Monday to Friday in groups of 5. You can :ref:`sign up for the 8-week course here<join a HATCH>`
 
 ----
 
