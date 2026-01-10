@@ -110,7 +110,7 @@ start the project
 
       code makePythonTdd.ps1
 
-* I change everywhere I have ``type_error`` to the name of this project in ``makePythonTdd.sh``
+* I change everywhere I have ``type_error`` to the name of this project
 
   .. code-block:: shell
     :linenos:
