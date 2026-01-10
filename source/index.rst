@@ -94,7 +94,7 @@ table of contents
   videos <https://www.youtube.com/@JacobItegboje>
   conventions
   how_to/setup/index
-  how_to/make_tdd/index
+  how_to/make_tdd_manually/index
   exceptions/AssertionError
   functions
   how_to/pass_values
@@ -102,7 +102,7 @@ table of contents
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   how_to/calculator
-  how_to/make_tdd/make_tdd_automatically/index
+  how_to/make_tdd_automatically/index
   how_to/exception_handling/index
   exceptions/TypeError
   data_structures/lists/index

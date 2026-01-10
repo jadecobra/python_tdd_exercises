@@ -51,7 +51,7 @@ preview
 
 Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`, it is only 27 lines of code, with spaces
 
-.. literalinclude:: ../../../code/make_tdd/makePythonTddNoVariables.ps1
+.. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.ps1
   :language: PowerShell
   :linenos:
 

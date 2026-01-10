@@ -51,7 +51,7 @@ preview
 
 Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to make a Python Test Driven Development environment automatically>`, it is only 28 lines of code, with spaces
 
-.. literalinclude:: ../../../code/make_tdd/makePythonTddNoVariables.sh
+.. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.sh
   :language: shell
   :linenos:
 
