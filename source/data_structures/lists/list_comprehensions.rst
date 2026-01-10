@@ -2055,7 +2055,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
     AssertionError: ABCDE.FGHIJKLMNOPQRST != 'Excuse me?! I only work with numbers. Please try again...'
 
-  there is a problem. One of the :ref:`data types<data structures>` I am testing is being allowed by the :ref:`if statement<if statements>`, which means one of them is also either an integer_ or a float_. I need a way to tell which one is causing the problem
+  there is a problem. One of the :ref:`data types<data structures>` I am testing is being allowed by the :ref:`if statement<if statements>`, which means one of them is also an integer_ or is a float_. I need a way to know which one is causing the problem
 
 * the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a loop, I add it to the test
 
@@ -2255,6 +2255,653 @@ close the project
     .../pumping_python/calculator
 
 * I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+----
+
+*********************************************************************************
+test_is_a_boolean_an_integer_or_a_float
+*********************************************************************************
+
+I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<functions>` in the :ref:`calculator program<how to make a calculator>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail. This means that they are also integers_ or floats_ even though they are :ref:`booleans`. I want to find out
+
+=================================================================================
+open the project
+=================================================================================
+
+* I `change directory`_ to the ``booleans`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd booleans
+
+  the terminal_ shows I am in the ``booleans`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/booleans
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/booleans
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    rootdir: .../pumping_python/booleans
+    collected 2 items
+
+    tests/test_booleans.py ....                                        [100%]
+
+    ============================ 2 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_booleans.py`` to open it in the :ref:`editor<2 editors>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+I add a new test with an :ref:`assertion<what is an assertion?>`
+
+.. code-block:: python
+  :lineno-start: 29
+  :emphasize-lines: 3-4
+
+          self.assertTrue({'key': 'value'})
+
+      def test_is_a_boolean_an_integer_or_a_float(self):
+          self.assertNotIsInstance(False, int)
+
+
+  # NOTES
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: False is an instance of <class 'int'>
+
+in Python_, False_ is a :ref:`boolean<booleans>` and an integer_
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+I change assertNotIsInstance_ to assertIsInstance_
+
+.. code-block:: python
+  :lineno-start: 31
+  :emphasize-lines: 2
+
+      def test_is_a_boolean_an_integer_or_a_float(self):
+          self.assertIsInstance(False, int)
+
+the test passes
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 4
+
+    # False is False
+    # False is not true
+    # False is a boolean
+    # False is an integer
+
+
+    # Exceptions Encountered
+    # AssertionError
+
+* I move the :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`` :ref:`method<functions>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(False, int)
+            self.assertFalse(False)
+
+* I add another :ref:`assertion<what is an assertion?>` to see if :ref:`False<test_what_is_false>` is a float_
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 1
+
+        def test_is_a_boolean_an_integer_or_a_float(self):
+            self.assertIsInstance(False, float)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: False is not an instance of <class 'float'>
+
+  :ref:`False<test_what_is_false>` is not a float_
+
+* I change assertIsInstance_ to assertNotIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 2
+
+        def test_is_a_boolean_an_integer_or_a_float(self):
+            self.assertNotIsInstance(False, float)
+
+  the test passes
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 3
+
+    # False is a boolean
+    # False is an integer
+    # False is not a float
+
+
+    # Exceptions Encountered
+    # AssertionError
+
+* I remove ``test_is_a_boolean_an_integer_or_a_float`` to make the :ref:`assertion<what is an assertion?>` part of the the ``test_what_is_true`` :ref:`method<functions>`
+
+  .. code-block:: python
+    :lineno-start: 30
+
+            self.assertTrue({'key': 'value'})
+
+
+            self.assertNotIsInstance(False, float)
+
+
+    # NOTES
+
+  still green
+
+* I move the :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`` :ref:`method<functions>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(False, int)
+            self.assertNotIsInstance(False, float)
+            self.assertFalse(False)
+
+  the test is still green
+
+* I add an :ref:`assertion<what is an assertion?>` to the ``test_what_is_true`` :ref:`method<functions>` to test if :ref:`True<test_what_is_true>` is also an integer_
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2
+
+            self.assertTrue({'key': 'value'})
+            self.assertNotIsInstance(True, int)
+
+
+    # NOTES
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: True is an instance of <class 'int'>
+
+  in Python_, :ref:`True<test_what_is_true>` is a :ref:`boolean<booleans>` and an integer_
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2
+
+            self.assertTrue({'key': 'value'})
+            self.assertIsInstance(True, int)
+
+  the test passes
+
+* I move the line to where the other instance test is
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 3
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertIsInstance(True, int)
+            self.assertTrue(True)
+
+  still green
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 2
+
+    # True is a boolean
+    # True is an integer
+    # the empty dictionary is false
+    # the empty set is false
+
+* I add another :ref:`assertion<what is an assertion?>` to test if :ref:`True<test_what_is_true>` is a float_
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertIsInstance(True, int)
+            self.assertIsInstance(True, float)
+            self.assertTrue(True)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: True is not an instance of <class 'float'>
+
+  :ref:`True<test_what_is_true>` is not a float_
+
+* I change the `assert method`_
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 2
+
+            self.assertIsInstance(True, int)
+            self.assertNotIsInstance(True, float)
+            self.assertTrue(True)
+
+  the test passes
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 3
+
+    # True is a boolean
+    # True is an integer
+    # True is not a float
+    # the empty dictionary is false
+
+This explains why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<functions>` only allows integers_ and floats_.
+
+
+The :ref:`add function<test_addition>` returned numbers in the calculation with :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` because they are integers_. I want to know what their values are
+
+----
+
+*********************************************************************************
+test_the_value_of_false
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+I add a new test to find out the value of :ref:`False<test_what_is_false>`
+
+.. code-block:: python
+  :lineno-start: 33
+  :emphasize-lines: 3-4
+
+          self.assertTrue({'key': 'value'})
+
+      def test_the_value_of_false(self):
+          self.assertEqual(False+1, None)
+
+
+  # NOTES
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: 1 != None
+
+:ref:`False<test_what_is_false>` is ``0``
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+I change the expectation to match
+
+.. code-block:: python
+  :lineno-start: 36
+  :emphasize-lines: 1
+
+          self.assertEqual(False+1, 1)
+
+the test passes
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 2
+
+            self.assertEqual(False+1, 1)
+            self.assertEqual(False-1, 1)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: -1 != 1
+
+  :ref:`False<test_what_is_false>` is ``0``
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+            self.assertEqual(False-1, -1)
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 2
+
+            self.assertEqual(False-1, -1)
+            self.assertEqual(False*1, -1)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 0 != -1
+
+  :ref:`False<test_what_is_false>` is ``0``
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 1
+
+            self.assertEqual(False*1, 0)
+
+* what happens if I divide a number by :ref:`False?<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 2
+
+            self.assertEqual(False*1, 0)
+            1 / False
+
+
+    # NOTES
+
+  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+* I add assertRaises_
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 5-6
+
+        def test_the_value_of_false(self):
+            self.assertEqual(False+1, 1)
+            self.assertEqual(False-1, -1)
+            self.assertEqual(False*1, 0)
+            with self.assertRaises(ZeroDivisionError):
+                1 / False
+
+  the test passes
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 8
+
+    # 0 is false
+    # None is false
+    # False is False
+    # False is not true
+    # False is a boolean
+    # False is an integer
+    # False is not a float
+    # False is 0
+
+time to test the value of :ref:`True<test_what_is_true>`
+
+----
+
+*********************************************************************************
+test_the_value_of_true
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+I add a new test to find out the value of :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 39
+  :emphasize-lines: 4-5
+
+          with self.assertRaises(ZeroDivisionError):
+              1 / False
+
+      def test_the_value_of_true(self):
+          self.assertEqual(True+1, 1)
+
+
+  # NOTES
+
+the terminaL_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: 2 != 1
+
+:ref:`True<test_what_is_true>` is ``1``
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+I change the expectation
+
+.. code-block:: python
+  :lineno-start: 43
+  :emphasize-lines: 1
+
+          self.assertEqual(True+1, 2)
+
+the test passes
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 2
+
+            self.assertEqual(True+1, 2)
+            self.assertEqual(True-1, 2)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 0 != 2
+
+  :ref:`True<test_what_is_true>` is ``1``
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 1
+
+            self.assertEqual(True-1, 0)
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 2
+
+            self.assertEqual(True-1, 0)
+            self.assertEqual(True*1, 0)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 1 != 0
+
+  :ref:`True<test_what_is_true>` is ``1``
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 1
+
+            self.assertEqual(True*1, 1)
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`division<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 2
+
+            self.assertEqual(True*1, 1)
+            self.assertEqual(True/2, 1)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 0.5 != 1
+
+  :ref:`True<test_what_is_true>` is ``1``
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 1
+
+            self.assertEqual(True/2, 0.5)
+
+  the test passes
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 3
+
+    # True is an integer
+    # True is not a float
+    # True is 1
+    # the empty dictionary is false
+
+----
+
+=================================================================================
+close the project
+=================================================================================
+
+* I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/booleans
+
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/booleans
+
+* I `change directory`_ to the parent of ``booleans``
 
   .. code-block:: shell
     :emphasize-lines: 1
