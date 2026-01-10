@@ -113,7 +113,7 @@ Here are extensions I use in `Visual Studio Code`_
 BONUS!!!
 *********************************************************************************
 
-I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made it this far. It makes going through your computer easier and :ref:`the next chapter<how to make a test driven development environment>` as well. This is how your computer is organized. :ref:`Click HERE for the BONUS!<BONUS: learn directory structure>`
+I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made it this far. It makes going through your computer easier and :ref:`the next chapter<how to make a test driven development environment part 1>` as well. This is how your computer is organized. :ref:`Click HERE for the BONUS!<BONUS: learn directory structure>`
 
 ----
 

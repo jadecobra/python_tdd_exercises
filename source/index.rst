@@ -121,8 +121,8 @@ table of contents
   all the code in this book<catalog_of_code>
   questions the book answers<reviews>
   learning_models
-  hatches
   what people think of this<review>
+  hatches
 
 ----
 

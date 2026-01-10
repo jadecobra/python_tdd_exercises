@@ -594,7 +594,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines:
+    :emphasize-lines: 1
 
             self.assertEqual(a_list, list(iterable))
             self.assertEqual(list(iterable), a_list)
@@ -1903,7 +1903,7 @@ close the project
 how to make sure the calculator tests use new numbers for every test
 *********************************************************************************
 
-I used the `setUp method`_ earlier to make sure that I had a new :ref:`list<lists>` and iterable_ for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
+I used the `setUp method`_ earlier to make sure that I had a new :ref:`list<lists>` and :ref:`iterable<what is an iterable?>` for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
 
 =================================================================================
 open the project
@@ -2301,6 +2301,7 @@ code from the chapter
 *************************************************************************************
 
 :ref:`Do you want to see all the CODE I typed in this chapter?<data structures: list comprehensions: tests and solutions>`
+
 ----
 
 *********************************************************************************
@@ -2309,7 +2310,7 @@ what is next?
 
 you know
 
-* :ref:`how to make a test driven development environment`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions<how to pass values>`

@@ -325,7 +325,7 @@ what is next?
 
 Here is what we have gone through together so far
 
-* :ref:`how to make a test driven development environment`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions<how to pass values>`

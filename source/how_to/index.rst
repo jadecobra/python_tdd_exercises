@@ -24,9 +24,10 @@ the chapters
   :titlesonly:
 
   setup/index
-  make_tdd/index
-  calculator
+  make_tdd_manually/index
+  make_tdd_automatically/index
   pass_values
+  calculator
   make_person
   exception_handling/index
 
@@ -52,4 +53,4 @@ Here is the code you will have at the end of the above chapters
 what is next?
 *********************************************************************************
 
-:ref:`Would you like to see me make a Python Test Driven Development environment?<how to make a test driven development environment>`
+:ref:`Would you like to see me make a Python Test Driven Development environment?<how to make a test driven development environment part 1>`

@@ -924,7 +924,7 @@ what is next?
 
 you made it to the end and know
 
-* :ref:`how to make a test driven development environment`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions<how to pass values>`

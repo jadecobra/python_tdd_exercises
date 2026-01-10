@@ -1114,7 +1114,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 35
-    :emphasize-lines: 3
+    :emphasize-lines: 2
 
             self.assertIsNotNone('')
             self.assertIsNone("text")
@@ -1336,7 +1336,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 44
-    :emphasize-lines: 4
+    :emphasize-lines: 1
 
             self.assertIsInstance((), tuple)
 
@@ -1997,7 +1997,7 @@ what is next?
 
 so far you have covered
 
-* :ref:`how to make a test driven development environment`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions<how to pass values>` and

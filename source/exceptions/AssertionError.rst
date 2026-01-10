@@ -1722,7 +1722,7 @@ what is next?
 
 Congratulations! You now know
 
-* :ref:`how to make a test driven development environment any time you want<how to make a test driven development environment>` and
+* :ref:`how to make a test driven development environment any time you want<how to make a test driven development environment part 1>` and
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 
 :ref:`Would you like to test functions?<functions>`

@@ -1961,7 +1961,7 @@ what is next?
 
 you know a lot
 
-* :ref:`how to make a test driven development environment`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<functions>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
@@ -1993,7 +1993,7 @@ There is a problem, I have done the same steps for each of the 8 chapters covere
 
 I think I know how to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`. I am going to :ref:`write a program that will do all the steps for making a project for me<how to make a Python Test Driven Development environment automatically>`, so I never have to do those steps again.
 
-:ref:`Would you like to know how to make a Python Test Driven Development environment automatically?<how to make a test driven development environment automatically>`
+:ref:`Would you like to know how to make a Python Test Driven Development environment automatically?<how to make a test driven development environment part 2>`
 
 -----
 
