@@ -15,6 +15,22 @@ truth table: Nullary and Unary Operations
 ----
 
 *********************************************************************************
+questions about Nullary and Unary Operations
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`What are the Nullary Operations?<Nullary Operations>`
+* :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`
+* :ref:`What are the Unary Operations?<Unary Operations>`
+* :ref:`How many inputs do Unary Operations take?<Unary Operations>`
+* :ref:`What is a function that returns its input as output?<test_logical_identity>`
+* :ref:`What is a function that returns the negation of its input?<test_logical_negation>`
+* :ref:`How can I return the opposite of a boolean?<how to return the opposite of a boolean>`
+
+----
+
+*********************************************************************************
 requirements
 *********************************************************************************
 
@@ -513,16 +529,7 @@ for :ref:`Unary operations<Unary Operations>`
 * :ref:`test_logical_identity`
 * :ref:`test_logical_negation`
 
-
-Here are questions you can answer after going through this chapter
-
-* :ref:`What are the Nullary Operations?<Nullary Operations>`
-* :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`
-* :ref:`What are the Unary Operations?<Unary Operations>`
-* :ref:`How many inputs do Unary Operations take?<Unary Operations>`
-* :ref:`What is a function that returns its input as output?<test_logical_identity>`
-* :ref:`What is a function that returns the negation of its input?<test_logical_negation>`
-* :ref:`How can I return the opposite of a boolean?<how to return the opposite of a boolean>`
+:ref:`How many questions can you answer after going through this chapter?<questions about Nullary and Unary Operations>`
 
 ----
 
@@ -543,13 +550,15 @@ Would you like to :ref:`test binary operations?<truth table: Binary Operations p
 ----
 
 *********************************************************************************
-please leave a review
+rate pumping python
 *********************************************************************************
+
+If this has been a 7 star experience for you, please leave a 5 star review. It helps other people get into the book too
 
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 5 star experience for you</a>
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 7 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->

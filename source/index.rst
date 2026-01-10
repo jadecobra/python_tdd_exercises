@@ -92,6 +92,7 @@ table of contents
 
   self
   videos <https://www.youtube.com/@JacobItegboje>
+  conventions
   how_to/setup/index
   how_to/make_tdd/index
   exceptions/AssertionError
@@ -112,7 +113,6 @@ table of contents
   exceptions/AttributeError
   exceptions/ModuleNotFoundError
 
-  conventions
   dot_notation
   exceptions/index
   data_structures/index
