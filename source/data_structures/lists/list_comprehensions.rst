@@ -17,6 +17,7 @@
 .. _map object: map_
 .. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
 .. _unittest.TestCase.subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
+.. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
 
 #################################################################################
 lists: list comprehensions
@@ -177,7 +178,7 @@ start the project
 test_making_a_list_w_a_for_loop
 *********************************************************************************
 
-I can make a :ref:`list<lists>` with the constructor_ (``list()``) or with square brackets (``[]``), I can also add items one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`, and I can use the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>`
+I can make a :ref:`list<lists>` with the constructor_ (``list()``) or with square brackets (``[]``), I can also add items one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -223,7 +224,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I use :ref:`test_append_adds_item_to_end_of_a_list` to add another item to the :ref:`list<lists>` with an :ref:`assertion<what is an assertion?>`
+* I use the :ref:`append method<test_append_adds_item_to_end_of_a_list>` to add another item to the :ref:`list<lists>` with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 8
@@ -250,7 +251,7 @@ the test passes
 
   the test passes
 
-* I :ref:`test_append_adds_item_to_end_of_a_list` another number with an :ref:`assertion<what is an assertion?>` to check
+* I :ref:`append<test_append_adds_item_to_end_of_a_list>` another number to the :ref:`list<lists>` then add an :ref:`assertion<what is an assertion?>` to check
 
   .. code-block:: python
     :lineno-start: 10
@@ -277,7 +278,7 @@ the test passes
 
   the test passes
 
-* I add one more number with an :ref:`assertion<what is an assertion?>`
+* I :ref:`append<test_append_adds_item_to_end_of_a_list>` one more number, then an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -366,7 +367,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
           self.assertEqual(a_list, [0, 1, 2, 3])
 
   - ``for number in (0, 1, 2, 3):`` goes over every number in the tuple_
-  - ``a_list.append(number)`` gets called every time the `for loop`_ runs to add the number from the tuple_ to ``a_list``
+  - ``a_list.append(number)`` gets to add each number from the tuple_ to ``a_list``
 
 * Python_ has an :ref:`iterable<what is an iterable?>` I can use to make a sequence of numbers, it is called the `range object`_. I add it to the `for loop`_
 
@@ -400,7 +401,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   ``range(0, 4)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus 1, in this case it goes from ``0`` to ``3``
 
-* The `for loop`_ is simpler than using the :ref:`append method<test_append_adds_item_to_end_of_a_list>` one a time, but there is an easier way. I can do the same thing with with the :ref:`list constructor<test_making_a_list>`
+* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item in ``a_list``, but there is an easier way. I can do the same thing with with the :ref:`list constructor<test_making_a_list>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -425,7 +426,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   the test passes
 
-* I add a variable to remove the duplication of the `range object`_
+* I add a :ref:`variable<what is a variable?>` to remove the duplication of the `range object`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -440,6 +441,8 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
             self.assertEqual(a_list, [0, 1, 2, 3])
             self.assertEqual(list(iterable), a_list)
+
+  the test is still green
 
 * I add another :ref:`assertion<what is an assertion?>` to practice writing a `for loop`_
 
@@ -586,8 +589,8 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
 
-  - ``random.randint(2, 1000)`` gives me a random integer_ between first number in parentheses and the second number minus ``1``, in this case ``2`` to ``999``
-  - this `range object`_ now goes from ``0`` to anywhere between ``1`` and ``999`` because it goes from the first number in parentheses to the second number minus ``1``
+  - ``random.randint(2, 1000)`` gives me a random integer_ between the first number in parentheses and the second number minus ``1``, in this case ``2`` to ``999``
+  - this `range object`_ now goes from ``0`` to anywhere between ``1`` and ``999`` because it also goes from the first number in parentheses to the second number minus ``1``
   - The values change every time the test runs
 
 * I change the expectation in the first :ref:`assertion<what is an assertion?>`
@@ -829,7 +832,7 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 
   the test is green again
 
-* The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<functions>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test I add it to the test
+* The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<functions>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test I add it to the ``TestListComprehensions`` :ref:`class<classes>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1124,7 +1127,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes
 
-* I wrote the same condition in the test 3 times. I have to make the same change everywhere I wrote it if I want to change it. Let us say the new condition is that the number should be divisible by ``3``
+* I wrote the same :ref:`condition<if statements>` in the test 3 times. I have to make the same change everywhere I wrote it if I want to change it. Let us say the new :ref:`condition<if statements>` is that the number should be divisible by ``3``. I make the change in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 36
@@ -1142,7 +1145,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
-* I change the condition in the `list comprehension`_ of the first :ref:`assertion<what is an assertion?>`
+* I change the :ref:`condition<if statements>` in the `list comprehension`_ of the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1155,7 +1158,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ shows green
 
-* I change the condition in the `list comprehension`_ of the second :ref:`assertion<what is an assertion?>`
+* I change the :ref:`condition<if statements>` in the `list comprehension`_ of the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 46
@@ -1172,7 +1175,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [0, 2, 4, 6, ...] != [0, 3, 6, 9, ...]
 
-* I change the condition in the solution
+* I change the :ref:`condition<if statements>` in the ``get_even_numbers`` :ref:`function<functions>` in ``list_comprehensions.py``
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1186,8 +1189,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-5
+    :emphasize-lines: 6-7
 
+    import random
+    import src.list_comprehensions
     import unittest
 
 
@@ -1212,7 +1217,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ still shows green
 
-* I remove the commented line and do the same thing in the first :ref:`assertion<what is an assertion?>`
+* I remove the commented line and use the new :ref:`function<functions>` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -1265,7 +1270,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   .. NOTE:: ``condition`` is not a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
 
-* I change the condition in the :ref:`function<functions>` in ``test_list_comprehensions.py``
+* I change the :ref:`condition<if statements>` in the new :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1280,7 +1285,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
-* I change the condition in ``get_even_numbers`` in ``list_comprehensions.py``
+* I change the :ref:`condition<if statements>` in ``get_even_numbers`` in ``list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -1291,7 +1296,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes. Adding the :ref:`function<functions>` adds extra lines, and makes managing the code easier because I now only have to make a change in one place in the test when I need
 
-* I add a new empty :ref:`list<lists>` to test another condition in ``test_list_comprehensions.py``
+* I add a new empty :ref:`list<lists>` to test another :ref:`condition<if statements>` in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -1335,7 +1340,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [1, 3, 5, 7, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
 
-* I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>`
+* I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>` with :ref:`logical negation(NOT)<test_logical_negation>` and the ``condition`` :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 56
@@ -1434,7 +1439,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
 * I remove the second `return statement`_
 
-* There is a `Python Built-in Function`_ I can use to do the same thing as the `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition". I try it in the ``get_even_numbers`` :ref:`function<functions>`
+* There is a `Python Built-in Function`_ I can use to do the same thing as this `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition". I try it in the ``get_even_numbers`` :ref:`function<functions>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1462,7 +1467,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes. Which do you like better: `filter`_ or the `list comprehension`_?
 
-* If I want to use filter_ in ``get_odd_numbers``, I have to make a :ref:`function<functions>` like I did for ``is_even`` because filter_ takes a :ref:`function<functions>` as input
+* filter_ takes a :ref:`function<functions>` as input, which means I would have to make one for odd numbers like ``is_even``
 
   .. code-block:: python
     :lineno-start: 21
@@ -1478,14 +1483,14 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     TypeError: 'bool' object is not callable
 
-* I do not want to write a new :ref:`function<functions>`. I can use a :ref:`function<functions>` with no name to make it work
+* I do not want to write a new :ref:`function<functions>`. I can use a `lambda function`_ which is a :ref:`function<functions>` with no name to make it work
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 2
 
     def get_odd_numbers(numbers):
-        return list(filter(lambda x: not is_even(x), numbers))
+        return list(filter(lambda number: not is_even(number), numbers))
         return [number for number in numbers if not is_even(number)]
 
   the test passes, but this is not sexy
@@ -1498,12 +1503,12 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     def get_odd_numbers(numbers):
         import itertools
         return list(itertools.filterfalse(is_even, numbers))
-        return list(filter(lambda x: not is_even(x), numbers))
+        return list(filter(lambda number: not is_even(number), numbers))
         return [number for number in numbers if not is_even(number)]
 
   the test is still green
 
-  filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the condition of the :ref:`function<functions>`
+  filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the :ref:`condition<if statements>` of the :ref:`function<functions>`
 
 I like the `list comprehension`_ from the options, it is simpler, easier to remember, and does not need any `import statements`_. :ref:`I know how to filter a list<test_making_a_list_w_conditions>`
 
@@ -1513,7 +1518,7 @@ I like the `list comprehension`_ from the options, it is simpler, easier to reme
 test_making_a_list_w_processes
 *********************************************************************************
 
-I can do other operations in a `list comprehension`_ not just :ref:`append<test_append_adds_item_to_end_of_a_list>`
+I can also do other operations with a `list comprehension`_ that are not :ref:`append<test_append_adds_item_to_end_of_a_list>`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1610,14 +1615,14 @@ the test passes
 
     x ^ y
 
-* There is a `Python Built-in Function`_ that I can use to process a :ref:`list<lists>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<functions>`
+* There is a `Python Built-in Function`_ that I can use to process a :ref:`list<lists>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<functions>` with a `lambda function`_
 
   .. code-block:: python
     :lineno-start: 28
     :emphasize-lines: 2
 
     def square(numbers):
-        return map(lambda x: x**2, numbers)
+        return map(lambda number: number**2, numbers)
         return [number**2 for number in numbers]
 
   the terminal_ shows :ref:`AssertionError`
@@ -1635,10 +1640,10 @@ the test passes
     :emphasize-lines: 2
 
     def square(numbers):
-        return list(map(lambda x: x**2, numbers))
+        return list(map(lambda number: number**2, numbers))
         return [number**2 for number in numbers]
 
-  the test passes. map_ takes in a :ref:`function<functions>` as input, so once again I like the `list comprehension`_ better
+  the test passes. map_ takes in a :ref:`function<functions>` as input. I still like the `list comprehension`_ better, it is simpler and easier to read
 
 * I add a :ref:`function<functions>` for the calculation I just did 3 times in ``test_list_comprehensions.py``
 
@@ -1858,7 +1863,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the test passes
 
-:ref:`I know how to make a list based on conditions (filter) with processes (transform) it with list comprehensions<test_making_a_list_w_processes_and_conditions>`
+:ref:`I know how to use list comprehensions to make a list based on conditions (filter) with processes (transform)<test_making_a_list_w_processes_and_conditions>`
 
 ----
 
@@ -1867,7 +1872,7 @@ the numbers on the left are the squares of the even numbers from the right
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``test_list_comprehensions.py`` and ``list_comprehensions.py`` in the :ref:`editors<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
@@ -2090,7 +2095,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the `unittest.TestCase.subTest method`_ runs the code in its context as a sub test, showing the values I give in ``i=data_type`` so that I can see which one caused the error
 
-* I add a condition for :ref:`booleans` in the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
+* I add a :ref:`condition<if statements>` for :ref:`booleans` in the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
