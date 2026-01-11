@@ -1867,7 +1867,6 @@ the numbers on the left are the squares of the even numbers from the right
 
 ----
 
-
 *********************************************************************************
 close the project
 *********************************************************************************
@@ -1996,7 +1995,7 @@ the test is still green. The `setUp method`_ runs before every test, giving ``ra
 a better way to test the calculator with inputs that are NOT numbers
 *************************************************************************************
 
-I have tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None`, strings_ and :ref:`lists`, I want to test them with the other the basic :ref:`Python basic data types<data structures>`: :ref:`booleans`, tuples_, sets_ and :ref:`dictionaries`. Since I know how to use a `for loop`_ and `list comprehensions`_, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
+I tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`booleans`, tuples_, sets_ and :ref:`dictionaries`. Since I know how to use a `for loop`_ and `list comprehensions`_, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
 
 =================================================================================
 :yellow:`RED`: make it fail
@@ -2006,7 +2005,7 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_m
 
 .. code-block:: python
   :lineno-start: 58
-  :emphasize-lines: 4-16
+  :emphasize-lines: 4-17
 
       def test_calculator_sends_message_when_input_is_not_a_number(self):
           error_message = 'Excuse me?! I only work with numbers. Please try again...'
@@ -2058,7 +2057,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   .. code-block:: shell
 
-    AssertionError: ABCDE.FGHIJKLMNOPQRST != 'Excuse me?! I only work with numbers. Please try again...'
+    AssertionError: ABC.DEFGHIJKLMNOPQR != 'Excuse me?! I only work with numbers. Please try again...'
 
   there is a problem. One of the :ref:`data types<data structures>` I am testing is being allowed by the :ref:`if statement<if statements>`, which means one of them is also an integer_ or is a float_. I need a way to know which one is causing the problem
 
