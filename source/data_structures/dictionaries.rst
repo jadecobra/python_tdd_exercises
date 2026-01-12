@@ -28,9 +28,9 @@ dictionaries
 what is a dictionary?
 *********************************************************************************
 
-A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any Python_ :ref:`object<classes>`. I add tests for the :ref:`keys<test_keys_of_a_dictionary>` to see which of :ref:`the Python basic data types<data structures>` I can use.
+A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<classes>`. I add tests to see which of :ref:`the Python basic data types<data structures>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
 
-I think this is the most important :ref:`data structure<data structures>` to know because they can hold all the other :ref:`data structures`. In programming I have had to work with JSON_ which I can read and write as dictionaries_
+I think this is the most important :ref:`data structure<data structures>` because it can hold all the other :ref:`data structures`, same as with :ref:`lists<lists>` and tuples_ but with more. In programming I have had to work with JSON_ which I can read and write as dictionaries_
 
 ----
 
@@ -44,35 +44,122 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+----
+
 *********************************************************************************
-requirements
+start the project
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``dictionaries`` as the name of the project
+* I name this project ``dictionaries``
+* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
-    ./makePythonTdd.sh dictionaries
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      code makePythonTdd.sh
+
+    on `Windows`_ without `Windows Subsystem for Linux`_ use
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      code makePythonTdd.ps1
+
+* I change everywhere I have ``list_comprehensions`` to the name of this project
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2, 3, 5, 12, 20
+
+    #!/bin/bash
+    mkdir dictionaries
+    cd dictionaries
+    mkdir src
+    touch src/dictionaries.py
+    mkdir tests
+    touch tests/__init__.py
+
+    echo "import unittest
+
+
+    class TestDictionaries(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+
+    # Exceptions seen
+    # AssertionError
+    " > tests/test_dictionaries.py
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
+      :linenos:
+      :emphasize-lines: 1-2, 4, 11, 18
 
-      ./makePythonTdd.ps1 dictionaries
+      mkdir dictionaries
+      cd dictionaries
+      mkdir src
+      New-Item src/dictionaries.py
+      mkdir tests
+      New-Item tests/__init__.py
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
+      "import unittest
+
+
+      class TestDictionaries(unittest.TestCase):
+
+          def test_failure(self):
+              self.assertFalse(True)
+
+      # Exceptions seen
+      # AssertionError
+      " | Out-File tests/test_dictionaries.py
+
+* I run the program_ in the terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
+    ./makePythonTdd.sh
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      ./makePythonTdd.ps1
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: python
+    :emphasize-lines: 10
+    :emphasize-text: tests/test_dictionaries.py:7
+
+    ======================================= FAILURES =======================================
+    ____________________________ TestDictionaries.test_failure _____________________________
+
+    self = <tests.test_dictionaries.TestDictionaries testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
     E       AssertionError: True is not false
 
     tests/test_dictionaries.py:7: AssertionError
+    =============================== short test summary info ================================
+    FAILED tests/test_dictionaries.py::TestDictionaries::test_failure - AssertionError: True is not false
+    ================================== 1 failed in X.YZs ===================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_dictionaries.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
+
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -80,13 +167,7 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
-
-    class TestDictionaries(unittest.TestCase):
+  the test passes
 
 ----
 
@@ -114,7 +195,7 @@ I change ``test_failure`` to ``test_making_a_dictionary`` then add an assertion_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {} != None
 
@@ -131,9 +212,9 @@ I change the expectation to match
       def test_making_a_dictionary(self):
           self.assertEqual(dict(), {})
 
-the test passes. These are two ways to make an empty dictionary_ one
+the test passes. These are two ways to make an empty dictionary_ with
 
-* with the constructor_ - ``dict()`` and with
+* the constructor_ - ``dict()``
 * curly braces - ``{}``
 
 =================================================================================
@@ -152,21 +233,22 @@ the test passes. These are two ways to make an empty dictionary_ one
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: 'int' object is not iterable
 
-* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_dictionaries.py``
+* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 3
+    :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
     # TypeError
 
-* I change the value to a tuple_ since it is an :ref:`iterable<what is an iterable?>`
+* I change the value to a tuple_
 
   .. code-block:: python
     :lineno-start: 7
@@ -177,7 +259,7 @@ the test passes. These are two ways to make an empty dictionary_ one
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: none
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -192,19 +274,21 @@ the test passes. These are two ways to make an empty dictionary_ one
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key': 'value'} != {}
 
   I change the expectation to match the values in the terminal_
 
   .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1
 
-    self.assertEqual(dict(key='value'), {'key': 'value'})
+            self.assertEqual(dict(key='value'), {'key': 'value'})
 
   the test passes.
 
-I can make a dictionary_ with the dict_ constructor_ or curly braces(``{}``) and I used a string_ as a :ref:`key<test_keys_of_a_dictionary>` in this test. Next I test the Python_ basic :ref:`data types<data structures>` to see which ones I can use as keys
+:ref:`I know how to make a dictionary<test_making_a_dictionary>`. I used a string_ as a :ref:`key<test_keys_of_a_dictionary>` in this test. Next I test other :ref:`Python basic data types<data structures>` to see which ones I can use as :ref:`keys<test_keys_of_a_dictionary>`
 
 ----
 
@@ -232,7 +316,7 @@ I add a test to see if I can use :ref:`None` as a :ref:`key<test_keys_of_a_dicti
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {None: 'boom'} != {None: 'bap'}
 
@@ -277,7 +361,7 @@ I add a test to see if I can use a :ref:`boolean<booleans>` as a :ref:`key<test_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {False: 'boom'} != {False: 'bap'}
 
@@ -313,7 +397,7 @@ I add an :ref:`assertion<what is an assertion?>` for the :ref:`other boolean<tes
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {False: 'boom', True: 'bap'} != {False: 'boom'}
 
@@ -360,7 +444,7 @@ I add a failing test to see if I can use a number as a :ref:`key<test_keys_of_a_
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {0: 'boom'} != {0: 'bap'}
 
@@ -397,7 +481,7 @@ I want to see if I can use a float_ as a :ref:`key<test_keys_of_a_dictionary>` i
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {0: 'boom', 0.1: 'bap'} != {0: 'boom'}
 
@@ -444,7 +528,7 @@ I add a test to see if I can use a tuple_ (anything in parentheses (``()``)) as 
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {(0, 1): 'boom'} != {(0, 1): 'bap'}
 
@@ -493,7 +577,7 @@ I add a test for :ref:`lists` (anything in square brackets (``[]``))
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: unhashable type: 'list'
 
@@ -550,7 +634,7 @@ I add another test with a set_ (single items in a curly braces (``{}``)) as a :r
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: unhashable type: 'set'
 
@@ -597,7 +681,7 @@ I add another test, this time for a dictionary_
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: unhashable type: 'dict'
 
@@ -650,7 +734,7 @@ I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attri
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: Lists differ: ['__class__', '__class_getitem__', '__cont[530 chars]ues'] != []
 
@@ -821,7 +905,7 @@ test_clear_empties_a_dictionary
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {} != {'key': 'value'}
 
@@ -907,7 +991,7 @@ I add a test for the next :ref:`method<functions>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {'key': 'value'} is not None
 
@@ -932,7 +1016,7 @@ I add the value to the :ref:`assertion<what is an assertion?>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: {'key': 'value'} is not None : {'key': 'value'}
 
@@ -1015,7 +1099,7 @@ I add a test for the next :ref:`method<functions>` from the TODO list
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: fromkeys expected at least 1 argument, got 0
 
@@ -1035,7 +1119,7 @@ the terminal_ shows :ref:`TypeError`
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: 'int' object is not iterable
 
@@ -1049,7 +1133,7 @@ the terminal_ shows :ref:`TypeError`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {0: None, 1: None} is not None
 
@@ -1070,7 +1154,7 @@ the terminal_ shows :ref:`TypeError`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
 
@@ -1107,7 +1191,7 @@ the terminal_ shows :ref:`TypeError`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key': 'value'} != {}
 
@@ -1150,7 +1234,7 @@ the terminal_ shows :ref:`TypeError`
 
 * the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal_ showed :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: fromkeys expected at least 1 argument, got 0
 
@@ -1180,7 +1264,7 @@ the terminal_ shows :ref:`TypeError`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {0: 'default', 1: 'default'} != {0: None, 1: None}
 
@@ -1255,7 +1339,7 @@ I add a test for the get_ :ref:`method<functions>`
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: get expected at least 1 argument, got 0
 
@@ -1297,7 +1381,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'default' is not None
 
@@ -1316,7 +1400,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'default' is not None : default
 
@@ -1366,7 +1450,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'value' != 'default'
 
@@ -1450,7 +1534,7 @@ I add the next test from the TODO list
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: dict_items([('key', 'value')]) is not None
 
@@ -1471,7 +1555,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'dict_items' is not defined
 
@@ -1490,7 +1574,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
@@ -1507,7 +1591,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: [('key', 'value')] is not None : [('key', 'value')]
 
@@ -1553,7 +1637,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [('key1', 'value1'), ('keyN', [0, 1, 2, 'n'])] != [('key', 'value')]
 
@@ -1638,7 +1722,7 @@ I add a new test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: dict_keys(['key']) is not None
 
@@ -1663,7 +1747,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'dict_keys' is not defined
 
@@ -1684,7 +1768,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: dict_keys(['key']) is not None : ['key']
 
@@ -1701,7 +1785,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: ['key'] is not None : ['key']
 
@@ -1740,7 +1824,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: ['key1', 'keyN'] != ['key']
 
@@ -1815,7 +1899,7 @@ I wonder if the next :ref:`method<functions>` behaves the same way as it did in 
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: pop expected at least 1 argument, got 0
 
@@ -1835,7 +1919,7 @@ this `pop method`_ is different from the one in :ref:`lists`
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     KeyError: 0
 
@@ -1862,7 +1946,7 @@ this `pop method`_ is different from the one in :ref:`lists`
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     KeyError: 'not in dictionary'
 
@@ -1886,7 +1970,7 @@ this `pop method`_ is different from the one in :ref:`lists`
 
 * When I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: pop expected at least 1 argument, got 0
 
@@ -1912,7 +1996,7 @@ this `pop method`_ is different from the one in :ref:`lists`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'default' is not None
 
@@ -1929,7 +2013,7 @@ this `pop method`_ is different from the one in :ref:`lists`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'default' is not None : default
 
@@ -1963,7 +2047,7 @@ this `pop method`_ is different from the one in :ref:`lists`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'value' != 'default'
 
@@ -1996,7 +2080,7 @@ this `pop method`_ is different from the one in :ref:`lists`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {} != {'key': 'value'}
 
@@ -2073,7 +2157,7 @@ I add a failing test for the next item in the TODO list
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: ('key', 'value') is not None
 
@@ -2097,7 +2181,7 @@ I add the value from the terminal_ as the expectation
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: ('key', 'value') is not None : ('key', 'value')
 
@@ -2132,7 +2216,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {} != {'key': 'value'}
 
@@ -2167,7 +2251,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Tuples differ: ('keyN', [0, 1, 2, 'n']) != ('key', 'value')
 
@@ -2184,7 +2268,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key1': 'value1'} != {'key': 'value'}
 
@@ -2252,7 +2336,7 @@ I add a test for the next :ref:`method<functions>`
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: setdefault expected at least 1 argument, got 0
 
@@ -2294,7 +2378,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'default' is not None
 
@@ -2312,7 +2396,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'default' is not None : default
 
@@ -2343,7 +2427,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key': 'value', 0: 'default'} != {'key': 'value'}
 
@@ -2384,7 +2468,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key': 'value', 'new_key': 'default'} != {'key': 'value', 0: 'default'}
 
@@ -2430,7 +2514,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'value' != 'default'
 
@@ -2532,7 +2616,7 @@ test_update_a_dictionary
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key': 'value'} != {}
 
@@ -2569,7 +2653,7 @@ the test passes
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: 'int' object is not iterable
 
@@ -2583,7 +2667,7 @@ the test passes
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
@@ -2599,7 +2683,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key': 'value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value'}
 
@@ -2634,7 +2718,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key': 'updated value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value', 'new_key': [0, 1, 2, 'n']}
 
@@ -2671,7 +2755,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n'], 'another_key': {0, 1, 2, 'n'}} != {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n']}
 
@@ -2755,7 +2839,7 @@ I add a test for the last :ref:`method<functions>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: dict_values(['value']) is not None
 
@@ -2780,7 +2864,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'dict_values' is not defined
 
@@ -2810,7 +2894,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: ['value'] is not None : ['value']
 
@@ -2849,7 +2933,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: ['value1', [0, 1, 2, 'n']] != ['value']
 
@@ -2924,7 +3008,7 @@ I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: 'value' != ''
 
@@ -2959,7 +3043,7 @@ the test passes
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     KeyError: 'not_in_dictionary'
 
@@ -2991,7 +3075,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'default' != ''
 
@@ -3022,7 +3106,7 @@ the test passes
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     KeyError: 'not_in_dictionary'
 
@@ -3057,7 +3141,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'default' != ''
 
@@ -3088,7 +3172,7 @@ the test passes
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     KeyError: 'popitem(): dictionary is empty'
 
@@ -3137,27 +3221,27 @@ close the project
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/dictionaries
 
 * I `change directory`_ to the parent of ``dictionaries``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 

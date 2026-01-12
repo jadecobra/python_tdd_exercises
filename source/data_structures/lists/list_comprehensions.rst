@@ -48,6 +48,22 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+*********************************************************************************
+questions about list comprehensions
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`what is a list comprehension?`
+* :ref:`what is a for loop?`
+* :ref:`how can I make a list with the extend method?<test_making_a_list_w_extend>`
+* :ref:`how can I make a list with a list comprehension<test_making_a_list_w_a_list_comprehensions>`
+* :ref:`how can I make a list based on a condition?<test_making_a_list_w_conditions>`
+* :ref:`how can I use the filter function?<test_making_a_list_w_conditions>`
+* :ref:`how can I transform a list?<test_making_a_list_w_processes>`
+* :ref:`how can I transfrom and filter a list<test_making_a_list_w_processes_and_conditions>`
+* :ref:`how can I make sure class attributes are reset for every test?<how to reset class attributes (variables) for every test>`
+
 ----
 
 *********************************************************************************
@@ -150,7 +166,7 @@ start the project
     ======================================= FAILURES =======================================
     _________________________ TestListComprehensions.test_failure __________________________
 
-    self = <tests.test_lists.TestListComprehensions testMethod=test_failure>
+    self = <tests.test_list_comprehensions.TestListComprehensions testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
@@ -732,7 +748,13 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 
   the test is green again
 
-* The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<functions>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test. I add it to the ``TestListComprehensions`` :ref:`class<classes>`
+---------------------------------------------------------------------------------
+how to reset class attributes (variables) for every test
+---------------------------------------------------------------------------------
+
+The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<functions>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
+
+* I add it to the ``TestListComprehensions`` :ref:`class<classes>`
 
   .. code-block:: python
     :lineno-start: 6

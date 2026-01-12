@@ -166,7 +166,7 @@ start the project
 
 * I run the program_ in the terminal_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     ./makePythonTdd.sh
@@ -182,7 +182,7 @@ start the project
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 10
     :emphasize-text: tests/test_lists.py:7
 
