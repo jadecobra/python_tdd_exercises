@@ -58,21 +58,21 @@ start the project
 
   .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       code makePythonTdd.sh
 
     on `Windows`_ without `Windows Subsystem for Linux`_ use
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       code makePythonTdd.ps1
 
 * I change everywhere I have ``lists`` to the name of this project
 
-  .. code-block:: shell
+  .. code-block:: python
     :linenos:
     :emphasize-lines: 2, 3, 5, 12, 20
 
@@ -126,7 +126,7 @@ start the project
 
 * I run the program_ in the terminal_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     ./makePythonTdd.sh
@@ -135,14 +135,14 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       ./makePythonTdd.ps1
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 10
     :emphasize-text: tests/test_list_comprehensions.py:7
 
@@ -187,24 +187,30 @@ I can make a :ref:`list<lists>` with the constructor_ (``list()``) or with squar
 I change ``test_failure`` to ``test_making_a_list_w_a_for_loop`` to show what happens when I use the :ref:`append method<test_append_adds_item_to_end_of_a_list>` with more than one item
 
 .. code-block:: python
-  :linenos:
-  :emphasize-lines: 6-9
-
-  import unittest
-
+  :lineno-start: 4
+  :emphasize-lines: 4-15
 
   class TestListComprehensions(unittest.TestCase):
 
       def test_making_a_list_w_a_for_loop(self):
           a_list = []
           a_list.append(0)
+          a_list.append(1)
+          a_list.append(2)
+          a_list.append(3)
+          a_list.append(4)
+          a_list.append(5)
+          a_list.append(6)
+          a_list.append(7)
+          a_list.append(8)
+          a_list.append(9)
           self.assertEqual(a_list, [])
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
-  AssertionError: Lists differ: [0] != []
+  AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != []
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -213,10 +219,10 @@ the terminal_ shows :ref:`AssertionError`
 I change the expectation to match
 
 .. code-block:: python
-  :lineno-start: 9
+  :lineno-start: 18
   :emphasize-lines: 1
 
-          self.assertEqual(a_list, [0])
+          self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 the test passes
 
@@ -224,94 +230,11 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I use the :ref:`append method<test_append_adds_item_to_end_of_a_list>` to add another item to the :ref:`list<lists>` with an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 3-4
-
-            a_list.append(0)
-            self.assertEqual(a_list, [0])
-            a_list.append(1)
-            self.assertEqual(a_list, [0])
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: Lists differ: [0, 1] != [0]
-
-* I add the expected value to the test
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 1
-
-            self.assertEqual(a_list, [0, 1])
-
-  the test passes
-
-* I :ref:`append<test_append_adds_item_to_end_of_a_list>` another number to the :ref:`list<lists>` then add an :ref:`assertion<what is an assertion?>` to check
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 3-4
-
-            a_list.append(1)
-            self.assertEqual(a_list, [0, 1])
-            a_list.append(2)
-            self.assertEqual(a_list, [0, 1])
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: Lists differ: [0, 1, 2] != [0, 1]
-
-* I change the expectation to match
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 1
-
-            self.assertEqual(a_list, [0, 1, 2])
-
-  the test passes
-
-* I :ref:`append<test_append_adds_item_to_end_of_a_list>` one more number, then an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 3-4
-
-            a_list.append(2)
-            self.assertEqual(a_list, [0, 1, 2])
-            a_list.append(3)
-            self.assertEqual(a_list, [0, 1, 2])
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2]
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 1
-
-            self.assertEqual(a_list, [0, 1, 2, 3])
-
-  the test passes
-
-----
-
 ---------------------------------------------------------------------------------
 what is a for loop?
 ---------------------------------------------------------------------------------
 
-I just wrote the same things 4 times in a row, the only things that changed were the numbers I added to the :ref:`list<lists>`, there is a better way. I can use a `for loop`_.
+I just called the :ref:`append method<test_append_adds_item_to_end_of_a_list>` 10 times in a row, the only things that changed were the numbers I added to the :ref:`list<lists>`, there is a better way. I can use a `for loop`_.
 
 A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is an iterable?>` (a collection of items)
 
@@ -319,55 +242,43 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 3-10, 12-13, 15
+    :emphasize-lines: 3-12, 14-15
 
         def test_making_a_list_w_a_for_loop(self):
             a_list = []
             # a_list.append(0)
-            # self.assertEqual(a_list, [0])
             # a_list.append(1)
-            # self.assertEqual(a_list, [0, 1])
             # a_list.append(2)
-            # self.assertEqual(a_list, [0, 1, 2])
             # a_list.append(3)
-            # self.assertEqual(a_list, [0, 1, 2, 3])
+            # a_list.append(4)
+            # a_list.append(5)
+            # a_list.append(6)
+            # a_list.append(7)
+            # a_list.append(8)
+            # a_list.append(9)
 
-            for number in (0, 1, 2, 3):
+            for number in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
                 a_list.append(number)
 
-            self.assertEqual(a_list, [])
+            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-  the terminal_ shows :ref:`AssertionError`
+  the test is still green
 
-  .. code-block:: shell
-
-    AssertionError: Lists differ: [0, 1, 2, 3] != []
-
-* I add the values
-
-  .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 1
-
-            self.assertEqual(a_list, [0, 1, 2, 3])
-
-  the test passes
-
-* I remove the commented lines. This `for loop`_ removed 8 lines of code and I can use it for any number of items, the other way gets busy very quickly once I have to add more than 4 numbers
+* I remove the commented lines. This `for loop`_ removed 10 lines of code and I can use it for any number of items, the other way gets busy very quickly once I have to add more numbers
 
   .. code-block:: python
     :lineno-start: 6
 
-      def test_making_a_list_w_a_for_loop(self):
-          a_list = []
+        def test_making_a_list_w_a_for_loop(self):
+            a_list = []
 
-          for number in (0, 1, 2, 3):
-              a_list.append(number)
+            for number in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
+                a_list.append(number)
 
-          self.assertEqual(a_list, [0, 1, 2, 3])
+            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-  - ``for number in (0, 1, 2, 3):`` goes over every number in the tuple_
-  - ``a_list.append(number)`` gets to add each number from the tuple_ to ``a_list``
+  - ``for number in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):`` goes over every number in the tuple_
+  - ``a_list.append(number)`` adds each number from the tuple_ to ``a_list``
 
 * Python_ has an :ref:`iterable<what is an iterable?>` I can use to make a sequence of numbers, it is called the `range object`_. I add it to the `for loop`_
 
@@ -378,11 +289,11 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
         def test_making_a_list_w_a_for_loop(self):
             a_list = []
 
-            # for number in (0, 1, 2, 3):
-            for number in range(0, 4):
+            # for number in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9):
+            for number in range(0, 10):
                 a_list.append(number)
 
-            self.assertEqual(a_list, [0, 1, 2, 3])
+            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
   the test is still green
 
@@ -394,27 +305,27 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
         def test_making_a_list_w_a_for_loop(self):
             a_list = []
 
-            for number in range(0, 4):
+            for number in range(0, 10):
                 a_list.append(number)
 
-            self.assertEqual(a_list, [0, 1, 2, 3])
+            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  ``range(0, 4)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus 1, in this case it goes from ``0`` to ``3``
+  ``range(0, 10)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus ``1``, in this case it goes from ``0`` to ``9``
 
-* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item in ``a_list``, but there is an easier way. I can do the same thing with with the :ref:`list constructor<test_making_a_list>`
+* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<lists>`, but there is an easier way. I can do the same thing with with the :ref:`list constructor<test_making_a_list>`
 
   .. code-block:: python
     :lineno-start: 12
     :emphasize-lines: 2
 
-            self.assertEqual(a_list, [0, 1, 2, 3])
+            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
             self.assertEqual(list(), a_list)
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError: Lists differ: [] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 * I add the `range object`_ to the :ref:`assertion<what is an assertion?>`
 
@@ -422,7 +333,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     :lineno-start: 13
     :emphasize-lines: 1
 
-            self.assertEqual(list(range(0, 4)), a_list)
+            self.assertEqual(list(range(0, 10)), a_list)
 
   the test passes
 
@@ -434,12 +345,12 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
         def test_making_a_list_w_a_for_loop(self):
             a_list = []
-            iterable = range(0, 4)
+            iterable = range(0, 10)
 
             for number in iterable:
                 a_list.append(number)
 
-            self.assertEqual(a_list, [0, 1, 2, 3])
+            self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
             self.assertEqual(list(iterable), a_list)
 
   the test is still green
@@ -453,12 +364,12 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
         self.assertEqual(a_list, list(iterable))
         self.assertEqual(
             src.list_comprehensions.a_for_loop(iterable),
-            [0, 1, 2, 3]
+            [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'src' is not defined
 
@@ -483,7 +394,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
 
@@ -511,11 +422,23 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: a_for_loop() takes 0 positional arguments but 1 was given
 
-* I add a name for the argument
+* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 5
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+
+* I add a name for the argument in ``list_comprehensions.py``
 
   .. code-block:: python
     :linenos:
@@ -526,9 +449,9 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError: None != [0, 1, 2, 3]
+    AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 * I change the `return statement`_ to match
 
@@ -537,35 +460,11 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     :emphasize-lines: 2
 
     def a_for_loop(a_container):
-        return [0, 1, 2, 3]
+        return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  the test passes
+  the test passes. The problem with this solution is that it will fail when I have a range of numbers that is different. I want a solution that can take any :ref:`iterable<what is an iterable?>` and return the right :ref:`list<lists>`
 
-* this solution fails when I change the values in the `range object`_ in ``test_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 1
-
-            iterable = range(0, 5)
-
-  the terminal_ shows :ref:`AssertionError`
-
-  .. code-block:: shell
-
-    AssertionError: Lists differ: [0, 1, 2, 3, 4] != [0, 1, 2, 3]
-
-* I undo the change
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 1
-
-            iterable = range(0, 4)
-
-  the test is green again
-
-* I import the `random module`_ to use random numbers in the test. I want a solution that can take any :ref:`iterable<what is an iterable?>` and return the right :ref:`list<lists>`
+* I import the `random module`_ to use random numbers in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :linenos:
@@ -575,7 +474,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     import src.list_comprehensions
     import unittest
 
-* I change the second value given to the `range object`_
+* I change the second value in the parentheses for the `range object`_ to a random number
 
   .. code-block:: python
     :lineno-start: 10
@@ -585,12 +484,12 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3]
+    AssertionError: Lists differ: [0, 1, 2, 3, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  - ``random.randint(2, 1000)`` gives me a random integer_ between the first number in parentheses and the second number minus ``1``, in this case ``2`` to ``999``
-  - this `range object`_ now goes from ``0`` to anywhere between ``1`` and ``999`` because it also goes from the first number in parentheses to the second number minus ``1``
+  - ``random.randint(2, 1000)`` gives me a random integer_ between the first number in parentheses and the second number minus ``1``, in this case the number can be anything from ``2`` to ``999``
+  - this `range object`_ now goes from ``0`` to anywhere between ``1`` and ``999`` because it also goes from the first number in parentheses to the second number minus ``1``, and the second number in this case is a random integer that can be anything from ``2`` to ``999``
   - The values change every time the test runs
 
 * I change the expectation in the first :ref:`assertion<what is an assertion?>`
@@ -615,7 +514,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
             self.assertEqual(a_list, list(iterable))
             self.assertEqual(
                 src.list_comprehensions.a_for_loop(iterable),
-                [0, 1, 2, 3]
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
             )
 
 * I change the expectation of the second :ref:`assertion<what is an assertion?>`
@@ -632,9 +531,9 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError: Lists differ: [0, 1, 2, 3] != [0, 1, 2, 3, ...]
+    AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 1, 2, 3, ...]
 
 * I change the :ref:`function<functions>` in ``list_comprehensions.py``
 
@@ -647,7 +546,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
         for stuff in a_container:
             result.append(stuff)
         return result
-        return [0, 1, 2, 3]
+        return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   the test passes
 
@@ -688,7 +587,7 @@ I add a new test
 
 the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: list.extend() takes exactly one argument (0 given)
 
@@ -721,7 +620,7 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
@@ -812,7 +711,7 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [0, 1, 2, 3, ... XYZ, 0, 1, 2, 3, ...XYZ] != [0, 1, 2, 3, ...XYZ]
 
@@ -832,7 +731,7 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 
   the test is green again
 
-* The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<functions>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test I add it to the ``TestListComprehensions`` :ref:`class<classes>`
+* The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<functions>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test. I add it to the ``TestListComprehensions`` :ref:`class<classes>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -926,7 +825,7 @@ I add a failing test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: Lists differ: [0, 1, 2, 3, ...] != []
 
@@ -969,16 +868,20 @@ the test passes. The `list comprehension`_ is like the `for loop`_ without the :
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_list_comprehension'
 
-* I add the :ref:`function<functions>` in ``list_comprehensions.py``
+* I add the :ref:`function<functions>` to ``list_comprehensions.py``
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 4-5
+    :linenos:
+    :emphasize-lines: 8-9
 
+    def a_for_loop(a_container):
+        result = []
+        for stuff in a_container:
+            result.append(stuff)
         return result
 
 
@@ -1048,9 +951,11 @@ I add a failing test to ``test_list_comprehensions.py``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
+
+the numbers on the left are even numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`
 
 * ``if item % 2 == 0:`` checks if the number in ``self.iterable`` leaves a remainder of ``0`` when it is divided by ``2``, this is the rule for even numbers
 * ``%`` is the modulo_ operator, which divides the number on the left by the number on the right and returns a remainder, there's a test for it in :ref:`test_the_modulo_operation`
@@ -1072,7 +977,7 @@ How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ wit
 
 the terminal_ still shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: Lists differ: [0, 2, 4, 6, 8, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8...]
 
@@ -1108,7 +1013,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'get_even_numbers'
 
@@ -1141,7 +1046,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
@@ -1171,7 +1076,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [0, 2, 4, 6, ...] != [0, 3, 6, 9, ...]
 
@@ -1268,7 +1173,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     # Exceptions seen
 
-  .. NOTE:: ``condition`` is not a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
+  .. NOTE:: ``condition`` is NOT a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
 
 * I change the :ref:`condition<if statements>` in the new :ref:`function<functions>`
 
@@ -1281,7 +1186,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [0, 3, 6, 9, ...] != [0, 2, 4, 6, ...]
 
@@ -1336,9 +1241,11 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [1, 3, 5, 7, ...] != [0, 1, 2, 3, 4, 5, 6, 7, 8, ...]
+
+  the numbers on the left are odd numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`
 
 * I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>` with :ref:`logical negation(NOT)<test_logical_negation>` and the ``condition`` :ref:`function<functions>`
 
@@ -1399,9 +1306,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
   I add a :ref:`function<functions>` to remove the duplication
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 4-5
+    :lineno-start: 8
+    :emphasize-lines: 5-6
 
+    def a_list_comprehension(a_collection):
         return [element for element in a_collection]
 
 
@@ -1426,8 +1334,10 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 * I remove the second `return statement`_ and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<functions>` in ``get_odd_numbers``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 16
+    :emphasize-lines: 6
 
+    def get_even_numbers(numbers):
         return [number for number in numbers if is_even(number)]
 
 
@@ -1479,7 +1389,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: 'bool' object is not callable
 
@@ -1548,7 +1458,7 @@ I add a failing test to ``test_list_comprehensions.py``
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: Lists differ: [0, 1, 4, 9, ...] != [0, 1, 2, 3, ...]
 
@@ -1590,7 +1500,7 @@ the test passes
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'square'
 
@@ -1627,7 +1537,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: <map object at 0xffffa1b234c5> != [0, 1, 4, 9, ...]
 
@@ -1660,7 +1570,7 @@ the test passes
 
     def condition(number):
 
-* I call the new :ref:`function<functions>` in the `for loop`_
+* I call the new :ref:`function<functions>` in the `for loop`_ in ``test_making_a_list_w_processes``
 
   .. code-block:: python
     :lineno-start: 69
@@ -1721,7 +1631,7 @@ the test passes
 
     # Exceptions seen
 
-  .. NOTE:: ``process`` is not a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
+  .. NOTE:: ``process`` is NOT a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
 
 :ref:`I know how to process(transform) a list with list comprehensions<test_making_a_list_w_processes>`
 
@@ -1764,7 +1674,7 @@ I add a failing test
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: Lists differ: [0, 4, 16, ...] != [0, 1, 2, 3, 4, ...]
 
@@ -1787,7 +1697,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [0, 4, 16, 36, ...] != [0, 2, 4, 6, ...]
 
@@ -1825,7 +1735,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [1, 9, 25, 49, ...] != [0, 1, 2, 3, 4, 5, 6, 7, ...]
 
@@ -1844,7 +1754,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: Lists differ: [1, 9, 25, 49, ...] != [1, 3, 5, 7, ...]
 
@@ -1863,6 +1773,37 @@ the numbers on the left are the squares of the even numbers from the right
 
   the test passes
 
+* I add a :ref:`variable<what is a variable?>` to the `for loop`_ to remove the duplication of the call to the ``process`` :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 2, 4-5, 7-8
+
+            for item in self.iterable:
+                item = process(item)
+                if condition(item):
+                    # even_squares.append(process(item))
+                    even_squares.append(item)
+                else:
+                    # odd_squares.append(process(item))
+                    odd_squares.append(item)
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 85
+
+            for item in self.iterable:
+                item = process(item)
+                if condition(item):
+                    even_squares.append(item)
+                else:
+                    odd_squares.append(item)
+
+  still green
+
 :ref:`I know how to use list comprehensions to make a list based on conditions (filter) with processes (transform)<test_making_a_list_w_processes_and_conditions>`
 
 ----
@@ -1875,27 +1816,27 @@ close the project
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/list_comprehensions
 
 * I `change directory`_ to the parent of ``list_comprehensions``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
@@ -1915,20 +1856,20 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 
 * I activate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     source .venv/bin/activate
@@ -1937,27 +1878,27 @@ open the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       .venv/scripts/activate.ps1
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     (.venv) .../pumping_python/calculator
 
 * I use ``pytest-watch`` to run the tests
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     pytest-watch
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 4
 
     rootdir: .../pumping_python/calculator
@@ -2032,7 +1973,7 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_m
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
 
@@ -2055,7 +1996,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: ABC.DEFGHIJKLMNOPQR != 'Excuse me?! I only work with numbers. Please try again...'
 
@@ -2082,7 +2023,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the terminal_ shows :ref:`AssertionError` for two of the :ref:`data types<data structures>` I am testing
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 3, 4
     :emphasize-text: SUBFAILED True False
 
@@ -2130,7 +2071,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the terminal_ shows :ref:`AssertionError` for all the :ref:`data types<data structures>` in the test
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
 
@@ -2164,7 +2105,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the terminal_ shows :ref:`AssertionError` for each :ref:`data type<data structures>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
 
@@ -2198,7 +2139,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the terminal_ shows :ref:`AssertionError` for all the :ref:`data types<data structures>` I am testing
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
 
@@ -2241,33 +2182,33 @@ close the project
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     (.venv) .../pumping_python/calculator
 
 * I deactivate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 
 * I `change directory`_ to the parent of ``calculator``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
@@ -2287,20 +2228,20 @@ open the project
 
 * I `change directory`_ to the ``booleans`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd booleans
 
   the terminal_ shows I am in the ``booleans`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/booleans
 
 * I activate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     source .venv/bin/activate
@@ -2309,27 +2250,27 @@ open the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       .venv/scripts/activate.ps1
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     (.venv) .../pumping_python/booleans
 
 * I use ``pytest-watch`` to run the tests
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     pytest-watch
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 4
 
     rootdir: .../pumping_python/booleans
@@ -2562,7 +2503,7 @@ I add a new test to find out the value of :ref:`False<test_what_is_false>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: 1 != None
 
@@ -2597,7 +2538,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: -1 != 1
 
@@ -2624,7 +2565,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 0 != -1
 
@@ -2713,7 +2654,7 @@ I add a new test to find out the value of :ref:`True<test_what_is_true>`
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: 2 != 1
 
@@ -2802,7 +2743,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 0.5 != 1
 
@@ -2838,33 +2779,33 @@ close the project
 * I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     (.venv) .../pumping_python/booleans
 
 * I deactivate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/booleans
 
 * I `change directory`_ to the parent of ``booleans``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
@@ -2891,7 +2832,7 @@ I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>
 
 I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of the following
 
-.. code-block:: shell
+.. code-block:: python
 
   {a_process(key): another_process(value) for key/value in iterable if condition/NOT condition}
 

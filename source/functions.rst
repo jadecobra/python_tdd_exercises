@@ -1662,7 +1662,7 @@ I want to see what happens when I call the function_ with ONLY :ref:`positional 
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: Tuples differ: ((0, 1, 2, 3), {}) != ()
 
@@ -1703,7 +1703,7 @@ I add another :ref:`assertion<what is an assertion?>` to see what happens when I
 
 the terminal_ shows
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: Tuples differ: ((), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != ()
 
