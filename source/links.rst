@@ -72,7 +72,6 @@
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _f-strings: `f-string`_
-.. _get: https://docs.python.org/3/library/stdtypes.html#dict.get
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable
 .. _history: https://man7.org/Linux/man-pages/man3/history.3.html
@@ -85,8 +84,6 @@
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _integer: int_
 .. _integers: int_
-.. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
-.. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
 .. _Linux package manager: https://grokipedia.com/page/APT_(software)
 .. _ls: https://grokipedia.com/page/Ls
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
@@ -138,7 +135,6 @@
 .. _script: `computer program`_
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset
 .. _sets: set_
-.. _setdefault: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
 .. _setUp: https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp
 .. _setUp method: setUp_
 .. _shebang: https://grokipedia.com/page/Shebang_(Unix)
@@ -182,10 +178,8 @@
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
 .. _unittest.TestCase class: `unittest.TestCase`_
-.. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
 .. _variable: https://grokipedia.com/page/Variable_(computer_science)
 .. _variables: https://grokipedia.com/page/Variable_(computer_science)
-.. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
 .. _while: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement

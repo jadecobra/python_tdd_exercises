@@ -10,10 +10,17 @@
 .. _copy method: copy_
 .. _fromkeys: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
 .. _fromkeys method: fromkeys_
+.. _get: https://docs.python.org/3/library/stdtypes.html#dict.get
+.. _get method: get_
+.. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
+.. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
 .. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
 .. _pop method: pop_
 .. _popitem: https://docs.python.org/3/library/stdtypes.html#dict.popitem
 .. _popitem method: popitem_
+.. _setdefault: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
+.. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
+.. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
 .. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 .. _dict class: dict_
 .. _dictionary: dict_
@@ -1332,7 +1339,7 @@ test_get_value_of_a_key_in_a_dictionary
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the get_ :ref:`method<functions>`
+I add a test for the `get method`_
 
 .. code-block:: python
   :lineno-start: 107
@@ -1372,7 +1379,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* the get_ :ref:`method<functions>` also expected at least 1 argument, I add :ref:`None` to the call
+* the `get method`_ also expected at least 1 argument, I add :ref:`None` to the call
 
   .. code-block:: python
     :lineno-start: 118
@@ -1441,7 +1448,7 @@ the test passes
 
   the test is still green
 
-* I want to see what happens when I use the get_ :ref:`method<functions>` with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_, I add another :ref:`assertion<what is an assertion?>`
+* I want to see what happens when I use the `get method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_, I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 118
@@ -1478,7 +1485,7 @@ the test passes
 
   the test passes.
 
-  The get_ :ref:`method<functions>` has a :ref:`condition<if statements>`
+  The `get method`_ has a :ref:`condition<if statements>`
 
   - When the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_, it returns the default argument
   - When the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_, it returns its :ref:`value<test_values_of_a_dictionary>`.
@@ -3071,7 +3078,7 @@ the test passes
 
   the test passes
 
-* I can use the get_ :ref:`method<functions>` if I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a dictionary_
+* I can use the `get method`_ if I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a dictionary_
 
   .. code-block:: python
     :lineno-start: 225

@@ -1658,7 +1658,7 @@ I add an :ref:`exception handler<how to use try...except...else>` to the `else c
 
 .. code-block:: python
   :lineno-start: 16
-  :emphasize-lines: 4-7
+  :emphasize-lines: 4-8
 
   def add(first_input, second_input):
       if isinstance(first_input, str) or isinstance(second_input, str):
