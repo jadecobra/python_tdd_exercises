@@ -454,7 +454,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ...::test_catching_failure - AssertionError: <function raise_exception at 0xabcd12e34567> != 'failed'
     ...::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'

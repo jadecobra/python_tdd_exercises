@@ -16,7 +16,8 @@
 .. _map: https://docs.python.org/3/library/functions.html#map
 .. _map object: map_
 .. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
-.. _unittest.TestCase.subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
+.. _subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
+.. _unittest.TestCase.subTest method: `subTest method`_
 .. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
 
 #################################################################################
@@ -1816,27 +1817,27 @@ close the project
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python/list_comprehensions
 
 * I `change directory`_ to the parent of ``list_comprehensions``
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python
 
@@ -1856,20 +1857,20 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python/calculator
 
 * I activate the `virtual environment`_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     source .venv/bin/activate
@@ -1878,33 +1879,33 @@ open the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       .venv/scripts/activate.ps1
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     (.venv) .../pumping_python/calculator
 
 * I use ``pytest-watch`` to run the tests
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     pytest-watch
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 4
 
     rootdir: .../pumping_python/calculator
     collected 7 items
 
-    tests/test_calculator.py ....                                        [100%]
+    tests/test_calculator.py .......                                     [100%]
 
     ============================ 7 passed in X.YZs =============================
 
@@ -2159,17 +2160,79 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 * I remove the other assertions in the test because they are now covered by the `for loop`_
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 58
 
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            error_message = 'Excuse me?! I only work with numbers. Please try again...'
+
+            for data_type in (
+                None,
+                True,
+                False,
+                str(),
+                tuple(),
+                list(),
+                set(),
+                dict(),
+            ):
+                with self.subTest(i=data_type):
+                    self.assertEqual(
+                        src.calculator.add(data_type, a_random_number()),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.divide(data_type, a_random_number()),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.multiply(data_type, a_random_number()),
+                        error_message
+                    )
                     self.assertEqual(
                         src.calculator.subtract(data_type, a_random_number()),
                         error_message
                     )
 
         def test_calculator_w_list_items(self):
-            a_list = [self.random_first_number, self.random_second_number]
 
   Using a `for loop`_ saved me having to write a lot of tests
+
+* I could also do this with a `list comprehension`_, though it is a little silly
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 6-14
+
+                self.assertEqual(
+                    src.calculator.subtract(data_type, a_random_number()),
+                    error_message
+                )
+
+        [
+            self.assertEqual(
+                src.calculator.add(data_type, a_random_number),
+                'BOOM!!!'
+            ) for data_type in (
+                None, True, False, str(), tuple(), list(),
+                set(), dict(),
+            )
+        ]
+
+    def test_calculator_w_list_items(self):
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: 'Excuse me?! I only work with numbers. Please try again...' != 'BOOM!!!'
+
+  There are a few problems with doing it this way
+
+  - I make a :ref:`list<lists>` when I do not need it
+  - I would not have been able to tell which data type failed since I cannot use the `subTest method`_ with this
+  - I would have to repeat all those lines for each :ref:`function<functions>` in the :ref:`calculator program<how to make a calculator>`
+
+* I remove it from the test and things are green again
 
 :ref:`I know a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
 
@@ -2182,33 +2245,33 @@ close the project
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     (.venv) .../pumping_python/calculator
 
 * I deactivate the `virtual environment`_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python/calculator
 
 * I `change directory`_ to the parent of ``calculator``
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python
 
@@ -2220,7 +2283,7 @@ close the project
 is a boolean an integer or a float?
 *********************************************************************************
 
-I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<functions>` in the :ref:`calculator program<how to make a calculator>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail. This means that they are also integers_ or floats_ even though they are :ref:`booleans`. I want to find out
+I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<functions>` in the :ref:`calculator program<how to make a calculator>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail. This means that they are also integers_ or floats_ even though they are :ref:`booleans`. I want to find out if :ref:`booleans` are integers_ or floats_
 
 =================================================================================
 open the project
@@ -2228,20 +2291,20 @@ open the project
 
 * I `change directory`_ to the ``booleans`` folder_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     cd booleans
 
   the terminal_ shows I am in the ``booleans`` folder_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python/booleans
 
 * I activate the `virtual environment`_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     source .venv/bin/activate
@@ -2250,33 +2313,33 @@ open the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
 
-    .. code-block:: python
+    .. code-block:: shell
       :emphasize-lines: 1
 
       .venv/scripts/activate.ps1
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     (.venv) .../pumping_python/booleans
 
 * I use ``pytest-watch`` to run the tests
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     pytest-watch
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 4
 
     rootdir: .../pumping_python/booleans
     collected 2 items
 
-    tests/test_booleans.py ....                                        [100%]
+    tests/test_booleans.py ..                                        [100%]
 
     ============================ 2 passed in X.YZs =============================
 
@@ -2749,7 +2812,7 @@ the test passes
 
   :ref:`True<test_what_is_true>` is ``1``
 
-* I change the expectation
+* I change the :ref:`assertion<what is an asserttion?>`
 
   .. code-block:: python
     :lineno-start: 46
@@ -2779,33 +2842,33 @@ close the project
 * I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     (.venv) .../pumping_python/booleans
 
 * I deactivate the `virtual environment`_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python/booleans
 
 * I `change directory`_ to the parent of ``booleans``
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python
 

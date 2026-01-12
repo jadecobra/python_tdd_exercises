@@ -448,7 +448,7 @@ requirements
 
   the terminal_ shows `Python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like what I am looking for
 
-  .. code-block:: python
+  .. code-block:: shell
 
     ...
     |
