@@ -29,6 +29,18 @@ list comprehensions with the Calculator solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`lists: list comprehensions`
 
-.. literalinclude:: solutions/list_comprehensions.py
+.. literalinclude:: solutions/calculator_list_comprehensions.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+list comprehensions with booleans tests
+*********************************************************************************
+
+the solutions in ``booleans/tests/booleans_list_comprehensions.py`` from :ref:`lists: list comprehensions`
+
+.. literalinclude:: tests/booleans_list_comprehensions.py
   :language: python
   :linenos:

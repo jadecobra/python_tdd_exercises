@@ -325,7 +325,7 @@ test_attributes_and_methods_of_lists
 *********************************************************************************
 
 =================================================================================
-how to see the the attributes and methods of an object
+how to see the attributes and methods of an object
 =================================================================================
 
 I want to test the things I can do with lists_. I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of :ref:`objects<classes>`, it is part of `Python's Built-in Functions`_
@@ -3958,7 +3958,7 @@ the test passes
 close the project
 =================================================================================
 
-* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
   .. code-block:: shell

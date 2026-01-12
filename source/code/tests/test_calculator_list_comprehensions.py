@@ -74,7 +74,7 @@ class TestCalculator(unittest.TestCase):
                     error_message
                 )
                 self.assertEqual(
-                    src.calculator.divide(data_type, a_random_number),
+                    src.calculator.divide(data_type, a_random_number()),
                     error_message
                 )
                 self.assertEqual(
