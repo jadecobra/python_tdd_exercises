@@ -83,10 +83,11 @@ class TestListComprehensions(unittest.TestCase):
     def test_making_a_list_w_processes_and_conditions(self):
         even_squares, odd_squares = [], []
         for item in self.iterable:
+            item = process(item)
             if condition(item):
-                even_squares.append(process(item))
+                even_squares.append(item)
             else:
-                odd_squares.append(process(item))
+                odd_squares.append(item)
 
         self.assertEqual(
             even_squares,
@@ -102,3 +103,4 @@ class TestListComprehensions(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
+# TypeError
