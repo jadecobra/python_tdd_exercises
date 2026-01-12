@@ -57,7 +57,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`what is a list comprehension?`
 * :ref:`what is a for loop?`
 * :ref:`how can I make a list with the extend method?<test_making_a_list_w_extend>`
-* :ref:`how can I make a list with a list comprehension<test_making_a_list_w_a_list_comprehensions>`
+* :ref:`how can I make a list with a list comprehension<test_making_a_list_w_a_list_comprehension>`
 * :ref:`how can I make a list based on a condition?<test_making_a_list_w_conditions>`
 * :ref:`how can I use the filter function?<test_making_a_list_w_conditions>`
 * :ref:`how can I transform a list?<test_making_a_list_w_processes>`
@@ -2834,7 +2834,7 @@ the test passes
 
   :ref:`True<test_what_is_true>` is ``1``
 
-* I change the :ref:`assertion<what is an asserttion?>`
+* I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 46
