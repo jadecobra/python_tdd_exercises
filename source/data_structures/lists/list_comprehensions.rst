@@ -2885,11 +2885,11 @@ I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what 
 * :ref:`the list constructor<test_making_a_list>`
 * :ref:`a for loop<test_making_a_list_w_a_for_loop>`
 * :ref:`the extend method<test_making_a_list_w_extend>`
-* and :ref:`list comprehensions<test_making_a_list_w_a_list_comprehension>` where I can
+* :ref:`list comprehensions<test_making_a_list_w_a_list_comprehension>` where I can
 
   - :ref:`filter the list based on a condition<test_making_a_list_w_conditions>`
   - :ref:`transform the list with a process<test_making_a_list_w_processes>`
-  - :ref:`transform and filter a list<test_making_a_list_w_processes_and_conditions>`
+  - :ref:`transform and filter the list<test_making_a_list_w_processes_and_conditions>`
 
 I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
 
@@ -2897,7 +2897,15 @@ I can also do this with :ref:`dictionaries`, it is called a dict comprehension a
 
 .. code-block:: python
 
-  {a_process(key): another_process(value) for key/value in iterable if condition/NOT condition}
+  {
+      a_process(key): another_process(value)
+      for key/value in iterable
+      if condition/not condition
+  }
+
+----
+
+:ref:`How many questions can you answer after going through this chapter?<questions about list comprehensions>`
 
 ----
 
@@ -2929,7 +2937,7 @@ you know
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<lists: list comprehensions>`
 
-:ref:`Would you like to test making a person?<how to make a person>`
+:ref:`Would you like to test dictionaries?<dictionaries>`
 
 -----
 
