@@ -81,21 +81,6 @@ how to make a python test driven development environment on Windows without Wind
 
 ----
 
-************************************************************************************************************
-exceptions review
-************************************************************************************************************
-
-* :ref:`What causes AssertionError?<AssertionError>`
-* :ref:`What causes AttributeError?<AttributeError>`
-* :ref:`What causes ModuleNotFoundError?<ModuleNotFoundError>`
-* :ref:`What causes NameError?<test_catching_name_error_in_tests>`
-* What is the difference between :ref:`AttributeError` and :ref:`NameError<test_catching_name_error_in_tests>`?
-* :ref:`What causes TypeError?<TypeError>`
-* :ref:`What causes IndexError?<test_index_error>`
-* :ref:`What causes KeyError?<test_key_error>`
-
-----
-
 *********************************************************************************
 AssertionError review
 *********************************************************************************
@@ -192,7 +177,7 @@ Unary Operations review
 ----
 
 *********************************************************************************
-questions about testing Exceptions
+Exception handling in Tests review
 *********************************************************************************
 
 * :ref:`What causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
@@ -207,7 +192,7 @@ questions about testing Exceptions
 ----
 
 *********************************************************************************
-questions about handling Exceptions
+Exception handling in Programs review
 *********************************************************************************
 
 * :ref:`How can I test an Exception with a specific message<test_catching_exceptions_w_messages>`
@@ -216,7 +201,7 @@ questions about handling Exceptions
 ----
 
 *********************************************************************************
-questions about TypeError
+TypeError review
 *********************************************************************************
 
 Here are questions you can answer after going through this chapter
@@ -231,7 +216,7 @@ Here are questions you can answer after going through this chapter
 ----
 
 *********************************************************************************
-questions about lists
+lists review
 *********************************************************************************
 
 * :ref:`what is a list?`
@@ -250,6 +235,24 @@ questions about lists
 * :ref:`how can I change an item in a list?<test_setting_items_in_a_list>`
 * :ref:`how can I see only parts of a list?<test_looking_at_parts_of_a_list_aka_slicing>`
 * :ref:`what causes IndexError?<test_index_error>`
+
+----
+
+*********************************************************************************
+list comprehensions review
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`what is a list comprehension?`
+* :ref:`what is a for loop?`
+* :ref:`how can I make a list with the extend method?<test_making_a_list_w_extend>`
+* :ref:`how can I make a list with a list comprehension<test_making_a_list_w_a_list_comprehension>`
+* :ref:`how can I make a list based on a condition?<test_making_a_list_w_conditions>`
+* :ref:`how can I use the filter function?<test_making_a_list_w_conditions>`
+* :ref:`how can I transform a list?<test_making_a_list_w_processes>`
+* :ref:`how can I transform and filter a list<test_making_a_list_w_processes_and_conditions>`
+* :ref:`how can I make sure class attributes are reset for every test?<how to reset class attributes (variables) for every test>`
 
 ----
 
