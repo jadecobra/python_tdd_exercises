@@ -1,6 +1,6 @@
 def only_takes_numbers(function):
     def wrapper(first_input, second_input):
-        error_message = 'Excuse me?! Numbers only! Please try again...'
+        error_message = 'Excuse me?! Numbers only! try again...'
         if isinstance(first_input, str) or isinstance(second_input, str):
             return error_message
         else:

@@ -1972,7 +1972,7 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_m
   :emphasize-lines: 4-17
 
       def test_calculator_sends_message_when_input_is_not_a_number(self):
-          error_message = 'Excuse me?! Numbers only! Please try again...'
+          error_message = 'Excuse me?! Numbers only! try again...'
 
           for data_type in (
               None,
@@ -1998,7 +1998,7 @@ the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: python
 
-  AssertionError: 'Excuse me?! Numbers only! Please try again...' != 'BOOM!!!'
+  AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
 Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py`` is doing its job, the :ref:`calculator<how to make a calculator>` only takes numbers
 
@@ -2021,7 +2021,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   .. code-block:: python
 
-    AssertionError: ABC.DEFGHIJKLMNOPQR != 'Excuse me?! Numbers only! Please try again...'
+    AssertionError: ABC.DEFGHIJKLMNOPQR != 'Excuse me?! Numbers only! try again...'
 
   there is a problem. One of the :ref:`data types<data structures>` I am testing is being allowed by the :ref:`if statement<if statements>`, which means one of them is also an integer_ or is a float_. I need a way to know which one is causing the problem
 
@@ -2064,7 +2064,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :lineno-start: 4
     :emphasize-lines: 3-4
 
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             if isinstance(first_input, bool) or isinstance(second_input, bool):
                 return error_message
@@ -2096,7 +2096,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   .. code-block:: python
 
-    AssertionError: 'Excuse me?! Numbers only! Please try again...' != 'BOOM!!!'
+    AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
 * I think you can tell what will happen next. I change the expectation to match
 
@@ -2130,7 +2130,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   .. code-block:: python
 
-    AssertionError: 'Excuse me?! Numbers only! Please try again...' != 'BOOM!!!'
+    AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
 * I change the expectation
 
@@ -2164,7 +2164,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   .. code-block:: python
 
-    AssertionError: 'Excuse me?! Numbers only! Please try again...' != 'BOOM!!!'
+    AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
 * I change the expectation to match
 
@@ -2185,7 +2185,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :lineno-start: 58
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             for data_type in (
                 None,
@@ -2246,7 +2246,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   .. code-block:: python
 
-    AssertionError: 'Excuse me?! Numbers only! Please try again...' != 'BOOM!!!'
+    AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
   There are a few problems with doing it this way
 

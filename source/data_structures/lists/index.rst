@@ -3096,7 +3096,7 @@ the terminal_ shows :ref:`AssertionError`
 
 .. code-block:: shell
 
-  AssertionError: 'Excuse me?! Numbers only! Please try again...' != 'BOOM!!!'
+  AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
 =================================================================================
 :green:`green`: make it pass
@@ -3110,7 +3110,7 @@ I change the expectation to match
 
           self.assertEqual(
               src.calculator.add(a_list, 0),
-              'Excuse me?! Numbers only! Please try again...'
+              'Excuse me?! Numbers only! try again...'
           )
 
 the test passes
@@ -3127,7 +3127,7 @@ the test passes
 
             self.assertEqual(
                 src.calculator.add(a_list, 0),
-                'Excuse me?! Numbers only! Please try again...'
+                'Excuse me?! Numbers only! try again...'
             )
             self.assertEqual(
                 src.calculator.divide(a_list, 1),
@@ -3138,7 +3138,7 @@ the test passes
 
   .. code-block:: shell
 
-    AssertionError: 'Excuse me?! Numbers only! Please try again...' != 'BAP!!!'
+    AssertionError: 'Excuse me?! Numbers only! try again...' != 'BAP!!!'
 
 * I change the expectation
 
@@ -3148,7 +3148,7 @@ the test passes
 
             self.assertEqual(
                 src.calculator.divide(a_list, 1),
-                'Excuse me?! Numbers only! Please try again...'
+                'Excuse me?! Numbers only! try again...'
             )
 
   the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``only_takes_numbers`` :ref:`function<functions>`. Never again
@@ -3161,7 +3161,7 @@ the test passes
 
         def test_calculator_sends_message_when_input_is_a_list(self):
             a_list = [0, 1, 2, 3]
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             self.assertEqual(
                 src.calculator.add(a_list, 0),
@@ -3218,7 +3218,7 @@ how to multiply a list
 
   .. code-block:: shell
 
-    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'Excuse me?! Numbers only! Please try again...'
+    AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'Excuse me?! Numbers only! try again...'
 
 * I open ``calculator.py`` in the :ref:`editor<2 editors>`
 
@@ -3230,7 +3230,7 @@ how to multiply a list
 
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             if isinstance(first_input, str) or isinstance(second_input, str):
                 return error_message
@@ -3264,7 +3264,7 @@ how to multiply a list
 
   .. code-block:: shell
 
-    AssertionError: 'Excuse me?! Numbers only! Please try again...' != 'BOOM!!!'
+    AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
 * I change the expectation to match
 
@@ -3290,7 +3290,7 @@ how to multiply a list
             )
 
             a_list = [0, 1, 2, 3]
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             self.assertEqual(
                 src.calculator.add(a_list, 0),
@@ -3350,7 +3350,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
             bad_types = (str, list)
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             # if isinstance(first_input, str) or isinstance(second_input, str):
             #     return error_message
@@ -3376,7 +3376,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
             bad_types = (str, list)
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             if isinstance(first_input, bad_types) or isinstance(second_input, bad_types):
                 return error_message
@@ -3399,7 +3399,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
         def wrapper(first_input, second_input):
             good_types = (int, float)
             bad_types = (str, list)
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             # if isinstance(first_input, bad_types) or isinstance(second_input, bad_types):
             #     return error_message
@@ -3423,7 +3423,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
                 return error_message
@@ -3487,7 +3487,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
-            error_message = 'Excuse me?! Numbers only! Please try again...'
+            error_message = 'Excuse me?! Numbers only! try again...'
 
             if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
                 return error_message
