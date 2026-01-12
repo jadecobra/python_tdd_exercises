@@ -146,7 +146,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_more_magic.py`` to make the test pass
 
-* I hit :kbd:`ctrl+c` in the terminal to stop the test
+* I hit :kbd:`ctrl+c` in the terminal_ to stop the test
 * I deactivate the `virtual environment`_
 
   .. code-block:: PowerShell

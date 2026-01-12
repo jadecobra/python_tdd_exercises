@@ -5,16 +5,19 @@
 .. include:: ../links.rst
 
 .. _clear: https://docs.python.org/3/library/stdtypes.html#dict.clear
+.. _clear method: clear_
 .. _copy: https://docs.python.org/3/library/stdtypes.html#dict.copy
+.. _copy method: copy_
+.. _fromkeys: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
+.. _fromkeys method: fromkeys_
 .. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
+.. _pop method: pop_
 .. _popitem: https://docs.python.org/3/library/stdtypes.html#dict.popitem
+.. _popitem method: popitem_
 .. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+.. _dict class: dict_
 .. _dictionary: dict_
 .. _dictionaries: dictionary_
-.. _clear method: clear_
-.. _copy method: copy_
-.. _pop method: pop_
-.. _popitem method: popitem_
 
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
@@ -300,7 +303,7 @@ test_making_a_dictionary_w_none_as_a_key
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to see if I can use :ref:`None` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+I add a test to see if I can use :ref:`None` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :lineno-start: 8
@@ -332,7 +335,7 @@ I change ``'bap'`` to ``'boom'``
 
           self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-the test passes. I can use :ref:`None` and strings_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
+the test passes. I can use strings_ and :ref:`None` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -344,7 +347,7 @@ test_making_a_dictionary_w_a_boolean_as_a_key
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to see if I can use a :ref:`boolean<booleans>` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+I add a test to see if I can use a :ref:`boolean<booleans>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :lineno-start: 10
@@ -377,7 +380,7 @@ I change ``'bap'`` to ``'boom'``
 
           self.assertEqual({False: 'boom'}, {False: 'boom'})
 
-the tests passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+the tests passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -412,7 +415,7 @@ I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pair
               {False: 'boom', True: 'bap'}
           )
 
-the test passes. I can use :ref:`booleans`, :ref:`None` and strings_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
+the test passes. I can use strings_, :ref:`booleans` and :ref:`None` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -424,7 +427,7 @@ test_making_a_dictionary_w_a_number_as_a_key
 :red:`RED`: make it fail
 =================================================================================
 
-I add a failing test to see if I can use a number as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+I add a failing test to see if I can use a number as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :lineno-start: 16
@@ -463,15 +466,17 @@ I change ``'bap'`` to ``'boom'``
               {0: 'boom'}
           )
 
-the test passes. I can use an integer_ as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+the test passes. I can use an integer_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-I want to see if I can use a float_ as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+I want to see if I can use a float_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
+  :lineno-start: 19
+  :emphasize-lines: 3
 
       def test_making_a_dictionary_w_a_number_as_a_key(self):
           self.assertEqual(
@@ -496,7 +501,7 @@ I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pair
               {0: 'boom', 0.1: 'bap'}
           )
 
-the test passes. I can use numbers (floats_ and integers_), :ref:`booleans`, :ref:`None` and strings_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
+the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`booleans` and :ref:`None` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -508,7 +513,7 @@ test_making_a_dictionary_w_a_tuple_as_a_key
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to see if I can use a tuple_ (anything in parentheses (``()``)) as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+I add a test to see if I can use a tuple_ (anything in parentheses (``()``)) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :lineno-start: 22
@@ -546,7 +551,7 @@ I change ``'bap'`` to ``'boom'``
               {(0, 1): 'boom'}
           )
 
-the test passes. I can use tuples_, numbers (floats_ and integers_), :ref:`booleans`, :ref:`None` and strings_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
+the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`booleans` and :ref:`None` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -589,7 +594,7 @@ I remove the things around the new dictionary_ then change the :ref:`key<test_ke
 
 .. code-block:: python
   :lineno-start: 31
-  :emphasize-lines: 2-4
+  :emphasize-lines: 2-3
 
       def test_making_a_dictionary_w_a_list_as_a_key(self):
 
@@ -606,7 +611,7 @@ the terminal_ still shows :ref:`TypeError`. I add assertRaises_
           with self.assertRaises(TypeError):
               {[3, 2, 1]: 'BOOM!!!'}
 
-the test passes. I cannot use a :ref:`list<lists>` as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+the test passes. I cannot use a :ref:`list<lists>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -618,7 +623,7 @@ test_making_a_dictionary_w_a_set_as_a_key
 :red:`RED`: make it fail
 =================================================================================
 
-I add another test with a set_ (single items in a curly braces (``{}``)) as a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_
+I add another test with a set_ (single items in curly braces (``{}``)) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :lineno-start: 33
@@ -652,7 +657,7 @@ I add assertRaises_ to handle the :ref:`Exception<errors>`
           with self.assertRaises(TypeError):
               {{3, 2, 1}: 'BOOM!!!'}
 
-the test is green again. I cannot use :ref:`lists` or sets_ as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_
+the test is green again. I cannot use :ref:`lists` or sets_ as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -703,7 +708,7 @@ I add assertRaises_
 
   # Exceptions seen
 
-the test passes. I cannot use dictionaries_, sets_ or :ref:`lists` as :ref:`keys<test_keys_of_a_dictionary>` in a dictionary_. They are not hashable_, which means they can change in their lifetime
+the test passes. I cannot use dictionaries_, sets_ or :ref:`lists` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`. They are not hashable_, which means they can change in their lifetime
 
 ----
 
@@ -715,7 +720,7 @@ test_attributes_and_methods_of_dictionaries
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test with the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of dictionaries_
+I add a new test with the `dir built-in function`_ to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of dictionaries_
 
 .. code-block:: python
   :lineno-start: 42
@@ -744,13 +749,12 @@ It also gives me a message about how to show the full difference between the two
 
   Diff is 720 characters long. Set self.maxDiff to None to see it.
 
-maxDiff_ is a :ref:`class attribute<test_attribute_error_w_class_attributes>` that is used to set the maximum length of differences between 2 items that the terminal_ shows
+`unittest.TestCase.maxDiff`_ is a :ref:`class attribute<test_attribute_error_w_class_attributes>` that is used to set the maximum length of differences between 2 items that the terminal_ shows
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I move the terminal_ to right side of the screen
 * I add maxDiff_ to the test
 
   .. code-block:: python
@@ -857,9 +861,7 @@ maxDiff_ is a :ref:`class attribute<test_attribute_error_w_class_attributes>` th
 
     # Exceptions seen
 
-  the terminal still shows green
-
-* I move the terminal_ back to the bottom of the screen
+  the terminal_ still shows green
 
 ----
 
@@ -888,9 +890,8 @@ test_clear_empties_a_dictionary
 
 
     'clear',
-    'copy',
 
-  the terminal_ shows green. The clear_ :ref:`method<functions>` returns :ref:`None`
+  still green. The `clear method`_ returns :ref:`None`
 
 * I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the dictionary_
 
@@ -909,7 +910,7 @@ test_clear_empties_a_dictionary
 
     AssertionError: {} != {'key': 'value'}
 
-  the clear_ :ref:`method<functions>` emptied the dictionary_, :ref:`same as it does with lists<test_clear_empties_a_list>`
+  the `clear method`_ emptied the dictionary_, :ref:`same as it does with lists<test_clear_empties_a_list>`
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -945,14 +946,16 @@ the test passes
 
 
     'clear',
-    'copy',
 
 * I remove clear_ from the TODO list
 
   .. code-block:: python
     :lineno-start: 104
 
-    'copy',
+            self.assertEqual(a_dictionary, {})
+
+
+    'clear',
     'fromkeys',
     'get',
     'items',
@@ -1059,7 +1062,11 @@ the test passes
 * I remove copy_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 111
+    :lineno-start: 107
+
+                {'key': 'value'}
+            )
+
 
     'fromkeys',
     'get',
@@ -1137,7 +1144,7 @@ the terminal_ shows :ref:`TypeError`
 
     AssertionError: {0: None, 1: None} is not None
 
-  the fromkeys_ :ref:`method<functions>` returns a dictionary_ that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None`
+  the `fromkeys method`_ returns a dictionary_ that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None`. It reminds me of a :ref:`list comprehension<list comprehensions>`
 
 * I add the dictionary_ as an expectation
 
@@ -1175,7 +1182,7 @@ the terminal_ shows :ref:`TypeError`
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another `assert method`_ to see what happens to the first dictionary_ in the test
+* I add another `assert method`_ to see what happened to ``a_dictionary``
 
   .. code-block:: python
     :lineno-start: 110
@@ -1198,7 +1205,7 @@ the terminal_ shows :ref:`TypeError`
   the dictionary_ did not change
 
 * I remove the last line I added
-* I change the call fromkeys_ to use the dict_ :ref:`class<classes>` instead
+* then change the call to fromkeys_ to use the `dict class`_ instead
 
   .. code-block:: python
     :lineno-start: 110
@@ -1232,7 +1239,7 @@ the terminal_ shows :ref:`TypeError`
 
   still green
 
-* the dictionary_ made with the fromkeys_ :ref:`method<functions>` has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal_ showed :ref:`TypeError`
+* the dictionary_ made with the `fromkeys method`_ has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal_ showed :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1268,11 +1275,11 @@ the terminal_ shows :ref:`TypeError`
 
     AssertionError: {0: 'default', 1: 'default'} != {0: None, 1: None}
 
-  I change the values to match
+* I change the values in the expectation to match
 
   .. code-block:: python
     :lineno-start: 111
-    :emphasize-lines: 2-3
+    :emphasize-lines: 3
 
             self.assertEqual(
                 dict.fromkeys((0, 1), 'default'),
@@ -1300,7 +1307,11 @@ the terminal_ shows :ref:`TypeError`
 * I remove fromkeys_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 113
+
+                {0: 'default', 1: 'default'}
+            )
+
 
     'get',
     'items',
@@ -2518,7 +2529,7 @@ the test passes
 
     AssertionError: 'value' != 'default'
 
-  I get ``'value'`` back. setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key<test_keys_of_a_dictionary>` in a dictionary_ when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_
+  I get ``'value'`` back. setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key in a dictionary<test_keys_of_a_dictionary>` when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_
 
 * I change the expectation to match
 
@@ -3291,7 +3302,7 @@ you know
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`
 * :ref:`what you can do with Lists<lists>`
-* :ref:`how to use list comprehensions<lists: list comprehensions>`
+* :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 

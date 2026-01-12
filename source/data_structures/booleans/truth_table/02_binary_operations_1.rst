@@ -605,7 +605,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
             if second_input == True:
                 return True
 
-  the terminal still shows green
+  the terminal_ still shows green
 
 * there are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>`. In the other 3 cases it returns :ref:`False <test_what_is_false>`.
 

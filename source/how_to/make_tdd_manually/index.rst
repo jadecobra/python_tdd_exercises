@@ -145,7 +145,7 @@ On Windows computers without Windows Subsystem for Linux
 * :ref:`how to write text to a file on Windows without Windows Subsystem for Linux`
 * :ref:`how to install Python packages in a virtual environment on Windows without WSL`
 * :ref:`how to see what packages are installed in a virtual environment on Windows without WSL`
-* :ref:`how to view all the commands I typed in a terminal on Windows without WSL`
+* :ref:`how to view all the commands I typed in a terminal_ on Windows without WSL`
 * :ref:`how to make a PowerShell script`
 * :ref:`how to use a variable in a PowerShell script`
 * :ref:`how to run a PowerShell script`

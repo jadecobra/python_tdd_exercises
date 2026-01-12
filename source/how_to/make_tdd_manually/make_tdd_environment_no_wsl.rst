@@ -67,7 +67,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment on Windows without WSL>`
 * :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment on Windows without WSL>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
-* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal on Windows without WSL>`
+* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal_ on Windows without WSL>`
 
 ----
 
@@ -1072,7 +1072,7 @@ and it shows results without going back to the command line
 ----
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-how to open the test file in the editor from the terminal on Windows without WSL
+how to open the test file in the editor from the terminal_ on Windows without WSL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
@@ -1170,7 +1170,7 @@ review
 I gave the computer some commands to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
 
 =================================================================================
-how to view all the commands I typed in a terminal on Windows without WSL
+how to view all the commands I typed in a terminal_ on Windows without WSL
 =================================================================================
 
 * I type history_ in the terminal_ to see all the commands I have typed so far
@@ -1272,7 +1272,7 @@ how to view all the commands I typed in a terminal on Windows without WSL
   - :ref:`make a requirements file for the needed Python packages<how to write text to a file on Windows without Windows Subsystem for Linux>`
   - :ref:`install the packages listed in the requirements file<how to install Python packages in a virtual environment on Windows without WSL>`
   - :ref:`run the tests automatically<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
-  - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal on Windows without WSL>`
+  - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal_ on Windows without WSL>`
   - make the test pass
 
 ----

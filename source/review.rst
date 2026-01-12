@@ -73,7 +73,7 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment on Windows without WSL>`
 * :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment on Windows without WSL>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
-* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal on Windows without WSL>`
+* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal_ on Windows without WSL>`
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
 * :ref:`What is a variable?<how to use a variable in a shell script>`
 * :ref:`How can I use a variable in a PowerShell script<how to use a variable in a PowerShell script>`
@@ -261,7 +261,7 @@ testing
 *********************************************************************************
 
 * :ref:`How can I run automated tests after I exit them in the terminal?<how to run the tests automatically in a virtual environment>`
-* :ref:`How can I run automated tests after I exit them in the terminal on Windows without Windows Subsystem for Linux?<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
+* :ref:`How can I run automated tests after I exit them in the terminal_ on Windows without Windows Subsystem for Linux?<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
 
 ----
 

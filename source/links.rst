@@ -70,7 +70,6 @@
 .. _floats: float_
 .. _floor (integer) division: https://grokipedia.com/page/Division_(mathematics)#Division_in_different_contexts
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
-.. _fromkeys: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _f-strings: `f-string`_
 .. _get: https://docs.python.org/3/library/stdtypes.html#dict.get

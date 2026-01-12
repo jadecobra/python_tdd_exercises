@@ -712,7 +712,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
             (not (first_input and not second_input))
         )
 
-  the terminal shows SyntaxError_
+  the terminal_ shows SyntaxError_
 
   .. code-block:: shell
 

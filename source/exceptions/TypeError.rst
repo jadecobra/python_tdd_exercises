@@ -1529,7 +1529,7 @@ the test passes
   I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 67
     :emphasize-lines: 8-9
 
         def test_calculator_raises_type_error_w_none(self):

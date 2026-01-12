@@ -21,7 +21,7 @@
 .. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
 
 #################################################################################
-lists: list comprehensions
+list comprehensions
 #################################################################################
 
 .. raw:: html
@@ -2957,7 +2957,7 @@ you know
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`
 * :ref:`what you can do with Lists<lists>`
-* :ref:`how to use list comprehensions<lists: list comprehensions>`
+* :ref:`how to use list comprehensions<list comprehensions>`
 
 :ref:`Would you like to test dictionaries?<dictionaries>`
 

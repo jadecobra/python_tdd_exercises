@@ -57,7 +57,7 @@ on a Windows_ computer without `Windows Subsystem for Linux`_
 #. :ref:`I make a requirements file for the needed Python packages<how to write text to a file on Windows without Windows Subsystem for Linux>`
 #. :ref:`I install the packages listed in the requirements file<how to install Python packages in a virtual environment on Windows without WSL>`
 #. :ref:`I run the tests automatically<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
-#. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal on Windows without WSL>`
+#. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal_ on Windows without WSL>`
 #. I make the test pass
 #. then I start working on the project
 

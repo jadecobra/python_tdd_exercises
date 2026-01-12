@@ -264,7 +264,7 @@ you have gone through a lot of information and know
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`
 * :ref:`what you can do with Lists<lists>`
-* :ref:`how to use list comprehensions<lists: list comprehensions>`
+* :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`what you can do with classes<classes>`

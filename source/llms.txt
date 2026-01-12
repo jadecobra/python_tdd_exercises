@@ -53,7 +53,7 @@
 - [dictionaries](https://www.pumpingpython.com/data_structures/dictionaries.html)
 - [data structures](https://www.pumpingpython.com/data_structures/index.html)
 - [lists](https://www.pumpingpython.com/data_structures/lists/index.html)
-- [lists: list comprehensions](https://www.pumpingpython.com/data_structures/lists/list_comprehensions.html)
+- [list comprehensions](https://www.pumpingpython.com/data_structures/lists/list_comprehensions.html)
 - [None](https://www.pumpingpython.com/data_structures/none.html)
 
 ## Dot_notation.html
