@@ -1,7 +1,7 @@
 def only_takes_numbers(function):
     def wrapper(first_input, second_input):
         good_types = (int, float)
-        error_message = 'Excuse me?! I only work with numbers. Please try again...'
+        error_message = 'Excuse me?! Numbers only! Please try again...'
 
         if isinstance(first_input, bool) or isinstance(second_input, bool):
             return error_message
