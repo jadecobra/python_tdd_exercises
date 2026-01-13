@@ -3278,7 +3278,7 @@ the test passes
 close the project
 *********************************************************************************
 
-* I close ``dictionaries.py``
+* I close ``dictionaries.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
   .. code-block:: shell
@@ -3329,11 +3329,11 @@ close the project
 review
 *********************************************************************************
 
-I ran tests for dictionaries_
+I ran tests to show that I can make a dictionary_ with the constructor_ ``dict()`` or curly braces ``{}``, then I ran the following tests for the :ref:
 
 * they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 * any :ref:`object<classes>` can be used as values
-* strings_, :ref:`booleans`, integers_, floats_ and tuples_ can be used as keys
+* tuples_, strings_, floats_, integers_, :ref:`booleans` and :ref:`None` can be used as :ref:`keys<test_keys_of_a_dictionary>`
 * they can be represented with ``{}``
 * they can be made with the dict_ constructor_
 
