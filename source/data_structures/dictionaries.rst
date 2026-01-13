@@ -3413,7 +3413,7 @@ open the project
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
 =================================================================================
-:red:`red`: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to use a dictionary_ to test the :ref:`calculator<how to make a calculator>`
@@ -3448,7 +3448,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
 
 =================================================================================
-:green:`green`: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change the expectation to the right calculation
@@ -3465,7 +3465,7 @@ I change the expectation to the right calculation
 the test passes
 
 =================================================================================
-:yellow:`refactor`: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
@@ -3740,6 +3740,349 @@ the test passes
             )
 
   the test passes
+
+* I can use the :ref:`values method<test_values_of_a_dictionary>` to make a :ref:`list<lists>` to test the :ref:`calculator<how to make a calculator>` in ``test_calculator_w_list_items``
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 2-7
+
+        def test_calculator_w_list_items(self):
+            # two_numbers = [self.random_first_number, self.random_second_number]
+            a_dictionary = {
+                'x': self.random_first_number,
+                'y': self.random_second_number
+            }
+            two_numbers = list(a_dictionary.values())
+
+            self.assertEqual(
+                src.calculator.add(two_numbers[0], two_numbers[1]),
+                self.random_first_number+self.random_second_number
+            )
+
+  the test is still green
+
+* I can also use a dictionary_ with a `for loop`_ to make ``test_calculator_sends_message_when_input_is_not_a_number`` more complex and simpler
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 4-9, 21-25
+
+    def test_calculator_sends_message_when_input_is_not_a_number(self):
+        error_message = 'Excuse me?! Numbers only. Try again...'
+
+        arithmetic = {
+            'add': src.calculator.add,
+            'subtract': src.calculator.subtract,
+            'multiply': src.calculator.multiply,
+            'divide': src.calculator.divide
+        }
+
+        for data in (
+            None,
+            True, False,
+            str(), 'text',
+            tuple(), (0, 1, 2, 'n'),
+            list(), [0, 1, 2, 'n'],
+            set(), {0, 1, 2, 'n'},
+            dict(), {'key': 'value'},
+        ):
+            with self.subTest(i=data):
+                for operation in arithmetic:
+                    self.assertEqual(
+                        arithmetic[operation](data, a_random_number),
+                        'BOOM'
+                    )
+                self.assertEqual(
+                    src.calculator.add(data, a_random_number()),
+                    error_message
+                )
+
+  the terminal_ shows :ref:`AssertionError` for every case in the iterable_
+
+  .. code-block:: python
+
+    SUBFAILED(i=None) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=True) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=False) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i='') tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i='text') tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=()) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=(0, 1, 2, 'n')) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=[]) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=[0, 1, 2, 'n']) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=set()) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={0, 1, 2, 'n'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={'key': 'value'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+
+  the test works
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 5
+
+                with self.subTest(i=data):
+                    for operation in arithmetic:
+                        self.assertEqual(
+                            arithmetic[operation](data, a_random_number),
+                            error_message
+                        )
+
+  the test passes
+
+* I remove the other :ref:`assertions<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 58
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            error_message = 'Excuse me?! Numbers only. Try again...'
+
+            arithmetic = {
+                'add': src.calculator.add,
+                'subtract': src.calculator.subtract,
+                'multiply': src.calculator.multiply,
+                'divide': src.calculator.divide
+            }
+
+            for data in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                with self.subTest(i=data):
+                    for operation in arithmetic:
+                        self.assertEqual(
+                            arithmetic[operation](data, a_random_number),
+                            error_message
+                        )
+
+        def test_calculator_w_list_items(self):
+
+  this solution is not as easy to read as what was there before especially for someone new to Python_
+
+----
+
+*********************************************************************************
+test_calculator_functions
+*********************************************************************************
+
+I want to use a dictionary_ to write one test that covers all the :ref:`4 calculator functions<how to make a calculator>`
+
+=================================================================================
+:green:`RED`: make it pass
+=================================================================================
+
+* I add a new test
+
+  .. code-block:: python
+    :lineno-start: 173
+    :emphasize-lines: 4-10, 12-17
+
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(*not_two_numbers)
+
+        def test_calculator_functions(self):
+            arithmetic = {
+                'addition': src.calculator.add,
+                'subtraction': src.calculator.subtract,
+                'division': src.calculator.divide,
+                'multiplication': src.calculator.multiply
+            }
+
+            for operation in arithmetic:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        arithmetic[operation](self.random_first_number, self.random_second_number),
+                        'BOOM!!!'
+                    )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError` for the 4 arithmetic operations
+
+  .. code-block:: python
+
+    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: QRS.TUVWXYZABCDEF != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: GHI.JKLMNOPQRSTUVWX != 'BOOM!!!'
+    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: Y.ABCDEFGHIJKLMNOP != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: QRSTUV.WXYZABCDEFG != 'BOOM!!!'
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+* I need a way to add the calculations for each operation to the :ref:`assertion<what is an assertion?>`. I add another dictionary_
+
+  .. code-block:: python
+    :lineno-start: 181
+    :emphasize-lines: 3-8
+
+                'multiplication': src.calculator.multiply
+            }
+            data = {
+                'addition': self.random_first_number+self.random_second_number,
+                'subtraction': self.random_first_number-self.random_second_number,
+                'division': self.random_first_number/self.random_second_number,
+                'multiplication': self.random_first_number*self.random_second_number,
+            }
+
+            for operation in arithmetic:
+
+* I use the new dictionary_ in the calculation in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 190
+    :emphasize-lines: 5
+
+            for operation in arithmetic:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        arithmetic[operation](self.random_first_number, self.random_second_number),
+                        data[operation]
+                    )
+
+  the test passes
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+* the two dictionaries_ in this test have the same :ref:`keys<test_keys_of_a_dictionary>`. I put the dictionaries_ together
+
+  .. code-block:: python
+    :lineno-start: 187
+    :emphasize-lines:
+
+                'multiplication': self.random_first_number*self.random_second_number,
+            }
+
+            arithmetic_tests = {
+                'addition': {
+                    'function': src.calculator.add,
+                    'expectation': self.random_first_number+self.random_second_number,
+                },
+                'subtraction': {
+                    'function': src.calculator.subtract,
+                    'expectation': self.random_first_number-self.random_second_number,
+                },
+                'division': {
+                    'function': src.calculator.divide,
+                    'expectation': self.random_first_number/self.random_second_number,
+                },
+                'multiplication': {
+                    'function': src.calculator.multiply,
+                    'expectation': self.random_first_number*self.random_second_number,
+                }
+            }
+
+            for operation in arithmetic:
+
+* I add a new :ref:`assertion<what is an assertion?>` in a `for loop`_ with the `subTest method`_
+
+  .. code-block:: python
+    :lineno-start: 213
+    :emphasize-lines: 4-12
+
+                        data[operation]
+                    )
+
+            for operation in arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        arithmetic_tests[operation]['function'](
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        'BOOM!!!'
+                    )
+
+
+    def test_addition(self):
+
+  the terminal_ shows :ref:`AssertionError`:
+
+  .. code-block:: python
+
+    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: HIJ.KLMNOPQRSTUVW != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: XYZA.BCDEFGHIJKLMN != 'BOOM!!!'
+    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: NOP.QRSTUVWXYZABCDEF != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: GHIJKLM.NOPQRSTUVWX != 'BOOM!!!'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 216
+    :emphasize-lines: 8
+
+            for operation in arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        arithmetic_tests[operation]['function'](
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        arithmetic_tests[operation]['expectation']
+                    )
+
+  the test passes
+
+* I remove the other dictionaries_ and `for loop`_
+
+  .. code-block:: python
+    :lineno-start: 176
+
+        def test_calculator_functions(self):
+            arithmetic_tests = {
+                'addition': {
+                    'function': src.calculator.add,
+                    'expectation': self.random_first_number+self.random_second_number,
+                },
+                'subtraction': {
+                    'function': src.calculator.subtract,
+                    'expectation': self.random_first_number-self.random_second_number,
+                },
+                'division': {
+                    'function': src.calculator.divide,
+                    'expectation': self.random_first_number/self.random_second_number,
+                },
+                'multiplication': {
+                    'function': src.calculator.multiply,
+                    'expectation': self.random_first_number*self.random_second_number,
+                }
+            }
+
+            for operation in arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        arithmetic_tests[operation]['function'](
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        arithmetic_tests[operation]['expectation']
+                    )
+
+* I remove the ``test_addition``, ``test_subtraction``, ``test_multiplication`` and ``test_division``
+
+  .. code-block:: python
+
+    class TestCalculator(unittest.TestCase):
+
+        def setUp(self):
+            self.random_first_number = a_random_number()
+            self.random_second_number = a_random_number()
+
+        def test_calculator_functions(self):
+
+
 
 ----
 

@@ -1989,7 +1989,7 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_m
       def test_calculator_sends_message_when_input_is_not_a_number(self):
           error_message = 'Excuse me?! Numbers only! try again...'
 
-          for data_type in (
+          for data in (
               None,
               True, False,
               str(),
@@ -1999,7 +1999,7 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_m
               dict(),
           ):
               self.assertEqual(
-                  src.calculator.add(data_type, a_random_number()),
+                  src.calculator.add(data, a_random_number()),
                   'BOOM!!!'
               )
 
@@ -2027,7 +2027,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :emphasize-lines: 3
 
                 self.assertEqual(
-                    src.calculator.add(data_type, a_random_number()),
+                    src.calculator.add(data, a_random_number()),
                     error_message
                 )
 
@@ -2047,9 +2047,9 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
                 dict(),
             ):
-                with self.subTest(i=data_type):
+                with self.subTest(i=data):
                     self.assertEqual(
-                        src.calculator.add(data_type, a_random_number()),
+                        src.calculator.add(data, a_random_number()),
                         error_message
                     )
 
@@ -2070,7 +2070,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     SUBFAILED(i=False) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: MNO.PQRSTUVWXYZABCD != 'Excuse ...
     =========== 2 failed, 7 passed in X.YZs ============
 
-  the `unittest.TestCase.subTest method`_ runs the code in its context as a sub test, showing the values I give in ``i=data_type`` so that I can see which one caused the error
+  the `unittest.TestCase.subTest method`_ runs the code in its context as a sub test, showing the values I give in ``i=data`` so that I can see which one caused the error
 
 * I add a :ref:`condition<if statements>` for :ref:`booleans` in the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
 
@@ -2099,7 +2099,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
-            error_message = 'Excuse me?! numbers only. Try again...'
+            error_message = 'Excuse me?! Numbers only. Try again...'
 
             # if isinstance(first_input, bool) or isinstance(second_input, bool):
             #     return error_message
@@ -2126,7 +2126,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
-            error_message = 'Excuse me?! numbers only. Try again...'
+            error_message = 'Excuse me?! Numbers only. Try again...'
 
             for value in (first_input, second_input):
                 if isinstance(value, bool) or not isinstance(value, good_types):
@@ -2146,13 +2146,13 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :lineno-start: 70
     :emphasize-lines: 6-9
 
-                with self.subTest(i=data_type):
+                with self.subTest(i=data):
                     self.assertEqual(
-                        src.calculator.add(data_type, a_random_number()),
+                        src.calculator.add(data, a_random_number()),
                         error_message
                     )
                     self.assertEqual(
-                        src.calculator.divide(data_type, a_random_number()),
+                        src.calculator.divide(data, a_random_number()),
                         'BOOM!!!'
                     )
 
@@ -2169,7 +2169,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :emphasize-lines: 3
 
                     self.assertEqual(
-                        src.calculator.divide(data_type, a_random_number()),
+                        src.calculator.divide(data, a_random_number()),
                         error_message
                     )
 
@@ -2182,11 +2182,11 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :emphasize-lines: 5-8
 
                     self.assertEqual(
-                        src.calculator.divide(data_type, a_random_number()),
+                        src.calculator.divide(data, a_random_number()),
                         error_message
                     )
                     self.assertEqual(
-                        src.calculator.multiply(data_type, a_random_number()),
+                        src.calculator.multiply(data, a_random_number()),
                         'BOOM!!!'
                     )
 
@@ -2203,7 +2203,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :emphasize-lines: 3
 
                     self.assertEqual(
-                        src.calculator.multiply(data_type, a_random_number()),
+                        src.calculator.multiply(data, a_random_number()),
                         error_message
                     )
 
@@ -2216,11 +2216,11 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :emphasize-lines: 5-8
 
                     self.assertEqual(
-                        src.calculator.multiply(data_type, a_random_number()),
+                        src.calculator.multiply(data, a_random_number()),
                         error_message
                     )
                     self.assertEqual(
-                        src.calculator.subtract(data_type, a_random_number()),
+                        src.calculator.subtract(data, a_random_number()),
                         'BOOM!!!'
                     )
 
@@ -2237,7 +2237,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :emphasize-lines: 3
 
                     self.assertEqual(
-                        src.calculator.subtract(data_type, a_random_number()),
+                        src.calculator.subtract(data, a_random_number()),
                         error_message
                     )
 
@@ -2251,7 +2251,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
         def test_calculator_sends_message_when_input_is_not_a_number(self):
             error_message = 'Excuse me?! Numbers only! try again...'
 
-            for data_type in (
+            for data in (
                 None,
                 True, False,
                 str(),
@@ -2260,21 +2260,21 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
                 set(),
                 dict(),
             ):
-                with self.subTest(i=data_type):
+                with self.subTest(i=data):
                     self.assertEqual(
-                        src.calculator.add(data_type, a_random_number()),
+                        src.calculator.add(data, a_random_number()),
                         error_message
                     )
                     self.assertEqual(
-                        src.calculator.divide(data_type, a_random_number()),
+                        src.calculator.divide(data, a_random_number()),
                         error_message
                     )
                     self.assertEqual(
-                        src.calculator.multiply(data_type, a_random_number()),
+                        src.calculator.multiply(data, a_random_number()),
                         error_message
                     )
                     self.assertEqual(
-                        src.calculator.subtract(data_type, a_random_number()),
+                        src.calculator.subtract(data, a_random_number()),
                         error_message
                     )
 
@@ -2282,24 +2282,49 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   Using a `for loop`_ saved me having to write a lot of tests
 
-* I could also do this with a `list comprehension`_, though it is a little silly
+* I can add more data to the iterable_ without having to add more tests
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 7-11
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            error_message = 'Excuse me?! Numbers only! try again...'
+
+            for data in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                with self.subTest(i=data):
+
+  the test is still green
+
+* I could also write the test with a `list comprehension`_, though it looks ugly
 
   .. code-block:: python
     :lineno-start: 84
-    :emphasize-lines: 6-14
+    :emphasize-lines: 11-15
 
                 self.assertEqual(
-                    src.calculator.subtract(data_type, a_random_number()),
+                    src.calculator.subtract(data, a_random_number()),
                     error_message
                 )
 
         [
             self.assertEqual(
-                src.calculator.add(data_type, a_random_number),
+                src.calculator.add(data, a_random_number),
                 'BOOM!!!'
-            ) for data_type in (
-                None, True, False, str(), tuple(), list(),
-                set(), dict(),
+            ) for data in (
+                None, True, False, str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
             )
         ]
 

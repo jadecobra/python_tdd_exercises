@@ -3099,7 +3099,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
 =================================================================================
-:green:`green`: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change the expectation to match
@@ -3116,7 +3116,7 @@ I change the expectation to match
 the test passes
 
 =================================================================================
-:yellow:`refactor`: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add another :ref:`assertion<what is an assertion?>` for the next :ref:`function<functions>`
@@ -3509,7 +3509,7 @@ test_calculator_w_list_items
 I can use a list_ to test the :ref:`calculator functions<how to make a calculator>` as long as its items are numbers
 
 =================================================================================
-:red:`red`: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to use the :ref:`index of the items in the list<test_index_returns_first_position_of_item_in_a_list>` to test the :ref:`calculator<how to make a calculator>`
@@ -3541,7 +3541,7 @@ the terminal_ shows :ref:`AssertionError`
   AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
 
 =================================================================================
-:green:`green`: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I change the expectation to the right calculation
@@ -3558,7 +3558,7 @@ I change the expectation to the right calculation
 the test passes
 
 =================================================================================
-:yellow:`refactor`: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
@@ -3808,7 +3808,7 @@ test_calculator_raises_type_error_when_given_more_than_two_inputs
 It is important to note that the star expression always gives the items from the list in order, and I cannot use a list_ that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
 
 =================================================================================
-:red:`red`: make it fail
+:red:`RED`: make it fail
 =================================================================================
 
 I add a new test to show the problem when I have more than 2 inputs and use a star expression
@@ -3837,7 +3837,7 @@ the terminal_ shows :ref:`TypeError`
   TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
 =================================================================================
-:green:`green`: make it pass
+:green:`GREEN`: make it pass
 =================================================================================
 
 I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
@@ -3855,7 +3855,7 @@ I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
 the test passes
 
 =================================================================================
-:yellow:`refactor`: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 * I add a failing line for :ref:`division<test_division>` with the new list_

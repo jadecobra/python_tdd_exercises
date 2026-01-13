@@ -56,9 +56,9 @@ class TestCalculator(unittest.TestCase):
             )
 
     def test_calculator_sends_message_when_input_is_not_a_number(self):
-        error_message = 'Excuse me?! numbers only. Try again...'
+        error_message = 'Excuse me?! Numbers only. Try again...'
 
-        for data_type in (
+        for data in (
             None,
             True, False,
             str(),
@@ -67,21 +67,21 @@ class TestCalculator(unittest.TestCase):
             set(),
             dict(),
         ):
-            with self.subTest(i=data_type):
+            with self.subTest(i=data):
                 self.assertEqual(
-                    src.calculator.add(data_type, a_random_number()),
+                    src.calculator.add(data, a_random_number()),
                     error_message
                 )
                 self.assertEqual(
-                    src.calculator.divide(data_type, a_random_number()),
+                    src.calculator.divide(data, a_random_number()),
                     error_message
                 )
                 self.assertEqual(
-                    src.calculator.multiply(data_type, a_random_number()),
+                    src.calculator.multiply(data, a_random_number()),
                     error_message
                 )
                 self.assertEqual(
-                    src.calculator.subtract(data_type, a_random_number()),
+                    src.calculator.subtract(data, a_random_number()),
                     error_message
                 )
 
