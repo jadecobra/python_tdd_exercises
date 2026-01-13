@@ -1,17 +1,16 @@
 def only_takes_numbers(function):
     def wrapper(first_input, second_input):
         good_types = (int, float)
-        error_message = 'Excuse me?! Numbers only! try again...'
+        error_message = 'Excuse me?! numbers only. Try again...'
 
-        if isinstance(first_input, bool) or isinstance(second_input, bool):
-            return error_message
-        if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
-            return error_message
-        else:
-            try:
-                return function(first_input, second_input)
-            except TypeError:
+        for value in (first_input, second_input):
+            if isinstance(value, bool) or not isinstance(value, good_types):
                 return error_message
+
+        try:
+            return function(first_input, second_input)
+        except TypeError:
+            return error_message
     return wrapper
 
 
