@@ -1133,6 +1133,12 @@ how to deactivate a virtual environment on Windows without WSL
 
     deactivate
 
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: PowerShell
+
+    ...\pumping_python\magic
+
 * I try `pytest-watch`_ again to show that I do not have it installed outside the `virtual environment`_
 
   .. code-block:: PowerShell

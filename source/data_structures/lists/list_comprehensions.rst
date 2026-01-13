@@ -1836,34 +1836,49 @@ close the project
 *********************************************************************************
 
 * I close ``test_list_comprehensions.py`` and ``list_comprehensions.py`` in the :ref:`editors<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
-* I deactivate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/list_comprehensions
-
-* I `change directory`_ to the parent of ``list_comprehensions``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
   .. code-block:: shell
 
     .../pumping_python
 
   I am back in the ``pumping_python`` directory_
+
+.. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
+
+  * the terminal_ shows
+
+    .. code-block:: PowerShell
+
+      (.venv) ...\pumping_python\list_comprehensions
+
+  * I deactivate the `virtual environment`_
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      deactivate
+
+    the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+    .. code-block:: PowerShell
+
+      ...\pumping_python\list_comprehensions
+
+  * I `change directory`_ to the parent of ``list_comprehensions``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      cd ..
+
+    the terminal_ shows
+
+    .. code-block:: PowerShell
+
+      ...\pumping_python
+
+    I am back in the ``pumping_python`` directory_
 
 ----
 

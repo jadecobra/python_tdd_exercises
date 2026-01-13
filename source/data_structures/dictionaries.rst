@@ -2857,7 +2857,17 @@ the test passes
 * I remove update_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 209
+    :lineno-start: 199
+
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'updated value',
+                    'new_key': [0, 1, 2, 'n'],
+                    'another_key': {0, 1, 2, 'n'},
+                }
+            )
+
 
     'values'
 
@@ -2992,7 +3002,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   .. code-block:: python
     :lineno-start: 213
-    :emphasize-lines: 3
+    :emphasize-lines: 3-6
 
             self.assertEqual(
                 list(a_dictionary.values()),
@@ -3098,7 +3108,7 @@ the test passes
 
     KeyError: 'not_in_dictionary'
 
-  I change the assertEqual_ to assertRaises_
+* I change the assertEqual_ to assertRaises_
 
   .. code-block:: python
     :lineno-start: 223
@@ -3130,7 +3140,7 @@ the test passes
 
     AssertionError: 'default' != ''
 
-  I change the expectation
+* I change the expectation
 
   .. code-block:: python
     :lineno-start: 227
@@ -3161,7 +3171,7 @@ the test passes
 
     KeyError: 'not_in_dictionary'
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
     :lineno-start: 227
@@ -3196,7 +3206,7 @@ the test passes
 
     AssertionError: 'default' != ''
 
-  I change the expectation to match
+* I change the expectation to match
 
   .. code-block:: python
     :lineno-start: 234
@@ -3227,7 +3237,7 @@ the test passes
 
     KeyError: 'popitem(): dictionary is empty'
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
     :lineno-start: 221
@@ -3268,35 +3278,50 @@ the test passes
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
-* I deactivate the `virtual environment`_
+* I close ``dictionaries.py``
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: python
-
-    .../pumping_python/dictionaries
-
-* I `change directory`_ to the parent of ``dictionaries``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python
 
   I am back in the ``pumping_python`` directory_
+
+.. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
+
+  * the terminal_ shows
+
+    .. code-block:: PowerShell
+
+      (.venv) ...\pumping_python\dictionaries
+
+  * I deactivate the `virtual environment`_
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      deactivate
+
+    the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+    .. code-block:: PowerShell
+
+      ...\pumping_python\dictionaries
+
+  * I `change directory`_ to the parent of ``dictionaries``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      cd ..
+
+    the terminal_ shows
+
+    .. code-block:: PowerShell
+
+      ...\pumping_python
+
+    I am back in the ``pumping_python`` directory_
 
 ----
 

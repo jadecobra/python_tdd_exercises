@@ -1217,6 +1217,12 @@ how to deactivate a virtual environment
 
     deactivate
 
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/magic
+
 * I try `pytest-watch`_ again to show that I do not have it installed outside the `virtual environment`_
 
   .. code-block:: shell
