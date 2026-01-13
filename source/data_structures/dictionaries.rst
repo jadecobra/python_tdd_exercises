@@ -14,6 +14,7 @@
 .. _get method: get_
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
+.. _keys method: keys_
 .. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
 .. _pop method: pop_
 .. _popitem: https://docs.python.org/3/library/stdtypes.html#dict.popitem
@@ -288,7 +289,7 @@ the test passes. These are two ways to make an empty dictionary_ with
 
     AssertionError: {'key': 'value'} != {}
 
-  I change the expectation to match the values in the terminal_
+* I change the expectation to match the values in the terminal_
 
   .. code-block:: python
     :lineno-start: 8
@@ -1435,7 +1436,7 @@ the test passes
 
   the test passes
 
-* I change ``0`` in the call to get_ to be clearer
+* I change ``0`` in the call to be clearer
 
   .. code-block:: python
     :lineno-start: 118
@@ -1515,7 +1516,11 @@ the test passes
 * I remove get_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 124
+
+                'value'
+            )
+
 
     'items',
     'keys',
@@ -1563,9 +1568,10 @@ the terminal_ shows :ref:`AssertionError`
 * I copy the ``dict_items`` :ref:`object<classes>` from the terminal_ and paste it as the expectation
 
   .. code-block:: python
-    :lineno-start: 129
-    :emphasize-lines: 1-4
+    :lineno-start: 128
+    :emphasize-lines: 2-5
 
+            a_dictionary = {'key': 'value'}
             self.assertIsNone(
                 a_dictionary.items(),
                 dict_items([('key', 'value')])
@@ -1577,7 +1583,7 @@ the terminal_ shows :ref:`AssertionError`
 
     NameError: name 'dict_items' is not defined
 
-  this new :ref:`object<classes>` has a :ref:`list<lists>` and I know how to work with :ref:`lists`
+  this new :ref:`object<classes>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`
 
 * I remove the stuff around the :ref:`list<lists>`
 
@@ -1596,7 +1602,7 @@ the terminal_ shows :ref:`AssertionError`
 
     AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
-* I pass the call to the items_ :ref:`method<functions>` to the :ref:`list constructor<test_making_a_list>` to see if it is :ref:`iterable<what is an iterable?>`
+* I pass the call to the `items method`_ to the :ref:`list constructor<test_making_a_list>` to see if it is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 129
@@ -1628,7 +1634,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the test passes.
 
-  This works because the items_ :ref:`method<functions>` returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<classes>` is :ref:`iterable<what is an iterable?>`
+  This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<classes>` is :ref:`iterable<what is an iterable?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1700,7 +1706,12 @@ the terminal_ shows :ref:`AssertionError`
 * I remove items_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 141
+    :lineno-start: 136
+
+                    ('keyN', [0, 1, 2, 'n']),
+                ]
+            )
+
 
     'keys',
     'pop',
@@ -1769,7 +1780,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     NameError: name 'dict_keys' is not defined
 
-  the ``dict_keys`` :ref:`object<classes>` contains a :ref:`list<lists>`
+  the ``dict_keys`` :ref:`object<classes>` has a :ref:`list<lists>`
 
 * I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<classes>` as the expectation instead
 
@@ -1790,7 +1801,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: dict_keys(['key']) is not None : ['key']
 
-* I pass the call to the keys_ :ref:`method<functions>` to the :ref:`list constructor<test_making_a_list>` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
+* I pass the call to the `keys method`_ to the :ref:`list constructor<test_making_a_list>` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 142
@@ -1824,7 +1835,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the dictionary_ to see what the keys_ :ref:`method<functions>` returns when there are multiple
+* I add another :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the dictionary_ to see what the `keys method`_ returns when there are multiple
 
   .. code-block:: python
     :lineno-start: 140
@@ -1846,7 +1857,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: Lists differ: ['key1', 'keyN'] != ['key']
 
-  I change the expectation to match
+* I change the expectation to match
 
   .. code-block:: python
     :lineno-start: 145
@@ -1881,7 +1892,11 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I remove keys_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 147
+
+                ['key1', 'keyN']
+            )
+
 
     'pop',
     'popitem',
@@ -1899,7 +1914,7 @@ test_pop_removes_given_key_from_a_dictionary_and_returns_its_value
 :red:`RED`: make it fail
 =================================================================================
 
-I wonder if the next :ref:`method<functions>` behaves the same way as it did in :ref:`test_pop_removes_and_returns_last_item_from_a_list`, I add a test for it
+I wonder if the `pop method`_ of dictionaries_ behaves the same way as it did in :ref:`test_pop_removes_and_returns_last_item_from_a_list`. I add a test for it
 
 .. code-block:: python
   :lineno-start: 147
@@ -1921,7 +1936,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: pop expected at least 1 argument, got 0
 
-this `pop method`_ is different from the one in :ref:`lists`
+this `pop method`_ is different from the :ref:`pop method of lists<test_pop_removes_and_returns_last_item_from_a_list>`
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1941,11 +1956,12 @@ this `pop method`_ is different from the one in :ref:`lists`
 
     KeyError: 0
 
-* I add it to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 162
     :emphasize-lines: 4
+    :emphasize-text: KeyError
 
     # Exceptions seen
     # AssertionError
@@ -2110,7 +2126,7 @@ this `pop method`_ is different from the one in :ref:`lists`
     :lineno-start: 163
     :emphasize-lines: 1
 
-    self.assertEqual(a_dictionary, {})
+            self.assertEqual(a_dictionary, {})
 
   the test passes
 
@@ -2141,9 +2157,11 @@ this `pop method`_ is different from the one in :ref:`lists`
 * I remove pop_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 166
+    :lineno-start: 163
 
-    'popitem',
+            self.assertEqual(a_dictionary, {})
+
+
     'setdefault',
     'update',
     'values'
@@ -2179,7 +2197,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: ('key', 'value') is not None
 
-the popitem_ :ref:`method<functions>` returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the dictionary_ as a tuple_
+the `popitem method`_ returns the :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the dictionary_ as a tuple_
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -2189,7 +2207,7 @@ I add the value from the terminal_ as the expectation
 
 .. code-block:: python
   :lineno-start: 166
-  :emphasize-lines: 2-4
+  :emphasize-lines: 2-5
 
           a_dictionary = {'key': 'value'}
           self.assertIsNone(
@@ -2220,7 +2238,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I want to know what the popitem_ :ref:`method<functions>` did to the dictionary_. I add another :ref:`assertion<what is an assertion?>`
+* I want to know what the `popitem method`_ did to the dictionary_. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 167
@@ -2293,6 +2311,8 @@ the test passes
 * I change the value in the second assertEqual_ to match
 
   .. code-block:: python
+    :lineno-start: 174
+    :emphasize-lines: 1
 
             self.assertEqual(a_dictionary, {'key1': 'value1'})
 
@@ -2322,6 +2342,9 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 177
+
+            self.assertEqual(a_dictionary, {})
+
 
     'setdefault',
     'update',
@@ -3176,7 +3199,7 @@ the test passes
 
   the test passes
 
-* The popitem_ :ref:`method<functions>` also raises :ref:`KeyError<test_key_error>` when called on an empty dictionary_
+* The `popitem method`_ also raises :ref:`KeyError<test_key_error>` when called on an empty dictionary_
 
   .. code-block::
     :lineno-start: 234
