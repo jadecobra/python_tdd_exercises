@@ -350,6 +350,7 @@ test_addition
 
     - ``reality`` - ``src.calculator.add(0, 1)``, and the other is
     - my ``expectation`` - ``1``, because ``0 + 1`` is ``1``
+    - in other words is the result ``src.calculator.add(0, 1)`` equal to ``1``?
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 

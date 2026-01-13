@@ -4070,7 +4070,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
                         arithmetic_tests[operation]['expectation']
                     )
 
-* I remove the ``test_addition``, ``test_subtraction``, ``test_multiplication`` and ``test_division``
+* I remove the ``test_addition``, ``test_subtraction``, ``test_multiplication``
 
   .. code-block:: python
 
@@ -4080,9 +4080,102 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
             self.random_first_number = a_random_number()
             self.random_second_number = a_random_number()
 
-        def test_calculator_functions(self):
+        def test_division(self):
 
+* I need a way to handle :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in ``test_calculator_functions`` for the :ref:`divide function<test_division>`. I change ``random_second_number`` to ``0`` in the `setUp method`_ to make :ref:`ZeroDivisionError` happen in the tests
 
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 3-4
+
+        def setUp(self):
+            self.random_first_number = a_random_number()
+            # self.random_second_number = a_random_number()
+            self.random_second_number = 0
+
+        def test_division(self):
+
+  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` for 3 tests
+
+  .. code-block:: python
+
+    FAILED tests/test_calculator.py::TestCalculator::test_calculator_functions - ZeroDivisionError: float division by zero
+    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
+    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - ZeroDivisionError: float division by zero
+
+* I use an :ref:`exception handler<how to use try...except...else>` to add a new :ref:`class attribute (variable)` for the result of :ref:`division<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 15
+
+            self.random_second_number = 0
+            try:
+                self.division_result = self.random_first_number / self.random_second_number
+            except ZeroDivisionError:
+                self.division_result = 'undefined: I cannot divide by 0'
+
+* I use the new :ref:`class attribute (variable) <test_attribute_error_w_class_attributes>` in ``test_calculator_functions``
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 3-4
+
+                'division': {
+                    'function': src.calculator.divide,
+                    # 'expectation': self.random_first_number/self.random_second_number,
+                    'expectation': self.division_result,
+                },
+
+  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` for 2 tests
+
+  .. code-block:: python
+
+    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
+    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - ZeroDivisionError: float division by zero
+
+  progress
+
+* I add the :ref:`class attribute<variable>` to ``test_calculator_w_list_items``
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 3-4
+
+            self.assertEqual(
+                src.calculator.divide(two_numbers[-2], two_numbers[-1]),
+                # self.random_first_number/self.random_second_number
+                self.division_result
+            )
+
+  and
+
+  .. code-block:: python
+    :lineno-start: 122
+    :emphasize-lines: 3-4
+
+            self.assertEqual(
+                src.calculator.divide(*two_numbers),
+                # self.random_first_number/self.random_second_number
+                self.division_result
+            )
+
+  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` for 1 test
+
+  .. code-block:: python
+
+    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
+
+* I add the :ref:`class attribute<variable>` to ``test_calculator_w_dictionary_items``
+
+  .. code-block:: python
+    :lineno-start 146
+    :emphasize-lines: 3-4
+
+            self.assertEqual(
+                src.calculator.divide(two_numbers['first_input'], two_numbers['second_input']),
+                # self.random_first_number/self.random_second_number
+                self.division_result
+            )
 
 ----
 

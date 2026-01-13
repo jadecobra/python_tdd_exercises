@@ -651,7 +651,7 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 
   the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not better than the :ref:`list constructor<test_making_a_list>`
 
-* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<lists>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes<test_attribute_error_w_class_attributes>` to remove the duplication
+* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<lists>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the duplication
 
   .. code-block:: python
     :lineno-start: 6
