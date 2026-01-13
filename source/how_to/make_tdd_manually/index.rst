@@ -157,9 +157,9 @@ at the end of the chapter you will know how to make a :ref:`Python Test Driven D
 
 ----
 
-*********************************************************************************
+*************************************************************************************
 what is next?
-*********************************************************************************
+*************************************************************************************
 
 * if you have MacOS_, Linux_ or successfully :ref:`installed Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>` you can go to :ref:`how to make a python test driven development environment`
 * if you were not able to :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>` then :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux` is for you

@@ -118,9 +118,9 @@ at the end of the chapter you will know how to automatically make a :ref:`Python
 
 ----
 
-*********************************************************************************
+*************************************************************************************
 what is next?
-*********************************************************************************
+*************************************************************************************
 
 * :ref:`how to make a Python Test Driven Development environment automatically` or
 * :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`

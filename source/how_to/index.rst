@@ -49,8 +49,8 @@ Here is the code you will have at the end of the above chapters
 
 ----
 
-*********************************************************************************
+*************************************************************************************
 what is next?
-*********************************************************************************
+*************************************************************************************
 
 :ref:`Would you like to see me make a Python Test Driven Development environment?<how to make a test driven development environment part 1>`

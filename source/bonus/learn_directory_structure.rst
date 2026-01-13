@@ -1862,9 +1862,9 @@ code from the chapter
 
 ----
 
-*************************************************************************************
+*****************************************************************************************
 what is next?
-*************************************************************************************
+*****************************************************************************************
 
 Do you have a Windows_ computer with `Windows Subsystem for Linux`_? :ref:`Click Here to install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`
 

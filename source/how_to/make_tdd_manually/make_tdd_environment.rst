@@ -1373,9 +1373,9 @@ how to view all the commands I typed in a terminal
 
 ----
 
-*********************************************************************************
+*************************************************************************************
 what is next?
-*********************************************************************************
+*************************************************************************************
 
 You have seen me make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Linux_, Windows_ with `Windows Subsystem for Linux`_ or MacOS_ computers. :ref:`Would you like to test AssertionError next?<AssertionError>`
 

@@ -95,9 +95,9 @@ If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`ho
 
 ----
 
-*********************************************************************************
+*************************************************************************************
 what is next?
-*********************************************************************************
+*************************************************************************************
 
 :ref:`Would you like to see me make a Python Test Driven Development environment?<how to make a Python Test Driven Development environment manually>`
 

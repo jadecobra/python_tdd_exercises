@@ -33,9 +33,9 @@ what should I expect?
 * We will have a lot of fun
 * You can also send me a message anytime and I will respond once I get it, and if we need to get on a call to resolve some problem, we will do that
 
-*********************************************************************************
+*************************************************************************************
 what is next?
-*********************************************************************************
+*************************************************************************************
 
 * **Check Your Email:** You should see a recurring invitation for the next 8 weeks. Please accept it now. If you do not see it, check your spam folder since this is probably the first time I have sent you an email.
 * **WhatsApp Community:** I will add you to a WhatsApp group for the class where we can text and share links about the class.

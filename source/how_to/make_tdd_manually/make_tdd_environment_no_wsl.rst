@@ -1287,9 +1287,9 @@ how to view all the commands I typed in a terminal_ on Windows without WSL
 
 ----
 
-********************************************************************************************
+************************************************************************************************
 what is next?
-********************************************************************************************
+************************************************************************************************
 
 You have seen me make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Windows_ computer that does NOT have `Windows Subsystem for Linux`_. :ref:`Would you like to test AssertionError next?<AssertionError>`
 

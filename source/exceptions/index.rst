@@ -48,8 +48,8 @@ Here are some questions you can answer after going through these chapters
 * :ref:`What causes KeyError?<test_key_error>`
 * :ref:`How can I handle exceptions in a program<how to use try...except...else>`
 
-*********************************************************************************
+*************************************************************************************
 what is next?
-*********************************************************************************
+*************************************************************************************
 
 :ref:`Would you like to know how to test that an Exception is raised?<how to test that an Exception is raised>`
