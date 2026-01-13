@@ -56,6 +56,27 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+*********************************************************************************
+questions about dictionaries
+*********************************************************************************
+
+Here are questions you can answer after going through this chapter
+
+* :ref:`what is a dictionary?`
+* :ref:`test_clear_empties_a_dictionary`
+* :ref:`how can I copy a dictionary<test_copy_a_dictionary>`
+* :ref:`how can I make a dictionary from an iterable?<test_fromkeys_makes_a_dictionary_from_an_iterable>`
+* :ref:`how can I get a value that is in a dictionary?<test_get_value_of_a_key_in_a_dictionary>`
+* :ref:`how can I look at the key-value pairs in a dictionary as a list of tuples<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+* :ref:`how can I look at only the keys in a dictionary?<test_keys_of_a_dictionary>`
+* :ref:`how can I remove a key-value pair from a dictionary?<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
+* :ref:`how can I remove the last key-value pair from a dictionary?<test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary>`
+* :ref:`how can I add a key with a default value to a dictionary?<test_setdefault_adds_given_key_to_a_dictionary>`
+* :ref:`how can I update a dictionary?<test_update_a_dictionary>`
+* :ref:`how can I add the key-value pairs from one dictionary to another?<test_update_a_dictionary>`
+* :ref:`how can I look at only the values in a dictionary?<test_values_of_a_dictionary>`
+* :ref:`what causes KeyError?<test_key_error>`
+
 ----
 
 *********************************************************************************
@@ -3329,15 +3350,37 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make a dictionary_ with the constructor_ ``dict()`` or curly braces ``{}``, then I ran the following tests for the :ref:
+Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<classes>` can be used as values.
 
-* they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
-* any :ref:`object<classes>` can be used as values
-* tuples_, strings_, floats_, integers_, :ref:`booleans` and :ref:`None` can be used as :ref:`keys<test_keys_of_a_dictionary>`
-* they can be represented with ``{}``
-* they can be made with the dict_ constructor_
+I ran tests to show that I can make a dictionary_ with the constructor_ ``dict()`` or curly braces ``{}``, then I ran the following tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
-Would you like to :ref:`test How to make a Person?<how to make a person>`
+* :ref:`test_making_a_dictionary_w_none_as_a_key`
+* :ref:`test_making_a_dictionary_w_a_boolean_as_a_key`
+* :ref:`test_making_a_dictionary_w_a_number_as_a_key`
+* :ref:`test_making_a_dictionary_w_a_tuple_as_a_key`
+* :ref:`test_making_a_dictionary_w_a_list_as_a_key`
+* :ref:`test_making_a_dictionary_w_a_set_as_a_key`
+* :ref:`test_making_a_dictionary_w_a_dictionary_as_a_key`
+
+I also ran these tests for the :ref:`methods of dictionaries<test_attributes_and_methods_of_dictionaries>`
+
+* :ref:`test_clear_empties_a_dictionary`
+* :ref:`test_copy_a_dictionary`
+* :ref:`test_fromkeys_makes_a_dictionary_from_an_iterable`
+* :ref:`test_get_value_of_a_key_in_a_dictionary`
+* :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary`
+* :ref:`test_keys_of_a_dictionary`
+* :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value`
+* :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary`
+* :ref:`test_setdefault_adds_given_key_to_a_dictionary`
+* :ref:`test_update_a_dictionary`
+* :ref:`test_values_of_a_dictionary`
+
+and finally a test for the :ref:`Exception<errors>` to know when working with dictionaries_ - :ref:`KeyError<test_key_error>`
+
+----
+
+:ref:`How many questions can you answer after going through this chapter?<questions about lists>`
 
 ----
 

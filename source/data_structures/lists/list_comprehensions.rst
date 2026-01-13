@@ -2572,10 +2572,216 @@ the test passes
     # True is not a float
     # the empty dictionary is false
 
-This explains why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<functions>` only allowed integers_ and floats_.
+  This explains why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<functions>` only allowed integers_ and floats_.
 
 
-The :ref:`add function<test_addition>` returned numbers in the calculation with :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` because they are integers_. I want to know what their values are
+  The :ref:`add function<test_addition>` returned numbers in the calculation with :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` because they are integers_. I want to know what their values are
+
+* I can use an iterable_ with the `assertIsInstance method`_, the same way I do with the `isinstance function` in the ``only_takes_numbers`` :ref:`function` in the :ref:`calculator<how to make a calculator>`
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertIsInstance(True, int)
+            self.assertIsInstance(True, (bool, int))
+            self.assertNotIsInstance(True, float)
+
+  the test is still green
+
+* I remove the first two :ref:`assertions<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, (bool, int))
+            self.assertNotIsInstance(True, float)
+            self.assertTrue(True)
+
+  still green
+
+* I do the same thing in the ``test_what_is_false`` :ref:`function<functions>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(False, int)
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+
+  the tests are still passing
+
+* I remove the first two :ref:`assertions<what is an assertion?>` in the test
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+            self.assertFalse(False)
+
+  still green
+
+* I can use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test what is False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4-24
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+            # self.assertFalse(False)
+            # self.assertFalse(None)
+            # self.assertFalse(0)
+            # self.assertFalse(0.0)
+            # self.assertFalse(str())
+            # self.assertFalse(tuple())
+            # self.assertFalse(list())
+            # self.assertFalse(set())
+            # self.assertFalse(dict())
+            for false_item in (
+                False,
+                None,
+                0, 0.0,
+                str(),
+                tuple(),
+                list(),
+                set(),
+                dict(),
+            ):
+                with self.subTest(i=false_item):
+                    self.assertFalse(false_item)
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+            for false_item in (
+                False,
+                None,
+                0, 0.0,
+                str(),
+                tuple(),
+                list(),
+                set(),
+                dict(),
+            ):
+                with self.subTest(i=false_item):
+                    self.assertFalse(false_item)
+
+  still green
+
+* I add :ref:`True<test_what_is_true>` to make sure the test works
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 2
+
+                dict(),
+                True,
+            ):
+                with self.subTest(i=item):
+                    self.assertFalse(item)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    SUBFAILED(i=True) tests/test_booleans.py::TestBooleans::test_what_is_false - AssertionError: True is not false
+
+* I remove the failing line and the test is green again
+
+* I add a `for loop`_ for all the :ref:`assertions<what is an assertion?>` that :ref:`test what is True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 4-25
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, (bool, int))
+            self.assertNotIsInstance(True, float)
+            # self.assertTrue(True)
+            # self.assertTrue(-1)
+            # self.assertTrue(1)
+            # self.assertTrue(-0.1)
+            # self.assertTrue(0.1)
+            # self.assertTrue('text')
+            # self.assertTrue((1, 2, 3, 'n'))
+            # self.assertTrue([1, 2, 3, 'n'])
+            # self.assertTrue({1, 2, 3, 'n'})
+            # self.assertTrue({'key': 'value'})
+            for true_item in (
+                True,
+                -1, 1,
+                -0.1, 0.1,
+                'text',
+                (1, 2, 3, 'n'),
+                [1, 2, 3, 'n'],
+                {1, 2, 3, 'n'},
+                {'key': 'value'},
+            ):
+                with self.subTest(i=true_item):
+                    self.assertTrue(true_item)
+
+  the terminal_ still shows green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 22
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, (bool, int))
+            self.assertNotIsInstance(True, float)
+            for true_item in (
+                True,
+                -1, 1,
+                -0.1, 0.1,
+                'text',
+                (1, 2, 3, 'n'),
+                [1, 2, 3, 'n'],
+                {1, 2, 3, 'n'},
+                {'key': 'value'},
+            ):
+                with self.subTest(i=true_item):
+                    self.assertTrue(true_item)
+
+
+  still green
+
+* I add :ref:`False<test_what_is_false>` to make sure the test still works as expected
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 2
+
+                {'key': 'value'},
+                False,
+            ):
+                with self.subTest(i=item):
+                    self.assertTrue(item)
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    SUBFAILED(i=False) tests/test_booleans.py::TestBooleans::test_what_is_true - AssertionError: False is not true
+
+* I remove the line I just added and the test is green again
 
 ----
 
