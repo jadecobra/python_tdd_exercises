@@ -4223,6 +4223,173 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
   all tests are passing
 
+* the dictionaries_ in ``test_calculator_functions`` and ``test_calculator_sends_message_when_input_is_not_a_number`` are similar, I add a new dictionary_ in the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 4-21
+
+            except ZeroDivisionError:
+                self.division_result = 'undefined: I cannot divide by 0'
+
+            self.arithmetic_tests = {
+                'addition': {
+                    'function': src.calculator.add,
+                    'expectation': self.random_first_number+self.random_second_number,
+                },
+                'subtraction': {
+                    'function': src.calculator.subtract,
+                    'expectation': self.random_first_number-self.random_second_number,
+                },
+                'division': {
+                    'function': src.calculator.divide,
+                    'expectation': self.division_result,
+                },
+                'multiplication': {
+                    'function': src.calculator.multiply,
+                    'expectation': self.random_first_number*self.random_second_number,
+                }
+            }
+
+        def test_calculator_functions(self):
+
+* I use it in ``test_calculator_functions``
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 1, 4, 8
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        self.arithmetic_tests[operation]['function'](
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        self.arithmetic_tests[operation]['expectation']
+                    )
+
+  the test is green
+
+* I remove the ``arithemtic_tests`` dictionary_ from ``test_calculator_functions``
+
+  .. code-block:: python
+    :lineno-start: 39
+
+        def test_calculator_functions(self):
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        self.arithmetic_tests[operation]['function'](
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        self.arithmetic_tests[operation]['expectation']
+                    )
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+
+  still green
+
+* I use the new :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` in ``test_calculator_sends_message_when_input_is_not_a_number``
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 2-3, 5-6
+
+                with self.subTest(i=data):
+                    # for operation in arithmetic:
+                    for operation in self.arithmetic_tests:
+                        self.assertEqual(
+                            # arithmetic[operation](data, a_random_number),
+                            self.arithmetic_tests[operation]['function'](data, a_random_number),
+                            error_message
+                        )
+
+  the test is still green
+
+* I remove the commented lines and the ``arithmetic`` dictionary_
+
+  .. code-block:: python
+    :lineno-start: 50
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            error_message = 'Excuse me?! Numbers only. Try again...'
+
+            for data in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                with self.subTest(i=data):
+                    for operation in self.arithmetic_tests:
+                        self.assertEqual(
+                            self.arithmetic_tests[operation]['function'](data, a_random_number),
+                            error_message
+                        )
+
+        def test_calculator_w_list_items(self):
+
+  still green
+
+* I add a `for loop`_ to use the ``arithmetic_tests`` dictionary_ in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
+
+  .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 4-6
+
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(*not_two_numbers)
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.arithmetic_tests[operation]['function'](*not_two_numbers)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`TypeError` for all 4 cases
+
+  .. code-block:: python
+
+    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_raises_type_error_when_given_more_than_two_inputs - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_raises_type_error_when_given_more_than_two_inputs - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_raises_type_error_when_given_more_than_two_inputs - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_raises_type_error_when_given_more_than_two_inputs - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+
+* I add the `assertRaises method`_
+
+  .. code-block:: python
+    :lineno-start: 161
+    :emphasize-lines: 3-4
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    with self.assertRaises(TypeError):
+                        self.arithmetic_tests[operation]['function'](*not_two_numbers)
+
+  the test passes
+
+* I remove the other :ref:`assertions<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 149
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            not_two_numbers = [0, 1, 2]
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    with self.assertRaises(TypeError):
+                        self.arithmetic_tests[operation]['function'](*not_two_numbers)
+
+
+    # Exceptions seen
+
 ----
 
 *********************************************************************************
