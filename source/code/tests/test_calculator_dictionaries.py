@@ -12,6 +12,10 @@ class TestCalculator(unittest.TestCase):
     def setUp(self):
         self.random_first_number = a_random_number()
         self.random_second_number = a_random_number()
+        try:
+            self.division_result = self.random_first_number / self.random_second_number
+        except ZeroDivisionError:
+            self.division_result = 'undefined: I cannot divide by 0'
 
     def test_calculator_functions(self):
         arithmetic_tests = {
@@ -25,7 +29,7 @@ class TestCalculator(unittest.TestCase):
             },
             'division': {
                 'function': src.calculator.divide,
-                'expectation': self.random_first_number/self.random_second_number,
+                'expectation': self.division_result,
             },
             'multiplication': {
                 'function': src.calculator.multiply,
@@ -83,7 +87,8 @@ class TestCalculator(unittest.TestCase):
         )
         self.assertEqual(
             src.calculator.divide(two_numbers[-2], two_numbers[-1]),
-            self.random_first_number/self.random_second_number
+            # self.random_first_number/self.random_second_number
+            self.division_result
         )
         self.assertEqual(
             src.calculator.multiply(two_numbers[1], two_numbers[-1]),
@@ -99,7 +104,7 @@ class TestCalculator(unittest.TestCase):
         )
         self.assertEqual(
             src.calculator.divide(*two_numbers),
-            self.random_first_number/self.random_second_number
+            self.division_result
         )
         self.assertEqual(
             src.calculator.multiply(*two_numbers),
@@ -122,7 +127,7 @@ class TestCalculator(unittest.TestCase):
         )
         self.assertEqual(
             src.calculator.divide(two_numbers['first_input'], two_numbers['second_input']),
-            self.random_first_number/self.random_second_number
+            self.division_result
         )
         self.assertEqual(
             src.calculator.multiply(two_numbers['second_input'], two_numbers['second_input']),
@@ -138,7 +143,7 @@ class TestCalculator(unittest.TestCase):
         )
         self.assertEqual(
             src.calculator.divide(**two_numbers),
-            self.random_first_number/self.random_second_number
+            self.division_result
         )
         self.assertEqual(
             src.calculator.multiply(**two_numbers),

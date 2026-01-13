@@ -4193,6 +4193,36 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
 * I remove the commented lines I added
 
+* I remove ``test_division``
+
+  .. code-block:: python
+
+        def setUp(self):
+            self.random_first_number = a_random_number()
+            # self.random_second_number = a_random_number()
+            self.random_second_number = 0
+            try:
+                self.division_result = self.random_first_number / self.random_second_number
+            except ZeroDivisionError:
+                self.division_result = 'undefined: I cannot divide by 0'
+
+        def test_calculator_functions(self):
+
+* I change ``self.random_second_number`` back to a random float_
+
+  .. code-block:: python
+    :lineno-start: 12
+
+    def setUp(self):
+        self.random_first_number = a_random_number()
+        self.random_second_number = a_random_number()
+        try:
+            self.division_result = self.random_first_number / self.random_second_number
+        except ZeroDivisionError:
+            self.division_result = 'undefined: I cannot divide by 0'
+
+  all tests are passing
+
 ----
 
 *********************************************************************************
