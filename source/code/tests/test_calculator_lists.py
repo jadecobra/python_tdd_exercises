@@ -146,16 +146,16 @@ class TestCalculator(unittest.TestCase):
         )
 
     def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-        another_list = [0, 1, 2]
+        not_two_numbers = [0, 1, 2]
 
         with self.assertRaises(TypeError):
-            src.calculator.add(*another_list)
+            src.calculator.add(*not_two_numbers)
         with self.assertRaises(TypeError):
-            src.calculator.divide(*another_list)
+            src.calculator.divide(*not_two_numbers)
         with self.assertRaises(TypeError):
-            src.calculator.multiply(*another_list)
+            src.calculator.multiply(*not_two_numbers)
         with self.assertRaises(TypeError):
-            src.calculator.subtract(*another_list)
+            src.calculator.subtract(*not_two_numbers)
 
 
 # Exceptions seen

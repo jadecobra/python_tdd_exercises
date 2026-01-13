@@ -3347,6 +3347,403 @@ close the project
 ----
 
 *********************************************************************************
+test_calculator_w_dictionary_items
+*********************************************************************************
+
+I can use a dictionary_ to test the :ref:`calculator functions<how to make a calculator>` as long as its values are numbers
+
+=================================================================================
+open the project
+=================================================================================
+
+* I `change directory`_ to the ``calculator`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd calculator
+
+  the terminal_ shows I am in the ``calculator`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 4
+
+    rootdir: .../pumping_python/calculator
+    collected 7 items
+
+    tests/test_calculator.py .......                                     [100%]
+
+    ============================ 7 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+=================================================================================
+:red:`red`: make it fail
+=================================================================================
+
+I add a new test to use a dictionary_ to test the :ref:`calculator<how to make a calculator>`
+
+.. code-block:: python
+  :lineno-start: 119
+  :emphasize-lines: 6-10, 12-15
+
+            self.assertEqual(
+                src.calculator.subtract(*a_list),
+                self.random_first_number-self.random_second_number
+            )
+
+        def test_calculator_w_dictionary_items(self):
+            two_numbers = {
+                'x': self.random_first_number,
+                'y': self.random_second_number,
+            }
+
+            self.assertEqual(
+                src.calculator.add(two_numbers['x'], two_numbers['y']),
+                self.random_first_number+self.random_first_number
+            )
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            not_two_numbers = [0, 1, 2]
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: shell
+
+  AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
+
+=================================================================================
+:green:`green`: make it pass
+=================================================================================
+
+I change the expectation to the right calculation
+
+.. code-block:: python
+  :lineno-start: 130
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.add(two_numbers['x'], two_numbers['y']),
+              self.random_first_number+self.random_second_number
+          )
+
+the test passes
+
+=================================================================================
+:yellow:`refactor`: make it better
+=================================================================================
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.add(two_numbers['x'], two_numbers['y']),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(two_numbers['x'], two_numbers['y']),
+                self.random_first_number*self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
+
+* I change the calculation
+
+  .. code-block:: python
+    :lineno-start: 134
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.divide(two_numbers['x'], two_numbers['y']),
+                self.random_first_number/self.random_second_number
+            )
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 134
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.divide(two_numbers['x'], two_numbers['y']),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(two_numbers['y'], two_numbers['y']),
+                self.random_first_number*self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 123
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.multiply(two_numbers['y'], two_numbers['y']),
+                self.random_second_number*self.random_second_number
+            )
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 138
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.multiply(two_numbers['y'], two_numbers['y']),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(two_numbers['x'], two_numbers['x']),
+                self.random_first_number-self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: 0.0 != FGH.IJKLMNOPQRSTU
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.subtract(two_numbers['x'], two_numbers['x']),
+                self.random_first_number-self.random_first_number
+            )
+
+  the test passes
+
+* Python_ allows me use a double starred expression like I did in :ref:`test_functions_w_unknown_arguments`. I add an :ref:`assertion<what is an assertion?>` with it
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.subtract(two_numbers['x'], two_numbers['x']),
+                self.random_first_number-self.random_first_number
+            )
+            self.assertEqual(
+                src.calculator.add(**two_numbers),
+                self.random_first_number-self.random_second_number
+            )
+
+  the terminal_ shows :ref:`TypeError`
+
+  .. code-block:: python
+
+    TypeError: only_takes_numbers.<locals>.wrapper() got an unexpected keyword argument 'x'
+
+* the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` dictionary_ must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``. I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the test
+
+  .. code-block:: python
+    :lineno-start: 124
+    :emphasize-lines: 3-4, 8, 12, 16, 20
+
+        def test_calculator_w_dictionary_items(self):
+            two_numbers = {
+                'first_input': self.random_first_number,
+                'second_input': self.random_second_number,
+            }
+
+            self.assertEqual(
+                src.calculator.add(two_numbers['first_input'], two_numbers['second_input']),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(two_numbers['first_input'], two_numbers['second_input']),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(two_numbers['second_input'], two_numbers['second_input']),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(two_numbers['first_input'], two_numbers['first_input']),
+                self.random_first_number-self.random_first_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: python
+
+    AssertionError: VWX.YZABCDEFGHIJK != LMN.OPQRSTUVWXYZABC
+
+* I change the calculation in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 146
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.add(**two_numbers),
+                self.random_first_number+self.random_second_number
+            )
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 146
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.add(**two_numbers),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(**two_numbers),
+                self.random_first_number*self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
+
+* I change the calculation
+
+  .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.divide(**two_numbers),
+                self.random_first_number/self.random_second_number
+            )
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 150
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.divide(**two_numbers),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(**two_numbers),
+                self.random_first_number/self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
+
+* I change the calculation
+
+  .. code-block:: python
+    :lineno-start: 154
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.multiply(**two_numbers),
+                self.random_first_number*self.random_second_number
+            )
+
+  the test passes
+
+* I add the next :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 154
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.multiply(**two_numbers),
+                self.random_first_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(**two_numbers),
+                self.random_first_number+self.random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError`
+
+  .. code-block:: shell
+
+    AssertionError: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 143
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.multiply(**two_numbers),
+                self.random_first_number-self.random_second_number
+            )
+
+  the test passes
+
+----
+
+*********************************************************************************
 review
 *********************************************************************************
 
@@ -3380,8 +3777,7 @@ and finally a test for the :ref:`Exception<errors>` to know when working with di
 
 ----
 
-:ref:`How many questions can you answer after going through this chapter?<questions about lists>`
-
+:ref:`How many questions can you answer after going through this chapter?<questions about dictionaries>`
 ----
 
 *************************************************************************************

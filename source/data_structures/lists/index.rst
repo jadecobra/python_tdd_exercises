@@ -3289,7 +3289,7 @@ how to multiply a list
                 error_message
             )
 
-            a_list = [0, 1, 2, 3]
+            two_numbers = [0, 1, 2, 3]
             error_message = 'Excuse me?! Numbers only! try again...'
 
             self.assertEqual(
@@ -3331,7 +3331,7 @@ how to multiply a list
                 error_message
             )
 
-  still green. This test looks long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
+  still green. This test is long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
 
 ----
 
@@ -3524,10 +3524,10 @@ I add a new test to use the :ref:`index of the items in the list<test_index_retu
             )
 
         def test_calculator_w_list_items(self):
-            a_list = [self.random_first_number, self.random_second_number]
+            two_numbers = [self.random_first_number, self.random_second_number]
 
             self.assertEqual(
-                src.calculator.add(a_list[0], a_list[1]),
+                src.calculator.add(two_numbers[0], two_numbers[1]),
                 self.random_first_number-self.random_second_number
             )
 
@@ -3551,7 +3551,7 @@ I change the expectation to the right calculation
   :emphasize-lines: 3
 
           self.assertEqual(
-              src.calculator.add(a_list[0], a_list[1]),
+              src.calculator.add(two_numbers[0], two_numbers[1]),
               self.random_first_number+self.random_second_number
           )
 
@@ -3568,11 +3568,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.add(a_list[0], a_list[1]),
+                src.calculator.add(two_numbers[0], two_numbers[1]),
                 self.random_first_number+self.random_second_number
             )
             self.assertEqual(
-                src.calculator.divide(a_list[-2], a_list[-1]),
+                src.calculator.divide(two_numbers[-2], two_numbers[-1]),
                 self.random_first_number*self.random_second_number
             )
 
@@ -3589,7 +3589,7 @@ the test passes
     :emphasize-lines: 3
 
           self.assertEqual(
-              src.calculator.divide(a_list[-2], a_list[-1]),
+              src.calculator.divide(two_numbers[-2], two_numbers[-1]),
               self.random_first_number/self.random_second_number
           )
 
@@ -3602,11 +3602,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.divide(a_list[-2], a_list[-1]),
+                src.calculator.divide(two_numbers[-2], two_numbers[-1]),
                 self.random_first_number/self.random_second_number
             )
             self.assertEqual(
-                src.calculator.multiply(a_list[1], a_list[-1]),
+                src.calculator.multiply(two_numbers[1], two_numbers[-1]),
                 self.random_first_number*self.random_second_number
             )
 
@@ -3623,7 +3623,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.multiply(a_list[1], a_list[-1]),
+                src.calculator.multiply(two_numbers[1], two_numbers[-1]),
                 self.random_second_number*self.random_second_number
             )
 
@@ -3636,11 +3636,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.multiply(a_list[1], a_list[-1]),
+                src.calculator.multiply(two_numbers[1], two_numbers[-1]),
                 self.random_second_number*self.random_second_number
             )
             self.assertEqual(
-                src.calculator.subtract(a_list[-2], a_list[0]),
+                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
                 self.random_first_number-self.random_second_number
             )
 
@@ -3657,7 +3657,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.subtract(a_list[-2], a_list[0]),
+                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
                 self.random_first_number-self.random_first_number
             )
 
@@ -3670,11 +3670,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.subtract(a_list[-2], a_list[0]),
+                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
                 self.random_first_number-self.random_first_number
             )
             self.assertEqual(
-                src.calculator.add(*a_list),
+                src.calculator.add(*two_numbers),
                 self.random_first_number-self.random_second_number
             )
 
@@ -3691,7 +3691,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.add(*a_list),
+                src.calculator.add(*two_numbers),
                 self.random_first_number+self.random_second_number
             )
 
@@ -3704,11 +3704,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.add(*a_list),
+                src.calculator.add(*two_numbers),
                 self.random_first_number+self.random_second_number
             )
             self.assertEqual(
-                src.calculator.divide(*a_list),
+                src.calculator.divide(*two_numbers),
                 self.random_first_number*self.random_second_number
             )
 
@@ -3725,7 +3725,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.divide(*a_list),
+                src.calculator.divide(*two_numbers),
                 self.random_first_number/self.random_second_number
             )
 
@@ -3738,11 +3738,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.divide(*a_list),
+                src.calculator.divide(*two_numbers),
                 self.random_first_number/self.random_second_number
             )
             self.assertEqual(
-                src.calculator.multiply(*a_list),
+                src.calculator.multiply(*two_numbers),
                 self.random_first_number/self.random_second_number
             )
 
@@ -3759,7 +3759,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.multiply(*a_list),
+                src.calculator.multiply(*two_numbers),
                 self.random_first_number*self.random_second_number
             )
 
@@ -3772,11 +3772,11 @@ the test passes
     :emphasize-lines: 5-8
 
             self.assertEqual(
-                src.calculator.multiply(*a_list),
+                src.calculator.multiply(*two_numbers),
                 self.random_first_number*self.random_second_number
             )
             self.assertEqual(
-                src.calculator.subtract(*a_list),
+                src.calculator.subtract(*two_numbers),
                 self.random_first_number+self.random_second_number
             )
 
@@ -3793,7 +3793,7 @@ the test passes
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.subtract(*a_list),
+                src.calculator.subtract(*two_numbers),
                 self.random_first_number-self.random_second_number
             )
 
@@ -3805,7 +3805,7 @@ the test passes
 test_calculator_raises_type_error_when_given_more_than_two_inputs
 *********************************************************************************
 
-It is important to note that the star expression always gives the items from the list in order, and I cannot use a list_ that has more than 2 items with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
+It is important to note that the star expression always gives the items from the list in order, and I cannot use a list_ that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
 
 =================================================================================
 :red:`red`: make it fail
@@ -3823,9 +3823,9 @@ I add a new test to show the problem when I have more than 2 inputs and use a st
           )
 
       def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-          another_list = [0, 1, 2]
+          not_two_numbers = [0, 1, 2]
 
-          src.calculator.add(*another_list)
+          src.calculator.add(*not_two_numbers)
 
 
   # Exceptions seen
@@ -3847,10 +3847,10 @@ I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
   :emphasize-lines: 4-5
 
       def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-          another_list = [0, 1, 2]
+          not_two_numbers = [0, 1, 2]
 
           with self.assertRaises(TypeError):
-              src.calculator.add(*another_list)
+              src.calculator.add(*not_two_numbers)
 
 the test passes
 
@@ -3865,8 +3865,8 @@ the test passes
     :emphasize-lines: 3
 
             with self.assertRaises(TypeError):
-                src.calculator.add(*another_list)
-            src.calculator.divide(*another_list)
+                src.calculator.add(*not_two_numbers)
+            src.calculator.divide(*not_two_numbers)
 
   the terminal_ shows :ref:`TypeError`
 
@@ -3881,9 +3881,9 @@ the test passes
     :emphasize-lines: 3-4
 
             with self.assertRaises(TypeError):
-                src.calculator.add(*another_list)
+                src.calculator.add(*not_two_numbers)
             with self.assertRaises(TypeError):
-                src.calculator.divide(*another_list)
+                src.calculator.divide(*not_two_numbers)
 
     the test passes
 
@@ -3894,8 +3894,8 @@ the test passes
     :emphasize-lines: 3
 
             with self.assertRaises(TypeError):
-                src.calculator.divide(*another_list)
-            src.calculator.multiply(*another_list)
+                src.calculator.divide(*not_two_numbers)
+            src.calculator.multiply(*not_two_numbers)
 
   the terminal_ shows :ref:`TypeError`
 
@@ -3910,9 +3910,9 @@ the test passes
     :emphasize-lines: 3-4
 
             with self.assertRaises(TypeError):
-                src.calculator.divide(*another_list)
+                src.calculator.divide(*not_two_numbers)
             with self.assertRaises(TypeError):
-                src.calculator.multiply(*another_list)
+                src.calculator.multiply(*not_two_numbers)
 
   the test passes
 
@@ -3923,8 +3923,8 @@ the test passes
     :emphasize-lines: 3
 
             with self.assertRaises(TypeError):
-                src.calculator.multiply(*another_list)
-            src.calculator.subtract(*another_list)
+                src.calculator.multiply(*not_two_numbers)
+            src.calculator.subtract(*not_two_numbers)
 
   the terminal_ shows :ref:`TypeError`
 
@@ -3939,16 +3939,16 @@ the test passes
     :emphasize-lines: 10-11
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-            another_list = [0, 1, 2]
+            not_two_numbers = [0, 1, 2]
 
             with self.assertRaises(TypeError):
-                src.calculator.add(*another_list)
+                src.calculator.add(*not_two_numbers)
             with self.assertRaises(TypeError):
-                src.calculator.divide(*another_list)
+                src.calculator.divide(*not_two_numbers)
             with self.assertRaises(TypeError):
-                src.calculator.multiply(*another_list)
+                src.calculator.multiply(*not_two_numbers)
             with self.assertRaises(TypeError):
-                src.calculator.subtract(*another_list)
+                src.calculator.subtract(*not_two_numbers)
 
   the test passes
 
