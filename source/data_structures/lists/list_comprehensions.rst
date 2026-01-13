@@ -1984,15 +1984,14 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_m
 
 .. code-block:: python
   :lineno-start: 58
-  :emphasize-lines: 4-17
+  :emphasize-lines: 4-16
 
       def test_calculator_sends_message_when_input_is_not_a_number(self):
           error_message = 'Excuse me?! Numbers only! try again...'
 
           for data_type in (
               None,
-              True,
-              False,
+              True, False,
               str(),
               tuple(),
               list(),
@@ -2024,7 +2023,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 70
     :emphasize-lines: 3
 
                 self.assertEqual(
@@ -2043,7 +2042,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 * the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a loop, I add it to the test
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 68
     :emphasize-lines: 3-7
 
                 dict(),
@@ -2091,10 +2090,60 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
+* I can use a `for loop`_ to make the :ref:`if statements` simpler
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-9, 11-13, 15-18
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            good_types = (int, float)
+            error_message = 'Excuse me?! numbers only. Try again...'
+
+            # if isinstance(first_input, bool) or isinstance(second_input, bool):
+            #     return error_message
+            # if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
+            #     return error_message
+
+            for value in (first_input, second_input):
+                if isinstance(value, bool) or not isinstance(value, good_types):
+                    return error_message
+
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
+        return wrapper
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def only_takes_numbers(function):
+        def wrapper(first_input, second_input):
+            good_types = (int, float)
+            error_message = 'Excuse me?! numbers only. Try again...'
+
+            for value in (first_input, second_input):
+                if isinstance(value, bool) or not isinstance(value, good_types):
+                    return error_message
+
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
+        return wrapper
+
+  still green
+
 * I add another :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 70
     :emphasize-lines: 6-9
 
                 with self.subTest(i=data_type):
@@ -2129,7 +2178,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 75
     :emphasize-lines: 5-8
 
                     self.assertEqual(
@@ -2150,7 +2199,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 79
     :emphasize-lines: 3
 
                     self.assertEqual(
@@ -2163,7 +2212,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`subtraction<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 79
     :emphasize-lines: 5-8
 
                     self.assertEqual(
@@ -2184,7 +2233,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 83
     :emphasize-lines: 3
 
                     self.assertEqual(
@@ -2194,7 +2243,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the test passes
 
-* I remove the other assertions in the test because they are now covered by the `for loop`_
+* I remove the other :ref:`assertions<what is an assertion?>` in the test because they are now covered by the `for loop`_
 
   .. code-block:: python
     :lineno-start: 58
@@ -2204,8 +2253,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
             for data_type in (
                 None,
-                True,
-                False,
+                True, False,
                 str(),
                 tuple(),
                 list(),
