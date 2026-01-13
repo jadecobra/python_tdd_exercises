@@ -4390,6 +4390,201 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
     # Exceptions seen
 
+* I no longer need the :ref:`variable<what is a variable?>`, I remove it and use the :ref:`list<lists>` directly in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 149
+    :emphasize-lines: 5
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    with self.assertRaises(TypeError):
+                        self.arithmetic_tests[operation]['function'](*[0, 1, 2])
+
+* I add a `for loop`_ to ``test_calculator_w_list_items``
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 6-13
+
+            self.assertEqual(
+                src.calculator.subtract(*two_numbers),
+                self.random_first_number-self.random_second_number
+            )
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        self.arithmetic_tests[operation]['function'](
+                            *two_numbers
+                        ),
+                        'BOOM!!!'
+                    )
+
+        def test_calculator_w_dictionary_items(self):
+
+  the terminal_ shows :ref:`AssertionError` for the 4 operations
+
+  .. code-block:: python
+
+    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - AssertionError: YZA.BCDEFGHIJKLMNO != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - AssertionError: PQR.STUVWXYZABCDE != 'BOOM!!!'
+    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - AssertionError: F.GHIJKLMNOPQRSTUV != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - AssertionError: WXYABC.DEFGHIJKLMN != 'BOOM!!!'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 7
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        self.arithmetic_tests[operation]['function'](
+                            *two_numbers
+                        ),
+                        self.arithmetic_tests[operation]['expectation']
+                    )
+
+  the test passes
+
+* I remove all the :ref:`assertions<what is an assertion?>` for the starred expression
+
+  .. code-block:: python
+    :lineno-start: 89
+
+            self.assertEqual(
+                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
+                self.random_first_number-self.random_first_number
+            )
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        self.arithmetic_tests[operation]['function'](
+                            *two_numbers
+                        ),
+                        self.arithmetic_tests[operation]['expectation']
+                    )
+
+        def test_calculator_w_dictionary_items(self):
+
+  still green
+
+* I add a `for loop`_ to ``test_calculator_w_dictionary_items``
+
+  .. code-block:: python
+    :lineno-start: 137
+    :emphasize-lines:
+
+            self.assertEqual(
+                src.calculator.subtract(**two_numbers),
+                self.random_first_number-self.random_second_number
+            )
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        self.arithmetic_tests[operation]['function'](
+                            **two_numbers
+                        ),
+                        'BOOM!!!'
+                    )
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+
+  the terminal_ shows :ref:`AssertionError` for the 4 operations
+
+  .. code-block:: python
+
+    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - AssertionError: OPQ.RSTUVWXYZABCDEF != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - AssertionError: GHI.JKLMNOPQRSTUVWX != 'BOOM!!!'
+    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - AssertionError: Y.ZABCDEFGHIJKLMNOP != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - AssertionError: -QRSTU.VWXYZABCDEF != 'BOOM!!!'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 7
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        self.arithmetic_tests[operation]['function'](
+                            **two_numbers
+                        ),
+                        self.arithmetic_tests[operation]['expectation']
+                    )
+
+  the test passes
+
+* I remove the other :ref:`assertions<what is an assertion?>` for the starred expression
+
+  .. code-block:: python
+    :lineno-start: 121
+
+            self.assertEqual(
+                src.calculator.subtract(two_numbers['first_input'], two_numbers['first_input']),
+                self.random_first_number-self.random_first_number
+            )
+
+            for operation in self.arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        self.arithmetic_tests[operation]['function'](
+                            **two_numbers
+                        ),
+                        self.arithmetic_tests[operation]['expectation']
+                    )
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+
+  still green
+
+----
+
+=================================================================================
+close the project
+=================================================================================
+
+* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/calculator
+
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/calculator
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
 ----
 
 *********************************************************************************

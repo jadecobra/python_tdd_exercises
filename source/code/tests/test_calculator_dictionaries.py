@@ -62,7 +62,9 @@ class TestCalculator(unittest.TestCase):
             with self.subTest(i=data):
                 for operation in self.arithmetic_tests:
                     self.assertEqual(
-                        self.arithmetic_tests[operation]['function'](data, a_random_number),
+                        self.arithmetic_tests[operation]['function'](
+                            data, a_random_number
+                        ),
                         error_message
                     )
 
@@ -90,22 +92,15 @@ class TestCalculator(unittest.TestCase):
             src.calculator.subtract(two_numbers[-2], two_numbers[0]),
             self.random_first_number-self.random_first_number
         )
-        self.assertEqual(
-            src.calculator.add(*two_numbers),
-            self.random_first_number+self.random_second_number
-        )
-        self.assertEqual(
-            src.calculator.divide(*two_numbers),
-            self.division_result
-        )
-        self.assertEqual(
-            src.calculator.multiply(*two_numbers),
-            self.random_first_number*self.random_second_number
-        )
-        self.assertEqual(
-            src.calculator.subtract(*two_numbers),
-            self.random_first_number-self.random_second_number
-        )
+
+        for operation in self.arithmetic_tests:
+            with self.subTest(operation=operation):
+                self.assertEqual(
+                    self.arithmetic_tests[operation]['function'](
+                        *two_numbers
+                    ),
+                    self.arithmetic_tests[operation]['expectation']
+                )
 
     def test_calculator_w_dictionary_items(self):
         two_numbers = {
@@ -129,30 +124,21 @@ class TestCalculator(unittest.TestCase):
             src.calculator.subtract(two_numbers['first_input'], two_numbers['first_input']),
             self.random_first_number-self.random_first_number
         )
-        self.assertEqual(
-            src.calculator.add(**two_numbers),
-            self.random_first_number+self.random_second_number
-        )
-        self.assertEqual(
-            src.calculator.divide(**two_numbers),
-            self.division_result
-        )
-        self.assertEqual(
-            src.calculator.multiply(**two_numbers),
-            self.random_first_number*self.random_second_number
-        )
-        self.assertEqual(
-            src.calculator.subtract(**two_numbers),
-            self.random_first_number-self.random_second_number
-        )
-
-    def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-        not_two_numbers = [0, 1, 2]
 
         for operation in self.arithmetic_tests:
             with self.subTest(operation=operation):
+                self.assertEqual(
+                    self.arithmetic_tests[operation]['function'](
+                        **two_numbers
+                    ),
+                    self.arithmetic_tests[operation]['expectation']
+                )
+
+    def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+        for operation in self.arithmetic_tests:
+            with self.subTest(operation=operation):
                 with self.assertRaises(TypeError):
-                    self.arithmetic_tests[operation]['function'](*not_two_numbers)
+                    self.arithmetic_tests[operation]['function'](*[0, 1, 2])
 
 
 # Exceptions seen
