@@ -777,7 +777,7 @@ I sometimes use the :ref:`Identity Function<test_identity_function>` when I am t
 
 ----
 
-The :ref:`Identity Function<test_identity_function>` takes one input, the following tests are for functions_ that take more than one.
+This :ref:`Identity Function<test_identity_function>` takes one input, the following tests are for functions_ that take more than one.
 
 ----
 

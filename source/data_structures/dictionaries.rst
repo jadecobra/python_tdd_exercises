@@ -21,6 +21,7 @@
 .. _popitem method: popitem_
 .. _setdefault: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
 .. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
+.. _update method: update_
 .. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
 .. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 .. _dict class: dict_
@@ -232,7 +233,7 @@ the test passes. These are two ways to make an empty dictionary_ with
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<what is an assertion?>`, this time with input
+* I add another :ref:`assertion<what is an assertion?>`, this time with input to make a dictionary_ with things in it
 
   .. code-block:: python
     :lineno-start: 6
@@ -2513,7 +2514,7 @@ the test passes
 
     AssertionError: {'key': 'value', 'new_key': 'default'} != {'key': 'value', 0: 'default'}
 
-  I change the expectation to match
+* I change the expectation to match
 
   .. code-block:: python
     :lineno-start: 182
@@ -2532,7 +2533,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` to see what happens when I use setdefault_ with a :ref:`key<test_keys_of_a_dictionary>` that is already in the dictionary_
 
   .. code-block:: python
-    :lineno-start: 178
+    :lineno-start: 176
     :emphasize-lines: 7-10
 
         def test_setdefault(self):
@@ -2610,7 +2611,16 @@ the test passes
 * I remove setdefault_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 195
+    :lineno-start: 186
+
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'value',
+                    'new_key': 'default',
+                }
+            )
+
 
     'update',
     'values'
@@ -2642,7 +2652,7 @@ test_update_a_dictionary
 
     'update',
 
-  the test is green. The update_ :ref:`method<functions>` returns :ref:`None`
+  the test is green. The `update method`_ returns :ref:`None`
 
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the dictionary_
 
@@ -2681,7 +2691,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add a value to the call to the update_ :ref:`method<functions>` to see what happens
+* I add a value to the call to the `update method`_ to see what happens
 
   .. code-block:: python
     :lineno-start: 194
@@ -2698,7 +2708,7 @@ the test passes
 
     TypeError: 'int' object is not iterable
 
-  I change the value to a tuple_
+* I change the value to a tuple_
 
   .. code-block:: python
     :lineno-start: 196
@@ -2728,7 +2738,7 @@ the test passes
 
     AssertionError: {'key': 'value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value'}
 
-  I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
+* I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the expectation
 
   .. code-block:: python
     :lineno-start: 196
@@ -2763,7 +2773,7 @@ the test passes
 
     AssertionError: {'key': 'updated value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value', 'new_key': [0, 1, 2, 'n']}
 
-  the update_ :ref:`method<functions>` changes the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key<test_keys_of_a_dictionary>` that is already in a dictionary_
+  the `update method`_ changes the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key<test_keys_of_a_dictionary>` that is already in a dictionary_
 
 * I change the expectation to match
 
@@ -2781,7 +2791,7 @@ the test passes
 
   the test passes
 
-* since the update_ :ref:`method<functions>` takes :ref:`keyword arguments<test_functions_w_keyword_arguments>`, I can give it a dictionary_ as input. I add another :ref:`assertion<what is an assertion?>`
+* since the `update method`_ takes :ref:`keyword arguments<test_functions_w_keyword_arguments>`, I can give it a dictionary_ as input. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 194
@@ -2800,7 +2810,7 @@ the test passes
 
     AssertionError: {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n'], 'another_key': {0, 1, 2, 'n'}} != {'key[14 chars]lue', 'new_key': [0, 1, 2, 'n']}
 
-  I can use the update_ :ref:`method<functions>` to add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from one dictionary_ to another
+  I can use the `update method`_ to add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from one dictionary_ to another
 
 * I change the expectation to match
 
