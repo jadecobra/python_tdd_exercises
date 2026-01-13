@@ -3663,7 +3663,7 @@ the test passes
 * I change the calculation
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 150
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -3718,7 +3718,7 @@ the test passes
                 self.random_first_number*self.random_second_number
             )
             self.assertEqual(
-                src.calculator.multiply(**two_numbers),
+                src.calculator.subtract(**two_numbers),
                 self.random_first_number+self.random_second_number
             )
 
@@ -3731,11 +3731,11 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 143
+    :lineno-start: 158
     :emphasize-lines: 3
 
             self.assertEqual(
-                src.calculator.multiply(**two_numbers),
+                src.calculator.subtract(**two_numbers),
                 self.random_first_number-self.random_second_number
             )
 
