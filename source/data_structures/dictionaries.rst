@@ -3960,7 +3960,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
   .. code-block:: python
     :lineno-start: 187
-    :emphasize-lines:
+    :emphasize-lines: 4-21
 
                 'multiplication': self.random_first_number*self.random_second_number,
             }
@@ -4082,7 +4082,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
         def test_division(self):
 
-* I need a way to handle :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in ``test_calculator_functions`` for the :ref:`divide function<test_division>`. I change ``random_second_number`` to ``0`` in the `setUp method`_ to make :ref:`ZeroDivisionError` happen in the tests
+* I need a way to handle :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in ``test_calculator_functions`` for the :ref:`divide function<test_division>`. I change ``random_second_number`` to ``0`` in the `setUp method`_ to make :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` happen in the tests
 
   .. code-block:: python
     :lineno-start: 12
@@ -4103,7 +4103,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
     FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
     FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - ZeroDivisionError: float division by zero
 
-* I use an :ref:`exception handler<how to use try...except...else>` to add a new :ref:`class attribute (variable)` for the result of :ref:`division<test_division>`
+* I use an :ref:`exception handler<how to use try...except...else>` to add a new :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` for the result of :ref:`division<test_division>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -4135,7 +4135,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
   progress
 
-* I add the :ref:`class attribute<variable>` to ``test_calculator_w_list_items``
+* I add the :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to ``test_calculator_w_list_items``
 
   .. code-block:: python
     :lineno-start: 105
@@ -4165,10 +4165,10 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
     FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
 
-* I add the :ref:`class attribute<variable>` to ``test_calculator_w_dictionary_items``
+* I add the :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to ``test_calculator_w_dictionary_items``
 
   .. code-block:: python
-    :lineno-start 146
+    :lineno-start: 146
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -4176,6 +4176,22 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
                 # self.random_first_number/self.random_second_number
                 self.division_result
             )
+
+  and
+
+  .. code-block:: python
+    :lineno-start: 163
+    :emphasize-lines: 3-4
+
+            self.assertEqual(
+                src.calculator.divide(**two_numbers),
+                # self.random_first_number/self.random_second_number
+                self.division_result
+            )
+
+  the terminal_ shows green. Lovely!
+
+* I remove the commented lines I added
 
 ----
 
