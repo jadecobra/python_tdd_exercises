@@ -136,9 +136,11 @@ class TestCalculator(unittest.TestCase):
 
     def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
         for operation in self.arithmetic_tests:
-            with self.subTest(operation=operation):
-                with self.assertRaises(TypeError):
-                    self.arithmetic_tests[operation]['function'](*[0, 1, 2])
+            with (
+                self.subTest(operation=operation),
+                self.assertRaises(TypeError),
+            ):
+                self.arithmetic_tests[operation]['function'](*[0, 1, 2])
 
 
 # Exceptions seen

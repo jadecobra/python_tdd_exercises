@@ -4390,6 +4390,8 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
     # Exceptions seen
 
+  still green
+
 * I no longer need the :ref:`variable<what is a variable?>`, I remove it and use the :ref:`list<lists>` directly in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
@@ -4401,6 +4403,39 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
                 with self.subTest(operation=operation):
                     with self.assertRaises(TypeError):
                         self.arithmetic_tests[operation]['function'](*[0, 1, 2])
+
+  the test is still green
+
+* Python_ allows me to put the 2 with contexts together in one statement
+
+  .. code-block:: python
+    :lineno-start: 149
+    :emphasize-lines: 3-8
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            for operation in self.arithmetic_tests:
+                # with self.subTest(operation=operation):
+                #     with self.assertRaises(TypeError):
+                with (
+                    self.subTest(operation=operation),
+                    self.assertRaises(TypeError),
+                ):
+                    self.arithmetic_tests[operation]['function'](*[0, 1, 2])
+
+  green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 137
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            for operation in self.arithmetic_tests:
+                with (
+                    self.subTest(operation=operation),
+                    self.assertRaises(TypeError),
+                ):
+                    self.arithmetic_tests[operation]['function'](*[0, 1, 2])
 
 * I add a `for loop`_ to ``test_calculator_w_list_items``
 
