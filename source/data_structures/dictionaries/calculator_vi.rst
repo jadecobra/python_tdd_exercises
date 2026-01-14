@@ -2,7 +2,7 @@
   :description: Master Python dictionaries with TDD! Learn :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s, methods, and testing techniques in this hands-on guide. Start coding now!
   :keywords: Jacob Itegboje, Python dictionaries, Test-Driven Development, Python programming, data structures, unit testing, Python tutorial, coding guide
 
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _clear: https://docs.python.org/3/library/stdtypes.html#dict.clear
 .. _clear method: clear_
@@ -40,7 +40,7 @@ dictionaries part 2
 test_calculator_w_dictionary_items
 *********************************************************************************
 
-I can use a dictionary_ to test the :ref:`calculator functions<how to make a calculator>` as long as its values are numbers
+I can use a dictionary_ to test the :ref:`calculator functions<how to make a calculator part 1>` as long as its values are numbers
 
 =================================================================================
 open the project
@@ -106,7 +106,7 @@ open the project
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test to use a dictionary_ to test the :ref:`calculator<how to make a calculator>`
+I add a new test to use a dictionary_ to test the :ref:`calculator<how to make a calculator part 1>`
 
 .. code-block:: python
   :lineno-start: 119
@@ -281,7 +281,7 @@ the test passes
 
     TypeError: only_takes_numbers.<locals>.wrapper() got an unexpected keyword argument 'x'
 
-* the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` dictionary_ must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``. I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the test
+* the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` dictionary_ must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator part 1>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``. I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the test
 
   .. code-block:: python
     :lineno-start: 124
@@ -431,7 +431,7 @@ the test passes
 
   the test passes
 
-* I can use the :ref:`values method<test_values_of_a_dictionary>` to make a :ref:`list<lists>` to test the :ref:`calculator<how to make a calculator>` in ``test_calculator_w_list_items``
+* I can use the :ref:`values method<test_values_of_a_dictionary>` to make a :ref:`list<lists>` to test the :ref:`calculator<how to make a calculator part 1>` in ``test_calculator_w_list_items``
 
   .. code-block:: python
     :lineno-start: 88
@@ -564,7 +564,7 @@ the test passes
 test_calculator_functions
 *********************************************************************************
 
-I want to use a dictionary_ to write one test that covers all the :ref:`4 calculator functions<how to make a calculator>`
+I want to use a dictionary_ to write one test that covers all the :ref:`4 calculator functions<how to make a calculator part 1>`
 
 =================================================================================
 :green:`RED`: make it pass

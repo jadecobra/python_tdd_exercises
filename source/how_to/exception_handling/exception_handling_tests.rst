@@ -1156,7 +1156,7 @@ close the exceptions project
 test catching ZeroDivisionError in test_calculator.py
 *********************************************************************************
 
-I want to add an exception handler to the :ref:`calculator project<how to make a calculator>` for ZeroDivisionError_ in :ref:`test_division`
+I want to add an exception handler to the :ref:`calculator project<how to make a calculator part 1>` for ZeroDivisionError_ in :ref:`test_division`
 
 =================================================================================
 open the project

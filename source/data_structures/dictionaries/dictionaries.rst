@@ -2,7 +2,7 @@
   :description: Master Python dictionaries with TDD! Learn :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s, methods, and testing techniques in this hands-on guide. Start coding now!
   :keywords: Jacob Itegboje, Python dictionaries, Test-Driven Development, Python programming, data structures, unit testing, Python tutorial, coding guide
 
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _clear: https://docs.python.org/3/library/stdtypes.html#dict.clear
 .. _clear method: clear_

@@ -32,6 +32,7 @@ These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<
 
   exception_handling_tests
   exception_handling_programs
+  calculator_ii
 
 ----
 
