@@ -33,7 +33,7 @@
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
 #################################################################################
-dictionaries part 2
+how to make a calculator part 6
 #################################################################################
 
 *********************************************************************************
