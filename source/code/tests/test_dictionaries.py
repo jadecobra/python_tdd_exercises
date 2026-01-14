@@ -195,7 +195,9 @@ class TestDictionaries(unittest.TestCase):
         a_dictionary = {'key': 'value'}
         self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
         self.assertIsNone(a_dictionary.update(key='updated value'))
-        self.assertIsNone(a_dictionary.update({'another_key': {0, 1, 2, 'n'}}))
+        self.assertIsNone(a_dictionary.update({
+            'another_key': {0, 1, 2, 'n'}
+        }))
         self.assertEqual(
             a_dictionary,
             {
@@ -243,4 +245,5 @@ class TestDictionaries(unittest.TestCase):
 # Exceptions seen
 # AssertionError
 # TypeError
+# NameError
 # KeyError

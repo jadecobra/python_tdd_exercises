@@ -2948,17 +2948,19 @@ the test passes
   .. code-block:: python
     :lineno-start: 202
 
-          self.assertEqual(
-              a_dictionary,
-              {
-                  'key': 'updated value',
-                  'new_key': [0, 1, 2, 'n'],
-                  'another_key': {0, 1, 2, 'n'},
-              }
-          )
+            self.assertEqual(
+                a_dictionary,
+                {
+                    'key': 'updated value',
+                    'new_key': [0, 1, 2, 'n'],
+                    'another_key': {0, 1, 2, 'n'},
+                }
+            )
 
 
-  'values'
+    'values'
+
+:ref:`I know how to add key-value pairs from one dictionary to another<test_update_a_dictionary>`
 
 ----
 
@@ -2970,12 +2972,17 @@ test_values_of_a_dictionary
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the last :ref:`method<functions>`
+I add a test for the last :ref:`method<functions>` in my TODO list
 
 .. code-block:: python
-  :lineno-start: 204
-  :emphasize-lines: 5-7
+  :lineno-start: 202
+  :emphasize-lines: 10-12
 
+          self.assertEqual(
+              a_dictionary,
+              {
+                  'key': 'updated value',
+                  'new_key': [0, 1, 2, 'n'],
                   'another_key': {0, 1, 2, 'n'},
               }
           )
@@ -3002,7 +3009,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I add the expected value
 
   .. code-block:: python
-    :lineno-start: 208
+    :lineno-start: 211
     :emphasize-lines: 3-6
 
         def test_values(self):
@@ -3021,7 +3028,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I remove the things around the :ref:`list<lists>` in the ``dict_values`` :ref:`object<classes>`
 
   .. code-block:: python
-    :lineno-start: 210
+    :lineno-start: 213
     :emphasize-lines: 3
 
             self.assertIsNone(
@@ -3031,10 +3038,14 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
   the terminal_ shows :ref:`AssertionError`
 
+  .. code-block:: python
+
+    AssertionError: dict_values(['value']) is not None : ['value']
+
 * I use the :ref:`list constructor<test_making_a_list>` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
-    :lineno-start: 210
+    :lineno-start: 213
     :emphasize-lines: 2
 
             self.assertIsNone(
@@ -3051,7 +3062,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 210
+    :lineno-start: 213
     :emphasize-lines: 2
 
             self.assertEqual(
@@ -3068,7 +3079,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the dictionary_ to see what happens when it has more than one :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
   .. code-block:: python
-    :lineno-start: 208
+    :lineno-start: 211
     :emphasize-lines: 2-5
 
         def test_values(self):
@@ -3090,7 +3101,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the values in the expectation
 
   .. code-block:: python
-    :lineno-start: 213
+    :lineno-start: 216
     :emphasize-lines: 3-6
 
             self.assertEqual(
@@ -3106,7 +3117,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 208
+    :lineno-start: 211
     :emphasize-lines: 1
 
         def test_values_of_a_dictionary(self):
@@ -3127,13 +3138,29 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
 * I remove values_ from the TODO list
 
+  .. code-block:: python
+    :lineno-start: 216
+
+            self.assertEqual(
+                list(a_dictionary.values()),
+                [
+                    'value1',
+                    [0, 1, 2, 'n']
+                ]
+            )
+
+
+    # Exceptions seen
+
+:ref:`I know how to look at the values of a dictionary<test_values_of_a_dictionary>`
+
 ----
 
 *********************************************************************************
 test_key_error
 *********************************************************************************
 
-The `KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<errors>` to know when working with a dictionary_. It happened earlier in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value`
+`KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<errors>` to know when working with a dictionary_. It happened earlier in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -3143,9 +3170,13 @@ I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref
 
 .. code-block:: python
   :lineno-start: 217
-  :emphasize-lines: 5-7
+  :emphasize-lines: 9-11
 
-                  [0, 1, 2, 'n'],
+          self.assertEqual(
+              list(a_dictionary.values()),
+              [
+                  'value1',
+                  [0, 1, 2, 'n']
               ]
           )
 
@@ -3162,7 +3193,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 'value' != ''
 
-I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a dictionary_ by giving the :ref:`key<test_key_error>` in ``[]``, just like :ref:`viewing items in a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>`
+I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a dictionary_ by giving the :ref:`key<test_key_error>` in ``[]``, the same way :ref:`I can get items from a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in ``[]``
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -3171,7 +3202,7 @@ I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in 
 I change the value in the expectation to match the terminal_
 
 .. code-block:: python
-  :lineno-start: 223
+  :lineno-start: 226
   :emphasize-lines: 1
 
           self.assertEqual(a_dictionary['key'], 'value')
@@ -3185,7 +3216,7 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>`, this time for a :ref:`key<test_keys_of_a_dictionary>` that is not in the dictionary_
 
   .. code-block:: python
-    :lineno-start: 224
+    :lineno-start: 226
     :emphasize-lines: 2
 
             self.assertEqual(a_dictionary['key'], 'value')
@@ -3200,7 +3231,7 @@ the test passes
 * I change the assertEqual_ to assertRaises_
 
   .. code-block:: python
-    :lineno-start: 223
+    :lineno-start: 226
     :emphasize-lines: 3-4
 
             self.assertEqual(a_dictionary['key'], 'value')
@@ -3210,10 +3241,10 @@ the test passes
 
   the test passes
 
-* I can use the `get method`_ if I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a dictionary_
+* I can use the `get method`_ when I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a dictionary_
 
   .. code-block:: python
-    :lineno-start: 225
+    :lineno-start: 228
     :emphasize-lines: 3-6
 
             with self.assertRaises(KeyError):
@@ -3232,7 +3263,7 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 227
+    :lineno-start: 230
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -3245,13 +3276,14 @@ the test passes
 * Earlier on in :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value` the `pop method`_ raised :ref:`KeyError<test_key_error>` when I gave it a :ref:`key<test_keys_of_a_dictionary>` that was not in the dictionary_, I add another :ref:`assertion<what is an assertion?>` for it
 
   .. code-block:: python
-    :lineno-start: 227
-    :emphasize-lines: 5
+    :lineno-start: 230
+    :emphasize-lines: 6
 
             self.assertEqual(
                 a_dictionary.get('not_in_dictionary', 'default'),
                 'default'
             )
+
             a_dictionary.pop('not_in_dictionary')
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
@@ -3263,7 +3295,7 @@ the test passes
 * I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 227
+    :lineno-start: 230
     :emphasize-lines: 6-7
 
             self.assertEqual(
@@ -3276,10 +3308,10 @@ the test passes
 
   the test passes
 
-* I can give a second argument if I do not want the `pop method`_ to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. I add an :ref:`assertion<what is an assertion?>`
+* I can give a second argument when I do not want the `pop method`_ to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the dictionary_. I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 232
+    :lineno-start: 235
     :emphasize-lines: 3-6
 
             with self.assertRaises(KeyError):
@@ -3298,7 +3330,7 @@ the test passes
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 234
+    :lineno-start: 237
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -3311,13 +3343,14 @@ the test passes
 * The `popitem method`_ also raises :ref:`KeyError<test_key_error>` when called on an empty dictionary_
 
   .. code-block::
-    :lineno-start: 234
-    :emphasize-lines: 5
+    :lineno-start: 237
+    :emphasize-lines: 6
 
             self.assertEqual(
                 a_dictionary.pop('not_in_dictionary', 'default'),
                 'default'
             )
+
             {}.popitem()
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
@@ -3329,7 +3362,7 @@ the test passes
 * I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 221
+    :lineno-start: 224
     :emphasize-lines: 19-20
 
         def test_key_error(self):
@@ -3357,9 +3390,12 @@ the test passes
     # Exceptions seen
     # AssertionError
     # TypeError
+    # NameError
     # KeyError
 
   the test passes
+
+:ref:`I know what causes KeyError<test_key_error>`
 
 ----
 
@@ -3367,7 +3403,7 @@ the test passes
 close the project
 *********************************************************************************
 
-* I close ``dictionaries.py`` in the :ref:`editor<2 editors>`
+* I close ``test_dictionaries.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
   .. code-block:: shell
