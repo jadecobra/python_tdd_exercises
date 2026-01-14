@@ -224,7 +224,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1

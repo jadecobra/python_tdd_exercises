@@ -130,7 +130,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
     .. code-block:: PowerShell
       :linenos:
@@ -164,7 +164,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -282,7 +282,7 @@ the test passes. These are two ways to make an empty dictionary_
     # AssertionError
     # TypeError
 
-* I change the value to a tuple_
+* I change the value given to ``dict()`` to a tuple_
 
   .. code-block:: python
     :lineno-start: 7
@@ -544,12 +544,14 @@ test_making_a_dictionary_w_a_tuple_as_a_key
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to see if I can use a tuple_ (anything in parentheses (``()``)) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+I add a test to see if I can use a tuple_ (anything in parentheses (``()``), separated by a comma) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
-  :lineno-start: 22
-  :emphasize-lines: 4-8
+  :lineno-start: 20
+  :emphasize-lines: 6-10
 
+          self.assertEqual(
+              {0: 'boom', 0.1: 'bap'},
               {0: 'boom', 0.1: 'bap'}
           )
 
@@ -597,9 +599,11 @@ test_making_a_dictionary_w_a_list_as_a_key
 I add a test for :ref:`lists` (anything in square brackets (``[]``))
 
 .. code-block:: python
-  :lineno-start: 28
-  :emphasize-lines: 4-8
+  :lineno-start: 26
+  :emphasize-lines: 6-9
 
+          self.assertEqual(
+              {(0, 1): 'boom'},
               {(0, 1): 'boom'}
           )
 
@@ -621,28 +625,30 @@ the terminal_ shows :ref:`TypeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I remove the things around the new dictionary_ then change the :ref:`key<test_keys_of_a_dictionary>` and :ref:`value<test_values_of_a_dictionary>` for fun
+* I remove the things around the new dictionary_ then change the :ref:`key<test_keys_of_a_dictionary>` and :ref:`value<test_values_of_a_dictionary>` for fun
 
-.. code-block:: python
-  :lineno-start: 31
-  :emphasize-lines: 3
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 3
 
-      def test_making_a_dictionary_w_a_list_as_a_key(self):
+        def test_making_a_dictionary_w_a_list_as_a_key(self):
 
-          {[3, 2, 1]: 'BOOM!!!'}
+            {[3, 2, 1]: 'BOOM!!!'}
 
 
-the terminal_ still shows :ref:`TypeError`. I add assertRaises_
+  the terminal_ still shows :ref:`TypeError`
 
-.. code-block:: python
-  :lineno-start: 31
-  :emphasize-lines: 2
+* I add assertRaises_
 
-      def test_making_a_dictionary_w_a_list_as_a_key(self):
-          with self.assertRaises(TypeError):
-              {[3, 2, 1]: 'BOOM!!!'}
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2
 
-the test passes. I cannot use a :ref:`list<lists>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+        def test_making_a_dictionary_w_a_list_as_a_key(self):
+            with self.assertRaises(TypeError):
+                {[3, 2, 1]: 'BOOM!!!'}
+
+  the test passes. I cannot use a :ref:`list<lists>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -657,9 +663,10 @@ test_making_a_dictionary_w_a_set_as_a_key
 I add another test with a set_ (single items in curly braces (``{}``)) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
-  :lineno-start: 33
-  :emphasize-lines: 3-4
+  :lineno-start: 32
+  :emphasize-lines: 4-5
 
+          with self.assertRaises(TypeError):
               {[3, 2, 1]: 'BOOM!!!'}
 
       def test_making_a_dictionary_w_a_set_as_a_key(self):
@@ -703,10 +710,11 @@ test_making_a_dictionary_w_a_dictionary_as_a_key
 I add another test, this time for a dictionary_
 
 .. code-block:: python
-  :lineno-start: 37
-  :emphasize-lines: 3-5
+  :lineno-start: 36
+  :emphasize-lines: 4-6
 
-              {{3, 2, 1}: 'BOOM!!!'}
+          with self.assertRaises(TypeError):
+              {[3, 2, 1]: 'BOOM!!!'}
 
       def test_making_a_dictionary_w_a_dictionary_as_a_key(self):
           a_dictionary = {'key': 'value'}
@@ -754,9 +762,10 @@ test_attributes_and_methods_of_dictionaries
 I add a new test with the `dir built-in function`_ to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of dictionaries_
 
 .. code-block:: python
-  :lineno-start: 42
-  :emphasize-lines: 4-7
+  :lineno-start: 41
+  :emphasize-lines: 4-8
 
+          with self.assertRaises(TypeError):
               {a_dictionary: 'BOOM!!!'}
 
       def test_attributes_and_methods_of_dictionaries(self):
@@ -983,11 +992,12 @@ the test passes
 * I remove clear_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 104
+    :lineno-start: 101
 
             self.assertEqual(a_dictionary, {})
 
 
+    'copy',
     'fromkeys',
     'get',
     'items',
@@ -1010,7 +1020,7 @@ test_copy_a_dictionary
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the next :ref:`method<functions>`
+I add a test for the `copy method`_
 
 .. code-block:: python
   :lineno-start: 101
@@ -1096,8 +1106,10 @@ the test passes
 * I remove copy_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 105
 
+            self.assertEqual(
+                a_dictionary.copy(),
                 {'key': 'value'}
             )
 
@@ -1127,9 +1139,11 @@ test_fromkeys_makes_a_dictionary_from_an_iterable
 I add a test for the next :ref:`method<functions>` from the TODO list
 
 .. code-block:: python
-  :lineno-start: 107
-  :emphasize-lines: 4-6
+  :lineno-start: 105
+  :emphasize-lines: 6-8
 
+          self.assertEqual(
+              a_dictionary.copy(),
               {'key': 'value'}
           )
 
@@ -1241,7 +1255,7 @@ the terminal_ shows :ref:`TypeError`
   the dictionary_ did not change
 
 * I remove the last line I added
-* then change the call to fromkeys_ to use the `dict class`_ instead
+* then change the call to fromkeys_ to use the `dict class`_
 
   .. code-block:: python
     :lineno-start: 110
@@ -1343,8 +1357,10 @@ the terminal_ shows :ref:`TypeError`
 * I remove fromkeys_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 111
 
+            self.assertEqual(
+                dict.fromkeys((0, 1), 'default'),
                 {0: 'default', 1: 'default'}
             )
 
@@ -1358,7 +1374,7 @@ the terminal_ shows :ref:`TypeError`
     'update',
     'values'
 
-:ref:`I know how to make dictionary from an iterable<tesT_fromkeys_makes_a_dictionary_from_an_iterable>`
+:ref:`I know how to make a dictionary from an iterable<tesT_fromkeys_makes_a_dictionary_from_an_iterable>`
 
 ----
 
@@ -1373,9 +1389,11 @@ test_get_value_of_a_key_in_a_dictionary
 I add a test for the `get method`_
 
 .. code-block:: python
-  :lineno-start: 114
-  :emphasize-lines: 4-6
+  :lineno-start: 111
+  :emphasize-lines: 6-8
 
+          self.assertEqual(
+              dict.fromkeys((0, 1), 'default'),
               {0: 'default', 1: 'default'}
           )
 
@@ -1399,7 +1417,7 @@ the terminal_ shows :ref:`TypeError`
 I add a value to the call
 
 .. code-block:: python
-  :lineno-start: 119
+  :lineno-start: 118
   :emphasize-lines: 1
 
           self.assertIsNone(a_dictionary.get(0))
@@ -1413,7 +1431,7 @@ the test passes
 * the `get method`_ also expected at least 1 argument, I add :ref:`None` to the call
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 118
     :emphasize-lines: 1
 
             self.assertIsNone(a_dictionary.get(0, None))
@@ -1423,7 +1441,7 @@ the test passes
 * I change the second argument expecting a failure
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 118
     :emphasize-lines: 1
 
             self.assertIsNone(a_dictionary.get(0, 'default'))
@@ -1437,7 +1455,7 @@ the test passes
 * I add the expectation
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 116
     :emphasize-lines: 3-6
 
         def test_get(self):
@@ -1456,7 +1474,7 @@ the test passes
 * I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 118
     :emphasize-lines: 1
 
             self.assertEqual(
@@ -1469,7 +1487,7 @@ the test passes
 * I change ``0`` in the call to be clearer
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 118
     :emphasize-lines: 2
     :emphasize-text: not_in_dictionary
 
@@ -1483,7 +1501,7 @@ the test passes
 * I want to see what happens when I use the `get method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_, I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 118
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -1529,7 +1547,7 @@ the test passes
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 116
     :emphasize-lines: 1
 
         def test_get_value_of_a_key_in_a_dictionary(self):
@@ -1551,7 +1569,7 @@ the test passes
 * I remove get_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 123
+    :lineno-start: 122
 
             self.assertEqual(
                 a_dictionary.get('key', 'default'),
@@ -1567,7 +1585,7 @@ the test passes
     'update',
     'values'
 
-:ref:`I know how t get the value of a key that is in a dictionary<test_get_value_of_a_key_in_a_dictionary>`
+:ref:`I know how to get the value of a key that is in a dictionary<test_get_value_of_a_key_in_a_dictionary>`
 
 ----
 
@@ -1582,7 +1600,7 @@ test_items_returns_iterable_of_key_value_pairs_of_a_dictionary
 I add the next test from the TODO list
 
 .. code-block:: python
-  :lineno-start: 123
+  :lineno-start: 122
   :emphasize-lines: 6-8
 
           self.assertEqual(
@@ -1610,7 +1628,7 @@ the terminal_ shows :ref:`AssertionError`
 * I copy the ``dict_items`` :ref:`object<classes>` from the terminal_ and paste  it as the expectation
 
   .. code-block:: python
-    :lineno-start: 129
+    :lineno-start: 128
     :emphasize-lines: 2-5
 
             a_dictionary = {'key': 'value'}
@@ -1625,7 +1643,7 @@ the terminal_ shows :ref:`AssertionError`
 
     NameError: name 'dict_items' is not defined
 
-  this new :ref:`object<classes>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`
+  this new :ref:`object<classes>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -1642,7 +1660,7 @@ the terminal_ shows :ref:`AssertionError`
 * I remove the stuff around the :ref:`list<lists>`
 
   .. code-block:: python
-    :lineno-start: 130
+    :lineno-start: 129
     :emphasize-lines: 3
 
             self.assertIsNone(
@@ -1656,10 +1674,10 @@ the terminal_ shows :ref:`AssertionError`
 
     AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
-* I pass the call to the `items method`_ to :ref:`list()<test_making_a_list>` to see if it is :ref:`iterable<what is an iterable?>`
+* I pass the call to the `items method`_ to ``list()`` to see if it is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
-    :lineno-start: 130
+    :lineno-start: 129
     :emphasize-lines: 2
 
             self.assertIsNone(
@@ -1678,7 +1696,7 @@ the terminal_ shows :ref:`AssertionError`
 * I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 130
+    :lineno-start: 129
     :emphasize-lines: 1
 
             self.assertEqual(
@@ -1688,7 +1706,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the test passes.
 
-  This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<classes>` is :ref:`iterable<what is an iterable?>`
+This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<classes>` is :ref:`iterable<what is an iterable?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1697,7 +1715,7 @@ the terminal_ shows :ref:`AssertionError`
 * I add another key-value pair to the dictionary_ to see what the :ref:`method<functions>` does when there is more than one
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 127
     :emphasize-lines: 2-5
 
         def test_items(self):
@@ -1722,7 +1740,7 @@ the terminal_ shows :ref:`AssertionError`
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 133
+    :lineno-start: 132
     :emphasize-lines: 3-6
 
             self.assertEqual(
@@ -1738,7 +1756,7 @@ the terminal_ shows :ref:`AssertionError`
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 127
     :emphasize-lines: 1
 
         def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
@@ -1760,7 +1778,7 @@ the terminal_ shows :ref:`AssertionError`
 * I remove items_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 133
+    :lineno-start: 132
 
             self.assertEqual(
                 list(a_dictionary.items()),
@@ -1795,7 +1813,7 @@ test_keys_of_a_dictionary
 I add a new test
 
 .. code-block:: python
-  :lineno-start: 133
+  :lineno-start: 132
   :emphasize-lines: 9-11
 
               self.assertEqual(
@@ -1828,7 +1846,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I copy the ``dict_keys`` :ref:`object<classes>` from the terminal_ and paste it as the expectation
 
   .. code-block:: python
-    :lineno-start: 141
+    :lineno-start: 140
     :emphasize-lines: 3-6
 
         def test_keys(self):
@@ -1846,10 +1864,10 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
   the ``dict_keys`` :ref:`object<classes>` has a :ref:`list<lists>`
 
-* I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<classes>` as the expectation instead
+* I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<classes>` as the expectation
 
   .. code-block:: python
-    :lineno-start: 141
+    :lineno-start: 140
     :emphasize-lines: 5
 
         def test_keys(self):
@@ -1865,10 +1883,10 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: dict_keys(['key']) is not None : ['key']
 
-* I pass the call to the `keys method`_ to :ref:`list()<test_making_a_list>` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
+* I pass the call to the `keys method`_ to ``list()`` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
-    :lineno-start: 143
+    :lineno-start: 142
     :emphasize-lines: 2
 
             self.assertIsNone(
@@ -1885,7 +1903,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
   I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 143
+    :lineno-start: 142
     :emphasize-lines: 1
 
             self.assertEqual(
@@ -1902,7 +1920,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I add another :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to the dictionary_ to see what the `keys method`_ returns when there are multiple
 
   .. code-block:: python
-    :lineno-start: 141
+    :lineno-start: 140
     :emphasize-lines: 2-5
 
         def test_keys(self):
@@ -1924,7 +1942,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 146
+    :lineno-start: 145
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -1937,7 +1955,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 141
+    :lineno-start: 140
     :emphasize-lines: 1
 
         def test_keys_of_a_dictionary(self):
@@ -1956,7 +1974,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 * I remove keys_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 146
+    :lineno-start: 145
 
             self.assertEqual(
                 list(a_dictionary.keys()),
@@ -3042,7 +3060,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     AssertionError: dict_values(['value']) is not None : ['value']
 
-* I use :ref:`list()<test_making_a_list>` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
+* I use ``list()`` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 213
@@ -3482,7 +3500,7 @@ open the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1

@@ -44,7 +44,6 @@
 .. _computer program: https://grokipedia.com/page/Computer_program
 .. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _conditional expressions: `conditional expression`_
-.. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
 .. _directory: https://grokipedia.com/page/Directory_(computing)
 .. _directories: directory_
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime

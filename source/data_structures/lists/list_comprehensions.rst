@@ -116,7 +116,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
     .. code-block:: PowerShell
       :linenos:
@@ -150,7 +150,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` instead of ``makePythonTdd.sh``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -329,7 +329,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   ``range(0, 10)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus ``1``, in this case it goes from ``0`` to ``9``
 
-* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<lists>`, but there is an easier way. I can do the same thing with :ref:`list()<test_making_a_list>`
+* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<lists>`, but there is an easier way. I can do the same thing with ``list()``
 
   .. code-block:: python
     :lineno-start: 12
@@ -571,7 +571,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
 :ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`
 
-Why did I use a `for loop`_ when I can use :ref:`list()<test_making_a_list>` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
+Why did I use a `for loop`_ when I can use ``list()`` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
 
 ----
 
@@ -649,7 +649,7 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 
             self.assertEqual(a_list, list(iterable))
 
-  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not better than :ref:`list()<test_making_a_list>`
+  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not better than ``list()``
 
 * I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<lists>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the duplication
 
@@ -933,7 +933,7 @@ the test passes. The `list comprehension`_ is like the `for loop`_ without the :
   * loop through the :ref:`iterable<what is an iterable?>`
   * do the operation I want on every item of the :ref:`iterable<what is an iterable?>`
 
-  with the `list comprehension`_, I do all the steps in one line, and still none of the other ways are better than using :ref:`list()<test_making_a_list>`, yet.
+  with the `list comprehension`_, I do all the steps in one line, and still none of the other ways are better than using ``list()``, yet.
 
 :ref:`I know how to use a list comprehension to make a list<test_making_a_list_w_a_list_comprehension>`
 
@@ -1015,7 +1015,7 @@ I add the :ref:`if statement<if statements>`
               [item for item in self.iterable if item % 2 == 0]
           )
 
-the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using :ref:`list()<test_making_a_list>`
+the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using ``list()``
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1390,7 +1390,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   I have to make the `filter object`_ a :ref:`list<lists>`
 
-* I put it in :ref:`list()<test_making_a_list>`
+* I put it in ``list()``
 
   .. code-block:: python
     :lineno-start: 17
@@ -1566,7 +1566,7 @@ the test passes
 
   I have to change the `map object`_ to a :ref:`list<lists>`
 
-* I add :ref:`list()<test_making_a_list>`
+* I add ``list()``
 
   .. code-block:: python
     :lineno-start: 28
@@ -1914,7 +1914,7 @@ open the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -2421,7 +2421,7 @@ open the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` instead of ``source .venv/bin/activate``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
 
     .. code-block:: shell
       :emphasize-lines: 1
