@@ -998,9 +998,9 @@ the test passes
 
 ----
 
-=================================================================================
+*********************************************************************************
 close the project
-=================================================================================
+*********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
@@ -1043,30 +1043,12 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make a list_ with ``list()`` or square brackets (``[]``), then I ran the following tests for the :ref:`methods of lists<test_attributes_and_methods_of_lists>` from append_ to sort_
+I added the following tests to the :ref:`calculator program<how to make a calculator part 3>` after testing :ref:`lists<what is a list?>`
 
-* :ref:`test_append_adds_item_to_end_of_a_list`
-* :ref:`test_clear_empties_a_list`
-* :ref:`test_copy_a_list`
-* :ref:`test_count_number_of_times_item_is_in_a_list`
-* :ref:`test_extend_adds_items_from_an_iterable_to_end_of_a_list`
-* :ref:`test_index_returns_first_position_of_item_in_a_list`
-* :ref:`test_insert_item_at_position_in_a_list`
-* :ref:`test_pop_removes_and_returns_last_item_from_a_list`
-* :ref:`test_remove_first_time_item_is_in_a_list`
-* :ref:`test_reverse_a_list`
-* :ref:`test_sort_a_list`
-
-I also added tests for
-
-* :ref:`getting items of a list<test_getting_items_of_a_list>`
-* :ref:`setting items in a list<test_setting_items_in_a_list>`
-* :ref:`slicing a list<test_looking_at_parts_of_a_list_aka_slicing>`
-* :ref:`the Exception to know when working with lists (IndexError) <test_index_error>`
-
-----
-
-:ref:`How many questions can you answer after going through this chapter?<questions about lists>`
+* :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+* :ref:`add more instance tests to the only_takes_numbers function<how to test if something is an instance of more than one type>`
+* :ref:`test_calculator_w_list_items`
+* :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
 
 ----
 
