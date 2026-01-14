@@ -43,14 +43,8 @@ I want to practice using lists_ with the :ref:`calculator project<how to make a 
 ----
 
 *********************************************************************************
-test_calculator_sends_message_when_input_is_a_list
-*********************************************************************************
-
-I want to see what happens when I send a list_ as input to the :ref:`calculator program<how to make a calculator part 1>`, will it send a message or raise :ref:`TypeError`?
-
-=================================================================================
 open the project
-=================================================================================
+*********************************************************************************
 
 * I `change directory`_ to the ``calculator`` folder_
 
@@ -107,6 +101,14 @@ open the project
     ============================ 5 passed in X.YZs =============================
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+----
+
+*********************************************************************************
+test_calculator_sends_message_when_input_is_a_list
+*********************************************************************************
+
+I want to see what happens when I send a list_ as input to the :ref:`calculator program<how to make a calculator part 1>`, will it send a message or raise :ref:`TypeError`?
 
 =================================================================================
 :red:`RED`: make it fail
@@ -431,7 +433,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
 
   still green
 
-* I can use :ref:`Logical Negation (NOT)<test_logical_negation>` to make the :ref:`if statement<if statements>` allow only the types of numbers (integers_ and floats_) that I want the :ref:`calculator<how to make a calculator part 1>` to handle
+* I can use :ref:`Logical Negation (NOT)<test_logical_negation>` to make the :ref:`if statement<if statements>` allow only the types of numbers (integers_ and floats_) that I want the :ref:`calculator<how to make a calculator part 1>` to work with
 
   .. code-block:: python
     :linenos:
