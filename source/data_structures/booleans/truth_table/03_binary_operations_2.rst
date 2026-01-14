@@ -121,7 +121,7 @@ there is no definition for ``negate_first`` in ``truth_table.py``
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the :ref:`function<functions>` definition in ``truth_table.py``
+I add the :ref:`function<what is a function?>` definition in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 29
@@ -239,7 +239,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
     AssertionError: False is not true
 
-* I add :ref:`if statements` for this case to the ``negate_first`` :ref:`function<functions>` in ``truth_table.py``
+* I add :ref:`if statements` for this case to the ``negate_first`` :ref:`function<what is a function?>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -292,7 +292,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
   - :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
-* since the 2 cases where the ``negate_first`` :ref:`function<functions>` returns :ref:`True<test_what_is_true>` are when the first input is :ref:`False<test_what_is_false>`. I can write it as an :ref:`if statement<if statements>` with an `else clause`_
+* since the 2 cases where the ``negate_first`` :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>` are when the first input is :ref:`False<test_what_is_false>`. I can write it as an :ref:`if statement<if statements>` with an `else clause`_
 
   .. code-block:: python
     :lineno-start: 33
@@ -435,7 +435,7 @@ there is no definition for ``logical_nand`` in ``truth_table.py``
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a definition for the :ref:`function<functions>` to ``truth_table.py``
+I add a definition for the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 33
@@ -472,7 +472,7 @@ the test passes.
 
     AssertionError: False is not true
 
-* I add :ref:`if statements` to the ``logical_nand`` :ref:`function<functions>` in ``truth_table.py``
+* I add :ref:`if statements` to the ``logical_nand`` :ref:`function<what is a function?>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -512,7 +512,7 @@ the test passes.
             return True
         return False
 
-  the terminal_ still shows green. the ``logical_nand`` :ref:`function<functions>` returns
+  the terminal_ still shows green. the ``logical_nand`` :ref:`function<what is a function?>` returns
 
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
@@ -871,7 +871,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition in ``truth_table.py``
+I add a :ref:`function<what is a function?>` definition in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 37
@@ -984,7 +984,7 @@ there is no definition for ``logical_disjunction`` in ``truth_table.py`` in the 
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the :ref:`function<functions>` to ``truth_table.py``
+I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 41

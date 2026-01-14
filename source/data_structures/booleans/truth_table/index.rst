@@ -23,7 +23,7 @@ Sometimes I want programs to make decisions based on inputs or conditions, and c
 
 I can add these to a program so that when it gets information about the person, it can make a decision or return output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote"
 
-The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics and the assertFalse_ and assertTrue_ :ref:`methods<functions>` from :ref:`AssertionError`, :ref:`None` and :ref:`booleans`.
+The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics and the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError`, :ref:`None` and :ref:`booleans`.
 
 All operations from the `Truth Table`_ always result in :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 

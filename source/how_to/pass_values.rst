@@ -14,7 +14,7 @@ how to pass values
 
 I want to be able to send things from tests to the program_ I am testing and compare what I think will happen with the results I get. This helps me see what is the same, and what is different, the difference helps me know what to change to get what I want.
 
-I use :ref:`the identity function<test_identity_function>` to show how input is passed from a test to a :ref:`function<functions>` in a :ref:`module<ModuleNotFoundError>`
+I use :ref:`the identity function<test_identity_function>` to show how input is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -408,7 +408,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     TypeError: 'NoneType' object is not callable
 
-  I cannot call :ref:`None` the way I can call a :ref:`function<functions>`
+  I cannot call :ref:`None` the way I can call a :ref:`function<what is a function?>`
 
 * I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
@@ -422,7 +422,7 @@ there is no definition for ``src`` in ``test_telephone.py``
     # AttributeError
     # TypeError
 
-* I change ``text`` to a :ref:`function<functions>` in ``telephone.py`` to make it callable_
+* I change ``text`` to a :ref:`function<what is a function?>` in ``telephone.py`` to make it callable_
 
   .. code-block:: python
     :linenos:
@@ -437,9 +437,9 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  ``src.telephone.text`` was called with ``"hello"`` as input but the definition of the :ref:`function<functions>` does not take any input - the parentheses are empty
+  ``src.telephone.text`` was called with ``"hello"`` as input but the definition of the :ref:`function<what is a function?>` does not take any input - the parentheses are empty
 
-* I make the :ref:`function<functions>` take input and call it ``the_input``
+* I make the :ref:`function<what is a function?>` take input and call it ``the_input``
 
   .. code-block:: python
     :linenos:
@@ -454,7 +454,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     AssertionError: None != 'I received: hello'
 
-  the test expects ``'I received: hello'`` and the ``text`` :ref:`function<functions>` returns :ref:`None`
+  the test expects ``'I received: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None`
 
 * I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None`
 
@@ -471,7 +471,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-The problem with this solution is that the ``text`` :ref:`function<functions>` does not care about the input it gets, it always returns ``'I received: hello'`` when called. I want it to return the value it gets as part of the message.
+The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about the input it gets, it always returns ``'I received: hello'`` when called. I want it to return the value it gets as part of the message.
 
 ---------------------------------------------------------------------------------
 :red:`RED`: make it fail
@@ -502,7 +502,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: 'I received: hello' != 'I received: yes'
 
-the ``text`` :ref:`function<functions>` always returns ``'I received: hello'``, the test expects ``'I received: yes'``
+the ``text`` :ref:`function<what is a function?>` always returns ``'I received: hello'``, the test expects ``'I received: yes'``
 
 ---------------------------------------------------------------------------------
 :green:`GREEN`: make it pass
@@ -559,7 +559,7 @@ test_passing_a_class
 :red:`RED`: make it fail
 =================================================================================
 
-I add a failing test in ``test_telephone.py`` to see what happens when I pass a :ref:`class <classes>` from a test to the ``text`` :ref:`function<functions>`
+I add a failing test in ``test_telephone.py`` to see what happens when I pass a :ref:`class <classes>` from a test to the ``text`` :ref:`function<what is a function?>`
 
 .. code-block:: python
   :lineno-start: 12
@@ -1123,7 +1123,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     TypeError: 'NoneType' object is not callable
 
-  I make ``text`` a :ref:`function<functions>`
+  I make ``text`` a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1137,7 +1137,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  I make the :ref:`function<functions>` take input
+  I make the :ref:`function<what is a function?>` take input
 
   .. code-block:: python
     :linenos:
@@ -1284,7 +1284,7 @@ you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>` and
+* :ref:`how to write functions<what is a function?>` and
 * :ref:`how to pass values from tests to functions<how to pass values>`
 
 :ref:`Would you like to use some of the assert methods from AssertionError to test Python's data structures?<data structures>`

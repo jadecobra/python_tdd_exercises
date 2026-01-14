@@ -251,7 +251,7 @@ There are :ref:`objects<classes>` that can NOT be called
   - the ``()`` to the right of ``src.type_error.none`` makes it a call
   - the name ``none`` points to :ref:`None` which is NOT callable_
 
-  I cannot call :ref:`None` like a :ref:`function<functions>`
+  I cannot call :ref:`None` like a :ref:`function<what is a function?>`
 
 * I add TypeError_ to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
 
@@ -264,7 +264,7 @@ There are :ref:`objects<classes>` that can NOT be called
     # AttributeError
     # TypeError
 
-* I make ``none`` a :ref:`function<functions>` in ``type_error.py`` to make it callable_
+* I make ``none`` a :ref:`function<what is a function?>` in ``type_error.py`` to make it callable_
 
   .. code-block:: python
     :linenos:
@@ -275,7 +275,7 @@ There are :ref:`objects<classes>` that can NOT be called
 
   the test passes
 
-I can call a :ref:`function<functions>`, I cannot call :ref:`None`
+I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -317,9 +317,9 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     TypeError: 'bool' object is not callable
 
-  I cannot call a :ref:`boolean<booleans>` the way I can call a :ref:`function<functions>`
+  I cannot call a :ref:`boolean<booleans>` the way I can call a :ref:`function<what is a function?>`
 
-* I change the :ref:`variable<what is a variable?>` to a :ref:`function<functions>`
+* I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -370,7 +370,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     TypeError: 'bool' object is not callable
 
-* I make it a :ref:`function<functions>`
+* I make it a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -383,7 +383,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def true():
         return True
 
-  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`boolean<booleans>` or :ref:`None`
 
 * I add a failing line to ``test_type_error.py``
 
@@ -416,7 +416,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
   the terminal_ shows TypeError_
 
-* I change the :ref:`variable<what is a variable?>` to a :ref:`funcion<functions>`
+* I change the :ref:`variable<what is a variable?>` to a :ref:`funcion<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -429,7 +429,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def an_integer():
         return 1234
 
-  the test passes. I can call a :ref:`function<functions>`, I cannot call an integer_, a :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call an integer_, a :ref:`boolean<booleans>` or :ref:`None`
 
 * I add a line for a float_ in ``test_type_error.py``
 
@@ -466,7 +466,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     TypeError: 'float' object is not callable
 
-* I make ``a_float`` a :ref:`function<functions>`
+* I make ``a_float`` a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -479,7 +479,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_float():
         return 1.234
 
-  the test passes. I can call a :ref:`function<functions>`, I cannot call a float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
 * I add a line for a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
 
@@ -516,7 +516,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     TypeError: 'str' object is not callable
 
-* I change ``a_string`` to a :ref:`function<functions>`
+* I change ``a_string`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -529,7 +529,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_string():
         return 'a string'
 
-  the test passes. I can call a :ref:`function<functions>`. I cannot call a string_, a float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a string_, a float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
 * I add a failing line for a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
 
@@ -566,7 +566,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     TypeError: 'tuple' object is not callable
 
-* I change it to a :ref:`function<functions>`
+* I change it to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -579,7 +579,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_tuple():
         return (1, 2, 3, 'n')
 
-  the test passes. I can call a :ref:`function<functions>`. I cannot call a tuple_, string_, float_, integer_ :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a tuple_, string_, float_, integer_ :ref:`boolean<booleans>` or :ref:`None`
 
 * I add another line to ``test_type_error.py``
 
@@ -616,7 +616,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     TypeError: 'list' object is not callable
 
-* I change ``a_list`` to a :ref:`function<functions>`
+* I change ``a_list`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -629,7 +629,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes. I can call a :ref:`function<functions>`, I cannot call a :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
 * I add another failing line to ``test_type_error.py``
 
@@ -666,7 +666,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     TypeError: 'set' object is not callable
 
-* I make it a :ref:`function<functions>`
+* I make it a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -679,7 +679,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_set():
         return {1, 2, 3, 'n'}
 
-  the test passes. I can call a :ref:`function<functions>`, I cannot call a set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
 * I add the last failing line for this test to ``test_type_error.py``
 
@@ -726,7 +726,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
 
     TypeError: 'dict' object is not callable
 
-* I change it to a :ref:`function<functions>`
+* I change it to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 33
@@ -739,7 +739,7 @@ I can call a :ref:`function<functions>`, I cannot call :ref:`None`
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal_ shows green again. I can call a :ref:`function<functions>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the terminal_ shows green again. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
 
 It is safe to say that I cannot call :ref:`data structures` because they are NOT callable_. I can call :ref:`functions`, they are callable_
 
@@ -749,7 +749,7 @@ It is safe to say that I cannot call :ref:`data structures` because they are NOT
 test_type_error_w_function_signatures
 *********************************************************************************
 
-When I call a :ref:`function<functions>` I have to match its definition also known as its signature or I get TypeError_
+When I call a :ref:`function<what is a function?>` I have to match its definition also known as its signature or I get TypeError_
 
 =================================================================================
 :red:`RED`: make it fail
@@ -779,7 +779,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add the :ref:`function<functions>` to ``type_error.py``
+* I add the :ref:`function<what is a function?>` to ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -800,7 +800,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
 
   because ``function_00`` is called with ``'a'`` as input and the definition does not allow any inputs
 
-* I add a name in parentheses to the :ref:`function<functions>` definition
+* I add a name in parentheses to the :ref:`function<what is a function?>` definition
 
   .. code-block:: python
     :lineno-start: 41
@@ -811,7 +811,7 @@ When I call a :ref:`function<functions>` I have to match its definition also kno
 
   the test passes
 
-I have to call a :ref:`function<functions>` in a way that matches its definition or I get TypeError_
+I have to call a :ref:`function<what is a function?>` in a way that matches its definition or I get TypeError_
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -832,7 +832,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
     AttributeError: module 'src.type_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-* I add the :ref:`function<functions>` to ``type_error.py``
+* I add the :ref:`function<what is a function?>` to ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 41
@@ -853,7 +853,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
   the definition only allows one input, and the test sent two
 
-* I change the first name, then add another name in parentheses so that the call to the :ref:`function<functions>` and its definition match
+* I change the first name, then add another name in parentheses so that the call to the :ref:`function<what is a function?>` and its definition match
 
   .. code-block:: python
     :lineno-start: 45
@@ -881,7 +881,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
     AttributeError: module 'src.type_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-* I add the :ref:`function<functions>` to ``type_error.py``
+* I add the :ref:`function<what is a function?>` to ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 45
@@ -929,7 +929,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
     AttributeError: module 'src.type_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-* I add the :ref:`function<functions>` to ``type_error.py``
+* I add the :ref:`function<what is a function?>` to ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 49
@@ -959,7 +959,7 @@ I have to call a :ref:`function<functions>` in a way that matches its definition
 
   the test passes
 
-I have to call a :ref:`function<functions>` with the same number of inputs its definition expects
+I have to call a :ref:`function<what is a function?>` with the same number of inputs its definition expects
 
 ----
 
@@ -1213,7 +1213,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

@@ -318,7 +318,7 @@ test_attributes_and_methods_of_lists
 how to see the attributes and methods of an object
 =================================================================================
 
-I want to test the things I can do with lists_. I can use the dir_ :ref:`function<functions>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of :ref:`objects<classes>`, it is part of `Python's Built-in Functions`_
+I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of :ref:`objects<classes>`, it is part of `Python's Built-in Functions`_
 
 =================================================================================
 :red:`RED`: make it fail
@@ -717,7 +717,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: [0, 1, 2, 'n'] is not None
 
-the :ref:`method<functions>` returns a copy of the list_
+the :ref:`method<what is a function?>` returns a copy of the list_
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -794,7 +794,7 @@ test_count_number_of_times_item_is_in_a_list
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the next :ref:`method<functions>`
+I add a test for the next :ref:`method<what is a function?>`
 
 .. code-block:: python
   :lineno-start: 78
@@ -1172,7 +1172,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* maybe the :ref:`method<functions>` returned the same value I gave, I change the list_ to find out
+* maybe the :ref:`method<what is a function?>` returned the same value I gave, I change the list_ to find out
 
   .. code-block:: python
     :lineno-start: 91
@@ -1396,7 +1396,7 @@ the test passes
 
     self.assertEqual(a_list.index('1st', 1), 4)
 
-  the test passes, the second input is the position I want the :ref:`method<functions>` to start from
+  the test passes, the second input is the position I want the :ref:`method<what is a function?>` to start from
 
 * I try the same thing with the other :ref:`assertions<what is an assertion?>`
 
@@ -1453,7 +1453,7 @@ test_insert_item_at_position_in_a_list
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the next :ref:`method<functions>`
+I add a test for the next :ref:`method<what is a function?>`
 
 .. code-block:: python
   :lineno-start: 99
@@ -1802,7 +1802,7 @@ test_remove_first_time_item_is_in_a_list
 :red:`RED`: make it fail
 =================================================================================
 
-time for the next :ref:`method<functions>`
+time for the next :ref:`method<what is a function?>`
 
 .. code-block:: python
   :lineno-start: 114
@@ -1856,7 +1856,7 @@ the terminal_ shows green. The `remove method`_ returns :ref:`None`
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
-  the :ref:`method<functions>` removes the item given as input from the list_
+  the :ref:`method<what is a function?>` removes the item given as input from the list_
 
 * I change the expectation
 
@@ -2059,7 +2059,7 @@ test_sort_a_list
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the last :ref:`method<functions>` in the TODO list
+I add a test for the last :ref:`method<what is a function?>` in the TODO list
 
 .. code-block:: python
   :lineno-start: 127
@@ -2169,7 +2169,7 @@ the test passes
 
             self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<functions>` is sort_ and I gave it a list_ that is sorted
+  the test passes. The name of the :ref:`method<what is a function?>` is sort_ and I gave it a list_ that is sorted
 
 * I change the list_ to see what happens when it is NOT sorted
 
@@ -3037,7 +3037,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what None is<None>`
 * :ref:`what is True and False in Python<booleans>`

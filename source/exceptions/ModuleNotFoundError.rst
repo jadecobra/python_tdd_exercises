@@ -254,7 +254,7 @@ you have gone through a lot of information and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

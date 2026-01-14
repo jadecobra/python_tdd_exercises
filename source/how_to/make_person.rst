@@ -148,7 +148,7 @@ test_takes_keyword_arguments
     # NameError
     # AttributeError
 
-* I open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>` then I add a :ref:`function<functions>`
+* I open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>` then I add a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -158,7 +158,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the :ref:`function<functions>` to take in a keyword argument named ``first_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a keyword argument named ``first_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -190,7 +190,7 @@ test_takes_keyword_arguments
     # AttributeError
     # TypeError
 
-* then I add ``first_name`` as an input parameter to the :ref:`function<functions>` in ``person.py``
+* then I add ``first_name`` as an input parameter to the :ref:`function<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -201,7 +201,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the :ref:`function<functions>` to take in a keyword argument named ``last_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a keyword argument named ``last_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -222,7 +222,7 @@ test_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
-* I add ``last_name`` to the :ref:`function<functions>` definition in ``person.py``
+* I add ``last_name`` to the :ref:`function<what is a function?>` definition in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -233,7 +233,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the :ref:`function<functions>` to take in a keyword argument named ``sex``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a keyword argument named ``sex``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -255,7 +255,7 @@ test_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-* I add ``sex`` as input to the :ref:`function<functions>` in ``person.py``
+* I add ``sex`` as input to the :ref:`function<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -269,7 +269,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the :ref:`function<functions>` to take in a keyword argument for ``year_of_birth`` and give it the result of calling another :ref:`function<functions>`. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a keyword argument for ``year_of_birth`` and give it the result of calling another :ref:`function<what is a function?>`. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -292,7 +292,7 @@ test_takes_keyword_arguments
 
     NameError: name 'this_year' is not defined
 
-* I add a definition for the ``this_year`` :ref:`function<functions>` above the :ref:`class<classes>` definition in ``test_person.py``
+* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<classes>` definition in ``test_person.py``
 
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
@@ -319,7 +319,7 @@ test_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  when I add the name to the :ref:`function<functions>` definition in ``person.py``
+  when I add the name to the :ref:`function<what is a function?>` definition in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -333,7 +333,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the ``factory`` :ref:`function<functions>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
+* I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -370,7 +370,7 @@ test_takes_keyword_arguments
 
   the test passes because ``{}`` and ``dict()`` are two ways to write an empty :ref:`dictionary<dictionaries>`
 
-* I want the expected :ref:`dictionary<dictionaries>` in the test to have a key named ``first_name`` with the same value as what is given when the ``factory`` :ref:`function<functions>` is called. I change it in ``test_person.py``
+* I want the expected :ref:`dictionary<dictionaries>` in the test to have a key named ``first_name`` with the same value as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I change it in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -471,7 +471,7 @@ test_takes_keyword_arguments
 
   and the test is green again
 
-* I want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<functions>`. I add it to the expectation in ``test_person.py``
+* I want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -576,7 +576,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what is given in the call to the ``factory`` :ref:`function<functions>` in ``test_person.py``
+* I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -740,7 +740,7 @@ test_takes_keyword_arguments
 
   datetime_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used for dates and times
 
-* I change the `return statement`_ in the ``this_year`` :ref:`function <functions>`
+* I change the `return statement`_ in the ``this_year`` :ref:`function <what is a function?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -749,9 +749,9 @@ test_takes_keyword_arguments
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<functions>` of the ``datetime`` :ref:`class<classes>`, from the `datetime module`_. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes`
+  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<what is a function?>` of the ``datetime`` :ref:`class<classes>`, from the `datetime module`_. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes`
 
-  .. attention:: I can also use the today_ :ref:`method<functions>` to get the same value
+  .. attention:: I can also use the today_ :ref:`method<what is a function?>` to get the same value
 
     .. code-block:: python
       :lineno-start: 6
@@ -878,9 +878,9 @@ test_takes_keyword_arguments
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<functions>` that is NOT in ``person.py``.
+  because I called a :ref:`function<what is a function?>` that is NOT in ``person.py``.
 
-* I use the `return statement`_ of the ``this_year()`` :ref:`function<functions>` from ``test_person.py`` to change ``this_year()`` in ``person.py``
+* I use the `return statement`_ of the ``this_year()`` :ref:`function<what is a function?>` from ``test_person.py`` to change ``this_year()`` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1147,7 +1147,7 @@ I want to see what happens when I try to make a person without a value for the `
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I comment out ``last_name`` in the call to the ``factory`` :ref:`function<functions>` in ``test_function_w_default_keyword_arguments``
+* I comment out ``last_name`` in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_function_w_default_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1174,7 +1174,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  the ``factory`` :ref:`function<functions>` is called with 3 arguments in ``test_function_w_default_keyword_arguments`` but the definition expects 4 in ``person.py``
+  the ``factory`` :ref:`function<what is a function?>` is called with 3 arguments in ``test_function_w_default_keyword_arguments`` but the definition expects 4 in ``person.py``
 
 * I add a default value for ``last_name`` in ``person.py``
 
@@ -1207,7 +1207,7 @@ I want to see what happens when I try to make a person without a value for the `
     # TypeError
     # SyntaxError
 
-* I add a default value for the ``sex`` parameter in the ``factory`` :ref:`function<functions>` in ``person.py``
+* I add a default value for the ``sex`` parameter in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1272,9 +1272,9 @@ I want to see what happens when I try to make a person without a value for the `
 
     AssertionError: {'first_name': X, 'last_name': None, 'sex': Y, 'age': Z} != {'first_name': X, 'last_name': 'doe', 'sex': Y, 'age': Z}
 
-  the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for ``last_name`` and the test expects ``'doe'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for ``last_name`` and the test expects ``'doe'``
 
-* I change the default value for ``last_name`` in the ``factory`` :ref:`function<functions>` in ``person.py``
+* I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1288,7 +1288,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test passes
 
-  .. attention:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<functions>` definition, it is the same as calling it with ``last_name='doe'``
+  .. attention:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<what is a function?>` definition, it is the same as calling it with ``last_name='doe'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -1349,7 +1349,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'sex' is not defined
 
-* I comment out ``sex`` in the call to the ``factory`` :ref:`function<functions>` in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
+* I comment out ``sex`` in the call to the ``factory`` :ref:`function<what is a function?>` in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 49
@@ -1401,7 +1401,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     AssertionError: {'first_name': X, 'last_name': 'doe', 'sex': None, 'age': Y} != {'first_name': X, 'last_name': 'doe', 'sex': 'M', 'age': Y}
 
-  the ``factory`` :ref:`function<functions>` returns a :ref:`dictionary<dictionaries>` with :ref:`None` as the value for ``sex`` and the test expects ``'M'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with :ref:`None` as the value for ``sex`` and the test expects ``'M'``
 
 * I add a default value for ``sex`` in ``person.py``
 
@@ -1417,7 +1417,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test passes
 
-  .. attention:: When the ``factory`` :ref:`function<functions>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<functions>` definition, it is the same as calling it with ``sex='M'``
+  .. attention:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<what is a function?>` definition, it is the same as calling it with ``sex='M'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -1429,7 +1429,7 @@ I want to see what happens when I try to make a person without a value for the `
           sex='M',
       )
 
-    since the values are the same as the default values, I can call the :ref:`function<functions>` without them
+    since the values are the same as the default values, I can call the :ref:`function<what is a function?>` without them
 
     .. code-block:: python
       :emphasize-lines: 2-3
@@ -1501,7 +1501,7 @@ I want to see what happens when I try to make a person without a value for the `
         def test_takes_keyword_arguments(self):
             ...
 
-  I can use them in ``test_takes_keyword_arguments`` with ``self.`` the same way I use the ``assert`` :ref:`methods<functions>` since they now belong to the ``TestPerson`` :ref:`class<classes>`
+  I can use them in ``test_takes_keyword_arguments`` with ``self.`` the same way I use the ``assert`` :ref:`methods<what is a function?>` since they now belong to the ``TestPerson`` :ref:`class<classes>`
 
   .. code-block:: python
     :lineno-start: 20
@@ -1664,7 +1664,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the tests are still passing
 
-* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I add the `unittest.TestCase.setUp`_ :ref:`method<functions>` to make sure they both get new random values before each test runs
+* both tests have the same random values for ``first_name`` and ``year_of_birth``, they were not always the same before the change. I add the `unittest.TestCase.setUp`_ :ref:`method<what is a function?>` to make sure they both get new random values before each test runs
 
   .. code-block:: python
     :lineno-start: 13
@@ -1689,7 +1689,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` named ``first_name``, it is now a :ref:`variable<test_attribute_error_w_variables>` in the `unittest.TestCase.setUp`_ :ref:`method<functions>` and the other :ref:`methods<functions>` cannot reach it
+  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` named ``first_name``, it is now a :ref:`variable<test_attribute_error_w_variables>` in the `unittest.TestCase.setUp`_ :ref:`method<what is a function?>` and the other :ref:`methods<what is a function?>` cannot reach it
 
 * I add ``self.`` to make it a :ref:`class<classes>` :ref:`attribute<AttributeError>`
 
@@ -1782,7 +1782,7 @@ test_person_tests
 
     TypeError: 'NoneType' object is not callable
 
-* when I make it a :ref:`function<functions>`
+* when I make it a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1796,7 +1796,7 @@ test_person_tests
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-  I add the keyword argument to the :ref:`function<functions>` definition
+  I add the keyword argument to the :ref:`function<what is a function?>` definition
 
   .. code-block:: python
     :linenos:
@@ -2173,7 +2173,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests to make a :ref:`function<functions>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary <dictionaries>` as output
+I ran tests to make a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary <dictionaries>` as output
 
 I also saw the following :ref:`Exceptions<errors>`
 
@@ -2202,7 +2202,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

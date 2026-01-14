@@ -17,8 +17,8 @@ These chapters show how I setup any computer for development
 .. toctree::
   :titlesonly:
 
-  setup_my_ide
-  install_wsl
+  setup my computer<setup_my_ide>
+  install WSL on Windows<install_wsl>
 
 they cover the following
 

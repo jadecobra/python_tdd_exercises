@@ -436,7 +436,7 @@ test_catching_type_error_in_tests
 
     TypeError: 'NoneType' object is not callable
 
-  a reminder that I cannot call :ref:`None` like a :ref:`function<functions>`
+  a reminder that I cannot call :ref:`None` like a :ref:`function<what is a function?>`
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_exceptions.py``
 
@@ -471,7 +471,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* when I make ``function_name`` a :ref:`function<functions>` in ``exceptions.py``
+* when I make ``function_name`` a :ref:`function<what is a function?>` in ``exceptions.py``
 
   .. code-block:: python
     :linenos:
@@ -480,7 +480,7 @@ the test passes
     def function_name():
         return None
 
-  the terminal_ still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the :ref:`function<functions>` does not take input
+  the terminal_ still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the :ref:`function<what is a function?>` does not take input
 
 * when I add a parameter to the definition
 
@@ -497,7 +497,7 @@ the test passes
 
     AssertionError: TypeError not raised
 
-  because :ref:`TypeError` is NOT raised since the :ref:`function<functions>` call matches the definition. I undo the change
+  because :ref:`TypeError` is NOT raised since the :ref:`function<what is a function?>` call matches the definition. I undo the change
 
   .. code-block:: python
     :linenos:
@@ -1222,7 +1222,7 @@ open the project
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<functions>` raises ZeroDivisionError_ in
+I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<what is a function?>` raises ZeroDivisionError_ in
 
 .. code-block:: python
   :lineno-start: 42
@@ -1345,7 +1345,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

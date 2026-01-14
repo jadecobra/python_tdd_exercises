@@ -126,7 +126,7 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
     # ZeroDivisionError
 
 * I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
-* I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<functions>`
+* I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -146,7 +146,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add a `return statement`_ to the ``a_random_number`` :ref:`function<functions>` in ``test_calculator.py`` to make it happen
+* I add a `return statement`_ to the ``a_random_number`` :ref:`function<what is a function?>` in ``test_calculator.py`` to make it happen
 
   .. code-block:: python
     :lineno-start: 6
@@ -294,7 +294,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

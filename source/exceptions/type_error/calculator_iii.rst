@@ -854,9 +854,9 @@ the other part that is different for all the :ref:`functions` are the calculatio
 what is a decorator function?
 =================================================================================
 
-A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<functions>` as input and returns a :ref:`function<functions>`. I can use it to remove the :ref:`exception handler<how to use try...except...else>` that is the same in all of the :ref:`calculator functions<how to make a calculator part 1>`
+A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`function<what is a function?>` as input and returns a :ref:`function<what is a function?>`. I can use it to remove the :ref:`exception handler<how to use try...except...else>` that is the same in all of the :ref:`calculator functions<how to make a calculator part 1>`
 
-* I add a new :ref:`function<functions>` add the top of ``calculator.py``
+* I add a new :ref:`function<what is a function?>` add the top of ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -873,9 +873,9 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
     def subtract(first_input, second_input):
 
-  The ``only_takes_numbers`` :ref:`function<functions>` takes a :ref:`function<functions>` as input
+  The ``only_takes_numbers`` :ref:`function<what is a function?>` takes a :ref:`function<what is a function?>` as input
 
-  - it tries to return the result of the :ref:`function<functions>` working on the two inputs
+  - it tries to return the result of the :ref:`function<what is a function?>` working on the two inputs
   - if TypeError_ is raised it returns the error message
 
 * I use it to wrap the :ref:`subtract function<test_subtraction>`
@@ -890,7 +890,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   the test is still green
 
-* I remove the parts that are also in the ``only_takes_numbers`` :ref:`function<functions>`
+* I remove the parts that are also in the ``only_takes_numbers`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -917,7 +917,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   the terminal_ shows green
 
-* I remove the parts that are also in the ``only_takes_numbers`` :ref:`function<functions>`
+* I remove the parts that are also in the ``only_takes_numbers`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -961,7 +961,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   all the tests are still green
 
-* one more to go, I wrap the :ref:`add function<test_addition>` with the ``only_takes_numbers`` :ref:`function<functions>`
+* one more to go, I wrap the :ref:`add function<test_addition>` with the ``only_takes_numbers`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -988,7 +988,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   green! Lovely!
 
-* I can make a :ref:`function<functions>` for the condition in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
+* I can make a :ref:`function<what is a function?>` for the condition in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 28
@@ -1016,7 +1016,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   - it also adds 2 lines of code to remove 6 characters. WOW!
 
-* I can make a :ref:`function<functions>` for the whole :ref:`if statement<if statements>` in the :ref:`add function<test_addition>`
+* I can make a :ref:`function<what is a function?>` for the whole :ref:`if statement<if statements>` in the :ref:`add function<test_addition>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -1035,11 +1035,11 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   the test is still green.
 
-  - the ``one_input_is_a_string`` :ref:`function<functions>` looks the same as :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`
+  - the ``one_input_is_a_string`` :ref:`function<what is a function?>` looks the same as :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`
   - this makes it easier to change the :ref:`condition<if statements>` later without touching the :ref:`add function<test_addition>`
   - it still adds 2 lines of code
 
-* I can also make a decorator :ref:`function<functions>` for the :ref:`if statement<if statements>` to practice making a decorator :ref:`function<functions>`
+* I can also make a decorator :ref:`function<what is a function?>` for the :ref:`if statement<if statements>` to practice making a decorator :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1091,7 +1091,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
             return function(first_input, second_input)
         return wrapper
 
-  I make a new :ref:`function<functions>` that has the :ref:`if statement<if statements>` from ``reject_strings`` and the :ref:`exception handler<how to use try...except...else>` from ``only_takes_numbers``
+  I make a new :ref:`function<what is a function?>` that has the :ref:`if statement<if statements>` from ``reject_strings`` and the :ref:`exception handler<how to use try...except...else>` from ``only_takes_numbers``
 
   .. code-block:: python
     :linenos:
@@ -1111,7 +1111,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
     def reject_strings(function):
 
-* I use the new :ref:`function<functions>` to wrap the :ref:`add function<test_addition>`
+* I use the new :ref:`function<what is a function?>` to wrap the :ref:`add function<test_addition>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -1136,7 +1136,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   still green
 
-* I wrap the other :ref:`functions<functions>` with ``only_takes_numbers_and_reject_strings``
+* I wrap the other :ref:`functions<what is a function?>` with ``only_takes_numbers_and_reject_strings``
 
   .. code-block:: python
     :lineno-start: 31
@@ -1168,7 +1168,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
 
   the terminal_ shows green
 
-* I remove ``only_takes_numbers`` from each :ref:`function<functions>`
+* I remove ``only_takes_numbers`` from each :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 31
@@ -1236,7 +1236,7 @@ A decorator or wrapper :ref:`function<functions>` takes another :ref:`function<f
     def add(first_input, second_input):
         return first_input + second_input
 
-* I change the name of the new decorator :ref:`function<functions>` to make it easier
+* I change the name of the new decorator :ref:`function<what is a function?>` to make it easier
 
   .. code-block:: python
     :linenos:
@@ -1358,7 +1358,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

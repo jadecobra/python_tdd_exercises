@@ -348,7 +348,7 @@ the terminal_ shows AttributeError_
     # NameError
     # TypeError
 
-* I change the attribute to a :ref:`function<functions>` in ``attribute_error.py``
+* I change the attribute to a :ref:`function<what is a function?>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -382,7 +382,7 @@ the terminal_ shows AttributeError_
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_01'. Did you mean: 'function_00'?
 
-* I add the :ref:`function<functions>` to ``attribute_error.py``
+* I add the :ref:`function<what is a function?>` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -413,7 +413,7 @@ the terminal_ shows AttributeError_
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
 
-* I add a :ref:`function<functions>` for it in ``attribute_error.py``
+* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -449,7 +449,7 @@ the terminal_ shows AttributeError_
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-* I add it the :ref:`function<functions>` to ``attribute_error.py``
+* I add it the :ref:`function<what is a function?>` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -464,7 +464,7 @@ the terminal_ shows AttributeError_
 
   the test passes
 
-A :ref:`function<functions>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+A :ref:`function<what is a function?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -500,7 +500,7 @@ the terminal_ shows AttributeError_
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add a :ref:`function<functions>` to ``attribute_error.py``
+* I add a :ref:`function<what is a function?>` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -519,7 +519,7 @@ the terminal_ shows AttributeError_
 
     AttributeError: 'function' object has no attribute 'attribute_00'
 
-* I define a :ref:`variable<what is a variable?>` inside the :ref:`function <functions>`
+* I define a :ref:`variable<what is a variable?>` inside the :ref:`function <what is a function?>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -530,7 +530,7 @@ the terminal_ shows AttributeError_
         attribute_00 = None
         return None
 
-  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot access a :ref:`variable<what is a variable?>` that belongs to a :ref:`function<functions>` from outside of the :ref:`function<functions>`
+  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot access a :ref:`variable<what is a variable?>` that belongs to a :ref:`function<what is a function?>` from outside of the :ref:`function<what is a function?>`
 
 * I use the :ref:`class<classes>` keyword instead of the def_ keyword to make ``AClass`` a :ref:`class<classes>`
 
@@ -564,7 +564,7 @@ the terminal_ shows AttributeError_
     # TypeError
     # SyntaxError
 
-* I remove the `return statement`_ from ``AClass`` in ``attribute_error.py`` since it is no longer a :ref:`function<functions>`
+* I remove the `return statement`_ from ``AClass`` in ``attribute_error.py`` since it is no longer a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -685,7 +685,7 @@ test_attribute_error_w_class_methods
 
 We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`module<ModuleNotFoundError>` are attributes. We also know that variables_ defined inside a :ref:`class<classes>` are attributes.
 
-:ref:`functions<functions>` defined inside a :ref:`class<classes>` are also attributes, they are known as :ref:`methods<functions>`
+:ref:`functions<what is a function?>` defined inside a :ref:`class<classes>` are also attributes, they are known as :ref:`methods<what is a function?>`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -736,7 +736,7 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
 
     TypeError: 'NoneType' object is not callable
 
-* I make it a :ref:`method<functions>` by using the def_ keyword
+* I make it a :ref:`method<what is a function?>` by using the def_ keyword
 
   .. code-block:: python
     :lineno-start: 28
@@ -800,7 +800,7 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
 
     AttributeError: type object 'AClass' has no attribute 'method_02'. Did you mean: 'method_00'?
 
-* I add the :ref:`method<functions>` to ``AClass`` in ``attribute_error.py``
+* I add the :ref:`method<what is a function?>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -835,7 +835,7 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
 
     AttributeError: type object 'AClass' has no attribute 'method_03'. Did you mean: 'method_00'?
 
-* I add the :ref:`method<functions>` to ``AClass`` in ``attribute_error.py``
+* I add the :ref:`method<what is a function?>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 36
@@ -849,7 +849,7 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
 
   the test passes
 
-* A :ref:`function<functions>` in a :ref:`class<classes>` is called a :ref:`method<functions>` and is an attribute of the :ref:`class<classes>`
+* A :ref:`function<what is a function?>` in a :ref:`class<classes>` is called a :ref:`method<what is a function?>` and is an attribute of the :ref:`class<classes>`
 * A :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
 
 ----
@@ -926,7 +926,7 @@ you made it to the end and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

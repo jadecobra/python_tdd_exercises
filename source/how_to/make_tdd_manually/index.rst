@@ -87,8 +87,8 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
 .. toctree::
   :titlesonly:
 
-  make_tdd_environment
-  make_tdd_environment_no_wsl
+  make a Python TDD environment<make_tdd_environment>
+  make a Python TDD environment no WSL<make_tdd_environment_no_wsl>
 
 
 =================================================================================

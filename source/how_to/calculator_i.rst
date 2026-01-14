@@ -435,7 +435,7 @@ test_addition
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` :ref:`variable<test_attribute_error_w_variables>` is now a name for :ref:`None` which I cannot use like a :ref:`function<functions>`
+  because the ``add`` :ref:`variable<test_attribute_error_w_variables>` is now a name for :ref:`None` which I cannot use like a :ref:`function<what is a function?>`
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
@@ -449,7 +449,7 @@ test_addition
     # AttributeError
     # TypeError
 
-* I use the def_ keyword in ``calculator.py`` to make ``add`` a :ref:`function<functions>` so it is callable_
+* I use the def_ keyword in ``calculator.py`` to make ``add`` a :ref:`function<what is a function?>` so it is callable_
 
   .. code-block:: python
     :linenos:
@@ -466,7 +466,7 @@ test_addition
 
   the definition of ``add`` does not allow it take input, but 2 were given in the call ``src.calculator.add(0, 1)``: ``0`` and ``1``
 
-* I make the ``add`` :ref:`function<functions>` take 2 inputs
+* I make the ``add`` :ref:`function<what is a function?>` take 2 inputs
 
   .. code-block:: python
     :linenos:
@@ -481,7 +481,7 @@ test_addition
 
     AssertionError: None != 1
 
-  the ``add`` :ref:`function<functions>` returns :ref:`None`, the test expects ``1``
+  the ``add`` :ref:`function<what is a function?>` returns :ref:`None`, the test expects ``1``
 
 * I make the `return statement`_ match the expected value
 
@@ -498,13 +498,13 @@ test_addition
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-The ``add`` :ref:`function<functions>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to return the result of a calculation with the inputs
+The ``add`` :ref:`function<what is a function?>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to return the result of a calculation with the inputs
 
 ---------------------------------------------------------------------------------
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-To show the problem with the :ref:`function<functions>`, I add another :ref:`assertion<what is an assertion?>` in ``test_calculator.py``
+To show the problem with the :ref:`function<what is a function?>`, I add another :ref:`assertion<what is an assertion?>` in ``test_calculator.py``
 
 .. code-block:: python
   :lineno-start: 7
@@ -526,7 +526,7 @@ the terminal_ shows :ref:`AssertionError`
 
   E    AssertionError: 1 != 2
 
-the :ref:`function<functions>` returns ``1``, the test expects ``2``
+the :ref:`function<what is a function?>` returns ``1``, the test expects ``2``
 
 ---------------------------------------------------------------------------------
 :green:`GREEN`: make it pass
@@ -549,7 +549,7 @@ the :ref:`function<functions>` returns ``1``, the test expects ``2``
 
   this makes the :ref:`assertion<what is an assertion?>` that was passing before now fail. I need a solution that can make the two tests pass
 
-* I make the :ref:`function<functions>` return the result of adding the two inputs
+* I make the :ref:`function<what is a function?>` return the result of adding the two inputs
 
   .. code-block:: python
     :linenos:
@@ -558,13 +558,13 @@ the :ref:`function<functions>` returns ``1``, the test expects ``2``
     def add(first_input, second_input):
         return first_input + second_input
 
-  the test passes. The ``add`` :ref:`function<functions>` passes the two tests
+  the test passes. The ``add`` :ref:`function<what is a function?>` passes the two tests
 
 ---------------------------------------------------------------------------------
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-I add another test to make sure the :ref:`function<functions>` works for other numbers
+I add another test to make sure the :ref:`function<what is a function?>` works for other numbers
 
 .. code-block:: python
   :lineno-start: 12
@@ -642,7 +642,7 @@ I change the expectation to match reality
               4
           )
 
-the test passes. The ``add`` :ref:`function<functions>` looks good so far
+the test passes. The ``add`` :ref:`function<what is a function?>` looks good so far
 
 ---------------------------------------------------------------------------------
 :red:`RED`: make it fail
@@ -768,7 +768,7 @@ I make the expectation match reality
               -5
           )
 
-the test passes. The ``add`` :ref:`function<functions>` can handle positive and negative numbers
+the test passes. The ``add`` :ref:`function<what is a function?>` can handle positive and negative numbers
 
 ---------------------------------------------------------------------------------
 :red:`RED`: make it fail
@@ -955,7 +955,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test is still passing. The problem with this is I lose the test for the previous number, everytime I change a number. I need a better way
 
-* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that the ``add`` :ref:`function<functions>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the `random module`_ from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
+* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that the ``add`` :ref:`function<what is a function?>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the `random module`_ from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -1074,7 +1074,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test is still green
 
-* I add a :ref:`function<functions>` to remove the repetition
+* I add a :ref:`function<what is a function?>` to remove the repetition
 
   .. code-block:: python
     :linenos:
@@ -1091,7 +1091,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
     class TestCalculator(unittest.TestCase):
 
-  then I use the new :ref:`function<functions>` to get random values for the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>`
+  then I use the new :ref:`function<what is a function?>` to get random values for the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1256,7 +1256,7 @@ the terminal_ shows :ref:`AttributeError`
 
   I have seen this before
 
-* I change ``subtract`` to a :ref:`function<functions>` to make it callable_
+* I change ``subtract`` to a :ref:`function<what is a function?>` to make it callable_
 
   .. code-block:: python
     :lineno-start: 5
@@ -1290,7 +1290,7 @@ the terminal_ shows :ref:`AttributeError`
 
   ``subtract`` returns :ref:`None`, the test expects ``random_first_number-random_second_number`` or ``first_input-second_input`` - the difference between the 2 numbers
 
-* I make the ``subtract`` :ref:`function<functions>` return the difference between the inputs
+* I make the ``subtract`` :ref:`function<what is a function?>` return the difference between the inputs
 
   .. code-block:: python
     :lineno-start: 5
@@ -1369,7 +1369,7 @@ the terminal_ shows :ref:`AttributeError`
                 random_first_number-random_second_number
             )
 
-  the terminal_ shows the tests are still passing. The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class attributes<test_attribute_error_w_class_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase`_ :ref:`methods<functions>` like assertEqual_ or assertFalse_
+  the terminal_ shows the tests are still passing. The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class attributes<test_attribute_error_w_class_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase`_ :ref:`methods<what is a function?>` like assertEqual_ or assertFalse_
 
 * I remove the commented lines in ``test_addition``
 
@@ -1541,7 +1541,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-using what I know so far, I add a :ref:`function<functions>` to ``calculator.py``
+using what I know so far, I add a :ref:`function<what is a function?>` to ``calculator.py``
 
 .. code-block:: python
   :lineno-start: 5
@@ -1616,7 +1616,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add a :ref:`function<functions>` to ``calculator.py``
+* I add a :ref:`function<what is a function?>` to ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -1706,7 +1706,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     TypeError: 'NoneType' object is not callable
 
-  I change ``subtract`` to a :ref:`function<functions>`
+  I change ``subtract`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1721,7 +1721,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-  I add :ref:`positional arguments<test_functions_w_positional_arguments>` to the :ref:`function<functions>`
+  I add :ref:`positional arguments<test_functions_w_positional_arguments>` to the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1751,7 +1751,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AssertionError: (XYZ.ABCDEFGHIJKLMN, YZA.BCDEFGHIJKLMNO) != ZAB.CDEFGHIJKLMNOP
 
-  the name of the :ref:`function<functions>` is ``subtract`` and the test expects the difference between the 2 inputs
+  the name of the :ref:`function<what is a function?>` is ``subtract`` and the test expects the difference between the 2 inputs
 
 * I make the `return statement`_ match the expectation
 
@@ -1768,7 +1768,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AttributeError: module 'src.calculator' has no attribute 'multiply'
 
-* I add a :ref:`function<functions>`
+* I add a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1817,7 +1817,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AssertionError: (XYZ.ABCDEFGHIJKLMNO, -YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
-  I change it to the multiplication of the inputs to match the name of the :ref:`function<functions>`
+  I change it to the multiplication of the inputs to match the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1832,7 +1832,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AttributeError: module 'src.calculator' has no attribute 'divide'
 
-* I add another :ref:`function<functions>`
+* I add another :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1964,7 +1964,7 @@ you know a lot
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

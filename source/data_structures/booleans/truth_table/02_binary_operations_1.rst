@@ -20,7 +20,7 @@ truth table: Binary Operations part 1
 
 The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input, and :ref:`Unary Operations` which take 1 input.
 
-There are also Binary Operations, these take 2 inputs. Each of the inputs in this exercise will be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to an :ref:`operation<functions>`
+There are also Binary Operations, these take 2 inputs. Each of the inputs in this exercise will be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to an :ref:`operation<what is a function?>`
 
 * :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
 * :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`
@@ -237,7 +237,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition to ``truth_table.py``
+I add a :ref:`function<what is a function?>` definition to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 13
@@ -256,7 +256,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: contradiction() takes 1 positional argument but 2 were given
 
-The definition only takes one input, but the test sent two. I add ``second_input`` as the second name in parentheses then change ``argument`` to ``first_input`` for the first input given when the :ref:`function<functions>` is called by the test
+The definition only takes one input, but the test sent two. I add ``second_input`` as the second name in parentheses then change ``argument`` to ``first_input`` for the first input given when the :ref:`function<what is a function?>` is called by the test
 
 .. TIP:: In `Visual Studio Code`_ I can change all the places that a name is in the file_, by using
 
@@ -315,7 +315,7 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
   - the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
-* I change the `return statement`_ in the ``contradiction`` :ref:`function<functions>` in ``truth_table.py`` to return the expectation
+* I change the `return statement`_ in the ``contradiction`` :ref:`function<what is a function?>` in ``truth_table.py`` to return the expectation
 
   .. code-block:: python
     :lineno-start: 17
@@ -379,7 +379,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the :ref:`function<functions>` in ``truth_table.py``
+I add the :ref:`function<what is a function?>` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 17
@@ -414,7 +414,7 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
 
     AssertionError: True is not false
 
-* I make the ``logical_conjunction`` :ref:`function<functions>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
+* I make the ``logical_conjunction`` :ref:`function<what is a function?>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -443,14 +443,14 @@ I can make it do that with `if statements`_
 if statements
 ---------------------------------------------------------------------------------
 
-An `if statement`_ is a way for a program_ to do something based on something else. I can use them to make a :ref:`function<functions>` choose between 2 things, there are written as
+An `if statement`_ is a way for a program_ to do something based on something else. I can use them to make a :ref:`function<what is a function?>` choose between 2 things, there are written as
 
 .. code-block:: python
 
   if something:
       do this
 
-* I add `if statements`_ to the ``logical_conjunction`` :ref:`function<functions>` in ``truth_table.py``
+* I add `if statements`_ to the ``logical_conjunction`` :ref:`function<what is a function?>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -607,7 +607,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   the terminal_ still shows green
 
-* there are only 2 results for this operation, in the first case the :ref:`function<functions>` returns :ref:`True <test_what_is_true>`. In the other 3 cases it returns :ref:`False <test_what_is_false>`.
+* there are only 2 results for this operation, in the first case the :ref:`function<what is a function?>` returns :ref:`True <test_what_is_true>`. In the other 3 cases it returns :ref:`False <test_what_is_false>`.
 
   .. code-block:: python
     :lineno-start: 21
@@ -833,7 +833,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a definition for the :ref:`function<functions>` in ``truth_table.py``
+I add a definition for the :ref:`function<what is a function?>` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 21
@@ -846,7 +846,7 @@ I add a definition for the :ref:`function<functions>` in ``truth_table.py``
   def project_second(first_input, second_input):
       return True
 
-the test passes. When the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, this :ref:`function<functions>` returns :ref:`True<test_what_is_true>`
+the test passes. When the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, this :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1006,7 +1006,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the :ref:`function<functions>` to ``truth_table.py``
+I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 25
@@ -1066,7 +1066,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
                 return True
         return False
 
-  the test passes. The ``converse_non_implication`` :ref:`function<functions>` returns
+  the test passes. The ``converse_non_implication`` :ref:`function<what is a function?>` returns
 
   - :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>` in all other cases

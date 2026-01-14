@@ -428,7 +428,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
 * I open ``list_comprehensions.py`` in the :ref:`editor<2 editors>`
 
-* then add a :ref:`function<functions>` to ``list_comprehensions.py``
+* then add a :ref:`function<what is a function?>` to ``list_comprehensions.py``
 
   .. code-block:: python
     :linenos:
@@ -552,7 +552,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
     AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] != [0, 1, 2, 3, ...]
 
-* I change the :ref:`function<functions>` in ``list_comprehensions.py``
+* I change the :ref:`function<what is a function?>` in ``list_comprehensions.py``
 
   .. code-block:: python
     :linenos:
@@ -752,7 +752,7 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 how to reset class attributes (variables) for every test
 ---------------------------------------------------------------------------------
 
-The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<functions>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
+The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<what is a function?>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
 
 * I add it to the ``TestListComprehensions`` :ref:`class<classes>`
 
@@ -895,7 +895,7 @@ the test passes. The `list comprehension`_ is like the `for loop`_ without the :
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_list_comprehension'
 
-* I add the :ref:`function<functions>` to ``list_comprehensions.py``
+* I add the :ref:`function<what is a function?>` to ``list_comprehensions.py``
 
   .. code-block:: python
     :linenos:
@@ -913,7 +913,7 @@ the test passes. The `list comprehension`_ is like the `for loop`_ without the :
 
   the test passes
 
-* I made 2 :ref:`functions<functions>` that do the same thing - one that uses a `for loop`_ and another that uses a `list comprehension`_
+* I made 2 :ref:`functions<what is a function?>` that do the same thing - one that uses a `for loop`_ and another that uses a `list comprehension`_
 
   .. code-block:: python
 
@@ -1040,7 +1040,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'get_even_numbers'
 
-* I add a :ref:`function<functions>` to ``list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` to ``list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -1103,7 +1103,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AssertionError: Lists differ: [0, 2, 4, 6, ...] != [0, 3, 6, 9, ...]
 
-* I change the :ref:`condition<if statements>` in the ``get_even_numbers`` :ref:`function<functions>` in ``list_comprehensions.py``
+* I change the :ref:`condition<if statements>` in the ``get_even_numbers`` :ref:`function<what is a function?>` in ``list_comprehensions.py``
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -1113,7 +1113,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes
 
-* I add a :ref:`function<functions>` to remove the duplication in ``test_list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` to remove the duplication in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :linenos:
@@ -1130,7 +1130,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     class TestListComprehensions(unittest.TestCase):
 
-* I change the :ref:`if statement<if statements>` in the test to call the new :ref:`function<functions>`
+* I change the :ref:`if statement<if statements>` in the test to call the new :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -1145,7 +1145,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the terminal_ still shows green
 
-* I remove the commented line and use the new :ref:`function<functions>` in the first :ref:`assertion<what is an assertion?>`
+* I remove the commented line and use the new :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -1165,7 +1165,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   still green
 
-* I remove the commented line and use the new :ref:`function<functions>` in the next :ref:`assertion<what is an assertion?>`
+* I remove the commented line and use the new :ref:`function<what is a function?>` in the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 46
@@ -1196,9 +1196,9 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     # Exceptions seen
 
-  .. NOTE:: ``condition`` is NOT a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
+  .. NOTE:: ``condition`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
 
-* I change the :ref:`condition<if statements>` in the new :ref:`function<functions>`
+* I change the :ref:`condition<if statements>` in the new :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1222,7 +1222,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     def get_even_numbers(numbers):
         return [number for number in numbers if number % 2 == 0]
 
-  the test passes. Adding the :ref:`function<functions>` adds extra lines, and makes managing the code easier because I now only have to make a change in one place in the test when I need
+  the test passes. Adding the :ref:`function<what is a function?>` adds extra lines, and makes managing the code easier because I now only have to make a change in one place in the test when I need
 
 * I add a new empty :ref:`list<lists>` to test another :ref:`condition<if statements>` in ``test_list_comprehensions.py``
 
@@ -1270,7 +1270,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the numbers on the left are odd numbers from the :ref:`iterable<what is an iterable?>`, and the numbers on the right are every number in the :ref:`iterable<what is an iterable?>`
 
-* I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>` with :ref:`logical negation(NOT)<test_logical_negation>` and the ``condition`` :ref:`function<functions>`
+* I add the :ref:`if statement<if statements>` to the :ref:`assertion<what is an assertion?>` with :ref:`logical negation(NOT)<test_logical_negation>` and the ``condition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 56
@@ -1302,7 +1302,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'get_odd_numbers'. Did you mean: 'get_even_numbers'?
 
-* I add the :ref:`function<functions>` to ``list_comprehensions.py``
+* I add the :ref:`function<what is a function?>` to ``list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -1326,7 +1326,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the difference is the equality symbols ``==`` and ``!=``
 
-  I add a :ref:`function<functions>` to remove the duplication
+  I add a :ref:`function<what is a function?>` to remove the duplication
 
   .. code-block:: python
     :lineno-start: 8
@@ -1342,7 +1342,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     def get_even_numbers(numbers):
 
-* I call the :ref:`function<functions>` in ``get_even_numbers``
+* I call the :ref:`function<what is a function?>` in ``get_even_numbers``
 
   .. code-block:: python
     :lineno-start: 16
@@ -1354,7 +1354,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test is still green
 
-* I remove the second `return statement`_ and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<functions>` in ``get_odd_numbers``
+* I remove the second `return statement`_ and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<what is a function?>` in ``get_odd_numbers``
 
   .. code-block:: python
     :lineno-start: 16
@@ -1372,7 +1372,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
 * I remove the second `return statement`_
 
-* There is a `Python Built-in Function`_ I can use to do the same thing as this `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition". I try it in the ``get_even_numbers`` :ref:`function<functions>`
+* There is a `Python Built-in Function`_ I can use to do the same thing as this `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition". I try it in the ``get_even_numbers`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1400,7 +1400,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes. Which do you like better: `filter`_ or the `list comprehension`_?
 
-* filter_ takes a :ref:`function<functions>` as input, which means I would have to make one for odd numbers like ``is_even``
+* filter_ takes a :ref:`function<what is a function?>` as input, which means I would have to make one for odd numbers like ``is_even``
 
   .. code-block:: python
     :lineno-start: 21
@@ -1416,7 +1416,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     TypeError: 'bool' object is not callable
 
-* I do not want to write a new :ref:`function<functions>`. I can use a `lambda function`_ which is a :ref:`function<functions>` with no name to make it work
+* I do not want to write a new :ref:`function<what is a function?>`. I can use a `lambda function`_ which is a :ref:`function<what is a function?>` with no name to make it work
 
   .. code-block:: python
     :lineno-start: 21
@@ -1441,7 +1441,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test is still green
 
-  filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the :ref:`condition<if statements>` of the :ref:`function<functions>`
+  filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the :ref:`condition<if statements>` of the :ref:`function<what is a function?>`
 
 I like the `list comprehension`_ from the options, it is simpler, easier to remember, and does not need any `import statements`_. :ref:`I know how to filter a list<test_making_a_list_w_conditions>`
 
@@ -1527,7 +1527,7 @@ the test passes
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'square'
 
-* I add the :ref:`function<functions>` to ``list_comprehensions.py``
+* I add the :ref:`function<what is a function?>` to ``list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -1548,7 +1548,7 @@ the test passes
 
     x ^ y
 
-* There is a `Python Built-in Function`_ that I can use to process a :ref:`list<lists>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<functions>` with a `lambda function`_
+* There is a `Python Built-in Function`_ that I can use to process a :ref:`list<lists>`, just like filter_, this one is called map_, I add it to the ``square`` :ref:`function<what is a function?>` with a `lambda function`_
 
   .. code-block:: python
     :lineno-start: 28
@@ -1576,9 +1576,9 @@ the test passes
         return list(map(lambda number: number**2, numbers))
         return [number**2 for number in numbers]
 
-  the test passes. map_ takes in a :ref:`function<functions>` as input. I still like the `list comprehension`_ better, it is simpler and easier to read
+  the test passes. map_ takes in a :ref:`function<what is a function?>` as input. I still like the `list comprehension`_ better, it is simpler and easier to read
 
-* I add a :ref:`function<functions>` for the calculation I just did 3 times in ``test_list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` for the calculation I just did 3 times in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 3
@@ -1593,7 +1593,7 @@ the test passes
 
     def condition(number):
 
-* I call the new :ref:`function<functions>` in the `for loop`_ in ``test_making_a_list_w_processes``
+* I call the new :ref:`function<what is a function?>` in the `for loop`_ in ``test_making_a_list_w_processes``
 
   .. code-block:: python
     :lineno-start: 69
@@ -1607,7 +1607,7 @@ the test passes
 
   the test is still green
 
-* I remove the commented line and call the :ref:`function<functions>` in the first :ref:`assertion<what is an assertion?>`
+* I remove the commented line and call the :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 71
@@ -1624,7 +1624,7 @@ the test passes
 
   still green
 
-* I remove the commented line and call the :ref:`function<functions>` in the second :ref:`assertion<what is an assertion?>`
+* I remove the commented line and call the :ref:`function<what is a function?>` in the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 75
@@ -1654,7 +1654,7 @@ the test passes
 
     # Exceptions seen
 
-  .. NOTE:: ``process`` is NOT a good name for a :ref:`function<functions>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
+  .. NOTE:: ``process`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
 
 :ref:`I know how to process(transform) a list with list comprehensions<test_making_a_list_w_processes>`
 
@@ -1707,7 +1707,7 @@ the numbers on the left are the squares of the even numbers from the right
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add a call to the ``condition`` :ref:`function<functions>`
+* I add a call to the ``condition`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -1726,7 +1726,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the numbers on the left are squares of the numbers on the right
 
-* I add a call to the ``process`` :ref:`function<functions>`
+* I add a call to the ``process`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -1796,7 +1796,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to the `for loop`_ to remove the duplication of the call to the ``process`` :ref:`function<functions>`
+* I add a :ref:`variable<what is a variable?>` to the `for loop`_ to remove the duplication of the call to the ``process`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -1931,7 +1931,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

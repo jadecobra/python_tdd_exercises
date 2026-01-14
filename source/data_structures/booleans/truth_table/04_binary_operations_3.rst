@@ -119,7 +119,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the :ref:`function<functions>` for ``exclusive_disjunction`` in ``truth_table.py``
+I add the :ref:`function<what is a function?>` for ``exclusive_disjunction`` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 45
@@ -510,7 +510,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` for ``material_non_implication`` in ``truth_table.py``
+I add a :ref:`function<what is a function?>` for ``material_non_implication`` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 49
@@ -735,7 +735,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition for ``project_first`` in ``truth_table.py``
+I add a :ref:`function<what is a function?>` definition for ``project_first`` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 55
@@ -906,7 +906,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
   - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
-* I add a `return statement`_ to show that this :ref:`function<functions>` returns the same value as ``first_input`` in every case
+* I add a `return statement`_ to show that this :ref:`function<what is a function?>` returns the same value as ``first_input`` in every case
 
   .. code-block:: python
     :lineno-start: 59
@@ -971,7 +971,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition for ``converse_implication`` in ``truth_table.py``
+I add a :ref:`function<what is a function?>` definition for ``converse_implication`` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 59

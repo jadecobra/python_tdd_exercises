@@ -52,7 +52,7 @@ test_logical_true
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-I change the :ref:`class<classes>` and :ref:`method<functions>` in ``test_truth_table.py``
+I change the :ref:`class<classes>` and :ref:`method<what is a function?>` in ``test_truth_table.py``
 
 .. code-block:: python
   :linenos:
@@ -92,7 +92,7 @@ I have not added a definition for ``logical_true`` to ``truth_table.py`` in the 
     # AssertionError
     # AttributeError
 
-* I open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a :ref:`function<functions>`
+* I open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -118,7 +118,7 @@ I have not added a definition for ``logical_true`` to ``truth_table.py`` in the 
 
   the test passes
 
-* Adding the ``logical_true`` :ref:`function<functions>` to ``truth_table.py`` solved the :ref:`AttributeError`
+* Adding the ``logical_true`` :ref:`function<what is a function?>` to ``truth_table.py`` solved the :ref:`AttributeError`
 * ``logical_true`` always returns :ref:`True<test_what_is_true>`
 * ``logical_true`` does not take any input
 
@@ -157,7 +157,7 @@ I have not added a definition for ``logical_false`` to ``truth_table.py``, I onl
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a :ref:`function<functions>` definition in ``truth_table.py``
+* I add a :ref:`function<what is a function?>` definition in ``truth_table.py``
 
   .. code-block:: python
     :linenos:
@@ -187,7 +187,7 @@ I have not added a definition for ``logical_false`` to ``truth_table.py``, I onl
 
   the test passes
 
-* Adding the ``logical_true`` and ``logical_false``:ref:`function<functions>` to ``truth_table.py`` solved the :ref:`AttributeError` in both cases
+* Adding the ``logical_true`` and ``logical_false``:ref:`function<what is a function?>` to ``truth_table.py`` solved the :ref:`AttributeError` in both cases
 * ``logical_true`` always returns :ref:`True<test_what_is_true>`
 * ``logical_false`` always returns :ref:`False<test_what_is_false>`
 * both Nullary Operations do not take input
@@ -243,7 +243,7 @@ I need to add a definition for it
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
-* I add the :ref:`function<functions>` to ``truth_table.py``
+* I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -262,7 +262,7 @@ I need to add a definition for it
 
     TypeError: logical_identity() takes 0 positional arguments but 1 was given
 
-  I need to make the :ref:`function<functions>` accept input since the test sends :ref:`True<test_what_is_true>` as input
+  I need to make the :ref:`function<what is a function?>` accept input since the test sends :ref:`True<test_what_is_true>` as input
 
 * I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_truth_table.py``
 
@@ -338,7 +338,7 @@ I need to add a definition for it
 
   there is a failure for the test that passed before. The expectation of the test is that when :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>` and when :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_false>`
 
-* I change the `return statement`_ of the :ref:`function<functions>`
+* I change the `return statement`_ of the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -349,7 +349,7 @@ I need to add a definition for it
 
   the test passes.
 
-``logical_identity`` returns its input as output. I think of it as a passthrough :ref:`function<functions>`, it does not process the input it gets, it just passes it along.
+``logical_identity`` returns its input as output. I think of it as a passthrough :ref:`function<what is a function?>`, it does not process the input it gets, it just passes it along.
 
 ----
 
@@ -387,7 +387,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
-I add a definition for the :ref:`function<functions>` in ``truth_table.py``
+I add a definition for the :ref:`function<what is a function?>` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 9
@@ -437,7 +437,7 @@ the test passes
 
     AssertionError: False is not true
 
-* I change the `return statement`_ of the ``logical_negation`` :ref:`function<functions>` in ``truth_table.py``
+* I change the `return statement`_ of the ``logical_negation`` :ref:`function<what is a function?>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -454,7 +454,7 @@ the test passes
 
   the test fails for the line that passed before
 
-* I make the :ref:`function<functions>` return its input, remember the :ref:`identity function<test_identity_function>`
+* I make the :ref:`function<what is a function?>` return its input, remember the :ref:`identity function<test_identity_function>`
 
   .. code-block:: python
     :lineno-start: 13

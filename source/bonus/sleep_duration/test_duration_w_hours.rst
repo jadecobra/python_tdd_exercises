@@ -206,14 +206,14 @@ requirements
 
     TypeError: 'NoneType' object is not callable
 
-  I make it callable_ by changing it to a :ref:`function<functions>`
+  I make it callable_ by changing it to a :ref:`function<what is a function?>`
 
   .. code-block:: python
 
     def duration():
         return None
 
-* I want the ``duration`` :ref:`function<functions>` to take in a ``wake_time`` then add it to the test
+* I want the ``duration`` :ref:`function<what is a function?>` to take in a ``wake_time`` then add it to the test
 
   .. code-block:: python
 
@@ -230,14 +230,14 @@ requirements
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  because the name is not in the :ref:`function's<functions>` definition. I add it with a default value of :ref:`None`
+  because the name is not in the :ref:`function's<what is a function?>` definition. I add it with a default value of :ref:`None`
 
   .. code-block:: python
 
     def duration(wake_time=None):
         return None
 
-* I also want the ``duration`` :ref:`function<functions>` to take in a ``sleep_time``
+* I also want the ``duration`` :ref:`function<what is a function?>` to take in a ``sleep_time``
 
   .. code-block:: python
 
@@ -255,7 +255,7 @@ requirements
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  because ``sleep_time`` is not in the :ref:`function's<functions>` definition. I add it with a default value of :ref:`None`
+  because ``sleep_time`` is not in the :ref:`function's<what is a function?>` definition. I add it with a default value of :ref:`None`
 
   .. code-block:: python
 
@@ -280,7 +280,7 @@ requirements
 
     AssertionError: None != ('08:00', '07:00')
 
-  the ``duration`` :ref:`function<functions>` returns :ref:`None`, I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns :ref:`None`, I change it to match the expectation
 
   .. code-block:: python
 
@@ -356,7 +356,7 @@ requirements
 
   the test passes
 
-* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an ideand then change the ``duration`` :ref:`function<functions>` to match. It would be better to test the :ref:`function<functions>` with random numbers. I add an `import statement`_ for the `random module`_  at the top of ``test_sleep_duration.py``
+* I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an ideand then change the ``duration`` :ref:`function<what is a function?>` to match. It would be better to test the :ref:`function<what is a function?>` with random numbers. I add an `import statement`_ for the `random module`_  at the top of ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -438,7 +438,7 @@ requirements
         (wake_time, sleep_time)
     )
 
-* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a call to the `help system`_ to see which :ref:`methods<functions>` of strings_ can help me break one apart or get specific parts from it
+* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a call to the `help system`_ to see which :ref:`methods<what is a function?>` of strings_ can help me break one apart or get specific parts from it
 
   .. code-block:: python
 
@@ -446,7 +446,7 @@ requirements
         self.assertEqual(help(str))
     ...
 
-  the terminal_ shows `Python documentation for strings`_ and I read the descriptions until I see a :ref:`method<functions>` that looks like what I am looking for
+  the terminal_ shows `Python documentation for strings`_ and I read the descriptions until I see a :ref:`method<what is a function?>` that looks like what I am looking for
 
   .. code-block:: shell
 
@@ -477,7 +477,7 @@ test_string_splitting
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-I add a failing test for the `str.split`_ :ref:`method<functions>` to see what it does
+I add a failing test for the `str.split`_ :ref:`method<what is a function?>` to see what it does
 
 .. code-block:: python
 
@@ -537,7 +537,7 @@ the test passes
 
   the test passes which means I know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I add calls to the `str.split`_ :ref:`method<functions>` in ``test_duration_w_hours``
+* I add calls to the `str.split`_ :ref:`method<what is a function?>` in ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -561,7 +561,7 @@ the test passes
     AssertionError: Tuples differ: ('06:00', '11:00') != (['06', '00'], ['11', '00'])
     AssertionError: Tuples differ: ('13:00', '13:00') != (['13', '00'], ['13', '00'])
 
-  the ``duration`` :ref:`function<functions>` returns ``wake_time`` and ``sleep_time`` but the test expects the result of splitting them. I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns ``wake_time`` and ``sleep_time`` but the test expects the result of splitting them. I change it to match the expectation
 
   .. code-block:: python
 
@@ -648,7 +648,7 @@ the test passes
     AssertionError: Tuples differ: (['05', '00'], ['08', '00']) != ('05', '08')
     AssertionError: Tuples differ: (['23', '00'], ['04', '00']) != ('23', '04')
 
-  the ``duration`` :ref:`function<functions>` returns the result of splitting the timestamps but the test expects the hours, I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns the result of splitting the timestamps but the test expects the hours, I change it to match the expectation
 
   .. code-block:: python
 
@@ -736,7 +736,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     AssertionError: Tuples differ: ('04', '04') != (4, 4)
     AssertionError: Tuples differ: ('16', '14') != (16, 14)
 
-  the ``duration`` :ref:`function<functions>` returns the hours as a string_ but the test expects them as numbers, I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns the hours as a string_ but the test expects them as numbers, I change it to match the expectation
 
   .. code-block:: python
 
@@ -772,7 +772,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     AssertionError: (12, 21) != -9
     AssertionError: (14, 2) != 12
 
-  the ``duration`` :ref:`function<functions>` returns the hours from the timestamps and the test expects the difference between them. I change the ``duration`` :ref:`function<functions>` to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns the hours from the timestamps and the test expects the difference between them. I change the ``duration`` :ref:`function<what is a function?>` to match the expectation
 
   .. code-block:: python
 
@@ -784,7 +784,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the test passes! Celebration Time!!
 
-* I add a :ref:`function<functions>` to get the hours part of a given timestamp since it is the only part that changes in the solution
+* I add a :ref:`function<what is a function?>` to get the hours part of a given timestamp since it is the only part that changes in the solution
 
   .. code-block:: python
 
@@ -814,7 +814,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
   the terminal_ still shows passing tests
 
-* ``wake_time`` and ``sleep_time`` are defined in the same way, time to make a :ref:`function<functions>` that returns a random timestamp
+* ``wake_time`` and ``sleep_time`` are defined in the same way, time to make a :ref:`function<what is a function?>` that returns a random timestamp
 
   .. code-block:: python
 
@@ -844,7 +844,7 @@ The challenge is to write a program_ that calculates the difference between a gi
 
 * `test_string_splitting`_ where I
 
-  - used the `str.split`_ :ref:`method<functions>` I found by calling the `help system`_ to split a string_ on a separator
+  - used the `str.split`_ :ref:`method<what is a function?>` I found by calling the `help system`_ to split a string_ on a separator
   - and indexed the :ref:`list <lists>` from the split to get specific items
 
 * `test_converting_strings_to_numbers`_ with ``int()``
@@ -852,7 +852,7 @@ The challenge is to write a program_ that calculates the difference between a gi
 * :ref:`test_duration_w_hours <how to measure sleep duration: test_duration_w_hours>` where I
 
   - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values` them in the timestamps
-  - then test that the ``duration`` :ref:`function<functions>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
+  - then test that the ``duration`` :ref:`function<what is a function?>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
 I also saw the following :ref:`Exceptions<errors>`
 

@@ -120,7 +120,7 @@ there is no definition for it yet
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition for ``negate_second`` to ``truth_table.py``
+I add a :ref:`function<what is a function?>` definition for ``negate_second`` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 63
@@ -292,7 +292,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add the :ref:`function<functions>` to ``truth_table.py``
+I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 67
@@ -508,7 +508,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`function<functions>` definition for it in ``truth_table.py``
+I add a :ref:`function<what is a function?>` definition for it in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 71
@@ -843,7 +843,7 @@ the terminal_ shows :ref:`AttributeError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I add a :ref:`method<functions>` for ``material_implication`` in ``truth_table.py``
+I add a :ref:`method<what is a function?>` for ``material_implication`` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 75

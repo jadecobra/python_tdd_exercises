@@ -132,7 +132,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     TypeError: 'NoneType' object is not callable
 
-  I make ``tautology`` a :ref:`function<functions>`
+  I make ``tautology`` a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -147,7 +147,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     TypeError: tautology() takes 0 positional arguments but 2 were given
 
-  I add names in parentheses for the :ref:`function<functions>` to take input arguments
+  I add names in parentheses for the :ref:`function<what is a function?>` to take input arguments
 
   .. code-block:: python
     :linenos:
@@ -177,7 +177,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
-* I add the :ref:`function<functions>` using the solution I just used for ``tautology``
+* I add the :ref:`function<what is a function?>` using the solution I just used for ``tautology``
 
   .. code-block:: python
     :linenos:
@@ -241,7 +241,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'project_first'
 
-* I add a :ref:`function<functions>` for it
+* I add a :ref:`function<what is a function?>` for it
 
   .. code-block:: python
     :lineno-start: 5
@@ -277,7 +277,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
-* I add a :ref:`function<functions>` for ``negate_second``
+* I add a :ref:`function<what is a function?>` for ``negate_second``
 
   .. code-block:: python
     :lineno-start: 9
@@ -329,7 +329,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
-* I add a :ref:`function<functions>` definition for it
+* I add a :ref:`function<what is a function?>` definition for it
 
   .. code-block:: python
     :lineno-start: 13
@@ -383,7 +383,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
 
-* I add a :ref:`function<functions>` for ``material_non_implication``
+* I add a :ref:`function<what is a function?>` for ``material_non_implication``
 
   .. code-block:: python
     :lineno-start: 21
@@ -453,7 +453,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
-* I add a :ref:`function<functions>` for ``material_implication``
+* I add a :ref:`function<what is a function?>` for ``material_implication``
 
   .. code-block:: python
     :lineno-start: 28
@@ -488,7 +488,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nor'
 
-* I add a :ref:`function<functions>` for ``logical_nor``
+* I add a :ref:`function<what is a function?>` for ``logical_nor``
 
   .. code-block:: python
     :lineno-start: 33
@@ -558,7 +558,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_nor'?
 
-* I add a :ref:`function<functions>` for ``logical_nand``
+* I add a :ref:`function<what is a function?>` for ``logical_nand``
 
   .. code-block:: python
     :lineno-start: 40
@@ -593,7 +593,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_equality'
 
-* I add the :ref:`function<functions>`
+* I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -645,7 +645,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'
 
-* I add a :ref:`function<functions>` for ``logical_disjunction``
+* I add a :ref:`function<what is a function?>` for ``logical_disjunction``
 
   .. code-block:: python
     :lineno-start: 51
@@ -680,7 +680,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_disjunction'?
 
-* I add a :ref:`function<functions>` for ``logical_conjunction``
+* I add a :ref:`function<what is a function?>` for ``logical_conjunction``
 
   .. code-block:: python
     :lineno-start: 56
@@ -750,7 +750,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction'
 
-* I add a :ref:`function<functions>` for ``exclusive_disjunction``
+* I add a :ref:`function<what is a function?>` for ``exclusive_disjunction``
 
   .. code-block:: python
     :lineno-start: 63
@@ -802,7 +802,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'. Did you mean: 'material_non_implication'?
 
-* I add a definition for the ``converse_non_implication`` :ref:`function<functions>`
+* I add a definition for the ``converse_non_implication`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -872,7 +872,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 
-* I add the :ref:`function<functions>` for ``converse_implication``
+* I add the :ref:`function<what is a function?>` for ``converse_implication``
 
   .. code-block:: python
     :lineno-start: 76
@@ -907,7 +907,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
-* I add a :ref:`function<functions>` for ``contradiction``
+* I add a :ref:`function<what is a function?>` for ``contradiction``
 
   .. code-block:: python
     :lineno-start: 81
@@ -996,7 +996,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_negation'. Did you mean: 'logical_conjunction'?
 
-* I add a :ref:`function<functions>` for ``logical_negation``
+* I add a :ref:`function<what is a function?>` for ``logical_negation``
 
   .. code-block:: python
     :lineno-start: 89
@@ -1015,7 +1015,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     TypeError: logical_negation() missing 1 required positional argument: 'second_input'
 
-* I remove ``second_input`` from the parentheses, to make the :ref:`function<functions>` take only 1 input,
+* I remove ``second_input`` from the parentheses, to make the :ref:`function<what is a function?>` take only 1 input,
 
   .. code-block:: python
     :lineno-start: 93
@@ -1045,7 +1045,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_identity'. Did you mean: 'logical_equality'?
 
-* I add a :ref:`function<functions>` for ``logical_identity``
+* I add a :ref:`function<what is a function?>` for ``logical_identity``
 
   .. code-block:: python
     :lineno-start: 93
@@ -1079,7 +1079,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_true'. Did you mean: 'logical_nand'?
 
-* I add a :ref:`function<functions>` for ``logical_true``
+* I add a :ref:`function<what is a function?>` for ``logical_true``
 
   .. code-block:: python
     :lineno-start: 97
@@ -1098,7 +1098,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     TypeError: logical_true() missing 1 required positional argument: 'x'
 
-  I remove ``first_input`` from the parentheses, this :ref:`function<functions>` does not take input, I change the `return statement`_
+  I remove ``first_input`` from the parentheses, this :ref:`function<what is a function?>` does not take input, I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 101
@@ -1128,7 +1128,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_nand'?
 
-* I add a :ref:`function<functions>` for ``logical_false``
+* I add a :ref:`function<what is a function?>` for ``logical_false``
 
   .. code-block:: python
     :lineno-start: 101
@@ -1147,7 +1147,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-I can refactor the :ref:`functions<functions>` I have, to make them simpler since all the tests are passing
+I can refactor the :ref:`functions<what is a function?>` I have, to make them simpler since all the tests are passing
 
 * :ref:`logical_false<test_logical_false>`, :ref:`logical_true<test_logical_true>`, :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>` are already simple
 
@@ -1184,7 +1184,7 @@ I can refactor the :ref:`functions<functions>` I have, to make them simpler sinc
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the test is still green. I remove the other lines in the :ref:`function<functions>`
+  the test is still green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -2043,7 +2043,7 @@ you now know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

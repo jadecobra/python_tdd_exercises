@@ -84,7 +84,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     # NameError
     # TypeError
 
-* I change ``get_datetime`` to a :ref:`function<functions>` to make it callable_
+* I change ``get_datetime`` to a :ref:`function<what is a function?>` to make it callable_
 
   .. code-block:: python
 
@@ -97,7 +97,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     TypeError: get_datetime() takes 0 positional arguments but 1 was given
 
-  then I add a name to the :ref:`function's<functions>` definition
+  then I add a name to the :ref:`function's<what is a function?>` definition
 
   .. code-block:: python
 
@@ -171,7 +171,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   I need a way to change a string_ that has a date and time to a `datetime.datetime`_ object
 
-* I use the `datetime.datetime.strptime`_ :ref:`method<functions>` to make it happen
+* I use the `datetime.datetime.strptime`_ :ref:`method<what is a function?>` to make it happen
 
   .. code-block:: python
 
@@ -212,7 +212,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     TypeError: 'NoneType' object is not callable
 
-* then change it to a :ref:`function<functions>` to make it callable_
+* then change it to a :ref:`function<what is a function?>` to make it callable_
 
   .. code-block:: python
 
@@ -225,7 +225,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  I add the name to the :ref:`function's<functions>` definition
+  I add the name to the :ref:`function's<what is a function?>` definition
 
   .. code-block:: python
 
@@ -258,7 +258,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     AssertionError: None != '1829637 days, 5:10:00'
     AssertionError: None != '2846203 days, 15:15:00'
 
-  it looks like the ``duration`` :ref:`function<functions>` has to make a decision based on its inputs
+  it looks like the ``duration`` :ref:`function<what is a function?>` has to make a decision based on its inputs
 
 * I change the `return statement`_ to raise ValueError_ with the inputs or return the inputs to see the difference between them and the expected output
 
@@ -379,7 +379,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     ValueError: wake_time: "3201/08/13 15:20" is earlier than sleep_time: "1074/03/31 16:44"
     ValueError: wake_time: "9810/07/30 04:29" is earlier than sleep_time: "9792/03/04 12:44"
 
-  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<functions>` needs a condition to make sure it raises ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
+  this is not right, the timestamps for ``wake_time`` are not earlier than ``sleep_time``. The ``duration`` :ref:`function<what is a function?>` needs a condition to make sure it raises ValueError_ only when ``wake_time`` is earlier than ``sleep_time``. I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_sleep_duration.py``
 
   .. code-block:: python
 
@@ -463,7 +463,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     AssertionError: datetime.timedelta(days=-744003, seconds=22500) != '744002 days, 17:45:00'
     AssertionError: datetime.timedelta(days=-1226280, seconds=76800) != '1226279 days, 2:40:00'
 
-  the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I did something wrong
+  the test expects a string_ and the :ref:`function<what is a function?>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I did something wrong
 
 * I use ``str()`` to match the format of the expectation
 
@@ -491,7 +491,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
     AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'
 
-  the ``duration`` :ref:`function<functions>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number less than the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number less than the expectation
 
 * I switch ``wake_time`` and ``sleep_time`` in the `return statement`_
 

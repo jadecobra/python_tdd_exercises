@@ -493,7 +493,7 @@ the test passes
 how to test if something is an instance of a class
 ---------------------------------------------------------------------------------
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<functions>` I can use to test if an :ref:`object<classes>` is a child/instance of a :ref:`class<classes>` or not - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can use to test if an :ref:`object<classes>` is a child/instance of a :ref:`class<classes>` or not - assertIsInstance_ and assertNotIsInstance_
 
 * I add the `assertNotIsInstance method`_ to test if :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
 
@@ -1999,7 +1999,7 @@ so far you have covered
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>` and
 * :ref:`what is None and NOT None and learned new assert methods<None>`
 

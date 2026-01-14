@@ -748,7 +748,7 @@ test_attributes_and_methods_of_dictionaries
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new test with the `dir built-in function`_ to see the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of dictionaries_
+I add a new test with the `dir built-in function`_ to see the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of dictionaries_
 
 .. code-block:: python
   :lineno-start: 41
@@ -904,7 +904,7 @@ test_clear_empties_a_dictionary
 :red:`RED`: make it fail
 =================================================================================
 
-* I add a test for the first :ref:`method<functions>`
+* I add a test for the first :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 93
@@ -1031,7 +1031,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: {'key': 'value'} is not None
 
-this :ref:`method<functions>` returns a copy of the dictionary_, :ref:`same as with lists<test_copy_a_list>`
+this :ref:`method<what is a function?>` returns a copy of the dictionary_, :ref:`same as with lists<test_copy_a_list>`
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1125,7 +1125,7 @@ test_fromkeys_makes_a_dictionary_from_an_iterable
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the next :ref:`method<functions>` from the TODO list
+I add a test for the next :ref:`method<what is a function?>` from the TODO list
 
 .. code-block:: python
   :lineno-start: 105
@@ -1278,7 +1278,7 @@ the terminal_ shows :ref:`TypeError`
 
   still green
 
-* the dictionary_ made with the `fromkeys method`_ has :ref:`None` as the default values. When I called the :ref:`method<functions>` without inputs the terminal_ showed :ref:`TypeError`
+* the dictionary_ made with the `fromkeys method`_ has :ref:`None` as the default values. When I called the :ref:`method<what is a function?>` without inputs the terminal_ showed :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1701,7 +1701,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another key-value pair to the dictionary_ to see what the :ref:`method<functions>` does when there is more than one
+* I add another key-value pair to the dictionary_ to see what the :ref:`method<what is a function?>` does when there is more than one
 
   .. code-block:: python
     :lineno-start: 127
@@ -2486,7 +2486,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* The error message showed that the :ref:`method<functions>` expects at least 1 argument, I add a second argument
+* The error message showed that the :ref:`method<what is a function?>` expects at least 1 argument, I add a second argument
 
   .. code-block:: python
     :lineno-start: 178
@@ -2725,7 +2725,7 @@ test_update_a_dictionary
 :red:`RED`: make it fail
 =================================================================================
 
-* I add a test for the next :ref:`method<functions>` from the TODO list
+* I add a test for the next :ref:`method<what is a function?>` from the TODO list
 
   .. code-block:: python
     :lineno-start: 186
@@ -2981,7 +2981,7 @@ test_values_of_a_dictionary
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the last :ref:`method<functions>` in my TODO list
+I add a test for the last :ref:`method<what is a function?>` in my TODO list
 
 .. code-block:: python
   :lineno-start: 201
@@ -3516,7 +3516,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

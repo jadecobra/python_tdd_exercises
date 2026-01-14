@@ -19,7 +19,7 @@ This is part 4 of a program_ that calculates the difference between a given wake
 
 ----
 
-I want to test the ``duration`` :ref:`function<functions>` with timestamps that have dates
+I want to test the ``duration`` :ref:`function<what is a function?>` with timestamps that have dates
 
 *********************************************************************************
 :red:`RED`: make it fail
@@ -116,7 +116,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps that 
   and the test is green again
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_w_date_and_time``
-* then change the call in the :ref:`assertion<what is an assertion?>` to a different :ref:`function<functions>`
+* then change the call in the :ref:`assertion<what is an assertion?>` to a different :ref:`function<what is a function?>`
 
   .. code-block:: python
 
@@ -148,7 +148,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps that 
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration_a'...
 
-* I make a copy of the ``duration`` :ref:`function<functions>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one. I change the ``else`` block to return :ref:`None`
+* I make a copy of the ``duration`` :ref:`function<what is a function?>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one. I change the ``else`` block to return :ref:`None`
 
   .. code-block:: python
 
@@ -168,7 +168,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps that 
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
-  because the test calls the ``get_difference`` :ref:`method<functions>` in the expectation which uses ``int()``
+  because the test calls the ``get_difference`` :ref:`method<what is a function?>` in the expectation which uses ``int()``
 
 * I change it to return ``wake_time`` and ``sleep_time``
 
@@ -315,7 +315,7 @@ I copy the value from the left side of the :ref:`AssertionError` and paste it as
 
 and it passes
 
-The `datetime.datetime.strptime`_ :ref:`method<functions>` returns a `datetime.datetime`_ object when given 2 strings_ as inputs - a timestamp and a pattern that is for the timestamp. The pattern provided is
+The `datetime.datetime.strptime`_ :ref:`method<what is a function?>` returns a `datetime.datetime`_ object when given 2 strings_ as inputs - a timestamp and a pattern that is for the timestamp. The pattern provided is
 
 - ``%d`` for days
 - ``%m`` for months
@@ -404,7 +404,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
 
   the terminal_ shows green again
 
-* I add calls to the `datetime.datetime.strptime`_ :ref:`method<functions>` in ``test_duration_w_date_and_time``
+* I add calls to the `datetime.datetime.strptime`_ :ref:`method<what is a function?>` in ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -484,7 +484,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
 
   the test passes
 
-* I just called `datetime.datetime.strptime`_ 5 times in a row with the same pattern, time to add a :ref:`function<functions>` to remove some repetition
+* I just called `datetime.datetime.strptime`_ 5 times in a row with the same pattern, time to add a :ref:`function<what is a function?>` to remove some repetition
 
   .. code-block:: python
 
@@ -523,7 +523,7 @@ test_get_datetime
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-I want a test for the ``get_datetime`` :ref:`function<functions>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it call ``src.sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<functions>`
+I want a test for the ``get_datetime`` :ref:`function<what is a function?>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it call ``src.sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<what is a function?>`
 
 .. code-block:: python
 
@@ -674,7 +674,7 @@ and the test is still green
     AssertionError: (datetime.datetime(1999, 12, 31, 23, 59),[35 chars], 1)) != datetime.timedelta(seconds=7080)
     AssertionError: (datetime.datetime(1999, 12, 31, 16, 1), [35 chars] 55)) != datetime.timedelta(seconds=7560)
 
-  the ``duration_a`` :ref:`function<functions>` returns `datetime.datetime`_ objects and the test expects a `datetime.timedelta`_ object. I change it to match the expectation
+  the ``duration_a`` :ref:`function<what is a function?>` returns `datetime.datetime`_ objects and the test expects a `datetime.timedelta`_ object. I change it to match the expectation
 
   .. code-block:: python
 
@@ -779,7 +779,7 @@ and the test is still green
 
 * and remove ``random_timestamp`` because no one calls it anymore
 * then change the name of ``random_timestamp_a`` to ``random_timestamp``
-* the new ``random_timestamp`` :ref:`function<functions>` always returns timestamps with the same date, I change it to return random dates as well
+* the new ``random_timestamp`` :ref:`function<what is a function?>` always returns timestamps with the same date, I change it to return random dates as well
 
   .. code-block:: python
 
@@ -798,9 +798,9 @@ and the test is still green
 
     ValueError: day is out of range for month
 
-  I need to make sure the random dates that are made by the :ref:`function<functions>` are real dates
+  I need to make sure the random dates that are made by the :ref:`function<what is a function?>` are real dates
 
-* I change the name of ``random_timestamp`` to ``get_random_timestamp`` and make a new :ref:`function<functions>` to make sure the random timestamps generated are good
+* I change the name of ``random_timestamp`` to ``get_random_timestamp`` and make a new :ref:`function<what is a function?>` to make sure the random timestamps generated are good
 
   .. code-block:: python
 
@@ -823,14 +823,14 @@ and the test is still green
         else:
             return result
 
-  The new ``random_timestamp`` :ref:`function<functions>` does the following
+  The new ``random_timestamp`` :ref:`function<what is a function?>` does the following
 
   - generates a random timestamp by calling ``get_random_timestamp``
   - checks if the timestamp is good by calling ``src.sleep_duration.get_datetime``
-  - if the timestamp is good, the :ref:`function<functions>` returns it
+  - if the timestamp is good, the :ref:`function<what is a function?>` returns it
   - if the timestamp is bad, it raises ValueError_ and repeats the process by calling itself
 
-* I can add another :ref:`function<functions>` to remove some repetition
+* I can add another :ref:`function<what is a function?>` to remove some repetition
 
   .. code-block:: python
 
@@ -869,12 +869,12 @@ The challenge was to write a program_ that calculates the difference between a g
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time <how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time>`
 * :ref:`test_duration_w_hours_and_minutes<how to measure sleep duration: test_duration_w_hours_and_minutes>`
-* `test_datetime_objects`_ where I used `Python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<functions>` which I used to change a string_ to a `datetime.datetime`_ object
+* `test_datetime_objects`_ where I used `Python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<what is a function?>` which I used to change a string_ to a `datetime.datetime`_ object
 * `test_get_datetime`_
 * :ref:`test_duration_w_date_and_time <how to measure sleep duration: test_duration_w_date_and_time>` where I used
 
   - `random.randint`_ and an :ref:`how to test that an Exception is raised` to generate timestamps with random dates and times that are :ref:`how to pass values` in strings for ``wake_time`` and ``sleep_time``
-  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<functions>` raises ValueError_ with a message and returns the right difference between the 2 when ``wake_time`` is later than or the same as ``sleep_time``
+  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<what is a function?>` raises ValueError_ with a message and returns the right difference between the 2 when ``wake_time`` is later than or the same as ``sleep_time``
 
 I also saw the following :ref:`Exceptions<errors>`
 

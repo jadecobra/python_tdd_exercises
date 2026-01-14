@@ -20,7 +20,7 @@ booleans
 what are booleans?
 *********************************************************************************
 
-There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<functions>` to test which of the :ref:`basic data structures<data structures>` seen so far - integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
+There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a function?>` to test which of the :ref:`basic data structures<data structures>` seen so far - integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
 
 *********************************************************************************
 preview
@@ -484,7 +484,7 @@ the terminal_ shows :ref:`AssertionError`
     # Exceptions seen
     # AssertionError
 
-* I move the line from ``test_what_is_true`` to the ``test_what_is_false`` :ref:`method<functions>`
+* I move the line from ``test_what_is_true`` to the ``test_what_is_false`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -560,7 +560,7 @@ the terminal_ shows :ref:`AssertionError`
 
     # Exceptions seen
 
-* I move the line from ``test_what_is_false`` to the ``test_what_is_true`` :ref:`method<functions>`
+* I move the line from ``test_what_is_false`` to the ``test_what_is_true`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -635,7 +635,7 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I change the :ref:`method<functions>`
+I change the :ref:`method<what is a function?>`
 
 .. code-block:: python
   :lineno-start: 13
@@ -719,7 +719,7 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I change the :ref:`method<functions>`
+I change the :ref:`method<what is a function?>`
 
 .. code-block:: python
   :lineno-start: 10
@@ -766,7 +766,7 @@ the test passes
 
     AssertionError: 0 is not true
 
-* I change the :ref:`method<functions>` to assertFalse_
+* I change the :ref:`method<what is a function?>` to assertFalse_
 
   .. code-block:: python
     :lineno-start: 15
@@ -809,7 +809,7 @@ the test passes
 
     AssertionError: 1 is not false
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -887,7 +887,7 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -929,7 +929,7 @@ the terminal_ shows :ref:`AssertionError`
 
     AssertionError: 0.0 is not true
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 18
@@ -974,7 +974,7 @@ the terminal_ shows :ref:`AssertionError`
 
     AssertionError: 0.1 is not false
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1084,7 +1084,7 @@ the empty string_ ('') is not True_
 :green:`GREEN`: make it pass
 =================================================================================
 
-I change the :ref:`method<functions>`
+I change the :ref:`method<what is a function?>`
 
 .. code-block:: python
   :lineno-start: 20
@@ -1127,7 +1127,7 @@ the test passes
 
     AssertionError: 'text' is not false
 
-  I change the :ref:`method<functions>`
+  I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1269,7 +1269,7 @@ the empty tuple_ is not True_
 
   a tuple_ with things is NOT False_
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 14
@@ -1355,7 +1355,7 @@ the empty :ref:`list<lists>` is NOT True_
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -1398,7 +1398,7 @@ the empty :ref:`list<lists>` is NOT True_
 
     AssertionError: [1, 2, 3, 'n'] is not false
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -1493,7 +1493,7 @@ the empty set_ is NOT True_
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1537,7 +1537,7 @@ the empty set_ is NOT True_
 
   a set_ with things is NOT False_
 
-* I change the :ref:`method<functions>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1643,7 +1643,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
 
   the test passes
 
-* I move the line to the ``test_what_is_false`` :ref:`method<functions>`
+* I move the line to the ``test_what_is_false`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1696,7 +1696,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
 
   the test passes
 
-* I move the line to the ``test_what_is_true`` :ref:`method<functions>`
+* I move the line to the ``test_what_is_true`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1835,7 +1835,7 @@ you now know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what None is<None>`
 * :ref:`what is True and False in Python<booleans>`

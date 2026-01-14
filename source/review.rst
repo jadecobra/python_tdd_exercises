@@ -104,7 +104,7 @@ functions review
 
 Here are the questions you can answer after going through this chapter
 
-* :ref:`What is a Function?<functions>`
+* :ref:`What is a Function?<what is a function?>`
 * :ref:`What do functions return by default?<test_making_a_function_w_return_none>`
 * :ref:`What is a constant function?<test_constant_function>`
 * :ref:`What is the identity function?<test_identity_function>`

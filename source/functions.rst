@@ -12,12 +12,8 @@
 .. _positional arguments: arguments_
 
 #################################################################################
-functions
-#################################################################################
-
-*********************************************************************************
 what is a function?
-*********************************************************************************
+#################################################################################
 
 A function_ is a unit or block of code that is callable_. This means I can write statements that I can use to do something at a different time from when I write them. They can make code smaller, easier to read, test, reuse, maintain and improve.
 
@@ -65,7 +61,7 @@ questions about functions
 
 Here are the questions you can answer after going through this chapter
 
-* :ref:`What is a Function?<functions>`
+* :ref:`What is a Function?<what is a function?>`
 * :ref:`What do functions return by default?<test_making_a_function_w_return_none>`
 * :ref:`What is a constant function?<test_constant_function>`
 * :ref:`What is the identity function?<test_identity_function>`
@@ -1852,7 +1848,7 @@ you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>` and
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 
 :ref:`Would you like to test how to pass values from tests to functions with assert methods?<how to pass values>`
 

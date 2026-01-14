@@ -161,7 +161,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<what is an assertion?>` for the next :ref:`function<functions>`
+* I add another :ref:`assertion<what is an assertion?>` for the next :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 96
@@ -193,7 +193,7 @@ the test passes
                 'Excuse me?! Numbers only! try again...'
             )
 
-  the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``only_takes_numbers`` :ref:`function<functions>`. Never again
+  the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``only_takes_numbers`` :ref:`function<what is a function?>`. Never again
 
 * I add a :ref:`variable<what is a variable?>` to remove the repetition
 
@@ -264,7 +264,7 @@ how to multiply a list
 
 * I open ``calculator.py`` in the :ref:`editor<2 editors>`
 
-* I add an :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
+* I add an :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -285,7 +285,7 @@ how to multiply a list
                 return error_message
         return wrapper
 
-  the test passes. The ``only_takes_numbers`` :ref:`function<functions>` looks ugly now, there has to be a better way
+  the test passes. The ``only_takes_numbers`` :ref:`function<what is a function?>` looks ugly now, there has to be a better way
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` to ``test_calculator.py``
 
@@ -383,7 +383,7 @@ how to test if something is an instance of more than one type
 
 The `isinstance function`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<classes>` in the tuple_
 
-* I add a :ref:`variable<what is a variable?>` to the ``only_takes_numbers`` :ref:`function<functions>` in ``calculator.py``
+* I add a :ref:`variable<what is a variable?>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -540,7 +540,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
                     return error_message
         return wrapper
 
-  all the tests are still passing. I wonder if there is a way to write this :ref:`function<functions>` with only one `return statement`_ for the error message
+  all the tests are still passing. I wonder if there is a way to write this :ref:`function<what is a function?>` with only one `return statement`_ for the error message
 
 ----
 
@@ -1084,7 +1084,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what None is<None>`
 * :ref:`what is True and False in Python<booleans>`

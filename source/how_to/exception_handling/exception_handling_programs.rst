@@ -173,7 +173,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     TypeError: 'NoneType' object is not callable
 
-* when I make ``raise_exception`` a :ref:`function<functions>`
+* when I make ``raise_exception`` a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -184,7 +184,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
   the test passes
 
-* I want the :ref:`function<functions>` to raise :ref:`Exception<errors>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
+* I want the :ref:`function<what is a function?>` to raise :ref:`Exception<errors>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 42
@@ -200,7 +200,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     AssertionError: Exception not raised
 
-* I add a `raise statement`_ to the ``raise_exception`` :ref:`function<functions>` in ``exceptions.py``
+* I add a `raise statement`_ to the ``raise_exception`` :ref:`function<what is a function?>` in ``exceptions.py``
 
   .. code-block:: python
     :lineno-start: 5
@@ -314,7 +314,7 @@ the terminal_ shows :ref:`AttributeError`
 
     TypeError: 'NoneType' object is not callable
 
-* I make it a :ref:`function<functions>`
+* I make it a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -329,7 +329,7 @@ the terminal_ shows :ref:`AttributeError`
 
     TypeError: an_exception_handler() takes 0 positional arguments but 1 was given
 
-* I make the :ref:`function<functions>` take input
+* I make the :ref:`function<what is a function?>` take input
 
   .. code-block:: python
     :lineno-start: 9
@@ -459,7 +459,7 @@ the terminal_ shows :ref:`AttributeError`
     ...::test_catching_failure - AssertionError: <function raise_exception at 0xabcd12e34567> != 'failed'
     ...::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
-  - ``test_catching_failure`` fails because ``an_exception_handler`` returns the name (``raise_exception``) and address in the computer(``0xabcd12e34567``) of the :ref:`function<functions>` it gets
+  - ``test_catching_failure`` fails because ``an_exception_handler`` returns the name (``raise_exception``) and address in the computer(``0xabcd12e34567``) of the :ref:`function<what is a function?>` it gets
   - ``test_catching_success`` fails because ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
 
 * I change the name of the input parameter to be clearer
@@ -472,7 +472,7 @@ the terminal_ shows :ref:`AttributeError`
         return a_function
         return 'failed'
 
-* I make ``an_exception_handler`` return the result of a call to its input as a :ref:`function<functions>`
+* I make ``an_exception_handler`` return the result of a call to its input as a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -494,7 +494,7 @@ the terminal_ shows :ref:`AttributeError`
 
   because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_
 
-* I make it a :ref:`function<functions>` to make it callable_
+* I make it a :ref:`function<what is a function?>` to make it callable_
 
   .. code-block:: python
     :lineno-start: 9
@@ -520,7 +520,7 @@ the terminal_ shows :ref:`AttributeError`
 
     Exception: 'BOOM!!!'
 
-I need a way for the :ref:`function<functions>` to choose what to do when an :ref:`Exception<errors>` is raised and when one is NOT raised. I can use the `try statement`_ to do this
+I need a way for the :ref:`function<what is a function?>` to choose what to do when an :ref:`Exception<errors>` is raised and when one is NOT raised. I can use the `try statement`_ to do this
 
 ---------------------------------------------------------------------------------
 how to use try...except...else
@@ -728,7 +728,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`

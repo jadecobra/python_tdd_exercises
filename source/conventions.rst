@@ -28,7 +28,7 @@ names
 
   I can use any case I want but :ref:`CapWords` keeps things consistent
 
-- :ref:`variables<what is a variable?>` and :ref:`function/method<functions>` names are in ``snake_case`` for example
+- :ref:`variables<what is a variable?>` and :ref:`function/method<what is a function?>` names are in ``snake_case`` for example
 
   .. code-block:: python
 

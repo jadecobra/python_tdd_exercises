@@ -8,7 +8,7 @@
 classes
 #################################################################################
 
-``classes`` are definitions that represent an object. I think of them as :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` that belong together
+``classes`` are definitions that represent an object. I think of them as :ref:`attributes<AttributeError>` and :ref:`methods (functions) <what is a function?>` that belong together
 
 *********************************************************************************
 how to make a class in Python
@@ -16,7 +16,7 @@ how to make a class in Python
 
 * use the class_ keyword
 * use ``TitleCase`` for the name
-* use a name that tells what the collection of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <functions>` does - this is hard to do and is something I am still learning
+* use a name that tells what the collection of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <what is a function?>` does - this is hard to do and is something I am still learning
 
 ----
 
@@ -144,7 +144,7 @@ the terminal_ shows :ref:`ModuleNotFoundError` because I have an import statemen
 Here is a quick review of what has happened so far
 
 * pass_ is a placeholder
-* ``self.assertIsInstance`` is a `unittest.TestCase`_ :ref:`method<functions>` that checks if the first input to the :ref:`method<functions>` is a child of the second input
+* ``self.assertIsInstance`` is a `unittest.TestCase`_ :ref:`method<what is a function?>` that checks if the first input to the :ref:`method<what is a function?>` is a child of the second input
 * the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an :ref:`object<classes>`
 * in Python_ everything is an :ref:`object<classes>` , which means if it is in Python_ there is a class definition for it somewhere or it inherits from a class
 
@@ -372,7 +372,7 @@ the terminal_ shows all tests pass
 test_attributes_and_methods_of_classes
 *********************************************************************************
 
-I can also define classes with :ref:`methods<functions>` which are :ref:`function<functions>` definitions that belong to the class
+I can also define classes with :ref:`methods<what is a function?>` which are :ref:`function<what is a function?>` definitions that belong to the class
 
 =================================================================================
 :red:`RED`: make it fail
@@ -430,7 +430,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the terminal_ shows :ref:`TypeError` since ``method_a`` is :ref:`None` which is not callable
 
-* I change the definition of ``method_a`` to make it a :ref:`function<functions>` which makes it callable
+* I change the definition of ``method_a`` to make it a :ref:`function<what is a function?>` which makes it callable
 
   .. code-block:: python
 
@@ -535,7 +535,7 @@ test_attributes_and_methods_of_objects
 
 To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<classes>` I can call dir_ on the :ref:`object<classes>`.
 
-The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of the object provided to it as input
+The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of the object provided to it as input
 
 =================================================================================
 :red:`RED`: make it fail
@@ -604,7 +604,7 @@ and it passes, the last 2 values in the list are ``attribute`` and ``method`` wh
 test_making_a_class_w_initializer
 *********************************************************************************
 
-When making a new class, we can define an initializer which is a :ref:`method<functions>` that can receive inputs to be used to customize instances/copies of the class
+When making a new class, we can define an initializer which is a :ref:`method<what is a function?>` that can receive inputs to be used to customize instances/copies of the class
 
 *********************************************************************************
 :red:`RED`: make it fail
@@ -686,11 +686,11 @@ the terminal_ shows :ref:`AttributeError`
 
     TypeError: Girl() takes no arguments
 
-  - ``classes.Girl(sex='F')`` looks like a call to a :ref:`function<functions>`
+  - ``classes.Girl(sex='F')`` looks like a call to a :ref:`function<what is a function?>`
   - I can define classes that take values by using an initializer
-  - An initializer is a class :ref:`method<functions>` that allows customization of instances/copies of a class_
+  - An initializer is a class :ref:`method<what is a function?>` that allows customization of instances/copies of a class_
 
-* I add the initializer :ref:`method<functions>` called ``__init__`` to the ``Girl`` class
+* I add the initializer :ref:`method<what is a function?>` called ``__init__`` to the ``Girl`` class
 
   .. code-block:: python
 
@@ -708,7 +708,7 @@ the terminal_ shows :ref:`AttributeError`
 
    TypeError: __init__() got an unexpected keyword argument 'sex'
 
-* I make the definition of the ``__init__`` :ref:`method<functions>` take a keyword argument
+* I make the definition of the ``__init__`` :ref:`method<what is a function?>` take a keyword argument
 
   .. code-block:: python
 
@@ -746,7 +746,7 @@ the terminal_ shows :ref:`AttributeError`
 
   - I defined a class_ with a name
   - I defined an attribute called ``sex``
-  - I defined an ``__init__`` :ref:`method<functions>` which takes in a ``sex`` keyword argument
+  - I defined an ``__init__`` :ref:`method<what is a function?>` which takes in a ``sex`` keyword argument
 
 * I am going to make it a third repetition by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class because it is fun to do bad things
 
@@ -762,7 +762,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the terminal_ shows all tests still passing and I have now written the same thing 3 times. Earlier on I mentioned inheritance, and now try to use it to remove this duplication so `I do not repeat myself`_
 
-* I add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :ref:`method<functions>` of the classes I am trying to abstract
+* I add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :ref:`method<what is a function?>` of the classes I am trying to abstract
 
   .. code-block:: python
 
@@ -826,7 +826,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the terminal_ still shows :ref:`AssertionError`
 
-* when I remove the ``__init__`` :ref:`method<functions>` from the ``Girl`` class
+* when I remove the ``__init__`` :ref:`method<what is a function?>` from the ``Girl`` class
 
   .. code-block:: python
 
@@ -859,7 +859,7 @@ the terminal_ shows :ref:`AttributeError`
 
   all tests are passing, I have successfully refactored the 3 classes and abstracted a ``Human`` class from them
 
-* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same :ref:`methods<functions>` and attributes that the ``Human`` class has, including the ``__init__`` method
+* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same :ref:`methods<what is a function?>` and attributes that the ``Human`` class has, including the ``__init__`` method
 * ``self.sex`` in each class is the ``sex`` attribute in the class, allowing its definition from inside the ``__init__`` method
 * since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as I do in the tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
 
@@ -872,9 +872,9 @@ review
 the tests show
 
 * how to define a class with an attribute
-* how to define a class with a :ref:`method<functions>`
+* how to define a class with a :ref:`method<what is a function?>`
 * how to define a class with an initializer
-* how to view the :ref:`attributes<AttributeError>` and :ref:`methods<functions>` of a class
+* how to view the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of a class
 * classes can be defined
 
   - with parentheses stating what :ref:`object<classes>` the class inherits from
@@ -943,7 +943,7 @@ you have gone through a lot of things and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
-* :ref:`how to write functions<functions>`
+* :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<None>`
 * :ref:`what is True and False in Python<booleans>`
