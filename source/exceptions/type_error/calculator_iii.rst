@@ -2,7 +2,7 @@
   :description: Facing a Python TypeError? Learn to fix common errors like 'unsupported operand type' and 'int object is not callable'. Watch the full tutorial to debug now.
   :keywords: Jacob Itegboje, python typeerror unsupported operand type, python typeerror 'int' object is not callable, python typeerror can only concatenate str, how to fix typeerror in python, python typeerror string and integer, python typeerror list indices must be integers, python typeerror 'str' object is not callable, python typeerror float object is not iterable
 
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _TypeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError
 

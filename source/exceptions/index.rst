@@ -17,8 +17,7 @@ The tests in this chapter cover the following Exceptions_
   AssertionError
   ModuleNotFoundError
   AttributeError
-  TypeError
-  calculator_iii
+  type_error/index
 
 *********************************************************************************
 what is covered?

@@ -94,7 +94,7 @@ table of contents
   videos <https://www.youtube.com/@JacobItegboje>
   conventions
   setup<how_to/setup/index>
-  test driven development environment 1<how_to/make_tdd_manually/index>
+  make TDD environment 1<how_to/make_tdd_manually/index>
   exceptions/AssertionError
   functions
   how_to/pass_values
@@ -102,7 +102,7 @@ table of contents
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   calculator<how_to/calculator_i>
-  test driven development environment 2<how_to/make_tdd_automatically/index>
+  make TDD environment 2<how_to/make_tdd_automatically/index>
   handling Exceptions<how_to/exception_handling/index>
   exceptions/TypeError
   data_structures/lists/index

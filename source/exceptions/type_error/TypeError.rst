@@ -2,7 +2,7 @@
   :description: Facing a Python TypeError? Learn to fix common errors like 'unsupported operand type' and 'int object is not callable'. Watch the full tutorial to debug now.
   :keywords: Jacob Itegboje, python typeerror unsupported operand type, python typeerror 'int' object is not callable, python typeerror can only concatenate str, how to fix typeerror in python, python typeerror string and integer, python typeerror list indices must be integers, python typeerror 'str' object is not callable, python typeerror float object is not iterable
 
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _TypeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError
 
@@ -13,14 +13,6 @@ TypeError
 .. raw:: html
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/DdEmPvYaCEQ?si=ih9z9nUVSJnY4D0N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-----
-
-*********************************************************************************
-what causes TypeError?
-*********************************************************************************
-
-TypeError_ is raised when an :ref:`object<classes>` is used in a way that it should not be. This helps understand how to use :ref:`functions` and :ref:`classes`
 
 ----
 
