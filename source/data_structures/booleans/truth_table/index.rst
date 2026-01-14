@@ -3,7 +3,7 @@
 .. _truth_table:
 
 #################################################################################
-booleans: truth table
+truth table
 #################################################################################
 
 .. raw:: html
@@ -333,12 +333,12 @@ truth table operations
   :maxdepth: 2
   :titlesonly:
 
-  01_nullary_unary_operations
-  02_binary_operations_1
-  03_binary_operations_2
-  04_binary_operations_3
-  05_binary_operations_4
-  test_truth_table_tests
+  Nullary and Unary<01_nullary_unary_operations>
+  Binary Operations 1<02_binary_operations_1>
+  Binary Operations 2<03_binary_operations_2>
+  Binary Operations 3<04_binary_operations_3>
+  Binary Operatiosn 4<05_binary_operations_4>
+  Truth Table Test<test_truth_table_tests>
 
 ----
 

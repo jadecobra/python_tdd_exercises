@@ -23,13 +23,13 @@ the chapters
 .. toctree::
   :titlesonly:
 
-  setup/index
-  make_tdd_manually/index
-  make_tdd_automatically/index
+  setup my computer<setup/index>
+  make TDD manually<make_tdd_manually/index>
+  make TDD automatically<make_tdd_automatically/index>
   pass_values
-  calculator_i
+  calculator 1<calculator_i>
   make_person
-  exception_handling/index
+  handle Exceptions<exception_handling/index>
 
 ----
 

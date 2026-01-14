@@ -35,12 +35,8 @@
 
 
 #################################################################################
-dictionaries
-#################################################################################
-
-*********************************************************************************
 what is a dictionary?
-*********************************************************************************
+#################################################################################
 
 A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<classes>`. I add tests to see which of :ref:`the Python basic data types<data structures>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
 
