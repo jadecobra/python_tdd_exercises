@@ -2595,7 +2595,7 @@ the test passes
 
   the test passes
 
-* I change the ``0`` given to the call to be clearer
+* I change the ``0`` given in the call to the `setdefault method`_ be clearer
 
   .. code-block:: python
     :lineno-start: 178
@@ -2658,7 +2658,7 @@ the test passes
 
     AssertionError: 'value' != 'default'
 
-  I get ``'value'`` back. setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key in a dictionary<test_keys_of_a_dictionary>` when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_
+  setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key in a dictionary<test_keys_of_a_dictionary>` when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_
 
 * I change the expectation to match
 
