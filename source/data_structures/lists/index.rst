@@ -51,7 +51,7 @@ what is a list?
 A list_ is a container :ref:`object<classes>` that can hold any objects_
 
 * they are represented with ``[]``
-* they can be made with the list_ constructor_ (``list()``)
+* they can be made with ``list()`` or ``[]``
 * they can be changed with an operation, which means they are mutable
 
 *********************************************************************************
@@ -258,7 +258,7 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<what is an assertion?>`, this time with input to the list_ constructor_, I want to make a list_ that has things in it
+* I add another :ref:`assertion<what is an assertion?>`, this time with input to ``list()``, I want to make a list_ that has things in it
 
   .. code-block:: python
     :lineno-start: 7
@@ -316,7 +316,7 @@ An iterable_ is an :ref:`object<classes>` that can return what it has, one at a 
 
   the test passes.
 
-I can make a list_ with the constructor_ (``list()``) or square brackets(``[]``) which uses less characters
+I can make a list_ with ``list()``, or with square brackets(``[]``) which uses less characters
 
 ----
 
@@ -3999,7 +3999,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make a list_ with the constructor_ ``list()`` or square brackets (``[]``), then I ran the following tests for the :ref:`methods of lists<test_attributes_and_methods_of_lists>` from append_ to sort_
+I ran tests to show that I can make a list_ with ``list()`` or square brackets (``[]``), then I ran the following tests for the :ref:`methods of lists<test_attributes_and_methods_of_lists>` from append_ to sort_
 
 * :ref:`test_append_adds_item_to_end_of_a_list`
 * :ref:`test_clear_empties_a_list`

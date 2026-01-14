@@ -71,7 +71,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps that 
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which uses the int_ constructor_ to change the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, which uses ``int()`` to change the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
 
 
 *********************************************************************************
@@ -102,7 +102,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps that 
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  I cannot use the int_ constructor_ to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :ref:`handle<how to test that an Exception is raised>` the ValueError_
+  I cannot use ``int()`` to change a timestamp string_ to a number when it has a date. I add an `assertRaises`_ to :ref:`handle<how to test that an Exception is raised>` the ValueError_
 
   .. code-block:: python
 
@@ -168,7 +168,7 @@ I want to test the ``duration`` :ref:`function<functions>` with timestamps that 
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
-  because the test calls the ``get_difference`` :ref:`method<functions>` in the expectation which uses the int_ constructor_
+  because the test calls the ``get_difference`` :ref:`method<functions>` in the expectation which uses ``int()``
 
 * I change it to return ``wake_time`` and ``sleep_time``
 
@@ -693,7 +693,7 @@ and the test is still green
 
   the test passes
 
-* I add the str_ constructor_ to the expectation in the test because I want the result as a string_ not a `datetime.timedelta`_ object
+* I add ``str()`` to the expectation in the test because I want the result as a string_ not a `datetime.timedelta`_ object
 
   .. code-block:: python
 

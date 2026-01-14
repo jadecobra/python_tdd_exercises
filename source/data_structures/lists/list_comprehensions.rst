@@ -195,7 +195,7 @@ start the project
 test_making_a_list_w_a_for_loop
 *********************************************************************************
 
-I can make a :ref:`list<lists>` with the constructor_ (``list()``) or with square brackets (``[]``), I can also add items one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`
+I can make a :ref:`list<lists>` with ``list()`` or with square brackets (``[]``), I can also add items one at a time with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -329,7 +329,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   ``range(0, 10)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus ``1``, in this case it goes from ``0`` to ``9``
 
-* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<lists>`, but there is an easier way. I can do the same thing with with the :ref:`list constructor<test_making_a_list>`
+* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<lists>`, but there is an easier way. I can do the same thing with :ref:`list()<test_making_a_list>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -571,7 +571,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
 :ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`
 
-Why did I use a `for loop`_ when I can use the :ref:`list constructor<test_making_a_list>` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
+Why did I use a `for loop`_ when I can use :ref:`list()<test_making_a_list>` to do the same thing with less characters? :ref:`Sometimes one is better than the other<test_making_a_list_w_conditions>`
 
 ----
 
@@ -649,7 +649,7 @@ the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_
 
             self.assertEqual(a_list, list(iterable))
 
-  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not better than the :ref:`list constructor<test_making_a_list>`
+  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not better than :ref:`list()<test_making_a_list>`
 
 * I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<lists>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the duplication
 
@@ -933,7 +933,7 @@ the test passes. The `list comprehension`_ is like the `for loop`_ without the :
   * loop through the :ref:`iterable<what is an iterable?>`
   * do the operation I want on every item of the :ref:`iterable<what is an iterable?>`
 
-  with the `list comprehension`_, I do all the steps in one line, and still none of the other ways are better than using the :ref:`list constructor<test_making_a_list>`, yet.
+  with the `list comprehension`_, I do all the steps in one line, and still none of the other ways are better than using :ref:`list()<test_making_a_list>`, yet.
 
 :ref:`I know how to use a list comprehension to make a list<test_making_a_list_w_a_list_comprehension>`
 
@@ -987,7 +987,7 @@ the numbers on the left are even numbers from the :ref:`iterable<what is an iter
 :green:`GREEN`: make it pass
 =================================================================================
 
-How can I make the ``even_numbers`` :ref:`list<lists>` with the constructor_ without changing the :ref:`iterable<what is an iterable?>`? Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_. I change the expectation
+How can I make the ``even_numbers`` :ref:`list<lists>` with ``list()`` without changing the :ref:`iterable<what is an iterable?>`? Since I can make the :ref:`list<lists>` with a `for loop`_, I can do it with a `list comprehension`_. I change the expectation
 
 .. code-block:: python
   :lineno-start: 42
@@ -1015,7 +1015,7 @@ I add the :ref:`if statement<if statements>`
               [item for item in self.iterable if item % 2 == 0]
           )
 
-the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using the :ref:`list constructor<test_making_a_list>`
+the test passes. This is a case where a `list comprehension`_ or a `for loop`_ is better than using :ref:`list()<test_making_a_list>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1390,7 +1390,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   I have to make the `filter object`_ a :ref:`list<lists>`
 
-* I put it in the :ref:`list constructor<test_making_a_list>`
+* I put it in :ref:`list()<test_making_a_list>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1566,7 +1566,7 @@ the test passes
 
   I have to change the `map object`_ to a :ref:`list<lists>`
 
-* I add the :ref:`list constructor<test_making_a_list>`
+* I add :ref:`list()<test_making_a_list>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -3198,7 +3198,7 @@ review
 
 I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with
 
-* :ref:`the list constructor<test_making_a_list>`
+* :ref:`the list()<test_making_a_list>`
 * :ref:`a for loop<test_making_a_list_w_a_for_loop>`
 * :ref:`the extend method<test_making_a_list_w_extend>`
 * :ref:`list comprehensions<test_making_a_list_w_a_list_comprehension>` where I can

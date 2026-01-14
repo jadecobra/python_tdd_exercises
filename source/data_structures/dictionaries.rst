@@ -248,7 +248,7 @@ I change the expectation to match
 
 the test passes. These are two ways to make an empty dictionary_
 
-* the constructor_ - ``dict()``
+* ``dict()``
 * curly braces - ``{}``
 
 =================================================================================
@@ -1656,7 +1656,7 @@ the terminal_ shows :ref:`AssertionError`
 
     AssertionError: dict_items([('key', 'value')]) is not None : [('key', 'value')]
 
-* I pass the call to the `items method`_ to the :ref:`list constructor<test_making_a_list>` to see if it is :ref:`iterable<what is an iterable?>`
+* I pass the call to the `items method`_ to :ref:`list()<test_making_a_list>` to see if it is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 130
@@ -1865,7 +1865,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: dict_keys(['key']) is not None : ['key']
 
-* I pass the call to the `keys method`_ to the :ref:`list constructor<test_making_a_list>` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
+* I pass the call to the `keys method`_ to :ref:`list()<test_making_a_list>` to see if ``dict_keys`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 143
@@ -3042,7 +3042,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     AssertionError: dict_values(['value']) is not None : ['value']
 
-* I use the :ref:`list constructor<test_making_a_list>` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
+* I use :ref:`list()<test_making_a_list>` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
     :lineno-start: 213
@@ -4732,7 +4732,7 @@ review
 
 Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<classes>` can be used as values.
 
-I ran tests to show that I can make a dictionary_ with the constructor_ ``dict()`` or curly braces ``{}``, then I ran the following tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+I ran tests to show that I can make a dictionary_ with ``dict()`` or curly braces ``{}``, then I ran the following tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 * :ref:`test_making_a_dictionary_w_none_as_a_key`
 * :ref:`test_making_a_dictionary_w_a_boolean_as_a_key`

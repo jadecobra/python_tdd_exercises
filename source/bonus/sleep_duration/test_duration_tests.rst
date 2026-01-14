@@ -465,7 +465,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   the test expects a string_ and the :ref:`function<functions>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I did something wrong
 
-* I add the str_ constructor_ to match the format of the expectation
+* I use ``str()`` to match the format of the expectation
 
   .. code-block:: python
 
