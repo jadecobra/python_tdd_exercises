@@ -656,7 +656,7 @@ A constant function_ always return the same thing when called, I can use them in
 test_identity_function
 *********************************************************************************
 
-The identity function_ returns its input as output, it's also in the :ref:`Truth Table<booleans: truth table>` chapter in :ref:`test_logical_identity`
+The identity function_ returns its input as output, it's also in the :ref:`Truth Table<truth table>` chapter in :ref:`test_logical_identity`
 
 =================================================================================
 :red:`RED`: make it fail

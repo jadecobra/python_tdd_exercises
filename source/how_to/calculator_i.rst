@@ -1968,8 +1968,8 @@ you know a lot
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
-* :ref:`how to write programs that make decisions<booleans: truth table>`
-* :ref:`how to make a calculator`
+* :ref:`how to write programs that make decisions<truth table>`
+* :ref:`how to make a calculator<how to make a calculator part 1>`
 
 There is a problem, I have done the same steps for each of the 8 chapters covered so far
 

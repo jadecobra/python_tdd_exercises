@@ -8,6 +8,14 @@
 errors
 #################################################################################
 
+When an :ref:`error<errors>` happens in Python_, an :ref:`Exception<errors>` is raised to stop the program, this means nothing past the line that caused the :ref:`error<errors>` will run.
+
+It is useful because there is a problem that must be solved for the program_ to continue, and it is a problem when it causes the program_ to stop early.
+
+*********************************************************************************
+what is covered?
+*********************************************************************************
+
 The tests in this chapter cover the following Exceptions_
 
 .. toctree::
@@ -18,18 +26,7 @@ The tests in this chapter cover the following Exceptions_
   ModuleNotFoundError
   AttributeError
   type_error/index
-
-*********************************************************************************
-what is covered?
-*********************************************************************************
-
-the chapters below cover handling Exceptions_ in :ref:`tests<how to test that an Exception is raised>` and :ref:`programs<how to handle Exceptions (Errors) in programs>`
-
-.. toctree::
-  :maxdepth: 1
-
-  /how_to/exception_handling/exception_handling_tests
-  /how_to/exception_handling/exception_handling_programs
+  handling Exceptions</how_to/exception_handling/index>
 
 *********************************************************************************
 questions about Exceptions

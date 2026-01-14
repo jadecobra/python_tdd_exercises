@@ -258,8 +258,8 @@ you have gone through a lot of information and know
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
-* :ref:`how to write programs that make decisions<booleans: truth table>`
-* :ref:`how to make a calculator`
+* :ref:`how to write programs that make decisions<truth table>`
+* :ref:`how to make a calculator<how to make a calculator part 1>`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`

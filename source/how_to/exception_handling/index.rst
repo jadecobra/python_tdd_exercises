@@ -30,8 +30,8 @@ These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<
 .. toctree::
   :titlesonly:
 
-  exception_handling_tests
-  exception_handling_programs
+  handle Exceptions in tests<exception_handling_tests>
+  handle Exceptions in programs<exception_handling_programs>
   calculator_ii
 
 ----

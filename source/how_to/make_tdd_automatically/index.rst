@@ -91,8 +91,8 @@ These chapters show how I setup a Python_ :ref:`Test Driven Development environm
 .. toctree::
   :titlesonly:
 
-  make_tdd_environment_automatically
-  make_tdd_environment_no_wsl_automatically
+  make TDD automatically<make_tdd_environment_automatically>
+  make TDD automatically no WSL<make_tdd_environment_no_wsl_automatically>
 
 they cover the following
 

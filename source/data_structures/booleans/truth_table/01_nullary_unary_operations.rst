@@ -34,7 +34,7 @@ Here are questions you can answer after going through this chapter
 requirements
 *********************************************************************************
 
-:ref:`booleans: truth table`
+:ref:`truth table`
 
 ----
 

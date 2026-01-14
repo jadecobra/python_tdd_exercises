@@ -400,8 +400,8 @@ Here is what we have gone through together so far
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
-* :ref:`how to write programs that make decisions<booleans: truth table>`
-* :ref:`how to make a calculator`
+* :ref:`how to write programs that make decisions<truth table>`
+* :ref:`how to make a calculator<how to make a calculator part 1>`
 * :ref:`how to make a Python Test Driven Development environment automatically`
 
 :ref:`Would you like to use makePythonTdd.sh to make a Python Test Driven Development environment to test that an Exception is raised?<how to test that an Exception is raised>`

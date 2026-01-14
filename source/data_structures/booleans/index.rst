@@ -1840,7 +1840,7 @@ you now know
 * :ref:`what None is<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 
-:ref:`Would you like to test the truth table?<booleans: truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`
+:ref:`Would you like to test the truth table?<truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`
 
 ----
 

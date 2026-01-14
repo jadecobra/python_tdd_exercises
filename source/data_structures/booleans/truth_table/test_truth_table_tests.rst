@@ -2047,7 +2047,7 @@ you now know
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
-* :ref:`how to write programs that make decisions<booleans: truth table>`
+* :ref:`how to write programs that make decisions<truth table>`
 
 :ref:`Would you like to test making a calculator?<how to make a calculator part 1>`
 
