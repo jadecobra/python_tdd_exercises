@@ -24,15 +24,15 @@
 booleans part 2
 #################################################################################
 
-*********************************************************************************
-is a boolean an integer or a float?
-*********************************************************************************
+I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator part 1>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail.
 
-I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator part 1>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail. This means that they are also integers_ or floats_ even though they are :ref:`booleans<what are booleans?>`. I want to find out if :ref:`booleans<what are booleans?>` are integers_ or floats_
+This means that they are also integers_ or floats_ even though they are :ref:`booleans<what are booleans?>`. I want to find out if :ref:`booleans<what are booleans?>` are integers_ or floats_
 
-=================================================================================
+----
+
+*********************************************************************************
 open the project
-=================================================================================
+*********************************************************************************
 
 * I `change directory`_ to the ``booleans`` folder_
 
@@ -91,6 +91,10 @@ open the project
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_booleans.py`` to open it in the :ref:`editor<2 editors>`
 
 ----
+
+*********************************************************************************
+is a boolean an integer or a float?
+*********************************************************************************
 
 =================================================================================
 :red:`RED`: make it fail
@@ -468,7 +472,6 @@ the test passes
                 with self.subTest(i=true_item):
                     self.assertTrue(true_item)
 
-
   still green
 
 * I add :ref:`False<test_what_is_false>` to make sure the test still works as expected
@@ -786,9 +789,9 @@ the test passes
 
 ----
 
-=================================================================================
+*********************************************************************************
 close the project
-=================================================================================
+*********************************************************************************
 
 * I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
@@ -831,32 +834,10 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what is an iterable?>` with
+I added :ref:`assertions<what is an assertion?>` that show :ref:`booleans<what are booleans?>` are also integers_ and NOT floats_ then added the following tests
 
-* :ref:`the list()<test_making_a_list>`
-* :ref:`a for loop<test_making_a_list_w_a_for_loop>`
-* :ref:`the extend method<test_making_a_list_w_extend>`
-* :ref:`list comprehensions<test_making_a_list_w_a_list_comprehension>` where I can
-
-  - :ref:`filter the list based on a condition<test_making_a_list_w_conditions>`
-  - :ref:`transform the list with a process<test_making_a_list_w_processes>`
-  - :ref:`transform and filter the list<test_making_a_list_w_processes_and_conditions>`
-
-I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
-
-I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of the following
-
-.. code-block:: python
-
-  {
-      a_process(key): another_process(value)
-      for key/value in iterable
-      if condition/not condition
-  }
-
-----
-
-:ref:`How many questions can you answer after going through this chapter?<questions about list comprehensions>`
+* :ref:`test_the_value_of_false` which showed that :ref:`False<test_what_is_false>` is ``0``
+* :ref:`test_the_value_of_true` which showed that :ref:`True<test_what_is_true>` is ``1``
 
 ----
 
