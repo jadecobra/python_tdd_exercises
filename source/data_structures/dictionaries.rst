@@ -13,6 +13,7 @@
 .. _get: https://docs.python.org/3/library/stdtypes.html#dict.get
 .. _get method: get_
 .. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
+.. _items method: items_
 .. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
 .. _keys method: keys_
 .. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
@@ -63,11 +64,11 @@ questions about dictionaries
 Here are questions you can answer after going through this chapter
 
 * :ref:`what is a dictionary?`
-* :ref:`test_clear_empties_a_dictionary`
+* :ref:`how can I empty a dictionary?<test_clear_empties_a_dictionary>`
 * :ref:`how can I copy a dictionary<test_copy_a_dictionary>`
 * :ref:`how can I make a dictionary from an iterable?<test_fromkeys_makes_a_dictionary_from_an_iterable>`
 * :ref:`how can I get a value that is in a dictionary?<test_get_value_of_a_key_in_a_dictionary>`
-* :ref:`how can I look at the key-value pairs in a dictionary as a list of tuples<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+* :ref:`how can I look at the key-value pairs in a dictionary as a list of tuples?<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 * :ref:`how can I look at only the keys in a dictionary?<test_keys_of_a_dictionary>`
 * :ref:`how can I remove a key-value pair from a dictionary?<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
 * :ref:`how can I remove the last key-value pair from a dictionary?<test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary>`
@@ -245,7 +246,7 @@ I change the expectation to match
       def test_making_a_dictionary(self):
           self.assertEqual(dict(), {})
 
-the test passes. These are two ways to make an empty dictionary_ with
+the test passes. These are two ways to make an empty dictionary_
 
 * the constructor_ - ``dict()``
 * curly braces - ``{}``
@@ -502,7 +503,7 @@ the test passes. I can use an integer_ as a :ref:`key in a dictionary<test_keys_
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-I want to see if I can use a float_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+I want to see if I can use a float_ as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`. I add a float_ to the dictionary_
 
 .. code-block:: python
   :lineno-start: 19
@@ -624,7 +625,7 @@ I remove the things around the new dictionary_ then change the :ref:`key<test_ke
 
 .. code-block:: python
   :lineno-start: 31
-  :emphasize-lines: 2-3
+  :emphasize-lines: 3
 
       def test_making_a_dictionary_w_a_list_as_a_key(self):
 
@@ -798,7 +799,9 @@ It also gives me a message about how to show the full difference between the two
                 []
             )
 
-  the terminal_ shows the full difference between the two :ref:`lists`. I copy and paste the expected values from the terminal_ then use `find and replace`_ to remove the extra characters
+  the terminal_ shows the full difference between the two :ref:`lists`.
+
+* I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) the expected values from the terminal_ then use `find and replace`_ to remove the extra characters
 
   .. note::
 
@@ -985,7 +988,6 @@ the test passes
             self.assertEqual(a_dictionary, {})
 
 
-    'clear',
     'fromkeys',
     'get',
     'items',
@@ -1365,7 +1367,7 @@ test_get_value_of_a_key_in_a_dictionary
 I add a test for the `get method`_
 
 .. code-block:: python
-  :lineno-start: 107
+  :lineno-start: 114
   :emphasize-lines: 4-6
 
               {0: 'default', 1: 'default'}
@@ -1391,7 +1393,7 @@ the terminal_ shows :ref:`TypeError`
 I add a value to the call
 
 .. code-block:: python
-  :lineno-start: 118
+  :lineno-start: 119
   :emphasize-lines: 1
 
           self.assertIsNone(a_dictionary.get(0))
@@ -1405,7 +1407,7 @@ the test passes
 * the `get method`_ also expected at least 1 argument, I add :ref:`None` to the call
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 119
     :emphasize-lines: 1
 
             self.assertIsNone(a_dictionary.get(0, None))
@@ -1415,7 +1417,7 @@ the test passes
 * I change the second argument expecting a failure
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 119
     :emphasize-lines: 1
 
             self.assertIsNone(a_dictionary.get(0, 'default'))
@@ -1429,7 +1431,7 @@ the test passes
 * I add the expectation
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 117
     :emphasize-lines: 3-6
 
         def test_get(self):
@@ -1448,7 +1450,7 @@ the test passes
 * I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 119
     :emphasize-lines: 1
 
             self.assertEqual(
@@ -1461,8 +1463,9 @@ the test passes
 * I change ``0`` in the call to be clearer
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 119
     :emphasize-lines: 2
+    :emphasize-text: not_in_dictionary
 
             self.assertEqual(
                 a_dictionary.get('not_in_dictionary', 'default'),
@@ -1474,7 +1477,7 @@ the test passes
 * I want to see what happens when I use the `get method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the dictionary_, I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 119
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -1495,7 +1498,9 @@ the test passes
 
     AssertionError: 'value' != 'default'
 
-  I get ``'value'`` back. I change the expectation to match
+  I get ``'value'`` back
+
+* I change the expectation to match
 
   .. code-block:: python
     :lineno-start: 122
@@ -1506,17 +1511,19 @@ the test passes
                 'value'
             )
 
-  the test passes.
+  the test passes
 
-  The `get method`_ has a :ref:`condition<if statements>`
+  .. NOTE::
 
-  - When the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_, it returns the default argument
-  - When the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_, it returns its :ref:`value<test_values_of_a_dictionary>`.
+    The `get method`_ has a :ref:`condition<if statements>`
+
+    - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_, it returns the default argument
+    - when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_, it returns its :ref:`value<test_values_of_a_dictionary>`
 
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 116
+    :lineno-start: 117
     :emphasize-lines: 1
 
         def test_get_value_of_a_key_in_a_dictionary(self):
@@ -1538,8 +1545,10 @@ the test passes
 * I remove get_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 124
+    :lineno-start: 123
 
+            self.assertEqual(
+                a_dictionary.get('key', 'default'),
                 'value'
             )
 
@@ -1565,8 +1574,11 @@ test_items_returns_iterable_of_key_value_pairs_of_a_dictionary
 I add the next test from the TODO list
 
 .. code-block:: python
-  :lineno-start: 124
+  :lineno-start: 123
+  :emphasize-lines: 6-8
 
+          self.assertEqual(
+              a_dictionary.get('key', 'default'),
               'value'
           )
 
@@ -1587,10 +1599,10 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I copy the ``dict_items`` :ref:`object<classes>` from the terminal_ and paste it as the expectation
+* I copy the ``dict_items`` :ref:`object<classes>` from the terminal_ and paste  it as the expectation
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 129
     :emphasize-lines: 2-5
 
             a_dictionary = {'key': 'value'}
@@ -1607,10 +1619,22 @@ the terminal_ shows :ref:`AssertionError`
 
   this new :ref:`object<classes>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`
 
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 145
+    :emphasize-lines: 4
+    :emphasize-text: NameError
+
+    # Exceptions seen
+    # AssertionError
+    # TypeError
+    # NameError
+
 * I remove the stuff around the :ref:`list<lists>`
 
   .. code-block:: python
-    :lineno-start: 129
+    :lineno-start: 130
     :emphasize-lines: 3
 
             self.assertIsNone(
@@ -1627,7 +1651,7 @@ the terminal_ shows :ref:`AssertionError`
 * I pass the call to the `items method`_ to the :ref:`list constructor<test_making_a_list>` to see if it is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
-    :lineno-start: 129
+    :lineno-start: 130
     :emphasize-lines: 2
 
             self.assertIsNone(
@@ -1646,7 +1670,7 @@ the terminal_ shows :ref:`AssertionError`
 * I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 129
+    :lineno-start: 130
     :emphasize-lines: 1
 
             self.assertEqual(
@@ -1665,7 +1689,7 @@ the terminal_ shows :ref:`AssertionError`
 * I add another key-value pair to the dictionary_ to see what the :ref:`method<functions>` does when there is more than one
 
   .. code-block:: python
-    :lineno-start: 127
+    :lineno-start: 128
     :emphasize-lines: 2-5
 
         def test_items(self):
@@ -1690,7 +1714,7 @@ the terminal_ shows :ref:`AssertionError`
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 132
+    :lineno-start: 133
     :emphasize-lines: 3-6
 
             self.assertEqual(
@@ -1706,7 +1730,7 @@ the terminal_ shows :ref:`AssertionError`
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 127
+    :lineno-start: 128
     :emphasize-lines: 1
 
         def test_items_returns_iterable_of_key_value_pairs_of_a_dictionary(self):
@@ -1728,8 +1752,12 @@ the terminal_ shows :ref:`AssertionError`
 * I remove items_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 133
 
+            self.assertEqual(
+                list(a_dictionary.items()),
+                [
+                    ('key1', 'value1'),
                     ('keyN', [0, 1, 2, 'n']),
                 ]
             )
