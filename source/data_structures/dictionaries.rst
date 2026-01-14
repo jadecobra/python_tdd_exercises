@@ -2861,10 +2861,10 @@ the test passes
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` to see what happens when I give a key that is already in the dictionary_
+* I add an :ref:`assertion<what is an assertion?>` to see what happens when I give a :ref:`key<test_keys_of_a_dictionary>` that is already in the dictionary_
 
   .. code-block:: python
-    :lineno-start: 195
+    :lineno-start: 194
     :emphasize-lines: 4
 
         def test_update(self):
@@ -2884,7 +2884,7 @@ the test passes
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 199
+    :lineno-start: 198
     :emphasize-lines: 4
 
             self.assertEqual(
@@ -2900,16 +2900,16 @@ the test passes
 * since the `update method`_ takes :ref:`keyword arguments<test_functions_w_keyword_arguments>`, I can give it a dictionary_ as input. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 195
+    :lineno-start: 194
     :emphasize-lines: 5-7
 
         def test_update(self):
             a_dictionary = {'key': 'value'}
             self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
             self.assertIsNone(a_dictionary.update(key='updated value'))
-            self.assertIsNone(a_dictionary.update({
-                'another_key': {0, 1, 2, 'n'}
-            }))
+            self.assertIsNone(a_dictionary.update(
+                {'another_key': {0, 1, 2, 'n'}}
+            ))
             self.assertEqual(
 
   the terminal_ shows :ref:`AssertionError`
@@ -2923,7 +2923,7 @@ the test passes
 * I change the expectation in the assertEqual_ to match
 
   .. code-block:: python
-    :lineno-start: 202
+    :lineno-start: 201
     :emphasize-lines: 6
 
             self.assertEqual(
@@ -2940,22 +2940,22 @@ the test passes
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 195
+    :lineno-start: 194
     :emphasize-lines: 1
 
         def test_update_a_dictionary(self):
             a_dictionary = {'key': 'value'}
             self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
             self.assertIsNone(a_dictionary.update(key='updated value'))
-            self.assertIsNone(a_dictionary.update({
-                'another_key': {0, 1, 2, 'n'}
-            }))
+            self.assertIsNone(a_dictionary.update(
+                {'another_key': {0, 1, 2, 'n'}}
+            ))
             self.assertEqual(
                 a_dictionary,
                 {
                     'key': 'updated value',
                     'new_key': [0, 1, 2, 'n'],
-                    'another_key': {0, 1, 2, 'n'},
+                    'another_key': {0, 1, 2, 'n'}
                 }
             )
 
@@ -2967,14 +2967,14 @@ the test passes
 * I remove update_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 202
+    :lineno-start: 201
 
             self.assertEqual(
                 a_dictionary,
                 {
                     'key': 'updated value',
                     'new_key': [0, 1, 2, 'n'],
-                    'another_key': {0, 1, 2, 'n'},
+                    'another_key': {0, 1, 2, 'n'}
                 }
             )
 
@@ -2996,7 +2996,7 @@ test_values_of_a_dictionary
 I add a test for the last :ref:`method<functions>` in my TODO list
 
 .. code-block:: python
-  :lineno-start: 202
+  :lineno-start: 201
   :emphasize-lines: 10-12
 
           self.assertEqual(
@@ -3030,7 +3030,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I add the expected value
 
   .. code-block:: python
-    :lineno-start: 211
+    :lineno-start: 210
     :emphasize-lines: 3-6
 
         def test_values(self):
@@ -3049,7 +3049,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I remove the things around the :ref:`list<lists>` in the ``dict_values`` :ref:`object<classes>`
 
   .. code-block:: python
-    :lineno-start: 213
+    :lineno-start: 212
     :emphasize-lines: 3
 
             self.assertIsNone(
@@ -3066,7 +3066,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I use ``list()`` to see if ``dict_values`` is :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
-    :lineno-start: 213
+    :lineno-start: 212
     :emphasize-lines: 2
 
             self.assertIsNone(
@@ -3083,8 +3083,8 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
-    :lineno-start: 213
-    :emphasize-lines: 2
+    :lineno-start: 212
+    :emphasize-lines: 1
 
             self.assertEqual(
                 list(a_dictionary.values()),
@@ -3100,7 +3100,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the dictionary_ to see what happens when it has more than one :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
   .. code-block:: python
-    :lineno-start: 211
+    :lineno-start: 210
     :emphasize-lines: 2-5
 
         def test_values(self):
@@ -3122,7 +3122,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the values in the expectation
 
   .. code-block:: python
-    :lineno-start: 216
+    :lineno-start: 215
     :emphasize-lines: 3-6
 
             self.assertEqual(
@@ -3138,7 +3138,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I change the name of the test
 
   .. code-block:: python
-    :lineno-start: 211
+    :lineno-start: 210
     :emphasize-lines: 1
 
         def test_values_of_a_dictionary(self):
@@ -3160,7 +3160,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 * I remove values_ from the TODO list
 
   .. code-block:: python
-    :lineno-start: 216
+    :lineno-start: 215
 
             self.assertEqual(
                 list(a_dictionary.values()),
