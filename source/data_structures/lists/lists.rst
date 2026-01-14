@@ -3040,7 +3040,7 @@ you know
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what None is<what is None?>`
-* :ref:`what is True and False in Python<booleans>`
+* :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator part 1>`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
@@ -3049,7 +3049,7 @@ you know
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
 * :ref:`what you can do with Lists<lists>`
 
-:ref:`would you like to test the Calculator now that you know more things?<how to make a calculator part 4>`
+:ref:`would you like to test the Calculator with what you know?<how to make a calculator part 4>`
 
 -----
 

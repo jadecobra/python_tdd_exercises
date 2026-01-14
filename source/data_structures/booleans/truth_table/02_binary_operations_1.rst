@@ -758,7 +758,7 @@ conditional expressions
       else:
           return False
 
-  * this uses bool_ to get the :ref:`boolean<booleans>` of ``something`` then checks if the result is :ref:`True<test_what_is_true>`
+  * this uses bool_ to get the :ref:`boolean<what are booleans?>` of ``something`` then checks if the result is :ref:`True<test_what_is_true>`
 
     .. code-block:: python
 

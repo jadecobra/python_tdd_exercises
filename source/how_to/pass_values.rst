@@ -715,7 +715,7 @@ test_passing_a_boolean
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for :ref:`booleans`, first with an :ref:`assertion<what is an assertion?>` for :ref:`True<test_what_is_true>`
+I add a test for :ref:`<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 27

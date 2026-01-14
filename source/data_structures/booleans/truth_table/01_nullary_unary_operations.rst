@@ -475,7 +475,7 @@ the test passes
 how to return the opposite of a boolean
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* I can make this happen with the "not_" keyword which returns the opposite of the :ref:`boolean<booleans>` after it. I add it to the `return statement`_
+* I can make this happen with the "not_" keyword which returns the opposite of the :ref:`boolean<what are booleans?>` after it. I add it to the `return statement`_
 
   .. code-block:: python
     :lineno-start: 13

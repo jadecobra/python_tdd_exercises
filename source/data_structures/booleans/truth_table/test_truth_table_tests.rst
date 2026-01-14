@@ -1910,7 +1910,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests using :ref:`booleans` which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
+I ran tests using :ref:`<what are booleans?>` which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
 
 * there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input and always return the same thing, they are :ref:`constant<test_constant_function>`
 
@@ -2046,7 +2046,7 @@ you now know
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<booleans>`
+* :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 
 :ref:`Would you like to test making a calculator?<how to make a calculator part 1>`

@@ -367,7 +367,7 @@ test_making_a_dictionary_w_a_boolean_as_a_key
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to see if I can use a :ref:`boolean<booleans>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+I add a test to see if I can use a :ref:`boolean<what are booleans?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :lineno-start: 10
@@ -435,7 +435,7 @@ I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pair
               {False: 'boom', True: 'bap'}
           )
 
-the test passes. I can use strings_, :ref:`booleans` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use strings_, :ref:`<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -521,7 +521,7 @@ I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pair
               {0: 'boom', 0.1: 'bap'}
           )
 
-the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`booleans` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -573,7 +573,7 @@ I change ``'bap'`` to ``'boom'``
               {(0, 1): 'boom'}
           )
 
-the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`booleans` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -3492,7 +3492,7 @@ I also ran these tests for the :ref:`methods of dictionaries<test_attributes_and
 * :ref:`test_update_a_dictionary`
 * :ref:`test_values_of_a_dictionary`
 
-and finally a test for the :ref:`Exception<errors>` to know when working with dictionaries_ - :ref:`KeyError<test_key_error>`
+and a test for the important :ref:`Exception<errors>` to know when working with dictionaries_ - :ref:`KeyError<test_key_error>`
 
 ----
 
@@ -3519,7 +3519,7 @@ you know
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<booleans>`
+* :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator part 1>`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
@@ -3529,7 +3529,7 @@ you know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 
-:ref:`Would you like to use dictionaries in the calculator tests?<what is a class?>`
+:ref:`Would you like to use dictionaries in the calculator tests?<how to make a calculator part 6>`
 
 ----
 

@@ -397,7 +397,7 @@ test_is_none_a_boolean
 :red:`RED`: make it fail
 =================================================================================
 
-I add another failing test to see if None_ is a :ref:`boolean<booleans>`
+I add another failing test to see if None_ is a :ref:`boolean<what are booleans?>`
 
 .. code-block:: python
   :lineno-start: 7
@@ -447,7 +447,7 @@ the test passes
 
   Still a repetition of what I learned in :ref:`AssertionError`
 
-* I add another failing :ref:`assertion<what is an assertion?>` for the other :ref:`boolean<booleans>`
+* I add another failing :ref:`assertion<what is an assertion?>` for the other :ref:`boolean<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -491,7 +491,7 @@ how to test if something is an instance of a class
 
 The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can use to test if an :ref:`object<what is a class?>` is a child/instance of a :ref:`class<what is a class?>` or not - assertIsInstance_ and assertNotIsInstance_
 
-* I add the `assertNotIsInstance method`_ to test if :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
+* I add the `assertNotIsInstance method`_ to test if :ref:`False<test_what_is_false>` is a :ref:`boolean<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -501,7 +501,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
             self.assertNotIsInstance(False, bool)
 
   - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question ``is False NOT a child of the bool class?``. Okay, this is new
-  - bool_ is the :ref:`class<what is a class?>` for :ref:`booleans<booleans>`
+  - bool_ is the :ref:`class<what is a class?>` for :ref:`booleans<what are booleans?>`
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -509,7 +509,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
     AssertionError: False is an instance of <class 'bool'>
 
-  :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
+  :ref:`False<test_what_is_false>` is a :ref:`boolean<what are booleans?>`
 
 * I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``is False a child of the bool class?``
 
@@ -521,7 +521,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
   the test passes
 
-* I add a failing line for the other :ref:`boolean<booleans>` with assertNotIsInstance_
+* I add a failing line for the other :ref:`boolean<what are booleans?>` with assertNotIsInstance_
 
   .. code-block:: python
     :lineno-start: 12
@@ -536,7 +536,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
     AssertionError: True is an instance of <class 'bool'>
 
-  :ref:`True<test_what_is_true>` is a :ref:`boolean<booleans>`
+  :ref:`True<test_what_is_true>` is a :ref:`boolean<what are booleans?>`
 
 * I make the statement :ref:`True<test_what_is_true>` with assertIsInstance_
 
@@ -563,7 +563,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
     AssertionError: None is not an instance of <class 'bool'>
 
-  :ref:`None<what is None?>` is NOT a :ref:`boolean<booleans>`
+  :ref:`None<what is None?>` is NOT a :ref:`boolean<what are booleans?>`
 
 * I make the line :ref:`True<test_what_is_true>` with assertNotIsInstance_
 
@@ -1969,7 +1969,7 @@ I also showed the basic Python_ :ref:`data structures`
 * integers_ - whole numbers, negative and positive
 * floats_ - floating point decimal numbers
 * strings_ - anything inside :ref:`quotes`
-* :ref:`booleans` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
+* :ref:`<what are booleans?>` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
 * tuples_ - anything in parentheses (``()``) separated by commas
 * :ref:`lists` - anything in square brackets (``[]``) separated by commas
 * sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
@@ -1999,7 +1999,7 @@ so far you have covered
 * :ref:`how to pass values from tests to functions<how to pass values>` and
 * :ref:`what is None and NOT None and learned new assert methods<what is None?>`
 
-:ref:`Would you like to test what is True and False in Python?<booleans>`
+:ref:`Would you like to test what is True and False in Python?<what are booleans?>`
 
 ----
 

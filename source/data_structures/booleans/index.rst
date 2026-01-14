@@ -7,7 +7,7 @@
 .. _booleans: https://docs.python.org/3/library/functions.html#bool
 
 #################################################################################
-booleans
+what are booleans?
 #################################################################################
 
 .. raw:: html
@@ -15,10 +15,6 @@ booleans
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/6r3QcYN0wxQ?si=cQaK63rwX3f9PGX6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
-
-*********************************************************************************
-what are booleans?
-*********************************************************************************
 
 There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a function?>` to test which of the :ref:`basic data structures<data structures>` seen so far - integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
 
@@ -1838,7 +1834,7 @@ you now know
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what None is<what is None?>`
-* :ref:`what is True and False in Python<booleans>`
+* :ref:`what is True and False in Python<what are booleans?>`
 
 :ref:`Would you like to test the truth table?<truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`
 

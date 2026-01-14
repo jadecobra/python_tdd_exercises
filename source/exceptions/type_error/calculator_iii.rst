@@ -229,7 +229,7 @@ the test passes
 
   the test passes
 
-The ``calculator`` raises TypeError_ when given :ref:`None<what is None?>` as input. What does it do when the input is a :ref:`boolean<booleans>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
+The ``calculator`` raises TypeError_ when given :ref:`None<what is None?>` as input. What does it do when the input is a :ref:`boolean<what are booleans?>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
 
 *********************************************************************************
 test_calculator_raises_type_error_w_strings
@@ -1361,7 +1361,7 @@ you know
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<booleans>`
+* :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator part 1>`
 * :ref:`how to make a Python Test Driven Development environment automatically` or :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`

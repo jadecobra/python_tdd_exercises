@@ -767,7 +767,7 @@ I can use assertions_ to test if something is :ref:`None<what is None?>`
 test_assertion_error_w_false
 *********************************************************************************
 
-:ref:`False<test_what_is_false>` is a simple :ref:`data structures` , it is one of the two :ref:`boolean<booleans>` and is not :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not
+:ref:`False<test_what_is_false>` is a simple :ref:`data structures` , it is one of the two :ref:`boolean<what are booleans?>` and is not :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not
 
 =================================================================================
 :red:`RED`: make it fail
@@ -871,7 +871,7 @@ I can use assertions_ to test if something is :ref:`False<test_what_is_false>` o
 test_assertion_error_w_true
 *********************************************************************************
 
-:ref:`True<test_what_is_true>` is a simple :ref:`data structures`, it the other :ref:`boolean<booleans>` and is not :ref:`False<test_what_is_false>` or :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or not
+:ref:`True<test_what_is_true>` is a simple :ref:`data structures`, it the other :ref:`boolean<what are booleans?>` and is not :ref:`False<test_what_is_false>` or :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or not
 
 =================================================================================
 :red:`RED`: make it fail

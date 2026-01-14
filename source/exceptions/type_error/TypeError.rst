@@ -317,7 +317,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
 
     TypeError: 'bool' object is not callable
 
-  I cannot call a :ref:`boolean<booleans>` the way I can call a :ref:`function<what is a function?>`
+  I cannot call a :ref:`boolean<what are booleans?>` the way I can call a :ref:`function<what is a function?>`
 
 * I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>`
 
@@ -333,7 +333,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
 
   the terminal_ shows green again
 
-* I add a line to test the other :ref:`boolean<Booleans>` in ``test_type_error.py``
+* I add a line to test the other :ref:`boolean<what are booleans?>` in ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -383,7 +383,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def true():
         return True
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`boolean<booleans>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 * I add a failing line to ``test_type_error.py``
 
@@ -429,7 +429,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def an_integer():
         return 1234
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call an integer_, a :ref:`boolean<booleans>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call an integer_, a :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 * I add a line for a float_ in ``test_type_error.py``
 
@@ -479,7 +479,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_float():
         return 1.234
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 * I add a line for a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
 
@@ -529,7 +529,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_string():
         return 'a string'
 
-  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a string_, a float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a string_, a float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 * I add a failing line for a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
 
@@ -579,7 +579,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_tuple():
         return (1, 2, 3, 'n')
 
-  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a tuple_, string_, float_, integer_ :ref:`boolean<booleans>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a tuple_, string_, float_, integer_ :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 * I add another line to ``test_type_error.py``
 
@@ -629,7 +629,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 * I add another failing line to ``test_type_error.py``
 
@@ -679,7 +679,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_set():
         return {1, 2, 3, 'n'}
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 * I add the last failing line for this test to ``test_type_error.py``
 
@@ -739,7 +739,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal_ shows green again. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
+  the terminal_ shows green again. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 It is safe to say that I cannot call :ref:`data structures` because they are NOT callable_. I can call :ref:`functions<what is a function?>`, they are callable_
 
@@ -1216,7 +1216,7 @@ you know
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<booleans>`
+* :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator part 1>`
 * :ref:`how to make a Python Test Driven Development environment automatically` or :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`
