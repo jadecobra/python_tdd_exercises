@@ -4585,7 +4585,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 close the project
 =================================================================================
 
-* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
+* I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
   .. code-block:: shell

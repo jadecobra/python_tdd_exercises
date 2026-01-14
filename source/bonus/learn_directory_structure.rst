@@ -58,16 +58,16 @@ questions about directory structure
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`What is a folder (directory)?<what is a folder?>`
+* :ref:`what is a folder (directory)?<what is a folder?>`
 * :ref:`what is a file?<what is a file?>`
-* :ref:`How can I tell what directory I am in?<how to see the directory I am in>`
-* :ref:`How can I change directories?<how to change directory>`
-* :ref:`How can I make a directory?<how to make a directory>`
-* :ref:`How can I see directory relationships?<how to look at directory structure>`
-* :ref:`How can I see what isin a directory?<how to see what is in a directory>`
-* :ref:`How can I make an empty file?<how to make an empty file>`
-* :ref:`How can I use directory relationships?<how to use directory relationships>`
-* :ref:`How can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
+* :ref:`how can I tell what directory I am in?<how to see the directory I am in>`
+* :ref:`how can I change directories?<how to change directory>`
+* :ref:`how can I make a directory?<how to make a directory>`
+* :ref:`how can I see directory relationships?<how to look at directory structure>`
+* :ref:`how can I see what is in a directory?<how to see what is in a directory>`
+* :ref:`how can I make an empty file?<how to make an empty file>`
+* :ref:`how can I use directory relationships?<how to use directory relationships>`
+* :ref:`how can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
 
 *********************************************************************************
 what is a folder?
