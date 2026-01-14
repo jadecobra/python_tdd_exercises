@@ -177,6 +177,8 @@
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
 .. _unittest.TestCase class: `unittest.TestCase`_
+.. _subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
+.. _unittest.TestCase.subTest method: `subTest method`_
 .. _variable: https://grokipedia.com/page/Variable_(computer_science)
 .. _variables: https://grokipedia.com/page/Variable_(computer_science)
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv

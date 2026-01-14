@@ -16,8 +16,6 @@
 .. _map: https://docs.python.org/3/library/functions.html#map
 .. _map object: map_
 .. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
-.. _subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
-.. _unittest.TestCase.subTest method: `subTest method`_
 .. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
 
 #################################################################################

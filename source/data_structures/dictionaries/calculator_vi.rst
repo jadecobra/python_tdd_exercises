@@ -1161,7 +1161,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 1
     :emphasize-lines: 7
 
             for operation in self.arithmetic_tests:
