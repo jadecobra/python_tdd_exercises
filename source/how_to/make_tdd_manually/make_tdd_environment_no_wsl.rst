@@ -462,28 +462,28 @@ how to make a Python file to hold the tests in the 'tests' folder on Windows wit
   - ``import unittest`` imports the `unittest module`_ from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<what is a function?>` that belong together, I cover this in more detail in the :ref:`classes chapter<classes>`
-    * ``TestMagic`` is the name I gave this :ref:`class <classes>` and will hold the test
+    * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<what is a function?>` that belong together, I cover this in more detail in the :ref:`classes chapter<what is a class?>`
+    * ``TestMagic`` is the name I gave this :ref:`class <what is a class?>` and will hold the test
 
-      .. IMPORTANT:: I can use any name for the :ref:`test class<classes>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
+      .. IMPORTANT:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
-    * `unittest.TestCase`_ is a :ref:`class <classes>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for testing
+    * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<what is a function?>` and :ref:`attributes<AttributeError>`
 
   - ``def test_failure``
 
-    * def_ is the Python_ keyword for making :ref:`methods (functions) <what is a function?>`, see :ref:`functions` for more
+    * def_ is the Python_ keyword for making :ref:`methods (functions) <what is a function?>`, see :ref:`functions<what is a function?>` for more
     * ``test_failure`` is the name I used :ref:`method<what is a function?>` for :ref:`this first test<test_failure>`
 
       .. IMPORTANT:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ does NOT run the tests in it
 
-    * ``self.`` lets me use :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<classes>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self.`` lets me use :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().``
 
       .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name but it is easier to stick with convention for this concept
 
     * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>`
 
-      - assertFalse_ is a :ref:`method<what is a function?>` in the `unittest.TestCase`_ :ref:`class <classes>` that checks if its input is :ref:`False<test_what_is_false>`
+      - assertFalse_ is a :ref:`method<what is a function?>` in the `unittest.TestCase`_ :ref:`class <what is a class?>` that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
@@ -638,7 +638,7 @@ how to change the name of a file on Windows without WSL
     - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
     -  ``tests`` is the ``tests`` folder_
     -  ``test_magic`` is the ``test_magic.py`` file_ in the ``tests`` directory_
-    - ``TestMagic`` is the :ref:`class <classes>` defined on line 4 in ``test_magic.py``
+    - ``TestMagic`` is the :ref:`class <what is a class?>` defined on line 4 in ``test_magic.py``
     - ``test_failure`` is the :ref:`method (function)<what is a function?>` defined on line 6 in ``test_magic.py``
 
   * ``F`` shows a failure

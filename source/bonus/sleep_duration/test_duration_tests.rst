@@ -63,7 +63,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     # AttributeError
     # NameError
 
-* and point ``get_datetime`` to :ref:`None`
+* and point ``get_datetime`` to :ref:`None<what is None?>`
 
   .. code-block:: python
 
@@ -122,7 +122,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     # TypeError
     # AssertionError
 
-* I copy the value from the terminal_ to change :ref:`None` in the `return statement`_
+* I copy the value from the terminal_ to change :ref:`None<what is None?>` in the `return statement`_
 
   .. code-block:: python
 
@@ -200,7 +200,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   I have done this dance before
 
-* I point it to :ref:`None` to define it
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
 

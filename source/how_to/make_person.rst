@@ -17,7 +17,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries` with :ref:`functions`. I think these are the 2 most important concepts in Python_
+This is an exercise in making :ref:`dictionaries` with :ref:`functions<what is a function?>`. I think these are the 2 most important concepts in Python_
 
 ----
 
@@ -69,7 +69,7 @@ start the project
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -292,7 +292,7 @@ test_takes_keyword_arguments
 
     NameError: name 'this_year' is not defined
 
-* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<classes>` definition in ``test_person.py``
+* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition in ``test_person.py``
 
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
@@ -722,7 +722,7 @@ test_takes_keyword_arguments
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
-  I cannot do subtraction with :ref:`None` and I want the value for the current year
+  I cannot do subtraction with :ref:`None<what is None?>` and I want the value for the current year
 
 * I add an `import statement`_ at the top of ``test_person.py``
 
@@ -749,7 +749,7 @@ test_takes_keyword_arguments
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<classes>` returned by the now_ :ref:`method<what is a function?>` of the ``datetime`` :ref:`class<classes>`, from the `datetime module`_. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes`
+  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<what is a class?>` returned by the now_ :ref:`method<what is a function?>` of the ``datetime`` :ref:`class<what is a class?>`, from the `datetime module`_. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes<what is a class?>`
 
   .. attention:: I can also use the today_ :ref:`method<what is a function?>` to get the same value
 
@@ -1272,7 +1272,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     AssertionError: {'first_name': X, 'last_name': None, 'sex': Y, 'age': Z} != {'first_name': X, 'last_name': 'doe', 'sex': Y, 'age': Z}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None` for ``last_name`` and the test expects ``'doe'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None<what is None?>` for ``last_name`` and the test expects ``'doe'``
 
 * I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -1401,7 +1401,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     AssertionError: {'first_name': X, 'last_name': 'doe', 'sex': None, 'age': Y} != {'first_name': X, 'last_name': 'doe', 'sex': 'M', 'age': Y}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with :ref:`None` as the value for ``sex`` and the test expects ``'M'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with :ref:`None<what is None?>` as the value for ``sex`` and the test expects ``'M'``
 
 * I add a default value for ``sex`` in ``person.py``
 
@@ -1471,7 +1471,7 @@ I want to see what happens when I try to make a person without a value for the `
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* ``first_name`` and ``year_of_birth`` are made the same way in both tests, I can remove this repetition by adding :ref:`attributes<AttributeError>` to the ``TestPerson`` :ref:`class<classes>`
+* ``first_name`` and ``year_of_birth`` are made the same way in both tests, I can remove this repetition by adding :ref:`attributes<AttributeError>` to the ``TestPerson`` :ref:`class<what is a class?>`
 
   .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
 
@@ -1501,7 +1501,7 @@ I want to see what happens when I try to make a person without a value for the `
         def test_takes_keyword_arguments(self):
             ...
 
-  I can use them in ``test_takes_keyword_arguments`` with ``self.`` the same way I use the ``assert`` :ref:`methods<what is a function?>` since they now belong to the ``TestPerson`` :ref:`class<classes>`
+  I can use them in ``test_takes_keyword_arguments`` with ``self.`` the same way I use the ``assert`` :ref:`methods<what is a function?>` since they now belong to the ``TestPerson`` :ref:`class<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 20
@@ -1689,9 +1689,9 @@ I want to see what happens when I try to make a person without a value for the `
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
-  because there is no longer a :ref:`class<classes>` :ref:`attribute<AttributeError>` named ``first_name``, it is now a :ref:`variable<test_attribute_error_w_variables>` in the `unittest.TestCase.setUp`_ :ref:`method<what is a function?>` and the other :ref:`methods<what is a function?>` cannot reach it
+  because there is no longer a :ref:`class<what is a class?>` :ref:`attribute<AttributeError>` named ``first_name``, it is now a :ref:`variable<test_attribute_error_w_variables>` in the `unittest.TestCase.setUp`_ :ref:`method<what is a function?>` and the other :ref:`methods<what is a function?>` cannot reach it
 
-* I add ``self.`` to make it a :ref:`class<classes>` :ref:`attribute<AttributeError>`
+* I add ``self.`` to make it a :ref:`class<what is a class?>` :ref:`attribute<AttributeError>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1769,7 +1769,7 @@ test_person_tests
 
     NameError: name 'factory' is not defined
 
-* I point it to :ref:`None`
+* I point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -2204,7 +2204,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

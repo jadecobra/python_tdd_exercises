@@ -431,10 +431,10 @@ I can make a function_ with the pass_ keyword
 
   the test passes
 
-  * the test checks if the result of the call to ``src.functions.w_pass`` is :ref:`None`
+  * the test checks if the result of the call to ``src.functions.w_pass`` is :ref:`None<what is None?>`
   * the function_ definition simply says pass_ and the test passes
   * pass_ is a placeholder keyword which allows the function_ definition to follow Python_ language rules
-  * the test passes because all functions_ return :ref:`None` by default, as if the function_ has an invisible line that says ``return None``, which leads me to the next test
+  * the test passes because all functions_ return :ref:`None<what is None?>` by default, as if the function_ has an invisible line that says ``return None``, which leads me to the next test
 
 ----
 
@@ -505,7 +505,7 @@ I change pass_ to a `return statement`_
 
 the test is still green.
 
-I have 2 functions_ with different statements in their body but they both return :ref:`None`, because "all functions_ return :ref:`None` by default, as if the function_ has an invisible line that says ``return None``", which leads me to the next test
+I have 2 functions_ with different statements in their body but they both return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if the function_ has an invisible line that says ``return None``", which leads me to the next test
 
 ----
 
@@ -565,7 +565,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-I add :ref:`None` to the `return statement`_
+I add :ref:`None<what is None?>` to the `return statement`_
 
 .. code-block:: python
   :lineno-start: 9
@@ -709,7 +709,7 @@ the terminal_ shows :ref:`AttributeError`
 
     TypeError: identity() takes 0 positional arguments but 1 was given
 
-  the definition for ``identity`` does not allow inputs and the test sends :ref:`None` as input
+  the definition for ``identity`` does not allow inputs and the test sends :ref:`None<what is None?>` as input
 
 * I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
@@ -738,7 +738,7 @@ the terminal_ shows :ref:`AttributeError`
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-The requirement for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, the test is currently passing when :ref:`None` is given as input. Does it pass when another value is given or does it always return :ref:`None`? Time to write a test
+The requirement for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, the test is currently passing when :ref:`None<what is None?>` is given as input. Does it pass when another value is given or does it always return :ref:`None<what is None?>`? Time to write a test
 
 * I add a new :ref:`assertion<what is an assertion?>` to ``test_identity_function`` in ``test_functions.py``
 
@@ -756,7 +756,7 @@ The requirement for the :ref:`identity function<test_logical_identity>` is that 
 
     AssertionError: None != <class 'object'>
 
-  the function_ returns :ref:`None` instead of ``<class 'object'>`` in the second case, I am not all the way genius, yet
+  the function_ returns :ref:`None<what is None?>` instead of ``<class 'object'>`` in the second case, I am not all the way genius, yet
 
 * I change the `return statement`_ of ``identity`` in ``functions.py`` to match the expectation
 
@@ -1826,7 +1826,7 @@ as a reminder
 * :ref:`positional arguments<test_functions_w_positional_arguments>` are represented as tuples_
 * the :ref:`identity function<test_identity_function>` returns its input
 * :ref:`constant functions<test_constant_function>` always return the same thing
-* functions_ return :ref:`None` by default
+* functions_ return :ref:`None<what is None?>` by default
 
 :ref:`How many questions can you answer after going through this chapter?<questions about functions>`
 

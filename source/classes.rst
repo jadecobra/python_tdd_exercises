@@ -5,7 +5,7 @@
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
 #################################################################################
-classes
+what is a class?
 #################################################################################
 
 ``classes`` are definitions that represent an object. I think of them as :ref:`attributes<AttributeError>` and :ref:`methods (functions) <what is a function?>` that belong together
@@ -102,7 +102,7 @@ the terminal_ shows :ref:`ModuleNotFoundError` because I have an import statemen
     # AttributeError
     # NameError
 
-* I point the name to :ref:`None`
+* I point the name to :ref:`None<what is None?>`
 
   .. code-block:: python
 
@@ -145,8 +145,8 @@ Here is a quick review of what has happened so far
 
 * pass_ is a placeholder
 * ``self.assertIsInstance`` is a `unittest.TestCase`_ :ref:`method<what is a function?>` that checks if the first input to the :ref:`method<what is a function?>` is a child of the second input
-* the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an :ref:`object<classes>`
-* in Python_ everything is an :ref:`object<classes>` , which means if it is in Python_ there is a class definition for it somewhere or it inherits from a class
+* the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an :ref:`object<what is a class?>`
+* in Python_ everything is an :ref:`object<what is a class?>` , which means if it is in Python_ there is a class definition for it somewhere or it inherits from a class
 
 ----
 
@@ -243,7 +243,7 @@ the terminal_ shows :ref:`AttributeError`
 
   the terminal_ shows all tests passed
 
-* then I change the definition to explicitly state the parent :ref:`object<classes>`
+* then I change the definition to explicitly state the parent :ref:`object<what is a class?>`
 
   .. code-block:: python
 
@@ -300,7 +300,7 @@ I now add some tests for attributes since I know how to define a class for attri
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-* after I point the name to :ref:`None`
+* after I point the name to :ref:`None<what is None?>`
 
   .. code-block:: python
 
@@ -419,7 +419,7 @@ the terminal_ shows :ref:`AttributeError`
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>` because there is no definition for ``method_a``
 
 
-* I define ``method_a`` as an attribute by pointing it to :ref:`None`
+* I define ``method_a`` as an attribute by pointing it to :ref:`None<what is None?>`
 
   .. code-block:: python
 
@@ -428,7 +428,7 @@ the terminal_ shows :ref:`AttributeError`
 
         method_a = None
 
-  the terminal_ shows :ref:`TypeError` since ``method_a`` is :ref:`None` which is not callable
+  the terminal_ shows :ref:`TypeError` since ``method_a`` is :ref:`None<what is None?>` which is not callable
 
 * I change the definition of ``method_a`` to make it a :ref:`function<what is a function?>` which makes it callable
 
@@ -533,7 +533,7 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 test_attributes_and_methods_of_objects
 *********************************************************************************
 
-To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<classes>` I can call dir_ on the :ref:`object<classes>`.
+To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<what is a class?>` I can call dir_ on the :ref:`object<what is a class?>`.
 
 The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of the object provided to it as input
 
@@ -877,16 +877,16 @@ the tests show
 * how to view the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of a class
 * classes can be defined
 
-  - with parentheses stating what :ref:`object<classes>` the class inherits from
-  - with parentheses without stating what :ref:`object<classes>` the class inherits from
+  - with parentheses stating what :ref:`object<what is a class?>` the class inherits from
+  - with parentheses without stating what :ref:`object<what is a class?>` the class inherits from
   - without parentheses
   - pass_ is a placeholder
 
-* classes by default inherit from the :ref:`object<classes>` class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an :ref:`object<classes>`
+* classes by default inherit from the :ref:`object<what is a class?>` class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an :ref:`object<what is a class?>`
 
 .. attention:: :PEP:`Zen of Python <20>`
 
-  I prefer to use the explicit form of class definitions with the parent :ref:`object<classes>` in parentheses, from the :PEP:`Zen of Python <20>`:
+  I prefer to use the explicit form of class definitions with the parent :ref:`object<what is a class?>` in parentheses, from the :PEP:`Zen of Python <20>`:
   ``Explicit is better than implicit``
 
 ----
@@ -945,7 +945,7 @@ you have gone through a lot of things and know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`
@@ -956,7 +956,7 @@ you have gone through a lot of things and know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<classes>`
+* :ref:`what you can do with classes<what is a class?>`
 
 Would you like to :ref:`test ModuleNotFoundError?<ModuleNotFoundError>`
 

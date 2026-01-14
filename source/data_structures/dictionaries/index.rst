@@ -38,7 +38,7 @@
 what is a dictionary?
 #################################################################################
 
-A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<classes>`. I add tests to see which of :ref:`the Python basic data types<data structures>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
+A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<what is a class?>`. I add tests to see which of :ref:`the Python basic data types<data structures>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
 
 I think this is the most important :ref:`data structure<data structures>` because it can hold all the other :ref:`data structures`, same as with :ref:`lists<lists>` and tuples_ but with more. In programming I have had to work with JSON_ which I can read and write as dictionaries_
 
@@ -74,7 +74,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what None is<None>`
+* :ref:`what None is<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

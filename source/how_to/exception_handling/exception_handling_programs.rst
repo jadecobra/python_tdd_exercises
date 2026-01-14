@@ -159,7 +159,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     NameError: name 'raise_exception' is not defined
 
-* I point it to :ref:`None`
+* I point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -300,7 +300,7 @@ the terminal_ shows :ref:`AttributeError`
 
     NameError: name 'an_exception_handler' is not defined
 
-* I point it to :ref:`None`
+* I point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -344,7 +344,7 @@ the terminal_ shows :ref:`AttributeError`
 
     AssertionError: None != 'failed'
 
-  the result of the call to ``src.exceptions.an_exception_handler`` is :ref:`None` and the test expects ``'failed'``
+  the result of the call to ``src.exceptions.an_exception_handler`` is :ref:`None<what is None?>` and the test expects ``'failed'``
 
 * I change the `return statement`_ to match the expectation
 
@@ -423,7 +423,7 @@ the terminal_ shows :ref:`AttributeError`
 
     NameError: name 'does_not_raise_exception' is not defined
 
-* I point it to :ref:`None`
+* I point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -460,7 +460,7 @@ the terminal_ shows :ref:`AttributeError`
     ...::TestExceptions::test_catching_success - AssertionError: None != 'succeeded'
 
   - ``test_catching_failure`` fails because ``an_exception_handler`` returns the name (``raise_exception``) and address in the computer(``0xabcd12e34567``) of the :ref:`function<what is a function?>` it gets
-  - ``test_catching_success`` fails because ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None`
+  - ``test_catching_success`` fails because ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None<what is None?>`
 
 * I change the name of the input parameter to be clearer
 
@@ -492,7 +492,7 @@ the terminal_ shows :ref:`AttributeError`
     >       return a_function()
     E       TypeError: 'NoneType' object is not callable
 
-  because ``does_not_raise_exception`` points to :ref:`None`, which is not callable_
+  because ``does_not_raise_exception`` points to :ref:`None<what is None?>`, which is not callable_
 
 * I make it a :ref:`function<what is a function?>` to make it callable_
 
@@ -730,7 +730,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

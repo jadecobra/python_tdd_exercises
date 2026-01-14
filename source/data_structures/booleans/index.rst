@@ -326,7 +326,7 @@ test_what_is_false
 :red:`RED`: make it fail
 =================================================================================
 
-* I change ``test_failure`` to ``test_what_is_false``, then use the `assertNotIsInstance method`_ from :ref:`testing None<None>` to check if False_ is a child/instance of the bool_ :ref:`class<classes>` expecting a failure
+* I change ``test_failure`` to ``test_what_is_false``, then use the `assertNotIsInstance method`_ from :ref:`testing None<what is None?>` to check if False_ is a child/instance of the bool_ :ref:`class<what is a class?>` expecting a failure
 
   .. code-block:: python
     :linenos:
@@ -370,7 +370,7 @@ the test passes and I add a note
 
   # Exceptions seen
 
-so far this is going over what I already know from :ref:`testing None<None>`
+so far this is going over what I already know from :ref:`testing None<what is None?>`
 
 ----
 
@@ -595,7 +595,7 @@ the terminal_ shows :ref:`AssertionError`
 
 All of this is still a repetition of what I did with :ref:`AssertionError`. Next up, I test the other Python_ basic data types_ to see which of are False_ or True_
 
-* is :ref:`None` False_ or True_?
+* is :ref:`None<what is None?>` False_ or True_?
 * is an integer_ False_ or True_?
 * is a float_ False_ or True_?
 * is a string_ False_ or True_?
@@ -614,7 +614,7 @@ is None False or True?
 :red:`RED`: make it fail
 =================================================================================
 
-I add a line in ``test_what_is_true`` to test if :ref:`None` is True_
+I add a line in ``test_what_is_true`` to test if :ref:`None<what is None?>` is True_
 
 .. code-block:: python
   :lineno-start: 10
@@ -683,7 +683,7 @@ I add a note
 
   # Exceptions seen
 
-:ref:`None` is False_ though I learned in :ref:`test_assertion_error_w_false` that False_ is not :ref:`None`
+:ref:`None<what is None?>` is False_ though I learned in :ref:`test_assertion_error_w_false` that False_ is not :ref:`None<what is None?>`
 
 ----
 
@@ -1837,7 +1837,7 @@ you now know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what None is<None>`
+* :ref:`what None is<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 
 :ref:`Would you like to test the truth table?<booleans: truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`

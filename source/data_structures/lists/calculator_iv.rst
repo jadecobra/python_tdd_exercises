@@ -381,7 +381,7 @@ how to multiply a list
 how to test if something is an instance of more than one type
 *********************************************************************************
 
-The `isinstance function`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<classes>` in the tuple_
+The `isinstance function`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<what is a class?>` in the tuple_
 
 * I add a :ref:`variable<what is a variable?>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py``
 
@@ -1086,7 +1086,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what None is<None>`
+* :ref:`what None is<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

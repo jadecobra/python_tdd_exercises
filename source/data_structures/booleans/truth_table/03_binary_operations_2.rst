@@ -95,7 +95,7 @@ test_negate_first
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to the ``TestBinaryOperations`` :ref:`class<classes>` in ``test_truth_table.py`` for ``negate_first``
+I add a test to the ``TestBinaryOperations`` :ref:`class<what is a class?>` in ``test_truth_table.py`` for ``negate_first``
 
 .. code-block:: python
   :lineno-start: 49

@@ -323,7 +323,7 @@ test_making_a_dictionary_w_none_as_a_key
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to see if I can use :ref:`None` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+I add a test to see if I can use :ref:`None<what is None?>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :lineno-start: 8
@@ -355,7 +355,7 @@ I change ``'bap'`` to ``'boom'``
 
           self.assertEqual({None: 'boom'}, {None: 'boom'})
 
-the test passes. I can use strings_ and :ref:`None` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use strings_ and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -435,7 +435,7 @@ I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pair
               {False: 'boom', True: 'bap'}
           )
 
-the test passes. I can use strings_, :ref:`booleans` and :ref:`None` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use strings_, :ref:`booleans` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -521,7 +521,7 @@ I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pair
               {0: 'boom', 0.1: 'bap'}
           )
 
-the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`booleans` and :ref:`None` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`booleans` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -573,7 +573,7 @@ I change ``'bap'`` to ``'boom'``
               {(0, 1): 'boom'}
           )
 
-the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`booleans` and :ref:`None` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`booleans` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -922,7 +922,7 @@ test_clear_empties_a_dictionary
 
     'clear',
 
-  still green. The `clear method`_ returns :ref:`None`
+  still green. The `clear method`_ returns :ref:`None<what is None?>`
 
 * I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the dictionary_
 
@@ -1183,7 +1183,7 @@ the terminal_ shows :ref:`TypeError`
 
     AssertionError: {0: None, 1: None} is not None
 
-  the `fromkeys method`_ returns a dictionary_ that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None`. It reminds me of a :ref:`list comprehension<list comprehensions>`
+  the `fromkeys method`_ returns a dictionary_ that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None<what is None?>`. It reminds me of a :ref:`list comprehension<list comprehensions>`
 
 * I add the dictionary_ as an expectation
 
@@ -1278,7 +1278,7 @@ the terminal_ shows :ref:`TypeError`
 
   still green
 
-* the dictionary_ made with the `fromkeys method`_ has :ref:`None` as the default values. When I called the :ref:`method<what is a function?>` without inputs the terminal_ showed :ref:`TypeError`
+* the dictionary_ made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I called the :ref:`method<what is a function?>` without inputs the terminal_ showed :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1417,7 +1417,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* the `get method`_ also expected at least 1 argument, I add :ref:`None` to the call
+* the `get method`_ also expected at least 1 argument, I add :ref:`None<what is None?>` to the call
 
   .. code-block:: python
     :lineno-start: 118
@@ -1614,7 +1614,7 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I copy the ``dict_items`` :ref:`object<classes>` from the terminal_ and paste  it as the expectation
+* I copy the ``dict_items`` :ref:`object<what is a class?>` from the terminal_ and paste  it as the expectation
 
   .. code-block:: python
     :lineno-start: 128
@@ -1632,7 +1632,7 @@ the terminal_ shows :ref:`AssertionError`
 
     NameError: name 'dict_items' is not defined
 
-  this new :ref:`object<classes>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+  this new :ref:`object<what is a class?>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -1695,7 +1695,7 @@ the terminal_ shows :ref:`AssertionError`
 
   the test passes.
 
-This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<classes>` is :ref:`iterable<what is an iterable?>`
+This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the dictionary_. The ``dict_items`` :ref:`object<what is a class?>` is :ref:`iterable<what is an iterable?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1832,7 +1832,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I copy the ``dict_keys`` :ref:`object<classes>` from the terminal_ and paste it as the expectation
+* I copy the ``dict_keys`` :ref:`object<what is a class?>` from the terminal_ and paste it as the expectation
 
   .. code-block:: python
     :lineno-start: 140
@@ -1851,9 +1851,9 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     NameError: name 'dict_keys' is not defined
 
-  the ``dict_keys`` :ref:`object<classes>` has a :ref:`list<lists>`
+  the ``dict_keys`` :ref:`object<what is a class?>` has a :ref:`list<lists>`
 
-* I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<classes>` as the expectation
+* I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<what is a class?>` as the expectation
 
   .. code-block:: python
     :lineno-start: 140
@@ -2665,7 +2665,7 @@ the test passes
 
     setdefault_ has a :ref:`condition<if statements>`
 
-    - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_ it adds it with a default value of :ref:`None` and returns :ref:`None`
+    - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_ it adds it with a default value of :ref:`None<what is None?>` and returns :ref:`None<what is None?>`
     - when the :ref:`key<test_keys_of_a_dictionary>` is NOT in the dictionary_ and I call setdefault_ with a second argument, it adds the :ref:`key<test_keys_of_a_dictionary>` to the dictionary_ with the second argument as the :ref:`value<test_values_of_a_dictionary>` and returns the second argument
     - when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_ it returns its :ref:`value<test_values_of_a_dictionary>` from the dictionary_
 
@@ -2746,7 +2746,7 @@ test_update_a_dictionary
 
     'update',
 
-  the test is green. The `update method`_ returns :ref:`None`
+  the test is green. The `update method`_ returns :ref:`None<what is None?>`
 
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the dictionary_
 
@@ -3034,7 +3034,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     NameError: name 'dict_values' is not defined
 
-* I remove the things around the :ref:`list<lists>` in the ``dict_values`` :ref:`object<classes>`
+* I remove the things around the :ref:`list<lists>` in the ``dict_values`` :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 212
@@ -3466,7 +3466,7 @@ close the project
 review
 *********************************************************************************
 
-Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<classes>` can be used as values.
+Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<what is a class?>` can be used as values.
 
 I ran tests to show that I can make a dictionary_ with ``dict()`` or curly braces ``{}``, then I ran the following tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
@@ -3518,7 +3518,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`
@@ -3529,7 +3529,7 @@ you know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 
-:ref:`Would you like to use dictionaries in the calculator tests?<classes>`
+:ref:`Would you like to use dictionaries in the calculator tests?<what is a class?>`
 
 ----
 

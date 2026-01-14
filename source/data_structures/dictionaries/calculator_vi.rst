@@ -1316,7 +1316,7 @@ close the project
 review
 *********************************************************************************
 
-Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<classes>` can be used as values.
+Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<what is a class?>` can be used as values.
 
 I ran tests to show that I can make a dictionary_ with ``dict()`` or curly braces ``{}``, then I ran the following tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
@@ -1368,7 +1368,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`
@@ -1380,7 +1380,7 @@ you know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 
-:ref:`Would you like to put it all together in Classes?<classes>`
+:ref:`Would you like to put it all together in Classes?<what is a class?>`
 
 ----
 

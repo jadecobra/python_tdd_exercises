@@ -279,7 +279,7 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
 what is an iterable?
 ---------------------------------------------------------------------------------
 
-An iterable_ is an :ref:`object<classes>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries` are iterable_
+An iterable_ is an :ref:`object<what is a class?>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries` are iterable_
 
 * I change the input to a tuple_ (anything in parentheses (``()``), separated by a comma)
 
@@ -318,7 +318,7 @@ test_attributes_and_methods_of_lists
 how to see the attributes and methods of an object
 =================================================================================
 
-I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of :ref:`objects<classes>`, it is part of `Python's Built-in Functions`_
+I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of :ref:`objects<what is a class?>`, it is part of `Python's Built-in Functions`_
 
 =================================================================================
 :red:`RED`: make it fail
@@ -350,7 +350,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
   Diff is 748 characters long. Set self.maxDiff to None to see it
 
-`maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase class`_ that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None` it shows the full difference
+`maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase class`_ that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -504,7 +504,7 @@ I add ``0`` as input
 
           self.assertIsNone(a_list.append(0))
 
-the terminal_ shows green, the `append method`_ returns :ref:`None` when called
+the terminal_ shows green, the `append method`_ returns :ref:`None<what is None?>` when called
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -614,7 +614,7 @@ I add a test for the `clear method`_
 
   'clear',
 
-the terminal_ shows green. The `clear method`_ returns :ref:`None` when called
+the terminal_ shows green. The `clear method`_ returns :ref:`None<what is None?>` when called
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1005,7 +1005,7 @@ I change the value to an iterable_
 
           self.assertIsNone(a_list.extend((0, 1)))
 
-the test passes. The `extend method`_ returns :ref:`None` when called
+the test passes. The `extend method`_ returns :ref:`None<what is None?>` when called
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1835,7 +1835,7 @@ I add a value to the call
 
           self.assertIsNone(a_list.remove(0))
 
-the terminal_ shows green. The `remove method`_ returns :ref:`None`
+the terminal_ shows green. The `remove method`_ returns :ref:`None<what is None?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -1983,7 +1983,7 @@ test_reverse_a_list
 
     'reverse',
 
-  the terminal_ shows green. The `reverse method`_ returns :ref:`None`.
+  the terminal_ shows green. The `reverse method`_ returns :ref:`None<what is None?>`.
 
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
@@ -2141,7 +2141,7 @@ the test passes
             a_list = [0, 1, 2, 3]
             self.assertIsNone(a_list.sort())
 
-  the terminal_ still shows green, sort_ returns :ref:`None` when called
+  the terminal_ still shows green, sort_ returns :ref:`None<what is None?>` when called
 
 * I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
@@ -3039,7 +3039,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what None is<None>`
+* :ref:`what None is<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

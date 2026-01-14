@@ -394,7 +394,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   the name is in the file_ but I have not told Python_ what it means
 
-* I point ``text`` to :ref:`None`
+* I point ``text`` to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -408,7 +408,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     TypeError: 'NoneType' object is not callable
 
-  I cannot call :ref:`None` the way I can call a :ref:`function<what is a function?>`
+  I cannot call :ref:`None<what is None?>` the way I can call a :ref:`function<what is a function?>`
 
 * I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
@@ -454,9 +454,9 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     AssertionError: None != 'I received: hello'
 
-  the test expects ``'I received: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None`
+  the test expects ``'I received: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
-* I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None`
+* I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -559,7 +559,7 @@ test_passing_a_class
 :red:`RED`: make it fail
 =================================================================================
 
-I add a failing test in ``test_telephone.py`` to see what happens when I pass a :ref:`class <classes>` from a test to the ``text`` :ref:`function<what is a function?>`
+I add a failing test in ``test_telephone.py`` to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`
 
 .. code-block:: python
   :lineno-start: 12
@@ -585,7 +585,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: "I received: <class 'object'>" != 'I received: object'
 
-:ref:`object<classes>` is the mother :ref:`class<classes>` that all Python_ :ref:`classes<classes>` come from
+:ref:`object<what is a class?>` is the mother :ref:`class<what is a class?>` that all Python_ :ref:`classes<what is a class?>` come from
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -609,7 +609,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<classes>` to ``test_passing_a_class`` in ``test_telephone.py``
+* I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -631,7 +631,7 @@ the test passes
 
     AssertionError: "I received: <class 'tests.test_telephone.TestTelephone'>" != "I received: <class 'object'>"
 
-  even though they are both :ref:`classes`, :ref:`object<classes>` and ``TestTelephone`` are different
+  even though they are both :ref:`classes<what is a class?>`, :ref:`object<what is a class?>` and ``TestTelephone`` are different
 
 * I change the expectation
 
@@ -661,7 +661,7 @@ test_passing_none
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new failing test for :ref:`None` in ``test_telephone.py``
+I add a new failing test for :ref:`None<what is None?>` in ``test_telephone.py``
 
 .. code-block:: python
   :lineno-start: 22
@@ -688,7 +688,7 @@ the terminal_ shows :ref:`AssertionError`
 :green:`GREEN`: make it pass
 =================================================================================
 
-I remove the :ref:`quotes` from around :ref:`None` in the expectation
+I remove the :ref:`quotes` from around :ref:`None<what is None?>` in the expectation
 
 .. code-block:: python
   :lineno-start: 27
@@ -1110,7 +1110,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     NameError: name 'text' is not defined
 
-  I point it to :ref:`None`
+  I point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:

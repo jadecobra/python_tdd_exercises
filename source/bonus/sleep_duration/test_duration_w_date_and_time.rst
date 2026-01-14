@@ -148,7 +148,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
 
     AttributeError: module 'src.sleep_duration' has no attribute 'duration_a'...
 
-* I make a copy of the ``duration`` :ref:`function<what is a function?>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one. I change the ``else`` block to return :ref:`None`
+* I make a copy of the ``duration`` :ref:`function<what is a function?>` in ``sleep_duration.py`` and change the name to ``duration_a`` to keep the working solution while I try a new one. I change the ``else`` block to return :ref:`None<what is None?>`
 
   .. code-block:: python
 

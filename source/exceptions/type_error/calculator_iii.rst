@@ -80,7 +80,7 @@ open the project
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new failing test to show that the :ref:`calculator<how to make a calculator part 1>` raises TypeError_ when one of the inputs is :ref:`None`, just like in :ref:`test_type_error_w_objects_that_do_not_mix`
+I add a new failing test to show that the :ref:`calculator<how to make a calculator part 1>` raises TypeError_ when one of the inputs is :ref:`None<what is None?>`, just like in :ref:`test_type_error_w_objects_that_do_not_mix`
 
 .. code-block:: python
   :lineno-start: 42
@@ -229,7 +229,7 @@ the test passes
 
   the test passes
 
-The ``calculator`` raises TypeError_ when given :ref:`None` as input. What does it do when the input is a :ref:`boolean<booleans>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
+The ``calculator`` raises TypeError_ when given :ref:`None<what is None?>` as input. What does it do when the input is a :ref:`boolean<booleans>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
 
 *********************************************************************************
 test_calculator_raises_type_error_w_strings
@@ -374,7 +374,7 @@ the test passes
 how to test if something is an instance of an object in a program
 ---------------------------------------------------------------------------------
 
-I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the `assertIsInstance method`_ from when I tested :ref:`None`, it checks if one thing is an instance or child of a :ref:`class<classes>`
+I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions<what is a function?>` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the `assertIsInstance method`_ from when I tested :ref:`None<what is None?>`, it checks if one thing is an instance or child of a :ref:`class<what is a class?>`
 
 * I change the assertEqual_ to assertRaises_ in ``test_calculator_with_strings`` in ``test_calculator.py``
 
@@ -412,7 +412,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
   .. NOTE::
 
-    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance (child) of the :ref:`class<classes>` it is given as the second input. It is part of `Python's Built-in Functions`_
+    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance (child) of the :ref:`class<what is a class?>` it is given as the second input. It is part of `Python's Built-in Functions`_
     - the :ref:`if statement<if statements>` ``if isinstance(first_input, str) or isinstance(second_input, str):`` is :ref:`True<test_what_is_true>` if
 
       * ``first_input`` is a string_ and ``second_input`` is NOT a string_
@@ -807,7 +807,7 @@ the test passes
                 error_message
             )
 
-  still green. All these :ref:`assertions<what is an assertion?>` look the same, they check that the :ref:`calculator<how to make a calculator part 1>` :ref:`functions` return an error message when they get input that is NOT a number
+  still green. All these :ref:`assertions<what is an assertion?>` look the same, they check that the :ref:`calculator<how to make a calculator part 1>` :ref:`functions<what is a function?>` return an error message when they get input that is NOT a number
 
   .. code-block:: python
 
@@ -824,7 +824,7 @@ the test passes
 how to make a decorator function
 *********************************************************************************
 
-All the :ref:`functions` in the :ref:`calculator program<how to make a calculator part 1>` have the same :ref:`exception handler<how to use try...except...else>`
+All the :ref:`functions<what is a function?>` in the :ref:`calculator program<how to make a calculator part 1>` have the same :ref:`exception handler<how to use try...except...else>`
 
 
 .. code-block:: python
@@ -841,7 +841,7 @@ the :ref:`divide function<test_division>` is different because it has another :r
   except ZeroDivisionError:
       return 'undefined: I cannot divide by 0'
 
-the other part that is different for all the :ref:`functions` are the calculations
+the other part that is different for all the :ref:`functions<what is a function?>` are the calculations
 
 .. code-block:: python
 
@@ -1080,7 +1080,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
 
   the test is still green
 
-* the ``reject_strings`` and ``only_takes_numbers`` :ref:`functions` have parts that are the same
+* the ``reject_strings`` and ``only_takes_numbers`` :ref:`functions<what is a function?>` have parts that are the same
 
   .. code-block:: python
 
@@ -1197,7 +1197,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
 
   the test is still green
 
-* I remove the ``reject_strings`` and ``only_takes_numbers`` :ref:`functions`
+* I remove the ``reject_strings`` and ``only_takes_numbers`` :ref:`functions<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1360,7 +1360,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

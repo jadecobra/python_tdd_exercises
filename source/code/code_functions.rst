@@ -11,7 +11,7 @@ functions: tests and solutions
 tests
 *********************************************************************************
 
-the code in ``functions/tests/test_functions.py`` from :ref:`functions`
+the code in ``functions/tests/test_functions.py`` from :ref:`functions<what is a function?>`
 
 .. literalinclude:: tests/test_functions.py
   :language: python
@@ -21,7 +21,7 @@ the code in ``functions/tests/test_functions.py`` from :ref:`functions`
 solutions
 *********************************************************************************
 
-the solutions in ``functions/src/functions.py`` from :ref:`functions`
+the solutions in ``functions/src/functions.py`` from :ref:`functions<what is a function?>`
 
 .. literalinclude:: solutions/functions.py
   :language: python

@@ -620,7 +620,7 @@ I add the :ref:`iterable<what is an iterable?>`
 
           self.assertIsNone(a_list.extend(iterable))
 
-the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` returns :ref:`None`
+the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` returns :ref:`None<what is None?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -754,7 +754,7 @@ how to reset class attributes (variables) for every test
 
 The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<what is a function?>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
 
-* I add it to the ``TestListComprehensions`` :ref:`class<classes>`
+* I add it to the ``TestListComprehensions`` :ref:`class<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1897,7 +1897,7 @@ I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what 
   - :ref:`transform the list with a process<test_making_a_list_w_processes>`
   - :ref:`transform and filter the list<test_making_a_list_w_processes_and_conditions>`
 
-I can use :ref:`functions` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
+I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
 
 I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of the following
 
@@ -1933,7 +1933,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

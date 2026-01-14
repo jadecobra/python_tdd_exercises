@@ -14,7 +14,7 @@ The following are a few conventions to know in Python_
 CapWords
 *********************************************************************************
 
-:ref:`Class<classes>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized
+:ref:`Class<what is a class?>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized
 
 *********************************************************************************
 names

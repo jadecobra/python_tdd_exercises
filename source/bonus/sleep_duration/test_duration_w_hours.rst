@@ -55,7 +55,7 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -100,7 +100,7 @@ requirements
 :green:`GREEN`: make it pass
 *********************************************************************************
 
-* I add :ref:`None` as the first and second arguments of the :ref:`assertion<what is an assertion?>`
+* I add :ref:`None<what is None?>` as the first and second arguments of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ requirements
 
     NameError: name 'duration' is not defined
 
-  I point it to :ref:`None` to define it
+  I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
 
@@ -230,7 +230,7 @@ requirements
 
     TypeError: duration() got an unexpected keyword argument 'wake_time'
 
-  because the name is not in the :ref:`function's<what is a function?>` definition. I add it with a default value of :ref:`None`
+  because the name is not in the :ref:`function's<what is a function?>` definition. I add it with a default value of :ref:`None<what is None?>`
 
   .. code-block:: python
 
@@ -255,7 +255,7 @@ requirements
 
     TypeError: duration() got an unexpected keyword argument 'sleep_time'
 
-  because ``sleep_time`` is not in the :ref:`function's<what is a function?>` definition. I add it with a default value of :ref:`None`
+  because ``sleep_time`` is not in the :ref:`function's<what is a function?>` definition. I add it with a default value of :ref:`None<what is None?>`
 
   .. code-block:: python
 
@@ -280,7 +280,7 @@ requirements
 
     AssertionError: None != ('08:00', '07:00')
 
-  the ``duration`` :ref:`function<what is a function?>` returns :ref:`None`, I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, I change it to match the expectation
 
   .. code-block:: python
 

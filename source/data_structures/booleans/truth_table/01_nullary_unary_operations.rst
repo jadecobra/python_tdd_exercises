@@ -52,7 +52,7 @@ test_logical_true
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-I change the :ref:`class<classes>` and :ref:`method<what is a function?>` in ``test_truth_table.py``
+I change the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_truth_table.py``
 
 .. code-block:: python
   :linenos:

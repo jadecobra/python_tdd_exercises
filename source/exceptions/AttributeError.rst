@@ -20,7 +20,7 @@ AttributeError
 what causes AttributeError?
 *********************************************************************************
 
-AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<classes>` that exists.
+AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<what is a class?>` that exists.
 
 ----
 
@@ -28,7 +28,7 @@ AttributeError_ is raised when there is a reference to a name that is NOT in an 
 what is an attribute?
 *********************************************************************************
 
-An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<classes>`, for example, a human being has attributes like height, weight, sex and color. They are also known as properties
+An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<what is a class?>`, for example, a human being has attributes like height, weight, sex and color. They are also known as properties
 
 ----
 
@@ -80,7 +80,7 @@ start the project
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -165,7 +165,7 @@ test_attribute_error_w_variables
     # AttributeError
     # NameError
 
-* I point ``variable_00`` to :ref:`None` in ``attribute_error.py``
+* I point ``variable_00`` to :ref:`None<what is None?>` in ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -210,7 +210,7 @@ test_attribute_error_w_variables
 
     NameError: name 'variable_01' is not defined
 
-  I point it to :ref:`None`
+  I point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -239,7 +239,7 @@ test_attribute_error_w_variables
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_02'. Did you mean: 'variable_00'?
 
-* I add the name and point it to :ref:`None`
+* I add the name and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -319,7 +319,7 @@ the terminal_ shows AttributeError_
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add the name and point it to :ref:`None` in ``attribute_error.py``
+* I add the name and point it to :ref:`None<what is None?>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -472,7 +472,7 @@ A :ref:`function<what is a function?>` in a :ref:`module<ModuleNotFoundError>` i
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-We know that variables_ and :ref:`functions` defined in a :ref:`module<ModuleNotFoundError>` are attributes. variables_ defined inside a :ref:`class<classes>` are also attributes.
+We know that variables_ and :ref:`functions<what is a function?>` defined in a :ref:`module<ModuleNotFoundError>` are attributes. variables_ defined inside a :ref:`class<what is a class?>` are also attributes.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -532,7 +532,7 @@ the terminal_ shows AttributeError_
 
   the terminal_ still shows the same :ref:`Exception<errors>` because I cannot access a :ref:`variable<what is a variable?>` that belongs to a :ref:`function<what is a function?>` from outside of the :ref:`function<what is a function?>`
 
-* I use the :ref:`class<classes>` keyword instead of the def_ keyword to make ``AClass`` a :ref:`class<classes>`
+* I use the :ref:`class<what is a class?>` keyword instead of the def_ keyword to make ``AClass`` a :ref:`class<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -594,7 +594,7 @@ the terminal_ shows AttributeError_
 
     AttributeError: type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class<classes>` definition in ``attribute_error.py``
+* I add the name to the :ref:`class<what is a class?>` definition in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -674,8 +674,8 @@ the terminal_ shows AttributeError_
 
   the test passes
 
-* A :ref:`variable<what is a variable?>` in a :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`class<classes>`.
-* A :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+* A :ref:`variable<what is a variable?>` in a :ref:`class<what is a class?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`class<what is a class?>`.
+* A :ref:`class<what is a class?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -683,9 +683,9 @@ the terminal_ shows AttributeError_
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`module<ModuleNotFoundError>` are attributes. We also know that variables_ defined inside a :ref:`class<classes>` are attributes.
+We know that variables_, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` defined in a :ref:`module<ModuleNotFoundError>` are attributes. We also know that variables_ defined inside a :ref:`class<what is a class?>` are attributes.
 
-:ref:`functions<what is a function?>` defined inside a :ref:`class<classes>` are also attributes, they are known as :ref:`methods<what is a function?>`
+:ref:`functions<what is a function?>` defined inside a :ref:`class<what is a class?>` are also attributes, they are known as :ref:`methods<what is a function?>`
 
 =================================================================================
 :red:`RED`: make it fail
@@ -715,7 +715,7 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add the name to ``AClass`` and point it to :ref:`None` in ``attribute_error.py``
+* I add the name to ``AClass`` and point it to :ref:`None<what is None?>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -849,8 +849,8 @@ We know that variables_, :ref:`functions` and :ref:`classes` defined in a :ref:`
 
   the test passes
 
-* A :ref:`function<what is a function?>` in a :ref:`class<classes>` is called a :ref:`method<what is a function?>` and is an attribute of the :ref:`class<classes>`
-* A :ref:`class<classes>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+* A :ref:`function<what is a function?>` in a :ref:`class<what is a class?>` is called a :ref:`method<what is a function?>` and is an attribute of the :ref:`class<what is a class?>`
+* A :ref:`class<what is a class?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
 
 ----
 
@@ -928,7 +928,7 @@ you made it to the end and know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`
@@ -939,7 +939,7 @@ you made it to the end and know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<classes>`
+* :ref:`what you can do with classes<what is a class?>`
 * :ref:`how to raise ModuleNotFoundError<ModuleNotFoundError>`
 * :ref:`how to raise AttributeError<AttributeError>`
 

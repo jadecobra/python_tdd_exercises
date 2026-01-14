@@ -28,7 +28,7 @@ I changed ``magic_again`` to ``more_magic`` in 5 places in ``makePythonTdd.sh``.
 - the project folder_
 - the file_ for the program_ in the ``src`` folder_
 - the file_ for the test in the ``tests`` folder_
-- the :ref:`test class<classes>` in the test file_
+- the :ref:`test class<what is a class?>` in the test file_
 - the `virtual environment`_ in the ``.venv`` folder_
 
 The program_ should always make this structure

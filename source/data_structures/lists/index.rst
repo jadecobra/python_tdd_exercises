@@ -44,7 +44,7 @@ what is a list?
 
 ----
 
-A list_ is a container :ref:`object<classes>` that can hold any objects_
+A list_ is a container :ref:`object<what is a class?>` that can hold any objects_
 
 * they are represented with ``[]``
 * they can be made with ``list()`` or ``[]``
@@ -105,7 +105,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what None is<None>`
+* :ref:`what None is<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

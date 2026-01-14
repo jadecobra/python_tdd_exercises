@@ -521,7 +521,7 @@ I think of an `assert statement`_ as a command to the computer saying "DO NOT CO
 test_assertion_error_w_none
 *********************************************************************************
 
-:ref:`None` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use assertions_ to test if something is :ref:`None`.
+:ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use assertions_ to test if something is :ref:`None<what is None?>`.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -573,7 +573,7 @@ I can also make assertions_ with `assert methods`_ from the `unittest.TestCase c
 how to test if something is NOT None
 ---------------------------------------------------------------------------------
 
-I add another failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses (``()``) is NOT :ref:`None`
+I add another failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses (``()``) is NOT :ref:`None<what is None?>`
 
 .. code-block:: python
   :lineno-start: 11
@@ -593,7 +593,7 @@ the terminal_ shows :ref:`AssertionError` with a more descriptive message
 how to test if something is None
 ---------------------------------------------------------------------------------
 
-* I change the statement to use the `assertIsNone method`_ which checks if the thing in parentheses is :ref:`None`
+* I change the statement to use the `assertIsNone method`_ which checks if the thing in parentheses is :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -621,7 +621,7 @@ how to test if something is None
     # Exceptions seen
     # AssertionError
 
-* I add a new :ref:`assertion<what is an assertion?>` to compare :ref:`None` with :ref:`False<test_what_is_false>`, another simple :ref:`data structure<data structures>`
+* I add a new :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`False<test_what_is_false>`, another simple :ref:`data structure<data structures>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -686,7 +686,7 @@ how to test if something is None
     # Exceptions seen
     # AssertionError
 
-* I add another :ref:`assertion<what is an assertion?>` to compare :ref:`None` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
+* I add another :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -759,7 +759,7 @@ how to test if something is None
     # Exceptions seen
     # AssertionError
 
-I can use assertions_ to test if something is :ref:`None`
+I can use assertions_ to test if something is :ref:`None<what is None?>`
 
 ----
 
@@ -767,7 +767,7 @@ I can use assertions_ to test if something is :ref:`None`
 test_assertion_error_w_false
 *********************************************************************************
 
-:ref:`False<test_what_is_false>` is a simple :ref:`data structures` , it is one of the two :ref:`boolean<booleans>` and is not :ref:`None`. I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not
+:ref:`False<test_what_is_false>` is a simple :ref:`data structures` , it is one of the two :ref:`boolean<booleans>` and is not :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not
 
 =================================================================================
 :red:`RED`: make it fail
@@ -863,7 +863,7 @@ how to test if something is False
     # Exceptions seen
     # AssertionError
 
-I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or :ref:`None`
+I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or :ref:`None<what is None?>`
 
 ----
 
@@ -871,7 +871,7 @@ I can use assertions_ to test if something is :ref:`False<test_what_is_false>` o
 test_assertion_error_w_true
 *********************************************************************************
 
-:ref:`True<test_what_is_true>` is a simple :ref:`data structures`, it the other :ref:`boolean<booleans>` and is not :ref:`False<test_what_is_false>` or :ref:`None`. I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or not
+:ref:`True<test_what_is_true>` is a simple :ref:`data structures`, it the other :ref:`boolean<booleans>` and is not :ref:`False<test_what_is_false>` or :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or not
 
 =================================================================================
 :red:`RED`: make it fail
@@ -968,9 +968,9 @@ how to test if something is True
     # Exceptions seen
     # AssertionError
 
-I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` or :ref:`None`
+I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` or :ref:`None<what is None?>`
 
-All the assertions_ I have typed so far show that, :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None` are different. They give me a basic expectation of Python_ because I can compare things with them.
+All the assertions_ I have typed so far show that, :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different. They give me a basic expectation of Python_ because I can compare things with them.
 
 ----
 
@@ -1093,7 +1093,7 @@ how to test if two things are Equal
     # Exceptions seen
     # AssertionError
 
-* I add a new failing assertion_ to compare :ref:`False<test_what_is_false>` with :ref:`None`
+* I add a new failing assertion_ to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 31

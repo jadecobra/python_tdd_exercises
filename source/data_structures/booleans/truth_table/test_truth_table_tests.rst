@@ -118,7 +118,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     NameError: name 'tautology' is not defined
 
-  I point the name to :ref:`None`
+  I point the name to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -162,7 +162,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: None is not true
 
-  I change :ref:`None` to :ref:`True<test_what_is_true>` in the `return statement`_
+  I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
     :linenos:
@@ -1113,7 +1113,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
 
     AssertionError: None is not true
 
-  I change :ref:`None` to :ref:`True<test_what_is_true>` in the `return statement`_
+  I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
     :lineno-start: 101
@@ -2045,7 +2045,7 @@ you now know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 

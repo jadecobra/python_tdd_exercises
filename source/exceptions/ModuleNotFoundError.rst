@@ -72,7 +72,7 @@ start the project
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<classes>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -256,7 +256,7 @@ you have gone through a lot of information and know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`
@@ -267,7 +267,7 @@ you have gone through a lot of information and know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<classes>`
+* :ref:`what you can do with classes<what is a class?>`
 * :ref:`how to raise ModuleNotFoundError<ModuleNotFoundError>`
 
 :ref:`Would you like to test AttributeError?<AttributeError>`

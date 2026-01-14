@@ -186,7 +186,7 @@ start the project
 test_type_error_w_the_uncallables
 *********************************************************************************
 
-There are :ref:`objects<classes>` that can NOT be called
+There are :ref:`objects<what is a class?>` that can NOT be called
 
 =================================================================================
 :red:`RED`: make it fail
@@ -234,7 +234,7 @@ There are :ref:`objects<classes>` that can NOT be called
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None`
+* I open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -249,9 +249,9 @@ There are :ref:`objects<classes>` that can NOT be called
     TypeError: 'NoneType' object is not callable
 
   - the ``()`` to the right of ``src.type_error.none`` makes it a call
-  - the name ``none`` points to :ref:`None` which is NOT callable_
+  - the name ``none`` points to :ref:`None<what is None?>` which is NOT callable_
 
-  I cannot call :ref:`None` like a :ref:`function<what is a function?>`
+  I cannot call :ref:`None<what is None?>` like a :ref:`function<what is a function?>`
 
 * I add TypeError_ to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
 
@@ -275,7 +275,7 @@ There are :ref:`objects<classes>` that can NOT be called
 
   the test passes
 
-I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
+I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what is None?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
@@ -383,7 +383,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
     def true():
         return True
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`boolean<booleans>` or :ref:`None<what is None?>`
 
 * I add a failing line to ``test_type_error.py``
 
@@ -429,7 +429,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
     def an_integer():
         return 1234
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call an integer_, a :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call an integer_, a :ref:`boolean<booleans>` or :ref:`None<what is None?>`
 
 * I add a line for a float_ in ``test_type_error.py``
 
@@ -479,7 +479,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
     def a_float():
         return 1.234
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
 
 * I add a line for a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
 
@@ -529,7 +529,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
     def a_string():
         return 'a string'
 
-  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a string_, a float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a string_, a float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
 
 * I add a failing line for a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
 
@@ -579,7 +579,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
     def a_tuple():
         return (1, 2, 3, 'n')
 
-  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a tuple_, string_, float_, integer_ :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a tuple_, string_, float_, integer_ :ref:`boolean<booleans>` or :ref:`None<what is None?>`
 
 * I add another line to ``test_type_error.py``
 
@@ -629,7 +629,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
 
 * I add another failing line to ``test_type_error.py``
 
@@ -679,7 +679,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
     def a_set():
         return {1, 2, 3, 'n'}
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
 
 * I add the last failing line for this test to ``test_type_error.py``
 
@@ -739,9 +739,9 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None`
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal_ shows green again. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None`
+  the terminal_ shows green again. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<booleans>` or :ref:`None<what is None?>`
 
-It is safe to say that I cannot call :ref:`data structures` because they are NOT callable_. I can call :ref:`functions`, they are callable_
+It is safe to say that I cannot call :ref:`data structures` because they are NOT callable_. I can call :ref:`functions<what is a function?>`, they are callable_
 
 ----
 
@@ -993,7 +993,7 @@ the terminal_ shows TypeError_
 
   TypeError: unsupported operand type(s) for +: 'NoneType' and 'bool'
 
-I cannot do arithmetic_ with :ref:`None`
+I cannot do arithmetic_ with :ref:`None<what is None?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1215,7 +1215,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

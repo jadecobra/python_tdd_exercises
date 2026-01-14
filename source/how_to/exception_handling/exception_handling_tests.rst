@@ -422,7 +422,7 @@ test_catching_type_error_in_tests
 
     NameError: name 'function_name' is not defined
 
-  I point it to :ref:`None` to define it
+  I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
@@ -436,7 +436,7 @@ test_catching_type_error_in_tests
 
     TypeError: 'NoneType' object is not callable
 
-  a reminder that I cannot call :ref:`None` like a :ref:`function<what is a function?>`
+  a reminder that I cannot call :ref:`None<what is None?>` like a :ref:`function<what is a function?>`
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_exceptions.py``
 
@@ -1347,7 +1347,7 @@ you know
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`

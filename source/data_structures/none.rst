@@ -7,7 +7,7 @@
 .. _None: https://docs.python.org/3/library/constants.html?highlight=none#None
 
 #################################################################################
-None
+what is None?
 #################################################################################
 
 .. raw:: html
@@ -15,10 +15,6 @@ None
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/NKvM2yqyIrQ?si=rXBUptys2D9ns9d8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
-
-*********************************************************************************
-what is None?
-*********************************************************************************
 
 None_ is used when there is no value. It is the simplest :ref:`data structure<data structures>` in Python_
 
@@ -493,7 +489,7 @@ the test passes
 how to test if something is an instance of a class
 ---------------------------------------------------------------------------------
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can use to test if an :ref:`object<classes>` is a child/instance of a :ref:`class<classes>` or not - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can use to test if an :ref:`object<what is a class?>` is a child/instance of a :ref:`class<what is a class?>` or not - assertIsInstance_ and assertNotIsInstance_
 
 * I add the `assertNotIsInstance method`_ to test if :ref:`False<test_what_is_false>` is a :ref:`boolean<booleans>`
 
@@ -505,7 +501,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
             self.assertNotIsInstance(False, bool)
 
   - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question ``is False NOT a child of the bool class?``. Okay, this is new
-  - bool_ is the :ref:`class<classes>` for :ref:`booleans<booleans>`
+  - bool_ is the :ref:`class<what is a class?>` for :ref:`booleans<booleans>`
 
   the terminal_ shows :ref:`AssertionError`
 
@@ -552,7 +548,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
   the test passes
 
-* I add assertIsInstance_ to test if None_ is a child/instance of the bool_ :ref:`class<classes>`
+* I add assertIsInstance_ to test if None_ is a child/instance of the bool_ :ref:`class<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -567,7 +563,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
     AssertionError: None is not an instance of <class 'bool'>
 
-  :ref:`None` is NOT a :ref:`boolean<booleans>`
+  :ref:`None<what is None?>` is NOT a :ref:`boolean<booleans>`
 
 * I make the line :ref:`True<test_what_is_true>` with assertNotIsInstance_
 
@@ -599,8 +595,8 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
 I know two new `assert methods`_
 
-* assertIsInstance_ to see if something is an instance of a :ref:`class<classes>`
-* assertNotIsInstance_ to see if something is NOT an instance of a :ref:`class<classes>`
+* assertIsInstance_ to see if something is an instance of a :ref:`class<what is a class?>`
+* assertNotIsInstance_ to see if something is NOT an instance of a :ref:`class<what is a class?>`
 
 .. CAUTION:: the naming of the `assert methods`_ can be confusing, there is
 
@@ -716,7 +712,7 @@ the test passes
             self.assertIsNotNone(1)
             self.assertNotIsInstance(-1, int)
 
-  int_ is the :ref:`class<classes>` for integers_, the terminal_ shows :ref:`AssertionError`
+  int_ is the :ref:`class<what is a class?>` for integers_, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -941,7 +937,7 @@ the test passes
             self.assertIsNotNone(0.1)
             self.assertNotIsInstance(-0.1, float)
 
-  float_ is the :ref:`class<classes>` for floating point numbers. The terminal_ shows :ref:`AssertionError`
+  float_ is the :ref:`class<what is a class?>` for floating point numbers. The terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1090,7 +1086,7 @@ the terminal_ shows :ref:`AssertionError`
 
   AssertionError: '' is not None
 
-the empty string_ (``''``) is NOT :ref:`None`
+the empty string_ (``''``) is NOT :ref:`None<what is None?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1144,7 +1140,7 @@ the test passes
             self.assertIsNotNone("text")
             self.assertNotIsInstance('', str)
 
-  str_ is the :ref:`class<classes>` for strings_. The terminal_ shows :ref:`AssertionError`
+  str_ is the :ref:`class<what is a class?>` for strings_. The terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1820,7 +1816,7 @@ the test passes
             self.assertIsNotNone({'key': 'value'})
             self.assertNotIsInstance({}, dict)
 
-  :ref:`dict<dictionaries>` is the :ref:`class<classes>` for :ref:`dictionaries`, the terminal_ shows :ref:`AssertionError`
+  :ref:`dict<dictionaries>` is the :ref:`class<what is a class?>` for :ref:`dictionaries`, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: shell
 
@@ -1964,8 +1960,8 @@ I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that
 
 and 2 new `assert methods`_
 
-* assertIsInstance_ which checks if something is an instance of a given :ref:`class<classes>`
-* assertNotIsInstance_ which checks if something is NOT an instance of a given :ref:`class<classes>`
+* assertIsInstance_ which checks if something is an instance of a given :ref:`class<what is a class?>`
+* assertNotIsInstance_ which checks if something is NOT an instance of a given :ref:`class<what is a class?>`
 
 I also showed the basic Python_ :ref:`data structures`
 
@@ -2001,7 +1997,7 @@ so far you have covered
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>` and
-* :ref:`what is None and NOT None and learned new assert methods<None>`
+* :ref:`what is None and NOT None and learned new assert methods<what is None?>`
 
 :ref:`Would you like to test what is True and False in Python?<booleans>`
 

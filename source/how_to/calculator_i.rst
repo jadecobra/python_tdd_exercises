@@ -421,7 +421,7 @@ test_addition
 
   I have to tell Python_ what the name ``add`` stands for or means
 
-* I point it to :ref:`None`
+* I point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -435,7 +435,7 @@ test_addition
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` :ref:`variable<test_attribute_error_w_variables>` is now a name for :ref:`None` which I cannot use like a :ref:`function<what is a function?>`
+  because the ``add`` :ref:`variable<test_attribute_error_w_variables>` is now a name for :ref:`None<what is None?>` which I cannot use like a :ref:`function<what is a function?>`
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
@@ -481,7 +481,7 @@ test_addition
 
     AssertionError: None != 1
 
-  the ``add`` :ref:`function<what is a function?>` returns :ref:`None`, the test expects ``1``
+  the ``add`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, the test expects ``1``
 
 * I make the `return statement`_ match the expected value
 
@@ -1240,7 +1240,7 @@ the terminal_ shows :ref:`AttributeError`
 
     NameError: name 'subtract' is not defined
 
-  I point ``subtract`` to :ref:`None`
+  I point ``subtract`` to :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1288,7 +1288,7 @@ the terminal_ shows :ref:`AttributeError`
 
     AssertionError: None != XYZ.ABCDEFGHIJKLMNOP
 
-  ``subtract`` returns :ref:`None`, the test expects ``random_first_number-random_second_number`` or ``first_input-second_input`` - the difference between the 2 numbers
+  ``subtract`` returns :ref:`None<what is None?>`, the test expects ``random_first_number-random_second_number`` or ``first_input-second_input`` - the difference between the 2 numbers
 
 * I make the ``subtract`` :ref:`function<what is a function?>` return the difference between the inputs
 
@@ -1692,7 +1692,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     NameError: name 'subtract' is not defined
 
-  I point it to :ref:`None`
+  I point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -1866,7 +1866,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-* the `return statement`_ of the last 3 :ref:`functions` matched their names, I do the same thing for the new one
+* the `return statement`_ of the last 3 :ref:`functions<what is a function?>` matched their names, I do the same thing for the new one
 
   .. code-block:: python
     :linenos:
@@ -1966,7 +1966,7 @@ you know a lot
 * :ref:`how to raise AssertionError with assert methods<AssertionError>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<None>`
+* :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<booleans>`
 * :ref:`how to write programs that make decisions<booleans: truth table>`
 * :ref:`how to make a calculator`
