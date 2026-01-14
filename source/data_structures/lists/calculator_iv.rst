@@ -1095,7 +1095,7 @@ you know
 * :ref:`how to raise TypeError<TypeError>`
 * :ref:`how to make the calculator check if its inputs are numbers<test_calculator_sends_message_when_input_is_not_a_number>`
 * :ref:`what you can do with Lists<lists>`
-* :ref:`how to test the calculator with lists<how to test the calculator with lists>`
+* :ref:`how to test the calculator with lists<how to make a calculator part 4>`
 
 :ref:`would you like to test list comprehensions?<list comprehensions>` They are a quick way to make :ref:`lists`
 

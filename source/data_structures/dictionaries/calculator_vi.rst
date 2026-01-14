@@ -488,7 +488,7 @@ the test passes
                     error_message
                 )
 
-  the terminal_ shows :ref:`AssertionError` for every case in the iterable_
+  the terminal_ shows :ref:`AssertionError` for every case in the :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
 
@@ -1202,7 +1202,6 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
   .. code-block:: python
     :lineno-start: 137
-    :emphasize-lines:
 
             self.assertEqual(
                 src.calculator.subtract(**two_numbers),

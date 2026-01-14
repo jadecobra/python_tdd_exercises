@@ -279,7 +279,7 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
 what is an iterable?
 ---------------------------------------------------------------------------------
 
-An iterable_ is an :ref:`object<what is a class?>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries` are iterable_
+An :ref:`iterable<what is an iterable?>` is an :ref:`object<what is a class?>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries` are :ref:`iterable<what is an iterable?>`
 
 * I change the input to a tuple_ (anything in parentheses (``()``), separated by a comma)
 
@@ -997,7 +997,7 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: 'int' object is not iterable
 
-I change the value to an iterable_
+I change the value to an :ref:`iterable<what is an iterable?>`
 
 .. code-block:: python
   :lineno-start: 88
@@ -1061,7 +1061,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 
             self.assertEqual(a_list, [0, 1, 2, 'n', 2, 1, 0])
 
-  the test is green again, it looks like extend_ calls append_ for each item in the iterable_
+  the test is green again, it looks like extend_ calls append_ for each item in the :ref:`iterable<what is an iterable?>`
 
 * I change the name of the test
 

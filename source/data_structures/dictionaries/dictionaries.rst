@@ -42,7 +42,7 @@ preview
 
 Here are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_dictionaries.py
+.. literalinclude:: ../../code/tests/test_dictionaries.py
   :language: python
   :linenos:
 
@@ -2184,7 +2184,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
   .. code-block:: python
     :lineno-start: 159
-    :emphasize-lines: 5-8
+    :emphasize-lines: 5
 
             self.assertEqual(
                 a_dictionary.pop('key', 'default'),

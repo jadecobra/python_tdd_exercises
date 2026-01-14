@@ -16,7 +16,7 @@ The following chapters test Python_ basic data structures/types, which are a way
   :titlesonly:
   :maxdepth: 1
 
-  None: the simplest<what is None?>
+  None: the simplest<none>
   Booleans: only 2<booleans/index>
   Lists: anything in [ ]<lists/index>
   Dictionaries: key-value pairs<dictionaries/index>

@@ -53,4 +53,4 @@ Here is the code you will have at the end of the above chapters
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to see me make a Python Test Driven Development environment?<how to make a test driven development environment part 1>`
+:ref:`Would you like to setup your computer the way I set mine up for development<how I setup my computer for development>`

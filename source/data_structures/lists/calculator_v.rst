@@ -2282,7 +2282,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   Using a `for loop`_ saved me having to write a lot of tests
 
-* I can add more data to the iterable_ without having to add more tests
+* I can add more data to the :ref:`iterable<what is an iterable?>` without having to add more tests
 
   .. code-block:: python
     :lineno-start: 58
@@ -2650,7 +2650,7 @@ the test passes
 
   The :ref:`add function<test_addition>` returned numbers in the calculation with :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` because they are integers_. I want to know what their values are
 
-* I can use an iterable_ with the `assertIsInstance method`_, the same way I do with the `isinstance function` in the ``only_takes_numbers`` :ref:`function` in the :ref:`calculator<how to make a calculator part 1>`
+* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function` in the ``only_takes_numbers`` :ref:`function` in the :ref:`calculator<how to make a calculator part 1>`
 
   .. code-block:: python
     :lineno-start: 20
