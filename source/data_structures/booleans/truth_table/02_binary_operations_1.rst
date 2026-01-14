@@ -696,7 +696,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
     - ``if something == True:``
     - ``if bool(something): == True``
-    - ``if bool(something):
+    - ``if bool(something):``
     - ``if something:``
 
     Python_ checks if ``something`` is :ref:`True<test_what_is_true>` in the background when I type ``if something:``
