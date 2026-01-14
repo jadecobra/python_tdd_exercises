@@ -104,7 +104,7 @@ table of contents
   calculator<how_to/calculator_i>
   make TDD environment 2<how_to/make_tdd_automatically/index>
   handling Exceptions<how_to/exception_handling/index>
-  exceptions/TypeError
+  exceptions/type_error/index
   data_structures/lists/index
   data_structures/dictionaries/index
   make a person<how_to/make_person>

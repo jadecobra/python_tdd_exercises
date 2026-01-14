@@ -35,7 +35,7 @@
 
 
 #################################################################################
-lists
+data structures: lists
 #################################################################################
 
 .. raw:: html
@@ -43,16 +43,6 @@ lists
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/npXHw5-3C8s?si=K-BDxQG86CoP7rOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
-
-*********************************************************************************
-what is a list?
-*********************************************************************************
-
-A list_ is a container :ref:`object<classes>` that can hold any objects_
-
-* they are represented with ``[]``
-* they can be made with ``list()`` or ``[]``
-* they can be changed with an operation, which means they are mutable
 
 *********************************************************************************
 preview

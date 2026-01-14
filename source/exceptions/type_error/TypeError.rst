@@ -7,7 +7,7 @@
 .. _TypeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError
 
 #################################################################################
-TypeError
+Exceptions: TypeError
 #################################################################################
 
 .. raw:: html

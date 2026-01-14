@@ -35,12 +35,16 @@
 
 
 #################################################################################
-lists
+dictionaries
 #################################################################################
 
-.. raw:: html
+*********************************************************************************
+what is a dictionary?
+*********************************************************************************
 
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/npXHw5-3C8s?si=K-BDxQG86CoP7rOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+A dictionary_ also known as a Mapping is a way to keep :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, the :ref:`values<test_values_of_a_dictionary>` can be any :ref:`Python object<classes>`. I add tests to see which of :ref:`the Python basic data types<data structures>` I can use as :ref:`keys<test_keys_of_a_dictionary>` .
+
+I think this is the most important :ref:`data structure<data structures>` because it can hold all the other :ref:`data structures`, same as with :ref:`lists<lists>` and tuples_ but with more. In programming I have had to work with JSON_ which I can read and write as dictionaries_
 
 ----
 
@@ -51,28 +55,8 @@ the chapters
 .. toctree::
   :titlesonly:
 
-  lists
-  calculator_iv
-  list_comprehensions
-  calculator_v
-
-----
-
-*********************************************************************************
-videos
-*********************************************************************************
-
-* Lists
-
-  .. raw:: html
-
-    <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/npXHw5-3C8s?si=K-BDxQG86CoP7rOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-* List Comprehensions
-
-  .. raw:: html
-
-    <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube.com/embed/ydGHVab_YpY?si=a9D0VufncC4jlzte" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  dictionaries
+  calculator_vi
 
 ----
 
@@ -80,10 +64,7 @@ videos
 code from the chapter
 *************************************************************************************
 
-Do you want to see all the CODE I typed in these chapters?
-
-* :ref:`data structures: lists: tests and solutions`
-* :ref:`data structures: list comprehensions: tests and solutions`
+:ref:`Do you want to see all the CODE I typed in these chapter?<data structures: dictionaries: tests>`
 
 ----
 

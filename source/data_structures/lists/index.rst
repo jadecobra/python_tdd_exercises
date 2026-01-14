@@ -45,6 +45,18 @@ lists
 ----
 
 *********************************************************************************
+what is a list?
+*********************************************************************************
+
+A list_ is a container :ref:`object<classes>` that can hold any objects_
+
+* they are represented with ``[]``
+* they can be made with ``list()`` or ``[]``
+* they can be changed with an operation, which means they are mutable
+
+----
+
+*********************************************************************************
 the chapters
 *********************************************************************************
 
