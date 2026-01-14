@@ -435,7 +435,7 @@ I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pair
               {False: 'boom', True: 'bap'}
           )
 
-the test passes. I can use strings_, :ref:`<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use strings_, :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -521,7 +521,7 @@ I add the new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pair
               {0: 'boom', 0.1: 'bap'}
           )
 
-the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 
@@ -573,7 +573,7 @@ I change ``'bap'`` to ``'boom'``
               {(0, 1): 'boom'}
           )
 
-the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :ref:`booleans<what are booleans?>` and :ref:`None<what is None?>` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 

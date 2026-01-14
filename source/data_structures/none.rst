@@ -1969,7 +1969,7 @@ I also showed the basic Python_ :ref:`data structures`
 * integers_ - whole numbers, negative and positive
 * floats_ - floating point decimal numbers
 * strings_ - anything inside :ref:`quotes`
-* :ref:`<what are booleans?>` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
+* :ref:`booleans<what are booleans?>` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
 * tuples_ - anything in parentheses (``()``) separated by commas
 * :ref:`lists` - anything in square brackets (``[]``) separated by commas
 * sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`

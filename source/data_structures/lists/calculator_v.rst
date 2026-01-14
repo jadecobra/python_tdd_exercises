@@ -24,17 +24,7 @@
 how to make a calculator part 5
 #################################################################################
 
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube.com/embed/ydGHVab_YpY?si=a9D0VufncC4jlzte" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-----
-
-*********************************************************************************
-what is a list comprehension?
-*********************************************************************************
-
-A `List Comprehension`_ is a simple way to make a :ref:`list <lists>` from an :ref:`iterable<what is an iterable?>` with one line
+I want to use the things I know to make the :ref:`tests for the calculator program<how to make a calculator part 4>` better
 
 ----
 
@@ -51,14 +41,8 @@ Here are the tests I have by the end of the chapter
 ----
 
 *********************************************************************************
-how to make sure the calculator tests use new numbers for every test
-*********************************************************************************
-
-I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I had a new :ref:`list<lists>` and :ref:`iterable<what is an iterable?>` for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator part 1>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
-
-=================================================================================
 open the project
-=================================================================================
+*********************************************************************************
 
 * I `change directory`_ to the ``calculator`` folder_
 
@@ -116,6 +100,16 @@ open the project
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
+----
+
+*********************************************************************************
+how to make sure the calculator tests use new numbers for every test
+*********************************************************************************
+
+I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I had a new :ref:`list<lists>` and :ref:`iterable<what is an iterable?>` for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator part 1>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
+
+
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
@@ -142,10 +136,12 @@ the test is still green. The `setUp method`_ runs before every test, giving ``ra
 a better way to test the calculator with inputs that are NOT numbers
 *************************************************************************************
 
-I tested the :ref:`calculator functions<how to make a calculator part 1>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries`. Since I know how to use a `for loop`_ and `list comprehensions`_, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
+I tested the :ref:`calculator functions<how to make a calculator part 1>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`booleans<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries`.
+
+Since I know how to use a `for loop`_ and `list comprehensions`_, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
 
 =================================================================================
-:yellow:`RED`: make it fail
+:RED:`RED`: make it fail
 =================================================================================
 
 I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_message_when_input_is_not_a_number``
@@ -240,7 +236,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the `unittest.TestCase.subTest method`_ runs the code in its context as a sub test, showing the values I give in ``i=data`` so that I can see which one caused the error
 
-* I add a :ref:`condition<if statements>` for :ref:`<what are booleans?>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py``
+* I add a :ref:`condition<if statements>` for :ref:`booleans<what are booleans?>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -516,9 +512,9 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
 ----
 
-=================================================================================
+*********************************************************************************
 close the project
-=================================================================================
+*********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows

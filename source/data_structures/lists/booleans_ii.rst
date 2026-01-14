@@ -28,7 +28,7 @@ booleans part 2
 is a boolean an integer or a float?
 *********************************************************************************
 
-I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator part 1>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail. This means that they are also integers_ or floats_ even though they are :ref:`<what are booleans?>`. I want to find out if :ref:`<what are booleans?>` are integers_ or floats_
+I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator part 1>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail. This means that they are also integers_ or floats_ even though they are :ref:`booleans<what are booleans?>`. I want to find out if :ref:`booleans<what are booleans?>` are integers_ or floats_
 
 =================================================================================
 open the project
