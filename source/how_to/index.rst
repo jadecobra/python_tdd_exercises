@@ -27,7 +27,7 @@ the chapters
   make_tdd_manually/index
   make_tdd_automatically/index
   pass_values
-  calculator
+  calculator_i
   make_person
   exception_handling/index
 

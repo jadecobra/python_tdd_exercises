@@ -93,21 +93,21 @@ table of contents
   self
   videos <https://www.youtube.com/@JacobItegboje>
   conventions
-  how_to/setup/index
-  how_to/make_tdd_manually/index
+  setup<how_to/setup/index>
+  test driven development environment 1<how_to/make_tdd_manually/index>
   exceptions/AssertionError
   functions
   how_to/pass_values
   data_structures/none
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
-  how_to/calculator
-  how_to/make_tdd_automatically/index
-  how_to/exception_handling/index
+  calculator<how_to/calculator_i>
+  test driven development environment 2<how_to/make_tdd_automatically/index>
+  handling Exceptions<how_to/exception_handling/index>
   exceptions/TypeError
   data_structures/lists/index
   data_structures/dictionaries/index
-  how_to/make_person
+  make a person<how_to/make_person>
   classes
   exceptions/AttributeError
   exceptions/ModuleNotFoundError
