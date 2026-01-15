@@ -98,7 +98,7 @@ I add a new failing test to show that the :ref:`calculator<how to make a calcula
           except ZeroDivisionError:
               self.assertEqual(
                   src.calculator.divide(self.random_first_number, 0),
-                  'undefined: I cannot divide by 0'
+                  'brmph?! cannot divide by 0. Try again...'
               )
 
       def test_calculator_raises_type_error_w_none(self):
@@ -570,7 +570,7 @@ the test passes
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'undefined: I cannot divide by 0'
+            return 'brmph?! cannot divide by 0. Try again...'
         except TypeError:
             return 'Excuse me?! Numbers only! try again...'
 
@@ -839,7 +839,7 @@ the :ref:`divide function<test_division>` is different because it has another :r
 .. code-block:: python
 
   except ZeroDivisionError:
-      return 'undefined: I cannot divide by 0'
+      return 'brmph?! cannot divide by 0. Try again...'
 
 the other part that is different for all the :ref:`functions<what is a function?>` are the calculations
 
@@ -954,7 +954,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'undefined: I cannot divide by 0'
+            return 'brmph?! cannot divide by 0. Try again...'
 
 
     def add(first_number, second_input):
@@ -1160,7 +1160,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'undefined: I cannot divide by 0'
+            return 'brmph?! cannot divide by 0. Try again...'
 
 
     @only_takes_numbers_and_rejects_strings
@@ -1188,7 +1188,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'undefined: I cannot divide by 0'
+            return 'brmph?! cannot divide by 0. Try again...'
 
 
     @only_takes_numbers_and_rejects_strings
@@ -1229,7 +1229,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'undefined: I cannot divide by 0'
+            return 'brmph?! cannot divide by 0. Try again...'
 
 
     @only_takes_numbers_and_rejects_strings
@@ -1269,7 +1269,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'undefined: I cannot divide by 0'
+            return 'brmph?! cannot divide by 0. Try again...'
 
 
     @only_takes_numbers

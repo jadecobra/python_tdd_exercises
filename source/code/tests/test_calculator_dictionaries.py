@@ -13,18 +13,24 @@ class TestCalculator(unittest.TestCase):
         self.random_first_number = a_random_number()
         self.random_second_number = a_random_number()
         try:
-            self.division_result = self.random_first_number / self.random_second_number
+            self.division_result = (
+                self.random_first_number / self.random_second_number
+            )
         except ZeroDivisionError:
-            self.division_result = 'undefined: I cannot divide by 0'
+            self.division_result = 'brmph?! cannot divide by 0. Try again...'
 
         self.arithmetic_tests = {
             'addition': {
                 'function': src.calculator.add,
-                'expectation': self.random_first_number+self.random_second_number,
+                'expectation': (
+                    self.random_first_number+self.random_second_number
+                ),
             },
             'subtraction': {
                 'function': src.calculator.subtract,
-                'expectation': self.random_first_number-self.random_second_number,
+                'expectation': (
+                    self.random_first_number-self.random_second_number
+                ),
             },
             'division': {
                 'function': src.calculator.divide,
@@ -32,7 +38,9 @@ class TestCalculator(unittest.TestCase):
             },
             'multiplication': {
                 'function': src.calculator.multiply,
-                'expectation': self.random_first_number*self.random_second_number,
+                'expectation': (
+                    self.random_first_number*self.random_second_number
+                ),
             }
         }
 
@@ -48,7 +56,7 @@ class TestCalculator(unittest.TestCase):
                 )
 
     def test_calculator_sends_message_when_input_is_not_a_number(self):
-        error_message = 'Excuse me?! Numbers only. Try again...'
+        error_message = 'brmph?! Numbers only. Try again...'
 
         for data in (
             None,
@@ -63,7 +71,7 @@ class TestCalculator(unittest.TestCase):
                 for operation in self.arithmetic_tests:
                     self.assertEqual(
                         self.arithmetic_tests[operation]['function'](
-                            data, a_random_number
+                            data, a_random_number()
                         ),
                         error_message
                     )
@@ -109,19 +117,31 @@ class TestCalculator(unittest.TestCase):
         }
 
         self.assertEqual(
-            src.calculator.add(two_numbers['first_input'], two_numbers['second_input']),
+            src.calculator.add(
+                two_numbers['first_input'],
+                two_numbers['second_input']
+            ),
             self.random_first_number+self.random_second_number
         )
         self.assertEqual(
-            src.calculator.divide(two_numbers['first_input'], two_numbers['second_input']),
+            src.calculator.divide(
+                two_numbers['first_input'],
+                two_numbers['second_input']
+            ),
             self.division_result
         )
         self.assertEqual(
-            src.calculator.multiply(two_numbers['second_input'], two_numbers['second_input']),
+            src.calculator.multiply(
+                two_numbers['second_input'],
+                two_numbers['second_input']
+            ),
             self.random_second_number*self.random_second_number
         )
         self.assertEqual(
-            src.calculator.subtract(two_numbers['first_input'], two_numbers['first_input']),
+            src.calculator.subtract(
+                two_numbers['first_input'],
+                two_numbers['first_input']
+            ),
             self.random_first_number-self.random_first_number
         )
 
@@ -140,7 +160,9 @@ class TestCalculator(unittest.TestCase):
                 self.subTest(operation=operation),
                 self.assertRaises(TypeError),
             ):
-                self.arithmetic_tests[operation]['function'](*[0, 1, 2])
+                self.arithmetic_tests[operation]['function'](
+                    *[0, 1, 2]
+                )
 
 
 # Exceptions seen

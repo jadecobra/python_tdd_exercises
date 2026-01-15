@@ -187,6 +187,8 @@
 .. _variables: https://grokipedia.com/page/Variable_(computer_science)
 .. _venv: https://docs.python.org/3/library/venv.html#module-venv
 .. _virtual environment: https://docs.python.org/3/glossary.html#term-virtual-environment
+.. _with statement: https://docs.python.org/3/reference/compound_stmts.html#the-with-statement
+.. _with statements: `with statement`_
 .. _while: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
 .. _while statement: while_
 .. _zero-based indexing: https://grokipedia.com/page/Zero-based_numbering

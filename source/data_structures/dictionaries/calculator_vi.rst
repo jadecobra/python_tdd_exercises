@@ -448,7 +448,7 @@ the test passes
     :emphasize-lines: 4-9, 21-25
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'Excuse me?! Numbers only. Try again...'
+            error_message = 'brmph?! Numbers only. Try again...'
 
             arithmetic = {
                 'addition': src.calculator.add,
@@ -481,19 +481,19 @@ the test passes
 
   .. code-block:: python
 
-    SUBFAILED(i=None) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=True) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=False) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i='') tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i='text') tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=()) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=(0, 1, 2, 'n')) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=[]) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=[0, 1, 2, 'n']) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=set()) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={0, 1, 2, 'n'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={'key': 'value'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=None) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=True) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=False) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i='') tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i='text') tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=()) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=(0, 1, 2, 'n')) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=[]) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=[0, 1, 2, 'n']) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=set()) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={0, 1, 2, 'n'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={'key': 'value'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
 
   the test works
 
@@ -540,7 +540,7 @@ the test passes
     :lineno-start: 58
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'Excuse me?! Numbers only. Try again...'
+            error_message = 'brmph?! Numbers only. Try again...'
 
             arithmetic = {
                 'addition': src.calculator.add,
@@ -594,7 +594,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
             except ZeroDivisionError:
                 self.assertEqual(
                     src.calculator.divide(self.random_first_number, 0),
-                    'undefined: I cannot divide by 0'
+                    'brmph?! cannot divide by 0. Try again...'
                 )
 
         def test_calculator_functions(self):
@@ -804,7 +804,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
             for operation in arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
-                        arithmetic_tests[operation]('function')(
+                        arithmetic_tests[operation]['function'](
                             self.random_first_number,
                             self.random_second_number
                         ),
@@ -813,22 +813,19 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-
-    def test_addition(self):
-
   the terminal_ shows :ref:`AssertionError`:
 
   .. code-block:: python
 
     SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: HIJ.KLMNOPQRSTUVW != 'BOOM!!!'
     SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: XYZA.BCDEFGHIJKLMN != 'BOOM!!!'
-    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: NOP.QRSTUVWXYZABCDEF != 'BOOM!!!'
-    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: GHIJKLM.NOPQRSTUVWX != 'BOOM!!!'
+    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: NO.PQRSTUVWXYZABCDE != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: FGHIJKLM.NOPQRSTUVW != 'BOOM!!!'
 
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 216
+    :lineno-start: 117
     :emphasize-lines: 8
 
             for operation in arithmetic_tests:
@@ -846,25 +843,33 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I remove the other dictionaries_ and `for loop`_
 
   .. code-block:: python
-    :lineno-start: 176
+    :lineno-start: 58
 
         def test_calculator_functions(self):
             arithmetic_tests = {
                 'addition': {
                     'function': src.calculator.add,
-                    'expectation': self.random_first_number+self.random_second_number,
+                    'expectation': (
+                        self.random_first_number+self.random_second_number
+                    ),
                 },
                 'subtraction': {
                     'function': src.calculator.subtract,
-                    'expectation': self.random_first_number-self.random_second_number,
+                    'expectation': (
+                        self.random_first_number-self.random_second_number
+                    ),
                 },
                 'division': {
                     'function': src.calculator.divide,
-                    'expectation': self.random_first_number/self.random_second_number,
+                    'expectation': (
+                        self.random_first_number/self.random_second_number
+                    ),
                 },
                 'multiplication': {
                     'function': src.calculator.multiply,
-                    'expectation': self.random_first_number*self.random_second_number,
+                    'expectation': (
+                        self.random_first_number*self.random_second_number
+                    ),
                 }
             }
 
@@ -878,7 +883,9 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                         arithmetic_tests[operation]['expectation']
                     )
 
-* I remove the ``test_addition``, ``test_subtraction``, ``test_multiplication``
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+
+* I remove the ``test_addition``, ``test_subtraction`` and ``test_multiplication`` :ref:`methods<what is a function?>`
 
   .. code-block:: python
 
@@ -911,26 +918,30 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
     FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
     FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - ZeroDivisionError: float division by zero
 
-* I use an :ref:`exception handler<how to use try...except...else>` to add a new :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` for the result of :ref:`division<test_division>`
+* I use an :ref:`exception handler<how to use try...except...else>` to add a new :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to the `setUp method`_ for the result of :ref:`division<test_division>`
 
   .. code-block:: python
     :lineno-start: 15
 
             self.random_second_number = 0
             try:
-                self.division_result = self.random_first_number / self.random_second_number
+                self.division_result = (
+                    self.random_first_number / self.random_second_number
+                )
             except ZeroDivisionError:
-                self.division_result = 'undefined: I cannot divide by 0'
+                self.division_result = 'brmph?! cannot divide by 0. Try again...'
 
 * I use the new :ref:`class attribute (variable) <test_attribute_error_w_class_attributes>` in ``test_calculator_functions``
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 3-4
+    :lineno-start: 52
+    :emphasize-lines: 3-6
 
                 'division': {
                     'function': src.calculator.divide,
-                    # 'expectation': self.random_first_number/self.random_second_number,
+                    # 'expectation': (
+                    #     self.random_first_number/self.random_second_number
+                    # ),
                     'expectation': self.division_result,
                 },
 
@@ -946,7 +957,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I add the :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to ``test_calculator_w_list_items``
 
   .. code-block:: python
-    :lineno-start: 105
+    :lineno-start: 119
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -958,7 +969,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
   and
 
   .. code-block:: python
-    :lineno-start: 122
+    :lineno-start: 136
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -976,11 +987,14 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I add the :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to ``test_calculator_w_dictionary_items``
 
   .. code-block:: python
-    :lineno-start: 146
-    :emphasize-lines: 3-4
+    :lineno-start: 163
+    :emphasize-lines: 6-7
 
             self.assertEqual(
-                src.calculator.divide(two_numbers['first_input'], two_numbers['second_input']),
+                src.calculator.divide(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
                 # self.random_first_number/self.random_second_number
                 self.division_result
             )
@@ -988,7 +1002,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
   and
 
   .. code-block:: python
-    :lineno-start: 163
+    :lineno-start: 189
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -997,22 +1011,25 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                 self.division_result
             )
 
-  the terminal_ shows green. Lovely!
+  the terminal_ shows green again. Lovely!
 
-* I remove the commented lines I added
+* I remove the lines I commented out to replace with ``self.division_result``
 
 * I remove ``test_division``
 
   .. code-block:: python
+    :lineno-start: 12
 
         def setUp(self):
             self.random_first_number = a_random_number()
             # self.random_second_number = a_random_number()
             self.random_second_number = 0
             try:
-                self.division_result = self.random_first_number / self.random_second_number
+                self.division_result = (
+                    self.random_first_number / self.random_second_number
+                )
             except ZeroDivisionError:
-                self.division_result = 'undefined: I cannot divide by 0'
+                self.division_result = 'brmph?! cannot divide by 0. Try again...'
 
         def test_calculator_functions(self):
 
@@ -1020,34 +1037,35 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   .. code-block:: python
     :lineno-start: 12
+    :emphasize-lines: 3
 
     def setUp(self):
         self.random_first_number = a_random_number()
         self.random_second_number = a_random_number()
-        try:
-            self.division_result = self.random_first_number / self.random_second_number
-        except ZeroDivisionError:
-            self.division_result = 'undefined: I cannot divide by 0'
 
-  all tests are passing
+  all tests are still green
 
-* the dictionaries_ in ``test_calculator_functions`` and ``test_calculator_sends_message_when_input_is_not_a_number`` are similar, I add a new dictionary_ in the `setUp method`_
+* the dictionaries_ in ``test_calculator_functions`` and ``test_calculator_sends_message_when_input_is_not_a_number`` are similar, I add a new dictionary_ in the `setUp method`_ to replace them
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 4-21
+    :lineno-start: 19
+    :emphasize-lines: 4-27
 
             except ZeroDivisionError:
-                self.division_result = 'undefined: I cannot divide by 0'
+                self.division_result = 'brmph?! cannot divide by 0. Try again...'
 
             self.arithmetic_tests = {
                 'addition': {
                     'function': src.calculator.add,
-                    'expectation': self.random_first_number+self.random_second_number,
+                    'expectation': (
+                        self.random_first_number+self.random_second_number
+                    ),
                 },
                 'subtraction': {
                     'function': src.calculator.subtract,
-                    'expectation': self.random_first_number-self.random_second_number,
+                    'expectation': (
+                        self.random_first_number-self.random_second_number
+                    ),
                 },
                 'division': {
                     'function': src.calculator.divide,
@@ -1055,34 +1073,39 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                 },
                 'multiplication': {
                     'function': src.calculator.multiply,
-                    'expectation': self.random_first_number*self.random_second_number,
+                    'expectation': (
+                        self.random_first_number*self.random_second_number
+                    ),
                 }
             }
 
         def test_calculator_functions(self):
 
-* I use it in ``test_calculator_functions``
+* then I use it in ``test_calculator_functions``
 
   .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 1, 4, 8
+    :lineno-start: 73
+    :emphasize-lines: 1-2, 5-6, 10-11
 
+            # for operation in arithmetic_tests:
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
+                        # arithmetic_tests[operation]['function'](
                         self.arithmetic_tests[operation]['function'](
                             self.random_first_number,
                             self.random_second_number
                         ),
+                        # arithmetic_tests[operation]['expectation']
                         self.arithmetic_tests[operation]['expectation']
                     )
 
-  the test is green
+  the test is still green
 
-* I remove the ``arithemtic_tests`` dictionary_ from ``test_calculator_functions``
+* I remove the commented lines and ``arithemtic_tests`` dictionary_ from ``test_calculator_functions``
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 47
 
         def test_calculator_functions(self):
             for operation in self.arithmetic_tests:
@@ -1102,15 +1125,17 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I use the new :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` in ``test_calculator_sends_message_when_input_is_not_a_number``
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 2-3, 5-6
+    :lineno-start: 77
+    :emphasize-lines: 2-3, 5-8
 
                 with self.subTest(i=data):
                     # for operation in arithmetic:
                     for operation in self.arithmetic_tests:
                         self.assertEqual(
-                            # arithmetic[operation](data, a_random_number),
-                            self.arithmetic_tests[operation]['function'](data, a_random_number),
+                            # arithmetic[operation](data, a_random_number()),
+                            self.arithmetic_tests[operation]['function'](
+                                data, a_random_number()
+                            ),
                             error_message
                         )
 
@@ -1119,10 +1144,10 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I remove the commented lines and the ``arithmetic`` dictionary_
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 58
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'Excuse me?! Numbers only. Try again...'
+            error_message = 'brmph?! Numbers only. Try again...'
 
             for data in (
                 None,
@@ -1136,7 +1161,9 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                 with self.subTest(i=data):
                     for operation in self.arithmetic_tests:
                         self.assertEqual(
-                            self.arithmetic_tests[operation]['function'](data, a_random_number),
+                            self.arithmetic_tests[operation]['function'](
+                                data, a_random_number()
+                            ),
                             error_message
                         )
 
@@ -1147,15 +1174,17 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I add a `for loop`_ to use the ``arithmetic_tests`` dictionary_ in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 4-6
+    :lineno-start: 180
+    :emphasize-lines: 4-8
 
             with self.assertRaises(TypeError):
                 src.calculator.subtract(*not_two_numbers)
 
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
-                    self.arithmetic_tests[operation]['function'](*not_two_numbers)
+                    self.arithmetic_tests[operation]['function'](
+                        **not_two_numbers
+                    )
 
 
     # Exceptions seen
@@ -1172,20 +1201,22 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I add the `assertRaises method`_
 
   .. code-block:: python
-    :lineno-start: 161
-    :emphasize-lines: 3-4
+    :lineno-start: 183
+    :emphasize-lines: 3-6
 
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
                     with self.assertRaises(TypeError):
-                        self.arithmetic_tests[operation]['function'](*not_two_numbers)
+                        self.arithmetic_tests[operation]['function'](
+                            *not_two_numbers
+                        )
 
   the test passes
 
 * I remove the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 149
+    :lineno-start: 171
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
             not_two_numbers = [0, 1, 2]
@@ -1193,7 +1224,9 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
                     with self.assertRaises(TypeError):
-                        self.arithmetic_tests[operation]['function'](*not_two_numbers)
+                        self.arithmetic_tests[operation]['function'](
+                            *not_two_numbers
+                        )
 
 
     # Exceptions seen
@@ -1203,22 +1236,24 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I no longer need the :ref:`variable<what is a variable?>`, I remove it and use the :ref:`list<lists>` directly in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 149
-    :emphasize-lines: 5
+    :lineno-start: 171
+    :emphasize-lines: 5-7
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
                     with self.assertRaises(TypeError):
-                        self.arithmetic_tests[operation]['function'](*[0, 1, 2])
+                        self.arithmetic_tests[operation]['function'](
+                            *[0, 1, 2]
+                        )
 
   the test is still green
 
-* Python_ allows me to put the 2 with contexts together in one statement
+* Python_ allows me to put the 2 `with statements`_ together as one
 
   .. code-block:: python
-    :lineno-start: 149
-    :emphasize-lines: 3-8
+    :lineno-start: 171
+    :emphasize-lines: 3-11
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
             for operation in self.arithmetic_tests:
@@ -1228,14 +1263,16 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                     self.subTest(operation=operation),
                     self.assertRaises(TypeError),
                 ):
-                    self.arithmetic_tests[operation]['function'](*[0, 1, 2])
+                    self.arithmetic_tests[operation]['function'](
+                        *[0, 1, 2]
+                    )
 
-  green
+  still green
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 171
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
             for operation in self.arithmetic_tests:
@@ -1243,12 +1280,14 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                     self.subTest(operation=operation),
                     self.assertRaises(TypeError),
                 ):
-                    self.arithmetic_tests[operation]['function'](*[0, 1, 2])
+                    self.arithmetic_tests[operation]['function'](
+                        *[0, 1, 2]
+                    )
 
 * I add a `for loop`_ to ``test_calculator_w_list_items``
 
   .. code-block:: python
-    :lineno-start: 105
+    :lineno-start: 115
     :emphasize-lines: 6-13
 
             self.assertEqual(
@@ -1279,7 +1318,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 1
+    :lineno-start: 20
     :emphasize-lines: 7
 
             for operation in self.arithmetic_tests:
@@ -1296,7 +1335,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I remove all the :ref:`assertions<what is an assertion?>` for the starred expression
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 99
 
             self.assertEqual(
                 src.calculator.subtract(two_numbers[-2], two_numbers[0]),
@@ -1319,7 +1358,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I add a `for loop`_ to ``test_calculator_w_dictionary_items``
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 159
 
             self.assertEqual(
                 src.calculator.subtract(**two_numbers),
@@ -1349,7 +1388,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 142
+    :lineno-start: 164
     :emphasize-lines: 7
 
             for operation in self.arithmetic_tests:
@@ -1363,13 +1402,16 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   the test passes
 
-* I remove the other :ref:`assertions<what is an assertion?>` for the starred expression
+* I remove the other :ref:`assertions<what is an assertion?>` for the double starred expression
 
   .. code-block:: python
-    :lineno-start: 121
+    :lineno-start: 140
 
             self.assertEqual(
-                src.calculator.subtract(two_numbers['first_input'], two_numbers['first_input']),
+                src.calculator.subtract(
+                    two_numbers['first_input'],
+                    two_numbers['first_input']
+                ),
                 self.random_first_number-self.random_first_number
             )
 
@@ -1384,7 +1426,9 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
-  still green
+  still
+
+I think it is time to take nap. That was a lot.
 
 ----
 

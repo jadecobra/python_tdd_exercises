@@ -96,7 +96,7 @@ I change the last :ref:`assertion<what is an assertion?>` in ``test_division``
           )
           self.assertEqual(
               src.calculator.divide(self.random_first_number, 0),
-              'undefined: I cannot divide by 0'
+              'brmph?! cannot divide by 0. Try again...'
           )
 
 
@@ -136,7 +136,7 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'undefined: I cannot divide by 0'
+            return 'brmph?! cannot divide by 0. Try again...'
 
   the test passes.
 
@@ -165,7 +165,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
             )
     E       ZeroDivisionError: division by zero
 
-  the expectation calculation in ``test_division`` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'undefined: I cannot divide by 0'``
+  the expectation calculation in ``test_division`` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'brmph?! cannot divide by 0. Try again...'``
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the test
 
@@ -185,7 +185,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
           except ZeroDivisionError:
               self.assertEqual(
                   src.calculator.divide(self.random_first_number, 0),
-                  'undefined: I cannot divide by 0'
+                  'brmph?! cannot divide by 0. Try again...'
               )
 
   the test passes

@@ -52,11 +52,11 @@ class TestCalculator(unittest.TestCase):
         except ZeroDivisionError:
             self.assertEqual(
                 src.calculator.divide(self.random_first_number, 0),
-                'undefined: I cannot divide by 0'
+                'brmph?! cannot divide by 0. Try again...'
             )
 
     def test_calculator_sends_message_when_input_is_not_a_number(self):
-        error_message = 'Excuse me?! Numbers only. Try again...'
+        error_message = 'brmph?! Numbers only. Try again...'
 
         for data in (
             None,

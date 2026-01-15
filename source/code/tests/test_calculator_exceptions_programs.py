@@ -51,7 +51,7 @@ class TestCalculator(unittest.TestCase):
         except ZeroDivisionError:
             self.assertEqual(
                 src.calculator.divide(self.random_first_number, 0),
-                'undefined: I cannot divide by 0'
+                'brmph?! cannot divide by 0. Try again...'
             )
 
 
