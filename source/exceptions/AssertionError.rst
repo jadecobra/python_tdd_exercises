@@ -16,7 +16,7 @@ what is an assertion?
 
 ----
 
-An `assertion`_ or `assert statement` is a command to the computer saying "DO NOT CONTINUE, UNLESS THIS STATEMENT IS TRUE"
+An `assertion`_ or `assert statement`_ is like telling the the computer "DO NOT CONTINUE, UNLESS THIS STATEMENT IS TRUE"
 
 I can use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before the computer can continue running the program.
 

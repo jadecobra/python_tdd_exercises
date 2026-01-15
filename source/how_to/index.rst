@@ -27,7 +27,6 @@ the chapters
   make TDD manually<make_tdd_manually/index>
   make TDD automatically<make_tdd_automatically/index>
   pass_values
-  calculator 1<calculator_i>
   make_person
   handle Exceptions<exception_handling/index>
 

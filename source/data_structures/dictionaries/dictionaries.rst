@@ -40,27 +40,6 @@ Here are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
-*********************************************************************************
-questions about dictionaries
-*********************************************************************************
-
-Here are questions you can answer after going through this chapter
-
-* :ref:`what is a dictionary?`
-* :ref:`how can I empty a dictionary?<test_clear_empties_a_dictionary>`
-* :ref:`how can I copy a dictionary<test_copy_a_dictionary>`
-* :ref:`how can I make a dictionary from an iterable?<test_fromkeys_makes_a_dictionary_from_an_iterable>`
-* :ref:`how can I get a value that is in a dictionary?<test_get_value_of_a_key_in_a_dictionary>`
-* :ref:`how can I look at the key-value pairs in a dictionary as a list of tuples?<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
-* :ref:`how can I look at only the keys in a dictionary?<test_keys_of_a_dictionary>`
-* :ref:`how can I remove a key-value pair from a dictionary?<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
-* :ref:`how can I remove the last key-value pair from a dictionary?<test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary>`
-* :ref:`how can I add a key with a default value to a dictionary?<test_setdefault_adds_given_key_to_a_dictionary>`
-* :ref:`how can I update a dictionary?<test_update_a_dictionary>`
-* :ref:`how can I add the key-value pairs from one dictionary to another?<test_update_a_dictionary>`
-* :ref:`how can I look at only the values in a dictionary?<test_values_of_a_dictionary>`
-* :ref:`what causes KeyError?<test_key_error>`
-
 ----
 
 *********************************************************************************

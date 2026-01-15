@@ -12,9 +12,25 @@ how to pass values
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/QEiyAO7aEVQ?si=gN_vRO0VrSyWR7R6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-I want to be able to send things from tests to the program_ I am testing and compare what I think will happen with the results I get. This helps me see what is the same, and what is different, the difference helps me know what to change to get what I want.
+One of the things that happens when testing a program_, is I send things (data) to the program_ and I check if what I think will happen is the same as the results I get back. Testing helps me answer 2 questions
 
-I use :ref:`the identity function<test_identity_function>` to show how input is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<ModuleNotFoundError>`
+* what is the same?
+* what is different?
+
+the difference helps me know what to change to get what I want
+
+this is the job of the `assertEqual method`_, which takes 2 inputs and checks if they are the same
+
+.. code-block:: python
+
+  self.assertEqual(reality, my_expectation)
+
+where
+
+* ``reality`` is what happens when I call a :ref:`function<what is a function?>` or :ref:`object<classes>` in a :ref:`module<ModuleNotFoundError>` with some thing
+* ``my_expectation`` is what I think will happen when I call a :ref:`function<what is a function?>` or :ref:`object<classes>` in a :ref:`module<ModuleNotFoundError>` with some thing
+
+I use :ref:`the identity function<test_identity_function>` in this chapter to show how something is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<ModuleNotFoundError>`
 
 ----
 
