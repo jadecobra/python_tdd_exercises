@@ -1,3 +1,5 @@
+.. include:: links.rst
+
 #################################################################################
 dot notation
 #################################################################################
@@ -8,7 +10,7 @@ You have made it through the end of the book. Do you understand the following?
 AClass.attribute
 *********************************************************************************
 
-in the same file
+in the same file_
 
 .. code-block:: python
 
@@ -31,7 +33,7 @@ or
 AClass.method()
 *********************************************************************************
 
-in the same file
+in the same file_
 
 .. code-block:: python
 
@@ -46,7 +48,7 @@ in the same file
 AClass.method(*args, **kwargs)
 *********************************************************************************
 
-in the same file
+in the same file_
 
 .. code-block:: python
 
