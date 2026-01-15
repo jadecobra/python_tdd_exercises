@@ -16,6 +16,8 @@ CapWords
 
 :ref:`Class<what is a class?>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized
 
+----
+
 *********************************************************************************
 names
 *********************************************************************************
@@ -40,7 +42,7 @@ names
 
 for more details see the :PEP:`Python Style Guide <8>`
 
-.. _conventions_comments:
+----
 
 *********************************************************************************
 comments
@@ -52,7 +54,7 @@ Comments are represented by the hashtag or pound before the thing that is commen
 
   # This is a comment
 
-.. _conventions_enclosures:
+----
 
 *********************************************************************************
 enclosures
@@ -72,7 +74,7 @@ Enclosures must be closed once open, which means they happen in pairs for exampl
 
 The `Integrated Development Environment (IDE)`_ takes care of this
 
-.. _conventions_quotes:
+----
 
 *********************************************************************************
 quotes
@@ -96,6 +98,8 @@ Quotes represent strings_ and can be single, double, triple single or triple dou
   triple double quotes
   '''
 
+----
+
 .. _conventions_tuples:
 
 *********************************************************************************
@@ -107,6 +111,8 @@ A tuple_ is a sequence or container of objects_ that cannot be changed later, it
 .. code-block:: python
 
   (1, 2.5, "three", [4, 'five'])
+
+----
 
 .. _conventions_lists:
 
@@ -120,7 +126,8 @@ A :ref:`list/array<lists>` is a sequence or container of objects_ that can be ch
 
   [1, 2.5, 'three', (4, "five")]
 
-.. _conventions_sets:
+
+----
 
 *********************************************************************************
 sets
@@ -132,7 +139,7 @@ A set_ is a container of objects_ that have no duplicates, and are represented w
 
   {1, 2.5, 'three', (4, 'five')}
 
-.. _conventions_dictionaries:
+----
 
 *********************************************************************************
 dictionaries/mappings
