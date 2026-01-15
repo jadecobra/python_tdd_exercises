@@ -1516,10 +1516,11 @@ you know
 * :ref:`how to raise TypeError<TypeError>`
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<list comprehensions>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 
-:ref:`Would you like to put it all together in Classes?<what is a class?>`
+I keep editing ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` when I start a new project. I want to automate the process so that I call the program and it does all the steps for me when I give it the name of the project, so I never have to edit the file again.
+
+:ref:`Would you like to know how to make a Python Test Driven Development environment automatically with variables?<make_tdd_automatically_w_variables>`
 
 ----
 
