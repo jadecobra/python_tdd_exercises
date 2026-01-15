@@ -1101,7 +1101,7 @@ the test passes
     :emphasize-lines: 2
 
             self.assertFalse(0.0)
-            self.assertTrue(str())
+            self.assertFalse(str())
 
         def test_what_is_true(self):
 
