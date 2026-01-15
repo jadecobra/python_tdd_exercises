@@ -1520,7 +1520,7 @@ you know
 
 I keep editing ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` when I start a new project. I want to automate the process so that I call the program and it does all the steps for me when I give it the name of the project, so I never have to edit the file again.
 
-:ref:`Would you like to know how to make a Python Test Driven Development environment automatically with variables?<make_tdd_automatically_w_variables>`
+:ref:`Would you like to know how to make a Python Test Driven Development environment automatically with variables?<how to make a test driven development environment part 3>`
 
 ----
 
