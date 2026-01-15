@@ -94,23 +94,23 @@ table of contents
   videos <https://www.youtube.com/@JacobItegboje>
   conventions
   setup<how_to/setup/index>
-  make TDD environment 1<how_to/make_tdd_manually/index>
-  exceptions/AssertionError
-  functions
+  make TDD project<how_to/make_tdd_manually/index>
+  what is an assertion?<exceptions/AssertionError>
+  what is a function?<functions>
   pass values<how_to/pass_values>
   data_structures/none
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
-  calculator<how_to/calculator_i>
-  make TDD environment 2<how_to/make_tdd_automatically/index>
+  make a calculator<how_to/calculator_i>
+  make TDD project automatically<how_to/make_tdd_automatically/index>
   handling Exceptions<how_to/exception_handling/index>
   exceptions/type_error/index
   data_structures/lists/index
   data_structures/dictionaries/index
   make a person<how_to/make_person>
   classes
-  exceptions/AttributeError
-  exceptions/ModuleNotFoundError
+  what causes AttributeError?<exceptions/AttributeError>
+  what is a module?<exceptions/ModuleNotFoundError>
 
   dot_notation
   exceptions/index
@@ -120,7 +120,7 @@ table of contents
   all the code in this book<catalog_of_code>
   questions the book answers<reviews>
   learning_models
-  what people think of this<review>
+  what do people think of this?<review>
   hatches
 
 ----
