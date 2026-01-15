@@ -309,7 +309,7 @@ I now add some tests for attributes since I know how to define a class for attri
 
         a_boolean = None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 * I redefine the attribute to make the test pass
 
@@ -440,7 +440,7 @@ the terminal_ shows :ref:`AttributeError`
         def method_a():
             return None
 
-  the terminal_ shows :ref:`AssertionError`. Progress!
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`. Progress!
 
 * I then change the value that ``method_a`` returns to match the expectation of the test
 
@@ -551,7 +551,7 @@ I add a test to ``test_classes.py``
         []
     )
 
-the terminal_ shows :ref:`AssertionError` as the expected and real values do not match
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` as the expected and real values do not match
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -811,7 +811,7 @@ the terminal_ shows :ref:`AttributeError`
         def __init__(self):
             pass
 
-* I remove the ``sex`` attribute the terminal_ shows :ref:`AssertionError`
+* I remove the ``sex`` attribute the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I make the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
 
   .. code-block:: python
@@ -824,7 +824,7 @@ the terminal_ shows :ref:`AttributeError`
         def __init__(self, sex='M'):
             self.sex = sex
 
-  the terminal_ still shows :ref:`AssertionError`
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
 * when I remove the ``__init__`` :ref:`method<what is a function?>` from the ``Girl`` class
 
@@ -942,7 +942,7 @@ what is next?
 you have gone through a lot of things and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

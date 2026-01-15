@@ -154,7 +154,7 @@ start the project
 
       ./makePythonTdd.ps1
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 10
@@ -210,7 +210,7 @@ I change ``test_failure`` to ``test_making_a_dictionary`` then add an assertion_
       def test_making_a_dictionary(self):
           self.assertEqual(dict(), None)
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -289,7 +289,7 @@ the test passes. These are two ways to make an empty dictionary_
             self.assertEqual(dict(), {})
             self.assertEqual(dict(key='value'), {})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -331,7 +331,7 @@ I add a test to see if I can use :ref:`None<what is None?>` as a :ref:`key in a 
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -376,7 +376,7 @@ I add a test to see if I can use a :ref:`boolean<what are booleans?>` as a :ref:
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -412,7 +412,7 @@ I add an :ref:`assertion<what is an assertion?>` for the :ref:`other boolean<tes
               {False: 'boom'}
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -459,7 +459,7 @@ I add a failing test to see if I can use a number as a :ref:`key in a dictionary
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -498,7 +498,7 @@ I want to see if I can use a float_ as a :ref:`key in a dictionary<test_keys_of_
               {0: 'boom'}
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -547,7 +547,7 @@ I add a test to see if I can use a tuple_ (anything in parentheses (``()``), sep
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -760,7 +760,7 @@ I add a new test with the `dir built-in function`_ to see the :ref:`attributes<A
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -929,7 +929,7 @@ test_clear_empties_a_dictionary
             self.assertIsNone(a_dictionary.clear())
             self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1019,7 +1019,7 @@ I add a test for the `copy method`_
   'copy',
   'fromkeys',
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1044,7 +1044,7 @@ I add the value to the :ref:`assertion<what is an assertion?>`
               {'key': 'value'}
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1171,7 +1171,7 @@ the terminal_ shows :ref:`TypeError`
 
             self.assertIsNone(a_dictionary.fromkeys((0, 1)))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1192,7 +1192,7 @@ the terminal_ shows :ref:`TypeError`
                 {0: None, 1: None}
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1229,7 +1229,7 @@ the terminal_ shows :ref:`TypeError`
             )
             self.assertEqual(a_dictionary, {})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1302,7 +1302,7 @@ the terminal_ shows :ref:`TypeError`
                 {0: None, 1: None}
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1429,7 +1429,7 @@ the test passes
 
             self.assertIsNone(a_dictionary.get(0, 'default'))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1448,7 +1448,7 @@ the test passes
                 'default'
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1499,7 +1499,7 @@ the test passes
 
     'get',
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1598,7 +1598,7 @@ I add the next test from the TODO list
 
   'items',
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1651,7 +1651,7 @@ the terminal_ shows :ref:`AssertionError`
                 [('key', 'value')]
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1668,7 +1668,7 @@ the terminal_ shows :ref:`AssertionError`
                 [('key', 'value')]
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1714,7 +1714,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 
     'items',
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1814,7 +1814,7 @@ I add a new test
 
   'keys',
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1860,7 +1860,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
                 ['key']
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1877,7 +1877,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
                 ['key']
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1916,7 +1916,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
                 ['key']
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2102,7 +2102,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
             self.assertIsNone(a_dictionary.pop('not_in_dictionary', 'default'))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2119,7 +2119,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
                 'default'
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2153,7 +2153,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
                 'default'
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2186,7 +2186,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
             )
             self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2268,7 +2268,7 @@ I add a failing test for the next item in the TODO list
 
   'popitem',
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -2292,7 +2292,7 @@ I add the value from the terminal_ as the expectation
               ('key', 'value')
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -2327,7 +2327,7 @@ the test passes
             )
             self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2362,7 +2362,7 @@ the test passes
             )
             self.assertEqual(a_dictionary, {})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2381,7 +2381,7 @@ the test passes
                 ('keyN', [0, 1, 2, 'n'])
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2498,7 +2498,7 @@ the test passes
 
             self.assertIsNone(a_dictionary.setdefault(0, 'default'))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2516,7 +2516,7 @@ the test passes
                 'default'
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2547,7 +2547,7 @@ the test passes
             )
             self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2588,7 +2588,7 @@ the test passes
                 'default'
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2634,7 +2634,7 @@ the test passes
                 }
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2753,7 +2753,7 @@ test_update_a_dictionary
             self.assertIsNone(a_dictionary.update())
             self.assertEqual(a_dictionary, {})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2820,7 +2820,7 @@ the test passes
 
             self.assertIsNone(a_dictionary.update(new_key=[0, 1, 2, 'n']))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2855,7 +2855,7 @@ the test passes
             self.assertIsNone(a_dictionary.update(key='updated value'))
             self.assertEqual(
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2894,7 +2894,7 @@ the test passes
             ))
             self.assertEqual(
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2997,7 +2997,7 @@ I add a test for the last :ref:`method<what is a function?>` in my TODO list
 
   'values'
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -3039,7 +3039,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
                 ['value']
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3056,7 +3056,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
                 ['value']
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3095,7 +3095,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
                 ['value']
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3190,7 +3190,7 @@ I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -3257,7 +3257,7 @@ the test passes
                 ''
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3324,7 +3324,7 @@ the test passes
                 ''
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3509,7 +3509,7 @@ what is next?
 you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

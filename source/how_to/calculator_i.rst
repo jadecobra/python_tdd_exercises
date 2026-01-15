@@ -271,7 +271,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -345,7 +345,7 @@ test_addition
                 1
             )
 
-  - the `assertEqual method`_ from :ref:`AssertionError` checks if the 2 things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the `assertEqual method`_ from :ref:`AssertionError<what causes AssertionError?>` checks if the 2 things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
   - the explanation I like from what I have seen is that one of them is
 
     - ``reality`` - ``src.calculator.add(0, 1)``, and the other is
@@ -475,7 +475,7 @@ test_addition
     def add(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -520,7 +520,7 @@ To show the problem with the :ref:`function<what is a function?>`, I add another
                 2
             )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -541,7 +541,7 @@ the :ref:`function<what is a function?>` returns ``1``, the test expects ``2``
     def add(first_input, second_input):
         return 2
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -579,7 +579,7 @@ I add another test to make sure the :ref:`function<what is a function?>` works f
               2
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -621,7 +621,7 @@ I add another test with a different number for the first input
               3
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -663,7 +663,7 @@ I add a test with bigger numbers
               4
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -705,7 +705,7 @@ I add another test, this time with a negative number
               912468
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -747,7 +747,7 @@ I try another test with two negative numbers
               -1
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -789,7 +789,7 @@ I add another test with floats_ (binary floating point decimal numbers)
                 -5
             )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -991,7 +991,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
                 first_number+first_number
             )
 
-  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ :ref:`AssertionError` with random values that look like this
+  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
   .. code-block:: shell
 
@@ -1280,9 +1280,9 @@ the terminal_ shows :ref:`AttributeError`
     def subtract(first_input, second_input):
         return None
 
-  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError` with random values that look like this
+  I hit save (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1730,7 +1730,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def subtract(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError` with random numbers
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers
 
   .. code-block:: shell
 
@@ -1745,7 +1745,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def subtract(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError` with random numbers that look like this
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: shell
 
@@ -1796,7 +1796,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def multiply(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1811,7 +1811,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def multiply(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError` with random numbers that look like this
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: shell
 
@@ -1845,7 +1845,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def divide(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError` with random numbers that look like this
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: shell
 
@@ -1940,7 +1940,7 @@ I wrote the following tests for a program_ that can :ref:`add<test_addition>`, :
 
 I also saw the following :ref:`Exceptions<errors>`
 
-* :ref:`AssertionError`
+* :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
@@ -1963,7 +1963,7 @@ what is next?
 you know a lot
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

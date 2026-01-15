@@ -24,7 +24,7 @@ I use `assert methods`_ to compare None_ with the other Python_ :ref:`data struc
 preview
 *********************************************************************************
 
-In :ref:`AssertionError`, I used assertIsNone_ and assertIsNotNone_ to :ref:`test_assertion_error_w_none`, that experiment showed that
+In :ref:`AssertionError<what causes AssertionError?>`, I used assertIsNone_ and assertIsNotNone_ to :ref:`test_assertion_error_w_none`, that experiment showed that
 
 * :ref:`True<test_what_is_true>` is NOT None_ and NOT equal to None_
 * :ref:`False<test_what_is_false>` is NOT None_ and NOT equal to None_
@@ -301,7 +301,7 @@ requirements
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_none.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_none.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_none.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -346,7 +346,7 @@ We need a way to represent nothing or the absence of a value. In mathematics we 
         def test_what_is_none(self):
             self.assertIsNotNone(None)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -385,7 +385,7 @@ I add a note
   # Exceptions seen
   # AssertionError
 
-so far this is a repetition of :ref:`AssertionError`
+so far this is a repetition of :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
@@ -411,7 +411,7 @@ I add another failing test to see if None_ is a :ref:`boolean<what are booleans?
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -445,7 +445,7 @@ the test passes
     # False is NOT None
     # None is None
 
-  Still a repetition of what I learned in :ref:`AssertionError`
+  Still a repetition of what I learned in :ref:`AssertionError<what causes AssertionError?>`
 
 * I add another failing :ref:`assertion<what is an assertion?>` for the other :ref:`boolean<what are booleans?>`
 
@@ -456,7 +456,7 @@ the test passes
             self.assertIsNotNone(False)
             self.assertIsNone(True)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -503,7 +503,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
   - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question ``is False NOT a child of the bool class?``. Okay, this is new
   - bool_ is the :ref:`class<what is a class?>` for :ref:`booleans<what are booleans?>`
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -530,7 +530,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
             self.assertIsInstance(False, bool)
             self.assertNotIsInstance(True, bool)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -557,7 +557,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
             self.assertIsInstance(True, bool)
             self.assertIsInstance(None, bool)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -629,7 +629,7 @@ I add a test to see if None_ is an integer_ (a whole number)
       def test_is_none_an_integer(self):
           self.assertIsNone(-1)
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -662,7 +662,7 @@ the test passes
             self.assertIsNotNone(-1)
             self.assertIsNone(0)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -687,7 +687,7 @@ the test passes
             self.assertIsNotNone(0)
             self.assertIsNone(1)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -712,7 +712,7 @@ the test passes
             self.assertIsNotNone(1)
             self.assertNotIsInstance(-1, int)
 
-  int_ is the :ref:`class<what is a class?>` for integers_, the terminal_ shows :ref:`AssertionError`
+  int_ is the :ref:`class<what is a class?>` for integers_, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -739,7 +739,7 @@ the test passes
             self.assertIsInstance(-1, int)
             self.assertNotIsInstance(0, int)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -766,7 +766,7 @@ the test passes
             self.assertIsInstance(0, int)
             self.assertNotIsInstance(1, int)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -793,7 +793,7 @@ the test passes
             self.assertIsInstance(1, int)
             self.assertIsInstance(None, int)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -854,7 +854,7 @@ I add a test to see if None_ is a float_ (floating point decimal number)
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -887,7 +887,7 @@ the test passes
             self.assertIsNotNone(-0.1)
             self.assertIsNone(0.0)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -912,7 +912,7 @@ the test passes
             self.assertIsNotNone(0.0)
             self.assertIsNone(0.1)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -937,7 +937,7 @@ the test passes
             self.assertIsNotNone(0.1)
             self.assertNotIsInstance(-0.1, float)
 
-  float_ is the :ref:`class<what is a class?>` for floating point numbers. The terminal_ shows :ref:`AssertionError`
+  float_ is the :ref:`class<what is a class?>` for floating point numbers. The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -964,7 +964,7 @@ the test passes
             self.assertIsInstance(-0.1, float)
             self.assertNotIsInstance(0.0, float)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -991,7 +991,7 @@ the test passes
             self.assertIsInstance(0.0, float)
             self.assertNotIsInstance(0.1, float)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1018,7 +1018,7 @@ the test passes
             self.assertIsInstance(0.1, float)
             self.assertIsInstance(None, float)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1080,7 +1080,7 @@ I add a test to see if None_ is a string_ (anything inside :ref:`quotes`)
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1115,7 +1115,7 @@ the test passes
             self.assertIsNotNone('')
             self.assertIsNone("text")
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1140,7 +1140,7 @@ the test passes
             self.assertIsNotNone("text")
             self.assertNotIsInstance('', str)
 
-  str_ is the :ref:`class<what is a class?>` for strings_. The terminal_ shows :ref:`AssertionError`
+  str_ is the :ref:`class<what is a class?>` for strings_. The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1167,7 +1167,7 @@ the test passes
             self.assertIsInstance('', str)
             self.assertNotIsInstance("text", str)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1201,7 +1201,7 @@ the test passes
             self.assertIsInstance("text", str)
             self.assertIsInstance(None, str)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1262,7 +1262,7 @@ I add a test to see if None_ is a tuple_ (anything in parentheses (``()``)), pro
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1295,7 +1295,7 @@ the test passes
             self.assertIsNotNone(())
             self.assertIsNone((1, 2, 3, 'n'))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1320,7 +1320,7 @@ the test passes
             self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertNotIsInstance((), tuple)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1347,7 +1347,7 @@ the test passes
             self.assertIsInstance((), tuple)
             self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1374,7 +1374,7 @@ the test passes
             self.assertIsInstance((1, 2, 3, 'n'), tuple)
             self.assertIsInstance(None, tuple)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1438,7 +1438,7 @@ I add a new test to see if None_ is a :ref:`list<lists>` (anything in square bra
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1471,7 +1471,7 @@ the test passes
             self.assertIsNotNone([])
             self.assertIsNone([1, 2, 3, 'n'])
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1496,7 +1496,7 @@ the test passes
             self.assertIsNotNone([1, 2, 3, 'n'])
             self.assertNotIsInstance([], list)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1523,7 +1523,7 @@ the test passes
             self.assertIsInstance([], list)
             self.assertNotIsInstance([1, 2, 3, 'n'], list)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1550,7 +1550,7 @@ the test passes
         self.assertIsInstance([1, 2, 3, 'n'], list)
         self.assertIsInstance(None, list)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1610,7 +1610,7 @@ I want to see if None_ is a set_
       def test_is_none_a_set(self):
           self.assertIsNone(set())
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1643,7 +1643,7 @@ the test passes
             self.assertIsNotNone(set())
             self.assertIsNone({1, 2, 3, 'n'})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1668,7 +1668,7 @@ the test passes
             self.assertIsNotNone({1, 2, 3, 'n'})
             self.assertNotIsInstance({1, 2, 3, 'n'}, set)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1693,7 +1693,7 @@ the test passes
             self.assertIsInstance({1, 2, 3, 'n'}, set)
             self.assertIsInstance(None, set)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1756,7 +1756,7 @@ One last test to see if None_ is a :ref:`dictionary<dictionaries>`
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1791,7 +1791,7 @@ the test passes
             self.assertIsNotNone(dict())
             self.assertIsNone({'key': 'value'})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1816,7 +1816,7 @@ the test passes
             self.assertIsNotNone({'key': 'value'})
             self.assertNotIsInstance({}, dict)
 
-  :ref:`dict<dictionaries>` is the :ref:`class<what is a class?>` for :ref:`dictionaries`, the terminal_ shows :ref:`AssertionError`
+  :ref:`dict<dictionaries>` is the :ref:`class<what is a class?>` for :ref:`dictionaries`, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1843,7 +1843,7 @@ the test passes
             self.assertIsInstance({}, dict)
             self.assertNotIsInstance({'key': 'value'}, dict)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1870,7 +1870,7 @@ the test passes
             self.assertIsInstance({'key': 'value'}, dict)
             self.assertIsInstance(None, dict)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1953,7 +1953,7 @@ close the project
 review
 *********************************************************************************
 
-I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were say_hellod in :ref:`AssertionError`
+I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were say_hellod in :ref:`AssertionError<what causes AssertionError?>`
 
 * assertIsNone_ - which tests if the thing in parentheses is None_
 * assertIsNotNone_ - which tests if the thing in parentheses is not None_
@@ -1994,7 +1994,7 @@ what is next?
 so far you have covered
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>` and
 * :ref:`what is None and NOT None and learned new assert methods<what is None?>`

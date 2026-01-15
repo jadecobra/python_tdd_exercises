@@ -290,7 +290,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_booleans.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_booleans.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -336,7 +336,7 @@ test_what_is_false
         def test_what_is_false(self):
             self.assertNotIsInstance(False, bool)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -395,7 +395,7 @@ I add another failing test
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -447,7 +447,7 @@ the terminal_ shows :ref:`AssertionError`
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -521,7 +521,7 @@ the terminal_ shows :ref:`AssertionError`
             self.assertFalse(False)
             self.assertFalse(True)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -589,7 +589,7 @@ the terminal_ shows :ref:`AssertionError`
     # Exceptions seen
     # AssertionError
 
-All of this is still a repetition of what I did with :ref:`AssertionError`. Next up, I test the other Python_ basic data types_ to see which of are False_ or True_
+All of this is still a repetition of what I did with :ref:`AssertionError<what causes AssertionError?>`. Next up, I test the other Python_ basic data types_ to see which of are False_ or True_
 
 * is :ref:`None<what is None?>` False_ or True_?
 * is an integer_ False_ or True_?
@@ -621,7 +621,7 @@ I add a line in ``test_what_is_true`` to test if :ref:`None<what is None?>` is T
           self.assertTrue(True)
           self.assertTrue(None)
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -705,7 +705,7 @@ I add a failing line ``test_what_is_false`` to see if an integer_ (a whole numbe
 
       def test_what_is_true(self):
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -756,7 +756,7 @@ the test passes
             self.assertTrue(-1)
             self.assertTrue(0)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -799,7 +799,7 @@ the test passes
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -873,7 +873,7 @@ I add a line to test if floats_ (binary floating point decimal numbers) are Fals
 
       def test_what_is_true(self):
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -919,7 +919,7 @@ the terminal_ shows :ref:`AssertionError`
             self.assertTrue(-0.1)
             self.assertTrue(0.0)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -964,7 +964,7 @@ the terminal_ shows :ref:`AssertionError`
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1068,7 +1068,7 @@ I add a failing line to ``test_what_is_true`` to test if a string_ (anything in 
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1117,7 +1117,7 @@ the test passes
             self.assertFalse(str())
             self.assertFalse('text')
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1205,7 +1205,7 @@ I add a line to ``test_what_is_true`` to see if a tuple_ (anything in parenthese
 
   # NOTES
 
-The terminal_ shows :ref:`AssertionError`
+The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1257,7 +1257,7 @@ the empty tuple_ is not True_
             self.assertFalse(tuple())
             self.assertFalse((1, 2, 3, 'n'))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1339,7 +1339,7 @@ I add a line to test if a :ref:`list<lists>` (anything in square brackets (``[]`
       self.assertTrue((1, 2, 3, 'n'))
       self.assertTrue(list())
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1388,7 +1388,7 @@ the empty :ref:`list<lists>` is NOT True_
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1477,7 +1477,7 @@ I add a line to in ``test_what_is_true`` to see if a set_ is True_
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1525,7 +1525,7 @@ the empty set_ is NOT True_
 
         def test_what_is_true(self):
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1617,7 +1617,7 @@ I add a line to ``test_what_is_true`` to test if a :ref:`dictionary <dictionarie
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1674,7 +1674,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
             self.assertFalse(dict())
             self.assertFalse({'key': 'value'})
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1830,7 +1830,7 @@ what is next?
 you now know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what None is<what is None?>`

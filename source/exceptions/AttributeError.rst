@@ -63,7 +63,7 @@ start the project
 
       ./makePythonTdd.ps1 attribute_error
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -903,7 +903,7 @@ I ran tests for AttributeError_ with
 
 I also saw the following :ref:`Exceptions<errors>`
 
-* :ref:`AssertionError`
+* :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`TypeError` and
 * SyntaxError_
@@ -925,7 +925,7 @@ what is next?
 you made it to the end and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

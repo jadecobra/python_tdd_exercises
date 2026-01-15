@@ -106,7 +106,7 @@ I add a test to see what happens when I send a :ref:`list<lists>` as input
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -148,7 +148,7 @@ the test passes
                 'BAP!!!'
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -209,7 +209,7 @@ how to multiply a list
                 'BOOM!!!'
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -228,7 +228,7 @@ how to multiply a list
                 error_message
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -274,7 +274,7 @@ how to multiply a list
                 'BOOM!!!'
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -548,7 +548,7 @@ I add a new test to use the :ref:`index of the items in the list<test_index_retu
 
     # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -590,7 +590,7 @@ the test passes
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -624,7 +624,7 @@ the test passes
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -658,7 +658,7 @@ the test passes
                 self.random_first_number-self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -692,7 +692,7 @@ the test passes
                 self.random_first_number-self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -726,7 +726,7 @@ the test passes
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -760,7 +760,7 @@ the test passes
                 self.random_first_number/self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -794,7 +794,7 @@ the test passes
                 self.random_first_number+self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1037,7 +1037,7 @@ what is next?
 you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what None is<what is None?>`

@@ -681,7 +681,7 @@ how to change the name of a file
 
     python3 -m unittest
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 9
@@ -707,8 +707,8 @@ how to change the name of a file
 
   - ``FAILED (failures=1)`` the number of failures
   - ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-  - ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
-  - ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError`
+  - ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError<what causes AssertionError?>` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  - ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError<what causes AssertionError?>`
   - ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
   - ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
   - ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
@@ -759,7 +759,7 @@ the test passes! The terminal_ shows
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError` in ``test_magic.py`` in the :ref:`editor<2 editors>`
+Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError<what causes AssertionError?>` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
 .. code-block:: python
   :linenos:
@@ -1167,7 +1167,7 @@ how to open the test file in the editor from the terminal
 
           self.assertFalse(True)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 10
@@ -1377,7 +1377,7 @@ how to view all the commands I typed in a terminal
 what is next?
 *************************************************************************************
 
-You have seen me make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Linux_, Windows_ with `Windows Subsystem for Linux`_ or MacOS_ computers. :ref:`Would you like to test AssertionError next?<AssertionError>`
+You have seen me make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Linux_, Windows_ with `Windows Subsystem for Linux`_ or MacOS_ computers. :ref:`Would you like to test AssertionError next?<what causes AssertionError?>`
 
 -----
 

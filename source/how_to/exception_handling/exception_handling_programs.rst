@@ -194,7 +194,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
             with self.assertRaises(Exception):
                 src.exceptions.raise_exception()
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -223,7 +223,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
             ):
                 src.exceptions.raise_exception()
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -338,7 +338,7 @@ the terminal_ shows :ref:`AttributeError`
     def an_exception_handler(the_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -431,7 +431,7 @@ the terminal_ shows :ref:`AttributeError`
 
     does_not_raise_exception = None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block::
 
@@ -452,7 +452,7 @@ the terminal_ shows :ref:`AttributeError`
         return the_input
         return 'failed'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -508,7 +508,7 @@ the terminal_ shows :ref:`AttributeError`
         return a_function()
         return 'failed'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -538,7 +538,7 @@ how to use try...except...else
         except Exception:
             return 'failed'
 
-  ``test_catching_failure`` passes. The terminal_ still shows :ref:`AssertionError` for ``test_catching_success``
+  ``test_catching_failure`` passes. The terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` for ``test_catching_success``
 
   .. code-block:: shell
 
@@ -560,7 +560,7 @@ how to use try...except...else
         else:
             return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -727,7 +727,7 @@ what is next?
 you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

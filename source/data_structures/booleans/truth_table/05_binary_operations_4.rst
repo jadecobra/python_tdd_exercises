@@ -149,7 +149,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
             self.assertFalse(src.truth_table.negate_second(True, True))
             self.assertTrue(src.truth_table.negate_second(True, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -201,7 +201,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
             self.assertFalse(src.truth_table.negate_second(False, True))
             self.assertTrue(src.truth_table.negate_second(False, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -358,7 +358,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when t
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -537,7 +537,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
             self.assertTrue(src.truth_table.logical_equality(True, True))
             self.assertFalse(src.truth_table.logical_equality(True, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -570,7 +570,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
             self.assertFalse(src.truth_table.logical_equality(True, False))
             self.assertFalse(src.truth_table.logical_equality(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -877,7 +877,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
             self.assertTrue(src.truth_table.material_implication(True, True))
             self.assertFalse(src.truth_table.material_implication(True, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 

@@ -167,7 +167,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
             self.assertFalse(src.truth_table.negate_first(True, False))
             self.assertTrue(src.truth_table.negate_first(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -233,7 +233,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -466,7 +466,7 @@ the test passes.
             self.assertFalse(src.truth_table.logical_nand(True, True))
             self.assertTrue(src.truth_table.logical_nand(True, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -528,7 +528,7 @@ the test passes.
             self.assertTrue(src.truth_table.logical_nand(True, False))
             self.assertTrue(src.truth_table.logical_nand(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -601,7 +601,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1052,7 +1052,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 

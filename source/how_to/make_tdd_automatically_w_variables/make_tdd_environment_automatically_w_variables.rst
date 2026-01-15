@@ -307,7 +307,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
-  the computer makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`assertion_error<AssertionError>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError`
+  the computer makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`assertion_error<what causes AssertionError?>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
@@ -329,7 +329,7 @@ code from the chapter
 
 ----
 
-:ref:`Would you like to test AssertionError?<AssertionError>`
+:ref:`Would you like to test AssertionError?<what causes AssertionError?>`
 
 -----
 

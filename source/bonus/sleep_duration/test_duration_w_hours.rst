@@ -38,7 +38,7 @@ requirements
 
       ./makePythonTdd.ps1 sleep_duration
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -144,7 +144,7 @@ requirements
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -274,7 +274,7 @@ requirements
         ('08:00', '07:00')
     )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -318,7 +318,7 @@ requirements
         wake_time = '09:00'
         sleep_time = '07:00'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -341,7 +341,7 @@ requirements
         wake_time = '09:00'
         sleep_time = '06:00'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -390,7 +390,7 @@ requirements
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it shows have a ``0`` in front of it, for example ``01``. The terminal_ shows :ref:`AssertionError`
+  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it shows have a ``0`` in front of it, for example ``01``. The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -489,7 +489,7 @@ I add a failing test for the `str.split`_ :ref:`method<what is a function?>` to 
   def test_duration_w_hours(self):
   ...
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -521,7 +521,7 @@ the test passes
         '01:23'.split(), ['01', '23']
     )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -552,7 +552,7 @@ the test passes
         )
     )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -589,7 +589,7 @@ the test passes
     self.assertEqual(split, ['01', '23'])
     self.assertEqual(split[0], 0)
 
-  the terminal_ shows :ref:`AssertionError` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
 
   .. code-block:: shell
 
@@ -610,7 +610,7 @@ the test passes
     self.assertEqual(split[0], '01')
     self.assertEqual(split[1], '01')
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -639,7 +639,7 @@ the test passes
         )
     )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -676,7 +676,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     def test_duration_w_hours(self):
     ...
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -696,7 +696,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     self.assertEqual(int('23'), 1)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -727,7 +727,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -763,7 +763,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -856,7 +856,7 @@ The challenge is to write a program_ that calculates the difference between a gi
 
 I also saw the following :ref:`Exceptions<errors>`
 
-* :ref:`AssertionError`
+* :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`

@@ -7,7 +7,7 @@
 .. _AssertionError: https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError
 
 #################################################################################
-AssertionError
+what is an assertion?
 #################################################################################
 
 .. raw:: html
@@ -16,11 +16,11 @@ AssertionError
 
 ----
 
-*********************************************************************************
-what is an assertion?
-*********************************************************************************
+An `assertion`_ or `assert statement` is a command to the computer saying "DO NOT CONTINUE, UNLESS THIS STATEMENT IS TRUE"
 
-I can use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before it continues. I can also use them to test how the program_ behaves, for example when it is given inputs.
+I can use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before the computer can continue running the program.
+
+I can also use them to test how the program_ behaves, for example when it is given inputs.
 
 Assertions_ can help catch things that break passing tests when I add new lines of code. They also help me answer 2 questions
 
@@ -66,46 +66,46 @@ start the project
 * I open a terminal_
 * then I `make a directory`_ for the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir assertion_error
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
 * I `change directory`_ to the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd assertion_error
 
   the terminal_ shows I am now in the ``assertion_error`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/assertion_error
 
 * I `make a folder`_ for the source code
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir src
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/assertion_error
 
 * I use touch_ to make an empty file_ for the program_ in the ``src`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch src/assertion_error.py
@@ -114,20 +114,20 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/assertion_error.py`` instead of ``touch src/assertion_error.py``
 
-    .. code-block:: shell
+    .. code-block:: Powershell
       :emphasize-lines: 1
 
       New-Item src/assertion_error.py
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/assertion_error
 
 * I `make a directory`_ for the tests
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir tests
@@ -138,7 +138,7 @@ start the project
 
   .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch tests/__init__.py
@@ -147,7 +147,7 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
 
-    .. code-block:: shell
+    .. code-block:: Powershell
       :emphasize-lines: 1
 
       New-Item tests/__init__.py
@@ -156,7 +156,7 @@ start the project
 
 * I make an empty file_ for the actual test
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch tests/test_assertion_error.py
@@ -165,7 +165,7 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_assertion_error.py`` instead of ``touch tests/test_assertion_error.py``
 
-    .. code-block:: shell
+    .. code-block:: Powershell
       :emphasize-lines: 1
 
       New-Item tests/test_assertion_error.py
@@ -176,7 +176,7 @@ start the project
 
   .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       code tests/test_assertion_error.py
@@ -199,7 +199,7 @@ start the project
 
 * I make a `virtual environment`_ in the terminal_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 -m venv .venv
@@ -208,7 +208,7 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       python -m venv .venv
@@ -217,7 +217,7 @@ start the project
 
 * I activate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     source .venv/bin/activate
@@ -226,20 +226,20 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       .venv/scripts/activate.ps1
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     (.venv) .../pumping_python/assertion_error
 
 * I upgrade the `Python package manager (pip)`_ to the latest version
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 -m pip install --upgrade pip
@@ -248,7 +248,7 @@ start the project
 
 * I make a ``requirements.txt`` file for the `Python programs`_ my project needs
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     echo "pytest-watch" > requirements.txt
@@ -257,7 +257,7 @@ start the project
 
 * I use pip_ to use the requirements file_ to install ``pytest-watch``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 -m pip install --requirement requirements.txt
@@ -266,7 +266,7 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
 
-    .. code-block:: shell
+    .. code-block:: PowerShell
       :emphasize-lines: 1
 
       python -m pip install --requirement requirements.txt
@@ -275,14 +275,14 @@ start the project
 
 * I use `pytest-watch`_ to run the test
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     pytest-watch
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 8, 10
 
     ================================ FAILURES ================================
@@ -301,7 +301,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 7
@@ -375,9 +375,9 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
 
             assert 1 + 1 == 11
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     E       assert (1 + 1) == 11
 
@@ -422,9 +422,9 @@ the test passes
             assert 1 + 1 == 2
             assert '1' + '1' == '2'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 3-4
 
     E       AssertionError: assert '11' == '2'
@@ -474,9 +474,9 @@ the test passes
 
             assert 'I am' + ' a programmer' == '11'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 3-4
 
     E       AssertionError: assert 'I am a programmer' == '11'
@@ -497,9 +497,11 @@ the test passes
 
   the test passes
 
----------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 what causes AssertionError?
----------------------------------------------------------------------------------
+*********************************************************************************
 
 AssertionError_ happens when the statement after assert_ is :ref:`False<test_what_is_false>`. It was in :ref:`how to make a python test driven development environment` with :ref:`the first failing test<test_failure>`
 
@@ -513,7 +515,7 @@ which is like this `assertion`_
 
   assert True is False
 
-I think of an `assert statement`_ as a command to the computer saying "DO NOT CONTINUE, UNLESS THIS STATEMENT IS TRUE". The statement above can be thought of as "DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
+The statement above is like telling the computer "DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
 ----
 
@@ -583,9 +585,9 @@ I add another failing line with the `assertIsNotNone method`_ which checks if th
           assert None is None
           self.assertIsNotNone(None)
 
-the terminal_ shows :ref:`AssertionError` with a more descriptive message
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with a more descriptive message
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: unexpectedly None
 
@@ -658,7 +660,7 @@ how to test if something is None
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False is not None
 
@@ -726,7 +728,7 @@ how to test if something is None
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: True is not None
 
@@ -829,7 +831,7 @@ how to test if something is False
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: True is not false
 
@@ -932,7 +934,7 @@ how to test if something is True
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False is not true
 
@@ -1056,7 +1058,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None == None
 
@@ -1133,7 +1135,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False != None
 
@@ -1206,7 +1208,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: True != None
 
@@ -1280,7 +1282,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: True != False
 
@@ -1353,7 +1355,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False == False
 
@@ -1426,7 +1428,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False != True
 
@@ -1499,7 +1501,7 @@ how to test if two things are Equal
 
   the terminal_ shows AssertionError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: True == True
 
@@ -1572,9 +1574,9 @@ how to test if two things are Equal
 
         def test_assertion_error_w_none(self):
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 2 != 3
 
@@ -1603,7 +1605,7 @@ how to test if two things are Equal
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: '11' != '2'
 
@@ -1630,9 +1632,9 @@ how to test if two things are Equal
 
         def test_assertion_error_w_none(self):
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 'I am a programmer' != '11'
 
@@ -1658,27 +1660,27 @@ close the project
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/assertion_error
 
 * I `change directory`_ to the parent of ``assertion_error``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
@@ -1723,7 +1725,7 @@ what is next?
 Congratulations! You now know
 
 * :ref:`how to make a test driven development environment any time you want<how to make a test driven development environment part 1>` and
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 
 :ref:`Would you like to test functions?<what is a function?>`
 

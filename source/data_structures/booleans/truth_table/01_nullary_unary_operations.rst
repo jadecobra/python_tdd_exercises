@@ -101,7 +101,7 @@ I have not added a definition for ``logical_true`` to ``truth_table.py`` in the 
     def logical_true():
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -170,7 +170,7 @@ I have not added a definition for ``logical_false`` to ``truth_table.py``, I onl
     def logical_false():
         return True
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -284,7 +284,7 @@ I need to add a definition for it
     def logical_identity(the_input):
         return False
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -315,7 +315,7 @@ I need to add a definition for it
             self.assertTrue(src.truth_table.logical_identity(True))
             self.assertFalse(src.truth_table.logical_identity(False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -330,7 +330,7 @@ I need to add a definition for it
     def logical_identity(the_input):
         return False
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -400,7 +400,7 @@ I add a definition for the :ref:`function<what is a function?>` in ``truth_table
   def logical_negation(the_input):
       return the_input
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -431,7 +431,7 @@ the test passes
             self.assertFalse(src.truth_table.logical_negation(True))
             self.assertTrue(src.truth_table.logical_negation(False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -446,7 +446,7 @@ the test passes
     def logical_negation(the_input):
         return True
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -463,7 +463,7 @@ the test passes
     def logical_negation(the_input):
         return the_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 

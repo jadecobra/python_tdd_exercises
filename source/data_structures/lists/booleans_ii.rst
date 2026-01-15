@@ -95,7 +95,7 @@ I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`
           self.assertNotIsInstance(False, int)
           self.assertFalse(False)
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -149,7 +149,7 @@ the test passes
             self.assertIsInstance(False, float)
             self.assertFalse(False)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -194,7 +194,7 @@ the test passes
             self.assertNotIsInstance(True, int)
             self.assertTrue(True)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -237,7 +237,7 @@ the test passes
             self.assertIsInstance(True, float)
             self.assertTrue(True)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -393,7 +393,7 @@ the test passes
                 with self.subTest(i=item):
                     self.assertFalse(item)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -470,7 +470,7 @@ the test passes
                 with self.subTest(i=item):
                     self.assertTrue(item)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -502,7 +502,7 @@ I add a new test to find out the value of :ref:`False<test_what_is_false>`
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -537,7 +537,7 @@ the test passes
             self.assertEqual(False+1, 1)
             self.assertEqual(False-1, 1)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -564,7 +564,7 @@ the test passes
             self.assertEqual(False-1, -1)
             self.assertEqual(False*1, -1)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -653,7 +653,7 @@ I add a new test to find out the value of :ref:`True<test_what_is_true>`
 
   # NOTES
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -688,7 +688,7 @@ the test passes
             self.assertEqual(True+1, 2)
             self.assertEqual(True-1, 2)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -715,7 +715,7 @@ the test passes
             self.assertEqual(True-1, 0)
             self.assertEqual(True*1, 0)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -742,7 +742,7 @@ the test passes
             self.assertEqual(True*1, 1)
             self.assertEqual(True/2, 1)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -840,7 +840,7 @@ what is next?
 you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

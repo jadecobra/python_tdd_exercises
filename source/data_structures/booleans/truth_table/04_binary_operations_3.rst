@@ -148,7 +148,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
             self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -210,7 +210,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
             self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -541,7 +541,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
             self.assertFalse(src.truth_table.material_non_implication(True, True))
             self.assertTrue(src.truth_table.material_non_implication(True, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -781,7 +781,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
             self.assertTrue(src.truth_table.project_first(True, False))
             self.assertFalse(src.truth_table.project_first(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -847,7 +847,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1017,7 +1017,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
             self.assertTrue(src.truth_table.converse_implication(True, False))
             self.assertFalse(src.truth_table.converse_implication(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 

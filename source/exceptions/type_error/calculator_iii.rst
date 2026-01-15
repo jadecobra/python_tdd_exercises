@@ -254,7 +254,7 @@ I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -388,7 +388,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
             with self.assertRaises(TypeError):
                 src.calculator.divide('1', '1')
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -574,7 +574,7 @@ the test passes
         except TypeError:
             return 'Excuse me?! Numbers only! try again...'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -634,7 +634,7 @@ the test passes
         except TypeError:
             return 'Excuse me?! Numbers only! try again...'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -693,7 +693,7 @@ the test passes
         except TypeError:
             return 'Excuse me?! Numbers only! try again...'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1357,7 +1357,7 @@ what is next?
 you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

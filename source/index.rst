@@ -33,7 +33,7 @@ who is this for?
 * If you have been telling yourself, "I will learn Python_ some day", today is the day, this is for you
 * If you already use Python_ but do not know any of the :ref:`Exceptions<errors>` below, this is for you
 
-  - :ref:`AssertionError`
+  - :ref:`AssertionError<what causes AssertionError?>`
   - :ref:`AttributeError`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`
@@ -65,7 +65,7 @@ Here are a few things I would do if I were in your shoes to make the process mor
 ----
 
 *********************************************************************************
-join a HATCH with Jacob
+join a HATCH with other Python Pumpers
 *********************************************************************************
 
 If you would like to work with me. I teach this course everyday from Monday to Friday in groups of 5. You can :ref:`sign up for the 8-week course here<join a HATCH>`
@@ -94,7 +94,7 @@ table of contents
   videos <https://www.youtube.com/@JacobItegboje>
   conventions
   setup<how_to/setup/index>
-  make TDD project<how_to/make_tdd_manually/index>
+  make TDD project pt 1<how_to/make_tdd_manually/index>
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions>
   pass values<how_to/pass_values>
@@ -102,11 +102,12 @@ table of contents
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   make a calculator<how_to/calculator_i>
-  make TDD project automatically<how_to/make_tdd_automatically/index>
+  make TDD project pt 2<how_to/make_tdd_automatically/index>
   handling Exceptions<how_to/exception_handling/index>
   exceptions/type_error/index
   data_structures/lists/index
   data_structures/dictionaries/index
+  make TDD project pt 3<how_to/make_tdd_automatically_w_variables/index>
   make a person<how_to/make_person>
   classes
   what causes AttributeError?<exceptions/AttributeError>

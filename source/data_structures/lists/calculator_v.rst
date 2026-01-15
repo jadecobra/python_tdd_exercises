@@ -156,7 +156,7 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_m
               error_message
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -179,7 +179,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
                     error_message
                 )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -206,7 +206,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
                 error_message
             )
 
-  the terminal_ shows :ref:`AssertionError` for two of the :ref:`data types<data structures>` I am testing
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for two of the :ref:`data types<data structures>` I am testing
 
   .. code-block:: python
     :emphasize-lines: 3, 4
@@ -304,7 +304,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
                         'BOOM!!!'
                     )
 
-  the terminal_ shows :ref:`AssertionError` for all the :ref:`data types<data structures>` in the test
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all the :ref:`data types<data structures>` in the test
 
   .. code-block:: python
 
@@ -338,7 +338,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
                         'BOOM!!!'
                     )
 
-  the terminal_ shows :ref:`AssertionError` for each :ref:`data type<data structures>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for each :ref:`data type<data structures>`
 
   .. code-block:: python
 
@@ -372,7 +372,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
                         'BOOM!!!'
                     )
 
-  the terminal_ shows :ref:`AssertionError` for all the :ref:`data types<data structures>` I am testing
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all the :ref:`data types<data structures>` I am testing
 
   .. code-block:: python
 
@@ -478,7 +478,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
     def test_calculator_w_list_items(self):
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -585,7 +585,7 @@ what is next?
 you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

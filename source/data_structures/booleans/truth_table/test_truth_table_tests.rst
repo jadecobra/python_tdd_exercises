@@ -156,7 +156,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def tautology(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -190,7 +190,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def project_second(first_input, second_input):
         return True
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -205,7 +205,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def project_second(first_input, second_input):
         return False
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -220,7 +220,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def project_second(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -254,7 +254,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def project_first(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -290,7 +290,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def negate_second(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -306,7 +306,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -344,7 +344,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def negate_first(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -360,7 +360,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -396,7 +396,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def material_non_implication(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -412,7 +412,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -429,7 +429,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -466,7 +466,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def material_implication(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -501,7 +501,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def logical_nor(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -517,7 +517,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -534,7 +534,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -571,7 +571,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def logical_nand(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -606,7 +606,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def logical_equality(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -622,7 +622,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -658,7 +658,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def logical_disjunction(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -693,7 +693,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def logical_conjunction(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -709,7 +709,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -726,7 +726,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -763,7 +763,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def exclusive_disjunction(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -779,7 +779,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -815,7 +815,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def converse_non_implication(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -831,7 +831,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -848,7 +848,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -885,7 +885,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def converse_implication(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -920,7 +920,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def contradiction(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -936,7 +936,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -953,7 +953,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -971,7 +971,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1024,7 +1024,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def logical_negation(first_input):
         return first_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1058,7 +1058,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def logical_identity(the_input):
         return not the_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1107,7 +1107,7 @@ I want to write a program_ that makes the tests in ``test_truth_table.py`` pass 
     def logical_true():
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1606,7 +1606,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         return not first_input and second_input
         return (first_input, second_input) != (True, False)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2042,7 +2042,7 @@ what is next?
 you now know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

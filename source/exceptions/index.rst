@@ -36,7 +36,7 @@ Here are some questions you can answer after going through these chapters
 
 * :ref:`What is an Exception?<how to handle Exceptions (Errors)>`
 * :ref:`What is Exception handling?<how to handle Exceptions (Errors)>`
-* :ref:`What causes AssertionError?<AssertionError>`
+* :ref:`What causes AssertionError?<what causes AssertionError?>`
 * :ref:`What causes AttributeError?<AttributeError>`
 * :ref:`What causes TypeError?<TypeError>`
 * :ref:`What causes ModuleNotFoundError?<ModuleNotFoundError>`

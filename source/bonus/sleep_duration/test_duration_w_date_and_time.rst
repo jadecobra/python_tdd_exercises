@@ -193,7 +193,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
                 (wake_time, sleep_time)
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -292,13 +292,13 @@ because my `import statement`_ is different from `the example in the documentati
           ''
       )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
   AssertionError: datetime.datetime(2006, 11, 21, 16, 30) != ''
 
-I copy the value from the left side of the :ref:`AssertionError` and paste it as the expected value in the test
+I copy the value from the left side of the :ref:`AssertionError<what causes AssertionError?>` and paste it as the expected value in the test
 
 .. code-block:: python
 
@@ -343,7 +343,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
             )
         )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -436,7 +436,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
                 )
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -568,7 +568,7 @@ then add a :ref:`variable<test_attribute_error_w_variables>` for a random timest
           )
       )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -665,7 +665,7 @@ and the test is still green
                 )
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -723,7 +723,7 @@ and the test is still green
                 )
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -878,7 +878,7 @@ The challenge was to write a program_ that calculates the difference between a g
 
 I also saw the following :ref:`Exceptions<errors>`
 
-* :ref:`AssertionError`
+* :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`

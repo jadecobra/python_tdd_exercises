@@ -318,7 +318,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_functions.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -631,7 +631,7 @@ I add the function_ to ``functions.py``
   def constant():
       return None
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -750,7 +750,7 @@ The requirement for the :ref:`identity function<test_logical_identity>` is that 
         self.assertIsNone(src.functions.identity(None))
         self.assertEqual(src.functions.identity(object), object)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -857,7 +857,7 @@ the terminal_ shows :ref:`AttributeError`
     def w_positional_arguments(first_input, last_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -897,7 +897,7 @@ the terminal_ shows :ref:`AttributeError`
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1009,7 +1009,7 @@ the terminal_ shows :ref:`AttributeError`
     def w_keyword_arguments(first_input, last_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1065,7 +1065,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
                 ('last', 'first')
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1105,7 +1105,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
               ('first', 'last')
           )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1256,7 +1256,7 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
     def w_positional_and_keyword_arguments(first_input, last_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1419,7 +1419,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1656,7 +1656,7 @@ I want to see what happens when I call the function_ with ONLY :ref:`positional 
               ()
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1847,7 +1847,7 @@ what is next?
 you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>` and
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>` and
 * :ref:`how to write functions<what is a function?>`
 
 :ref:`Would you like to test how to pass values from tests to functions with assert methods?<how to pass values>`

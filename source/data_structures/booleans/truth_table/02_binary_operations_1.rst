@@ -303,7 +303,7 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
             self.assertFalse(src.truth_table.contradiction(True, False))
             self.assertFalse(src.truth_table.contradiction(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -408,7 +408,7 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
             self.assertTrue(src.truth_table.logical_conjunction(True, True))
             self.assertFalse(src.truth_table.logical_conjunction(True, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -424,7 +424,7 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
         return False
         return True
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -478,7 +478,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
             self.assertFalse(src.truth_table.logical_conjunction(True, False))
             self.assertFalse(src.truth_table.logical_conjunction(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -520,7 +520,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -862,7 +862,7 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
             self.assertTrue(src.truth_table.project_second(True, True))
             self.assertFalse(src.truth_table.project_second(True, False))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -913,7 +913,7 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1048,7 +1048,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
             self.assertFalse(src.truth_table.converse_non_implication(True, False))
             self.assertTrue(src.truth_table.converse_non_implication(False, True))
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 

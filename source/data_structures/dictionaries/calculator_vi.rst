@@ -107,7 +107,7 @@ I add a new test to use a dictionary_ to test the :ref:`calculator<how to make a
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
             not_two_numbers = [0, 1, 2]
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -149,7 +149,7 @@ the test passes
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -183,7 +183,7 @@ the test passes
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -217,7 +217,7 @@ the test passes
                 self.random_first_number-self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -298,7 +298,7 @@ the test passes
                 self.random_first_number-self.random_first_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -332,7 +332,7 @@ the test passes
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -366,7 +366,7 @@ the test passes
                 self.random_first_number/self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -400,7 +400,7 @@ the test passes
                 self.random_first_number+self.random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -476,7 +476,7 @@ the test passes
                         error_message
                     )
 
-  the terminal_ shows :ref:`AssertionError` for every case in the :ref:`iterable<what is an iterable?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for every case in the :ref:`iterable<what is an iterable?>`
 
   .. code-block:: python
 
@@ -616,7 +616,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-  the terminal_ shows :ref:`AssertionError` for the 4 arithmetic operations
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for the 4 arithmetic operations
 
   .. code-block:: python
 
@@ -812,7 +812,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-  the terminal_ shows :ref:`AssertionError`:
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`:
 
   .. code-block:: python
 
@@ -1305,7 +1305,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
         def test_calculator_w_dictionary_items(self):
 
-  the terminal_ shows :ref:`AssertionError` for the 4 operations
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
 
   .. code-block:: python
 
@@ -1375,7 +1375,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
-  the terminal_ shows :ref:`AssertionError` for the 4 operations
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
 
   .. code-block:: python
 
@@ -1525,7 +1525,7 @@ what is next?
 you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

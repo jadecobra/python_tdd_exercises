@@ -273,7 +273,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -448,7 +448,7 @@ there is no definition for ``src`` in ``test_telephone.py``
     def text(the_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -496,7 +496,7 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_passing_a_string``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -517,7 +517,7 @@ I change the `return statement`_ in ``telephone.py`` to match
   def text(the_input):
       return 'I received: yes'
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -579,7 +579,7 @@ I add a failing test in ``test_telephone.py`` to see what happens when I pass a 
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -625,7 +625,7 @@ the test passes
                 "I received: <class 'object'>"
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -678,7 +678,7 @@ I add a new failing test for :ref:`None<what is None?>` in ``test_telephone.py``
               "I received: 'None'"
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -733,7 +733,7 @@ I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assert
               "I received: 'True'"
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -773,7 +773,7 @@ the terminal_ shows :ref:`AssertionError`
                 "I received: 'False'"
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -827,7 +827,7 @@ I add a test for an integer_ (a whole number)
               "I received: '1234'"
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -882,7 +882,7 @@ I add a test for a float_ (binary floating point decimal numbers)
               "I received: '1.234'"
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -937,7 +937,7 @@ I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
               "I received: '(1, 2, 3, n)'"
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -989,7 +989,7 @@ I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), sepa
               "I received: '[1, 2, 3, n]'"
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1044,7 +1044,7 @@ I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly br
               "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
           )
 
-the terminal_ shows :ref:`AssertionError`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1146,7 +1146,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     def text(the_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1161,7 +1161,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     def text(the_input):
         return 'I received: None'
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1177,7 +1177,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
         return the_input
         return 'I received: None'
 
-  the test summary info shows that every test has :ref:`AssertionError`
+  the test summary info shows that every test has :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :force:
@@ -1261,7 +1261,7 @@ Here are the tests I ran to see what happens when I pass Python_ basic :ref:`dat
 
 I also saw the following :ref:`Exceptions<errors>`
 
-* :ref:`AssertionError`
+* :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
@@ -1283,7 +1283,7 @@ what is next?
 you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>` and
 * :ref:`how to pass values from tests to functions<how to pass values>`
 

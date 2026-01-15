@@ -52,7 +52,7 @@ start the project
 
       ./makePythonTdd.ps1 person
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -350,7 +350,7 @@ test_takes_keyword_arguments
                 dict()
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -389,7 +389,7 @@ test_takes_keyword_arguments
                 )
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -451,7 +451,7 @@ test_takes_keyword_arguments
                 )
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -493,7 +493,7 @@ test_takes_keyword_arguments
                 )
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -553,7 +553,7 @@ test_takes_keyword_arguments
 
             ...
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -600,7 +600,7 @@ test_takes_keyword_arguments
                 )
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -666,7 +666,7 @@ test_takes_keyword_arguments
 
             ...
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -760,7 +760,7 @@ test_takes_keyword_arguments
       def this_year():
           return datetime.datetime.today().year
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -849,7 +849,7 @@ test_takes_keyword_arguments
 
             ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError`
+  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -935,7 +935,7 @@ test_takes_keyword_arguments
 
             ...
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError`
+  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -978,7 +978,7 @@ test_takes_keyword_arguments
 
             ...
 
-  I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError`
+  I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1025,7 +1025,7 @@ test_takes_keyword_arguments
 
             ...
 
-  I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError`
+  I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1266,7 +1266,7 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1395,7 +1395,7 @@ I want to see what happens when I try to make a person without a value for the `
             )
         )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1856,7 +1856,7 @@ test_person_tests
         ):
         return None
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1879,7 +1879,7 @@ test_person_tests
             'age': 20,
         }
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1907,7 +1907,7 @@ test_person_tests
             'age': 20,
         }
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1935,7 +1935,7 @@ test_person_tests
             'age': 20,
         }
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1963,7 +1963,7 @@ test_person_tests
             'age': 20,
         }
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1991,7 +1991,7 @@ test_person_tests
             'age': year_of_birth,
         }
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2083,7 +2083,7 @@ test_person_tests
             sex=None, year_of_birth=None,
         ):
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2103,7 +2103,7 @@ test_person_tests
         ):
         ...
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2177,7 +2177,7 @@ I ran tests to make a :ref:`function<what is a function?>` that takes in :ref:`k
 
 I also saw the following :ref:`Exceptions<errors>`
 
-* :ref:`AssertionError`
+* :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
@@ -2201,7 +2201,7 @@ what is next?
 you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
-* :ref:`how to raise AssertionError with assert methods<AssertionError>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`

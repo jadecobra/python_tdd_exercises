@@ -103,7 +103,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     def get_datetime(the_input):
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -145,7 +145,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
       def get_datetime(the_input):
       ...
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -160,7 +160,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def get_datetime(the_input):
         return the_input
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -243,7 +243,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     def duration(sleep_time, wake_time):
 
-  the terminal_ shows this :ref:`AssertionError`
+  the terminal_ shows this :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -267,7 +267,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def duration(sleep_time, wake_time):
         raise ValueError(sleep_time, wake_time)
 
-* When I raise ValueError_ in ``duration`` the terminal_ shows :ref:`AssertionError` because the message in the ValueError_ does not match the expectation of the test
+* When I raise ValueError_ in ``duration`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: shell
 
@@ -285,7 +285,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     ValueError: ('6471/03/10 05:04', '7883/06/01 02:38')
     ValueError: ('7370/08/12 21:34', '7937/03/27 01:58')
 
-  which does not tell me anything so I comment it out to get the other message I got with the :ref:`AssertionError`, I can raise ValueError_ again or try to return the inputs
+  which does not tell me anything so I comment it out to get the other message I got with the :ref:`AssertionError<what causes AssertionError?>`, I can raise ValueError_ again or try to return the inputs
 
 * When I get the error with the message about ``wake_time`` being earlier than ``sleep_time``, I copy it from the terminal_ to change the message of the ValueError_
 
@@ -329,7 +329,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
             'sleep_time: "8720/08/18 01:02"'
         )
 
-  the terminal_ shows :ref:`AssertionError` because the timestamps in the ValueError_ message are not the same
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` because the timestamps in the ValueError_ message are not the same
 
   .. code-block:: shell
 
@@ -356,7 +356,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
         #    'sleep_time: "8720/08/18 01:02"'
         # )
 
-  the terminal_ shows the :ref:`AssertionError` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError` that the ValueError_ messages do not match
+  the terminal_ shows the :ref:`AssertionError<what causes AssertionError?>` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError<what causes AssertionError?>` that the ValueError_ messages do not match
 
 * I :ref:`interpolate<how to pass values>` ``wake_time`` and ``sleep_time`` in the message
 
@@ -404,7 +404,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     else:
         return (sleep_time, wake_time)
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -454,7 +454,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
               - get_datetime(wake_time)
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -482,7 +482,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
               - get_datetime(wake_time)
             )
 
-  the terminal_ shows :ref:`AssertionError`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -538,7 +538,7 @@ The challenge was to write a program_ that makes the tests in ``test_sleep_durat
 * :ref:`AttributeError`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`TypeError`
-* :ref:`AssertionError`
+* :ref:`AssertionError<what causes AssertionError?>`
 * SyntaxError_
 * ValueError_
 
