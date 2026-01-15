@@ -25,6 +25,8 @@ or
       def __init__(self, attribute):
           self.attribute = attribute
 
+----
+
 *********************************************************************************
 AClass.method()
 *********************************************************************************
@@ -38,6 +40,8 @@ in the same file
       def method(self):
           return None
 
+----
+
 *********************************************************************************
 AClass.method(*args, **kwargs)
 *********************************************************************************
@@ -50,6 +54,8 @@ in the same file
 
       def method(self, *args, **kwargs):
           return None
+
+----
 
 *********************************************************************************
 module.attribute
@@ -68,6 +74,8 @@ module.attribute
     import module
 
     module.attribute
+
+----
 
 *********************************************************************************
 module.function()
@@ -88,6 +96,8 @@ module.function()
 
     module.function()
 
+----
+
 *********************************************************************************
 module.function(*args, **kwargs)
 *********************************************************************************
@@ -105,6 +115,8 @@ module.function(*args, **kwargs)
     import module
 
     module.function(*args, **kwargs)
+
+----
 
 *********************************************************************************
 module.AClass.attribute
@@ -145,6 +157,8 @@ module.AClass.attribute
     instance = module.AClass(attribute='Attribute')
     instance.attribute
 
+----
+
 *********************************************************************************
 module.AClass.method()
 *********************************************************************************
@@ -166,6 +180,8 @@ module.AClass.method()
 
     instance = module.AClass()
     instance.method()
+
+----
 
 *********************************************************************************
 module.AClass.method(*args, **kwargs)
