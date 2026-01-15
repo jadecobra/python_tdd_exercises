@@ -78,7 +78,6 @@ open the project
 test_calculator_w_dictionary_items
 *********************************************************************************
 
-
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1426,7 +1425,29 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
-  still
+  still green
+
+----
+
+*********************************************************************************
+test squares
+*********************************************************************************
+
+Since I am using a :ref:`dictionary<what is a dictionary?>` adding a new test is easy. I want to add a test for using the :ref:`calculator<how to make a calculator part 1>` to square numbers like I did in :ref:`test_making_a_list_w_processes`
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+=================================================================================
+:refactor:`REFACTOR`: make it better
+=================================================================================
+
+
 
 I think it is time to take nap. That was a lot.
 
