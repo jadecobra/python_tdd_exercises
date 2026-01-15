@@ -4,41 +4,11 @@
 
 .. include:: ../../links.rst
 
-.. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _append: more_on_lists_
-.. _append method: more_on_lists_
-.. _count: more_on_lists_
-.. _count method: more_on_lists_
-.. _clear: more_on_lists_
-.. _clear method: more_on_lists_
-.. _copy: more_on_lists_
-.. _copy method: more_on_lists_
-.. _pop: more_on_lists_
-.. _pop method:
-.. _insert: more_on_lists_
-.. _insert method: more_on_lists_
-.. _index: more_on_lists_
-.. _index method: more_on_lists_
-.. _remove:
-.. _remove method: more_on_lists_
-.. _reverse: more_on_lists_
-.. _reverse method: more_on_lists_
-.. _sort: more_on_lists_
-.. _sort method: more_on_lists_
-.. _extend: more_on_lists_
-.. _extend method: more_on_lists_
-.. _list: https://docs.python.org/3/library/stdtypes.html#list
-.. _lists: list_
-.. _slicing: https://docs.python.org/3/reference/expressions.html#slicings
-.. _IndexError: https://docs.python.org/3/library/exceptions.html#IndexError
-.. _iterable: https://docs.python.org/3/glossary.html#term-iterable
-
-
 #################################################################################
 how to make a calculator part 4
 #################################################################################
 
-I want to practice using lists_ with the :ref:`calculator project<how to make a calculator part 1>`
+I want to practice using :ref:`lists` with the :ref:`calculator project<how to make a calculator part 1>`
 
 ----
 
@@ -108,13 +78,13 @@ open the project
 test_calculator_sends_message_when_input_is_a_list
 *********************************************************************************
 
-I want to see what happens when I send a list_ as input to the :ref:`calculator program<how to make a calculator part 1>`, will it send a message or raise :ref:`TypeError`?
+I want to see what happens when I send a :ref:`list<lists>` as input to the :ref:`calculator program<how to make a calculator part 1>`, will it send a message or raise :ref:`TypeError`?
 
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test to see what happens when I send a list_ as input
+I add a test to see what happens when I send a :ref:`list<lists>` as input
 
 .. code-block:: python
   :lineno-start: 88
@@ -550,7 +520,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
 test_calculator_w_list_items
 *********************************************************************************
 
-I can use a list_ to test the :ref:`calculator functions<how to make a calculator part 1>` as long as its items are numbers
+I can use a :ref:`list<lists>` to test the :ref:`calculator functions<how to make a calculator part 1>` as long as its items are numbers
 
 =================================================================================
 :red:`RED`: make it fail
@@ -849,7 +819,7 @@ the test passes
 test_calculator_raises_type_error_when_given_more_than_two_inputs
 *********************************************************************************
 
-It is important to note that the star expression always gives the items from the list in order, and I cannot use a list_ that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator part 1>` since they only take 2 inputs
+It is important to note that the star expression always gives the items from the list in order, and I cannot use a :ref:`list<lists>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator part 1>` since they only take 2 inputs
 
 =================================================================================
 :red:`RED`: make it fail
@@ -902,7 +872,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add a failing line for :ref:`division<test_division>` with the new list_
+* I add a failing line for :ref:`division<test_division>` with the new :ref:`list<lists>`
 
   .. code-block:: python
     :lineno-start: 151

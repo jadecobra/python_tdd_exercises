@@ -54,6 +54,10 @@
 .. _def: https://docs.python.org/3/reference/lexical_analysis.html#keywords
 .. _dir: https://docs.python.org/3/library/functions.html#dir
 .. _dir built-in function: dir_
+.. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+.. _dict class: dict_
+.. _dictionary: dict_
+.. _dictionaries: dictionary_
 .. _file: https://grokipedia.com/page/File
 .. _files: file_
 .. _folder: directory_

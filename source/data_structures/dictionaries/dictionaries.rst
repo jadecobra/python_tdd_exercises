@@ -25,12 +25,6 @@
 .. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
 .. _update method: update_
 .. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
-.. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-.. _dict class: dict_
-.. _dictionary: dict_
-.. _dictionaries: dictionary_
-
-.. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
 #################################################################################
 dictionaries

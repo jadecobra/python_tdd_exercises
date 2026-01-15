@@ -4,20 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. _list comprehension: https://docs.python.org/3/glossary.html#term-list-comprehension
-.. _list comprehensions: https://docs.python.org/3/glossary.html#term-list-comprehension
-.. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
-.. _range object: range_
-.. _filter: https://docs.python.org/3/library/functions.html#filter
-.. _filter object: filter_
-.. _filterfalse: https://docs.python.org/3/library/itertools.html#itertools.filterfalse
-.. _filterfalse method: filterfalse_
-.. _itertools module: https://docs.python.org/3/library/itertools.html
-.. _map: https://docs.python.org/3/library/functions.html#map
-.. _map object: map_
-.. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
-.. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
-
 #################################################################################
 how to make a calculator part 5
 #################################################################################
@@ -136,7 +122,7 @@ a better way to test the calculator with inputs that are NOT numbers
 
 I tested the :ref:`calculator functions<how to make a calculator part 1>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`booleans<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries`.
 
-Since I know how to use a `for loop`_ and `list comprehensions`_, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
+Since I know how to use a `for loop`_ and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
 
 =================================================================================
 :RED:`RED`: make it fail
@@ -466,7 +452,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the test is still green
 
-* I could also write the test with a `list comprehension`_, though it looks ugly
+* I could also write the test with a :ref:`list comprehension<list comprehensions>`, though it looks ugly
 
   .. code-block:: python
     :lineno-start: 84
@@ -566,7 +552,7 @@ I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what 
   - :ref:`transform the list with a process<test_making_a_list_w_processes>`
   - :ref:`transform and filter the list<test_making_a_list_w_processes_and_conditions>`
 
-I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with `list comprehensions`_ to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
+I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with :ref:`list comprehensions` to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
 
 I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of the following
 

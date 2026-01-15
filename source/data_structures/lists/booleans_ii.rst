@@ -4,22 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. _list comprehension: https://docs.python.org/3/glossary.html#term-list-comprehension
-.. _list comprehensions: https://docs.python.org/3/glossary.html#term-list-comprehension
-.. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
-.. _range object: range_
-.. _filter: https://docs.python.org/3/library/functions.html#filter
-.. _filter object: filter_
-.. _filterfalse: https://docs.python.org/3/library/itertools.html#itertools.filterfalse
-.. _filterfalse method: filterfalse_
-.. _itertools module: https://docs.python.org/3/library/itertools.html
-.. _map: https://docs.python.org/3/library/functions.html#map
-.. _map object: map_
-.. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests
-.. _subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
-.. _unittest.TestCase.subTest method: `subTest method`_
-.. _lambda function: https://docs.python.org/3/glossary.html#term-lambda
-
 #################################################################################
 booleans part 2
 #################################################################################

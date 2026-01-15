@@ -4,47 +4,17 @@
 
 .. include:: ../../links.rst
 
-.. _clear: https://docs.python.org/3/library/stdtypes.html#dict.clear
-.. _clear method: clear_
-.. _copy: https://docs.python.org/3/library/stdtypes.html#dict.copy
-.. _copy method: copy_
-.. _fromkeys: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
-.. _fromkeys method: fromkeys_
-.. _get: https://docs.python.org/3/library/stdtypes.html#dict.get
-.. _get method: get_
-.. _items: https://docs.python.org/3/library/stdtypes.html#dict.items
-.. _items method: items_
-.. _keys: https://docs.python.org/3/library/stdtypes.html#dict.keys
-.. _keys method: keys_
-.. _pop: https://docs.python.org/3/library/stdtypes.html#dict.pop
-.. _pop method: pop_
-.. _popitem: https://docs.python.org/3/library/stdtypes.html#dict.popitem
-.. _popitem method: popitem_
-.. _setdefault: https://docs.python.org/3/library/stdtypes.html#dict.setdefault
-.. _setdefault method: setdefault_
-.. _update: https://docs.python.org/3/library/stdtypes.html#dict.update
-.. _update method: update_
-.. _values: https://docs.python.org/3/library/stdtypes.html#dict.values
-.. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
-.. _dict class: dict_
-.. _dictionary: dict_
-.. _dictionaries: dictionary_
-
-.. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
-
 #################################################################################
 how to make a calculator part 6
 #################################################################################
 
-*********************************************************************************
-test_calculator_w_dictionary_items
-*********************************************************************************
-
 I can use a dictionary_ to test the :ref:`calculator functions<how to make a calculator part 1>` as long as its values are numbers
 
-=================================================================================
+----
+
+*********************************************************************************
 open the project
-=================================================================================
+*********************************************************************************
 
 * I `change directory`_ to the ``calculator`` folder_
 
@@ -70,7 +40,7 @@ open the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
 
-    .. code-block:: shell
+    .. code-block:: Powershell
       :emphasize-lines: 1
 
       .venv/scripts/activate.ps1
@@ -83,24 +53,31 @@ open the project
 
 * I use ``pytest-watch`` to run the tests
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+.. code-block:: shell
+  :emphasize-lines: 1
 
-    pytest-watch
+  pytest-watch
 
-  the terminal_ shows
+the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 4
+.. code-block:: shell
+  :emphasize-lines: 4
 
-    rootdir: .../pumping_python/calculator
-    collected 7 items
+  rootdir: .../pumping_python/calculator
+  collected 7 items
 
-    tests/test_calculator.py .......                                     [100%]
+  tests/test_calculator.py .......                                     [100%]
 
-    ============================ 7 passed in X.YZs =============================
+  ============================ 7 passed in X.YZs =============================
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+
+----
+
+*********************************************************************************
+test_calculator_w_dictionary_items
+*********************************************************************************
+
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1270,9 +1247,9 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
 ----
 
-=================================================================================
+*********************************************************************************
 close the project
-=================================================================================
+*********************************************************************************
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
@@ -1315,37 +1292,15 @@ close the project
 review
 *********************************************************************************
 
-Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<what is a class?>` can be used as values.
+I added the following tests for the :ref:`calculator program<how to make a calculator part 5>` with :ref:`dictionaries` which made testing the program easier
 
-I ran tests to show that I can make a dictionary_ with ``dict()`` or curly braces ``{}``, then I ran the following tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+* :ref:`test_calculator_w_dictionary_items`
+* :ref:`test_calculator_functions` which replaced
 
-* :ref:`test_making_a_dictionary_w_none_as_a_key`
-* :ref:`test_making_a_dictionary_w_a_boolean_as_a_key`
-* :ref:`test_making_a_dictionary_w_a_number_as_a_key`
-* :ref:`test_making_a_dictionary_w_a_tuple_as_a_key`
-* :ref:`test_making_a_dictionary_w_a_list_as_a_key`
-* :ref:`test_making_a_dictionary_w_a_set_as_a_key`
-* :ref:`test_making_a_dictionary_w_a_dictionary_as_a_key`
-
-I also ran these tests for the :ref:`methods of dictionaries<test_attributes_and_methods_of_dictionaries>`
-
-* :ref:`test_clear_empties_a_dictionary`
-* :ref:`test_copy_a_dictionary`
-* :ref:`test_fromkeys_makes_a_dictionary_from_an_iterable`
-* :ref:`test_get_value_of_a_key_in_a_dictionary`
-* :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionary`
-* :ref:`test_keys_of_a_dictionary`
-* :ref:`test_pop_removes_given_key_from_a_dictionary_and_returns_its_value`
-* :ref:`test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary`
-* :ref:`test_setdefault_adds_given_key_to_a_dictionary`
-* :ref:`test_update_a_dictionary`
-* :ref:`test_values_of_a_dictionary`
-
-and finally a test for the :ref:`Exception<errors>` to know when working with dictionaries_ - :ref:`KeyError<test_key_error>`
-
-----
-
-:ref:`How many questions can you answer after going through this chapter?<questions about dictionaries>`
+  - :ref:`test_addition`
+  - :ref:`test_subtraction`
+  - :ref:`test_multiplication`
+  - :ref:`test_division`
 
 ----
 
