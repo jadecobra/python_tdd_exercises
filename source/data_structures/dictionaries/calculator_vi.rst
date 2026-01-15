@@ -18,20 +18,20 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 
 * I activate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     source .venv/bin/activate
@@ -47,28 +47,28 @@ open the project
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     (.venv) .../pumping_python/calculator
 
 * I use ``pytest-watch`` to run the tests
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: python
+    :emphasize-lines: 1
 
-  pytest-watch
+    pytest-watch
 
-the terminal_ shows
+  the terminal_ shows
 
-.. code-block:: shell
-  :emphasize-lines: 4
+  .. code-block:: python
+    :emphasize-lines: 4
 
-  rootdir: .../pumping_python/calculator
-  collected 7 items
+    rootdir: .../pumping_python/calculator
+    collected 7 items
 
-  tests/test_calculator.py .......                                     [100%]
+    tests/test_calculator.py .......                                     [100%]
 
-  ============================ 7 passed in X.YZs =============================
+    ============================ 7 passed in X.YZs =============================
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
@@ -110,7 +110,7 @@ I add a new test to use a dictionary_ to test the :ref:`calculator<how to make a
 
 the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
 
@@ -152,7 +152,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
 
@@ -186,7 +186,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
 
@@ -220,7 +220,7 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 0.0 != FGH.IJKLMNOPQRSTU
 
@@ -262,7 +262,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 124
-    :emphasize-lines: 3-4, 8, 12, 16, 20
+    :emphasize-lines: 3-4, 9-10, 16-17, 23-24, 30-31
 
         def test_calculator_w_dictionary_items(self):
             two_numbers = {
@@ -271,19 +271,31 @@ the test passes
             }
 
             self.assertEqual(
-                src.calculator.add(two_numbers['first_input'], two_numbers['second_input']),
+                src.calculator.add(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
                 self.random_first_number+self.random_second_number
             )
             self.assertEqual(
-                src.calculator.divide(two_numbers['first_input'], two_numbers['second_input']),
+                src.calculator.divide(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
                 self.random_first_number/self.random_second_number
             )
             self.assertEqual(
-                src.calculator.multiply(two_numbers['second_input'], two_numbers['second_input']),
+                src.calculator.multiply(
+                    two_numbers['second_input'],
+                    two_numbers['second_input']
+                ),
                 self.random_second_number*self.random_second_number
             )
             self.assertEqual(
-                src.calculator.subtract(two_numbers['first_input'], two_numbers['first_input']),
+                src.calculator.subtract(
+                    two_numbers['first_input'],
+                    two_numbers['first_input']
+                ),
                 self.random_first_number-self.random_first_number
             )
 
@@ -296,7 +308,7 @@ the test passes
 * I change the calculation in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 146
+    :lineno-start: 158
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -309,7 +321,7 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 146
+    :lineno-start: 158
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -323,14 +335,14 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
 
 * I change the calculation
 
   .. code-block:: python
-    :lineno-start: 150
+    :lineno-start: 162
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -343,7 +355,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 150
+    :lineno-start: 162
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -357,14 +369,14 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
 
 * I change the calculation
 
   .. code-block:: python
-    :lineno-start: 154
+    :lineno-start: 166
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -377,7 +389,7 @@ the test passes
 * I add the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 154
+    :lineno-start: 166
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -391,14 +403,14 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
 
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 158
+    :lineno-start: 170
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -429,41 +441,41 @@ the test passes
 
   the test is still green
 
-* I can also use a dictionary_ with a `for loop`_ to make ``test_calculator_sends_message_when_input_is_not_a_number`` more complex and simpler
+* I can also use a dictionary_ with a `for loop`_ to make ``test_calculator_sends_message_when_input_is_not_a_number`` more complex and simpler at the same time
 
   .. code-block:: python
     :lineno-start: 58
     :emphasize-lines: 4-9, 21-25
 
-    def test_calculator_sends_message_when_input_is_not_a_number(self):
-        error_message = 'Excuse me?! Numbers only. Try again...'
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            error_message = 'Excuse me?! Numbers only. Try again...'
 
-        arithmetic = {
-            'add': src.calculator.add,
-            'subtract': src.calculator.subtract,
-            'multiply': src.calculator.multiply,
-            'divide': src.calculator.divide
-        }
+            arithmetic = {
+                'addition': src.calculator.add,
+                'subtraction': src.calculator.subtract,
+                'multiplication': src.calculator.multiply,
+                'division': src.calculator.divide,
+            }
 
-        for data in (
-            None,
-            True, False,
-            str(), 'text',
-            tuple(), (0, 1, 2, 'n'),
-            list(), [0, 1, 2, 'n'],
-            set(), {0, 1, 2, 'n'},
-            dict(), {'key': 'value'},
-        ):
-            with self.subTest(i=data):
-                for operation in arithmetic:
+            for data in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                with self.subTest(i=data):
+                    for operation in arithmetic:
+                        self.assertEqual(
+                            arithmetic[operation](data, a_random_number()),
+                            'BOOM!!!'
+                        )
                     self.assertEqual(
-                        arithmetic[operation](data, a_random_number),
-                        'BOOM'
+                        src.calculator.add(data, a_random_number()),
+                        error_message
                     )
-                self.assertEqual(
-                    src.calculator.add(data, a_random_number()),
-                    error_message
-                )
 
   the terminal_ shows :ref:`AssertionError` for every case in the :ref:`iterable<what is an iterable?>`
 
@@ -484,6 +496,28 @@ the test passes
     SUBFAILED(i={'key': 'value'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'Excuse me?! Numbers only. Try again...' != 'BOOM'
 
   the test works
+
+  .. NOTE::
+
+    ``arithmetic[operation](data, a_random_number())`` represents every operation in the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` and every item in the :ref:`iterable<what is an iterable?>` for example
+
+    .. code-block:: python
+
+      arithmetic['addition'](None, a_random_number())
+      arithmetic['subtraction']((0, 1, 2, 'n'), a_random_number())
+      arithmetic['division'](dict(), a_random_number())
+      arithmetic['multiplication']('text', a_random_number())
+
+    these 4 examples are translated by the computer to
+
+    .. code-block:: python
+
+      src.calculator.add(None, a_random_number())
+      src.calculator.subtract((0, 1, 2, 'n'), a_random_number())
+      src.calculator.divide(dict(), a_random_number())
+      src.calculator.multiply('text', a_random_number())
+
+    If I had to write a test for each operation and each data item, I would end up with a total of 52 tests. Too much
 
 * I change the expectation
 
@@ -509,10 +543,10 @@ the test passes
             error_message = 'Excuse me?! Numbers only. Try again...'
 
             arithmetic = {
-                'add': src.calculator.add,
-                'subtract': src.calculator.subtract,
-                'multiply': src.calculator.multiply,
-                'divide': src.calculator.divide
+                'addition': src.calculator.add,
+                'subtraction': src.calculator.subtract,
+                'multiplication': src.calculator.multiply,
+                'division': src.calculator.divide,
             }
 
             for data in (
@@ -527,13 +561,17 @@ the test passes
                 with self.subTest(i=data):
                     for operation in arithmetic:
                         self.assertEqual(
-                            arithmetic[operation](data, a_random_number),
+                            arithmetic[operation](data, a_random_number()),
                             error_message
                         )
+                    self.assertEqual(
+                        src.calculator.add(data, a_random_number()),
+                        error_message
+                    )
 
         def test_calculator_w_list_items(self):
 
-  this solution is not as easy to read as what was there before especially for someone new to Python_
+  this solution is not as easy to read as what was there before especially for someone new to Python_. :ref:`There has to be a better way<test_calculator_functions>`
 
 ----
 
@@ -541,7 +579,7 @@ the test passes
 test_calculator_functions
 *********************************************************************************
 
-I want to use a dictionary_ to write one test that covers all the :ref:`4 calculator functions<how to make a calculator part 1>`
+I want to use a dictionary_ to write one test that covers all the :ref:`4 calculator functions: addition, subtraction, division and multiplication<how to make a calculator part 1>`
 
 =================================================================================
 :green:`RED`: make it pass
@@ -550,29 +588,34 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 * I add a new test
 
   .. code-block:: python
-    :lineno-start: 173
-    :emphasize-lines: 4-10, 12-17
+    :lineno-start: 52
+    :emphasize-lines: 7-13, 15-23
 
-            with self.assertRaises(TypeError):
-                src.calculator.subtract(*not_two_numbers)
+            except ZeroDivisionError:
+                self.assertEqual(
+                    src.calculator.divide(self.random_first_number, 0),
+                    'undefined: I cannot divide by 0'
+                )
 
         def test_calculator_functions(self):
             arithmetic = {
                 'addition': src.calculator.add,
                 'subtraction': src.calculator.subtract,
                 'division': src.calculator.divide,
-                'multiplication': src.calculator.multiply
+                'multiplication': src.calculator.multiply,
             }
 
             for operation in arithmetic:
                 with self.subTest(operation=operation):
                     self.assertEqual(
-                        arithmetic[operation](self.random_first_number, self.random_second_number),
+                        arithmetic[operation](
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
                         'BOOM!!!'
                     )
 
-
-    # Exceptions seen
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
 
   the terminal_ shows :ref:`AssertionError` for the 4 arithmetic operations
 
@@ -590,64 +633,153 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 * I need a way to add the calculations for each operation to the :ref:`assertion<what is an assertion?>`. I add another dictionary_
 
   .. code-block:: python
-    :lineno-start: 181
-    :emphasize-lines: 3-8
+    :lineno-start: 63
+    :emphasize-lines: 3-16
 
-                'multiplication': src.calculator.multiply
+                'multiplication': src.calculator.multiply,
             }
-            data = {
-                'addition': self.random_first_number+self.random_second_number,
-                'subtraction': self.random_first_number-self.random_second_number,
-                'division': self.random_first_number/self.random_second_number,
-                'multiplication': self.random_first_number*self.random_second_number,
+            expectations = {
+                'addition': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtraction': (
+                    self.random_first_number-self.random_second_number
+                ),
+                'division': (
+                    self.random_first_number/self.random_second_number
+                ),
+                'multiplication': (
+                    self.random_first_number*self.random_second_number
+                )
             }
 
             for operation in arithmetic:
 
-* I use the new dictionary_ in the calculation in the :ref:`assertion<what is an assertion?>`
+* I use the new dictionary_ for the calculation in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 190
-    :emphasize-lines: 5
+    :lineno-start: 80
+    :emphasize-lines: 8
 
             for operation in arithmetic:
                 with self.subTest(operation=operation):
                     self.assertEqual(
-                        arithmetic[operation](self.random_first_number, self.random_second_number),
-                        data[operation]
+                        arithmetic[operation](
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        expectations[operation]
                     )
 
-  the test passes
+  the test passes.
+
+This test goes through every operation in the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` then calls the :ref:`function<what is a function?>` that is its :ref:`value<test_values_of_a_dictionary>` with ``self.random_first_number`` and ``self.random_second_number`` as input, and checks if the result is the :ref:`value<test_values_of_a_dictionary>` for the :ref:`key<test_keys_of_a_dictionary>` in the ``expectations`` :ref:`dictionary<what is a dictionary?>`
+
+* In other words
+
+  .. code-block:: python
+
+    arithmetic['addition'](self.first_random_number, self.second_random_number)
+    arithmetic['subtraction'](self.first_random_number, self.second_random_number)
+    arithmetic['division'](self.first_random_number, self.second_random_number)
+    arithmetic['multiplication'](self.first_random_number, self.second_random_number)
+
+* these four statements get translated by the computer to
+
+  .. code-block:: python
+
+    src.calculator.add(self.first_random_number, self.second_random_number)
+    src.calculator.subtract(self.first_random_number, self.second_random_number)
+    src.calculator.divide((self.first_random_number, self.second_random_number)
+    src.calculator.multiply(self.first_random_number, self.second_random_number)
+
+* then the computer checks if the results of the operations are the same as
+
+  .. code-block:: python
+
+    expectations['addition']
+    expectations['subtraction']
+    expectations['division']
+    expectations['multiplication']
+
+  which are
+
+  .. code-block:: python
+
+    self.random_first_number+self.random_second_number
+    self.random_first_number-self.random_second_number
+    self.random_first_number/self.random_second_number
+    self.random_first_number*self.random_second_number
+
+* the test is checking if these statements are equal
+
+  for :ref:`addition<test_addition>`
+
+  .. code-block:: python
+
+    src.calculator.add(self.first_random_number, self.second_random_number)
+    self.random_first_number+self.random_second_number
+
+  for :ref:`subtraction<test_subtraction>`
+
+  .. code-block:: python
+
+    src.calculator.subtract(self.first_random_number, self.second_random_number)
+    self.random_first_number-self.random_second_number
+
+  for :ref:`division<test_division>`
+
+  .. code-block:: python
+
+    src.calculator.divide((self.first_random_number, self.second_random_number)
+    self.random_first_number/self.random_second_number
+
+  for :ref:`multiplication<test_multiplication>`
+
+  .. code-block:: python
+
+    src.calculator.multiply(self.first_random_number, self.second_random_number)
+    self.random_first_number*self.random_second_number
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* the two dictionaries_ in this test have the same :ref:`keys<test_keys_of_a_dictionary>`. I put the dictionaries_ together
+* the two dictionaries_ in this test have the same :ref:`keys<test_keys_of_a_dictionary>`, I can put them together
 
   .. code-block:: python
-    :lineno-start: 187
-    :emphasize-lines: 4-21
+    :lineno-start: 75
+    :emphasize-lines: 6-31
 
-                'multiplication': self.random_first_number*self.random_second_number,
+                'multiplication': (
+                    self.random_first_number*self.random_second_number
+                )
             }
 
             arithmetic_tests = {
                 'addition': {
                     'function': src.calculator.add,
-                    'expectation': self.random_first_number+self.random_second_number,
+                    'expectation': (
+                        self.random_first_number+self.random_second_number
+                    ),
                 },
                 'subtraction': {
                     'function': src.calculator.subtract,
-                    'expectation': self.random_first_number-self.random_second_number,
+                    'expectation': (
+                        self.random_first_number-self.random_second_number
+                    ),
                 },
                 'division': {
                     'function': src.calculator.divide,
-                    'expectation': self.random_first_number/self.random_second_number,
+                    'expectation': (
+                        self.random_first_number/self.random_second_number
+                    ),
                 },
                 'multiplication': {
-                    'function': src.calculator.multiply,
-                    'expectation': self.random_first_number*self.random_second_number,
+                    'function': src.calculator.divide,
+                    'expectation': (
+                        self.random_first_number*self.random_second_number
+                    ),
                 }
             }
 
@@ -656,21 +788,30 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 * I add a new :ref:`assertion<what is an assertion?>` in a `for loop`_ with the `subTest method`_
 
   .. code-block:: python
-    :lineno-start: 213
-    :emphasize-lines: 4-12
+    :lineno-start: 107
+    :emphasize-lines: 11-19
 
-                        data[operation]
+            for operation in arithmetic:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        arithmetic[operation](
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        expectations[operation]
                     )
 
             for operation in arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
-                        arithmetic_tests[operation]['function'](
+                        arithmetic_tests[operation]('function')(
                             self.random_first_number,
                             self.random_second_number
                         ),
                         'BOOM!!!'
                     )
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
 
 
     def test_addition(self):
@@ -1254,33 +1395,33 @@ close the project
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     (.venv) .../pumping_python/calculator
 
 * I deactivate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 
 * I `change directory`_ to the parent of ``calculator``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
