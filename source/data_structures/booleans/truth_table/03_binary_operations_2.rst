@@ -1,5 +1,5 @@
 .. meta::
-  :description: Learn to build binary operations in Python with Test-Driven Development. This tutorial covers logical NAND, disjunction, and more. Watch the full tutorial!
+  :description: Learn to build Binary Operations 1n Python with Test-Driven Development. This tutorial covers logical NAND, disjunction, and more. Watch the full tutorial!
   :keywords: Jacob Itegboje, python truth table binary operations, test driven development python tutorial, python logical operations for beginners, how to implement logical NAND in python, python TDD example with unittest, learn python binary logic step by step, python logical disjunction implementation, what is tautology in python programming
 
 .. include:: ../../../links.rst
@@ -7,7 +7,7 @@
 .. _binary_operations_ii:
 
 #################################################################################
-truth table: Binary Operations part 2
+truth table: Binary Operations 2
 #################################################################################
 
 .. raw:: html
@@ -20,13 +20,13 @@ truth table: Binary Operations part 2
 requirements
 *********************************************************************************
 
-:ref:`Binary Operations part 1<truth table: Binary Operations part 1>`
+:ref:`Binary Operations 1<truth table: Binary Operations 1>`
 
 *********************************************************************************
 how to get back to the automated tests
 *********************************************************************************
 
-If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations part 1>`, heres's how to get back to the tests
+If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations 1>`, heres's how to get back to the tests
 
 * Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 

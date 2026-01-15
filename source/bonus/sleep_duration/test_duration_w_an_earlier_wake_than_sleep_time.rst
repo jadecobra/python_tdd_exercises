@@ -15,7 +15,7 @@ how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time
 
 ----
 
-This is part 3 of a program_ that calculates the difference between a given wake and sleep time.
+This is III of a program_ that calculates the difference between a given wake and sleep time.
 
 ----
 

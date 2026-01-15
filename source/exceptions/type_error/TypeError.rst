@@ -1180,7 +1180,7 @@ close the project
 review
 *********************************************************************************
 
-The :ref:`calculator program<how to make a calculator part 1>` can take 2 inputs and :ref:`check if they are both numbers<test_calculator_sends_message_when_input_is_not_a_number>`, then :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` or :ref:`divide<test_division>` them
+The :ref:`calculator program<how to make a calculator>` can take 2 inputs and :ref:`check if they are both numbers<test_calculator_sends_message_when_input_is_not_a_number>`, then :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` or :ref:`divide<test_division>` them
 
 Even though the program_ says it only works with numbers, I did not add tests for tuples_, :ref:`lists`, sets_, and :ref:`dictionaries`, though they are touched in :ref:`test_type_error_w_objects_that_do_not_mix`, Do you want to add them or do we already have enough tests to know what would happen?
 
@@ -1211,20 +1211,20 @@ what is next?
 
 you know
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator part 1>`
+* :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to make a Python Test Driven Development environment automatically` or :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`
 
-:ref:`Would you like to use what you know so far with the Calculator?<how to make a calculator part 3>`
+:ref:`Would you like to use what you know so far with the Calculator?<how to make a calculator 3>`
 
 -----
 

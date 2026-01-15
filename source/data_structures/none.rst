@@ -16,7 +16,7 @@ what is None?
 
 ----
 
-None_ is used when there is no value. It is the simplest :ref:`data structure<data structures>` in Python_
+None_ is used when there is no value. It is like ``NULL`` in other languages or ``N/A`` in forms. It is the simplest :ref:`data structure<data structures>` in Python_
 
 I use `assert methods`_ to compare None_ with the other Python_ :ref:`data structures` to see what it is and what it is not
 
@@ -1993,7 +1993,7 @@ what is next?
 
 so far you have covered
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>` and

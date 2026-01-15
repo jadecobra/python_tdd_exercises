@@ -545,7 +545,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-Would you like to :ref:`test binary operations?<truth table: Binary Operations part 1>`
+Would you like to :ref:`test binary operations?<truth table: Binary Operations 1>`
 
 ----
 

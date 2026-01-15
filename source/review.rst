@@ -77,7 +77,7 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
 * :ref:`What is a variable?<how to use a variable in a shell script>`
 * :ref:`How can I use a variable in a PowerShell script<how to use a variable in a PowerShell script>`
-* :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
+* :ref:`How can I run a PowerShell script?<how to run a PowerShell script>`
 
 ----
 

@@ -94,7 +94,7 @@ table of contents
   videos <https://www.youtube.com/@JacobItegboje>
   conventions
   setup<how_to/setup/index>
-  make TDD project pt 1<how_to/make_tdd_manually/index>
+  make TDD project 1<how_to/make_tdd_manually/index>
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions>
   pass values<how_to/pass_values>
@@ -102,7 +102,7 @@ table of contents
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   make a calculator<how_to/calculator/calculator_i>
-  make TDD project pt 2<how_to/make_tdd_automatically/index>
+  make TDD project 2<how_to/make_tdd_automatically/index>
   handling Exceptions<how_to/exception_handling/index>
   exceptions/type_error/index
   data_structures/lists/index

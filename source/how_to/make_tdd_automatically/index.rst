@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-how to make a test driven development environment part 2
+how to make a test driven development environment 2
 #################################################################################
 
 You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically anytime I want on a
@@ -110,7 +110,7 @@ On Windows computers without Windows Subsystem for Linux
 =================================================================================
 
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
+* :ref:`How can I run a PowerShell script?<how to run a PowerShell script>`
 
 ----
 

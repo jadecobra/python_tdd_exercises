@@ -20,13 +20,13 @@ truth table: test_truth_table_tests
 requirements
 *********************************************************************************
 
-* :ref:`Binary Operations part 4<truth table: Binary Operations part 4>`
+* :ref:`Binary Operations 4<truth table: Binary Operations 4>`
 
 *********************************************************************************
 how to get back to the automated tests
 *********************************************************************************
 
-If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations part 2>`, heres's how to get back to the tests
+If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations 2>`, heres's how to get back to the tests
 
 * Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
@@ -2041,7 +2041,7 @@ what is next?
 
 you now know
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
@@ -2049,7 +2049,7 @@ you now know
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 
-:ref:`Would you like to test making a calculator?<how to make a calculator part 1>`
+:ref:`Would you like to test making a calculator?<how to make a calculator>`
 
 ----
 

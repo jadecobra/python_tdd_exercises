@@ -26,7 +26,7 @@ the chapters
   :titlesonly:
 
   TypeError
-  calculator_iii
+  ../../how_to/calculator/calculator_iii
 
 ----
 

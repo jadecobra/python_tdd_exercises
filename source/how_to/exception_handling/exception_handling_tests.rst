@@ -1156,7 +1156,7 @@ close the exceptions project
 test catching ZeroDivisionError in test_calculator.py
 *********************************************************************************
 
-I want to add an exception handler to the :ref:`calculator project<how to make a calculator part 1>` for ZeroDivisionError_ in :ref:`test_division`
+I want to add an exception handler to the :ref:`calculator project<how to make a calculator>` for ZeroDivisionError_ in :ref:`test_division`
 
 =================================================================================
 open the project
@@ -1343,14 +1343,14 @@ what is next?
 
 you know
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator part 1>`
+* :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to make a Python Test Driven Development environment automatically` or :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux` and
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 

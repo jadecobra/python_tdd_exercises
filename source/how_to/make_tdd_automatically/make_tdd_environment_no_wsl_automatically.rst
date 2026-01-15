@@ -62,7 +62,7 @@ questions about making a Python Test Driven Development Environment automaticall
 Here are questions you can answer after going through this chapter
 
 * :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`How can I run a PowerShell script<how to run a PowerShell script>`
+* :ref:`How can I run a PowerShell script?<how to run a PowerShell script>`
 
 ----
 
@@ -325,14 +325,14 @@ what is next?
 
 Here is what we have gone through together so far
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator part 1>`
+* :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`
 
 :ref:`Would you like to use makePythonTdd.ps1 to make a Python Test Driven Development environment to test that an Exception is raised?<how to test that an Exception is raised>`

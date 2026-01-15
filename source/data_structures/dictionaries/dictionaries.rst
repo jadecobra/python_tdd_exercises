@@ -3487,14 +3487,14 @@ what is next?
 
 you know
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to write functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator part 1>`
+* :ref:`how to make a calculator<how to make a calculator>`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`
@@ -3502,7 +3502,7 @@ you know
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 
-:ref:`Would you like to use dictionaries in the calculator tests?<how to make a calculator part 6>`
+:ref:`Would you like to use dictionaries in the calculator tests?<how to make a calculator 6>`
 
 ----
 

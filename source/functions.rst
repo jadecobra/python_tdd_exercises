@@ -1846,7 +1846,7 @@ what is next?
 
 you have covered a bit so far and know
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment part 1>`
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>` and
 * :ref:`how to write functions<what is a function?>`
 

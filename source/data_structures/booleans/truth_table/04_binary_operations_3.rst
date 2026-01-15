@@ -7,7 +7,7 @@
 .. _binary_operations_iii:
 
 #################################################################################
-truth table: Binary Operations part 3
+truth table: Binary Operations 3
 #################################################################################
 
 .. raw:: html
@@ -20,13 +20,13 @@ truth table: Binary Operations part 3
 requirements
 *********************************************************************************
 
-:ref:`Binary Operations part 2<truth table: Binary Operations part 2>`
+:ref:`Binary Operations 2<truth table: Binary Operations 2>`
 
 *********************************************************************************
 how to get back to the automated tests
 *********************************************************************************
 
-If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations part 2>`, heres's how to get back to the tests
+If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations 2>`, heres's how to get back to the tests
 
 * Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
