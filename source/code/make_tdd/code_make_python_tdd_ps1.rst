@@ -10,9 +10,24 @@ makePythonTdd.ps1
     :language: PowerShell
     :linenos:
 
-* give a name for the ``$PROJECT_NAME`` :ref:`variable<test_attribute_error_w_variables>` when the program_ is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder_ where ``makePythonTdd.sh`` is saved makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project with the name :ref:`assertion_error<what causes AssertionError?>`
+* give a name for the ``$PROJECT_NAME`` :ref:`variable<test_attribute_error_w_variables>` when the program_ is called to make a `Test Driven Development`_ any time you want. For example typing this command in the terminal_ in the folder_ where ``makePythonTdd.ps1`` is saved makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project with the name :ref:`person<how to make a person>`
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    ./makePythonTdd.ps1 assertion_error
+    ./makePythonTdd.ps1 person
+
+----
+
+#################################################################################
+BONUS: makePythonTdd.ps1
+#################################################################################
+
+Since you are the adventurous type and made it in here, I have added 2 lines for you that automate opening the test file and source file for the projects
+
+.. literalinclude:: makePythonTddPlus.ps1
+  :language: shell
+  :linenos:
+  :emphasize-lines: 22-23
+
+this works with `Visual Studio Code`_ you can change it to use the command for any `Integrated Development Environment`_ you like
