@@ -726,10 +726,10 @@ test_takes_keyword_arguments
 
   - ``datetime`` is the `datetime module`_
   - ``.datetime`` is an :ref:`object<what is a class?>`  in the `datetime module`_
-  - ``.now()`` is a call to the `now method`_ in the ``datetime`` :ref:`object<what is a class?>` from the `datetime module`_, it returns a `datetime.datetime object`_
-  ``.year`` is a :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object` returned by the `now method`_ of the `datetime.datetime object`_ : from the `datetime module`_.
+  - ``.now()`` is a call to the `now method`_of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
+  ``.year`` is a :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
-  If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes<what is a class?>`
+  If you are confused, do not worry, that was a lot of words, it is explained in more detail in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`
 
   .. attention:: I can also use the today_ :ref:`method<what is a function?>` to get the same value
 

@@ -1542,7 +1542,7 @@ the test passes. What did the `insert method`_ do to the list_?
 
   .. code-block:: shell
 
-    AssertionError: Lists differ: [-1, 0, 1, 2, 'n'] != [1, 0, 1, 2, 'n']
+    AssertionError: Lists differ: [-1, 0, 1, 2, 'n'] != [0, 1, 2, 'n']
 
 * I change the expectation to match
 
