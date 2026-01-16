@@ -12,11 +12,6 @@ The following are a few conventions to know in Python_
 
 ----
 
-*********************************************************************************
-CapWords
-*********************************************************************************
-
-:ref:`Class<what is a class?>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized
 
 ----
 
@@ -24,23 +19,39 @@ CapWords
 names
 *********************************************************************************
 
-- class names are usually in :ref:`CapWords` for example
+----
+
+=================================================================================
+CapWords
+=================================================================================
+
+:ref:`class<what is a class?>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized, for example
+
+.. code-block:: python
+
+  class AClassName(object):
+
+I can use any case I want but :ref:`CapWords` keeps things consistent
+
+----
+
+=================================================================================
+snake case
+=================================================================================
+
+:ref:`variables<what is a variable?>` and :ref:`function/method<what is a function?>` names are in ``snake_case`` for example
+
+* :ref:`variables<what is a variable?>`
 
   .. code-block:: python
-
-    class AClassName(object):
-
-  I can use any case I want but :ref:`CapWords` keeps things consistent
-
-- :ref:`variables<what is a variable?>` and :ref:`function/method<what is a function?>` names are in ``snake_case`` for example
-
-  .. code-block:: python
-
-    def function_name(first_input, second_input, keyword_argument=None):
-        ...
-
 
     variable_name = None
+
+* :ref:`functions<what is a function?>`
+
+  .. code-block:: python
+
+    def function_name(*arguments, **keyword_arguments):
 
 for more details see the :PEP:`Python Style Guide <8>`
 
@@ -50,7 +61,7 @@ for more details see the :PEP:`Python Style Guide <8>`
 comments
 *********************************************************************************
 
-Comments are represented by the hashtag or pound before the thing that is commented for example
+Comments are made with a hashtag/pound before the thing that is commented for example
 
 .. code-block:: python
 
@@ -75,25 +86,25 @@ Enclosures must be closed once open, which means they happen in pairs for exampl
     ''
     ''''''
 
-* tuples
+* parentheses
 
   .. code-block:: python
 
     ()
 
-* list
+* square brackets/braces
 
   .. code-block:: python
 
     []
 
-* set
+* curly brackets/braces
 
   .. code-block:: python
 
     {}
 
-The `Integrated Development Environment (IDE)`_ takes care of this
+The `Integrated Development Environment (IDE)`_ takes care of this, it automatically closes them when you open one
 
 ----
 
@@ -101,7 +112,7 @@ The `Integrated Development Environment (IDE)`_ takes care of this
 quotes
 *********************************************************************************
 
-Quotes represent strings_ and can be
+Quotes are for strings_ and can be
 
 * single
 
@@ -115,7 +126,7 @@ Quotes represent strings_ and can be
 
     "Double Quotes"
 
-* triple single
+* triple single which allows writing one string_ on many lines
 
   .. code-block:: python
 
@@ -124,7 +135,7 @@ Quotes represent strings_ and can be
     triple double quotes
     '''
 
-* triple double
+* triple double which allows writing one string_ on many lines
 
   .. code-block:: python
 
@@ -145,6 +156,8 @@ A tuple_ is a sequence or container of objects_ that cannot be changed later, th
 
 .. code-block:: python
 
+  ()
+  (0)
   (1, 2.5, "three", [4, 'five'])
 
 ----
@@ -155,12 +168,13 @@ A tuple_ is a sequence or container of objects_ that cannot be changed later, th
 lists
 *********************************************************************************
 
-A :ref:`list/array<lists>` is a sequence or container of objects_ that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``), for example
+A :ref:`list/array<lists>` is a sequence or container of objects_ that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
 
 .. code-block:: python
 
+  []
+  [0,]
   [1, 2.5, 'three', (4, "five")]
-
 
 ----
 
@@ -184,6 +198,7 @@ dictionaries/mappings
 
 .. code-block:: python
 
+  {}
   {
       'integer': 1,
       'floating_point': 2.5,
@@ -191,6 +206,15 @@ dictionaries/mappings
       'tuple': (1, 2.5, "three", [4, 'five'])
       'list': [1, 2.5, 'three', (4, "five")]
       'set': {1, 2.5, 'three', (4, 'five')}
+      'dictionary': {
+          'integer': 1,
+          'floating_point': 2.5,
+          'string': 'three',
+          'tuple': (1, 2.5, "three", [4, 'five'])
+          'list': [1, 2.5, 'three', (4, "five")]
+          'set': {1, 2.5, 'three', (4, 'five')},
+          'dictionary': ...
+      }
   }
 
 ----

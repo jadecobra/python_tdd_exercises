@@ -121,7 +121,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     # AssertionError
     " > tests/test_$PROJECT_NAME.py
 
-* I change the name of the project to 
+* I change the name of the project to
 
 * I run the program_ in the terminal_
 
@@ -136,9 +136,9 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     :emphasize-lines: 2, 4, 10, 12
 
     ======================================= FAILURES =======================================
-    ____________________________ Testdictionaries.test_failure ______________________________
+    ___________________________ TestDictionaries.test_failure ______________________________
 
-    self = <tests.test_magic_again.Testdictionaries testMethod=test_failure>
+    self = <tests.test_magic_again.TestDictionaries testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
@@ -146,7 +146,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
     tests/test_dictionaries.py:7: AssertionError
     =============================== short test summary info ================================
-    FAILED tests/test_dictionaries.py::Testdictionaries::test_failure - AssertionError: True is not false
+    FAILED tests/test_dictionaries.py::TestDictionaries::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ===================================
 
 * I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_dictionaries.py`` to make the test pass
