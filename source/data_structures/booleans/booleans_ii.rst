@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-booleans II
+booleans 2
 #################################################################################
 
 I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail.
