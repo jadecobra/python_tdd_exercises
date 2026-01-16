@@ -1,5 +1,5 @@
 .. meta::
-  :description: Master Python coding conventions, including naming rules and data structure usage! Improve your code style and readability with these essential Python best practices.
+  :description: Here are the Python coding conventions used in Pumping Python
   :keywords: Jacob Itegboje, Python conventions, Python naming conventions, Python data structures, Python style guide, Python best practices, Python code quality, PEP 8 Python
 
 .. include:: /links.rst
