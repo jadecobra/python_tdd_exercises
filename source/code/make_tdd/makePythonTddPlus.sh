@@ -1,16 +1,22 @@
 #!/bin/bash
-PROJECT_NAME=$1
-mkdir $PROJECT_NAME
+if [ -z "$1" ] ; then
+    PROJECT_NAME="PROJECT_NAME"
+else
+    PROJECT_NAME=$1
+fi
+
+IFS='_' read -r -a words <<< "$PROJECT_NAME"
+IFS=''
+CLASS_NAME="${words[*]^}"
+
+mkdir -p $PROJECT_NAME/{src,tests}
 cd $PROJECT_NAME
-mkdir src
-touch src/$PROJECT_NAME.py
-mkdir tests
-touch tests/__init__.py
+touch src/$PROJECT_NAME.py tests/__init__.py
 
 echo "import unittest
 
 
-class Test$PROJECT_NAME(unittest.TestCase):
+class Test$CLASS_NAME(unittest.TestCase):
 
     def test_failure(self):
         self.assertFalse(True)

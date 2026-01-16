@@ -30,11 +30,15 @@ makePythonTdd.sh
 BONUS: makePythonTdd.sh
 #################################################################################
 
-Since you are the adventurous type and made it in here, I have added 2 lines for you that automate opening the test file and source file for the projects
+Since you are the adventurous type and made it this deep in the book, I have added extra lines that
+
+* make the project with ``PROJECT_NAME`` as the name if you do not give a name
+* make the class name in :ref:`CapWords format<CapWords>`
+* open the test file and source file in your editor
 
 .. literalinclude:: makePythonTddPlus.sh
   :language: shell
   :linenos:
-  :emphasize-lines: 23-24
+  :emphasize-lines: 2-6
 
 this works with `Visual Studio Code`_ you can change it to use the command for any `Integrated Development Environment`_ you like
