@@ -4,6 +4,12 @@
 makePythonTdd.sh
 #################################################################################
 
+----
+
+*********************************************************************************
+makePythonTdd.sh program
+*********************************************************************************
+
 * Here is the ``makePythonTdd.sh`` program_ from :ref:`how to make a python test driven development environment`
 
   .. literalinclude:: makePythonTdd.sh
@@ -26,9 +32,9 @@ makePythonTdd.sh
 
 ----
 
-#################################################################################
-BONUS: makePythonTdd.sh
-#################################################################################
+*********************************************************************************
+BONUS: makePythonTdd.sh Plus
+*********************************************************************************
 
 Since you are the adventurous type and made it this deep in the book, I have added extra lines that
 

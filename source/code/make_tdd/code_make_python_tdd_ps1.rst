@@ -4,6 +4,12 @@
 makePythonTdd.ps1
 #################################################################################
 
+----
+
+*********************************************************************************
+makePythonTdd.sh program
+*********************************************************************************
+
 * Here is the ``makePythonTdd.ps1`` program_ from :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
 
   .. literalinclude:: makePythonTdd.ps1
@@ -19,9 +25,9 @@ makePythonTdd.ps1
 
 ----
 
-#################################################################################
-BONUS: makePythonTdd.ps1
-#################################################################################
+*********************************************************************************
+BONUS: makePythonTdd.ps1 Plus
+*********************************************************************************
 
 Since you are the adventurous type and made it in here, I have added 2 lines for you that automate opening the test file and source file for the projects
 
