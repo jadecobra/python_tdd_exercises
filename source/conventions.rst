@@ -10,6 +10,8 @@ conventions
 
 The following are a few conventions to know in Python_
 
+----
+
 *********************************************************************************
 CapWords
 *********************************************************************************
@@ -50,9 +52,11 @@ comments
 
 Comments are represented by the hashtag or pound before the thing that is commented for example
 
-.. code-block::
+.. code-block:: python
 
   # This is a comment
+
+comments do not do anything, they are notes
 
 ----
 
@@ -62,15 +66,32 @@ enclosures
 
 Enclosures must be closed once open, which means they happen in pairs for example
 
-.. code-block:: python
+* quotes
 
-  ""
-  """"""
-  ''
-  ''''''
-  ()
-  []
-  {}
+  .. code-block:: python
+
+    ""
+    """"""
+    ''
+    ''''''
+
+* tuples
+
+  .. code-block:: python
+
+    ()
+
+* list
+
+  .. code-block:: python
+
+    []
+
+* set
+
+  .. code-block:: python
+
+    {}
 
 The `Integrated Development Environment (IDE)`_ takes care of this
 
@@ -80,23 +101,37 @@ The `Integrated Development Environment (IDE)`_ takes care of this
 quotes
 *********************************************************************************
 
-Quotes represent strings_ and can be single, double, triple single or triple double for example
+Quotes represent strings_ and can be
 
-.. code-block:: python
+* single
 
-  "Double Quotes"
+  .. code-block:: python
 
-  'Single Quotes'
+    'Single Quotes'
 
-  """Text on different lines
-  with
-  triple double quotes
-  """
+* double
 
-  '''Text on different lines
-  with
-  triple double quotes
-  '''
+  .. code-block:: python
+
+    "Double Quotes"
+
+* triple single
+
+  .. code-block:: python
+
+    '''Text on different lines
+    with
+    triple double quotes
+    '''
+
+* triple double
+
+  .. code-block:: python
+
+    """Text on different lines
+    with
+    triple double quotes
+    """
 
 ----
 
@@ -106,7 +141,7 @@ Quotes represent strings_ and can be single, double, triple single or triple dou
 tuples
 *********************************************************************************
 
-A tuple_ is a sequence or container of objects_ that cannot be changed later, it is immutable (cannot be changed later) and represented with parentheses/brackets (``()``), for example
+A tuple_ is a sequence or container of objects_ that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), for example
 
 .. code-block:: python
 
@@ -120,7 +155,7 @@ A tuple_ is a sequence or container of objects_ that cannot be changed later, it
 lists
 *********************************************************************************
 
-A :ref:`list/array<lists>` is a sequence or container of objects_ that can be changed after it is defined, it is mutable (can change later) and represented with square brackets (``[]``), for example
+A :ref:`list/array<lists>` is a sequence or container of objects_ that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``), for example
 
 .. code-block:: python
 
@@ -133,7 +168,7 @@ A :ref:`list/array<lists>` is a sequence or container of objects_ that can be ch
 sets
 *********************************************************************************
 
-A set_ is a container of objects_ that have no duplicates, and are represented with curly braces/brackets (``{}``)
+A set_ is a container of objects_ that have no duplicates, and are represented with curly braces/brackets (``{}``), for example
 
 .. code-block:: python
 

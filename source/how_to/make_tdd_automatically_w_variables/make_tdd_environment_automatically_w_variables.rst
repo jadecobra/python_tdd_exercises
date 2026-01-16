@@ -7,7 +7,7 @@
 .. include:: ../../links.rst
 
 ##############################################################################################
-how to make a Python Test Driven Development environment automatically with variables
+how to make a Python Test Driven Development environment automatically w/ variables
 ##############################################################################################
 
 .. raw:: html
@@ -16,14 +16,13 @@ how to make a Python Test Driven Development environment automatically with vari
 
 ----
 
---------------------------------------------------------------------------------------------
+********************************************************************************************
 how to use a variable in a shell script
---------------------------------------------------------------------------------------------
+********************************************************************************************
 
 ``makePythonTdd.sh`` works and always makes a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
 
-
-I changed ``magic_again`` to ``more_magic`` in 5 places in ``makePythonTdd.sh``. I would have to do the same change every time I have a new project, and I want to follow `The Do Not Repeat Yourself (DRY) Principle`_. I want the program_ to take a project name once and use that name when making the project to make the following
+I change the name of the project in 5 places every time I use the program to make a project. I want the program_ to take a project name once and use that name when making the project to make the following
 
 - the project folder_
 - the file_ for the program_ in the ``src`` folder_
@@ -46,6 +45,15 @@ The program_ should always make this structure
 
 Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
+* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
+
+  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      code makePythonTdd.sh
+
 * I add a name to represent any project name that I give to ``makePythonTdd.sh`` when I want it to make a project
 
   .. code-block:: shell
@@ -53,18 +61,18 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     :emphasize-lines: 2
 
     #!/bin/bash
-    PROJECT_NAME="more_magic"
-    mkdir more_magic
-    cd more_magic
+    PROJECT_NAME="dictionaries"
+    mkdir dictionaries
+    cd dictionaries
     mkdir src
-    touch src/more_magic.py
+    touch src/dictionaries.py
     mkdir tests
     touch tests/__init__.py
 
     echo "import unittest
 
 
-    class TestMagicAgain(unittest.TestCase):
+    class TestDictionaries(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
@@ -72,18 +80,18 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
     # Exceptions seen
     # AssertionError
-    " > tests/test_more_magic.py
+    " > tests/test_dictionaries.py
 
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
+  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example, we use the word
 
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example, we use the word ``woman`` to represent any woman, ``man`` to represent any man, ``child`` to represent any child, and ``parent`` to represent anyone with a child. In this case I use ``$PROJECT_NAME`` to represent any name of a project
+  * ``woman`` to represent any woman
+  * ``man`` to represent any man
+  * ``child`` to represent any child
+  * ``parent`` to represent anyone with a child.
 
-* I change every where I have ``more_magic`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
+  In this case I use ``$PROJECT_NAME`` to represent any name of a project
+
+* I change every where I have ``dictionaries`` in the program_, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
 
   .. NOTE:: The lines that are changing in the code are highlighted
 
@@ -92,7 +100,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     :emphasize-lines: 3-4, 6, 13, 21
 
     #!/bin/bash
-    PROJECT_NAME="more_magic"
+    PROJECT_NAME="dictionaries"
     mkdir $PROJECT_NAME
     cd $PROJECT_NAME
     mkdir src
@@ -113,14 +121,9 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     # AssertionError
     " > tests/test_$PROJECT_NAME.py
 
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    pytest-watch
+* I change the name of the project to 
 
-* I run the program_ again in the terminal_
+* I run the program_ in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -133,20 +136,20 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     :emphasize-lines: 2, 4, 10, 12
 
     ======================================= FAILURES =======================================
-    ____________________________ Testmore_magic.test_failure ______________________________
+    ____________________________ Testdictionaries.test_failure ______________________________
 
-    self = <tests.test_magic_again.Testmore_magic testMethod=test_failure>
+    self = <tests.test_magic_again.Testdictionaries testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/test_more_magic.py:7: AssertionError
+    tests/test_dictionaries.py:7: AssertionError
     =============================== short test summary info ================================
-    FAILED tests/test_more_magic.py::Testmore_magic::test_failure - AssertionError: True is not false
+    FAILED tests/test_dictionaries.py::Testdictionaries::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ===================================
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_more_magic.py`` to make the test pass
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_dictionaries.py`` to make the test pass
 
 * I hit :kbd:`ctrl+c` in the terminal_ to stop the test
 
@@ -169,7 +172,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     │   ├── src
     │   ├── tests
     │   └── .venv
-    ├── more_magic
+    ├── dictionaries
     │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
@@ -211,7 +214,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
   ``tree`` is the command and ``$`` is ``-a``
 
-* I change ``more_magic`` to ``$1`` in ``makePythonTdd.sh``
+* I change ``dictionaries`` to ``$1`` in ``makePythonTdd.sh``
 
   .. code-block:: shell
     :lineno-start: 2
@@ -224,7 +227,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh more_magic_again
+    ./makePythonTdd.sh dictionaries_again
 
   the terminal_ shows
 
@@ -232,20 +235,20 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     :emphasize-lines: 10
 
     ======================================= FAILURES =======================================
-    _____________________________ Testmore_magic_again.test_failure ______________________________
+    _____________________________ Testdictionaries_again.test_failure ______________________________
 
-    self = <tests.test_more_magic_again.Testmore_magic_again testMethod=test_failure>
+    self = <tests.test_dictionaries_again.Testdictionaries_again testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/test_more_magic_again.py:7: AssertionError
+    tests/test_dictionaries_again.py:7: AssertionError
     =============================== short test summary info ================================
-    FAILED tests/test_more_magic_again.py::Testmore_magic_again::test_failure - AssertionError: True is not false
+    FAILED tests/test_dictionaries_again.py::Testdictionaries_again::test_failure - AssertionError: True is not false
     ================================== 1 failed in 0.04s ===================================
 
-* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_more_magic_again.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
+* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_dictionaries_again.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
 
 * I use :kbd:`ctrl+c` on the keyboard in the terminal_ to stop the tests
 
@@ -268,14 +271,14 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     │   ├── src
     │   ├── tests
     │   └── .venv
-    ├── more_magic
+    ├── dictionaries
     │   ├── .pytest_cache
     │   ├── requirements.txt
     │   ├── src
     │   ├── tests
     │   └── .venv
     ├── makePythonTdd.sh
-    └── more_magic_again
+    └── dictionaries_again
         ├── .pytest_cache
         ├── requirements.txt
         ├── src
