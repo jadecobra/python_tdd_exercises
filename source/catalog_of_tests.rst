@@ -34,8 +34,8 @@ test_telephone
 test_person_factory
 *********************************************************************************
 
-#. :ref:`test_takes_keyword_arguments`
-#. :ref:`test_function_w_default_keyword_arguments`
+#. :ref:`test_factory_takes_keyword_arguments`
+#. :ref:`test_factory_w_default_arguments`
 
 *********************************************************************************
 test_sleep_duration

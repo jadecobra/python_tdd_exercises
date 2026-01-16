@@ -84,14 +84,14 @@ start the project
     class TestPerson(unittest.TestCase):
 
 *********************************************************************************
-test_takes_keyword_arguments
+test_factory_takes_keyword_arguments
 *********************************************************************************
 
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-* I change ``test_failure`` to ``test_takes_keyword_arguments``
+* I change ``test_failure`` to ``test_factory_takes_keyword_arguments``
 
   .. code-block:: python
     :linenos:
@@ -102,7 +102,7 @@ test_takes_keyword_arguments
 
     class TestPerson(unittest.TestCase):
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(),
                 None
@@ -172,7 +172,7 @@ test_takes_keyword_arguments
     :lineno-start: 7
     :emphasize-lines: 4
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -216,7 +216,7 @@ test_takes_keyword_arguments
     :lineno-start: 7
     :emphasize-lines: 5
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -248,7 +248,7 @@ test_takes_keyword_arguments
     :lineno-start: 7
     :emphasize-lines: 6
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -284,7 +284,7 @@ test_takes_keyword_arguments
     :lineno-start: 7
     :emphasize-lines: 7
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -343,7 +343,7 @@ test_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 9
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -380,7 +380,7 @@ test_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 10
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -419,7 +419,7 @@ test_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 2, 6, 12
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'first_name'
 
             self.assertEqual(
@@ -442,7 +442,7 @@ test_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 2
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -513,7 +513,7 @@ test_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 3,8,14
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'last_name'
 
@@ -536,7 +536,7 @@ test_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 3
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
 
@@ -613,7 +613,7 @@ test_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 4,10,16
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'M'
@@ -640,7 +640,7 @@ test_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 4
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
@@ -774,7 +774,7 @@ test_takes_keyword_arguments
     :lineno-start: 12
     :emphasize-lines: 5,12,18
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
@@ -822,7 +822,7 @@ test_takes_keyword_arguments
     :lineno-start: 13
     :emphasize-lines: 5-8
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
@@ -910,7 +910,7 @@ test_takes_keyword_arguments
     :lineno-start: 13
     :emphasize-lines: 4-5
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             # sex = 'F'
@@ -953,7 +953,7 @@ test_takes_keyword_arguments
     :lineno-start: 13
     :emphasize-lines: 3-6
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
             # last_name = 'doe'
             last_name = random.choice((
@@ -990,7 +990,7 @@ test_takes_keyword_arguments
     :lineno-start: 13
     :emphasize-lines: 2-5
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             # first_name = 'jane'
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
@@ -1024,40 +1024,14 @@ test_takes_keyword_arguments
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the test passes!
+  the test passes
 
-----
-
-*************************************************************************************
-test_function_w_default_keyword_arguments
-*************************************************************************************
-
-I want to see what happens when I try to make a person without a value for the ``last_name`` argument
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-* I select ``test_takes_keyword_arguments``, then copy (:kbd:`ctrl+c` (Windows/Linux) or ``command+c`` (mac)) and paste (:kbd:`ctrl+v` (Windows/Linux) or ``command+v`` (mac)) it below in ``test_person.py``
-* I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` :ref:`variable<what is a variable?>`
+* I remove the commented line from ``test_factory_takes_keyword_arguments`` in ``test_person.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 40,44-46
+    :lineno-start: 13
 
-    import datetime
-    import random
-    import src.person
-    import unittest
-
-
-    def this_year():
-        return datetime.datetime.now().year
-
-
-    class TestPerson(unittest.TestCase):
-
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
@@ -1084,7 +1058,68 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-        def test_function_w_default_keyword_arguments(self):
+
+    # Exceptions seen
+
+----
+
+*************************************************************************************
+test_factory_w_default_arguments
+*************************************************************************************
+
+I want to see what happens when I try to make a person without a value for the ``last_name`` argument
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+* I select ``test_factory_takes_keyword_arguments``, then copy (:kbd:`ctrl+c` (Windows/Linux) or ``command+c`` (mac)) and paste (:kbd:`ctrl+v` (Windows/Linux) or ``command+v`` (mac)) it below in ``test_person.py``
+* I change the name of the new test to ``test_factory_w_default_arguments`` and comment out the ``last_name`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 40,44-46
+
+    import datetime
+    import random
+    import src.person
+    import unittest
+
+
+    def this_year():
+        return datetime.datetime.now().year
+
+
+    class TestPerson(unittest.TestCase):
+
+        def test_factory_takes_keyword_arguments(self):
+            first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            sex = random.choice(('F', 'M'))
+            year_of_birth = random.randint(
+                this_year()-120, this_year()
+            )
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                dict(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    age=this_year()-year_of_birth,
+                )
+            )
+
+        def test_factory_w_default_arguments(self):
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
@@ -1121,7 +1156,7 @@ I want to see what happens when I try to make a person without a value for the `
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I comment out ``last_name`` in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_function_w_default_keyword_arguments``
+* I comment out ``last_name`` in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_factory_w_default_arguments``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1148,7 +1183,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  the ``factory`` :ref:`function<what is a function?>` is called with 3 arguments in ``test_function_w_default_keyword_arguments`` but the definition expects 4 in ``person.py``
+  the ``factory`` :ref:`function<what is a function?>` is called with 3 arguments in ``test_factory_w_default_arguments`` but the definition expects 4 in ``person.py``
 
 * I add a default value for ``last_name`` in ``person.py``
 
@@ -1217,9 +1252,9 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'last_name' is not defined
 
-  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_function_w_default_keyword_arguments`` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` which I just commented out
+  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_factory_w_default_arguments`` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` which I just commented out
 
-* I change the expectation of ``test_function_w_default_keyword_arguments`` in ``test_person.py``
+* I change the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1274,12 +1309,12 @@ I want to see what happens when I try to make a person without a value for the `
           last_name='doe',
       )
 
-* I remove the commented lines from ``test_function_w_default_keyword_arguments`` in ``test_person.py``
+* I remove the commented lines from ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 40
 
-        def test_function_w_default_keyword_arguments(self):
+        def test_factory_w_default_arguments(self):
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
@@ -1308,7 +1343,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 40
     :emphasize-lines: 5
 
-        def test_function_w_default_keyword_arguments(self):
+        def test_factory_w_default_arguments(self):
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
@@ -1418,7 +1453,7 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: python
     :lineno-start: 40
 
-        def test_function_w_default_keyword_arguments(self):
+        def test_factory_w_default_arguments(self):
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
@@ -1472,16 +1507,16 @@ I want to see what happens when I try to make a person without a value for the `
             this_year()-120, this_year()
         )
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             ...
 
-  I can use them in ``test_takes_keyword_arguments`` with ``self.`` the same way I use the ``assert`` :ref:`methods<what is a function?>` since they now belong to the ``TestPerson`` :ref:`class<what is a class?>`
+  I can use them in ``test_factory_takes_keyword_arguments`` with ``self.`` the same way I use the ``assert`` :ref:`methods<what is a function?>` since they now belong to the ``TestPerson`` :ref:`class<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 20
     :emphasize-lines: 2-5,10-13
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             # first_name = random.choice((
             #    'jane', 'joe', 'john', 'person',
             # ))
@@ -1498,13 +1533,13 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(
                 ...
 
-  the test is still green. I do the same thing in ``test_function_w_default_keyword_arguments``
+  the test is still green. I do the same thing in ``test_factory_w_default_arguments``
 
   .. code-block:: python
     :lineno-start: 49
     :emphasize-lines: 2-9
 
-        def test_function_w_default_keyword_arguments(self):
+        def test_factory_w_default_arguments(self):
             # first_name = random.choice((
             #    'jane', 'joe', 'john', 'person',
             # ))
@@ -1519,12 +1554,12 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ still shows green
 
-* I remove the commented lines from ``test_takes_keyword_arguments``
+* I remove the commented lines from ``test_factory_takes_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 20
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             first_name = self.first_name
             last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
@@ -1535,12 +1570,12 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(
                 ...
 
-  and remove the commented lines from ``test_function_w_default_keyword_arguments``
+  and remove the commented lines from ``test_factory_w_default_arguments``
 
   .. code-block:: python
     :lineno-start: 43
 
-        def test_function_w_default_keyword_arguments(self):
+        def test_factory_w_default_arguments(self):
             first_name = self.first_name
             year_of_birth = self.random_year_of_birth
 
@@ -1549,13 +1584,13 @@ I want to see what happens when I try to make a person without a value for the `
 
   still green
 
-* since the :ref:`variables<what is a variable?>` point to :ref:`class attributes<test_attribute_error_w_class_attributes>`, I can use them directly and comment out ``first_name`` and ``year_of_birth`` in ``test_takes_keyword_arguments``
+* since the :ref:`variables<what is a variable?>` point to :ref:`class attributes<test_attribute_error_w_class_attributes>`, I can use them directly and comment out ``first_name`` and ``year_of_birth`` in ``test_factory_takes_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 20
     :emphasize-lines: 2,7,11,14,17,20
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             # first_name = self.first_name
             last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
@@ -1578,13 +1613,13 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-  the test is still green. I make the same change in ``test_function_w_default_keyword_arguments``
+  the test is still green. I make the same change in ``test_factory_w_default_arguments``
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 2-3,7-8,11,14
 
-        def test_function_w_default_keyword_arguments(self):
+        def test_factory_w_default_arguments(self):
             # first_name = self.first_name
             # year_of_birth = self.random_year_of_birth
 
@@ -1603,12 +1638,12 @@ I want to see what happens when I try to make a person without a value for the `
 
   all tests are still passing
 
-* I remove the commented lines from ``test_takes_keyword_arguments``
+* I remove the commented lines from ``test_factory_takes_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 20
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
             ))
@@ -1617,12 +1652,12 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(
                 ...
 
-  and in ``test_function_w_default_keyword_arguments``
+  and in ``test_factory_w_default_arguments``
 
   .. code-block:: python
     :lineno-start: 41
 
-        def test_function_w_default_keyword_arguments(self):
+        def test_factory_w_default_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
@@ -1654,7 +1689,7 @@ I want to see what happens when I try to make a person without a value for the `
                 this_year()-120, this_year()
             )
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             ...
 
   the terminal_ shows :ref:`AttributeError`
@@ -1679,7 +1714,7 @@ I want to see what happens when I try to make a person without a value for the `
                 this_year()-120, this_year()
             )
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             ...
 
   the terminal_ shows :ref:`AttributeError`
@@ -1702,7 +1737,7 @@ I want to see what happens when I try to make a person without a value for the `
                 this_year()-120, this_year()
             )
 
-        def test_takes_keyword_arguments(self):
+        def test_factory_takes_keyword_arguments(self):
             ...
 
   and both tests are green again!
