@@ -16,6 +16,7 @@ These chapters show how I setup any computer for development
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   setup my computer<setup_my_ide>
   install WSL on Windows<install_wsl>

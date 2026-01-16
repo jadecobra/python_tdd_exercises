@@ -73,6 +73,7 @@ the chapters
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   dictionaries
   ../../how_to/calculator/calculator_vi

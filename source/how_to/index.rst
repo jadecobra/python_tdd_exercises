@@ -22,6 +22,7 @@ the chapters
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   setup my computer<setup/index>
   make TDD manually<make_tdd_manually/index>

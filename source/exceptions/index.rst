@@ -20,6 +20,7 @@ The tests in this chapter cover the following Exceptions_
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   AssertionError
   ModuleNotFoundError

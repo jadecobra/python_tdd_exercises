@@ -14,6 +14,7 @@ The following chapters test Python_ basic data structures/types, which are a way
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   None: the simplest<none>
   Booleans: only 2<booleans/index>

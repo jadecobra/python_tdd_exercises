@@ -29,6 +29,7 @@ These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   handling Exceptions in tests<exception_handling_tests>
   handling Exceptions in programs<exception_handling_programs>

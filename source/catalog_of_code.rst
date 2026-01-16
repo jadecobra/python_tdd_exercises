@@ -8,6 +8,7 @@ Here are the tests and solutions in the book
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   code/make_tdd/code_make_python_tdd_sh
   code/make_tdd/code_make_python_tdd_ps1

@@ -58,6 +58,7 @@ the chapters
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   lists
   ../../how_to/calculator/calculator_iv

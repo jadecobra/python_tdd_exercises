@@ -24,6 +24,7 @@ the chapters
 
 .. toctree::
   :titlesonly:
+  :maxdepth: 1
 
   TypeError
   ../../how_to/calculator/calculator_iii
