@@ -55,7 +55,7 @@ requirements
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4

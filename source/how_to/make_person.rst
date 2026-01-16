@@ -1,10 +1,11 @@
 .. meta::
-  :description: Learn to build a Python person dictionary with a factory function using TDD. This tutorial covers keyword arguments, default values, and exception handling.
-  :keywords: Jacob Itegboje, python dictionary from function, python factory function tutorial, python tdd with pytest, create person object in python, python function with default keyword arguments, python test driven development example, handling exceptions in python unit tests, python dictionary with random values
+  :description: Learn to build a Python person dictionary with a factory function using TDD. This tutorial covers :ref:`keyword argument<test_functions_w_keyword_arguments>`s, default values, and exception handling.
+  :keywords: Jacob Itegboje, python dictionary from function, python factory function tutorial, python tdd with pytest, create person object in python, python function with default :ref:`keyword argument<test_functions_w_keyword_arguments>`s, python test driven development example, handling exceptions in python unit tests, python dictionary with random values
 
 .. include:: ../links.rst
 
 .. _now: https://docs.python.org/3/library/datetime.html#datetime.datetime.now
+.. _now method: https://docs.python.org/3/library/datetime.html#datetime.datetime.now
 .. _today: https://docs.python.org/3/library/datetime.html#datetime.date.today
 
 #################################################################################
@@ -39,7 +40,7 @@ start the project
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``person`` as the name of the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     ./makePythonTdd.sh person
@@ -69,7 +70,7 @@ start the project
 
             self.assertFalse(False)
 
-* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords` format to follow Python_ :ref:`convention<conventions>`
+* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -104,7 +105,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'src' is not defined
 
@@ -112,11 +113,12 @@ test_takes_keyword_arguments
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 3
+    :emphasize-text: NameError
 
     # Exceptions seen
     # AssertionError
@@ -133,15 +135,16 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-* I add it to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 4
+    :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
@@ -158,7 +161,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the :ref:`function<what is a function?>` to take in a keyword argument named ``first_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` named ``first_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -174,15 +177,16 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
+* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 16
     :emphasize-lines: 5
+    :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
@@ -201,7 +205,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the :ref:`function<what is a function?>` to take in a keyword argument named ``last_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` named ``last_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -218,7 +222,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
@@ -233,7 +237,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the :ref:`function<what is a function?>` to take in a keyword argument named ``sex``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` named ``sex``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -251,7 +255,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
@@ -259,7 +263,7 @@ test_takes_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3
+    :emphasize-lines: 1-4
 
     def factory(
             first_name, last_name,
@@ -269,7 +273,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* I want the :ref:`function<what is a function?>` to take in a keyword argument for ``year_of_birth`` and give it the result of calling another :ref:`function<what is a function?>`. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` for ``year_of_birth`` and give it the result of calling another :ref:`function<what is a function?>`. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -288,7 +292,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'this_year' is not defined
 
@@ -300,8 +304,8 @@ test_takes_keyword_arguments
     :linenos:
     :emphasize-lines: 5-6
 
-    import unittest
     import src.person
+    import unittest
 
 
     def this_year():
@@ -311,15 +315,14 @@ test_takes_keyword_arguments
     class TestPerson(unittest.TestCase):
 
         def test_takes_keyword_arguments(self):
-            ...
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  when I add the name to the :ref:`function<what is a function?>` definition in ``person.py``
+* I add the name to the :ref:`function<what is a function?>` definition in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -352,11 +355,11 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None != {}
 
-  I change the `return statement`_ in ``person.py``
+* I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -368,7 +371,7 @@ test_takes_keyword_arguments
         ):
         return {}
 
-  the test passes because ``{}`` and ``dict()`` are two ways to write an empty :ref:`dictionary<dictionaries>`
+  the test passes because ``{}`` and ``dict()`` are two ways to :ref:`write an empty dictionary<test_making_a_dictionary>`
 
 * I want the expected :ref:`dictionary<dictionaries>` in the test to have a key named ``first_name`` with the same value as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I change it in ``test_person.py``
 
@@ -391,7 +394,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {} != {'first_name': 'first_name'}
 
@@ -432,6 +435,8 @@ test_takes_keyword_arguments
 
   the test is still green. I now only need to change the value of ``first_name`` in one place
 
+* I change ``'first_name'`` to ``'jane'``
+
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 2
@@ -439,21 +444,9 @@ test_takes_keyword_arguments
         def test_takes_keyword_arguments(self):
             first_name = 'jane'
 
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=this_year()
-                ),
-                dict(
-                    first_name=first_name,
-                )
-            )
-
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'first_name'} != {'first_name': 'jane'}
 
@@ -474,11 +467,8 @@ test_takes_keyword_arguments
 * I want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 13
-
-        def test_takes_keyword_arguments(self):
-            first_name = 'jane'
+    :lineno-start: 14
+    :emphasize-lines: 10
 
             self.assertEqual(
                 src.person.factory(
@@ -495,7 +485,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane'} != {'first_name': 'jane', 'last_name': 'last_name'}
 
@@ -503,7 +493,7 @@ test_takes_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7
+    :emphasize-lines: 5-8
 
     def factory(
             first_name, last_name,
@@ -539,9 +529,7 @@ test_takes_keyword_arguments
                 )
             )
 
-  I change the value
-
-  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+* I change the value from ``'last_name'`` to ``'doe'``
 
   .. code-block:: python
     :lineno-start: 11
@@ -551,11 +539,9 @@ test_takes_keyword_arguments
             first_name = 'jane'
             last_name = 'doe'
 
-            ...
-
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'last_name'} != {'first_name': 'jane', 'last_name': 'doe'}
 
@@ -579,12 +565,8 @@ test_takes_keyword_arguments
 * I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 15
-
-        def test_takes_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
+    :lineno-start: 15
+    :emphasize-lines: 11
 
             self.assertEqual(
                 src.person.factory(
@@ -602,11 +584,11 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
 
-  I change the `return statement`_ in ``person.py``
+* I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -651,12 +633,10 @@ test_takes_keyword_arguments
 
   the test is still green
 
-* when I change the value of the ``sex`` variable_
-
-  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+* I change the value of the ``sex`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 11
     :emphasize-lines: 4
 
         def test_takes_keyword_arguments(self):
@@ -664,11 +644,9 @@ test_takes_keyword_arguments
             last_name = 'doe'
             sex = 'F'
 
-            ...
-
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
@@ -690,16 +668,11 @@ test_takes_keyword_arguments
 
   and the test is green again
 
-* I add a calculation and a key for ``age`` to the expectation in ``test_person.py``
+* I add a key for ``age`` and a calculation to the expectation in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 17
-
-        def test_takes_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
+    :lineno-start: 16
+    :emphasize-lines: 12
 
             self.assertEqual(
                 src.person.factory(
@@ -718,13 +691,13 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
-  I cannot do subtraction with :ref:`None<what is None?>` and I want the value for the current year
+  :ref:`I cannot do arithmetic with None<test_calculator_raises_type_error>` and I want the value for this year
 
-* I add an `import statement`_ at the top of ``test_person.py``
+* I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -749,7 +722,14 @@ test_takes_keyword_arguments
     def this_year():
         return datetime.datetime.now().year
 
-  ``datetime.datetime.now().year`` returns the ``year`` :ref:`attribute<AttributeError>` of the ``datetime`` :ref:`object<what is a class?>` returned by the now_ :ref:`method<what is a function?>` of the ``datetime`` :ref:`class<what is a class?>`, from the `datetime module`_. If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes<what is a class?>`
+  Here's what ``datetime.datetime.now().year`` means
+
+  - ``datetime`` is the `datetime module`_
+  - ``.datetime`` is an :ref:`object<what is a class?>`  in the `datetime module`_
+  - ``.now()`` is a call to the `now method`_ in the ``datetime`` :ref:`object<what is a class?>` from the `datetime module`_, it returns a `datetime.datetime object`_
+  ``.year`` is a :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object` returned by the `now method`_ of the `datetime.datetime object`_ : from the `datetime module`_.
+
+  If you are confused, do not worry, that was a lot of terminology, it is explained in more detail when I :ref:`test AttributeError<test_attribute_error>` and :ref:`classes<what is a class?>`
 
   .. attention:: I can also use the today_ :ref:`method<what is a function?>` to get the same value
 
@@ -762,7 +742,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
 
@@ -833,7 +813,7 @@ test_takes_keyword_arguments
     import src.person
     import unittest
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers. I use it for the ``year_of_birth`` variable_
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers. I use it for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -851,7 +831,7 @@ test_takes_keyword_arguments
 
   ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X}
 
@@ -874,7 +854,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'this_year' is not defined
 
@@ -899,7 +879,7 @@ test_takes_keyword_arguments
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
@@ -937,7 +917,7 @@ test_takes_keyword_arguments
 
   ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': X}
 
@@ -980,7 +960,7 @@ test_takes_keyword_arguments
 
   I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'public', 'sex': X, 'age': Y}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'smith', 'sex': X, 'age': Y}
@@ -1027,7 +1007,7 @@ test_takes_keyword_arguments
 
   I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'joe', 'last_name': X, 'sex': Y, 'age': Z}
     AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'john', 'last_name': X, 'sex': Y, 'age': Z}
@@ -1065,7 +1045,7 @@ I want to see what happens when I try to make a person without a value for the `
 =================================================================================
 
 * I select ``test_takes_keyword_arguments``, then copy (:kbd:`ctrl+c` (Windows/Linux) or ``command+c`` (mac)) and paste (:kbd:`ctrl+v` (Windows/Linux) or ``command+v`` (mac)) it below in ``test_person.py``
-* I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` variable_
+* I change the name of the new test to ``test_function_w_default_keyword_arguments`` and comment out the ``last_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :linenos:
@@ -1139,7 +1119,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'last_name' is not defined
 
@@ -1170,7 +1150,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
@@ -1190,7 +1170,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     SyntaxError: parameter without a default follows parameter with a default
 
@@ -1221,7 +1201,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     SyntaxError: parameter without a default follows parameter with a default
 
@@ -1239,7 +1219,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'last_name' is not defined
 
@@ -1268,7 +1248,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': X, 'last_name': None, 'sex': Y, 'age': Z} != {'first_name': X, 'last_name': 'doe', 'sex': Y, 'age': Z}
 
@@ -1345,7 +1325,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'sex' is not defined
 
@@ -1371,7 +1351,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'sex' is not defined
 
@@ -1397,7 +1377,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': X, 'last_name': 'doe', 'sex': None, 'age': Y} != {'first_name': X, 'last_name': 'doe', 'sex': 'M', 'age': Y}
 
@@ -1519,7 +1499,7 @@ I want to see what happens when I try to make a person without a value for the `
             # year_of_birth = random.randint(
             #    this_year()-120, this_year()
             # )
-            year_of_birth = self.random_second_numberear_of_birth
+            year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 ...
@@ -1538,7 +1518,7 @@ I want to see what happens when I try to make a person without a value for the `
             # year_of_birth = random.randint(
             #    this_year()-120, this_year()
             # )
-            year_of_birth = self.random_second_numberear_of_birth
+            year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 ...
@@ -1556,7 +1536,7 @@ I want to see what happens when I try to make a person without a value for the `
                 'doe', 'smith', 'blow', 'public',
             ))
             sex = random.choice(('F', 'M'))
-            year_of_birth = self.random_second_numberear_of_birth
+            year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 ...
@@ -1568,7 +1548,7 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_function_w_default_keyword_arguments(self):
             first_name = self.first_name
-            year_of_birth = self.random_second_numberear_of_birth
+            year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 ...
@@ -1587,20 +1567,20 @@ I want to see what happens when I try to make a person without a value for the `
                 'doe', 'smith', 'blow', 'public',
             ))
             sex = random.choice(('F', 'M'))
-            # year_of_birth = self.random_second_numberear_of_birth
+            # year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
                     last_name=last_name,
                     sex=sex,
-                    year_of_birth=self.random_second_numberear_of_birth,
+                    year_of_birth=self.random_year_of_birth,
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name=last_name,
                     sex=sex,
-                    age=this_year()-self.random_second_numberear_of_birth,
+                    age=this_year()-self.random_year_of_birth,
                 )
             )
 
@@ -1612,18 +1592,18 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_function_w_default_keyword_arguments(self):
             # first_name = self.first_name
-            # year_of_birth = self.random_second_numberear_of_birth
+            # year_of_birth = self.random_year_of_birth
 
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
-                    year_of_birth=self.random_second_numberear_of_birth,
+                    year_of_birth=self.random_year_of_birth,
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name='doe',
                     sex='M',
-                    age=this_year()-self.random_second_numberear_of_birth,
+                    age=this_year()-self.random_year_of_birth,
                 )
             )
 
@@ -1652,13 +1632,13 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(
                 src.person.factory(
                     first_name=self.first_name,
-                    year_of_birth=self.random_second_numberear_of_birth
+                    year_of_birth=self.random_year_of_birth
                 ),
                 dict(
                     first_name=self.first_name,
                     last_name='doe',
                     sex='M',
-                    age=this_year()-self.random_second_numberear_of_birth,
+                    age=this_year()-self.random_year_of_birth,
                 )
             )
 
@@ -1685,7 +1665,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: 'TestPerson' object has no attribute 'first_name'
 
@@ -1710,7 +1690,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: 'TestPerson' object has no attribute 'year_of_birth'
 
@@ -1724,7 +1704,7 @@ I want to see what happens when I try to make a person without a value for the `
             self.first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
-            self.random_second_numberear_of_birth = random.randint(
+            self.random_year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
 
@@ -1733,7 +1713,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   and both tests are green again!
 
-  ``self.first_name`` and ``self.random_second_numberear_of_birth`` are given random values before the first test, then given random values again before the second test. That was a lot, but we got through it.
+  ``self.first_name`` and ``self.random_year_of_birth`` are given random values before the first test, then given random values again before the second test. That was a lot, but we got through it.
 
 ----
 
@@ -1748,7 +1728,7 @@ test_person_tests
 * I close ``test_person.py``
 * I want to write the solution without looking at the tests and delete all the text in ``person.py``. The terminal_ shows :ref:`AttributeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
@@ -1765,7 +1745,7 @@ test_person_tests
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'factory' is not defined
 
@@ -1778,7 +1758,7 @@ test_person_tests
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: 'NoneType' object is not callable
 
@@ -1792,11 +1772,11 @@ test_person_tests
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-  I add the keyword argument to the :ref:`function<what is a function?>` definition
+  I add the :ref:`keyword argument<test_functions_w_keyword_arguments>` to the :ref:`function<what is a function?>` definition
 
   .. code-block:: python
     :linenos:
@@ -1807,11 +1787,11 @@ test_person_tests
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
-  I add the keyword argument
+  I add the :ref:`keyword argument<test_functions_w_keyword_arguments>`
 
   .. code-block:: python
     :linenos:
@@ -1822,11 +1802,11 @@ test_person_tests
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-  when I add the keyword argument
+  when I add the :ref:`keyword argument<test_functions_w_keyword_arguments>`
 
   .. code-block:: python
     :linenos:
@@ -1840,11 +1820,11 @@ test_person_tests
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  I add the missing keyword argument
+  I add the missing :ref:`keyword argument<test_functions_w_keyword_arguments>`
 
   .. code-block:: python
     :linenos:
@@ -1858,7 +1838,7 @@ test_person_tests
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': A}
 
@@ -1881,7 +1861,7 @@ test_person_tests
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'smith', 'sex': 'M', 'age': 50}
     AssertionError: {'first_name': 'john', 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': 73}
@@ -1909,7 +1889,7 @@ test_person_tests
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': X, 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': X, 'last_name': 'public', 'sex': 'M', 'age': 69}
     AssertionError: {'first_name': X, 'last_name': 'blow', 'sex': 'F', 'age': 20} != {'first_name': X, 'last_name': 'blow', 'sex': 'M', 'age': 97}
@@ -1937,7 +1917,7 @@ test_person_tests
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': 'F', 'age': 20} != {'first_name': X, 'last_name': Y, 'sex': 'M', 'age': 3}
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': 'F', 'age': 20} != {'first_name': X, 'last_name': Y, 'sex': 'M', 'age': 118}
@@ -1965,7 +1945,7 @@ test_person_tests
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 20} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 1}
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 20} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 90}
@@ -1993,7 +1973,7 @@ test_person_tests
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 2022} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 2}
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 2024} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': 0}
@@ -2032,7 +2012,7 @@ test_person_tests
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: factory() missing 2 required positional arguments: 'last_name' and 'sex'
 
@@ -2050,7 +2030,7 @@ test_person_tests
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     SyntaxError: parameter without a default follows parameter with a default
 
@@ -2068,7 +2048,7 @@ test_person_tests
 
   the terminal_ shows SyntaxError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     SyntaxError: parameter without a default follows parameter with a default
 
@@ -2085,7 +2065,7 @@ test_person_tests
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': X, 'last_name': None, 'sex': None, 'age': Y} != {'first_name': X, 'last_name': 'doe', 'sex': 'M', 'age': Y}
 
@@ -2105,7 +2085,7 @@ test_person_tests
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': X, 'last_name': Y, 'sex': None, 'age': Z} != {'first_name': Z, 'last_name': Y, 'sex': 'M', 'age': Z}
 
@@ -2141,27 +2121,27 @@ close the project
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     deactivate
 
   the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/person
 
 * I `change directory`_ to the parent of ``person``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 

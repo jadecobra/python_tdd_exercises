@@ -903,7 +903,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test passes
 
-* I remove the next test since it is now covered by this new :ref:`assertion<what is an assertion?>` that uses a variable_
+* I remove the next test since it is now covered by this new :ref:`assertion<what is an assertion?>` that uses a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 11

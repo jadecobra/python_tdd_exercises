@@ -1287,7 +1287,7 @@ what is different is the way I called them in the tests
 .. code-block:: python
 
   w_positional_arguments('first', 'last')
-  w_positional_arguments('first', 'last')
+  w_positional_arguments('last', 'first')
   w_keyword_arguments(first_input='first', last_input='last')
   w_keyword_arguments(last_input='last', first_input='first')
   w_keyword_arguments('last', 'first')

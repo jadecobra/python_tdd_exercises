@@ -42,11 +42,11 @@ class Person(object):
     ):
         self.first_name = first_name
         self.last_name = last_name
-        self.random_second_numberear_of_birth = year_of_birth
+        self.random_year_of_birth = year_of_birth
         return None
 
     def get_age(self):
-        return this_year() - self.random_second_numberear_of_birth
+        return this_year() - self.random_year_of_birth
 
     def say_hello(self):
         return (
