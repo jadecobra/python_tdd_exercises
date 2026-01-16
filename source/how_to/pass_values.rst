@@ -283,7 +283,7 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_telephone.py:7: AssertionError
-    ======================== short test summary info =========================
+    ========================= short test summary info ==========================
     FAILED tests/test_telephone.py::TestTelephone::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 

@@ -1182,7 +1182,7 @@ how to open the test file in the editor from the terminal
     E       AssertionError: True is not false
 
     tests/test_magic.py:7: AssertionError
-    ============================== short test summary info ================================
+    =============================== short test summary info =================================
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ================================= 1 failed in X.YZs ===================================
 

@@ -154,7 +154,7 @@ start the project
     :emphasize-lines: 10
     :emphasize-text: tests/test_type_error.py:7
 
-    ======================================= FAILURES =======================================
+    ================================= FAILURES =================================
     ______________________________ TestTypeError.test_failure ______________________________
 
     self = <tests.test_exceptions.TestTypeError testMethod=test_failure>
@@ -164,9 +164,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_type_error.py:7: AssertionError
-    =============================== short test summary info ================================
+    ================================ short test summary info =================================
     FAILED tests/test_type_error.py::TestTypeError::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
+    ============================ 1 failed in X.YZs =============================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to open it in the :ref:`editor<2 editors>`
 

@@ -263,7 +263,7 @@ how to make a shell script run as a command
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ======================================= FAILURES =======================================
+    ================================= FAILURES =================================
     _____________________________ TestMagicAgain.test_failure ______________________________
 
     self = <tests.test_magic_again.TestMagicAgain testMethod=test_failure>
@@ -273,15 +273,15 @@ how to make a shell script run as a command
     E       AssertionError: True is not false
 
     tests/test_magic_again.py:7: AssertionError
-    =============================== short test summary info ================================
+    ================================ short test summary info =================================
     FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
+    ============================ 1 failed in X.YZs =============================
 
   Success! I just made a program_ that can make the ``magic_again`` project anytime I want and it automatically does the steps I did manually.
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
-* I hit :kbd:`ctrl+c` in the terminal_ to stop the test
+* I use :kbd:`ctrl+c` in the terminal_ to stop the test
 
 * I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic_again`` to the name of the new project in the :ref:`editor<2 editors>`
 
@@ -324,7 +324,7 @@ how to make a shell script run as a command
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ======================================= FAILURES =======================================
+    ================================= FAILURES =================================
     ______________________________ TestMoreMagic.test_failure ______________________________
 
     self = <tests.test_more_magic.TestMoreMagic testMethod=test_failure>
@@ -334,13 +334,13 @@ how to make a shell script run as a command
     E       AssertionError: True is not false
 
     tests/test_more_magic.py:7: AssertionError
-    =============================== short test summary info ================================
+    ================================ short test summary info =================================
     FAILED tests/test_more_magic.py::TestMoreMagic::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
+    ============================ 1 failed in X.YZs =============================
 
   I make the test pass
 
-* I hit :kbd:`ctrl+c` to exit the tests in the terminal_
+* I use :kbd:`ctrl+c` to exit the tests in the terminal_
 
 the program_ works and can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically the way I want every time
 

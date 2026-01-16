@@ -33,6 +33,7 @@ I change the name of the project in 5 places every time I use the program to mak
 The program_ should always make this structure
 
 .. code-block:: shell
+  :emphasize-text: PROJECT_NAME
 
   PROJECT_NAME
   ├── requirements.txt
@@ -47,7 +48,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` if you are using `Visual Studio Code`_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -59,28 +60,12 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
   .. code-block:: shell
     :linenos:
     :emphasize-lines: 2
+    :emphasize-text: PROJECT_NAME
 
     #!/bin/bash
     PROJECT_NAME="dictionaries"
     mkdir dictionaries
     cd dictionaries
-    mkdir src
-    touch src/dictionaries.py
-    mkdir tests
-    touch tests/__init__.py
-
-    echo "import unittest
-
-
-    class TestDictionaries(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
-
-
-    # Exceptions seen
-    # AssertionError
-    " > tests/test_dictionaries.py
 
   a :ref:`variable<test_attribute_error_w_variables>` is a name that is used for a value that can change. For example, we use the word
 
@@ -98,6 +83,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
   .. code-block:: shell
     :linenos:
     :emphasize-lines: 3-4, 6, 13, 21
+    :emphasize-text: PROJECT_NAME
 
     #!/bin/bash
     PROJECT_NAME="dictionaries"
@@ -121,7 +107,17 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     # AssertionError
     " > tests/test_$PROJECT_NAME.py
 
-* I change the name of the project to
+* Since I already did some work in the :ref:`dictionaries<what is a dictionary?>` project. I do not want the program_ to write over it. I change the name of the project to ``pro_magic`` because I am a professional
+
+  .. code-block:: shell
+    :linenos:
+    :emphasize-lines: 2
+    :emphasize-text: pro_magic
+
+    #!/bin/bash
+    PROJECT_NAME="pro_magic"
+    mkdir $PROJECT_NAME
+    cd $PROJECT_NAME
 
 * I run the program_ in the terminal_
 
@@ -134,59 +130,45 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
   .. code-block:: shell
     :emphasize-lines: 2, 4, 10, 12
+    :emphasize-text: pro_magic
 
-    ======================================= FAILURES =======================================
-    ___________________________ TestDictionaries.test_failure ______________________________
+    ================================= FAILURES =================================
+    _______________________ Testpro_magic.test_failure _________________________
 
-    self = <tests.test_magic_again.TestDictionaries testMethod=test_failure>
+    self = <tests.test_pro_magic.Testpro_magic testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/test_dictionaries.py:7: AssertionError
-    =============================== short test summary info ================================
-    FAILED tests/test_dictionaries.py::TestDictionaries::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ===================================
+    tests/test_pro_magic.py:7: AssertionError
+    ========================= short test summary info ==========================
+    FAILED tests/test_pro_magic.py::Testpro_magic::test_failure - AssertionError: True is not false
+    ============================ 1 failed in X.YZs =============================
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``tests/test_dictionaries.py`` to make the test pass
+  unfortunately this program_ does not have a way to make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made with this program_
 
-* I hit :kbd:`ctrl+c` in the terminal_ to stop the test
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/pro_magic.py`` in the terminal_ to open it in the :ref:`editor<2 editors>`
 
-* I run tree_ to see what I have in the ``pumping_python`` folder_ now
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+* I use :kbd:`ctrl+c` in the terminal_ to stop the test
 
-    tree -a -L 2
+The program_ works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file_ to give it the project name.
 
-  the terminal_ shows
+----
 
-  .. code-block:: shell
-    :emphasize-lines: 8-13
+********************************************************************************************
+how to call a shell script with arguments
+********************************************************************************************
 
-    .
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── dictionaries
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    └── makePythonTdd.sh
-
-* The program_ works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file_ to give it the project name. I want to be able to just call the program_ and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
+I want to be able to call the program_ and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
 
   .. code-block:: shell
 
     command argument
 
-  in the code above, :kbd:`command` will be ``./makePythonTdd.sh`` and ``$1`` will be ``argument`` or whatever name I give.
+  in the code above, ``command`` is the name of the program_ ``./makePythonTdd.sh`` and ``$1`` is ``argument`` or whatever name I give.
 
   Here are a few other examples
 
@@ -214,13 +196,16 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
   ``tree`` is the command and ``$`` is ``-a``
 
-* I change ``dictionaries`` to ``$1`` in ``makePythonTdd.sh``
+* I change ``pro_magic`` to ``$1`` in ``makePythonTdd.sh``
 
   .. code-block:: shell
-    :lineno-start: 2
-    :emphasize-lines: 1
+    :linenos: 2
+    :emphasize-lines: 2
+    :emphasize-text: $1
 
+    #!/bin/bash
     PROJECT_NAME=$1
+    mkdir $PROJECT_NAME
 
 * I try the program_ again, this time with a different name for the project in the terminal_
 
@@ -234,7 +219,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ======================================= FAILURES =======================================
+    ================================= FAILURES =================================
     _____________________________ Testdictionaries_again.test_failure ______________________________
 
     self = <tests.test_dictionaries_again.Testdictionaries_again testMethod=test_failure>
@@ -244,7 +229,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     E       AssertionError: True is not false
 
     tests/test_dictionaries_again.py:7: AssertionError
-    =============================== short test summary info ================================
+    ================================ short test summary info =================================
     FAILED tests/test_dictionaries_again.py::Testdictionaries_again::test_failure - AssertionError: True is not false
     ================================== 1 failed in 0.04s ===================================
 
@@ -306,7 +291,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     E       AssertionError: True is not false
 
     tests/test_assertion_error.py:7: AssertionError
-    =============================== short test summary info ===============================
+    ================================ short test summary info ================================
     FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
