@@ -1180,10 +1180,6 @@ close the project
 review
 *********************************************************************************
 
-The :ref:`calculator program<how to make a calculator>` can take 2 inputs and :ref:`check if they are both numbers<test_calculator_sends_message_when_input_is_not_a_number>`, then :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` or :ref:`divide<test_division>` them
-
-Even though the program_ says it only works with numbers, I did not add tests for tuples_, :ref:`lists`, sets_, and :ref:`dictionaries`, though they are touched in :ref:`test_type_error_w_objects_that_do_not_mix`, Do you want to add them or do we already have enough tests to know what would happen?
-
 I ran tests for TypeError_ with
 
 * :ref:`objects that are not  callable<test_type_error_w_the_uncallables>`
