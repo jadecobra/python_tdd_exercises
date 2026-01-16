@@ -154,7 +154,25 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I use :kbd:`ctrl+c` in the terminal_ to stop the test
 
-The program_ works as expected, and I only need to give the project name in one place. It would be nice if I do not have to go into the file_ to give it the project name.
+* I run tree_ to see what I have in the ``pro_magic`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    tree -a -L 1 pro_magic
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    pro_magic
+    ├── .pytest_cache
+    ├── requirements.txt
+    ├── src
+    ├── tests
+    └── .venv
+
+The program_ does what I want, and I only need to give the project name in one place. It would be nice if I do not have to go into the file_ to give it the project name.
 
 ----
 
@@ -162,140 +180,129 @@ The program_ works as expected, and I only need to give the project name in one 
 how to call a shell script with arguments
 ********************************************************************************************
 
-I want to be able to call the program_ and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example,
+I want to be able to call the program_ and give it a name for the project from the command line. I can do this with ``$1`` in bash_, it represents the first argument given when a program_ is called. For example
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    command argument
+  command argument
 
-  in the code above, ``command`` is the name of the program_ ``./makePythonTdd.sh`` and ``$1`` is ``argument`` or whatever name I give.
+in the code above, ``command`` is the name of the program_ ``./makePythonTdd.sh`` and ``$1`` is ``argument`` or whatever name I give.
 
-  Here are a few other examples
+Here are a few other examples
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    mkdir name_of_folder
+  mkdir folder_name
 
-  ``mkdir`` is the command, and ``$1`` is ``name_of_folder``
+``mkdir`` is the command, and ``$1`` is ``folder_name``
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    touch name_of_file
+  touch file_name
 
-  ``touch`` is the command, and ``$1`` is ``name_of_file``
+``touch`` is the command, and ``$1`` is ``file_name``
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    echo "anything"
+  echo "echo"
 
-  ``echo`` is the command, and ``$1`` is ``"anything"``
+``echo`` is the command, and ``$1`` is ``"echo"``
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    tree -a
+  tree -a
 
-  ``tree`` is the command and ``$`` is ``-a``
+``tree`` is the command and ``$1`` is ``-a``
+
+----
 
 * I change ``pro_magic`` to ``$1`` in ``makePythonTdd.sh``
 
   .. code-block:: shell
-    :linenos: 2
+    :linenos:
     :emphasize-lines: 2
-    :emphasize-text: $1
+    :emphasize-text: 1
 
     #!/bin/bash
     PROJECT_NAME=$1
     mkdir $PROJECT_NAME
 
-* I try the program_ again, this time with a different name for the project in the terminal_
+* I try the program_ again, this time with a name for the project in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh dictionaries_again
+    ./makePythonTdd.sh pro_magic_plus
 
   the terminal_ shows
 
   .. code-block:: shell
     :emphasize-lines: 10
+    :emphasize-text: pro_magic_plus
 
     ================================= FAILURES =================================
-    _____________________________ Testdictionaries_again.test_failure ______________________________
+    ____________________ Testpro_magic_plus.test_failure _______________________
 
-    self = <tests.test_dictionaries_again.Testdictionaries_again testMethod=test_failure>
+    self = <tests.test_pro_magic_plus.Testpro_magic_plus testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/test_dictionaries_again.py:7: AssertionError
-    ================================ short test summary info =================================
-    FAILED tests/test_dictionaries_again.py::Testdictionaries_again::test_failure - AssertionError: True is not false
-    ================================== 1 failed in 0.04s ===================================
+    tests/test_pro_magic_plus.py:7: AssertionError
+    ========================= short test summary info ==========================
+    FAILED tests/test_pro_magic_plus.py::Testpro_magic_plus::test_failure - AssertionError: True is not false
+    ============================ 1 failed in X.YZs =============================
 
-* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_dictionaries_again.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
+* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_pro_magic_plus.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
 
 * I use :kbd:`ctrl+c` on the keyboard in the terminal_ to stop the tests
 
-* I run tree_ to see what I have in the ``pumping_python`` folder_
+* I run tree_ to see what I have in the ``pro_magic_plus`` folder_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree -a -L 2
+    tree -a -L 1 pro_magic_plus
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 15-20
 
-    .
-    ├── magic_again
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── dictionaries
-    │   ├── .pytest_cache
-    │   ├── requirements.txt
-    │   ├── src
-    │   ├── tests
-    │   └── .venv
-    ├── makePythonTdd.sh
-    └── dictionaries_again
-        ├── .pytest_cache
-        ├── requirements.txt
-        ├── src
-        ├── tests
-        └── .venv
+    pro_magic_plus
+    ├── .pytest_cache
+    ├── requirements.txt
+    ├── src
+    ├── tests
+    └── .venv
 
 * I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh assertion_error
+    ./makePythonTdd.sh person
 
   the terminal_ shows
 
   .. code-block:: shell
 
     ====================================== FAILURES =======================================
-    __________________________ Testassertion_error.test_failure ___________________________
 
-    self = <tests.test_assertion_error.Testassertion_error testMethod=test_failure>
+    ______________________________ Testperson.test_failure ________________________________
+
+    self = <tests.test_person.Testperson testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/test_assertion_error.py:7: AssertionError
-    ================================ short test summary info ================================
-    FAILED tests/test_assertion_error.py::Testassertion_error::test_failure - AssertionError: True is not false
+    tests/test_person.py:7: AssertionError
+    =============================== short test summary info ===============================
+    FAILED tests/test_person.py::Testperson::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
-  the computer makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`assertion_error<what causes AssertionError?>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`AssertionError<what causes AssertionError?>`
+the computer makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`person<how to make a person>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to make a person`
 
 ----
 
@@ -305,21 +312,41 @@ review
 
 `Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
-:ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
-
 ----
 
 *************************************************************************************
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<makePythonTdd.sh>`
+:ref:`Do you want to see all the CODE for makePythonTdd.sh?<makePythonTdd.sh>`
 
 ----
 
-:ref:`Would you like to test AssertionError?<what causes AssertionError?>`
+*************************************************************************************
+what is next?
+*************************************************************************************
 
------
+you know
+
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
+* :ref:`how to write functions<what is a function?>`
+* :ref:`how to pass values from tests to functions<how to pass values>`
+* :ref:`what is None and NOT None<what is None?>`
+* :ref:`what is True and False in Python<what are booleans?>`
+* :ref:`how to write programs that make decisions<truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to raise TypeError<TypeError>`
+* :ref:`what you can do with Lists<lists>`
+* :ref:`how to use list comprehensions<list comprehensions>`
+* :ref:`what you can do with dictionaries<dictionaries>`
+* :ref:`how to make a Python Test Driven Development environment automatically with variables<how to make a test driven development environment 3>`
+
+:ref:`would you like to test using dictionaries and functions to make a person?<how to make a person>`
+
+----
 
 *********************************************************************************
 rate pumping python
