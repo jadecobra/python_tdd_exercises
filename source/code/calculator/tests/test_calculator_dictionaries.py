@@ -20,7 +20,7 @@ class TestCalculator(unittest.TestCase):
         except ZeroDivisionError:
             self.division_result = 'brmph?! cannot divide by 0. Try again...'
 
-        self.arithmetic_tests = {
+        self.calculator_tests = {
             'addition': {
                 'function': src.calculator.add,
                 'expectation': (
@@ -50,14 +50,14 @@ class TestCalculator(unittest.TestCase):
         }
 
     def test_calculator_functions(self):
-        for operation in self.arithmetic_tests:
+        for operation in self.calculator_tests:
             with self.subTest(operation=operation):
                 self.assertEqual(
-                    self.arithmetic_tests[operation]['function'](
+                    self.calculator_tests[operation]['function'](
                         self.random_first_number,
                         self.random_second_number
                     ),
-                    self.arithmetic_tests[operation]['expectation']
+                    self.calculator_tests[operation]['expectation']
                 )
 
     def test_calculator_sends_message_when_input_is_not_a_number(self):
@@ -73,9 +73,9 @@ class TestCalculator(unittest.TestCase):
             dict(), {'key': 'value'},
         ):
             with self.subTest(i=data):
-                for operation in self.arithmetic_tests:
+                for operation in self.calculator_tests:
                     self.assertEqual(
-                        self.arithmetic_tests[operation]['function'](
+                        self.calculator_tests[operation]['function'](
                             data, a_random_number()
                         ),
                         error_message
@@ -106,13 +106,13 @@ class TestCalculator(unittest.TestCase):
             self.random_first_number-self.random_first_number
         )
 
-        for operation in self.arithmetic_tests:
+        for operation in self.calculator_tests:
             with self.subTest(operation=operation):
                 self.assertEqual(
-                    self.arithmetic_tests[operation]['function'](
+                    self.calculator_tests[operation]['function'](
                         *two_numbers
                     ),
-                    self.arithmetic_tests[operation]['expectation']
+                    self.calculator_tests[operation]['expectation']
                 )
 
     def test_calculator_w_dictionary_items(self):
@@ -150,22 +150,22 @@ class TestCalculator(unittest.TestCase):
             self.random_first_number-self.random_first_number
         )
 
-        for operation in self.arithmetic_tests:
+        for operation in self.calculator_tests:
             with self.subTest(operation=operation):
                 self.assertEqual(
-                    self.arithmetic_tests[operation]['function'](
+                    self.calculator_tests[operation]['function'](
                         **two_numbers
                     ),
-                    self.arithmetic_tests[operation]['expectation']
+                    self.calculator_tests[operation]['expectation']
                 )
 
     def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-        for operation in self.arithmetic_tests:
+        for operation in self.calculator_tests:
             with (
                 self.subTest(operation=operation),
                 self.assertRaises(TypeError),
             ):
-                self.arithmetic_tests[operation]['function'](
+                self.calculator_tests[operation]['function'](
                     *[0, 1, 2]
                 )
 
