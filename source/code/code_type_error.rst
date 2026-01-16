@@ -31,7 +31,7 @@ TypeError with the Calculator tests
 
 the code in ``calculator/tests/test_calculator.py`` from :ref:`TypeError`
 
-.. literalinclude:: tests/test_calculator_type_error.py
+.. literalinclude:: calculator/tests/test_calculator_type_error.py
   :language: python
   :linenos:
 
@@ -41,6 +41,6 @@ TypeError with the Calculator solutions
 
 the solution in ``calculator/src/calculator.py`` from :ref:`TypeError`
 
-.. literalinclude:: solutions/calculator_type_error.py
+.. literalinclude:: calculator/solutions/calculator_type_error.py
   :language: python
   :linenos:

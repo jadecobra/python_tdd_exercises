@@ -31,7 +31,7 @@ Exception Handling with the Calculator tests
 
 the code in ``calculator/tests/test_calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
 
-.. literalinclude:: tests/test_calculator_exceptions_programs.py
+.. literalinclude:: calculator/tests/test_calculator_exceptions_programs.py
   :language: python
   :linenos:
 
@@ -41,6 +41,6 @@ Exception Handling with the Calculator solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
 
-.. literalinclude:: solutions/calculator_exceptions_programs.py
+.. literalinclude:: calculator/solutions/calculator_exceptions_programs.py
   :language: python
   :linenos:

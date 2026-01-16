@@ -10,6 +10,7 @@ def a_random_number():
 class TestCalculator(unittest.TestCase):
 
     def setUp(self):
+        self.history = {}
         self.random_first_number = a_random_number()
         self.random_second_number = a_random_number()
         try:
@@ -41,7 +42,11 @@ class TestCalculator(unittest.TestCase):
                 'expectation': (
                     self.random_first_number*self.random_second_number
                 ),
-            }
+            },
+            'square': {
+                'function': src.calculator.square,
+                'expectation': self.random_first_number**2
+            },
         }
 
     def test_calculator_functions(self):
