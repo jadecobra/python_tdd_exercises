@@ -19,8 +19,8 @@ class Test$($PROJECT_NAME)(unittest.TestCase):
 # AssertionError
 " | Out-File "tests/test_$PROJECT_NAME.py" -Encoding UTF8
 
-code tests/test_$PROJECT_NAME.py
 code src/$PROJECT_NAME.py
+code tests/test_$PROJECT_NAME.py
 
 python -m venv .venv
 .venv/scripts/activate.ps1

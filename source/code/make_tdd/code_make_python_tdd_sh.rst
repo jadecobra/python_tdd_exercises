@@ -45,6 +45,6 @@ Since you are the adventurous type and made it this deep in the book, I have add
 .. literalinclude:: makePythonTddPlus.sh
   :language: shell
   :linenos:
-  :emphasize-lines: 2-6
+  :emphasize-lines: 2-6, 8-10, 12, 14, 29-30
 
-this works with `Visual Studio Code`_ you can change it to use the command for any `Integrated Development Environment`_ you like
+this works with `Visual Studio Code`_ you can change it to use the command for any `Integrated Development Environment (IDE)`_ you like

@@ -26,8 +26,8 @@ class Test$CLASS_NAME(unittest.TestCase):
 # AssertionError
 " > tests/test_$PROJECT_NAME.py
 
-code tests/test_$PROJECT_NAME.py
 code src/$PROJECT_NAME.py
+code tests/test_$PROJECT_NAME.py
 
 python3 -m venv .venv
 source .venv/bin/activate
