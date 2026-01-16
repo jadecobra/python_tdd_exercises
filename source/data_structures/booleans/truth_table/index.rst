@@ -330,7 +330,6 @@ truth table operations
 *********************************************************************************
 
 .. toctree::
-  :maxdepth: 2
   :titlesonly:
 
   Nullary and Unary<01_nullary_unary_operations>

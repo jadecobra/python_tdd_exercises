@@ -63,7 +63,7 @@ the chapters
   ../../how_to/calculator/calculator_iv
   list_comprehensions
   ../../how_to/calculator/calculator_v
-  ../../data_structures/booleans_ii
+  ../../data_structures/booleans/booleans_ii
 
 ----
 
