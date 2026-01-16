@@ -36,7 +36,7 @@ This process can be repeated as many times as needed until I get to my goal.
 preview
 *********************************************************************************
 
-I set up an environment for every Python_ project, this way I keep all the things that belong to the project in the same place. I can do this manually, which means I have to do the same exact steps for every project or I could do it automatically where I give the computer a command and it does all those steps for me.
+I set up an environment for every Python_ project, this way I keep all the things that belong to the project in the same place. I can do this manually, which means I have to do the same exact steps for every project or I could do it automatically where I give the computer a command it does all those steps for me.
 
 Some things I think about when I want to start a project
 

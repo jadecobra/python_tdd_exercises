@@ -212,7 +212,7 @@ Here are a few other examples
 
   tree /F
 
-``tree`` is the command and ``$args[0]`` is ``/F``
+``tree`` is the command ``$args[0]`` is ``/F``
 
 ----
 

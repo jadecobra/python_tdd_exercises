@@ -212,7 +212,7 @@ Here are a few other examples
 
   tree -a
 
-``tree`` is the command and ``$1`` is ``-a``
+``tree`` is the command ``$1`` is ``-a``
 
 ----
 

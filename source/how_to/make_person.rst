@@ -5,8 +5,13 @@
 .. include:: ../links.rst
 
 .. _now: https://docs.python.org/3/library/datetime.html#datetime.datetime.now
-.. _now method: https://docs.python.org/3/library/datetime.html#datetime.datetime.now
+.. _now method: now_
 .. _today: https://docs.python.org/3/library/datetime.html#datetime.date.today
+.. _today method: today_
+.. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
+.. _random.randint method: `random.randint`_
+.. _random.choice: https://docs.python.org/3/library/random.html#random.choice
+.. _random.choice method: https://docs.python.org/3/library/random.html#random.choice
 
 #################################################################################
 how to make a person
@@ -298,8 +303,6 @@ test_takes_keyword_arguments
 
 * I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition in ``test_person.py``
 
-  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
-
   .. code-block:: python
     :linenos:
     :emphasize-lines: 5-6
@@ -313,8 +316,6 @@ test_takes_keyword_arguments
 
 
     class TestPerson(unittest.TestCase):
-
-        def test_takes_keyword_arguments(self):
 
   the terminal_ shows :ref:`TypeError`
 
@@ -506,7 +507,7 @@ test_takes_keyword_arguments
 
   the test passes
 
-* ``'last_name'`` happens twice in the test, I add a :ref:`variable<test_attribute_error_w_variables>` to remove the duplication like I did with ``first_name`` in ``test_person.py``
+* ``'last_name'`` happens twice in the test, I add a :ref:`variable<test_attribute_error_w_variables>` to remove the duplication like I did with ``'first_name'`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -725,13 +726,13 @@ test_takes_keyword_arguments
   Here's what ``datetime.datetime.now().year`` means
 
   - ``datetime`` is the `datetime module`_
-  - ``.datetime`` is an :ref:`object<what is a class?>`  in the `datetime module`_
-  - ``.now()`` is a call to the `now method`_of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
+  - ``.datetime`` is a call to the `datetime.datetime object`_ in the `datetime module`_
+  - ``.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
   ``.year`` is a :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
-  If you are confused, do not worry, that was a lot of words, it is explained in more detail in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`
+  If you are confused, do not worry, that was a lot of words, the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>` help
 
-  .. attention:: I can also use the today_ :ref:`method<what is a function?>` to get the same value
+  .. NOTE:: I can also use the `today method`_ to get the same value
 
     .. code-block:: python
       :lineno-start: 6
@@ -746,9 +747,9 @@ test_takes_keyword_arguments
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
 
-  the new :ref:`dictionary<dictionaries>` has a value for ``age``
+  the new :ref:`dictionary<dictionaries>` has a value for ``'age'``
 
-* I change the `return statement`_ in ``person.py``
+* I add a key for ``'age'`` in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -805,7 +806,7 @@ test_takes_keyword_arguments
   .. TIP:: I like to arrange `import statements`_ alphabetically
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
     :emphasize-lines: 2
 
     import datetime
@@ -813,29 +814,38 @@ test_takes_keyword_arguments
     import src.person
     import unittest
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers. I use it for the ``year_of_birth`` :ref:`variable<what is a variable?>`
+  random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers
+
+* I use a random integer_ for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 5-7
+    :emphasize-lines: 5-8
 
         def test_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
+            # year_of_birth = this_year()
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
 
-            ...
 
-  ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and and when the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  - ``random`` is the `random module`_
+  - ``.randint`` is a call to the `random.randint method`_ from the `random module`_
+  - ``this_year()-120`` returns this year minus ``120``
+  - ``this_year()`` returns this year
+  - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``
+
+* I use :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a to save the file a few times to run the tests and when the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X}
 
-  I add the age calculation from ``test_person.py`` to the `return statement`_ in ``person.py``
+* I add the age calculation from ``test_person.py`` to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -863,13 +873,9 @@ test_takes_keyword_arguments
 * I use the `return statement`_ of the ``this_year()`` :ref:`function<what is a function?>` from ``test_person.py`` to change ``this_year()`` in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 9
+    :lineno-start: 8
+    :emphasize-lines: 5
 
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
         return {
             'first_name': 'jane',
             'last_name': 'doe',
@@ -883,9 +889,7 @@ test_takes_keyword_arguments
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-  I add an `import statement`_ at the top of ``person.py``
-
-  .. NOTE:: the ...(ellipsis) represents code that does not need to change in this part
+* I add an `import statement`_ at the top of ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -895,42 +899,43 @@ test_takes_keyword_arguments
 
 
     def factory(
-        ...
 
   the test passes
 
-* I add randomness to the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
+* I remove the commented ``year_of_birth = this_year()`` line
+
+* then I add randomness to the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 4
+    :emphasize-lines: 4-5
 
         def test_takes_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
+            # sex = 'F'
             sex = random.choice(('F', 'M'))
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
 
-            ...
+  - ``random`` is the `random module`_
+  - ``.choice`` is a call to the `random.choice method`_ from the `random module`_
+  - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
+  - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
-  ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs. I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``, and when it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``. When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': X}
 
-  I add the ``sex`` input parameter instead of a value that does not change to the `return statement`_ in ``person.py``
+* I add the ``sex`` input parameter instead of a value that does not change to the `return statement`_ in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 8
+    :lineno-start: 8
+    :emphasize-lines: 4
 
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
         return {
             'first_name': 'jane',
             'last_name': 'doe',
@@ -940,25 +945,23 @@ test_takes_keyword_arguments
 
   the test passes with no more random failures
 
-* I use `random.choice`_ with the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
+* I remove ``# sex = 'F'`` from ``test_person.py``
+
+* then I use `random.choice`_ with the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 3-5
+    :emphasize-lines: 3-6
 
         def test_takes_keyword_arguments(self):
             first_name = 'jane'
+            # last_name = 'doe'
             last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
             ))
             sex = random.choice(('F', 'M'))
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
 
-            ...
-
-  I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -966,16 +969,12 @@ test_takes_keyword_arguments
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'smith', 'sex': X, 'age': Y}
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'blow', 'sex': X, 'age': Y}
 
-  I add the ``last_name`` input parameter in the `return statement`_ in ``person.py``
+* I add the ``last_name`` input parameter to the `return statement`_ in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7
+    :lineno-start: 8
+    :emphasize-lines: 3
 
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
         return {
             'first_name': 'jane',
             'last_name': last_name,
@@ -985,27 +984,22 @@ test_takes_keyword_arguments
 
   and the test is green again
 
-* I do the same thing for the ``first_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
+* I remove ``#last_name = 'doe'`` then add randomness to the ``first_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-5
 
         def test_takes_keyword_arguments(self):
+            # first_name = 'jane'
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
             last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
             ))
-            sex = random.choice(('F', 'M'))
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
 
-            ...
-
-  I hit save :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``. When ``first_name`` is NOT ``'jane'`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1013,7 +1007,7 @@ test_takes_keyword_arguments
     AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'john', 'last_name': X, 'sex': Y, 'age': Z}
     AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'person', 'last_name': X, 'sex': Y, 'age': Z}
 
-  I add the ``first_name`` input parameter in the `return statement`_ in ``person.py``
+* I add the ``first_name`` input parameter in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
