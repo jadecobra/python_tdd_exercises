@@ -20,7 +20,7 @@ list comprehensions with the Calculator tests
 
 the code in ``calculator/tests/test_calculator.py`` from :ref:`list comprehensions`
 
-.. literalinclude:: tests/test_calculator_list_comprehensions.py
+.. literalinclude:: calculator/tests/test_calculator_list_comprehensions.py
   :language: python
   :linenos:
 
@@ -30,7 +30,7 @@ list comprehensions with the Calculator solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`list comprehensions`
 
-.. literalinclude:: solutions/calculator_list_comprehensions.py
+.. literalinclude:: calculator/solutions/calculator_list_comprehensions.py
   :language: python
   :linenos:
 

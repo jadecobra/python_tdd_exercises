@@ -7,7 +7,7 @@
 .. include:: ../../links.rst
 
 ##############################################################################################
-how to make a Python Test Driven Development environment automatically w/ variables
+how to make a Python Test Driven Development environment automatically with variables
 ##############################################################################################
 
 .. raw:: html
@@ -20,7 +20,7 @@ how to make a Python Test Driven Development environment automatically w/ variab
 how to use a variable in a shell script
 ********************************************************************************************
 
-``makePythonTdd.sh`` works and always makes a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
+``makePythonTdd.sh`` works and always makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
 
 I change the name of the project in 5 places every time I use the program to make a project. I want the program_ to take a project name once and use that name when making the project to make the following
 
@@ -46,7 +46,7 @@ The program_ should always make this structure
 
 Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
-* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
+* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
 
   .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` if you are using `Visual Studio Code`_
 
@@ -146,7 +146,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     FAILED tests/test_pro_magic.py::Testpro_magic::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
-  unfortunately this program_ does not make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made but :ref:`there is a better way<BONUS: makePythonTdd.sh Plus>`
+  this program_ does not make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made but :ref:`there is a better way<BONUS: makePythonTdd.sh Plus>`
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/pro_magic.py`` in the terminal_ to open it in the :ref:`editor<2 editors>`
 
@@ -186,7 +186,7 @@ I want to be able to call the program_ and give it a name for the project from t
 
   command argument
 
-in the code above, ``command`` is the name of the program_ ``./makePythonTdd.sh`` and ``$1`` is ``argument`` or whatever name I give.
+in the code above, ``command`` is the name of the program_ and ``$1`` is ``argument``
 
 Here are a few other examples
 
@@ -302,7 +302,7 @@ Here are a few other examples
     FAILED tests/test_person.py::Testperson::test_failure - AssertionError: True is not false
     ================================== 1 failed in X.YZs ==================================
 
-the computer makes a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`person<how to make a person>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to make a person`
+the computer makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`person<how to make a person>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to make a person`
 
 ----
 
@@ -310,7 +310,7 @@ the computer makes a :ref:`Test Driven Development environment<what is a Test Dr
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 ----
 
@@ -318,7 +318,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE for makePythonTdd.sh?<makePythonTdd.sh>`
+:ref:`Do you want to see the CODE for makePythonTdd.sh?<makePythonTdd.sh>`
 
 ----
 

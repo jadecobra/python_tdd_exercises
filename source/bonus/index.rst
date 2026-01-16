@@ -11,6 +11,7 @@ In the chapters that follow are things that I think will help you understand you
 Thank you for choosing to spend time practicing `Test Driven Development` in Python_ with me
 
 ----
+
 *********************************************************************************
 what is covered?
 *********************************************************************************

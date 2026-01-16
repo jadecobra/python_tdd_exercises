@@ -36,10 +36,10 @@ I can use any case I want but :ref:`CapWords` keeps things consistent
 ----
 
 =================================================================================
-snake case
+snake_case
 =================================================================================
 
-:ref:`variables<what is a variable?>` and :ref:`function/method<what is a function?>` names are in ``snake_case`` for example
+:ref:`variables<what is a variable?>` and :ref:`function/method<what is a function?>` names are in lowercase with underscores in between when it is more than one word, for example
 
 * :ref:`variables<what is a variable?>`
 

@@ -165,7 +165,9 @@ latex_elements = {
 }
 
 # The LaTeX document class ('report', 'book', 'article', 'howto').
-latex_documents = [
-    (master_doc, 'pumpingpython.tex', 'pumping python Documentation',
-     'Jacob Itegboje', 'manual'),
-]
+latex_documents = [(
+    master_doc, 'pumpingpython.tex', 'pumping python Documentation',
+    'Jacob Itegboje', 'manual'
+)]
+
+suppress_warnings = ['ref.label', 'autosectionlabel.*']
