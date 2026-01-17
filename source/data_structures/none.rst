@@ -500,7 +500,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
             self.assertIsNotNone(True)
             self.assertNotIsInstance(False, bool)
 
-  - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question ``is False NOT a child of the bool class?``. Okay, this is new
+  - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question, "is False NOT a child of the bool class?" Okay, this is new
   - bool_ is the :ref:`class<what is a class?>` for :ref:`booleans<what are booleans?>`
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
