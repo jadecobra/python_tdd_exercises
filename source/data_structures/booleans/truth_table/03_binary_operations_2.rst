@@ -962,7 +962,7 @@ I add another test to ``test_truth_table.py`` with the first case, where the two
 
 .. code-block:: python
   :lineno-start: 67
-  :emphasize-lines: 4-5
+  :emphasize-lines: 3-4
 
           self.assertTrue(src.truth_table.tautology(False, False))
 

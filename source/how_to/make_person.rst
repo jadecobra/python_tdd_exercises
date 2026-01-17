@@ -1073,36 +1073,12 @@ I want to see what happens when I try to make a person without a value for the `
 :red:`RED`: make it fail
 =================================================================================
 
-* I select ``test_factory_takes_keyword_arguments``, then copy (:kbd:`ctrl+c` (Windows/Linux) or ``command+c`` (mac)) and paste (:kbd:`ctrl+v` (Windows/Linux) or ``command+v`` (mac)) it below in ``test_person.py``
+* I copy ``test_factory_takes_keyword_arguments`` and paste it below in ``test_person.py``
 * I change the name of the new test to ``test_factory_w_default_arguments`` and comment out the ``last_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 40,44-46
-
-    import datetime
-    import random
-    import src.person
-    import unittest
-
-
-    def this_year():
-        return datetime.datetime.now().year
-
-
-    class TestPerson(unittest.TestCase):
-
-        def test_factory_takes_keyword_arguments(self):
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            last_name = random.choice((
-                'doe', 'smith', 'blow', 'public',
-            ))
-            sex = random.choice(('F', 'M'))
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
+    :lineno-start: 25
+    :emphasize-lines: 16-26, 28-41
 
             self.assertEqual(
                 src.person.factory(
@@ -1195,7 +1171,6 @@ I want to see what happens when I try to make a person without a value for the `
             first_name, last_name=None,
             sex, year_of_birth,
         ):
-        ...
 
   the terminal_ shows SyntaxError_
 
@@ -1203,11 +1178,12 @@ I want to see what happens when I try to make a person without a value for the `
 
     SyntaxError: parameter without a default follows parameter with a default
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 68
     :emphasize-lines: 6
+    :emphasize-text: SyntaxError
 
     # Exceptions seen
     # AssertionError
@@ -1244,7 +1220,6 @@ I want to see what happens when I try to make a person without a value for the `
             first_name, last_name=None,
             sex=None, year_of_birth=None,
         ):
-        ...
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -1293,11 +1268,10 @@ I want to see what happens when I try to make a person without a value for the `
             first_name, last_name='doe',
             sex=None, year_of_birth=None,
         ):
-        ...
 
   the test passes
 
-  .. attention:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<what is a function?>` definition, it is the same as calling it with ``last_name='doe'``
+  .. NOTE:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<what is a function?>` definition, it is the same as calling it with ``last_name='doe'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -1337,7 +1311,7 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-* I comment out the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in the test to see what happens if I do not know its value
+* I comment out the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in the test to see what happens when I do not know its value
 
   .. code-block:: python
     :lineno-start: 40
@@ -1364,19 +1338,19 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 49
     :emphasize-lines: 4
 
-          self.assertEqual(
-              src.person.factory(
-                  first_name=first_name,
-                  # sex=sex,
-                  year_of_birth=year_of_birth,
-              ),
-              dict(
-                  first_name=first_name,
-                  last_name='doe',
-                  sex=sex,
-                  age=this_year()-year_of_birth,
-              )
-          )
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    # sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                dict(
+                    first_name=first_name,
+                    last_name='doe',
+                    sex=sex,
+                    age=this_year()-year_of_birth,
+                )
+            )
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -1384,25 +1358,27 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'sex' is not defined
 
-  the value in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>` I commented out. I change the expectation
+  the value in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>` I commented out
+
+* I change the expectation
 
   .. code-block:: python
     :lineno-start: 49
     :emphasize-lines: 10
 
-        self.assertEqual(
-            src.person.factory(
-                first_name=first_name,
-                # sex=sex,
-                year_of_birth=year_of_birth,
-            ),
-            dict(
-                first_name=first_name,
-                last_name='doe',
-                sex='M',
-                age=this_year()-year_of_birth,
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    # sex=sex,
+                    year_of_birth=year_of_birth,
+                ),
+                dict(
+                    first_name=first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=this_year()-year_of_birth,
+                )
             )
-        )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
