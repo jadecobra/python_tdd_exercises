@@ -40,7 +40,7 @@ Since you are the adventurous type and made it this deep in the book, I have add
 
 * make the project with ``PROJECT_NAME`` as the name if you do not give a name
 * make the class name in :ref:`CapWords format<CapWords>`
-* open the test file and source file in your editor
+* open the test file_ and source file_ in your editor
 
 .. literalinclude:: makePythonTddPlus.sh
   :language: shell

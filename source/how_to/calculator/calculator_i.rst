@@ -216,7 +216,7 @@ start the project
 
   the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
 
-* I make a ``requirements.txt`` file for the `Python programs`_ my project needs
+* I make a ``requirements.txt`` file_ for the `Python programs`_ my project needs
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -374,7 +374,7 @@ test_addition
     # AssertionError
     # NameError
 
-* I add an `import statement`_ at the top of the file for the ``calculator`` :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_ at the top of the file_ for the ``calculator`` :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
     :linenos:
@@ -392,7 +392,7 @@ test_addition
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file from the ``src`` `folder (directory)`_
+  I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file_ from the ``src`` `folder (directory)`_
 
 * I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 

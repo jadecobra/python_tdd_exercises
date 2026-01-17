@@ -481,7 +481,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I want the :ref:`dictionary<dictionaries>` to have a key named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
+* I want the :ref:`dictionary<dictionaries>` to have a :ref:`key<test_keys_of_a_dictionary>` named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -545,6 +545,8 @@ test_factory_takes_keyword_arguments
                     last_name=last_name,
                 )
             )
+
+  the test is still green
 
 * I change the value from ``'last_name'`` to ``'doe'``
 
@@ -667,7 +669,7 @@ test_factory_takes_keyword_arguments
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
-  I change the `return statement`_ in ``person.py``
+* I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -685,7 +687,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` and a calculation to the expectation in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` and a calculation as its :ref:`value<test_values_of_a_dictionary>`, to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -744,9 +746,9 @@ test_factory_takes_keyword_arguments
   - ``datetime`` is the `datetime module`_
   - ``.datetime`` is a call to the `datetime.datetime object`_ in the `datetime module`_
   - ``.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
-  ``.year`` is a :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_
+  - ``.year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
-  If you are confused, do not worry, that was a lot of words, the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>` help
+  that was a lot of words, there is more of this in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`
 
   .. NOTE:: I can also use the `today method`_ to get the same value
 
@@ -847,7 +849,7 @@ test_factory_takes_keyword_arguments
                 this_year()-120, this_year()
             )
 
-
+  Here is what the new line means
 
   - ``random`` is the `random module`_
   - ``.randint`` is a call to the `random.randint method`_ from the `random module`_
@@ -855,7 +857,7 @@ test_factory_takes_keyword_arguments
   - ``this_year()`` returns this year
   - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``
 
-* I use :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a to save the file a few times to run the tests and when the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times to run the tests and when the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 

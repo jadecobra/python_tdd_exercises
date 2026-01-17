@@ -20,7 +20,7 @@ ModuleNotFoundError
 what causes ModuleNotFoundError?
 *********************************************************************************
 
-ModuleNotFoundError_ is raised when Python_ cannot find a module_ that is given in an `import statement`_. A Python_ module_ is a file that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_
+ModuleNotFoundError_ is raised when Python_ cannot find a module_ that is given in an `import statement`_. A Python_ module_ is a file_ that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_
 
 ----
 
@@ -64,7 +64,7 @@ start the project
     tests/test_module_not_found_error.py:7: AssertionError
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_module_not_found_error.py:7`` to open it in the :ref:`editor<2 editors>`
-  
+
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
@@ -148,7 +148,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     ModuleNotFoundError: No module named 'src.module_01'
 
-  I make a new file named ``module_01.py`` in the ``src`` folder and the test passes
+  I make a new file_ named ``module_01.py`` in the ``src`` folder and the test passes
 
 * I close the file
 
@@ -191,7 +191,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     ModuleNotFoundError: No module called 'src.module_03'
 
-* I add the file to the ``src`` folder_ and the test passes
+* I add the file_ to the ``src`` folder_ and the test passes
 
 * I close the file
 

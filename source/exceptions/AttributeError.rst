@@ -72,7 +72,7 @@ start the project
     tests/test_attribute_error.py:7: AssertionError
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_attribute_error.py:7`` to open it in the :ref:`editor<2 editors>`
-  
+
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
@@ -121,7 +121,7 @@ test_attribute_error_w_variables
 
     # Exceptions seen
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` which is in the ``src`` folder. Since the file is empty, the :ref:`variable<what is a variable?>` is not in it.
+  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` which is in the ``src`` folder. Since the file_ is empty, the :ref:`variable<what is a variable?>` is not in it.
 
   The terminal_ shows AttributeError_
 

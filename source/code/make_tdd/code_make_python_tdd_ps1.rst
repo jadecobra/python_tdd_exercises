@@ -29,7 +29,7 @@ makePythonTdd.sh program
 BONUS: makePythonTdd.ps1 Plus
 *********************************************************************************
 
-Since you are the adventurous type and made it in here, I have added 2 lines for you that automate opening the test file and source file for the projects
+Since you are the adventurous type and made it in here, I have added 2 lines for you that automate opening the test file_ and source file for the projects
 
 .. literalinclude:: makePythonTddPlus.ps1
   :language: shell

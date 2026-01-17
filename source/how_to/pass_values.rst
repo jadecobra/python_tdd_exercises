@@ -234,7 +234,7 @@ start the project
 
   the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
 
-* I make a ``requirements.txt`` file for the `Python programs`_ my project needs
+* I make a ``requirements.txt`` file_ for the `Python programs`_ my project needs
 
   .. code-block:: shell
     :emphasize-lines: 1

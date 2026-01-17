@@ -221,7 +221,7 @@ I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` in the ``src`` `folder (directory)`_ to solve the problem but I want to catch/handle it in the test. This way I can show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file does NOT exist. I add the `assertRaises method`_
+* I can make ``does_not_exist.py`` in the ``src`` `folder (directory)`_ to solve the problem but I want to catch/handle it in the test. This way I can show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file_ does NOT exist. I add the `assertRaises method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -326,7 +326,7 @@ test_catching_attribute_error_in_tests
 
     NameError: name 'src' is not defined
 
-* I add an `import statement`_ at the top of the file for the :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_ at the top of the file_ for the :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
     :linenos:

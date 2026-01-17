@@ -136,7 +136,7 @@ requirements
     # TypeError
     # NameError
 
-  then add an `import statement`_ at the top of the file for the :ref:`module<ModuleNotFoundError>`
+  then add an `import statement`_ at the top of the file_ for the :ref:`module<ModuleNotFoundError>`
 
   .. code-block:: python
 

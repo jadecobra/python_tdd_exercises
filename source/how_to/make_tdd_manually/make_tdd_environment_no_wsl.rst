@@ -303,7 +303,7 @@ how to make an empty file on Windows without Windows Subsystem for Linux
     └── src
         └── magic.py
 
-  `New-Item`_ is a command that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``New-Item src/magic.py`` makes a file named ``magic.py`` in the ``src`` folder_
+  `New-Item`_ is a command that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``New-Item src/magic.py`` makes a file_ named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -384,7 +384,7 @@ the terminal_ goes back to the command line
 how to make a Python file to hold the tests in the 'tests' folder on Windows without WSL
 -----------------------------------------------------------------------------------------------------
 
-* I use `New-Item`_ to add an empty file to the ``tests`` directory for the actual test
+* I use `New-Item`_ to add an empty file_ to the ``tests`` directory for the actual test
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -511,7 +511,7 @@ how to make a Python file to hold the tests in the 'tests' folder on Windows wit
 how to make the tests a Python package on Windows without WSL
 --------------------------------------------------------------------------------------------
 
-* I use `New-Item`_ to add an empty file with the name ``__init__.py`` in the ``tests`` folder
+* I use `New-Item`_ to add an empty file_ with the name ``__init__.py`` in the ``tests`` folder
 
   .. ATTENTION:: make sure to use 2 underscores (__) before and after ``init`` for ``__init__.py``
 
@@ -558,7 +558,7 @@ how to make the tests a Python package on Windows without WSL
 
 * I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file after you change its name
+  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ after you change its name
 
 --------------------------------------------------------------------------------------------
 how to change the name of a file on Windows without WSL
@@ -622,7 +622,7 @@ how to change the name of a file on Windows without WSL
 
     FAILED (failures=1)
 
-  .. IMPORTANT:: I can use any name for the test file but it must start with ``test_`` or unittest_ will NOT run the tests in the file
+  .. IMPORTANT:: I can use any name for the test file_ but it must start with ``test_`` or unittest_ will NOT run the tests in the file
 
 * This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
 
@@ -880,7 +880,7 @@ the terminal_ shows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 how to write text to a file on Windows without Windows Subsystem for Linux
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-I want to make a file where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
+I want to make a file_ where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
 * I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
 
@@ -895,7 +895,7 @@ I want to make a file where I can list all the `Python packages`_ for my project
 
     pytest-watch
 
-  I can use it to write text to a file by giving the file name with an operator
+  I can use it to write text to a file_ by giving the file_ name with an operator
 
   .. code-block:: PowerShell
 
