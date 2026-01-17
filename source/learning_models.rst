@@ -38,8 +38,18 @@ An Infinite Learning Model
     tests/test_learning.py:7: AssertionError
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_learning.py:7`` to open it in the :ref:`editor<2 editors>`
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
-* and change the text in ``test_learning.py`` with
+
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
+
+            self.assertFalse(False)
+
+  the test passes
+
+* I change the text in ``test_learning.py`` with
 
   .. literalinclude:: /code/tests/test_learning_models.py
 

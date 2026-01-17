@@ -150,7 +150,15 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/pro_magic.py`` in the terminal_ to open it in the :ref:`editor<2 editors>`
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` to make the test pass
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
+
+            self.assertFalse(False)
+
+  the test passes
 
 * I use :kbd:`ctrl+c` in the terminal_ to stop the test
 
