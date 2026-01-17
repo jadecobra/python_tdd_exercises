@@ -445,7 +445,7 @@ the test passes
     # False is NOT None
     # None is None
 
-  Still a repetition of what I learned in :ref:`AssertionError<what causes AssertionError?>`
+  Still a repetition of the lessons from :ref:`AssertionError<what causes AssertionError?>`
 
 * I add another failing :ref:`assertion<what is an assertion?>` for the other :ref:`boolean<what are booleans?>`
 
