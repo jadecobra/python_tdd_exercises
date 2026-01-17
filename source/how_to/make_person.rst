@@ -857,7 +857,7 @@ test_factory_takes_keyword_arguments
   - ``this_year()`` returns this year
   - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times to run the tests and when the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times to run the tests. When the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -886,7 +886,7 @@ test_factory_takes_keyword_arguments
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<what is a function?>` that is NOT in ``person.py``.
+  because I called a :ref:`function<what is a function?>` that is not in ``person.py``.
 
 * I use the `return statement`_ of the ``this_year()`` :ref:`function<what is a function?>` from ``test_person.py`` to change ``this_year()`` in ``person.py``
 
@@ -907,7 +907,7 @@ test_factory_takes_keyword_arguments
 
     NameError: name 'datetime' is not defined. Did you forget to import 'datetime'
 
-* I add an `import statement`_ at the top of ``person.py``
+* I add an `import statement`_ for the `datetime module`_ at the top of ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -920,7 +920,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* I remove the commented ``year_of_birth = this_year()`` line
+* I remove the commented ``# year_of_birth = this_year()`` line from ``test_person.py``
 
 * then I add randomness to the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
 
@@ -942,7 +942,7 @@ test_factory_takes_keyword_arguments
   - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
-* I use :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``. When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``. When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -979,7 +979,7 @@ test_factory_takes_keyword_arguments
             ))
             sex = random.choice(('F', 'M'))
 
-* I use :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1017,7 +1017,7 @@ test_factory_takes_keyword_arguments
                 'doe', 'smith', 'blow', 'public',
             ))
 
-* I use :kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``. When ``first_name`` is NOT ``'jane'`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``. When ``first_name`` is NOT ``'jane'`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 

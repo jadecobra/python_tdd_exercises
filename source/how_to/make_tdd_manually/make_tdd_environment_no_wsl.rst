@@ -488,7 +488,7 @@ how to make a Python file to hold the tests in the 'tests' folder on Windows wit
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by saving (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) every time I make a change
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by saving (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) every time I make a change
 
   .. ATTENTION:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
 

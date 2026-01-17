@@ -991,7 +991,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
                 first_number+first_number
             )
 
-  I use (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
+  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
   .. code-block:: shell
 
@@ -1280,7 +1280,7 @@ the terminal_ shows :ref:`AttributeError`
     def subtract(first_input, second_input):
         return None
 
-  I use (:kbd:`ctrl+s` (Windows/Linux) or :kbd:`command+s` (mac)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
+  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
