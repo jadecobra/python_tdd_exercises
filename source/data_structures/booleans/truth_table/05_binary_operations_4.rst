@@ -999,7 +999,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
     def material_implication(first_input, second_input):
         return not first_input or second_input
 
-:ref:`Material Implication aka Logical Implication<test_material_implication>` returns
+:ref:`Material Implication also known as Logical Implication<test_material_implication>` returns
 
 * ``not first_input or second_input``
 * the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input

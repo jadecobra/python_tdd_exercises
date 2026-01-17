@@ -898,8 +898,8 @@ I ran tests for AttributeError_ with
 
 * :ref:`variables<what is a variable?>`
 * :ref:`functions<test_attribute_error_w_functions>`
-* :ref:`variables in classes aka class attributes<test_attribute_error_w_class_attributes>`
-* :ref:`functions in classes aka methods<test_attribute_error_w_class_methods>`
+* :ref:`variables in classes also known as class attributes<test_attribute_error_w_class_attributes>`
+* :ref:`functions in classes also known as methods<test_attribute_error_w_class_methods>`
 
 I also saw the following :ref:`Exceptions<errors>`
 

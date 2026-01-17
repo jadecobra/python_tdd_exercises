@@ -506,7 +506,7 @@ how to return the opposite of a boolean
 
     # Exceptions seen
 
-``logical_negation`` aka not_ returns the opposite of its input
+``logical_negation`` also known as not_ returns the opposite of its input
 
 * when it receives :ref:`True<test_what_is_true>` it returns :ref:`False<test_what_is_false>`
 * when it receives :ref:`False<test_what_is_false>` it returns :ref:`True<test_what_is_true>`

@@ -1088,7 +1088,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 
   the test is still passing
 
-* I use ``and`` aka ``logical_conjunction`` to put the two `if statements`_ together in ``converse_non_implication`` in ``truth_table.py``
+* I use ``and`` also known as ``logical_conjunction`` to put the two `if statements`_ together in ``converse_non_implication`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 29

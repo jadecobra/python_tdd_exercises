@@ -1275,7 +1275,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   green everywhere
 
-:ref:`Logical Disjunction<test_logical_disjunction>` aka or_ returns
+:ref:`Logical Disjunction<test_logical_disjunction>` also known as "or_" returns
 
 * ``first_input or second_input``
 * :ref:`False<test_what_is_false>` only when the two inputs are :ref:`False<test_what_is_false>`
