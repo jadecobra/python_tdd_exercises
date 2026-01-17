@@ -67,7 +67,7 @@ start the project
     tests/test_person.py:7: AssertionError
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
-  
+
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
@@ -147,6 +147,8 @@ test_factory_takes_keyword_arguments
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
+  there is nothing in ``person.py`` with that name
+
 * I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
@@ -188,6 +190,8 @@ test_factory_takes_keyword_arguments
   .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
+
+  the test calls the ``factory`` :ref:`function<what is a function?>` with input, but the definition in ``person.py`` does not take any input
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -234,6 +238,9 @@ test_factory_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'last_name'
 
+  the test calls the ``factory`` :ref:`function<what is a function?>` with 2 inputs, but the definition in ``person.py`` only takes 1 input
+
+
 * I add ``last_name`` to the :ref:`function<what is a function?>` definition in ``person.py``
 
   .. code-block:: python
@@ -267,7 +274,9 @@ test_factory_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-* I add ``sex`` as input to the :ref:`function<what is a function?>` in ``person.py``
+  the test calls the ``factory`` :ref:`function<what is a function?>` with 3 inputs, but the definition in ``person.py`` only takes 2 inputs
+
+* I add ``sex`` as an input parameter of the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -304,7 +313,9 @@ test_factory_takes_keyword_arguments
 
     NameError: name 'this_year' is not defined
 
-* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition in ``test_person.py``
+  there is nothing with that name in this file_
+
+* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition
 
   .. code-block:: python
     :linenos:
@@ -325,6 +336,8 @@ test_factory_takes_keyword_arguments
   .. code-block:: python
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
+
+  the test now calls the ``factory`` :ref:`function<what is a function?>` with 4 inputs, but the definition in ``person.py`` only takes 3 inputs
 
 * I add the name to the :ref:`function<what is a function?>` definition in ``person.py``
 
@@ -363,7 +376,7 @@ test_factory_takes_keyword_arguments
 
     AssertionError: None != {}
 
-* I change the `return statement`_ in ``person.py``
+* I change :ref:`None<what is None?>` to a :ref:`dictionary<what is a dictionary?>` in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -377,7 +390,7 @@ test_factory_takes_keyword_arguments
 
   the test passes because ``{}`` and ``dict()`` are two ways to :ref:`write an empty dictionary<test_making_a_dictionary>`
 
-* I want the expected :ref:`dictionary<dictionaries>` in the test to have a key named ``first_name`` with the same value as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I change it in ``test_person.py``
+* I want the expected :ref:`dictionary<dictionaries>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` named ``first_name`` with the same value as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -566,7 +579,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* I add a key named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -672,7 +685,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I add a key for ``age`` and a calculation to the expectation in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` and a calculation to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -752,7 +765,7 @@ test_factory_takes_keyword_arguments
 
   the new :ref:`dictionary<dictionaries>` has a value for ``'age'``
 
-* I add a key for ``'age'`` in the `return statement`_ in ``person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` for ``'age'`` in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1230,7 +1243,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'last_name' is not defined
 
-  the value for the ``last_name`` key in the expected :ref:`dictionary<dictionaries>` in ``test_factory_w_default_arguments`` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` which I just commented out
+  the value for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` in ``test_factory_w_default_arguments`` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` which I just commented out
 
 * I change the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 

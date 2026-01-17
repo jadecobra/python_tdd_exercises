@@ -1439,7 +1439,7 @@ Since I am using a :ref:`dictionary<what is a dictionary?>` adding a new test is
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new key for the square :ref:`function<what is a function?>` to the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>`
+I add a new :ref:`key<test_keys_of_a_dictionary>` for the square :ref:`function<what is a function?>` to the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 40
