@@ -17,9 +17,9 @@ One of the things that happens when testing a program_, is I send things (data) 
 * what is the same?
 * what is different?
 
-the difference helps me know what to change to get what I want
+The difference helps me know what to change to get what I want.
 
-this is the job of the `assertEqual method`_, which takes 2 inputs and checks if they are the same
+This is the job of the `assertEqual method`_, which takes 2 inputs and checks if they are the same
 
 .. code-block:: python
 

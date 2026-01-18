@@ -116,7 +116,7 @@ requirements
 :ref:`truth table: Nullary and Unary Operations`
 
 *********************************************************************************
-how to get back to the automated tests
+start the project
 *********************************************************************************
 
 If your tests stopped after the :ref:`previous chapter<truth table: Nullary and Unary Operations>`, heres's how to get back to the tests
@@ -264,7 +264,7 @@ The definition only takes one input, but the test sent two. I add ``second_input
   * Rename Symbol
 
     - Right click on the name you want to change, for example ``the_input`` then select ``Rename Symbol`` or
-    - Select the name you want to change then hit :kbd:``F2`` on your keyboard to rename it
+    - Select the name you want to change then used :kbd:`F2` on your keyboard to rename it
 
 .. code-block:: python
   :lineno-start: 17
@@ -1204,6 +1204,42 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 * ``not first_input and second_input``
 * the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Negation<test_logical_negation>` of the first input and the second input
 * :ref:`True<test_what_is_true>` only when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+
+----
+
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close ``test_truth_table.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I deactivate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: shell
+
+    .../pumping_python/truth_table
+
+* I `change directory`_ to the parent of ``truth_table``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 

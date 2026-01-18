@@ -177,7 +177,7 @@ how to install tree on Mac OS
 
   the terminal_ shows instructions about how to add brew_ to your path
 
-* copy and paste the 3 lines it shows in the terminal_ then hit ``return`` to run it, the terminal_ will not show anything if the commands run successfully
+* copy and paste the 3 lines it shows in the terminal_ then use :kbd:`return` on the keyboard to run it, the terminal_ will not show anything if the commands run successfully
 
 * use brew_ to install tree_
 

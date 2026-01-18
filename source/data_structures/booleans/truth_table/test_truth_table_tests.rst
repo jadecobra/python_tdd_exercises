@@ -1159,7 +1159,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
     * Rename Symbol
 
       - Right click on the name you want to change, for example ``first_input`` then select ``Rename Symbol`` or
-      - Select the name you want to change then hit :kbd:``F2`` on your keyboard to rename it
+      - Select the name you want to change then use :kbd:`F2` on your keyboard to rename it
 
   .. code-block:: python
     :lineno-start: 93
@@ -1876,7 +1876,7 @@ all the tests are still passing
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``test_truth_table.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 

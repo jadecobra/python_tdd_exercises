@@ -321,7 +321,7 @@ start the project
     import unittest
     import src.truth_table
 
-* :ref:`I CLICK HERE to continue to Truth Table: Nullary and Unary Operations<truth table: Nullary and Unary Operations>`
+* :ref:`Click Here to continue to Nullary and Unary Operations<truth table: Nullary and Unary Operations>`
 
 ----
 
@@ -353,4 +353,4 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test Nullary and Unary Operations?<truth table: Nullary and Unary Operations>`
+:ref:`Continue in Nullary and Unary Operations?<truth table: Nullary and Unary Operations>`
