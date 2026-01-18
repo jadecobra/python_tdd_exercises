@@ -16,6 +16,8 @@ truth table: test_truth_table_tests
 
 ----
 
+I want to write a program_ that makes the tests in ``test_truth_table.py`` pass without looking at them
+
 *********************************************************************************
 requirements
 *********************************************************************************
@@ -23,10 +25,8 @@ requirements
 * :ref:`Binary Operations 4<truth table: Binary Operations 4>`
 
 *********************************************************************************
-how to get back to the automated tests
+continue the project
 *********************************************************************************
-
-If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations 2>`, heres's how to get back to the tests
 
 * Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
@@ -41,7 +41,7 @@ If your tests stopped after the :ref:`previous chapter<truth table: Binary Opera
 
     .../pumping_python
 
-  you need to `change directory`_ to the ``pumping_python`` folder
+  `change directory`_ to the ``pumping_python`` folder
 
 * Once in the ``pumping_python`` directory_, `change directory`_ to the project
 
@@ -86,8 +86,6 @@ If your tests stopped after the :ref:`previous chapter<truth table: Binary Opera
     pytest-watch
 
 ----
-
-I want to write a program_ that makes the tests in ``test_truth_table.py`` pass without looking at them
 
 *********************************************************************************
 :red:`RED`: make it fail
@@ -1905,6 +1903,8 @@ close the project
     .../pumping_python
 
   I am back in the ``pumping_python`` directory_
+
+----
 
 *********************************************************************************
 review

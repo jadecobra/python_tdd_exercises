@@ -23,10 +23,8 @@ requirements
 :ref:`Binary Operations 1<truth table: Binary Operations 1>`
 
 *********************************************************************************
-how to get back to the automated tests
+continue the project
 *********************************************************************************
-
-If your tests stopped after the :ref:`previous chapter<truth table: Binary Operations 1>`, heres's how to get back to the tests
 
 * Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
@@ -41,7 +39,7 @@ If your tests stopped after the :ref:`previous chapter<truth table: Binary Opera
 
     .../pumping_python
 
-  you need to `change directory`_ to the ``pumping_python`` folder
+  `change directory`_ to the ``pumping_python`` folder
 
 * Once in the ``pumping_python`` directory_, `change directory`_ to the project
 

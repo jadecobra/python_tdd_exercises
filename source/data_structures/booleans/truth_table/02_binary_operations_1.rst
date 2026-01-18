@@ -116,10 +116,8 @@ requirements
 :ref:`truth table: Nullary and Unary Operations`
 
 *********************************************************************************
-start the project
+continue the project
 *********************************************************************************
-
-If your tests stopped after the :ref:`previous chapter<truth table: Nullary and Unary Operations>`, heres's how to get back to the tests
 
 * Make sure you are in the ``pumping_python`` folder_ with pwd_ in the terminal_
 
@@ -134,7 +132,7 @@ If your tests stopped after the :ref:`previous chapter<truth table: Nullary and 
 
     .../pumping_python
 
-  you need to `change directory`_ to the ``pumping_python`` folder
+  `change directory`_ to the ``pumping_python`` folder
 
 * Once in the ``pumping_python`` directory_, `change directory`_ to the project
 
@@ -177,7 +175,6 @@ If your tests stopped after the :ref:`previous chapter<truth table: Nullary and 
     :emphasize-lines: 1
 
     pytest-watch
-
 
 ----
 
