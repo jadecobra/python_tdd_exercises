@@ -942,7 +942,9 @@ test_factory_takes_keyword_arguments
   - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``. When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``.
+
+  When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -965,7 +967,7 @@ test_factory_takes_keyword_arguments
 
 * I remove ``# sex = 'F'`` from ``test_person.py``
 
-* then I use `random.choice`_ with the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
+* then I use `random.choice`_ with the ``last_name`` :ref:`variable<test_attribute_error_w_variables>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -979,13 +981,13 @@ test_factory_takes_keyword_arguments
             ))
             sex = random.choice(('F', 'M'))
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``, and when it is not, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``.
+
+  When ``last_name`` is not ``doe``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'public', 'sex': X, 'age': Y}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'smith', 'sex': X, 'age': Y}
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': X, 'age': Y} != {'first_name': 'jane', 'last_name': 'blow', 'sex': X, 'age': Y}
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': Z, 'age': A} != {'first_name': 'jane', 'last_name': Y, 'sex': Z, 'age': A}
 
 * I add the ``last_name`` input parameter to the `return statement`_ in ``person.py``
 
@@ -1002,7 +1004,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I remove ``#last_name = 'doe'`` then add randomness to the ``first_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
+* I remove ``# last_name = 'doe'`` then add randomness to the ``first_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -1017,13 +1019,13 @@ test_factory_takes_keyword_arguments
                 'doe', 'smith', 'blow', 'public',
             ))
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``. When ``first_name`` is NOT ``'jane'`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``.
+
+  When ``first_name`` is not ``'jane'`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'joe', 'last_name': X, 'sex': Y, 'age': Z}
-    AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'john', 'last_name': X, 'sex': Y, 'age': Z}
-    AssertionError: {'first_name': 'jane', 'last_name': X, 'sex': Y, 'age': Z} != {'first_name': 'person', 'last_name': X, 'sex': Y, 'age': Z}
+    AssertionError: {'first_name': 'jane', 'last_name': Y, 'sex': Z, 'age': A} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': A}
 
 * I add the ``first_name`` input parameter in the `return statement`_ in ``person.py``
 
@@ -1044,7 +1046,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* I remove the commented line from ``test_factory_takes_keyword_arguments`` in ``test_person.py``
+* I remove the commented line ``# first_name = 'jane'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -1079,6 +1081,8 @@ test_factory_takes_keyword_arguments
 
     # Exceptions seen
 
+  the test is still green
+
 ----
 
 *************************************************************************************
@@ -1092,7 +1096,7 @@ I want to see what happens when I try to make a person without a value for the `
 =================================================================================
 
 * I copy ``test_factory_takes_keyword_arguments`` and paste it below in ``test_person.py``
-* I change the name of the new test to ``test_factory_w_default_arguments`` and comment out the ``last_name`` :ref:`variable<what is a variable?>`
+* I change the name of the new test to ``test_factory_w_default_arguments``, then comment out the ``last_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -1177,7 +1181,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  the ``factory`` :ref:`function<what is a function?>` is called with 3 arguments in ``test_factory_w_default_arguments`` but the definition expects 4 in ``person.py``
+  the ``factory`` :ref:`function<what is a function?>` is called with 3 arguments in ``test_factory_w_default_arguments`` but the definition in ``person.py`` always takes 4 inputs
 
 * I add a default value for ``last_name`` in ``person.py``
 
@@ -1194,7 +1198,9 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    SyntaxError: parameter without a default follows parameter with a default
+    SyntaxError: parameter without a default follows parameter with a
+
+  I cannot put a parameter that does not have a default value after one that does
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -1245,9 +1251,9 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'last_name' is not defined
 
-  the value for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` in ``test_factory_w_default_arguments`` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` which I just commented out
+  the value for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` which I just commented out
 
-* I change the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
+* I change the value for ``last_name`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1272,9 +1278,26 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    AssertionError: {'first_name': X, 'last_name': None, 'sex': Y, 'age': Z} != {'first_name': X, 'last_name': 'doe', 'sex': Y, 'age': Z}
+    AssertionError: {'first_name': 'joe', 'last_name': 'last_name', 'sex': 'M', 'age': 62} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 62}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a value of :ref:`None<what is None?>` for ``last_name`` and the test expects ``'doe'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a value of ``'last_name'`` for ``last_name`` and the test expects ``'doe'``
+
+* I use the ``last_name`` input parameter in the `return statement`_ in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2
+
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.now().year - year_of_birth,
+        }
+
+  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+
+  the test passes
 
 * I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -1283,9 +1306,11 @@ I want to see what happens when I try to make a person without a value for the `
     :emphasize-lines: 2
 
     def factory(
-            first_name, last_name='doe',
+            first_name, last_name=None,
             sex=None, year_of_birth=None,
         ):
+
+
 
   the test passes
 
