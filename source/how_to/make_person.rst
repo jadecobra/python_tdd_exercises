@@ -10,6 +10,7 @@
 .. _today method: today_
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
 .. _choice method: `random.choice`_
+.. _random.choice method: `random.choice`_
 
 #################################################################################
 how to make a person
@@ -388,7 +389,7 @@ test_factory_takes_keyword_arguments
 
   the test passes because ``{}`` and ``dict()`` are two ways to :ref:`write an empty dictionary<test_making_a_dictionary>`
 
-* I want the expected :ref:`dictionary<dictionaries>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` named ``first_name`` with the same value as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
+* I want the expected :ref:`dictionary<dictionaries>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` named ``first_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -427,7 +428,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places if I want a different value for it. I add a :ref:`variable<test_attribute_error_w_variables>` to remove the repetition in ``test_person.py``
+* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places if I want a different :ref:`value<test_values_of_a_dictionary>` for it. I add a :ref:`variable<test_attribute_error_w_variables>` to remove the repetition in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -479,7 +480,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I want the expected :ref:`dictionary<dictionaries>` to have a :ref:`key<test_keys_of_a_dictionary>` named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
+* I want the expected :ref:`dictionary<dictionaries>` to have a :ref:`key<test_keys_of_a_dictionary>` named ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -586,7 +587,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` named ``sex`` to the :ref:`dictionary<dictionaries>` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` named ``sex`` to the :ref:`dictionary<dictionaries>` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -781,7 +782,7 @@ test_factory_takes_keyword_arguments
     E       + {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
     E       ?  ++++++++++
 
-  the new :ref:`dictionary<dictionaries>` has a value for ``'age'``
+  the new :ref:`dictionary<dictionaries>` has a :ref:`value<test_values_of_a_dictionary>` for the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`
 
 * I add a :ref:`key<test_keys_of_a_dictionary>` for ``'age'`` in the `return statement`_ in ``person.py``
 
@@ -962,7 +963,7 @@ test_factory_takes_keyword_arguments
   - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows success when ``sex`` is randomly ``'F'``.
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows success when ``sex`` is randomly ``'F'``.
 
   When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1006,13 +1007,18 @@ test_factory_takes_keyword_arguments
             ))
             sex = random.choice(('F', 'M'))
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows success when ``last_name`` is ``'doe'``.
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows success when ``last_name`` is ``'doe'``.
 
   When ``last_name`` is not ``doe``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 2, 5
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': Z, 'age': A} != {'first_name': 'jane', 'last_name': Y, 'sex': Z, 'age': A}
+    E       - {'age': X, 'first_name': 'jane', 'last_name': 'doe', 'sex': A}
+    E       ?                                                ^^^
+    E
+    E       + {'age': X, 'first_name': 'jane', 'last_name': Z, 'sex': A}
+    E       ?                                               ^
 
 * I add the ``last_name`` input parameter to the `return statement`_ in ``person.py``
 
@@ -1044,15 +1050,20 @@ test_factory_takes_keyword_arguments
                 'doe', 'smith', 'blow', 'public',
             ))
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) a few times to run the tests and the terminal_ shows green when ``first_name`` is ``'jane'``.
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows green when ``first_name`` is ``'jane'``.
 
   When ``first_name`` is not ``'jane'`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 2, 5
 
-    AssertionError: {'first_name': 'jane', 'last_name': Y, 'sex': Z, 'age': A} != {'first_name': X, 'last_name': Y, 'sex': Z, 'age': A}
+    E       - {'age': X, 'first_name': 'jane', 'last_name': Z, 'sex': A}
+    E       ?                          ^^^^^^
+    E
+    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': A}
+    E       ?                          ^
 
-* I add the ``first_name`` input parameter in the `return statement`_ in ``person.py``
+* I add the ``first_name`` input parameter to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1208,7 +1219,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the ``factory`` :ref:`function<what is a function?>` is called with 3 arguments in ``test_factory_w_default_arguments`` but the definition in ``person.py`` always takes 4 inputs
 
-* I add a default value for ``last_name`` in ``person.py``
+* I add a default value for ``last_name`` to make it optional in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1223,7 +1234,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    SyntaxError: parameter without a default follows parameter with a
+    SyntaxError: parameter without a default follows parameter with a default
 
   I cannot put a parameter that does not have a default value after one that does
 
@@ -1276,9 +1287,9 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'last_name' is not defined
 
-  the value for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` which I just commented out
+  the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` I commented out earlier
 
-* I change the value for ``last_name`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
+* I change the :ref:`value<test_values_of_a_dictionary>` for ``last_name`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1305,7 +1316,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     AssertionError: {'first_name': 'joe', 'last_name': 'last_name', 'sex': 'M', 'age': 62} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 62}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a value of ``'last_name'`` for ``last_name`` and the test expects ``'doe'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of ``'last_name'`` for ``last_name`` and the test expects ``'doe'``
 
 * I use the ``last_name`` input parameter in the `return statement`_ in ``person.py``
 
@@ -1434,7 +1445,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'sex' is not defined
 
-  the value in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>` I commented out
+  the :ref:`value<test_values_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>` I commented out
 
 * I change the expectation
 
@@ -1467,7 +1478,7 @@ I want to see what happens when I try to make a person without a value for the `
     E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'M'}
     E       ?                                                    ^^^
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with :ref:`None<what is None?>` as the value for ``sex`` and the test expects ``'M'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with :ref:`None<what is None?>` as the :ref:`value<test_values_of_a_dictionary>` for ``sex`` and the test expects ``'M'``
 
 * I add a default value for ``sex`` in ``person.py``
 
@@ -1593,7 +1604,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'first_name' is not defined
 
-* I change the value of ``first_name`` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I change the :ref:`value<test_values_of_a_dictionary>` of ``first_name`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -1677,7 +1688,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'year_of_birth' is not defined
 
-* I change the value of ``year_of_birth`` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I change the :ref:`value<test_values_of_a_dictionary>` of ``year_of_birth`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -1760,7 +1771,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'first_name' is not
 
-* I do the same thing for the value of ``first_name`` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I do the same thing for the :ref:`value<test_values_of_a_dictionary>` of ``first_name`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 56
@@ -1837,7 +1848,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'year_of_birth' is not defined
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the value of ``year_of_birth`` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` of ``year_of_birth`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 53
@@ -2075,7 +2086,7 @@ I want to write the solution without looking at the tests
 
   the values for ``age`` and ``first_name`` change every time I save (:kbd:`ctrl/command+s`) the file_ to run the tests, sometimes they match
 
-* I use the ``year_of_birth`` input parameter in the `return statement`_ for the value of ``age``
+* I use the ``year_of_birth`` input parameter in the `return statement`_ for the :ref:`value<test_values_of_a_dictionary>` of ``age``
 
   .. code-block:: python
     :lineno-start: 5
@@ -2098,7 +2109,7 @@ I want to write the solution without looking at the tests
     E       + {'age': BC, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
     E       ?         ^^                ^
 
-  the ``year_of_birth`` value the ``factory`` :ref:`function<what is a function?>` returned has 4 digits (a year) for the value of the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects the difference between the value and the current year. Sometimes the value for ``first_name`` matches because the test uses random values
+  the ``year_of_birth`` :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned has 4 digits (a year) for the :ref:`value<test_values_of_a_dictionary>` of the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year. Sometimes the :ref:`value<test_values_of_a_dictionary>` for ``first_name`` matches because the test uses random values
 
 * I add an `import statement`_ for the `datetime module`_ at the top of the file_
 
@@ -2255,7 +2266,7 @@ I want to write the solution without looking at the tests
     E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': A}
     E       ?                                          ^
 
-  the ``last_name`` value is different between the two :ref:`dictionaries<what is a dictionary?>`
+  the ``last_name`` :ref:`value<test_values_of_a_dictionary>` is different between the two :ref:`dictionaries<what is a dictionary?>`
 
 * I use the ``last_name`` input parameter in the `return statement`_
 
