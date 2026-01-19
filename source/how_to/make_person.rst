@@ -1436,7 +1436,7 @@ I want to see what happens when I try to make a person without a value for the `
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-lines: 1, 4
+    :emphasize-lines: 2, 5
 
     E       - {'age': X, 'first_name': Y, 'last_name': Z, 'sex': None}
     E       ?                                                    ^^^^
@@ -1949,7 +1949,7 @@ I want to write the solution without looking at the tests
 
   the test called the :ref:`function<what is a function?>` with an extra argument and Python_ thinks it is a positional argument for ``last_name``, which I already added
 
-* I add a default value for ``last_name``
+* I add a default value for ``last_name`` to make it optional
 
   .. code-block:: python
     :linenos:
@@ -2003,16 +2003,16 @@ I want to write the solution without looking at the tests
             'first_name': 'john',
             'last_name': 'doe',
             'sex': 'M',
-            'age': 55
+            'age': 55,
         }
 
   the terminal_ shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: shell
-    :emphasize-lines: 1, 4
+    :emphasize-lines: 2, 5
 
-    E       - {'age': 55, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
-    E       ?         -                  ^^ -
+    E       - {'age': 55, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
+    E       ?         -                 ^^^^^^
     E
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
     E       ?         ^                ^
@@ -2036,10 +2036,10 @@ I want to write the solution without looking at the tests
   the terminal_ shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: shell
-    :emphasize-lines: 1, 4
+    :emphasize-lines: 2, 5
 
     E       - {'age': XYZA, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?         ^^^^                 ^ -
+    E       ?         ^^^^                ^^^^^^
     E
     E       + {'age': BC, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
     E       ?         ^^                ^
@@ -2075,10 +2075,10 @@ I want to write the solution without looking at the tests
   the terminal_ shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: shell
-    :emphasize-lines: 1, 4
+    :emphasize-lines: 2, 5
 
     E       - {'age': X, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?                           ^^^^
+    E       ?                          ^^^^^^
     E
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
     E       ?                          ^
@@ -2143,10 +2143,10 @@ I want to write the solution without looking at the tests
   the terminal_ shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: shell
-    :emphasize-lines: 1, 4
+    :emphasize-lines: 2, 5
 
     E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
-    E       ?                                           ^^^           ^
+    E       ?                                          ^^^^^          ^
     E
     E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'F'}
     E       ?                                          ^          ^
@@ -2169,7 +2169,7 @@ I want to write the solution without looking at the tests
   the terminal_ shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: shell
-    :emphasize-lines: 1, 4
+    :emphasize-lines: 2, 5
 
     E       - {'age': X, 'first_name': Y, 'last_name': Z, 'sex': None}
     E       ?                                                    ^^^^
@@ -2193,7 +2193,7 @@ I want to write the solution without looking at the tests
   the test passes when the ``last_name`` is randomly ``'doe'``  and when it is not, the terminal_ shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: shell
-    :emphasize-lines: 1, 4
+    :emphasize-lines: 2, 5
 
     E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
     E       ?                                          ^^^^^
@@ -2218,7 +2218,8 @@ I want to write the solution without looking at the tests
 
   the terminal_ shows :ref:`AssertionError<what is an assertion?>`
 
-  .. code-block:: shell
+  .. code-block::
+    :emphasize-lines: 2, 5
 
     E       - {'age': X, 'first_name': Y, 'last_name': None, 'sex': A}
     E       ?                                          ^ -
