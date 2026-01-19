@@ -1533,7 +1533,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly with no need for the :ref:`variables<what is a variable?>`
 
-* I comment out ``first_name`` in ``test_factory_takes_keyword_arguments`` and change it to point to the :ref:`class attributes<test_attribute_error_w_class_attributes>`
+* I point ``first_name`` in ``test_factory_takes_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -1684,27 +1684,24 @@ I want to see what happens when I try to make a person without a value for the `
 
   still green
 
-* I comment out ``first_name`` in ``test_factory_w_default_arguments``
+* I point ``first_name`` in ``test_factory_w_default_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-5
 
         def test_factory_w_default_arguments(self):
             # first_name = random.choice((
             #     'jane', 'joe', 'john', 'person',
             # ))
             first_name = self.first_name
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
 
   the test is still green
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the value of ``first_name`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 51
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -1714,16 +1711,12 @@ I want to see what happens when I try to make a person without a value for the `
                     year_of_birth=year_of_birth,
                 ),
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'first_name' is not
+  still green
 
 * I do the same thing for the :ref:`value<test_values_of_a_dictionary>` of ``first_name`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 57
     :emphasize-lines: 2-3
 
                 dict(
@@ -1734,9 +1727,9 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
 
-  the test is green again
+  green
 
-* I remove the commented lines
+* I remove the commented lines and the ``first_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1761,27 +1754,24 @@ I want to see what happens when I try to make a person without a value for the `
 
   still green
 
-* I comment out ``year_of_birth``
+* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-5
 
         def test_factory_w_default_arguments(self):
             # year_of_birth = random.randint(
             #     this_year()-120, this_year()
             # )
+            year_of_birth = self.year_of_birth
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'year_of_birth' is not defined
+  the test is still green
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the value of ``year_of_birth`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 48
     :emphasize-lines: 4-5
 
             self.assertEqual(
@@ -1791,16 +1781,12 @@ I want to see what happens when I try to make a person without a value for the `
                     year_of_birth=self.year_of_birth,
                 ),
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'year_of_birth' is not defined
+  still green
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` of ``year_of_birth`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 54
     :emphasize-lines: 5-6
 
                 dict(
@@ -1811,9 +1797,9 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-self.year_of_birth,
                 )
 
-  the test passes
+  green
 
-* I remove the commented lines
+* I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 42
