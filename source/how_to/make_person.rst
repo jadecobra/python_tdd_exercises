@@ -1613,26 +1613,21 @@ I want to see what happens when I try to make a person without a value for the `
 * I comment out the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 6
+    :lineno-start: 25
+    :emphasize-lines: 5
 
-        def test_factory_takes_keyword_arguments(self):
-            last_name = random.choice((
-                'doe', 'smith', 'blow', 'public',
-            ))
             sex = random.choice(('F', 'M'))
-            # year_of_birth = self.year_of_birth
+            # year_of_birth = random.randint(
+            #     this_year()-120, this_year()
+            # )
+            year_of_birth = self.year_of_birth
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'year_of_birth' is not defined
+  the test is still green
 
 * I change the value of ``year_of_birth`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 28
+    :lineno-start: 31
     :emphasize-lines: 5-6
 
                 src.person.factory(
@@ -1643,16 +1638,12 @@ I want to see what happens when I try to make a person without a value for the `
                     year_of_birth=self.year_of_birth,
                 ),
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'year_of_birth' is not defined
+  still green
 
 * I change the :ref:`value<test_values_of_a_dictionary>` of ``year_of_birth`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 39
     :emphasize-lines: 5-6
 
                 dict(
@@ -1663,9 +1654,9 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-self.year_of_birth,
                 )
 
-  the test is green again
+  green
 
-* I remove the commented lines
+* I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -1703,15 +1694,12 @@ I want to see what happens when I try to make a person without a value for the `
             # first_name = random.choice((
             #     'jane', 'joe', 'john', 'person',
             # ))
+            first_name = self.first_name
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'first_name' is not defined
+  the test is still green
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the value of ``first_name`` in the :ref:`assertion<what is an assertion?>`
 
