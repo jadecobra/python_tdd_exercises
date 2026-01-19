@@ -1312,29 +1312,8 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
-
-    AssertionError: {'first_name': 'joe', 'last_name': 'last_name', 'sex': 'M', 'age': 62} != {'first_name': 'joe', 'last_name': 'doe', 'sex': 'M', 'age': 62}
-
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of ``'last_name'`` for ``last_name`` and the test expects ``'doe'``
-
-* I use the ``last_name`` input parameter in the `return statement`_ in ``person.py``
-
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 3
-
-        return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-            'age': datetime.datetime.now().year - year_of_birth,
-        }
-
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
-
-  .. code-block:: shell
-    :emphasize-lines: 1, 4
+  .. code-block::
+    :emphasize-lines: 2, 5
 
     E       - {'age': X, 'first_name': Y, 'last_name': None, 'sex': A}
     E       ?                                          ^ -
@@ -1342,7 +1321,7 @@ I want to see what happens when I try to make a person without a value for the `
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
     E       ?                                          ^^  +
 
-  the ``factory`` :ref:`function<what is a function?>` now returns the default value of :ref:`None<what is None?>` for ``last_name`` and the test expects ``'doe'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of ``'last_name'`` for ``last_name`` and the test expects ``'doe'``
 
 * I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -1431,13 +1410,6 @@ I want to see what happens when I try to make a person without a value for the `
                     # sex=sex,
                     year_of_birth=year_of_birth,
                 ),
-                dict(
-                    first_name=first_name,
-                    last_name='doe',
-                    sex=sex,
-                    age=this_year()-year_of_birth,
-                )
-            )
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -1447,7 +1419,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the :ref:`value<test_values_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>` I commented out
 
-* I change the expectation
+* I change the expectation of the :ref:`assertion<what is an assertion>?`
 
   .. code-block:: python
     :lineno-start: 49

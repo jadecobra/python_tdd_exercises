@@ -66,7 +66,7 @@ Pick a time that works best for you
             <div class="price">$99.99</div>
             <p class="time-slot">1PM - 3PM CST</p>
             <ul>
-                <li>Jan 12 - Mar 6</li>
+                <li>Feb 2 - Mar 27commi </li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
@@ -79,7 +79,7 @@ Pick a time that works best for you
             <div class="price">$99.99</div>
             <p class="time-slot">5PM - 7PM CST</p>
             <ul>
-                <li>Jan 26 - Mar 16</li>
+                <li>Feb 2 - Mar 27</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
