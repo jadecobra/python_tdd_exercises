@@ -287,7 +287,7 @@ start the project
     FAILED tests/test_telephone.py::TestTelephone::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the :ref:`editor<2 editors>`
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 

@@ -6,6 +6,8 @@ dot notation
 
 You have made it through the end of the book. Do you understand the following?
 
+----
+
 *********************************************************************************
 AClass.attribute
 *********************************************************************************

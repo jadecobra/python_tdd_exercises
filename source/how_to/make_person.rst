@@ -8,10 +8,8 @@
 .. _now method: now_
 .. _today: https://docs.python.org/3/library/datetime.html#datetime.date.today
 .. _today method: today_
-.. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
-.. _random.randint method: `random.randint`_
 .. _random.choice: https://docs.python.org/3/library/random.html#random.choice
-.. _random.choice method: https://docs.python.org/3/library/random.html#random.choice
+.. _choice method: `random.choice`_
 
 #################################################################################
 how to make a person
@@ -66,7 +64,7 @@ start the project
 
     tests/test_person.py:7: AssertionError
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -175,7 +173,7 @@ test_factory_takes_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 4
+    :emphasize-lines: 3-5
 
         def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
@@ -234,9 +232,9 @@ test_factory_takes_keyword_arguments
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    TypeError: factory() got an unexpected keyword argument 'last_name'
+    TypeError: factory() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
 
   the test calls the ``factory`` :ref:`function<what is a function?>` with 2 inputs, but the definition in ``person.py`` only takes 1 input
 
@@ -481,7 +479,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I want the :ref:`dictionary<dictionaries>` to have a :ref:`key<test_keys_of_a_dictionary>` named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
+* I want the expected :ref:`dictionary<dictionaries>` to have a :ref:`key<test_keys_of_a_dictionary>` named ``last_name`` with the same value as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -560,11 +558,18 @@ test_factory_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 2, 5
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'last_name'} != {'first_name': 'jane', 'last_name': 'doe'}
+    E       - {'first_name': 'jane', 'last_name': 'last_name'}
+    E       ?                                      ^^^^^^^^
+    E
+    E       + {'first_name': 'jane', 'last_name': 'doe'}
+    E       ?                                      ^^
 
-* I change the `return statement`_ in ``person.py``
+  the :ref:`values<test_values_of_a_dictionary>` are different in the 2 :ref:`dictionaries<what is a dictionary?>`
+
+* I change the `return statement`_ to match in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -603,11 +608,14 @@ test_factory_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 3
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
+    E       - {'first_name': 'jane', 'last_name': 'doe'}
+    E       + {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
+    E       ?                                          ++++++++++++
 
-* I change the `return statement`_ in ``person.py``
+* I add a new :ref:`key<test_keys_of_a_dictionary>` to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -665,9 +673,14 @@ test_factory_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 2, 5
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    E       - {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
+    E       ?                                                    ^
+    E
+    E       + {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    E       ?                                                    ^
 
 * I change the `return statement`_ in ``person.py``
 
@@ -744,13 +757,13 @@ test_factory_takes_keyword_arguments
   Here's what ``datetime.datetime.now().year`` means
 
   - ``datetime`` is the `datetime module`_
-  - ``.datetime`` is a call to the `datetime.datetime object`_ in the `datetime module`_
-  - ``.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
+  - ``.datetime`` is a call to the `datetime object`_ in the `datetime module`_. Wait a minute, that is the same name twice. Do I have to remember all this?
+  - ``.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy.
   - ``.year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
   that was a lot of words, there is more of this in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`
 
-  .. NOTE:: I can also use the `today method`_ to get the same value
+  .. TIP:: I can also use the `today method`_ to get the same value
 
     .. code-block:: python
       :lineno-start: 6
@@ -761,9 +774,12 @@ test_factory_takes_keyword_arguments
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 3
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0}
+    E       - {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    E       + {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    E       ?  ++++++++++
 
   the new :ref:`dictionary<dictionaries>` has a value for ``'age'``
 
@@ -819,9 +835,7 @@ test_factory_takes_keyword_arguments
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I add an `import statement`_ at the top of ``test_person.py`` to use random values in the tests
-
-  .. TIP:: I like to arrange `import statements`_ alphabetically
+* I add an `import statement`_ at the top of ``test_person.py`` to use random values in the tests. I like to arrange `import statements`_ alphabetically
 
   .. code-block:: python
     :linenos:
@@ -852,21 +866,26 @@ test_factory_takes_keyword_arguments
   Here is what the new line means
 
   - ``random`` is the `random module`_
-  - ``.randint`` is a call to the `random.randint method`_ from the `random module`_
+  - ``.randint`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name twice
   - ``this_year()-120`` returns this year minus ``120``
   - ``this_year()`` returns this year
   - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times to run the tests. When the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 2, 5
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': 0} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X}
+    E       - {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    E       ?         ^
+    E
+    E       + {'age': 74, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    E       ?         ^^
 
 * I add the age calculation from ``test_person.py`` to the `return statement`_ in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
     :emphasize-lines: 9
 
     def factory(
@@ -893,6 +912,7 @@ test_factory_takes_keyword_arguments
   .. code-block:: python
     :lineno-start: 8
     :emphasize-lines: 5
+    :emphasize-text: datetime now
 
         return {
             'first_name': 'jane',
@@ -938,7 +958,7 @@ test_factory_takes_keyword_arguments
             )
 
   - ``random`` is the `random module`_
-  - ``.choice`` is a call to the `random.choice method`_ from the `random module`_
+  - ``.choice`` is a call to the `choice method`_ from the `random module`_
   - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
@@ -946,9 +966,14 @@ test_factory_takes_keyword_arguments
 
   When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 2, 5
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F', 'age': X} != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M', 'age': X}
+    E       - {'age': X, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    E       ?                                                              ^
+    E
+    E       + {'age': X, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
+    E       ?                                                              ^
 
 * I add the ``sex`` input parameter instead of a value that does not change to the `return statement`_ in ``person.py``
 

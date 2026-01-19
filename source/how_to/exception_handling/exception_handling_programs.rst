@@ -145,7 +145,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9
+    :emphasize-lines: 5
 
     def function_name():
         return None

@@ -416,7 +416,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 2-7
+    :emphasize-lines: 2-5
 
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):

@@ -8,7 +8,7 @@
 how to make a calculator 2
 #################################################################################
 
-I want to add an exception handler to the :ref:`calculator project<how to make a calculator>` for ZeroDivisionError_ in :ref:`test_division`
+I want to use assertRaises_ to make sure :ref:`test_division` from the :ref:`calculator project<how to make a calculator>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 *********************************************************************************
 preview
@@ -90,7 +90,7 @@ test catching ZeroDivisionError in test_calculator.py
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<what is a function?>` raises ZeroDivisionError_ in
+I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<what is a function?>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in
 
 .. code-block:: python
   :lineno-start: 42
@@ -109,7 +109,7 @@ I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` 
 
   # Exceptions seen
 
-the terminal_ shows ZeroDivisionError_
+the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 .. code-block:: shell
 
@@ -190,7 +190,7 @@ I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested t
 * :ref:`TypeError`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError<test_key_error>`
-* ZeroDivisionError_ and
+* :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` and
 * :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
 
 ----

@@ -76,7 +76,7 @@ the chapters
   :maxdepth: 1
 
   dictionaries
-  ../../how_to/calculator/calculator_vi
+  ../../how_to/calculator/calculator_vii
 
 ----
 

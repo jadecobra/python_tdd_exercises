@@ -1430,16 +1430,16 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 ----
 
 *********************************************************************************
-test squares
+test exponents
 *********************************************************************************
 
-Since I am using a :ref:`dictionary<what is a dictionary?>` adding a new test is easy. I want to add a test for using the :ref:`calculator<how to make a calculator>` to square numbers like I did in :ref:`test_making_a_list_w_processes`
+Since I am using a :ref:`dictionary<what is a dictionary?>` adding a new test is easy. I want to add a test for using the :ref:`calculator<how to make a calculator>` to exponent numbers like I did in :ref:`test_making_a_list_w_processes`
 
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add a new :ref:`key<test_keys_of_a_dictionary>` for the square :ref:`function<what is a function?>` to the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>`
+I add a new :ref:`key<test_keys_of_a_dictionary>` for the exponent :ref:`function<what is a function?>` to the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 40
@@ -1451,8 +1451,8 @@ I add a new :ref:`key<test_keys_of_a_dictionary>` for the square :ref:`function<
                         self.random_first_number*self.random_second_number
                     ),
                 },
-                'square': {
-                    'function': src.calculator.square,
+                'exponent': {
+                    'function': src.calculator.exponent,
                     'expectation': self.random_first_number**2
                 },
             }
@@ -1463,7 +1463,7 @@ the terminal_ shows :ref:`AttributeError` for every test
 
 .. code-block:: python
 
-  AttributeError: module 'src.calculator' has no attribute 'square'
+  AttributeError: module 'src.calculator' has no attribute 'exponent'
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -1480,14 +1480,14 @@ the terminal_ shows :ref:`AttributeError` for every test
         return first_input + second_input
 
 
-    def square(first_input):
+    def exponent(first_input):
         return None
 
   the terminal_ shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: square() takes 1 positional argument but 2 were given
+    TypeError: exponent() takes 1 positional argument but 2 were given
 
 * I add a second input argument
 
@@ -1495,7 +1495,7 @@ the terminal_ shows :ref:`AttributeError` for every test
     :lineno-start: 41
     :emphasize-lines: 1
 
-    def square(first_input, second_input):
+    def exponent(first_input, second_input):
         return None
 
   the terminal_ shows :ref:`AssertionError<what is an assertion?>` for 16 tests
@@ -1506,36 +1506,36 @@ the terminal_ shows :ref:`AttributeError` for every test
     :lineno-start: 41
     :emphasize-lines: 2
 
-    def square(first_input, second_input):
-        return first_input**2
+    def exponent(first_input, second_input):
+        return first_input ** second_input
 
   the terminal_ shows :ref:`AssertionError<what is an assertion?>` for 13 tests. Progress
 
-* I :ref:`wrap<what is a decorator function?>` the ``square`` :ref:`function<what is a function?>` with the ``only_takes_numbers`` :ref:`decorator function<what is a decorator function?>`
+* I :ref:`wrap<what is a decorator function?>` the ``exponent`` :ref:`function<what is a function?>` with the ``only_takes_numbers`` :ref:`decorator function<what is a decorator function?>`
 
   .. code-block:: python
     :lineno-start: 41
     :emphasize-lines: 3
 
     @only_takes_numbers
-    def square(first_input, second_input):
-        return first_input**2
+    def exponent(first_input, second_input):
+        return first_input ** second_input
 
   the test passes
 
 =================================================================================
-:refactor:`REFACTOR`: make it better
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
-* I want the ``square`` :ref:`function<what is a function?>` to only take one input since the second input is not used. I make the second input optional by adding a :ref:`default argument<test_functions_w_default_arguments>`
+* I want the ``exponent`` :ref:`function<what is a function?>` to only take one input since the second input is not used. I make the second input optional by adding a :ref:`default argument<test_functions_w_default_arguments>`
 
   .. code-block:: python
     :lineno-start: 41
     :emphasize-lines: 2
 
     @only_takes_numbers
-    def square(first_input, second_input=None):
-        return first_input**2
+    def exponent(first_input, second_input=None):
+        return first_input ** second_input
 
   still green. Not a beautiful solution but it works for now.
 

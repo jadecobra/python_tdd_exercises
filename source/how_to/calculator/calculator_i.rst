@@ -269,7 +269,7 @@ start the project
     FAILED tests/test_calculator.py::TestCalculator::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option` or :kbd:`command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to open it in the :ref:`editor<2 editors>`
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
@@ -1109,7 +1109,6 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   .. code-block:: python
     :lineno-start: 12
-    :emphasize-lines: 2-5
 
         def test_addition(self):
             random_first_number = a_random_number()

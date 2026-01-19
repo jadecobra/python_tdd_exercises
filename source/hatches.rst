@@ -26,7 +26,9 @@ what do I get?
 
 * 30 chapters
 * 11 hours of video
-* 40 sessions (8 weeks)
+* 40 sessions
+* 8 weeks
+* 80 hours
 * over 100 tests
 * writing code from day 1
 * improved typing skills (`click here to take a typing test <https://www.keybr.com/typing-test>`_)

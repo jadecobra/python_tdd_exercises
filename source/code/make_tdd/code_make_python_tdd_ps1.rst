@@ -4,8 +4,6 @@
 makePythonTdd.ps1
 #################################################################################
 
-----
-
 *********************************************************************************
 makePythonTdd.sh program
 *********************************************************************************
@@ -36,4 +34,4 @@ Since you are the adventurous type and made it in here, I have added 2 lines for
   :linenos:
   :emphasize-lines: 22-23
 
-this works with `Visual Studio Code`_ you can change it to use the command for any `Integrated Development Environment`_ you like
+this works with `Visual Studio Code`_ you can change it to use the command for any `Integrated Development Environment (IDE)`_ you like
