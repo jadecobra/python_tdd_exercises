@@ -1419,18 +1419,12 @@ I want to see what happens when I try to make a person without a value for the `
 
   the :ref:`value<test_values_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>` I commented out
 
-* I change the expectation of the :ref:`assertion<what is an assertion>?`
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 49
-    :emphasize-lines: 10
+    :emphasize-lines: 4
 
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    # sex=sex,
-                    year_of_birth=year_of_birth,
-                ),
                 dict(
                     first_name=first_name,
                     last_name='doe',
@@ -1537,28 +1531,27 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_takes_keyword_arguments(self):
 
-* I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly with no need for the :ref:`variables<what is a variable?>`. I comment out ``first_name``
+  I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly with no need for the :ref:`variables<what is a variable?>`
+
+* I comment out ``first_name`` in ``test_factory_takes_keyword_arguments`` and change it to point to the :ref:`class attributes<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 2
+    :emphasize-lines: 2-5
 
-    def test_factory_takes_keyword_arguments(self):
-        # first_name = self.first_name
-        last_name = random.choice((
-            'doe', 'smith', 'blow', 'public',
-        ))
+        def test_factory_takes_keyword_arguments(self):
+            # first_name = random.choice((
+            #     'jane', 'joe', 'john', 'person',
+            # ))
+            first_name = self.first_name
+            last_name = random.choice((
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'first_name' is not defined
+  the test is still green
 
 * I change the value of ``first_name`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 34
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -1570,16 +1563,12 @@ I want to see what happens when I try to make a person without a value for the `
                     year_of_birth=year_of_birth,
                 ),
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'first_name' is not defined
+  still green
 
 * I change the :ref:`value<test_values_of_a_dictionary>` of ``first_name`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 2-3
 
                 dict(
@@ -1590,9 +1579,9 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
 
-  the test is green again
+  green
 
-* I remove the commented lines
+* I remove the commented lines and the ``first_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 21
