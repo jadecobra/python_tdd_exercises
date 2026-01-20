@@ -69,7 +69,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I get the first position of an item in a list?<test_index_returns_first_position_of_item_in_a_list>`
 * :ref:`how can I put an item at a position in a list?<test_insert_item_at_position_in_a_list>`
 * :ref:`how can I remove the last item from a list?<test_pop_removes_and_returns_last_item_from_a_list>`
-* :ref:`how can I remove the first time an item is in a list<test_remove_first_time_item_is_in_a_list>`
+* :ref:`how can I remove the first time an item is in a list?<test_remove_first_time_item_is_in_a_list>`
 * :ref:`how can I reverse a list?<test_reverse_a_list>`
 * :ref:`how can I sort a list?<test_sort_a_list>`
 * :ref:`how can I get items of a list?<test_getting_items_of_a_list>`
