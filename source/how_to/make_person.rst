@@ -745,9 +745,6 @@ test_factory_takes_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :emphasize-lines:
-
-  .. code-block:: python
     :lineno-start: 16
     :emphasize-lines: 5-6
 
@@ -1410,83 +1407,58 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 25
-    :emphasize-lines: 16-26, 28-41
+    :emphasize-lines: 12-24, 26-35
 
             self.assertEqual(
                 src.person.factory(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
+                    **keyword_arguments,
                     year_of_birth=year_of_birth,
                 ),
                 dict(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
+                    **keyword_arguments,
                     age=this_year()-year_of_birth,
                 )
             )
 
-        def test_factory_w_default_arguments(self):
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            # last_name = random.choice((
-            #    'doe', 'smith', 'blow', 'public',
-            # ))
-            sex = random.choice(('F', 'M'))
+        def test_factory_takes_keyword_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
+            keyword_arguments = dict(
+                first_name=random.choice((
+                    'jane', 'joe', 'john', 'person',
+                )),
+                # last_name=random.choice((
+                #     'doe', 'smith', 'blow', 'public',
+                # )),
+                sex=random.choice(('F', 'M')),
+            )
 
             self.assertEqual(
                 src.person.factory(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
+                    **keyword_arguments,
                     year_of_birth=year_of_birth,
                 ),
                 dict(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
+                    **keyword_arguments,
                     age=this_year()-year_of_birth,
                 )
             )
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+    # Exceptions seen
 
-    NameError: name 'last_name' is not defined
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-* I comment out ``last_name`` in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_factory_w_default_arguments``
-
-  .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 4
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    # last_name=last_name,
-                    year_of_birth=year_of_birth,
-                    sex=sex,
-                ),
-
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  the ``factory`` :ref:`function<what is a function?>` is called with 3 arguments in ``test_factory_w_default_arguments`` but the definition in ``person.py`` always takes 4 inputs
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-* I add a default value for ``last_name`` to make it optional in ``person.py``
+* I add a default value for the ``last_name`` argument in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1508,7 +1480,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 64
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
@@ -1548,28 +1520,29 @@ I want to see what happens when I try to make a person without a value for the `
             sex=None, year_of_birth=None,
         ):
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block::
+    :emphasize-lines: 2
+
+    E       - {'age': 50, 'first_name': 'joe', 'last_name': None, 'sex': 'F'}
+    E       ?                                  -------------------
+    E
+    E       + {'age': 50, 'first_name': 'joe', 'sex': 'F'
+
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'last_name'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'last_name'``
+
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
-
-    NameError: name 'last_name' is not defined
-
-  the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` points to the ``last_name`` :ref:`variable<what is a variable?>` I commented out earlier
-
-* I change the :ref:`value<test_values_of_a_dictionary>` for ``last_name`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 3-4
+    :lineno-start: 57
+    :emphasize-lines: 3
 
                 dict(
-                    first_name=first_name,
-                    # last_name='last_name',
+                    **keyword_arguments,
                     last_name='doe',
-                    sex=sex,
                     age=this_year()-year_of_birth,
                 )
-            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1582,7 +1555,7 @@ I want to see what happens when I try to make a person without a value for the `
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
     E       ?                                          ^^  +
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of ``'last_name'`` for ``last_name`` and the test expects ``'doe'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the test expects ``'doe'``
 
 * I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -1594,7 +1567,6 @@ I want to see what happens when I try to make a person without a value for the `
             first_name, last_name='doe',
             sex=None, year_of_birth=None,
         ):
-
 
   the test passes
 
@@ -1613,51 +1585,150 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented lines from ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 38
 
-        def test_factory_w_default_arguments(self):
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            sex = random.choice(('F', 'M'))
+        def test_factory_takes_keyword_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
+            )
+            keyword_arguments = dict(
+                first_name=random.choice((
+                    'jane', 'joe', 'john', 'person',
+                )),
+                sex=random.choice(('F', 'M')),
             )
 
             self.assertEqual(
                 src.person.factory(
-                    first_name=first_name,
-                    sex=sex,
+                    **keyword_arguments,
                     year_of_birth=year_of_birth,
                 ),
                 dict(
-                    first_name=first_name,
+                    **keyword_arguments,
                     last_name='doe',
-                    sex=sex,
                     age=this_year()-year_of_birth,
                 )
             )
 
-* I comment out the ``sex`` :ref:`variable<what is a variable?>` in the test to see what happens when I do not know its value
+
+    # Exceptions seen
+
+* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_factory_w_default_arguments`` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 5
+    :lineno-start: 38
+    :emphasize-lines: 9
 
-        def test_factory_w_default_arguments(self):
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            # sex = random.choice(('F', 'M'))
+        def test_factory_takes_keyword_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
+            keyword_arguments = dict(
+                first_name=random.choice((
+                    'jane', 'joe', 'john', 'person',
+                )),
+                # sex=random.choice(('F', 'M')),
+            )
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+    :emphasize-lines: 2
+
+    E       - {'age': 120, 'first_name': 'joe', 'last_name': 'doe', 'sex': None}
+    E       ?                                                     -------------
+    E
+    E       + {'age': 120, 'first_name': 'joe', 'last_name': 'doe'}
+
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'sex'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'sex'``
+
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 3
 
-    NameError: name 'sex' is not defined
+                dict(
+                    **keyword_arguments,
+                    last_name='doe',
+                    sex='M',
+                    age=this_year()-year_of_birth,
+                )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 5
+
+    E       - {'age': X, 'first_name': Y, 'last_name': Z, 'sex': None}
+    E       ?                                                    ^^^^
+    E
+    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'M'}
+    E       ?                                                    ^^^
+
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the test expects ``'M'``
+
+* I change the default value for ``sex`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3
+
+    def factory(
+            first_name, last_name='doe',
+            sex='M', year_of_birth=None,
+        ):
+
+  the test passes
+
+* I remove the commented line ``# sex=random.choice(('F', 'M')),``
+
+  .. code-block:: python
+    :lineno-start: 42
+
+            keyword_arguments = dict(
+                first_name=random.choice((
+                    'jane', 'joe', 'john', 'person',
+                )),
+            )
+
+            self.assertEqual(
+
+* I do not need the ``keyword_arguments`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_takes_keyword_arguments`` because it only has one :ref:`key<test_keys_of_a_dictionary>`, I can use a :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 6-8
+
+            keyword_arguments = dict(
+                first_name=random.choice((
+                    'jane', 'joe', 'john', 'person',
+                )),
+            )
+            first_name=random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+
+            self.assertEqual(
+
+* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 3-4
+
+            self.assertEqual(
+                src.person.factory(
+                    # **keyword_arguments,
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ),
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+
 
 * I comment out ``sex`` in the call to the ``factory`` :ref:`function<what is a function?>` in the :ref:`assertion<what is an assertion?>`
 
@@ -2248,7 +2319,7 @@ I want to write the solution without looking at the tests
         ):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2273,7 +2344,7 @@ I want to write the solution without looking at the tests
             'age': 55,
         }
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2300,7 +2371,7 @@ I want to write the solution without looking at the tests
             'age': year_of_birth,
         }
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2324,7 +2395,7 @@ I want to write the solution without looking at the tests
 
     def factory(
 
-  the terminal_ still shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
 * I use the `datetime module`_ to get the current year for the ``age`` calculation
 
@@ -2339,7 +2410,7 @@ I want to write the solution without looking at the tests
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2407,7 +2478,7 @@ I want to write the solution without looking at the tests
             year_of_birth=None, sex=None,
         ):
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2433,7 +2504,7 @@ I want to write the solution without looking at the tests
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2459,7 +2530,7 @@ I want to write the solution without looking at the tests
 
   the test passes when the ``last_name`` is randomly ``'doe'``.
 
-  When the ``last_name`` is not ``'doe'``, the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  When the ``last_name`` is not ``'doe'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2485,7 +2556,7 @@ I want to write the solution without looking at the tests
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block::
     :emphasize-lines: 2, 5

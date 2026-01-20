@@ -1498,7 +1498,7 @@ the terminal_ shows :ref:`AttributeError` for every test
     def exponent(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>` for 16 tests
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for 16 tests
 
 * I change the `return statement`_
 
@@ -1509,7 +1509,7 @@ the terminal_ shows :ref:`AttributeError` for every test
     def exponent(first_input, second_input):
         return first_input ** second_input
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>` for 13 tests. Progress
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for 13 tests. Progress
 
 * I :ref:`wrap<what is a decorator function?>` the ``exponent`` :ref:`function<what is a function?>` with the ``only_takes_numbers`` :ref:`decorator function<what is a decorator function?>`
 
