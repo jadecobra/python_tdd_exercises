@@ -908,7 +908,7 @@ test_factory_takes_keyword_arguments
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<what is a function?>` that is not in ``person.py``.
+  because I called a :ref:`function<what is a function?>` that is not in ``person.py``
 
 * I use the `return statement`_ of the ``this_year()`` :ref:`function<what is a function?>` from ``test_person.py`` to change ``this_year()`` in ``person.py``
 
@@ -1928,7 +1928,7 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-3
+    :emphasize-lines: 1-4
 
     def factory(
             first_name, last_name,

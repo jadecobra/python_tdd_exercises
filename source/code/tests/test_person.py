@@ -57,4 +57,6 @@ class TestPerson(unittest.TestCase):
 # Exceptions seen
 # AssertionError
 # NameError
+# AttributeError
 # TypeError
+# SyntaxError

@@ -313,9 +313,9 @@ the computer cannot find the program_ because it does not exist, yet
 
 ----
 
---------------------------------------------------------------------------------------------
+=====================================================================================================
 how to make a directory for the source code
---------------------------------------------------------------------------------------------
+=====================================================================================================
 
 * I make a child folder_ in the ``magic`` directory_ for the program_
 
@@ -426,9 +426,9 @@ I do not have any tests yet, so there is nothing to run
 
 ----
 
---------------------------------------------------------------------------------------------
+=====================================================================================================
 how to make a directory for the tests
---------------------------------------------------------------------------------------------
+=====================================================================================================
 
 * I make a child folder_ to keep the tests separate from the actual program_
 
@@ -458,9 +458,9 @@ how to make a directory for the tests
 
 ----
 
---------------------------------------------------------------------------------------------
+=====================================================================================================
 how to make a Python file to hold the tests in the 'tests' folder
---------------------------------------------------------------------------------------------
+=====================================================================================================
 * I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
   .. code-block:: shell
@@ -503,9 +503,9 @@ how to make a Python file to hold the tests in the 'tests' folder
 
 ----
 
-=================================================================================
+********************************************************************************************
 :red:`RED`: make it fail
-=================================================================================
+********************************************************************************************
 
 * I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
@@ -584,9 +584,11 @@ how to make a Python file to hold the tests in the 'tests' folder
 
   I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
 
---------------------------------------------------------------------------------------------
+----
+
+=====================================================================================================
 how to make the tests a Python package
---------------------------------------------------------------------------------------------
+=====================================================================================================
 
 * I use touch_ to add an empty file_ with the name ``__init__.py`` in the ``tests`` folder
 
@@ -637,9 +639,9 @@ how to make the tests a Python package
 
   .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ after you change its name
 
---------------------------------------------------------------------------------------------
+=====================================================================================================
 how to change the name of a file
---------------------------------------------------------------------------------------------
+=====================================================================================================
 
 * I use the `mv program`_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
 
@@ -724,9 +726,11 @@ how to change the name of a file
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
 
-=================================================================================
+----
+
+********************************************************************************************
 :green:`GREEN`: make it pass
-=================================================================================
+********************************************************************************************
 
 I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py`` in the :ref:`editor<2 editors>`
 
@@ -755,9 +759,12 @@ the test passes! The terminal_ shows
 
 *cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
 
-=================================================================================
+
+----
+
+********************************************************************************************
 :yellow:`REFACTOR`: make it better
-=================================================================================
+********************************************************************************************
 
 Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError<what causes AssertionError?>` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
@@ -785,9 +792,9 @@ I do not want to type ``python3 -m unittest`` again, it is better for a `compute
 
 ----
 
---------------------------------------------------------------------------------------------
+=====================================================================================================
 how to run the tests automatically
---------------------------------------------------------------------------------------------
+=====================================================================================================
 
 I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
@@ -810,9 +817,9 @@ I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `
 
 ----
 
---------------------------------------------------------------------------------------------
+=====================================================================================================
 what is a virtual environment?
---------------------------------------------------------------------------------------------
+=====================================================================================================
 
 I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
@@ -822,9 +829,9 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to make a virtual environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 * I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_
 
@@ -897,9 +904,9 @@ how to make a virtual environment
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to activate a virtual environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 * When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
 
@@ -933,9 +940,9 @@ how to activate a virtual environment
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to see what packages are installed in a virtual environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_ I just made
 
@@ -957,9 +964,9 @@ the terminal_ shows
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to write text to a file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 I want to make a file_ where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
 * I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
@@ -1019,9 +1026,9 @@ I want to make a file_ where I can list all the `Python packages`_ for my projec
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to see what is inside a file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 I can use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
 
@@ -1040,9 +1047,9 @@ life is good!
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to install Python packages in a virtual environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 * I use pip_ to install `pytest-watch`_ from the requirements file
 
@@ -1063,9 +1070,9 @@ how to install Python packages in a virtual environment
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to upgrade the Python package manager in a virtual environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 * I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
 
@@ -1128,9 +1135,9 @@ how to upgrade the Python package manager in a virtual environment
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to run the tests automatically in a virtual environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 I try to run the tests again
 
@@ -1155,9 +1162,9 @@ and it shows results without going back to the command line
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to open the test file in the editor from the terminal
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
@@ -1198,17 +1205,17 @@ how to open the test file in the editor from the terminal
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to stop the automated tests
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
 
 ----
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 how to deactivate a virtual environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================================================================
 
 * I leave the `virtual environment`_ by typing this in the terminal_
 
@@ -1259,9 +1266,9 @@ review
 
 I gave the computer some commands to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
 
-=================================================================================
+=====================================================================================================
 how to view all the commands I typed in a terminal
-=================================================================================
+=====================================================================================================
 
 * I type history_ in the terminal_ to see all the commands I have typed so far
 
