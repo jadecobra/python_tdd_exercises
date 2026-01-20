@@ -2185,7 +2185,9 @@ I want to write the solution without looking at the tests
             year_of_birth=None, sex='M',
         ):
 
-  the test passes when the ``last_name`` is randomly ``'doe'``  and when it is not, the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the test passes when the ``last_name`` is randomly ``'doe'``.
+
+  When the ``last_name`` is not ``'doe'``, the terminal_ shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
