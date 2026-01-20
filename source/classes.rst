@@ -41,6 +41,68 @@ requirements
 ----
 
 *********************************************************************************
+open the project
+*********************************************************************************
+
+* I `change directory`_ to the ``person`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd person
+
+  the terminal_ shows I am in the ``person`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/person
+
+* I activate the `virtual environment`_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
+
+    .. code-block:: Powershell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    (.venv) .../pumping_python/person
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: python
+    :emphasize-lines: 4
+
+    rootdir: .../pumping_python/person
+    collected 2 items
+
+    tests/test_person.py ..                                             [100%]
+
+    ============================ 2 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_person.py`` to open it in the :ref:`editor<2 editors>`
+
+----
+
+*********************************************************************************
 test_factory_person_introduction
 *********************************************************************************
 
@@ -48,83 +110,12 @@ test_factory_person_introduction
 :red:`RED`: make it fail
 =================================================================================
 
-I make a new file_ called ``test_classes.py`` in the ``tests`` directory
 
-.. code-block:: python
-
-  import unittest
-  import classes
-
-
-  class TestClasses(unittest.TestCase):
-
-      def test_making_a_class_w_pass(self):
-          self.assertIsInstance(classes.ClassWithPass(), object)
-
-the terminal_ shows :ref:`ModuleNotFoundError` because I have an import statement for a module called ``classes``
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
-* I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
-
-  .. code-block:: python
-
-    # Exceptions seen
-    # AssertionError
-    # ModuleNotFoundError
-
-* I make Python_ module called ``classes.py`` the terminal_ shows :ref:`AttributeError` which I add to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
-
-  .. code-block:: python
-
-    # Exceptions seen
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-
-* I then add the name ``ClassWithPass`` to the module
-
-  .. code-block:: python
-
-    ClassWithPass
-
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>` because ``ClassWithPass`` is not defined anywhere
-
-* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
-
-  .. code-block:: python
-
-    # Exceptions seen
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
-
-* I point the name to :ref:`None<what is None?>`
-
-  .. code-block:: python
-
-    ClassWithPass = None
-
-* and then redefine the :ref:`variable<test_attribute_error_w_variables>` as a class using the Python_ class_ keyword
-
-  .. code-block:: python
-
-    class ClassWithPass:
-
-  the terminal_ shows IndentationError_ because I declared a class without adding any indented text
-* I add the new error to the list of :ref:`Exceptions<errors>` seen in ``test_classes.py``
-
-  .. code-block:: python
-
-    # Exceptions seen
-    # AssertionError
-    # ModuleNotFoundError
-    # AttributeError
-    # NameError
-    # IndentationError
 
 * Python_ has the pass_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
 

@@ -2116,7 +2116,7 @@ the test passes
 
   the test is still green
 
-* I remove the :ref:`variable<test_attribute_error_w_variables>` because it is no longer used
+* I remove the :ref:`variable<what is a variable?>` because it is no longer used
 
   .. code-block:: python
     :lineno-start: 129

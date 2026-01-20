@@ -837,7 +837,7 @@ how to activate a virtual environment on Windows without WSL
 
     .. code-block:: PowerShell
 
-      (.venv) .../magic $
+      (.venv) .../magic
 
   the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
 

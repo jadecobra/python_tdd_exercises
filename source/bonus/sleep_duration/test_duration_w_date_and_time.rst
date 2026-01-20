@@ -552,7 +552,7 @@ I change the expectation to use `datetime.datetime.strptime`_
           )
       )
 
-then add a :ref:`variable<test_attribute_error_w_variables>` for a random timestamp
+then add a :ref:`variable<what is a variable?>` for a random timestamp
 
 .. code-block:: python
 
@@ -580,7 +580,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
-I add the :ref:`variable<test_attribute_error_w_variables>` to the expectation
+I add the :ref:`variable<what is a variable?>` to the expectation
 
 .. code-block:: python
 

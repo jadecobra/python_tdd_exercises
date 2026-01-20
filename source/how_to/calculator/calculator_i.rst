@@ -435,7 +435,7 @@ test_addition
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` :ref:`variable<test_attribute_error_w_variables>` is now a name for :ref:`None<what is None?>` which I cannot use like a :ref:`function<what is a function?>`
+  because the ``add`` :ref:`variable<what is a variable?>` is now a name for :ref:`None<what is None?>` which I cannot use like a :ref:`function<what is a function?>`
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 

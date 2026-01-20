@@ -33,7 +33,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
         sleep_time = random_timestamp()
         wake_time = random_timestamp()
 
-* then add a :ref:`variable<test_attribute_error_w_variables>` for the difference between the hours
+* then add a :ref:`variable<what is a variable?>` for the difference between the hours
 
   .. code-block:: python
 
@@ -383,7 +383,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     # @unittest.skip
     def test_duration_calculation(self):
 
-* and change the first `return statement`_ in the ``duration`` :ref:`function<what is a function?>` to a :ref:`variable<test_attribute_error_w_variables>` for the total difference in minutes
+* and change the first `return statement`_ in the ``duration`` :ref:`function<what is a function?>` to a :ref:`variable<what is a variable?>` for the total difference in minutes
 
   .. code-block:: python
 
@@ -397,7 +397,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         f'{difference_minutes:02}'
     )
 
-  then add a :ref:`variable<test_attribute_error_w_variables>` for the hours of the duration using `floor (integer) division`_
+  then add a :ref:`variable<what is a variable?>` for the hours of the duration using `floor (integer) division`_
 
   .. code-block:: python
 
@@ -407,7 +407,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     )
     duration_hours = difference // 60
 
-  and a :ref:`variable<test_attribute_error_w_variables>` for the minutes of the duration using the modulo_ operator
+  and a :ref:`variable<what is a variable?>` for the minutes of the duration using the modulo_ operator
 
   .. code-block:: python
 

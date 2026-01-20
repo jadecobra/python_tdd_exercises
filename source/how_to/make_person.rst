@@ -110,17 +110,17 @@ test_factory_takes_keyword_arguments
                 None
             )
 
+
+    # Exceptions seen
+    # AssertionError
+
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
     NameError: name 'src' is not defined
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 13
@@ -131,7 +131,11 @@ test_factory_takes_keyword_arguments
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>` at the top of the file
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+* I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>` at the top of the file
 
   .. code-block:: python
     :linenos:
@@ -160,7 +164,9 @@ test_factory_takes_keyword_arguments
     # NameError
     # AttributeError
 
-* I open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>` then I add a :ref:`function<what is a function?>`
+* I open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+
+* I add a :ref:`function<what is a function?>` to ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -183,6 +189,9 @@ test_factory_takes_keyword_arguments
                 ),
                 None
             )
+
+
+    # Exceptions seen
 
   the terminal_ shows :ref:`TypeError`
 
@@ -428,11 +437,51 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places when I want a different :ref:`value<test_values_of_a_dictionary>` for it. I add a :ref:`variable<test_attribute_error_w_variables>` to remove the repetition in ``test_person.py``
+* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places when I want a different :ref:`value<test_values_of_a_dictionary>` for it. I add a :ref:`variable<what is a variable?>` to remove the repetition in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 2, 6, 12
+    :emphasize-lines: 2
+
+        def test_factory_takes_keyword_arguments(self):
+            first_name = 'first_name'
+
+            self.assertEqual(
+
+* I use the :ref:`variable<what is a variable?>` as the value for ``first_name`` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 3-4
+
+            self.assertEqual(
+                src.person.factory(
+                    # first_name='first_name',
+                    first_name=first_name,
+                    last_name='last_name',
+                    sex='M',
+                    year_of_birth=this_year(),
+                ),
+
+  the test is still green
+
+* I use the :ref:`variable<what is a variable?>` as the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 2-3
+
+                dict(
+                    # first_name='first_name',
+                    first_name=first_name,
+                )
+
+  still green. I now only need to change the value of ``first_name`` in one place
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 11
 
         def test_factory_takes_keyword_arguments(self):
             first_name = 'first_name'
@@ -442,14 +491,15 @@ test_factory_takes_keyword_arguments
                     first_name=first_name,
                     last_name='last_name',
                     sex='M',
-                    year_of_birth=this_year()
+                    year_of_birth=this_year(),
                 ),
                 dict(
                     first_name=first_name,
                 )
             )
 
-  the test is still green. I now only need to change the value of ``first_name`` in one place
+
+    # Exceptions seen
 
 * I change ``'first_name'`` to ``'jane'``
 
@@ -524,11 +574,53 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* ``'last_name'`` happens twice in the test, I add a :ref:`variable<test_attribute_error_w_variables>` to remove the duplication like I did with ``'first_name'`` in ``test_person.py``
+* ``'last_name'`` happens twice in the test, I add a :ref:`variable<what is a variable?>` to remove the duplication like I did with ``'first_name'`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 3,8,14
+    :emphasize-lines: 3
+
+        def test_factory_takes_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'last_name'
+
+            self.assertEqual(
+
+* I use the new :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 4-5
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    # last_name='last_name',
+                    last_name=last_name,
+                    sex='M',
+                    year_of_birth=this_year(),
+                ),
+
+  the test is still green
+
+* I use the :ref:`variable<what is a variable?>` in the expected :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 3-4
+
+                dict(
+                    first_name=first_name,
+                    # last_name='last_name',
+                    last_name=last_name,
+                )
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 11
 
         def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
@@ -539,7 +631,7 @@ test_factory_takes_keyword_arguments
                     first_name=first_name,
                     last_name=last_name,
                     sex='M',
-                    year_of_birth=this_year()
+                    year_of_birth=this_year(),
                 ),
                 dict(
                     first_name=first_name,
@@ -547,7 +639,8 @@ test_factory_takes_keyword_arguments
                 )
             )
 
-  the test is still green
+
+    # Exceptions seen
 
 * I change the value from ``'last_name'`` to ``'doe'``
 
@@ -570,7 +663,7 @@ test_factory_takes_keyword_arguments
     E       + {'first_name': 'jane', 'last_name': 'doe'}
     E       ?                                      ^^
 
-  the :ref:`values<test_values_of_a_dictionary>` are different in the 2 :ref:`dictionaries<what is a dictionary?>`
+  the :ref:`values<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` are different in the 2 :ref:`dictionaries<what is a dictionary?>`
 
 * I change the `return statement`_ in ``person.py``
 
@@ -636,11 +729,58 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* I add a :ref:`variable<test_attribute_error_w_variables>` to remove the repetition in ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to remove the repetition of the value for ``sex`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 4,10,16
+    :emphasize-lines: 4
+
+        def test_factory_takes_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'M'
+
+            self.assertEqual(
+
+* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :emphasize-lines:
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 5-6
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    # sex='M',
+                    sex=sex,
+                    year_of_birth=this_year(),
+                ),
+
+  the test is still green
+
+* I use the :ref:`variable<what is a variable?>` in the expected :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 4-5
+
+                dict(
+                    first_name=first_name,
+                    last_name=last_name,
+                    # sex='M',
+                    sex=sex,
+                )
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 11
 
         def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
@@ -661,7 +801,8 @@ test_factory_takes_keyword_arguments
                 )
             )
 
-  the test is still green
+
+    # Exceptions seen
 
 * I change the value of the ``sex`` :ref:`variable<what is a variable?>`
 
@@ -703,7 +844,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I want the ``factory`` :ref:`function<what is a function?>` to return the age of the person it makes. I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` and a calculation as its :ref:`value<test_values_of_a_dictionary>` to the expectation in ``test_person.py``
+* I want the ``factory`` :ref:`function<what is a function?>` to return the age of the person it makes. I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` and a calculation as its :ref:`value<test_values_of_a_dictionary>`, to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -805,7 +946,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* I add a :ref:`variable<test_attribute_error_w_variables>` to remove duplication from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to remove duplication from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -945,7 +1086,7 @@ test_factory_takes_keyword_arguments
 
 * I remove the commented ``# year_of_birth = this_year()`` line from ``test_person.py``
 
-* then I add randomness to the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
+* then I add randomness to the ``sex`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -995,7 +1136,7 @@ test_factory_takes_keyword_arguments
 
 * I remove ``# sex = 'F'`` from ``test_person.py``
 
-* then I use `random.choice`_ with the ``last_name`` :ref:`variable<test_attribute_error_w_variables>`
+* then I use `random.choice`_ with the ``last_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1037,7 +1178,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I remove ``# last_name = 'doe'`` then add randomness to the ``first_name`` :ref:`variable<test_attribute_error_w_variables>` in ``test_person.py``
+* I remove ``# last_name = 'doe'`` then add randomness to the ``first_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -1282,7 +1423,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'last_name' is not defined
 
-  the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` points to the ``last_name`` :ref:`variable<test_attribute_error_w_variables>` I commented out earlier
+  the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` points to the ``last_name`` :ref:`variable<what is a variable?>` I commented out earlier
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for ``last_name`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
@@ -1366,7 +1507,7 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-* I comment out the ``sex`` :ref:`variable<test_attribute_error_w_variables>` in the test to see what happens when I do not know its value
+* I comment out the ``sex`` :ref:`variable<what is a variable?>` in the test to see what happens when I do not know its value
 
   .. code-block:: python
     :lineno-start: 40
@@ -1406,7 +1547,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     NameError: name 'sex' is not defined
 
-  the :ref:`value<test_values_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<test_attribute_error_w_variables>` I commented out
+  the :ref:`value<test_values_of_a_dictionary>` in the expected :ref:`dictionary<dictionaries>` still uses the ``sex`` :ref:`variable<what is a variable?>` I commented out
 
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 

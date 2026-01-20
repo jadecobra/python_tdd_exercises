@@ -66,7 +66,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     mkdir dictionaries
     cd dictionaries
 
-  a :ref:`variable<test_attribute_error_w_variables>` is a name that is
+  a :ref:`variable<what is a variable?>` is a name that is
   used for a value that can change. For example, we use the word
 
   * ``woman`` to represent any woman
@@ -76,7 +76,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
   In this case I use ``$PROJECT_NAME`` to represent any name of a project
 
-* I change every where I have ``dictionaries`` in the program, to use the :ref:`variable<test_attribute_error_w_variables>` I just added so that I only have to make a change in one place
+* I change every where I have ``dictionaries`` in the program, to use the :ref:`variable<what is a variable?>` I just added so that I only have to make a change in one place
 
   .. NOTE:: The lines that are changing in the code are highlighted
 
