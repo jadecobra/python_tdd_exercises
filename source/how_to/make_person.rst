@@ -844,7 +844,7 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I want the ``factory`` :ref:`function<what is a function?>` to return the age of the person it makes. I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` and a calculation as its :ref:`value<test_values_of_a_dictionary>`, to the expectation in ``test_person.py``
+* I want the ``factory`` :ref:`function<what is a function?>` to return the age of the person it makes. I add a :ref:`key<test_keys_of_a_dictionary>` to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -927,7 +927,7 @@ test_factory_takes_keyword_arguments
 
   the new :ref:`dictionary<dictionaries>` has a :ref:`value<test_values_of_a_dictionary>` for the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` for ``'age'`` in the `return statement`_ in ``person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -946,11 +946,57 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to remove duplication from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to remove the duplication of the value for ``age`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 12
-    :emphasize-lines: 5,12,18
+    :emphasize-lines: 5
+
+        def test_factory_takes_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = this_year()
+
+            self.assertEqual(
+
+* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 6-7
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    # year_of_birth=this_year(),
+                    year_of_birth=year_of_birth,
+                ),
+
+  the test is still green
+
+* I use the :ref:`variable<what is a variable?>` in the expected :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 5-6
+
+                dict(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    # age=this_year()-this_year(),
+                    age=this_year()-year_of_birth,
+                )
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 12
 
         def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
@@ -973,11 +1019,93 @@ test_factory_takes_keyword_arguments
                 )
             )
 
-  and the test is still green
+
+    # Exceptions seen
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+* the only difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the :ref:`assertion<what is an assertion?>` is that one has a year of birth and the other does a calculation with it. The other things are the same. I add a :ref:`dictionary<what is a dictionary?>` to remove the duplication
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 6-10
+
+        def test_factory_takes_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = this_year()
+            keyword_arguments = dict(
+                first_name='jane',
+                last_name='doe',
+                sex='F',
+            )
+
+            self.assertEqual(
+
+* I use the new :ref:`variable<what is a variable?>` with a starred expression like in :ref:`test_functions_w_unknown_arguments` in the call to ``src.function.factory``
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 3-6
+
+            self.assertEqual(
+                src.person.factory(
+                    # first_name=first_name,
+                    # last_name=last_name,
+                    # sex=sex,
+                    **keyword_arguments,
+                    year_of_birth=year_of_birth,
+                ),
+
+  the test is still green
+
+* I do the same thing in the expectation
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2-5
+
+                dict(
+                    # first_name=first_name,
+                    # last_name=last_name,
+                    # sex=sex,
+                    **keyword_arguments,
+                    age=this_year()-year_of_birth,
+                )
+
+  still green
+
+* I remove the commented lines and the ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 12
+
+        def test_factory_takes_keyword_arguments(self):
+            year_of_birth = this_year()
+            keyword_arguments = dict(
+                first_name='jane',
+                last_name='doe',
+                sex='F',
+            )
+
+            self.assertEqual(
+                src.person.factory(
+                    **keyword_arguments,
+                    year_of_birth=year_of_birth,
+                ),
+                dict(
+                    **keyword_arguments,
+                    age=this_year()-year_of_birth,
+                )
+            )
+
+
+    # Exceptions seen
+
+  green
 
 * I add an `import statement`_ at the top of ``test_person.py`` to use random values in the tests. I like to arrange `import statements`_ alphabetically
 
@@ -996,16 +1124,14 @@ test_factory_takes_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 5-8
+    :emphasize-lines: 2-5
 
         def test_factory_takes_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
             # year_of_birth = this_year()
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
+            keyword_arguments = dict(
 
   Here is what the new line means
 
@@ -1086,20 +1212,24 @@ test_factory_takes_keyword_arguments
 
 * I remove the commented ``# year_of_birth = this_year()`` line from ``test_person.py``
 
-* then I add randomness to the ``sex`` :ref:`variable<what is a variable?>` in ``test_person.py``
+* then I add randomness to the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 4-5
+    :emphasize-lines: 8-9
 
         def test_factory_takes_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            # sex = 'F'
-            sex = random.choice(('F', 'M'))
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
+            keyword_arguments = dict(
+                first_name='jane',
+                last_name='doe',
+                # sex='F',
+                sex=random.choice(('F', 'M')),
+            )
+
+            self.assertEqual(
 
   - ``random`` is the `random module`_
   - ``.choice`` is a call to the `random.choice method`_ from the `random module`_
@@ -1136,19 +1266,20 @@ test_factory_takes_keyword_arguments
 
 * I remove ``# sex = 'F'`` from ``test_person.py``
 
-* then I use `random.choice`_ with the ``last_name`` :ref:`variable<what is a variable?>`
+* then I use `random.choice`_ with the ``last_name`` :ref:`key<test_keys_of_a_dictionary>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 17
     :emphasize-lines: 3-6
 
-        def test_factory_takes_keyword_arguments(self):
-            first_name = 'jane'
-            # last_name = 'doe'
-            last_name = random.choice((
-                'doe', 'smith', 'blow', 'public',
-            ))
-            sex = random.choice(('F', 'M'))
+            keyword_arguments = dict(
+                first_name='jane',
+                # last_name='doe',
+                last_name=random.choice((
+                    'doe', 'smith', 'blow', 'public',
+                )),
+                sex=random.choice(('F', 'M')),
+            )
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows success when ``last_name`` is ``'doe'``.
 
@@ -1163,7 +1294,7 @@ test_factory_takes_keyword_arguments
     E       + {'age': X, 'first_name': 'jane', 'last_name': Z, 'sex': A}
     E       ?                                               ^
 
-* I add the ``last_name`` input parameter to the `return statement`_ in ``person.py``
+* I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 8
@@ -1178,22 +1309,24 @@ test_factory_takes_keyword_arguments
 
   and the test is green again
 
-* I remove ``# last_name = 'doe'`` then add randomness to the ``first_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
+* I remove ``# last_name = 'doe'`` then add randomness to the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 17
     :emphasize-lines: 2-5
 
-        def test_factory_takes_keyword_arguments(self):
-            # first_name = 'jane'
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            last_name = random.choice((
-                'doe', 'smith', 'blow', 'public',
-            ))
+            keyword_arguments = dict(
+                # first_name='jane',
+                first_name=random.choice((
+                    'jane', 'joe', 'john', 'person',
+                )),
+                last_name=random.choice((
+                    'doe', 'smith', 'blow', 'public',
+                )),
+                sex=random.choice(('F', 'M')),
+            )
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows green when ``first_name`` is ``'jane'``.
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows green when ``first_name`` is ``'jane'``.
 
   When ``first_name`` is not ``'jane'`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1231,28 +1364,26 @@ test_factory_takes_keyword_arguments
     :lineno-start: 13
 
         def test_factory_takes_keyword_arguments(self):
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
-            last_name = random.choice((
-                'doe', 'smith', 'blow', 'public',
-            ))
-            sex = random.choice(('F', 'M'))
             year_of_birth = random.randint(
                 this_year()-120, this_year()
+            )
+            keyword_arguments = dict(
+                first_name=random.choice((
+                    'jane', 'joe', 'john', 'person',
+                )),
+                last_name=random.choice((
+                    'doe', 'smith', 'blow', 'public',
+                )),
+                sex=random.choice(('F', 'M')),
             )
 
             self.assertEqual(
                 src.person.factory(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
+                    **keyword_arguments,
                     year_of_birth=year_of_birth,
                 ),
                 dict(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
+                    **keyword_arguments,
                     age=this_year()-year_of_birth,
                 )
             )
