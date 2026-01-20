@@ -15,8 +15,8 @@ how to make a class in Python
 *********************************************************************************
 
 * use the class_ keyword
-* use ``TitleCase`` for the name
-* use a name that tells what the collection of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <what is a function?>` does - this is hard to do and is something I am still learning
+* use :ref:`CapWords format<CapWords>` for the name
+* use a name that tells what the collection of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <what is a function?>` does - naming things is its own challenge
 
 ----
 
