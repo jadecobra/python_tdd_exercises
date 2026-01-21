@@ -1559,8 +1559,8 @@ I want to see what happens when I try to make a person without a value for the `
 * I change the name of the new test to ``test_factory_w_default_arguments``, then comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 12-24, 26-35
+    :lineno-start: 27
+    :emphasize-lines: 12-20, 22-31
 
             self.assertEqual(
                 src.person.factory(
@@ -1578,13 +1578,9 @@ I want to see what happens when I try to make a person without a value for the `
                 this_year()-120, this_year()
             )
             a_person = dict(
-                first_name=random.choice((
-                    'jane', 'joe', 'john', 'person',
-                )),
-                # last_name=random.choice((
-                #     'doe', 'smith', 'blow', 'public',
-                # )),
-                sex=random.choice(('F', 'M')),
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                # last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M'),
             )
 
             self.assertEqual(
@@ -1597,7 +1593,6 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
             )
-
 
     # Exceptions seen
 
@@ -1632,7 +1627,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I broke a Python_ rule. I cannot put a parameter that does not have a default value after one that does
+  I cannot put a parameter that does not have a default value after one that does
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -1741,7 +1736,7 @@ I want to see what happens when I try to make a person without a value for the `
           last_name='doe',
       )
 
-* I remove the commented lines from ``test_factory_w_default_arguments`` in ``test_person.py``
+* I remove the commented line from ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 38
@@ -1751,10 +1746,8 @@ I want to see what happens when I try to make a person without a value for the `
                 this_year()-120, this_year()
             )
             a_person = dict(
-                first_name=random.choice((
-                    'jane', 'joe', 'john', 'person',
-                )),
-                sex=random.choice(('F', 'M')),
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                sex=choose('F', 'M'),
             )
 
             self.assertEqual(
@@ -1769,7 +1762,6 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-
     # Exceptions seen
 
 ----
@@ -1778,17 +1770,15 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 38
-    :emphasize-lines: 9
+    :emphasize-lines: 7
 
         def test_factory_w_default_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
             a_person = dict(
-                first_name=random.choice((
-                    'jane', 'joe', 'john', 'person',
-                )),
-                # sex=random.choice(('F', 'M')),
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                # sex=choose('F', 'M'),
             )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -1806,7 +1796,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 52
     :emphasize-lines: 4
 
                 dict(
@@ -1864,15 +1854,13 @@ I want to see what happens when I try to make a person without a value for the `
           year_of_birth=year_of_birth,
       )
 
-* I remove the commented line ``# sex=random.choice(('F', 'M')),``
+* I remove the commented line
 
   .. code-block:: python
     :lineno-start: 42
 
             a_person = dict(
-                first_name=random.choice((
-                    'jane', 'joe', 'john', 'person',
-                )),
+                first_name=choose('jane', 'joe', 'john', 'person'),
             )
 
             self.assertEqual(
@@ -1883,24 +1871,41 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 6-8
+    :emphasize-lines: 4
 
             a_person = dict(
-                first_name=random.choice((
-                    'jane', 'joe', 'john', 'person',
-                )),
+                first_name=choose('jane', 'joe', 'john', 'person'),
             )
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
+            first_name = choose('jane', 'joe', 'john', 'person')
 
             self.assertEqual(
 
 * I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 3-4
+    :lineno-start: 47
+    :emphasize-lines: 4
+
+            self.assertEqual(
+                src.person.factory(
+                    **a_person,
+                    first_name=first_name,
+                    year_of_birth=year_of_birth,
+                ),
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: src.person.factory() got multiple values for keyword argument 'first_name'
+
+  because the ``**a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` named ``first_name`` the call to ``src.person.factory`` gets called with the same name twice
+
+* I comment out ``a_person`` in the call to ``src.person.factory``
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 3
 
             self.assertEqual(
                 src.person.factory(
@@ -1925,8 +1930,28 @@ I want to see what happens when I try to make a person without a value for the `
 * I use the ``first_name`` :ref:`variable<what is a variable?>` in the expectation
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 2-3
+    :lineno-start: 53
+    :emphasize-lines: 3
+
+                dict(
+                    **a_person,
+                    first_name=first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=this_year()-year_of_birth,
+                )
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: dict() got multiple values for keyword argument 'first_name'
+
+* I comment out ``**a_person``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 2
 
                   dict(
                       # **a_person,
@@ -1947,9 +1972,7 @@ I want to see what happens when I try to make a person without a value for the `
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
+            first_name = choose('jane', 'joe', 'john', 'person')
 
             self.assertEqual(
                 src.person.factory(
@@ -1963,7 +1986,6 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
             )
-
 
     # Exceptions seen
 
@@ -2567,7 +2589,7 @@ I want to write the solution without looking at the tests
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I am breaking a Python_ rule. I cannot put a parameter that does not have a default value after one that does
+  I cannot put a parameter that does not have a default value after one that does
 
 * I add a default value for ``sex``
 
