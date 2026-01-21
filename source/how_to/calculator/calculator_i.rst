@@ -429,7 +429,7 @@ test_addition
 
   I have to tell Python_ what the name ``add`` stands for or means
 
-* I point it to :ref:`None<what is None?>`
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
@@ -1739,7 +1739,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     NameError: name 'subtract' is not defined
 
-  I point it to :ref:`None<what is None?>`
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
@@ -1753,7 +1753,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     TypeError: 'NoneType' object is not callable
 
-  I change ``subtract`` to a :ref:`function<what is a function?>`
+* I change ``subtract`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:

@@ -2332,7 +2332,7 @@ I want to write the solution without looking at the tests
 
     NameError: name 'factory' is not defined
 
-* I point it to :ref:`None<what is None?>`
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:

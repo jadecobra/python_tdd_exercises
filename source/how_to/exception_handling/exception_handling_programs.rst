@@ -163,7 +163,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     NameError: name 'raise_exception' is not defined
 
-* I point it to :ref:`None<what is None?>`
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :lineno-start: 5
@@ -312,7 +312,7 @@ the terminal_ shows :ref:`AttributeError`
 
     NameError: name 'an_exception_handler' is not defined
 
-* I point it to :ref:`None<what is None?>`
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :lineno-start: 9
@@ -443,7 +443,7 @@ the terminal_ shows :ref:`AttributeError`
 
     NameError: name 'does_not_raise_exception' is not defined
 
-* I point it to :ref:`None<what is None?>`
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :lineno-start: 9

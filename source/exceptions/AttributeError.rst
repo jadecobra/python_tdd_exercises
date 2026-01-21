@@ -225,7 +225,7 @@ test_attribute_error_w_variables
 
     NameError: name 'variable_01' is not defined
 
-  I point it to :ref:`None<what is None?>`
+  I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:

@@ -1214,7 +1214,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     NameError: name 'text' is not defined
 
-  I point it to :ref:`None<what is None?>`
+  I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
