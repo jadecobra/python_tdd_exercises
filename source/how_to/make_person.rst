@@ -1549,7 +1549,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I broke a Python_ rule - I cannot put a parameter that does not have a default value after one that does
+  I broke a Python_ rule. I cannot put a parameter that does not have a default value after one that does
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -2294,7 +2294,7 @@ I want to write the solution without looking at the tests
 
   the tests expect a :ref:`dictionary<what is a dictionary?>` and the ``factory`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
-* I change :ref:`None<what is None?>` to a :ref:`dictionary<what is a dictionary?>` in the `return statement`_
+* I make the :ref:`function<what is a function?>` return a :ref:`dictionary<what is a dictionary?>` instead of :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -2472,7 +2472,7 @@ I want to write the solution without looking at the tests
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I am breaking a Python_ rule
+  I am breaking a Python_ rule. I cannot put a parameter that does not have a default value after one that does
 
 * I add a default value for ``sex``
 
@@ -2599,6 +2599,28 @@ I want to write the solution without looking at the tests
 
 ----
 
+This solution only has 2 parameters with default values
+
+.. code-block:: python
+  :emphasize-text: None
+
+  def factory(
+          first_name, year_of_birth,
+          last_name='doe', sex='M',
+      ):
+
+which is a little bit different from the first solution where I had 3 parameters with default values
+
+.. code-block:: python
+  :emphasize-text: None
+
+  def factory(
+          first_name, last_name='doe',
+          sex='M', year_of_birth=None,
+      ):
+
+----
+
 *********************************************************************************
 close the project
 *********************************************************************************
@@ -2663,7 +2685,6 @@ I also saw the following :ref:`Exceptions<errors>`
 * :ref:`AttributeError`
 * :ref:`TypeError`
 * SyntaxError_
-
 
 ----
 

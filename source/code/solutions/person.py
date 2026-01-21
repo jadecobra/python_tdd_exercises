@@ -2,8 +2,8 @@ import datetime
 
 
 def factory(
-        first_name, last_name='doe',
-        year_of_birth=None, sex='M',
+        first_name, year_of_birth,
+        last_name='doe', sex='M',
     ):
     return {
         'first_name': first_name,
