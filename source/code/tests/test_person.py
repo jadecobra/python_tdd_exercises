@@ -4,6 +4,10 @@ import src.person
 import unittest
 
 
+def choose(*iterable):
+    return random.choice(iterable)
+
+
 def this_year():
     return datetime.datetime.now().year
 
@@ -14,17 +18,13 @@ class TestPerson(unittest.TestCase):
         self.year_of_birth = random.randint(
             this_year()-120, this_year()
         )
-        self.first_name = random.choice((
-            'jane', 'joe', 'john', 'person',
-        ))
+        self.first_name = choose('jane', 'joe', 'john', 'person')
 
     def test_factory_takes_keyword_arguments(self):
         a_person = dict(
             first_name=self.first_name,
-            last_name=random.choice((
-                'doe', 'smith', 'blow', 'public',
-            )),
-            sex=random.choice(('F', 'M')),
+            last_name=choose('doe', 'smith', 'blow', 'public'),
+            sex=choose('F', 'M'),
         )
 
         self.assertEqual(
