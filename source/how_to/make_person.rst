@@ -1990,7 +1990,7 @@ I want to write the solution without looking at the tests
 
     AttributeError: module 'src.person' has no attribute 'factory'
 
-  there is nothing in ``person.py`` with that name
+  there is nothing in ``person.py`` with the name ``factory``
 
 =================================================================================
 :green:`GREEN`: make it pass
@@ -2024,7 +2024,7 @@ I want to write the solution without looking at the tests
 
     TypeError: 'NoneType' object is not callable
 
-  :ref:`None<what is None?>` is not callable_ like a :ref:`function<what is a function?>`
+  ``factory`` points to :ref:`None<what is None?>` which is not callable_ like a :ref:`function<what is a function?>`
 
 * I make ``factory`` a :ref:`function<what is a function?>`
 
@@ -2056,82 +2056,22 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    TypeError: factory() got an unexpected keyword argument 'last_name'
-
-  the test called the :ref:`function<what is a function?>` with another :ref:`keyword argument<test_functions_w_keyword_arguments>`
-
-* I add ``last_name`` to the :ref:`function<what is a function?>` definition
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    def factory(first_name, last_name):
-        return None
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: python
-
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  more :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+  the test called the :ref:`function<what is a function?>` with another :ref:`keyword argument<test_functions_w_keyword_arguments>`
 
 * I add ``year_of_birth`` to the :ref:`function<what is a function?>` definition
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-4
+    :emphasize-lines: 1
 
-    def factory(
-            first_name, last_name,
-            year_of_birth,
-        ):
-        return None
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: python
-
-    TypeError: factory() missing 1 required positional argument: 'last_name'
-
-  the test called the :ref:`function<what is a function?>` with an extra argument and Python_ thinks it is a positional argument for ``last_name``, which I already added
-
-* I add a default value for ``last_name`` to make it optional
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2
-
-    def factory(
-            first_name, last_name=None,
-            year_of_birth,
-        ):
-        return None
-
-  the terminal_ shows SyntaxError_
-
-  .. code-block:: python
-
-    SyntaxError: parameter without a default follows parameter with a default
-
-  I am breaking a Python_ rule
-
-* I add a default value for ``year_of_birth``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-
-    def factory(
-            first_name, last_name=None,
-            year_of_birth=None,
-        ):
+    def factory(first_name, year_of_birth):
         return None
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AssertionError: None != {'first_name': X, 'last_name': 'doe', 'sex': 'M', 'age': A}
 
@@ -2141,12 +2081,9 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-10
+    :emphasize-lines: 2-7
 
-    def factory(
-            first_name, last_name=None,
-            year_of_birth=None,
-        ):
+    def factory(first_name, year_of_birth):
         return {
             'first_name': 'john',
             'last_name': 'doe',
@@ -2154,28 +2091,59 @@ I want to write the solution without looking at the tests
             'age': 55,
         }
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+
+  .. ATTENTION:: Some of your values will be different because the test uses random values
 
   .. code-block:: shell
-    :emphasize-lines: 2, 5
 
     E       - {'age': 55, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?         -                 ^^^^^^
+    E       ?         ^^                  ^^
     E
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
     E       ?         ^                ^
 
-  .. ATTENTION:: Some of your values will be different because the test is using random values
+  the :ref:`values<test_values_of_a_dictionary>` of the ``age`` and ``first_name`` :ref:`keys<test_keys_of_a_dictionary>` change randomly
 
-  the values for ``age`` and ``first_name`` change every time I save (:kbd:`ctrl/command+s`) the file_ to run the tests, sometimes they match
+* I use the ``first_name`` input parameter in the `return statement`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    def factory(first_name, year_of_birth):
+        return {
+            'first_name': first_name,
+            'last_name': 'doe',
+            'sex': 'M',
+            'age': 55,
+        }
+
+  the first name matches and when the ages are different, the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    E       - {'age': 55, 'first_name': Y, 'last_name': 'doe', 'sex': A}
+    E       ?         ^^
+    E
+    E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
+    E       ?         ^
+
+  sometimes the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError: factory() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
 
 * I use the ``year_of_birth`` input parameter in the `return statement`_ for the :ref:`value<test_values_of_a_dictionary>` of ``age``
 
   .. code-block:: python
-    :lineno-start: 5
+    :linenos:
+    :emphasize-lines: 6
 
+    def factory(first_name, year_of_birth):
         return {
-            'first_name': 'john',
+            'first_name': first_name,
             'last_name': 'doe',
             'sex': 'M',
             'age': year_of_birth,
@@ -2187,12 +2155,12 @@ I want to write the solution without looking at the tests
     :emphasize-lines: 2, 5
 
     E       - {'age': ABCD, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?         ^^^^                ^^^^^^
+    E       ?         ^^^^
     E
-    E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
-    E       ?         ^                ^
+    E       + {'age': X, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
+    E       ?         ^
 
-  the ``year_of_birth`` :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned has 4 digits (a year) for the :ref:`value<test_values_of_a_dictionary>` of the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year. Sometimes the :ref:`value<test_values_of_a_dictionary>` for ``first_name`` matches because the test uses random values
+  the ``year_of_birth`` :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned has 4 digits (a year) for the :ref:`value<test_values_of_a_dictionary>` of the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
 
 * I add an `import statement`_ for the `datetime module`_ at the top of the file_
 
@@ -2210,38 +2178,8 @@ I want to write the solution without looking at the tests
 * I use the `datetime module`_ to get the current year for the ``age`` calculation
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 4
     :emphasize-lines: 5
-
-        return {
-            'first_name': 'john',
-            'last_name': 'doe',
-            'sex': 'M',
-            'age': datetime.datetime.today().year - year_of_birth,
-        }
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
-
-    E       - {'age': X, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?                          ^^^^^^
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
-    E       ?                          ^
-
-  the :ref:`value<test_values_of_a_dictionary>` of ``first_name`` changes every time the test runs and when it matches the terminal_ shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: factory() got an unexpected keyword argument 'sex'
-
-* I use the ``first_name`` input parameter in the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 2
 
         return {
             'first_name': first_name,
@@ -2252,21 +2190,63 @@ I want to write the solution without looking at the tests
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
+  .. code-block:: shell
+
+    TypeError: factory() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
+
+  the test called the :ref:`function<what is a function?>` with another :ref:`keyword argument<test_functions_w_keyword_arguments>`
+
+* I add a new input parameter to the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 1-4
+    :emphasize-text: last_name
+
+    def factory(
+            first_name, year_of_birth,
+            last_name,
+        ):
+        return {
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
   .. code-block:: python
 
-    TypeError: factory() got an unexpected keyword argument 'sex'
+    TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  the test called the :ref:`function<what is a function?>` with one more :ref:`keyword argument<test_functions_w_keyword_arguments>`
+  the test called the :ref:`function<what is a function?>` with an extra argument and Python_ thinks it is a positional argument for ``last_name``, which I already added
 
-* I add ``sex`` to the definition of the ``factory`` :ref:`function<functions>`
+* I add a default value for ``last_name`` so Python_ does not think it is a :ref:`positional argument<test_functions_w_positional_arguments>` when a name is not given
 
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 3
 
     def factory(
-            first_name, last_name=None,
-            year_of_birth=None, sex,
+            first_name, year_of_birth,
+            last_name=None,
+        ):
+        return {
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: factory() got an unexpected keyword argument 'sex'
+
+  another :ref:`keyword argument<test_functions_w_keyword_arguments>`
+
+* I add the name to the definition of the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3
+    :emphasize-text: sex
+
+    def factory(
+            first_name, year_of_birth,
+            last_name=None, sex,
         ):
 
   the terminal_ shows SyntaxError_
@@ -2275,29 +2255,28 @@ I want to write the solution without looking at the tests
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I cannot put a parameter without a default value after one that has a default value
+  I am breaking a Python_ rule
 
-* I add a default value for the ``sex`` parameter
+* I add a default value for ``sex``
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
     :emphasize-lines: 3
 
     def factory(
-            first_name, last_name=None,
-            year_of_birth=None, sex=None,
+            first_name, year_of_birth,
+            last_name=None, sex=None,
         ):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-lines: 2, 5
 
     E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
-    E       ?                                          ^^^^^          ^
+    E       ?                                           ^^^
     E
-    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'F'}
-    E       ?                                          ^          ^
+    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': A}
+    E       ?                                          ^         ^
 
   the values for ``last_name`` and ``sex`` change  every time the tests run
 
@@ -2327,15 +2306,15 @@ I want to write the solution without looking at the tests
 
   the test expects ``'M'`` as the :ref:`value<test_values_of_a_dictionary>` of ``sex`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, it returns the default value
 
-* I change the default value for ``sex`` to ``'M'``
+* I change the default value of ``sex`` to ``'M'``
 
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 3
 
     def factory(
-            first_name, last_name=None,
-            year_of_birth=None, sex='M',
+            first_name, year_of_birth,
+            last_name=None, sex='M',
         ):
 
   the test passes when the ``last_name`` is randomly ``'doe'``.
@@ -2383,14 +2362,14 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 6
 
     import datetime
 
 
     def factory(
-            first_name, last_name='doe',
-            year_of_birth=None, sex='M',
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
         ):
         return {
             'first_name': first_name,
