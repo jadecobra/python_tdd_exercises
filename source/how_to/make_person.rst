@@ -1912,6 +1912,65 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test is still green
 
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 4-5
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    # year_of_birth=year_of_birth,
+                    year_of_birth=self.year_of_birth,
+                ),
+
+  still green
+
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 5-6
+
+                dict(
+                    first_name=first_name,
+                    last_name='doe',
+                    sex='M',
+                    # age=this_year()-year_of_birth,
+                    age=this_year()-self.year_of_birth,
+                )
+
+  green
+
+* I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 40
+
+        def test_factory_w_default_arguments(self):
+            first_name=random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+
+            self.assertEqual(
+                src.person.factory(
+                    first_name=first_name,
+                    year_of_birth=self.year_of_birth,
+                ),
+                dict(
+                    first_name=first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=this_year()-self.year_of_birth,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the test is still green
+
 ----
 
 * I point ``first_name`` in ``test_factory_takes_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
