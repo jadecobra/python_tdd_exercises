@@ -134,8 +134,6 @@ how to make a PowerShell script
     # AssertionError
     " | Out-File "tests/test_magic_again.py" -Encoding UTF8
 
-----
-
 --------------------------------------------------------------------------------------------
 how to run a PowerShell script
 --------------------------------------------------------------------------------------------

@@ -1051,8 +1051,6 @@ test_factory_takes_keyword_arguments
 
 ----
 
-----
-
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
@@ -1238,7 +1236,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
     E       + {'age': X, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
     E       ?         ^
 
-  .. NOTE:: ``X`` represents the random age
+  .. NOTE:: ``X`` is for the random age
 
 ----
 
@@ -1340,7 +1338,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
   - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows success when ``sex`` is randomly ``'F'``.
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``sex`` is randomly ``'F'``.
 
   When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1387,7 +1385,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
                 sex=random.choice(('F', 'M')),
             )
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows success when ``last_name`` is ``'doe'``.
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``last_name`` is ``'doe'``.
 
   When ``last_name`` is not ``doe``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1400,7 +1398,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
     E       + {'age': X, 'first_name': 'jane', 'last_name': Z, 'sex': A}
     E       ?                                               ^
 
-  .. NOTE:: ``Z`` represents the random last name and ``A`` represents the random sex value
+  .. NOTE:: ``Z`` is for the random last name and ``A`` is for the random sex value
 
 * I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` in the `return statement`_ in ``person.py``
 
@@ -1436,7 +1434,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
                 sex=random.choice(('F', 'M')),
             )
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the tests a few times and the terminal_ shows green when ``first_name`` is ``'jane'``.
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``first_name`` is ``'jane'``.
 
   When ``first_name`` is not ``'jane'`` the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1449,7 +1447,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
     E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': A}
     E       ?                          ^
 
-  .. NOTE:: ``Y`` represents the random first name
+  .. NOTE:: ``Y`` is for the random first name
 
 * I add the ``first_name`` input parameter to the `return statement`_ in ``person.py``
 
@@ -1648,10 +1646,12 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block::
     :emphasize-lines: 2
 
-    E       - {'age': 50, 'first_name': 'joe', 'last_name': None, 'sex': 'F'}
-    E       ?                                  -------------------
+    E       - {'age': X, 'first_name': Y, 'last_name': None, 'sex': 'F'}
+    E       ?                           -------------------
     E
-    E       + {'age': 50, 'first_name': 'joe', 'sex': 'F'
+    E       + {'age': X, 'first_name': Y, 'sex': 'F'
+
+  .. NOTE:: ``X`` is for the random age, ``Y`` is for the random first name
 
   the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'last_name'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'last_name'``
 
@@ -1760,10 +1760,10 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: shell
     :emphasize-lines: 2
 
-    E       - {'age': 120, 'first_name': 'joe', 'last_name': 'doe', 'sex': None}
-    E       ?                                                     -------------
+    E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': None}
+    E       ?                                               -------------
     E
-    E       + {'age': 120, 'first_name': 'joe', 'last_name': 'doe'}
+    E       + {'age': X, 'first_name': Y, 'last_name': 'doe'}
 
   the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'sex'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'sex'``
 
@@ -1771,7 +1771,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
                 dict(
                     **a_person,
@@ -1805,6 +1805,28 @@ I want to see what happens when I try to make a person without a value for the `
         ):
 
   the test passes
+
+  .. NOTE:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<what is a function?>` definition, it is the same as calling it with ``sex='M'``
+
+    .. code-block:: python
+      :emphasize-lines: 5
+
+      src.person.factory(
+          first_name=first_name,
+          year_of_birth=year_of_birth,
+          last_name='doe',
+          sex='M',
+      )
+
+    since the values are the same as the default values, I can call the :ref:`function<what is a function?>` without them
+
+    .. code-block:: python
+      :emphasize-lines: 2-3
+
+      src.person.factory(
+          first_name=first_name,
+          year_of_birth=year_of_birth,
+      )
 
 * I remove the commented line ``# sex=random.choice(('F', 'M')),``
 
@@ -1854,12 +1876,13 @@ I want to see what happens when I try to make a person without a value for the `
   the terminal_ randomly shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :emphasize-lines: 2, 5
 
-    E       - {'age': 115, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
-    E       ?                              ^ -
+    E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
+    E       ?                          ^
     E
-    E       + {'age': 115, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?                              ^^
+    E       + {'age': X, 'first_name': B, 'last_name': 'doe', 'sex': 'M'}
+    E       ?                          ^
 
   because the :ref:`values<test_values_of_a_dictionary>` for ``first_name`` randomly change in both :ref:`dictionaries<what is a dictionary?>`
 
@@ -1878,28 +1901,6 @@ I want to see what happens when I try to make a person without a value for the `
                   )
 
   the test passes
-
-  .. NOTE:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<what is a function?>` definition, it is the same as calling it with ``sex='M'``
-
-    .. code-block:: python
-      :emphasize-lines: 5
-
-      src.person.factory(
-          first_name=first_name,
-          year_of_birth=year_of_birth,
-          last_name='doe',
-          sex='M',
-      )
-
-    since the values are the same as the default values, I can call the :ref:`function<what is a function?>` without them
-
-    .. code-block:: python
-      :emphasize-lines: 2-3
-
-      src.person.factory(
-          first_name=first_name,
-          year_of_birth=year_of_birth,
-      )
 
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
@@ -1929,8 +1930,6 @@ I want to see what happens when I try to make a person without a value for the `
 
 
     # Exceptions seen
-
-----
 
 ----
 
@@ -2079,29 +2078,28 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 40
 
-        def test_factory_takes_keyword_arguments(self):
-            a_person = dict(
-                first_name=self.first_name,
-                last_name=random.choice((
-                    'doe', 'smith', 'blow', 'public',
-                )),
-                sex=random.choice(('F', 'M')),
-            )
+        def test_factory_w_default_arguments(self):
+            first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
 
             self.assertEqual(
                 src.person.factory(
-                    **a_person,
+                    first_name=first_name,
                     year_of_birth=self.year_of_birth,
                 ),
                 dict(
-                    **a_person,
+                    first_name=first_name,
+                    last_name='doe',
+                    sex='M',
                     age=this_year()-self.year_of_birth,
                 )
             )
 
-        def test_factory_w_default_arguments(self):
+
+    # Exceptions seen
 
   the tests are still green
 
@@ -2131,13 +2129,13 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 21
     :emphasize-lines: 3-6
 
-    def test_factory_takes_keyword_arguments(self):
-        a_person = dict(
-            # first_name=random.choice((
-            #     'jane', 'joe', 'john', 'person',
-            # )),
-            first_name=self.first_name,
-            last_name=random.choice((
+        def test_factory_takes_keyword_arguments(self):
+            a_person = dict(
+                # first_name=random.choice((
+                #     'jane', 'joe', 'john', 'person',
+                # )),
+                first_name=self.first_name,
+                last_name=random.choice((
 
   the test is still green
 
