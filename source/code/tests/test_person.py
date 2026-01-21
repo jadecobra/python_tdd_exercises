@@ -19,7 +19,7 @@ class TestPerson(unittest.TestCase):
         ))
 
     def test_factory_takes_keyword_arguments(self):
-        keyword_arguments = dict(
+        a_person = dict(
             first_name=self.first_name,
             last_name=random.choice((
                 'doe', 'smith', 'blow', 'public',
@@ -29,11 +29,11 @@ class TestPerson(unittest.TestCase):
 
         self.assertEqual(
             src.person.factory(
-                **keyword_arguments,
+                **a_person,
                 year_of_birth=self.year_of_birth,
             ),
             dict(
-                **keyword_arguments,
+                **a_person,
                 age=this_year()-self.year_of_birth,
             )
         )
