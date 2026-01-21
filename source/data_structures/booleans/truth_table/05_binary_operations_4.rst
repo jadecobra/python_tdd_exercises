@@ -89,9 +89,13 @@ continue the project
 test_negate_second
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test for another Binary Operation to ``test_truth_table.py`` with the first case where both ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>`
 
@@ -114,9 +118,13 @@ the terminal_ shows :ref:`AttributeError`
 
 there is no definition for it yet
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a :ref:`function<what is a function?>` definition for ``negate_second`` to ``truth_table.py``
 
@@ -133,9 +141,13 @@ I add a :ref:`function<what is a function?>` definition for ``negate_second`` to
 
 the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`, to ``test_negate_second`` in ``test_truth_table.py``
 
@@ -262,9 +274,13 @@ it is the opposite or :ref:`Logical Negation<test_logical_negation>` of :ref:`Pr
 test_logical_nor
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for ``logical_nor`` in ``test_truth_table.py``
 
@@ -286,9 +302,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_nor'. Did you mean: 'logical_nand'?
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
@@ -305,9 +325,13 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case to ``test_logical_nor`` in ``test_truth_table.py`` - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
@@ -478,9 +502,13 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when t
 test_logical_equality
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test for the next Binary Operation in ``test_truth_table.py``
 
@@ -502,9 +530,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_equality'. Did you mean: 'logical_identity'?
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a :ref:`function<what is a function?>` definition for it in ``truth_table.py``
 
@@ -521,9 +553,13 @@ I add a :ref:`function<what is a function?>` definition for it in ``truth_table.
 
 the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case to ``test_logical_equality`` in ``test_truth_table.py``
 
@@ -813,9 +849,13 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 test_material_implication
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test for one more Binary Operation in ``test_truth_table.py``
 
@@ -837,9 +877,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a :ref:`method<what is a function?>` for ``material_implication`` in ``truth_table.py``
 
@@ -861,9 +905,13 @@ I add a :ref:`method<what is a function?>` for ``material_implication`` in ``tru
 
 the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case to ``test_material_implication`` in ``test_truth_table.py``
 

@@ -263,7 +263,7 @@ how to make a directory
 
     .../pumping_python
 
-  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here's how to do that with `Visual Studio Code`_
+  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open the folder. Here is how to do that with `Visual Studio Code`_
 
     .. code-block:: shell
       :emphasize-lines: 1

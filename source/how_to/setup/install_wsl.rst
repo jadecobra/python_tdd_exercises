@@ -80,7 +80,7 @@ If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`ho
 
 .. NOTE::
 
-  In some cases your `Windows Subsystem for Linux`_ installation might succeed and you will have errors with Debian_, you might have to enable virtualization from your BIOS, here's how to do that
+  In some cases your `Windows Subsystem for Linux`_ installation might succeed and you will have errors with Debian_, you might have to enable virtualization from your BIOS, here is how to do that
 
   * restart your computer
   * as soon as it restarts, press the key to enter setup mode, this varies by manufacturer but is one of the following

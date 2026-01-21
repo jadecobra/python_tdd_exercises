@@ -87,9 +87,13 @@ start the project
 test_module_not_found_error
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I change ``test_failure`` to ``test_module_not_found_error``
 
@@ -123,15 +127,23 @@ test_module_not_found_error
     # AssertionError
     # ModuleNotFoundError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
 
+----
+
 I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the test passes
+
+----
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 * I add another `import statement`_ to ``test_module_not_found_error.py``
 
   .. code-block:: python

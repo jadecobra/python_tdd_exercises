@@ -181,9 +181,13 @@ test_catching_module_not_found_error_in_tests
 
 :ref:`ModuleNotFoundError` is raised when I try to import a :ref:`module<ModuleNotFoundError>` that does NOT exist
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_ in ``test_exceptions.py``
 
@@ -207,9 +211,13 @@ the terminal_ shows :ref:`ModuleNotFoundError`
 
 I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref:`module<ModuleNotFoundError>` is any file_ that ends in ``.py``
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` seen
 
@@ -243,9 +251,13 @@ test_catching_name_error_in_tests
 
 NameError_ is raised when I use a name that is not defined in the file
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add another failing test
 
@@ -279,9 +291,13 @@ NameError_ is raised when I use a name that is not defined in the file
     # ModuleNotFoundError
     # NameError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add assertRaises_
 
@@ -303,9 +319,13 @@ test_catching_attribute_error_in_tests
 
 :ref:`AttributeError` is raised when I try to call something that does NOT exist from something that does exist
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add another failing test, this time for :ref:`AttributeError`
 
@@ -361,9 +381,13 @@ test_catching_attribute_error_in_tests
     # NameError
     # AttributeError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the `assertRaises method`_
 
@@ -385,9 +409,13 @@ test_catching_type_error_in_tests
 
 :ref:`TypeError` is raised when I call something in a way that it should NOT be called
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add a failing test for :ref:`TypeError`
 
@@ -451,9 +479,13 @@ test_catching_type_error_in_tests
     # AttributeError
     # TypeError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I use assertRaises_ to take care of the :ref:`Exception<errors>`
 
@@ -467,9 +499,13 @@ I use assertRaises_ to take care of the :ref:`Exception<errors>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * when I make ``function_name`` a :ref:`function<what is a function?>` in ``exceptions.py``
 
@@ -521,9 +557,13 @@ test_catching_index_error_in_tests
 - bigger than or the same as the number of items in the :ref:`lists`
 - smaller than the negative of the number of items in the :ref:`list<lists>`
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I want to test catching :ref:`IndexError<test_index_error>`, I add a new test with a :ref:`list<lists>`
 
@@ -594,9 +634,13 @@ test_catching_index_error_in_tests
     # TypeError
     # IndexError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add assertRaises_
 
@@ -611,9 +655,13 @@ I add assertRaises_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I can also :ref:`index<test_index_returns_first_position_of_item_in_a_list>` with negative numbers, the one for the last item in the :ref:`list<lists>` is ``-1``, like reading from right to left
 
@@ -717,9 +765,13 @@ test_catching_key_error_in_tests
 
 :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<dictionaries>`
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add a :ref:`dictionary<dictionaries>` to a new test for :ref:`KeyError<test_key_error>`
 
@@ -778,9 +830,13 @@ test_catching_key_error_in_tests
     # IndexError
     # KeyError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add assertRaises_ to the test
 
@@ -798,9 +854,13 @@ the test passes. :ref:`KeyError<test_key_error>` is raised when I try to use a :
 test_catching_zero_division_error_in_tests
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add another failing test
 
@@ -839,9 +899,13 @@ test_catching_zero_division_error_in_tests
     # KeyError
     # ZeroDivisionError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add assertRaises_
 
@@ -861,9 +925,13 @@ the test passes. ZeroDivisionError_ is raised when I try to divide any number by
 test_catching_exceptions_in_tests
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add a failing test with the `raise statement`_
 
@@ -916,9 +984,13 @@ test_catching_exceptions_in_tests
 
     Exception
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the `assertRaises method`_ to catch it
 
@@ -935,9 +1007,13 @@ I add the `assertRaises method`_ to catch it
 
 the terminal_ shows all tests are passing. The `assertRaises method`_ checks that the code under it raises the :ref:`Exception<errors>` it is given in parentheses
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I can use :ref:`Exception<errors>` to catch any of the :ref:`Exceptions<errors>` that inherit from it, its children
 

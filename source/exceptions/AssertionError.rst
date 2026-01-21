@@ -333,9 +333,13 @@ We know that the result of ``1 + 1`` is ``2``, but what if I said that ``'1' + '
 
 I can use assertions_ to make the computer check if these statements are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I change ``test_failure`` to ``test_what_is_an_assertion`` with the first statement
 
@@ -383,9 +387,13 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
 
     E       assert (1 + 1) == 11
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -397,9 +405,13 @@ I change the statement to make it :ref:`True<test_what_is_true>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another statement
 
@@ -527,9 +539,13 @@ test_assertion_error_w_none
 
 :ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use assertions_ to test if something is :ref:`None<what is None?>`.
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add a new failing test
 
@@ -553,9 +569,13 @@ test_assertion_error_w_none
 
   the `assert statement`_ is :ref:`False<test_what_is_false>`
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the line to make it :ref:`True<test_what_is_true>`
 
@@ -567,9 +587,13 @@ I change the line to make it :ref:`True<test_what_is_true>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 I can also make assertions_ with `assert methods`_ from the `unittest.TestCase class`_, they have more descriptive messages
 
@@ -773,9 +797,13 @@ test_assertion_error_w_false
 
 :ref:`False<test_what_is_false>` is a simple :ref:`data structures` , it is one of the two :ref:`boolean<what are booleans?>` and is not :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a failing test
 
@@ -797,9 +825,13 @@ the terminal_ shows AssertionError_
 
   E    assert True is False
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the `assertion`_ to make it :ref:`True<test_what_is_true>`
 
@@ -811,9 +843,13 @@ I change the `assertion`_ to make it :ref:`True<test_what_is_true>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 There is an `assert method`_ to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`
 
@@ -877,9 +913,13 @@ test_assertion_error_w_true
 
 :ref:`True<test_what_is_true>` is a simple :ref:`data structures`, it the other :ref:`boolean<what are booleans?>` and is not :ref:`False<test_what_is_false>` or :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or not
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a failing test
 
@@ -901,9 +941,13 @@ the terminal_ shows AssertionError_
 
   E    assert False is True
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
@@ -915,9 +959,13 @@ I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 There is an `assert method`_ to check if something is :ref:`True<test_what_is_true>`
 
@@ -984,9 +1032,13 @@ test_assertion_error_w_equality
 
 I can use assertions_ to test if 2 things are equal, like I did with :ref:`test_what_is_an_assertion`
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new failing test
 
@@ -1012,9 +1064,13 @@ the terminal_ shows AssertionError_
 
   ``!=`` (:kbd:`!+=`) is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None`` or "DO NOT CONTINUE unless None is NOT equal to None"
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the assertion_ to make it :ref:`True<test_what_is_true>`
 
@@ -1026,9 +1082,13 @@ I change the assertion_ to make it :ref:`True<test_what_is_true>`
 
 the test passes.
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 ---------------------------------------------------------------------------------
 What is the difference between ``=`` and ``==``?

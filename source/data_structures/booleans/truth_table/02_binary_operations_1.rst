@@ -182,9 +182,13 @@ continue the project
 test_contradiction
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new TestCase_ to ``test_truth_table.py``
 
@@ -230,9 +234,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a :ref:`function<what is a function?>` definition to ``truth_table.py``
 
@@ -272,9 +280,13 @@ The definition only takes one input, but the test sent two. I add ``second_input
 
 the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as its first input and :ref:`True<test_what_is_true>` as its second input, it returns the :ref:`opposite<test_logical_negation>` of the first input, that means it returns not_ :ref:`True<test_what_is_true>` which is :ref:`False<test_what_is_false>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the second case to ``test_contradiction`` in ``test_truth_table.py``, this is when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
@@ -348,9 +360,13 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 test_logical_conjunction
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for ``logical_conjunction`` in ``test_truth_table.py`` with the first case where the two inputs are :ref:`True<test_what_is_true>`
 
@@ -372,9 +388,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_negation'?
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the :ref:`function<what is a function?>` in ``truth_table.py``
 
@@ -391,9 +411,13 @@ I add the :ref:`function<what is a function?>` in ``truth_table.py``
 
 the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when the first and second input are both :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to ``test_logical_conjunction`` in ``test_truth_table.py``
 
@@ -802,9 +826,13 @@ conditional expressions
 test_project_second
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for another Binary Operation in ``test_truth_table.py``
 
@@ -826,9 +854,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a definition for the :ref:`function<what is a function?>` in ``truth_table.py``
 
@@ -845,9 +877,13 @@ I add a definition for the :ref:`function<what is a function?>` in ``truth_table
 
 the test passes. When the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, this :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the second case - where the first input is :ref:`True<test_what_is_true>` and the second input :ref:`False<test_what_is_false>`, to ``test_project_second`` in ``test_truth_table.py``
 
@@ -975,9 +1011,13 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
 test_converse_non_implication
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for ``converse_non_implication`` in ``test_truth_table.py``
 
@@ -999,9 +1039,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
@@ -1018,9 +1062,13 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case to ``test_converse_non_implication`` in ``test_truth_table.py``, when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 

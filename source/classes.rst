@@ -106,15 +106,23 @@ open the project
 test_factory_person_introduction
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
+----
 
+
+
+----
 
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 
 * Python_ has the pass_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
@@ -128,9 +136,13 @@ test_factory_person_introduction
   the test passes
 
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 Here is a quick review of what has happened so far
 
@@ -146,9 +158,13 @@ Here is a quick review of what has happened so far
 test_classy_person_introduction
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to make a class
 
@@ -159,9 +175,13 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
 
 the terminal_ shows :ref:`AttributeError`
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 
 * I add a class definition like ``ClassWithPass`` to ``classes.py``
@@ -205,9 +225,13 @@ Making new objects is easier because I do not have to reinvent or rewrite things
 
 To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to make the relationship
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add another test to ``TestClasses`` in ``test_classes.py``
 
@@ -218,9 +242,13 @@ I add another test to ``TestClasses`` in ``test_classes.py``
 
 the terminal_ shows :ref:`AttributeError`
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 
 * I add a class definition to ``classes.py``
@@ -251,9 +279,13 @@ test_update_classy_person_year_of_birth
 
 I now add some tests for attributes since I know how to define a class for attributes
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 
 * I add a failing test to ``TestClasses`` in ``classes.py``
@@ -276,9 +308,13 @@ I now add some tests for attributes since I know how to define a class for attri
 
   the terminal_ shows :ref:`AttributeError` for a missing attribute in the newly defined class
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add an attribute to ``ClassWithAttributes``
 
@@ -313,9 +349,13 @@ I now add some tests for attributes since I know how to define a class for attri
 
   the terminal_ shows all tests passed
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
@@ -365,9 +405,13 @@ test_attributes_and_methods_of_classes
 
 I can also define classes with :ref:`methods<what is a function?>` which are :ref:`function<what is a function?>` definitions that belong to the class
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
@@ -381,9 +425,13 @@ I add some tests for class methods to ``TestClasses`` in ``classes.py``
 
 the terminal_ shows :ref:`AttributeError`
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 
 * I add a class definition to ``classes.py``
@@ -442,9 +490,13 @@ the terminal_ shows :ref:`AttributeError`
 
   the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I can "make this better" by adding a few more tests to ``test_making_a_class_w_methods`` for fun
 
@@ -481,9 +533,13 @@ test_making_a_class_w_attributes_and_methods
 
 Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add another test for a class that has both attributes and methods
 
@@ -501,9 +557,13 @@ I add another test for a class that has both attributes and methods
 
 the terminal_ shows :ref:`AttributeError`
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I make ``classes.py`` to make the tests pass by defining the class, attribute and methods
 
@@ -528,9 +588,13 @@ To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for a
 
 The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of the object provided to it as input
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test to ``test_classes.py``
 
@@ -544,9 +608,13 @@ I add a test to ``test_classes.py``
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` as the expected and real values do not match
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I copy the values from the terminal_ to change the expectation of the test
 

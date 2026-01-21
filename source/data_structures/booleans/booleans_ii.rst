@@ -80,9 +80,13 @@ open the project
 is a boolean an integer or a float?
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`` :ref:`method<what is a function?>`
 
@@ -103,9 +107,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 in Python_, False_ is a :ref:`boolean<what are booleans?>` and an integer_
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change assertNotIsInstance_ to assertIsInstance_
 
@@ -119,9 +127,13 @@ I change assertNotIsInstance_ to assertIsInstance_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add a note
 
@@ -484,9 +496,13 @@ the test passes
 test_the_value_of_false
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to find out the value of :ref:`False<test_what_is_false>`
 
@@ -510,9 +526,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 :ref:`False<test_what_is_false>` is ``0``
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation to match
 
@@ -524,9 +544,13 @@ I change the expectation to match
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -634,9 +658,13 @@ time to test the value of :ref:`True<test_what_is_true>`
 test_the_value_of_true
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to find out the value of :ref:`True<test_what_is_true>`
 
@@ -661,9 +689,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 :ref:`True<test_what_is_true>` is ``1``
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation
 
@@ -675,9 +707,13 @@ I change the expectation
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>`
 

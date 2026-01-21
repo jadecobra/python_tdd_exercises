@@ -86,9 +86,13 @@ open the project
 test catching ZeroDivisionError in test_calculator.py
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<what is a function?>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in
 
@@ -115,9 +119,13 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
 
   ZeroDivisionError: float division by zero
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add assertRaises_
 

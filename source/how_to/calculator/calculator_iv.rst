@@ -92,9 +92,13 @@ open the project
 test_calculator_raises_type_error
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new failing test to show that the :ref:`calculator<how to make a calculator>` raises TypeError_ when one of the inputs is :ref:`None<what is None?>`, just like in :ref:`test_type_error_w_objects_that_do_not_mix`
 
@@ -129,9 +133,13 @@ the terminal_ shows TypeError_
 
   TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add assertRaises_
 
@@ -145,9 +153,13 @@ I add assertRaises_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add a failing line for :ref:`division<test_division>`
 
@@ -251,9 +263,13 @@ The ``calculator`` raises TypeError_ when given :ref:`None<what is None?>` as in
 test_calculator_raises_type_error_w_strings
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_an_assertion`  to test the :ref:`add function<test_addition>` with strings_
 
@@ -276,9 +292,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: '11' != '2'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation to match reality
 
@@ -290,9 +310,13 @@ I change the expectation to match reality
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
@@ -464,9 +488,13 @@ test_calculator_sends_message_when_input_is_not_a_number
 
 I want the :ref:`calculator functions<how to make a calculator>` to send a message when the input is not a number, not raise TypeError_ which causes the program to stop. I want the user to be able to try again with different input
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in ``test_calculator_raises_type_error_w_none``
 
@@ -492,9 +520,13 @@ the terminal_ shows TypeError_
 
   TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add an :ref:`exception handler<how to use try...except...else>` to the `else clause`_ of the :ref:`add function<test_addition>` in ``calculator.py``
 
@@ -513,9 +545,13 @@ I add an :ref:`exception handler<how to use try...except...else>` to the `else c
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I want the same thing to happen when the :ref:`add function<test_addition>` gets a string_ as input. I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in ``test_calculator_raises_type_error_w_strings`` in ``test_calculator.py``
 

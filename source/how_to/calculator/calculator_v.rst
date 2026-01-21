@@ -92,9 +92,13 @@ test_calculator_sends_message_when_input_is_a_list
 
 I want to see what happens when I send a :ref:`list<lists>` as input to the :ref:`calculator program<how to make a calculator>`, will it send a message or raise :ref:`TypeError`?
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test to see what happens when I send a :ref:`list<lists>` as input
 
@@ -124,9 +128,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: 'Excuse me?! Numbers only! try again...' != 'BOOM!!!'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation to match
 
@@ -141,9 +149,13 @@ I change the expectation to match
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>` for the next :ref:`function<what is a function?>`
 
@@ -534,9 +546,13 @@ test_calculator_w_list_items
 
 I can use a :ref:`list<lists>` to test the :ref:`calculator functions<how to make a calculator>` as long as its items are numbers
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to use the :ref:`index of the items in the list<test_index_returns_first_position_of_item_in_a_list>` to test the :ref:`calculator<how to make a calculator>`
 
@@ -566,9 +582,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation to the right calculation
 
@@ -583,9 +603,13 @@ I change the expectation to the right calculation
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
@@ -833,9 +857,13 @@ test_calculator_raises_type_error_when_given_more_than_two_inputs
 
 It is important to note that the star expression always gives the items from the list in order, and I cannot use a :ref:`list<lists>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to show the problem when I have more than 2 inputs and use a star expression
 
@@ -862,9 +890,13 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
 
@@ -880,9 +912,13 @@ I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add a failing line for :ref:`division<test_division>` with the new :ref:`list<lists>`
 

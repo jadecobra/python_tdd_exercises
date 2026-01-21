@@ -317,9 +317,13 @@ start the project
 test_passing_a_string
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I change ``test_failure`` to ``test_passing_a_string``
 
@@ -349,9 +353,13 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 there is no definition for ``src`` in ``test_telephone.py``
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add the error to the list of :ref:`Exceptions<errors>` seen
 
@@ -483,9 +491,13 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   the test passes!
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about the input it gets, it always returns ``'I received: hello'`` when called. I want it to return the value it gets as part of the message.
 
@@ -571,9 +583,13 @@ A string_ is any characters inside :ref:`quotes` e.g.
 test_passing_a_class
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a failing test in ``test_telephone.py`` to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`
 
@@ -603,9 +619,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 :ref:`object<what is a class?>` is the mother :ref:`class<what is a class?>` that all Python_ :ref:`classes<what is a class?>` come from
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation in the test to match the result
 
@@ -621,9 +641,13 @@ I change the expectation in the test to match the result
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
 
@@ -673,9 +697,13 @@ the test passes
 test_passing_none
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new failing test for :ref:`None<what is None?>` in ``test_telephone.py``
 
@@ -700,9 +728,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: 'I received: None' != "I received: 'None'"
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I remove the :ref:`quotes` from around :ref:`None<what is None?>` in the expectation
 
@@ -727,9 +759,13 @@ the test passes.
 test_passing_a_boolean
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`True<test_what_is_true>`
 
@@ -755,9 +791,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: "I received: True" != "I received: 'True'"
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I change the expectation
 
@@ -822,9 +862,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 test_passing_an_integer
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for an integer_ (a whole number)
 
@@ -849,9 +893,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: 'I received: 1234' != "I received: '1234'"
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I remove the :ref:`quotes` from the expectation
 
@@ -876,9 +924,13 @@ the test passes.
 test_passing_a_float
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for a float_ (binary floating point decimal numbers)
 
@@ -904,9 +956,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: 'I received: 1.234' != "I received: '1.234'"
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I remove the :ref:`quotes` from the number
 
@@ -931,9 +987,13 @@ the test passes.
 test_passing_a_tuple
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
 
@@ -959,9 +1019,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: "I received: (1, 2, 3, 'n')" != "I received: '(1, 2, 3, n)'"
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation
 
@@ -983,9 +1047,13 @@ the test passes.
 test_passing_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), separated by a comma)
 
@@ -1011,9 +1079,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: "I received: [1, 2, 3, 'n']" != "I received: '[1, 2, 3, n]'"
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation to match reality
 
@@ -1035,9 +1107,13 @@ the test passes.
 test_passing_a_dictionary
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly braces (``{}``), separated by a comma)
 
@@ -1066,9 +1142,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation
 
@@ -1098,9 +1178,13 @@ test_telephone
 
 Time to write the program_ that makes the tests pass without looking at ``test_telephone.py``
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I close ``test_telephone.py``
 * then delete all the text in ``telephone.py``, the terminal_ shows 9 failures, I start with the last :ref:`AttributeError`
@@ -1109,9 +1193,13 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     AttributeError: module 'src.telephone' has no attribute 'text'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add the name to ``telephone.py``
 

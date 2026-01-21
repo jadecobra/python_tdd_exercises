@@ -188,9 +188,13 @@ test_type_error_w_the_uncallables
 
 There are :ref:`objects<what is a class?>` that can NOT be called
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add an `import statement`_ at the top of ``test_type_error.py``
 
@@ -230,9 +234,13 @@ There are :ref:`objects<what is a class?>` that can NOT be called
     # AssertionError
     # AttributeError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
 
@@ -277,9 +285,13 @@ There are :ref:`objects<what is a class?>` that can NOT be called
 
 I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what is None?>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another failing line to ``test_type_error.py``
 
@@ -751,9 +763,13 @@ test_type_error_w_function_signatures
 
 When I call a :ref:`function<what is a function?>` I have to match its definition also known as its signature or I get TypeError_
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add a new test to ``test_type_error.py``
 
@@ -775,9 +791,13 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
 
     AttributeError: module 'src.type_error' has no attribute 'function_00'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add the :ref:`function<what is a function?>` to ``type_error.py``
 
@@ -813,9 +833,13 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
 
 I have to call a :ref:`function<what is a function?>` in a way that matches its definition or I get TypeError_
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add a new failing line to ``test_type_error.py``
 
@@ -969,9 +993,13 @@ test_type_error_w_objects_that_do_not_mix
 
 Some operations do not work if the objects_ are NOT the same type_
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test with a failing line in ``test_type_error.py``
 
@@ -995,9 +1023,13 @@ the terminal_ shows TypeError_
 
 I cannot do arithmetic_ with :ref:`None<what is None?>`
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the `assertRaises method`_
 
@@ -1011,9 +1043,13 @@ I add the `assertRaises method`_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another failing line to the test
 

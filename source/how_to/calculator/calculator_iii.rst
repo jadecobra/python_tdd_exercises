@@ -90,9 +90,13 @@ open the project
 test_division_handles_zero_division_error
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I change the last :ref:`assertion<what is an assertion?>` in ``test_division``
 
@@ -122,9 +126,13 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
 
   ZeroDivisionError: float division by zero
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add it to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
@@ -156,9 +164,13 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
 
 There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first part of ``test_division`` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add a `return statement`_ to the ``a_random_number`` :ref:`function<what is a function?>` in ``test_calculator.py`` to make it happen
 

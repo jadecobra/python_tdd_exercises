@@ -137,9 +137,13 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     AttributeError: module 'src.exceptions' has no attribute 'raise_exception'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add the name to ``exceptions.py``
 
@@ -248,9 +252,13 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 test_catching_failure
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new failing test in ``test_exceptions.py``
 
@@ -278,9 +286,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.exceptions' has no attribute 'an_exception_handler'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add the name to ``exceptions.py``
 
@@ -365,9 +377,13 @@ test_catching_success
 
 I want ``an_exception_handler`` to process its input and return ``failed`` when an :ref:`Exception<errors>` happens or return ``success`` when an :ref:`Exception<errors>` is NOT raised.
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to ``test_exceptions.py``
 
@@ -397,9 +413,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.exceptions' has no attribute 'does_not_raise_exception'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add the name to ``exceptions.py``
 

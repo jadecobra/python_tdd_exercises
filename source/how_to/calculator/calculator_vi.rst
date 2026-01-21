@@ -94,9 +94,13 @@ I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I had
 
 
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 I add the `setUp method`_ to the ``TestCalculator`` :ref:`class<what is a class?>`
 
@@ -124,9 +128,13 @@ I tested the :ref:`calculator functions<how to make a calculator>` with :ref:`No
 
 Since I know how to use a `for loop`_ and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
 
+----
+
 =================================================================================
-:RED:`RED`: make it fail
+:red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_message_when_input_is_not_a_number``
 
@@ -164,9 +172,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py`` is doing its job, the :ref:`calculator<how to make a calculator>` only takes numbers
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I change the expectation to match
 
@@ -234,9 +246,13 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I can use a `for loop`_ to make the :ref:`if statements` simpler
 

@@ -331,9 +331,13 @@ test_what_is_none
 
 We need a way to represent nothing or the absence of a value. In mathematics we use ``0`` to represent no quantity. In some languages or domains we use ``null``, in forms we use ``N/A`` when the options do not apply. In Python_ we use None_
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I change ``test_failure`` to ``test_what_is_none``
 
@@ -354,9 +358,13 @@ We need a way to represent nothing or the absence of a value. In mathematics we 
 
   assertIsNotNone_ checks that what is in the parentheses is NOT None_
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the assertIsNotNone_ to assertIsNone_, which checks if what it gets in parentheses is None_
 
@@ -368,9 +376,13 @@ I change the assertIsNotNone_ to assertIsNone_, which checks if what it gets in 
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 I add a note
 
@@ -393,9 +405,13 @@ so far this is a repetition of :ref:`AssertionError<what causes AssertionError?>
 test_is_none_a_boolean
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add another failing test to see if None_ is a :ref:`boolean<what are booleans?>`
 
@@ -417,9 +433,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: False is not None
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsNotNone method`_
 
@@ -431,9 +451,13 @@ I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add a note
 
@@ -614,9 +638,13 @@ I know two new `assert methods`_
 test_is_none_an_integer
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test to see if None_ is an integer_ (a whole number)
 
@@ -635,9 +663,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: -1 is not None
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
@@ -649,9 +681,13 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add a new failing line with assertIsNone_
 
@@ -836,9 +872,13 @@ the test passes
 test_is_none_a_float
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test to see if None_ is a float_ (floating point decimal number)
 
@@ -860,9 +900,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: -0.1 is not None
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
@@ -874,9 +918,13 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another failing line with assertIsNone_
 
@@ -1062,9 +1110,13 @@ the test passes
 test_is_none_a_string
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test to see if None_ is a string_ (anything inside :ref:`quotes`)
 
@@ -1088,9 +1140,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 the empty string_ (``''``) is NOT :ref:`None<what is None?>`
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
@@ -1102,9 +1158,13 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another failing line with assertIsNone_
 
@@ -1244,9 +1304,13 @@ the test passes
 test_is_none_a_tuple
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test to see if None_ is a tuple_ (anything in parentheses (``()``)), pronounced ``two-pull``
 
@@ -1268,9 +1332,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: () is not None
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I make the statement :ref:`True<test_what_is_true>`
 
@@ -1282,9 +1350,13 @@ I make the statement :ref:`True<test_what_is_true>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add a failing :ref:`assertion<what is an assertion?>`
 
@@ -1420,9 +1492,13 @@ the test passes
 test_is_none_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to see if None_ is a :ref:`list<lists>` (anything in square brackets (``[]``))
 
@@ -1444,9 +1520,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: [] is not None
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
@@ -1458,9 +1538,13 @@ I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another failing line
 
@@ -1595,9 +1679,13 @@ the test passes
 test_is_none_a_set
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I want to see if None_ is a set_
 
@@ -1616,9 +1704,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: set() is not None
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I make the statement :ref:`True<test_what_is_true>`
 
@@ -1630,9 +1722,13 @@ I make the statement :ref:`True<test_what_is_true>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -1738,9 +1834,13 @@ the test passes
 test_is_none_a_dictionary
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 One last test to see if None_ is a :ref:`dictionary<dictionaries>`
 
@@ -1764,9 +1864,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 wait a minute! Python_ uses ``{}`` for sets_. it also uses them for :ref:`dictionaries` with a difference.
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I make the statement :ref:`True<test_what_is_true>`
 
@@ -1778,9 +1882,13 @@ I make the statement :ref:`True<test_what_is_true>`
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another failing line
 

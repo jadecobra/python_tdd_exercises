@@ -78,9 +78,13 @@ open the project
 test_calculator_w_dictionary_items
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to use a dictionary_ to test the :ref:`calculator<how to make a calculator>`
 
@@ -113,9 +117,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: ABC.DEFGHIJKLMNOPQ != RST.UVWXYZABCDEFG
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation to the right calculation
 
@@ -130,9 +138,13 @@ I change the expectation to the right calculation
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
@@ -625,9 +637,13 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
     SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: Y.ABCDEFGHIJKLMNOP != 'BOOM!!!'
     SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: QRSTUV.WXYZABCDEFG != 'BOOM!!!'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I need a way to add the calculations for each operation to the :ref:`assertion<what is an assertion?>`. I add another dictionary_
 
@@ -740,9 +756,13 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
     src.calculator.multiply(self.first_random_number, self.second_random_number)
     self.random_first_number*self.random_second_number
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * the two dictionaries_ in this test have the same :ref:`keys<test_keys_of_a_dictionary>`, I can put them together
 
@@ -1435,9 +1455,13 @@ test exponents
 
 Since I am using a :ref:`dictionary<what is a dictionary?>` adding a new test is easy. I want to add a test for using the :ref:`calculator<how to make a calculator>` to exponent numbers like I did in :ref:`test_making_a_list_w_processes`
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new :ref:`key<test_keys_of_a_dictionary>` for the exponent :ref:`function<what is a function?>` to the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>`
 
@@ -1465,9 +1489,13 @@ the terminal_ shows :ref:`AttributeError` for every test
 
   AttributeError: module 'src.calculator' has no attribute 'exponent'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I open ``calculator.py`` in the :ref:`editor<2 editors>` then add a new :ref:`function<what is a function?>`
 
@@ -1523,9 +1551,13 @@ the terminal_ shows :ref:`AttributeError` for every test
 
   the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I want the ``exponent`` :ref:`function<what is a function?>` to only take one input since the second input is not used. I make the second input optional by adding a :ref:`default argument<test_functions_w_default_arguments>`
 

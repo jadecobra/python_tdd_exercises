@@ -85,13 +85,19 @@ start the project
 
     class TestPerson(unittest.TestCase):
 
+----
+
 *********************************************************************************
 test_factory_takes_keyword_arguments
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I change ``test_failure`` to ``test_factory_takes_keyword_arguments``
 
@@ -131,9 +137,13 @@ test_factory_takes_keyword_arguments
     # AssertionError
     # NameError
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>` at the top of the file
 
@@ -371,7 +381,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
+* I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation of the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -406,7 +416,7 @@ test_factory_takes_keyword_arguments
         ):
         return {}
 
-  the test passes because ``{}`` and ``dict()`` are two ways to :ref:`write an empty dictionary<test_making_a_dictionary>`
+  the test passes because ``{}`` and ``dict()`` are two ways to :ref:`make an empty dictionary<test_making_a_dictionary>`
 
 ----
 
@@ -449,7 +459,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places when I want a different :ref:`value<test_values_of_a_dictionary>` for it. I add a :ref:`variable<what is a variable?>` to remove the repetition in ``test_person.py``
+* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places when I want a different :ref:`value<test_values_of_a_dictionary>`. I add a :ref:`variable<what is a variable?>` to remove the repetition in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -460,7 +470,7 @@ test_factory_takes_keyword_arguments
 
             self.assertEqual(
 
-* I use the :ref:`variable<what is a variable?>` as the value for ``first_name`` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`variable<what is a variable?>` as the value for ``first_name`` in the call to ``src.person.factory`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 14
@@ -600,7 +610,7 @@ test_factory_takes_keyword_arguments
 
             self.assertEqual(
 
-* I use the new :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+* I use the new :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` in the  :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -758,7 +768,7 @@ test_factory_takes_keyword_arguments
 
             self.assertEqual(
 
-* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -922,16 +932,6 @@ test_factory_takes_keyword_arguments
       def this_year():
           return datetime.datetime.today().year
 
-  Here's what ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` means
-
-  - ``datetime`` is the `datetime module`_
-  - ``.datetime`` is a call to the `datetime object`_ in the `datetime module`_. Wait a minute, that is the same name twice. Do I have to remember all this?
-  - ``.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy
-  - ``.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
-  - ``.year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
-
-  that was a lot of words. This becomes clearer in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`.
-
   The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
@@ -941,7 +941,18 @@ test_factory_takes_keyword_arguments
     E       + {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
     E       ?  ++++++++++
 
-  the new :ref:`dictionary<dictionaries>` has a :ref:`value<test_values_of_a_dictionary>` for the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`
+  the new :ref:`dictionary<dictionaries>` has a :ref:`value<test_values_of_a_dictionary>` for the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`.
+
+  Here is what ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` means
+
+  - ``datetime`` is the `datetime module`_
+  - ``.datetime`` is a call to the `datetime object`_ in the `datetime module`_. Wait a minute, that is the same name twice. Do I have to remember all this?
+  - ``.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy
+  - ``.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
+  - ``.year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
+
+  that was a lot of word, they become clearer in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`.
+
 
 * I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` to the `return statement`_ in ``person.py``
 
@@ -976,7 +987,7 @@ test_factory_takes_keyword_arguments
 
             self.assertEqual(
 
-* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 18
@@ -1040,11 +1051,15 @@ test_factory_takes_keyword_arguments
 
 ----
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-* the only difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the :ref:`assertion<what is an assertion?>` is that one has a year of birth and the other does a calculation with it. The other things are the same. I add a :ref:`dictionary<what is a dictionary?>` to remove the repetition
+----
+
+* the only difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the :ref:`assertion<what is an assertion?>` is that one has a year of birth and the other does a calculation with the year of birth. The other things are the same. I add a :ref:`dictionary<what is a dictionary?>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 12
@@ -1166,18 +1181,30 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I want to use random values in the test. I add an `import statement`_ at the top of ``test_person.py``
+*********************************************************************************
+add randomness
+*********************************************************************************
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2
+I want to use random values in the test. I add an `import statement`_ at the top of ``test_person.py``
 
-    import datetime
-    import random
-    import src.person
-    import unittest
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 2
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers
+  import datetime
+  import random
+  import src.person
+  import unittest
+
+random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
 
 * I use a random integer_ for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
@@ -1212,6 +1239,14 @@ test_factory_takes_keyword_arguments
     E       ?         ^
 
   .. NOTE:: ``X`` represents the random age
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
 
 * I add the age calculation from ``test_person.py`` to the `return statement`_ in ``person.py``
 
@@ -1271,9 +1306,15 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* I remove the commented ``# year_of_birth = this_year()`` line from ``test_person.py``
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
 ----
+
+* I remove the commented ``# year_of_birth = this_year()`` line from ``test_person.py``
 
 * I add randomness to the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
@@ -1472,9 +1513,13 @@ test_factory_w_default_arguments
 
 I want to see what happens when I try to make a person without a value for the ``last_name`` argument
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I copy ``test_factory_takes_keyword_arguments`` and paste it below in ``test_person.py``
 * I change the name of the new test to ``test_factory_w_default_arguments``, then comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
@@ -1528,9 +1573,13 @@ I want to see what happens when I try to make a person without a value for the `
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add a default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py`` to make it a choice
 
@@ -1883,9 +1932,13 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * ``first_name`` and ``year_of_birth`` are made the same way in both tests. I add  the `setUp method`_ to the ``TestPerson`` :ref:`class<what is a class?>` with an :ref:`attribute (variable)<test_attribute_error_w_class_attributes>` to remove the repetition of the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
@@ -2196,9 +2249,13 @@ test_person_tests
 
 I want to write the solution without looking at the tests
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I close ``test_person.py`` in the :ref:`editor<2 editors>`
 * then I delete all the text in ``person.py``. The terminal_ shows :ref:`AttributeError`
@@ -2209,9 +2266,13 @@ I want to write the solution without looking at the tests
 
   there is nothing in ``person.py`` with the name ``factory``
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add the name
 

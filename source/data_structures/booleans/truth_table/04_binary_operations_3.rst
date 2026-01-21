@@ -89,9 +89,13 @@ continue the project
 test_exclusive_disjunction
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to ``test_truth_table.py``
 
@@ -113,9 +117,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the :ref:`function<what is a function?>` for ``exclusive_disjunction`` in ``truth_table.py``
 
@@ -132,9 +140,13 @@ I add the :ref:`function<what is a function?>` for ``exclusive_disjunction`` in 
 
 the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case to ``test_exclusive_disjunction`` in ``test_truth_table.py``
 
@@ -480,9 +492,13 @@ all of the above statements mean the same thing. Would "Logical Inequality" be a
 test_material_non_implication
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add another test to ``test_truth_table.py``
 
@@ -504,9 +520,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'. Did you mean: 'converse_non_implication'?
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a :ref:`function<what is a function?>` for ``material_non_implication`` in ``truth_table.py``
 
@@ -525,9 +545,13 @@ I add a :ref:`function<what is a function?>` for ``material_non_implication`` in
 
 the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another case to ``test_material_non_implication`` in ``test_truth_table.py``
 
@@ -705,9 +729,13 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 test_project_first
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test in ``test_truth_table.py``
 
@@ -729,9 +757,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'project_first'
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a :ref:`function<what is a function?>` definition for ``project_first`` in ``truth_table.py``
 
@@ -748,9 +780,13 @@ I add a :ref:`function<what is a function?>` definition for ``project_first`` in
 
 the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the second case to ``test_project_first`` in ``test_truth_table.py``
 
@@ -941,9 +977,13 @@ it is like :ref:`Project Second<test_project_second>` which always returns the s
 test_converse_implication
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to ``test_truth_table.py``
 
@@ -965,9 +1005,13 @@ the terminal_ shows :ref:`AttributeError`
 
   AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a :ref:`function<what is a function?>` definition for ``converse_implication`` in ``truth_table.py``
 
@@ -984,9 +1028,13 @@ I add a :ref:`function<what is a function?>` definition for ``converse_implicati
 
 the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the second case to ``test_converse_implication`` in ``test_truth_table.py``
 

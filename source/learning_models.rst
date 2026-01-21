@@ -10,9 +10,13 @@ What follows is an exercise in measuring learning. It is somewhat philosophical 
 An Infinite Learning Model
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I open a terminal_ to run :ref:`makePythonTdd.sh` with ``learning`` as the name of the project
 
@@ -60,9 +64,13 @@ An Infinite Learning Model
     AttributeError: module 'src.learning' has no attribute 'model'
 
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 If you've gone through any of the other exercises in this book, then you have what you need to solve these problems
 

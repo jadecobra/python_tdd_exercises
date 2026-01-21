@@ -208,9 +208,13 @@ start the project
 test_making_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I change ``test_failure`` to ``test_making_a_list``
 
@@ -230,9 +234,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: [] != None
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation
 
@@ -244,9 +252,13 @@ I change the expectation
 
 the test passes. I can make an empty list_ with ``list()`` or ``[]``
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>`, this time with input to ``list()``, I want to make a list_ that has things in it
 
@@ -320,9 +332,13 @@ how to see the attributes and methods of an object
 
 I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of :ref:`objects<what is a class?>`, it is part of `Python's Built-in Functions`_
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a failing test
 
@@ -352,9 +368,13 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 
 `maxDiff`_ is an :ref:`attribute<AttributeError>` of the `unittest.TestCase class`_ that sets the maximum number of characters to show when comparing 2 objects in the terminal_, when it is set to :ref:`None<what is None?>` it shows the full difference
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add ``self.maxDiff`` to the test then move the terminal_ to the right
 
@@ -465,9 +485,13 @@ there is also a note on how to see the full difference between ``dir(list)`` and
 test_append_adds_item_to_end_of_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for the `append method`_
 
@@ -492,9 +516,13 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: list.append() takes exactly one argument (0 given)
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add ``0`` as input
 
@@ -506,9 +534,13 @@ I add ``0`` as input
 
 the terminal_ shows green, the `append method`_ returns :ref:`None<what is None?>` when called
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>` to see what append_ did to the list_
 
@@ -616,9 +648,13 @@ I add a test for the `clear method`_
 
 the terminal_ shows green. The `clear method`_ returns :ref:`None<what is None?>` when called
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the list_
 
@@ -637,9 +673,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 the list_ is now empty
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the values to match
 
@@ -651,9 +691,13 @@ I change the values to match
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I change the name of the test to make it "clearer"
 
@@ -692,9 +736,13 @@ the test passes
 test_copy_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add another test
 
@@ -719,9 +767,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 the :ref:`method<what is a function?>` returns a copy of the list_
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 * I add the list_ to the :ref:`assertion<what is an assertion?>`
 
@@ -751,9 +803,13 @@ the :ref:`method<what is a function?>` returns a copy of the list_
 
   the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I change the name of the test
 
@@ -790,9 +846,13 @@ the :ref:`method<what is a function?>` returns a copy of the list_
 test_count_number_of_times_item_is_in_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for the next :ref:`method<what is a function?>`
 
@@ -831,9 +891,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: 1 is not None
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the value
 
@@ -859,9 +923,13 @@ I change assertIsNone_ to assertEqual_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * ``0`` is in this list_ 1 time, I add ``1`` to the list_ 2 more times then add an :ref:`assertion<what is an assertion?>` for it
 
@@ -954,9 +1022,13 @@ the test passes
 test_extend_adds_items_from_an_iterable_to_end_of_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 time for another test
 
@@ -979,9 +1051,13 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: list.extend() takes exactly one argument (0 given)
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I pass a value to the call
 
@@ -1007,9 +1083,13 @@ I change the value to an :ref:`iterable<what is an iterable?>`
 
 the test passes. The `extend method`_ returns :ref:`None<what is None?>` when called
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
@@ -1097,9 +1177,13 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 test_index_returns_first_position_of_item_in_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for the `index method`_
 
@@ -1122,9 +1206,13 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: index expected at least 1 argument, got 0
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a value to the call
 
@@ -1168,9 +1256,13 @@ I change assertIsNone_ to assertEqual_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * maybe the :ref:`method<what is a function?>` returned the same value I gave, I change the list_ to find out
 
@@ -1449,9 +1541,13 @@ the test passes
 test_insert_item_at_position_in_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for the next :ref:`method<what is a function?>`
 
@@ -1475,9 +1571,13 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: insert expected 2 arguments, got 0
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add two values to the call
 
@@ -1491,9 +1591,13 @@ I add two values to the call
 
 the test passes. What did the `insert method`_ do to the list_?
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add an :ref:`assertion<what is an assertion?>` to find out
 
@@ -1627,9 +1731,13 @@ the test passes. What did the `insert method`_ do to the list_?
 test_pop_removes_and_returns_last_item_from_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test
 
@@ -1654,9 +1762,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 The `pop method`_ returns the last item in the list_
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the expectation
 
@@ -1684,9 +1796,13 @@ I change assertIsNone_ to assertEqual_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>` to see what happened to the list_
 
@@ -1798,9 +1914,13 @@ the test passes
 test_remove_first_time_item_is_in_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 time for the next :ref:`method<what is a function?>`
 
@@ -1823,9 +1943,13 @@ the terminal_ shows :ref:`TypeError`
 
   TypeError: list.remove() takes exactly one argument (0 given)
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a value to the call
 
@@ -1837,9 +1961,13 @@ I add a value to the call
 
 the terminal_ shows green. The `remove method`_ returns :ref:`None<what is None?>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
@@ -1963,9 +2091,13 @@ the terminal_ shows green. The `remove method`_ returns :ref:`None<what is None?
 test_reverse_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 * I add the next test
 
@@ -2002,9 +2134,13 @@ test_reverse_a_list
 
   it reversed the order of the items in the list_
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation
 
@@ -2016,9 +2152,13 @@ I change the expectation
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I change the name of the test
 
@@ -2055,9 +2195,13 @@ the test passes
 test_sort_a_list
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for the last :ref:`method<what is a function?>` in the TODO list
 
@@ -2082,9 +2226,13 @@ the terminal_ shows :ref:`TypeError`
 
 I have to change ``'n'`` to a number or change the other numbers to strings_
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I remove the things around the call then add assertRaises_
 
@@ -2099,9 +2247,13 @@ I remove the things around the call then add assertRaises_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I can use the list_ directly in the call
 
@@ -2239,9 +2391,13 @@ test_getting_items_of_a_list
 
 When I want an item that is in a list_, I can give its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in square brackets(``[]``) to get it
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a failing test
 
@@ -2266,9 +2422,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 the first item has an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of ``0``
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the value in the test
 
@@ -2280,9 +2440,13 @@ I change the value in the test
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * this is the opposite of the `index method`_ which takes in the item and returns its position, in this case I provide the :ref:`index (position)<test_index_returns_first_position_of_item_in_a_list>` and it returns the item, which means I can write this
 
@@ -2508,9 +2672,13 @@ test_setting_items_in_a_list
 
 I can also use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item in a list_ to change the item
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add an :ref:`assertion<what is an assertion?>`
 
@@ -2536,9 +2704,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of an item to change its value in a list_, the way I point a name to a value when I make a :ref:`variable<what is a variable?>`
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the expectation to match the values in the terminal_
 
@@ -2558,9 +2730,13 @@ test_looking_at_parts_of_a_list_aka_slicing
 
 I can use :ref:`indices<test_index_returns_first_position_of_item_in_a_list>` to look at parts of a list_, this is called slicing_
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add another test
 
@@ -2583,9 +2759,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: Lists differ: ['a', 'b'] != []
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I change the values to match
 
@@ -2599,9 +2779,13 @@ the test passes.
 
 I give two values in square brackets(``[]``), separated by a ``:``, the first value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to start from, and the second value is the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the item I want to stop at plus ``1``
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I can skip the first number when the starting :ref:`index<test_index_returns_first_position_of_item_in_a_list>` is ``0``
 
@@ -2782,9 +2966,13 @@ test_index_error
 
 IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it. When I see this :ref:`Exception<errors>` I know the underlying data structure is a list_
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a failing test
 
@@ -2809,9 +2997,13 @@ the terminal_ shows IndexError_
 
 when I use an :ref:`index<test_index_returns_first_position_of_item_in_a_list>` that is greater than or the same as the number of things in the list_, I am pointing to something that is NOT in the list_
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add assertRaises_
 
@@ -2827,9 +3019,13 @@ I add assertRaises_
 
 the test passes
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add IndexError_ to the list of :ref:`Exceptions<errors>` seen
 

@@ -89,9 +89,13 @@ continue the project
 test_negate_first
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test to the ``TestBinaryOperations`` :ref:`class<what is a class?>` in ``test_truth_table.py`` for ``negate_first``
 
@@ -115,9 +119,13 @@ the terminal_ shows :ref:`AttributeError`
 
 there is no definition for ``negate_first`` in ``truth_table.py``
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the :ref:`function<what is a function?>` definition in ``truth_table.py``
 
@@ -134,9 +142,13 @@ I add the :ref:`function<what is a function?>` definition in ``truth_table.py``
 
 the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the second case - where the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to ``test_negate_first`` in ``test_truth_table.py``
 
@@ -403,9 +415,13 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 test_logical_nand
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a new test to ``test_truth_table.py``
 
@@ -429,9 +445,13 @@ the terminal_ shows :ref:`AttributeError`
 
 there is no definition for ``logical_nand`` in ``truth_table.py``
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a definition for the :ref:`function<what is a function?>` to ``truth_table.py``
 
@@ -450,9 +470,13 @@ the test passes.
 
 ``logical_nand`` returns :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the second case - where the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to ``test_logical_nand`` in ``test_truth_table.py``
 
@@ -839,9 +863,13 @@ the test passes.
 test_tautology
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add a test for the next Binary Operation in ``test_truth_table.py`` with the first case where the two inputs are :ref:`True<test_what_is_true>`
 
@@ -865,9 +893,13 @@ the terminal_ shows :ref:`AttributeError`
 
 ``truth_table.py`` does not have ``tautology`` defined inside it
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add a :ref:`function<what is a function?>` definition in ``truth_table.py``
 
@@ -884,9 +916,13 @@ I add a :ref:`function<what is a function?>` definition in ``truth_table.py``
 
 the test passes. ``tatutology`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case to ``test_tautology`` in ``test_truth_table.py`` - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
@@ -952,9 +988,13 @@ It always returns :ref:`True<test_what_is_true>`, it is the opposite of :ref:`Co
 test_logical_disjunction
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add another test to ``test_truth_table.py`` with the first case, where the two inputs are :ref:`True<test_what_is_true>`
 
@@ -978,9 +1018,13 @@ the terminal_ shows :ref:`AttributeError`
 
 there is no definition for ``logical_disjunction`` in ``truth_table.py`` in the ``src`` folder_ yet
 
+----
+
 =================================================================================
 :green:`GREEN`: make it pass
 =================================================================================
+
+----
 
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
@@ -997,9 +1041,13 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
+----
+
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
 
 * I add the next case - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`, to ``test_logical_disjunction`` in ``test_truth_table.py``
 
