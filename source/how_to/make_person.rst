@@ -1973,195 +1973,102 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I point ``first_name`` in ``test_factory_takes_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for ``first_name`` to the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5-7
+
+    def setUp(self):
+        self.year_of_birth = random.randint(
+            this_year()-120, this_year()
+        )
+        self.first_name = random.choice((
+            'jane', 'joe', 'john', 'person',
+        ))
+
+    def test_factory_takes_keyword_arguments(self):
+
+* I point ``first_name`` in ``test_factory_takes_keyword_argument`` to the new :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 2-5
+    :emphasize-lines: 3-6
 
         def test_factory_takes_keyword_arguments(self):
-            # first_name = random.choice((
-            #     'jane', 'joe', 'john', 'person',
-            # ))
-            first_name = self.first_name
-            last_name = random.choice((
-
-  the test is still green
-
-* I change the value of ``first_name`` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 3-4
-
-            self.assertEqual(
-                src.person.factory(
-                    # first_name=first_name,
-                    first_name=self.first_name,
-                    last_name=last_name,
-                    sex=sex,
-                    year_of_birth=year_of_birth,
-                ),
+            keyword_arguments = dict(
+                # first_name=random.choice((
+                #     'jane', 'joe', 'john', 'person',
+                # )),
+                first_name=self.first_name,
+                last_name=random.choice((
 
   still green
 
-* I change the :ref:`value<test_values_of_a_dictionary>` of ``first_name`` in the expectation of the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 42
-    :emphasize-lines: 2-3
-
-                dict(
-                    # first_name=first_name,
-                    first_name=self.first_name,
-                    last_name=last_name,
-                    sex=sex,
-                    age=this_year()-year_of_birth,
-                )
-
-  green
-
-* I remove the commented lines and the ``first_name`` :ref:`variable<what is a variable?>`
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 21
 
         def test_factory_takes_keyword_arguments(self):
-            last_name = random.choice((
-                'doe', 'smith', 'blow', 'public',
-            ))
-            sex = random.choice(('F', 'M'))
-            year_of_birth = self.year_of_birth
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=self.first_name,
-                    last_name=last_name,
-                    sex=sex,
-                    year_of_birth=year_of_birth,
-                ),
-                dict(
-                    first_name=self.first_name,
-                    last_name=last_name,
-                    sex=sex,
-                    age=this_year()-year_of_birth,
-                )
+            keyword_arguments = dict(
+                first_name=self.first_name,
+                last_name=random.choice((
+                    'doe', 'smith', 'blow', 'public',
+                )),
+                sex=random.choice(('F', 'M')),
             )
 
-  still green
-
-* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 6-9
-
-        def test_factory_takes_keyword_arguments(self):
-            last_name = random.choice((
-                'doe', 'smith', 'blow', 'public',
-            ))
-            sex = random.choice(('F', 'M'))
-            # year_of_birth = random.randint(
-            #     this_year()-120, this_year()
-            # )
-            year_of_birth = self.year_of_birth
-
-  the test is still green
-
-* I change the value of ``year_of_birth`` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 6-7
-
             self.assertEqual(
                 src.person.factory(
-                    first_name=self.first_name,
-                    last_name=last_name,
-                    sex=sex,
-                    # year_of_birth=year_of_birth,
-                    year_of_birth=self.year_of_birth,
-                ),
-
-  still green
-
-* I change the :ref:`value<test_values_of_a_dictionary>` of ``year_of_birth`` in the expectation of the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 5-6
-
-                dict(
-                    first_name=self.first_name,
-                    last_name=last_name,
-                    sex=sex,
-                    # age=this_year()-year_of_birth,
-                    age=this_year()-self.year_of_birth,
-                )
-
-  green
-
-* I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 21
-
-        def test_factory_takes_keyword_arguments(self):
-            last_name = random.choice((
-                'doe', 'smith', 'blow', 'public',
-            ))
-            sex = random.choice(('F', 'M'))
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=self.first_name,
-                    last_name=last_name,
-                    sex=sex,
+                    **keyword_arguments,
                     year_of_birth=self.year_of_birth,
                 ),
                 dict(
-                    first_name=self.first_name,
-                    last_name=last_name,
-                    sex=sex,
+                    **keyword_arguments,
                     age=this_year()-self.year_of_birth,
                 )
             )
 
-  still green
+        def test_factory_w_default_arguments(self):
+
+  green
 
 * I point ``first_name`` in ``test_factory_w_default_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 41
     :emphasize-lines: 2-5
 
         def test_factory_w_default_arguments(self):
-            # first_name = random.choice((
+            # first_name=random.choice((
             #     'jane', 'joe', 'john', 'person',
             # ))
             first_name = self.first_name
 
+            self.assertEqual(
+
   the test is still green
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the value of ``first_name`` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 47
     :emphasize-lines: 3-4
 
             self.assertEqual(
                 src.person.factory(
                     # first_name=first_name,
                     first_name=self.first_name,
-                    year_of_birth=year_of_birth,
+                    year_of_birth=self.year_of_birth,
                 ),
 
   still green
 
-* I do the same thing for the :ref:`value<test_values_of_a_dictionary>` of ``first_name`` in the expectation of the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 53
     :emphasize-lines: 2-3
 
                 dict(
@@ -2169,7 +2076,7 @@ I want to see what happens when I try to make a person without a value for the `
                     first_name=self.first_name,
                     last_name='doe',
                     sex='M',
-                    age=this_year()-year_of_birth,
+                    age=this_year()-self.year_of_birth,
                 )
 
   green
@@ -2177,77 +2084,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented lines and the ``first_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 42
-
-        def test_factory_w_default_arguments(self):
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=self.first_name,
-                    year_of_birth=year_of_birth,
-                ),
-                dict(
-                    first_name=self.first_name,
-                    last_name='doe',
-                    sex='M',
-                    age=this_year()-year_of_birth,
-                )
-            )
-
-  still green
-
-* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
-
-  .. code-block:: python
-    :lineno-start: 42
-    :emphasize-lines: 2-5
-
-        def test_factory_w_default_arguments(self):
-            # year_of_birth = random.randint(
-            #     this_year()-120, this_year()
-            # )
-            year_of_birth = self.year_of_birth
-
-  the test is still green
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the value of ``year_of_birth`` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 4-5
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=self.first_name,
-                    # year_of_birth=year_of_birth,
-                    year_of_birth=self.year_of_birth,
-                ),
-
-  still green
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` of ``year_of_birth`` in the expectation of the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 5-6
-
-                dict(
-                    first_name=self.first_name,
-                    last_name='doe',
-                    sex='M',
-                    # age=this_year()-year_of_birth,
-                    age=this_year()-self.year_of_birth,
-                )
-
-  green
-
-* I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 41
 
         def test_factory_w_default_arguments(self):
             self.assertEqual(
