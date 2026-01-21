@@ -459,7 +459,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* ``'first_name'`` appears twice in the test, which means I have to make a change in 2 places when I want a different :ref:`value<test_values_of_a_dictionary>`. I add a :ref:`variable<what is a variable?>` to remove the repetition in ``test_person.py``
+* I typed ``'first_name'`` two times in the test, which means I have to make a change in 2 places when I want a different :ref:`value<test_values_of_a_dictionary>`. I add a :ref:`variable<what is a variable?>` to remove the repetition in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -951,7 +951,7 @@ test_factory_takes_keyword_arguments
   - ``.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
   - ``.year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
-  that was a lot of word, they become clearer in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`.
+  that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`.
 
 
 * I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` to the `return statement`_ in ``person.py``
@@ -1180,7 +1180,7 @@ test_factory_takes_keyword_arguments
 ----
 
 *********************************************************************************
-add randomness
+test factory with random values
 *********************************************************************************
 
 I want to use random values in the test. I add an `import statement`_ at the top of ``test_person.py``
@@ -1334,7 +1334,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
             self.assertEqual(
 
   - ``random`` is the `random module`_
-  - ``.choice`` is a call to the `random.choice method`_ from the `random module`_
+  - ``.choice`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the iterable_ it is given in parentheses
   - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
@@ -1470,21 +1470,57 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
 
 * I remove the commented line ``# first_name = 'jane'`` from ``test_person.py``
 
+* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a starred expression like I did in :ref:`test_functions_w_unknown_arguments`
+
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 4
+    :emphasize-lines: 4-5
+
+    import unittest
+
+
+    def choose(*iterable):
+        return random.choice(iterable)
+
+
+    def this_year():
+
+* I use the new :ref:`function<what is a function?>` in the test
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-11
+
+            a_person = dict(
+                # first_name=random.choice((
+                #     'jane', 'joe', 'john', 'person',
+                # )),
+                # last_name=random.choice((
+                #     'doe', 'smith', 'blow', 'public',
+                # )),
+                # sex=random.choice(('F', 'M')),
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M'),
+            )
+
+            self.assertEqual(
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 17
 
         def test_factory_takes_keyword_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
             a_person = dict(
-                first_name=random.choice((
-                    'jane', 'joe', 'john', 'person',
-                )),
-                last_name=random.choice((
-                    'doe', 'smith', 'blow', 'public',
-                )),
-                sex=random.choice(('F', 'M')),
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M'),
             )
 
             self.assertEqual(
@@ -1501,7 +1537,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
 
     # Exceptions seen
 
-  the test is still green
+  still green
 
 ----
 
