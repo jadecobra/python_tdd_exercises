@@ -2482,7 +2482,7 @@ I want to write the solution without looking at the tests
     E       + {'age': X, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
     E       ?         ^
 
-  the ``year_of_birth`` :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned has 4 digits (a year) for the :ref:`value<test_values_of_a_dictionary>` of the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
+  the :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned for the ``age`` :ref:`key<test_keys_of_a_dictionary>` has 4 digits (a year), and the test expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
 
 * I add an `import statement`_ for the `datetime module`_ at the top of the file_
 
@@ -2537,9 +2537,9 @@ I want to write the solution without looking at the tests
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  the test called the :ref:`function<what is a function?>` with an extra argument and Python_ thinks it is a positional argument for ``last_name``, which I already added
+  the test called the :ref:`function<what is a function?>` with an extra argument and Python_ took it is a positional argument for ``last_name``
 
-* I add a default value for ``last_name`` so Python_ does not think it is a :ref:`positional argument<test_functions_w_positional_arguments>` when a name is not given
+* I add a default value for ``last_name`` so Python_ does not take it is a :ref:`positional argument<test_functions_w_positional_arguments>` when a name is not given
 
   .. code-block:: python
     :lineno-start: 4
