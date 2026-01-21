@@ -2000,7 +2000,7 @@ I want to see what happens when I try to make a person without a value for the `
 * ``first_name`` and ``year_of_birth`` are made the same way in both tests. I add  the `setUp method`_ to the ``TestPerson`` :ref:`class<what is a class?>` with an :ref:`attribute (variable)<test_attribute_error_w_class_attributes>` to remove the repetition of the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 15
     :emphasize-lines: 3-6
 
     class TestPerson(unittest.TestCase):
@@ -2017,7 +2017,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I point ``year_of_birth`` in ``test_factory_takes_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 22
     :emphasize-lines: 2-5
 
         def test_factory_takes_keyword_arguments(self):
@@ -2044,7 +2044,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   still green
 
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` in the expectation
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation
 
   .. code-block:: python
     :lineno-start: 39
@@ -2061,17 +2061,13 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 22
 
         def test_factory_takes_keyword_arguments(self):
             a_person = dict(
-                first_name=random.choice((
-                    'jane', 'joe', 'john', 'person',
-                )),
-                last_name=random.choice((
-                    'doe', 'smith', 'blow', 'public',
-                )),
-                sex=random.choice(('F', 'M')),
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M'),
             )
 
             self.assertEqual(
@@ -2087,7 +2083,7 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_default_arguments(self):
 
-* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` to the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_w_default_arguments``
+* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` in ``test_factory_w_default_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -2098,14 +2094,14 @@ I want to see what happens when I try to make a person without a value for the `
             #     this_year()-120, this_year()
             # )
             year_of_birth = self.year_of_birth
-            first_name=random.choice((
+            first_name = choose('jane', 'joe', 'john', 'person')
 
   the test is still green
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.factory`` in  the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 47
     :emphasize-lines: 4-5
 
             self.assertEqual(
@@ -2120,7 +2116,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 53
     :emphasize-lines: 5-6
 
                 dict(
@@ -2139,9 +2135,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 40
 
         def test_factory_w_default_arguments(self):
-            first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
+            first_name = choose('jane', 'joe', 'john', 'person')
 
             self.assertEqual(
                 src.person.factory(
@@ -2166,16 +2160,14 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` for ``first_name`` to the `setUp method`_ to remove repetition of the :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 5-7
+    :lineno-start: 17
+    :emphasize-lines: 5
 
         def setUp(self):
             self.year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
-            self.first_name = random.choice((
-                'jane', 'joe', 'john', 'person',
-            ))
+            self.first_name = choose('jane', 'joe', 'john', 'person')
 
         def test_factory_takes_keyword_arguments(self):
 
@@ -2184,20 +2176,20 @@ I want to see what happens when I try to make a person without a value for the `
 * I point ``first_name`` in ``test_factory_takes_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 3-6
+    :lineno-start: 23
+    :emphasize-lines: 3-4
 
         def test_factory_takes_keyword_arguments(self):
             a_person = dict(
-                # first_name=random.choice((
-                #     'jane', 'joe', 'john', 'person',
-                # )),
+                # first_name=choose('jane', 'joe', 'john', 'person'),
                 first_name=self.first_name,
-                last_name=random.choice((
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M'),
+            )
 
   the test is still green
 
-* I remove the commented lines
+* I remove the commented line
 
   .. code-block:: python
     :lineno-start: 21
@@ -2205,10 +2197,8 @@ I want to see what happens when I try to make a person without a value for the `
         def test_factory_takes_keyword_arguments(self):
             a_person = dict(
                 first_name=self.first_name,
-                last_name=random.choice((
-                    'doe', 'smith', 'blow', 'public',
-                )),
-                sex=random.choice(('F', 'M')),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M'),
             )
 
             self.assertEqual(
@@ -2226,16 +2216,14 @@ I want to see what happens when I try to make a person without a value for the `
 
   still green
 
-* I point the ``first_name`` :ref:`variable<what is a variable?>` to the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_w_default_arguments``
+* I point the ``first_name`` :ref:`variable<what is a variable?>` in ``test_factory_w_default_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 41
-    :emphasize-lines: 2-5
+    :emphasize-lines: 2-3
 
         def test_factory_w_default_arguments(self):
-            # first_name = random.choice((
-            #     'jane', 'joe', 'john', 'person',
-            # ))
+            # first_name = choose('jane', 'joe', 'john', 'person')
             first_name = self.first_name
 
             self.assertEqual(
@@ -2245,7 +2233,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.factory`` in  the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 45
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -2273,7 +2261,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test is still green
 
-* I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
+* I remove the commented lines and the ``first_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 41
