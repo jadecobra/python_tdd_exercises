@@ -598,7 +598,7 @@ test_factory_takes_keyword_arguments
 
   the test passes
 
-* ``'last_name'`` happens twice in the test, I add a :ref:`variable<what is a variable?>` to remove the repetition like I did with ``'first_name'`` in ``test_person.py``
+* ``'last_name'`` happens two times in the test, I add a :ref:`variable<what is a variable?>` to remove the repetition like I did with ``'first_name'`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -946,7 +946,7 @@ test_factory_takes_keyword_arguments
   Here is what ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` means
 
   - ``datetime`` is the `datetime module`_
-  - ``.datetime`` is a call to the `datetime object`_ in the `datetime module`_. Wait a minute, that is the same name twice. Do I have to remember all this?
+  - ``.datetime`` is a call to the `datetime object`_ in the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
   - ``.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy
   - ``.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
   - ``.year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
@@ -1220,7 +1220,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
   Here is what the new line means
 
   - ``random`` is the `random module`_
-  - ``.randint`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name twice
+  - ``.randint`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name again
   - ``this_year()-120`` returns this year minus ``120``
   - ``this_year()`` returns ``datetime.datetime.now().year`` which is the value for the current year
   - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``
@@ -1334,7 +1334,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
             self.assertEqual(
 
   - ``random`` is the `random module`_
-  - ``.choice`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the iterable_ it is given in parentheses
+  - ``.choice`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the :ref:`iterable<what is an iterable?>` it is given in parentheses
   - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
@@ -1479,8 +1479,8 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
     import unittest
 
 
-    def choose(*iterable):
-        return random.choice(iterable)
+    def choose(*choices):
+        return random.choice(choices)
 
 
     def this_year():
@@ -1880,7 +1880,7 @@ I want to see what happens when I try to make a person without a value for the `
 
             self.assertEqual(
 
-* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -1899,7 +1899,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     TypeError: src.person.factory() got multiple values for keyword argument 'first_name'
 
-  because the ``**a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` named ``first_name`` the call to ``src.person.factory`` gets called with the same name twice
+  because the ``**a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` named ``first_name``, the call to ``src.person.factory`` gets called with the same name two times
 
 * I comment out ``a_person`` in the call to ``src.person.factory``
 
@@ -2537,7 +2537,7 @@ I want to write the solution without looking at the tests
 
     TypeError: factory() missing 1 required positional argument: 'last_name'
 
-  the test called the :ref:`function<what is a function?>` with an extra argument and Python_ took it is a positional argument for ``last_name``
+  the test called the :ref:`function<what is a function?>` with another argument and Python_ took it is a positional argument for ``last_name``
 
 * I add a default value for ``last_name`` so Python_ does not take it is a :ref:`positional argument<test_functions_w_positional_arguments>` when a name is not given
 

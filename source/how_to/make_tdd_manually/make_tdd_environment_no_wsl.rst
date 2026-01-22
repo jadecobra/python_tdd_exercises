@@ -1284,7 +1284,7 @@ how to view all the commands I typed in a terminal_ on Windows without WSL
   - :ref:`make a requirements file for the needed Python packages<how to write text to a file on Windows without Windows Subsystem for Linux>`
   - :ref:`install the packages listed in the requirements file<how to install Python packages in a virtual environment on Windows without WSL>`
   - :ref:`run the tests automatically<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
-  - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal_ on Windows without WSL>`
+  - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal on Windows without WSL>`
   - make the test pass
 
 ----

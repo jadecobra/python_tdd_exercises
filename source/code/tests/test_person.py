@@ -4,8 +4,8 @@ import src.person
 import unittest
 
 
-def choose(*iterable):
-    return random.choice(iterable)
+def choose(*choices):
+    return random.choice(choices)
 
 
 def this_year():
