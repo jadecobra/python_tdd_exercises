@@ -35,9 +35,6 @@ text_sectionchars = '#*=-~"+`'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-# html_theme = 'furo'
-# pygments_style = "tango"
-# pygments_dark_style = "monokai" # for furo
 html_theme = "sphinxawesome_theme"
 html_permalinks_icon = sphinxawesome_theme.postprocess.Icons.permalinks_icon
 html_theme_options = {
@@ -50,7 +47,7 @@ html_sidebars = {
 }
 
 # syntax highlighting
-pygments_style = "tango"
+pygments_style = "monokai"
 pygments_style_dark = "monokai"
 
 html_extra_path = ['robots.txt', 'llms.txt']

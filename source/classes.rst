@@ -388,43 +388,51 @@ test_classy_person_introduction
 
 I can also do this with a class_
 
-* I add a new test to ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 12-17
-
-            for person in (joe, jane, john):
-                with self.subTest(name=person.get('first_name')):
-                    self.assertEqual(
-                        src.person.introduce(person),
-                        (
-                            f'Hello, my name is {person.get("first_name")} '
-                            f'{person.get("last_name")} '
-                            f'and I am {person.get("age")}'
-                        )
-                    )
-
-        def test_classy_person_introduction(self):
-            joe = src.person.Person(
-                first_name='joe',
-                last_name='blow',
-                year_of_birth=1996,
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src.person' has no attribute 'Person'
-
 ----
 
 =================================================================================
 :red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a new test to ``test_person.py``
+
+.. code-block:: python
+  :lineno-start: 83
+  :emphasize-lines: 12-17
+
+          for person in (joe, jane, john):
+              with self.subTest(name=person.get('first_name')):
+                  self.assertEqual(
+                      src.person.introduce(person),
+                      (
+                          f'Hello, my name is {person.get("first_name")} '
+                          f'{person.get("last_name")} '
+                          f'and I am {person.get("age")}'
+                      )
+                  )
+
+      def test_classy_person_introduction(self):
+          joe = src.person.Person(
+              first_name='joe',
+              last_name='blow',
+              year_of_birth=1996,
+          )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.person' has no attribute 'Person'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
 =================================================================================
 
 ----
@@ -524,6 +532,102 @@ I can also do this with a class_
 * I add ``year_of_birth`` to the definition
 
   .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3-6
+
+    class Person:
+
+        def __init__(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            return
+
+  the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add another person to ``test_classy_person_introduction``
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 7-11
+
+        def test_classy_person_introduction(self):
+            joe = src.person.Person(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+            jane = src.person.Person(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() got an unexpected keyword argument 'sex'
+
+* I add ``sex`` to the ``__init__`` :ref:`method<functions>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 3
+
+        def __init__(
+                self, first_name, last_name,
+                year_of_birth, sex,
+            ):
+            return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() missing 1 required positional argument: 'sex'
+
+  I did not provide ``sex`` when I made ``joe`` I want it to have a default value
+
+* I add the next person
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 3
+
+        def __init__(
+                self, first_name, last_name,
+                year_of_birth, sex=None,
+            ):
+            return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() missing 1 required positional argument: 'last_name'
+
+* I give ``last_name`` a default value
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 2
+
+        def __init__(
+                self, first_name, last_name=None,
+                year_of_birth, sex=None,
+            ):
+            return None
+
+  the terminal_ shows SyntaxError_
 
 ----
 
@@ -542,13 +646,7 @@ I add another test to ``TestClasses`` in ``test_classes.py`` to show another way
 
 the terminal_ shows :ref:`AttributeError`
 
-----
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
 
 
 * I add a class definition like ``ClassWithPass`` to ``classes.py``
