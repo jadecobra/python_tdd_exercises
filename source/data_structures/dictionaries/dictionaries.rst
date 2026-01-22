@@ -801,7 +801,7 @@ test_attributes_and_methods_of_dictionaries
 
 ----
 
-I add a new test with the `dir built-in function`_ to see the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of dictionaries_
+I add a new test with the `dir built-in function`_ to see the :ref:`attributes<what causes AttributeError?>` and :ref:`methods<what is a function?>` of dictionaries_
 
 .. code-block:: python
   :lineno-start: 41

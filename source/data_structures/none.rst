@@ -1862,7 +1862,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: {} is not None
 
-wait a minute! Python_ uses ``{}`` for sets_. it also uses them for :ref:`dictionaries` with a difference.
+wait a minute! Python_ uses ``{}`` for sets_. It also uses them for :ref:`dictionaries` with a difference.
 
 ----
 
@@ -1957,7 +1957,11 @@ the test passes
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
-  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right, I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas. sets_ do NOT have key-value pairs.
+  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
+
+  I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas.
+
+  sets_ do NOT have key-value pairs.
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -2061,7 +2065,7 @@ close the project
 review
 *********************************************************************************
 
-I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were say_hellod in :ref:`AssertionError<what causes AssertionError?>`
+I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were in :ref:`AssertionError<what causes AssertionError?>`
 
 * assertIsNone_ - which tests if the thing in parentheses is None_
 * assertIsNotNone_ - which tests if the thing in parentheses is not None_

@@ -1,6 +1,9 @@
 .. include:: links.rst
 
 .. _class: https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
+.. _classes: class_
+.. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
+.. _constructor method: constructor_
 
 .. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
 
@@ -16,7 +19,7 @@ how to make a class in Python
 
 * use the class_ keyword
 * use :ref:`CapWords format<CapWords>` for the name
-* use a name that tells what the group of :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` do - naming things is its own challenge
+* use a name that tells what the group of :ref:`attributes<what causes AttributeError?>` and :ref:`methods<what is a function?>` do - naming things is its own challenge
 
 ----
 
@@ -26,7 +29,7 @@ preview
 
 Here are the tests I have by the end of the chapter
 
-.. literalinclude:: code/tests/test_classes.py
+.. literalinclude:: code/tests/test_person_classes.py
   :language: python
   :linenos:
 
@@ -106,18 +109,427 @@ open the project
 test_factory_person_introduction
 *********************************************************************************
 
+I have a :ref:`function<what is a function?>` that takes in first name, last name, sex and year of birth for a person and returns a :ref:`dictionary<what is a dictionary?>` with the first name, last name, sex and age based on the year of birth.
+
+What if I want the person to send a message about themselves. How would I do that? I can write a :ref:`function<what is a function?>` that takes in a person and returns a message
+
+* I add a new test where I make a person
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 9-14
 
 
+                dict(
+                    first_name=self.first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=this_year()-self.year_of_birth,
+                )
+            )
 
-*********************************************************************************
-test_classy_person_introduction
-*********************************************************************************
+        def test_factory_person_introduction(self):
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+
+
+    # Exceptions seen
+
+* I add another person
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 7-11
+
+        def test_factory_person_introduction(self):
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+            jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
+
+
+    # Exceptions
+
+* I add one more person
+
+  .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 6-10
+
+            jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+
+
+    # Exceptions seen
 
 ----
 
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
+
+I add a `for loop`_
+
+.. code-block:: python
+  :lineno-start: 66
+  :emphasize-lines: 7-12
+
+          john = src.person.factory(
+              first_name='john',
+              last_name='smith',
+              year_of_birth=1580,
+          )
+
+          for person in (joe, jane, john):
+              with self.subTest(name=person.get('first_name')):
+                  self.assertEqual(
+                      src.person.introduce(person),
+                      None
+                  )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for each one of the people
+
+.. code-block:: python
+
+  AttributeError: module 'src.person' has no attribute 'introduce'
+
+``person.py`` does not have a :ref:`function<what is a function?>` named ``introduce``
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I open ``person.py`` in the :ref:`editor<2 editors>`
+* I add the :ref:`function<what is a function?>` to ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 13-14
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.today().year - year_of_birth,
+        }
+
+
+    def introduce():
+        return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: introduce() takes 0 positional arguments but 1 was given
+
+* I add a name to the definition
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 1
+
+    def introduce(person):
+        return None
+
+  the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+I want the ``introduce`` :ref:`function<what is a function?>` to return a message introducing the person I give as input
+
+* I change the expectation in ``test_factory_person_introduction`` in ``test_person.py`` with an `f-string`_ like I did in :ref:`how to pass values`
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 6-8
+
+            for person in (joe, jane, john):
+                with self.subTest(name=person.get('first_name')):
+                    self.assertEqual(
+                        src.person.introduce(person),
+                        (
+                            f'Hello, my name is {person.get("first_name")} '
+                            f'{person.get("last_name")} '
+                            f'and I am {person.get("age")}'
+                        )
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != 'Hello, my name is john smith and I am 446'
+
+* I copy the value from the terminal_ and paste it in the `return statement`_ in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2
+
+    def introduce(person):
+        return 'Hello, my name is john smith and I am 446'
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 4
+
+    E               - Hello, my name is john smith and I am 446
+    E               ?                     ^^^^^^^^          ^^^
+    E               + Hello, my name is jane doe and I am 35
+    E               ?                    +++++ ^          ^^
+
+  the first name, last name and ages are different
+
+* I change the string_ to an `f-string`_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2
+
+    def introduce(person):
+        return f'Hello, my name is {person.get("first_name")} smith and I am 446'
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 4
+
+    E               - Hello, my name is jane smith and I am 446
+    E               ?                        ^^^^^          ^^^
+    E               + Hello, my name is jane doe and I am 35
+    E               ?                        ^^^          ^^
+
+  the first name is the same, the last name and ages are different
+
+* I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2-5
+
+    def introduce(person):
+        return (
+            f'Hello, my name is {person.get("first_name")} '
+            f'{person.get("last_name")} and I am 446'
+        )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+    :emphasize-lines:  2, 4
+
+    E               - Hello, my name is jane doe and I am 446
+    E               ?                                     ^^^
+    E               + Hello, my name is jane doe and I am 35
+    E               ?                                     ^^
+
+  the age is the only thing that is different
+
+* I add the age to the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 5
+
+    def introduce(person):
+        return (
+            f'Hello, my name is {person.get("first_name")} '
+            f'{person.get("last_name")} '
+            f'and I am {person.get("age")}'
+        )
+
+  the test passes
+
+The solution works but needs different :ref:`functions<what is a function?>`, one to make the person and another to make the introduction.
+
+----
+
+*********************************************************************************
+test_classy_person_introduction
+*********************************************************************************
+
+I can also do this with a class_
+
+* I add a new test to ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 12-17
+
+            for person in (joe, jane, john):
+                with self.subTest(name=person.get('first_name')):
+                    self.assertEqual(
+                        src.person.introduce(person),
+                        (
+                            f'Hello, my name is {person.get("first_name")} '
+                            f'{person.get("last_name")} '
+                            f'and I am {person.get("age")}'
+                        )
+                    )
+
+        def test_classy_person_introduction(self):
+            joe = src.person.Person(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.person' has no attribute 'Person'
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a class_ in ``person.py`` using the ``factory`` :ref:`function<what is a function?>` as my starting point
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 9, 11
+
+    def introduce(person):
+        return (
+            f'Hello, my name is {person.get("first_name")} '
+            f'{person.get("last_name")} '
+            f'and I am {person.get("age")}'
+        )
+
+
+    class Person:
+
+        pass
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person() takes no arguments
+
+* classes_ have a `constructor method`_ that is used to make copies of the class_. I add it
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3-4
+
+    class Person:
+
+        def __init__():
+            return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() got an unexpected keyword argument 'first_name'
+
+* I add the name
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3
+
+    class Person:
+
+        def __init__(first_name):
+            return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() got multiple values for argument 'first_name'
+
+* The ``__init__`` :ref:`method<what is a function?>` takes the class_ as the first argument. I add ``self`` like I do with the tests in the book
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3
+
+    class Person:
+
+        def __init__(self, first_name):
+            return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError: Person.__init__() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
+
+  I have seen this before, so far it is the same as the process of making the ``factory`` :ref:`function<what is a function?>`
+
+* I add ``last_name``
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 1
+
+        def __init__(self, first_name, last_name):
+            return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() got an unexpected keyword argument 'year_of_birth'
+
+* I add ``year_of_birth`` to the definition
+
+  .. code-block:: python
+
+----
+
+----
+
+----
 
 ----
 
@@ -539,9 +951,9 @@ I make ``classes.py`` to make the tests pass by defining the class, attribute an
 test_attributes_and_methods_of_objects
 *********************************************************************************
 
-To view what :ref:`attributes<AttributeError>` and ``methods`` are defined for any :ref:`object<what is a class?>` I can call dir_ on the :ref:`object<what is a class?>`.
+To view what :ref:`attributes<what causes AttributeError?>` and :ref:`methods<what is a function?>` are defined for any :ref:`object<what is a class?>` I can call dir_ on the :ref:`object<what is a class?>`.
 
-The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of the object provided to it as input
+The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attributes<what causes AttributeError?>` and :ref:`methods<what is a function?>` of the object provided to it as input
 
 ----
 
@@ -888,7 +1300,7 @@ the tests show
 * how to define a class with an attribute
 * how to define a class with a :ref:`method<what is a function?>`
 * how to define a class with an initializer
-* how to view the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of a class
+* how to view the :ref:`attributes<what causes AttributeError?>` and :ref:`methods<what is a function?>` of a class
 * classes can be defined
 
   - with parentheses stating what :ref:`object<what is a class?>` the class inherits from

@@ -2413,7 +2413,7 @@ I want to write the solution without looking at the tests
             'age': 55,
         }
 
-  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. ATTENTION:: Some of your values will be different because the test uses random values
 
@@ -2441,7 +2441,7 @@ I want to write the solution without looking at the tests
             'age': 55,
         }
 
-  the first name matches and when the ages are different, the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+  the first name matches and when the ages are different, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 

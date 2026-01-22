@@ -328,7 +328,7 @@ test_attributes_and_methods_of_lists
 how to see the attributes and methods of an object
 =================================================================================
 
-I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` of :ref:`objects<what is a class?>`, it is part of `Python's Built-in Functions`_
+I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<what causes AttributeError?>` and :ref:`methods<what is a function?>` of :ref:`objects<what is a class?>`, it is part of `Python's Built-in Functions`_
 
 ----
 
