@@ -1,4 +1,4 @@
 sphinx
 sphinx-sitemap
 sphinx-notfound-page
-sphinxawesome-theme
+sphinxawesome-theme==5.3.2 # 6.0 breaks light mode

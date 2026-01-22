@@ -202,7 +202,7 @@ I add a `for loop`_
           for person in (joe, jane, john):
               with self.subTest(name=person.get('first_name')):
                   self.assertEqual(
-                      src.person.introduce(person),
+                      src.person.hello(person),
                       None
                   )
 
@@ -213,9 +213,9 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for each 
 
 .. code-block:: python
 
-  AttributeError: module 'src.person' has no attribute 'introduce'
+  AttributeError: module 'src.person' has no attribute 'hello'
 
-``person.py`` does not have a :ref:`function<what is a function?>` named ``introduce``
+``person.py`` does not have a :ref:`function<what is a function?>` named ``hello``
 
 ----
 
@@ -244,14 +244,14 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for each 
         }
 
 
-    def introduce():
+    def hello():
         return None
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: introduce() takes 0 positional arguments but 1 was given
+    TypeError: hello() takes 0 positional arguments but 1 was given
 
 * I add a name to the definition
 
@@ -259,7 +259,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for each 
     :lineno-start: 16
     :emphasize-lines: 1
 
-    def introduce(person):
+    def hello(person):
         return None
 
   the test passes
@@ -272,7 +272,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for each 
 
 ----
 
-I want the ``introduce`` :ref:`function<what is a function?>` to return a message introducing the person I give as input
+I want the ``hello`` :ref:`function<what is a function?>` to return a message introducing the person I give as input
 
 * I change the expectation in ``test_factory_person_introduction`` in ``test_person.py`` with an `f-string`_ like I did in :ref:`how to pass values`
 
@@ -283,7 +283,7 @@ I want the ``introduce`` :ref:`function<what is a function?>` to return a messag
             for person in (joe, jane, john):
                 with self.subTest(name=person.get('first_name')):
                     self.assertEqual(
-                        src.person.introduce(person),
+                        src.person.hello(person),
                         (
                             f'Hello, my name is {person.get("first_name")} '
                             f'{person.get("last_name")} '
@@ -303,7 +303,7 @@ I want the ``introduce`` :ref:`function<what is a function?>` to return a messag
     :lineno-start: 16
     :emphasize-lines: 2
 
-    def introduce(person):
+    def hello(person):
         return 'Hello, my name is john smith and I am 446'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -324,7 +324,7 @@ I want the ``introduce`` :ref:`function<what is a function?>` to return a messag
     :lineno-start: 16
     :emphasize-lines: 2
 
-    def introduce(person):
+    def hello(person):
         return f'Hello, my name is {person.get("first_name")} smith and I am 446'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -345,7 +345,7 @@ I want the ``introduce`` :ref:`function<what is a function?>` to return a messag
     :lineno-start: 16
     :emphasize-lines: 2-5
 
-    def introduce(person):
+    def hello(person):
         return (
             f'Hello, my name is {person.get("first_name")} '
             f'{person.get("last_name")} and I am 446'
@@ -369,7 +369,7 @@ I want the ``introduce`` :ref:`function<what is a function?>` to return a messag
     :lineno-start: 16
     :emphasize-lines: 5
 
-    def introduce(person):
+    def hello(person):
         return (
             f'Hello, my name is {person.get("first_name")} '
             f'{person.get("last_name")} '
@@ -405,7 +405,7 @@ I add a new test to ``test_person.py``
           for person in (joe, jane, john):
               with self.subTest(name=person.get('first_name')):
                   self.assertEqual(
-                      src.person.introduce(person),
+                      src.person.hello(person),
                       (
                           f'Hello, my name is {person.get("first_name")} '
                           f'{person.get("last_name")} '
@@ -443,7 +443,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
     :lineno-start: 16
     :emphasize-lines: 9, 11
 
-    def introduce(person):
+    def hello(person):
         return (
             f'Hello, my name is {person.get("first_name")} '
             f'{person.get("last_name")} '

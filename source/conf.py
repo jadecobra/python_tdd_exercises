@@ -7,8 +7,11 @@ author = 'Jacob Itegboje'
 
 rst_prolog = """
 .. role:: red
+   :class: custom-red
 .. role:: green
+   :class: custom-green
 .. role:: yellow
+   :class: custom-yellow
 """
 master_doc = 'index'
 
@@ -47,7 +50,8 @@ html_sidebars = {
 }
 
 # syntax highlighting
-pygments_style = "monokai"
+# pygments_style = "default"
+pygments_style = "default"
 pygments_style_dark = "monokai"
 
 html_extra_path = ['robots.txt', 'llms.txt']
