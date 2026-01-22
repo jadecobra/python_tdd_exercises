@@ -1,5 +1,5 @@
 .. meta::
-  :description: Learn to build a Python person dictionary with a factory function using TDD. This tutorial covers :ref:`keyword argument<test_functions_w_keyword_arguments>`s, default values, and exception handling.
+  :description: Learn to build a Python person dictionary with a factory function using TDD. This tutorial covers keyword arguments, default values, and exception handling.
   :keywords: Jacob Itegboje, python dictionary from function, python factory function tutorial, python tdd with pytest, create person object in python, python function with default :ref:`keyword argument<test_functions_w_keyword_arguments>`s, python test driven development example, handling exceptions in python unit tests, python dictionary with random values
 
 .. include:: ../links.rst
