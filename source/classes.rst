@@ -8,7 +8,7 @@
 what is a class?
 #################################################################################
 
-``classes`` are definitions that represent an object. I think of them as :ref:`attributes<AttributeError>` and :ref:`methods (functions) <what is a function?>` that belong together
+``classes`` are definitions for something. I think of them as :ref:`attributes (variables)<AttributeError>` and :ref:`methods (functions) <what is a function?>` that belong together
 
 *********************************************************************************
 how to make a class in Python
@@ -16,7 +16,7 @@ how to make a class in Python
 
 * use the class_ keyword
 * use :ref:`CapWords format<CapWords>` for the name
-* use a name that tells what the collection of :ref:`attributes<AttributeError>` and :ref:`methods (functions) <what is a function?>` does - naming things is its own challenge
+* use a name that tells what the group of :ref:`attributes<AttributeError>` and :ref:`methods<what is a function?>` do - naming things is its own challenge
 
 ----
 
@@ -106,52 +106,7 @@ open the project
 test_factory_person_introduction
 *********************************************************************************
 
-----
 
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-
-* Python_ has the pass_ keyword to use as a placeholder for moments like this cue `Kelly Clarkson <https://youtu.be/S7b8ADhadJU?si=TxScdecOYlsxB5uW>`_
-
-  .. code-block:: python
-
-    class ClassWithPass:
-
-        pass
-
-  the test passes
-
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-Here is a quick review of what has happened so far
-
-* pass_ is a placeholder
-* ``self.assertIsInstance`` is a `unittest.TestCase`_ :ref:`method<what is a function?>` that checks if the first input to the :ref:`method<what is a function?>` is a child of the second input
-* the test ``self.assertIsInstance(classes.ClassWithPass(), object)`` checks if ``ClassWithPass`` is an :ref:`object<what is a class?>`
-* in Python_ everything is an :ref:`object<what is a class?>` , which means if it is in Python_ there is a class definition for it somewhere or it inherits from a class
-
-----
 
 
 *********************************************************************************
