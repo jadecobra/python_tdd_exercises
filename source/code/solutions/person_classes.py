@@ -19,7 +19,7 @@ def factory(
 
 def say_hello(person):
     return (
-        f'Hello, my name is {person.get("first_name")} '
+        f'Hi, my name is {person.get("first_name")} '
         f'{person.get("last_name")} '
         f'and I am {person.get("age")}'
     )
@@ -50,7 +50,7 @@ class Person(object):
 
     def say_hello(self):
         return (
-            f'Hello, my name is {self.random_first_name} '
+            f'Hi, my name is {self.random_first_name} '
             f'{self.last_name} '
             f'and I am {self.get_age()}'
         )

@@ -67,21 +67,21 @@ class TestPerson(unittest.TestCase):
             )
         )
 
-    def test_factory_person_hello(self):
+    def test_factory_person_greeting(self):
         self.assertEqual(
             src.person.say_hello(self.random_factory_person),
             (
-                f'Hello, my name is {self.random_first_name} '
+                f'Hi, my name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
         )
 
-    def test_classy_person_hello(self):
+    def test_classy_person_greeting(self):
         self.assertEqual(
             self.random_classy_person.say_hello(),
             (
-                f'Hello, my name is {self.random_first_name} '
+                f'Hi, my name is {self.random_first_name} '
                 f'{self.random_last_name} '
                 f'and I am {self.original_age}'
             )
