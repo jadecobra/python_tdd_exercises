@@ -1272,7 +1272,604 @@ the test passes
 
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
+  .. code-block:: python
 
+    AttributeError: module 'src.person' has no attribute 'update_year_of_birth'
+
+* I add the :ref:`function<what is a function?>` to ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 9-10
+
+    def hello(person):
+        return (
+            f'Hello, my name is {person.get("first_name")} '
+            f'{person.get("last_name")} '
+            f'and I am {person.get("age")}'
+        )
+
+
+    def update_year_of_birth():
+        return None
+
+
+    class Person:
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: update_year_of_birth() takes 0 positional arguments but 2 were given
+
+* I add the two names in parentheses
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 1
+
+    def update_year_of_birth(person, new_year_of_birth):
+        return None
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != {'first_name': 'john', 'last_name': 'smith', 'sex': 'M', 'age': 46}
+
+* I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-7
+
+    def update_year_of_birth(person, new_year_of_birth):
+        return factory(
+            first_name=person.get('first_name'),
+            last_name=person.get('last_name'),
+            sex=person.get('sex'),
+            year_of_birth=new_year_of_birth
+        )
+
+
+    class Person:
+
+  the test passes
+
+* time to remove some duplication. I add a :ref:`variable<what is a variable?>` for the original year of birth in ``test_update_factory_person_year_of_birth`` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 2
+
+        def test_update_factory_person_year_of_birth(self):
+            original_year_of_birth = 1580
+            person = src.person.factory(
+
+  the test is still green
+
+* I use the :ref:`variable<what is a variable?>` in the call to ``src.person.factory``
+
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 5-6
+
+            original_year_of_birth = 1580
+            person = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                # year_of_birth=1580,
+                year_of_birth=original_year_of_birth,
+            )
+
+  still green
+
+* I use the :ref:`variable<what is a variable?>` in the first :ref:`assertion<what is an assertion?>` for the age
+
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 7-11
+
+            person = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                # year_of_birth=1580,
+                year_of_birth=original_year_of_birth,
+            )
+            # self.assertEqual(person.get('age'), 446)
+            self.assertEqual(
+                person.get('age'),
+                this_year()-original_year_of_birth
+            )
+
+            with self.assertRaises(KeyError):
+
+  green
+
+* I use the :ref:`variable<what is a variable?>` in the second :ref:`assertion<what is an assertion?>` for the age
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 5-9
+
+            self.assertEqual(
+                person.setdefault('year_of_birth', 1980),
+                1980
+            )
+            # self.assertEqual(person.get('age'), 446)
+            self.assertEqual(
+                person.get('age'),
+                this_year()-original_year_of_birth
+            )
+
+            self.assertEqual(
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 111
+
+        def test_update_factory_person_year_of_birth(self):
+            original_year_of_birth = 1580
+            person = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=original_year_of_birth,
+            )
+            self.assertEqual(
+                person.get('age'),
+                this_year()-original_year_of_birth
+            )
+
+            with self.assertRaises(KeyError):
+                person['year_of_birth']
+            self.assertEqual(
+                person.setdefault('year_of_birth', 1980),
+                1980
+            )
+            self.assertEqual(
+                person.get('age'),
+                this_year()-original_year_of_birth
+            )
+
+            self.assertEqual(
+                src.person.update_year_of_birth(person, 1980),
+                dict(
+                    first_name=person.get('first_name'),
+                    last_name=person.get('last_name'),
+                    sex=person.get('sex'),
+                    age=this_year()-1980,
+                )
+            )
+
+
+    # Exceptions seen
+
+  the test is still green
+
+* I add a :ref:`variable<what is a variable?>` for the new year of birth
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3
+
+        def test_update_factory_person_year_of_birth(self):
+            original_year_of_birth = 1580
+            new_year_of_birth = 1980
+
+            person = src.person.factory(
+
+  still green
+
+* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
+
+  .. code-block:: python
+    :lineno-start: 125
+    :emphasize-lines: 4-7
+
+              with self.assertRaises(KeyError):
+                  person['year_of_birth']
+              self.assertEqual(
+                  # person.setdefault('year_of_birth', 1980),
+                  person.setdefault('year_of_birth', new_year_of_birth),
+                  # 1980
+                  new_year_of_birth
+              )
+              self.assertEqual(
+
+  the test is still green
+
+* I use the :ref:`variable<what is a variable?>`  in the last :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 138
+    :emphasize-lines: 2-6, 11-12
+
+            self.assertEqual(
+                # src.person.update_year_of_birth(person, 1980),
+                src.person.update_year_of_birth(
+                    person,
+                    new_year_of_birth
+                ),
+                dict(
+                    first_name=person.get('first_name'),
+                    last_name=person.get('last_name'),
+                    sex=person.get('sex'),
+                    # age=this_year()-1980,
+                    age=this_year()-new_year_of_birth,
+                )
+            )
+
+
+    # Exceptions seen
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 111
+
+        def test_update_factory_person_year_of_birth(self):
+            original_year_of_birth = 1580
+            new_year_of_birth = 1980
+
+            person = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=original_year_of_birth,
+            )
+            self.assertEqual(
+                person.get('age'),
+                this_year()-original_year_of_birth
+            )
+
+            with self.assertRaises(KeyError):
+                person['year_of_birth']
+            self.assertEqual(
+                person.setdefault('year_of_birth', new_year_of_birth),
+                new_year_of_birth
+            )
+            self.assertEqual(
+                person.get('age'),
+                this_year()-original_year_of_birth
+            )
+
+            self.assertEqual(
+                src.person.update_year_of_birth(
+                    person,
+                    new_year_of_birth
+                ),
+                dict(
+                    first_name=person.get('first_name'),
+                    last_name=person.get('last_name'),
+                    sex=person.get('sex'),
+                    age=this_year()-new_year_of_birth,
+                )
+            )
+
+
+    # Exceptions seen
+
+  green
+
+* I add a :ref:`variable<what is a variable?>` for the original age calculation
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3
+
+        def test_update_factory_person_year_of_birth(self):
+            original_year_of_birth = 1580
+            original_age = this_year() - original_year_of_birth
+            new_year_of_birth = 1980
+
+* I use the :ref:`variable<what is a variable?>` in the first :ref:`assertion<what is an assertion?>` for the age
+
+  .. code-block:: python
+    :lineno-start: 121
+
+            self.assertEqual(
+                person.get('age'),
+                # this_year()-original_year_of_birth
+                original_age
+            )
+
+  the test is still green
+
+* I use the :ref:`variable<what is a variable?>` in the second :ref:`assertion<what is an assertion?>` for the age
+
+  .. code-block:: python
+    :lineno-start: 133
+
+            self.assertEqual(
+                person.get('age'),
+                # this_year()-original_year_of_birth
+                original_age
+            )
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 111
+
+        def test_update_factory_person_year_of_birth(self):
+            original_year_of_birth = 1580
+            original_age = this_year() - original_year_of_birth
+            new_year_of_birth = 1980
+
+            person = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=original_year_of_birth,
+            )
+            self.assertEqual(
+                person.get('age'),
+                original_age
+            )
+
+            with self.assertRaises(KeyError):
+                person['year_of_birth']
+            self.assertEqual(
+                person.setdefault('year_of_birth', new_year_of_birth),
+                new_year_of_birth
+            )
+            self.assertEqual(
+                person.get('age'),
+                original_age
+            )
+
+            self.assertEqual(
+                src.person.update_year_of_birth(
+                    person,
+                    new_year_of_birth
+                ),
+                dict(
+                    first_name=person.get('first_name'),
+                    last_name=person.get('last_name'),
+                    sex=person.get('sex'),
+                    age=this_year()-new_year_of_birth,
+                )
+            )
+
+
+    # Exceptions seen
+
+I had to make a new person with the same first name, last name, sex and the new year of birth to change the year of birth. How would I do this with a class_?
+
+----
+
+*********************************************************************************
+test_update_classy_person_year_of_birth
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a new test
+
+  .. code-block:: python
+    :lineno-start: 142
+    :emphasize-lines: 9-14
+
+                dict(
+                    first_name=person.get('first_name'),
+                    last_name=person.get('last_name'),
+                    sex=person.get('sex'),
+                    age=this_year()-new_year_of_birth,
+                )
+            )
+
+        def test_update_classy_person_year_of_birth(self):
+            person = src.person.Person(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+
+
+    # Exceptions seen
+
+* I add an :ref:`assertion<what is an assertion?>` for the age
+
+  .. code-block:: python
+    :lineno-start: 150
+    :emphasize-lines: 7
+
+        def test_update_classy_person_year_of_birth(self):
+            person = src.person.Person(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+            self.assertEqual(person.get_age(), 0)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != 0
+
+  the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is None?>`. I want it to return the difference between this year and the year of birth
+
+* I add a calculation to the ``get_age`` :ref:`method<what is a function?>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 3
+
+        @staticmethod
+        def get_age():
+            return this_year() - self.year_of_birth
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'this_year' is not defined
+
+* I add the :ref:`function<what is a function?>` at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    import datetime
+
+
+    def this_year():
+        return datetime.datetime.today().year
+
+
+    def factory(
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+* I add ``self`` to the definition of the ``get_age`` :ref:`method<what is a function?>` parentheses
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 2
+
+    @staticmethod
+    def get_age(self):
+        return this_year() - self.year_of_birth
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.get_age() missing 1 required positional argument: 'self'
+
+* I remove the `staticmethod decorator`_ from the ``get_age`` :ref:`method<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 47
+
+        def hello(self):
+            return (
+                f'Hello, my name is {self.first_name} '
+                f'{self.last_name} and I am None'
+            )
+
+        def get_age(self):
+            return this_year() - self.year_of_birth
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Person' object has no attribute 'year_of_birth'
+
+* I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` to the ``__init__`` :ref:`method<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 7
+
+        def __init__(
+                self, first_name, last_name=None,
+                year_of_birth=None, sex=None,
+            ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            return None
+
+        def hello(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 446 != 0
+
+* I change the expectation in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 156
+    :emphasize-lines: 1
+
+            self.assertEqual(person.get_age(), 446)
+
+  the terminal_ shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 4
+
+    E               - Hello, my name is john smith and I am None
+    E               ?                                       ^^^^
+    E               + Hello, my name is john smith and I am 446
+    E               ?                                       ^^^
+
+* I add a call to the ``get_age`` :ref:`method<what is a function?>` in the ``hello`` :ref:`method<what is a function?>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 4
+
+        def hello(self):
+            return (
+                f'Hello, my name is {self.first_name} '
+                f'{self.last_name} and I am {self.get_age()}'
+            )
+
+  the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I can change the value of a :ref:`class attribute<test_attribute_error_w_class_attributes>` after the object_ has been made, kind of like I did in :ref:`test_setting_items_in_a_list`. I add a statement to ``test_update_classy_person_year_of_birth`` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 156
+    :emphasize-lines: 3
+
+            self.assertEqual(person.get_age(), 446)
+
+            person.year_of_birth = 1980
+
+
+    # Exceptions seen
+
+* I add another :ref:`assertion<what is an assertion?>` for the age calculation
+
+  .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 2
+
+            person.year_of_birth = 1980
+            self.assertEqual(person.get_age(), 446)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 46 != 446
+
+* I change the 
+
+----
 
 ----
 
