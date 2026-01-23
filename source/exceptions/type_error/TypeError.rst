@@ -991,7 +991,7 @@ I have to call a :ref:`function<what is a function?>` with the same number of in
 test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
-Some operations do not work if the objects_ are NOT the same type_
+Some operations do not work if the :ref:`objects<what is a class?>` are NOT the same type_
 
 ----
 

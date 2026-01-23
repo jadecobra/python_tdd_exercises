@@ -67,7 +67,7 @@ class TestPerson(unittest.TestCase):
             )
         )
 
-    def test_factory_person_introduction(self):
+    def test_factory_person_hello(self):
         self.assertEqual(
             src.person.say_hello(self.random_factory_person),
             (
@@ -77,7 +77,7 @@ class TestPerson(unittest.TestCase):
             )
         )
 
-    def test_classy_person_introduction(self):
+    def test_classy_person_hello(self):
         self.assertEqual(
             self.random_classy_person.say_hello(),
             (

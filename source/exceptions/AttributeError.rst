@@ -1,6 +1,6 @@
 .. meta::
   :description: Getting an AttributeError in Python? Learn to fix the common 'NoneType' object and other attribute errors with our step-by-step guide and video tutorial.
-  :keywords: Jacob Itegboje, python attributeerror 'NoneType' object has no attribute, how to fix attributeerror in python, python 'int' object has no attribute 'append', python attributeerror 'str' object has no attribute, AttributeError: 'list' object has no attribute 'add', python check if attribute exists before access, python debug AttributeError in class, python common causes of AttributeError, AttributeError vs TypeError in Python
+  :keywords: Jacob Itegboje, python AttributeError 'NoneType' object has no attribute, how to fix AttributeError in python, python 'int' object has no attribute 'append', python AttributeError 'str' object has no attribute, AttributeError: 'list' object has no attribute 'add', python check if attribute exists before access, python debug AttributeError in class, python common causes of AttributeError, AttributeError vs TypeError in Python
 
 .. include:: ../links.rst
 

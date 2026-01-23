@@ -16,9 +16,13 @@ The following are a few conventions to know in Python_
 names
 *********************************************************************************
 
+----
+
 =================================================================================
 CapWords
 =================================================================================
+
+----
 
 :ref:`class<what is a class?>` names in Python_ are written in the CapWords format, where the first letter of every word in the name is capitalized, for example
 
@@ -31,8 +35,40 @@ I can use any case I want but :ref:`CapWords` keeps things consistent
 ----
 
 =================================================================================
+how to use class methods and attributes
+=================================================================================
+
+----
+
+:ref:`class<what is a class?>` :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` can be used inside a :ref:`class<what is a class?>` with ``self``
+
+for example
+
+.. code-block:: python
+  :emphasize-text: self
+
+  class AClass(object):
+
+      an_attribute
+
+      def a_method(self):
+          return self.an_attribute
+
+      def another_method(self):
+          return self.a_method()
+
+* ``a_method`` can use the ``an_attribute`` :ref:`class attribute<test_attribute_error_w_class_attributes>` with ``self.an_attribute`` instead of ``AClass.an_attribute``
+* ``another_method`` can use the ``a_method`` :ref:`method<what is a function?>` with ``self.method`` instead of ``AClass.a_method()``
+
+.. NOTE:: ``self`` is Python_ convention, I can use any name I want
+
+----
+
+=================================================================================
 snake_case
 =================================================================================
+
+----
 
 :ref:`variables<what is a variable?>` and :ref:`function/method<what is a function?>` names are in lowercase with underscores in between when it is more than one word, for example
 
@@ -56,6 +92,8 @@ for more details see the :PEP:`Python Style Guide <8>`
 comments
 *********************************************************************************
 
+----
+
 Comments are made with a hashtag/pound before the thing that is commented for example
 
 .. code-block:: python
@@ -69,6 +107,8 @@ comments do not do anything, they are notes
 *********************************************************************************
 enclosures
 *********************************************************************************
+
+----
 
 Enclosures must be closed once open, which means they happen in pairs for example
 
@@ -106,6 +146,8 @@ The `Integrated Development Environment (IDE)`_ takes care of this, it automatic
 *********************************************************************************
 quotes
 *********************************************************************************
+
+----
 
 Quotes are for strings_ and can be
 
@@ -147,7 +189,10 @@ Quotes are for strings_ and can be
 tuples
 *********************************************************************************
 
-A tuple_ is a sequence or container of objects_ that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), for example
+----
+
+
+A tuple_ is a sequence or container of :ref:`objects<what is a class?>` that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), for example
 
 .. code-block:: python
 
@@ -163,7 +208,9 @@ A tuple_ is a sequence or container of objects_ that cannot be changed later, th
 lists
 *********************************************************************************
 
-A :ref:`list/array<lists>` is a sequence or container of objects_ that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
+----
+
+A :ref:`list/array<lists>` is a sequence or container of :ref:`objects<what is a class?>` that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
 
 .. code-block:: python
 
@@ -177,7 +224,9 @@ A :ref:`list/array<lists>` is a sequence or container of objects_ that can be ch
 sets
 *********************************************************************************
 
-A set_ is a container of objects_ that have no duplicates, and are represented with curly braces/brackets (``{}``), for example
+----
+
+A set_ is a container of :ref:`objects<what is a class?>` that have no duplicates, and are represented with curly braces/brackets (``{}``), for example
 
 .. code-block:: python
 
@@ -188,6 +237,8 @@ A set_ is a container of objects_ that have no duplicates, and are represented w
 *********************************************************************************
 dictionaries/mappings
 *********************************************************************************
+
+----
 
 :ref:`Dictionaries/Mappings<dictionaries>` are also represented with curly braces/brackets (``{}``) but have :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, for example
 

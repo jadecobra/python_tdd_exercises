@@ -325,7 +325,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   still green
 
-* I add a `static method`_ to calculate the difference between ``wake_time`` and ``sleep_time``
+* I add a `staticmethod decorator`_ to calculate the difference between ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 

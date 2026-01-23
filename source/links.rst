@@ -104,8 +104,6 @@
 .. _mv program: mv_
 .. _not: https://docs.python.org/3/reference/expressions.html#not
 .. _nots: not_
-.. _object: https://docs.python.org/3/glossary.html#term-object
-.. _objects: object_
 .. _or: https://docs.python.org/3/reference/expressions.html#or
 .. _pass: https://docs.python.org/3/tutorial/controlflow.html#pass-statements
 .. _plain text: https://grokipedia.com/page/Plain_text
@@ -146,7 +144,7 @@
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
 .. _source code: https://grokipedia.com/page/Source_code
 .. _see the source code for unittest here: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
-.. _static method: https://docs.python.org/3/library/functions.html#staticmethod
+.. _staticmethod decorator: https://docs.python.org/3/library/functions.html#staticmethod
 .. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str

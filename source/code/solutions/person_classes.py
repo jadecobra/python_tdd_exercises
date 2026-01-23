@@ -40,7 +40,7 @@ class Person(object):
         self, first_name, last_name='doe',
         sex='M', year_of_birth=this_year(),
     ):
-        self.first_name = first_name
+        self.random_first_name = first_name
         self.last_name = last_name
         self.random_year_of_birth = year_of_birth
         return None
@@ -50,7 +50,7 @@ class Person(object):
 
     def say_hello(self):
         return (
-            f'Hello, my name is {self.first_name} '
+            f'Hello, my name is {self.random_first_name} '
             f'{self.last_name} '
             f'and I am {self.get_age()}'
         )
