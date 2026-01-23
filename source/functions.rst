@@ -409,7 +409,7 @@ I can make a function_ with the pass_ keyword
 
     class TestFunctions(unittest.TestCase):
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -475,7 +475,7 @@ I add a new failing test in ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -558,7 +558,7 @@ I add another failing test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -642,7 +642,7 @@ I add a test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -724,7 +724,7 @@ I add a failing test in ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -860,7 +860,7 @@ I add a failing test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1022,7 +1022,7 @@ I add a new test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1274,7 +1274,7 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
                 ('first', 'last')
             )
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1416,7 +1416,7 @@ I add a failing test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1572,7 +1572,7 @@ I add a new test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 

@@ -162,7 +162,7 @@ requirements
         None
     )
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -862,7 +862,7 @@ I also saw the following :ref:`Exceptions<errors>`
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError`
+* :ref:`AttributeError<what causes AttributeError?>`
 
 Would you like to :ref:`test duration with hours and minutes? <how to measure sleep duration: test_duration_w_hours_and_minutes>`
 

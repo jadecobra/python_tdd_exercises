@@ -13,7 +13,7 @@
 what is a class?
 #################################################################################
 
-``classes`` are definitions for something. I think of them as :ref:`attributes (variables)<AttributeError>` and :ref:`methods (functions) <what is a function?>` that belong together
+``classes`` are definitions for something. I think of them as :ref:`attributes (variables)<AttributeError>` and :ref:`methods (functions) <what is a function?>` that belong together.
 
 *********************************************************************************
 how to make a class in Python

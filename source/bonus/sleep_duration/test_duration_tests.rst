@@ -26,7 +26,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 *********************************************************************************
 
 * I close ``test_sleep_duration.py``
-* then delete all the text in ``sleep_duration.py`` the terminal_ shows :ref:`AttributeError`
+* then delete all the text in ``sleep_duration.py`` the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -180,7 +180,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
             argument, '%Y/%m/%d %H:%M'
         )
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -535,7 +535,7 @@ review
 
 The challenge was to write a program_ that makes the tests in ``test_sleep_duration.py`` pass without looking at them. I wrote something that returns the difference between a given ``wake_time`` and ``sleep_time`` by following these :ref:`Exceptions<errors>` from the terminal_
 
-* :ref:`AttributeError`
+* :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`TypeError`
 * :ref:`AssertionError<what causes AssertionError?>`

@@ -216,7 +216,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
         def test_type_error_w_the_uncallables(self):
             src.type_error.none()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -224,7 +224,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
 
   there is nothing in ``type_error.py`` in the ``src`` folder_ yet
 
-* I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -303,7 +303,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
             src.type_error.none()
             src.type_error.false()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -356,7 +356,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
             src.type_error.false()
             src.type_error.true()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -408,7 +408,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
             src.type_error.true()
             src.type_error.an_integer()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -454,7 +454,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
             src.type_error.an_integer()
             src.type_error.a_float()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -504,7 +504,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
             src.type_error.a_float()
             src.type_error.a_string()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -554,7 +554,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
             src.type_error.a_string()
             src.type_error.a_tuple()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -604,7 +604,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
             src.type_error.a_tuple()
             src.type_error.a_list()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -654,7 +654,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
             src.type_error.a_list()
             src.type_error.a_set()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -714,7 +714,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -785,7 +785,7 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -850,7 +850,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
         src.type_error.function_00('a')
         src.type_error.function_01('a', 'b')
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -899,7 +899,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
             src.type_error.function_01('a', 'b')
             src.type_error.function_02('a', 'b', 'c')
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -947,7 +947,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
             src.type_error.function_02('a', 'b', 'c')
             src.type_error.function_03('a', 'b', 'c', 'd')
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 

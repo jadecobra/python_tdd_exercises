@@ -70,7 +70,7 @@ I change the :ref:`class<what is a class?>` and :ref:`method<what is a function?
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -118,7 +118,7 @@ I have not added a definition for ``logical_true`` to ``truth_table.py`` in the 
 
   the test passes
 
-* Adding the ``logical_true`` :ref:`function<what is a function?>` to ``truth_table.py`` solved the :ref:`AttributeError`
+* Adding the ``logical_true`` :ref:`function<what is a function?>` to ``truth_table.py`` solved the :ref:`AttributeError<what causes AttributeError?>`
 * ``logical_true`` always returns :ref:`True<test_what_is_true>`
 * ``logical_true`` does not take any input
 
@@ -145,7 +145,7 @@ I add another test in ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -187,7 +187,7 @@ I have not added a definition for ``logical_false`` to ``truth_table.py``, I onl
 
   the test passes
 
-* Adding the ``logical_true`` and ``logical_false``:ref:`function<what is a function?>` to ``truth_table.py`` solved the :ref:`AttributeError` in both cases
+* Adding the ``logical_true`` and ``logical_false``:ref:`function<what is a function?>` to ``truth_table.py`` solved the :ref:`AttributeError<what causes AttributeError?>` in both cases
 * ``logical_true`` always returns :ref:`True<test_what_is_true>`
 * ``logical_false`` always returns :ref:`False<test_what_is_false>`
 * both Nullary Operations do not take input
@@ -231,7 +231,7 @@ I add a new TestCase_ and a test for Unary Operations to ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -377,7 +377,7 @@ I add a new test to ``test_truth_table.py`` for ``logical_negation``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 

@@ -111,7 +111,7 @@ I add a test to the ``TestBinaryOperations`` :ref:`class<what is a class?>` in `
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -437,7 +437,7 @@ I add a new test to ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -885,7 +885,7 @@ I add a test for the next Binary Operation in ``test_truth_table.py`` with the f
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1010,7 +1010,7 @@ I add another test to ``test_truth_table.py`` with the first case, where the two
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 

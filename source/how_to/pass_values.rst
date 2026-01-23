@@ -383,7 +383,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     class TestTelephone(unittest.TestCase):
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1187,7 +1187,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 ----
 
 * I close ``test_telephone.py``
-* then delete all the text in ``telephone.py``, the terminal_ shows 9 failures, I start with the last :ref:`AttributeError`
+* then delete all the text in ``telephone.py``, the terminal_ shows 9 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1367,7 +1367,7 @@ I also saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError`
+* :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError`
 
 ----

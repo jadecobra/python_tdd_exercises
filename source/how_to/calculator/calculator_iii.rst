@@ -288,7 +288,7 @@ I ran tests to show that
 
   - :ref:`ModuleNotFoundError`
   - :ref:`NameError<test_catching_name_error_in_tests>`
-  - :ref:`AttributeError`
+  - :ref:`AttributeError<what causes AttributeError?>`
   - :ref:`TypeError`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`

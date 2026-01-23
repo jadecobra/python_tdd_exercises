@@ -394,7 +394,7 @@ test_addition
 
     class TestCalculator(unittest.TestCase):
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -402,7 +402,7 @@ test_addition
 
   I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file_ from the ``src`` `folder (directory)`_
 
-* I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -1225,7 +1225,7 @@ I add a test for subtraction in ``test_calculator.py``
 
   # TODO
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1558,7 +1558,7 @@ I add a failing test for multiplication in ``test_calculator.py``
 
   # TODO
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1641,7 +1641,7 @@ Time for division. I add a new test to ``test_calculator.py``
 
   # TODO
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1709,7 +1709,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 ----
 
 * I close ``test_calculator.py``
-* then delete all the text in ``calculator.py``, the terminal_ shows 4 failures, I start with the last :ref:`AttributeError`
+* then delete all the text in ``calculator.py``, the terminal_ shows 4 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1809,7 +1809,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def subtract(first_input, second_input):
         return first_input - second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1873,7 +1873,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def multiply(first_input, second_input):
         return first_input * second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1907,7 +1907,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def divide(first_input, second_input):
         return first_input / second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1989,7 +1989,7 @@ I also saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError`
+* :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 

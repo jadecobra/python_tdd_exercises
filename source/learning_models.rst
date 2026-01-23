@@ -57,7 +57,7 @@ An Infinite Learning Model
 
   .. literalinclude:: /code/tests/test_learning_models.py
 
-* the terminal_ shows :ref:`AttributeError`
+* the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 

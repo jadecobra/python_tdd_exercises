@@ -317,7 +317,7 @@ the test passes, showing that NameError_ is raised when I use a name that is not
 test_catching_attribute_error_in_tests
 *********************************************************************************
 
-:ref:`AttributeError` is raised when I try to call something that does NOT exist from something that does exist
+:ref:`AttributeError<what causes AttributeError?>` is raised when I try to call something that does NOT exist from something that does exist
 
 ----
 
@@ -327,7 +327,7 @@ test_catching_attribute_error_in_tests
 
 ----
 
-* I add another failing test, this time for :ref:`AttributeError`
+* I add another failing test, this time for :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -355,7 +355,7 @@ test_catching_attribute_error_in_tests
     import src.exceptions
     import unittest
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -369,7 +369,7 @@ test_catching_attribute_error_in_tests
 
   the failure happened because Python_ cannot find ``does_not_exist`` in ``exceptions.py`` in the ``src`` folder_. tried to get something that does NOT exist from something that exists
 
-* I add the :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
+* I add the :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 19
@@ -399,7 +399,7 @@ I add the `assertRaises method`_
           with self.assertRaises(AttributeError):
               src.exceptions.does_not_exist
 
-the test passes. :ref:`AttributeError` is raised when I try to call something that does NOT exist from something that does exist
+the test passes. :ref:`AttributeError<what causes AttributeError?>` is raised when I try to call something that does NOT exist from something that does exist
 
 ----
 
@@ -430,7 +430,7 @@ test_catching_type_error_in_tests
         def test_catching_type_error_in_tests(self):
             src.exceptions.function_name('the input')
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1236,7 +1236,7 @@ I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested t
 
 * :ref:`ModuleNotFoundError`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError`
+* :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError<test_key_error>`

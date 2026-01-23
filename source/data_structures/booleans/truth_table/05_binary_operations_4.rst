@@ -110,7 +110,7 @@ I add a new test for another Binary Operation to ``test_truth_table.py`` with th
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -296,7 +296,7 @@ I add a test for ``logical_nor`` in ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -524,7 +524,7 @@ I add a new test for the next Binary Operation in ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -871,7 +871,7 @@ I add a new test for one more Binary Operation in ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 

@@ -131,7 +131,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
         def test_catching_exceptions_w_messages(self):
             src.exceptions.raise_exception()
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -280,7 +280,7 @@ I add a new failing test in ``test_exceptions.py``
                 'failed'
             )
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block::
 
@@ -407,7 +407,7 @@ I add a new test to ``test_exceptions.py``
                 'succeeded'
             )
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -716,7 +716,7 @@ I ran tests to show that
 
   - :ref:`ModuleNotFoundError`
   - :ref:`NameError<test_catching_name_error_in_tests>`
-  - :ref:`AttributeError`
+  - :ref:`AttributeError<what causes AttributeError?>`
   - :ref:`TypeError`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`

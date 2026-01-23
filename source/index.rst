@@ -34,7 +34,7 @@ who is this for?
 * If you already use Python_ but do not know any of the :ref:`Exceptions<errors>` below, this is for you
 
   - :ref:`AssertionError<what causes AssertionError?>`
-  - :ref:`AttributeError`
+  - :ref:`AttributeError<what causes AttributeError?>`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`
   - :ref:`ModuleNotFoundError`

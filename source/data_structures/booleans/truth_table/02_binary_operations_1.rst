@@ -228,7 +228,7 @@ I add a new TestCase_ to ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -382,7 +382,7 @@ I add a test for ``logical_conjunction`` in ``test_truth_table.py`` with the fir
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -848,7 +848,7 @@ I add a test for another Binary Operation in ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1033,7 +1033,7 @@ I add a test for ``converse_non_implication`` in ``test_truth_table.py``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 

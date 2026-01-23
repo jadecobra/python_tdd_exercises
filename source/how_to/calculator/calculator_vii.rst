@@ -1483,7 +1483,7 @@ I add a new :ref:`key<test_keys_of_a_dictionary>` for the exponent :ref:`functio
 
         def test_calculator_functions(self):
 
-the terminal_ shows :ref:`AttributeError` for every test
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for every test
 
 .. code-block:: python
 

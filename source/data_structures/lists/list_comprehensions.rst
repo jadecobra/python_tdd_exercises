@@ -417,13 +417,13 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     import src.list_comprehensions
     import unittest
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
     AttributeError: module 'src.list_comprehensions' has no attribute 'a_for_loop'
 
-* I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block::
     :lineno-start: 22
@@ -921,7 +921,7 @@ the test passes. The `list comprehension`_ is like the `for loop`_ without the :
                 [item for item in self.iterable]
             )
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1078,7 +1078,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if item % 2 == 0]
             )
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1340,7 +1340,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if not condition(item)]
             )
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1577,7 +1577,7 @@ the test passes
                 [item*item for item in self.iterable]
             )
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 

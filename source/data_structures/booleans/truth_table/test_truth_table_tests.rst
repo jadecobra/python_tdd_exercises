@@ -169,7 +169,7 @@ continue the project
     def tautology(first_input, second_input):
         return True
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -233,7 +233,7 @@ continue the project
     def project_second(first_input, second_input):
         return second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -269,7 +269,7 @@ continue the project
     def project_first(first_input, second_input):
         return first_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -321,7 +321,7 @@ continue the project
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -375,7 +375,7 @@ continue the project
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -445,7 +445,7 @@ continue the project
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -480,7 +480,7 @@ continue the project
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -550,7 +550,7 @@ continue the project
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -585,7 +585,7 @@ continue the project
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -637,7 +637,7 @@ continue the project
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -672,7 +672,7 @@ continue the project
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -742,7 +742,7 @@ continue the project
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -794,7 +794,7 @@ continue the project
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -864,7 +864,7 @@ continue the project
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -899,7 +899,7 @@ continue the project
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -988,7 +988,7 @@ continue the project
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1037,7 +1037,7 @@ continue the project
     def logical_negation(first_input):
         return not first_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1071,7 +1071,7 @@ continue the project
     def logical_identity(the_input):
         return the_input
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1120,7 +1120,7 @@ continue the project
     def logical_true():
         return True
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 

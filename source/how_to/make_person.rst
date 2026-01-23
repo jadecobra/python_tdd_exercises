@@ -154,7 +154,7 @@ test_factory_takes_keyword_arguments
     import src.person
     import unittest
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -162,7 +162,7 @@ test_factory_takes_keyword_arguments
 
   there is nothing in ``person.py`` with that name
 
-* I add :ref:`AttributeError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 14
@@ -2302,7 +2302,7 @@ I want to write the solution without looking at the tests
 ----
 
 * I close ``test_person.py`` in the :ref:`editor<2 editors>`
-* then I delete all the text in ``person.py``. The terminal_ shows :ref:`AttributeError`
+* then I delete all the text in ``person.py``. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -2787,7 +2787,7 @@ I also saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError`
+* :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError`
 * SyntaxError_
 

@@ -142,7 +142,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
                 )
             )
 
-  the terminal_ shows :ref:`AttributeError`
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -273,7 +273,7 @@ I add an `import statement`_ for the datetime_ module
   import unittest
   ...
 
-the terminal_ shows :ref:`AttributeError`
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -752,7 +752,7 @@ and the test is still green
   the test passes
 
 * I remove ``duration`` because ``duration_a`` is a better solution
-* which means I can remove ``read_timestamp`` because no one calls it anymore. The terminal_ shows :ref:`AttributeError`
+* which means I can remove ``read_timestamp`` because no one calls it anymore. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -881,7 +881,7 @@ I also saw the following :ref:`Exceptions<errors>`
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError`
+* :ref:`AttributeError<what causes AttributeError?>`
 * ValueError_
 
 Would you like to :ref:`write the solution without looking at test_sleep_duration.py? <how to measure sleep duration: test_duration_tests>`
