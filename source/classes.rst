@@ -1704,6 +1704,14 @@ test_update_classy_person_year_of_birth
 
   the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is None?>`. I want it to return the difference between this year and the year of birth
 
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
 * I add a calculation to the ``get_age`` :ref:`method<what is a function?>` in ``person.py``
 
   .. code-block:: python
@@ -1991,6 +1999,8 @@ test_update_classy_person_year_of_birth
 *********************************************************************************
 test with random person
 *********************************************************************************
+
+----
 
 I want to add randomness to the test
 

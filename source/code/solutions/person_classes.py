@@ -6,8 +6,8 @@ def this_year():
 
 
 def factory(
-        first_name, last_name='doe',
-        sex='M', year_of_birth=this_year(),
+        first_name, year_of_birth,
+        last_name='doe', sex='M',
     ):
     return {
         'first_name': first_name,
@@ -17,7 +17,7 @@ def factory(
     }
 
 
-def say_hello(person):
+def hello(person):
     return (
         f'Hi, my name is {person.get("first_name")} '
         f'{person.get("last_name")} '
@@ -30,27 +30,26 @@ def update_year_of_birth(person, new_year_of_birth):
         first_name=person.get('first_name'),
         last_name=person.get('last_name'),
         sex=person.get('sex'),
-        year_of_birth=new_year_of_birth,
+        year_of_birth=new_year_of_birth
     )
 
 
-class Person(object):
+class Person:
 
     def __init__(
-        self, first_name, last_name='doe',
-        sex='M', year_of_birth=this_year(),
-    ):
-        self.random_first_name = first_name
+            self, first_name, last_name=None,
+            year_of_birth=None, sex=None,
+        ):
+        self.first_name = first_name
         self.last_name = last_name
-        self.random_year_of_birth = year_of_birth
+        self.year_of_birth = year_of_birth
         return None
 
-    def get_age(self):
-        return this_year() - self.random_year_of_birth
-
-    def say_hello(self):
+    def hello(self):
         return (
-            f'Hi, my name is {self.random_first_name} '
-            f'{self.last_name} '
-            f'and I am {self.get_age()}'
+            f'Hi, my name is {self.first_name} '
+            f'{self.last_name} and I am {self.get_age()}'
         )
+
+    def get_age(self):
+        return this_year() - self.year_of_birth
