@@ -655,7 +655,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test is still green
 
-* I copy the `for loop`_ with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_hello` and paste it in ``test_factory_person_hello``
+* I copy the `for loop`_ with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_hello` and paste it in ``test_classy_person_hello``
 
   .. code-block:: python
     :lineno-start: 94
@@ -1836,6 +1836,38 @@ test_update_classy_person_year_of_birth
 
 ----
 
+* I use the ``this_year`` :ref:`function<what is a function?>` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 5-6
+
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            # 'age': datetime.datetime.today().year - year_of_birth,
+            'age': this_year() - year_of_birth,
+        }
+
+  green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 8
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': this_year() - year_of_birth,
+        }
+
 * I can change the value of a :ref:`class attribute<test_attribute_error_w_class_attributes>` after the object_ has been made, kind of like I did in :ref:`test_setting_items_in_a_list`. I add a statement to ``test_update_classy_person_year_of_birth`` in ``test_person.py``
 
   .. code-block:: python
@@ -1867,9 +1899,77 @@ test_update_classy_person_year_of_birth
 
     AssertionError: 46 != 446
 
-* I change the 
+* I change the expectation in the :ref:`assertion<what is an assertion?>`
 
-----
+  .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 1
+
+            self.assertEqual(person.get_age(), this_year()-1980)
+
+  the test passes. Wait! That was a lot simpler than doing it with just :ref:`functions<what is a function?>`
+
+* I add a :ref:`variable<what is a variable?>` to remove repetition
+
+  .. code-block:: python
+    :lineno-start: 156
+    :emphasize-lines: 3
+
+            self.assertEqual(person.get_age(), 446)
+
+            new_year_of_birth = 1980
+            person.year_of_birth = 1980
+            self.assertEqual(person.get_age(), this_year()-1980)
+
+
+    # Exceptions seen
+
+* I use the :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 2-8
+
+            new_year_of_birth = 1980
+            # person.year_of_birth = 1980
+            person.year_of_birth = new_year_of_birth
+            # self.assertEqual(person.get_age(), this_year()-1980)
+            self.assertEqual(
+                person.get_age(),
+                this_year()-new_year_of_birth
+            )
+
+
+    # Exceptions seen
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 150
+
+        def test_update_classy_person_year_of_birth(self):
+            person = src.person.Person(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+            self.assertEqual(person.get_age(), 446)
+
+            new_year_of_birth = 1980
+            person.year_of_birth = new_year_of_birth
+            self.assertEqual(
+                person.get_age(),
+                this_year()-new_year_of_birth
+            )
+
+
+    # Exceptions seen
+
+  still green
+
+Classes_ have `attributes<test_attribute_error_w_class_attributes>` which can be changed, and since the age calculation is based on the ``year_of_birth``, and is done when I call it, not when the person is made, it is easier to make changes to a person when I use a class_ than when I use only :ref:`functions<what is a function?>`
 
 ----
 
