@@ -107,7 +107,7 @@ table of contents
   exceptions/type_error/index
   data_structures/lists/index
   data_structures/dictionaries/index
-  make TDD project pt 3<how_to/make_tdd_automatically_w_variables/index>
+  make TDD project 3<how_to/make_tdd_automatically_w_variables/index>
   make a person<how_to/make_person>
   classes
   what causes AttributeError?<exceptions/AttributeError>
