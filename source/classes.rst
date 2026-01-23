@@ -2188,8 +2188,514 @@ I want to add randomness to the test
 
   still green. Do I still need ``test_factory_takes_keyword_arguments``?
 
-* I use the ``random_factory_person`` :ref:`class attributes<test_attribute_error_w_class_attributes>` in ``test_factory_person_greeting``
+* I add an :ref:`assertion<what is an assertion?>` with the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` to ``test_factory_person_greeting``
 
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 12-19
+
+            for person in (joe, jane, john):
+                with self.subTest(name=person.get('first_name')):
+                    self.assertEqual(
+                        src.person.hello(person),
+                        (
+                            f'Hi, my name is {person.get("first_name")} '
+                            f'{person.get("last_name")} '
+                            f'and I am {person.get("age")}'
+                        )
+                    )
+
+            self.assertEqual(
+                src.person.hello(self.random_factory_person),
+                (
+                    f'Hi, my name is {self.random_first_name} '
+                    f'{self.random_last_name} '
+                    f'and I am {this_year()-self.random_year_of_birth}'
+                )
+            )
+
+        def test_classy_person_greeting(self):
+
+  the test is still green
+
+* I remove the 3 people I made because they are no longer needed, the random person covers all their cases
+
+  .. code-block:: python
+    :lineno-start: 56
+
+        def test_factory_person_greeting(self):
+            self.assertEqual(
+                src.person.hello(self.random_factory_person),
+                (
+                    f'Hi, my name is {self.random_first_name} '
+                    f'{self.random_last_name} '
+                    f'and I am {this_year()-self.random_year_of_birth}'
+                )
+            )
+
+        def test_classy_person_greeting(self):
+
+  still green
+
+* I have to make a random classy person to do the same thing for ``test_classy_person_greeting``. I will come back to it
+
+* I use the ``random_year_of_birth`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_factory_person_year_of_birth``
+
+  .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 2-3
+
+        def test_update_factory_person_year_of_birth(self):
+            # original_year_of_birth = 1580
+            original_year_of_birth = self.random_year_of_birth
+
+  the test is still green
+
+* I remove the commented line then use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the calculation
+
+  .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 3-4
+
+        def test_update_factory_person_year_of_birth(self):
+            original_year_of_birth = self.random_year_of_birth
+            # original_age = this_year() - original_year_of_birth
+            original_age = this_year() - self.random_year_of_birth
+            new_year_of_birth = 1980
+
+  still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 94
+
+        def test_update_factory_person_year_of_birth(self):
+            original_year_of_birth = self.random_year_of_birth
+            original_age = this_year() - self.random_year_of_birth
+            new_year_of_birth = 1980
+
+            person = src.person.factory(
+
+  green
+
+* I point ``person`` to the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>`
+
+  .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 6
+
+            # person = src.person.factory(
+            #     first_name='john',
+            #     last_name='smith',
+            #     year_of_birth=original_year_of_birth,
+            # )
+            person = self.random_factory_person
+            self.assertEqual(
+
+  still green
+
+* I remove the commented lines and the ``original_year_of_birth`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 97
+
+        def test_update_factory_person_year_of_birth(self):
+            original_age = this_year() - self.random_year_of_birth
+            new_year_of_birth = 1980
+
+            person = self.random_factory_person
+            self.assertEqual(
+                person.get('age'),
+                original_age
+            )
+
+  the test is still green
+
+* I use the the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the first :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 2-3
+
+            self.assertEqual(
+                # person.get('age'),
+                self.random_factory_person.get('age'),
+                original_age
+            )
+
+  still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 98
+
+            person = self.random_factory_person
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                original_age
+            )
+
+            with self.assertRaises(KeyError):
+
+  green
+
+* I use the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the assertRaises_ block
+
+  .. code-block:: python
+    :lineno-start: 104
+    :emphasize-lines: 2-3
+
+            with self.assertRaises(KeyError):
+                # person['year_of_birth']
+                self.random_factory_person['year_of_birth']
+            self.assertEqual(
+
+  still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 104
+
+            with self.assertRaises(KeyError):
+                self.random_factory_person['year_of_birth']
+            self.assertEqual(
+
+  the test is still green
+
+* I use the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>` for the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
+
+  .. code-block:: python
+    :lineno-start: 106
+    :emphasize-lines: 2-5
+
+            self.assertEqual(
+                # person.setdefault('year_of_birth', new_year_of_birth),
+                self.random_factory_person.setdefault(
+                    'year_of_birth', new_year_of_birth
+                ),
+                new_year_of_birth
+            )
+
+  still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 104
+
+            with self.assertRaises(KeyError):
+                self.random_factory_person['year_of_birth']
+            self.assertEqual(
+                self.random_factory_person.setdefault(
+                    'year_of_birth', new_year_of_birth
+                ),
+                new_year_of_birth
+            )
+            self.assertEqual(
+
+  green
+
+* I use ``self.random_factory_person`` in the second :ref:`assertion<what is an assertion?>` for the age
+
+  .. code-block:: python
+    :lineno-start: 112
+    :emphasize-lines: 2-3
+
+            self.assertEqual(
+                # person.get('age'),
+                self.random_factory_person.get('age'),
+                original_age
+            )
+
+  still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 112
+
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                original_age
+            )
+
+            self.assertEqual(
+
+  the test is still green
+
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.update_year_of_birth`` in the :ref:`assertion<what is an assertion?>` for the ``year_of_birth`` update
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 3-4
+
+            self.assertEqual(
+                src.person.update_year_of_birth(
+                    # person,
+                    self.random_factory_person,
+                    new_year_of_birth
+                ),
+
+  still green
+
+* I use the other :ref:`class attributes<test_attribute_error_w_class_attributes>` in the expected :ref:`dictionary<what is a dictionary?>` of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 123
+    :emphasize-lines: 2-7
+
+                dict(
+                    # first_name=person.get('first_name'),
+                    # last_name=person.get('last_name'),
+                    # sex=person.get('sex'),
+                    first_name=self.random_first_name,
+                    last_name=self.random_last_name,
+                    sex=self.random_sex,
+                    age=this_year()-new_year_of_birth,
+                )
+
+  green
+
+* I remove the commented lines and the ``person`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 94
+
+        def test_update_factory_person_year_of_birth(self):
+            original_age = this_year() - self.random_year_of_birth
+            new_year_of_birth = 1980
+
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                original_age
+            )
+
+            with self.assertRaises(KeyError):
+                self.random_factory_person['year_of_birth']
+            self.assertEqual(
+                self.random_factory_person.setdefault(
+                    'year_of_birth', new_year_of_birth
+                ),
+                new_year_of_birth
+            )
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                original_age
+            )
+
+            self.assertEqual(
+                src.person.update_year_of_birth(
+                    self.random_factory_person,
+                    new_year_of_birth
+                ),
+                dict(
+                    first_name=self.random_first_name,
+                    last_name=self.random_last_name,
+                    sex=self.random_sex,
+                    age=this_year()-new_year_of_birth,
+                )
+            )
+
+        def test_update_classy_person_year_of_birth(self):
+
+  still green
+
+* I have seen ``this_year() - self.random_year_of_birth`` a few times, I add a :ref:`class attributes<test_attribute_error_w_class_attributes>` for it in the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 5
+
+        def setUp(self):
+            self.random_year_of_birth = random.randint(
+                this_year()-120, this_year()
+            )
+            self.original_age = this_year() - self.random_year_of_birth
+            self.random_first_name = choose('jane', 'joe', 'john', 'person')
+
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_w_default_arguments``
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 5-6
+
+                dict(
+                    first_name=self.random_first_name,
+                    last_name='doe',
+                    sex='M',
+                    # age=this_year()-self.random_year_of_birth,
+                    age=self.original_age,
+                )
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 43
+
+        def test_factory_w_default_arguments(self):
+            self.assertEqual(
+                src.person.factory(
+                    first_name=self.random_first_name,
+                    year_of_birth=self.random_year_of_birth,
+                ),
+                dict(
+                    first_name=self.random_first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=self.original_age,
+                )
+            )
+
+        def test_factory_person_greeting(self):
+
+  green
+
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_person_greeting``
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 45
+
+                (
+                    f'Hi, my name is {self.random_first_name} '
+                    f'{self.random_last_name} '
+                    # f'and I am {this_year()-self.random_year_of_birth}'
+                    f'and I am {self.original_age}'
+                )
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 57
+
+        def test_factory_person_greeting(self):
+            self.assertEqual(
+                src.person.hello(self.random_factory_person),
+                (
+                    f'Hi, my name is {self.random_first_name} '
+                    f'{self.random_last_name} '
+                    f'and I am {self.original_age}'
+                )
+            )
+
+        def test_classy_person_greeting(self):
+
+  still green
+
+* I use ``self.original_age`` in ``test_update_factory_person_year_of_birth``
+
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 2-3
+
+        def test_update_factory_person_year_of_birth(self):
+            # original_age = this_year() - self.random_year_of_birth
+            original_age = self.original_age
+            new_year_of_birth = 1980
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 95
+
+        def test_update_factory_person_year_of_birth(self):
+            original_age = self.original_age
+            new_year_of_birth = 1980
+
+  green
+
+* I use it in the first :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 3-4
+
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                # original_age
+                self.original_age
+            )
+
+  green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 99
+
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                self.original_age
+            )
+
+            with self.assertRaises(KeyError):
+
+  green
+
+* I use it in the second :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 112
+
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                # original_age
+                self.original_age
+            )
+
+  still green
+
+* I remove the commented line and the ``original_age`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 95
+
+        def test_update_factory_person_year_of_birth(self):
+            new_year_of_birth = 1980
+
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                self.original_age
+            )
+
+            with self.assertRaises(KeyError):
+                self.random_factory_person['year_of_birth']
+            self.assertEqual(
+                self.random_factory_person.setdefault(
+                    'year_of_birth', new_year_of_birth
+                ),
+                new_year_of_birth
+            )
+            self.assertEqual(
+                self.random_factory_person.get('age'),
+                self.original_age
+            )
+
+            self.assertEqual(
+                src.person.update_year_of_birth(
+                    self.random_factory_person,
+                    new_year_of_birth
+                ),
+                dict(
+                    first_name=self.random_first_name,
+                    last_name=self.random_last_name,
+                    sex=self.random_sex,
+                    age=this_year()-new_year_of_birth,
+                )
+            )
+
+        def test_update_classy_person_year_of_birth(self):
+
+*
 
 ----
 
