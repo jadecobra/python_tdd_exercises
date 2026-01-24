@@ -60,6 +60,8 @@ start the project
   it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :emphasize-lines: 3
+    :emphasize-text: test_person
 
     E       AssertionError: True is not false
 
@@ -145,7 +147,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>` at the top of the file
+* I add an `import statement`_ for the ``person`` :ref:`module<ModuleNotFoundError>` at the top of ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -341,7 +343,7 @@ test_factory_takes_keyword_arguments
 
   there is nothing with that name in this file_
 
-* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition
+* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition in ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -498,7 +500,7 @@ test_factory_takes_keyword_arguments
                     first_name=first_name,
                 )
 
-  still green. I now only need to change the value of ``first_name`` in one place
+  still green
 
 * I remove the commented lines
 
@@ -522,6 +524,8 @@ test_factory_takes_keyword_arguments
 
 
     # Exceptions seen
+
+  I now only need to change the value of ``first_name`` in one place
 
 * I change ``'first_name'`` to ``'jane'``
 
@@ -665,6 +669,8 @@ test_factory_takes_keyword_arguments
 
 
     # Exceptions seen
+
+  the test is still green
 
 * I change the value from ``'last_name'`` to ``'doe'``
 
@@ -1223,7 +1229,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
   - ``.randint`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name again
   - ``this_year()-120`` returns this year minus ``120``
   - ``this_year()`` returns ``datetime.datetime.now().year`` which is the value for the current year
-  - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by ``this_year()``
+  - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by the call to ``this_year()``
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times to run the tests. When the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1269,7 +1275,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
 
     NameError: name 'this_year' is not defined
 
-  because I called a :ref:`function<what is a function?>` that is not in ``person.py``
+  because I used a name that is not defined in ``person.py``
 
 * I use the `return statement`_ of the ``this_year()`` :ref:`function<what is a function?>` from ``test_person.py`` to change ``this_year()`` in ``person.py``
 
@@ -1470,7 +1476,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
 
 * I remove the commented line ``# first_name = 'jane'`` from ``test_person.py``
 
-* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a starred expression like I did in :ref:`test_functions_w_unknown_arguments`
+* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a starred expression like in :ref:`test_functions_w_unknown_arguments`
 
   .. code-block:: python
     :lineno-start: 4
@@ -1593,6 +1599,7 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
             )
+
 
     # Exceptions seen
 
@@ -1761,6 +1768,7 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
             )
+
 
     # Exceptions seen
 
@@ -1986,6 +1994,7 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
             )
+
 
     # Exceptions seen
 

@@ -41,6 +41,7 @@ requirements
   it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :emphasize-lines: 3
 
     E       AssertionError: True is not false
 
