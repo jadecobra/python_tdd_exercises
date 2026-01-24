@@ -7,8 +7,6 @@
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
 .. _constructor method: constructor_
 
-.. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
-
 #################################################################################
 what is a class?
 #################################################################################
@@ -2569,7 +2567,7 @@ I want to add randomness to the test
 
 ----
 
-* I have seen ``this_year() - self.random_year_of_birth`` a few times, I add a :ref:`class attributes<test_attribute_error_w_class_attributes>` for it in the `setUp method`_
+* ``this_year() - self.random_year_of_birth`` is in the tests a few times. I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for it in the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 17
@@ -2677,9 +2675,11 @@ I want to add randomness to the test
             original_age = self.original_age
             new_year_of_birth = 1980
 
+            self.assertEqual(
+
   green
 
-* I use it in the first :ref:`assertion<what is an assertion?>`
+* I use ``self.original_age`` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 99
@@ -2761,6 +2761,8 @@ I want to add randomness to the test
 
         def test_update_classy_person_year_of_birth(self):
 
+----
+
 * I add a random person made with the ``Person`` class_ to the `setUp method`_
 
   .. code-block:: python
@@ -2812,7 +2814,7 @@ I want to add randomness to the test
 
   still green
 
-* I remove the 3 people I made with the ``Person`` class_ and the `for loop`_ with its :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers all their cases
+* I remove the 3 people I made with the ``Person`` class_ and the `for loop`_ with its :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers those cases and more
 
   .. code-block:: python
     :lineno-start: 73
@@ -2896,7 +2898,7 @@ I want to add randomness to the test
 
   green
 
-* I update the ``year_of_birth`` :ref:`attribute<test_attribute_error_w_class_attributes>` of ``self.random_classy_person``
+* I use the new year of birth as the value for the ``year_of_birth`` :ref:`attribute<test_attribute_error_w_class_attributes>` of ``self.random_classy_person``
 
   .. code-block:: python
     :lineno-start: 124
@@ -2928,7 +2930,7 @@ I want to add randomness to the test
 
   the test is still green
 
-* I remove the commented lines and the ``person`` :ref:`variable<what is a variable?>`
+* I remove the commented line and the ``person`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 117
@@ -2950,6 +2952,8 @@ I want to add randomness to the test
     # Exceptions seen
 
   still green
+
+----
 
 * the ``new_year_of_birth`` :ref:`variable<what is a variable?>` is the same in ``test_update_factory_person_year_of_birth`` and ``test_update_classy_person_year_of_birth``. I want to use random numbers for it. I add a new :ref:`class attribute<test_attribute_error_w_class_attributes>` to the `setUp method`_
 
@@ -3028,7 +3032,7 @@ I want to add randomness to the test
         self.original_age = this_year() - self.random_year_of_birth
         self.random_first_name = choose('jane', 'joe', 'john', 'person')
 
-* I use the new :ref:`attribute<test_attribute_error_w_class_attributes>` in ``test_update_factory_person_year_of_birth``
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_factory_person_year_of_birth``
 
   .. code-block:: python
     :lineno-start: 88
@@ -3070,7 +3074,7 @@ I want to add randomness to the test
 
   green
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the expectation of the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
   .. code-block:: python
     :lineno-start: 99
@@ -3249,14 +3253,16 @@ I want to add randomness to the test
 
   the test is still green
 
+----
+
 * There are two calculations that happen in the tests, one for the new age and another for the original age
 
   .. code-block:: python
 
     this_year() - self.random_year_of_birth
-    this_year()-self.random_new_year_of_birth
+    this_year() - self.random_new_year_of_birth
 
-  I add a :ref:`function<what is a function?>` that does the calculation
+  I add a :ref:`function<what is a function?>` that does the calculation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -3401,7 +3407,7 @@ I wonder what red and yellow look like, that was a lot of green.
 close the project
 *********************************************************************************
 
-* I close the ``test_person.py`` and ``person.py`` in the :ref:`editors<2 editors>`
+* I close ``test_person.py`` and ``person.py`` in the :ref:`editors<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
@@ -3460,11 +3466,11 @@ you have gone through a lot of things and know
 * :ref:`how to raise TypeError<TypeError>`
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<list comprehensions>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with classes<what is a class?>`
 
-Would you like to :ref:`test ModuleNotFoundError?<ModuleNotFoundError>`
+:ref:`Would you like to test AttributeError?<AttributeError>`
 
 ----
 

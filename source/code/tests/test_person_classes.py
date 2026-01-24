@@ -118,7 +118,7 @@ class TestPerson(unittest.TestCase):
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
                 sex=self.random_sex,
-                age=self.new_age,
+                age=self.new_age
             )
         )
 
