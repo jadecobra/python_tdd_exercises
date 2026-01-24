@@ -70,24 +70,23 @@ class TestPerson(unittest.TestCase):
             )
         )
 
+    def expected_greeting(self):
+        return (
+            f'Hi, my name is {self.random_first_name} '
+            f'{self.random_last_name} '
+            f'and I am {self.original_age}'
+        )
+
     def test_factory_person_greeting(self):
         self.assertEqual(
             src.person.hello(self.random_factory_person),
-            (
-                f'Hi, my name is {self.random_first_name} '
-                f'{self.random_last_name} '
-                f'and I am {self.original_age}'
-            )
+            self.expected_greeting()
         )
 
     def test_classy_person_greeting(self):
         self.assertEqual(
             self.random_classy_person.hello(),
-            (
-                f'Hi, my name is {self.random_first_name} '
-                f'{self.random_last_name} '
-                f'and I am {self.original_age}'
-            )
+            self.expected_greeting()
         )
 
     def test_update_factory_person_year_of_birth(self):
