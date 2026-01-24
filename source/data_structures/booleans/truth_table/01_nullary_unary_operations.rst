@@ -107,7 +107,7 @@ I have not added a definition for ``logical_true`` to ``truth_table.py`` in the 
 
     AssertionError: None is not true
 
-  I change :ref:`False <test_what_is_false>` to :ref:`True <test_what_is_true>` in the `return statement`_
+  I change :ref:`None<what is None?>` to :ref:`True <test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
     :linenos:
