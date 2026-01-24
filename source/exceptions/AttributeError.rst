@@ -36,7 +36,7 @@ An :ref:`attribute<AttributeError>` is a name for something that belongs to an :
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_attribute_error.py
   :language: python

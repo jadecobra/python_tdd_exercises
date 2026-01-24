@@ -16,7 +16,7 @@ I want the :ref:`divide function<test_division>` in the :ref:`calculator project
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../../code/calculator/tests/test_calculator_exceptions_programs.py
   :language: python

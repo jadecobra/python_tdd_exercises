@@ -33,7 +33,7 @@ The difference between my expectations (tests and ideas) and reality (what happe
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_assertion_error.py
   :language: python

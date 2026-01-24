@@ -27,7 +27,7 @@ how to make a class in Python
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: code/tests/test_person_classes.py
   :language: python
@@ -612,7 +612,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I cannot put a parameter that does not have a default value after one that does
+  I cannot put a parameter that does NOT have a default value after a parameter that has a default value
 
 * I add a default value for ``year_of_birth``
 

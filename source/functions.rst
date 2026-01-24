@@ -49,7 +49,7 @@ In Python_ functions_ are made with the def_ keyword, a name, parentheses and a 
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: code/tests/test_functions.py
   :language: python

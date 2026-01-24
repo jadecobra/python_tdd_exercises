@@ -38,7 +38,7 @@ I use :ref:`the identity function<test_identity_function>` in this chapter to sh
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_telephone.py
   :language: python

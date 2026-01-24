@@ -48,7 +48,7 @@ lists
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../../code/tests/test_lists.py
   :language: python

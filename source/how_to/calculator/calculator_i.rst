@@ -20,7 +20,7 @@ I want to write a program_ that can ``add``, ``subtract``, ``multiply`` and ``di
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../../code/calculator/tests/test_calculator.py
   :language: python

@@ -16,7 +16,7 @@ I want to practice using :ref:`lists` with the :ref:`calculator project<how to m
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../../code/calculator/tests/test_calculator_lists.py
   :language: python

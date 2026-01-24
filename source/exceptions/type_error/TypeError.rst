@@ -20,7 +20,7 @@ TypeError
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../../code/tests/test_type_error.py
   :language: python

@@ -22,7 +22,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries` with :ref:`functions<what is a function?>`. I think these are the 2 most important concepts in Python_
+This is an exercise in making :ref:`dictionaries` with :ref:`functions<what is a function?>`. I think they are the 2 most important things in Python_
 
 ----
 
@@ -30,7 +30,7 @@ This is an exercise in making :ref:`dictionaries` with :ref:`functions<what is a
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_person.py
   :language: python
@@ -190,7 +190,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` named ``first_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``first_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -241,7 +241,7 @@ test_factory_takes_keyword_arguments
 
 -----
 
-* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` named ``last_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``last_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -278,7 +278,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` named ``sex``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``sex``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -365,7 +365,7 @@ test_factory_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  the test now calls the ``factory`` :ref:`function<what is a function?>` with 4 inputs, but the definition in ``person.py`` only takes 3 inputs
+  the test calls the ``factory`` :ref:`function<what is a function?>` with 4 inputs, but the definition in ``person.py`` only takes 3 inputs
 
 * I add the name to the :ref:`function<what is a function?>` definition in ``person.py``
 
@@ -418,11 +418,11 @@ test_factory_takes_keyword_arguments
         ):
         return {}
 
-  the test passes because ``{}`` and ``dict()`` are two ways to :ref:`make an empty dictionary<test_making_a_dictionary>`
+  the test passes because ``{}`` and ``dict()`` are two ways to :ref:`make the empty dictionary<test_making_a_dictionary>`
 
 ----
 
-* I want the expected :ref:`dictionary<dictionaries>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` named ``first_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
+* I want the expected :ref:`dictionary<dictionaries>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -558,7 +558,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I want the expected :ref:`dictionary<dictionaries>` to have a :ref:`key<test_keys_of_a_dictionary>` named ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
+* I want the expected :ref:`dictionary<dictionaries>` to have a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -714,7 +714,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` named ``sex`` to the :ref:`dictionary<dictionaries>` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<dictionaries>` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -1229,7 +1229,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
   - ``.randint`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name again
   - ``this_year()-120`` returns this year minus ``120``
   - ``this_year()`` returns ``datetime.datetime.now().year`` which is the value for the current year
-  - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and including the current year which is returned by the call to ``this_year()``
+  - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and also the current year which is returned by the call to ``this_year()``
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times to run the tests. When the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1325,6 +1325,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 8-9
+    :emphasize-text: ) ,
 
         def test_factory_takes_keyword_arguments(self):
             year_of_birth = random.randint(
@@ -1346,7 +1347,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``sex`` is randomly ``'F'``.
 
-  When it is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  When ``sex`` is randomly ``'M'``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -1381,6 +1382,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
   .. code-block:: python
     :lineno-start: 17
     :emphasize-lines: 3-6
+    :emphasize-text: ) ,
 
             a_person = dict(
                 first_name='jane',
@@ -1428,6 +1430,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
   .. code-block:: python
     :lineno-start: 17
     :emphasize-lines: 2-5
+    :emphasize-text: ) ,
 
             a_person = dict(
                 # first_name='jane',
@@ -1496,6 +1499,7 @@ random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard librar
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 2-11
+    :emphasize-text: ) ,
 
             a_person = dict(
                 # first_name=random.choice((
@@ -1634,7 +1638,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I cannot put a parameter that does not have a default value after one that does
+  I cannot put a parameter that does NOT have a default value after a parameter that has a default value
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -1660,7 +1664,6 @@ I want to see what happens when I try to make a person without a value for the `
             first_name, last_name=None,
             sex=None, year_of_birth,
         ):
-        ...
 
   the terminal_ shows SyntaxError_
 
@@ -1691,7 +1694,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. NOTE:: ``X`` is for the random age, ``Y`` is for the random first name
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'last_name'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'last_name'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'last_name'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'last_name'``
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
@@ -1743,36 +1746,11 @@ I want to see what happens when I try to make a person without a value for the `
           last_name='doe',
       )
 
-* I remove the commented line from ``test_factory_w_default_arguments`` in ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 38
-
-        def test_factory_w_default_arguments(self):
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
-            a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                sex=choose('F', 'M'),
-            )
-
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    year_of_birth=year_of_birth,
-                ),
-                dict(
-                    **a_person,
-                    last_name='doe',
-                    age=this_year()-year_of_birth,
-                )
-            )
-
-
-    # Exceptions seen
+    see :ref:`test_functions_w_default_arguments` for more
 
 ----
+
+* I remove the commented line from ``test_factory_w_default_arguments`` in ``test_person.py``
 
 * I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_factory_w_default_arguments`` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it
 
@@ -1799,7 +1777,7 @@ I want to see what happens when I try to make a person without a value for the `
     E
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe'}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'sex'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` named ``'sex'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
 
@@ -1862,20 +1840,13 @@ I want to see what happens when I try to make a person without a value for the `
           year_of_birth=year_of_birth,
       )
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 42
-
-            a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-            )
-
-            self.assertEqual(
+    see :ref:`test_functions_w_default_arguments` for more
 
 ----
 
-* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_takes_keyword_arguments`` because it only has one :ref:`key<test_keys_of_a_dictionary>`, I can use a :ref:`variable<what is a variable?>`
+* I remove the commented line ``# sex=choose('F', 'M'),`` from ``test_factory_w_default_arguments`` in ``test_person.py``
+
+* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_takes_keyword_arguments`` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I can use a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1907,9 +1878,9 @@ I want to see what happens when I try to make a person without a value for the `
 
     TypeError: src.person.factory() got multiple values for keyword argument 'first_name'
 
-  because the ``**a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` named ``first_name``, the call to ``src.person.factory`` gets called with the same name two times
+  because the ``**a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same name two times
 
-* I comment out ``a_person`` in the call to ``src.person.factory``
+* I comment out ``a_person,`` in the call to ``src.person.factory``
 
   .. code-block:: python
     :lineno-start: 47
@@ -1955,7 +1926,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     TypeError: dict() got multiple values for keyword argument 'first_name'
 
-* I comment out ``**a_person``
+* I comment out ``**a_person,`` in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 53
@@ -2006,7 +1977,7 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* ``first_name`` and ``year_of_birth`` are made the same way in both tests. I add  the `setUp method`_ to the ``TestPerson`` :ref:`class<what is a class?>` with an :ref:`attribute (variable)<test_attribute_error_w_class_attributes>` to remove the repetition of the ``year_of_birth`` :ref:`variable<what is a variable?>`
+* ``first_name`` and ``year_of_birth`` are made the same way in both tests. I add  the `setUp method`_ to the ``TestPerson`` :ref:`class<what is a class?>` with a :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to remove the repetition of the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -2182,7 +2153,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   I can use the :ref:`class attribute<test_attribute_error_w_class_attributes>` directly
 
-* I point ``first_name`` in ``test_factory_takes_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_takes_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 23
@@ -2586,7 +2557,7 @@ I want to write the solution without looking at the tests
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I cannot put a parameter that does not have a default value after one that does
+  I cannot put a parameter that does NOT have a default value after a parameter that has a default value
 
 * I add a default value for ``sex``
 
@@ -2635,7 +2606,7 @@ I want to write the solution without looking at the tests
     E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'M'}
     E       ?                                                    ^^^
 
-  the test expects ``'M'`` as the :ref:`value<test_values_of_a_dictionary>` of ``sex`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, it returns the default value
+  the test expects ``'M'`` as the :ref:`value<test_values_of_a_dictionary>` of ``sex`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
 
 * I change the default value of ``sex`` to ``'M'``
 
@@ -2687,7 +2658,7 @@ I want to write the solution without looking at the tests
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
     E       ?                                          ^^  +
 
-  the test expects ``'doe'`` as the :ref:`value<test_values_of_a_dictionary>` of ``last_name`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, its default value
+  the test expects ``'doe'`` as the :ref:`value<test_values_of_a_dictionary>` of ``last_name`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
 
 * I change the default value for ``last_name`` to match the expectation
 
@@ -2732,6 +2703,8 @@ which is a little bit different from the first solution where I had 3 parameters
           first_name, last_name='doe',
           sex='M', year_of_birth=None,
       ):
+
+new things can be learned from repetition
 
 ----
 

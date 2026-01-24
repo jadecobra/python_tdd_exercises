@@ -25,7 +25,7 @@ assertRaises_ checks that the code in its context, raises the :ref:`Exception<er
 preview
 *********************************************************************************
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../../code/tests/test_exceptions.py
   :language: python

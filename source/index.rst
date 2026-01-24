@@ -15,11 +15,13 @@ pumping python: how I solve problems with test driven development
 
 ----
 
-Welcome to `Pumping Python`_, My name is Jacob Itegboje and these are `Test Driven Development`_ exercises that helped me use the Python_ programming language for more than a decade. I have tried different ways of learning from books, courses, videos and exercises to working on personal projects and I find that the most effective way to learn is to build something. Of all the things I tried, the thing that helped me build and learn most effectively was `Test Driven Development`_
+Welcome to `Pumping Python`_, My name is Jacob Itegboje and these are `Test Driven Development`_ exercises that helped me use the Python_ programming language for more than a decade.
 
-This is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal. It feels like the scientific method to me.
+I have tried different ways of learning - from books, courses, videos and exercises to working on personal projects. I find that the most effective way to learn is to build something.
 
-I also find that sometimes when I am working on a project and have an idea, I remember I have a test for that idea in another project and can go back to run it or write a new test.
+Of all the things I tried, the thing that helped me build and learn most effectively was `Test Driven Development`_, which is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal, which kind of feels like the scientific method.
+
+I find that sometimes when I am working on a project and have an idea, I remember I have a test for that idea in another project and can go back to run it or write a new test.
 
 I recommend `Test Driven Development by Example`_ by `Kent Beck`_ and Refactoring_ by `Martin Fowler`_, they both influenced the way I write programs_.
 

@@ -30,7 +30,7 @@ In :ref:`AssertionError<what causes AssertionError?>`, I used assertIsNone_ and 
 * :ref:`False<test_what_is_false>` is NOT None_ and NOT equal to None_
 * None_ is None_ and equal to None_
 
-Here are the tests I have by the end of the chapter
+These are the tests I have by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_none.py
   :language: python
