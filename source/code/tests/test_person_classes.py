@@ -24,13 +24,18 @@ def get_age(year_of_birth):
 
 class TestPerson(unittest.TestCase):
 
+    RANDOM_NAMES = (
+        'jane', 'joe', 'john', 'person',
+        'doe', 'smith', 'blow', 'public',
+    )
+
     def setUp(self):
         self.random_year_of_birth = random_year_of_birth()
         self.random_new_year_of_birth = random_year_of_birth()
         self.original_age = get_age(self.random_year_of_birth)
         self.new_age = get_age(self.random_new_year_of_birth)
-        self.random_first_name = choose('jane', 'joe', 'john', 'person')
-        self.random_last_name = choose('doe', 'smith', 'blow', 'public')
+        self.random_first_name = choose(self.RANDOM_NAMES)
+        self.random_last_name = choose(self.RANDOM_NAMES)
         self.random_sex = choose('M', 'F')
         self.random_factory_person = src.person.factory(
             first_name=self.random_first_name,
