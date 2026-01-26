@@ -2089,9 +2089,9 @@ I want to add randomness to the test
                 this_year()-120, this_year()
             )
             # self.random_first_name = choose('jane', 'joe', 'john', 'person')
-            self.random_first_name = choose(self.RANDOM_NAMES)
+            self.random_first_name = choose(*self.RANDOM_NAMES)
             # self.random_last_name = choose('doe', 'smith', 'blow', 'public')
-            self.random_last_name = choose(self.RANDOM_NAMES)
+            self.random_last_name = choose(*self.RANDOM_NAMES)
 
   the tests are still green and there are now more names to choose from
 
@@ -2104,8 +2104,8 @@ I want to add randomness to the test
             self.random_year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
-            self.random_first_name = choose(self.RANDOM_NAMES)
-            self.random_last_name = choose(self.RANDOM_NAMES)
+            self.random_first_name = choose(*self.RANDOM_NAMES)
+            self.random_last_name = choose(*self.RANDOM_NAMES)
 
         def test_factory_takes_keyword_arguments(self):
 
@@ -2151,8 +2151,8 @@ I want to add randomness to the test
             self.random_year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
-            self.random_first_name = choose(self.RANDOM_NAMES)
-            self.random_last_name = choose(self.RANDOM_NAMES)
+            self.random_first_name = choose(*self.RANDOM_NAMES)
+            self.random_last_name = choose(*self.RANDOM_NAMES)
             self.random_sex = choose('M', 'F')
 
         def test_factory_takes_keyword_arguments(self):
@@ -2199,8 +2199,8 @@ I want to add randomness to the test
             self.random_year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
-            self.random_first_name = choose(self.RANDOM_NAMES)
-            self.random_last_name = choose(self.RANDOM_NAMES)
+            self.random_first_name = choose(*self.RANDOM_NAMES)
+            self.random_last_name = choose(*self.RANDOM_NAMES)
             self.random_sex = choose('M', 'F')
             self.random_factory_person = src.person.factory(
                 first_name=self.random_first_name,
@@ -2561,8 +2561,8 @@ I want to add randomness to the test
                 this_year()-120, this_year()
             )
             self.original_age = this_year() - self.random_year_of_birth
-            self.random_first_name = choose(self.RANDOM_NAMES)
-            self.random_last_name = choose(self.RANDOM_NAMES)
+            self.random_first_name = choose(*self.RANDOM_NAMES)
+            self.random_last_name = choose(*self.RANDOM_NAMES)
 
 * I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_w_default_arguments`
 
@@ -3081,7 +3081,7 @@ I want to add randomness to the test
             self.random_year_of_birth = random_year_of_birth()
             self.random_new_year_of_birth = random_year_of_birth()
             self.original_age = this_year() - self.random_year_of_birth
-            self.random_first_name = choose(self.RANDOM_NAMES)
+            self.random_first_name = choose(*self.RANDOM_NAMES)
 
 * I use ``self.random_new_year_of_birth`` in ``test_update_factory_person_year_of_birth``
 
@@ -3311,7 +3311,7 @@ I want to add randomness to the test
             self.random_new_year_of_birth = random_year_of_birth()
             # self.original_age = this_year() - self.random_year_of_birth
             self.original_age = get_age(self.random_year_of_birth)
-            self.random_first_name = choose(self.RANDOM_NAMES)
+            self.random_first_name = choose(*self.RANDOM_NAMES)
 
   the test is still green
 
@@ -3326,7 +3326,7 @@ I want to add randomness to the test
             self.random_new_year_of_birth = random_year_of_birth()
             self.original_age = get_age(self.random_year_of_birth)
             self.new_age = get_age(self.random_new_year_of_birth)
-            self.random_first_name = choose(self.RANDOM_NAMES)
+            self.random_first_name = choose(*self.RANDOM_NAMES)
 
 
 * I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_factory_person_year_of_birth``
@@ -3434,7 +3434,59 @@ test_class_w_default_arguments
 
 In :ref:`test_factory_w_default_arguments`, I tested what happens when I call the ``factory`` :ref:`function<what is a function?>` without giving a value for ``last_name`` and ``sex``.
 
-In those cases the :ref:`function` uses default values of ``'doe'`` for ``last_name`` and ``'M'``. I want to add a test for the ``Person`` class_ to make sure it does the same thing when I do not provide a value for ``last_name`` or ``sex`` when making a person.
+In those cases the :ref:`functions<what is a function?>` uses default values of ``'doe'`` for ``last_name`` and ``'M'`` for ``sex``.
+
+I want to add a test for the ``Person`` class_ to make sure it does the same thing when I do not provide a value for ``last_name`` or ``sex`` when making a person.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a new test with a person made with the ``Person`` class_ without a value for ``last_name`` and ``sex`` and an :ref:`assertion<what is an assertion?>` for the value of the ``last_name``
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 9-13
+
+                dict(
+                    first_name=self.random_first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=self.original_age
+                )
+            )
+
+        def test_class_w_default_arguments(self):
+            person = src.person.Person(
+                first_name=self.random_first_name,
+                year_of_birth=self.random_year_of_birth,
+            )
+            self.assertEqual(person.first_name, None)
+
+        def expected_greeting(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+    AssertionError: ('jane', 'joe', 'john', 'person', 'doe', 'smith', 'blow', 'public') != None
+
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
 ----
 

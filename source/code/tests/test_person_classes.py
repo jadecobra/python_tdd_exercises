@@ -34,8 +34,8 @@ class TestPerson(unittest.TestCase):
         self.random_new_year_of_birth = random_year_of_birth()
         self.original_age = get_age(self.random_year_of_birth)
         self.new_age = get_age(self.random_new_year_of_birth)
-        self.random_first_name = choose(self.RANDOM_NAMES)
-        self.random_last_name = choose(self.RANDOM_NAMES)
+        self.random_first_name = choose(*self.RANDOM_NAMES)
+        self.random_last_name = choose(*self.RANDOM_NAMES)
         self.random_sex = choose('M', 'F')
         self.random_factory_person = src.person.factory(
             first_name=self.random_first_name,
