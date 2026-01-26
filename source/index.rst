@@ -75,10 +75,10 @@ If you would like to work with me. I teach this course everyday from Monday to F
 ----
 
 *********************************************************************************
-videos
+do you like videos?
 *********************************************************************************
 
-`There are videos for every chapter, check them out here <https://www.youtube.com/@JacobItegboje>`_
+:ref:`There are videos for every chapter, check them out here<pumping python videos>`
 
 .. raw:: html
 
@@ -93,7 +93,6 @@ table of contents
   :maxdepth: 2
 
   self
-  videos <https://www.youtube.com/@JacobItegboje>
   conventions
   setup<how_to/setup/index>
   make TDD project 1<how_to/make_tdd_manually/index>
@@ -125,6 +124,7 @@ table of contents
   learning_models
   what do people think of this?<reviews>
   hatches
+  videos
 
 ----
 
