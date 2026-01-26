@@ -3450,7 +3450,7 @@ I want to add a test for the ``Person`` class_ to make sure it does the same thi
 
   .. code-block:: python
     :lineno-start: 70
-    :emphasize-lines: 9-13
+    :emphasize-lines: 9-14
 
                 dict(
                     first_name=self.random_first_name,
@@ -3471,8 +3471,9 @@ I want to add a test for the ``Person`` class_ to make sure it does the same thi
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-    AssertionError: ('jane', 'joe', 'john', 'person', 'doe', 'smith', 'blow', 'public') != None
+  .. code-block:: python
 
+    AssertionError: X != None
 
 ----
 
@@ -3482,6 +3483,16 @@ I want to add a test for the ``Person`` class_ to make sure it does the same thi
 
 ----
 
+I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` for ``random_first_name`` to make the expectation match
+
+.. code-block:: python
+  :lineno-start: 83
+  :emphasize-lines: 1
+
+            self.assertEqual(person.first_name, self.random_first_name)
+
+the test passes
+
 ----
 
 =================================================================================
@@ -3490,9 +3501,376 @@ I want to add a test for the ``Person`` class_ to make sure it does the same thi
 
 ----
 
+* I add an :ref:`assertion<what is an assertion?>` for the value of the ``last_name``
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 2
+
+            self.assertEqual(person.first_name, self.random_first_name)
+            self.assertEqual(person.last_name, 'doe')
+
+        def expected_greeting(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != 'doe'
+
+* I change the default value for ``last_name`` in the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` class_ in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 4
+
+    class Person:
+
+        def __init__(
+                self, first_name, last_name='doe',
+                year_of_birth=None, sex=None,
+            ):
+
+  the test passes
+
+----
+
+* I add another :ref:`assertion<what is an assertion?>` for the value of ``sex`` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 3
+
+            self.assertEqual(person.first_name, self.random_first_name)
+            self.assertEqual(person.last_name, 'doe')
+            self.assertEqual(person.sex, 'M')
+
+        def expected_greeting(self):
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Person' object has no attribute 'sex'
+
+* I add the :ref:`class attribute<test_attribute_error_w_class_attributes>` to the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` class_ in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 8
+
+        def __init__(
+                self, first_name, last_name='doe',
+                year_of_birth=None, sex=None,
+            ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            return None
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != 'M'
+
+* I change the default value for ``sex``
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 2
+
+        def __init__(
+                self, first_name, last_name='doe',
+                year_of_birth=None, sex='M',
+            ):
+
+  the test passes
+
+----
+
+There is a problem with the ``year_of_birth``, its default value is :ref:`None<what is None?>`, which means if I do not give a value for it when I make a person with the ``factory`` :ref:`function<what is a function?>` or ``Person`` class_, :ref:`TypeError<what causes TypeError?>` will be raised.
+
+* I remove ``year_of_birth`` from the call to the ``Person`` class in ``test_class_w_default_arguments`` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 78
+
+        def test_class_w_default_arguments(self):
+            person = src.person.Person(
+                first_name=self.random_first_name,
+                # year_of_birth=self.random_year_of_birth,
+            )
+
+  the test is still green
+
+* I remove the commented line then add an :ref:`assertion<what is an assertion?>` for the age
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 2, 6
+
+        def test_class_w_default_arguments(self):
+            person = src.person.Person(self.random_first_name)
+            self.assertEqual(person.first_name, self.random_first_name)
+            self.assertEqual(person.last_name, 'doe')
+            self.assertEqual(person.sex, 'M')
+            self.assertEqual(person.get_age(), None)
+
+        def expected_greeting(self):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+
+  because the ``get_age`` :ref:`method<what is a function?>` tries to subtract ``year_of_birth`` from this year, and ``year_of_birth`` is :ref:`None<what is None?>`
+
+* I add a default value for ``year_of_birth`` in the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` class_ in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 3
+
+        def __init__(
+                self, first_name, last_name='doe',
+                year_of_birth=this_year(), sex='M',
+            ):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 != None
+
+* I change the expectation in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 2
+
+            self.assertEqual(person.sex, 'M')
+            self.assertEqual(person.get_age(), 0)
+
+        def expected_greeting(self):
+
+  the test passes
+
+----
+
+* I remove the value for ``year_of_birth`` in the call to ``src.person.factory`` in :ref:`test_factory_w_default_arguments`
+
+  .. code-block:: python
+    :lineno-start: 64
+
+        def test_factory_w_default_arguments(self):
+            self.assertEqual(
+                src.person.factory(
+                    first_name=self.random_first_name,
+                    # year_of_birth=self.random_year_of_birth,
+                ),
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: factory() missing 1 required positional argument: 'year_of_birth'
+
+* I add a default value for ``year_of_birth`` to make it a choice in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2
+
+    def factory(
+            first_name, year_of_birth=None,
+            last_name='doe', sex='M',
+        ):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'int' and 'NoneType'
+
+* I change the default value for ``year_of_birth`` to this year
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2
+
+    def factory(
+            first_name, year_of_birth=this_year(),
+            last_name='doe', sex='M',
+        ):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 5
+
+    E       - {'age': 0, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
+    E       ?         ^
+    E
+    E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
+    E       ?         ^
+
+* I change the expectation in :ref:`test_factory_w_default_arguments` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 5-6
+
+                dict(
+                    first_name=self.random_first_name,
+                    last_name='doe',
+                    sex='M',
+                    # age=self.original_age
+                    age=0
+                )
+
+  the test passes
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 64
+
+        def test_factory_w_default_arguments(self):
+            self.assertEqual(
+                src.person.factory(self.random_first_name),
+                dict(
+                    first_name=self.random_first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=0
+                )
+            )
+
+        def test_class_w_default_arguments(self):
+
+  the tests are still green
+
+----
+
+The tests so far have a problem, they check that the input and the output are the same, with no checks for what type of input it is. This means I can use a :ref:`data type<data structures>` that is not a string_ for ``first_name`` and ``last_name`` and ``sex`` and the tests would still pass. I would only get :ref:`TypeError<what causes TypeError?>` when I use a value for ``year_of_birth`` that is not a number, though if I use a :ref:`boolean<what are booleans?>`, the calculation would still work.
+
+You know enough to add tests for these problems, to make sure that the right inputs are always used. Send me your solutions when you do, I would love to see them.
+
+----
+
 *********************************************************************************
 test_attributes_and_methods_of_classes
 *********************************************************************************
+
+----
+
+I used the `dir built-in function`_ in :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>` to show their :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>`. I can also use it with the ``Person`` class_
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a new test
+
+.. code-block:: python
+  :lineno-start: 140
+  :emphasize-lines: 6-10
+
+            self.assertEqual(
+                self.random_classy_person.get_age(),
+                self.new_age
+            )
+
+        def test_attributes_and_methods_of_a_class(self):
+            self.assertEqual(
+                dir(src.person.Person),
+                []
+            )
+
+
+    # Exceptions seen
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: ['__class__', '__delattr__', '__dict__', '[377 chars]llo'] != []
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I copy and paste the values from the terminal_ and remove the extra characters I do not need with the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_
+
+.. code-block:: python
+  :lineno-start: 145
+  :emphasize-lines: 4-36
+
+        def test_attributes_and_methods_of_a_class(self):
+            self.assertEqual(
+                dir(src.person.Person),
+                [
+                    '__class__',
+                    '__delattr__',
+                    '__dict__',
+                    '__dir__',
+                    '__doc__',
+                    '__eq__',
+                    '__firstlineno__',
+                    '__format__',
+                    '__ge__',
+                    '__getattribute__',
+                    '__getstate__',
+                    '__gt__',
+                    '__hash__',
+                    '__init__',
+                    '__init_subclass__',
+                    '__le__',
+                    '__lt__',
+                    '__module__',
+                    '__ne__',
+                    '__new__',
+                    '__reduce__',
+                    '__reduce_ex__',
+                    '__repr__',
+                    '__setattr__',
+                    '__sizeof__',
+                    '__static_attributes__',
+                    '__str__',
+                    '__subclasshook__',
+                    '__weakref__',
+                    'get_age',
+                    'hello'
+                ]
+            )
+
+
+    # Exceptions seen
+
+  the test passes
+
+The attributes I defined in the ``__init__`` :ref:`method<what is a function?>` are not in the list, because I called dir_ on ``src.person.Person`` which is the class_ definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<test_attribute_error_w_class_attributes>`.
+
+What is the difference between ``dir(src.person.Person)`` and ``dir(src.person.Person('jane'))``?
+
+The 3 :ref:`methods<what is a function?>` I defined in the ``Person`` class_ in ``person.py``
+
+* __init__
+* get_age
+* hello
+
+are in the list, and there are others which I never defined, which leads to the question of :ref:`where did they come from?<inheritance>`
 
 ----
 
@@ -3544,10 +3922,15 @@ code from the chapter
 review
 *************************************************************************************
 
-from these tests I learned that
+* A class_ is :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` that belong together
+* A class_ can be used to represent something
+* classes_ can be an easier way to manage data than :ref:`functions<what is a function?>`
+* classes_ make it easier to write tests for something
 
-* A factory person is harder than a classy person
-* A classy person is easier, I do not have to buy them dinner first
+.. TIP::
+
+  * when I find myself writing or doing the same thing two times, I write a :ref:`function<what is a function?>`
+  * when I find I have two :ref:`functions<what is a function?>` that use the same information, I write a class_
 
 ----
 
