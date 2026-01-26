@@ -2109,7 +2109,7 @@ I want to add randomness to the test
 
         def test_factory_takes_keyword_arguments(self):
 
-* I use ``self.random_last_name`` in ``test_factory_takes_keyword_arguments``
+* I use ``self.random_last_name`` in :ref:`test_factory_takes_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 29
@@ -2157,10 +2157,10 @@ I want to add randomness to the test
 
         def test_factory_takes_keyword_arguments(self):
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_takes_keyword_arguments``
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_takes_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 30
     :emphasize-lines: 5-6
 
         def test_factory_takes_keyword_arguments(self):
@@ -2176,7 +2176,7 @@ I want to add randomness to the test
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 30
 
         def test_factory_takes_keyword_arguments(self):
             a_person = dict(
@@ -2192,29 +2192,29 @@ I want to add randomness to the test
 * I make a random person with the ``factory`` :ref:`function<what is a function?>` in the `setUp method`_
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 22
     :emphasize-lines: 8-13
 
         def setUp(self):
             self.random_year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
-            self.random_first_name = choose('jane', 'joe', 'john', 'person')
-            self.random_last_name = choose('doe', 'smith', 'blow', 'public')
+            self.random_first_name = choose(self.RANDOM_NAMES)
+            self.random_last_name = choose(self.RANDOM_NAMES)
             self.random_sex = choose('M', 'F')
             self.random_factory_person = src.person.factory(
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
                 sex=self.random_sex,
-                year_of_birth=self.random_year_of_birth
+                year_of_birth=self.random_year_of_birth,
             )
 
         def test_factory_takes_keyword_arguments(self):
 
-* I use the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>` in ``test_factory_takes_keyword_arguments``
+* I use the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_factory_takes_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 43
     :emphasize-lines: 6-10
 
             self.assertEqual(
@@ -2233,38 +2233,24 @@ I want to add randomness to the test
 
   the test is still green
 
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 38
-
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    year_of_birth=self.random_year_of_birth,
-                ),
-                self.random_factory_person
-            )
-
-  still green
-
 * I no longer need the ``a_person`` :ref:`variable<what is a variable?>`, I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-11
+    :lineno-start: 43
+    :emphasize-lines: 3-6
 
             self.assertEqual(
-                # src.person.factory(
-                #     **a_person,
-                #     year_of_birth=self.random_year_of_birth,
-                # ),
                 src.person.factory(
+                    # **a_person,
                     first_name=self.random_first_name,
                     last_name=self.random_last_name,
                     sex=self.random_sex,
                     year_of_birth=self.random_year_of_birth,
                 ),
+                # dict(
+                #     **a_person,
+                #     age=this_year()-self.random_year_of_birth,
+                # )
                 self.random_factory_person
             )
 
@@ -2273,7 +2259,7 @@ I want to add randomness to the test
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 36
 
         def test_factory_takes_keyword_arguments(self):
             self.assertEqual(
@@ -2288,26 +2274,21 @@ I want to add randomness to the test
 
         def test_factory_w_default_arguments(self):
 
-  still green. Do I still need ``test_factory_takes_keyword_arguments``?
+  green again. Do I still need :ref:`test_factory_takes_keyword_arguments`?
 
 ----
 
 * I add an :ref:`assertion<what is an assertion?>` with the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` to ``test_factory_person_greeting``
 
   .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 12-19
+    :lineno-start: 72
+    :emphasize-lines: 7-14
 
-            for person in (joe, jane, john):
-                with self.subTest(name=person.get('first_name')):
-                    self.assertEqual(
-                        src.person.hello(person),
-                        (
-                            f'Hi, my name is {person.get("first_name")} '
-                            f'{person.get("last_name")} '
-                            f'and I am {person.get("age")}'
-                        )
-                    )
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
 
             self.assertEqual(
                 src.person.hello(self.random_factory_person),
@@ -2318,14 +2299,14 @@ I want to add randomness to the test
                 )
             )
 
-        def test_classy_person_greeting(self):
+            for person in (joe, jane, john):
 
   the test is still green
 
 * I remove the 3 people I made with the ``factory`` :ref:`function<what is a function?>` and the `for loop`_ with the :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers all their cases and more
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 61
 
         def test_factory_person_greeting(self):
             self.assertEqual(
@@ -2339,7 +2320,7 @@ I want to add randomness to the test
 
         def test_classy_person_greeting(self):
 
-  still green
+  still
 
 ----
 
@@ -2350,7 +2331,7 @@ I want to add randomness to the test
 * I use the ``random_year_of_birth`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_factory_person_year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 94
+    :lineno-start: 99
     :emphasize-lines: 2-3
 
         def test_update_factory_person_year_of_birth(self):
@@ -2359,13 +2340,14 @@ I want to add randomness to the test
 
   the test is still green
 
-* I remove the commented line then use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the calculation
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the calculation
 
   .. code-block:: python
-    :lineno-start: 94
-    :emphasize-lines: 3-4
+    :lineno-start: 99
+    :emphasize-lines: 4-5
 
         def test_update_factory_person_year_of_birth(self):
+            # original_year_of_birth = 1580
             original_year_of_birth = self.random_year_of_birth
             # original_age = this_year() - original_year_of_birth
             original_age = this_year() - self.random_year_of_birth
@@ -2373,25 +2355,13 @@ I want to add randomness to the test
 
   still green
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 94
-
-        def test_update_factory_person_year_of_birth(self):
-            original_year_of_birth = self.random_year_of_birth
-            original_age = this_year() - self.random_year_of_birth
-            new_year_of_birth = 1980
-
-            person = src.person.factory(
-
-  green
-
 * I point ``person`` to the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
-    :lineno-start: 99
-    :emphasize-lines: 6
+    :lineno-start: 104
+    :emphasize-lines: 3-8
+
+            new_year_of_birth = 1980
 
             # person = src.person.factory(
             #     first_name='john',
@@ -2403,41 +2373,31 @@ I want to add randomness to the test
 
   still green
 
-* I remove the commented lines and the ``original_year_of_birth`` :ref:`variable<what is a variable?>`
+* I use the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 97
-
-        def test_update_factory_person_year_of_birth(self):
-            original_age = this_year() - self.random_year_of_birth
-            new_year_of_birth = 1980
+    :lineno-start: 111
+    :emphasize-lines: 3-4
 
             person = self.random_factory_person
-            self.assertEqual(
-                person.get('age'),
-                original_age
-            )
-
-  the test is still green
-
-* I use the the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the first :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 99
-    :emphasize-lines: 2-3
-
             self.assertEqual(
                 # person.get('age'),
                 self.random_factory_person.get('age'),
                 original_age
             )
 
+            with self.assertRaises(KeyError):
+
   still green
 
-* I remove the commented line
+* I remove the commented lines and the ``original_year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 99
+
+        def test_update_factory_person_year_of_birth(self):
+            original_age = this_year() - self.random_year_of_birth
+            new_year_of_birth = 1980
 
             person = self.random_factory_person
             self.assertEqual(
@@ -2447,12 +2407,10 @@ I want to add randomness to the test
 
             with self.assertRaises(KeyError):
 
-  green
-
-* I use the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the assertRaises_ block
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the assertRaises_ block
 
   .. code-block:: python
-    :lineno-start: 104
+    :lineno-start: 109
     :emphasize-lines: 2-3
 
             with self.assertRaises(KeyError):
@@ -2462,22 +2420,12 @@ I want to add randomness to the test
 
   still green
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 104
-
-            with self.assertRaises(KeyError):
-                self.random_factory_person['year_of_birth']
-            self.assertEqual(
-
-  the test is still green
-
 * I use the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>` for the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 112
     :emphasize-lines: 2-5
+    :emphasize-text: ) ,
 
             self.assertEqual(
                 # person.setdefault('year_of_birth', new_year_of_birth),
@@ -2489,27 +2437,10 @@ I want to add randomness to the test
 
   still green
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 104
-
-            with self.assertRaises(KeyError):
-                self.random_factory_person['year_of_birth']
-            self.assertEqual(
-                self.random_factory_person.setdefault(
-                    'year_of_birth', new_year_of_birth
-                ),
-                new_year_of_birth
-            )
-            self.assertEqual(
-
-  green
-
 * I use ``self.random_factory_person`` in the second :ref:`assertion<what is an assertion?>` for the age
 
   .. code-block:: python
-    :lineno-start: 112
+    :lineno-start: 119
     :emphasize-lines: 2-3
 
             self.assertEqual(
@@ -2520,24 +2451,30 @@ I want to add randomness to the test
 
   still green
 
-* I remove the commented line
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 112
+    :lineno-start: 109
 
+            with self.assertRaises(KeyError):
+                self.random_factory_person['year_of_birth']
+            self.assertEqual(
+                self.random_factory_person.setdefault(
+                    'year_of_birth', new_year_of_birth
+                ),
+                new_year_of_birth
+            )
             self.assertEqual(
                 self.random_factory_person.get('age'),
                 original_age
             )
-
-            self.assertEqual(
 
   the test is still green
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.update_year_of_birth`` in the :ref:`assertion<what is an assertion?>` for the ``year_of_birth`` update
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 122
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -2552,15 +2489,15 @@ I want to add randomness to the test
 * I use the other :ref:`class attributes<test_attribute_error_w_class_attributes>` in the expected :ref:`dictionary<what is a dictionary?>` of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 123
+    :lineno-start: 128
     :emphasize-lines: 2-7
 
                 dict(
                     # first_name=person.get('first_name'),
-                    # last_name=person.get('last_name'),
-                    # sex=person.get('sex'),
                     first_name=self.random_first_name,
+                    # last_name=person.get('last_name'),
                     last_name=self.random_last_name,
+                    # sex=person.get('sex'),
                     sex=self.random_sex,
                     age=this_year()-new_year_of_birth,
                 )
@@ -2570,7 +2507,7 @@ I want to add randomness to the test
 * I remove the commented lines and the ``person`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 94
+    :lineno-start: 99
 
         def test_update_factory_person_year_of_birth(self):
             original_age = this_year() - self.random_year_of_birth
@@ -2616,7 +2553,7 @@ I want to add randomness to the test
 * ``this_year() - self.random_year_of_birth`` is in the tests a few times. I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for it in the `setUp method`_
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 22
     :emphasize-lines: 5
 
         def setUp(self):
@@ -2624,12 +2561,13 @@ I want to add randomness to the test
                 this_year()-120, this_year()
             )
             self.original_age = this_year() - self.random_year_of_birth
-            self.random_first_name = choose('jane', 'joe', 'john', 'person')
+            self.random_first_name = choose(self.RANDOM_NAMES)
+            self.random_last_name = choose(self.RANDOM_NAMES)
 
-* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_w_default_arguments``
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_w_default_arguments`
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 54
     :emphasize-lines: 5-6
 
                 dict(
@@ -2645,7 +2583,7 @@ I want to add randomness to the test
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 48
 
         def test_factory_w_default_arguments(self):
             self.assertEqual(
@@ -2668,8 +2606,8 @@ I want to add randomness to the test
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_person_greeting``
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 45
+    :lineno-start: 65
+    :emphasize-lines: 4-5
 
                 (
                     f'Hi, my name is {self.random_first_name} '
@@ -2683,7 +2621,7 @@ I want to add randomness to the test
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 62
 
         def test_factory_person_greeting(self):
             self.assertEqual(
@@ -2702,7 +2640,7 @@ I want to add randomness to the test
 * I use ``self.original_age`` in ``test_update_factory_person_year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 95
+    :lineno-start: 100
     :emphasize-lines: 2-3
 
         def test_update_factory_person_year_of_birth(self):
@@ -2712,24 +2650,13 @@ I want to add randomness to the test
 
   the test is still green
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 95
-
-        def test_update_factory_person_year_of_birth(self):
-            original_age = self.original_age
-            new_year_of_birth = 1980
-
-            self.assertEqual(
-
-  green
-
 * I use ``self.original_age`` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 99
-    :emphasize-lines: 3-4
+    :lineno-start: 103
+    :emphasize-lines: 5-6
+
+            new_year_of_birth = 1980
 
             self.assertEqual(
                 self.random_factory_person.get('age'),
@@ -2739,37 +2666,32 @@ I want to add randomness to the test
 
   green
 
-* I remove the commented lines
+* I use it in the second :ref:`assertion<what is an assertion?>` for the age
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 113
+    :emphasize-lines: 9-10
 
             self.assertEqual(
-                self.random_factory_person.get('age'),
-                self.original_age
+                self.random_factory_person.setdefault(
+                    'year_of_birth', new_year_of_birth
+                ),
+                new_year_of_birth
             )
-
-            with self.assertRaises(KeyError):
-
-  green
-
-* I use it in the second :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 112
-
             self.assertEqual(
                 self.random_factory_person.get('age'),
                 # original_age
                 self.original_age
             )
+
+            self.assertEqual(
 
   still green
 
 * I remove the commented line and the ``original_age`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 95
+    :lineno-start: 100
 
         def test_update_factory_person_year_of_birth(self):
             new_year_of_birth = 1980
@@ -2812,7 +2734,7 @@ I want to add randomness to the test
 * I add a random person made with the ``Person`` class_ to the `setUp method`_
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 30
     :emphasize-lines: 7-12
 
             self.random_factory_person = src.person.factory(
@@ -2830,22 +2752,17 @@ I want to add randomness to the test
 
         def test_factory_takes_keyword_arguments(self):
 
-* I add an :ref:`assertion<what is an assertion?>` to ``test_classy_person_greeting``
+* I add an :ref:`assertion<what is an assertion?>` with the new :ref:`class attribute<test_attribute_error_w_class_attributes>` to ``test_classy_person_greeting``
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 12-19
+    :lineno-start: 89
+    :emphasize-lines: 7-14
 
-            for person in (joe, jane, john):
-                with self.subTest(name=person.first_name):
-                    self.assertEqual(
-                        person.hello(),
-                        (
-                            f'Hi, my name is {person.first_name} '
-                            f'{person.last_name} '
-                            f'and I am {person.get_age()}'
-                        )
-                    )
+            john = src.person.Person(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
 
             self.assertEqual(
                 self.random_classy_person.hello(),
@@ -2856,14 +2773,14 @@ I want to add randomness to the test
                 )
             )
 
-        def test_update_factory_person_year_of_birth(self):
+            for person in (joe, jane, john):
 
   still green
 
 * I remove the 3 people I made with the ``Person`` class_ and the `for loop`_ with its :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers those cases and more
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 78
 
         def test_classy_person_greeting(self):
             self.assertEqual(
@@ -2879,10 +2796,103 @@ I want to add randomness to the test
 
   still green
 
+* the expected message in ``test_classy_person_greeting`` and ``test_factory_person_greeting`` are now the same. I add a :ref:`method<what is a function?>` to remove the repetition
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 9-14
+
+                dict(
+                    first_name=self.random_first_name,
+                    last_name='doe',
+                    sex='M',
+                    age=self.original_age
+                )
+            )
+
+        def expected_greeting(self):
+            return (
+                f'Hi, my name is {self.random_first_name} '
+                f'{self.random_last_name} '
+                f'and I am {self.original_age}'
+            )
+
+        def test_factory_person_greeting(self):
+
+* I use the new :ref:`method<what is a function?>` in ``test_factory_person_greeting``
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 4-9
+
+        def test_factory_person_greeting(self):
+            self.assertEqual(
+                src.person.hello(self.random_factory_person),
+                # (
+                #     f'Hi, my name is {self.random_first_name} '
+                #     f'{self.random_last_name} '
+                #     f'and I am {self.original_age}'
+                # )
+                self.expected_greeting()
+            )
+
+        def test_classy_person_greeting(self):
+
+  the test is still green
+
+* I use it in ``test_classy_person_greeting``
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 4-9
+
+        def test_classy_person_greeting(self):
+            self.assertEqual(
+                self.random_classy_person.hello(),
+                # (
+                #     f'Hi, my name is {self.random_first_name} '
+                #     f'{self.random_last_name} '
+                #     f'and I am {self.original_age}'
+                # )
+                self.expected_greeting()
+            )
+
+        def test_update_factory_person_year_of_birth(self):
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 68
+
+        def expected_greeting(self):
+            return (
+                f'Hi, my name is {self.random_first_name} '
+                f'{self.random_last_name} '
+                f'and I am {self.original_age}'
+            )
+
+        def test_factory_person_greeting(self):
+            self.assertEqual(
+                src.person.hello(self.random_factory_person),
+                self.expected_greeting()
+            )
+
+        def test_classy_person_greeting(self):
+            self.assertEqual(
+                self.random_classy_person.hello(),
+                self.expected_greeting()
+            )
+
+        def test_update_factory_person_year_of_birth(self):
+
+  green
+
 * I use the ``random_classy_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_classy_person_year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 121
     :emphasize-lines: 2-7
 
         def test_update_classy_person_year_of_birth(self):
@@ -2903,7 +2913,7 @@ I want to add randomness to the test
 * I use ``self.original_age`` in the first :ref:`assertion<what is an assertion?>` for the age
 
   .. code-block:: python
-    :lineno-start: 123
+    :lineno-start: 127
     :emphasize-lines: 2-3
 
             person = self.random_classy_person
@@ -2917,37 +2927,25 @@ I want to add randomness to the test
 * I remove the commented lines then use ``self.random_classy_person`` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 121
     :emphasize-lines: 3-7
 
         def test_update_classy_person_year_of_birth(self):
             person = self.random_classy_person
-            # self.assertEqual(person.get_age(), self.original_age)
             self.assertEqual(
+                # person.get_age(),
                 self.random_classy_person.get_age(),
                 self.original_age
             )
+
+            new_year_of_birth = 1980
 
   the test is still green
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 117
-
-        def test_update_classy_person_year_of_birth(self):
-            person = self.random_classy_person
-            self.assertEqual(
-                self.random_classy_person.get_age(),
-                self.original_age
-            )
-
-  green
 
 * I use the new year of birth as the value for the ``year_of_birth`` :ref:`attribute<test_attribute_error_w_class_attributes>` of ``self.random_classy_person``
 
   .. code-block:: python
-    :lineno-start: 124
+    :lineno-start: 129
     :emphasize-lines: 2-3
 
             new_year_of_birth = 1980
@@ -2960,13 +2958,14 @@ I want to add randomness to the test
 
   green
 
-* I remove the commented line and use ``self.random_classy_person`` in the second :ref:`assertion<what is an assertion?>`
+* I use ``self.random_classy_person`` in the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 124
-    :emphasize-lines: 4-5
+    :lineno-start: 129
+    :emphasize-lines: 5-6
 
             new_year_of_birth = 1980
+            # person.year_of_birth = new_year_of_birth
             self.random_classy_person.year_of_birth = new_year_of_birth
             self.assertEqual(
                 # person.get_age(),
@@ -2974,12 +2973,15 @@ I want to add randomness to the test
                 this_year()-new_year_of_birth
             )
 
+
+    # Exceptions seen
+
   the test is still green
 
-* I remove the commented line and the ``person`` :ref:`variable<what is a variable?>`
+* I remove the commented lines and the ``person`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 121
 
         def test_update_classy_person_year_of_birth(self):
             self.assertEqual(
@@ -3001,10 +3003,10 @@ I want to add randomness to the test
 
 ----
 
-* the ``new_year_of_birth`` :ref:`variable<what is a variable?>` is the same in ``test_update_factory_person_year_of_birth`` and ``test_update_classy_person_year_of_birth``. I want to use random numbers for it. I add a new :ref:`class attribute<test_attribute_error_w_class_attributes>` to the `setUp method`_
+* the ``new_year_of_birth`` :ref:`variable<what is a variable?>` is the same in ``test_update_factory_person_year_of_birth`` and ``test_update_classy_person_year_of_birth``. I add a new :ref:`class attribute<test_attribute_error_w_class_attributes>` to the `setUp method`_ because I want to use random numbers for it
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 22
     :emphasize-lines: 5-7
 
         def setUp(self):
@@ -3036,10 +3038,10 @@ I want to add randomness to the test
 
     class TestPerson(unittest.TestCase):
 
-* I use the new :ref:`function<what is a function?>` in the `setUp method`_
+* I point ``self.random_year_of_birth`` to the result of calling the new :ref:`function<what is a function?>` in the `setUp method`_
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 28
     :emphasize-lines: 2-5
 
         def setUp(self):
@@ -3051,13 +3053,16 @@ I want to add randomness to the test
 
   the test is still green
 
-* I remove the commented lines and call the :ref:`function<what is a function?>` for the ``new_year_of_birth`` :ref:`attribute<test_attribute_error_w_class_attributes>`
+* I call the :ref:`function<what is a function?>` for the ``new_year_of_birth`` :ref:`attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 3-6
+    :lineno-start: 28
+    :emphasize-lines: 5-9
 
         def setUp(self):
+            # self.random_year_of_birth = random.randint(
+            #     this_year()-120, this_year()
+            # )
             self.random_year_of_birth = random_year_of_birth()
             # self.random_new_year_of_birth = random.randint(
             #     this_year()-120, this_year()
@@ -3070,18 +3075,18 @@ I want to add randomness to the test
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 28
 
-    def setUp(self):
-        self.random_year_of_birth = random_year_of_birth()
-        self.random_new_year_of_birth = random_year_of_birth()
-        self.original_age = this_year() - self.random_year_of_birth
-        self.random_first_name = choose('jane', 'joe', 'john', 'person')
+        def setUp(self):
+            self.random_year_of_birth = random_year_of_birth()
+            self.random_new_year_of_birth = random_year_of_birth()
+            self.original_age = this_year() - self.random_year_of_birth
+            self.random_first_name = choose(self.RANDOM_NAMES)
 
-* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_factory_person_year_of_birth``
+* I use ``self.random_new_year_of_birth`` in ``test_update_factory_person_year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 92
     :emphasize-lines: 2-3
 
         def test_update_factory_person_year_of_birth(self):
@@ -3093,7 +3098,7 @@ I want to add randomness to the test
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 103
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -3106,28 +3111,15 @@ I want to add randomness to the test
 
   the test is still green
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 99
-
-            self.assertEqual(
-                self.random_factory_person.setdefault(
-                    'year_of_birth', new_year_of_birth
-                ),
-                new_year_of_birth
-            )
-
-  green
-
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the expectation of the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
   .. code-block:: python
-    :lineno-start: 99
-    :emphasize-lines: 5-6
+    :lineno-start: 103
+    :emphasize-lines: 6-7
 
             self.assertEqual(
                 self.random_factory_person.setdefault(
+                    # 'year_of_birth', new_year_of_birth
                     'year_of_birth', self.random_new_year_of_birth
                 ),
                 # new_year_of_birth
@@ -3136,25 +3128,10 @@ I want to add randomness to the test
 
   still green
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 99
-
-            self.assertEqual(
-                self.random_factory_person.setdefault(
-                    'year_of_birth', self.random_new_year_of_birth
-                ),
-                self.random_new_year_of_birth
-            )
-            self.assertEqual(
-
-  the test is still green
-
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.update_year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 112
+    :lineno-start: 116
     :emphasize-lines: 4-5
 
             self.assertEqual(
@@ -3166,23 +3143,10 @@ I want to add randomness to the test
 
   still green
 
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 110
-
-            self.assertEqual(
-                src.person.update_year_of_birth(
-                    self.random_factory_person,
-                    self.random_new_year_of_birth
-                ),
-
-  green
-
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the calculation for the new age
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 122
     :emphasize-lines: 5-6
 
                 dict(
@@ -3198,7 +3162,7 @@ I want to add randomness to the test
 * I remove the commented lines and the ``new_year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 92
 
         def test_update_factory_person_year_of_birth(self):
             self.assertEqual(
@@ -3239,8 +3203,14 @@ I want to add randomness to the test
 * on to ``test_update_classy_person_year_of_birth``. I point the ``new_year_of_birth`` :ref:`variable<what is a variable?>` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 1-2
+    :lineno-start: 124
+    :emphasize-lines: 7-8
+
+        def test_update_classy_person_year_of_birth(self):
+            self.assertEqual(
+                self.random_classy_person.get_age(),
+                self.original_age
+            )
 
             # new_year_of_birth = 1980
             new_year_of_birth = self.random_new_year_of_birth
@@ -3248,12 +3218,13 @@ I want to add randomness to the test
 
   the test is still green
 
-* I remove the commented line and use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the assignment of the new value
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the assignment of the new value
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 2-3
+    :lineno-start: 130
+    :emphasize-lines: 3-4
 
+            # new_year_of_birth = 1980
             new_year_of_birth = self.random_new_year_of_birth
             # self.random_classy_person.year_of_birth = new_year_of_birth
             self.random_classy_person.year_of_birth = self.random_new_year_of_birth
@@ -3261,13 +3232,15 @@ I want to add randomness to the test
 
   still green
 
-* I remove the commented line and use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>`
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 5-6
+    :lineno-start: 130
+    :emphasize-lines: 7-8
 
+            # new_year_of_birth = 1980
             new_year_of_birth = self.random_new_year_of_birth
+            # self.random_classy_person.year_of_birth = new_year_of_birth
             self.random_classy_person.year_of_birth = self.random_new_year_of_birth
             self.assertEqual(
                 self.random_classy_person.get_age(),
@@ -3275,12 +3248,13 @@ I want to add randomness to the test
                 this_year()-self.random_new_year_of_birth
             )
 
+
   green
 
-* I remove the commented line and the ``new_year_of_birth`` :ref:`variable<what is a variable?>`
+* I remove the commented lines and the ``new_year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 120
+    :lineno-start: 124
 
         def test_update_classy_person_year_of_birth(self):
             self.assertEqual(
@@ -3308,7 +3282,7 @@ I want to add randomness to the test
     this_year() - self.random_year_of_birth
     this_year() - self.random_new_year_of_birth
 
-  I add a :ref:`function<what is a function?>` that does the calculation in ``test_person.py``
+  I add a :ref:`function<what is a function?>` that does the calculation to ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -3319,6 +3293,7 @@ I want to add randomness to the test
             this_year()-120, this_year()
         )
 
+
     def get_age(year_of_birth):
         return this_year() - year_of_birth
 
@@ -3328,7 +3303,7 @@ I want to add randomness to the test
 * I point ``self.original_age`` in the `setUp method`_ to the result of calling the :ref:`function<what is a function?>` with ``self.random_year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 32
     :emphasize-lines: 4-5
 
         def setUp(self):
@@ -3336,14 +3311,14 @@ I want to add randomness to the test
             self.random_new_year_of_birth = random_year_of_birth()
             # self.original_age = this_year() - self.random_year_of_birth
             self.original_age = get_age(self.random_year_of_birth)
-            self.random_first_name = choose('jane', 'joe', 'john', 'person')
+            self.random_first_name = choose(self.RANDOM_NAMES)
 
   the test is still green
 
-* I remove the commented line, then add a new :ref:`class attribute<test_attribute_error_w_class_attributes>` for the calculation of the new age
+* I remove the commented line then add a new :ref:`class attribute<test_attribute_error_w_class_attributes>` for the calculation of the new age
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 32
     :emphasize-lines: 5
 
         def setUp(self):
@@ -3351,12 +3326,13 @@ I want to add randomness to the test
             self.random_new_year_of_birth = random_year_of_birth()
             self.original_age = get_age(self.random_year_of_birth)
             self.new_age = get_age(self.random_new_year_of_birth)
-            self.random_first_name = choose('jane', 'joe', 'john', 'person')
+            self.random_first_name = choose(self.RANDOM_NAMES)
+
 
 * I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_factory_person_year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 121
     :emphasize-lines: 5-6
 
                 dict(
@@ -3372,7 +3348,7 @@ I want to add randomness to the test
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 97
 
         def test_update_factory_person_year_of_birth(self):
             self.assertEqual(
@@ -3413,7 +3389,7 @@ I want to add randomness to the test
 * use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_classy_person_year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 132
+    :lineno-start: 136
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -3427,7 +3403,7 @@ I want to add randomness to the test
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 125
+    :lineno-start: 129
 
         def test_update_classy_person_year_of_birth(self):
             self.assertEqual(
@@ -3446,6 +3422,25 @@ I want to add randomness to the test
 
 
 I wonder what red and yellow look like, that was a lot of green.
+
+----
+
+*********************************************************************************
+test_class_w_default_arguments
+*********************************************************************************
+
+----
+
+
+In :ref:`test_factory_w_default_arguments`, I tested what happens when I call the ``factory`` :ref:`function<what is a function?>` without giving a value for ``last_name`` and ``sex``.
+
+In those cases the :ref:`function` uses default values of ``'doe'`` for ``last_name`` and ``'M'``. I want to add a test for the ``Person`` class_ to make sure it does the same thing when I do not provide a value for ``last_name`` or ``sex`` when making a person.
+
+----
+
+*********************************************************************************
+test_attributes_and_methods_of_classes
+*********************************************************************************
 
 ----
 
