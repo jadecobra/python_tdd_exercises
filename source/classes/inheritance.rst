@@ -1215,7 +1215,7 @@ you have gone through a lot of things and know
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`what you can do with classes<what is a class?>`
 
-Would you like to :ref:`test ModuleNotFoundError?<what is a module?>`
+:ref:`Would you like to test if bool_ is an int_?<booleans 3>`
 
 ----
 

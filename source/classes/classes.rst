@@ -3944,6 +3944,8 @@ you have gone through a lot of things and know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with classes<what is a class?>`
 
+:ref:`Would you like to know where the extra attributes and methods of the Person class came from?<family ties>`
+
 ----
 
 *********************************************************************************
