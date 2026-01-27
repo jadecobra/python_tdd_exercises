@@ -268,7 +268,7 @@ start the project
     :emphasize-lines: 8, 10
 
     ================================ FAILURES ================================
-    _______________________ TestAttributeError.test_failure _______________________
+    ____________________ TestAttributeError.test_failure _____________________
 
     self = <tests.test_attribute_error.AttributeError testMethod=test_failure>
 
@@ -277,7 +277,7 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_attribute_error.py:7: AssertionError
-    ========================= short test summary info ==========================
+    ======================== short test summary info =========================
     FAILED tests/test_functions.py::TestFunctions::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 

@@ -14,12 +14,6 @@ Making new :ref:`objects<what is a class?>` is easier with Inheritance_ because 
 
 To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to make the relationship
 
-*********************************************************************************
-how to make a class in Python
-*********************************************************************************
-
-to review, I can make a :ref:`class<what is a class?>` with the class_ keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do
-
 ----
 
 *********************************************************************************
@@ -32,18 +26,61 @@ These are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
+-----
+
+*********************************************************************************
+start the project
+*********************************************************************************
+
+* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``classes`` as the name of the project
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    ./makePythonTdd.sh classes
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+
+    .. code-block:: shell
+
+      ./makePythonTdd.ps1 classes
+
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-lines: 3
+    :emphasize-text: test_classes
+
+    E       AssertionError: True is not false
+
+    tests/test_classes.py:7: AssertionError
+
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
+
+* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
+
+            self.assertFalse(False)
+
+  the test passes
+
+* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 1
+
+    class TestClasses(unittest.TestCase):
+
 ----
 
 *********************************************************************************
-requirements
-*********************************************************************************
-
-:ref:`how to make a person`
-
-----
-
-*********************************************************************************
-open the project
+test_making_a_class_w_pass
 *********************************************************************************
 
 * I `change directory`_ to the ``person`` folder_
@@ -104,7 +141,11 @@ open the project
 
 ----
 
+*********************************************************************************
+how to make a class in Python
+*********************************************************************************
 
+to review, I can make a :ref:`class<what is a class?>` with the class_ keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do
 
 ----
 
