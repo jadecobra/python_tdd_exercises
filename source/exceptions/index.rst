@@ -39,7 +39,7 @@ Here are some questions you can answer after going through these chapters
 * :ref:`What causes AssertionError?<what causes AssertionError?>`
 * :ref:`What causes AttributeError?<what causes AttributeError?>`
 * :ref:`What causes TypeError?<TypeError>`
-* :ref:`What causes ModuleNotFoundError?<ModuleNotFoundError>`
+* :ref:`What causes ModuleNotFoundError?<what is a module?>`
 * :ref:`What causes NameError?<test_catching_name_error_in_tests>`
 * :ref:`What causes IndexError?<test_index_error>`
 * :ref:`What causes KeyError?<test_key_error>`

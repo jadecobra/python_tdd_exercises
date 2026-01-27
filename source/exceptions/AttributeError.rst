@@ -728,7 +728,7 @@ the terminal_ shows AttributeError_
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-I know that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` defined in a :ref:`module<ModuleNotFoundError>` are attributes. :ref:`variables<what is a variable?>` defined inside a :ref:`class<what is a class?>` are also attributes.
+I know that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` defined in a :ref:`module<what is a module?>` are attributes. :ref:`variables<what is a variable?>` defined inside a :ref:`class<what is a class?>` are also attributes.
 
 ----
 
@@ -959,7 +959,7 @@ the terminal_ shows AttributeError_
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-I know that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` defined in a :ref:`module<ModuleNotFoundError>` are attributes.
+I know that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` defined in a :ref:`module<what is a module?>` are attributes.
 
 I also know that :ref:`variables<what is a variable?>` defined inside a :ref:`class<what is a class?>` are attributes. :ref:`functions<what is a function?>` defined inside a :ref:`class<what is a class?>` are also attributes, they are called :ref:`methods<what is a function?>`
 

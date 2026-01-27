@@ -87,6 +87,8 @@
 .. _isinstance: https://docs.python.org/3/library/functions.html#isinstance
 .. _isinstance function: isinstance_
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
+.. _object: https://docs.python.org/3/glossary.html#term-object
+.. _objects: object_
 .. _integer: int_
 .. _integers: int_
 .. _Linux package manager: https://grokipedia.com/page/APT_(software)

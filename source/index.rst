@@ -39,7 +39,7 @@ who is this for?
   - :ref:`AttributeError<what causes AttributeError?>`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`
-  - :ref:`ModuleNotFoundError`
+  - :ref:`ModuleNotFoundError<what is a module?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`
   - :ref:`TypeError`
   - ValueError_
@@ -125,7 +125,7 @@ table of contents
   learning_models
   what do people think of this?<reviews>
   hatches
-  videos<pumping python videos>
+  videos<videos>
 
 ----
 

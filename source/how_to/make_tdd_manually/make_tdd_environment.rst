@@ -419,8 +419,8 @@ how to manually run tests
     NO TESTS RAN
 
   - ``python3`` is the `Python program`_
-  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>`, unittest_ in this case
-  - a Python_ :ref:`module<ModuleNotFoundError>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
+  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>`, unittest_ in this case
+  - a Python_ :ref:`module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
 
 I do not have any tests yet, so there is nothing to run
 
@@ -833,7 +833,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
 how to make a virtual environment
 =====================================================================================================
 
-* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_
+* I make a `virtual environment`_ with the venv_ :ref:`module<what is a module?>` from the `Python standard library`_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -843,8 +843,8 @@ how to make a virtual environment
   the terminal_ goes back to the command line
 
   - ``python3`` is the `Python program`_
-  - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
+  - ``-m`` is an option passed to Python_ to run the :ref:`module<what is a module?>` given after the option
+  - venv_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
   - ``.venv`` is the name I am giving for this `virtual environment`_
 
     .. IMPORTANT:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
@@ -960,7 +960,7 @@ the terminal_ shows
   pip     x.y
 
 - `pytest-watch`_ is not in the list
-- pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
+- pip_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to install `Python packages`_
 
 ----
 
@@ -1081,7 +1081,7 @@ how to upgrade the Python package manager in a virtual environment
 
     python3 -m pip install --upgrade pip
 
-  - pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
+  - pip_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to install `Python packages`_
   - ``install`` is an argument given to pip_ to install a given `Python package`_
   - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `Python package`_
   - ``pip`` is the `Python package`_ I am giving pip_ to install, in this case it upgrades itself to the latest version since I did not give a version number

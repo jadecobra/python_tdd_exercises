@@ -27,10 +27,10 @@ This is the job of the `assertEqual method`_, which takes 2 inputs and checks if
 
 where
 
-* ``reality`` is what happens when I call a :ref:`function<what is a function?>` or :ref:`object<classes>` in a :ref:`module<ModuleNotFoundError>` with some thing
-* ``my_expectation`` is what I think will happen when I call a :ref:`function<what is a function?>` or :ref:`object<classes>` in a :ref:`module<ModuleNotFoundError>` with some thing
+* ``reality`` is what happens when I call a :ref:`function<what is a function?>` or :ref:`object<classes>` in a :ref:`module<what is a module?>` with some thing
+* ``my_expectation`` is what I think will happen when I call a :ref:`function<what is a function?>` or :ref:`object<classes>` in a :ref:`module<what is a module?>` with some thing
 
-I use :ref:`the identity function<test_identity_function>` in this chapter to show how something is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<ModuleNotFoundError>`
+I use :ref:`the identity function<test_identity_function>` in this chapter to show how something is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`
 
 ----
 
@@ -371,7 +371,7 @@ there is no definition for ``src`` in ``test_telephone.py``
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ for the ``telephone`` :ref:`module<ModuleNotFoundError>` which is in the ``src`` folder_, at the top of the file_
+* then I add an `import statement`_ for the ``telephone`` :ref:`module<what is a module?>` which is in the ``src`` folder_, at the top of the file_
 
   .. code-block:: python
     :linenos:

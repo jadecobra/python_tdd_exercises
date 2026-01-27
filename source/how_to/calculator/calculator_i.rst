@@ -382,7 +382,7 @@ test_addition
     # AssertionError
     # NameError
 
-* I add an `import statement`_ at the top of the file_ for the ``calculator`` :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_ at the top of the file_ for the ``calculator`` :ref:`module<what is a module?>`
 
   .. code-block:: python
     :linenos:
@@ -977,7 +977,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
     import src.calculator
     import unittest
 
-  random_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_ that is used to make fake random numbers
+  random_ is a :ref:`module<what is a module?>` from the `Python standard library`_ that is used to make fake random numbers
 
 * I use a random value for ``first_number``
 

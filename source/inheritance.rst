@@ -83,69 +83,9 @@ start the project
 test_making_a_class_w_pass
 *********************************************************************************
 
-* I `change directory`_ to the ``person`` folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd person
-
-  the terminal_ shows I am in the ``person`` folder_
-
-  .. code-block:: python
-
-    .../pumping_python/person
-
-* I activate the `virtual environment`_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: Powershell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    (.venv) .../pumping_python/person
-
-* I use ``pytest-watch`` to run the tests
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    pytest-watch
-
-  the terminal_ shows
-
-  .. code-block:: python
-    :emphasize-lines: 4
-
-    rootdir: .../pumping_python/person
-    collected 2 items
-
-    tests/test_person.py ..                                             [100%]
-
-    ============================ 2 passed in X.YZs =============================
-
-* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_person.py`` to open it in the :ref:`editor<2 editors>`
-
 ----
 
-*********************************************************************************
-test_making_a_class_w_pass
-*********************************************************************************
-
-to review, I can make a :ref:`class<what is a class?>` with the class_ keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do
+to review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what is a class?>` keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do
 
 ----
 
@@ -155,99 +95,159 @@ to review, I can make a :ref:`class<what is a class?>` with the class_ keyword, 
 
 ----
 
-.. code-block:: python
+* I add an `import statement`_ for the ``classes`` :ref:`module<what is a module?>`
 
-  def test_making_a_class_w_pass(self):
-      self.assertIsInstance(classes.ClassWithPass(), object)
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
 
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+    import unittest
+    import src.classes
 
 
+    class TestClasses(unittest.TestCase):
+
+* I change ``test_failure`` to ``test_making_a_class_w_pass``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-4
+
+    class TestClasses(unittest.TestCase):
+
+        def test_making_a_class_w_pass(self):
+            self.assertIsInstance(src.classes.WPass(), object)
 
 
-* I add a class definition like ``ClassWithPass`` to ``classes.py``
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
+    AttributeError: module 'src.classes' has no attribute 'WPass'
 
-    class ClassWithParentheses:
+  there is no definition for ``WPass`` in ``classes.py``
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I open ``classes.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+
+* then I add a :ref:`class<what is a class?>` definition to ``classes.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1, 3
+
+    class WPass:
 
         pass
 
   the test passes
 
-* When I make the definition include parentheses
-
-  .. code-block:: python
-
-
-    class ClassWithParentheses():
-
-        pass
-
-  the terminal_ shows all tests are still passing.
-
-* I can confidently say that in Python_
-
-  - I can define ``classes`` with parentheses
-  - I can define ``classes`` without parentheses
-  - pass_ is a placeholder
-
-
-
+pass_ is a placeholder, it makes sure I am following Python_ rules and :ref:`I can make a class with pass<test_making_a_class_w_pass>`
 
 ----
 
-I add another test to ``TestClasses`` in ``test_classes.py`` to show another way to make a class
+*********************************************************************************
+test_making_a_class_w_parentheses
+*********************************************************************************
+
+----
+
+I can also make a :ref:`class<what is a class?>` with parentheses.
+
+----
+
+=================================================================================
+:red:`RED`: make it red
+=================================================================================
+
+----
+
+I add another test in ``test_classes.py``
 
 .. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 4-5
 
-  def test_making_a_class_w_parentheses(self):
-      self.assertIsInstance(classes.ClassWithParentheses(), object)
+      def test_making_a_class_w_pass(self):
+          self.assertIsInstance(src.classes.WPass(), object)
+
+      def test_making_a_class_w_parentheses(self):
+          self.assertIsInstance(src.classes.WParentheses(), object)
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
+.. code-block:: python
+
+  E       AttributeError: module 'src.classes' has no attribute 'WParentheses'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a class definition like ``WPass`` to ``classes.py``
+
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 6, 8
+
+  class WPass:
+
+      pass
 
 
+  class WParentheses:
 
-* I add a class definition like ``ClassWithPass`` to ``classes.py``
+      pass
+
+the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add parentheses to the definition
 
   .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 1
+    :emphasize-text: ( )
 
-
-    class ClassWithParentheses:
-
-        pass
-
-  the test passes
-
-* When I make the definition include parentheses
-
-  .. code-block:: python
-
-
-    class ClassWithParentheses():
+    class WParentheses():
 
         pass
 
   the terminal_ shows all tests are still passing.
 
-* I can confidently say that in Python_
+pass_ is a placeholder, it makes sure I am following Python_ rules, I can make a :ref:`class<what is a class?>` with
 
-  - I can define ``classes`` with parentheses
-  - I can define ``classes`` without parentheses
-  - pass_ is a placeholder
+* :ref:`pass<test_making_a_class_w_pass>`
+* :ref:`parentheses<test_making_a_class_w_parentheses>`
 
 ----
 
-
-
-
-In object oriented programming there is a concept called Inheritance_. With Inheritance_ I can define new :ref:`objects<what is a class?>` that inherit from existing objects_.
-
-Making new objects is easier because I do not have to reinvent or rewrite things that already exist, I can inherit them instead and change the new objects for my specific use case
-
-To use inheritance I specify the "parent" in parentheses when I define the new object (the child) to make the relationship
+*********************************************************************************
+test_making_a_class_w_object
+*********************************************************************************
 
 ----
 
@@ -260,77 +260,23 @@ To use inheritance I specify the "parent" in parentheses when I define the new o
 I add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 4-5
 
-  def test_making_a_class_w_object(self):
-      self.assertIsInstance(classes.ClassWithObject(), object)
+      def test_making_a_class_w_parentheses(self):
+          self.assertIsInstance(src.classes.WParentheses(), object)
+
+      def test_making_a_class_w_object(self):
+          self.assertIsInstance(src.classes.WObject(), object)
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-----
+.. code-block:: python
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-
-* I add a class definition to ``classes.py``
-
-  .. code-block:: python
-
-
-    class ClassWithObject():
-
-        pass
-
-  the terminal_ shows all tests passed
-
-* then I change the definition to explicitly state the parent :ref:`object<what is a class?>`
-
-  .. code-block:: python
-
-
-    class ClassWithObject(object):
-
-        pass
-
-  and the terminal_ still shows passing tests
-
-*********************************************************************************
-test_update_classy_person_year_of_birth
-*********************************************************************************
-
-I now add some tests for attributes since I know how to define a class for attributes
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-
-* I add a failing test to ``TestClasses`` in ``classes.py``
-
-  .. code-block:: python
-
-    def test_making_a_class_w_attributes(self):
-        self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-* I add a class definition to ``classes.py``
-
-  .. code-block:: python
-
-
-    class ClassWithAttributes(object):
-
-        pass
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for a missing attribute in the newly defined class
+  AttributeError: module 'src.classes' has no attribute 'WObject'
 
 ----
 
@@ -340,38 +286,22 @@ I now add some tests for attributes since I know how to define a class for attri
 
 ----
 
-* I add an attribute to ``ClassWithAttributes``
+I add a class definition to ``classes.py``
 
-  .. code-block:: python
+.. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 6, 8
 
+  class WParentheses():
 
-    class ClassWithAttributes(object):
-
-        a_boolean
-
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-* after I point the name to :ref:`None<what is None?>`
-
-  .. code-block:: python
+      pass
 
 
-    class ClassWithAttributes(object):
+  class WObject():
 
-        a_boolean = None
+      pass
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-* I redefine the attribute to make the test pass
-
-  .. code-block:: python
-
-
-    class ClassWithAttributes(object):
-
-        a_boolean = bool
-
-  the terminal_ shows all tests passed
+the test passes
 
 ----
 
@@ -381,236 +311,31 @@ I now add some tests for attributes since I know how to define a class for attri
 
 ----
 
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
+The last two tests pass because everything in Python_ is an object_ also known as a :ref:`class<what is a class?>`. object_ is the mother :ref:`class<what is a class?>` of all :ref:`classes<what is a class?>`. I can use anything in the `assertIsInstance method`_ and the test would pass.
 
-Let us add more tests with the other Python_ data structures to ``test_making_a_class_w_attributes``
-
-.. code-block:: python
-
-  def test_making_a_class_w_attributes(self):
-      self.assertEqual(classes.ClassWithAttributes.a_boolean, bool)
-      self.assertEqual(classes.ClassWithAttributes.an_integer, int)
-      self.assertEqual(classes.ClassWithAttributes.a_float, float)
-      self.assertEqual(classes.ClassWithAttributes.a_string, str)
-      self.assertEqual(classes.ClassWithAttributes.a_tuple, tuple)
-      self.assertEqual(classes.ClassWithAttributes.a_list, list)
-      self.assertEqual(classes.ClassWithAttributes.a_set, set)
-      self.assertEqual(classes.ClassWithAttributes.a_dictionary, dict)
-
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
-
-I add matching attributes to ``ClassWithAttributes`` to make the tests pass
+I use the examples to show different ways to make a :ref:`class<what is a class?>`. I can also say who the parent of a :ref:`class<what is a class?>` is when I define it. I add object_ to the definition
 
 .. code-block:: python
+  :lineno-start: 11
+  :emphasize-lines: 1
 
+  class WObject(object):
 
-  class ClassWithAttributes(object):
+      pass
 
-      a_boolean = bool
-      an_integer = int
-      a_float = float
-      a_string = str
-      a_tuple = tuple
-      a_list = list
-      a_set = set
-      a_dictionary = dict
+the test is still green. pass_ is a placeholder, it makes sure I am following Python_ rules, I can make a :ref:`class<what is a class?>` with
 
-the terminal_ shows all tests pass
+* :ref:`pass<test_making_a_class_w_pass>`
+* :ref:`parentheses<test_making_a_class_w_parentheses>`
+* :ref:`its parent<test_making_a_class_w_object>`
 
 ----
-
-*********************************************************************************
-test_attributes_and_methods_of_classes
-*********************************************************************************
-
-I can also define classes with :ref:`methods<what is a function?>` which are :ref:`function<what is a function?>` definitions that belong to the class
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add some tests for class methods to ``TestClasses`` in ``classes.py``
-
-.. code-block:: python
-
-  def test_making_a_class_w_methods(self):
-      self.assertEqual(
-          classes.ClassWithMethods.method_a(),
-          'You called MethodA'
-      )
-
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-
-* I add a class definition to ``classes.py``
-
-  .. code-block:: python
-
-
-    class ClassWithMethods(object):
-
-        pass
-
-  the terminal_ now gives :ref:`AttributeError<what causes AttributeError?>` with a different error
-
-
-* When I add the missing attribute to the ``ClassWithMethods`` class
-
-  .. code-block:: python
-
-
-    class ClassWithMethods(object):
-
-        method_a
-
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>` because there is no definition for ``method_a``
-
-
-* I define ``method_a`` as an attribute by pointing it to :ref:`None<what is None?>`
-
-  .. code-block:: python
-
-
-    class ClassWithMethods(object):
-
-        method_a = None
-
-  the terminal_ shows :ref:`TypeError` since ``method_a`` is :ref:`None<what is None?>` which is not callable
-
-* I change the definition of ``method_a`` to make it a :ref:`function<what is a function?>` which makes it callable
-
-  .. code-block:: python
-
-
-    class ClassWithMethods(object):
-
-        def method_a():
-            return None
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`. Progress!
-
-* I then change the value that ``method_a`` returns to match the expectation of the test
-
-  .. code-block:: python
-
-    def method_a():
-        return 'You called MethodA'
-
-  the test passes
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I can "make this better" by adding a few more tests to ``test_making_a_class_w_methods`` for fun
-
-  .. code-block:: python
-
-    def test_making_a_class_w_methods(self):
-        self.assertEqual(
-            classes.ClassWithMethods.method_a(),
-            'You called MethodA'
-        )
-        self.assertEqual(
-            classes.ClassWithMethods.method_b(),
-            'You called MethodB'
-        )
-        self.assertEqual(
-            classes.ClassWithMethods.method_c(),
-            'You called MethodC'
-        )
-        self.assertEqual(
-            classes.ClassWithMethods.method_d(),
-            'You called MethodD'
-        )
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-* and I change each :ref:`assertion<what is an assertion?>` to the right value until they all pass
-
-----
-
-
-*********************************************************************************
-test_making_a_class_w_attributes_and_methods
-*********************************************************************************
-
-Since I know how to define classes with methods and how to define classes with attributes, what happens when I define a class with both?
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add another test for a class that has both attributes and methods
-
-.. code-block:: python
-
-  def test_making_a_class_w_attributes_and_methods(self):
-      self.assertEqual(
-          classes.ClassWithAttributesAndMethods.attribute,
-          'attribute'
-      )
-      self.assertEqual(
-          classes.ClassWithAttributesAndMethods.method(),
-          'you called a method'
-      )
-
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I make ``classes.py`` to make the tests pass by defining the class, attribute and methods
-
-.. code-block:: python
-
-
-  class ClassWithAttributesAndMethods(object):
-
-      attribute = 'attribute'
-
-      def method():
-          return 'you called a method'
-
-----
-
 
 *********************************************************************************
 test_attributes_and_methods_of_objects
 *********************************************************************************
 
-To view what :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` are defined for any :ref:`object<what is a class?>` I can call dir_ on the :ref:`object<what is a class?>`.
-
-The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the object provided to it as input
+I add a test to show the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of object_
 
 ----
 
@@ -623,14 +348,26 @@ The `dir built-in function`_ returns a :ref:`list <lists>` of all :ref:`attribut
 I add a test to ``test_classes.py``
 
 .. code-block:: python
+  :lineno-start: 13
+  :emphasize-lines: 4-8
 
-  def test_attributes_and_methods_of_objects(self):
-    self.assertEqual(
-        dir(classes.ClassWithAttributesAndMethods),
-        []
-    )
+      def test_making_a_class_w_object(self):
+          self.assertIsInstance(src.classes.WObject(), object)
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` as the expected and real values do not match
+      def test_attributes_and_methods_of_objects(self):
+          self.assertEqual(
+              dir(object),
+              []
+          )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: Lists differ: ['__class__', '__delattr__', '__dir__', '_[272 chars]k__'] != []
 
 ----
 
@@ -640,52 +377,55 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` as the ex
 
 ----
 
-I copy the values from the terminal_ to change the expectation of the test
+I copy and paste the values from the terminal_ as the expectation and use the ``Find and Replace`` feature of the `Integrated Development Environment (IDE)`  to remove the extra characters
 
 .. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 4-29
 
-  def test_attributes_and_methods_of_objects(self):
-      self.assertEqual(
-          dir(classes.ClassWithAttributesAndMethods),
-          [
-              '__class__',
-              '__delattr__',
-              '__dict__',
-              '__dir__',
-              '__doc__',
-              '__eq__',
-              '__format__',
-              '__ge__',
-              '__getattribute__',
-              '__gt__',
-              '__hash__',
-              '__init__',
-              '__init_subclass__',
-              '__le__',
-              '__lt__',
-              '__module__',
-              '__ne__',
-              '__new__',
-              '__reduce__',
-              '__reduce_ex__',
-              '__repr__',
-              '__setattr__',
-              '__sizeof__',
-              '__str__',
-              '__subclasshook__',
-              '__weakref__',
-              'attribute',
-              'method',
-          ]
-      )
+      def test_attributes_and_methods_of_objects(self):
+          self.assertEqual(
+              dir(object),
+              [
+                  '__class__',
+                  '__delattr__',
+                  '__dir__',
+                  '__doc__',
+                  '__eq__',
+                  '__format__',
+                  '__ge__',
+                  '__getattribute__',
+                  '__getstate__',
+                  '__gt__',
+                  '__hash__',
+                  '__init__',
+                  '__init_subclass__',
+                  '__le__',
+                  '__lt__',
+                  '__ne__',
+                  '__new__',
+                  '__reduce__',
+                  '__reduce_ex__',
+                  '__repr__',
+                  '__setattr__',
+                  '__sizeof__',
+                  '__str__',
+                  '__subclasshook__'
+              ]
+          )
 
-and it passes, the last 2 values in the list are ``attribute`` and ``method`` which I defined earlier
+
+  # Exceptions seen
+
+and it passes. All :ref:`classes<what is a class?>` automatically get these attributes, they inherit them
 
 ----
 
 *********************************************************************************
-test_making_a_class_w_initializer
+test_making_classes_w_inheritance
 *********************************************************************************
+
+* I add 
 
 When making a new class, we can define an initializer which is a :ref:`method<what is a function?>` that can receive inputs to be used to customize instances/copies of the class
 
@@ -1041,7 +781,7 @@ you have gone through a lot of things and know
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`what you can do with classes<what is a class?>`
 
-Would you like to :ref:`test ModuleNotFoundError?<ModuleNotFoundError>`
+Would you like to :ref:`test ModuleNotFoundError?<what is a module?>`
 
 ----
 

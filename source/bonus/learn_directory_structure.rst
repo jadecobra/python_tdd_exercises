@@ -86,7 +86,7 @@ A file_ is a collection or container for text, like paper we write or print on a
 * ``.txt`` for a `plain text`_ file_
 * ``.sh`` for a bash_ file_
 * ``.ps1`` for a PowerShell_ file_
-* ``.py`` for a :ref:`Python module<ModuleNotFoundError>`
+* ``.py`` for a :ref:`Python module<what is a module?>`
 
 *********************************************************************************
 requirements

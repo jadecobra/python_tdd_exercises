@@ -340,8 +340,8 @@ how to manually run tests on Windows without WSL
     NO TESTS RAN
 
   - ``python`` is the `Python program`_
-  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<ModuleNotFoundError>`, unittest_ in this case
-  - a Python_ :ref:`module<ModuleNotFoundError>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
+  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>`, unittest_ in this case
+  - a Python_ :ref:`module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
 
 * I do not have any tests yet, so there is nothing to run
 
@@ -752,7 +752,7 @@ It means I can have a separate `virtual environment`_ for every project with onl
 how to make a virtual environment on Windows without WSL
 =====================================================================================================
 
-* I make a `virtual environment`_ with the venv_ :ref:`module<ModuleNotFoundError>` from the `Python standard library`_
+* I make a `virtual environment`_ with the venv_ :ref:`module<what is a module?>` from the `Python standard library`_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -762,8 +762,8 @@ how to make a virtual environment on Windows without WSL
   the terminal_ goes back to the command line
 
   - ``python`` is the `Python program`_
-  - ``-m`` is an option passed to Python_ to run the :ref:`module<ModuleNotFoundError>` given after the option
-  - venv_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
+  - ``-m`` is an option passed to Python_ to run the :ref:`module<what is a module?>` given after the option
+  - venv_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
   - ``.venv`` is the name I am giving for this `virtual environment`_
 
     .. IMPORTANT:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
@@ -878,7 +878,7 @@ the terminal_ shows
   pip     x.y
 
 - `pytest-watch`_ is not in the list
-- pip_ is a :ref:`module<ModuleNotFoundError>` from the `Python standard library`_, it is used to install `Python packages`_
+- pip_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to install `Python packages`_
 
 ----
 

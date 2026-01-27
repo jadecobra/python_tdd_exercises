@@ -222,7 +222,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-I want something that can read dates and times from timestamps. I search `Python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the `datetime module`_ from the results. The available types in the :ref:`module<ModuleNotFoundError>` show `datetime.datetime`_ objects
+I want something that can read dates and times from timestamps. I search `Python's online documentation`_ for `date and time <https://docs.python.org/3/search.html?q=date+and+time>`_ to see if there is an existing solution and select the `datetime module`_ from the results. The available types in the :ref:`module<what is a module?>` show `datetime.datetime`_ objects
 
 .. code-block:: python
 
@@ -279,7 +279,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   AttributeError: module 'datetime' has no attribute 'strptime'
 
-because my `import statement`_ is different from `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_, so I add the :ref:`module<ModuleNotFoundError>` name to the call
+because my `import statement`_ is different from `the example in the documentation <https://docs.python.org/3/library/datetime.html?highlight=time%20difference#examples-of-usage-datetime>`_, so I add the :ref:`module<what is a module?>` name to the call
 
 .. code-block:: python
 

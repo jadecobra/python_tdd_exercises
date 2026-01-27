@@ -1,7 +1,5 @@
 .. include:: links.rst
 
-.. _object: https://docs.python.org/3/glossary.html#term-object
-.. _objects: object_
 .. _class: https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
 .. _classes: class_
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)

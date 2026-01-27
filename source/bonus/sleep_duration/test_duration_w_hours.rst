@@ -113,7 +113,7 @@ requirements
         None
     )
 
-* then change the first argument to the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
+* then change the first argument to the ``sleep_duration`` :ref:`module<what is a module?>`
 
   .. code-block:: python
 
@@ -137,7 +137,7 @@ requirements
     # TypeError
     # NameError
 
-  then add an `import statement`_ at the top of the file_ for the :ref:`module<ModuleNotFoundError>`
+  then add an `import statement`_ at the top of the file_ for the :ref:`module<what is a module?>`
 
   .. code-block:: python
 
@@ -154,7 +154,7 @@ requirements
 
     AssertionError: <module 'src.sleep_duration' from '/workspace[46 chars].py'> != None
 
-* I use something in the ``sleep_duration`` :ref:`module<ModuleNotFoundError>`
+* I use something in the ``sleep_duration`` :ref:`module<what is a module?>`
 
   .. code-block:: python
 

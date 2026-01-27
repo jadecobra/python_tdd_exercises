@@ -7,7 +7,7 @@
 .. _ModuleNotFoundError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
 
 #################################################################################
-ModuleNotFoundError
+what is a module?
 #################################################################################
 
 .. raw:: html
@@ -286,7 +286,7 @@ you have gone through a lot of information and know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`what you can do with classes<what is a class?>`
-* :ref:`how to raise ModuleNotFoundError<ModuleNotFoundError>`
+* :ref:`how to raise ModuleNotFoundError<what is a module?>`
 
 :ref:`Would you like to test AttributeError?<what causes AttributeError?>`
 

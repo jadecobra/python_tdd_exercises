@@ -122,7 +122,7 @@ If you prefer videos to text, here are videos for some of the chapters in the bo
 
     <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/4-KGDO3zMYk?si=TdPbniUMkoz0M7CI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-* :ref:`ModuleNotFoundError`
+* :ref:`ModuleNotFoundError<what is a module?>`
 
   .. raw:: html
 

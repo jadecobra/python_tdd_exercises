@@ -179,7 +179,7 @@ start the project
 test_catching_module_not_found_error_in_tests
 *********************************************************************************
 
-:ref:`ModuleNotFoundError` is raised when I try to import a :ref:`module<ModuleNotFoundError>` that does NOT exist
+:ref:`ModuleNotFoundError<what is a module?>` is raised when I try to import a :ref:`module<what is a module?>` that does NOT exist
 
 ----
 
@@ -203,13 +203,13 @@ I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` w
 
   # Exceptions seen
 
-the terminal_ shows :ref:`ModuleNotFoundError`
+the terminal_ shows :ref:`ModuleNotFoundError<what is a module?>`
 
 .. code-block:: shell
 
   ModuleNotFoundError: No module named 'does_not_exist'
 
-I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref:`module<ModuleNotFoundError>` is any file_ that ends in ``.py``
+I cannot import a :ref:`module<what is a module?>` that does not exist. A :ref:`module<what is a module?>` is any file_ that ends in ``.py``
 
 ----
 
@@ -219,7 +219,7 @@ I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref
 
 ----
 
-* I add :ref:`ModuleNotFoundError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`ModuleNotFoundError<what is a module?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 10
@@ -229,7 +229,7 @@ I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` in the ``src`` `folder (directory)`_ to solve the problem but I want to catch/handle it in the test. This way I can show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError` when the file_ does NOT exist. I add the `assertRaises method`_
+* I can make ``does_not_exist.py`` in the ``src`` `folder (directory)`_ to solve the problem but I want to catch/handle it in the test. This way I can show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what is a module?>` when the file_ does NOT exist. I add the `assertRaises method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -241,7 +241,7 @@ I cannot import a :ref:`module<ModuleNotFoundError>` that does not exist. A :ref
 
   the test passes.
 
-assertRaises_ checks that the code in its context, raises the :ref:`Exception<errors>` it is given in parentheses. :ref:`ModuleNotFoundError` is raised when I try to import a :ref:`module<ModuleNotFoundError>` that does NOT exist
+assertRaises_ checks that the code in its context, raises the :ref:`Exception<errors>` it is given in parentheses. :ref:`ModuleNotFoundError<what is a module?>` is raised when I try to import a :ref:`module<what is a module?>` that does NOT exist
 
 ----
 
@@ -346,7 +346,7 @@ test_catching_attribute_error_in_tests
 
     NameError: name 'src' is not defined
 
-* I add an `import statement`_ at the top of the file_ for the :ref:`module<ModuleNotFoundError>`
+* I add an `import statement`_ at the top of the file_ for the :ref:`module<what is a module?>`
 
   .. code-block:: python
     :linenos:
@@ -1063,7 +1063,7 @@ the terminal_ shows all tests are passing. The `assertRaises method`_ checks tha
 
     KeyError: 'not_in_dictionary'
 
-  because it is not :ref:`ModuleNotFoundError` even though they are both :ref:`Exceptions<errors>`. I undo the change
+  because it is not :ref:`ModuleNotFoundError<what is a module?>` even though they are both :ref:`Exceptions<errors>`. I undo the change
 
   .. code-block:: python
     :lineno-start: 34
@@ -1234,7 +1234,7 @@ review
 
 I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested the following
 
-* :ref:`ModuleNotFoundError`
+* :ref:`ModuleNotFoundError<what is a module?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError`
