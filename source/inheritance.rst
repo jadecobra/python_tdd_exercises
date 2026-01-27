@@ -26,56 +26,80 @@ These are the tests I have by the end of the chapter
   :language: python
   :linenos:
 
------
+----
 
 *********************************************************************************
-start the project
+requirements
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``classes`` as the name of the project
+* :ref:`how to make a person`
+* :ref:`classes<what is a class?>`
+
+----
+
+*********************************************************************************
+open the project
+*********************************************************************************
+
+* I `change directory`_ to the ``person`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh classes
+    cd person
+
+  the terminal_ shows I am in the ``person`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/person
+
+* I activate the `virtual environment`_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
 
-    .. code-block:: shell
+    .. code-block:: Powershell
+      :emphasize-lines: 1
 
-      ./makePythonTdd.ps1 classes
+      .venv/scripts/activate.ps1
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :emphasize-lines: 3
-    :emphasize-text: test_classes
-
-    E       AssertionError: True is not false
-
-    tests/test_classes.py:7: AssertionError
-
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_classes.py:7`` to open it in the :ref:`editor<2 editors>`
-
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+  the terminal_ shows
 
   .. code-block:: python
-    :lineno-start: 7
+
+    (.venv) .../pumping_python/person
+
+* I use ``pytest-watch`` to run the tests
+
+  .. code-block:: python
     :emphasize-lines: 1
 
-            self.assertFalse(False)
+    pytest-watch
 
-  the test passes
-
-* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
+  the terminal_ shows
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
+    :emphasize-lines: 4
 
-    class TestClasses(unittest.TestCase):
+    rootdir: .../pumping_python/person
+    collected 2 items
+
+    tests/test_person.py ..                                             [100%]
+
+    ============================ 2 passed in X.YZs =============================
+
+* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_person.py`` to open it in the :ref:`editor<2 editors>`
+
+* I make a new file_ in the ``tests`` folder_ named ``test_classes.py``
+
+* I make another file in the ``src`` folder_ named ``classes.py``
 
 ----
 
@@ -425,7 +449,7 @@ and it passes. All :ref:`classes<what is a class?>` automatically get these attr
 test_making_classes_w_inheritance
 *********************************************************************************
 
-* I add 
+* I add
 
 When making a new class, we can define an initializer which is a :ref:`method<what is a function?>` that can receive inputs to be used to customize instances/copies of the class
 
