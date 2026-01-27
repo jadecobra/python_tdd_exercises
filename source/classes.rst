@@ -19,7 +19,7 @@ how to make a class in Python
 
 * use the class_ keyword
 * use :ref:`CapWords format<CapWords>` for the name
-* use a name that tells what the group of :ref:`attributes<what causes AttributeError?>` and :ref:`methods<what is a function?>` do - naming things is its own challenge
+* use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do - naming things is its own challenge
 
 ----
 

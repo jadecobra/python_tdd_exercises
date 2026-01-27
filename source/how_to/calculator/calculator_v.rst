@@ -325,7 +325,7 @@ how to multiply a list
                 error_message
             )
 
-            two_numbers = [0, 1, 2, 3]
+            a_list = [0, 1, 2, 3]
             error_message = 'Excuse me?! Numbers only! try again...'
 
             self.assertEqual(

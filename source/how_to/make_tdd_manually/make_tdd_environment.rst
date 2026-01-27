@@ -545,7 +545,7 @@ how to make a Python file to hold the tests in the 'tests' folder
       .. IMPORTANT:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for testing
-    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<what is a function?>` and :ref:`attributes<what causes AttributeError?>`
+    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<what is a function?>` and :ref:`attributes<test_attribute_error_w_class_attributes>`
 
   - ``def test_failure``
 
@@ -554,7 +554,7 @@ how to make a Python file to hold the tests in the 'tests' folder
 
       .. IMPORTANT:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
-    * ``self.`` lets me use :ref:`attributes<what causes AttributeError?>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().``
 
       .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name but it is easier to stick with convention for this concept
 
