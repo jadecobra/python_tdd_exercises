@@ -36,8 +36,3 @@ def divide(first_input, second_input):
 @only_takes_numbers
 def add(first_input, second_input):
     return first_input + second_input
-
-
-@only_takes_numbers
-def exponent(first_input, second_input):
-    return first_input**second_input

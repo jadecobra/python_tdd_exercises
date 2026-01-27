@@ -43,12 +43,6 @@ class TestCalculator(unittest.TestCase):
                     self.random_first_number*self.random_second_number
                 ),
             },
-            'exponent': {
-                'function': src.calculator.exponent,
-                'expectation': (
-                    self.random_first_number**self.random_second_number
-                )
-            },
         }
 
     def test_calculator_functions(self):
