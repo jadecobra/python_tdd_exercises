@@ -36,8 +36,7 @@ code from the chapter
 
 Do you want to see all the CODE I typed in these chapters?
 
-* :ref:`what is a class?`
-* :ref:`inheritance<family ties>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
 
 ----
 
@@ -46,8 +45,8 @@ what is next?
 *************************************************************************************
 
 
-* :ref:`what you can do with Lists<lists>`
-* :ref:`list comprehensions: a quick way to make lists<list comprehensions>`
+* :ref:`what is a class?`
+* :ref:`inheritance<family ties>`
 
 -----
 
