@@ -43,9 +43,11 @@ class TestCalculator(unittest.TestCase):
                     self.random_first_number*self.random_second_number
                 ),
             },
-            'square': {
-                'function': src.calculator.square,
-                'expectation': self.random_first_number**2
+            'exponent': {
+                'function': src.calculator.exponent,
+                'expectation': (
+                    self.random_first_number**self.random_second_number
+                )
             },
         }
 

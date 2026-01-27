@@ -39,5 +39,5 @@ def add(first_input, second_input):
 
 
 @only_takes_numbers
-def square(first_input, second_input=None):
-    return first_input**2
+def exponent(first_input, second_input):
+    return first_input**second_input
