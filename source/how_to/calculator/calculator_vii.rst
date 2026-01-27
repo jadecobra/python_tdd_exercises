@@ -1467,7 +1467,7 @@ I add a new :ref:`key<test_keys_of_a_dictionary>` for the exponent :ref:`functio
 
 .. code-block:: python
   :lineno-start: 40
-  :emphasize-lines: 7-10
+  :emphasize-lines: 7-12
 
                 'multiplication': {
                     'function': src.calculator.multiply,
@@ -1477,7 +1477,9 @@ I add a new :ref:`key<test_keys_of_a_dictionary>` for the exponent :ref:`functio
                 },
                 'exponent': {
                     'function': src.calculator.exponent,
-                    'expectation': self.random_first_number**2
+                    'expectation': (
+                        self.random_first_number**self.random_second_number
+                    )
                 },
             }
 
@@ -1551,44 +1553,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>` for every
 
   the test passes
 
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I want the ``exponent`` :ref:`function<what is a function?>` to only take one input since the second input is not used. I make the second input optional by adding a :ref:`default argument<test_functions_w_default_arguments>`
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
-
-    @only_takes_numbers
-    def exponent(first_input, second_input=None):
-        return first_input ** second_input
-
-  still green. Not a beautiful solution but it works for now.
-
-* * I use the ``Rename Symbol`` feature to change the name of the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` since I have added a test that is not arithmetic
-
-  .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 4
-
-            except ZeroDivisionError:
-                self.division_result = 'brmph?! cannot divide by 0. Try again...'
-
-            self.calculator_tests = {
-                'addition': {
-                    'function': src.calculator.add,
-                    'expectation': (
-                        self.random_first_number+self.random_second_number
-                    ),
-                },
-
-  I think it is time to take nap. That was a lot.
+I think it is time to take nap. That was a lot.
 
 ----
 
