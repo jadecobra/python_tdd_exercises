@@ -98,6 +98,7 @@ table of contents
   make TDD project 1<how_to/make_tdd_manually/index>
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions>
+  what causes AttributeError?<exceptions/AttributeError>
   pass values<how_to/pass_values>
   data_structures/none
   data_structures/booleans/index
@@ -111,7 +112,6 @@ table of contents
   make TDD project 3<how_to/make_tdd_automatically_w_variables/index>
   make a person<how_to/make_person>
   classes
-  what causes AttributeError?<exceptions/AttributeError>
   what is a module?<exceptions/ModuleNotFoundError>
 
   dot_notation

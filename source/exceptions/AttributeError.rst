@@ -20,7 +20,7 @@ AttributeError
 what causes AttributeError?
 *********************************************************************************
 
-AttributeError_ is raised when there is a reference to a name that is NOT in an :ref:`object<what is a class?>` that exists.
+AttributeError_ is raised when I use a name that is NOT in an :ref:`object<what is a class?>` that exists.
 
 ----
 
@@ -28,7 +28,7 @@ AttributeError_ is raised when there is a reference to a name that is NOT in an 
 what is an attribute?
 *********************************************************************************
 
-An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<what is a class?>`, for example, a human being has attributes like height, weight, sex and color. They are also known as properties
+An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<what is a class?>`, for example, a human being has attributes like height, weight, sex and color, they are also known as properties.
 
 ----
 
@@ -48,31 +48,256 @@ These are the tests I have by the end of the chapter
 start the project
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``attribute_error`` as the name of the project
+* I name this project ``attribute_error``
+* I open a terminal_
+* then I `make a directory`_ for the project
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh attribute_error
+    mkdir attribute_error
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+* I `change directory`_ to the project
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd attribute_error
+
+  the terminal_ shows I am now in the ``attribute_error`` folder_
+
+  .. code-block:: shell
+
+    .../pumping_python/attribute_error
+
+* I `make a folder`_ for the source code
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir src
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python/attribute_error
+
+* I use touch_ to make an empty file_ for the program_ in the ``src`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch src/attribute_error.py
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/attribute_error.py`` instead of ``touch src/attribute_error.py``
 
     .. code-block:: shell
+      :emphasize-lines: 1
 
-      ./makePythonTdd.ps1 attribute_error
+      New-Item src/attribute_error.py
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ goes back to the command line
+
+  .. code-block:: shell
+
+    .../pumping_python/attribute_error
+
+* I `make a directory`_ for the tests
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir tests
+
+  the terminal_ goes back to the command line
+
+* I use touch_ to make an empty file_ in the ``tests`` folder_ to tell Python_ that it is a `Python package`_
+
+  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch tests/__init__.py
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      New-Item tests/__init__.py
+
+  the terminal_ goes back to the command line
+
+* I make an empty file_ for the actual test
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    touch tests/test_attribute_error.py
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_attribute_error.py`` instead of ``touch tests/test_attribute_error.py``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      New-Item tests/test_attribute_error.py
+
+  the terminal_ goes back to the command line
+
+* I open ``test_attribute_error.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+
+  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example, when I type this
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code tests/test_attribute_error.py
+
+    ``test_attribute_error.py`` opens up in the :ref:`editor<2 editors>`
+
+* I add :ref:`the first failing test<test_failure>` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :emphasize-text: test_attribute_error
+    :linenos:
+    :emphasize-lines: 1, 4, 6-7
 
+    import unittest
+
+
+    class TestAttributeError(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+* I make a `virtual environment`_ in the terminal_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    python3 -m venv .venv
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      python -m venv .venv
+
+  the terminal_ takes some time then goes back to the command line
+
+* I activate the `virtual environment`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../pumping_python/attribute_error
+
+* I upgrade the `Python package manager (pip)`_ to the latest version
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    python3 -m pip install --upgrade pip
+
+  the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
+
+* I make a ``requirements.txt`` file_ for the `Python programs`_ my project needs
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    echo "pytest-watch" > requirements.txt
+
+  the terminal_ goes back to the command line
+
+* I use pip_ to install ``pytest-watch`` with the requirements file_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    python3 -m pip install --requirement requirements.txt
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      python -m pip install --requirement requirements.txt
+
+  the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
+
+* I use `pytest-watch`_ to run the test
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 8, 10
+
+    ================================ FAILURES ================================
+    _______________________ TestAttributeError.test_failure _______________________
+
+    self = <tests.test_attribute_error.AttributeError testMethod=test_failure>
+
+        def test_failure(self):
+    >       self.assertFalse(True)
     E       AssertionError: True is not false
 
     tests/test_attribute_error.py:7: AssertionError
+    ========================= short test summary info ==========================
+    FAILED tests/test_functions.py::TestFunctions::test_failure - AssertionError: True is not false
+    =========================== 1 failed in X.YZs ============================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_attribute_error.py:7`` to open it in the :ref:`editor<2 editors>`
+
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4-5
+
+            self.assertFalse(True)
+
+
+    # Exceptions seen
+    # AssertionError
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -84,13 +309,7 @@ start the project
 
   the test passes
 
-* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
-
-    class TestAttributeError(unittest.TestCase):
+----
 
 *********************************************************************************
 test_attribute_error_w_variables
@@ -108,9 +327,10 @@ test_attribute_error_w_variables
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
-    import unittest
     import src.attribute_error
+    import unittest
 
 * I change ``test_failure`` to ``test_attribute_error_w_variables``
 
@@ -126,19 +346,25 @@ test_attribute_error_w_variables
 
     # Exceptions seen
 
-  I think of ``src.attribute_error.variable_00`` as an address for ``variable_00`` in ``attribute_error.py`` which is in the ``src`` folder. Since the file_ is empty, the :ref:`variable<what is a variable?>` is not in it.
+  I think of ``src.attribute_error.variable_00`` as an address
 
-  The terminal_ shows AttributeError_
+  - ``src`` is the ``src`` folder_
+  - ``.attribute_error`` points to ``attribute_error.py`` in the ``src`` folder_
+  - ``.variable_00`` points to ``variable_00`` in ``attribute_error.py`` which is in the ``src`` folder_
+  - ``src.attribute_error.variable_00`` is pointing to ``variable_00`` in ``attribute_error.py`` in the ``src`` folder_
+
+  Since ``attribute_error.py`` is empty, Python_ cannot find ``variable_00`` inside it and the terminal_ shows AttributeError_
 
   .. code-block:: shell
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_00'
 
-* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
+* I add AttributeError_ to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 3
+    :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
@@ -166,11 +392,14 @@ test_attribute_error_w_variables
 
     NameError: name 'variable_00' is not defined
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
+  :ref:`NameError<test_catching_name_error_in_tests>` is raised when I use a name that is not defined in the file_ I am working in
+
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 4
+    :emphasize-text: NameError
 
     # Exceptions seen
     # AssertionError
@@ -185,7 +414,7 @@ test_attribute_error_w_variables
 
     variable_00 = None
 
-  the test passes. ``variable_00`` is now an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.variable_00``
+  the test passes. ``variable_00`` is now an attribute or property of ``attribute_error.py`` which is in the ``src`` folder_ and I can get to it with ``src.attribute_error.variable_00``
 
 ----
 
@@ -299,7 +528,7 @@ test_attribute_error_w_variables
 
   the test passes
 
-A :ref:`variable<what is a variable?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_variables>`
 
 ----
 
@@ -360,11 +589,12 @@ the terminal_ shows AttributeError_
 
     TypeError: 'NoneType' object is not callable
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 17
     :emphasize-lines: 5
+    :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
@@ -372,7 +602,7 @@ the terminal_ shows AttributeError_
     # NameError
     # TypeError
 
-* I change the attribute to a :ref:`function<what is a function?>` in ``attribute_error.py``
+* I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -384,7 +614,7 @@ the terminal_ shows AttributeError_
     def function_00():
         return None
 
-  the test passes. ``function_00`` is now an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can call it by using ``src.attribute_error.function_00()``
+  the test passes. ``function_00`` is now an attribute or property of ``attribute_error.py`` in the ``src`` folder_. I can call it with ``src.attribute_error.function_00()``
 
 ----
 
@@ -398,7 +628,7 @@ the terminal_ shows AttributeError_
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 2
+    :emphasize-lines: 3
 
         def test_attribute_error_w_functions(self):
             src.attribute_error.function_00()
@@ -429,6 +659,7 @@ the terminal_ shows AttributeError_
 
   .. code-block:: python
     :lineno-start: 13
+    :emphasize-lines: 4
 
         def test_attribute_error_w_functions(self):
             src.attribute_error.function_00()
@@ -456,7 +687,7 @@ the terminal_ shows AttributeError_
 
   the test passes
 
-* then I add another line in ``test_attribute_error.py``
+* I add another line in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -477,7 +708,7 @@ the terminal_ shows AttributeError_
 
     AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
 
-* I add it the :ref:`function<what is a function?>` to ``attribute_error.py``
+* I add the :ref:`function<what is a function?>` to ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -490,9 +721,10 @@ the terminal_ shows AttributeError_
     def function_03():
         return None
 
-  the test passes
+  the test passes.
 
-A :ref:`function<what is a function?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_variables>`
 
 ----
 
@@ -500,7 +732,7 @@ A :ref:`function<what is a function?>` in a :ref:`module<ModuleNotFoundError>` i
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-We know that variables_ and :ref:`functions<what is a function?>` defined in a :ref:`module<ModuleNotFoundError>` are attributes. variables_ defined inside a :ref:`class<what is a class?>` are also attributes.
+I know that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` defined in a :ref:`module<ModuleNotFoundError>` are attributes. :ref:`variables<what is a variable?>` defined inside a :ref:`class<what is a class?>` are also attributes.
 
 ----
 
@@ -513,6 +745,8 @@ We know that variables_ and :ref:`functions<what is a function?>` defined in a :
 I add a new test to ``test_attribute_error.py``
 
 .. code-block:: python
+  :lineno-start: 17
+  :emphasize-lines: 3-4
 
           src.attribute_error.function_03()
 
@@ -555,7 +789,7 @@ the terminal_ shows AttributeError_
 
     AttributeError: 'function' object has no attribute 'attribute_00'
 
-* I define a :ref:`variable<what is a variable?>` inside the :ref:`function <what is a function?>`
+* I add a :ref:`variable<what is a variable?>` inside the :ref:`function <what is a function?>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -566,7 +800,7 @@ the terminal_ shows AttributeError_
         attribute_00 = None
         return None
 
-  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot access a :ref:`variable<what is a variable?>` that belongs to a :ref:`function<what is a function?>` from outside of the :ref:`function<what is a function?>`
+  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`
 
 * I use the :ref:`class<what is a class?>` keyword instead of the def_ keyword to make ``AClass`` a :ref:`class<what is a class?>`
 
@@ -587,11 +821,14 @@ the terminal_ shows AttributeError_
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
+  I cannot use a `return statement`_ outside a :ref:`function<what is a function?>`
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 23
     :emphasize-lines: 6
+    :emphasize-text: SyntaxError
 
     # Exceptions seen
     # AssertionError
@@ -606,9 +843,10 @@ the terminal_ shows AttributeError_
     :lineno-start: 23
 
     class AClass():
+
         attribute_00 = None
 
-  the test passes. ``attribute_00`` is now an attribute/property of ``AClass`` which is an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.AClass.attribute_00()``
+  the test passes. ``attribute_00`` is now an attribute of the ``AClass`` :ref:`class<what is a class?>` which is an attribute of ``attribute_error.py`` in which is in the ``src`` folder_ and I can get to it with ``src.attribute_error.AClass.attribute_00``
 
 ----
 
@@ -618,7 +856,7 @@ the terminal_ shows AttributeError_
 
 ----
 
-* I add another failing line to ``test_attribute_error.py``
+* I add another failing line for practice to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -662,7 +900,7 @@ the terminal_ shows AttributeError_
 
   .. code-block:: shell
 
-     AttributeError: type object 'AClass' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
+    AttributeError: type object 'AClass' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
 
 * I add the attribute to ``AClass`` in ``attribute_error.py``
 
@@ -714,8 +952,10 @@ the terminal_ shows AttributeError_
 
   the test passes
 
-* A :ref:`variable<what is a variable?>` in a :ref:`class<what is a class?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`class<what is a class?>`.
-* A :ref:`class<what is a class?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_class_attributes>`
+* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_variables>`
 
 ----
 
@@ -723,9 +963,9 @@ the terminal_ shows AttributeError_
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-We know that variables_, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` defined in a :ref:`module<ModuleNotFoundError>` are attributes. We also know that variables_ defined inside a :ref:`class<what is a class?>` are attributes.
+I know that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` defined in a :ref:`module<ModuleNotFoundError>` are attributes.
 
-:ref:`functions<what is a function?>` defined inside a :ref:`class<what is a class?>` are also attributes, they are known as :ref:`methods<what is a function?>`
+I also know that :ref:`variables<what is a variable?>` defined inside a :ref:`class<what is a class?>` are attributes. :ref:`functions<what is a function?>` defined inside a :ref:`class<what is a class?>` are also attributes, they are called :ref:`methods<what is a function?>`
 
 ----
 
@@ -784,7 +1024,7 @@ We know that variables_, :ref:`functions<what is a function?>` and :ref:`classes
 
     TypeError: 'NoneType' object is not callable
 
-* I make it a :ref:`method<what is a function?>` by using the def_ keyword
+* I make it a :ref:`method<what is a function?>` with the def_ keyword
 
   .. code-block:: python
     :lineno-start: 28
@@ -795,7 +1035,7 @@ We know that variables_, :ref:`functions<what is a function?>` and :ref:`classes
         def method_00():
             return None
 
-  the test passes. ``method_00`` is now an attribute/property of ``AClass`` which is an attribute/property of ``attribute_error.py`` which is in the ``src`` folder_ and I can reach it by using ``src.attribute_error.AClass.method_00()``
+  the test passes. ``method_00`` is now an attribute of ``AClass`` which is an attribute of ``attribute_error.py`` which is in the ``src`` folder_ and I can get to it with ``src.attribute_error.AClass.method_00()``
 
 ----
 
@@ -833,7 +1073,7 @@ We know that variables_, :ref:`functions<what is a function?>` and :ref:`classes
         def method_01():
             return None
 
-  the terminal_ shows green again
+  the test passes
 
 * I add another failing line to ``test_attribute_error.py``
 
@@ -901,8 +1141,12 @@ We know that variables_, :ref:`functions<what is a function?>` and :ref:`classes
 
   the test passes
 
-* A :ref:`function<what is a function?>` in a :ref:`class<what is a class?>` is called a :ref:`method<what is a function?>` and is an attribute of the :ref:`class<what is a class?>`
-* A :ref:`class<what is a class?>` in a :ref:`module<ModuleNotFoundError>` is an attribute of the :ref:`module<ModuleNotFoundError>`
+
+* :ref:`A function in a class is called a method and is an attribute of the class<test_attribute_error_w_class_methods>`
+* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_class_attributes>`
+* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_variables>`
 
 ----
 
@@ -910,7 +1154,7 @@ We know that variables_, :ref:`functions<what is a function?>` and :ref:`classes
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``attribute_error.py`` and ``test_attribute_error.py``  in the :ref:`editors<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
@@ -957,7 +1201,7 @@ I also saw the following :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`TypeError` and
+* :ref:`TypeError<what causes TypeError?>` and
 * SyntaxError_
 
 ----

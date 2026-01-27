@@ -249,7 +249,7 @@ assertRaises_ checks that the code in its context, raises the :ref:`Exception<er
 test_catching_name_error_in_tests
 *********************************************************************************
 
-NameError_ is raised when I use a name that is not defined in the file
+NameError_ is raised when I use a name that is not defined in the file_ I am working in
 
 ----
 

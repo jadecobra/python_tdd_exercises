@@ -255,7 +255,7 @@ requirements
 
   the terminal_ goes back to the command line
 
-* I use pip_ to use the requirements file_ to install ``pytest-watch``
+* I use pip_ to install ``pytest-watch`` with the requirements file_
 
   .. code-block:: shell
     :emphasize-lines: 1

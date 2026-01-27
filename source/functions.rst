@@ -272,7 +272,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I use pip_ to use the requirements file_ to install ``pytest-watch``
+* I use pip_ to install ``pytest-watch`` with the requirements file_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -309,11 +309,11 @@ start the project
 
         def test_failure(self):
     >       self.assertFalse(True)
-    E       Functions: True is not false
+    E       AssertionError: True is not false
 
     tests/test_functions.py:7: AssertionError
     ========================= short test summary info ==========================
-    FAILED tests/test_functions.py::TestFunctions::test_failure - Functions: True is not false
+    FAILED tests/test_functions.py::TestFunctions::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_functions.py:7`` to open it in the :ref:`editor<2 editors>`
@@ -688,7 +688,7 @@ what the ``constant`` function_ returns and what the test expects are different.
 
 the test passes.
 
-A constant function_ always return the same thing when called, I can use them in place of variables_, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the function_ is called less than 10 times, but who's counting?
+A constant function_ always return the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the function_ is called less than 10 times, but who's counting?
 
 ----
 
