@@ -402,8 +402,8 @@ the test passes
                 dict(),
                 True,
             ):
-                with self.subTest(i=item):
-                    self.assertFalse(item)
+                with self.subTest(i=false_item):
+                    self.assertFalse(false_item)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -412,6 +412,8 @@ the test passes
     SUBFAILED(i=True) tests/test_booleans.py::TestBooleans::test_what_is_false - AssertionError: True is not false
 
 * I remove the failing line and the test is green again
+
+----
 
 * I add a `for loop`_ for all the :ref:`assertions<what is an assertion?>` that :ref:`test what is True<test_what_is_true>`
 
@@ -479,8 +481,8 @@ the test passes
                 {'key': 'value'},
                 False,
             ):
-                with self.subTest(i=item):
-                    self.assertTrue(item)
+                with self.subTest(i=true_item):
+                    self.assertTrue(true_item)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 

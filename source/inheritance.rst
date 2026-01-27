@@ -401,7 +401,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
-I copy and paste the values from the terminal_ as the expectation and use the ``Find and Replace`` feature of the `Integrated Development Environment (IDE)`  to remove the extra characters
+I copy and paste the values from the terminal_ as the expectation and use the ``Find and Replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters
 
 .. code-block:: python
   :lineno-start: 16
@@ -449,9 +449,302 @@ and it passes. All :ref:`classes<what is a class?>` automatically get these attr
 test_making_classes_w_inheritance
 *********************************************************************************
 
-* I add
+----
 
-When making a new class, we can define an initializer which is a :ref:`method<what is a function?>` that can receive inputs to be used to customize instances/copies of the class
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a new test
+
+.. code-block:: python
+  :lineno-start: 43
+  :emphasize-lines: 5-9
+
+                  '__subclasshook__'
+              ]
+          )
+
+      def test_making_classes_w_inheritance(self):
+          self.assertIsInstance(
+              src.classes.Doe('doe'),
+              src.person.Person
+          )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.classes' has no attribute 'Doe'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add a :ref:`class<what is a class?>` definition to ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 6, 8
+
+    class WObject(object):
+
+        pass
+
+
+    class Doe(object):
+
+        pass
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Doe() takes no arguments
+
+* I add the ``__init__`` :ref:`method<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3, 4
+
+    class Doe(object):
+
+        def __init__(self):
+            return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Doe.__init__() takes 1 positional argument but 2 were given
+
+* I add a parameter to the :ref:`method<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3
+
+    class Doe(object):
+
+        def __init__(self, first_name):
+            return None
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: <src.classes.Doe object at 0xffff01a2bc34> is not an instance of <class 'src.person.Person'>
+
+* I add an `import statement`_ at the top of ``classes.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import src.person
+
+
+    class WPass:
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I change the "parent" of ``Doe``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 1
+
+    class Doe(src.person.Person):
+
+        def __init__(self, first_name):
+            return None
+
+  the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a test for the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the ``Doe`` :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 47
+
+        def test_making_classes_w_inheritance(self):
+            self.assertIsInstance(
+                src.classes.Doe('doe'),
+                src.person.Person
+            )
+            self.assertEqual(
+                dir(src.classes.Doe),
+                []
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ: ['__class__', '__delattr__', '__dict__', '[377 chars]llo'] != []
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 8
+
+        def test_making_classes_w_inheritance(self):
+            self.assertIsInstance(
+                src.classes.Doe('doe'),
+                src.person.Person
+            )
+            self.assertEqual(
+                dir(src.classes.Doe),
+                dir(src.person.Person)
+            )
+
+
+    # Exceptions seen
+
+  the test passes. I do not need to add an `import statement`_ because ``classes.py`` imports ``src.person`` and I import ``src.classes`` at the beginning of ``test_person.py``
+
+* I add the `import statement`_ to be clearer
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    import unittest
+    import src.classes
+    import src.person
+
+
+    class TestClasses(unittest.TestCase):
+
+  the test is still green
+
+* I can remove the ``__init__`` :ref:`method<what is a function?>` from the ``Doe`` :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 1
+
+    class Doe(src.person.Person): pass
+
+  the test is still green
+
+----
+
+*********************************************************************************
+test_family_ties
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a new test for Inheritance_
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 6-9
+
+            self.assertEqual(
+                dir(src.classes.Doe),
+                dir(src.person.Person)
+            )
+
+        def test_family_ties(self):
+            doe = src.classes.Doe('doe')
+            jane = src.classes.Doe('jane')
+            john = src.classes.Doe('john')
+
+
+    # Exceptions seen
+
+* I add an :ref:`assertion<what is an assertion?>` for the last names of the people I made
+
+  .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 7
+
+            john = src.classes.Doe('john')
+
+            for person in (doe, jane, john):
+                with self.subTest(first_name=person.first_name):
+                    self.assertEqual(
+                        person.last_name,
+                        ''
+                    )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != ''
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation
+
+.. code-block:: python
+  :lineno-start: 65
+  :emphasize-lines: 3
+
+                    self.assertEqual(
+                        person.last_name,
+                        'doe'
+                    )
+
+all 3 people made with the ``Doe`` :ref:`class<what is a class?>` have the same last name. They are related.
+
+----
+
+=================================================================================
+:refactor:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`class<what is a class?>` for another family
+
+  .. code-block:: python
+    :lineno-start: 
+
+----
+
+----
+
+----
 
 *********************************************************************************
 :red:`RED`: make it fail
