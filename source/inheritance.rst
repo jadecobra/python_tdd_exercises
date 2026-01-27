@@ -57,7 +57,7 @@ start the project
 
     tests/test_classes.py:7: AssertionError
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_person.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_classes.py:7`` to open it in the :ref:`editor<2 editors>`
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -142,10 +142,59 @@ test_making_a_class_w_pass
 ----
 
 *********************************************************************************
-how to make a class in Python
+test_making_a_class_w_pass
 *********************************************************************************
 
 to review, I can make a :ref:`class<what is a class?>` with the class_ keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+.. code-block:: python
+
+  def test_making_a_class_w_pass(self):
+      self.assertIsInstance(classes.ClassWithPass(), object)
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+
+
+
+* I add a class definition like ``ClassWithPass`` to ``classes.py``
+
+  .. code-block:: python
+
+
+    class ClassWithParentheses:
+
+        pass
+
+  the test passes
+
+* When I make the definition include parentheses
+
+  .. code-block:: python
+
+
+    class ClassWithParentheses():
+
+        pass
+
+  the terminal_ shows all tests are still passing.
+
+* I can confidently say that in Python_
+
+  - I can define ``classes`` with parentheses
+  - I can define ``classes`` without parentheses
+  - pass_ is a placeholder
+
+
+
 
 ----
 

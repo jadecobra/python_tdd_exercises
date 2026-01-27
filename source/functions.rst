@@ -1377,6 +1377,10 @@ what is different is the way I called them in the tests
   w_keyword_arguments('last', 'first')
   w_positional_and_keyword_arguments('first', last_input='last')
 
+.. TIP::
+
+  as a rule of thumb I use :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I have 2 or inputs so I do not have to remember the order
+
 ----
 
 *********************************************************************************
