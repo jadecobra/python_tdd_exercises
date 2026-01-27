@@ -1958,7 +1958,7 @@ you have covered a bit so far and know
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>` and
 * :ref:`how to make functions<what is a function?>`
 
-:ref:`Would you like to test AttributeError?<AttributeError>`
+:ref:`Would you like to know what causes AttributeError?<what causes AttributeError?>`
 
 ----
 

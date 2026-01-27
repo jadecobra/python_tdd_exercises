@@ -124,7 +124,7 @@ table of contents
   learning_models
   what do people think of this?<reviews>
   hatches
-  videos
+  videos<pumping python videos>
 
 ----
 

@@ -7,7 +7,7 @@
 .. _AttributeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
 
 #################################################################################
-AttributeError
+what causes AttributeError?
 #################################################################################
 
 .. raw:: html
@@ -15,10 +15,6 @@ AttributeError
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/4-KGDO3zMYk?si=TdPbniUMkoz0M7CI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
-
-*********************************************************************************
-what causes AttributeError?
-*********************************************************************************
 
 AttributeError_ is raised when I use a name that is NOT in an :ref:`object<what is a class?>` that exists.
 
@@ -28,7 +24,7 @@ AttributeError_ is raised when I use a name that is NOT in an :ref:`object<what 
 what is an attribute?
 *********************************************************************************
 
-An :ref:`attribute<AttributeError>` is a name for something that belongs to an :ref:`object<what is a class?>`, for example, a human being has attributes like height, weight, sex and color, they are also known as properties.
+An :ref:`attribute<what causes AttributeError?>` is a name for something that belongs to an :ref:`object<what is a class?>`, for example, a human being has attributes like height, weight, sex and color, they are also known as properties.
 
 ----
 
@@ -1218,12 +1214,12 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-so far you know
+you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`what causes AttributeError<AttributeError>`
+* :ref:`what causes AttributeError<what causes AttributeError?>`
 
 :ref:`Would you like to test how to pass values from tests to functions with assert methods?<how to pass values>`
 

@@ -400,7 +400,7 @@ test_addition
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<AttributeError>`) in the empty ``calculator.py`` file_ from the ``src`` `folder (directory)`_
+  I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<what causes AttributeError?>`) in the empty ``calculator.py`` file_ from the ``src`` `folder (directory)`_
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
@@ -2007,18 +2007,19 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you know a lot
+you know a lot, you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
+* :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
 
-There is a problem, I have done the same steps for each of the 8 chapters covered so far
+There is a problem, I have done the same steps for each of the chapters I have gone through so far
 
 * I give the project a name
 * :ref:`I make a directory for the project<how to make a directory for the project>`

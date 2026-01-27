@@ -11,7 +11,7 @@
 what is a class?
 #################################################################################
 
-``classes`` are definitions for something. I think of them as :ref:`attributes (variables)<AttributeError>` and :ref:`methods (functions) <what is a function?>` that belong together.
+``classes`` are definitions for something. I think of them as :ref:`attributes (variables)<what causes AttributeError?>` and :ref:`methods (functions) <what is a function?>` that belong together.
 
 *********************************************************************************
 how to make a class in Python
@@ -3943,6 +3943,7 @@ you have gone through a lot of things and know
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
+* :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`

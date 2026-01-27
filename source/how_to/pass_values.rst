@@ -1388,7 +1388,8 @@ you have covered a bit so far and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
-* :ref:`how to make functions<what is a function?>` and
+* :ref:`how to make functions<what is a function?>`
+* :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 
 :ref:`Would you like to use some of the assert methods from AssertionError to test Python's data structures?<data structures>`

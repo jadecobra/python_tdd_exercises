@@ -288,7 +288,7 @@ you have gone through a lot of information and know
 * :ref:`what you can do with classes<what is a class?>`
 * :ref:`how to raise ModuleNotFoundError<ModuleNotFoundError>`
 
-:ref:`Would you like to test AttributeError?<AttributeError>`
+:ref:`Would you like to test AttributeError?<what causes AttributeError?>`
 
 ----
 

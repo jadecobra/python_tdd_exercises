@@ -539,7 +539,7 @@ how to make a Python file to hold the tests in the 'tests' folder
   - ``import unittest`` imports the `unittest module`_ from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<AttributeError>` and :ref:`methods (functions)<what is a function?>` that belong together, I cover this in more detail in the :ref:`classes chapter<what is a class?>`
+    * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<what causes AttributeError?>` and :ref:`methods (functions)<what is a function?>` that belong together, I cover this in more detail in the :ref:`classes chapter<what is a class?>`
     * ``TestMagic`` is the name I gave this :ref:`class <what is a class?>` and will hold the test
 
       .. IMPORTANT:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it

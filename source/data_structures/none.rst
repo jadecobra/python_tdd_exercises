@@ -2108,6 +2108,7 @@ so far you have covered
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
+* :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to pass values from tests to functions<how to pass values>` and
 * :ref:`what is None and NOT None and learned new assert methods<what is None?>`
 
