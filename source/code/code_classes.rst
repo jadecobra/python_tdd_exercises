@@ -45,6 +45,6 @@ classes solutions
 
 the solutions in ``person/src/classes.py`` from :ref:`inheritance<family ties>`
 
-.. literalinclude:: solutions/test_classes.py
+.. literalinclude:: solutions/classes.py
   :language: python
   :linenos:

@@ -1,4 +1,4 @@
-.. include:: links.rst
+.. include:: ../links.rst
 
 .. _super: https://docs.python.org/3/library/functions.html#super
 .. _super built-in function: super_
@@ -23,7 +23,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: code/tests/test_person_classes.py
+.. literalinclude:: ../code/tests/test_classes.py
   :language: python
   :linenos:
 
@@ -996,7 +996,7 @@ I change the expectation
 
   .. code-block:: python
     :lineno-start: 69
-    :empahsize-lines: 3
+    :emphasize-lines: 3
 
             self.assertEqual(mary.last_name, 'smith')
             self.assertEqual(joe.last_name, 'blow')
@@ -1090,7 +1090,8 @@ I change the expectation
 * I add a call to the `super built-in function`_ in the ``Doe`` :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 1, 3-4
+    :lineno-start: 19
+    :emphasize-lines: 1, 3-4
 
     class Doe(src.person.Person):
 

@@ -112,7 +112,6 @@ table of contents
   make TDD project 3<how_to/make_tdd_automatically_w_variables/index>
   make a person<how_to/make_person>
   classes/index
-  inheritance
   what is a module?<exceptions/ModuleNotFoundError>
 
   dot_notation

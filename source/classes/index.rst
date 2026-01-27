@@ -1,4 +1,7 @@
-.. include:: ../../links.rst
+.. include:: ../links.rst
+
+.. _class: https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
+.. _classes: class_
 
 #################################################################################
 what is a class?

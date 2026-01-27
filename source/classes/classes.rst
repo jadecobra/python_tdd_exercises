@@ -1,7 +1,5 @@
-.. include:: links.rst
+.. include:: ../links.rst
 
-.. _class: https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
-.. _classes: class_
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
 .. _constructor method: constructor_
 
@@ -17,7 +15,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: code/tests/test_person_classes.py
+.. literalinclude:: ../code/tests/test_person.py
   :language: python
   :linenos:
 
@@ -375,7 +373,7 @@ The solution works, it needs different :ref:`functions<what is a function?>` - o
 test_classy_person_greeting
 *********************************************************************************
 
-I can also make a person with a class_
+I can also make a person with a :ref:`class<what is a class?>`
 
 ----
 
@@ -426,7 +424,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* I add a class_ in ``person.py``
+* I add a :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -450,7 +448,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: Person() takes no arguments
 
-* classes_ have a `constructor method`_ that is used to make copies of the class_. I add it
+* classes_ have a `constructor method`_ that is used to make copies of the :ref:`class<what is a class?>`. I add it
 
   .. code-block:: python
     :lineno-start: 24
@@ -484,7 +482,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: Person.__init__() got multiple values for argument 'first_name'
 
-* The ``__init__`` :ref:`method<what is a function?>` takes the class_ as the first argument. I add ``self`` the way I do with all the tests in the book
+* The ``__init__`` :ref:`method<what is a function?>` takes the :ref:`class<what is a class?>` as the first argument. I add ``self`` the way I do with all the tests in the book
 
   .. code-block:: python
     :lineno-start: 24
@@ -678,7 +676,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AttributeError: 'Person' object has no attribute 'get'
 
-  the ``Person`` class_ does not have a :ref:`method<what is a function?>` named ``get``
+  the ``Person`` :ref:`class<what is a class?>` does not have a :ref:`method<what is a function?>` named ``get``
 
 * I can use :ref:`class attributes<test_attribute_error_w_class_attributes>` directly with no need for a ``get`` :ref:`method<what is a function?>`. I change the line for the `subTest method`_
 
@@ -696,7 +694,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AttributeError: 'Person' object has no attribute 'first_name'
 
-* I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` to the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` class_ in ``person.py``
+* I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` to the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -717,7 +715,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test calls the ``hello`` :ref:`function<what is a function?>` which takes in a :ref:`dictionary<what is a dictionary?>` and calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`, the ``Person`` object_ does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
 
-* I can call :ref:`methods<what is a function?>` from outside a class_ the way I use a :ref:`class attribute<test_attribute_error_w_class_attributes>`. I change the call in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
+* I can call :ref:`methods<what is a function?>` from outside a :ref:`class<what is a class?>` the way I use a :ref:`class attribute<test_attribute_error_w_class_attributes>`. I change the call in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 102
@@ -738,7 +736,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AttributeError: 'Person' object has no attribute 'hello'
 
-* I add the :ref:`method<what is a function?>` to the ``Person`` class_ in ``person.py``
+* I add the :ref:`method<what is a function?>` to the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -762,7 +760,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test calls the :ref:`method<what is a function?>` with one input and the definition takes no input
 
-* I add the `staticmethod decorator`_ to the :ref:`method<what is a function?>` because it does not use anything in the class_
+* I add the `staticmethod decorator`_ to the :ref:`method<what is a function?>` because it does not use anything in the :ref:`class<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -843,7 +841,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AttributeError: 'Person' object has no attribute 'last_name'. Did you mean: 'first_name'?
 
-* I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for ``last_name`` to the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` class_ in ``person.py``
+* I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for ``last_name`` to the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -887,7 +885,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AttributeError: 'Person' object has no attribute 'get_age'
 
-* I add the :ref:`method<what is a function?>` to the ``Person`` class_ in ``person.py``
+* I add the :ref:`method<what is a function?>` to the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 34
@@ -988,7 +986,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* I can call a :ref:`method<what is a function?>` that belongs to a class_ without the need to pass in the class_ as input since I can use the class_ with ``self``. I remove the repetition of the ``Person`` object_ in the call to the ``hello`` :ref:`method<what is a function?>` in ``test_person.py``
+* I can call a :ref:`method<what is a function?>` that belongs to a :ref:`class<what is a class?>` without the need to pass in the :ref:`class<what is a class?>` as input since I can use the :ref:`class<what is a class?>` with ``self``. I remove the repetition of the ``Person`` object_ in the call to the ``hello`` :ref:`method<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 100
@@ -1036,9 +1034,9 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes.
 
-  This works because ``person`` in the parentheses is for the ``Person`` class_ that the ``hello`` :ref:`method<what is a function?>` is part of.
+  This works because ``person`` in the parentheses is for the ``Person`` :ref:`class<what is a class?>` that the ``hello`` :ref:`method<what is a function?>` is part of.
 
-  When I wrapped the ``hello`` :ref:`function<what is a function?>` with the `staticmethod decorator`_, it was a :ref:`function<what is a function?>` that did not use other parts (:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>`) of the class_ it belongs to.
+  When I wrapped the ``hello`` :ref:`function<what is a function?>` with the `staticmethod decorator`_, it was a :ref:`function<what is a function?>` that did not use other parts (:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>`) of the :ref:`class<what is a class?>` it belongs to.
 
 * I use the ``Rename Symbol`` feature of the `Integrated Development Environment (IDE)`_ to change the name of the input parameter from ``person`` to ``self`` to match :ref:`Python convention<how to use class methods and attributes>`
 
@@ -1070,7 +1068,7 @@ Maybe I made a mistake when typing his age and typed ``5`` instead of ``9``. How
 * I could try updating the ``year_of_birth``
 * I could try making a :ref:`function<what is a function?>` that takes a person and a new year of birth as inputs, and returns the person with the correct age
 * I could make a new ``factory`` :ref:`function<what is a function?>` that returns a :ref:`dictionary<what is a dictionary?>` with ``year_of_birth`` as a :ref:`key<test_keys_of_a_dictionary>` which allows me to change it, then make another :ref:`function<what is a function?>` that calculates the age from the returned :ref:`dictionary<what is a dictionary?>` - this sounds like a lot of work, I would also have to rewrite the tests. No, thank you
-* I could make a class_
+* I could make a :ref:`class<what is a class?>`
 
 ----
 
@@ -1677,7 +1675,7 @@ the test passes
 
     # Exceptions seen
 
-I had to make a new person with the same first name, last name, sex and the new year of birth to change the year of birth. How would I solve this problem with a class_?
+I had to make a new person with the same first name, last name, sex and the new year of birth to change the year of birth. How would I solve this problem with a :ref:`class<what is a class?>`?
 
 ----
 
@@ -2024,7 +2022,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 
   - Classes_ have :ref:`attributes<test_attribute_error_w_class_attributes>` that can be changed.
   - Since the age calculation uses the ``year_of_birth``, and is done when I call it, not when the person is made, it will always calculate the right age.
-  - It is easier to make changes to a person when I use a class_ than when I use only :ref:`functions<what is a function?>`
+  - It is easier to make changes to a person when I use a :ref:`class<what is a class?>` than when I use only :ref:`functions<what is a function?>`
 
 ----
 
@@ -2312,7 +2310,7 @@ I want to add randomness to the test
 
 ----
 
-* I have to make a random person with the ``Person`` class_ to do the same thing for ``test_classy_person_greeting``. I will come back to it
+* I have to make a random person with the ``Person`` :ref:`class<what is a class?>` to do the same thing for ``test_classy_person_greeting``. I will come back to it
 
 ----
 
@@ -2719,7 +2717,7 @@ I want to add randomness to the test
 
 ----
 
-* I add a random person made with the ``Person`` class_ to the `setUp method`_
+* I add a random person made with the ``Person`` :ref:`class<what is a class?>` to the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 30
@@ -2765,7 +2763,7 @@ I want to add randomness to the test
 
   still green
 
-* I remove the 3 people I made with the ``Person`` class_ and the `for loop`_ with its :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers those cases and more
+* I remove the 3 people I made with the ``Person`` :ref:`class<what is a class?>` and the `for loop`_ with its :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers those cases and more
 
   .. code-block:: python
     :lineno-start: 78
@@ -3424,7 +3422,7 @@ In :ref:`test_factory_w_default_arguments`, I tested what happens when I call th
 
 In those cases the :ref:`functions<what is a function?>` uses default values of ``'doe'`` for ``last_name`` and ``'M'`` for ``sex``.
 
-I want to add a test for the ``Person`` class_ to make sure it does the same thing when I do not provide a value for ``last_name`` or ``sex`` when making a person.
+I want to add a test for the ``Person`` :ref:`class<what is a class?>` to make sure it does the same thing when I do not provide a value for ``last_name`` or ``sex`` when making a person.
 
 ----
 
@@ -3434,7 +3432,7 @@ I want to add a test for the ``Person`` class_ to make sure it does the same thi
 
 ----
 
-* I add a new test with a person made with the ``Person`` class_ without a value for ``last_name`` and ``sex`` and an :ref:`assertion<what is an assertion?>` for the value of the ``last_name``
+* I add a new test with a person made with the ``Person`` :ref:`class<what is a class?>` without a value for ``last_name`` and ``sex`` and an :ref:`assertion<what is an assertion?>` for the value of the ``last_name``
 
   .. code-block:: python
     :lineno-start: 70
@@ -3506,7 +3504,7 @@ the test passes
 
     AssertionError: None != 'doe'
 
-* I change the default value for ``last_name`` in the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` class_ in ``person.py``
+* I change the default value for ``last_name`` in the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -3541,7 +3539,7 @@ the test passes
 
     AttributeError: 'Person' object has no attribute 'sex'
 
-* I add the :ref:`class attribute<test_attribute_error_w_class_attributes>` to the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` class_ in ``person.py``
+* I add the :ref:`class attribute<test_attribute_error_w_class_attributes>` to the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -3578,7 +3576,7 @@ the test passes
 
 ----
 
-There is a problem with the ``year_of_birth``, its default value is :ref:`None<what is None?>`, which means if I do not give a value for it when I make a person with the ``factory`` :ref:`function<what is a function?>` or ``Person`` class_, :ref:`TypeError<what causes TypeError?>` will be raised.
+There is a problem with the ``year_of_birth``, its default value is :ref:`None<what is None?>`, which means if I do not give a value for it when I make a person with the ``factory`` :ref:`function<what is a function?>` or ``Person`` :ref:`class<what is a class?>`, :ref:`TypeError<what causes TypeError?>` will be raised.
 
 * I remove ``year_of_birth`` from the call to the ``Person`` class in ``test_class_w_default_arguments`` in ``test_person.py``
 
@@ -3616,7 +3614,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
 
   because the ``get_age`` :ref:`method<what is a function?>` tries to subtract ``year_of_birth`` from this year, and ``year_of_birth`` is :ref:`None<what is None?>`
 
-* I add a default value for ``year_of_birth`` in the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` class_ in ``person.py``
+* I add a default value for ``year_of_birth`` in the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -3755,7 +3753,7 @@ test_attributes_and_methods_of_classes
 
 ----
 
-I used the `dir built-in function`_ in :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>` to show their :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>`. I can also use it with the ``Person`` class_
+I used the `dir built-in function`_ in :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>` to show their :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>`. I can also use it with the ``Person`` :ref:`class<what is a class?>`
 
 ----
 
@@ -3848,17 +3846,17 @@ I copy and paste the values from the terminal_ and remove the extra characters I
 
   the test passes
 
-The attributes I defined in the ``__init__`` :ref:`method<what is a function?>` are not in the list, because I called dir_ on ``src.person.Person`` which is the class_ definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<test_attribute_error_w_class_attributes>`.
+The attributes I defined in the ``__init__`` :ref:`method<what is a function?>` are not in the list, because I called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>` definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<test_attribute_error_w_class_attributes>`.
 
 What is the difference between ``dir(src.person.Person)`` and ``dir(src.person.Person('jane'))``?
 
-The 3 :ref:`methods<what is a function?>` I defined in the ``Person`` class_ in ``person.py``
+The 3 :ref:`methods<what is a function?>` I defined in the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
 * __init__
 * get_age
 * hello
 
-are in the list, and there are others which I never defined, which leads to the question of :ref:`where did they come from?<inheritance>`
+are in the list, and there are others which I never defined, which leads to the question of :ref:`where did they come from?<family ties>`
 
 ----
 
@@ -3910,15 +3908,15 @@ code from the chapter
 review
 *************************************************************************************
 
-* A class_ is :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` that belong together
-* A class_ can be used to represent something
+* A :ref:`class<what is a class?>` is :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` that belong together
+* A :ref:`class<what is a class?>` can be used to represent something
 * classes_ can be an easier way to manage data than :ref:`functions<what is a function?>`
 * classes_ make it easier to write tests for something
 
 .. TIP::
 
   * when I find myself writing or doing the same thing two times, I write a :ref:`function<what is a function?>`
-  * when I find I have two :ref:`functions<what is a function?>` that use the same information, I write a class_
+  * when I find I have two :ref:`functions<what is a function?>` that use the same information, I write a :ref:`class<what is a class?>`
 
 ----
 
