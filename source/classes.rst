@@ -3942,7 +3942,7 @@ you have gone through a lot of things and know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
-* :ref:`how to write functions<what is a function?>`
+* :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
@@ -3956,8 +3956,6 @@ you have gone through a lot of things and know
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`what you can do with classes<what is a class?>`
-
-:ref:`Would you like to test AttributeError?<AttributeError>`
 
 ----
 

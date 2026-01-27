@@ -1218,28 +1218,14 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you made it to the end and know
+so far you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
-* :ref:`how to write functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
-* :ref:`how to raise TypeError<TypeError>`
-* :ref:`what you can do with Lists<lists>`
-* :ref:`how to use list comprehensions<list comprehensions>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<what is a class?>`
-* :ref:`how to raise ModuleNotFoundError<ModuleNotFoundError>`
-* :ref:`how to raise AttributeError<AttributeError>`
+* :ref:`how to make functions<what is a function?>`
+* :ref:`what causes AttributeError<AttributeError>`
 
-:ref:`do you think we can measure learning?<can we measure learning?>`
+:ref:`Would you like to test how to pass values from tests to functions with assert methods?<how to pass values>`
 
 ----
 

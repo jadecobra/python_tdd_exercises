@@ -1665,7 +1665,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
-* :ref:`how to write functions<what is a function?>`
+* :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
