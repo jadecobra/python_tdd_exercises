@@ -269,3 +269,4 @@
 .. _indent-rainbow: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
 .. _Black Formatter: https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter
 .. _Code Spell Checker: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+.. _CLICK HERE to leave a 5 star review of pumping python: https://www.trustpilot.com/review/pumpingpython.com

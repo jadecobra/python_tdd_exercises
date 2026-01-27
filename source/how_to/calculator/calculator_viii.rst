@@ -389,8 +389,46 @@ test_calculator_w_getattribute
 * I add another operation
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 
+    :lineno-start: 49
+    :emphasize-lines: 9-11
+
+            calculator_tests = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtract': (
+                    self.random_first_number-self.random_second_number
+                ),
+                'divide': self.division_result,
+                'multiplication': (
+                    self.random_first_number*self.random_second_number
+                ),
+            }
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.calculator' has no attribute 'multiplication'
+
+* I change the name
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 9
+
+            calculator_tests = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtract': (
+                    self.random_first_number-self.random_second_number
+                ),
+                'divide': self.division_result,
+                'multiply': (
+                    self.random_first_number*self.random_second_number
+                ),
+            }
 
 ----
 
@@ -490,12 +528,12 @@ you have gone through a lot of things and know
 rate pumping python
 *********************************************************************************
 
-If this has been a 7 star experience for you, please leave a 5 star review. It helps other people get into the book too
+If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too
 
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
   <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review, if this has been a 7 star experience for you</a>
+    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review of pumping python, if this has been a 7 star experience for you</a>
   </div>
   <!-- End TrustBox widget -->
