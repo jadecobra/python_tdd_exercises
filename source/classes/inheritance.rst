@@ -1,6 +1,7 @@
 .. include:: links.rst
 
-.. danger:: DANGER WILL ROBINSON! Though the code works, this chapter is still UNDER CONSTRUCTION it may look completely different when I am done
+.. _super: https://docs.python.org/3/library/functions.html#super
+.. _super built-in function: super_
 
 #################################################################################
 family ties
@@ -682,20 +683,15 @@ test_family_ties
 
     # Exceptions seen
 
-* I add an :ref:`assertion<what is an assertion?>` for the last names of the people I made
+* I add an :ref:`assertion<what is an assertion?>` for the last name of ``doe``
 
   .. code-block:: python
     :lineno-start: 61
-    :emphasize-lines: 7
+    :emphasize-lines: 3
 
             john = src.classes.Doe('john')
 
-            for person in (doe, jane, john):
-                with self.subTest(first_name=person.first_name):
-                    self.assertEqual(
-                        person.last_name,
-                        ''
-                    )
+            self.assertEqual(doe.last_name, '')
 
 
     # Exceptions seen
@@ -717,291 +713,425 @@ test_family_ties
 I change the expectation
 
 .. code-block:: python
-  :lineno-start: 65
-  :emphasize-lines: 3
+  :lineno-start: 63
+  :emphasize-lines: 1
 
-                    self.assertEqual(
-                        person.last_name,
-                        'doe'
-                    )
-
-all 3 people made with the ``Doe`` :ref:`class<what is a class?>` have the same last name. They are related.
+            self.assertEqual(doe.last_name, 'doe')
 
 ----
 
 =================================================================================
-:refactor:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add a :ref:`class<what is a class?>` for another family
-
-  .. code-block:: python
-    :lineno-start: 
-
-----
-
-----
-
-----
-
-*********************************************************************************
-:red:`RED`: make it fail
-*********************************************************************************
-
-I add a failing test to ``test_classes.py``
-
-.. code-block:: python
-
-  def test_making_a_class_w_initializers(self):
-      self.assertEqual(classes.Boy().sex, 'M')
-
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-*********************************************************************************
-:green:`GREEN`: make it pass
-*********************************************************************************
-
-* I add a definition for the ``Boy`` class
-
-  .. code-block:: python
-
-
-    class Boy(object):
-
-        pass
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-* I make the ``Boy`` class with an attribute called ``sex``
-
-  .. code-block:: python
-
-
-    class Boy(object):
-
-        sex
-
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-
-* I add a definition for the ``sex`` attribute
-
-  .. code-block:: python
-
-
-    class Boy(object):
-
-        sex = 'M'
-
-  the test passes
-
-*********************************************************************************
 :yellow:`REFACTOR`: make it better
-*********************************************************************************
+=================================================================================
 
-* I add another :ref:`assertion<what is an assertion?>` to ``test_making_a_class_w_initializers`` this time for a ``Girl`` class but with a difference, I provide the value for the ``sex`` attribute when I call the class
-
-  .. code-block:: python
-
-    def test_making_a_class_w_initializers(self):
-        self.assertEqual(classes.Boy().sex, 'M')
-        self.assertEqual(classes.Girl(sex='F').sex, 'F')
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-* I try the same solution I used for the ``Boy`` class then add a definition for the ``Girl`` class to ``classes.py``
-
-  .. code-block:: python
-
-
-    class Girl(object):
-
-        sex = 'M'
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: shell
-
-    TypeError: Girl() takes no arguments
-
-  - ``classes.Girl(sex='F')`` looks like a call to a :ref:`function<what is a function?>`
-  - I can define classes that take values by using an initializer
-  - An initializer is a class :ref:`method<what is a function?>` that allows customization of instances/copies of a class_
-
-* I add the initializer :ref:`method<what is a function?>` called ``__init__`` to the ``Girl`` class
-
-  .. code-block:: python
-
-
-    class Girl(object):
-
-        sex = 'F'
-
-        def __init__(self):
-            pass
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: python
-
-   TypeError: __init__() got an unexpected keyword argument 'sex'
-
-* I make the definition of the ``__init__`` :ref:`method<what is a function?>` take a keyword argument
-
-  .. code-block:: python
-
-    def __init__(self, sex=None):
-        pass
-
-  the test passes
+----
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 4
 
-    def test_making_a_class_w_initializers(self):
-        self.assertEqual(classes.Boy().sex, 'M')
-        self.assertEqual(classes.Girl(sex='F').sex, 'F')
-        self.assertEqual(classes.Other(sex='?').sex, '?')
+            john = src.classes.Doe('john')
+
+            self.assertEqual(doe.last_name, 'doe')
+            self.assertEqual(jane.last_name, '')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != ''
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 1
+
+            self.assertEqual(jane.last_name, 'doe')
+
+  the test passes
+
+* I add one more :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 2
+
+            self.assertEqual(jane.last_name, 'doe')
+            self.assertEqual(john.last_name, '')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != ''
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 1
+
+            self.assertEqual(john.last_name, 'doe')
+
+  the test passes. All 3 people made with the ``Doe`` :ref:`class<what is a class?>` have the same last name, they are related.
+
+* I add a person from another family
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 5
+
+        def test_family_ties(self):
+            doe = src.classes.Doe('doe')
+            jane = src.classes.Doe('jane')
+            john = src.classes.Doe('john')
+            mary = src.classes.Smith('mary')
+
+            self.assertEqual(doe.last_name, 'doe')
 
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-* I add a class definition to ``classes.py``
-
   .. code-block:: python
 
+    AttributeError: module 'src.classes' has no attribute 'Smith'
 
-    class Other(object):
+* I add a :ref:`class<what is a class?>` to ``classes.py``
 
-        sex = '?'
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 2
 
-        def __init__(self, sex=None):
-            pass
+    class Doe(src.person.Person): pass
+    class Smith(src.person.Person): pass
 
   the test passes
 
-* Wait a minute, I just repeated the same thing twice.
+* I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` of ``mary``
 
-  - I defined a class_ with a name
-  - I defined an attribute called ``sex``
-  - I defined an ``__init__`` :ref:`method<what is a function?>` which takes in a ``sex`` keyword argument
+  .. code-block:: python
+    :lineno-start: 66
 
-* I am going to make it a third repetition by redefining the ``Boy`` class to match the ``Girl`` and ``Other`` class because it is fun to do bad things
+            self.assertEqual(john.last_name, 'doe')
+            self.assertEqual(mary.last_name, '')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    AssertionError: 'doe' != ''
 
-    class Boy(object):
+* ``mary`` should have a last name of ``smith`` not ``doe``. I change the expectation
 
-        sex = 'M'
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 1
 
-        def __init__(self, sex=None):
+            self.assertEqual(mary.last_name, 'smith')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != 'smith'
+
+* I add a value for ``last_name`` to the ``Smith`` :ref:`class<what is a class?>` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 1, 3-4
+
+    class Smith(src.person.Person):
+
+        def __init__(self, first_name, last_name='smith'):
             pass
 
-  the terminal_ shows all tests still passing and I have now written the same thing 3 times. Earlier on I mentioned inheritance, and now try to use it to remove this duplication so `I do not repeat myself`_
-
-* I add a new class called ``Human`` to ``classes.py`` before the definition for ``Boy`` with the same attribute and :ref:`method<what is a function?>` of the classes I am trying to abstract
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
+    AttributeError: 'Smith' object has no attribute 'last_name'
 
-    class Human(object):
+* I need to add the :ref:`class attributes<test_attribute_error_w_class_attributes>`. I can do that by calling the ``__init__`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>`. Python_ has a way for me to do that, I add it
 
-        sex = 'M'
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4
 
-        def __init__(self, sex='M'):
-            pass
+    class Smith(src.person.Person):
 
-  the terminal_ still shows passing tests
+        def __init__(self, first_name, last_name='smith'):
+            super().__init__(first_name, last_name)
 
-* I change the definitions for ``Boy`` to inherit from the ``Human`` class and all tests are still passing
+  the test passes.
+
+  the `super built-in function`_ calls the ``__init__`` :ref:`method<what is a function?>` of the parent :ref:`class<what is a class?>` with the values I pass in parentheses.
+
+  In this case it calls the ``Person`` :ref:`class<what is a class?>` with values for ``first_name`` and ``last_name``
+
+* I add another person to ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 3
+
+            john = src.classes.Doe('john')
+            mary = src.classes.Smith('mary')
+            joe = src.classes.Blow('joe')
+
+            self.assertEqual(doe.last_name, 'doe')
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
+    AttributeError: module 'src.classes' has no attribute 'Blow'
 
-    class Boy(Human):
-
-        sex = 'M'
-
-        def __init__(self, sex=None):
-            pass
-
-* I remove the ``sex`` attribute from the ``Boy`` class and the tests continue to pass
-* I remove the ``__init__`` method, then add the pass_ placeholder
+* I add the :ref:`class<what is a class?>` to ``classes.py``
 
   .. code-block:: python
+    :lineno-start: 21
 
+    class Smith(src.person.Person):
 
-    class Boy(Human):
+        def __init__(self, first_name, last_name='smith'):
+            super().__init__(first_name, last_name)
 
-        pass
-
-  all tests are still passing. Lovely
-
-* What if I try the same thing with the ``Girl`` class and change its definition to inherit from the ``Human`` class?
-
-  .. code-block:: python
-
-    class Girl(Human):
-
-        sex = 'F'
-
-        def __init__(self):
-            pass
-
-* I remove the ``sex`` attribute the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-* I make the ``Human`` class to set the ``sex`` attribute in the parent initializer instead of at the child level
-
-  .. code-block:: python
-
-
-    class Human(object):
-
-        sex = 'M'
-
-        def __init__(self, sex='M'):
-            self.sex = sex
-
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
-
-* when I remove the ``__init__`` :ref:`method<what is a function?>` from the ``Girl`` class
-
-  .. code-block:: python
-
-
-    class Girl(Human):
-
-        pass
-
-  the test passes. Lovely
-
-* I wonder if I can do the same with the ``Other`` class? I change the definition to inherit from the ``Human`` class
-
-  .. code-block:: python
-
-
-    class Other(Human):
-
-        pass
+    class Blow(src.person.Person): pass
 
   the test passes
 
-* One More Thing! I remove the ``sex`` attribute from the ``Human`` class
+* I add an :ref:`assertion<what is an assertion?>` for the last name of ``joe``
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 3
+
+            self.assertEqual(john.last_name, 'doe')
+            self.assertEqual(mary.last_name, 'smith')
+            self.assertEqual(joe.last_name, 'blow')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    class Human(object):
+    AssertionError: 'doe' != 'blow'
 
-      def __init__(self, sex='M'):
-          self.sex = sex
+* I add the ``__init__`` :ref:`method<what is a function?>` to the class
 
-  all tests are passing, I have successfully refactored the 3 classes and abstracted a ``Human`` class from them
+  .. code-block:: python
+    :lineno-start: 26
 
-* the ``Boy``, ``Girl`` and ``Other`` class now inherit from the ``Human`` class which means they all get the same :ref:`methods<what is a function?>` and attributes that the ``Human`` class has, including the ``__init__`` method
-* ``self.sex`` in each class is the ``sex`` attribute in the class, allowing its definition from inside the ``__init__`` method
-* since ``self.sex`` is defined as a class attribute, it is accessible from outside the class as I do in the tests i.e ``classes.Girl(sex='F').sex`` and ``classes.Other(sex='?').sex``
+    class Blow(src.person.Person):
+
+        def __init__(self, first_name, last_name='blow'):
+            pass
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Blow' object has no attribute 'last_name'
+
+* I use the `super built-in function`_
+
+  .. code-block:: python
+    :lineno-start: 28
+
+    class Blow(src.person.Person):
+
+        def __init__(self, first_name, last_name='blow'):
+            super().__init__(first_name, last_name)
+
+  the test passes
+
+* I add a new person who is a child of ``jane`` named ``baby`` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 2
+
+            joe = src.classes.Blow('joe')
+            baby = src.classes.Baby('baby')
+
+            self.assertEqual(doe.last_name, 'doe')
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.classes' has no attribute 'Baby'
+
+* I add a :ref:`class<what is a class?>` for ``baby`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 7
+
+    class Blow(src.person.Person):
+
+        def __init__(self, first_name, last_name='blow'):
+            super().__init__(first_name, last_name)
+
+
+    class Baby(Doe): pass
+
+  the test passes
+
+* ``baby`` is also the child of ``joe``. I add an :ref:`assertion<what is an assertion?>` for the last name of ``baby`` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 69
+    :empahsize-lines: 3
+
+            self.assertEqual(mary.last_name, 'smith')
+            self.assertEqual(joe.last_name, 'blow')
+            self.assertEqual(baby.last_name, 'blow')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != 'blow'
+
+* I add another parent to the ``Baby`` :ref:`class<what is a class?>` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 1
+
+    class Baby(Blow, Doe): pass
+
+  the test passes
+
+* I add another person, a child of ``john`` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 3
+
+            joe = src.classes.Blow('joe')
+            baby = src.classes.Baby('baby')
+            lil = src.classes.Lil('lil')
+
+            self.assertEqual(doe.last_name, 'doe')
+
+  the terminal_ shows :ref:`AttributError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.classes' has no attribute 'Lil'
+
+* I add a :ref:`class<what is a class?>` for ``lil`` to ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 4
+
+    class Baby(Blow, Doe): pass
+
+
+    class Lil(Doe): pass
+
+  the test passes
+
+* ``lil`` is also the child of ``mary``. I add an :ref:`assertion<what is an assertion?>` for the last name of ``lil``
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 3
+
+            self.assertEqual(joe.last_name, 'blow')
+            self.assertEqual(baby.last_name, 'blow')
+            self.assertEqual(lil.last_name, '')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != ''
+
+* I add another parent to show that ``lil`` is a child of ``Doe`` and ``Smith`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+    class Lil(Doe, Smith): pass
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'smith' != ''
+
+  this is a problem. When I made ``Baby``, it took the last name of the first parent, and when I try the same thing with ``Lil`` it has the last name of the second parent
+
+* I add a call to the `super built-in function`_ in the ``Doe`` :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 1, 3-4
+
+    class Doe(src.person.Person):
+
+        def __init__(self, first_name):
+            super().__init__(first_name)
+
+
+    class Smith(src.person.Person):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Doe.__init__() takes 2 positional arguments but 3 were given
+
+  because the ``Baby`` class passes a value for ``last_name``
+
+* I add ``last_name`` to the call to ``__init__`` :ref:`method<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 3-4
+
+    class Doe(src.person.Person):
+
+        def __init__(self, first_name, last_name='doe'):
+            super().__init__(first_name, last_name)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != ''
+
+* I change the expectation in ``test_classes.py``
+
+  .. code-block:: python
+
+            self.assertEqual(lil.last_name, 'doe')
+
+  the test passes
 
 ----
 
@@ -1009,25 +1139,11 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 review
 *********************************************************************************
 
-the tests show
+I can make a :ref:`class<what is a class?>` with
 
-* how to define a class with an attribute
-* how to define a class with a :ref:`method<what is a function?>`
-* how to define a class with an initializer
-* how to view the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of a class
-* classes can be defined
-
-  - with parentheses stating what :ref:`object<what is a class?>` the class inherits from
-  - with parentheses without stating what :ref:`object<what is a class?>` the class inherits from
-  - without parentheses
-  - pass_ is a placeholder
-
-* classes by default inherit from the :ref:`object<what is a class?>` class, because in each of the tests, whether the parent is stated or not, each class I defined is an ``instance`` of an :ref:`object<what is a class?>`
-
-.. attention:: :PEP:`Zen of Python <20>`
-
-  I prefer to use the explicit form of class definitions with the parent :ref:`object<what is a class?>` in parentheses, from the :PEP:`Zen of Python <20>`:
-  ``Explicit is better than implicit``
+* :ref:`pass<test_making_a_class_w_pass>`
+* :ref:`parentheses<test_making_a_class_w_parentheses>`
+* :ref:`its parent<test_making_a_class_w_object>`
 
 ----
 

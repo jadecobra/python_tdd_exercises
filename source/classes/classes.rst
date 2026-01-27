@@ -6,18 +6,8 @@
 .. _constructor method: constructor_
 
 #################################################################################
-what is a class?
+classes
 #################################################################################
-
-``classes`` are definitions for something. I think of them as :ref:`attributes (variables)<what causes AttributeError?>` and :ref:`methods (functions) <what is a function?>` that belong together.
-
-*********************************************************************************
-how to make a class in Python
-*********************************************************************************
-
-* use the class_ keyword
-* use :ref:`CapWords format<CapWords>` for the name
-* use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do - naming things is its own challenge
 
 ----
 
