@@ -64,11 +64,11 @@ open the project
     :emphasize-lines: 4
 
     rootdir: .../pumping_python/calculator
-    collected 7 items
+    collected 6 items
 
-    tests/test_calculator.py .......                                     [100%]
+    tests/test_calculator.py ......                                      [100%]
 
-    ============================ 7 passed in X.YZs =============================
+    ============================ 6 passed in X.YZs =============================
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
@@ -86,17 +86,17 @@ test_calculator_w_getattribute
 
 ----
 
-* I add a test with a :ref:`dictionary<what is a dictionary>`
+* I add a test with a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 40
     :emphasize-lines: 9-14
 
-                'exponent': {
-                    'function': src.calculator.square,
+                'multiplication': {
+                    'function': src.calculator.multiply,
                     'expectation': (
-                        self.random_first_number**self.random_second_number
-                    )
+                        self.random_first_number*self.random_second_number
+                    ),
                 },
             }
 
@@ -109,7 +109,288 @@ test_calculator_w_getattribute
 
         def test_calculator_functions(self):
 
-* I add 
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 7-10
+
+        def test_calculator_w_getattribute(self):
+            calculator_tests = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                )
+            }
+            self.assertEqual(
+                src.calculator.__getattribute__('add'),
+                calculator_tests['add']
+            )
+
+        def test_calculator_functions(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: <function only_takes_numbers.<locals>.wrapper at 0xffff1a2bc3d4> != ABCD.EFGHIJKLMN
+
+  I have to call the :ref:`function<what is a function?>` after ``__getattribute__`` returns it
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add parentheses after to make it a call
+
+  .. code-block:: python
+    :lineno-start: 54
+    :emphasize-lines: 2
+    :emphasize-text: ( )
+
+            self.assertEqual(
+                src.calculator.__getattribute__('add')(),
+                calculator_tests['add']
+            )
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: only_takes_numbers.<locals>.wrapper() missing 2 required positional arguments: 'first_input' and 'second_input'
+
+  I have to give the inputs to the :ref:`function<what is a function?>`
+
+* I add inputs in the parentheses
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 8-11
+
+        def test_calculator_w_getattribute(self):
+            calculator_tests = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                )
+            }
+            self.assertEqual(
+                src.calculator.__getattribute__('add')(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                calculator_tests['add']
+            )
+
+        def test_calculator_functions(self):
+
+  the test passes
+
+  - ``src.calculator.__getattribute__('add')`` returns ``src.calculator.add``
+  - ``calculator_tests['add']`` returns ``self.random_first_number + self.random_second_number``
+  - ``object.__getattribute__(something)`` checks if ``something`` is in ``object`` and returns it
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add another operation to the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines:
+
+        def test_calculator_w_getattribute(self):
+            calculator_tests = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtract': (
+                    self.random_first_number-self.random_second_number
+                )
+            }
+            self.assertEqual(
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 8-14
+
+            self.assertEqual(
+                src.calculator.__getattribute__('add')(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                calculator_tests['add']
+            )
+            self.assertEqual(
+                src.calculator.__getattribute__('subtract')(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                calculator_tests['add']
+            )
+
+        def test_calculator_functions(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: OPQ.RSTUVWXYZABCDE != FGH.IJKLMNOPQRSTUV
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 6
+
+                self.assertEqual(
+                    src.calculator.__getattribute__('subtract')(
+                        self.random_first_number,
+                        self.random_second_number
+                    ),
+                    calculator_tests['subtract']
+                )
+
+  the test passes
+
+* I add a `for loop`_
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 9-17
+
+            self.assertEqual(
+                src.calculator.__getattribute__('subtract')(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                calculator_tests['subtract']
+            )
+
+            for operation in calculator_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        src.calculator.__getattribute__(operation)(
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        1
+                    )
+
+        def test_calculator_functions(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-text: operation add subtract
+
+    SUBFAILED(operation='add') tests/test_calculator.py::TestCalculator::test_calculator_w_getattribute - AssertionError: WXY.ZABCDEFGHIJKL != 1
+    SUBFAILED(operation='subtract') tests/test_calculator.py::TestCalculator::test_calculator_w_getattribute - AssertionError: MNO.PQRSTUVWXYZAB != 1
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 8
+
+            for operation in calculator_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        src.calculator.__getattribute__(operation)(
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        calculator_tests[operation]
+                    )
+
+  the test passes
+
+* I remove the other :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 48
+
+        def test_calculator_w_getattribute(self):
+            calculator_tests = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtract': (
+                    self.random_first_number-self.random_second_number
+                )
+            }
+
+            for operation in calculator_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        src.calculator.__getattribute__(operation)(
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        calculator_tests[operation]
+                    )
+
+        def test_calculator_functions(self):
+
+  the test is still green
+
+* I add a :ref:`key<test_keys_of_a_dictionary>` for the next operation
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 9
+
+        def test_calculator_w_getattribute(self):
+            calculator_tests = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtract': (
+                    self.random_first_number-self.random_second_number
+                ),
+                'division': self.division_result,
+            }
+
+            for operation in calculator_tests:
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.calculator' has no attribute 'division'
+
+* I used a name that is not in ``calculator.py``. I change the name
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines:
+
+            calculator_tests = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtract': (
+                    self.random_first_number-self.random_second_number
+                ),
+                'divide': self.division_result,
+            }
+
+  the test passes
+
+* I add another operation
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 
 
 ----
 

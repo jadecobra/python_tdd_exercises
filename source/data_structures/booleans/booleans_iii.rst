@@ -168,7 +168,7 @@ you have gone through a lot of things and know
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`what you can do with classes<what is a class?>`
 
-:ref:`Would you like to use one of the class methods with the calculator?<calculator 8>`
+:ref:`Would you like to use one of the class methods with the calculator?<how to make a calculator 8>`
 
 -----
 

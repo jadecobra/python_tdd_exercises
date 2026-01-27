@@ -66,7 +66,7 @@
 .. _folder (directory): directory_
 .. _folders: directory_
 .. _folders (directories): directory_
-.. _echo: https://man7.org/Linux/man-pages/man1/echo.1.html
+.. _echo: https://grokipedia.com/page/Echo_(command)
 .. _echo program: echo_
 .. _else: https://docs.python.org/3/reference/compound_stmts.html#else
 .. _else clause: else_
