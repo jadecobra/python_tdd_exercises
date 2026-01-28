@@ -27,11 +27,17 @@ As of this writing I use `Visual Studio Code`_, you can download and install it 
 Screen Layout
 *********************************************************************************
 
+----
+
 I split my screen in the following ways depending on the use case, try different layouts to see what works best for you.
+
+----
 
 =================================================================================
 for references
 =================================================================================
+
+----
 
 I put references on the left and the `Integrated Development Environment (IDE)`_ on the right
 
@@ -42,15 +48,24 @@ I put references on the left and the `Integrated Development Environment (IDE)`_
 
 this helps when I do not have an extra screen. I can stack two editors on top of one another, `source code`_ on top, tests below, and the terminal_ below the tests
 
+----
+
 =================================================================================
 for testing
 =================================================================================
 
+----
+
 When working with just the `Integrated Development Environment (IDE)`_, I have the following Windows open
+
+----
 
 ---------------------------------------------------------------------------------
 explorer on left
 ---------------------------------------------------------------------------------
+
+----
+
 explorer on the left to see files/folder structure at once, and I can drag and drop files directly into the editor
 
 .. image:: /_static/setup_my_ide/explorer_w_editors.png
@@ -58,9 +73,14 @@ explorer on the left to see files/folder structure at once, and I can drag and d
   :align: center
   :alt: Explorer with Editors
 
+----
+
 ---------------------------------------------------------------------------------
 2 editors
 ---------------------------------------------------------------------------------
+
+----
+
 editors side by side - `source code`_ on the left with tests on the right
 
 .. image:: /_static/setup_my_ide/2_editors.png
@@ -68,9 +88,13 @@ editors side by side - `source code`_ on the left with tests on the right
   :align: center
   :alt: Editors side by side
 
+----
+
 ---------------------------------------------------------------------------------
 the terminal
 ---------------------------------------------------------------------------------
+
+----
 
 the terminal_ to show results of the tests
 
@@ -96,10 +120,12 @@ This setup helps me answer 2 questions
 ----
 
 *********************************************************************************
-Visual Studio Extensions
+visual studio code extensions
 *********************************************************************************
 
-Here are extensions I use in `Visual Studio Code`_
+----
+
+Here are extensions I use in `Visual Studio Code`_, click on anyone you like to install them
 
 * `Code Spell Checker`_ - to catch spelling mistakes
 * `indent-rainbow`_ - I like pretty colors and this makes indentation easier to see from a distance
@@ -113,13 +139,17 @@ Here are extensions I use in `Visual Studio Code`_
 BONUS!!!
 *********************************************************************************
 
-I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made it this far. It makes going through your computer easier and :ref:`the next chapter<how to make a test driven development environment>` as well. This is how your computer is organized. :ref:`Click HERE for the BONUS!<BONUS: learn directory structure>`
+----
+
+I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made it this far. It makes moving around on your computer in the terminal_ and :ref:`the next chapter<how to make a test driven development environment>` easier. This is how your computer is organized. :ref:`Click HERE for the BONUS!<BONUS: learn directory structure>`
 
 ----
 
 *********************************************************************************
 rate pumping python
 *********************************************************************************
+
+----
 
 If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too
 

@@ -384,7 +384,7 @@ close the project
 review
 *********************************************************************************
 
-I ran a test for ModuleNotFoundError_ to practice making Python_ modules_
+I ran a test for ModuleNotFoundError_ to practice making :ref:`Python modules<what is a module?>`
 
 ----
 

@@ -58,11 +58,13 @@ Here are a few things I would do if I were in your shoes to make the process mor
 
 * at the end of a chapter, delete the tests and try to write them from memory or use the solution as a guide - this builds your memory skills
 * close the tests at the end of a chapter, delete the solution and try to write one with the terminal_ response as a guide - this helps you build a better relationship with the terminal_ (your best friend when programming)
-* try to write solutions using the tests from the :ref:`catalog_of_tests` as a guide
-* try adding tests for any ideas I get as I go through a chapter, the sooner you start writing tests the better, since it requires a different way of thinking
-* I would not quit until I get to the end of a chapter, especially when it gets hard, this is part of the experience when learning to solve problems, things get harder before they get easy because there is a lot of failure. I can always walk away to go do something different for a while, then come back and try again. If you take one small step at a time you eventually get where you want to go
+* try to write solutions using the tests from the :ref:`catalog_of_tests` as a guide - this builds your problem solving skills
+* try adding tests for any ideas I get as I go through a chapter, the sooner you start writing tests the better, since it requires a different way of thinking - this builds your testing skills
+* I would not quit until I get to the end of a chapter, especially when it gets hard, this is part of the experience when learning to solve problems, things get harder before they get easy because there is a lot of failure. I can always walk away to go do something different for a while, then come back and try again - this helps with being able to do hard things
 
-`Read reviews of the book here <https://www.trustpilot.com/review/pumpingpython.com>`_
+If you take one small step at a time you eventually get where you want to go
+
+`Read what other people think about the book here <https://www.trustpilot.com/review/pumpingpython.com>`_
 
 ----
 

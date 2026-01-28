@@ -40,7 +40,7 @@ how to use class methods and attributes
 
 ----
 
-:ref:`class<what is a class?>` :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` can be used inside a :ref:`class<what is a class?>` with ``self``
+:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` can be used inside a :ref:`class<what is a class?>` with ``self``
 
 for example
 
@@ -70,7 +70,7 @@ snake_case
 
 ----
 
-:ref:`variables<what is a variable?>` and :ref:`function/method<what is a function?>` names are in lowercase with underscores in between when it is more than one word, for example
+:ref:`variable<what is a variable?>` and :ref:`function/method<what is a function?>` names are in lowercase with underscores in between when it is more than one word, for example
 
 * :ref:`variables<what is a variable?>`
 
@@ -100,7 +100,7 @@ Comments are made with a hashtag/pound before the thing that is commented for ex
 
   # This is a comment
 
-comments do not do anything, they are notes
+comments do not do anything, they are notes. Python_ ignores them
 
 ----
 
@@ -116,10 +116,10 @@ Enclosures must be closed once open, which means they happen in pairs for exampl
 
   .. code-block:: python
 
-    ""
-    """"""
-    ''
-    ''''''
+    ""      <- double quotes
+    """"""  <- triple double quotes
+    ''      <- single quotes
+    ''''''  <- triple single quotes
 
 * parentheses
 
@@ -151,32 +151,32 @@ quotes
 
 Quotes are for strings_ and can be
 
-* single
+* single quotes
 
   .. code-block:: python
 
-    'Single Quotes'
+    'single quotes'
 
-* double
-
-  .. code-block:: python
-
-    "Double Quotes"
-
-* triple single which allows writing one string_ on many lines
+* double quotes
 
   .. code-block:: python
 
-    '''Text on different lines
+    "double quotes"
+
+* triple single quotes to write one string_ on many lines
+
+  .. code-block:: python
+
+    '''text on different lines
     with
     triple double quotes
     '''
 
-* triple double which allows writing one string_ on many lines
+* triple double quotes to write one string_ on many lines
 
   .. code-block:: python
 
-    """Text on different lines
+    """text on different lines
     with
     triple double quotes
     """
@@ -192,12 +192,12 @@ tuples
 ----
 
 
-A tuple_ is a sequence or container of :ref:`objects<what is a class?>` that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), for example
+A tuple_ is a sequence or container of :ref:`objects<what is a class?>` that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), and the things in them are separated by commas, for example
 
 .. code-block:: python
 
   ()
-  (0)
+  (0,)
   (1, 2.5, "three", [4, 'five'])
 
 ----
@@ -215,7 +215,7 @@ A :ref:`list/array<lists>` is a sequence or container of :ref:`objects<what is a
 .. code-block:: python
 
   []
-  [0,]
+  [0]
   [1, 2.5, 'three', (4, "five")]
 
 ----

@@ -45,7 +45,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
 * Click ``Get`` to install
 
-* When the installation is successful the computer ask yous for a ``USERNAME``, use something that is easy for you to remember later
+* When the installation is successful the computer asks you for a ``USERNAME``, use something that is easy for you to remember later
 
 * Next it asks for a ``PASSWORD``, use something that is easy for you to remember later
 
@@ -76,7 +76,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
 you can continue with :ref:`how to make a Python Test Driven Development environment manually`.
 
-If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux` instead
+If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux` instead, and know that all the sections that say something like "how to do something on Windows without Windows Subsystem for Linux" are dedicated to you
 
 .. NOTE::
 
