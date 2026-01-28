@@ -430,6 +430,263 @@ test_calculator_w_getattribute
                 ),
             }
 
+  the test passes
+
+----
+
+* I add the new :ref:`dictionary<what is a dictionary?>` to the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 8-19
+
+                'multiplication': {
+                    'function': src.calculator.multiply,
+                    'expectation': (
+                        self.random_first_number*self.random_second_number
+                    ),
+                },
+            }
+            self.calculator_tests_a = {
+                'add': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtract': (
+                    self.random_first_number-self.random_second_number
+                ),
+                'divide': self.division_result,
+                'multiply': (
+                    self.random_first_number*self.random_second_number
+                ),
+            }
+
+        def test_calculator_w_getattribute(self):
+
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_calculator_w_getattribute``
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 2-13
+
+        def test_calculator_w_getattribute(self):
+            # calculator_tests = {
+            #     'add': (
+            #         self.random_first_number+self.random_second_number
+            #     ),
+            #     'subtract': (
+            #         self.random_first_number-self.random_second_number
+            #     ),
+            #     'divide': self.division_result,
+            #     'multiply': (
+            #         self.random_first_number*self.random_second_number
+            #     ),
+            # }
+            calculator_tests = self.calculator_tests_a
+
+            for operation in calculator_tests:
+
+  the test is still green
+
+* I use ``self.calculator_tests_a`` in the `for loop`_
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 1-2
+
+            # for operation in calculator_tests:
+            for operation in self.calculator_tests_a:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+
+  still green
+
+* I use it in the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 9-10
+
+            # for operation in calculator_tests:
+            for operation in self.calculator_tests_a:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        src.calculator.__getattribute__(operation)(
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        # calculator_tests[operation]
+                        self.calculator_tests_a[operation]
+                    )
+
+  green
+
+* I remove the commented lines and the ``calculator_tests`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 60
+
+        def test_calculator_w_getattribute(self):
+            for operation in self.calculator_tests_a:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        src.calculator.__getattribute__(operation)(
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        self.calculator_tests_a[operation]
+                    )
+
+        def test_calculator_functions(self):
+
+  still green
+
+* I no longer need ``test_calculator_functions`` since it is covered by ``test_calculator_w_getattribute``, they have the same tests. I remove ``test_calculator_functions``
+
+  .. code-block:: python
+    :lineno-start: 60
+
+        def test_calculator_w_getattribute(self):
+            for operation in self.calculator_tests_a:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        src.calculator.__getattribute__(operation)(
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        self.calculator_tests_a[operation]
+                    )
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+
+  the tests are still green
+
+* I change the name of ``test_calculator_w_getattribute`` to ``test_calculator_functions``
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+                'multiply': (
+                    self.random_first_number*self.random_second_number
+                ),
+            }
+
+        def test_calculator_functions(self):
+            for operation in self.calculator_tests_a:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        src.calculator.__getattribute__(operation)(
+                            self.random_first_number,
+                            self.random_second_number
+                        ),
+                        self.calculator_tests_a[operation]
+                    )
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+
+  still green
+
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number` in a new `for loop`_
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 8-14
+
+                    for operation in self.calculator_tests:
+                        self.assertEqual(
+                            self.calculator_tests[operation]['function'](
+                                data, a_random_number()
+                            ),
+                            error_message
+                        )
+                    for operation in self.calculator_tests_a:
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                data, a_random_number()
+                            ),
+                            'BOOM!!!'
+                        )
+
+        def test_calculator_w_list_items(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for 13 tests
+
+  .. code-block:: python
+
+    AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+
+* I change the expectation to the error message
+
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 6
+
+                    for operation in self.calculator_tests_a:
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                data, a_random_number()
+                            ),
+                            error_message
+                        )
+
+  the test passes
+
+* I remove the other `for loop`_
+
+  .. code-block:: python
+    :lineno-start: 74
+
+            for data in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                with self.subTest(i=data):
+                    for operation in self.calculator_tests_a:
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                data, a_random_number()
+                            ),
+                            error_message
+                        )
+
+        def test_calculator_w_list_items(self):
+
+  the test is still green
+
+* I forgot to remove the ``error_message`` :ref:`variable<what is a variable?>`. I remove it because I do not need it anymore
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 17
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            for data in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                with self.subTest(i=data):
+                    for operation in self.calculator_tests_a:
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                data, a_random_number()
+                            ),
+                            'brmph?! Numbers only. Try again...'
+                        )
+
+        def test_calculator_w_list_items(self):
+
+  still green
+
 ----
 
 *********************************************************************************
