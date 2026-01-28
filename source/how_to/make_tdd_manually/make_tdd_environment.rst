@@ -68,7 +68,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`How can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment>`
 * :ref:`How can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment>`
 * :ref:`How can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
-* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands I typed in a terminal>`
+* :ref:`How can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal>`
 
 ----
 
@@ -1267,7 +1267,7 @@ review
 I gave the computer some commands to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
 
 =====================================================================================================
-how to view all the commands I typed in a terminal
+how to view all the commands typed in a terminal
 =====================================================================================================
 
 * I type history_ in the terminal_ to see all the commands I have typed so far

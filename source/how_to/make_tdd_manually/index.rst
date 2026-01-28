@@ -8,21 +8,31 @@
 how to make a test driven development environment
 #################################################################################
 
+----
+
 *********************************************************************************
 what is Test Driven Development (TDD)?
 *********************************************************************************
 
 This is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal.
 
+----
+
 *********************************************************************************
 what is a Test Driven Development Environment?
 *********************************************************************************
 
+----
+
 A :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` is a group of files_ and folders_ in a project where I can write tests and code and they automatically run so I see the results immediately.
+
+----
 
 *********************************************************************************
 what is the Test Driven Development cycle?
 *********************************************************************************
+
+----
 
 The `Test Driven Development`_ cycle is :red:`RED` :green:`GREEN` :yellow:`REFACTOR`
 
@@ -32,15 +42,19 @@ The `Test Driven Development`_ cycle is :red:`RED` :green:`GREEN` :yellow:`REFAC
 
 This process can be repeated as many times as needed until I get to my goal.
 
+----
+
 *********************************************************************************
 preview
 *********************************************************************************
 
-I set up an environment for every Python_ project, this way I keep all the things that belong to the project in the same place. I can do this manually, which means I have to do the same exact steps for every project or I could do it automatically where I give the computer a command it does all those steps for me.
+----
+
+I set up an environment for every Python_ project, this way I keep all the things that belong to the project in the same place. I can do this manually, which means I have to do the same exact steps for every project or I could do it automatically where I give the computer a command and it does all those steps for me.
 
 Some things I think about when I want to start a project
 
-* What name will I give the project? this is based on what the project will do. It's also one of the hardest things to do
+* What name will I give the project? this is based on what the project will do. Naming things is its own challenge
 * What is the structure of the project?
   - What files_ and folders_ does the project need?
 
@@ -66,6 +80,7 @@ Here is what that structure looks like if the name of the project is ``PROJECT_N
 .. code-block:: shell
 
   PROJECT_NAME
+  ├── .venv
   ├── requirements.txt
   ├── src
   │   └── PROJECT_NAME.py
@@ -78,9 +93,7 @@ Here is what that structure looks like if the name of the project is ``PROJECT_N
 what is covered?
 *********************************************************************************
 
-*********************************************************************************
-what is covered?
-*********************************************************************************
+----
 
 These chapters show how I setup a project in Python_ on any computer (Linux_, Windows_, MacOS_) to help you get started with `Test Driven Development`_ right now
 
@@ -90,13 +103,15 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
   make a Python TDD environment<make_tdd_environment>
   make a Python TDD environment no WSL<make_tdd_environment_no_wsl>
 
+----
 
 =================================================================================
 on Linux, MacOS and Windows with Window Subsystem for Linux computers
 =================================================================================
 
+----
+
 * :ref:`how to make a Python Test Driven Development environment manually`
-* :ref:`how to make a Python Test Driven Development environment automatically`
 * :ref:`how to change directory`
 * :ref:`how to make a directory`
 * :ref:`how to look at directory structure`
@@ -116,40 +131,39 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 * :ref:`how to write text to a file`
 * :ref:`how to install Python packages in a virtual environment`
 * :ref:`how to see what packages are installed in a virtual environment`
-* :ref:`how to view all the commands I typed in a terminal`
+* :ref:`how to view all the commands typed in a terminal`
 * :ref:`how to make a shell script`
 * :ref:`how to run a shell script`
-* :ref:`how to use a variable in a shell script`
 * :ref:`how to make a shell script run as a command`
 * :ref:`how to run a shell script`
 
+----
+
 =================================================================================
-On Windows computers without Windows Subsystem for Linux
+on Windows computers without Windows Subsystem for Linux
 =================================================================================
 
+----
+
 * :ref:`how to make a Python Test Driven Development environment manually on Windows without Windows Subsystem for Linux`
-* :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`
 * :ref:`how to make an empty file on Windows without Windows Subsystem for Linux`
 * :ref:`how to write text to a file on Windows without Windows Subsystem for Linux`
 * :ref:`how to change the name of a file on Windows without WSL`
 * :ref:`how to run a Python program on Windows without Windows Subsystem for Linux`
-* :ref:`test_failure on Windows without WSL`
+* :ref:`the first failing test on Windows Without WSL<test_failure on Windows without WSL>`
 * :ref:`how to make the tests a Python package on Windows without WSL`
 * :ref:`how to manually run tests on Windows without WSL`
 * :ref:`how to run the tests automatically on Windows without Windows Subsystem for Linux`
 * :ref:`how to stop the automated tests on Windows without WSL`
 * :ref:`how to make a virtual environment on Windows without WSL`
-* :ref:`how to make a virtual environment on Windows without WSL`
 * :ref:`how to activate a virtual environment on Windows without WSL`
 * :ref:`how to deactivate a virtual environment on Windows without WSL`
-* :ref:`how to write text to a file on Windows without Windows Subsystem for Linux`
 * :ref:`how to install Python packages in a virtual environment on Windows without WSL`
 * :ref:`how to see what packages are installed in a virtual environment on Windows without WSL`
-* :ref:`how to view all the commands I typed in a terminal_ on Windows without WSL`
+* :ref:`how to view all the commands typed in a terminal_ on Windows without WSL`
 * :ref:`how to make a PowerShell script`
-* :ref:`how to use a variable in a PowerShell script`
 * :ref:`how to run a PowerShell script`
-* :ref:`test_failure on Windows without WSL`
+* :ref:`the first failing test on Windows Without WSL<test_failure on Windows without WSL>`
 
 ----
 
