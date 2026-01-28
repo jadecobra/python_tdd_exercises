@@ -327,42 +327,56 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
 * I add the file_ to the ``src`` folder_ and the test passes
 
-
 ----
 
 *********************************************************************************
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
-* I deactivate the `virtual environment`_
+* I close ``test_module_not_found_error.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/module_not_found_error
-
-* I `change directory`_ to the parent of ``module_not_found_error``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
   I am back in the ``pumping_python`` directory_
+
+.. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
+
+  * the terminal_ shows
+
+    .. code-block:: PowerShell
+
+      (.venv) ...\pumping_python\module_not_found_error
+
+  * I deactivate the `virtual environment`_
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      deactivate
+
+    the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+    .. code-block:: python
+
+      ...\pumping_python\module_not_found_error
+
+  * I `change directory`_ to the parent of ``module_not_found_error``
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      cd ..
+
+    the terminal_ shows
+
+    .. code-block:: python
+
+      ...\pumping_python
+
+    I am back in the ``pumping_python`` directory_
 
 ----
 
