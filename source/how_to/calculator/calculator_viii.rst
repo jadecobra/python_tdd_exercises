@@ -1118,6 +1118,14 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     NameError: name 'add' is not defined
 
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
 * I point ``add`` to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
@@ -1678,15 +1686,268 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I add a :ref:`decorator function<how to make a decorator function>`
+  .. code-block:: python
+
+    SUBFAILED(i=True) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 404.40333818765737 != 'brmph?! Numbers on...
+    SUBFAILED(i=False) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: JKL.MNOPQRSTUVWXYZ != 'brmph?! Numbers on...
+
+  2 of the failures are for :ref:`booleans<what are booleans?>`
+
+* I add bool_ to the :ref:`if statements` of the :ref:`functions<what is a function?>`
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 2, 8, 14, 20
+    :emphasize-text: bool
 
-    def check_input(argument):
-        if isinstance(argument, (dict, set, list)):
+    def add(first_input, second_input):
+        if isinstance(first_input, (dict, set, list, tuple, str, bool)):
             return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+
+    def divide(first_input, second_input):
+        if isinstance(first_input, (dict, set, list, tuple, str, bool)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input / second_input
+
+
+    def multiply(first_input=None, second_input=None):
+        if isinstance(first_input, (dict, set, list, tuple, str, bool)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+
+    def subtract(first_input, second_input):
+        if isinstance(first_input, (dict, set, list, tuple, str, bool)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input - second_input
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for +: 'NoneType' and 'float'
+
+* I add :ref:`None<what is None?>` to the call to the `isinstance method`_ in the :ref:`if statements` of the :ref:`functions<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2, 8, 14, 20
+    :emphasize-text: None
+
+    def add(first_input, second_input):
+        if isinstance(first_input, (dict, set, list, tuple, str, bool, None)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+
+    def divide(first_input, second_input):
+        if isinstance(first_input, (dict, set, list, tuple, str, bool, None)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input / second_input
+
+
+    def multiply(first_input=None, second_input=None):
+        if isinstance(first_input, (dict, set, list, tuple, str, bool, None)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+
+    def subtract(first_input, second_input):
+        if isinstance(first_input, (dict, set, list, tuple, str, bool, None)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input - second_input
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+  that change made things worse. I cannot use :ref:`None<what is None?>` in the `isinstance method`_
+
+* I undo the change then add a new condition
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-5, 11-14, 20-23, 29-32
+
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, (dict, set, list, tuple, str, bool))
+            or first_input is None
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+
+    def divide(first_input, second_input):
+        if (
+            isinstance(first_input, (dict, set, list, tuple, str, bool))
+            or first_input is None
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input / second_input
+
+
+    def multiply(first_input=None, second_input=None):
+        if (
+            isinstance(first_input, (dict, set, list, tuple, str, bool))
+            or first_input is None
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+
+    def subtract(first_input, second_input):
+        if (
+            isinstance(first_input, (dict, set, list, tuple, str, bool))
+            or first_input is None
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input - second_input
+
+  the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`decorator function<how to make a decorator function>` to remove the repetition of the :ref:`if statements` because they are all the same
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-12
+
+    def check_input(function):
+        def wrapper(first_input, second_input):
+            if (
+                isinstance(
+                    first_input,
+                    (dict, set, list, tuple, str, bool)
+                ) or
+                first_input is None
+            ):
+                return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
+
+
+    def add(first_input, second_input):
+
+* I use the new :ref:`function<what is a function?>` to :ref:`wrap<how to make a decorator function>` the ``add`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 1
+
+    @check_input
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, (dict, set, list, tuple, str, bool))
+            or first_input is None
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+  the test is still green
+
+* I remove the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 15
+
+    @check_input
+    def add(first_input, second_input):
+        return first_input + second_input
+
+
+    def divide(first_input, second_input):
+
+  still green
+
+* I do the same thing with the ``divide`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 1
+
+    @check_input
+    def divide(first_input, second_input):
+        if (
+            isinstance(first_input, (dict, set, list, tuple, str, bool))
+            or first_input is None
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input / second_input
+
+  green
+
+* I remove the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 20
+
+    @check_input
+    def divide(first_input, second_input):
+        return first_input / second_input
+
+
+    def multiply(first_input=None, second_input=None):
+
+  the test is still green
+
+* I make the same change to the other 2 :ref:`functions<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 25-27, 30-32
+
+    def check_input(function):
+        def wrapper(first_input, second_input):
+            if (
+                isinstance(
+                    first_input,
+                    (dict, set, list, tuple, str, bool)
+                ) or
+                first_input is None
+            ):
+                return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
+
+
+    @check_input
+    def add(first_input, second_input):
+        return first_input + second_input
+
+
+    @check_input
+    def divide(first_input, second_input):
+        return first_input / second_input
+
+
+    @check_input
+    def multiply(first_input=None, second_input=None):
+        return first_input * second_input
+
+
+    @check_input
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+  still green
+
+----
+
+All the tests are passing, but there is a problem. What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not a :ref:`dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test
 
 ----
 
@@ -1735,15 +1996,9 @@ close the project
 review
 *********************************************************************************
 
-I added the following tests for the :ref:`calculator program<how to make a calculator 5>` with :ref:`dictionaries` which made testing the program easier
+I used the ``__getattribute__`` built-in :ref:`function<what is a function?>` to make the calculator tests simpler.
 
-* :ref:`test_calculator_w_dictionary_items`
-* :ref:`test_calculator_functions` which replaced
-
-  - :ref:`test_addition`
-  - :ref:`test_subtraction`
-  - :ref:`test_multiplication`
-  - :ref:`test_division`
+I rewrote the solution after rewriting the tests and found that I did not add a test for bad second inputs
 
 ----
 
@@ -1751,7 +2006,7 @@ I added the following tests for the :ref:`calculator program<how to make a calcu
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: dictionaries: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 8: tests>`
 
 ----
 
