@@ -271,7 +271,7 @@ requirements
 
       python -m pip install --requirement requirements.txt
 
-  the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
+  the terminal_ shows pip_ downloading then installing the `Python programs`_ that `pytest-watch`_ needs to run
 
 * I use `pytest-watch`_ to run the test
 

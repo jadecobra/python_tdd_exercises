@@ -15,20 +15,20 @@ the code in ``list_comprehensions/tests/test_list_comprehensions.py`` from :ref:
 ----
 
 *********************************************************************************
-list comprehensions with the Calculator tests
+how to make a calculator 6: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`list comprehensions`
+the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 6`
 
 .. literalinclude:: calculator/tests/test_calculator_list_comprehensions.py
   :language: python
   :linenos:
 
 *********************************************************************************
-list comprehensions with the Calculator solutions
+how to make a calculator 6: solutions
 *********************************************************************************
 
-the solutions in ``calculator/src/calculator.py`` from :ref:`list comprehensions`
+the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 6`
 
 .. literalinclude:: calculator/solutions/calculator_list_comprehensions.py
   :language: python
@@ -37,11 +37,11 @@ the solutions in ``calculator/src/calculator.py`` from :ref:`list comprehensions
 ----
 
 *********************************************************************************
-list comprehensions with booleans tests
+booleans 2: tests
 *********************************************************************************
 
-the solutions in ``booleans/tests/booleans_list_comprehensions.py`` from :ref:`list comprehensions`
+the tests in ``booleans/tests/test_booleans.py`` from :ref:`booleans 2`
 
-.. literalinclude:: tests/test_booleans_list_comprehensions.py
+.. literalinclude:: tests/booleans/test_booleans_list_comprehensions.py
   :language: python
   :linenos:

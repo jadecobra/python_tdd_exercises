@@ -1947,7 +1947,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-All the tests are passing, but there is a problem. What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not a :ref:`dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test
+All the tests are passing, but there is a problem. What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not a :ref:`dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test. I am still learning
 
 ----
 

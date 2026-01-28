@@ -260,7 +260,7 @@ start the project
 
       python -m pip install --requirement requirements.txt
 
-  the terminal_ shows pip_ downloads and installs the `Python programs`_ that `pytest-watch`_ needs to run
+  the terminal_ shows pip_ downloading then installing the `Python programs`_ that `pytest-watch`_ needs to run
 
 * I use `pytest-watch`_ to run the test
 
@@ -1931,7 +1931,7 @@ these things come in handy when I write :ref:`conditions<if statements>` in prog
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: booleans: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<booleans: tests>`
 
 ----
 

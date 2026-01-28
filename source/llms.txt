@@ -18,7 +18,7 @@
 
 - [AssertionError: tests](https://www.pumpingpython.com/code/code_assertion_error.html)
 - [AttributeError: tests and solutions](https://www.pumpingpython.com/code/code_attribute_error.html)
-- [data structures: Booleans: tests](https://www.pumpingpython.com/code/code_booleans.html)
+- [booleans: tests](https://www.pumpingpython.com/code/code_booleans.html)
 - [how to make a calculator: tests and solutions](https://www.pumpingpython.com/code/code_calculator.html)
 - [classes: tests and solutions](https://www.pumpingpython.com/code/code_classes.html)
 - [data structures: Dictionaries: tests](https://www.pumpingpython.com/code/code_dictionaries.html)

@@ -5,6 +5,8 @@
 .. include:: ../links.rst
 
 .. _ModuleNotFoundError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
+.. _sys module: https://docs.python.org/3/library/sys.html#module-sys
+.. _sys.path: https://docs.python.org/3/library/sys.html#sys.path
 
 #################################################################################
 what is a module?
@@ -16,11 +18,13 @@ what is a module?
 
 ----
 
+A Python_ module_ is a file_ that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_
+
 *********************************************************************************
 what causes ModuleNotFoundError?
 *********************************************************************************
 
-ModuleNotFoundError_ is raised when Python_ cannot find a module_ that is given in an `import statement`_. A Python_ module_ is a file_ that ends in ``.py``. Any folder_ that contains an ``__init__.py`` is also a Python_ module_
+ModuleNotFoundError_ is raised when Python_ cannot find a module_ given in an `import statement`_
 
 ----
 
@@ -40,50 +44,303 @@ These are the tests I have by the end of the chapter
 start the project
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
+* I open a terminal_, it shows
 
   .. code-block:: shell
+
+    .../pumping_python
+
+  I am in the ``pumping_python`` directory_
+
+  .. NOTE::
+
+    if you are not in the ``pumping_python`` directory_, try
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      cd ~/pumping_python
+
+    or the path to where you saved ``pumping_python`` to get back to it
+
+* I make 2 new folders_
+
+  .. code-block:: python
     :emphasize-lines: 1
 
-    ./makePythonTdd.sh module_not_found_error
+    mkdir src tests
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: python
+
+    .../pumping_python
+
+* I use touch_ to make an empty file_ for the program_ in the ``src`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch src/pumping_python.py
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/pumping_python.py`` instead of ``touch src/pumping_python.py``
 
-    .. code-block:: shell
+    .. code-block:: Powershell
+      :emphasize-lines: 1
 
-      ./makePythonTdd.ps1 module_not_found_error
+      New-Item src/pumping_python.py
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-    :emphasize-lines: 3
-    :emphasize-text: test_module_not_found_error
-
-    E       AssertionError: True is not false
-
-    tests/test_module_not_found_error.py:7: AssertionError
-
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_module_not_found_error.py:7`` to open it in the :ref:`editor<2 editors>`
-
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+  the terminal_ goes back to the command line
 
   .. code-block:: python
-    :lineno-start: 7
+
+    .../pumping_python/pumping_python
+
+* I use touch_ to make an empty file_ in the ``tests`` folder_ to tell Python_ that it is a `Python package`_
+
+  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+
+  .. code-block:: python
     :emphasize-lines: 1
 
-            self.assertFalse(False)
+    touch tests/__init__.py
 
-  the test passes
+  .. attention::
 
-* I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+
+    .. code-block:: Powershell
+      :emphasize-lines: 1
+
+      New-Item tests/__init__.py
+
+  the terminal_ goes back to the command line
+
+* I make an empty file_ for the actual test
 
   .. code-block:: python
-    :lineno-start: 4
     :emphasize-lines: 1
 
-    class TestModuleNotFoundError(unittest.TestCase):
+    touch tests/test_pumping_python.py
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_pumping_python.py`` NOT ``touch tests/test_pumping_python.py``
+
+    .. code-block:: Powershell
+      :emphasize-lines: 1
+
+      New-Item tests/test_pumping_python.py
+
+  the terminal_ goes back to the command line
+
+* I open ``test_pumping_python.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+
+  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      code tests/test_pumping_python.py
+
+    ``test_pumping_python.py`` opens up in the :ref:`editor<2 editors>`
+
+* I add :ref:`the first failing test<test_failure>` to ``test_pumping_python.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1, 4, 6-7
+
+    import unittest
+
+
+    class TestPumpingPython(unittest.TestCase):
+
+        def test_failure(self):
+            self.assertFalse(True)
+
+* I make a `virtual environment`_ in the terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m venv .venv
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      python -m venv .venv
+
+  the terminal_ takes some time then goes back to the command line
+
+* I activate the `virtual environment`_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    (.venv) .../pumping_python
+
+* I upgrade the `Python package manager (pip)`_ to the latest version
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m pip install --upgrade pip
+
+  the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
+
+* I make a ``requirements.txt`` file_ for the `Python programs`_ my project needs
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest-watch" > requirements.txt
+
+  the terminal_ goes back to the command line
+
+* I use pip_ to install ``pytest-watch`` with the requirements file_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m pip install --requirement requirements.txt
+
+  .. attention::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      python -m pip install --requirement requirements.txt
+
+  the terminal_ shows pip_ downloading then installing the `Python programs`_ that `pytest-watch`_ needs to run
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I use `pytest-watch`_ to run the test
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows ModuleNotFoundError_ then goes back to the command line
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+    :emphasize-text: ModuleNotFoundError
+
+    E   ModuleNotFoundError: No module named 'src.type_error'
+    ======================= short test summary info ========================
+    ERROR attribute_error/tests/test_attribute_error.py
+    ERROR booleans/tests/test_booleans.py
+    ERROR calculator/tests/test_calculator.py
+    ERROR dictionaries/tests/test_dictionaries.py
+    ERROR exceptions/tests/test_exceptions.py
+    ERROR functions/tests/test_functions.py
+    ERROR list_comprehensions/tests/test_list_comprehensions.py
+    ERROR lists/tests/test_lists.py
+    ERROR magic/tests/test_magic.py
+    ERROR magic_again/tests/test_magic_again.py
+    ERROR more_magic/tests/test_more_magic.py
+    ERROR none/tests/test_none.py
+    ERROR person/tests/test_classes.py
+    ERROR person/tests/test_person.py
+    ERROR pro_magic/tests/test_pro_magic.py
+    ERROR pro_magic_plus/tests/test_pro_magic_plus.py
+    ERROR telephone/tests/test_telephone.py
+    ERROR truth_table/tests/test_truth_table.py
+    ERROR type_error/tests/test_type_error.py
+    !!!!!!!!!!!!!!! Interrupted: 19 errors during collection !!!!!!!!!!!!!!!
+    ================ 2 tests collected, 19 errors in X.YZs =================
+
+  because Python_ cannot find ``type_error.py`` in the ``src`` folder_, there eis only one file_ in it.
+
+  I have to tell Python_ how to get to ``type_error.py`` in the ``src`` folder_ of ``type_error`` so it can run the tests from there :ref:`TypeError<what causes TypeError?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add an ``__init__.py`` file_ to the ``pumping_python`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch __init__.py
+
+  the terminal_ goes back to the command line
+
+* I open ``__init__.py`` in the :ref:`editor<2 editors>`
+
+* I add an `import statement`_ for the `sys module`_ in ``__init__.py``
+
+  .. code-block:: python
+    :linenos:
+
+    import sys
+
+  the `sys module`_ is part of the `Python Standard Library`_, it has an :ref:`attribute<test_attribute_error_w_class_attributes>` that has a :ref:`list<what is a list?>` of places for Python_ to check for :ref:`modules<what is a module?>`
+
+* I add ``type_error`` to the :ref:`attribute<test_attribute_error_w_class_attributes>` with the :ref:`append method<test_append_adds_item_to_end_of_a_list>`
+
+  .. code-block:: python
+    :linenos:
+
+    import sys
+    sys.path.append('type_error')
+
+  `sys.path`_ is a :ref:`list<what is a list>` of strings_ that Python_ checks for :ref:`modules<what is a module?>`
+
+* I try to run the test again
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    pytest-watch
+
+  the terminal_ shows ModuleNotFoundError_
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'tests.test_truth_table'
+
+  progress
+
+* I add ``truth_table`` to the `sys.path`_
+
 
 *********************************************************************************
 test_module_not_found_error

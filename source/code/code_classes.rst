@@ -52,6 +52,18 @@ the solutions in ``person/src/classes.py`` from :ref:`inheritance<family ties>`
 ----
 
 *********************************************************************************
+booleans 3: tests
+*********************************************************************************
+
+the code in ``booleans/tests/test_booleans.py`` from :ref:`booleans 3`
+
+.. literalinclude:: tests/booleans/test_booleans_classes.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
 how to make a calculator 8: tests
 *********************************************************************************
 
