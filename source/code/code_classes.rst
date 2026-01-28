@@ -57,7 +57,7 @@ how to make a calculator 8: tests
 
 the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 8`
 
-.. literalinclude:: calculator/tests/test_calculator_viii.py
+.. literalinclude:: calculator/tests/test_calculator_classes.py
   :language: python
   :linenos:
 
@@ -69,6 +69,6 @@ how to make a calculator 8: solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 8`
 
-.. literalinclude:: calculator/solutions/calculator_viii.py
+.. literalinclude:: calculator/solutions/calculator_classes.py
   :language: python
   :linenos:
