@@ -163,12 +163,9 @@ MacOS requirements
 what is next?
 *************************************************************************************
 
-* :ref:`Click Here to setup your Integrated Development Environment the same way I set mine up<how I setup my Integrated Development Environment (IDE)>` then
-* if you have a Windows_ computer :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`
-* if you are not able to install `Windows Subsystem for Linux`_ do not worry, every chapter of the book has something for you
+:ref:`Click Here to setup your Integrated Development Environment the same way I set mine up<how I setup my Integrated Development Environment (IDE)>`
 
 ----
-
 
 .. raw:: html
 

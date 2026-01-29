@@ -1342,7 +1342,6 @@ what is next?
 
 ----
 
-
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->

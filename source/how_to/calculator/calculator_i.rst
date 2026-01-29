@@ -2046,7 +2046,6 @@ I think I know how to make a Python_ :ref:`Test Driven Development environment<w
 
 -----
 
-
 .. raw:: html
 
   <!-- TrustBox widget - Review Collector -->
