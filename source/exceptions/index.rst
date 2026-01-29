@@ -34,16 +34,16 @@ questions about Exceptions
 
 Here are some questions you can answer after going through these chapters
 
-* :ref:`What is an Exception?<how to handle Exceptions (Errors)>`
-* :ref:`What is Exception handling?<how to handle Exceptions (Errors)>`
-* :ref:`What causes AssertionError?<what causes AssertionError?>`
-* :ref:`What causes AttributeError?<what causes AttributeError?>`
-* :ref:`What causes TypeError?<TypeError>`
-* :ref:`What causes ModuleNotFoundError?<what is a module?>`
-* :ref:`What causes NameError?<test_catching_name_error_in_tests>`
-* :ref:`What causes IndexError?<test_index_error>`
-* :ref:`What causes KeyError?<test_key_error>`
-* :ref:`How can I handle exceptions in a program<how to use try...except...else>`
+* :ref:`what is an Exception?<how to handle Exceptions (Errors)>`
+* :ref:`what is Exception handling?<how to handle Exceptions (Errors)>`
+* :ref:`what causes AssertionError?<what causes AssertionError?>`
+* :ref:`what causes AttributeError?<what causes AttributeError?>`
+* :ref:`what causes TypeError?<TypeError>`
+* :ref:`what causes ModuleNotFoundError?<what is a module?>`
+* :ref:`what causes NameError?<test_catching_name_error_in_tests>`
+* :ref:`what causes IndexError?<test_index_error>`
+* :ref:`what causes KeyError?<test_key_error>`
+* :ref:`how can I handle exceptions in a program<how to use try...except...else>`
 
 *************************************************************************************
 what is next?

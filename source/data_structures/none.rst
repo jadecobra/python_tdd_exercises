@@ -42,7 +42,7 @@ questions about None
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`What is None?<test_what_is_none>`
+* :ref:`what is None?<test_what_is_none>`
 * :ref:`Is None a boolean?<test_is_none_a_boolean>`
 * :ref:`Is None an integer?<test_is_none_an_integer>`
 * :ref:`Is None a float?<test_is_none_a_float>`
@@ -51,10 +51,10 @@ Here are questions you can answer after going through this chapter
 * :ref:`Is None a list?<test_is_none_a_list>`
 * :ref:`Is None a set?<test_is_none_a_set>`
 * :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
-* :ref:`How can I test if something is None?<how to test if something is None>`
-* :ref:`How can I test if something is NOT None?<how to test if something is None>`
-* :ref:`How can I test if something is an instance of a class?<how to test if something is an instance of a class>`
-* :ref:`How can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
+* :ref:`how can I test if something is None?<how to test if something is None>`
+* :ref:`how can I test if something is NOT None?<how to test if something is None>`
+* :ref:`how can I test if something is an instance of a class?<how to test if something is an instance of a class>`
+* :ref:`how can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
 
 ----
 

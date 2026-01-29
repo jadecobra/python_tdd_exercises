@@ -37,12 +37,12 @@ Here are the tests I have at the end of the chapters
 questions about The Truth Table
 *********************************************************************************
 
-* :ref:`What is not?<test_logical_negation>`
-* :ref:`What is and?<test_logical_conjunction>`
-* :ref:`What is or?<test_logical_disjunction>`
-* :ref:`What is an if statement<if statements>`
-* :ref:`What is a conditional expression?<conditional expressions>`
-* :ref:`What is a ternary operator?<conditional expressions>`
+* :ref:`what is not?<test_logical_negation>`
+* :ref:`what is and?<test_logical_conjunction>`
+* :ref:`what is or?<test_logical_disjunction>`
+* :ref:`what is an if statement<if statements>`
+* :ref:`what is a conditional expression?<conditional expressions>`
+* :ref:`what is a ternary operator?<conditional expressions>`
 * What are the possible combinations of two inputs?
 
 ----

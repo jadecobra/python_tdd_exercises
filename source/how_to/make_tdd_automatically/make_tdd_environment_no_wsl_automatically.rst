@@ -61,8 +61,8 @@ questions about making a Python Test Driven Development Environment automaticall
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`How can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`How can I run a PowerShell script?<how to run a PowerShell script>`
+* :ref:`how can I make a PowerShell script?<how to make a PowerShell script>`
+* :ref:`how can I run a PowerShell script?<how to run a PowerShell script>`
 
 ----
 

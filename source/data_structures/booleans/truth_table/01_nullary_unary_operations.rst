@@ -20,13 +20,13 @@ questions about Nullary and Unary Operations
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`What are the Nullary Operations?<Nullary Operations>`
+* :ref:`what are the Nullary Operations?<Nullary Operations>`
 * :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`
-* :ref:`What are the Unary Operations?<Unary Operations>`
+* :ref:`what are the Unary Operations?<Unary Operations>`
 * :ref:`How many inputs do Unary Operations take?<Unary Operations>`
-* :ref:`What is a function that returns its input as output?<test_logical_identity>`
-* :ref:`What is a function that returns the negation of its input?<test_logical_negation>`
-* :ref:`How can I return the opposite of a boolean?<how to return the opposite of a boolean>`
+* :ref:`what is a function that returns its input as output?<test_logical_identity>`
+* :ref:`what is a function that returns the negation of its input?<test_logical_negation>`
+* :ref:`how can I return the opposite of a boolean?<how to return the opposite of a boolean>`
 
 ----
 

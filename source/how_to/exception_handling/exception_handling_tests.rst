@@ -40,15 +40,15 @@ questions about testing Exceptions
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`How can I make sure an Exception is raised?<how to test that an Exception is raised>`
-* :ref:`What causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
-* :ref:`What causes NameError?<test_catching_name_error_in_tests>`
-* :ref:`What causes AttributeError?<test_catching_attribute_error_in_tests>`
-* :ref:`What causes TypeError?<test_catching_type_error_in_tests>`
-* :ref:`What causes IndexError?<test_catching_index_error_in_tests>`
-* :ref:`What causes KeyError?<test_catching_key_error_in_tests>`
-* :ref:`What causes ZeroDivisionError?<test_catching_zero_division_error_in_tests>`
-* :ref:`What Exception do all the other Exceptions come from<test_catching_exceptions_in_tests>`
+* :ref:`how can I make sure an Exception is raised?<how to test that an Exception is raised>`
+* :ref:`what causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`
+* :ref:`what causes NameError?<test_catching_name_error_in_tests>`
+* :ref:`what causes AttributeError?<test_catching_attribute_error_in_tests>`
+* :ref:`what causes TypeError?<test_catching_type_error_in_tests>`
+* :ref:`what causes IndexError?<test_catching_index_error_in_tests>`
+* :ref:`what causes KeyError?<test_catching_key_error_in_tests>`
+* :ref:`what causes ZeroDivisionError?<test_catching_zero_division_error_in_tests>`
+* :ref:`what Exception do all the other Exceptions come from<test_catching_exceptions_in_tests>`
 
 ----
 

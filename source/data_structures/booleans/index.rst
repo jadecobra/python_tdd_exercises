@@ -34,8 +34,8 @@ questions about Booleans
 
 Here are the questions you can answer after going through this chapter
 
-* :ref:`What is False?<test_what_is_false>`
-* :ref:`What is True?<test_what_is_true>`
+* :ref:`what is False?<test_what_is_false>`
+* :ref:`what is True?<test_what_is_true>`
 * :ref:`Is None False or True?<is None False or True?>`
 * :ref:`Is an integer False or True?<is an integer False or True?>`
 * :ref:`Is a float False or True?<is a float False or True?>`

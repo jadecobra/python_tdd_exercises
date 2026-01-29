@@ -61,15 +61,15 @@ questions about functions
 
 Here are the questions you can answer after going through this chapter
 
-* :ref:`What is a Function?<what is a function?>`
-* :ref:`What do functions return by default?<test_making_a_function_w_return_none>`
-* :ref:`What is a constant function?<test_constant_function>`
-* :ref:`What is the identity function?<test_identity_function>`
-* :ref:`What is a positional argument?<test_functions_w_positional_arguments>`
-* :ref:`What is a keyword argument?<test_functions_w_keyword_arguments>`
-* :ref:`How can I make arguments optional in a function?<test_functions_w_default_arguments>`
-* :ref:`How can I make a function take an unknown number of positional arguments?<test_functions_w_unknown_arguments>`
-* :ref:`How can I make a function take an unknown number of keyword arguments?<test_functions_w_unknown_arguments>`
+* :ref:`what is a Function?<what is a function?>`
+* :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
+* :ref:`what is a constant function?<test_constant_function>`
+* :ref:`what is the identity function?<test_identity_function>`
+* :ref:`what is a positional argument?<test_functions_w_positional_arguments>`
+* :ref:`what is a keyword argument?<test_functions_w_keyword_arguments>`
+* :ref:`how can I make arguments optional in a function?<test_functions_w_default_arguments>`
+* :ref:`how can I make a function take an unknown number of positional arguments?<test_functions_w_unknown_arguments>`
+* :ref:`how can I make a function take an unknown number of keyword arguments?<test_functions_w_unknown_arguments>`
 * :ref:`How are positional arguments represented in a function?<how Python reads positional arguments>`
 * :ref:`How are keyword arguments represented in a function?<how Python reads keyword arguments>`
 

@@ -62,10 +62,10 @@ questions about making a Python Test Driven Development Environment automaticall
 Here are questions you can answer after going through this chapter
 
 
-* :ref:`How can I make a shell script?<how to make a shell script>`
-* :ref:`How can I view the permissions of a file?<how to view the permissions of a file>`
-* :ref:`How can I make a shell script run as a command<how to make a shell script run as a command>`
-* :ref:`How can I run a shell script<how to run a shell script>`
+* :ref:`how can I make a shell script?<how to make a shell script>`
+* :ref:`how can I view the permissions of a file?<how to view the permissions of a file>`
+* :ref:`how can I make a shell script run as a command<how to make a shell script run as a command>`
+* :ref:`how can I run a shell script<how to run a shell script>`
 
 ----
 
