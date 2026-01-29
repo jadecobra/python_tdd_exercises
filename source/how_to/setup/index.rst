@@ -1,6 +1,8 @@
 .. include:: ../../links.rst
 
 .. _download and install Python: https://www.python.org/downloads/
+.. _Xcode Command Line Tools: https://developer.apple.com/xcode/resources/
+.. _download and install git: https://git-scm.com/install/windows
 
 #################################################################################
 how I setup my computer for development
@@ -89,6 +91,15 @@ Linux/Windows Subsystem for Linux requirements
 
   tree_ is a program for showing :ref:`directory structure<BONUS: learn directory structure>` as a tree
 
+* use apt_ to install git_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    sudo apt install git --y
+
+  git_ is a program for keeping track of changes I make in a project, it might already be installed
+
 :ref:`Click HERE to see how I setup my Integrated Development Environment (IDE)<how I setup my Integrated Development Environment (IDE)>`
 
 ----
@@ -102,6 +113,8 @@ Windows without Windows Subsystem Linux requirements
 .. ATTENTION:: Do this only if you are using Windows_ and could not install `Windows Subsystem Linux`_
 
 * `download and install Python`_
+
+* `download and install git`_, git_ is a program_ for keeping track of changes I make in a project
 
 * open PowerShell_ and copy and paste the text below to install the `uv Python package manager`_
 
@@ -154,6 +167,15 @@ MacOS requirements
     brew install tree
 
   tree_ is a program for showing :ref:`directory structure<BONUS: learn directory structure>` as a tree
+
+* install git_ with `Xcode Command Line Tools`_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    xcode-select --install
+
+  git_ is a program for keeping track of changes I make in a project
 
 :ref:`Click HERE to see how I setup my Integrated Development Environment (IDE)<how I setup my Integrated Development Environment (IDE)>`
 

@@ -64,8 +64,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
 * :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment on Windows without WSL>`
 * :ref:`how can I document the Python programs my project needs?<how to write text to a file on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment on Windows without WSL>`
-* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment on Windows without WSL>`
+* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv on Windows without WSL>`
+* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv on Windows without WSL>`
 * :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
 * :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal_ on Windows without WSL>`
 
@@ -979,7 +979,7 @@ life is good!
 ----
 
 =====================================================================================================
-how to install Python packages in a virtual environment on Windows without WSL
+how to install Python packages with uv on Windows without WSL
 =====================================================================================================
 
 * I use pip_ to install `pytest-watcher`_ from the requirements file
@@ -1284,7 +1284,7 @@ how to view all the commands typed in a terminal_ on Windows without WSL
   - :ref:`activate the virtual environment<how to activate a virtual environment on Windows without WSL>`
   - :ref:`upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment on Windows without WSL>`
   - :ref:`make a requirements file for the needed Python packages<how to write text to a file on Windows without Windows Subsystem for Linux>`
-  - :ref:`install the packages listed in the requirements file<how to install Python packages in a virtual environment on Windows without WSL>`
+  - :ref:`install the packages listed in the requirements file<how to install Python packages with uv on Windows without WSL>`
   - :ref:`run the tests automatically<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal on Windows without WSL>`
   - make the test pass

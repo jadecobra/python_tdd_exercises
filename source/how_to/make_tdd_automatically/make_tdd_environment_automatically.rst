@@ -29,7 +29,7 @@ To review, here are steps I take to make the environment for every project
 #. :ref:`I activate the virtual environment<how to activate a virtual environment>`
 #. :ref:`I upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
 #. :ref:`I make a requirements file for the needed Python packages<how to write text to a file>`
-#. :ref:`I install the packages listed in the requirements file<how to install Python packages in a virtual environment>`
+#. :ref:`I install the packages listed in the requirements file<how to install Python packages with uv>`
 #. :ref:`I run the tests automatically<how to run the tests automatically in a virtual environment>`
 #. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
 #. I make the test pass

@@ -77,6 +77,7 @@
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _f-strings: `f-string`_
+.. _git: https://grokipedia.com/page/Git
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable
 .. _history: https://man7.org/Linux/man-pages/man3/history.3.html
@@ -126,6 +127,7 @@
 .. _Python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
 .. _Python's online documentation: https://docs.python.org/3/search.html
 .. _Python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
+.. _pyproject.toml: https://python-poetry.org/docs/pyproject/
 .. _pwd: touch aka_current_working_directory
 .. _raise: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
 .. _raises: raise_

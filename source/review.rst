@@ -33,8 +33,8 @@ how to make a python test driven development environment review
 * :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
 * :ref:`how can I document the Python programs my project needs?<how to write text to a file>`
-* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment>`
-* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment>`
+* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv>`
+* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv>`
 * :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal>`
 * :ref:`how can I make a shell script?<how to make a shell script>`
@@ -70,8 +70,8 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
 * :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment on Windows without WSL>`
 * :ref:`how can I document the Python programs my project needs?<how to write text to a file on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment on Windows without WSL>`
-* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment on Windows without WSL>`
+* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv on Windows without WSL>`
+* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv on Windows without WSL>`
 * :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
 * :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal_ on Windows without WSL>`
 * :ref:`how can I make a PowerShell script?<how to make a PowerShell script>`
@@ -271,7 +271,7 @@ testing
 what is next?
 *************************************************************************************
 
-after that review you can confidently say you know something about Python_, you know 
+after that review you can confidently say you know something about Python_, you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`

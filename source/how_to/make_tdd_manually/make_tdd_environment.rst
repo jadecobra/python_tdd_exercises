@@ -65,8 +65,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
 * :ref:`how can I document the Python programs my project needs?<how to write text to a file>`
-* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages in a virtual environment>`
-* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages in a virtual environment>`
+* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv>`
+* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv>`
 * :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal>`
 
@@ -581,7 +581,9 @@ how to make the tests a Python package
 
 * I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ after you change its name
+  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the `Integrated Development Environment (IDE)`_ :ref:`editor<2 editors>` after you change its name
+
+----
 
 =====================================================================================================
 how to change the name of a file
@@ -607,8 +609,6 @@ how to change the name of a file
 
   the terminal_ shows
 
-  .. NOTE:: if you do not see ``__pycache__`` in the list do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test
-
   .. code-block:: shell
     :emphasize-lines: 7
 
@@ -619,6 +619,8 @@ how to change the name of a file
         ├── __init__.py
         ├── __pycache__
         └── test_magic.py
+
+  .. NOTE:: if you do not see ``__pycache__`` in the tree do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test
 
   the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of contents of the child folders_
 
@@ -649,9 +651,9 @@ how to change the name of a file
 
     FAILED (failures=1)
 
-  .. IMPORTANT:: I can use any name for the test file_ but it must start with ``test_`` or unittest_ will NOT run the tests in the file
+  .. TIP:: I can use any name for the test file_ but it must start with ``test_`` or unittest_ will NOT run the tests in the file_
 
-* This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
+  This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
 
   - ``FAILED (failures=1)`` the number of failures
   - ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
@@ -703,7 +705,7 @@ the test passes! The terminal_ shows
 
   OK
 
-*cue CELEBRATION MUSIC AND DANCE!* I am GREEN!!
+*cue CELEBRATION MUSIC AND DANCE!* I am :green:`GREEN!!`
 
 
 ----
@@ -762,162 +764,7 @@ the terminal_ shows
 
   command not found: pytest-watcher
 
-I need to install `pytest-watcher`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
-
-----
-
-=====================================================================================================
-what is a virtual environment?
-=====================================================================================================
-
-----
-
-I can install `pytest-watcher`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
-
-A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
-
-It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. This helps if I decide to package the program_ to send to someone else, because everything needed by the project is in one place.
-
-----
-
-=====================================================================================================
-how to make a virtual environment
-=====================================================================================================
-
-----
-
-* I make a `virtual environment`_ with the venv_ :ref:`module<what is a module?>` from the `Python standard library`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m venv .venv
-
-  the terminal_ goes back to the command line
-
-  - ``python3`` is the `Python program`_
-  - ``-m`` is an option passed to Python_ to run the :ref:`module<what is a module?>` given after the option
-  - venv_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
-  - ``.venv`` is the name I am giving for this `virtual environment`_
-
-    .. IMPORTANT:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
-
-* I run tree_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -L 2
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    .
-    ├── src
-    │   └── magic.py
-    └── tests
-        ├── __init__.py
-        ├── __pycache__
-        └── test_magic.py
-
-  it does not look like anything changed. This is because the ``.`` in front of ``.venv`` means the folder_ is hidden
-
-* I try tree_ again with another option to see what changed
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree -a -L 2
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 8
-
-    .
-    ├── src
-    │   └── magic.py
-    ├── tests
-    │   ├── __init__.py
-    │   ├── __pycache__
-    │   └── test_magic.py
-    └── .venv
-        ├── bin
-        ├── .gitignore
-        ├── include
-        ├── lib
-        ├── lib64 -> lib
-        └── pyvenv.cfg
-
-  there is now a folder_ named ``.venv`` for the `virtual environment`_
-
-  - the ``-a`` option makes tree_ show all files that are listed including hidden files_ and folders_
-  - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to keep it to the first level of what is in the children folders_ of ``magic``
-
-----
-
-=====================================================================================================
-how to activate a virtual environment
-=====================================================================================================
-
-----
-
-* When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../magic
-
-  the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
-
-* I use `pytest-watcher`_ to run the test again
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    pytest-watcher . --now
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    command not found: pytest-watcher
-
-  I have to install `pytest-watcher`_ in the `virtual environment`_ to use it in the `virtual environment`_
-
-----
-
-=====================================================================================================
-how to see what packages are installed in a virtual environment
-=====================================================================================================
-
-----
-
-I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_ I just made
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  pip list
-
-the terminal_ shows
-
-.. code-block:: shell
-
-  Package Version
-  ------- -------
-  pip     x.y
-
-- `pytest-watcher`_ is not in the list
-- pip_ is a program_ from the `Python standard library`_ that is used to install `Python packages`_
+I need to install `pytest-watcher`_ for the computer to use it. Next, I use the `uv Python package manager`_ to install it
 
 ----
 
@@ -927,7 +774,7 @@ how to write text to a file
 
 ----
 
-I want to make a file_ where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
+I want to make a file_ where I can list all the `Python packages`_ that my project needs as a way to document it and have uv_ install the programs_ listed in the file_
 
 * I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
 
@@ -970,17 +817,10 @@ I want to make a file_ where I can list all the `Python packages`_ for my projec
     ├── requirements.txt
     ├── src
     │   └── magic.py
-    ├── tests
-    │   ├── __init__.py
-    │   ├── __pycache__
-    │   └── test_magic.py
-    └── .venv
-        ├── bin
-        ├── .gitignore
-        ├── include
-        ├── lib
-        ├── lib64 -> lib
-        └── pyvenv.cfg
+    └── tests
+        ├── __init__.py
+        ├── __pycache__
+        └── test_magic.py
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
@@ -1010,27 +850,305 @@ life is good!
 ----
 
 =====================================================================================================
-how to install Python packages in a virtual environment
+how to setup a project with uv
 =====================================================================================================
 
 ----
 
-* I use pip_ to install `pytest-watcher`_ from the requirements file
+* I use uv_ to setup the project
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    python3 -m pip install --requirement requirements.txt
+    uv init
 
-  - ``--requirement`` is an option that can be given to the ``install`` argument for `Python packages`_ in a given file_
-  - ``requirements.txt`` is the name of the given file_
-
-  the terminal_ shows programs_ being downloaded and installed, and when I do not have the latest version of pip_ installed, it shows this at the end
+  the terminal_ shows
 
   .. code-block:: shell
 
-    [notice] A new release of pip is available: XY.Z -> AB.C
-    [notice] To update, run: pip install --upgrade pip
+    Initialized project `magic`
+
+  and the command line has ``(main)`` on the right side of the project name
+
+  .. code-block:: python
+
+    .../pumping_python/magic (main)
+
+* I run tree_ to see what uv_ did to the folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree -a -L 1
+
+  .. code-block:: shell
+    :emphasize-lines: 2-7
+
+    .
+    ├── .git
+    ├── .gitignore
+    ├── main.py
+    ├── pyproject.toml
+    ├── .python-version
+    ├── README.md
+    ├── requirements.txt
+    ├── src
+    └── tests
+
+  it added a few files_ and folders_
+
+* I remove ``main.py`` since I already have ``magic.py`` in the ``src`` folder_ for the main program_
+
+  .. code-block:: python
+
+    rm main.py
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: python
+
+    .../pumping_python/magic (main)
+
+* Here is what uv_ added to the project
+
+  - ``.git`` this folder_ makes the project a git_ repository, it makes it easy to keep track of changes I make, and if I publish the repository I can work on the project from any computer anywhere
+  - ``.gitignore`` is a file_ that tells git_ what files_ in the project to not keep track of, this is useful for things that I do not want or need to share
+  - ``pyproject.toml`` is a file_ that is used to configure Python_ projects for packaging see `pyproject.toml`_ for more
+  - ``.python-version`` is a file_ that has the version of Python_ I am using
+  - ``README.md`` is a file_ that is used to describe the project
+
+* I use cat_ to look at what is inside ``.gitignore``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cat .gitignore
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    # Python-generated files
+    __pycache__/
+    *.py[oc]
+    build/
+    dist/
+    wheels/
+    *.egg-info
+
+    # Virtual environments
+    .venv
+
+* I use cat_ to see what is inside ``pyproject.toml``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cat pyproject.toml
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    [project]
+    name = "magic"
+    version = "0.1.0"
+    description = "Add your description here"
+    readme = "README.md"
+    requires-python = ">=3.XY"
+    dependencies = []
+
+* I look at what is in ``.python-version``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cat .python-version
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    3.XY
+
+* I show what is in ``README.md``
+
+  .. code-block:: python
+
+    cat README.md
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: python
+
+    .../pumping_python/magic (main)
+
+  the file_ is empty
+
+----
+
+=====================================================================================================
+how to install Python packages with uv
+=====================================================================================================
+
+----
+
+* I use uv_ to install `pytest-watcher`_ from the requirements file
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    uv add --requirement requirements.txt
+
+  - ``--requirement`` is an option that can be given to the ``add`` argument for `Python packages`_ in a given file_
+  - ``requirements.txt`` is the name of the given file_. It helps to manage `Python programs`_ that are needed by the project. In this case I only have one program. A project can have a big number of programs it needs and using one file_ with one command is easier than one command for each program_
+
+  the terminal_ shows setup and installation
+
+  .. code-block:: shell
+
+    Using CPython 3.XY.Z interpreter at: /usr/local/bin/python3.XY
+    Creating virtual environment at: .venv
+    Resolved 3 packages in 341ms
+    ░░░░░░░░░░░░░░░░░░░░ [0/2] Installing wheels...
+    ...
+    Installed 2 packages in 270ms
+     + pytest-watcher==0.6.3
+     + watchdog==6.0.0
+
+* I run tree_ to see what changed in the project
+
+  .. code-block:: python
+    :emphasize-lines:
+
+    tree -a -L 1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 10-11
+
+    .
+    ├── .git
+    ├── .gitignore
+    ├── pyproject.toml
+    ├── .python-version
+    ├── README.md
+    ├── requirements.txt
+    ├── src
+    ├── tests
+    ├── uv.lock
+    └── .venv
+
+  uv_ added 2 things
+
+  - ``.venv`` a folder_ for the `Virtual Environment<what is a virtual environment?>`
+  - ``uv.lock`` a file_ that has the exact versions of the `Python programs`_ that were installed
+
+* I use cat_ to show what is now in ``pyproject.toml``
+
+  .. code-block:: python
+
+    cat pyproject.toml
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    [project]
+    name = "magic"
+    version = "0.1.0"
+    description = "Add your description here"
+    readme = "README.md"
+    requires-python = ">=3.13"
+    dependencies = [
+        "pytest-watcher>=0.6.3",
+    ]
+
+----
+
+=====================================================================================================
+what is a virtual environment?
+=====================================================================================================
+
+----
+
+A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
+
+It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. I do not have to keep every program_ I have ever used for projects that do not need them.
+
+
+----
+
+=====================================================================================================
+how to activate a virtual environment
+=====================================================================================================
+
+----
+
+* When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    (.venv) .../magic (main)
+
+  the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
+
+----
+
+=====================================================================================================
+how to deactivate a virtual environment
+=====================================================================================================
+
+----
+
+* I can leave the `virtual environment`_ by typing ``deactivate`` in the terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: python
+
+    .../pumping_python/magic (main)
+
+----
+
+=====================================================================================================
+how to see what packages are installed in a virtual environment
+=====================================================================================================
+
+----
+
+I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_ I just made
+
+.. code-block:: shell
+  :emphasize-lines: 1
+
+  pip list
+
+the terminal_ shows
+
+.. code-block:: shell
+
+  Package Version
+  ------- -------
+  pip     x.y
+
+- `pytest-watcher`_ is not in the list
+- pip_ is a program_ from the `Python standard library`_ that is used to install `Python packages`_
+
+
 
 ----
 
@@ -1347,7 +1465,7 @@ how to view all the commands typed in a terminal
   - :ref:`activate the virtual environment<how to activate a virtual environment>`
   - :ref:`upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
   - :ref:`make a requirements file for the needed Python packages<how to write text to a file>`
-  - :ref:`install the packages listed in the requirements file<how to install Python packages in a virtual environment>`
+  - :ref:`install the packages listed in the requirements file<how to install Python packages with uv>`
   - :ref:`run the tests automatically<how to run the tests automatically in a virtual environment>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
   - make the test pass

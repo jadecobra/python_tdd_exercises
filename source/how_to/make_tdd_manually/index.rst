@@ -127,7 +127,7 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 * :ref:`how to activate a virtual environment`
 * :ref:`how to deactivate a virtual environment`
 * :ref:`how to write text to a file`
-* :ref:`how to install Python packages in a virtual environment`
+* :ref:`how to install Python packages with uv`
 * :ref:`how to see what packages are installed in a virtual environment`
 * :ref:`how to view all the commands typed in a terminal`
 * :ref:`how to make a shell script`
@@ -156,7 +156,7 @@ on Windows computers without Windows Subsystem for Linux
 * :ref:`how to make a virtual environment on Windows without WSL`
 * :ref:`how to activate a virtual environment on Windows without WSL`
 * :ref:`how to deactivate a virtual environment on Windows without WSL`
-* :ref:`how to install Python packages in a virtual environment on Windows without WSL`
+* :ref:`how to install Python packages with uv on Windows without WSL`
 * :ref:`how to see what packages are installed in a virtual environment on Windows without WSL`
 * :ref:`how to view all the commands typed in a terminal_ on Windows without WSL`
 * :ref:`how to make a PowerShell script`
