@@ -668,10 +668,12 @@ how to test if something is None
 * I add a note
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 4-5
+    :lineno-start: 11
+    :emphasize-lines: 6-7
 
-              self.assertIsNone(None)
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
 
 
     # NOTES
@@ -738,7 +740,7 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines:
+    :emphasize-lines: 1
     :emphasize-text: Not
 
             self.assertIsNotNone(False)
@@ -748,9 +750,10 @@ how to test if something is None
 * I add another note
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 5
+    :lineno-start: 15
+    :emphasize-lines: 6
 
+            assert False is not None
             self.assertIsNotNone(False)
 
 
@@ -760,6 +763,9 @@ how to test if something is None
 
 
     # Exceptions seen
+    # AssertionError
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
 
@@ -835,9 +841,10 @@ how to test if something is None
 * I add a note
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 5
+    :lineno-start: 18
+    :emphasize-lines: 6
 
+            assert True is not None
             self.assertIsNotNone(True)
 
 
@@ -858,9 +865,7 @@ how to test if something is None
 test_assertion_error_w_false
 *********************************************************************************
 
-:ref:`False<test_what_is_false>` is a simple :ref:`data type<data structures>`, it is one of the two :ref:`booleans<what are booleans?>` and is NOT :ref:`None<what is None?>`.
-
-I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not.
+:ref:`False<test_what_is_false>` is a simple :ref:`data type<data structures>`, it is one of the two :ref:`booleans<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not.
 
 ----
 
@@ -1093,9 +1098,11 @@ how to test if something is True
 * I add more notes
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 5-6
+    :lineno-start: 25
+    :emphasize-lines: 7-8
 
+        def test_assertion_error_w_true(self):
+            assert False is not True
             self.assertTrue(True)
 
 
@@ -1107,9 +1114,6 @@ how to test if something is True
     # True is not None
     # False is not None
     # None is None
-
-
-    # Exceptions seen
 
 :ref:`I can use assertions to test if something is True or NOT<test_assertion_error_w_true>`
 
@@ -1173,7 +1177,7 @@ I change the assertion_ to make it :ref:`True<test_what_is_true>`
 
           assert None == None
 
-the test passes.
+the test passes
 
 ----
 
@@ -1236,9 +1240,11 @@ how to test if two things are Equal
 * I change assertNotEqual_ to assertEqual_ which checks if the 2 things in the parentheses are equal
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 1
+    :lineno-start: 29
+    :emphasize-lines: 3
 
+        def test_assertion_error_w_equality(self):
+            assert None == None
             self.assertEqual(None, None)
 
 
@@ -1315,9 +1321,13 @@ how to test if two things are Equal
 * I make the statement :ref:`True<test_what_is_true>` with assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2
+    :lineno-start: 29
+    :emphasize-lines: 6
     :emphasize-text: Not
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
 
             assert False != None
             self.assertNotEqual(False, None)
@@ -1402,9 +1412,12 @@ how to test if two things are Equal
 * I make the assertion_ :ref:`True<test_what_is_true>` with assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 2
+    :lineno-start: 33
+    :emphasize-lines: 5
     :emphasize-text: Not
+
+            assert False != None
+            self.assertNotEqual(False, None)
 
             assert True != None
             self.assertNotEqual(True, None)
@@ -1495,10 +1508,14 @@ how to test if two things are Equal
 * I change the `assert method`_ to assertNotEqual_
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 1
+    :lineno-start: 36
+    :emphasize-lines: 5
     :emphasize-text: Not
 
+            assert True != None
+            self.assertNotEqual(True, None)
+
+            assert True != False
             self.assertNotEqual(True, False)
 
 
@@ -1932,7 +1949,7 @@ how to test if two things are Equal
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close the ``assertion_error.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
 * I deactivate the `virtual environment`_
 
