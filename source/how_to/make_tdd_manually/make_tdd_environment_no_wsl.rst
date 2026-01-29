@@ -311,7 +311,7 @@ how to make an empty file on Windows without Windows Subsystem for Linux
 
     python src/magic.py
 
-  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it exists.
+  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it is a Python_ file_.
 
 ----
 
@@ -431,7 +431,9 @@ how to make a Python file to hold the tests in the 'tests' folder on Windows wit
 
 * I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
-  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
+  .. TIP::
+
+    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ type this in the terminal_
 
     .. code-block:: shell
       :emphasize-lines: 1

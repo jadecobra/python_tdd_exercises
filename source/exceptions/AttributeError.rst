@@ -16,7 +16,7 @@ what causes AttributeError?
 
 ----
 
-AttributeError_ is raised when I use a name that is NOT in an :ref:`object<what is a class?>` that exists.
+AttributeError_ is raised when I use a name that is NOT in an :ref:`object<what is a class?>` that is defined.
 
 ----
 
@@ -156,7 +156,9 @@ start the project
 
 * I open ``test_attribute_error.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example, when I type this
+  .. TIP::
+
+    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ type this in the terminal_, when I type this
 
     .. code-block:: shell
       :emphasize-lines: 1

@@ -286,6 +286,8 @@ how to make a directory for the source code
 how to make an empty file
 =================================================================================
 
+----
+
 * I use touch_ to make an empty file_ in the ``src`` folder_
 
   .. code-block:: shell
@@ -311,7 +313,7 @@ how to make an empty file
     └── src
         └── magic.py
 
-  touch_ is a program_ that makes an empty file_ with the name. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file_ named ``magic.py`` in the ``src`` folder_
+  touch_ is a program_ that makes an empty file_ with the name it is given. I can give it the directory_ I want to put the file_ in as part of the name, in this case ``touch src/magic.py`` makes a file_ named ``magic.py`` in the ``src`` folder_
 
 * I try to run the ``magic`` program_ again
 
@@ -320,7 +322,7 @@ how to make an empty file
 
     python3 src/magic.py
 
-  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because it exists.
+  the terminal_ goes back to the command line. Success! Even though ``magic.py`` does not do anything because there is no code in it, I can successfully run it because the file_ is now in the folder_.
 
 ----
 
@@ -331,6 +333,8 @@ test_failure
 =================================================================================
 how to manually run tests
 =================================================================================
+
+----
 
 * I use the `unittest module`_ from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
 
@@ -348,11 +352,12 @@ how to manually run tests
 
     NO TESTS RAN
 
+  I do not have any tests yet, so there is nothing to run
+
   - ``python3`` is the `Python program`_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>`, unittest_ in this case
-  - a Python_ :ref:`module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
+  - a :ref:`Python module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `you can take a look at the source code for unittest here`_
 
-I do not have any tests yet, so there is nothing to run
 
 ----
 
@@ -393,6 +398,9 @@ how to make a directory for the tests
 =====================================================================================================
 how to make a Python file to hold the tests in the 'tests' folder
 =====================================================================================================
+
+----
+
 * I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
   .. code-block:: shell
@@ -441,18 +449,20 @@ how to make a Python file to hold the tests in the 'tests' folder
 
 * I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
 
-  .. TIP:: I can open a file_ from the terminal_ in `Visual Studio Code`_ by typing ``code`` and the name of the file_, for example
+  .. TIP::
+
+    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ type this in the terminal_
 
     .. code-block:: shell
       :emphasize-lines: 1
 
       code tests/magic.py
 
-    I can also open a file_ by using :kbd:`ctrl` (Windows_/Linux_) or :kbd:`command` (MacOS_) on the keyboard and clicking with the mouse on the name of the file_
+    I can also open a file_ from the terminal_ with :kbd:`ctrl` (Windows_/Linux_) or :kbd:`command` (MacOS_) on the keyboard and click with the mouse on the name of the file_
 
 * I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
-  .. NOTE:: the line numbers below are a guide, you do not need to copy them
+  .. NOTE:: the line numbers below are a guide, no need to copy them
 
   .. code-block:: python
     :linenos:
@@ -471,10 +481,10 @@ how to make a Python file to hold the tests in the 'tests' folder
   - ``import unittest`` imports the `unittest module`_ from the `Python standard library`_, this is what I am using for testing
   - ``class TestMagic``
 
-    * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<what causes AttributeError?>` and :ref:`methods (functions)<what is a function?>` that belong together, I cover this in more detail in the :ref:`classes chapter<what is a class?>`
+    * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<what causes AttributeError?>` and :ref:`methods (functions)<what is a function?>` that belong together, :ref:`see the classes chapter for more<what is a class?>`
     * ``TestMagic`` is the name I gave this :ref:`class <what is a class?>` and will hold the test
 
-      .. IMPORTANT:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
+      .. TIP:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for testing
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<what is a function?>` and :ref:`attributes<test_attribute_error_w_class_attributes>`
@@ -484,20 +494,20 @@ how to make a Python file to hold the tests in the 'tests' folder
     * def_ is the Python_ keyword for making :ref:`methods (functions) <what is a function?>`, see :ref:`functions<what is a function?>` for more
     * ``test_failure`` is the name of the :ref:`method<what is a function?>` I used for :ref:`this first test<test_failure>`
 
-      .. IMPORTANT:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
+      .. TIP:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
     * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().``
 
-      .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name but it is easier to stick with convention for this concept
+      .. TIP:: the name ``self`` is :ref:`Python convention<conventions>`. I can use any name but it is easier to stick with convention for this concept
 
     * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>`
 
-      - assertFalse_ is a :ref:`method<what is a function?>` in the `unittest.TestCase`_ :ref:`class <what is a class?>` that checks if its input is :ref:`False<test_what_is_false>`
+      - assertFalse_ is a :ref:`method<what is a function?>` in the `unittest.TestCase class`_ that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by saving (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) every time I make a change
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ with (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) every time I make a change
 
   .. ATTENTION:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
 

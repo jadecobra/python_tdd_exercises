@@ -367,7 +367,7 @@ test_catching_attribute_error_in_tests
   - ``exceptions`` is ``exceptions.py`` in the ``src`` folder_
   - ``src.exceptions.does_not_exist`` is pointing to something named ``does_not_exist`` in ``exceptions.py`` in the ``src`` folder_
 
-  the failure happened because Python_ cannot find ``does_not_exist`` in ``exceptions.py`` in the ``src`` folder_. tried to get something that does NOT exist from something that exists
+  the failure happened because Python_ cannot find ``does_not_exist`` in ``exceptions.py`` in the ``src`` folder_. I tried to get something that is NOT in something that is already defined
 
 * I add the :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
