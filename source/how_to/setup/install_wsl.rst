@@ -67,16 +67,9 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
     sudo apt full-upgrade --yes
 
-* type this in the terminal_ to install Python_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    sudo apt install python3 python3-venv --yes
-
 you can continue with :ref:`how to make a Python Test Driven Development environment manually`.
 
-If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux` instead, and know that all the sections that say something like "how to do something on Windows without Windows Subsystem for Linux" are dedicated to you
+----
 
 .. NOTE::
 
@@ -92,6 +85,14 @@ If installing `Windows Subsystem for Linux`_ does not work, you can use :ref:`ho
     - Alternately you can hold ``shift`` when your computer is restarting to enter ``Windows Recovery Mode`` then select ``UEFI Firmware Settings``
 
   * In BIOS mode select any variation of ``System Configuration`` and Enable ``Virtualization``
+
+----
+
+*********************************************************************************
+what to do if you cannot install Windows Subsystem for Linux
+*********************************************************************************
+
+If you cannot install `Windows Subsystem for Linux`_, you can use :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`, and know that all the sections that say something like "how to do something on Windows without Windows Subsystem for Linux" are for you
 
 ----
 

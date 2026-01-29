@@ -22,7 +22,6 @@ This is a way to write software with a focus on tests. I write tests for ideas t
 what is a Test Driven Development Environment?
 *********************************************************************************
 
-----
 
 A :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` is a group of files_ and folders_ in a project where I can write tests and code and they automatically run so I see the results immediately.
 
@@ -32,7 +31,6 @@ A :ref:`Test Driven Development environment<what is a Test Driven Development En
 what is the Test Driven Development cycle?
 *********************************************************************************
 
-----
 
 The `Test Driven Development`_ cycle is :red:`RED` :green:`GREEN` :yellow:`REFACTOR`
 
@@ -48,9 +46,10 @@ This process can be repeated as many times as needed until I get to my goal.
 preview
 *********************************************************************************
 
-----
 
-I set up an environment for every Python_ project, this way I keep all the things that belong to the project in the same place. I can do this manually, which means I have to do the same exact steps for every project or I could do it automatically where I give the computer a command and it does all those steps for me.
+I set up an environment for every Python_ project, this way I keep all the things that belong to the project in the same place.
+
+I can do this manually, which means I have to do the same steps for every project or I could do it automatically where I give the computer a command and it does all those steps for me.
 
 Some things I think about when I want to start a project
 
@@ -93,7 +92,6 @@ Here is what that structure looks like if the name of the project is ``PROJECT_N
 what is covered?
 *********************************************************************************
 
-----
 
 These chapters show how I setup a project in Python_ on any computer (Linux_, Windows_, MacOS_) to help you get started with `Test Driven Development`_ right now
 

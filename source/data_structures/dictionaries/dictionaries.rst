@@ -171,7 +171,6 @@ start the project
 test_making_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -304,7 +303,6 @@ the test passes. These are two ways to make an empty dictionary_
 test_making_a_dictionary_w_none_as_a_key
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -356,7 +354,6 @@ the test passes. I can use strings_ and :ref:`None<what is None?>` as :ref:`keys
 test_making_a_dictionary_w_a_boolean_as_a_key
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -448,7 +445,6 @@ the test passes. I can use strings_, :ref:`booleans<what are booleans?>` and :re
 test_making_a_dictionary_w_a_number_as_a_key
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -546,7 +542,6 @@ the test passes. I can use strings_, numbers (floats_ and integers_), :ref:`bool
 test_making_a_dictionary_w_a_tuple_as_a_key
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -606,7 +601,6 @@ the test passes. I can use tuples_, strings_, numbers (floats_ and integers_), :
 test_making_a_dictionary_w_a_list_as_a_key
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -678,7 +672,6 @@ the terminal_ shows :ref:`TypeError`
 test_making_a_dictionary_w_a_set_as_a_key
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -733,7 +726,6 @@ the test is green again. I cannot use :ref:`lists` or sets_ as :ref:`keys in a d
 test_making_a_dictionary_w_a_dictionary_as_a_key
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -793,7 +785,6 @@ the test passes. I cannot use dictionaries_, sets_ or :ref:`lists` as :ref:`keys
 test_attributes_and_methods_of_dictionaries
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -957,7 +948,6 @@ It also gives me a message about how to show the full difference between the two
 test_clear_empties_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1074,7 +1064,6 @@ the test passes
 test_copy_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1202,7 +1191,6 @@ the test passes
 test_fromkeys_makes_a_dictionary_from_an_iterable
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1464,7 +1452,6 @@ the terminal_ shows :ref:`TypeError`
 test_get_value_of_a_key_in_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1687,7 +1674,6 @@ the test passes
 test_items_returns_iterable_of_key_value_pairs_of_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1912,7 +1898,6 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 test_keys_of_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2114,7 +2099,6 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 test_pop_removes_given_key_from_a_dictionary_and_returns_its_value
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2396,7 +2380,6 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 test_popitem_removes_and_returns_last_key_value_pair_from_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2596,7 +2579,6 @@ the test passes
 test_setdefault_adds_given_key_to_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2886,7 +2868,6 @@ the test passes
 test_update_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -3154,7 +3135,6 @@ the test passes
 test_values_of_a_dictionary
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail

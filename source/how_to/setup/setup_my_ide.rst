@@ -27,7 +27,6 @@ As of this writing I use `Visual Studio Code`_, you can download and install it 
 Screen Layout
 *********************************************************************************
 
-----
 
 I split my screen in the following ways depending on the use case, try different layouts to see what works best for you.
 
@@ -123,7 +122,6 @@ This setup helps me answer 2 questions
 visual studio code extensions
 *********************************************************************************
 
-----
 
 Here are extensions I use in `Visual Studio Code`_, click on anyone you like to install them
 
@@ -139,7 +137,6 @@ Here are extensions I use in `Visual Studio Code`_, click on anyone you like to 
 BONUS!!!
 *********************************************************************************
 
-----
 
 I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made it this far. It makes moving around on your computer in the terminal_ and :ref:`the next chapter<how to make a test driven development environment>` easier. This is how your computer is organized. :ref:`Click HERE for the BONUS!<BONUS: learn directory structure>`
 
@@ -149,7 +146,6 @@ I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made i
 rate pumping python
 *********************************************************************************
 
-----
 
 If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too
 

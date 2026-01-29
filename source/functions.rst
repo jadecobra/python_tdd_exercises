@@ -833,7 +833,6 @@ This :ref:`Identity Function<test_identity_function>` takes one input, the follo
 test_functions_w_positional_arguments
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail

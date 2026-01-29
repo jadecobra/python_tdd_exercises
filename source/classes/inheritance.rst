@@ -108,7 +108,6 @@ open the project
 test_making_a_class_w_pass
 *********************************************************************************
 
-----
 
 to review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what is a class?>` keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do
 
@@ -184,7 +183,6 @@ pass_ is a placeholder, it makes sure I am following Python_ rules and :ref:`I c
 test_making_a_class_w_parentheses
 *********************************************************************************
 
-----
 
 I can also make a :ref:`class<what is a class?>` with parentheses.
 
@@ -274,7 +272,6 @@ pass_ is a placeholder, it makes sure I am following Python_ rules, I can make a
 test_making_a_class_w_object
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -450,7 +447,6 @@ and it passes. All :ref:`classes<what is a class?>` automatically get these attr
 test_making_classes_w_inheritance
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -656,7 +652,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 test_family_ties
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail

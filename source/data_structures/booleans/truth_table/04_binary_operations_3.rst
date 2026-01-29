@@ -89,7 +89,6 @@ continue the project
 test_exclusive_disjunction
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -492,7 +491,6 @@ all of the above statements mean the same thing. Would "Logical Inequality" be a
 test_material_non_implication
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -729,7 +727,6 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 test_project_first
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -977,7 +974,6 @@ it is like :ref:`Project Second<test_project_second>` which always returns the s
 test_converse_implication
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail

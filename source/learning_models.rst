@@ -10,7 +10,6 @@ What follows is an exercise in measuring learning. It is somewhat philosophical 
 An Infinite Learning Model
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail

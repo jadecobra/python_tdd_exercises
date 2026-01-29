@@ -16,7 +16,6 @@ The following are a few conventions to know in Python_
 names
 *********************************************************************************
 
-----
 
 =================================================================================
 CapWords
@@ -92,7 +91,6 @@ for more details see the :PEP:`Python Style Guide <8>`
 comments
 *********************************************************************************
 
-----
 
 Comments are made with a hashtag/pound before the thing that is commented for example
 
@@ -108,7 +106,6 @@ comments do not do anything, they are notes. Python_ ignores them
 enclosures
 *********************************************************************************
 
-----
 
 Enclosures must be closed once open, which means they happen in pairs for example
 
@@ -147,7 +144,6 @@ The `Integrated Development Environment (IDE)`_ takes care of this, it automatic
 quotes
 *********************************************************************************
 
-----
 
 Quotes are for strings_ and can be
 
@@ -189,7 +185,6 @@ Quotes are for strings_ and can be
 tuples
 *********************************************************************************
 
-----
 
 
 A tuple_ is a sequence or container of :ref:`objects<what is a class?>` that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), and the things in them are separated by commas, for example
@@ -208,7 +203,6 @@ A tuple_ is a sequence or container of :ref:`objects<what is a class?>` that can
 lists
 *********************************************************************************
 
-----
 
 A :ref:`list/array<lists>` is a sequence or container of :ref:`objects<what is a class?>` that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
 
@@ -224,7 +218,6 @@ A :ref:`list/array<lists>` is a sequence or container of :ref:`objects<what is a
 sets
 *********************************************************************************
 
-----
 
 A set_ is a container of :ref:`objects<what is a class?>` that have no duplicates, and are represented with curly braces/brackets (``{}``), for example
 
@@ -238,7 +231,6 @@ A set_ is a container of :ref:`objects<what is a class?>` that have no duplicate
 dictionaries/mappings
 *********************************************************************************
 
-----
 
 :ref:`Dictionaries/Mappings<dictionaries>` are also represented with curly braces/brackets (``{}``) but have :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, for example
 

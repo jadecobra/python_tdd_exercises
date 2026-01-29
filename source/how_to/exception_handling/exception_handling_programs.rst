@@ -252,7 +252,6 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 test_catching_failure
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail

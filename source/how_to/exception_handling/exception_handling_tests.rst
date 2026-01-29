@@ -854,7 +854,6 @@ the test passes. :ref:`KeyError<test_key_error>` is raised when I try to use a :
 test_catching_zero_division_error_in_tests
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -925,7 +924,6 @@ the test passes. ZeroDivisionError_ is raised when I try to divide any number by
 test_catching_exceptions_in_tests
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail

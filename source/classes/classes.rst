@@ -1059,7 +1059,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 test_update_factory_person_year_of_birth
 *********************************************************************************
 
-----
 
 I made a person named ``john`` in :ref:`test_factory_person_greeting` and :ref:`test_classy_person_greeting` with a year of birth of ``1580``.
 
@@ -1683,7 +1682,6 @@ I had to make a new person with the same first name, last name, sex and the new 
 test_update_classy_person_year_of_birth
 *********************************************************************************
 
-----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2030,7 +2028,6 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 test with random person
 *********************************************************************************
 
-----
 
 I want to add randomness to the test
 
@@ -3415,7 +3412,6 @@ I wonder what red and yellow look like, that was a lot of green.
 test_class_w_default_arguments
 *********************************************************************************
 
-----
 
 
 In :ref:`test_factory_w_default_arguments`, I tested what happens when I call the ``factory`` :ref:`function<what is a function?>` without giving a value for ``last_name`` and ``sex``.
@@ -3751,7 +3747,6 @@ You know enough to add tests for these problems, to make sure that the right inp
 test_attributes_and_methods_of_classes
 *********************************************************************************
 
-----
 
 I used the `dir built-in function`_ in :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>` to show their :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>`. I can also use it with the ``Person`` :ref:`class<what is a class?>`
 
