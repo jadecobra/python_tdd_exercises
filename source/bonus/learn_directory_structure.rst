@@ -168,23 +168,7 @@ continue with :ref:`how to work in directories`
 how to install tree on Mac OS
 ---------------------------------------------------------------------------------
 
-* install brew_ (The Missing Package Manager for MacOS), if you do not have it already
 
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-  the terminal_ shows instructions about how to add brew_ to your path
-
-* copy and paste the 3 lines it shows in the terminal_ then use :kbd:`return` on the keyboard to run it, the terminal_ will not show anything if the commands run successfully
-
-* use brew_ to install tree_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    brew install tree
 
 * continue with :ref:`how to work in directories`
 

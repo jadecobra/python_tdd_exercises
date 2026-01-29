@@ -76,49 +76,7 @@ Here are questions you can answer after going through this chapter
 requirements
 *********************************************************************************
 
-* `download and install Python <https://www.python.org/downloads/>`_
-* get an `Integrated Development Environment (IDE)`_. Here are a few options
-
-  - `Visual Studio Code`_
-
-    - If you are on MacOS_ and using `Visual Studio Code`_, `Configure the path <https://code.visualstudio.com/docs/setup/mac#_configure-the-path-with-vs-code>`_ so you can open `Visual Studio Code`_ from the command line later
-
-  - `Sublime Text`_
-  - PyCharm_
-  - `other Integrated Development Environment (IDE) options`_
-
-=================================================================================
-Windows requirements
-=================================================================================
-
-* If you are using a Windows_ computer, :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`
-* If you cannot :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`, you can :ref:`make a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux<how to make a python test driven development environment on Windows without Windows Subsystem for Linux>` instead of this chapter
-
-=================================================================================
-Linux/Windows Subsystem for Linux requirements
-=================================================================================
-
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. MacOS_ users should not do this section
-
-* Open a terminal_ then type this to update the `Linux package manager`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    sudo apt update
-
-  .. TIP:: you can do a full upgrade if you want
-
-  .. code-block:: shell
-
-    sudo apt full-upgrade --yes
-
-* type this in the terminal_ to install Python_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    sudo apt install python3 python3-venv --yes
+* :ref:`how I setup my computer for development`
 
 ----
 
@@ -181,39 +139,7 @@ I choose ``magic`` as the name for this project
 
     tree: command not found
 
-  I need to install tree_ to use it
-
-  .. attention:: if you are using MacOS_ type this in the terminal_
-
-    first install brew_ (The Missing Package Manager for MacOS), if you do not have it already
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    then use brew_ to install tree_
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      brew install tree
-
-  or
-
-  .. attention:: if you are using Linux_ or `Windows Subsystem for Linux`_ type this in the terminal_
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      sudo apt install tree --yes
-
-  after the computer installs tree_, I run the command again
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    tree
+  :ref:`you can install it from here<what is covered?>`
 
   when tree_ is installed on the computer, the terminal_ shows
 
@@ -960,7 +886,7 @@ the terminal_ shows
   pip     x.y
 
 - `pytest-watcher`_ is not in the list
-- pip_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to install `Python packages`_
+- pip_ is a program_ from the `Python standard library`_ that is used to install `Python packages`_
 
 ----
 

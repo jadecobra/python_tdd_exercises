@@ -91,7 +91,8 @@
 .. _objects: object_
 .. _integer: int_
 .. _integers: int_
-.. _Linux package manager: https://grokipedia.com/page/APT_(software)
+.. _apt: https://grokipedia.com/page/APT_(software)
+.. _Linux package manager: apt_
 .. _ls: https://grokipedia.com/page/Ls
 .. _maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _mkdir: https://man7.org/Linux/man-pages/man1/mkdir.1.html
@@ -183,6 +184,8 @@
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
 .. _unittest.TestCase class: `unittest.TestCase`_
+.. _uv: https://docs.astral.sh/uv/
+.. _uv Python package manager: uv_
 .. _subTest method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.subTest
 .. _unittest.TestCase.subTest method: `subTest method`_
 .. _variable: https://grokipedia.com/page/Variable_(computer_science)

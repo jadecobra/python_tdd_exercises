@@ -604,7 +604,7 @@ how to use try...except...else
 
   the test passes.
 
-  The `try statement`_ is used to catch or handle :ref:`Exceptions<errors>` in Python_. It allows the program_ to choose what it does when it runs into an :ref:`Exception<errors>`. I think of it as
+  The `try statement`_ is used to catch or handle :ref:`Exceptions<errors>` in Python_. It allows the program_ to choose what to do when it runs into an :ref:`Exception<errors>`. I think of it as
 
   - ``try`` running **this**
   - ``except Exception`` - when running **this** raises ``Exception``, run the code in this block
