@@ -25,6 +25,6 @@ code tests/test_$PROJECT_NAME.py
 python -m venv .venv
 .venv/scripts/activate.ps1
 python -m pip install --upgrade pip
-"pytest-watch" | Out-File requirements.txt -Encoding UTF8
+"pytest-watcher" | Out-File requirements.txt -Encoding UTF8
 python -m pip install --requirement requirements.txt
-pytest-watch
+pytest-watcher

@@ -1,6 +1,6 @@
 .. meta::
   :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with one script in just 5 minutes.
-  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watch for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
+  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watcher for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
 
 .. include:: ../../links.rst
 
@@ -95,9 +95,9 @@ how to make a PowerShell script
     python -m venv .venv
     .venv/scripts/activate.ps1
     python -m pip install --upgrade pip
-    "pytest-watch" | Out-File requirements.txt -Encoding UTF8
+    "pytest-watcher" | Out-File requirements.txt -Encoding UTF8
     python -m pip install --requirement requirements.txt
-    pytest-watch
+    pytest-watcher
 
 * ``test_magic_again.py`` is an empty file_ becuase I used `New-Item`_. I want it to have the text for :ref:`the first failure<test_failure on Windows without WSL>` so I do not have to open the :ref:`editor<2 editors>` to add the text for it in each project. I use `Out-File`_ to add the text to ``test_magic_again.py`` when it makes the file_ in the ``tests`` folder_, the same I do with the ``requirements.txt`` file_
 
@@ -113,7 +113,7 @@ how to make a PowerShell script
     python -m venv .venv
     .venv/scripts/activate.ps1
 
-* I add the text for the test inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``, the way I do with `Out-File`_ when I add ``"pytest-watch"`` as text in ``requirements.txt``
+* I add the text for the test inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``, the way I do with `Out-File`_ when I add ``"pytest-watcher"`` as text in ``requirements.txt``
 
   .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
 

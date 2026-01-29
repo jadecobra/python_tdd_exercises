@@ -61,12 +61,12 @@ open the project
 
     (.venv) .../pumping_python/calculator
 
-* I use ``pytest-watch`` to run the tests
+* I use ``pytest-watcher`` to run the tests
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watch
+    pytest-watcher . --now
 
   the terminal_ shows
 

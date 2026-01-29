@@ -77,12 +77,12 @@ open the project
 
     (.venv) .../pumping_python/person
 
-* I use ``pytest-watch`` to run the tests
+* I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watch
+    pytest-watcher
 
   the terminal_ shows
 

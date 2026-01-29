@@ -1,6 +1,6 @@
 .. meta::
   :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with one script in just 5 minutes.
-  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watch for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
+  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watcher for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
 
 .. include:: ../../links.rst
 
@@ -99,9 +99,9 @@ how to make a shell script
     python3 -m venv .venv
     source .venv/bin/activate
     python3 -m pip install --upgrade pip
-    echo "pytest-watch" > requirements.txt
+    echo "pytest-watcher" > requirements.txt
     python3 -m pip install --requirement requirements.txt
-    pytest-watch
+    pytest-watcher
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
@@ -119,7 +119,7 @@ how to make a shell script
     python3 -m venv .venv
     source .venv/bin/activate
 
-* I add the text for the test inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``, the way I do with echo_ when I add ``"pytest-watch"`` as text in ``requirements.txt``
+* I add the text for the test inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``, the way I do with echo_ when I add ``"pytest-watcher"`` as text in ``requirements.txt``
 
   .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
 

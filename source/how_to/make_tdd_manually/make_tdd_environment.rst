@@ -1,6 +1,6 @@
 .. meta::
   :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with one script in just 5 minutes.
-  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watch for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
+  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watcher for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
 
 .. include:: ../../links.rst
 
@@ -33,7 +33,7 @@ By the end of the chapter you will know these commands better
   source .venv/bin/activate
   python3 -m pip install --upgrade pip
   python3 -m pip install --requirement requirements.txt
-  pytest-watch
+  pytest-watcher
   deactivate
   history
 
@@ -796,7 +796,7 @@ I do not want to type ``python3 -m unittest`` again, it is better for a `compute
 how to run the tests automatically
 =====================================================================================================
 
-I can use `pytest-watch`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
+I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
 pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
 
@@ -805,15 +805,15 @@ I type it in the terminal_
 .. code-block:: shell
   :emphasize-lines: 1
 
-  pytest-watch
+  pytest-watcher
 
 the terminal_ shows
 
 .. code-block:: shell
 
-  command not found: pytest-watch
+  command not found: pytest-watcher
 
-I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
+I need to install `pytest-watcher`_ for the computer to use it. Next, I set up a `virtual environment`_ to keep programs_ my project needs in one place
 
 ----
 
@@ -821,7 +821,7 @@ I need to install `pytest-watch`_ for the computer to use it. Next, I set up a `
 what is a virtual environment?
 =====================================================================================================
 
-I can install `pytest-watch`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
+I can install `pytest-watcher`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
 A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
@@ -923,20 +923,20 @@ how to activate a virtual environment
 
   the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
 
-* I use `pytest-watch`_ to run the test again
+* I use `pytest-watcher`_ to run the test again
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watch
+    pytest-watcher . --now
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    command not found: pytest-watch
+    command not found: pytest-watcher
 
-  I have to install `pytest-watch`_ in the `virtual environment`_ to use it in the `virtual environment`_
+  I have to install `pytest-watcher`_ in the `virtual environment`_ to use it in the `virtual environment`_
 
 ----
 
@@ -959,7 +959,7 @@ the terminal_ shows
   ------- -------
   pip     x.y
 
-- `pytest-watch`_ is not in the list
+- `pytest-watcher`_ is not in the list
 - pip_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to install `Python packages`_
 
 ----
@@ -974,23 +974,23 @@ I want to make a file_ where I can list all the `Python packages`_ for my projec
   .. code-block:: shell
     :emphasize-lines: 1
 
-    echo "pytest-watch"
+    echo "pytest-watcher"
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    pytest-watch
+    pytest-watcher
 
-* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watch`_ as what is inside it
+* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watcher`_ as what is inside it
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    echo "pytest-watch" > requirements.txt
+    echo "pytest-watcher" > requirements.txt
 
   - ``>`` is an operator that is used to send output from a program_ to the given file_
-  - `pytest-watch`_ is a `Python program`_ that automatically runs pytest_ when a Python_ file_ in the folder_ changes
+  - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project
   - pytest_ is a `Python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file_ where I can list `Python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
 
@@ -1030,7 +1030,7 @@ I want to make a file_ where I can list all the `Python packages`_ for my projec
 how to see what is inside a file
 =====================================================================================================
 
-I can use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watch`` inside it
+I can use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watcher`` inside it
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -1041,7 +1041,7 @@ the terminal_ shows
 
 .. code-block:: shell
 
-  pytest-watch
+  pytest-watcher
 
 life is good!
 
@@ -1051,7 +1051,7 @@ life is good!
 how to install Python packages in a virtual environment
 =====================================================================================================
 
-* I use pip_ to install `pytest-watch`_ from the requirements file
+* I use pip_ to install `pytest-watcher`_ from the requirements file
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1099,11 +1099,11 @@ how to upgrade the Python package manager in a virtual environment
           Successfully uninstalled pip-XY.Z
     Successfully installed pip-AB.C
 
-  .. NOTE:: I can also tell pip_ to install `pytest-watch`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
+  .. NOTE:: I can also tell pip_ to install `pytest-watcher`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
 
     .. code-block:: shell
 
-      python3 -m pip install pytest-watch
+      python3 -m pip install pytest-watcher
 
 * I check what `Python packages`_ are now installed in the `virtual environment`_
 
@@ -1126,12 +1126,12 @@ how to upgrade the Python package manager in a virtual environment
     pluggy       x.y.z
     Pygments     x.y.z
     pytest       x.y.z
-    pytest-watch x.y.z
+    pytest-watcher x.y.z
     watchdog     x.y.z
 
-  `pytest-watch`_ is in the list. Yes!
+  `pytest-watcher`_ is in the list. Yes!
 
-  .. TIP:: imagine that the `pytest-watch`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watch`_ from the ``requirements.txt`` file_
+  .. TIP:: imagine that the `pytest-watcher`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watcher`_ from the ``requirements.txt`` file_
 
 ----
 
@@ -1144,7 +1144,7 @@ I try to run the tests again
 .. code-block:: shell
   :emphasize-lines: 1
 
-  pytest-watch
+  pytest-watcher
 
 and it shows results without going back to the command line
 
@@ -1230,18 +1230,18 @@ how to deactivate a virtual environment
 
     .../pumping_python/magic
 
-* I try `pytest-watch`_ again to show that I do not have it installed outside the `virtual environment`_
+* I try `pytest-watcher`_ again to show that I do not have it installed outside the `virtual environment`_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watch
+    pytest-watcher . --now
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    command not found: pytest-watch
+    command not found: pytest-watcher
 
 * I `change directory`_ to the parent of ``magic``
 
@@ -1311,23 +1311,23 @@ how to view all the commands typed in a terminal
     mv tests/magic.py tests/test_magic.py
     tree -L 2
     python3 -m unittest
-    pytest-watch
+    pytest-watcher
     python3 -m venv .venv
     tree
     tree -a -L 2
     source .venv/bin/activate
-    pytest-watch
+    pytest-watcher
     pip list
-    echo "pytest-watch"
-    echo "pytest-watch" > requirements.txt
+    echo "pytest-watcher"
+    echo "pytest-watcher" > requirements.txt
     tree -a -L 2
     cat requirements.txt
     python3 -m pip install --requirement requirements.txt
     python3 -m pip install --upgrade pip
     pip list
-    pytest-watch
+    pytest-watcher
     deactivate
-    pytest-watch
+    pytest-watcher
     cd ..
     touch makePythonTdd.sh
     tree -a -L 2
@@ -1347,10 +1347,10 @@ how to view all the commands typed in a terminal
     touch tests/test_NAME_OF_THE_PROJECT.py
     python3 -m venv .venv
     source .venv/bin/activate
-    echo "pytest-watch" > requirements.txt
+    echo "pytest-watcher" > requirements.txt
     python3 -m pip install --upgrade pip
     python3 -m pip install --requirement requirements.txt
-    pytest-watch
+    pytest-watcher
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 

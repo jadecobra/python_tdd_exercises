@@ -80,10 +80,10 @@ continue the project
 
 * run the tests
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watch
+    pytest-watcher . --now
 
 ----
 

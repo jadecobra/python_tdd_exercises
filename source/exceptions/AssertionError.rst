@@ -251,11 +251,11 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    echo "pytest-watch" > requirements.txt
+    echo "pytest-watcher" > requirements.txt
 
   the terminal_ goes back to the command line
 
-* I use pip_ to install ``pytest-watch`` with the requirements file_
+* I use pip_ to install ``pytest-watcher`` with the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -271,14 +271,14 @@ start the project
 
       python -m pip install --requirement requirements.txt
 
-  the terminal_ shows pip_ downloading then installing the `Python programs`_ that `pytest-watch`_ needs to run
+  the terminal_ shows pip_ downloading then installing the `Python programs`_ that `pytest-watcher`_ needs to run
 
-* I use `pytest-watch`_ to run the test
+* I use `pytest-watcher`_ to run the test
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watch
+    pytest-watcher
 
   the terminal_ shows
 

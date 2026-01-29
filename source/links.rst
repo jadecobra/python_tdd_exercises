@@ -113,7 +113,7 @@
 .. _program: `computer program`_
 .. _programs: `computer program`_
 .. _pytest: https://docs.pytest.org/
-.. _pytest-watch: https://github.com/joeyespo/pytest-watch
+.. _pytest-watcher: https://pypi.org/project/pytest-watcher/
 .. _Python Built-in Function: https://docs.python.org/3/library/functions.html
 .. _Python Built-in Functions: `Python Built-in Function`_
 .. _Python's Built-in Functions: `Python Built-in Function`_
