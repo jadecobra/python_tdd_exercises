@@ -26,12 +26,12 @@ the chapters
 
   setup my computer<setup/index>
   make TDD manually<make_tdd_manually/index>
-  make TDD automatically<make_tdd_automatically/index>
-  make TDD w variables<make_tdd_automatically_w_variables/index>
   pass values<pass_values>
   make a calculator<calculator/index>
-  make a person<make_person>
+  make TDD automatically<make_tdd_automatically/index>
   handle Exceptions<exception_handling/index>
+  make TDD w variables<make_tdd_automatically_w_variables/index>
+  make a person<make_person>
 
 ----
 
@@ -45,9 +45,9 @@ Here is the code you will have at the end of the above chapters
 * :ref:`makePythonTdd.ps1`
 * :ref:`how to make a calculator: tests and solutions`
 * :ref:`how to make a person: tests and solution`
-* :ref:`how to measure sleep duration: tests and solution`
 * :ref:`how to pass values: tests and solution`
 * :ref:`how to handle Exceptions (Errors): tests and solutions`
+* :ref:`how to measure sleep duration: tests and solution`
 
 ----
 

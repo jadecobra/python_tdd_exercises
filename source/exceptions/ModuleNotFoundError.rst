@@ -420,7 +420,7 @@ you have gone through a lot of information and know
 * :ref:`what you can do with classes<what is a class?>`
 * :ref:`how to raise ModuleNotFoundError<what is a module?>`
 
-You have made it to the end of the book. :ref:`How many questions do you think you can answer?<pumping python review>`
+:ref:`Are you ready for a review, How many questions do you think you can answer?<pumping python review>`
 
 ----
 

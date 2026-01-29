@@ -115,6 +115,8 @@ table of contents
   make a person<how_to/make_person>
   classes/index
   what is a module?<exceptions/ModuleNotFoundError>
+  questions the book answers<review>
+  make TDD project 1<how_to/make_tdd_manually/index>
 
   dot_notation
   exceptions/index
@@ -122,7 +124,6 @@ table of contents
   how_to/index
   catalog of tests<catalog_of_tests>
   all the code in this book<catalog_of_code>
-  questions the book answers<review>
   learning_models
   what do people think of this?<reviews>
   hatches
