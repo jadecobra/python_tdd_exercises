@@ -72,7 +72,7 @@ start the project
 
     cd telephone
 
-  the terminal_ shows I am now in the ``telephone`` folder_
+  the terminal_ shows I am in the ``telephone`` folder_
 
   .. code-block:: shell
 
@@ -187,92 +187,54 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a `virtual environment`_ in the terminal_
+* I make a requirements file for the `Python packages`_ I need
 
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m venv .venv
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      python -m venv .venv
-
-  the terminal_ takes some time then goes back to the command line
-
-* I activate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/telephone
-
-* I upgrade the `Python package manager (pip)`_ to the latest version
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m pip install --upgrade pip
-
-  the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
-
-* I make a ``requirements.txt`` file_ for the `Python programs`_ my project needs
-
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     echo "pytest-watcher" > requirements.txt
 
   the terminal_ goes back to the command line
 
-* I use pip_ to install ``pytest-watcher`` with the requirements file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m pip install --requirement requirements.txt
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      python -m pip install --requirement requirements.txt
-
-  the terminal_ shows pip_ downloading then installing the `Python programs`_ that `pytest-watcher`_ needs to run
-
-* I use `pytest-watcher`_ to run the test
+* I setup the project with uv_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watcher . --now
-
+    uv init
   the terminal_ shows
 
   .. code-block:: shell
+
+    (.venv) .../pumping_python/telephone
+
+  I remove ``main.py`` from the project
+
+  .. code-block:: python
+
+    rm main.py
+
+  the terminal_ goes back to the command line
+
+* I install the Python packages listed in the requirements file
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv add --requirement requirements.txt
+
+  the terminal shows it installed the `Python packages`_
+
+* I run the tests automatically
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv run pytest-watcher --now --delay 0 .
+
+  the terminal_ shows
+
+  .. code-block:: python
     :emphasize-lines: 8, 10
 
     ================================ FAILURES ================================
@@ -294,9 +256,12 @@ start the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4-5
+    :lineno-start: 4
+    :emphasize-lines: 7-8
 
+    class Testtelephone(unittest.TestCase):
+
+        def test_failure(self):
             self.assertFalse(True)
 
 

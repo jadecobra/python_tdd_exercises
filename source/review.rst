@@ -101,11 +101,11 @@ Here are the questions you can answer after going through this chapter
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_functions_w_positional_arguments>`
 * :ref:`what is a keyword argument?<test_functions_w_keyword_arguments>`
-* :ref:`how can I make arguments optional in a function?<test_functions_w_default_arguments>`
-* :ref:`how can I make a function take an unknown number of positional arguments?<test_functions_w_unknown_arguments>`
-* :ref:`how can I make a function take an unknown number of keyword arguments?<test_functions_w_unknown_arguments>`
-* :ref:`How are positional arguments represented in a function?<test_functions_w_unknown_arguments>`
-* :ref:`How are keyword arguments represented in a function?<test_functions_w_unknown_arguments>`
+* :ref:`how can I make arguments a choice in a function?<test_functions_w_default_arguments>`
+* :ref:`how can I make a function take any number of positional arguments?<test_functions_w_unknown_arguments>`
+* :ref:`how can I make a function take any number of keyword arguments?<test_functions_w_unknown_arguments>`
+* :ref:`how does Python represent positional arguments in a function?<test_functions_w_unknown_arguments>`
+* :ref:`how does Python represent keyword arguments in a function?<test_functions_w_unknown_arguments>`
 
 ----
 

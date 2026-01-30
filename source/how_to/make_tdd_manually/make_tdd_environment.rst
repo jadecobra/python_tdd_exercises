@@ -118,7 +118,7 @@ I choose ``magic`` as the name of this project
 
       cd pumping_python
 
-    the terminal_ shows I am now in the ``pumping_python`` `folder (directory)`_
+    the terminal_ shows I am in the ``pumping_python`` `folder (directory)`_
 
     .. code-block:: shell
 
@@ -210,7 +210,7 @@ I try to go to ``magic`` again
 
   cd magic
 
-the terminal_ shows I am now in the ``magic`` folder_ I just made in the ``pumping_python`` folder
+the terminal_ shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
 .. code-block:: shell
 

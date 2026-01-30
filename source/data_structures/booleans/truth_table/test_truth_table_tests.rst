@@ -1182,7 +1182,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the test is still green. I remove the other lines in the :ref:`function<what is a function?>`
+  the test is still green. I remove the other lines in the :ref:`function<what is a function?>` in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -1232,7 +1232,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ still shows green and I remove the other lines
+  the terminal_ still shows green and I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -1277,7 +1277,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
     def converse_non_implication(first_input, second_input):
         return (first_input, second_input) == (False, True)
 
-  the test is still green, I remove the other lines
+  the test is still green, I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -1326,7 +1326,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ still shows green. I remove the other lines
+  the terminal_ still shows green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -1354,7 +1354,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ still shows green. I remove the other lines
+  the terminal_ still shows green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -1381,7 +1381,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (True, True): return False
         return first_input, second_input
 
-  still green. I remove the other lines
+  still green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 44

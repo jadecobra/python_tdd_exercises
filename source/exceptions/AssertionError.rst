@@ -29,6 +29,8 @@ Assertions_ can help catch things that break passing tests when I add new lines 
 
 The difference between my expectations (tests and ideas) and reality (what happens when the program_ runs), tells me what to change to make them match. The closer my program_ is to reality, the better.
 
+----
+
 *********************************************************************************
 preview
 *********************************************************************************
@@ -84,7 +86,7 @@ start the project
 
     cd assertion_error
 
-  the terminal_ shows I am now in the ``assertion_error`` folder_
+  the terminal_ shows I am in the ``assertion_error`` folder_
 
   .. code-block:: python
 
@@ -112,7 +114,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/assertion_error.py`` instead of ``touch src/assertion_error.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/assertion_error.py`` not ``touch src/assertion_error.py``
 
     .. code-block:: Powershell
       :emphasize-lines: 1
@@ -145,7 +147,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` not ``touch tests/__init__.py``
 
     .. code-block:: Powershell
       :emphasize-lines: 1
@@ -163,7 +165,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_assertion_error.py`` instead of ``touch tests/test_assertion_error.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_assertion_error.py`` not ``touch tests/test_assertion_error.py``
 
     .. code-block:: Powershell
       :emphasize-lines: 1
@@ -199,7 +201,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file for the `Python packages` I need
+* I make a requirements file for the `Python packages`_ I need
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -266,7 +268,7 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 4

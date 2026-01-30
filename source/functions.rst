@@ -15,7 +15,7 @@
 what is a function?
 #################################################################################
 
-A function_ is a unit or block of code that is callable_. This means I can write statements that I can use to do something at a different time from when I write them. They can make code smaller, easier to read, test, reuse, maintain and improve.
+A function_ is code that is callable_. This means I can write statements that I can use to do something at a different time from when I write them. They can make code smaller, easier to read, test, reuse, maintain and improve.
 
 `Computer Programming`_ involves providing a process with input data and the process returning output data, for example
 
@@ -63,15 +63,16 @@ Here are the questions you can answer after going through this chapter
 
 * :ref:`what is a Function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
+* :ref:`what happens after a functions returns<what happens after a function returns?>`
 * :ref:`what is a constant function?<test_constant_function>`
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_functions_w_positional_arguments>`
 * :ref:`what is a keyword argument?<test_functions_w_keyword_arguments>`
-* :ref:`how can I make arguments optional in a function?<test_functions_w_default_arguments>`
-* :ref:`how can I make a function take an unknown number of positional arguments?<test_functions_w_unknown_arguments>`
-* :ref:`how can I make a function take an unknown number of keyword arguments?<test_functions_w_unknown_arguments>`
-* :ref:`How are positional arguments represented in a function?<how Python reads positional arguments>`
-* :ref:`How are keyword arguments represented in a function?<how Python reads keyword arguments>`
+* :ref:`how can I make arguments a choice in a function?<test_functions_w_default_arguments>`
+* :ref:`how can I make a function take any number of positional arguments?<test_functions_w_unknown_arguments>`
+* :ref:`how can I make a function take any number of keyword arguments?<test_functions_w_unknown_arguments>`
+* :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`
+* :ref:`how does Python represent keyword arguments in a function?<how Python reads keyword arguments>`
 
 ----
 
@@ -83,62 +84,62 @@ start the project
 * I open a terminal_
 * I make a directory_ for the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir functions
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
 * I change directory_ to the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd functions
 
-  the terminal_ shows I am now in the ``functions`` folder_
+  the terminal_ shows I am in the ``functions`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/functions
 
 * I make a directory_ for the source code
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir src
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/functions
 
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch src/functions.py
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/functions.py`` instead of ``touch src/functions.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/functions.py`` not ``touch src/functions.py``
 
-    .. code-block:: shell
+    .. code-block:: Powershell
       :emphasize-lines: 1
 
       New-Item src/functions.py
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/functions
 
@@ -162,7 +163,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` not ``touch tests/__init__.py``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -180,7 +181,7 @@ start the project
 
   .. attention::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_functions.py`` instead of ``touch tests/test_functions.py``
+    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_functions.py`` not ``touch tests/test_functions.py``
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -193,9 +194,9 @@ start the project
 
   .. TIP::
 
-    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ type this in the terminal_, when I type this
+    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ type this in the terminal_
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       code tests/test_functions.py
@@ -216,92 +217,55 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a `virtual environment`_ in the terminal_
+* I make a requirements file for the `Python packages`_ I need
 
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m venv .venv
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      python -m venv .venv
-
-  the terminal_ takes some time then goes back to the command line
-
-* I activate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/functions
-
-* I upgrade the `Python package manager (pip)`_ to the latest version
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m pip install --upgrade pip
-
-  the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
-
-* I make a ``requirements.txt`` file_ for the `Python programs`_ my project needs
-
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     echo "pytest-watcher" > requirements.txt
 
   the terminal_ goes back to the command line
 
-* I use pip_ to install ``pytest-watcher`` with the requirements file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    python3 -m pip install --requirement requirements.txt
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      python -m pip install --requirement requirements.txt
-
-  the terminal_ shows pip_ downloading then installing the `Python programs`_ that `pytest-watcher`_ needs to run
-
-* I use `pytest-watcher`_ to run the test
+* I setup the project with uv_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watcher . --now
+    uv init
 
   the terminal_ shows
 
   .. code-block:: shell
+
+    Initialized project `functions`
+
+  I remove ``main.py`` from the project
+
+  .. code-block:: python
+
+    rm main.py
+
+  the terminal_ goes back to the command line
+
+* I install the Python packages listed in the requirements file
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv add --requirement requirements.txt
+
+  the terminal shows it installed the `Python packages`_
+
+* I run the tests automatically
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv run pytest-watcher --now --delay 0 .
+
+  the terminal_ shows
+
+  .. code-block:: python
     :emphasize-lines: 8, 10
 
     ================================ FAILURES ================================
@@ -323,9 +287,12 @@ start the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4-5
+    :lineno-start: 4
+    :emphasize-lines: 7-8
 
+    class TestFunctions(unittest.TestCase):
+
+        def test_failure(self):
             self.assertFalse(True)
 
 
@@ -381,7 +348,7 @@ I can make a function_ with the pass_ keyword
 
     NameError: name 'src' is not defined
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -419,7 +386,7 @@ I can make a function_ with the pass_ keyword
 
   ``functions.py`` in the ``src`` folder_ does not have anything named ``w_pass`` inside it
 
-* I add to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -761,7 +728,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the definition for ``identity`` does not allow inputs and the test sends :ref:`None<what is None?>` as input
 
-* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1885,20 +1852,12 @@ This is why the :ref:`update method of dictionaries<test_update_a_dictionary>` c
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
-* I deactivate the `virtual environment`_
+* I close ``test_functions.py`` and ``functions.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. code-block:: python
 
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/functions
+    .../pumping_python/functions (main)
 
 * I `change directory`_ to the parent of ``functions``
 
@@ -1940,8 +1899,10 @@ as a reminder
 * the :ref:`identity function<test_identity_function>` returns its input
 * :ref:`constant functions<test_constant_function>` always return the same thing
 * functions_ return :ref:`None<what is None?>` by default
+* nothing runs after the `return statement` in a function_
 
-:ref:`How many questions can you answer after going through this chapter?<questions about functions>`
+
+:ref:`How many questions can you answer above functions?<questions about functions>`
 
 ----
 

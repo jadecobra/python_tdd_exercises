@@ -241,7 +241,7 @@ how to make a directory
 
     cd pumping_python
 
-  the terminal_ shows I am now in the ``pumping_python`` `folder (directory)`_
+  the terminal_ shows I am in the ``pumping_python`` `folder (directory)`_
 
   .. code-block:: shell
 
