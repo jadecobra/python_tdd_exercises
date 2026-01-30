@@ -174,7 +174,7 @@ how to run a PowerShell script
     E       AssertionError: True is not false
 
     tests/test_magic_again.py:7: AssertionError
-    ================================ short test summary info =================================
+    ========================== short test summary info ============================
     FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
@@ -255,7 +255,7 @@ how to run a PowerShell script
     E       AssertionError: True is not false
 
     tests/test_more_magic.py:7: AssertionError
-    ================================ short test summary info =================================
+    ========================== short test summary info ============================
     FAILED tests/test_more_magic.py::TestMoreMagic::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 

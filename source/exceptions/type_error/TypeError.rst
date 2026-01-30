@@ -164,7 +164,7 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_type_error.py:7: AssertionError
-    ================================ short test summary info =================================
+    ========================== short test summary info ============================
     FAILED tests/test_type_error.py::TestTypeError::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 

@@ -30,7 +30,7 @@ To review, here are steps I take to make the environment for every project
 #. :ref:`I upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
 #. :ref:`I make a requirements file for the needed Python packages<how to write text to a file>`
 #. :ref:`I install the packages listed in the requirements file<how to install Python packages with uv>`
-#. :ref:`I run the tests automatically<how to run the tests automatically in a virtual environment>`
+#. :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
 #. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
 #. I make the test pass
 #. then I start working on the project
@@ -267,7 +267,7 @@ how to make a shell script run as a command
     E       AssertionError: True is not false
 
     tests/test_magic_again.py:7: AssertionError
-    ================================ short test summary info =================================
+    ========================== short test summary info ============================
     FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
@@ -328,7 +328,7 @@ how to make a shell script run as a command
     E       AssertionError: True is not false
 
     tests/test_more_magic.py:7: AssertionError
-    ================================ short test summary info =================================
+    ========================== short test summary info ============================
     FAILED tests/test_more_magic.py::TestMoreMagic::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 

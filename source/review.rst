@@ -14,7 +14,6 @@ how to make a python test driven development environment review
 
 * :ref:`what is a Test Driven Development Environment?`
 * :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually>`
-* :ref:`how can I make a Python Test Driven Development Environment automatically?<how to make a Python Test Driven Development environment automatically>`
 * :ref:`how can I change directories?<how to change directory>`
 * :ref:`how can I make a directory?<how to make a directory>`
 * :ref:`how can I see directory structure?<how to look at directory structure>`
@@ -28,21 +27,13 @@ how to make a python test driven development environment review
 * :ref:`how can I run tests manually?<how to manually run tests>`
 * :ref:`how can I run tests automatically?<how to run the tests automatically>`
 * :ref:`how can I stop automated Python tests from running?<how to stop the automated tests>`
+* :ref:`how can I setup a project with uv?<how to setup a project with uv>`
 * :ref:`what is a Virtual Environment?<what is a virtual environment?>`
-* :ref:`how can I make a Virtual Environment?<how to make a virtual environment>`
 * :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
 * :ref:`how can I document the Python programs my project needs?<how to write text to a file>`
 * :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv>`
-* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv>`
-* :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal>`
-* :ref:`how can I make a shell script?<how to make a shell script>`
-* :ref:`what is a variable?<how to use a variable in a shell script>`
-* :ref:`how can I use a variable in a shell script<how to use a variable in a shell script>`
-* :ref:`how can I view the permissions of a file?<how to view the permissions of a file>`
-* :ref:`how can I make a shell script run as a command<how to make a shell script run as a command>`
-* :ref:`how can I run a shell script<how to run a shell script>`
 
 ----
 
@@ -260,7 +251,7 @@ Here are questions you can answer after going through this chapter
 testing
 *********************************************************************************
 
-* :ref:`how can I run automated tests after I exit them in the terminal?<how to run the tests automatically in a virtual environment>`
+* :ref:`how can I run automated tests after I exit them in the terminal?<how to run the tests automatically with uv and pytest-watcher>`
 * :ref:`how can I run automated tests after I exit them in the terminal_ on Windows without Windows Subsystem for Linux?<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
 
 ----

@@ -1053,7 +1053,7 @@ how to upgrade the Python package manager in a virtual environment on Windows wi
 ----
 
 =====================================================================================================
-how to run the tests automatically in a virtual environment
+how to run the tests automatically with uv and pytest-watcher
 =====================================================================================================
 
 I try to run the tests again
@@ -1096,7 +1096,7 @@ how to open the test file in the editor from the terminal on Windows without WSL
   .. code-block:: PowerShell
     :emphasize-lines: 10
 
-    ====================================== FAILURES =======================================
+    ================================= FAILURES ===================================
     _______________________________ TestMagic.test_failure ________________________________
 
     self = <tests.test_magic.TestMagic testMethod=test_failure>
@@ -1106,9 +1106,9 @@ how to open the test file in the editor from the terminal on Windows without WSL
     E       AssertionError: True is not false
 
     tests/test_magic.py:7: AssertionError
-    =============================== short test summary info =================================
+    ========================= short test summary info ============================
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
-    ================================= 1 failed in X.YZs ===================================
+    ============================ 1 failed in X.YZs ===============================
 
   I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 

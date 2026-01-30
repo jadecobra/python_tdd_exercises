@@ -35,7 +35,7 @@ on a computer with MacOS_, Linux_ or `Windows`_ with `Windows Subsystem for Linu
 #. :ref:`I upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
 #. :ref:`I make a requirements file for the needed Python packages<how to write text to a file>`
 #. :ref:`I install the packages listed in the requirements file<how to install Python packages with uv>`
-#. :ref:`I run the tests automatically<how to run the tests automatically in a virtual environment>`
+#. :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
 #. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
 #. I make the test pass
 #. then I start working on the project

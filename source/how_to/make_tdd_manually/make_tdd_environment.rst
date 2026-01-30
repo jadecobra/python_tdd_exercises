@@ -60,14 +60,12 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I run tests manually?<how to manually run tests>`
 * :ref:`how can I run tests automatically?<how to run the tests automatically>`
 * :ref:`how can I stop automated Python tests from running?<how to stop the automated tests>`
+* :ref:`how can I setup a project with uv?<how to setup a project with uv>`
 * :ref:`what is a Virtual Environment?<what is a virtual environment?>`
-* :ref:`how can I make a Virtual Environment?<how to make a virtual environment>`
 * :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
 * :ref:`how can I document the Python programs my project needs?<how to write text to a file>`
 * :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv>`
-* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv>`
-* :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment>`
 * :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal>`
 
 ----
@@ -1009,12 +1007,12 @@ how to install Python packages with uv
 
     Using CPython 3.XY.Z interpreter at: /usr/local/bin/python3.XY
     Creating virtual environment at: .venv
-    Resolved 3 packages in 341ms
+    Resolved 3 packages in GHIms
     ░░░░░░░░░░░░░░░░░░░░ [0/2] Installing wheels...
     ...
-    Installed 2 packages in 270ms
-     + pytest-watcher==0.6.3
-     + watchdog==6.0.0
+    Installed 2 packages in JKLms
+     + pytest-watcher==A.B.C
+     + watchdog==D.E.F
 
 * I run tree_ to see what changed in the project
 
@@ -1042,7 +1040,7 @@ how to install Python packages with uv
 
   uv_ added 2 things
 
-  - ``.venv`` a folder_ for the `Virtual Environment<what is a virtual environment?>`
+  - ``.venv`` a folder_ for a :ref:`Virtual Environment<what is a virtual environment?>`
   - ``uv.lock`` a file_ that has the exact versions of the `Python programs`_ that were installed
 
 * I use cat_ to show what is now in ``pyproject.toml``
@@ -1054,16 +1052,19 @@ how to install Python packages with uv
   the terminal_ shows
 
   .. code-block:: python
+    :emphasize-lines: 7-9
 
     [project]
     name = "magic"
     version = "0.1.0"
     description = "Add your description here"
     readme = "README.md"
-    requires-python = ">=3.13"
+    requires-python = ">=3.XY"
     dependencies = [
-        "pytest-watcher>=0.6.3",
+        "pytest-watcher>=A.B.C",
     ]
+
+  it added `pytest-watcher`_ to the dependencies of the project
 
 ----
 
@@ -1076,7 +1077,6 @@ what is a virtual environment?
 A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 
 It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. I do not have to keep every program_ I have ever used for projects that do not need them.
-
 
 ----
 
@@ -1097,9 +1097,9 @@ how to activate a virtual environment
 
   .. code-block:: shell
 
-    (.venv) .../magic (main)
+    (magic) .../magic (main)
 
-  the ``(.venv)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
+  the ``(magic)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
 
 ----
 
@@ -1109,14 +1109,14 @@ how to deactivate a virtual environment
 
 ----
 
-* I can leave the `virtual environment`_ by typing ``deactivate`` in the terminal_
+* I leave the `virtual environment`_ by typing ``deactivate`` in the terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
     deactivate
 
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+  the terminal_ goes back to the command line, ``(magic)`` is no longer on the left side
 
   .. code-block:: python
 
@@ -1125,126 +1125,98 @@ how to deactivate a virtual environment
 ----
 
 =====================================================================================================
-how to see what packages are installed in a virtual environment
+how to run the tests automatically with uv and pytest-watcher
 =====================================================================================================
 
 ----
 
-I use the `Python package manager (pip)`_ to see what `Python packages`_ are installed in the `virtual environment`_ I just made
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  pip list
-
-the terminal_ shows
-
-.. code-block:: shell
-
-  Package Version
-  ------- -------
-  pip     x.y
-
-- `pytest-watcher`_ is not in the list
-- pip_ is a program_ from the `Python standard library`_ that is used to install `Python packages`_
-
-
-
-----
-
-=====================================================================================================
-how to upgrade the Python package manager in a virtual environment
-=====================================================================================================
-
-----
-
-* I upgrade pip_ to the latest version. I recommend you do this every time you are in a `virtual environment`_, it is good practice to update package managers to the latest version available
+* I try to run the tests again
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    python3 -m pip install --upgrade pip
-
-  - pip_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to install `Python packages`_
-  - ``install`` is an argument given to pip_ to install a given `Python package`_
-  - ``--upgrade`` is an option that can be passed to the ``install`` argument, like ``--requirement`` from earlier, this one tells pip_ to upgrade the version of the given `Python package`_
-  - ``pip`` is the `Python package`_ I am giving pip_ to install, in this case it upgrades itself to the latest version since I did not give a version number
+    pytest-watcher
 
   the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 5-6
+  .. code-block:: python
 
-    ...
-    Installing collected packages: pip
-      Attempting uninstall: pip
-        Found existing installation: pip XY.Z
-        Uninstalling pip-XY.Z:
-          Successfully uninstalled pip-XY.Z
-    Successfully installed pip-AB.C
+    command not found: pytest-watcher
 
-  .. NOTE:: I can also tell pip_ to install `pytest-watcher`_ directly without using a requirements file, the problem is it will not document what programs_ my project needs. I would either have to remember later or use ``pip list``. It also does not help someone else who is trying to run my project later, know what programs it needs without me
+  same error
 
-    .. code-block:: shell
+* I use uv_ to run `pytest-watcher`_
 
-      python3 -m pip install pytest-watcher
-
-* I check what `Python packages`_ are now installed in the `virtual environment`_
-
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    pip list
+    uv run pytest-watcher
 
   the terminal_ shows
 
   .. code-block:: shell
+    :emphasize-text: --now
 
-    Package      Version
-    ------------ -------
-    colorama     x.y.z
-    docopt       x.y.z
-    iniconfig    x.y.z
-    packaging    x.y
-    pip          x.y
-    pluggy       x.y.z
-    Pygments     x.y.z
-    pytest       x.y.z
-    pytest-watcher x.y.z
-    watchdog     x.y.z
+    usage: pytest_watcher [-h] [--now] [--clear] [--notify-on-failure] [--delay DELAY]
+                          [--runner RUNNER] [--patterns PATTERNS]
+                          [--ignore-patterns IGNORE_PATTERNS] [--version]
+                          path
+    pytest_watcher: error: the following arguments are required: path
 
-  `pytest-watcher`_ is in the list. Yes!
+  oh boy! I just want my tests to run already. I see a ``--now`` option
 
-  .. TIP:: imagine that the `pytest-watcher`_ project also has a requirements file_ with ``colorama``, ``docopt``, ``iniconfig``, ``packaging``, ``pluggy``, ``Pygments``, ``pytest`` and ``watchdog`` as programs that it needs to run and they got installed when I asked pip_ to install `pytest-watcher`_ from the ``requirements.txt`` file_
+* I try to run the tests again with the ``--now`` option and set the ``--delay`` to ``0``
 
-----
+  .. code-block:: python
+    :emphasize-lines: 1
 
-=====================================================================================================
-how to run the tests automatically in a virtual environment
-=====================================================================================================
+    uv run pytest-watcher --now --delay 0
 
-----
+  ``--now`` is an option that tells `pytest-watcher`_ to run the tests now without asking me for input
+  ``--delay`` is an option that sets how long `pytest-watcher`_ waits before it runs the tests after I make a change
 
-I try to run the tests again
+  the terminal_ shows
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: python
+    :emphasize-lines: 5
+    :emphasize-text: path
 
-  pytest-watcher
+    usage: pytest_watcher [-h] [--now] [--clear] [--notify-on-failure] [--delay DELAY]
+                          [--runner RUNNER] [--patterns PATTERNS]
+                          [--ignore-patterns IGNORE_PATTERNS] [--version]
+                          path
+    pytest_watcher: error: the following arguments are required: path
 
-and it shows results without going back to the command line
+  I have to tell `pytest-watcher` what folder_ has the tests to run
 
-.. code-block:: shell
-  :emphasize-lines: 6
+* I try to run the tests again
 
-  ================== test session starts===================
-  ...
-  rootdir: .../magic
-  collected 1 item
+  .. code-block:: python
 
-  tests/test_magic.py .                              [100%]
+    uv run pytest-watcher --now --delay 0 .
 
-  =============== 1 passed in X.YZs =======================
+  ``.`` is the current working directory_
+
+  the terminal_ shows results without going back to the command line
+
+  .. code-block:: shell
+    :emphasize-lines: 10
+
+    pytest-watcher version X.Y.Z
+    Runner command: pytest
+    Waiting for file changes in .../pumping_python/magic
+    ============================ test session starts =============================
+    platform linux -- Python 3.A.B, pytest-C.D.E, pluggy-F.G.H
+    rootdir: .../pumping_python/magic
+    configfile: pyproject.toml
+    collected 1 item
+
+    tests/test_magic.py .                                                   [100%]
+
+    ============================= 1 passed in 0.03s ==============================
+    [pytest-watcher]
+    Current runner args: []
+    Press w to show menu
 
 ----
 
@@ -1267,8 +1239,8 @@ how to open the test file in the editor from the terminal
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ====================================== FAILURES =======================================
-    _______________________________ TestMagic.test_failure ________________________________
+    ================================= FAILURES ===================================
+    __________________________ TestMagic.test_failure ____________________________
 
     self = <tests.test_magic.TestMagic testMethod=test_failure>
 
@@ -1277,11 +1249,11 @@ how to open the test file in the editor from the terminal
     E       AssertionError: True is not false
 
     tests/test_magic.py:7: AssertionError
-    =============================== short test summary info =================================
+    ========================= short test summary info ============================
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
-    ================================= 1 failed in X.YZs ===================================
+    ============================ 1 failed in X.YZs ===============================
 
-  I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: shell
     :lineno-start: 7
@@ -1289,7 +1261,7 @@ how to open the test file in the editor from the terminal
 
           self.assertFalse(False)
 
-  the test passes and I can write the rest of the code for the project as the tests run automatically in response to any change I make
+  the test passes and I can write the rest of the code for the project as the tests run when I change the code
 
 ----
 
@@ -1299,41 +1271,11 @@ how to stop the automated tests
 
 ----
 
-I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
-
-----
-
-=====================================================================================================
-how to deactivate a virtual environment
-=====================================================================================================
-
-----
-
-* I leave the `virtual environment`_ by typing this in the terminal_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/magic
-
-* I try `pytest-watcher`_ again to show that I do not have it installed outside the `virtual environment`_
+* I go to the the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the terminal_ goes back to the command line
 
   .. code-block:: python
-    :emphasize-lines: 1
 
-    pytest-watcher . --now
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    command not found: pytest-watcher
+    .../pumping_python/magic (main)
 
 * I `change directory`_ to the parent of ``magic``
 
@@ -1356,7 +1298,11 @@ how to deactivate a virtual environment
 review
 ********************************************************************************************
 
-I gave the computer some commands to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
+* I gave the computer some commands to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
+* I made some folders_ and files_
+* I successfully wrote a :ref:`failing test<test_failure>`
+* I made the failing test pass
+* I made the tests run automatically with `pytest-watcher`_
 
 ----
 
@@ -1376,13 +1322,11 @@ how to view all the commands typed in a terminal
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 8, 10, 12, 15, 19, 21, 24, 31, 34, 38, 41, 42, 44
+    :emphasize-lines: 6, 8, 10, 13, 17, 19, 22, 23, 31, 34, 36, 41, 50
 
     cd pumping_python
     mkdir pumping_python
     cd pumping_python
-    tree
-    sudo apt install tree --yes
     tree
     cd magic
     mkdir magic
@@ -1401,6 +1345,7 @@ how to view all the commands typed in a terminal
     touch tests/magic.py
     tree
     python3 -m unittest
+    code tests/magic.py
     touch tests/__init__.py
     tree
     python3 -m unittest
@@ -1408,25 +1353,28 @@ how to view all the commands typed in a terminal
     tree -L 2
     python3 -m unittest
     pytest-watcher
-    python3 -m venv .venv
-    tree
-    tree -a -L 2
-    source .venv/bin/activate
-    pytest-watcher
-    pip list
     echo "pytest-watcher"
     echo "pytest-watcher" > requirements.txt
     tree -a -L 2
     cat requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    python3 -m pip install --upgrade pip
-    pip list
-    pytest-watcher
+    uv init
+    tree -a -L 1
+    rm main.py
+    cat .gitignore
+    cat pyproject.toml
+    cat .python-version
+    cat README.md
+    uv add --requirement requirements.txt
+    tree -a -L 1
+    source .venv/bin/activate
     deactivate
     pytest-watcher
+    cat pyproject.toml
+    pytest-watcher
+    uv run pytest-watcher
+    uv run pytest-watcher --now --delay 0
+    uv run pytest-watcher --now --delay 0 .
     cd ..
-    touch makePythonTdd.sh
-    tree -a -L 2
 
   the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for me
 
@@ -1441,12 +1389,11 @@ how to view all the commands typed in a terminal
     mkdir tests
     touch tests/__init__.py
     touch tests/test_NAME_OF_THE_PROJECT.py
-    python3 -m venv .venv
-    source .venv/bin/activate
     echo "pytest-watcher" > requirements.txt
-    python3 -m pip install --upgrade pip
-    python3 -m pip install --requirement requirements.txt
-    pytest-watcher
+    uv init
+    rm main.py
+    uv add --requirement requirements.txt
+    uv run pytest-watcher --now --delay 0 .
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
@@ -1461,12 +1408,10 @@ how to view all the commands typed in a terminal
   - :ref:`make the 'tests' folder a Python package<how to make the tests a Python package>`
   - :ref:`make a Python file to hold the tests in the 'tests' folder<how to make a Python file to hold the tests in the 'tests' folder>`
   - :ref:`add the first failing test to the test file<test_failure>`
-  - :ref:`make a virtual environment<how to make a virtual environment>`
-  - :ref:`activate the virtual environment<how to activate a virtual environment>`
-  - :ref:`upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
   - :ref:`make a requirements file for the needed Python packages<how to write text to a file>`
+  - :ref:`setup the project with uv<how to setup a project with uv>`
   - :ref:`install the packages listed in the requirements file<how to install Python packages with uv>`
-  - :ref:`run the tests automatically<how to run the tests automatically in a virtual environment>`
+  - :ref:`run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
   - make the test pass
 
