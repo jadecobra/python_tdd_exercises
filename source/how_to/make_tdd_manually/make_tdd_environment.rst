@@ -1205,15 +1205,15 @@ how to run the tests automatically with uv and pytest-watcher
     pytest-watcher version X.Y.Z
     Runner command: pytest
     Waiting for file changes in .../pumping_python/magic
-    ============================ test session starts =============================
+    ======================= test session starts ========================
     platform linux -- Python 3.A.B, pytest-C.D.E, pluggy-F.G.H
     rootdir: .../pumping_python/magic
     configfile: pyproject.toml
     collected 1 item
 
-    tests/test_magic.py .                                                   [100%]
+    tests/test_magic.py .                                         [100%]
 
-    ============================= 1 passed in 0.03s ==============================
+    ======================== 1 passed in X.YZs =========================
     [pytest-watcher]
     Current runner args: []
     Press w to show menu
@@ -1239,8 +1239,8 @@ how to open the test file in the editor from the terminal
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ================================= FAILURES ===================================
-    __________________________ TestMagic.test_failure ____________________________
+    ============================ FAILURES ==============================
+    _____________________ TestMagic.test_failure _______________________
 
     self = <tests.test_magic.TestMagic testMethod=test_failure>
 
@@ -1249,9 +1249,9 @@ how to open the test file in the editor from the terminal
     E       AssertionError: True is not false
 
     tests/test_magic.py:7: AssertionError
-    ========================= short test summary info ============================
+    =================== short test summary info ========================
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
-    ============================ 1 failed in X.YZs ===============================
+    ======================= 1 failed in X.YZs ==========================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 

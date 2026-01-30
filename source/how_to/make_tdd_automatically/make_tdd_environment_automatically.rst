@@ -258,7 +258,7 @@ how to make a shell script run as a command
     :emphasize-lines: 10
 
     ================================= FAILURES =================================
-    _____________________________ TestMagicAgain.test_failure ______________________________
+    ________________________ TestMagicAgain.test_failure _________________________
 
     self = <tests.test_magic_again.TestMagicAgain testMethod=test_failure>
 
@@ -267,7 +267,7 @@ how to make a shell script run as a command
     E       AssertionError: True is not false
 
     tests/test_magic_again.py:7: AssertionError
-    ========================== short test summary info ============================
+    ====================== short test summary info ========================
     FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
@@ -319,7 +319,7 @@ how to make a shell script run as a command
     :emphasize-lines: 10
 
     ================================= FAILURES =================================
-    ______________________________ TestMoreMagic.test_failure ______________________________
+    _________________________ TestMoreMagic.test_failure _________________________
 
     self = <tests.test_more_magic.TestMoreMagic testMethod=test_failure>
 
@@ -328,7 +328,7 @@ how to make a shell script run as a command
     E       AssertionError: True is not false
 
     tests/test_more_magic.py:7: AssertionError
-    ========================== short test summary info ============================
+    ====================== short test summary info ========================
     FAILED tests/test_more_magic.py::TestMoreMagic::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 

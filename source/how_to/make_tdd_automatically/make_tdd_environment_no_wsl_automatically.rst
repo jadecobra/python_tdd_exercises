@@ -165,7 +165,7 @@ how to run a PowerShell script
     :emphasize-lines: 10
 
     ================================= FAILURES =================================
-    _____________________________ TestMagicAgain.test_failure _____________________________
+    ________________________ TestMagicAgain.test_failure ________________________
 
     self = <tests.test_magic_again.TestMagicAgain testMethod=test_failure>
 
@@ -174,7 +174,7 @@ how to run a PowerShell script
     E       AssertionError: True is not false
 
     tests/test_magic_again.py:7: AssertionError
-    ========================== short test summary info ============================
+    ====================== short test summary info ========================
     FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
@@ -246,7 +246,7 @@ how to run a PowerShell script
     :emphasize-lines: 10
 
     ================================= FAILURES =================================
-    _____________________________ TestMoreMagic.test_failure ______________________________
+    ________________________ TestMoreMagic.test_failure _________________________
 
     self = <tests.test_more_magic.TestMoreMagic testMethod=test_failure>
 
@@ -255,7 +255,7 @@ how to run a PowerShell script
     E       AssertionError: True is not false
 
     tests/test_more_magic.py:7: AssertionError
-    ========================== short test summary info ============================
+    ====================== short test summary info ========================
     FAILED tests/test_more_magic.py::TestMoreMagic::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 

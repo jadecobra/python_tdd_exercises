@@ -148,7 +148,7 @@ start the project
     :emphasize-text: tests/test_exceptions.py:7
 
     ================================= FAILURES =================================
-    _____________________________ TestExceptions.test_failure ______________________________
+    ________________________ TestExceptions.test_failure _________________________
 
     self = <tests.test_exceptions.TestExceptions testMethod=test_failure>
 
@@ -157,7 +157,7 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_exceptions.py:7: AssertionError
-    ========================== short test summary info ============================
+    ====================== short test summary info ========================
     FAILED tests/test_exceptions.py::TestExceptions::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 

@@ -294,9 +294,9 @@ Here are a few other examples
 
   .. code-block:: PowerShell
 
-    ================================= FAILURES ===================================
+    ============================ FAILURES ==============================
 
-    ______________________________ Testperson.test_failure ________________________________
+    _________________________ Testperson.test_failure ___________________________
 
     self = <tests.test_person.Testperson testMethod=test_failure>
 
@@ -305,9 +305,9 @@ Here are a few other examples
     E       AssertionError: True is not false
 
     tests/test_person.py:7: AssertionError
-    =============================== short test summary info ===============================
+    =========================== short test summary info ===========================
     FAILED tests/test_person.py::Testperson::test_failure - AssertionError: True is not false
-    ================================== 1 failed in X.YZs ==================================
+    ============================= 1 failed in X.YZs =============================
 
   the computer makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`person<how to make a person>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to make a person`
 
