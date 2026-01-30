@@ -18,7 +18,9 @@ how to make a python test driven development environment
 preview
 *********************************************************************************
 
-This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`
+This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`.
+
+I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`
 
 By the end of the chapter you will know these commands better
 
@@ -198,6 +200,8 @@ how to make a directory for the project
 =================================================================================
 how to change directory to the project
 =================================================================================
+
+----
 
 I try to go to ``magic`` again
 
@@ -391,7 +395,7 @@ how to make a directory for the tests
 ----
 
 =====================================================================================================
-how to make a Python file to hold the tests in the 'tests' folder
+how to make a Python file for the tests in the 'tests' directory
 =====================================================================================================
 
 ----
@@ -1137,7 +1141,7 @@ how to run the tests automatically with uv and pytest-watcher
   .. code-block:: shell
     :emphasize-lines: 1
 
-    pytest-watcher
+    uv run pytest-watcher --now --delay 0 .
 
   the terminal_ shows
 
@@ -1273,13 +1277,21 @@ how to stop the automated tests
 
 ----
 
-* I go to the the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the terminal_ goes back to the command line
+I go to the the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the terminal_ goes back to the command line
 
-  .. code-block:: python
+.. code-block:: python
 
-    .../pumping_python/magic (main)
+  .../pumping_python/magic (main)
 
-* I `change directory`_ to the parent of ``magic``
+----
+
+********************************************************************************************
+close the project
+********************************************************************************************
+
+* I close ``test_magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`
+
+* I click in the terminal and `change directory`_ to the parent of ``magic``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1407,12 +1419,12 @@ how to view all the commands typed in a terminal
   - :ref:`make a directory for the source code<how to make a directory for the source code>`
   - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
   - :ref:`make a directory for the tests<how to make a directory for the tests>`
-  - :ref:`make the 'tests' folder a Python package<how to make the tests a Python package>`
-  - :ref:`make a Python file to hold the tests in the 'tests' folder<how to make a Python file to hold the tests in the 'tests' folder>`
+  - :ref:`make the 'tests' directory a Python package<how to make the tests a Python package>`
+  - :ref:`make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
   - :ref:`add the first failing test to the test file<test_failure>`
-  - :ref:`make a requirements file for the needed Python packages<how to write text to a file>`
+  - :ref:`make a requirements file for the Python packages I need<how to write text to a file>`
   - :ref:`setup the project with uv<how to setup a project with uv>`
-  - :ref:`install the packages listed in the requirements file<how to install Python packages with uv>`
+  - :ref:`install the Python packages listed in the requirements file<how to install Python packages with uv>`
   - :ref:`run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
   - make the test pass

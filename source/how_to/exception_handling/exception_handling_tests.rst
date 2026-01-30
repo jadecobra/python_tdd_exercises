@@ -161,7 +161,7 @@ start the project
     FAILED tests/test_exceptions.py::TestExceptions::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -1182,7 +1182,7 @@ close the exceptions project
 *********************************************************************************
 
 * I close ``test_exceptions.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests, the terminal_ shows
 
   .../pumping_python
 

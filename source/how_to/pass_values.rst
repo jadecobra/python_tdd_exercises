@@ -52,7 +52,7 @@ start the project
 
 * I name this project ``telephone``
 * I open a terminal_
-* then I `make a directory`_ for the project
+* I make a directory_ for the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -65,7 +65,7 @@ start the project
 
     .../pumping_python
 
-* I `change directory`_ to the project
+* I change directory_ to the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -78,7 +78,7 @@ start the project
 
     .../pumping_python/telephone
 
-* I `make a folder`_ for the source code
+* I make a directory_ for the source code
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -91,7 +91,7 @@ start the project
 
     .../pumping_python/telephone
 
-* I use touch_ to make an empty file_ for the program_ in the ``src`` folder_
+* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -122,7 +122,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I use touch_ to make an empty file_ in the ``tests`` folder_ to tell Python_ that it is a `Python package`_
+* I make the ``tests`` directory_ a `Python package`_
 
   .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
@@ -142,7 +142,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I make an empty file_ for the actual test
+* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -289,7 +289,7 @@ start the project
     FAILED tests/test_telephone.py::TestTelephone::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_telephone.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
@@ -1309,7 +1309,7 @@ close the project
 *********************************************************************************
 
 * I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell

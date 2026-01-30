@@ -149,7 +149,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests, the terminal_ shows
 
   .. code-block:: shell
 

@@ -73,7 +73,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watcher
+    uv run pytest-watcher --now --delay 0 .
 
   the terminal_ shows
 
@@ -3860,7 +3860,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_person.py`` and ``person.py`` in the :ref:`editors<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell

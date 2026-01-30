@@ -18,7 +18,9 @@ how to make a python test driven development environment on Windows without Wind
 preview
 ********************************************************************************************
 
-This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>` on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`
+This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>` on a Windows_ Computer that does NOT have `Windows Subsystem for Linux`_.
+
+I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure on Windows without WSL>`
 
 By the end of the chapter you will know these commands better
 
@@ -29,11 +31,10 @@ By the end of the chapter you will know these commands better
   touch
   echo
   cat
-  python -m venv .venv
-  .venv/scripts/activate
-  python -m pip install --upgrade pip
-  python -m pip install --requirement requirements.txt
-  pytest-watcher
+  mv
+  Remove-Item
+  uv run pytest-watcher
+  source .venv/bin/activate
   deactivate
   history
 
@@ -380,7 +381,7 @@ the terminal_ goes back to the command line
 ----
 
 =====================================================================================================
-how to make a Python file to hold the tests in the 'tests' folder on Windows without WSL
+how to make a Python file for the tests in the 'tests' directory on Windows without WSL
 =====================================================================================================
 
 * I use `New-Item`_ to add an empty file_ to the ``tests`` directory for the actual test
@@ -848,7 +849,7 @@ how to activate a virtual environment on Windows without WSL
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    pytest-watcher
+    uv run pytest-watcher --now --delay 0 .
 
   the terminal_ shows
 
@@ -1152,7 +1153,7 @@ how to deactivate a virtual environment on Windows without WSL
   .. code-block:: PowerShell
     :emphasize-lines: 1
 
-    pytest-watcher
+    uv run pytest-watcher --now --delay 0 .
 
   the terminal_ shows
 
@@ -1278,7 +1279,7 @@ how to view all the commands typed in a terminal_ on Windows without WSL
   - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file on Windows without Windows Subsystem for Linux>`
   - :ref:`make a directory for the tests<how to make a directory for the tests on Windows without WSL>`
   - :ref:`make the 'tests' folder a Python package<how to make the tests a Python package on Windows without WSL>`
-  - :ref:`make a Python file to hold the tests in the 'tests' folder on Windows without WSL<how to make a Python file to hold the tests in the 'tests' folder on Windows without WSL>`
+  - :ref:`make a Python file to hold the tests in the 'tests' folder on Windows without WSL<how to make a Python file for the tests in the 'tests' directory on Windows without WSL>`
   - :ref:`add the first failing test to the test file<test_failure on Windows without WSL>`
   - :ref:`make a virtual environment<how to make a virtual environment on Windows without WSL>`
   - :ref:`activate the virtual environment<how to activate a virtual environment on Windows without WSL>`

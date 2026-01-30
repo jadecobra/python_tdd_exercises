@@ -16,11 +16,11 @@ what is an assertion?
 
 ----
 
-An `assertion`_ or `assert statement`_ is like telling the computer "DO NOT CONTINUE, UNLESS THIS STATEMENT IS TRUE"
+An `assertion`_ or `assert statement`_ is me telling the computer "DO NOT CONTINUE, IF this statement IS NOT TRUE"
 
-I can use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before the computer can continue running the program.
+I use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before the computer can continue running the program.
 
-I can also use them to test how the program_ behaves, for example when it is given inputs.
+I also use them to test how the program_ behaves, for example when it is given inputs.
 
 Assertions_ can help catch things that break passing tests when I add new lines of code. They also help me answer 2 questions
 
@@ -64,7 +64,7 @@ start the project
 
 * I name this project ``assertion_error``
 * I open a terminal_
-* then I `make a directory`_ for the project
+* I make a directory_ for the project
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -77,7 +77,7 @@ start the project
 
     .../pumping_python
 
-* I `change directory`_ to the project
+* I change directory_ to the project
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -90,7 +90,7 @@ start the project
 
     .../pumping_python/assertion_error
 
-* I `make a folder`_ for the source code
+* I make a directory_ for the source code
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -103,7 +103,7 @@ start the project
 
     .../pumping_python/assertion_error
 
-* I use touch_ to make an empty file_ for the program_ in the ``src`` folder_
+* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -134,7 +134,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I use touch_ to make an empty file_ in the ``tests`` folder_ to tell Python_ that it is a `Python package`_
+* I make the ``tests`` directory_ a `Python package`_
 
   .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
@@ -154,7 +154,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I make an empty file_ for the actual test
+* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -199,56 +199,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a `virtual environment`_ in the terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    python3 -m venv .venv
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``python3 -m venv .venv`` instead of ``python3 -m venv .venv``
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      python -m venv .venv
-
-  the terminal_ takes some time then goes back to the command line
-
-* I activate the `virtual environment`_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. attention::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    (.venv) .../pumping_python/assertion_error
-
-* I upgrade the `Python package manager (pip)`_ to the latest version
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    python3 -m pip install --upgrade pip
-
-  the terminal_ shows pip_ being uninstalled then installs the latest version or shows that it is already the latest version
-
-* I make a ``requirements.txt`` file_ for the `Python programs`_ my project needs
+* I make a requirements file for the `Python packages` I need
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -257,30 +208,42 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I use pip_ to install ``pytest-watcher`` with the requirements file_
+* I setup the project with uv_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    python3 -m pip install --requirement requirements.txt
+    uv init
 
-  .. attention::
+  the terminal_ shows
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``python -m pip install --requirement requirements.txt`` instead of ``python3 -m pip install --requirement requirements.txt``
+  .. code-block:: shell
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+    Initialized project `assertion-error`
 
-      python -m pip install --requirement requirements.txt
+  I remove ``main.py`` from the project
 
-  the terminal_ shows pip_ downloading then installing the `Python programs`_ that `pytest-watcher`_ needs to run
+  .. code-block:: python
 
-* I use `pytest-watcher`_ to run the test
+    rm main.py
+
+  the terminal_ goes back to the command line
+
+* I install the Python packages listed in the requirements file
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watcher
+    uv add --requirement requirements.txt
+
+  the terminal shows it installed the `Python packages`_
+
+* I run the tests automatically
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv run pytest-watcher --now --delay 0 .
 
   the terminal_ shows
 
@@ -297,18 +260,21 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_assertion_error.py:7: AssertionError
-    ========================= short test summary info ==========================
+    ======================== short test summary info =========================
     FAILED tests/test_assertion_error.py::TestAssertionError::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_assertion_error.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4-5
+    :lineno-start: 4
+    :emphasize-lines: 7-8
 
+    class TestAssertionError(unittest.TestCase):
+
+        def test_failure(self):
             self.assertFalse(True)
 
 
@@ -466,19 +432,14 @@ the test passes
 
   the test passes
 
-----
+  .. NOTE::
 
-* It is important to note that these 2 statements are not the same
+    * these 2 statements are not the same
 
-  - ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the ``==`` symbol
-  - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is any characters inside :ref:`quotes`, for example
+      - ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the ``==`` symbol
+      - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is any characters inside :ref:`quotes`
 
-    * ``'single quotes'``
-    * ``'''triple single quotes'''``
-    * ``"double quotes"``
-    * ``"""triple double quotes"""``
-
-  I add another statement to show this
+* I add another statement to show the difference between the statements
 
   .. code-block:: python
     :lineno-start: 6
@@ -552,7 +513,7 @@ which is like this `assertion`_
 
   assert True is False
 
-The statement above is like telling the computer "DO NOT CONTINUE, UNLESS :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
+With these statements, I am telling the computer "CONTINUE ONLY if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`, they at least have different spellings. If it does not fail, then Python_ and I have a problem
 
 ----
 
@@ -560,7 +521,12 @@ The statement above is like telling the computer "DO NOT CONTINUE, UNLESS :ref:`
 test_assertion_error_w_none
 *********************************************************************************
 
-:ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use assertions_ to test if something is :ref:`None<what is None?>`.
+:ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use assertions_ to test if something is :ref:`None<what is None?>`, this is useful when I want to check what value I am getting from some process or user input.
+
+For example,
+
+* if I have a process that changes something but does not return a value, I can use an assertion_ to make sure that the process returns :ref:`None<what is None?>`
+* if I have people fill a form and I want to test for when they do not put anything in a place that needs something
 
 ----
 
@@ -608,6 +574,7 @@ I change the line to make it :ref:`True<test_what_is_true>`
 .. code-block:: python
   :lineno-start: 12
   :emphasize-lines: 1
+  :emphasize-text: is
 
           assert None is None
 
@@ -631,11 +598,12 @@ how to test if something is NOT None
 
 ----
 
-I add another failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses (``()``) is NOT :ref:`None<what is None?>`
+I add a failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses - ``( )``, is NOT :ref:`None<what is None?>`
 
 .. code-block:: python
   :lineno-start: 11
   :emphasize-lines: 3
+  :emphasize-text: Not
 
       def test_assertion_error_w_none(self):
           assert None is None
@@ -667,7 +635,7 @@ how to test if something is None
 
   the test passes. I like the messages from the `assert methods`_ better
 
-* I add a note
+* I add comments
 
   .. code-block:: python
     :lineno-start: 11
@@ -749,7 +717,7 @@ how to test if something is None
 
   the test passes
 
-* I add another note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 15
@@ -769,7 +737,7 @@ how to test if something is None
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
+* I add an :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -840,7 +808,7 @@ how to test if something is None
 
   the test passes
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 18
@@ -968,7 +936,7 @@ how to test if something is False
 
   the test passes
 
-* I add notes
+* I add comments
 
   .. code-block:: python
     :lineno-start: 21
@@ -1086,7 +1054,7 @@ how to test if something is True
 
   .. code-block:: python
     :lineno-start: 25
-    :emphasize-lines: 1
+    :emphasize-lines: 3
 
         def test_assertion_error_w_true(self):
             assert False is not True
@@ -1097,7 +1065,7 @@ how to test if something is True
 
   the test passes
 
-* I add more notes
+* I add more comments
 
   .. code-block:: python
     :lineno-start: 25
@@ -1161,7 +1129,7 @@ the terminal_ shows AssertionError_
 
 .. NOTE::
 
-  ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None`` or "DO NOT CONTINUE unless None is NOT equal to None"
+  ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None`` or "CONTINUE only if None is NOT equal to None"
 
 ----
 
@@ -1203,7 +1171,11 @@ what is the difference between ``=`` and ``==``?
 
   any time I use ``project_name`` after writing that line, Python_ will replace it with ``assertion_error``
 
-* ``==`` checks if the thing on the left of the symbol is equal to the thing on the right of the symbol
+* ``==`` checks if the thing on the left of ``==`` is equal to the thing on the right of ``==``, for example
+
+  .. code-block:: python
+
+    'thing on the left' == 'thing on the right'
 
 ----
 
@@ -1220,6 +1192,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
   .. code-block:: python
     :lineno-start: 29
     :emphasize-lines: 3
+    :emphasize-text: Not
 
         def test_assertion_error_w_equality(self):
             assert None == None
@@ -1244,6 +1217,7 @@ how to test if two things are Equal
   .. code-block:: python
     :lineno-start: 29
     :emphasize-lines: 3
+    :emphasize-text: Equal
 
         def test_assertion_error_w_equality(self):
             assert None == None
@@ -1254,7 +1228,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add to the notes
+* I add to the ``None is None`` comment
 
   .. code-block:: python
     :lineno-start: 34
@@ -1339,7 +1313,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add to the notes
+* I add to the ``False is not None`` comment
 
   .. code-block:: python
     :lineno-start: 37
@@ -1429,7 +1403,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add a note
+* I add to the ``True is not None`` comment
 
   .. code-block:: python
     :lineno-start: 40
@@ -1525,7 +1499,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add a note
+* I add to the ``True is not False`` comment
 
   .. code-block:: python
     :lineno-start: 43
@@ -1613,7 +1587,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add a note
+* I add to the ``False is False`` comment
 
   .. code-block:: python
     :lineno-start: 46
@@ -1631,6 +1605,8 @@ how to test if two things are Equal
 
     # Exceptions seen
     # AssertionError
+
+----
 
 * I add a failing `assert statement`_
 
@@ -1705,7 +1681,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add another note
+* I add to the ``False is not True`` comment
 
   .. code-block:: python
     :lineno-start: 49
@@ -1814,7 +1790,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add a note for the last statement
+* I add to the ``True is True`` comment
 
   .. code-block:: python
     :lineno-start: 52
@@ -1951,20 +1927,12 @@ how to test if two things are Equal
 close the project
 *********************************************************************************
 
-* I close the ``assertion_error.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
-* I deactivate the `virtual environment`_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+* I close ``assertion_error.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
   .. code-block:: python
 
-    .../pumping_python/assertion_error
+    .../pumping_python/assertion_error (main)
 
 * I `change directory`_ to the parent of ``assertion_error``
 

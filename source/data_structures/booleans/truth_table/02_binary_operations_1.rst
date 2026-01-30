@@ -467,7 +467,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 .. code-block:: python
 
   if something:
-      do this
+      then do this
 
 * I add `if statements`_ to the ``logical_conjunction`` :ref:`function<what is a function?>` in ``truth_table.py``
 
@@ -1253,7 +1253,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_truth_table.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell

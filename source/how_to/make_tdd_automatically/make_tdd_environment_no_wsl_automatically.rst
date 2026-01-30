@@ -271,8 +271,8 @@ the program_ works and can make a Python_ :ref:`Test Driven Development environm
 close the project
 *********************************************************************************
 
-* I close the ``test_more_magic.py`` in the :ref:`editor<2 editors>` I had open
-* I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard
+* I close ``test_more_magic.py`` in the :ref:`editor<2 editors>` I had open
+* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell
