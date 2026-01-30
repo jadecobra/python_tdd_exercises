@@ -24,7 +24,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../../code/tests/test_booleans.py
+.. literalinclude:: ../../code/tests/booleans/test_booleans.py
   :language: python
   :linenos:
 

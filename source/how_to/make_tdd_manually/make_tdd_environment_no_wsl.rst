@@ -89,7 +89,7 @@ requirements
 how to make a Python Test Driven Development environment manually on Windows without Windows Subsystem for Linux
 ****************************************************************************************************************
 
-I choose ``magic`` as the name for this project
+I choose ``magic`` as the name of this project
 
 * I open ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 

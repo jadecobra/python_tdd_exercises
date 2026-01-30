@@ -29,11 +29,10 @@ By the end of the chapter you will know these commands better
   touch
   echo
   cat
-  python3 -m venv .venv
+  mv
+  rm
+  uv run pytest-watcher
   source .venv/bin/activate
-  python3 -m pip install --upgrade pip
-  python3 -m pip install --requirement requirements.txt
-  pytest-watcher
   deactivate
   history
 
@@ -82,47 +81,46 @@ requirements
 how to make a Python Test Driven Development environment manually
 ********************************************************************************************
 
-I choose ``magic`` as the name for this project
+I choose ``magic`` as the name of this project
 
 * I click ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
 * I `change directory`_ to where I will put all the projects from this book. I type cd_ in the terminal_
 
-  .. NOTE:: You can skip this step if you are already in the ``pumping_python`` directory_
+  .. NOTE:: skip this step if you are already in the ``pumping_python`` directory_ or made it earlier
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     cd pumping_python
 
-  the terminal_ shows
+  - if the terminal_ shows
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    cd: no such file or directory: pumping_python
+      cd: no such file or directory: pumping_python
 
-  the `folder (directory)`_ does NOT exist. I need to make it
+    the `folder (directory)`_ does NOT exist. I need to make it. I use the `mkdir program`_ to make the ``pumping_python`` `folder (directory)`_
 
-* I use the `mkdir program`_ to make the ``pumping_python`` `folder (directory)`_
+    .. code-block:: shell
+      :emphasize-lines: 1
 
-  .. code-block:: shell
+      mkdir pumping_python
 
-    mkdir pumping_python
+    the terminal_ goes back to the command line
 
-  the terminal_ goes back to the command line
+  - I try `changing directory`_ again
 
-* I try `changing directory`_ again
+    .. code-block:: shell
+      :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+      cd pumping_python
 
-    cd pumping_python
+    the terminal_ shows I am now in the ``pumping_python`` `folder (directory)`_
 
-  the terminal_ shows I am now in the ``pumping_python`` `folder (directory)`_
+    .. code-block:: shell
 
-  .. code-block:: shell
-
-    .../pumping_python
+      .../pumping_python
 
 * I type tree_ in the terminal_ to see what files_ and folders_ are in the ``pumping_python`` directory_
 
@@ -131,23 +129,23 @@ I choose ``magic`` as the name for this project
 
     tree
 
-  when tree_ is not installed on the computer, the terminal_ shows
+  - if tree_ is not installed on the computer, the terminal_ shows
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    tree: command not found
+      tree: command not found
 
-  :ref:`you can install it from here<what is covered?>`
+    :ref:`you can install it from here<what is covered?>`
 
-  when tree_ is installed on the computer, the terminal_ shows
+  - if tree_ is installed on the computer, the terminal_ shows
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    .
+      .
 
-    0 directories, 0 files
+      0 directories, 0 files
 
-  .. NOTE:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
+    .. NOTE:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
 
 ----
 
@@ -168,7 +166,7 @@ how to make a directory for the project
 
     cd: no such file or directory: magic
 
-  the ``magic`` folder does NOT exist yet
+  there is no folder_ with the name ``magic`` in this folder_, time to make ``magic``
 
 * I make the ``magic`` directory_
 
@@ -186,7 +184,7 @@ how to make a directory for the project
 
     tree
 
-  the terminal_ shows
+  the terminal_ shows ``magic``
 
   .. code-block:: shell
     :emphasize-lines: 2
@@ -201,7 +199,7 @@ how to make a directory for the project
 how to change directory to the project
 =================================================================================
 
-I try cd_ again
+I try to go to ``magic`` again
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -235,7 +233,7 @@ the terminal_ shows
 
   python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-the computer cannot find the program_ because it does not exist, yet
+the computer cannot find the program_ because it there is no file_ with that name in the ``src`` folder_, yet.
 
 ----
 
@@ -341,6 +339,10 @@ how to manually run tests
 
     python3 -m unittest
 
+  - ``python3`` is the `Python program`_
+  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>`, unittest_ in this case
+  - a :ref:`Python module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `click here to take a look at the source code for unittest`_
+
   the terminal_ shows
 
   .. code-block:: shell
@@ -350,12 +352,7 @@ how to manually run tests
 
     NO TESTS RAN
 
-  I do not have any tests yet, so there is nothing to run
-
-  - ``python3`` is the `Python program`_
-  - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>`, unittest_ in this case
-  - a :ref:`Python module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `you can take a look at the source code for unittest here`_
-
+  because I do not have any tests yet.
 
 ----
 
@@ -365,7 +362,7 @@ how to make a directory for the tests
 
 ----
 
-* I make a child folder_ to keep the tests separate from the actual program_
+* I make a child folder_ to keep the tests in a different place than the actual program_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -408,7 +405,7 @@ how to make a Python file to hold the tests in the 'tests' folder
 
   the terminal_ goes back to the command line
 
-* I use tree_ to see what the project looks like so far
+* I use tree_ to see what the project looks like now
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -449,14 +446,16 @@ how to make a Python file to hold the tests in the 'tests' folder
 
   .. TIP::
 
-    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ type this in the terminal_
+    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ when I type this in the terminal_
 
     .. code-block:: shell
       :emphasize-lines: 1
 
       code tests/magic.py
 
-    I can also open a file_ from the terminal_ with :kbd:`ctrl` (Windows_/Linux_) or :kbd:`command` (MacOS_) on the keyboard and click with the mouse on the name of the file_
+    ``magic.py`` from the ``tests`` folder_ opens in the :ref:`editor<2 editors>`.
+
+    I can also open a file_ from the terminal_ with :kbd:`ctrl` (Windows_/Linux_) or :kbd:`command` (MacOS_) on the keyboard and a click with the mouse on the name of the file_
 
 * I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
@@ -485,7 +484,7 @@ how to make a Python file to hold the tests in the 'tests' folder
       .. TIP:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for testing
-    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use its :ref:`methods<what is a function?>` and :ref:`attributes<test_attribute_error_w_class_attributes>`
+    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use the :ref:`methods<what is a function?>` and :ref:`attributes<test_attribute_error_w_class_attributes>` of the `unittest.TestCase class`_
 
   - ``def test_failure``
 
@@ -494,7 +493,7 @@ how to make a Python file to hold the tests in the 'tests' folder
 
       .. TIP:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
-    * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().``
+    * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().`` when I want to use something from the `unittest.TestCase class`_
 
       .. TIP:: the name ``self`` is :ref:`Python convention<conventions>`. I can use any name but it is easier to stick with convention for this concept
 
@@ -505,9 +504,9 @@ how to make a Python file to hold the tests in the 'tests' folder
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ with (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) every time I make a change
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_, I do not want to use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) on the keyboard every time I make a change, I want the computer to do that for me
 
-  .. ATTENTION:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
+  .. ATTENTION:: Turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_
 
 * I try the command again to run the tests in the terminal_
 
@@ -579,7 +578,7 @@ how to make the tests a Python package
 
 * I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. CAUTION:: if you do not close ``magic.py`` you will end up with 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the `Integrated Development Environment (IDE)`_ :ref:`editor<2 editors>` after you change its name
+  .. CAUTION:: if you do not close ``magic.py`` in the :ref:`editor<2 editors>`, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the :ref:`editor<2 editors>` after you change its name
 
 ----
 
@@ -657,16 +656,17 @@ how to change the name of a file
   - ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
   - ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError<what causes AssertionError?>` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
   - ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError<what causes AssertionError?>`
-  - ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
+  - ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above, that Python_ thinks caused the :ref:`error<errors>`
   - ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
   - ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
   - ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing :ref:`test method<what is a function?>`
 
     - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
-    -  ``tests`` is the ``tests`` folder_
-    -  ``test_magic`` is the ``test_magic.py`` file_ in the ``tests`` directory_
-    - ``TestMagic`` is the :ref:`class <what is a class?>` defined on line 4 in ``test_magic.py``
-    - ``test_failure`` is the :ref:`method (function)<what is a function?>` defined on line 6 in ``test_magic.py``
+
+      *  ``tests`` is the ``tests`` folder_
+      *  ``test_magic`` is the ``test_magic.py`` file_ in the ``tests`` folder_
+      * ``TestMagic`` is the :ref:`class<what is a class?>` defined on line 4 in ``test_magic.py`` in the ``tests`` folder_
+      * ``test_failure`` is the :ref:`method (function)<what is a function?>` defined in the ``TestMagic`` :ref:`class<what is a class?>`, on line 6 in ``test_magic.py`` in the ``tests`` folder_
 
   * ``F`` shows a failure
 
@@ -696,6 +696,7 @@ I run the test again in the terminal_
 the test passes! The terminal_ shows
 
 .. code-block:: none
+  :emphasize-lines: 3, 5
 
   .
   ------------------------------------------------------
@@ -712,7 +713,7 @@ the test passes! The terminal_ shows
 :yellow:`REFACTOR`: make it better
 ********************************************************************************************
 
-Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as you go through this book to know them better, it helps when you run into them later. I add a list with :ref:`AssertionError<what causes AssertionError?>` in ``test_magic.py`` in the :ref:`editor<2 editors>`
+I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to know them better, it helps when I run into them later. I add :ref:`AssertionError<what causes AssertionError?>` in ``test_magic.py`` in the :ref:`editor<2 editors>`
 
 .. code-block:: python
   :linenos:
@@ -730,11 +731,13 @@ Keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as
   # Exceptions seen
   # AssertionError
 
-I ran ``python3 -m unittest`` a few times to see the test fail, I ran ``python3 -m unittest`` again to see the test pass. I will have to run ``python3 -m unittest`` again when I add any code, to make sure tests that were passing do not start failing and that the new code I add does what I want.
+* I ran ``python3 -m unittest`` a few times to see the test fail
+* I ran ``python3 -m unittest`` again to see the test pass
+* I will run ``python3 -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want.
 
 This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change.
 
-I do not want to type ``python3 -m unittest`` again, it is better for a `computer program`_ to run the tests so that `I do not repeat myself`_.
+I do not want to type ``python3 -m unittest`` again, I want the computer to do it for me.
 
 ----
 
@@ -744,12 +747,11 @@ how to run the tests automatically
 
 ----
 
-----
-I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
+I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a :ref:`Python file<what is a module?>` changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
 pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
 
-I type it in the terminal_
+I type `pytest-watcher`_ in the terminal_
 
 .. code-block:: shell
   :emphasize-lines: 1
@@ -1099,7 +1101,7 @@ how to activate a virtual environment
 
     (magic) .../magic (main)
 
-  the ``(magic)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
+  ``(magic)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
 
 ----
 
@@ -1172,8 +1174,8 @@ how to run the tests automatically with uv and pytest-watcher
 
     uv run pytest-watcher --now --delay 0
 
-  ``--now`` is an option that tells `pytest-watcher`_ to run the tests now without asking me for input
-  ``--delay`` is an option that sets how long `pytest-watcher`_ waits before it runs the tests after I make a change
+  - ``--now`` is an option that tells `pytest-watcher`_ to run the tests now without asking me for input
+  - ``--delay`` is an option that sets how long `pytest-watcher`_ waits before it runs the tests after I make a change, the default is ``0.2``
 
   the terminal_ shows
 
@@ -1187,7 +1189,7 @@ how to run the tests automatically with uv and pytest-watcher
                           path
     pytest_watcher: error: the following arguments are required: path
 
-  I have to tell `pytest-watcher` what folder_ has the tests to run
+  I have to tell `pytest-watcher`_ what folder_ has the tests to run
 
 * I try to run the tests again
 
@@ -1261,7 +1263,7 @@ how to open the test file in the editor from the terminal
 
           self.assertFalse(False)
 
-  the test passes and I can write the rest of the code for the project as the tests run when I change the code
+  the test passes. I can write the rest of the code for the project and get results back quickly since the tests run when I change the code
 
 ----
 
@@ -1284,7 +1286,7 @@ how to stop the automated tests
 
     cd ..
 
-  ``..`` is shorthand for the parent of any directory_ you are in. The terminal_ shows
+  ``..`` is for the parent of any directory_ I am in. The terminal_ shows
 
   .. code-block:: shell
 

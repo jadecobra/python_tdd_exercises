@@ -123,12 +123,10 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 * :ref:`how to manually run tests`
 * :ref:`how to run the tests automatically`
 * :ref:`how to stop the automated tests`
-* :ref:`how to make a virtual environment`
 * :ref:`how to activate a virtual environment`
 * :ref:`how to deactivate a virtual environment`
 * :ref:`how to write text to a file`
 * :ref:`how to install Python packages with uv`
-* :ref:`how to see what packages are installed in a virtual environment`
 * :ref:`how to view all the commands typed in a terminal`
 * :ref:`how to make a shell script`
 * :ref:`how to run a shell script`
