@@ -989,7 +989,7 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
 
   the test is still green
 
-* I remove the other statements
+* I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 25

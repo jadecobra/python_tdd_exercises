@@ -1207,7 +1207,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  still green. I remove the other statements
+  still green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 80
@@ -1302,7 +1302,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  still green, I remove the other statements
+  still green, I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 60
@@ -1406,7 +1406,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  still green, I remove the other statements
+  still green, I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -1430,7 +1430,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (True, False): return False
         return first_input, second_input
 
-  the test is still green. I remove the other statements
+  the test is still green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -1455,7 +1455,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ still shows green. I remove the other statements
+  the terminal_ still shows green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -1490,7 +1490,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if first_input == True: return False
         return first_input, second_input
 
-  the test is still green, I remove the other statements
+  the test is still green, I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -1514,7 +1514,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  still green. I remove the other statements
+  still green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1668,7 +1668,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         # return (not first_input) (not or) (not second_input)
         return not first_input and not second_input
 
-  the terminal_ still shows green. I remove the other statements
+  the terminal_ still shows green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 29

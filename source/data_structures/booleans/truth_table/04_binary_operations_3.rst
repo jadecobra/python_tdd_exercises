@@ -409,7 +409,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   why is the grass greener on the other side?
 
-* I remove the other statements and make the `ternary operator`_ simpler
+* I remove the other statements in the :ref:`function<what is a function?>` and make the `ternary operator`_ simpler
 
   .. code-block:: python
     :lineno-start: 49
@@ -707,7 +707,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
   the test is still green
 
-* I remove the other statements
+* I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -953,7 +953,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
   the terminal_ still shows green
 
-* I remove the other statements
+* I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 59

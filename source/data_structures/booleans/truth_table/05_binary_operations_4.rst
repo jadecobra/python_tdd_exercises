@@ -252,7 +252,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 
   the test is still green
 
-* I remove the other statements
+* I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -479,7 +479,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when t
 
   green, green, green again
 
-* I remove the other statements
+* I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 71
@@ -693,7 +693,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 
   the test is still green
 
-* I remove the other statements then "multiply not_" by every symbol in the parentheses
+* I remove the other statements in the :ref:`function<what is a function?>` then "multiply not_" by every symbol in the parentheses
 
   .. code-block:: python
     :lineno-start: 75
@@ -993,7 +993,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 
   the test is still green
 
-* I remove the other statements then "multiply not_" by the symbols in the parentheses
+* I remove the other statements in the :ref:`function<what is a function?>` then "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
     :lineno-start: 84
