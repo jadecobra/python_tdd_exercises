@@ -63,7 +63,7 @@ Here are questions you can answer after going through this chapter
 
 * :ref:`what is a Function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
-* :ref:`what happens after a functions returns<what happens after a function returns?>`
+* :ref:`what happens after a function returns?<test_what_happens_after_a_function_returns>`
 * :ref:`what is a constant function?<test_constant_function>`
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_functions_w_positional_arguments>`
@@ -839,8 +839,9 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 25
     :emphasize-lines: 4
+    :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
@@ -858,10 +859,12 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
   the test passes
 
-  * the test checks if the result of the call to ``src.functions.w_pass`` is :ref:`None<what is None?>`
+  * the test checks if the result of the call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is :ref:`None<what is None?>`
   * the :ref:`function<what is a function?>` definition simply says pass_ and the test passes
   * pass_ is a placeholder keyword which allows the :ref:`function<what is a function?>` definition to follow Python_ language rules
   * the test passes because all functions_ return :ref:`None<what is None?>` by default, as if the :ref:`function<what is a function?>` has an invisible line that says ``return None``, which leads me to the next test
+
+:ref:`I can make a function with pass<test_making_a_function_w_pass>`
 
 ----
 
@@ -882,7 +885,7 @@ I can make a function with a `return statement`_
 I add a new failing test in ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 7
+  :lineno-start: 21
   :emphasize-lines: 4-5
 
       def test_making_a_function_w_pass(self):
@@ -910,7 +913,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a new :ref:`function<what is a function?>` with pass_ to ``functions.py``
+I add the new :ref:`function<what is a function?>` with the pass_ keyword to ``functions.py``
 
 .. code-block:: python
   :linenos:
@@ -944,7 +947,9 @@ I change pass_ to a `return statement`_
 
 the test is still green.
 
-I have 2 functions_ with different statements in their body but they both return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if the :ref:`function<what is a function?>` has an invisible line that says ``return None``", which leads me to the next test
+I have 2 functions_ with different statements and they both return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if the :ref:`function<what is a function?>` has an invisible line that says ``return None``", which leads me to the next test
+
+:ref:`I can make a function with a return statement<test_making_a_function_w_return>`
 
 ----
 
@@ -965,7 +970,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 I add another failing test to ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 10
+  :lineno-start: 24
   :emphasize-lines: 4-5
 
       def test_making_a_function_w_return(self):
@@ -1016,16 +1021,155 @@ the test passes
 
 ----
 
-I add :ref:`None<what is None?>` to the `return statement`_
+* I add :ref:`None<what is None?>` to the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
+    :emphasize-text: None
+
+    def w_return_none():
+        return None
+
+  the test is still green
+
+* I change :ref:`None<what is None?>` to ``something``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
+    :emphasize-text: something
+
+    def w_return_none():
+        return 'something'
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'something' is not None
+
+* I undo the change and the test is green again
+
+I like to write my functions_ this way, saying exactly what it returns, so that anyone can tell what the :ref:`function<what is a function?>` returns without knowing what it does or even understanding Python_
+
+:ref:`I can make a function with return None<test_making_a_function_w_return_none>`
+
+----
+
+*********************************************************************************
+test_what_happens_after_a_function_returns
+*********************************************************************************
+
+The `return statement`_ is the last thing that runs in a :ref:`function<what is a function?>`, nothing after it runs.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test to ``test_functions.py``
+
+.. code-block:: python
+  :lineno-start: 27
+  :emphasize-lines: 4-5
+
+      def test_making_a_function_w_return_none(self):
+          self.assertIsNone(src.functions.w_return_none())
+
+      def test_what_happens_after_a_function_returns(self):
+          self.assertIsNone(src.functions.return_is_last())
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.functions' has no attribute 'return_is_last'
+
+``functions.py`` does not have a definition for it yet
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a definition to ``functions.py``
 
 .. code-block:: python
   :lineno-start: 9
-  :emphasize-lines: 2
+  :emphasize-lines: 5-6
 
   def w_return_none():
       return None
 
-I like to write my functions_ this way, saying exactly what it returns, that way anyone can tell what the :ref:`function<what is a function?>` returns without knowing what it does or even understanding Python_ code
+
+  def return_is_last():
+      return None
+
+the test passes
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* when I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
+
+    def return_is_last():
+        return 'something'
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'something' is not None
+
+* I add another `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+
+    def return_is_last():
+        return 'something'
+        return None
+
+  the terminal_ still shows the same :ref:`AssertionError<what causes AssertionError?>` because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, the second `return statement`_ will not run
+
+  .. NOTE::
+
+    The `Integrated Development Environment (IDE)`_ shows that the second return statement will not run by graying it out
+
+* I make ``return None``, the first statement
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2-3
+    :emphasize-text: None
+
+    def return_is_last():
+        return None
+        return 'something'
+
+  the test is green again
+
+:ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 ----
 
