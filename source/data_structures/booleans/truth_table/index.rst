@@ -267,8 +267,9 @@ start the project
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 7-8
+    :emphasize-text: AssertionError
 
-    class Testtruth_table(unittest.TestCase):
+    class TestTruthTable(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)

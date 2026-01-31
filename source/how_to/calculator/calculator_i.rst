@@ -248,8 +248,9 @@ start the project
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 7-8
+    :emphasize-text: AssertionError
 
-    class Testcalculator(unittest.TestCase):
+    class TestCalculator(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)

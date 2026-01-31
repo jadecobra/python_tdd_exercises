@@ -255,13 +255,14 @@ start the project
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_attribute_error.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 7-8
+    :emphasize-text: AssertionError
 
-    class Testfunctions(unittest.TestCase):
+    class TestAttributeError(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)

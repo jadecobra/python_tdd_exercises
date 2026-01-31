@@ -297,6 +297,7 @@ start the project
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 7-8
+    :emphasize-text: AssertionError
 
     class TestFunctions(unittest.TestCase):
 
@@ -658,8 +659,93 @@ the test passes
 
   the test passes
 
-* What if I want to test what happens when I add ``3`` to a number? Wait, no more, there has to be a better way. I can use a :ref:`function<what is a function?>`
+* What if I want to test what happens when I add ``3`` to a number? Wait! No more, please, there has to be a better way. I add a :ref:`function<what is a function?>` for the parts that repeat
 
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 2-3
+
+        def test_why_use_a_function(self):
+            def add_x(x=2, y=0):
+                return x + y
+
+            self.assertEqual(2+0, 2)
+
+* then I use it in the first :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 2
+    :emphasize-text: add_x
+
+            # self.assertEqual(2+0, 2)
+            self.assertEqual(add_x(y=0), 2)
+
+  the test is still green
+
+* I remove the comment and use the ``add_x`` :ref:`function<what is a function?>` in the other :ref:`assertions<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 5-13
+    :emphasize-text: add_x
+
+        def test_why_use_a_function(self):
+            def add_x(x=2, y=0):
+                return x + y
+
+            self.assertEqual(add_x(y=0), 2)
+            self.assertEqual(add_x(y=1), 3)
+            self.assertEqual(add_x(y=2), 4)
+            self.assertEqual(add_x(y=3), 5)
+            self.assertEqual(add_x(y=4), 6)
+            self.assertEqual(add_x(y=5), 7)
+            self.assertEqual(add_x(y=6), 8)
+            self.assertEqual(add_x(y=7), 9)
+            self.assertEqual(add_x(y=8), 10)
+
+  still green
+
+* Now if I want to test what happens when I add ``3`` to a number, I only have to make that change in one place, then change the results since those will change as well
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 2
+    :emphasize-text: 3
+
+        def test_why_use_a_function(self):
+            def add_x(x=3, y=0):
+                return x + y
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 3 != 2
+
+* I change the expectations for the :ref:`assertions<what is an assertion?>` one at a time
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 5-13
+
+        def test_why_use_a_function(self):
+            def add_x(x=3, y=0):
+                return x + y
+
+            self.assertEqual(add_x(y=0), 3)
+            self.assertEqual(add_x(y=1), 4)
+            self.assertEqual(add_x(y=2), 5)
+            self.assertEqual(add_x(y=3), 6)
+            self.assertEqual(add_x(y=4), 7)
+            self.assertEqual(add_x(y=5), 8)
+            self.assertEqual(add_x(y=6), 9)
+            self.assertEqual(add_x(y=7), 10)
+            self.assertEqual(add_x(y=8), 11)
+
+:ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the results changing<what is a variable?>`
+
+----
 
 *********************************************************************************
 test_making_a_function_w_pass
@@ -675,16 +761,25 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
 ----
 
-* I change ``test_failure`` to ``test_making_a_function_w_pass``
+* I add a new test
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-7
+    :lineno-start: 6
+    :emphasize-lines: 15-16
 
-    import unittest
+        def test_why_use_a_function(self):
+            def add_x(x=3, y=0):
+                return x + y
 
-
-    class TestFunctions(unittest.TestCase):
+            self.assertEqual(add_x(y=0), 3)
+            self.assertEqual(add_x(y=1), 4)
+            self.assertEqual(add_x(y=2), 5)
+            self.assertEqual(add_x(y=3), 6)
+            self.assertEqual(add_x(y=4), 7)
+            self.assertEqual(add_x(y=5), 8)
+            self.assertEqual(add_x(y=6), 9)
+            self.assertEqual(add_x(y=7), 10)
+            self.assertEqual(add_x(y=8), 11)
 
         def test_making_a_function_w_pass(self):
             self.assertIsNone(src.functions.w_pass())
@@ -701,8 +796,13 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 3
+    :lineno-start: 20
+    :emphasize-lines: 7
+    :emphasize-text: NameError
+
+        def test_making_a_function_w_pass(self):
+            self.assertIsNone(src.functions.w_pass())
+
 
     # Exceptions seen
     # AssertionError
