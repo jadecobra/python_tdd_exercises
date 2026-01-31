@@ -904,6 +904,7 @@ how to setup a project with uv
 * I remove ``main.py`` since I already have ``magic.py`` in the ``src`` folder_ for the main program_
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     rm main.py
 

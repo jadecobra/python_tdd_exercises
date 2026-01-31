@@ -188,7 +188,14 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file for the `Python packages`_ I need
+* I make a requirements file_ for the `Python packages`_ I need
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest" > requirements.txt
+
+  the terminal_ goes back to the command line and I add `pytest-watcher`_ to the file_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -212,6 +219,7 @@ start the project
   I remove ``main.py`` from the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     rm main.py
 

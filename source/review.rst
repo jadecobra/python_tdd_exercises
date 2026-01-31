@@ -93,7 +93,7 @@ AssertionError review
 functions review
 *********************************************************************************
 
-Here are the questions you can answer after going through this chapter
+Here are questions you can answer after going through this chapter
 
 * :ref:`what is a Function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`

@@ -5,7 +5,7 @@
 .. include:: links.rst
 
 .. _function: https://docs.python.org/3/glossary.html#term-function
-.. _functions: function_
+.. _functions: :ref:`function<what is a function?>`
 .. _argument: https://docs.python.org/3/glossary.html#term-argument
 .. _arguments: argument_
 .. _keyword arguments: arguments_
@@ -15,15 +15,15 @@
 what is a function?
 #################################################################################
 
-A function_ is code that is callable_. This means I can write statements that I can use to do something at a different time from when I write them. They can make code smaller, easier to read, test, reuse, maintain and improve.
+A function_ is code that is callable_, this means I can write statements to do something one time, and can use it do something at a different time from when I write them. They can make code simpler, easier to read, test, reuse, maintain and improve, all the good things.
 
-`Computer Programming`_ involves providing a process with input data and the process returning output data, for example
+Part of `Computer Programming`_ is sending input data to a process and getting output data, for example
 
 .. code-block:: python
 
     input_data -> process -> output_data
 
-I think of it like the concept of mapping a function ``f`` with inputs ``x`` and an output of ``y``
+I think of it like mapping a function ``f`` with inputs ``x`` and an output of ``y``
 
 .. math::
 
@@ -35,7 +35,7 @@ in other words
 
   function(input_data) -> output_data
 
-the function_ processes ``input_data`` and returns ``output_data`` as the result.
+the :ref:`function<what is a function?>` does something with ``input_data`` and gives me ``output_data`` as the result.
 
 In Python_ functions_ are made with the def_ keyword, a name, parentheses and a colon at the end
 
@@ -59,7 +59,7 @@ These are the tests I have by the end of the chapter
 questions about functions
 *********************************************************************************
 
-Here are the questions you can answer after going through this chapter
+Here are questions you can answer after going through this chapter
 
 * :ref:`what is a Function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
@@ -217,7 +217,14 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file for the `Python packages`_ I need
+* I make a requirements file_ for the `Python packages`_ I need
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest=" > requirements.txt
+
+  the terminal_ goes back to the command line and I add `pytest-watcher`_ to the file_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -242,6 +249,7 @@ start the project
   I remove ``main.py`` from the project
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     rm main.py
 
@@ -278,7 +286,7 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_functions.py:7: AssertionError
-    ========================= short test summary info ==========================
+    ======================== short test summary info =========================
     FAILED tests/test_functions.py::TestFunctions::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
@@ -312,10 +320,352 @@ start the project
 ----
 
 *********************************************************************************
+test_why_use_a_function
+*********************************************************************************
+
+Why use a :ref:`function<what is a function?>` when I can just write code to do the thing I want? Let's see
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I change ``test_failure`` to ``test_why_use_a_function`` with an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-4
+
+    class TestFunctions(unittest.TestCase):
+
+        def test_why_use_a_function(self):
+            self.assertEqual(1+0, 0)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 1 != 0
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation to match reality
+
+.. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 1
+
+          self.assertEqual(1+0, 1)
+
+the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3
+
+        def test_why_use_a_function(self):
+            self.assertEqual(1+0, 1)
+            self.assertEqual(1+1, 1)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 2 != 1
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1
+
+            self.assertEqual(1+1, 2)
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+        def test_why_use_a_function(self):
+            self.assertEqual(1+0, 1)
+            self.assertEqual(1+1, 2)
+            self.assertEqual(1+2, 2)
+
+  the terminal_ shows :ref:`AssertionError<What causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 3 != 2
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1
+
+            self.assertEqual(1+2, 3)
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 5
+
+        def test_why_use_a_function(self):
+            self.assertEqual(1+0, 1)
+            self.assertEqual(1+1, 2)
+            self.assertEqual(1+2, 3)
+            self.assertEqual(1+3, 3)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 4 != 3
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 1
+
+            self.assertEqual(1+3, 4)
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3
+
+            self.assertEqual(1+2, 3)
+            self.assertEqual(1+3, 4)
+            self.assertEqual(1+4, 4)
+
+
+    # Exceptions seen
+    # AssertionError
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 5 != 4
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 1
+
+            self.assertEqual(1+4, 5)
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3
+
+            self.assertEqual(1+3, 4)
+            self.assertEqual(1+4, 5)
+            self.assertEqual(1+5, 5)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 6 != 5
+
+* I change the expectation
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+            self.assertEqual(1+5, 6)
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
+
+            self.assertEqual(1+4, 5)
+            self.assertEqual(1+5, 6)
+            self.assertEqual(1+6, 6)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 7 != 6
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 1
+
+            self.assertEqual(1+6, 7)
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 3
+
+            self.assertEqual(1+5, 6)
+            self.assertEqual(1+6, 7)
+            self.assertEqual(1+7, 7)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 8 != 7
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 1
+
+            self.assertEqual(1+7, 8)
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+
+            self.assertEqual(1+6, 7)
+            self.assertEqual(1+7, 8)
+            self.assertEqual(1+8, 8)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 9 != 8
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 10
+
+        def test_why_use_a_function(self):
+            self.assertEqual(1+0, 1)
+            self.assertEqual(1+1, 2)
+            self.assertEqual(1+2, 3)
+            self.assertEqual(1+3, 4)
+            self.assertEqual(1+4, 5)
+            self.assertEqual(1+5, 6)
+            self.assertEqual(1+6, 7)
+            self.assertEqual(1+7, 8)
+            self.assertEqual(1+8, 9)
+
+  the test passes
+
+* all those :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``, what if I want to test what happens when I add a number to ``2``? I would have to   change ``1`` in 10 places. I change ``1`` to ``2`` in :ref:`test_why_use_a_function`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 2-10
+    :emphasize-text: 2
+
+        def test_why_use_a_function(self):
+            self.assertEqual(2+0, 1)
+            self.assertEqual(2+1, 2)
+            self.assertEqual(2+2, 3)
+            self.assertEqual(2+3, 4)
+            self.assertEqual(2+4, 5)
+            self.assertEqual(2+5, 6)
+            self.assertEqual(2+6, 7)
+            self.assertEqual(2+7, 8)
+            self.assertEqual(2+8, 9)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 2 != 1
+
+* I change the expectation of each :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 2-10
+    :emphasize-text: 2 3 4 5 6 7 8 9 10
+
+        def test_why_use_a_function(self):
+            self.assertEqual(2+0, 2)
+            self.assertEqual(2+1, 3)
+            self.assertEqual(2+2, 4)
+            self.assertEqual(2+3, 5)
+            self.assertEqual(2+4, 6)
+            self.assertEqual(2+5, 7)
+            self.assertEqual(2+6, 8)
+            self.assertEqual(2+7, 9)
+            self.assertEqual(2+8, 10)
+
+  the test passes
+
+* What if I want to test what happens when I add ``3`` to a number? Wait, no more, there has to be a better way. I can use a :ref:`function<what is a function?>`
+
+
+*********************************************************************************
 test_making_a_function_w_pass
 *********************************************************************************
 
-I can make a function_ with the pass_ keyword
+I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
 ----
 
@@ -397,7 +747,7 @@ I can make a function_ with the pass_ keyword
     # ModuleNotFoundError
     # AttributeError
 
-* I open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then I add a function_ definition
+* I open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then I add a :ref:`function<what is a function?>` definition
 
   .. code-block:: python
     :linenos:
@@ -409,9 +759,9 @@ I can make a function_ with the pass_ keyword
   the test passes
 
   * the test checks if the result of the call to ``src.functions.w_pass`` is :ref:`None<what is None?>`
-  * the function_ definition simply says pass_ and the test passes
-  * pass_ is a placeholder keyword which allows the function_ definition to follow Python_ language rules
-  * the test passes because all functions_ return :ref:`None<what is None?>` by default, as if the function_ has an invisible line that says ``return None``, which leads me to the next test
+  * the :ref:`function<what is a function?>` definition simply says pass_ and the test passes
+  * pass_ is a placeholder keyword which allows the :ref:`function<what is a function?>` definition to follow Python_ language rules
+  * the test passes because all functions_ return :ref:`None<what is None?>` by default, as if the :ref:`function<what is a function?>` has an invisible line that says ``return None``, which leads me to the next test
 
 ----
 
@@ -460,7 +810,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a new function_ with pass_ to ``functions.py``
+I add a new :ref:`function<what is a function?>` with pass_ to ``functions.py``
 
 .. code-block:: python
   :linenos:
@@ -494,7 +844,7 @@ I change pass_ to a `return statement`_
 
 the test is still green.
 
-I have 2 functions_ with different statements in their body but they both return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if the function_ has an invisible line that says ``return None``", which leads me to the next test
+I have 2 functions_ with different statements in their body but they both return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if the :ref:`function<what is a function?>` has an invisible line that says ``return None``", which leads me to the next test
 
 ----
 
@@ -502,7 +852,7 @@ I have 2 functions_ with different statements in their body but they both return
 test_making_a_function_w_return_none
 *********************************************************************************
 
-I can make a function_ with a `return statement`_ that says what the function_ returns
+I can make a :ref:`function<what is a function?>` with a `return statement`_ that says what the :ref:`function<what is a function?>` returns
 
 ----
 
@@ -543,7 +893,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a function_ definition to ``functions.py``
+I add a :ref:`function<what is a function?>` definition to ``functions.py``
 
 .. code-block:: python
   :lineno-start: 5
@@ -575,7 +925,7 @@ I add :ref:`None<what is None?>` to the `return statement`_
   def w_return_none():
       return None
 
-I like to write my functions_ this way, saying exactly what it returns, that way anyone can tell what the function_ returns without knowing what it does or even understanding Python_ code
+I like to write my functions_ this way, saying exactly what it returns, that way anyone can tell what the :ref:`function<what is a function?>` returns without knowing what it does or even understanding Python_ code
 
 ----
 
@@ -627,7 +977,7 @@ I have not added a definition for ``constant`` in ``functions.py`` in the ``src`
 
 ----
 
-I add the function_ to ``functions.py``
+I add the :ref:`function<what is a function?>` to ``functions.py``
 
 .. code-block:: python
   :lineno-start: 9
@@ -646,7 +996,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: None != 'the same thing'
 
-what the ``constant`` function_ returns and what the test expects are different. I change the `return statement`_ to make them match
+what the ``constant`` :ref:`function<what is a function?>` returns and what the test expects are different. I change the `return statement`_ to make them match
 
 .. code-block:: python
   :lineno-start: 13
@@ -657,7 +1007,7 @@ what the ``constant`` function_ returns and what the test expects are different.
 
 the test passes.
 
-A constant function_ always return the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the function_ is called less than 10 times, but who's counting?
+A constant :ref:`function<what is a function?>` always return the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times, but who's counting?
 
 ----
 
@@ -665,7 +1015,7 @@ A constant function_ always return the same thing when called, I can use them in
 test_identity_function
 *********************************************************************************
 
-The identity function_ returns its input as output, it's also in the :ref:`Truth Table<truth table>` chapter in :ref:`test_logical_identity`
+The identity :ref:`function<what is a function?>` returns its input as output, it's also in the :ref:`Truth Table<truth table>` chapter in :ref:`test_logical_identity`
 
 ----
 
@@ -707,7 +1057,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* I add a function_ to ``functions.py``
+* I add a :ref:`function<what is a function?>` to ``functions.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -740,7 +1090,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
     # AttributeError
     # TypeError
 
-* I add a name in parentheses for the ``identity`` function_ to take input in ``functions.py``
+* I add a name in parentheses for the ``identity`` :ref:`function<what is a function?>` to take input in ``functions.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -777,7 +1127,7 @@ The requirement for the :ref:`identity function<test_logical_identity>` is that 
 
     AssertionError: None != <class 'object'>
 
-  the function_ returns :ref:`None<what is None?>` instead of ``<class 'object'>`` in the second case, I am not all the way genius, yet
+  the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` instead of ``<class 'object'>`` in the second case, I am not all the way genius, yet
 
 * I change the `return statement`_ of ``identity`` in ``functions.py`` to match the expectation
 
@@ -842,7 +1192,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* I add a function_ to  ``functions.py``
+* I add a :ref:`function<what is a function?>` to  ``functions.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -861,7 +1211,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_positional_arguments() takes 0 positional arguments but 2 were given
 
-* I make the function_ take input by adding a name in parentheses
+* I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
   .. code-block:: python
     :lineno-start: 21
@@ -910,7 +1260,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* The problem with giving arguments this way is that they have to be in the order the function_ expects or I get a different behavior. I add a test to ``test_functions.py`` to show this
+* The problem with giving arguments this way is that they have to be in the order the :ref:`function<what is a function?>` expects or I get a different behavior. I add a test to ``test_functions.py`` to show this
 
   .. code-block:: python
     :lineno-start: 26
@@ -948,7 +1298,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes.
 
-The order matters when passing `positional arguments`_ to a function_, because they are processed based on the position or in the order they are given to the function_
+The order matters when passing `positional arguments`_ to a :ref:`function<what is a function?>`, because they are processed based on the position or in the order they are given to the :ref:`function<what is a function?>`
 
 ----
 
@@ -956,7 +1306,7 @@ The order matters when passing `positional arguments`_ to a function_, because t
 test_functions_w_keyword_arguments
 *********************************************************************************
 
-There is a problem with using positional arguments, the inputs must always be supplied in the right order, which means the function_ behaves in an unexpected way when it gets input out of order.
+There is a problem with using positional arguments, the inputs must always be supplied in the right order, which means the :ref:`function<what is a function?>` behaves in an unexpected way when it gets input out of order.
 
 I can use `Keyword Arguments`_ to make sure it behaves how I want even when I send input out of order
 
@@ -1006,7 +1356,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* I add a function_ definition to ``functions.py``
+* I add a :ref:`function<what is a function?>` definition to ``functions.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -1075,7 +1425,7 @@ In the first case I use :ref:`positional arguments<test_functions_w_positional_a
   w_positional_arguments('first', 'last')
   w_positional_arguments('last', 'first')
 
-in the second case I use `keyword arguments`_ which use the names of the :ref:`variables<what is a variable?>` in parentheses in the function_ definition when calling the it
+in the second case I use `keyword arguments`_ which use the names of the :ref:`variables<what is a variable?>` in parentheses in the :ref:`function<what is a function?>` definition when calling the it
 
 .. code-block:: python
 
@@ -1132,7 +1482,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
 
   the test passes. `Keyword Arguments`_ allow the input to be passed in any order
 
-* I can still call the function_ without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`. I add an :ref:`assertion<what is an assertion?>` to show this
+* I can still call the :ref:`function<what is a function?>` without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`. I add an :ref:`assertion<what is an assertion?>` to show this
 
   .. code-block:: python
     :lineno-start: 43
@@ -1248,7 +1598,7 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 
     AttributeError: module 'src.functions' has no attribute 'w_positional_and_keyword_arguments'
 
-* I add a function_ to ``functions.py``
+* I add a :ref:`function<what is a function?>` to ``functions.py``
 
   .. code-block:: python
     :lineno-start: 25
@@ -1267,7 +1617,7 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 
     TypeError: w_positional_and_keyword_arguments() got an unexpected keyword argument 'last_input'
 
-* I add the name to the function_ definition in parentheses in ``functions.py``
+* I add the name to the :ref:`function<what is a function?>` definition in parentheses in ``functions.py``
 
   .. code-block:: python
     :lineno-start: 29
@@ -1355,7 +1705,7 @@ what is different is the way I called them in the tests
 test_functions_w_default_arguments
 *********************************************************************************
 
-I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want a function_ to take inputs that are needed and inputs that are NOT needed
+I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want a :ref:`function<what is a function?>` to take inputs that are needed and inputs that are NOT needed
 
 ----
 
@@ -1402,7 +1752,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a function_ to ``functions.py``
+I add a :ref:`function<what is a function?>` to ``functions.py``
 
 .. code-block:: python
   :lineno-start: 29
@@ -1443,7 +1793,7 @@ the test passes
 
     TypeError: w_default_arguments() missing 1 required positional argument: 'last_name'
 
-  the ``last_name`` argument is needed when the function_ is called
+  the ``last_name`` argument is needed when the :ref:`function<what is a function?>` is called
 
 * I make the argument a choice by giving it a default value in ``functions.py``
 
@@ -1456,7 +1806,7 @@ the test passes
 
   the test passes.
 
-* Calling the function_ without the ``last_name`` argument
+* Calling the :ref:`function<what is a function?>` without the ``last_name`` argument
 
   .. code-block:: python
 
@@ -1468,7 +1818,7 @@ the test passes
 
     w_default_arguments('jane', last_name='doe')
 
-  I add another :ref:`assertion<what is an assertion?>` to ``test_functions.py`` to show that I can still call the function_ with different values
+  I add another :ref:`assertion<what is an assertion?>` to ``test_functions.py`` to show that I can still call the :ref:`function<what is a function?>` with different values
 
   .. code-block:: python
     :lineno-start: 62
@@ -1512,7 +1862,7 @@ the test passes
 test_functions_w_unknown_arguments
 *********************************************************************************
 
-I can make functions_ that take any number of :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>` arguments. This means I do not need to know how many inputs are sent to the function_ when it is called
+I can make functions_ that take any number of :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>` arguments. This means I do not need to know how many inputs are sent to the :ref:`function<what is a function?>` when it is called
 
 ----
 
@@ -1558,7 +1908,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* I add a function_ to ``functions.py``
+* I add a :ref:`function<what is a function?>` to ``functions.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -1577,7 +1927,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_unknown_arguments() got an unexpected keyword argument 'a'
 
-* I add the name to the function_ definition
+* I add the name to the :ref:`function<what is a function?>` definition
 
   .. code-block:: python
     :lineno-start: 37
@@ -1684,7 +2034,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test is still green
 
-* I want the function_ to return its input, remember the :ref:`identity function<test_identity_function>`, I change the `return statement`_
+* I want the :ref:`function<what is a function?>` to return its input, remember the :ref:`identity function<test_identity_function>`, I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 37
@@ -1719,7 +2069,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 how Python reads positional arguments
 --------------------------------------------------------------------------------------------
 
-I want to see what happens when I call the function_ with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add a new :ref:`assertion<what is an assertion?>`
+I want to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add a new :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :lineno-start: 73
@@ -1756,13 +2106,13 @@ I change the expectation to match
 
   # Exceptions seen
 
-the test passes. The function_ reads the :ref:`positional arguments<test_functions_w_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
+the test passes. The :ref:`function<what is a function?>` reads the :ref:`positional arguments<test_functions_w_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
 
 --------------------------------------------------------------------------------------------
 how Python reads keyword arguments
 --------------------------------------------------------------------------------------------
 
-I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the function_ with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
 .. code-block:: python
   :lineno-start: 79
@@ -1797,11 +2147,11 @@ I change the expectation to match
 
   # Exceptions seen
 
-the test passes. The function_ reads the :ref:`keyword arguments<test_functions_w_keyword_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
+the test passes. The :ref:`function<what is a function?>` reads the :ref:`keyword arguments<test_functions_w_keyword_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
 
 ----
 
-* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the function_ with no inputs
+* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
 
   .. code-block:: python
     :lineno-start: 83
@@ -1839,7 +2189,7 @@ the test passes. The function_ reads the :ref:`keyword arguments<test_functions_
 
   the test passes
 
-The function_ reads
+The :ref:`function<what is a function?>` reads
 
 * :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_ and
 * :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`.
@@ -1892,14 +2242,14 @@ I ran tests to show that I can make functions_ with
 as a reminder
 
 * :ref:`positional arguments<test_functions_w_positional_arguments>` must come before :ref:`keyword arguments<test_functions_w_keyword_arguments>`
-* I can use ``**kwargs`` when I do not know how many :ref:`keyword arguments<test_functions_w_keyword_arguments>` the function_ has to take
+* I can use ``**kwargs`` when I do not know how many :ref:`keyword arguments<test_functions_w_keyword_arguments>` the :ref:`function<what is a function?>` has to take
 * :ref:`keyword arguments<test_functions_w_keyword_arguments>` are represented as :ref:`dictionaries`
-* I can use ``*args`` when I do not know how many :ref:`positional arguments<test_functions_w_positional_arguments>` the function_ has to take
+* I can use ``*args`` when I do not know how many :ref:`positional arguments<test_functions_w_positional_arguments>` the :ref:`function<what is a function?>` has to take
 * :ref:`positional arguments<test_functions_w_positional_arguments>` are represented as tuples_
 * the :ref:`identity function<test_identity_function>` returns its input
 * :ref:`constant functions<test_constant_function>` always return the same thing
 * functions_ return :ref:`None<what is None?>` by default
-* nothing runs after the `return statement` in a function_
+* nothing runs after the `return statement` in a :ref:`function<what is a function?>`
 
 
 :ref:`How many questions can you answer above functions?<questions about functions>`
