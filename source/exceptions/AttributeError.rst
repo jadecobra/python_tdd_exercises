@@ -203,11 +203,12 @@ start the project
     :emphasize-lines: 1
 
     uv init
+
   the terminal_ shows
 
   .. code-block:: shell
 
-    (.venv) .../pumping_python/attribute_error
+    Initialized project `attribute_error`
 
   I remove ``main.py`` from the project
 
@@ -250,7 +251,7 @@ start the project
 
     tests/test_attribute_error.py:7: AssertionError
     ======================== short test summary info =========================
-    FAILED tests/test_functions.py::TestFunctions::test_failure - AssertionError: True is not false
+    FAILED tests/test_functions.py::TestAttributeError::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_attribute_error.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`

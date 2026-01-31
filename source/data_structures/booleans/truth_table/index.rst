@@ -210,11 +210,12 @@ start the project
     :emphasize-lines: 1
 
     uv init
+
   the terminal_ shows
 
   .. code-block:: shell
 
-    (.venv) .../pumping_python/truth_table
+    Initialized project `truth_table`
 
   I remove ``main.py`` from the project
 

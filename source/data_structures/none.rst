@@ -221,11 +221,12 @@ requirements
     :emphasize-lines: 1
 
     uv init
+
   the terminal_ shows
 
   .. code-block:: shell
 
-    (.venv) .../pumping_python/none
+    Initialized project `none`
 
   I remove ``main.py`` from the project
 
