@@ -34,6 +34,8 @@ I split my screen in the following ways depending on the use case, try different
 
 =================================================================================
 for references
+----
+
 =================================================================================
 
 ----
@@ -51,19 +53,17 @@ this helps when I do not have an extra screen. I can stack two editors on top of
 
 =================================================================================
 for testing
+----
+
 =================================================================================
 
 ----
 
 When working with just the `Integrated Development Environment (IDE)`_, I have the following Windows open
 
-----
-
 ---------------------------------------------------------------------------------
 explorer on left
 ---------------------------------------------------------------------------------
-
-----
 
 explorer on the left to see files/folder structure at once, and I can drag and drop files directly into the editor
 
@@ -72,13 +72,9 @@ explorer on the left to see files/folder structure at once, and I can drag and d
   :align: center
   :alt: Explorer with Editors
 
-----
-
 ---------------------------------------------------------------------------------
 2 editors
 ---------------------------------------------------------------------------------
-
-----
 
 editors side by side - `source code`_ on the left with tests on the right
 
@@ -87,13 +83,9 @@ editors side by side - `source code`_ on the left with tests on the right
   :align: center
   :alt: Editors side by side
 
-----
-
 ---------------------------------------------------------------------------------
 the terminal
 ---------------------------------------------------------------------------------
-
-----
 
 the terminal_ to show results of the tests
 

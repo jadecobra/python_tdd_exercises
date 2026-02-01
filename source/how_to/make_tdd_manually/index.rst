@@ -105,6 +105,8 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
 
 =================================================================================
 on Linux, MacOS and Windows with Window Subsystem for Linux computers
+----
+
 =================================================================================
 
 ----
@@ -137,6 +139,8 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 
 =================================================================================
 on Windows computers without Windows Subsystem for Linux
+----
+
 =================================================================================
 
 ----

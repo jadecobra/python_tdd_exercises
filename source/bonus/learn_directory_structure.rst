@@ -107,9 +107,15 @@ when it is not installed on the computer, the terminal_ shows
 
 when it is installed, the terminal_ shows a tree of directories_ and files_. The tree_ program_ shows how files_ and folders_ on a computer are related.
 
+----
+
 =================================================================================
 how to install tree
+----
+
 =================================================================================
+
+----
 
 * :ref:`how to install tree on Linux/Windows Subsystem for Linux`
 * :ref:`how to install tree on Mac OS`
@@ -176,9 +182,15 @@ how to install tree on Mac OS
 how to work in directories
 ********************************************************************************************
 
+----
+
 =================================================================================
 how to see the directory I am in
+----
+
 =================================================================================
+
+----
 
 I start by checking where I am in the terminal_. I can do this with the pwd_ program
 
@@ -202,9 +214,15 @@ pwd_ shows the path/address to the current folder_ I am in at the moment
   - If you see the same name, skip to the part where I create ``doe``
   - If you see a different name, continue to the next step :ref:`how to change directory`
 
+----
+
 =================================================================================
 how to change directory
+----
+
 =================================================================================
+
+----
 
 I use the `cd program`_ to change directories_
 
@@ -221,9 +239,15 @@ the terminal_ shows
 
 this means the folder_ does not exist where I am
 
+----
+
 =================================================================================
 how to make a directory
+----
+
 =================================================================================
+
+----
 
 * I use the `mkdir program`_ to make a `folder (directory)`_
 
@@ -316,7 +340,11 @@ how to make a directory
 
 =================================================================================
 how to see what is in a directory
+----
+
 =================================================================================
+
+----
 
 * I can use ls_ to show what is in a directory_ and see information about the files_ in it
 
@@ -424,7 +452,11 @@ how to see what is in a directory
 
 =================================================================================
 how to look at directory structure
+----
+
 =================================================================================
+
+----
 
 * I can use the `tree program`_ to see what files_ and folders_ are in a directory_. I type it in the terminal_ to see what is in the ``doe`` directory_
 
@@ -839,7 +871,11 @@ how to look at directory structure
 
 =================================================================================
 how to make an empty file
+----
+
 =================================================================================
+
+----
 
 I can make empty files_ in a folder_ with the touch_ program
 
@@ -1189,7 +1225,11 @@ I can make empty files_ in a folder_ with the touch_ program
 
 =================================================================================
 how to use directory relationships
+----
+
 =================================================================================
+
+----
 
 * I try to go from ``doe`` to ``baby`` in 1 step
 
@@ -1781,7 +1821,11 @@ how to use directory relationships
 
 =================================================================================
 how to remove a directory and all its contents
+----
+
 =================================================================================
+
+----
 
 * I remove ``doe`` and all its children and their children
 

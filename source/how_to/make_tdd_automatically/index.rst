@@ -96,18 +96,30 @@ These chapters show how I setup a Python_ :ref:`Test Driven Development environm
 
 they cover the following
 
+----
+
 =================================================================================
 on Linux, MacOS and Windows with Window Subsystem for Linux computers
+----
+
 =================================================================================
+
+----
 
 * :ref:`how to make a shell script`
 * :ref:`how to view the permissions of a file`
 * :ref:`how to make a shell script run as a command`
 * :ref:`how to run a shell script`
 
+----
+
 =================================================================================
 On Windows computers without Windows Subsystem for Linux
+----
+
 =================================================================================
+
+----
 
 * :ref:`how can I make a PowerShell script?<how to make a PowerShell script>`
 * :ref:`how can I run a PowerShell script?<how to run a PowerShell script>`

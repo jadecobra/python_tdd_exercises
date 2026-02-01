@@ -62,16 +62,28 @@ These chapters show how I add a variable to a program_ so it makes a Python_ :re
 
 they cover the following
 
+----
+
 =================================================================================
 on Linux, MacOS and Windows with Window Subsystem for Linux computers
+----
+
 =================================================================================
+
+----
 
 * :ref:`how to use a variable in a shell script`
 * :ref:`how to call a shell script with arguments`
 
+----
+
 =================================================================================
 On Windows computers without Windows Subsystem for Linux
+----
+
 =================================================================================
+
+----
 
 * :ref:`how to use a variable in a PowerShell script`
 * :ref:`how to call a PowerShell script with arguments`

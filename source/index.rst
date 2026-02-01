@@ -99,13 +99,13 @@ table of contents
   setup<how_to/setup/index>
   make TDD project 1<how_to/make_tdd_manually/index>
   what is an assertion?<exceptions/AssertionError>
-  what is a function?<functions>
+  what is a function?<functions/index>
   what causes AttributeError?<exceptions/AttributeError>
   pass values<how_to/pass_values>
   data_structures/none
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
-  make a calculator<how_to/calculator/calculator_i>
+  make a calculator<how_to/calculator/calculator_i/index>
   make TDD project 2<how_to/make_tdd_automatically/index>
   handling Exceptions<how_to/exception_handling/index>
   exceptions/type_error/index

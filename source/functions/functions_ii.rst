@@ -12,7 +12,7 @@
 .. _positional arguments: arguments_
 
 #################################################################################
-what is a function?
+functions 2
 #################################################################################
 
 A function_ is code that is callable_, this means I can write statements to do something one time, and can use it do something at a different time from when I write them. They can make code simpler, easier to read, test, reuse, maintain and improve, all the good things.
@@ -330,6 +330,8 @@ Why use a :ref:`function<what is a function?>` when I can just write code to do 
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -358,6 +360,8 @@ Why use a :ref:`function<what is a function?>` when I can just write code to do 
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -376,6 +380,8 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
+----
+
 =================================================================================
 
 ----
@@ -757,6 +763,8 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -812,6 +820,8 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -878,6 +888,8 @@ I can make a function with a `return statement`_
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -909,6 +921,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -932,6 +946,8 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
+----
+
 =================================================================================
 
 ----
@@ -963,6 +979,8 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -994,6 +1012,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -1017,6 +1037,8 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
+----
+
 =================================================================================
 
 ----
@@ -1067,6 +1089,8 @@ The `return statement`_ is the last thing that runs in a :ref:`function<what is 
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -1098,6 +1122,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -1121,6 +1147,8 @@ the test passes
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -1183,6 +1211,8 @@ constant functions_ always return the same thing when they are called
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -1217,6 +1247,8 @@ I have not added a definition for ``constant`` in ``functions.py`` in the ``src`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -1270,6 +1302,8 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -1302,6 +1336,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -1355,6 +1391,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
+----
+
 =================================================================================
 
 ----
@@ -1406,6 +1444,8 @@ test_functions_w_positional_arguments
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -1439,6 +1479,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -1507,6 +1549,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
+----
+
 =================================================================================
 
 ----
@@ -1602,6 +1646,8 @@ I can use `Keyword Arguments`_ to make sure it behaves how I want even when I se
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -1645,6 +1691,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -1713,6 +1761,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
+----
+
 =================================================================================
 
 ----
@@ -1857,6 +1907,8 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -1909,6 +1961,8 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -2041,6 +2095,8 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -2078,6 +2134,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -2101,6 +2159,8 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
+----
+
 =================================================================================
 
 ----
@@ -2248,6 +2308,8 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
 =================================================================================
 :red:`RED`: make it fail
+----
+
 =================================================================================
 
 ----
@@ -2289,6 +2351,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
+----
+
 =================================================================================
 
 ----
@@ -2393,6 +2457,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
+----
+
 =================================================================================
 
 ----
@@ -2441,13 +2507,9 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes
 
-----
-
 --------------------------------------------------------------------------------------------
 how Python reads positional arguments
 --------------------------------------------------------------------------------------------
-
-----
 
 I want to see what happens when I call ``w_unknown_arguments`` with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add an :ref:`assertion<what is an assertion?>`
 
@@ -2492,13 +2554,9 @@ I change the expectation to match
 
 the test passes. The :ref:`function<what is a function?>` reads the :ref:`positional arguments<test_functions_w_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
 
-----
-
 --------------------------------------------------------------------------------------------
 how Python reads keyword arguments
 --------------------------------------------------------------------------------------------
-
-----
 
 
 I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
@@ -2541,13 +2599,9 @@ I change the expectation to match
 
 the test passes. The :ref:`function<what is a function?>` reads the :ref:`keyword arguments<test_functions_w_keyword_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
 
-----
-
 --------------------------------------------------------------------------------------------
 how Python reads positional and keyword arguments
 --------------------------------------------------------------------------------------------
-
-----
 
 * I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
 
