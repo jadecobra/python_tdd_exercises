@@ -2,7 +2,7 @@
   :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with one script in just 5 minutes.
   :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watcher for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
 
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 #################################################################################
 how to make a Python Test Driven Development environment automatically
@@ -20,7 +20,7 @@ preview
 
 Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to make a Python Test Driven Development environment automatically>`, it is only 28 lines of code, with spaces
 
-.. literalinclude:: ../code/make_tdd/makePythonTddNoVariables.sh
+.. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.sh
   :language: shell
   :linenos:
 

@@ -97,7 +97,7 @@ table of contents
   self
   conventions
   setup<how_to/setup/index>
-  make TDD project 1<make_tdd_manually/index>
+  make TDD project 1<make_tdd/make_tdd_manually/index>
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions/index>
   what causes AttributeError?<exceptions/AttributeError>
@@ -106,17 +106,17 @@ table of contents
   data_structures/booleans/index
   truth table<data_structures/booleans/truth_table/index>
   make a calculator<calculator/calculator_i/index>
-  make TDD project 2<make_tdd_automatically/index>
+  make TDD project 2<make_tdd/make_tdd_automatically/index>
   handling Exceptions<exceptions/exception_handling/index>
   exceptions/type_error/index
   data_structures/lists/index
   data_structures/dictionaries/index
-  make TDD project 3<how_to/make_tdd_automatically_w_variables/index>
+  make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
   make a person<how_to/make_person>
   classes/index
   what is a module?<exceptions/ModuleNotFoundError>
   questions the book answers<review>
-  make TDD project 1<make_tdd_manually/index>
+  make TDD project 1<make_tdd/make_tdd_manually/index>
 
   dot_notation
   exceptions/index
