@@ -27,7 +27,7 @@ the chapters
   setup my computer<setup/index>
   make TDD manually<make_tdd_manually/index>
   pass values<pass_values>
-  make a calculator<calculator/index>
+  make a calculator<../calculator/index>
   make TDD automatically<make_tdd_automatically/index>
   handle Exceptions<exception_handling/index>
   make TDD w variables<make_tdd_automatically_w_variables/index>
