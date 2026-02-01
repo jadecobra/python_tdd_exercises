@@ -255,9 +255,13 @@ the test passes
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
+----
+
 ---------------------------------------------------------------------------------
 what is a for loop?
 ---------------------------------------------------------------------------------
+
+----
 
 I just called the :ref:`append method<test_append_adds_item_to_end_of_a_list>` 10 times in a row, the only things that changed were the numbers I added to the :ref:`list<lists>`, there is a better way. I can use a `for loop`_.
 
