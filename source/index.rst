@@ -138,7 +138,3 @@ table of contents
 .. raw:: html
 
   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1uJ4BgylqE1PJ6Ua14laJf?utm_source=generator" width="560" height="375" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-----
-
-:ref:`search <search>`
