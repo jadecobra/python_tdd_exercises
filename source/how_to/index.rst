@@ -24,14 +24,14 @@ the chapters
   :titlesonly:
   :maxdepth: 1
 
-  setup my computer<setup/index>
-  make TDD manually<make_tdd_manually/index>
-  pass values<pass_values>
-  make a calculator<../calculator/index>
-  make TDD automatically<make_tdd_automatically/index>
-  handle Exceptions<../exceptions/exception_handling/index>
-  make TDD w variables<make_tdd_automatically_w_variables/index>
-  make a person<make_person>
+  how to setup my computer<setup/index>
+  how to make TDD manually<make_tdd_manually/index>
+  how to pass values<pass_values>
+  how to make a calculator<../calculator/index>
+  how to make TDD automatically<make_tdd_automatically/index>
+  how to handle Exceptions<../exceptions/exception_handling/index>
+  how to make TDD w variables<make_tdd_automatically_w_variables/index>
+  how to make a person<make_person>
 
 ----
 
