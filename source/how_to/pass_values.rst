@@ -475,7 +475,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
 ----
 
-The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about the input it gets, it always returns ``'I received: hello'`` when called. I want it to return the value it gets as part of the message.
+The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I received: hello'`` when called. I want it to return the value it gets as part of the message.
 
 ---------------------------------------------------------------------------------
 :red:`RED`: make it fail

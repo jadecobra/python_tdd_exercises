@@ -351,7 +351,7 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 
   the test is still green!
 
-:ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>` it does not matter what inputs it gets
+:ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>` it does not care about what it gets
 
 ----
 

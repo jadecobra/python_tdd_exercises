@@ -349,7 +349,7 @@ I need to add a definition for it
 
   the test passes.
 
-``logical_identity`` returns its input as output. I think of it as a passthrough :ref:`function<what is a function?>`, it does not process the input it gets, it just passes it along.
+``logical_identity`` returns its input as output. I think of it as a passthrough :ref:`function<what is a function?>`, it does not do anything with what it gets, it only passes it along.
 
 ----
 

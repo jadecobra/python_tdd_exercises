@@ -1051,7 +1051,7 @@ the test passes
 
 * I undo the change and the test is green again
 
-I like to write my functions_ this way, saying exactly what it returns, so that anyone can tell what the :ref:`function<what is a function?>` returns without knowing what it does or even understanding Python_
+I like to write my functions_ this way, so that anyone can tell what the :ref:`function<what is a function?>` returns without knowing what it does or even understanding Python_
 
 :ref:`I can make a function with return None<test_making_a_function_w_return_none>`
 
@@ -1167,7 +1167,7 @@ the test passes
         return None
         return 'something'
 
-  the test is green again
+  the test is green again because
 
 :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
@@ -1177,7 +1177,7 @@ the test passes
 test_constant_function
 *********************************************************************************
 
-constant functions_ always returns the same thing when they are called
+constant functions_ always return the same thing when they are called
 
 ----
 
@@ -1190,11 +1190,11 @@ constant functions_ always returns the same thing when they are called
 I add a test to ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 13
+  :lineno-start: 30
   :emphasize-lines: 4-8
 
-      def test_making_a_function_w_return_none(self):
-          self.assertIsNone(src.functions.w_return_none())
+      def test_what_happens_after_a_function_returns(self):
+          self.assertIsNone(src.functions.return_is_last())
 
       def test_constant_function(self):
           self.assertEqual(
@@ -1221,37 +1221,42 @@ I have not added a definition for ``constant`` in ``functions.py`` in the ``src`
 
 ----
 
-I add the :ref:`function<what is a function?>` to ``functions.py``
+* I add the :ref:`function<what is a function?>` to ``functions.py``
 
-.. code-block:: python
-  :lineno-start: 9
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 6-7
 
-  def w_return_none():
-      return None
+    def return_is_last():
+        return None
+        return 'something'
 
 
-  def constant():
-      return None
+    def constant():
+        return None
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: None != 'the same thing'
+    AssertionError: None != 'the same thing'
 
-what the ``constant`` :ref:`function<what is a function?>` returns and what the test expects are different. I change the `return statement`_ to make them match
+  what the ``constant`` :ref:`function<what is a function?>` returns and what the test expects are different
 
-.. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 2
+* I change the `return statement`_ to make them the same
 
-  def constant():
-      return 'the same thing'
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
-the test passes.
+    def constant():
+        return 'the same thing'
+
+  the test passes
 
 A constant :ref:`function<what is a function?>` always return the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times, but who's counting?
+
+:ref:`a constant function always returns the same thing<test_constant_function>`
 
 ----
 
@@ -1272,7 +1277,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 I add a failing test in ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 16
+  :lineno-start: 33
   :emphasize-lines: 7-8
 
       def test_constant_function(self):
@@ -1304,7 +1309,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I add a :ref:`function<what is a function?>` to ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 18
     :emphasize-lines: 5-6
 
     def constant():
@@ -1325,8 +1330,9 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 43
     :emphasize-lines: 5
+    :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
@@ -1337,7 +1343,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I add a name in parentheses for the ``identity`` :ref:`function<what is a function?>` to take input in ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 22
     :emphasize-lines: 1
 
     def identity(the_input):
@@ -1358,7 +1364,7 @@ The requirement for the :ref:`identity function<test_logical_identity>` is that 
 * I add a new :ref:`assertion<what is an assertion?>` to ``test_identity_function`` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 22
+    :lineno-start: 39
     :emphasize-lines: 3
 
     def test_identity_function(self):
@@ -1371,12 +1377,12 @@ The requirement for the :ref:`identity function<test_logical_identity>` is that 
 
     AssertionError: None != <class 'object'>
 
-  the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` instead of ``<class 'object'>`` in the second case, I am not all the way genius, yet
+  the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` not ``<class 'object'>`` in the second case. I am not all the way genius, yet
 
-* I change the `return statement`_ of ``identity`` in ``functions.py`` to match the expectation
+* I make the ``identity`` :ref:`function<what is a function?>` in ``functions.py`` return what it gets
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 22
     :emphasize-lines: 2
 
     def identity(the_input):
@@ -1384,18 +1390,19 @@ The requirement for the :ref:`identity function<test_logical_identity>` is that 
 
   the test passes
 
-I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing connections to see if my test is connected to what I am testing. If I can send input and received the same input back then I can start making changes to see what results I get.
+I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to see if my test is connected to what I am testing. If I can send input and received the same input back then I can start making changes to see what results I get.
+
+:ref:`The Identity Function returns its input as output<test_identity_function>`
 
 ----
 
-This :ref:`Identity Function<test_identity_function>` takes one input, the following tests are for functions_ that take more than one.
-
-----
+So far, the :ref:`functions<what is a function?>` take no input or one input, the following tests use functions_ that take more than one input.
 
 *********************************************************************************
 test_functions_w_positional_arguments
 *********************************************************************************
 
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -1406,7 +1413,7 @@ test_functions_w_positional_arguments
 I add a failing test to ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 22
+  :lineno-start: 39
   :emphasize-lines: 5-9
 
       def test_identity_function(self):
@@ -1439,7 +1446,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I add a :ref:`function<what is a function?>` to  ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 22
     :emphasize-lines: 5-6
 
     def identity(the_input):
@@ -1458,7 +1465,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 26
     :emphasize-lines: 1
 
     def w_positional_arguments(first_input):
@@ -1473,7 +1480,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I make ``w_positional_arguments`` take another input by adding another name in parentheses
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 26
     :emphasize-lines: 1
 
     def w_positional_arguments(first_input, last_input):
@@ -1485,10 +1492,10 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AssertionError: None != ('first', 'last')
 
-* I change the `return statement`_
+* I change the `return statement`_ to make the :ref:`function<what is a function?>` return what it gets
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 26
     :emphasize-lines: 2
 
     def w_positional_arguments(first_input, last_input):
@@ -1504,10 +1511,10 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* The problem with giving arguments this way is that they have to be in the order the :ref:`function<what is a function?>` expects or I get a different behavior. I add a test to ``test_functions.py`` to show this
+* The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get a different behavior. I add a test to ``test_functions.py`` to show this
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 43
     :emphasize-lines: 6-9
 
         def test_functions_w_positional_arguments(self):
@@ -1542,7 +1549,15 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes.
 
-The order matters when passing `positional arguments`_ to a :ref:`function<what is a function?>`, because they are processed based on the position or in the order they are given to the :ref:`function<what is a function?>`
+  - the return statement of ``w_positional_arguments`` is ``return (first_input, last_input)
+  - In the first case when the test calls ``src.functions.w_positional_arguments('first', 'last')``, it is calling ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_, with 2 strings - ``'first'`` and ``'last'`` as input
+  - when ``w_positional_arguments`` gets called with ``'first'`` and ``'last'`` as input it returns ``('first', 'last')`` because ``first_input`` is ``'first'`` and ``last_input`` is ``'last'`` in this case
+  - In the second case when the test calls ``src.functions.w_positional_arguments('last', 'first')``, it is calling ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_, with 2 strings - ``'first'`` and ``'last'`` as input
+  - when ``w_positional_arguments`` gets called with ``'last'`` and ``'first'`` as input it returns ``('last', 'first')`` because ``first_input`` is ``'last'`` and ``last_input`` is ``'first'`` in this case
+
+The order matters when passing `positional arguments`_ to a :ref:`function<what is a function?>`, because they are used in the order they are given to the :ref:`function<what is a function?>`
+
+:ref:`I can call a function with positional arguments<test_functions_w_positional_arguments>`
 
 ----
 
