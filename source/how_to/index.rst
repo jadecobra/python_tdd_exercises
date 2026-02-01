@@ -29,7 +29,7 @@ the chapters
   pass values<pass_values>
   make a calculator<../calculator/index>
   make TDD automatically<make_tdd_automatically/index>
-  handle Exceptions<exception_handling/index>
+  handle Exceptions<../exceptions/exception_handling/index>
   make TDD w variables<make_tdd_automatically_w_variables/index>
   make a person<make_person>
 

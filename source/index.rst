@@ -92,7 +92,7 @@ table of contents
 
 .. toctree::
   :titlesonly:
-  :maxdepth: 1
+  :maxdepth: 2
 
   self
   conventions
@@ -107,7 +107,7 @@ table of contents
   truth table<data_structures/booleans/truth_table/index>
   make a calculator<calculator/calculator_i/index>
   make TDD project 2<how_to/make_tdd_automatically/index>
-  handling Exceptions<how_to/exception_handling/index>
+  handling Exceptions<exceptions/exception_handling/index>
   exceptions/type_error/index
   data_structures/lists/index
   data_structures/dictionaries/index

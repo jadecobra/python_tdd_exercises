@@ -26,7 +26,7 @@ The tests in this chapter cover the following Exceptions_
   ModuleNotFoundError
   AttributeError
   type_error/index
-  handling Exceptions</how_to/exception_handling/index>
+  handling Exceptions<exception_handling/index>
 
 *********************************************************************************
 questions about Exceptions
