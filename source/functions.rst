@@ -1857,7 +1857,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 test_functions_w_positional_and_keyword_arguments
 *********************************************************************************
 
-I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and `keyword arguments<test_functions_w_keyword_arguments>`
+I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
 ----
 
@@ -1870,24 +1870,37 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 I add a failing test to ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 49
-  :emphasize-lines: 6-12
+  :lineno-start: 53
+  :emphasize-lines: 19-25
 
-          self.assertEqual(
-              src.functions.w_keyword_arguments('last', 'first'),
-              ('last', 'first')
-          )
+        def test_functions_w_keyword_arguments(self):
+            self.assertEqual(
+                src.functions.w_keyword_arguments(
+                    first_input='first', last_input='last',
+                ),
+                ('first', 'last')
+            )
+            self.assertEqual(
+                src.functions.w_keyword_arguments(
+                    last_input='last', first_input='first',
+                ),
+                ('first', 'last')
+            )
+            self.assertEqual(
+                src.functions.w_keyword_arguments('last', 'first'),
+                ('last', 'first')
+            )
 
-      def test_functions_w_positional_and_keyword_arguments(self):
-          self.assertEqual(
-              src.functions.w_positional_and_keyword_arguments(
-                  last_input='last', 'first',
-              ),
-              ('first', 'last')
-          )
+        def test_functions_w_positional_and_keyword_arguments(self):
+            self.assertEqual(
+                src.functions.w_positional_and_keyword_arguments(
+                    last_input='last', 'first',
+                ),
+                ('first', 'last')
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
 
 the terminal_ shows SyntaxError_
@@ -1896,7 +1909,7 @@ the terminal_ shows SyntaxError_
 
   SyntaxError: positional argument follows keyword argument
 
-I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` before a :ref:`positional argument<test_functions_w_positional_arguments>` in Python_
+I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before :ref:`positional arguments<test_functions_w_positional_arguments>`
 
 ----
 
@@ -1909,7 +1922,7 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 * I change the order of the arguments to follow Python_ rules
 
   .. code-block:: python
-    :lineno-start: 54
+    :lineno-start: 71
     :emphasize-lines: 4
 
         def test_functions_w_positional_and_keyword_arguments(self):
@@ -1929,7 +1942,7 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 * I add a :ref:`function<what is a function?>` to ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 30
     :emphasize-lines: 5-6
 
       def w_keyword_arguments(first_input, last_input):
@@ -1948,8 +1961,9 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 * I add the name to the :ref:`function<what is a function?>` definition in parentheses in ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 34
     :emphasize-lines: 1
+    :emphasize-text: last_input
 
     def w_positional_and_keyword_arguments(last_input):
         return None
@@ -1963,8 +1977,9 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 * I add another name in parentheses
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 34
     :emphasize-lines: 1
+    :emphasize-text: first_input
 
     def w_positional_and_keyword_arguments(last_input, first_input):
         return None
@@ -1975,13 +1990,14 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 
     TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last_input'
 
-  Python_ cannot tell the difference between the 2 values since ``last_input`` is both the second positional argument and passed in as a keyword argument
+    I cannot put :ref:`positional arguments<test_functions_w_positional_arguments>` after :ref:`keyword arguments<test_functions_w_keyword_arguments>`. Python_ cannot tell the difference between the 2 values because ``last_input`` is both the second positional argument and passed in as a keyword argument
 
 * I change the order of the names in parentheses
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 34
     :emphasize-lines: 1
+    :emphasize-text: first_input
 
     def w_positional_and_keyword_arguments(first_input, last_input):
         return None
@@ -1992,12 +2008,10 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 
     AssertionError: None != ('first', 'last')
 
-  I cannot put :ref:`positional arguments<test_functions_w_positional_arguments>` after :ref:`keyword arguments<test_functions_w_keyword_arguments>`
-
 * I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 34
     :emphasize-lines: 2
 
     def w_positional_and_keyword_arguments(first_input, last_input):
@@ -2005,27 +2019,7 @@ I cannot put a :ref:`keyword argument<test_functions_w_keyword_arguments>` befor
 
   the test passes.
 
-There is no difference between the last 3 functions except their names, they all have this pattern
-
-.. code-block:: python
-
-  def a_name(first_input, last_input):
-      return first_input, last_input
-
-what is different is the way I called them in the tests
-
-.. code-block:: python
-
-  w_positional_arguments('first', 'last')
-  w_positional_arguments('last', 'first')
-  w_keyword_arguments(first_input='first', last_input='last')
-  w_keyword_arguments(last_input='last', first_input='first')
-  w_keyword_arguments('last', 'first')
-  w_positional_and_keyword_arguments('first', last_input='last')
-
-.. TIP::
-
-  as a rule of thumb I use :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I have 2 or inputs so I do not have to remember the order
+:ref:`I can call a function with positional and keyword arguments<test_functions_w_positional_and_keyword_arguments>`
 
 ----
 
@@ -2183,6 +2177,44 @@ the test passes
             )
 
   the test passes
+
+.. NOTE::
+
+  ``w_keyword_arguments``, ``w_positional_arguments``,  ``w_positional_and_keyword_arguments`` and ``w_default_arguments`` are the same functions_, they always
+
+  .. code-block:: python
+
+    return first_input, last_input
+
+  Their names are different
+
+  .. code-block:: python
+    :emphasize-text: positional keyword
+
+    def w_positional_arguments(first_input, last_input):
+    def w_keyword_arguments(first_input, last_input):
+    def w_positional_and_keyword_arguments(first_input, last_input):
+    def w_default_arguments(first_name, last_name='doe'):
+
+  ``w_default_arguments`` uses different names for the input and has a default value
+
+  The difference that matters in the tests is in how I call the functions_
+
+  .. code-block:: python
+
+    w_positional_arguments('first', 'last')
+    w_positional_arguments('last', 'first')
+    w_keyword_arguments(first_input='first', last_input='last')
+    w_keyword_arguments(last_input='last', first_input='first')
+    w_keyword_arguments('last', 'first')
+    w_positional_and_keyword_arguments('first', last_input='last')
+    w_default_arguments('jane', last_name='doe')
+    w_default_arguments('jane')
+    w_default_arguments('joe', 'blow')
+
+.. TIP::
+
+  as a rule of thumb I use :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I have 2 or inputs so I do not have to remember the order
 
 ----
 
