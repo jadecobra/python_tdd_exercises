@@ -166,3 +166,4 @@ remove.txt
 .vscode/
 .DS_Store
 AWSCLIV2.pkg
+uv.lock
