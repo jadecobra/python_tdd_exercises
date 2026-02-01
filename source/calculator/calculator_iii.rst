@@ -2,7 +2,7 @@
   :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
   :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator 1n python step-by-step, python test driven development with pytest, python programming projects for beginners
 
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 #################################################################################
 how to make a calculator 3
@@ -18,7 +18,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../../code/calculator/tests/test_calculator_exceptions_programs.py
+.. literalinclude:: ../code/calculator/tests/test_calculator_exceptions_programs.py
   :language: python
   :linenos:
 
@@ -95,8 +95,6 @@ test_division_handles_zero_division_error
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -133,8 +131,6 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -173,8 +169,6 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----

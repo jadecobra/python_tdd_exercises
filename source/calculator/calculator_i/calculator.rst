@@ -2,7 +2,7 @@
   :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
   :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator 1n python step-by-step, python test driven development with pytest, python programming projects for beginners
 
-.. include:: ../../../links.rst
+.. include:: ../../links.rst
 
 #################################################################################
 how to make a calculator 1
@@ -20,7 +20,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../../code/calculator/tests/test_calculator.py
+.. literalinclude:: ../code/calculator/tests/test_calculator.py
   :language: python
   :linenos:
 
@@ -304,8 +304,6 @@ test_addition
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -346,8 +344,6 @@ test_addition
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -486,8 +482,6 @@ test_addition
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----
@@ -1175,8 +1169,6 @@ test_subtraction
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -1226,8 +1218,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -1315,8 +1305,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----
@@ -1521,8 +1509,6 @@ test_multiplication
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -1564,8 +1550,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -1609,8 +1593,6 @@ test_division
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -1652,8 +1634,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -1707,8 +1687,6 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -1726,8 +1704,6 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----

@@ -2,7 +2,7 @@
   :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
   :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator 1n python step-by-step, python test driven development with pytest, python programming projects for beginners
 
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 #################################################################################
 how to make a calculator 8
@@ -83,8 +83,6 @@ test_calculator_w_getattribute
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -143,8 +141,6 @@ test_calculator_w_getattribute
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -201,8 +197,6 @@ test_calculator_w_getattribute
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -1099,8 +1093,6 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -1131,8 +1123,6 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -1827,8 +1817,6 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----

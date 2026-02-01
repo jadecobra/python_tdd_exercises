@@ -2,7 +2,7 @@
   :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
   :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator 1n python step-by-step, python test driven development with pytest, python programming projects for beginners
 
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 #################################################################################
 how to make a calculator 5
@@ -18,7 +18,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../../code/calculator/tests/test_calculator_lists.py
+.. literalinclude:: ../code/calculator/tests/test_calculator_lists.py
   :language: python
   :linenos:
 
@@ -96,8 +96,6 @@ I want to see what happens when I send a :ref:`list<lists>` as input to the :ref
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -134,8 +132,6 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -157,8 +153,6 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----
@@ -554,8 +548,6 @@ I can use a :ref:`list<lists>` to test the :ref:`calculator functions<how to mak
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -592,8 +584,6 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -615,8 +605,6 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----
@@ -871,8 +859,6 @@ It is important to note that the star expression always gives the items from the
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -906,8 +892,6 @@ the terminal_ shows :ref:`TypeError`
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -930,8 +914,6 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----

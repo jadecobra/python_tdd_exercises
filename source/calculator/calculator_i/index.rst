@@ -2,7 +2,7 @@
   :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
   :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator 1n python step-by-step, python test driven development with pytest, python programming projects for beginners
 
-.. include:: ../../../links.rst
+.. include:: ../../links.rst
 
 #################################################################################
 how to make a calculator

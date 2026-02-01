@@ -2,7 +2,7 @@
   :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
   :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator 1n python step-by-step, python test driven development with pytest, python programming projects for beginners
 
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 #################################################################################
 how to make a calculator 6
@@ -18,7 +18,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../../code/calculator/tests/test_calculator_list_comprehensions.py
+.. literalinclude:: ../code/calculator/tests/test_calculator_list_comprehensions.py
   :language: python
   :linenos:
 
@@ -98,8 +98,6 @@ I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I had
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----
@@ -134,8 +132,6 @@ Since I know how to use a `for loop`_ and :ref:`list comprehensions`, I can do t
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -180,8 +176,6 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -256,8 +250,6 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----

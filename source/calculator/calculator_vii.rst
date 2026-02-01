@@ -2,7 +2,7 @@
   :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
   :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator 1n python step-by-step, python test driven development with pytest, python programming projects for beginners
 
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 #################################################################################
 how to make a calculator 7
@@ -83,8 +83,6 @@ test_calculator_w_dictionary_items
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -124,8 +122,6 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -147,8 +143,6 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----
@@ -603,8 +597,6 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
 =================================================================================
 :green:`RED`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -654,8 +646,6 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -775,8 +765,6 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----

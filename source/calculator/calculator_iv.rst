@@ -2,7 +2,7 @@
   :description: Learn Test-Driven Development in Python by building a calculator from scratch. This tutorial covers writing tests, handling exceptions, and refactoring.
   :keywords: Jacob Itegboje, python tdd calculator tutorial, test driven development python example, python calculator tutorial for beginners, python tdd workflow, python unit testing tutorial, how to build a calculator 1n python step-by-step, python test driven development with pytest, python programming projects for beginners
 
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 .. _TypeError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#TypeError
 
@@ -20,7 +20,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../../code/calculator/tests/test_calculator_type_error.py
+.. literalinclude:: ../code/calculator/tests/test_calculator_type_error.py
   :language: python
   :linenos:
 
@@ -97,8 +97,6 @@ test_calculator_raises_type_error
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -140,8 +138,6 @@ the terminal_ shows TypeError_
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -162,8 +158,6 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----
@@ -275,8 +269,6 @@ test_calculator_raises_type_error_w_strings
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -306,8 +298,6 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -326,8 +316,6 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----
@@ -506,8 +494,6 @@ I want the :ref:`calculator functions<how to make a calculator>` to send a messa
 
 =================================================================================
 :red:`RED`: make it fail
-----
-
 =================================================================================
 
 ----
@@ -540,8 +526,6 @@ the terminal_ shows TypeError_
 
 =================================================================================
 :green:`GREEN`: make it pass
-----
-
 =================================================================================
 
 ----
@@ -567,8 +551,6 @@ the test passes
 
 =================================================================================
 :yellow:`REFACTOR`: make it better
-----
-
 =================================================================================
 
 ----

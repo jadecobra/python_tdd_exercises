@@ -61,9 +61,9 @@ the chapters
   :maxdepth: 1
 
   lists
-  ../../how_to/calculator/calculator_v
+  ../../calculator/calculator_v
   list_comprehensions
-  ../../how_to/calculator/calculator_vi
+  ../../calculator/calculator_vi
   ../../data_structures/booleans/booleans_ii
 
 ----
