@@ -1,4 +1,4 @@
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 #################################################################################
 how to install Windows Subsystem for Linux on Windows

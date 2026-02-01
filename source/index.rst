@@ -96,7 +96,7 @@ table of contents
 
   self
   conventions
-  setup<how_to/setup/index>
+  setup<setup/index>
   make TDD project 1<make_tdd/make_tdd_manually/index>
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions/index>

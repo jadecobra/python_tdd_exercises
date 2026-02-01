@@ -2,7 +2,7 @@
   :description: Learn how to set up your VS Code for Python Test-Driven Development (TDD) with this step-by-step guide. Optimize your workflow and start writing cleaner code.
   :keywords: Jacob Itegboje, how to set up vscode for python tdd, python tdd workflow in vscode, best vscode extensions for python tdd, python test driven development setup, vscode python testing configuration, python tdd tutorial for beginners, visual studio code python tdd guide, automate python tests in vscode
 
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 #################################################################################
 how I setup my Integrated Development Environment (IDE)

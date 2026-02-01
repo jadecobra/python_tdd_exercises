@@ -1,4 +1,4 @@
-.. include:: ../../links.rst
+.. include:: ../links.rst
 
 .. _download and install Python: https://www.python.org/downloads/
 .. _Xcode Command Line Tools: https://developer.apple.com/xcode/resources/
