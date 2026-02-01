@@ -2,7 +2,7 @@
    :description: Learn Python functions with TDD! Explore arguments, defaults, and testing techniques in this practical guide. Start coding now!
    :keywords: Jacob Itegboje, Python functions, Test-Driven Development, Python programming, keyword arguments, positional arguments, coding tutorial
 
-.. include:: links.rst
+.. include:: ../links.rst
 
 .. _function: https://docs.python.org/3/glossary.html#term-function
 .. _functions: :ref:`function<what is a function?>`

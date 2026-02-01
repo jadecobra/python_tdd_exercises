@@ -14,37 +14,6 @@ how to make a Python Test Driven Development environment automatically
 
 ----
 
-To review, here are steps I take to make the environment for every project
-
-#. I give the project a name
-#. :ref:`I make a directory for the project<how to make a directory for the project>`
-#. :ref:`I change directory to the project<how to change directory to the project>`
-#. :ref:`I make a directory for the source code named 'src'<how to make a directory for the source code>`
-#. :ref:`I make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
-#. :ref:`I make a directory for the tests<how to make a directory for the tests>`
-#. :ref:`I make the 'tests' folder a Python package<how to make the tests a Python package>`
-#. :ref:`I make a Python file to hold the tests in the 'tests' folder<test_failure>`
-#. :ref:`I add the first failing test to the test file<test_failure>`
-#. :ref:`I make a virtual environment<how to make a virtual environment>`
-#. :ref:`I activate the virtual environment<how to activate a virtual environment>`
-#. :ref:`I upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
-#. :ref:`I make a requirements file for the needed Python packages<how to write text to a file>`
-#. :ref:`I install the packages listed in the requirements file<how to install Python packages with uv>`
-#. :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
-#. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
-#. I make the test pass
-#. then I start working on the project
-
-I want to give one command for the program to do every step except
-
-* give the project a name
-* make the test pass and
-* work on the project
-
-I only want to do 3 steps not 18
-
-----
-
 *********************************************************************************
 preview
 *********************************************************************************
@@ -386,7 +355,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-Here is what we have gone through together so far
+you have gone through a few things
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`

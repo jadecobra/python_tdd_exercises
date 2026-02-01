@@ -1462,7 +1462,7 @@ how to view all the commands typed in a terminal
 
 * these are the steps I took to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
 
-  - pick a name for the project
+  - give the project a name
   - :ref:`make a directory for the project<how to make a directory for the project>`
   - :ref:`change directory to the project<how to change directory to the project>`
   - :ref:`make a directory for the source code<how to make a directory for the source code>`

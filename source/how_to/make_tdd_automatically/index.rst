@@ -24,17 +24,15 @@ on a computer with MacOS_, Linux_ or `Windows`_ with `Windows Subsystem for Linu
 #. I give the project a name
 #. :ref:`I make a directory for the project<how to make a directory for the project>`
 #. :ref:`I change directory to the project<how to change directory to the project>`
-#. :ref:`I make a directory for the source code named 'src'<how to make a directory for the source code>`
+#. :ref:`I make a directory for the source code<how to make a directory for the source code>`
 #. :ref:`I make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
 #. :ref:`I make a directory for the tests<how to make a directory for the tests>`
-#. :ref:`I make the 'tests' folder a Python package<how to make the tests a Python package>`
-#. :ref:`I make a Python file to hold the tests in the 'tests' folder<test_failure>`
+#. :ref:`I make the 'tests' directory a Python package<how to make the tests a Python package>`
+#. :ref:`I make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
 #. :ref:`I add the first failing test to the test file<test_failure>`
-#. :ref:`I make a virtual environment<how to make a virtual environment>`
-#. :ref:`I activate the virtual environment<how to activate a virtual environment>`
-#. :ref:`I upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment>`
-#. :ref:`I make a requirements file for the needed Python packages<how to write text to a file>`
-#. :ref:`I install the packages listed in the requirements file<how to install Python packages with uv>`
+#. :ref:`I make a requirements file for the Python packages I need<how to write text to a file>`
+#. :ref:`I setup the project with uv<how to setup a project with uv>`
+#. :ref:`I install the Python packages listed in the requirements file<how to install Python packages with uv>`
 #. :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
 #. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
 #. I make the test pass
