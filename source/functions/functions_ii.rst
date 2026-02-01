@@ -171,6 +171,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 14
+    :emphasize-lines: 3-5
 
             y = 1
             self.assertEqual(add_x(x, y), x+y)
@@ -198,7 +199,52 @@ the test passes
 
   the test passes, this is the same as the :ref:`add function<test_addition>` from :ref:`how to make a calculator<how to make a calculator 1>`
 
-* I remove the comment 
+* I remove the comment, then add a :ref:`variable<what is a variable?>` for the next :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3-5
+
+            y = 2
+            self.assertEqual(add_x(x, y), x+y)
+            y = 3
+            # self.assertEqual(add_x(y=3), 6)
+            self.assertEqual(add_x(x, y), x+y)
+            self.assertEqual(add_x(y=4), 7)
+
+  the test is still green because ``x`` and ``y`` are both ``3``
+
+* on to the next one
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 3-5
+
+            y = 3
+            self.assertEqual(add_x(x, y), x+y)
+            y = 4
+            # self.assertEqual(add_x(y=4), 7)
+            self.assertEqual(add_x(x, y), y+y)
+            self.assertEqual(add_x(y=5), 8)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 7 != 8
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 20
+
+            y = 4
+            # self.assertEqual(add_x(y=4), 7)
+            self.assertEqual(add_x(x, y), x+y)
+            self.assertEqual(add_x(y=5), 8)
+
+  the test passes
+
 
 
 :ref:`I can use a variable to remove duplication<what is a variable?>`
