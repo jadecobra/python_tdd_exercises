@@ -97,7 +97,7 @@ table of contents
   self
   conventions
   setup<how_to/setup/index>
-  make TDD project 1<how_to/make_tdd_manually/index>
+  make TDD project 1<make_tdd_manually/index>
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions/index>
   what causes AttributeError?<exceptions/AttributeError>
@@ -116,7 +116,7 @@ table of contents
   classes/index
   what is a module?<exceptions/ModuleNotFoundError>
   questions the book answers<review>
-  make TDD project 1<how_to/make_tdd_manually/index>
+  make TDD project 1<make_tdd_manually/index>
 
   dot_notation
   exceptions/index

@@ -25,7 +25,7 @@ the chapters
   :maxdepth: 1
 
   how to setup my computer<setup/index>
-  how to make TDD manually<make_tdd_manually/index>
+  how to make TDD manually<../make_tdd_manually/index>
   how to pass values<pass_values>
   how to make a calculator<../calculator/index>
   how to make TDD automatically<make_tdd_automatically/index>
