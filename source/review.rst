@@ -95,8 +95,9 @@ functions review
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`what is a Function?<what is a function?>`
+* :ref:`what is a function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
+* :ref:`what happens after a function returns?<test_what_happens_after_a_function_returns>`
 * :ref:`what is a constant function?<test_constant_function>`
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_functions_w_positional_arguments>`
@@ -104,8 +105,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I make arguments a choice in a function?<test_functions_w_default_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_functions_w_unknown_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_functions_w_unknown_arguments>`
-* :ref:`how does Python represent positional arguments in a function?<test_functions_w_unknown_arguments>`
-* :ref:`how does Python represent keyword arguments in a function?<test_functions_w_unknown_arguments>`
+* :ref:`how does Python read positional arguments in a function?<how Python reads positional arguments>`
+* :ref:`how does Python read keyword arguments in a function?<how Python reads keyword arguments>`
 
 ----
 

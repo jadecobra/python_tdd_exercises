@@ -81,7 +81,7 @@ snake_case
 
   .. code-block:: python
 
-    def function_name(*arguments, **keyword_arguments):
+    def function_name(*positional_arguments, **keyword_arguments):
 
 for more details see the :PEP:`Python Style Guide <8>`
 

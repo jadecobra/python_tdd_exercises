@@ -61,7 +61,7 @@ questions about functions
 
 Here are questions you can answer after going through this chapter
 
-* :ref:`what is a Function?<what is a function?>`
+* :ref:`what is a function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
 * :ref:`what happens after a function returns?<test_what_happens_after_a_function_returns>`
 * :ref:`what is a constant function?<test_constant_function>`
@@ -71,8 +71,8 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I make arguments a choice in a function?<test_functions_w_default_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_functions_w_unknown_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_functions_w_unknown_arguments>`
-* :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`
-* :ref:`how does Python represent keyword arguments in a function?<how Python reads keyword arguments>`
+* :ref:`how does Python read positional arguments in a function?<how Python reads positional arguments>`
+* :ref:`how does Python read keyword arguments in a function?<how Python reads keyword arguments>`
 
 ----
 
@@ -1824,23 +1824,17 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
     .. code-block:: python
       :emphasize-text: first last
 
-      w_positional_arguments('first', 'last') return ('first', 'last')
-      w_positional_arguments('last', 'first') return ('last', 'first')
-      w_keyword_arguments('last', 'first') return ('last', 'first')
+      w_positional_arguments('first', 'last') == return ('first', 'last')
+      w_positional_arguments('last', 'first') == return ('last', 'first')
+         w_keyword_arguments('last', 'first') == return ('last', 'first')
 
   * I can give the input in any order when I use `keyword arguments`_ because I give values for the names in parentheses from the :ref:`function<what is a function?>` definition when calling it
 
     .. code-block:: python
       :emphasize-text: first_input last_input
 
-      w_keyword_arguments(first_input='first', last_input='last')
-      w_keyword_arguments(last_input='last', first_input='first')
-
-    both of these
-
-    .. code-block:: python
-
-      return 'first', 'last'
+      w_keyword_arguments(first_input='first', last_input='last') == return 'first', 'last'
+      w_keyword_arguments(last_input='last', first_input='first') == return 'first', 'last'
 
     because ``first_input`` is ``'first'`` and ``last_input`` is ``'last'`` in the call to ``w_keyword_arguments`` which will always
 
@@ -1918,6 +1912,20 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
 =================================================================================
 
 ----
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 80
+    :emphasize-lines: 6
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
 
 * I change the order of the arguments to follow Python_ rules
 
@@ -2040,7 +2048,7 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 I add a failing test to ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 54
+  :lineno-start: 71
   :emphasize-lines: 9-13
 
       def test_functions_w_positional_and_keyword_arguments(self):
@@ -2077,7 +2085,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 I add a :ref:`function<what is a function?>` to ``functions.py``
 
 .. code-block:: python
-  :lineno-start: 29
+  :lineno-start: 34
   :emphasize-lines: 5-6
 
   def w_positional_and_keyword_arguments(first_input, last_input):
@@ -2097,10 +2105,10 @@ the test passes
 
 ----
 
-* I remove ``last_name='doe'`` from the call to ``w_default_arguments`` in ``test_functions.py``
+* I remove ``, last_name='doe'`` from the call to ``w_default_arguments`` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 79
     :emphasize-lines: 3
 
         def test_functions_w_default_arguments(self):
@@ -2126,24 +2134,38 @@ the test passes
     def w_default_arguments(first_name, last_name='doe'):
         return first_name, last_name
 
-  the test passes.
+  the test passes
 
-* Calling the :ref:`function<what is a function?>` without the ``last_name`` argument
+  .. NOTE::
+
+    If I call the :ref:`function<what is a function?>` without the ``last_name`` argument
+
+    .. code-block:: python
+
+      w_default_arguments('jane')
+
+    it is the same as when I call it with the default value
+
+    .. code-block:: python
+
+      w_default_arguments('jane', last_name='doe')
+
+    which is the same as
+
+    .. code-block:: python
+
+      return 'jane', 'doe'
+
+    because ``w_default_arguments`` will always
+
+    .. code-block:: python
+
+      return first_name, last_name
+
+* I add another :ref:`assertion<what is an assertion?>` to ``test_functions.py`` to show that I can still call the :ref:`function<what is a function?>` with different values
 
   .. code-block:: python
-
-    w_default_arguments('jane')
-
-  is now the same as calling it with the default value
-
-  .. code-block:: python
-
-    w_default_arguments('jane', last_name='doe')
-
-  I add another :ref:`assertion<what is an assertion?>` to ``test_functions.py`` to show that I can still call the :ref:`function<what is a function?>` with different values
-
-  .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 79
     :emphasize-lines: 6-9
 
         def test_functions_w_default_arguments(self):
@@ -2168,7 +2190,7 @@ the test passes
   I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 84
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -2186,35 +2208,33 @@ the test passes
 
     return first_input, last_input
 
-  Their names are different
+  their names are different, ``w_default_arguments`` uses different names for the input and has a default value
 
   .. code-block:: python
-    :emphasize-text: positional keyword
+    :emphasize-text: positional keyword default
 
     def w_positional_arguments(first_input, last_input):
     def w_keyword_arguments(first_input, last_input):
     def w_positional_and_keyword_arguments(first_input, last_input):
     def w_default_arguments(first_name, last_name='doe'):
 
-  ``w_default_arguments`` uses different names for the input and has a default value
-
   The difference that matters in the tests is in how I call the functions_
 
   .. code-block:: python
 
-    w_positional_arguments('first', 'last')
-    w_positional_arguments('last', 'first')
-    w_keyword_arguments(first_input='first', last_input='last')
-    w_keyword_arguments(last_input='last', first_input='first')
-    w_keyword_arguments('last', 'first')
-    w_positional_and_keyword_arguments('first', last_input='last')
-    w_default_arguments('jane', last_name='doe')
-    w_default_arguments('jane')
-    w_default_arguments('joe', 'blow')
+                           w_positional_arguments('first', 'last') == return 'first', 'last'
+                           w_positional_arguments('last', 'first') == return 'last',  'first'
+       w_keyword_arguments(first_input='first', last_input='last') == return 'first', 'last'
+       w_keyword_arguments(last_input='last', first_input='first') == return 'first', 'last'
+                              w_keyword_arguments('last', 'first') == return 'last', 'first'
+    w_positional_and_keyword_arguments('first', last_input='last') == return 'first', 'last'
+                      w_default_arguments('jane', last_name='doe') == return 'jane', 'doe'
+                                       w_default_arguments('jane') == return 'jane', 'doe'
+                                w_default_arguments('joe', 'blow') == return 'joe', 'blow'
 
 .. TIP::
 
-  as a rule of thumb I use :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I have 2 or inputs so I do not have to remember the order
+  as a rule of thumb I use :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I have 2 or more inputs so I do not have to remember the order
 
 ----
 
@@ -2235,9 +2255,14 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 I add a new test to ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 67
-  :emphasize-lines: 6-12
+  :lineno-start: 79
+  :emphasize-lines: 11-17
 
+      def test_functions_w_default_arguments(self):
+          self.assertEqual(
+              src.functions.w_default_arguments('jane'),
+              ('jane', 'doe')
+          )
           self.assertEqual(
               src.functions.w_default_arguments('joe', 'blow'),
               ('joe', 'blow')
@@ -2271,7 +2296,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I add a :ref:`function<what is a function?>` to ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 38
     :emphasize-lines: 5-6
 
     def w_default_arguments(first_name, last_name='doe'):
@@ -2290,7 +2315,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I add the name to the :ref:`function<what is a function?>` definition
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 1
 
     def w_unknown_arguments(a):
@@ -2302,12 +2327,12 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_unknown_arguments() got multiple values for argument 'a'
 
-  I had this same problem in :ref:`test_functions_w_positional_and_keyword_arguments`, Python_ cannot tell which arguments are :ref:`positional<test_functions_w_positional_arguments>` or :ref:`keyword arguments<test_functions_w_keyword_arguments>` yet
+  I had this same problem in :ref:`test_functions_w_positional_and_keyword_arguments`. Python_ cannot tell if ``a`` is a :ref:`positional<test_functions_w_positional_arguments>` or :ref:`keyword arguments<test_functions_w_keyword_arguments>` in this case
 
 * Python_ has a way to allow passing any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many they are. I use it to replace ``a`` in the parentheses
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 1
 
     def w_unknown_arguments(**kwargs):
@@ -2319,11 +2344,12 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_unknown_arguments() takes 0 positional arguments but 4 were given
 
-* I add a name of the first :ref:`positional argument<test_functions_w_positional_arguments>`
+* I add a name for the first :ref:`positional argument<test_functions_w_positional_arguments>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 1
+    :emphasize-text: x
 
     def w_unknown_arguments(**kwargs, x):
         return None
@@ -2336,24 +2362,12 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   a reminder that I cannot put :ref:`positional arguments<test_functions_w_positional_arguments>` after :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 6
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # SyntaxError
-
 * I change the order of the inputs in ``w_unknown_arguments`` in ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 1
+    :emphasize-text: x
 
     def w_unknown_arguments(x, **kwargs):
         return None
@@ -2364,10 +2378,10 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_unknown_arguments() takes 1 positional argument but 4 were given
 
-* I can add names for the other :ref:`positional arguments<test_functions_w_positional_arguments>`, or I can do something like what I did with the :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+* I can add names for the other :ref:`positional arguments<test_functions_w_positional_arguments>`, or I can use what Python_ gives me to handle an unknown number of :ref:`positional arguments<test_functions_w_positional_arguments>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 1
 
     def w_unknown_arguments(*args, **kwargs):
@@ -2383,25 +2397,25 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-* ``*args, **kwargs`` is Python_ convention. I change the names to be clearer
+* ``*args, **kwargs`` is :ref:`Python convention<conventions>`. I change the names to be clearer
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 1
 
-    def w_unknown_arguments(*arguments, **keyword_arguments):
+    def w_unknown_arguments(*positional_arguments, **keyword_arguments):
         return None
 
   the test is still green
 
-* I want the :ref:`function<what is a function?>` to return its input, remember the :ref:`identity function<test_identity_function>`, I change the `return statement`_
+* I want the :ref:`function<what is a function?>` to return its input, remember the :ref:`identity function<test_identity_function>`? I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 42
     :emphasize-lines: 2
 
-    def w_unknown_arguments(*arguments, **keyword_arguments):
-        return arguments, keyword_arguments
+    def w_unknown_arguments(*positional_arguments, **keyword_arguments):
+        return positional_arguments, keyword_arguments
 
   the terminal_ shows
 
@@ -2409,10 +2423,12 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AssertionError: ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != None
 
+  I get a tuple_ back which contains another tuple_ and a :ref:`dictionary<what is a dictionary?>`
+
 * I copy the tuple_ from the terminal_ and use it to change the expectation in ``test_functions_w_unknown_arguments`` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 89
     :emphasize-lines: 6
 
         def test_functions_w_unknown_arguments(self):
@@ -2425,26 +2441,34 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes
 
+----
+
 --------------------------------------------------------------------------------------------
 how Python reads positional arguments
 --------------------------------------------------------------------------------------------
 
-I want to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add a new :ref:`assertion<what is an assertion?>`
+----
+
+I want to see what happens when I call ``w_unknown_arguments`` with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
-  :lineno-start: 73
-  :emphasize-lines: 7-10
+  :lineno-start: 89
+  :emphasize-lines: 8-11
 
+      def test_functions_w_unknown_arguments(self):
           self.assertEqual(
               src.functions.w_unknown_arguments(
                   0, 1, 2, 3, a=4, b=5, c=6, d=7,
               ),
-              ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+              ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
           )
           self.assertEqual(
               src.functions.w_unknown_arguments(0, 1, 2, 3),
               ()
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2455,7 +2479,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 I change the expectation to match
 
 .. code-block:: python
-  :lineno-start: 79
+  :lineno-start: 96
   :emphasize-lines: 3
 
           self.assertEqual(
@@ -2468,24 +2492,32 @@ I change the expectation to match
 
 the test passes. The :ref:`function<what is a function?>` reads the :ref:`positional arguments<test_functions_w_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
 
+----
+
 --------------------------------------------------------------------------------------------
 how Python reads keyword arguments
 --------------------------------------------------------------------------------------------
 
+----
+
+
 I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
 .. code-block:: python
-  :lineno-start: 79
+  :lineno-start: 96
   :emphasize-lines: 5-8
 
           self.assertEqual(
               src.functions.w_unknown_arguments(0, 1, 2, 3),
-              ((0, 1, 2, 3), {})
+              ((0, 1, 2, 3))
           )
           self.assertEqual(
               src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
               ()
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows
 
@@ -2496,7 +2528,7 @@ the terminal_ shows
 I change the expectation to match
 
 .. code-block:: python
-  :lineno-start: 83
+  :lineno-start: 100
   :emphasize-lines: 3
 
           self.assertEqual(
@@ -2511,20 +2543,29 @@ the test passes. The :ref:`function<what is a function?>` reads the :ref:`keywor
 
 ----
 
+--------------------------------------------------------------------------------------------
+how Python reads positional and keyword arguments
+--------------------------------------------------------------------------------------------
+
+----
+
 * I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 100
     :emphasize-lines: 5-8
 
-          self.assertEqual(
-              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-              ((), dict(a=4, b=5, c=6, d=7))
-          )
-          self.assertEqual(
-              src.functions.w_unknown_arguments(),
-              ()
-          )
+            self.assertEqual(
+                src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+                ((), dict(a=4, b=5, c=6, d=7))
+            )
+            self.assertEqual(
+                src.functions.w_unknown_arguments(),
+                ()
+            )
+
+
+    # Exceptions seen
 
   the terminal_ shows
 
@@ -2535,9 +2576,24 @@ the test passes. The :ref:`function<what is a function?>` reads the :ref:`keywor
   I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 87
-    :emphasize-lines: 3
+    :lineno-start: 89
+    :emphasize-lines: 18
 
+        def test_functions_w_unknown_arguments(self):
+            self.assertEqual(
+                src.functions.w_unknown_arguments(
+                    0, 1, 2, 3, a=4, b=5, c=6, d=7,
+                ),
+                ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+            )
+            self.assertEqual(
+                src.functions.w_unknown_arguments(0, 1, 2, 3),
+                ((0, 1, 2, 3), {})
+            )
+            self.assertEqual(
+                src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+                ((), dict(a=4, b=5, c=6, d=7))
+            )
             self.assertEqual(
                 src.functions.w_unknown_arguments(),
                 ((), {})
@@ -2546,15 +2602,43 @@ the test passes. The :ref:`function<what is a function?>` reads the :ref:`keywor
 
     # Exceptions seen
 
-
   the test passes
 
-The :ref:`function<what is a function?>` reads
+.. NOTE::
 
-* :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_ and
-* :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`.
+  these statements are the same
 
-This is why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input
+  .. code-block:: python
+
+    w_unknown_arguments(0, 1, 2, 3, a=4, b=5, c=6, d=7)
+    w_unknown_arguments(*(0, 1, 2, 3), **dict(a=4, b=5, c=6, d=7))
+    w_unknown_arguments(*(0, 1, 2, 3), **{'a': 4, 'b': 5, 'c': 6, 'd': 7})
+    ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+
+  because ``w_unknown_arguments`` in ``functions.py`` in the ``src`` folder will always
+
+  .. code-block:: python
+
+    return positional_arguments, keyword_arguments
+
+  in this case
+
+  .. code-block:: python
+
+    0, 1, 2, 3
+    *(0, 1, 2, 3)
+
+  are :ref:`positional arguments<test_functions_w_positional_arguments>` which are taken as a tuple_ and
+
+  .. code-block:: python
+
+    a=4, b=5, c=6, d=7
+    **dict(a=4, b=5, c=6, d=7)
+    **{'a': 4, 'b': 5, 'c': 6, 'd': 7}
+
+  are :ref:`keyword arguments<test_functions_w_keyword_arguments>` which are taken as a :ref:`dictionary<what is a dictionary?>`. The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`.
+
+  This is why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input
 
 ----
 
@@ -2601,18 +2685,17 @@ I ran tests to show that I can make functions_ with
 
 as a reminder
 
-* :ref:`positional arguments<test_functions_w_positional_arguments>` must come before :ref:`keyword arguments<test_functions_w_keyword_arguments>`
-* I can use ``**kwargs`` when I do not know how many :ref:`keyword arguments<test_functions_w_keyword_arguments>` the :ref:`function<what is a function?>` has to take
-* :ref:`keyword arguments<test_functions_w_keyword_arguments>` are represented as :ref:`dictionaries`
-* I can use ``*args`` when I do not know how many :ref:`positional arguments<test_functions_w_positional_arguments>` the :ref:`function<what is a function?>` has to take
-* :ref:`positional arguments<test_functions_w_positional_arguments>` are represented as tuples_
-* the :ref:`identity function<test_identity_function>` returns its input
-* :ref:`constant functions<test_constant_function>` always return the same thing
-* functions_ return :ref:`None<what is None?>` by default
-* nothing runs after the `return statement` in a :ref:`function<what is a function?>`
+* :ref:`I can use '*args' when I do not know how many positional arguments the function has to take<test_functions_w_unknown_arguments>`
+* :ref:`positional arguments are taken as a tuple<how Python reads positional arguments>`
+* :ref:`positional arguments must come before keyword arguments<test_functions_w_default_arguments>`
+* :ref:`I can use '**kwargs' when I do not know how many keyword arguments the function<test_functions_w_unknown_arguments>`
+* :ref:`keyword arguments are taken as a dictionary<how Python reads keyword arguments>`
+* :ref:`the identity function returns its input<test_identity_function>`
+* :ref:`constant functions always return the same thing<test_constant_function>`
+* :ref:`nothing runs after the return statement in a function<test_what_happens_after_a_function_returns>`
+* :ref:`functions return None by default<test_making_a_function_w_return_none>`
 
-
-:ref:`How many questions can you answer above functions?<questions about functions>`
+:ref:`How many questions can you answer about functions?<questions about functions>`
 
 ----
 
