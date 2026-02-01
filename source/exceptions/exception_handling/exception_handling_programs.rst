@@ -98,7 +98,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watcher . --now
+    uv run pytest-watcher --now --delay 0 .
 
   the terminal_ shows
 
@@ -106,11 +106,12 @@ open the project
     :emphasize-lines: 4
 
     rootdir: .../pumping_python/exceptions
+    configfile: pyproject.toml
     collected 8 items
 
     tests/test_exceptions.py ....                                        [100%]
 
-    ============================ 8 passed in X.YZs =============================
+    ======================== 8 passed in X.YZs =========================
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_exceptions.py`` to open it in the :ref:`editor<2 editors>`
 

@@ -81,11 +81,12 @@ open the project
     :emphasize-lines: 4
 
     rootdir: .../pumping_python/person
+    configfile: pyproject.toml
     collected 2 items
 
     tests/test_person.py ..                                             [100%]
 
-    ============================ 2 passed in X.YZs =============================
+    ======================== 2 passed in X.YZs =========================
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_person.py`` to open it in the :ref:`editor<2 editors>`
 

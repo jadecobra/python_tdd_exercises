@@ -58,7 +58,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watcher . --now
+    uv run pytest-watcher --now --delay 0 .
 
   the terminal_ shows
 
@@ -66,11 +66,12 @@ open the project
     :emphasize-lines: 4
 
     rootdir: .../pumping_python/booleans
+    configfile: pyproject.toml
     collected 2 items
 
     tests/test_booleans.py ..                                        [100%]
 
-    ============================ 2 passed in X.YZs =============================
+    ======================== 2 passed in X.YZs =========================
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_booleans.py`` to open it in the :ref:`editor<2 editors>`
 

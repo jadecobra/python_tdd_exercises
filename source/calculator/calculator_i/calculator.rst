@@ -1158,6 +1158,8 @@ all of these lines can be written using ``first_number`` as the name of the firs
     # test multiplication
     # test division
 
+:ref:`I can use a variable to remove duplication<what is a variable>`
+
 ----
 
 *********************************************************************************

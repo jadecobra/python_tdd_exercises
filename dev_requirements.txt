@@ -3,3 +3,4 @@ sphinx
 sphinx-sitemap
 sphinx-notfound-page
 sphinxawesome-theme
+watchdog

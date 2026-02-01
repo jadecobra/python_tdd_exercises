@@ -81,7 +81,7 @@ continue the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    pytest-watcher . --now
+    uv run pytest-watcher --now --delay 0 .
 
 ----
 

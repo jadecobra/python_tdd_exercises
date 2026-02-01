@@ -743,7 +743,7 @@ the test passes
             self.assertEqual(add_x(y=7), 10)
             self.assertEqual(add_x(y=8), 11)
 
-:ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the results changing<what is a variable?>`
+:ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the results changing`
 
 ----
 
