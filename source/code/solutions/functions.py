@@ -10,6 +10,11 @@ def w_return_none():
     return None
 
 
+def return_is_last():
+    return None
+    return 'something'
+
+
 def constant():
     return 'the same thing'
 
@@ -34,5 +39,5 @@ def w_default_arguments(first_name, last_name='doe'):
     return first_name, last_name
 
 
-def w_unknown_arguments(*positional_arguments, **keyword_arguments):
-    return positional_arguments, keyword_arguments
+def w_unknown_arguments(*arguments, **keyword_arguments):
+    return arguments, keyword_arguments

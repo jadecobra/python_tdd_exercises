@@ -4,6 +4,20 @@ import unittest
 
 class TestFunctions(unittest.TestCase):
 
+    def test_why_use_a_function(self):
+        def add_x(x=3, y=0):
+            return x + y
+
+        self.assertEqual(add_x(y=0), 3)
+        self.assertEqual(add_x(y=1), 4)
+        self.assertEqual(add_x(y=2), 5)
+        self.assertEqual(add_x(y=3), 6)
+        self.assertEqual(add_x(y=4), 7)
+        self.assertEqual(add_x(y=5), 8)
+        self.assertEqual(add_x(y=6), 9)
+        self.assertEqual(add_x(y=7), 10)
+        self.assertEqual(add_x(y=8), 11)
+
     def test_making_a_function_w_pass(self):
         self.assertIsNone(src.functions.w_pass())
 
@@ -12,6 +26,9 @@ class TestFunctions(unittest.TestCase):
 
     def test_making_a_function_w_return_none(self):
         self.assertIsNone(src.functions.w_return_none())
+
+    def test_what_happens_after_a_function_returns(self):
+        self.assertIsNone(src.functions.return_is_last())
 
     def test_constant_function(self):
         self.assertEqual(
@@ -36,13 +53,13 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                first='first', last='last',
+                first_input='first', last_input='last',
             ),
             ('first', 'last')
         )
         self.assertEqual(
             src.functions.w_keyword_arguments(
-                last='last', first='first',
+                last_input='last', first_input='first',
             ),
             ('first', 'last')
         )
@@ -54,7 +71,7 @@ class TestFunctions(unittest.TestCase):
     def test_functions_w_positional_and_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_positional_and_keyword_arguments(
-                'first', last='last',
+                'first', last_input='last',
             ),
             ('first', 'last')
         )
@@ -74,7 +91,7 @@ class TestFunctions(unittest.TestCase):
             src.functions.w_unknown_arguments(
                 0, 1, 2, 3, a=4, b=5, c=6, d=7,
             ),
-            ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+            ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
         )
         self.assertEqual(
             src.functions.w_unknown_arguments(0, 1, 2, 3),
@@ -93,5 +110,5 @@ class TestFunctions(unittest.TestCase):
 # Exceptions seen
 # AssertionError
 # NameError
-# IndentationError
-# SyntaxError
+# AttributeError
+# TypeError
