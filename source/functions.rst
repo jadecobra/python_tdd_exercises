@@ -1539,7 +1539,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I change the expectation of the test in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 48
     :emphasize-lines: 3
 
           self.assertEqual(
@@ -1549,15 +1549,44 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes.
 
-  - the return statement of ``w_positional_arguments`` is ``return (first_input, last_input)
-  - In the first case when the test calls ``src.functions.w_positional_arguments('first', 'last')``, it is calling ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_, with 2 strings - ``'first'`` and ``'last'`` as input
-  - when ``w_positional_arguments`` gets called with ``'first'`` and ``'last'`` as input it returns ``('first', 'last')`` because ``first_input`` is ``'first'`` and ``last_input`` is ``'last'`` in this case
-  - In the second case when the test calls ``src.functions.w_positional_arguments('last', 'first')``, it is calling ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_, with 2 strings - ``'first'`` and ``'last'`` as input
-  - when ``w_positional_arguments`` gets called with ``'last'`` and ``'first'`` as input it returns ``('last', 'first')`` because ``first_input`` is ``'last'`` and ``last_input`` is ``'first'`` in this case
+  .. NOTE::
 
-The order matters when passing `positional arguments`_ to a :ref:`function<what is a function?>`, because they are used in the order they are given to the :ref:`function<what is a function?>`
+    - ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_ will always
 
-:ref:`I can call a function with positional arguments<test_functions_w_positional_arguments>`
+      .. code-block:: python
+        :emphasize-text: first_input last_input
+
+        return first_input, last_input
+
+    - ``src.functions.w_positional_arguments('first', 'last')`` calls ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_, with ``'first'`` and ``'last'`` as input, which is the same as
+
+      .. code-block:: python
+
+        return 'first', 'last'
+
+      because ``first_input`` is ``'first'`` and ``last_input`` is ``'last'`` in the call to ``w_positional_arguments`` which will always
+
+      .. code-block:: python
+        :emphasize-text: first_input last_input
+
+        return first_input, last_input
+
+    - ``src.functions.w_positional_arguments('last', 'first')`` calls ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_, with ``'last'`` and ``'first'`` as input, which is the same as
+
+      .. code-block:: python
+
+        return 'last', 'first'
+
+      because ``first_input`` is ``'last'`` and ``last_input`` is ``'first'`` in the call to ``w_positional_arguments`` which will always
+
+      .. code-block:: python
+        :emphasize-text: first_input last_input
+
+        return first_input, last_input
+
+    I must give the input in order when I use `positional arguments`_, because they are used in the :ref:`function<what is a function?>` receives them
+
+:ref:`I can call functions with positional arguments<test_functions_w_positional_arguments>`
 
 ----
 
@@ -1565,9 +1594,9 @@ The order matters when passing `positional arguments`_ to a :ref:`function<what 
 test_functions_w_keyword_arguments
 *********************************************************************************
 
-There is a problem with using positional arguments, the inputs must always be supplied in the right order, which means the :ref:`function<what is a function?>` behaves in an unexpected way when it gets input out of order.
+There is a problem with using positional arguments, the inputs must always be given in the right order. This means the :ref:`function<what is a function?>` behaves in a different way when it gets input out of order.
 
-I can use `Keyword Arguments`_ to make sure it behaves how I want even when I send input out of order
+I can use `Keyword Arguments`_ to make sure it behaves how I want even when I send input out of order.
 
 ----
 
@@ -1580,9 +1609,14 @@ I can use `Keyword Arguments`_ to make sure it behaves how I want even when I se
 I add a new test to ``test_functions.py``
 
 .. code-block:: python
-  :lineno-start: 31
-  :emphasize-lines: 6-12
+  :lineno-start: 43
+  :emphasize-lines: 11-17
 
+      def test_functions_w_positional_arguments(self):
+          self.assertEqual(
+              src.functions.w_positional_arguments('first', 'last'),
+              ('first', 'last')
+          )
           self.assertEqual(
               src.functions.w_positional_arguments('last', 'first'),
               ('last', 'first')
@@ -1618,7 +1652,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I add a :ref:`function<what is a function?>` definition to ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 26
     :emphasize-lines: 5-6
 
     def w_positional_arguments(first_input, last_input):
@@ -1634,10 +1668,10 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_keyword_arguments() got an unexpected keyword argument 'first_input'
 
-* I add the name for the argument_ in parentheses
+* I add the name of the unexpected argument_ in parentheses
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 30
     :emphasize-lines: 1
 
     def w_keyword_arguments(first_input):
@@ -1649,10 +1683,10 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_keyword_arguments() got an unexpected keyword argument 'last_input'. Did you mean
 
-* I add the name in parentheses
+* I add the name for the other unexpected argument_ in parentheses
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 30
     :emphasize-lines: 1
 
     def w_keyword_arguments(first_input, last_input):
@@ -1667,28 +1701,13 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
   I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 30
     :emphasize-lines: 2
 
     def w_keyword_arguments(first_input, last_input):
         return first_input, last_input
 
   the test passes
-
-``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_. The only difference in the definitions is their names. The difference that matters in the tests is in how I call the functions_.
-
-In the first case I use :ref:`positional arguments<test_functions_w_positional_arguments>` which have to be given in order
-
-.. code-block:: python
-
-  w_positional_arguments('first', 'last')
-  w_positional_arguments('last', 'first')
-
-in the second case I use `keyword arguments`_ which use the names of the :ref:`variables<what is a variable?>` in parentheses in the :ref:`function<what is a function?>` definition when calling the it
-
-.. code-block:: python
-
-  w_keyword_arguments(first_input='first', last_input='last')
 
 ----
 
@@ -1701,7 +1720,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
 * I add another test with the `keyword arguments`_ given out of order in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 53
     :emphasize-lines: 8-13
 
         def test_functions_w_keyword_arguments(self):
@@ -1729,7 +1748,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 60
     :emphasize-lines: 5
 
             self.assertEqual(
@@ -1739,7 +1758,7 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
                 ('first', 'last')
             )
 
-  the test passes. `Keyword Arguments`_ allow the input to be passed in any order
+  the test passes. I can pass the input in any order when I use `keyword arguments`_
 
 * I can still call the :ref:`function<what is a function?>` without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`. I add an :ref:`assertion<what is an assertion?>` to show this
 
@@ -1764,7 +1783,9 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
 
     AssertionError: Tuples differ: ('last', 'first') != ('first', 'last')
 
-  I change the expectation to match
+  the :ref:`function<what is a function?>` uses the order (positions) when I do not use the names
+
+* I change the expectation to match
 
   .. code-block:: python
     :lineno-start: 49
@@ -1780,7 +1801,55 @@ in the second case I use `keyword arguments`_ which use the names of the :ref:`v
 
   the test passes
 
-:ref:`Positional Arguments<test_functions_w_positional_arguments>` MUST be given in the expected order, `Keyword Arguments`_ can be given in any order
+.. NOTE::
+
+  ``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_, they always return
+
+  .. code-block:: python
+
+        return first_input, last_input
+
+  Their names are different
+
+  .. code-block:: python
+    :emphasize-text: positional keyword
+
+    def w_positional_arguments(first_input, last_input):
+    def w_keyword_arguments(first_input, last_input):
+
+  The difference that matters in the tests is in how I call the functions_.
+
+  * I have to give the input in order when I use :ref:`positional arguments<test_functions_w_positional_arguments>`
+
+    .. code-block:: python
+      :emphasize-text: first last
+
+      w_positional_arguments('first', 'last') return ('first', 'last')
+      w_positional_arguments('last', 'first') return ('last', 'first')
+      w_keyword_arguments('last', 'first') return ('last', 'first')
+
+  * I can give the input in any order when I use `keyword arguments`_ because I give values for the names in parentheses from the :ref:`function<what is a function?>` definition when calling it
+
+    .. code-block:: python
+      :emphasize-text: first_input last_input
+
+      w_keyword_arguments(first_input='first', last_input='last')
+      w_keyword_arguments(last_input='last', first_input='first')
+
+    both of these
+
+    .. code-block:: python
+
+      return 'first', 'last'
+
+    because ``first_input`` is ``'first'`` and ``last_input`` is ``'last'`` in the call to ``w_keyword_arguments`` which will always
+
+    .. code-block:: python
+      :emphasize-text: first_input last_input
+
+      return first_input, last_input
+
+:ref:`I can call a function with keyword arguments<test_functions_w_keyword_arguments>`
 
 ----
 
@@ -2218,7 +2287,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_unknown_arguments() takes 0 positional arguments but 4 were given
 
-* I add a name for the first :ref:`positional argument<test_functions_w_positional_arguments>`
+* I add a name of the first :ref:`positional argument<test_functions_w_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 37
