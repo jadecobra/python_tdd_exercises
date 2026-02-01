@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. _isinstance built-in function: https://docs.python.org/3/library/functions.html#isinstance
+
 #################################################################################
 how to make a calculator 8
 #################################################################################
@@ -205,7 +207,7 @@ test_calculator_w_getattribute
 
   .. code-block:: python
     :lineno-start: 48
-    :emphasize-lines:
+    :emphasize-lines: 6-8
 
         def test_calculator_w_getattribute(self):
             calculator_tests = {
@@ -373,7 +375,7 @@ test_calculator_w_getattribute
 
   .. code-block:: python
     :lineno-start: 49
-    :emphasize-lines:
+    :emphasize-lines: 8
 
             calculator_tests = {
                 'add': (
@@ -1109,7 +1111,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
     :linenos:
-    :emphasize
+    :emphasize-lines: 1
 
     add
 
@@ -1131,6 +1133,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     add = None
 
@@ -1144,6 +1147,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1-2
 
     def add():
         return None
@@ -1607,7 +1611,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   another :ref:`data type<data structures>`, there has to be a better way
 
-* I add tuple_ to the `isinstance method`_ in the :ref:`if statement<if statements>` of the ``add`` :ref:`function<what is a function?>`
+* I add tuple_ to the `isinstance built-in function`_ in the :ref:`if statement<if statements>` of the ``add`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1732,7 +1736,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     TypeError: unsupported operand type(s) for +: 'NoneType' and 'float'
 
-* I add :ref:`None<what is None?>` to the call to the `isinstance method`_ in the :ref:`if statements` of the :ref:`functions<what is a function?>`
+* I add :ref:`None<what is None?>` to the call to the `isinstance built-in function`_ in the :ref:`if statements` of the :ref:`functions<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1768,7 +1772,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
 
-  that change made things worse. I cannot use :ref:`None<what is None?>` in the `isinstance method`_
+  that change made things worse. I cannot use :ref:`None<what is None?>` in the `isinstance built-in function`_
 
 * I undo the change then add a new condition
 

@@ -55,4 +55,4 @@ Here is the code you will have at the end of the above chapters
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to setup your computer the way I set mine up for development<how I setup my computer for development>`
+:ref:`Would you like to setup your computer the way I set mine up for development?<how I setup my computer for development>`

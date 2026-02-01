@@ -105,8 +105,6 @@ These chapters show how I setup a project in Python_ on any computer (Linux_, Wi
 
 =================================================================================
 on Linux, MacOS and Windows with Window Subsystem for Linux computers
-----
-
 =================================================================================
 
 ----
@@ -139,8 +137,6 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 
 =================================================================================
 on Windows computers without Windows Subsystem for Linux
-----
-
 =================================================================================
 
 ----
@@ -160,7 +156,7 @@ on Windows computers without Windows Subsystem for Linux
 * :ref:`how to deactivate a virtual environment on Windows without WSL`
 * :ref:`how to install Python packages with uv on Windows without WSL`
 * :ref:`how to see what packages are installed in a virtual environment on Windows without WSL`
-* :ref:`how to view all the commands typed in a terminal_ on Windows without WSL`
+* :ref:`how to view all the commands typed in a terminal on Windows without WSL`
 * :ref:`how to make a PowerShell script`
 * :ref:`how to run a PowerShell script`
 * :ref:`the first failing test on Windows Without WSL<test_failure on Windows without WSL>`

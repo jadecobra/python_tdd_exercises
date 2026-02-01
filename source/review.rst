@@ -64,7 +64,7 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv on Windows without WSL>`
 * :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv on Windows without WSL>`
 * :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
-* :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal_ on Windows without WSL>`
+* :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal on Windows without WSL>`
 * :ref:`how can I make a PowerShell script?<how to make a PowerShell script>`
 * :ref:`what is a variable?<how to use a variable in a shell script>`
 * :ref:`how can I use a variable in a PowerShell script<how to use a variable in a PowerShell script>`

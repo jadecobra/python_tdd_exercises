@@ -908,8 +908,6 @@ the other part that is different for all the :ref:`functions<what is a function?
 
 =================================================================================
 what is a decorator function?
-----
-
 =================================================================================
 
 ----

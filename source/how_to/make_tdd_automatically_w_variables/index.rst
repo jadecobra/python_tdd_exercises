@@ -66,8 +66,6 @@ they cover the following
 
 =================================================================================
 on Linux, MacOS and Windows with Window Subsystem for Linux computers
-----
-
 =================================================================================
 
 ----
@@ -79,8 +77,6 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 
 =================================================================================
 On Windows computers without Windows Subsystem for Linux
-----
-
 =================================================================================
 
 ----

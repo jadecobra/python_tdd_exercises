@@ -51,7 +51,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: code/tests/test_functions.py
+.. literalinclude:: ../code/tests/test_functions.py
   :language: python
   :linenos:
 

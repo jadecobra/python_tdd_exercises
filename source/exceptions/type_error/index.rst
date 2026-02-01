@@ -27,7 +27,7 @@ the chapters
   :maxdepth: 1
 
   TypeError
-  ../../how_to/calculator/calculator_iv
+  ../../calculator/calculator_iv
 
 ----
 

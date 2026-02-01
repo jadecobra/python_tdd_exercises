@@ -68,7 +68,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv on Windows without WSL>`
 * :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv on Windows without WSL>`
 * :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
-* :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal_ on Windows without WSL>`
+* :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal on Windows without WSL>`
 
 ----
 
@@ -152,8 +152,6 @@ the terminal_ goes back to the command line
 
 =====================================================================================================
 how to make a directory for the project on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -201,8 +199,6 @@ how to make a directory for the project on Windows without WSL
 
 =====================================================================================================
 how to change directory to the project on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -224,8 +220,6 @@ I try cd_ again
 
 =====================================================================================================
 how to run a Python program on Windows without Windows Subsystem for Linux
-----
-
 =====================================================================================================
 
 ----
@@ -249,8 +243,6 @@ how to run a Python program on Windows without Windows Subsystem for Linux
 
 =====================================================================================================
 how to make a directory for the source code on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -292,8 +284,6 @@ how to make a directory for the source code on Windows without WSL
 
 =====================================================================================================
 how to make an empty file on Windows without Windows Subsystem for Linux
-----
-
 =====================================================================================================
 
 ----
@@ -344,8 +334,6 @@ test_failure on Windows without WSL
 
 =====================================================================================================
 how to manually run tests on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -368,7 +356,7 @@ how to manually run tests on Windows without WSL
 
   - ``python`` is the `Python program`_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>`, unittest_ in this case
-  - a Python_ :ref:`module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `see the source code for unittest here`_
+  - a Python_ :ref:`module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `click here to see the source code for unittest`_
 
 * I do not have any tests yet, so there is nothing to run
 
@@ -376,8 +364,6 @@ how to manually run tests on Windows without WSL
 
 =====================================================================================================
 how to make a directory for the tests on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -412,8 +398,6 @@ the terminal_ goes back to the command line
 
 =====================================================================================================
 how to make a Python file for the tests in the 'tests' directory on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -547,8 +531,6 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
 
 =====================================================================================================
 how to make the tests a Python package on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -606,8 +588,6 @@ how to make the tests a Python package on Windows without WSL
 
 =====================================================================================================
 how to change the name of a file on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -760,8 +740,6 @@ I do not want to type ``python -m unittest`` again, it is better for a `computer
 
 =====================================================================================================
 how to run the tests automatically on Windows without Windows Subsystem for Linux
-----
-
 =====================================================================================================
 
 ----
@@ -789,8 +767,6 @@ I need to install `pytest-watcher`_ for the computer to use it. Next, I set up a
 
 =====================================================================================================
 what is a virtual environment?
-----
-
 =====================================================================================================
 
 ----
@@ -805,8 +781,6 @@ It means I can have a separate `virtual environment`_ for every project with onl
 
 =====================================================================================================
 how to make a virtual environment on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -861,8 +835,6 @@ how to make a virtual environment on Windows without WSL
 
 =====================================================================================================
 how to activate a virtual environment on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -923,8 +895,6 @@ how to activate a virtual environment on Windows without WSL
 
 =====================================================================================================
 how to see what packages are installed in a virtual environment on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -951,8 +921,6 @@ the terminal_ shows
 
 =====================================================================================================
 how to write text to a file on Windows without Windows Subsystem for Linux
-----
-
 =====================================================================================================
 
 ----
@@ -1028,8 +996,6 @@ I want to make a file_ where I can list all the `Python packages`_ for my projec
 
 =====================================================================================================
 how to see what is inside a file on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -1053,8 +1019,6 @@ life is good!
 
 =====================================================================================================
 how to install Python packages with uv on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -1080,8 +1044,6 @@ how to install Python packages with uv on Windows without WSL
 
 =====================================================================================================
 how to upgrade the Python package manager in a virtual environment on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -1135,8 +1097,6 @@ how to upgrade the Python package manager in a virtual environment on Windows wi
 
 =====================================================================================================
 how to run the tests automatically with uv and pytest-watcher
-----
-
 =====================================================================================================
 
 ----
@@ -1166,8 +1126,6 @@ and it shows results without going back to the command line
 
 =====================================================================================================
 how to open the test file in the editor from the terminal on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -1213,8 +1171,6 @@ how to open the test file in the editor from the terminal on Windows without WSL
 
 =====================================================================================================
 how to stop the automated tests on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -1225,8 +1181,6 @@ I exit the tests in the terminal_ with :kbd:`ctrl+c` on the keyboard
 
 =====================================================================================================
 how to deactivate a virtual environment on Windows without WSL
-----
-
 =====================================================================================================
 
 ----
@@ -1283,9 +1237,7 @@ I gave the computer some commands to make a Python_ :ref:`Test Driven Developmen
 ----
 
 ============================================================================================
-how to view all the commands typed in a terminal_ on Windows without WSL
-----
-
+how to view all the commands typed in a terminal on Windows without WSL
 ============================================================================================
 
 ----

@@ -36,8 +36,6 @@ they cover the following
 
 =================================================================================
 Windows requirements
-----
-
 =================================================================================
 
 ----
@@ -49,8 +47,6 @@ Windows requirements
 
 =================================================================================
 Linux/Windows Subsystem for Linux requirements
-----
-
 =================================================================================
 
 ----
@@ -110,13 +106,11 @@ Linux/Windows Subsystem for Linux requirements
 
 =================================================================================
 Windows without Windows Subsystem Linux requirements
-----
-
 =================================================================================
 
 ----
 
-.. ATTENTION:: Do this only if you are using Windows_ and could not install `Windows Subsystem Linux`_
+.. ATTENTION:: Do this only if you are using Windows_ and could not install `Windows Subsystem for Linux`_
 
 * `download and install Python`_
 
@@ -137,8 +131,6 @@ Windows without Windows Subsystem Linux requirements
 
 =================================================================================
 MacOS requirements
-----
-
 =================================================================================
 
 ----
@@ -161,7 +153,7 @@ MacOS requirements
 * Open a terminal_ then type this to install the `uv Python package manager`_
 
   .. code-block:: python
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     brew install uv
 

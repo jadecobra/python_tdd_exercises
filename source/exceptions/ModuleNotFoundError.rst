@@ -131,7 +131,7 @@ test_module_not_found_error
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 3
-    :emphasize-test: ModuleNotFoundError
+    :emphasize-text: ModuleNotFoundError
 
     # Exceptions seen
     # AssertionError
