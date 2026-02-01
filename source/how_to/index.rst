@@ -28,7 +28,7 @@ the chapters
   how to make TDD manually<../make_tdd_manually/index>
   how to pass values<pass_values>
   how to make a calculator<../calculator/index>
-  how to make TDD automatically<make_tdd_automatically/index>
+  how to make TDD automatically<../make_tdd_automatically/index>
   how to handle Exceptions<../exceptions/exception_handling/index>
   how to make TDD w variables<make_tdd_automatically_w_variables/index>
   how to make a person<make_person>
