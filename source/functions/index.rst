@@ -241,9 +241,13 @@ start the project
   .. code-block:: shell
 
     Initialized project `functions`
+
+  then goes back to the command line
+
+  .. code-block:: shell
     .../pumping_python/functions (main)
 
-  I remove ``main.py`` from the project
+* I remove ``main.py`` from the project
 
   .. code-block:: python
     :emphasize-lines: 1

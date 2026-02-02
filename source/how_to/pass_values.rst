@@ -208,6 +208,10 @@ start the project
   .. code-block:: shell
 
     Initialized project `telephone`
+
+  then goes back to the command line
+
+  .. code-block:: shell
     .../pumping_python/telephone (main)
 
   I remove ``main.py`` from the project

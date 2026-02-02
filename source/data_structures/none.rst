@@ -220,6 +220,10 @@ requirements
   .. code-block:: shell
 
     Initialized project `none`
+
+  then goes back to the command line
+
+  .. code-block:: shell
     .../pumping_python/none (main)
 
   I remove ``main.py`` from the project
