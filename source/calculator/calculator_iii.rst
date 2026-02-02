@@ -68,12 +68,12 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
     configfile: pyproject.toml
@@ -90,7 +90,6 @@ open the project
 *********************************************************************************
 test_division_handles_zero_division_error
 *********************************************************************************
-
 
 ----
 

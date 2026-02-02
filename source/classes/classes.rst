@@ -73,7 +73,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
@@ -1682,7 +1682,6 @@ I had to make a new person with the same first name, last name, sex and the new 
 *********************************************************************************
 test_update_classy_person_year_of_birth
 *********************************************************************************
-
 
 ----
 

@@ -8,15 +8,25 @@ class TestFunctions(unittest.TestCase):
         def add_x(x=3, y=0):
             return x + y
 
-        self.assertEqual(add_x(y=0), 3)
-        self.assertEqual(add_x(y=1), 4)
-        self.assertEqual(add_x(y=2), 5)
-        self.assertEqual(add_x(y=3), 6)
-        self.assertEqual(add_x(y=4), 7)
-        self.assertEqual(add_x(y=5), 8)
-        self.assertEqual(add_x(y=6), 9)
-        self.assertEqual(add_x(y=7), 10)
-        self.assertEqual(add_x(y=8), 11)
+        x = 4
+        y = 0
+        self.assertEqual(add_x(x, y), x+y)
+        y = 1
+        self.assertEqual(add_x(x, y), x+y)
+        y = 2
+        self.assertEqual(add_x(x, y), x+y)
+        y = 3
+        self.assertEqual(add_x(x, y), x+y)
+        y = 4
+        self.assertEqual(add_x(x, y), x+y)
+        y = 5
+        self.assertEqual(add_x(x, y), x+y)
+        y = 6
+        self.assertEqual(add_x(x, y), x+y)
+        y = 7
+        self.assertEqual(add_x(x, y), x+y)
+        y = 8
+        self.assertEqual(add_x(x, y), x+y)
 
     def test_making_a_function_w_pass(self):
         self.assertIsNone(src.functions.w_pass())

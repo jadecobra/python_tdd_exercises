@@ -70,12 +70,12 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
     configfile: pyproject.toml
@@ -92,7 +92,6 @@ open the project
 *********************************************************************************
 test_calculator_raises_type_error
 *********************************************************************************
-
 
 ----
 
@@ -264,7 +263,6 @@ The ``calculator`` raises TypeError_ when given :ref:`None<what is None?>` as in
 *********************************************************************************
 test_calculator_raises_type_error_w_strings
 *********************************************************************************
-
 
 ----
 

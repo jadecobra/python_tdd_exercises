@@ -56,7 +56,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
@@ -78,7 +78,6 @@ open the project
 *********************************************************************************
 test_calculator_w_dictionary_items
 *********************************************************************************
-
 
 ----
 

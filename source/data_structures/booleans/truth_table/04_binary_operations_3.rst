@@ -81,14 +81,13 @@ continue the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
 ----
 
 *********************************************************************************
 test_exclusive_disjunction
 *********************************************************************************
-
 
 ----
 
@@ -493,7 +492,6 @@ all of the above statements mean the same thing. Would "Logical Inequality" be a
 test_material_non_implication
 *********************************************************************************
 
-
 ----
 
 =================================================================================
@@ -730,7 +728,6 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 *********************************************************************************
 test_project_first
 *********************************************************************************
-
 
 ----
 
@@ -979,7 +976,6 @@ it is like :ref:`Project Second<test_project_second>` which always returns the s
 *********************************************************************************
 test_converse_implication
 *********************************************************************************
-
 
 ----
 

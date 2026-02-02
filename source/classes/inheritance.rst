@@ -82,7 +82,7 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
@@ -273,7 +273,6 @@ pass_ is a placeholder, it makes sure I am following Python_ rules, I can make a
 test_making_a_class_w_object
 *********************************************************************************
 
-
 ----
 
 =================================================================================
@@ -449,7 +448,6 @@ and it passes. All :ref:`classes<what is a class?>` automatically get these attr
 *********************************************************************************
 test_making_classes_w_inheritance
 *********************************************************************************
-
 
 ----
 
@@ -656,7 +654,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 *********************************************************************************
 test_family_ties
 *********************************************************************************
-
 
 ----
 

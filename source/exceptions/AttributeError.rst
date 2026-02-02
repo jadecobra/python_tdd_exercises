@@ -233,7 +233,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
@@ -287,7 +287,6 @@ start the project
 *********************************************************************************
 test_attribute_error_w_variables
 *********************************************************************************
-
 
 ----
 
@@ -509,7 +508,6 @@ test_attribute_error_w_variables
 *********************************************************************************
 test_attribute_error_w_functions
 *********************************************************************************
-
 
 ----
 

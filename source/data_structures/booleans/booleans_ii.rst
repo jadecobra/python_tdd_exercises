@@ -58,12 +58,12 @@ open the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     rootdir: .../pumping_python/booleans
     configfile: pyproject.toml
@@ -80,7 +80,6 @@ open the project
 *********************************************************************************
 is a boolean an integer or a float?
 *********************************************************************************
-
 
 ----
 
@@ -500,7 +499,6 @@ the test passes
 test_the_value_of_false
 *********************************************************************************
 
-
 ----
 
 =================================================================================
@@ -662,7 +660,6 @@ time to test the value of :ref:`True<test_what_is_true>`
 *********************************************************************************
 test_the_value_of_true
 *********************************************************************************
-
 
 ----
 

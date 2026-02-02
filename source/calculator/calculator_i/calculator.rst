@@ -219,7 +219,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
@@ -298,7 +298,6 @@ start the project
 *********************************************************************************
 test_addition
 *********************************************************************************
-
 
 ----
 
@@ -1158,14 +1157,13 @@ all of these lines can be written using ``first_number`` as the name of the firs
     # test multiplication
     # test division
 
-:ref:`I can use a variable to remove duplication<what is a variable>`
+:ref:`I can use a variable to remove duplication<what is a variable?>`
 
 ----
 
 *********************************************************************************
 test_subtraction
 *********************************************************************************
-
 
 ----
 
@@ -1506,7 +1504,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 test_multiplication
 *********************************************************************************
 
-
 ----
 
 =================================================================================
@@ -1589,7 +1586,6 @@ the test passes! I remove ``test_multiplication`` from the TODO list in ``test_c
 *********************************************************************************
 test_division
 *********************************************************************************
-
 
 ----
 
@@ -2004,28 +2000,7 @@ you know a lot, you know
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
 
-There is a problem, I have done the same steps for each of the chapters I have gone through so far
-
-* I give the project a name
-* :ref:`I make a directory for the project<how to make a directory for the project>`
-* :ref:`I change directory to the project<how to change directory to the project>`
-* :ref:`I make a directory for the source code<how to make a directory for the source code>`
-* :ref:`I make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
-* :ref:`I make a directory for the tests<how to make a directory for the tests>`
-* :ref:`I make the 'tests' directory a Python package<how to make the tests a Python package>`
-* :ref:`I make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
-* :ref:`I add the first failing test to the test file<test_failure>`
-* :ref:`I make a requirements file for the Python packages I need<how to write text to a file>`
-* :ref:`I setup the project with uv<how to setup a project with uv>`
-* :ref:`I install the Python packages listed in the requirements file<how to install Python packages with uv>`
-* :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
-* :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
-* I make the test pass
-* then I start working on the project
-
-I think I know how to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`. I am going to :ref:`write a program that will do all the steps for making a project for me<how to make a Python Test Driven Development environment automatically>`, so I never have to do those steps again.
-
-:ref:`Would you like to know how to make a Python Test Driven Development environment automatically?<how to make a test driven development environment 2>`
+:ref:`Would you like to see a better way to write test_why_use_a_function?<functions 2>`
 
 -----
 

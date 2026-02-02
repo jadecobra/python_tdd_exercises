@@ -1146,7 +1146,7 @@ how to run the tests automatically with uv and pytest-watcher
   .. code-block:: shell
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   the terminal_ shows
 
@@ -1176,15 +1176,14 @@ how to run the tests automatically with uv and pytest-watcher
 
   oh boy! I just want my tests to run already. I see a ``--now`` option
 
-* I try to run the tests again with the ``--now`` option and set the ``--delay`` to ``0``
+* I try to run the tests again with the ``--now`` option
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv run pytest-watcher --now --delay 0
+    uv run pytest-watcher --now
 
-  - ``--now`` is an option that tells `pytest-watcher`_ to run the tests now without asking me for input
-  - ``--delay`` is an option that sets how long `pytest-watcher`_ waits before it runs the tests after I make a change, the default is ``0.2``
+  ``--now`` is an option that tells `pytest-watcher`_ to run the tests now without asking me for input
 
   the terminal_ shows
 
@@ -1198,13 +1197,13 @@ how to run the tests automatically with uv and pytest-watcher
                           path
     pytest_watcher: error: the following arguments are required: path
 
-  I have to tell `pytest-watcher`_ what folder_ has the tests to run
+  I have to tell `pytest-watcher`_ what folder_ has the tests I want it to run
 
 * I try to run the tests again
 
   .. code-block:: python
 
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   ``.`` is the current working directory_
 
@@ -1391,8 +1390,8 @@ how to view all the commands typed in a terminal
     cat pyproject.toml
     pytest-watcher
     uv run pytest-watcher
-    uv run pytest-watcher --now --delay 0
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now
+    uv run pytest-watcher --now  .
     cd ..
 
   the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for me
@@ -1412,7 +1411,7 @@ how to view all the commands typed in a terminal
     uv init
     rm main.py
     uv add --requirement requirements.txt
-    uv run pytest-watcher --now --delay 0 .
+    uv run pytest-watcher --now  .
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
