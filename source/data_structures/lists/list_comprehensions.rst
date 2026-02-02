@@ -915,14 +915,14 @@ the test passes.
     for item in iterable:
         a_list.append(item)
 
-  is the same as this `list comprehensions`_
+  is the same as this `list comprehension`_
 
   .. code-block:: python
     :emphasize-text: for
 
     a_list = [item for item in iterable]
 
-  NOT
+  ``item`` comes before ``for item`` in the `list comprehension`_ and it  is NOT
 
   .. code-block:: python
     :emphasize-text: a_list

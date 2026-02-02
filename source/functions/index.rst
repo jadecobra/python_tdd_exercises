@@ -911,7 +911,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   * the test checks if the result of the call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is :ref:`None<what is None?>`
   * the :ref:`function<what is a function?>` definition simply says pass_ and the test passes
-  * pass_ is a placeholder keyword which allows the :ref:`function<what is a function?>` definition to follow Python_ language rules
+  * pass_ is a special keyword that allows the :ref:`function<what is a function?>` definition to follow Python_ language rules
   * the test passes because all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``, which leads me to the next test
 
 :ref:`I can make a function with pass<test_making_a_function_w_pass>`
@@ -1101,7 +1101,7 @@ the test passes
 
 * I undo the change and the test is green again
 
-I have 3 functions_ with different statements and they all return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ..." ah, the last :ref:`function<what is a function?>` has a line that says clearly ``return None``.
+I have 3 functions_ with different statements and they all return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ..." ah, the last :ref:`function<what is a function?>` has a line that clearly says ``return None`` for everyone to see.
 
 I like to write my functions_ this way, so that anyone can see what the :ref:`function<what is a function?>` returns.
 
@@ -1232,7 +1232,7 @@ the test passes
         return None
         return 'will not run'
 
-  the test is still green because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  the second `return statement`_ is now like a comment, and the test is still green because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 ----
 
@@ -1431,7 +1431,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 * I add a new :ref:`assertion<what is an assertion?>` to ``test_identity_function`` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 40
     :emphasize-lines: 3
 
     def test_identity_function(self):
@@ -1502,7 +1502,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   AttributeError: module 'src.functions' has no attribute 'w_positional_arguments'
 
-because
+because ...
 
 ----
 
@@ -1843,7 +1843,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes. I can give the input in any order when I use `keyword arguments`_
 
-* I can still call the :ref:`function<what is a function?>` without using the names, the same way I did in :ref:`test_functions_w_positional_arguments`. I add an :ref:`assertion<what is an assertion?>` to show this
+* I can still call the :ref:`function<what is a function?>` the same way I did in :ref:`test_functions_w_positional_arguments` - without using the names. I add an :ref:`assertion<what is an assertion?>` to show this
 
   .. code-block:: python
     :lineno-start: 61
@@ -1876,6 +1876,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
   .. code-block:: python
     :lineno-start: 54
     :emphasize-lines: 16
+    :emphasize-text: first
 
         def test_functions_w_keyword_arguments(self):
             self.assertEqual(
@@ -1921,7 +1922,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
   * I have to give the input in order when I use :ref:`positional arguments<test_functions_w_positional_arguments>`
 
     .. code-block:: python
-      :emphasize-text: first last
+      :emphasize-text: first
 
       w_positional_arguments('first', 'last') == return ('first', 'last')
       w_positional_arguments('last', 'first') == return ('last', 'first')
@@ -1930,7 +1931,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
   * I can give the input in any order when I use `keyword arguments`_ because I give values for the names in parentheses from the :ref:`function<what is a function?>` definition when I call it
 
     .. code-block:: python
-      :emphasize-text: first_input last_input
+      :emphasize-text: first_input
 
       w_keyword_arguments(first_input='first', last_input='last')
       w_keyword_arguments(last_input='last', first_input='first')
@@ -2228,7 +2229,7 @@ the test passes
 
     TypeError: w_default_arguments() missing 1 required positional argument: 'last_name'
 
-  the ``last_name`` argument is needed when the :ref:`function<what is a function?>` is called
+  the ``last_name`` argument MUST be given when this :ref:`function<what is a function?>` is called
 
 * I make the argument a choice by giving it a default value in ``functions.py``
 
@@ -2239,7 +2240,7 @@ the test passes
     def w_default_arguments(first_name, last_name='doe'):
         return first_name, last_name
 
-  the test passes
+  the test passes because the ``last_name`` argument no longer has to be given when this :ref:`function<what is a function? >` is called
 
   .. NOTE::
 
@@ -2327,7 +2328,7 @@ the test passes
 
     return first_name, last_name
 
-  but ``first_input``, ``first_name``, ``last_input`` and ``last_name`` are just names, they could be anything
+  but ``first_input``, ``first_name``, ``last_input`` and ``last_name`` are just names, they could be any name
 
   .. code-block:: python
     :emphasize-text: positional keyword default
@@ -2340,6 +2341,7 @@ the test passes
   The difference that matters in the tests is how I call the functions_
 
   .. code-block:: python
+    :emphasize-text: last
 
                            w_positional_arguments('first', 'last') == return 'first', 'last'
                            w_positional_arguments('last', 'first') == return 'last',  'first'
