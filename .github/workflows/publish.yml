@@ -14,7 +14,7 @@ permissions:
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -22,6 +22,26 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: setup Python
+        run: uv python install
+
+      - name: install dependencies
+        run: uv sync --no-dev --extra docs
+
+      - name: build and deploy sphinx
+        uses: sphinx-notes/pages@v3
+        with:
+          documentation_path: ./source
+          requirements_path: ""
+
     permissions:
       pages: write
       id-token: write
