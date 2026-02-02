@@ -909,6 +909,7 @@ the test passes.
   this `for loop`_
 
   .. code-block:: python
+    :emphasize-text: for item
 
     a_list = []
     for item in iterable:
@@ -917,12 +918,14 @@ the test passes.
   is the same as this `list comprehensions`_
 
   .. code-block:: python
+    :emphasize-text: for
 
     a_list = [item for item in iterable]
 
-  instead of
+  NOT
 
   .. code-block:: python
+    :emphasize-text: a_list
 
     a_list = [a_list.append(item) for item in iterable]
 
