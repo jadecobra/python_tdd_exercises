@@ -2240,7 +2240,7 @@ the test passes
     def w_default_arguments(first_name, last_name='doe'):
         return first_name, last_name
 
-  the test passes because the ``last_name`` argument no longer has to be given when this :ref:`function<what is a function? >` is called
+  the test passes because the ``last_name`` argument no longer has to be given when this :ref:`function<what is a function?>` is called
 
   .. NOTE::
 

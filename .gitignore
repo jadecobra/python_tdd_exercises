@@ -167,3 +167,4 @@ remove.txt
 .DS_Store
 AWSCLIV2.pkg
 uv.lock
+.python-version
