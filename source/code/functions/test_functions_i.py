@@ -17,6 +17,7 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(add_x(y=6), 9)
         self.assertEqual(add_x(y=7), 10)
         self.assertEqual(add_x(y=8), 11)
+        self.assertEqual(add_x(y=9), 12)
 
     def test_making_a_function_w_pass(self):
         self.assertIsNone(src.functions.w_pass())
@@ -91,7 +92,7 @@ class TestFunctions(unittest.TestCase):
             src.functions.w_unknown_arguments(
                 0, 1, 2, 3, a=4, b=5, c=6, d=7,
             ),
-            ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+            ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
         )
         self.assertEqual(
             src.functions.w_unknown_arguments(0, 1, 2, 3),
@@ -112,3 +113,4 @@ class TestFunctions(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
+# SyntaxError

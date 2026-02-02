@@ -202,6 +202,7 @@ start the project
   .. code-block:: shell
 
     Initialized project `attribute_error`
+    .../pumping_python/attribute_error (main)
 
   I remove ``main.py`` from the project
 

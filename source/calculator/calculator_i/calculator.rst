@@ -188,6 +188,7 @@ start the project
   .. code-block:: shell
 
     Initialized project `calculator`
+    .../pumping_python/calculator (main)
 
   I remove ``main.py`` from the project
 

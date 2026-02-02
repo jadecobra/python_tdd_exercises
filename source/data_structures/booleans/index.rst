@@ -209,6 +209,7 @@ start the project
   .. code-block:: shell
 
     Initialized project `booleans`
+    .../pumping_python/booleans (main)
 
   I remove ``main.py`` from the project
 

@@ -209,6 +209,7 @@ start the project
   .. code-block:: shell
 
     Initialized project `truth_table`
+    .../pumping_python/truth_table (main)
 
   I remove ``main.py`` from the project
 
