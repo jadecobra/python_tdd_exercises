@@ -710,12 +710,17 @@ the test passes
 * then I use it in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2
+    :lineno-start: 10
+    :emphasize-lines: 5-6
     :emphasize-text: add_x
+
+        def test_why_use_a_function(self):
+            def add_x(x=2, y=0):
+                return x + y
 
             # self.assertEqual(2+0, 2)
             self.assertEqual(add_x(y=0), 2)
+            self.assertEqual(2+1, 3)
 
   the test is still green
 

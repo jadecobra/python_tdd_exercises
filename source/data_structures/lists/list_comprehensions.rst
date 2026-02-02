@@ -900,7 +900,33 @@ I add a `list comprehension`_ as the expectation
               [item for item in self.iterable]
           )
 
-the test passes. The `list comprehension`_ is like the `for loop`_ without the :ref:`append<test_append_adds_item_to_end_of_a_list>` line
+the test passes.
+
+.. NOTE::
+
+  The `list comprehension`_ is like the `for loop`_ without the :ref:`append<test_append_adds_item_to_end_of_a_list>` line
+
+  this `for loop`_
+
+  .. code-block:: python
+
+    a_list = []
+    for item in iterable:
+        a_list.append(item)
+
+  is the same as this `list comprehensions`_
+
+  .. code-block:: python
+
+    a_list = [item for item in iterable]
+
+  instead of
+
+  .. code-block:: python
+
+    a_list = [a_list.append(item) for item in iterable]
+
+  because that would be saying ``a_list`` two times
 
 ----
 
