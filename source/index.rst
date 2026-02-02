@@ -94,6 +94,7 @@ table of contents
   :titlesonly:
   :maxdepth: 2
 
+  hatches
   self
   conventions
   setup<setup/index>
@@ -126,7 +127,6 @@ table of contents
   all the code in this book<catalog_of_code>
   learning_models
   what do people think of this?<reviews>
-  hatches
   videos<videos>
 
 ----

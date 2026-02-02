@@ -15,7 +15,7 @@
 what is a function?
 #################################################################################
 
-A function_ is code that is callable_, this means I can write statements to do something one time, and can use it do something at a different time from when I write them. They can make code simpler, easier to read, test, reuse, maintain and improve, all the good things.
+A function_ is code that is callable_, this means I can write code to do something one time, and can it to do the same thing at a different time from when I write it, by just calling the name. It can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
 
 Part of `Computer Programming`_ is sending input data to a process and getting output data back, you can think of it like this
 
@@ -23,7 +23,7 @@ Part of `Computer Programming`_ is sending input data to a process and getting o
 
     input_data -> process -> output_data
 
-I think of it like mapping a function ``f`` with inputs ``x`` and an output of ``y`` in `Mathematics`_
+I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
 
 .. math::
 
@@ -33,7 +33,7 @@ in other words
 
 .. code-block:: python
 
-         f(     x    ) ->      y
+                  f(x) -> y
   function(input_data) -> output_data
 
 the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and gives me ``output_data`` as the result.
