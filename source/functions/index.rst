@@ -197,14 +197,14 @@ start the project
 
   .. TIP::
 
-    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ type this in the terminal_
+    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_. That means when I type this in the terminal_
 
     .. code-block:: python
       :emphasize-lines: 1
 
       code tests/test_functions.py
 
-    ``test_functions.py`` opens up in the :ref:`editor<2 editors>`
+    `Visual Studio Code`_ opens ``test_functions.py`` in the :ref:`editor<2 editors>`
 
 * I add :ref:`the first failing test<test_failure>` to ``test_functions.py``
 
