@@ -192,14 +192,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line and I add `pytest-watcher`_ to the file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" > requirements.txt
+    echo "pytest\npytest-watcher" > requirements.txt
 
   the terminal_ goes back to the command line
 

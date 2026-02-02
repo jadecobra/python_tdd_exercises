@@ -8,21 +8,45 @@ functions: tests and solutions
 #################################################################################
 
 *********************************************************************************
-tests
+functions: tests
 *********************************************************************************
 
 the code in ``functions/tests/test_functions.py`` from :ref:`functions<what is a function?>`
 
-.. literalinclude:: tests/test_functions.py
+.. literalinclude:: functions/test_functions_i.py
   :language: python
   :linenos:
 
 *********************************************************************************
-solutions
+functions: solutions
 *********************************************************************************
 
 the solutions in ``functions/src/functions.py`` from :ref:`functions<what is a function?>`
 
-.. literalinclude:: solutions/functions.py
+.. literalinclude:: functions/functions.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+functions 2: tests
+*********************************************************************************
+
+the code in ``functions/tests/test_functions.py`` from :ref:`functions 2`
+
+.. literalinclude:: functions/test_functions_ii.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+functions 3: solutions
+*********************************************************************************
+
+the solutions in ``functions/tests/test_functions.py`` from :ref:`functions 3`
+
+.. literalinclude:: functions/test_functions_iii.py
   :language: python
   :linenos:

@@ -33,12 +33,12 @@ in other words
 
 .. code-block:: python
 
-  function(     x    ) ->      y
+         f(     x    ) ->      y
   function(input_data) -> output_data
 
 the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and gives me ``output_data`` as the result.
 
-functions_ are made with the def_ keyword in Python_, a name, parentheses and a colon at the end. The code that makes up in :ref:`function<what is a function?>` is indented to the right on the line after the colon
+functions_ are made with the def_ keyword in Python_, a name, parentheses and a colon at the end. The code that makes up the :ref:`function<what is a function?>` is indented to the right on the line after the colon.
 
 .. code-block:: python
 
@@ -54,7 +54,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/functions/test_functions.py
+.. literalinclude:: ../code/functions/test_functions_i.py
   :language: python
   :linenos:
 
@@ -225,14 +225,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    echo "pytest=" > requirements.txt
-
-  the terminal_ goes back to the command line and I add `pytest-watcher`_ to the file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" > requirements.txt
+    echo "pytest\npytest-watcher" > requirements.txt
 
   the terminal_ goes back to the command line
 
