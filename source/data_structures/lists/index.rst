@@ -65,6 +65,7 @@ the chapters
   list_comprehensions
   ../../calculator/calculator_vi
   ../../data_structures/booleans/booleans_ii
+  ../../functions/functions_iii
 
 ----
 

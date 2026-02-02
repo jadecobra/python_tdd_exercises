@@ -5,28 +5,13 @@ import unittest
 class TestFunctions(unittest.TestCase):
 
     def test_why_use_a_function(self):
-        def add(x=3, y=0):
+        def add(x, y):
             return x + y
 
-        x = 4
-        y = 0
-        self.assertEqual(add(x, y), x+y)
-        y = 1
-        self.assertEqual(add(x, y), x+y)
-        y = 2
-        self.assertEqual(add(x, y), x+y)
-        y = 3
-        self.assertEqual(add(x, y), x+y)
-        y = 4
-        self.assertEqual(add(x, y), x+y)
-        y = 5
-        self.assertEqual(add(x, y), x+y)
-        y = 6
-        self.assertEqual(add(x, y), x+y)
-        y = 7
-        self.assertEqual(add(x, y), x+y)
-        y = 8
-        self.assertEqual(add(x, y), x+y)
+        for x in range(0, 9):
+            for y in range(0, 9):
+                with self.subTest(y=y):
+                    self.assertEqual(add(x, y), x+y)
 
     def test_making_a_function_w_pass(self):
         self.assertIsNone(src.functions.w_pass())

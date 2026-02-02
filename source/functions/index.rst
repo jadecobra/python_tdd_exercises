@@ -17,13 +17,13 @@ what is a function?
 
 A function_ is code that is callable_, this means I can write statements to do something one time, and can use it do something at a different time from when I write them. They can make code simpler, easier to read, test, reuse, maintain and improve, all the good things.
 
-Part of `Computer Programming`_ is sending input data to a process and getting output data, for example
+Part of `Computer Programming`_ is sending input data to a process and getting output data back, you can think of it like this
 
 .. code-block:: python
 
     input_data -> process -> output_data
 
-I think of it like mapping a function ``f`` with inputs ``x`` and an output of ``y``
+I think of it like mapping a function ``f`` with inputs ``x`` and an output of ``y`` in `Mathematics`_
 
 .. math::
 
@@ -33,15 +33,18 @@ in other words
 
 .. code-block:: python
 
+  function(     x    ) ->      y
   function(input_data) -> output_data
 
-the :ref:`function<what is a function?>` does something with ``input_data`` and gives me ``output_data`` as the result.
+the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and gives me ``output_data`` as the result.
 
-In Python_ functions_ are made with the def_ keyword, a name, parentheses and a colon at the end
+functions_ are made with the def_ keyword in Python_, a name, parentheses and a colon at the end. The code that makes up in :ref:`function<what is a function?>` is indented to the right on the line after the colon
 
 .. code-block:: python
 
   def name_of_function():
+      code
+      more code
 
 ----
 
@@ -51,7 +54,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_functions.py
+.. literalinclude:: ../code/functions/test_functions.py
   :language: python
   :linenos:
 
