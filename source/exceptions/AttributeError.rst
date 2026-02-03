@@ -55,10 +55,6 @@ start the project
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
-
-    .../pumping_python
-
 * I change directory_ to the project
 
   .. code-block:: shell
@@ -81,10 +77,6 @@ start the project
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
-
-    .../pumping_python/attribute_error
-
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
   .. code-block:: shell
@@ -102,10 +94,6 @@ start the project
       New-Item src/attribute_error.py
 
   the terminal_ goes back to the command line
-
-  .. code-block:: shell
-
-    .../pumping_python/attribute_error
 
 * I `make a directory`_ for the tests
 
@@ -214,11 +202,7 @@ start the project
 
   then goes back to the command line
 
-  .. code-block:: shell
-
-    .../pumping_python/attribute_error (main)
-
-  I remove ``main.py`` from the project
+* I remove ``main.py`` from the project
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -331,8 +315,7 @@ test_attribute_error_w_variables
   I think of ``src.attribute_error.variable_00`` as an address
 
   - ``src`` is the ``src`` folder_
-  - ``.attribute_error`` points to ``attribute_error.py`` in the ``src`` folder_
-  - ``.variable_00`` points to ``variable_00`` in ``attribute_error.py`` in the ``src`` folder_
+  - ``src.attribute_error`` points to ``attribute_error.py`` in the ``src`` folder_
   - ``src.attribute_error.variable_00`` points to ``variable_00`` in ``attribute_error.py`` in the ``src`` folder_
 
   Since ``attribute_error.py`` is empty, Python_ cannot find ``variable_00`` inside it and raises AttributeError_
@@ -362,7 +345,9 @@ test_attribute_error_w_variables
 
 ----
 
-* I open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then I add the name
+* I open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
+
+* I add the name to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -398,7 +383,9 @@ test_attribute_error_w_variables
 
     variable_00 = None
 
-  the test passes. ``variable_00`` is now an attribute or property of ``attribute_error.py`` in the ``src`` folder_, I can use it with ``src.attribute_error.variable_00``
+  the test passes.
+
+``variable_00`` is now an attribute or property of ``attribute_error.py`` in the ``src`` folder_, I can use it with ``src.attribute_error.variable_00``
 
 ----
 
@@ -439,7 +426,7 @@ test_attribute_error_w_variables
 
     NameError: name 'variable_01' is not defined
 
-  I point it to :ref:`None<what is None?>` to define it
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
@@ -468,7 +455,7 @@ test_attribute_error_w_variables
 
     AttributeError: module 'src.attribute_error' has no attribute 'variable_02'. Did you mean: 'variable_00'?
 
-* I add the name and point it to :ref:`None<what is None?>`
+* I add the name and point it to :ref:`None<what is None?>` in ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -612,7 +599,9 @@ the terminal_ shows AttributeError_
     def function_00():
         return None
 
-  the test passes. ``function_00`` is now an attribute or property of ``attribute_error.py`` in the ``src`` folder_. I can call it with ``src.attribute_error.function_00()``
+  the test passes.
+
+``function_00`` is now an attribute or property of ``attribute_error.py`` in the ``src`` folder_. I can call it with ``src.attribute_error.function_00()``
 
 ----
 
@@ -864,7 +853,9 @@ the terminal_ shows AttributeError_
 
         attribute_00 = None
 
-  the test passes. ``attribute_00`` is now an attribute of the ``AClass`` :ref:`class<what is a class?>` which is an attribute of ``attribute_error.py`` in the ``src`` folder_ and I can get to it with ``src.attribute_error.AClass.attribute_00``
+  the test passes.
+
+``attribute_00`` is now an attribute of the ``AClass`` :ref:`class<what is a class?>` which is an attribute of ``attribute_error.py`` in the ``src`` folder_ and I can get to it with ``src.attribute_error.AClass.attribute_00``
 
 ----
 
@@ -1032,7 +1023,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
 ----
 
-* I add the name to ``AClass`` and point it to :ref:`None<what is None?>` in ``attribute_error.py``
+* I add the name to ``AClass`` and point it to :ref:`None<what is None?>`, in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -1071,7 +1062,9 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
         def method_00():
             return None
 
-  the test passes. ``method_00`` is now an attribute of ``AClass`` which is an attribute of ``attribute_error.py`` in the ``src`` folder_ and I can call it with ``src.attribute_error.AClass.method_00()``
+  the test passes.
+
+``method_00`` is now an attribute of ``AClass`` which is an attribute of ``attribute_error.py`` in the ``src`` folder_ and I can call it with ``src.attribute_error.AClass.method_00()``
 
 ----
 
@@ -1210,10 +1203,6 @@ close the project
 * I close ``attribute_error.py`` and ``test_attribute_error.py``  in the :ref:`editors<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
-  .. code-block:: python
-
-    .../pumping_python/attribute_error (main)
-
 * I `change directory`_ to the parent of ``attribute_error``
 
   .. code-block:: shell
@@ -1267,7 +1256,7 @@ you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
-* :ref:`how to make functions<what is a function?>`
+* :ref:`how to make functions<what is a function?>` and
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 
 :ref:`Would you like to test how to pass values from tests to functions with assert methods?<how to pass values>`

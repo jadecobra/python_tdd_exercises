@@ -41,10 +41,6 @@ start the project
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
-
-    .../pumping_python
-
 * I change directory_ to the project
 
   .. code-block:: shell
@@ -67,10 +63,6 @@ start the project
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
-
-    .../pumping_python/calculator
-
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
   .. code-block:: shell
@@ -88,10 +80,6 @@ start the project
       New-Item src/calculator.py
 
   the terminal_ goes back to the command line
-
-  .. code-block:: shell
-
-    .../pumping_python/calculator
 
 * I `make a directory`_ for the tests
 
@@ -197,12 +185,6 @@ start the project
   .. code-block:: shell
 
     Initialized project `calculator`
-
-  then goes back to the command line
-
-  .. code-block:: shell
-
-    .../pumping_python/calculator (main)
 
   I remove ``main.py`` from the project
 
@@ -1934,10 +1916,6 @@ close the project
 
 * I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
-
-  .. code-block:: python
-
-    .../pumping_python/calculator (main)
 
 * I `change directory`_ to the parent of ``calculator``
 

@@ -1336,10 +1336,6 @@ close the project
 * I close ``test_truth_table.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
-  .. code-block:: python
-
-    .../pumping_python/truth_table (main)
-
 * I `change directory`_ to the parent of ``truth_table``
 
   .. code-block:: shell

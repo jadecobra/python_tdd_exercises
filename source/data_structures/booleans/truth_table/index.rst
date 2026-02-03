@@ -62,10 +62,6 @@ start the project
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
-
-    .../pumping_python
-
 * I change directory_ to the project
 
   .. code-block:: shell
@@ -88,10 +84,6 @@ start the project
 
   the terminal_ goes back to the command line
 
-  .. code-block:: shell
-
-    .../pumping_python/truth_table
-
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
   .. code-block:: shell
@@ -109,10 +101,6 @@ start the project
       New-Item src/truth_table.py
 
   the terminal_ goes back to the command line
-
-  .. code-block:: shell
-
-    .../pumping_python/truth_table
 
 * I `make a directory`_ for the tests
 
@@ -220,10 +208,6 @@ start the project
     Initialized project `truth_table`
 
   then goes back to the command line
-
-  .. code-block:: shell
-
-    .../pumping_python/truth_table (main)
 
   I remove ``main.py`` from the project
 

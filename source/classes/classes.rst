@@ -3865,10 +3865,6 @@ close the project
 * I close ``test_person.py`` and ``person.py`` in the :ref:`editors<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
-  .. code-block:: python
-
-    .../pumping_python/person (main)
-
 * I `change directory`_ to the parent of ``person``
 
   .. code-block:: shell

@@ -1916,10 +1916,6 @@ close the project
 * I close ``assertion_error.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
-  .. code-block:: python
-
-    .../pumping_python/assertion_error (main)
-
 * I `change directory`_ to the parent of ``assertion_error``
 
   .. code-block:: python

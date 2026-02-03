@@ -256,10 +256,6 @@ start the project
 
   then goes back to the command line
 
-  .. code-block:: shell
-
-    .../pumping_python/functions (main)
-
 * I remove ``main.py`` from the project
 
   .. code-block:: python
@@ -2786,10 +2782,6 @@ close the project
 
 * I close ``test_functions.py`` and ``functions.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
-
-  .. code-block:: python
-
-    .../pumping_python/functions (main)
 
 * I `change directory`_ to the parent of ``functions``
 
