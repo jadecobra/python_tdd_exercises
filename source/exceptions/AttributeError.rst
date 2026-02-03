@@ -450,7 +450,7 @@ test_attribute_error_w_variables
 
   the test passes
 
-* I another statement to ``test_attribute_error.py``
+* I add another statement to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1003,9 +1003,13 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 * I add a new test to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 3-4
+    :lineno-start: 19
+    :emphasize-lines: 7-8
 
+        def test_attribute_error_w_class_attributes(self):
+            src.attribute_error.AClass.attribute_00
+            src.attribute_error.AClass.attribute_01
+            src.attribute_error.AClass.attribute_02
             src.attribute_error.AClass.attribute_03
 
         def test_attribute_error_w_class_methods(self):
@@ -1049,18 +1053,25 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
     TypeError: 'NoneType' object is not callable
 
+  ``method_00`` points to :ref:`None<what is None?>` and I cannot call :ref:`None<what is None?>` like a :ref:`function<what is a function?>`
+
 * I make it a :ref:`method<what is a function?>` with the def_ keyword
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 3-4
+    :lineno-start: 23
+    :emphasize-lines: 8-9
 
+    class AClass():
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
         attribute_03 = None
 
         def method_00():
             return None
 
-  the test passes. ``method_00`` is now an attribute of ``AClass`` which is an attribute of ``attribute_error.py`` which is in the ``src`` folder_ and I can get to it with ``src.attribute_error.AClass.method_00()``
+  the test passes. ``method_00`` is now an attribute of ``AClass`` which is an attribute of ``attribute_error.py`` in the ``src`` folder_ and I can call it with ``src.attribute_error.AClass.method_00()``
 
 ----
 
@@ -1120,8 +1131,11 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 * I add the :ref:`method<what is a function?>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 4-5
+    :lineno-start: 30
+    :emphasize-lines: 7-8
+
+        def method_00():
+            return None
 
         def method_01():
             return None
@@ -1155,8 +1169,21 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 * I add the :ref:`method<what is a function?>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 4-5
+    :lineno-start: 30
+    :emphasize-lines: 17-18
+
+    class AClass():
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+
+        def method_00():
+            return None
+
+        def method_01():
+            return None
 
         def method_02():
             return None
@@ -1164,14 +1191,15 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
         def method_03():
             return None
 
-  the test passes
+  the test passes.
 
+.. NOTE::
 
-* :ref:`A function in a class is called a method and is an attribute of the class<test_attribute_error_w_class_methods>`
-* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_class_attributes>`
-* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
-* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_variables>`
+  * :ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
+  * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
+  * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+  * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+  * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
 ----
 
