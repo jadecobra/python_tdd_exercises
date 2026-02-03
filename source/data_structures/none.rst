@@ -245,7 +245,7 @@ requirements
 
   the terminal_ goes back to the command line
 
-* I install the Python packages listed in the requirements file
+* I install the Python packages listed in the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1

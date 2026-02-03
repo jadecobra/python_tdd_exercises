@@ -553,7 +553,7 @@ There is a problem, I have done these same steps for each of the chapters up til
 * :ref:`I add the first failing test to the test file<test_failure>`
 * :ref:`I make a requirements file for the Python packages I need<how to write text to a file>`
 * :ref:`I setup the project with uv<how to setup a project with uv>`
-* :ref:`I install the Python packages listed in the requirements file<how to install Python packages with uv>`
+* :ref:`I install the Python packages listed in the requirements file_<how to install Python packages with uv>`
 * :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
 * :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
 * I make the test pass

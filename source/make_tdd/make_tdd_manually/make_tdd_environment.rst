@@ -1429,7 +1429,7 @@ how to view all the commands typed in a terminal
   - :ref:`add the first failing test to the test file<test_failure>`
   - :ref:`make a requirements file for the Python packages I need<how to write text to a file>`
   - :ref:`setup the project with uv<how to setup a project with uv>`
-  - :ref:`install the Python packages listed in the requirements file<how to install Python packages with uv>`
+  - :ref:`install the Python packages listed in the requirements file_<how to install Python packages with uv>`
   - :ref:`run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
   - make the test pass

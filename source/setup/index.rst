@@ -103,7 +103,7 @@ Linux/Windows Subsystem for Linux requirements
   .. code-block:: python
     :emphasize-lines: 1
 
-    sudo apt install git --y
+    sudo apt install git --yes
 
   git_ is a program for keeping track of changes I make in a project, it might already be installed
 
