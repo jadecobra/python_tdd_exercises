@@ -94,8 +94,8 @@ table of contents
   :titlesonly:
   :maxdepth: 2
 
-  self
   hatches
+  self
   conventions
   setup<setup/index>
   make TDD project 1<make_tdd/make_tdd_manually/index>

@@ -2450,7 +2450,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   I had this same problem in :ref:`test_functions_w_positional_and_keyword_arguments`. Python_ cannot tell if ``a`` is a :ref:`positional<test_functions_w_positional_arguments>` or :ref:`keyword argument<test_functions_w_keyword_arguments>` in this case
 
-* Python_ has a way to allow passing any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many they are. I use it to replace ``a`` in the parentheses
+* Python_ has a way for a :ref:`function<what is a function?>` to get any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many they are. I use it to replace ``a`` in the parentheses
 
   .. code-block:: python
     :lineno-start: 42
@@ -2499,7 +2499,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     TypeError: w_unknown_arguments() takes 1 positional argument but 4 were given
 
-* I can add names for the other :ref:`positional arguments<test_functions_w_positional_arguments>`, or I can use what Python_ gives me to handle an unknown number of :ref:`positional arguments<test_functions_w_positional_arguments>`
+* I can add names for the other :ref:`positional arguments<test_functions_w_positional_arguments>`, or I can use what Python_ has to handle any number of :ref:`positional arguments<test_functions_w_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -2562,9 +2562,11 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes
 
---------------------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 how Python reads positional arguments
---------------------------------------------------------------------------------------------
+*********************************************************************************
 
 I want to see what happens when I call ``w_unknown_arguments`` with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add an :ref:`assertion<what is an assertion?>`
 
@@ -2609,9 +2611,11 @@ I change the expectation to match
 
 the test passes. The :ref:`function<what is a function?>` reads the :ref:`positional arguments<test_functions_w_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
 
---------------------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 how Python reads keyword arguments
---------------------------------------------------------------------------------------------
+*********************************************************************************
 
 
 I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
@@ -2654,9 +2658,11 @@ I change the expectation to match
 
 the test passes. The :ref:`function<what is a function?>` reads the :ref:`keyword arguments<test_functions_w_keyword_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
 
---------------------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 how Python reads positional and keyword arguments
---------------------------------------------------------------------------------------------
+*********************************************************************************
 
 * I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
 
