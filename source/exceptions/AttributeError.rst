@@ -744,9 +744,9 @@ the terminal_ shows AttributeError_
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-I know that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` defined in a :ref:`module<what is a module?>` are attributes of the :ref:`module<what is a module?>`.
+I know that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are attributes of the :ref:`module<what is a module?>`.
 
-A :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` is also an attribute of the :ref:`module<what is a module?>`, and :ref:`variables<what is a variable?>` inside the :ref:`class<what is a class?>` are attributes of the :ref:`class<what is a class?>`.
+A :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` is also an attribute of the :ref:`module<what is a module?>`, and :ref:`variables<what is a variable?>` in the :ref:`class<what is a class?>` are attributes of the :ref:`class<what is a class?>`.
 
 ----
 
@@ -971,12 +971,14 @@ the terminal_ shows AttributeError_
         attribute_02 = None
         attribute_03 = None
 
-  the test passes
+  the test passes.
 
-* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_class_attributes>`
-* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
-* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_variables>`
+.. NOTE::
+
+  * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
+  * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+  * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+  * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
 ----
 
@@ -984,9 +986,11 @@ the terminal_ shows AttributeError_
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-I know that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` defined in a :ref:`module<what is a module?>` are attributes.
+I know that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` in a :ref:`module<what is a module?>` are attributes of the :ref:`module<what is a module?>`.
 
-I also know that :ref:`variables<what is a variable?>` defined inside a :ref:`class<what is a class?>` are attributes. :ref:`functions<what is a function?>` defined inside a :ref:`class<what is a class?>` are also attributes, they are called :ref:`methods<what is a function?>`
+I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is a class?>` are attributes of the :ref:`class<what is a class?>`.
+
+:ref:`functions<what is a function?>` in a :ref:`class<what is a class?>` are also attributes, they are called :ref:`methods<what is a function?>`
 
 ----
 
