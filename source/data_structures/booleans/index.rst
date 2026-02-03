@@ -99,7 +99,7 @@ start the project
 
     touch src/booleans.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/booleans.py`` instead of ``touch src/booleans.py``
 
@@ -125,14 +125,14 @@ start the project
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     touch tests/__init__.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
 
@@ -150,7 +150,7 @@ start the project
 
     touch tests/test_booleans.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_booleans.py`` instead of ``touch tests/test_booleans.py``
 
@@ -222,6 +222,7 @@ start the project
   then goes back to the command line
 
   .. code-block:: shell
+
     .../pumping_python/booleans (main)
 
   I remove ``main.py`` from the project

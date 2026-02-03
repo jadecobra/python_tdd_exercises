@@ -61,7 +61,7 @@ continue the project
 
     source .venv/bin/activate
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/scripts/activate.ps1`` instead of ``source .venv/bin/activate``
 

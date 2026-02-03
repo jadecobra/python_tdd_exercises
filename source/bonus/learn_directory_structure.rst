@@ -371,7 +371,7 @@ how to see what is in a directory
 
       ls -a
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
@@ -453,7 +453,7 @@ how to look at directory structure
 
     tree
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
@@ -503,7 +503,7 @@ how to look at directory structure
 
     ls -a
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
@@ -831,7 +831,7 @@ how to look at directory structure
 
     tree
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
@@ -872,7 +872,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     touch a_file_in_doe
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
 
@@ -890,7 +890,7 @@ I can make empty files_ in a folder_ with the touch_ program
 
     ls -a
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
 
@@ -1413,7 +1413,7 @@ how to use directory relationships
 
     tree
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
 
@@ -1457,7 +1457,7 @@ how to use directory relationships
 
     touch jane/a_child_of_doe jane/aka_sibling_of_john
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
 
@@ -1818,7 +1818,7 @@ how to remove a directory and all its contents
 
     rm -rf doe
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm -rf``
 

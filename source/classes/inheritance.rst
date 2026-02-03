@@ -62,7 +62,7 @@ open the project
 
     source .venv/bin/activate
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
 

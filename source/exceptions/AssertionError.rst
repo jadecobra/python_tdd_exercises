@@ -112,7 +112,7 @@ start the project
 
     touch src/assertion_error.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/assertion_error.py`` not ``touch src/assertion_error.py``
 
@@ -138,14 +138,14 @@ start the project
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch tests/__init__.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` not ``touch tests/__init__.py``
 
@@ -163,7 +163,7 @@ start the project
 
     touch tests/test_assertion_error.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_assertion_error.py`` not ``touch tests/test_assertion_error.py``
 

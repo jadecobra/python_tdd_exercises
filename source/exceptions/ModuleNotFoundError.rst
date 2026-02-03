@@ -51,7 +51,7 @@ start the project
 
     ./makePythonTdd.sh module_not_found_error
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 

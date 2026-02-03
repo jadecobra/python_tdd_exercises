@@ -90,7 +90,7 @@ start the project
     # AssertionError
     " > tests/test_dictionaries.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -124,7 +124,7 @@ start the project
 
     ./makePythonTdd.sh
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 

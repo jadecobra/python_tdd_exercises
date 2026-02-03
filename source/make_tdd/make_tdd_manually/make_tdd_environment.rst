@@ -541,7 +541,7 @@ how to make the tests a Python package
 
 * I use touch_ to add an empty file_ with the name ``__init__.py`` in the ``tests`` folder
 
-  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. code-block:: shell
     :emphasize-lines: 1

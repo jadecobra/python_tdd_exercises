@@ -15,7 +15,9 @@
 what is a function?
 #################################################################################
 
-A function_ is code that is callable_, this means I can write code to do something one time, and can it to do the same thing at a different time from when I write it, by just calling the name. It can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
+A function_ is code that is callable_, this means I can write code to do something one time, and use it to do the thing at a different time from when I write it, by calling the name.
+
+Using a function_ can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
 
 Part of `Computer Programming`_ is sending input data to a process and getting output data back, you can think of it like this
 
@@ -43,8 +45,9 @@ functions_ are made with the def_ keyword in Python_, a name, parentheses and a 
 .. code-block:: python
 
   def name_of_function():
-      code
-      more code
+      code indented to the right
+      more code indented to the right
+      ...
 
 ----
 
@@ -131,7 +134,7 @@ start the project
 
     touch src/functions.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/functions.py`` not ``touch src/functions.py``
 
@@ -157,14 +160,14 @@ start the project
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. ATTENTION:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     touch tests/__init__.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` not ``touch tests/__init__.py``
 
@@ -182,7 +185,7 @@ start the project
 
     touch tests/test_functions.py
 
-  .. attention::
+  .. NOTE::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_functions.py`` not ``touch tests/test_functions.py``
 
@@ -254,6 +257,7 @@ start the project
   then goes back to the command line
 
   .. code-block:: shell
+
     .../pumping_python/functions (main)
 
 * I remove ``main.py`` from the project
@@ -708,8 +712,10 @@ the test passes
 * What if I want to test what happens when I add ``3`` to a number? Wait! No more, please, there has to be a better way. I can use a :ref:`function<what is a function?>` for the parts that repeat, I add one to the test
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2-3
+    :lineno-start: 4
+    :emphasize-lines: 4-5
+
+    class TestFunctions(unittest.TestCase):
 
         def test_why_use_a_function(self):
             def add_x(x=2, y=0):
@@ -720,7 +726,7 @@ the test passes
 * then I use it in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 6
     :emphasize-lines: 5-6
     :emphasize-text: add_x
 
@@ -1109,7 +1115,16 @@ the test passes
 
     AssertionError: 'something' is not None
 
-* I undo the change and the test is green again
+* I undo the change
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2
+
+    def w_return_none():
+        return None
+
+  the test is green again
 
 I have 3 functions_ with different statements and they all return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ..." ah, the last :ref:`function<what is a function?>` has a line that clearly says ``return None`` for everyone to see.
 
@@ -1632,7 +1647,7 @@ because ...
                 ('last', 'first')
             )
 
-  the test passes.
+  the test passes
 
   .. NOTE::
 

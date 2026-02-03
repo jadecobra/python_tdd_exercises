@@ -61,11 +61,9 @@ html_favicon = '_static/dry_favicon_16x16.png'
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
 html_static_path = ['_static']
+html_css_files = ['custom.css']
 html_js_files = [
     '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js',
-]
-html_css_files = [
-    'custom.css',
 ]
 
 sitemap_url_scheme = '{link}'
