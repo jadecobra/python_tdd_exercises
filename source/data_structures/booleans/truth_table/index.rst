@@ -204,7 +204,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_goes back to the command line
+  the terminal_ goes back to the command line
 
 * I setup the project with uv_
 

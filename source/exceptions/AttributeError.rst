@@ -197,7 +197,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_goes back to the command line
+  the terminal_ goes back to the command line
 
 * I setup the project with uv_
 
@@ -510,7 +510,7 @@ test_attribute_error_w_variables
 
   the test passes
 
-* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_variables>`
+:ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_variables>`
 
 ----
 
@@ -706,7 +706,7 @@ the terminal_ shows AttributeError_
   the test passes.
 
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_variables>`
+* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_variables>`
 
 ----
 
@@ -714,7 +714,7 @@ the terminal_ shows AttributeError_
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-I know that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` defined in a :ref:`module<what is a module?>` are attributes. :ref:`variables<what is a variable?>` defined inside a :ref:`class<what is a class?>` are also attributes.
+I know that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` defined in a :ref:`modules<what is a module?>` are attributes. :ref:`variables<what is a variable?>` defined inside a :ref:`class<what is a class?>` are also attributes.
 
 ----
 
@@ -934,10 +934,10 @@ the terminal_ shows AttributeError_
 
   the test passes
 
-* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_class_attributes>`
+* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_class_attributes>`
 * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_variables>`
+* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_variables>`
 
 ----
 
@@ -1125,10 +1125,10 @@ I also know that :ref:`variables<what is a variable?>` defined inside a :ref:`cl
 
 
 * :ref:`A function in a class is called a method and is an attribute of the class<test_attribute_error_w_class_methods>`
-* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_class_attributes>`
+* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_class_attributes>`
 * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-* :ref:`A variable in a class in a module is an attribute of class<test_attribute_error_w_variables>`
+* :ref:`A variable in a class in a module is an attribute of the class<test_attribute_error_w_variables>`
 
 ----
 
@@ -1137,19 +1137,11 @@ close the project
 *********************************************************************************
 
 * I close ``attribute_error.py`` and ``test_attribute_error.py``  in the :ref:`editors<2 editors>`
-* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
-* I deactivate the `virtual environment`_
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. code-block:: python
 
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/attribute_error
+    .../pumping_python/attribute_error (main)
 
 * I `change directory`_ to the parent of ``attribute_error``
 

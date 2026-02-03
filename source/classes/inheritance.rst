@@ -1153,19 +1153,11 @@ close the project
 *********************************************************************************
 
 * I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
-* I deactivate the `virtual environment`_
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. code-block:: python
 
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/person
+    .../pumping_python/person (main)
 
 * I `change directory`_ to the parent of ``person``
 
