@@ -71,14 +71,14 @@ Linux/Windows Subsystem for Linux requirements
   .. code-block:: shell
     :emphasize-lines: 1
 
-    sudo apt install python3 python3-venv --yes
+    sudo apt install python3 python3-venv python3-pip --yes
 
 * type this to install the `uv Python package manager`_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    python3 -m pip install uv
+    pip install uv
 
   uv_ is a program_ that is used to install `Python packages`_
 

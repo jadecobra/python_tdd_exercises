@@ -17,6 +17,7 @@ def run_tests(*args):
         # message = input('\nenter a commit message: ')
         # process(f'git commit -am {message}')
     # make_html = 'make clean html'
-    make_html = 'make html'
+    # make_html = 'uv run sphinx-build ./source ./build/html'
+    make_html = 'uv run make html'
     if process(make_html):
         return True
