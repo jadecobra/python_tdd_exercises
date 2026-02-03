@@ -71,7 +71,7 @@ Linux/Windows Subsystem for Linux requirements
   .. code-block:: shell
     :emphasize-lines: 1
 
-    sudo apt install python3 python3-venv --yes
+    sudo apt install python3 python3-venv curl --yes
 
 * type this to install the `uv Python package manager`_
 
@@ -79,6 +79,13 @@ Linux/Windows Subsystem for Linux requirements
     :emphasize-lines: 1
 
     curl -LsSf https://astral.sh/uv/install.sh | sh
+
+  after it installs, there is a message about adding it to your path, run this in the terminal_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    source $HOME/.local/bin/env
 
   uv_ is a program_ that is used to install `Python packages`_
 

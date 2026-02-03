@@ -225,9 +225,18 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    echo "pytest\npytest-watcher" > requirements.txt
+    echo "pytest" > requirements.txt
 
   the terminal_ goes back to the command line
+
+* I add `pytest-watcher`_ to the file_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest-watcher" >> requirements.txt
+
+  the terminal_goes back to the command line
 
 * I setup the project with uv_
 
@@ -269,8 +278,9 @@ start the project
 
   .. code-block:: python
     :emphasize-lines: 1
+    :emphasize-text: .
 
-    uv run pytest-watcher --now  .
+    uv run pytest-watcher . --now
 
   the terminal_ shows
 
@@ -2544,7 +2554,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AssertionError: ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != None
 
-  I get a tuple_ back which contains another tuple_ and a :ref:`dictionary<what is a dictionary?>`
+  I get a tuple_ that has another tuple_ and a :ref:`dictionary<what is a dictionary?>`
 
 * I copy the tuple_ from the terminal_ and use it to change the expectation in ``test_functions_w_unknown_arguments`` in ``test_functions.py``
 
@@ -2664,60 +2674,60 @@ the test passes. The :ref:`function<what is a function?>` reads the :ref:`keywor
 how Python reads positional and keyword arguments
 *********************************************************************************
 
-* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
+I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
 
-  .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 5-8
+.. code-block:: python
+  :lineno-start: 101
+  :emphasize-lines: 5-8
 
-            self.assertEqual(
-                src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-                ((), dict(a=4, b=5, c=6, d=7))
-            )
-            self.assertEqual(
-                src.functions.w_unknown_arguments(),
-                ()
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    AssertionError: Tuples differ: ((), {}) != ()
-
-  I change the expectation to match
-
-  .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 18
-
-        def test_functions_w_unknown_arguments(self):
-            self.assertEqual(
-                src.functions.w_unknown_arguments(
-                    0, 1, 2, 3, a=4, b=5, c=6, d=7,
-                ),
-                ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
-            )
-            self.assertEqual(
-                src.functions.w_unknown_arguments(0, 1, 2, 3),
-                ((0, 1, 2, 3), {})
-            )
-            self.assertEqual(
-                src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-                ((), dict(a=4, b=5, c=6, d=7))
-            )
-            self.assertEqual(
-                src.functions.w_unknown_arguments(),
-                ((), {})
-            )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+              ((), dict(a=4, b=5, c=6, d=7))
+          )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(),
+              ()
+          )
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the test passes
+the terminal_ shows
+
+.. code-block:: shell
+
+  AssertionError: Tuples differ: ((), {}) != ()
+
+I change the expectation to match
+
+.. code-block:: python
+  :lineno-start: 90
+  :emphasize-lines: 18
+
+      def test_functions_w_unknown_arguments(self):
+          self.assertEqual(
+              src.functions.w_unknown_arguments(
+                  0, 1, 2, 3, a=4, b=5, c=6, d=7,
+              ),
+              ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+          )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(0, 1, 2, 3),
+              ((0, 1, 2, 3), {})
+          )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
+              ((), dict(a=4, b=5, c=6, d=7))
+          )
+          self.assertEqual(
+              src.functions.w_unknown_arguments(),
+              ((), {})
+          )
+
+
+  # Exceptions seen
+
+the test passes
 
 .. NOTE::
 
@@ -2751,9 +2761,7 @@ how Python reads positional and keyword arguments
     **dict(a=4, b=5, c=6, d=7)
     **{'a': 4, 'b': 5, 'c': 6, 'd': 7}
 
-  are :ref:`keyword arguments<test_functions_w_keyword_arguments>` which are taken as a :ref:`dictionary<what is a dictionary?>`. The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`.
-
-  This is why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input
+  are :ref:`keyword arguments<test_functions_w_keyword_arguments>` which are taken as a :ref:`dictionary<what is a dictionary?>`. The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`, which is why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input
 
 ----
 

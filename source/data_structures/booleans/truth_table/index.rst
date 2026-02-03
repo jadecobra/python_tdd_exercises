@@ -193,9 +193,18 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    echo "pytest\npytest-watcher" > requirements.txt
+    echo "pytest" > requirements.txt
 
   the terminal_ goes back to the command line
+
+* I add `pytest-watcher`_ to the file_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest-watcher" >> requirements.txt
+
+  the terminal_goes back to the command line
 
 * I setup the project with uv_
 
@@ -237,8 +246,9 @@ start the project
 
   .. code-block:: python
     :emphasize-lines: 1
+    :emphasize-text: .
 
-    uv run pytest-watcher --now  .
+    uv run pytest-watcher . --now
 
   the terminal_ shows
 

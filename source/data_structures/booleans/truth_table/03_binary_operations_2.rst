@@ -80,8 +80,9 @@ continue the project
 
   .. code-block:: python
     :emphasize-lines: 1
+    :emphasize-text: .
 
-    uv run pytest-watcher --now  .
+    uv run pytest-watcher . --now
 
 ----
 

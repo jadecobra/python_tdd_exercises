@@ -880,8 +880,9 @@ how to activate a virtual environment on Windows without WSL
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
+    :emphasize-text: .
 
-    uv run pytest-watcher --now  .
+    uv run pytest-watcher . --now
 
   the terminal_ shows
 
@@ -1202,8 +1203,9 @@ how to deactivate a virtual environment on Windows without WSL
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
+    :emphasize-text: .
 
-    uv run pytest-watcher --now  .
+    uv run pytest-watcher . --now
 
   the terminal_ shows
 

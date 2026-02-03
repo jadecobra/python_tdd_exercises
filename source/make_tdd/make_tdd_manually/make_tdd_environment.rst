@@ -1145,8 +1145,9 @@ how to run the tests automatically with uv and pytest-watcher
 
   .. code-block:: shell
     :emphasize-lines: 1
+    :emphasize-text: .
 
-    uv run pytest-watcher --now  .
+    uv run pytest-watcher . --now
 
   the terminal_ shows
 
