@@ -155,7 +155,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file_ for the `Python packages`_ I need
+* I make a requirements file_ for the `Python packages`_ I need in the terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -186,7 +186,7 @@ start the project
 
     Initialized project `calculator`
 
-  I remove ``main.py`` from the project
+* I remove ``main.py`` from the project
 
   .. code-block:: python
     :emphasize-lines: 1
