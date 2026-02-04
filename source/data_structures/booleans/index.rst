@@ -1224,7 +1224,7 @@ is a tuple False or True?
 
 ----
 
-I add a line to ``test_what_is_true`` to see if a tuple_ (anything in parentheses (``()``)) is True_
+I add a line to ``test_what_is_true`` to see if a tuple_ (anything in parentheses (``()``) separated by commas, separated by commas) is True_
 
 .. code-block:: python
   :lineno-start: 14

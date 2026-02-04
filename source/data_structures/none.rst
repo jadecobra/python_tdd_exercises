@@ -1415,7 +1415,7 @@ test_is_none_a_tuple
 
 ----
 
-I add a test to see if None_ is a tuple_ (anything in parentheses (``()``)), pronounced ``two-pull``
+I add a test to see if None_ is a tuple_ (anything in parentheses (``()``) separated by commas, separated by commas), pronounced ``too-pull``
 
 .. code-block:: python
   :lineno-start: 34
@@ -1511,7 +1511,7 @@ the test passes
 
     AssertionError: () is an instance of <class 'tuple'>
 
-  because anything in parentheses (``()``) in Python_ is a tuple_
+  because anything in parentheses (``()``) separated by commas in Python_ is a tuple_
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -1541,7 +1541,7 @@ the test passes
 
     AssertionError: (1, 2, 3, 'n') is an instance of <class 'tuple'>
 
-  because anything in parentheses (``()``) in Python_ is a tuple_
+  because anything in parentheses (``()``) separated by commas in Python_ is a tuple_
 
 * I change the `assert method`_ to make the statement :ref:`True<test_what_is_true>`
 
@@ -1625,9 +1625,14 @@ test_is_none_a_list
 I add a new test to see if None_ is a :ref:`list<lists>` (anything in square brackets (``[]``))
 
 .. code-block:: python
-  :lineno-start: 46
-  :emphasize-lines: 3-4
+  :lineno-start: 41
+  :emphasize-lines: 8-9
 
+      def test_is_none_a_tuple(self):
+          self.assertIsNotNone(())
+          self.assertIsNotNone((1, 2, 3, 'n'))
+          self.assertIsInstance((), tuple)
+          self.assertIsInstance((1, 2, 3, 'n'), tuple)
           self.assertNotIsInstance(None, tuple)
 
       def test_is_none_a_list(self):
@@ -1655,6 +1660,7 @@ I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:
 .. code-block:: python
   :lineno-start: 49
   :emphasize-lines: 1
+  :emphasize-text: Not
 
           self.assertIsNotNone([])
 
@@ -1671,9 +1677,10 @@ the test passes
 * I add another failing line
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 2
+    :lineno-start: 48
+    :emphasize-lines: 3
 
+        def test_is_none_a_list(self):
             self.assertIsNotNone([])
             self.assertIsNone([1, 2, 3, 'n'])
 
@@ -1688,6 +1695,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 50
     :emphasize-lines: 1
+    :emphasize-text: Not
 
             self.assertIsNotNone([1, 2, 3, 'n'])
 
@@ -1696,9 +1704,11 @@ the test passes
 * I add a failing instance test
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 2
+    :lineno-start: 48
+    :emphasize-lines: 4
 
+        def test_is_none_a_list(self):
+            self.assertIsNotNone([])
             self.assertIsNotNone([1, 2, 3, 'n'])
             self.assertNotIsInstance([], list)
 
@@ -1723,9 +1733,12 @@ the test passes
 * I add another failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2
+    :lineno-start: 48
+    :emphasize-lines: 5
 
+        def test_is_none_a_list(self):
+            self.assertIsNotNone([])
+            self.assertIsNotNone([1, 2, 3, 'n'])
             self.assertIsInstance([], list)
             self.assertNotIsInstance([1, 2, 3, 'n'], list)
 
@@ -1743,18 +1756,22 @@ the test passes
     :lineno-start: 52
     :emphasize-lines: 1
 
-        self.assertIsInstance([1, 2, 3, 'n'], list)
+            self.assertIsInstance([1, 2, 3, 'n'], list)
 
   the test passes
 
 * I add one more failing line with the `assertIsInstance method`_
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 2
+    :lineno-start: 51
+    :emphasize-lines: 3
 
-        self.assertIsInstance([1, 2, 3, 'n'], list)
-        self.assertIsInstance(None, list)
+            self.assertIsInstance([], list)
+            self.assertIsInstance([1, 2, 3, 'n'], list)
+            self.assertIsInstance(None, list)
+
+
+    # NOTES
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1783,7 +1800,7 @@ the test passes
 * I add a new comment
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 56
     :emphasize-lines: 2
 
     # NOTES
@@ -1814,13 +1831,21 @@ test_is_none_a_set
 I want to see if None_ is a set_
 
 .. code-block:: python
-  :lineno-start: 53
-  :emphasize-lines: 3-4
+  :lineno-start: 48
+  :emphasize-lines: 8-9
 
-          self.assertNotIsInstance(None, list)
+        def test_is_none_a_list(self):
+            self.assertIsNotNone([])
+            self.assertIsNotNone([1, 2, 3, 'n'])
+            self.assertIsInstance([], list)
+            self.assertIsInstance([1, 2, 3, 'n'], list)
+            self.assertNotIsInstance(None, list)
 
-      def test_is_none_a_set(self):
-          self.assertIsNone(set())
+        def test_is_none_a_set(self):
+            self.assertIsNone(set())
+
+
+    # NOTES
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1841,6 +1866,7 @@ I make the statement :ref:`True<test_what_is_true>`
 .. code-block:: python
   :lineno-start: 56
   :emphasize-lines: 1
+  :emphasize-text: Not
 
               self.assertIsNotNone(set())
 
@@ -1857,9 +1883,10 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 2
+    :lineno-start: 55
+    :emphasize-lines: 3
 
+        def test_is_none_a_set(self):
             self.assertIsNotNone(set())
             self.assertIsNone({1, 2, 3, 'n'})
 
@@ -1874,6 +1901,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 1
+    :emphasize-text: Not
 
             self.assertIsNotNone({1, 2, 3, 'n'})
 
@@ -1882,9 +1910,11 @@ the test passes
 * I add an instance test
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 2
+    :lineno-start: 55
+    :emphasize-lines: 4
 
+        def test_is_none_a_set(self):
+            self.assertIsNotNone(set())
             self.assertIsNotNone({1, 2, 3, 'n'})
             self.assertNotIsInstance({1, 2, 3, 'n'}, set)
 
@@ -1907,9 +1937,12 @@ the test passes
 * I add another instance test
 
   .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 2
+    :lineno-start: 55
+    :emphasize-lines: 5
 
+        def test_is_none_a_set(self):
+            self.assertIsNotNone(set())
+            self.assertIsNotNone({1, 2, 3, 'n'})
             self.assertIsInstance({1, 2, 3, 'n'}, set)
             self.assertIsInstance(None, set)
 
@@ -1971,9 +2004,13 @@ test_is_none_a_dictionary
 One last test to see if None_ is a :ref:`dictionary<dictionaries>`
 
 .. code-block:: python
-  :lineno-start: 59
-  :emphasize-lines: 3-4
+  :lineno-start: 55
+  :emphasize-lines: 7-8
 
+      def test_is_none_a_set(self):
+          self.assertIsNotNone(set())
+          self.assertIsNotNone({1, 2, 3, 'n'})
+          self.assertIsInstance({1, 2, 3, 'n'}, set)
           self.assertNotIsInstance(None, set)
 
       def test_is_none_a_dictionary(self):
@@ -2003,6 +2040,7 @@ I make the statement :ref:`True<test_what_is_true>`
 .. code-block:: python
   :lineno-start: 62
   :emphasize-lines: 1
+  :emphasize-text: Not
 
           self.assertIsNotNone(dict())
 
@@ -2019,9 +2057,10 @@ the test passes
 * I add another failing line
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 2
+    :lineno-start: 61
+    :emphasize-lines: 3
 
+        def test_is_none_a_dictionary(self):
             self.assertIsNotNone(dict())
             self.assertIsNone({'key': 'value'})
 
@@ -2036,6 +2075,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 63
     :emphasize-lines: 1
+    :emphasize-text: Not
 
             self.assertIsNotNone({'key': 'value'})
 
@@ -2044,9 +2084,11 @@ the test passes
 * I add a failing instance test
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 2
+    :lineno-start: 61
+    :emphasize-lines: 4
 
+        def test_is_none_a_dictionary(self):
+            self.assertIsNotNone(dict())
             self.assertIsNotNone({'key': 'value'})
             self.assertNotIsInstance({}, dict)
 
@@ -2071,9 +2113,12 @@ the test passes
 * I add another instance test
 
   .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 2
+    :lineno-start: 61
+    :emphasize-lines: 5
 
+        def test_is_none_a_dictionary(self):
+            self.assertIsNotNone(dict())
+            self.assertIsNotNone({'key': 'value'})
             self.assertIsInstance({}, dict)
             self.assertNotIsInstance({'key': 'value'}, dict)
 
@@ -2083,11 +2128,13 @@ the test passes
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
-  ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
+  .. NOTE::
 
-  I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas.
+    ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
 
-  sets_ do NOT have key-value pairs.
+    I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas.
+
+    sets_ do NOT have key-value pairs.
 
 * I make the statement :ref:`True<test_what_is_true>`
 
@@ -2102,9 +2149,13 @@ the test passes
 * I add the last failing instance test with assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2
+    :lineno-start: 61
+    :emphasize-lines: 6
 
+        def test_is_none_a_dictionary(self):
+            self.assertIsNotNone(dict())
+            self.assertIsNotNone({'key': 'value'})
+            self.assertIsInstance({}, dict)
             self.assertIsInstance({'key': 'value'}, dict)
             self.assertIsInstance(None, dict)
 
@@ -2132,7 +2183,7 @@ the test passes
 
   the test passes
 
-* I add the last note
+* I add the last comment
 
   .. code-block:: python
     :lineno-start: 69
@@ -2140,7 +2191,7 @@ the test passes
 
     # NOTES
     # None is NOT a dictionary
-    # None is NOt a set
+    # None is NOT a set
     # None is NOT a list
     # None is NOT a tuple
     # None is NOT a string
@@ -2148,6 +2199,10 @@ the test passes
     # None is NOT an integer
     # None is NOT a boolean
     # None is None
+
+
+    # Exceptions seen
+    # AssertionError
 
 :ref:`None is NOT a dictionary<test_is_none_a_dictionary>`
 
@@ -2157,7 +2212,7 @@ the test passes
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``test_none.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``none``
@@ -2184,22 +2239,22 @@ review
 I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were in :ref:`AssertionError<what causes AssertionError?>`
 
 * assertIsNone_ - which tests if the thing in parentheses is None_
-* assertIsNotNone_ - which tests if the thing in parentheses is not None_
+* assertIsNotNone_ - which tests if the thing in parentheses is NOT None_
 
 and 2 new `assert methods`_
 
 * assertIsInstance_ which checks if something is an instance of a given :ref:`class<what is a class?>`
 * assertNotIsInstance_ which checks if something is NOT an instance of a given :ref:`class<what is a class?>`
 
-I also showed the basic :ref:`Python data structures<data structures>`
+I also used :ref:`Python's basic data structures<data structures>` in the tests
 
 * None_ - the simplest
-* integers_ - whole numbers, negative and positive
-* floats_ - floating point decimal numbers
+* integers_ - whole numbers, negative and positive, including ``0``
+* floats_ - floating point decimal numbers, negative and positive including ``0.0``
 * strings_ - anything inside :ref:`quotes`
 * :ref:`booleans<what are booleans?>` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
-* tuples_ - anything in parentheses (``()``) separated by commas
-* :ref:`lists` - anything in square brackets (``[]``) separated by commas
+* tuples_ - anything in parentheses (``()``) separated by commas separated by commas
+* :ref:`lists` - anything in square brackets (``[]``)
 * sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 * :ref:`dictionaries` - :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``)
 

@@ -291,7 +291,7 @@ what is an iterable?
 
 An :ref:`iterable<what is an iterable?>` is an :ref:`object<what is a class?>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries` are :ref:`iterable<what is an iterable?>`
 
-* I change the input to a tuple_ (anything in parentheses (``()``), separated by a comma)
+* I change the input to a tuple_ (anything in parentheses (``()``) separated by commas, separated by a comma)
 
   .. code-block:: python
     :lineno-start: 7

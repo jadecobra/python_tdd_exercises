@@ -554,7 +554,7 @@ test_making_a_dictionary_w_a_tuple_as_a_key
 
 ----
 
-I add a test to see if I can use a tuple_ (anything in parentheses (``()``), separated by a comma) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+I add a test to see if I can use a tuple_ (anything in parentheses (``()``) separated by commas, separated by a comma) as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 .. code-block:: python
   :lineno-start: 20
