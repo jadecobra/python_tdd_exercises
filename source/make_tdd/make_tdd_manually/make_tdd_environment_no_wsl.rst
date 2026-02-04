@@ -1341,7 +1341,7 @@ how to view all the commands typed in a terminal on Windows without WSL
   - :ref:`activate the virtual environment<how to activate a virtual environment on Windows without WSL>`
   - :ref:`upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment on Windows without WSL>`
   - :ref:`make a requirements file for the needed Python packages<how to write text to a file on Windows without Windows Subsystem for Linux>`
-  - :ref:`install the packages listed in the requirements file_<how to install Python packages with uv on Windows without WSL>`
+  - :ref:`install the packages listed in the requirements file<how to install Python packages with uv on Windows without WSL>`
   - :ref:`run the tests automatically<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal on Windows without WSL>`
   - make the test pass

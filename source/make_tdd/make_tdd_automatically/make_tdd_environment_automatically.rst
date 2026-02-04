@@ -18,7 +18,7 @@ how to make a Python Test Driven Development environment automatically
 preview
 *********************************************************************************
 
-Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to make a Python Test Driven Development environment automatically>`, it is only 28 lines of code, with spaces
+Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to make a Python Test Driven Development environment automatically>`, it is only __ lines of code, with spaces
 
 .. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.sh
   :language: shell
@@ -51,7 +51,23 @@ how to make a shell script
 
   the terminal_ goes back to the command line
 
-* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project
+* I name this project ``magic_again``
+
+* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+
+  .. TIP::
+
+    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_. That means when I type this in the terminal_
+
+    .. code-block:: shell
+      :emphasize-lines: 1
+
+      code makePythonTdd.sh
+
+    `Visual Studio Code`_ opens ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
+
+
+* I add the commands I use to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project in ``makePythonTdd.sh``
 
   .. code-block:: shell
     :linenos:
@@ -65,36 +81,53 @@ how to make a shell script
     mkdir tests
     touch tests/__init__.py
     touch tests/test_magic_again.py
-    python3 -m venv .venv
-    source .venv/bin/activate
-    python3 -m pip install --upgrade pip
-    echo "pytest-watcher" > requirements.txt
-    python3 -m pip install --requirement requirements.txt
-    pytest-watcher
+    echo "pytest" > requirements.txt
+    echo "pytest-watcher" >> requirements.txt
+    uv init
+    rm main.py
+    uv add --requirement requirements.txt
+    uv run pytest-watcher . --now
 
   ``#!/bin/bash`` is called a shebang_ line, it tells the computer to use bash_ to run this program_
 
-* ``test_magic_again.py`` is an empty file_ because I used touch_. I want it to have the text for :ref:`the first failure<test_failure>` so I do not have to open the :ref:`editor<2 editors>` to add the text for it in each project. I use echo_ instead of touch_ to make the ``makePythonTdd.sh`` program_ add the text to ``test_magic_again.py`` when it makes the file_ in the ``tests`` folder_, the same I do with the ``requirements.txt`` file_
+* ``test_magic_again.py`` is empty because I made it with touch_. I want the file_ to have the text for :ref:`the first failing test<test_failure>` so I do not have to open the :ref:`editor<2 editors>` to add the text for it in each project.
+
+  I use echo_ in place of touch_ to make the ``makePythonTdd.sh`` program_ add the text to ``test_magic_again.py`` when it makes the file_ in the ``tests`` folder_, the same way I use echo_ to add text to the ``requirements.txt`` file_
 
   .. code-block:: shell
-    :lineno-start: 6
-    :emphasize-lines: 4
+    :linenos:
+    :emphasize-lines: 8
 
+    #!/bin/bash
+    mkdir magic_again
+    cd magic_again
+    mkdir src
+    touch src/magic_again.py
     mkdir tests
     touch tests/__init__.py
-
     echo "" > tests/test_magic_again.py
+    echo "pytest" > requirements.txt
+    echo "pytest-watcher" >> requirements.txt
+    uv init
+    rm main.py
+    uv add --requirement requirements.txt
+    uv run pytest-watcher . --now
 
-    python3 -m venv .venv
-    source .venv/bin/activate
+* I add the text for the :ref:`the first failing test<test_failure>` inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``, the way I do with echo_ when I add ``"pytest"`` as text in ``requirements.txt``
 
-* I add the text for the test inside the :ref:`quotes ("")<quotes>` I just added to ``makePythonTdd.sh``, the way I do with echo_ when I add ``"pytest-watcher"`` as text in ``requirements.txt``
-
-  .. CAUTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
+  .. ATTENTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
 
   .. code-block:: shell
-    :lineno-start: 9
-    :emphasize-lines: 1-12
+    :linenos:
+    :emphasize-lines: 9-20
+
+    #!/bin/bash
+    mkdir magic_again
+    cd magic_again
+    mkdir src
+    touch src/magic_again.py
+    mkdir tests
+    touch tests/__init__.py
 
     echo "import unittest
 
@@ -108,6 +141,13 @@ how to make a shell script
     # Exceptions seen
     # AssertionError
     " > tests/test_magic_again.py
+
+    echo "pytest" > requirements.txt
+    echo "pytest-watcher" >> requirements.txt
+    uv init
+    rm main.py
+    uv add --requirement requirements.txt
+    uv run pytest-watcher . --now
 
 --------------------------------------------------------------------------------------------
 how to run a shell script
@@ -139,7 +179,7 @@ I have to tell the computer where the file_ is
 
   permission denied: ./makePythonTdd.sh
 
-I want to make sure the computer can run the program_. I have to make it executable
+I have to make the file executable for the computer to be be able to run the program_.
 
 --------------------------------------------------------------------------------------------
 how to view the permissions of a file
@@ -160,26 +200,27 @@ the terminal_ shows
 
   -rw-r--r-- 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
 
-the first 10 characters above (``-rw-r--r--``) are grouped
+.. NOTE:: the first 10 characters above (``-rw-r--r--``) are grouped
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  -    rw-    r--    r--
+    -    rw-    r--    r--
 
-the groups that have 3 characters show ``read``, ``write`` and ``execute`` permissions with
+  the groups that have 3 characters show ``read``, ``write`` and ``execute`` permissions with
 
-- ``r`` for ``read``
-- ``w`` for ``write`` and
-- ``x`` for ``execute``
+  - ``r`` for can ``read``
+  - ``w`` for can ``write`` to, and
+  - ``x`` for can ``execute``
+  - ``-`` for CANNOT
 
-here is what it means for ``makePythonTdd.sh``
+  here is what it means for ``makePythonTdd.sh``
 
-* the first group tells if this is file_ or directory_ : ``-`` means this is a regular file_, it is not a directory_
-* this group shows permissions for the owner of the thing: ``rw-`` means the owner of the file_ can read and write to the file_ but NOT execute it
-* this group shows permissions for the group of the owner of the thing: ``r--`` means the group can read the file_, NOT write to it or execute it
-* this group is for other users: ``r--`` means other users can read the file_, NOT write to it or execute it
+  * the first group with just 1 character tells if this is a file_ or directory_ : ``-`` means this is a file_, it is NOT a directory_
+  * the second group has 3 characters, and is for the owner of the file_: ``rw-`` means the owner of the file_ can read (``r``), write to (``w``), and CANNOT (``-``) execute the file_
+  * the next group also has 3 characters, and is for the group of the owner of the file_: ``r--`` means the group can read (``r``), CANNOT (``-``) write to, and CANNOT (``-``) execute the file_
+  * the last group has 3 characters and is for other users: ``r--`` means other users can read (``r``), CANNOT (``-``) write to, and CANNOT (``-``) execute the file_
 
-I want to add execute permissions so I can run the file
+I want to add execute permissions so I can run (execute) the file_
 
 --------------------------------------------------------------------------------------------
 how to make a shell script run as a command
@@ -207,12 +248,12 @@ how to make a shell script run as a command
 
     -rwxr-xr-x 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
 
-  here is what each one of the characters before the folder_ means
+  .. NOTE::
 
-  * ``-`` means this is a regular file_, it is not a directory_
-  * ``rwx`` means the owner of the file_ has permissions to read, write to and execute it
-  * ``r-x`` means the group the owner of the file_ belongs to has permissions to read and execute the file_ they cannot write to it, and the second
-  * ``r-x`` means other users have permissions to read and execute the file_, they cannot write to it
+    * ``-`` means this is a file_, it is NOT a directory_
+    * ``rwx`` means the owner of the file_ can read (``r``), write to (``w``) and execute (``x``) the file_
+    * ``r-x`` means the group of the owner of the file_ can read (``r``), CANNOT (``-``) write to, and can execute (``x``) the file_
+    * and the second ``r-x`` means other users can read (``r``), CANNOT (``-``) write to, and can execute (``x``) the file_
 
 * I try the command again
 
@@ -226,8 +267,8 @@ how to make a shell script run as a command
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ================================= FAILURES =================================
-    ________________________ TestMagicAgain.test_failure _________________________
+    ============================== FAILURES ===============================
+    ____________________ TestMagicAgain.test_failure ______________________
 
     self = <tests.test_magic_again.TestMagicAgain testMethod=test_failure>
 
@@ -238,13 +279,13 @@ how to make a shell script run as a command
     tests/test_magic_again.py:7: AssertionError
     ====================== short test summary info ========================
     FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
-    ============================ 1 failed in X.YZs =============================
+    ========================= 1 failed in X.YZs ===========================
 
-  Success! I just made a program_ that can make the ``magic_again`` project anytime I want and it automatically does the steps I did manually.
+  Success! I just made a program_ that can make the ``magic_again`` project anytime I want and it automatically does the steps I used to do.
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
-* I use :kbd:`ctrl+c` in the terminal_ to stop the test
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic_again`` to the name of the new project in the :ref:`editor<2 editors>`
 
@@ -253,6 +294,7 @@ how to make a shell script run as a command
   .. code-block::
     :linenos:
     :emphasize-lines: 2, 3, 5, 12, 20
+    :emphasize-text: more_magic
 
     #!/bin/bash
     mkdir more_magic
@@ -303,7 +345,7 @@ how to make a shell script run as a command
 
   I make the test pass
 
-* I use :kbd:`ctrl+c` to exit the tests in the terminal_
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 the program_ works and can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically the way I want every time
 

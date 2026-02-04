@@ -160,7 +160,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
   the test passes
 
-* I use :kbd:`ctrl+c` in the terminal_ to stop the test
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I run tree_ to see what I have in the ``pro_magic`` folder_
 

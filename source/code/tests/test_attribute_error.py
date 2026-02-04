@@ -1,5 +1,5 @@
-import unittest
 import src.attribute_error
+import unittest
 
 
 class TestAttributeError(unittest.TestCase):

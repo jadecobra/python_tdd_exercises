@@ -151,7 +151,7 @@ how to run a PowerShell script
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
-* I use :kbd:`ctrl+c` in the terminal_ to stop the test
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 * I deactivate the `virtual environment`_
 
   .. code-block:: PowerShell
@@ -230,7 +230,7 @@ how to run a PowerShell script
 
   I make the test pass
 
-* I use :kbd:`ctrl+c` to exit the tests in the terminal_
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 the program_ works and can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically the way I want every time
 
