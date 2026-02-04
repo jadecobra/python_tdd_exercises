@@ -154,7 +154,6 @@
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: str_
-.. _string interpolation: https://peps.python.org/pep-0498/
 .. _strings: str_
 .. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
 .. _ternary operators: `ternary operator`_

@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. _string interpolation: https://peps.python.org/pep-0498/
+
 #################################################################################
 how to pass values
 #################################################################################
@@ -27,8 +29,8 @@ This is the job of the `assertEqual method`_, which takes 2 inputs and checks if
 
 where
 
-* ``reality`` is what happens when I call a :ref:`function<what is a function?>` or :ref:`object<classes>` in a :ref:`module<what is a module?>` with some thing
-* ``my_expectation`` is what I think will happen when I call a :ref:`function<what is a function?>` or :ref:`object<classes>` in a :ref:`module<what is a module?>` with some thing
+* ``reality`` is what happens when I do something with code
+* ``my_expectation`` is what I think will happen when I do something with code
 
 I use :ref:`the identity function<test_identity_function>` in this chapter to show how something is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`
 
@@ -249,7 +251,7 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_telephone.py:7: AssertionError
-    ========================= short test summary info ==========================
+    ======================== short test summary info =========================
     FAILED tests/test_telephone.py::TestTelephone::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
@@ -331,17 +333,18 @@ there is no definition for ``src`` in ``test_telephone.py``
 
 ----
 
-* I add the error to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 13
     :emphasize-lines: 3
+    :emphasize-text: NameError
 
     # Exceptions seen
     # AssertionError
     # NameError
 
-* then I add an `import statement`_ for the ``telephone`` :ref:`module<what is a module?>` which is in the ``src`` folder_, at the top of the file_
+* I add an `import statement`_ for the ``telephone`` :ref:`module<what is a module?>` which is in the ``src`` folder_, at the top of the file_
 
   .. code-block:: python
     :linenos:
@@ -361,11 +364,12 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   there is no definition for ``text`` in ``telephone.py`` in the ``src`` folder_
 
-* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
+* I :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 4
+    :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
@@ -404,11 +408,12 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   I cannot call :ref:`None<what is None?>` the way I can call a :ref:`function<what is a function?>`
 
-* I add the error to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 5
+    :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
@@ -450,6 +455,8 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   the test expects ``'I received: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
+  .. NOTE:: ``the_input`` is just the name I used for the input, I can use any name I want
+
 * I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None<what is None?>`
 
   .. code-block:: python
@@ -471,65 +478,55 @@ there is no definition for ``src`` in ``test_telephone.py``
 
 The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I received: hello'`` when called. I want it to return the value it gets as part of the message.
 
----------------------------------------------------------------------------------
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
+* I add a new :ref:`assertion<what is an assertion?>` to ``test_passing_a_string`` in ``test_telephone.py``
 
-I add a new :ref:`assertion<what is an assertion?>` to ``test_passing_a_string`` in ``test_telephone.py``
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6-9
 
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 6-9
-
-      def test_passing_a_string(self):
-          self.assertEqual(
-              src.telephone.text("hello"),
-              "I received: hello"
-          )
-          self.assertEqual(
-              src.telephone.text("yes"),
-              "I received: yes"
-          )
+        def test_passing_a_string(self):
+            self.assertEqual(
+                src.telephone.text("hello"),
+                "I received: hello"
+            )
+            self.assertEqual(
+                src.telephone.text("yes"),
+                "I received: yes"
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: 'I received: hello' != 'I received: yes'
+    AssertionError: 'I received: hello' != 'I received: yes'
 
-the ``text`` :ref:`function<what is a function?>` always returns ``'I received: hello'``, the test expects ``'I received: yes'``
+  the ``text`` :ref:`function<what is a function?>` always returns ``'I received: hello'``, the test expects ``'I received: yes'``
 
----------------------------------------------------------------------------------
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
+* I change the `return statement`_ in ``telephone.py`` to match
 
-I change the `return statement`_ in ``telephone.py`` to match
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 2
+    def text(the_input):
+        return 'I received: yes'
 
-  def text(the_input):
-      return 'I received: yes'
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  .. code-block:: shell
 
-.. code-block:: shell
+    AssertionError: 'I received: yes' != 'I received: hello'
 
-  AssertionError: 'I received: yes' != 'I received: hello'
-
-it did not work, my change broke the test that was passing before. The `return statement`_ has to use the input
+  it did not work, my change broke the test that was passing before. The `return statement`_ has to use the input
 
 ----
 
-=================================================================================
+*********************************************************************************
 string interpolation
-=================================================================================
-
-----
+*********************************************************************************
 
 I use an `f-string`_ which lets me add any values I want to a string_
 
@@ -568,9 +565,14 @@ test_passing_a_class
 I add a failing test in ``test_telephone.py`` to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`
 
 .. code-block:: python
-  :lineno-start: 12
-  :emphasize-lines: 6-10
+  :lineno-start: 7
+  :emphasize-lines: 11-15
 
+      def test_passing_a_string(self):
+          self.assertEqual(
+              src.telephone.text("hello"),
+              "I received: hello"
+          )
           self.assertEqual(
               src.telephone.text("yes"),
               "I received: yes"
@@ -591,7 +593,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: "I received: <class 'object'>" != 'I received: object'
 
-:ref:`object<what is a class?>` is the mother :ref:`class<what is a class?>` that all Python_ :ref:`classes<what is a class?>` come from
+:ref:`object<what is a class?>` is the mother :ref:`class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from
 
 ----
 
@@ -663,7 +665,7 @@ the test passes
                 "I received: <class 'tests.test_telephone.TestTelephone'>"
             )
 
-  the test passes
+  the test passes. What does ``tests.test_telephone.TestTelephone`` point to?
 
 ----
 
@@ -679,12 +681,18 @@ test_passing_none
 
 ----
 
-I add a new failing test for :ref:`None<what is None?>` in ``test_telephone.py``
+I add a new failing test for :ref:`None<what is None?>` (it is the simplest :ref:`Python data structure<data structures>`) in ``test_telephone.py``
 
 .. code-block:: python
-  :lineno-start: 22
-  :emphasize-lines: 6-10
+  :lineno-start: 17
+  :emphasize-lines: 11-15
+  :emphasize-text: '
 
+      def test_passing_a_class(self):
+          self.assertEqual(
+              src.telephone.text(object),
+              "I received: <class 'object'>"
+          )
           self.assertEqual(
               src.telephone.text(TestTelephone),
               "I received: <class 'tests.test_telephone.TestTelephone'>"
@@ -695,6 +703,9 @@ I add a new failing test for :ref:`None<what is None?>` in ``test_telephone.py``
               src.telephone.text(None),
               "I received: 'None'"
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -746,6 +757,7 @@ I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assert
 .. code-block:: python
   :lineno-start: 27
   :emphasize-lines: 7-11
+  :emphasize-text: '
 
       def test_passing_none(self):
           self.assertEqual(
@@ -758,6 +770,9 @@ I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assert
               src.telephone.text(True),
               "I received: 'True'"
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -792,6 +807,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
   .. code-block:: python
     :lineno-start: 33
     :emphasize-lines: 6-9
+    :emphasize-text: '
 
         def test_passing_a_boolean(self):
             self.assertEqual(
@@ -847,9 +863,15 @@ test_passing_an_integer
 I add a test for an integer_ (a whole number)
 
 .. code-block:: python
-  :lineno-start: 38
-  :emphasize-lines: 6-10
+  :lineno-start: 33
+  :emphasize-lines: 11-15
+  :emphasize-text: '
 
+      def test_passing_a_boolean(self):
+          self.assertEqual(
+              src.telephone.text(True),
+              "I received: True"
+          )
           self.assertEqual(
               src.telephone.text(False),
               "I received: False"
@@ -860,6 +882,9 @@ I add a test for an integer_ (a whole number)
               src.telephone.text(1234),
               "I received: '1234'"
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -911,6 +936,7 @@ I add a test for a float_ (binary floating point decimal numbers)
 .. code-block:: python
   :lineno-start: 43
   :emphasize-lines: 7-11
+  :emphasize-text: '
 
       def test_passing_an_integer(self):
           self.assertEqual(
@@ -923,6 +949,9 @@ I add a test for a float_ (binary floating point decimal numbers)
               src.telephone.text(1.234),
               "I received: '1.234'"
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -974,6 +1003,7 @@ I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
 .. code-block:: python
   :lineno-start: 49
   :emphasize-lines: 7-11
+  :emphasize-text: '
 
       def test_passing_a_float(self):
           self.assertEqual(
@@ -986,6 +1016,9 @@ I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
               src.telephone.text((1, 2, 3, "n")),
               "I received: '(1, 2, 3, n)'"
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1006,6 +1039,7 @@ I change the expectation
 .. code-block:: python
   :lineno-start: 55
   :emphasize-lines: 4
+  :emphasize-text: '
 
       def test_passing_a_tuple(self):
           self.assertEqual(
@@ -1034,6 +1068,7 @@ I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), sepa
 .. code-block:: python
   :lineno-start: 55
   :emphasize-lines: 7-11
+  :emphasize-text: '
 
       def test_passing_a_tuple(self):
           self.assertEqual(
@@ -1046,6 +1081,9 @@ I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), sepa
               src.telephone.text([1, 2, 3, "n"]),
               "I received: '[1, 2, 3, n]'"
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1066,6 +1104,7 @@ I change the expectation to match reality
 .. code-block:: python
   :lineno-start: 61
   :emphasize-lines: 4
+  :emphasize-text: '
 
       def test_passing_a_list(self):
           self.assertEqual(
@@ -1094,6 +1133,7 @@ I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly br
 .. code-block:: python
   :lineno-start: 61
   :emphasize-lines: 7-14
+  :emphasize-text: '
 
       def test_passing_a_list(self):
           self.assertEqual(
@@ -1107,8 +1147,11 @@ I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly br
                   "key1": "value1",
                   "keyN": [0, 1, 2, "n"],
               }),
-              "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
+              "I received: '{key1: value1, keyN: [0, 1, 2, n]}'"
           )
+
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1129,6 +1172,7 @@ I change the expectation
 .. code-block:: python
   :lineno-start: 67
   :emphasize-lines: 7
+  :emphasize-text: '
 
       def test_passing_a_dictionary(self):
           self.assertEqual(
@@ -1188,7 +1232,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     NameError: name 'text' is not defined
 
-  I point it to :ref:`None<what is None?>` to define it
+* I point it to :ref:`None<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
@@ -1201,7 +1245,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     TypeError: 'NoneType' object is not callable
 
-  I make ``text`` a :ref:`function<what is a function?>`
+* I make ``text`` a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1215,13 +1259,13 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  I make the :ref:`function<what is a function?>` take input
+* I make the :ref:`function<what is a function?>` take input
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def text(the_input):
+    def text(value):
         return None
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -1236,7 +1280,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     :linenos:
     :emphasize-lines: 2
 
-    def text(the_input):
+    def text(value):
         return 'I received: None'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -1251,14 +1295,14 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     :linenos:
     :emphasize-lines: 2
 
-    def text(the_input):
-        return the_input
+    def text(value):
+        return value
         return 'I received: None'
 
   the test summary info shows that every test has :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :force:
+    :emphasize-text: I received:
 
     AssertionError: True != 'I received: True'
     AssertionError: <class 'object'> != "I received: <class 'object'>"
@@ -1278,10 +1322,10 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     :linenos:
     :emphasize-lines: 2
 
-    def text(the_input):
-        return f'I received: {the_input}'
+    def text(value):
+        return f'I received: {value}'
 
-  and all the tests are passing! Once again! I am a programmer!!
+  and all the tests are passing! I am a programmer!!
 
 ----
 
@@ -1289,7 +1333,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``telephone.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``telephone``
@@ -1313,7 +1357,7 @@ close the project
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass Python_ basic :ref:`data structures` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation`
+Here are the tests I ran to see what happens when I pass :ref:`Python basic data structures<data structures>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation`
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_

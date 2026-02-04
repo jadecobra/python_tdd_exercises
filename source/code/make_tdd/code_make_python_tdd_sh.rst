@@ -66,7 +66,7 @@ Since you are the adventurous type and made it this deep in the book, I have add
 * make the class name in :ref:`CapWords format<CapWords>`
 * open the test file_ and source file_ in your editor
 
-.. literalinclude:: makePythonTddPlus.sh
+.. literalinclude:: makePythonTddPro.sh
   :language: shell
   :linenos:
   :emphasize-lines: 2-6, 8-10, 12, 14, 29-30
