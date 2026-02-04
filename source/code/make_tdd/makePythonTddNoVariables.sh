@@ -19,9 +19,9 @@ class TestMoreMagic(unittest.TestCase):
 # AssertionError
 " > tests/test_more_magic.py
 
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install --upgrade pip
-echo "pytest-watcher" > requirements.txt
-python3 -m pip install --requirement requirements.txt
-pytest-watcher
+echo "pytest" > requirements.txt
+echo "pytest-watcher" >> requirements.txt
+uv init
+rm main.py
+uv add --requirement requirements.txt
+uv run pytest-watcher . --now

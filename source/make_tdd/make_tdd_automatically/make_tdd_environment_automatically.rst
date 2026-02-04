@@ -389,7 +389,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<makePythonTdd.sh>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<makePythonTdd.sh with no variables>`
 
 ----
 
