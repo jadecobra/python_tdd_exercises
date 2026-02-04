@@ -761,7 +761,7 @@ the test passes
 
     AssertionError: 1 is not None
 
-  I change the line to make it :ref:`True<test_what_is_true>`
+* I change the line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -1000,7 +1000,7 @@ the test passes
 
     AssertionError: 0.0 is not None
 
-  I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
+* I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
     :lineno-start: 27
@@ -1027,7 +1027,7 @@ the test passes
 
     AssertionError: 0.1 is not None
 
-  I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
+* I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
     :lineno-start: 28
@@ -1149,7 +1149,7 @@ the test passes
 
     AssertionError: None is not an instance of <class 'float'>
 
-  I make the statement :ref:`True<test_what_is_true>` with the `assertNotIsInstance method`_
+* I make the statement :ref:`True<test_what_is_true>` with the `assertNotIsInstance method`_
 
   .. code-block:: python
     :lineno-start: 25
@@ -1270,7 +1270,7 @@ the test passes
 
     AssertionError: 'text' is not None
 
-  I change the `assert method`_ to make the statement :ref:`True<test_what_is_true>`
+* I change the `assert method`_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -1410,9 +1410,14 @@ test_is_none_a_tuple
 I add a test to see if None_ is a tuple_ (anything in parentheses (``()``)), pronounced ``two-pull``
 
 .. code-block:: python
-  :lineno-start: 39
-  :emphasize-lines: 3-4
+  :lineno-start: 34
+  :emphasize-lines: 8-9
 
+      def test_is_none_a_string(self):
+          self.assertIsNotNone('')
+          self.assertIsNotNone("text")
+          self.assertIsInstance('', str)
+          self.assertIsInstance("text", str)
           self.assertNotIsInstance(None, str)
 
       def test_is_none_a_tuple(self):
@@ -1440,6 +1445,7 @@ I make the statement :ref:`True<test_what_is_true>`
 .. code-block:: python
   :lineno-start: 42
   :emphasize-lines: 1
+  :emphasize-text: Not
 
           self.assertIsNotNone(())
 
@@ -1459,6 +1465,7 @@ the test passes
     :lineno-start: 42
     :emphasize-lines: 2
 
+        def test_is_none_a_tuple(self):
             self.assertIsNotNone(())
             self.assertIsNone((1, 2, 3, 'n'))
 
@@ -1468,11 +1475,12 @@ the test passes
 
     AssertionError: (1, 2, 3, 'n') is not None
 
-  I make the statement :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 1
+    :emphasize-text: Not
 
             self.assertIsNotNone((1, 2, 3, 'n'))
 
@@ -1481,9 +1489,11 @@ the test passes
 * I add a failing line with assertNotIsInstance_
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 2
+    :lineno-start: 41
+    :emphasize-lines: 4
 
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
             self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertNotIsInstance((), tuple)
 
@@ -1508,9 +1518,12 @@ the test passes
 * I add another failing line
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 2
+    :lineno-start: 41
+    :emphasize-lines: 5
 
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertIsInstance((), tuple)
             self.assertNotIsInstance((1, 2, 3, 'n'), tuple)
 
@@ -1535,9 +1548,13 @@ the test passes
 * I add one more instance test
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 2
+    :lineno-start: 41
+    :emphasize-lines: 6
 
+        def test_is_none_a_tuple(self):
+            self.assertIsNotNone(())
+            self.assertIsNotNone((1, 2, 3, 'n'))
+            self.assertIsInstance((), tuple)
             self.assertIsInstance((1, 2, 3, 'n'), tuple)
             self.assertIsInstance(None, tuple)
 
@@ -1547,7 +1564,7 @@ the test passes
 
     AssertionError: None is not an instance of <class 'tuple'>
 
-  I change the statement to make it :ref:`True<test_what_is_true>`
+* I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -1656,7 +1673,7 @@ the test passes
 
     AssertionError: [1, 2, 3, 'n'] is not None
 
-  I make the statement :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 50
@@ -1735,7 +1752,7 @@ the test passes
 
     AssertionError: None is not an instance of <class 'list'>
 
-  I make the statement :ref:`True<test_what_is_true>`
+* Imake the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1840,7 +1857,7 @@ the test passes
 
     AssertionError: {1, 2, 3, 'n'} is not None
 
-  I make the statement :ref:`True<test_what_is_true>`
+* Imake the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -1865,7 +1882,7 @@ the test passes
 
     AssertionError: {1, 2, 3, 'n'} is an instance of <class 'set'>
 
-  I make the statement :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1890,7 +1907,7 @@ the test passes
 
     AssertionError: None is not an instance of <class 'set'>
 
-  I make the statement :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -2000,7 +2017,7 @@ the test passes
 
     AssertionError: {'key': 'value'} is not None
 
-  I make the statement :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -2083,7 +2100,7 @@ the test passes
 
     AssertionError: None is not an instance of <class 'dict'>
 
-  I make the statement :ref:`True<test_what_is_true>` with assertNotIsInstance_
+* I make the statement :ref:`True<test_what_is_true>` with assertNotIsInstance_
 
   .. code-block:: python
     :lineno-start: 61
