@@ -634,6 +634,8 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
     # None is NOT a boolean
     # None is None
 
+:ref:`None is NOT a boolean<test_is_none_a_boolean>`
+
 I know two new `assert methods`_
 
 * assertIsInstance_ to see if something is an instance of a :ref:`class<what is a class?>`
@@ -917,6 +919,8 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+:ref:`None is NOT an integer<test_is_none_an_integer>`
+
 ----
 
 *********************************************************************************
@@ -1185,6 +1189,8 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+:ref:`None is NOT a float<test_is_none_a_float>`
+
 ----
 
 *********************************************************************************
@@ -1393,6 +1399,8 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+:ref:`None is NOT a string<test_is_none_a_string>`
+
 ----
 
 *********************************************************************************
@@ -1598,6 +1606,8 @@ the test passes
 
   it looks like None_ is None_ and not anything else
 
+:ref:`None is NOT a tuple<test_is_none_a_tuple>`
+
 ----
 
 *********************************************************************************
@@ -1752,7 +1762,7 @@ the test passes
 
     AssertionError: None is not an instance of <class 'list'>
 
-* Imake the statement :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1784,6 +1794,8 @@ the test passes
     # None is NOT an integer
     # None is NOT a boolean
     # None is None
+
+:ref:`None is NOT a list<test_is_none_a_list>`
 
 ----
 
@@ -1857,7 +1869,7 @@ the test passes
 
     AssertionError: {1, 2, 3, 'n'} is not None
 
-* Imake the statement :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -1939,6 +1951,8 @@ the test passes
     # None is NOT an integer
     # None is NOT a boolean
     # None is None
+
+:ref:`None is NOT a set<test_is_none_a_set>`
 
 ----
 
@@ -2134,6 +2148,8 @@ the test passes
     # None is NOT an integer
     # None is NOT a boolean
     # None is None
+
+:ref:`None is NOT a dictionary<test_is_none_a_dictionary>`
 
 ----
 
