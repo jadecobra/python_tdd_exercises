@@ -57,7 +57,7 @@ makePythonTdd.sh with variables
 ----
 
 *********************************************************************************
-BONUS: makePythonTdd.sh Plus
+BONUS: makePythonTdd.sh Pro
 *********************************************************************************
 
 Since you are the adventurous type and made it this deep in the book, I have added extra lines that

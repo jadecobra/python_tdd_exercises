@@ -24,7 +24,7 @@ makePythonTdd.sh program
 ----
 
 *********************************************************************************
-BONUS: makePythonTdd.ps1 Plus
+BONUS: makePythonTdd.ps1 Pro
 *********************************************************************************
 
 Since you are the adventurous type and made it in here, I have added 2 lines for you that automate opening the test file_ and source file for the projects
