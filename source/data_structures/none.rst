@@ -321,6 +321,9 @@ test_what_is_none
         def test_what_is_none(self):
             self.assertIsNotNone(None)
 
+
+    # Exceptions seen
+
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
@@ -345,7 +348,7 @@ I change the assertIsNotNone_ to assertIsNone_, which checks if what it gets in 
 
           self.assertIsNone(None)
 
-the test passes
+the test passes because None_ is None_
 
 ----
 
@@ -375,6 +378,8 @@ I add a comment
   # AssertionError
 
 this is the same comment from :ref:`the AssertionError chapter<what causes AssertionError?>`
+
+:ref:`None is None<test_what_is_none>`
 
 ----
 
@@ -527,7 +532,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
     # NOTES
 
-  - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question, "is False NOT a child of the bool class?" Okay, this is new, not something from the :ref:`the AssertionError chapter<what causes AssertionError?>`
+  - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question, ``"is False NOT a child of the bool class?"`` Okay, this is new, not something from :ref:`the AssertionError chapter<what causes AssertionError?>`
   - bool_ is the :ref:`class<what is a class?>` for :ref:`booleans<what are booleans?>`
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -538,7 +543,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
   :ref:`False<test_what_is_false>` is a :ref:`boolean<what are booleans?>`
 
-* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``is False a child of the bool class?``
+* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``"is False a child of the bool class?"``
 
   .. code-block:: python
     :lineno-start: 12
@@ -867,7 +872,7 @@ the test passes
 
   the test passes
 
-* I add one more failing line with to test if None_ is an integer_ with assertIsInstance_
+* I add one more failing line to test if None_ is an integer_ with assertIsInstance_
 
   .. code-block:: python
     :lineno-start: 20
