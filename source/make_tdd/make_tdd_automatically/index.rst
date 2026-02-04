@@ -8,7 +8,7 @@
 how to make a test driven development environment 2
 #################################################################################
 
-You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically anytime I want on a
+You made it this far and have become `the greatest programmer in the world`_. To follow `The Do Not Repeat Yourself (DRY) Principle`_, I write a program_ with the commands to make  a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` automatically anytime I want on a
 
 * :ref:`Windows Computer that does NOT have Windows Subsystem for Linux<how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`
 * :ref:`computer with MacOS, Linux or Windows with Windows Subsystem for Linux<how to make a Python Test Driven Development environment automatically>`
@@ -84,7 +84,7 @@ As a reminder here is what the structure looks like if the name of the project i
 what is covered?
 *********************************************************************************
 
-These chapters show how I setup a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically on any computer (Linux_, Windows_, MacOS_)
+These chapters show how I setup a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` automatically on any computer (Linux_, Windows_, MacOS_)
 
 .. toctree::
   :titlesonly:

@@ -2713,7 +2713,7 @@ close the project
 *********************************************************************************
 
 * I close ``person.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests, the terminal_ shows
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line, the terminal_ shows
 
   .. code-block:: python
 

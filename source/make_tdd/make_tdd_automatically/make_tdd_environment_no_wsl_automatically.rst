@@ -48,7 +48,7 @@ how to make a PowerShell script
 
   the terminal_ goes back to the command line
 
-* I open ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project
+* I open ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then add the commands I use to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project
 
   .. code-block:: PowerShell
     :linenos:
@@ -232,7 +232,7 @@ how to run a PowerShell script
 
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
-the program_ works and can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically the way I want every time
+the program_ works and can make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` automatically the way I want every time
 
 ----
 
@@ -241,7 +241,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_more_magic.py`` in the :ref:`editor<2 editors>` I had open
-* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 * I deactivate the `virtual environment`_
 
   .. code-block:: shell
@@ -276,7 +276,7 @@ close the project
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way I can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`, with a :ref:`program<makePythonTdd.ps1>` to do it on any Windows_ computer without `Windows Subsystem for Linux`_.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way I can make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`, with a :ref:`program<makePythonTdd.ps1>` to do it on any Windows_ computer without `Windows Subsystem for Linux`_.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux>`
 

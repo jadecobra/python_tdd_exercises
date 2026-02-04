@@ -1234,7 +1234,7 @@ how to deactivate a virtual environment on Windows without WSL
 review
 ********************************************************************************************
 
-I gave the computer some commands to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
+I gave the computer some commands to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`. I made some folders_ and files_, successfully wrote a :ref:`failing test<test_failure>`, made it pass, then made the tests run automatically
 
 ----
 
@@ -1304,9 +1304,9 @@ how to view all the commands typed in a terminal on Windows without WSL
     New-Item makePythonTdd.ps1
     tree /F
 
-  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for me
+  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for me
 
-* these are the commands I used to help make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
+* these are the commands I used to help make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
 
   .. code-block:: shell
 
@@ -1326,7 +1326,7 @@ how to view all the commands typed in a terminal on Windows without WSL
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
-* these are the steps I took to make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`
+* these are the steps I took to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
 
   - give the project a name
   - :ref:`make a directory for the project<how to make a directory for the project on Windows without WSL>`

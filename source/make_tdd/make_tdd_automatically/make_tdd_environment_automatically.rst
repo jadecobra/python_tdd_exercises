@@ -18,7 +18,7 @@ how to make a Python Test Driven Development environment automatically
 preview
 *********************************************************************************
 
-Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to make a Python Test Driven Development environment automatically>`, it is only __ lines of code, with spaces
+Here is the program_ I have by the end of the chapter to :ref:`automatically make a python test driven development environment <how to make a Python Test Driven Development environment automatically>`, it is only 27 lines of code, with spaces
 
 .. literalinclude:: ../../code/make_tdd/makePythonTddNoVariables.sh
   :language: shell
@@ -97,6 +97,7 @@ how to make a shell script
   .. code-block:: shell
     :linenos:
     :emphasize-lines: 8
+    :emphasize-text: magic_again
 
     #!/bin/bash
     mkdir magic_again
@@ -285,7 +286,15 @@ how to make a shell script run as a command
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests, the terminal_ shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+* I close ``test_magic_again`` in the :ref:`editor<2 editors>`
 
 * I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic_again`` to the name of the new project in the :ref:`editor<2 editors>`
 
@@ -317,6 +326,13 @@ how to make a shell script run as a command
     # AssertionError
     " > tests/test_more_magic.py
 
+    echo "pytest" > requirements.txt
+    echo "pytest-watcher" >> requirements.txt
+    uv init
+    rm main.py
+    uv add --requirement requirements.txt
+    uv run pytest-watcher . --now
+
 * I run ``makePythonTdd.sh`` in the terminal_ to make a project named ``more_magic``
 
   .. code-block:: shell
@@ -329,8 +345,8 @@ how to make a shell script run as a command
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ================================= FAILURES =================================
-    _________________________ TestMoreMagic.test_failure _________________________
+    ============================== FAILURES ===============================
+    _____________________ TestMoreMagic.test_failure ______________________
 
     self = <tests.test_more_magic.TestMoreMagic testMethod=test_failure>
 
@@ -341,31 +357,11 @@ how to make a shell script run as a command
     tests/test_more_magic.py:7: AssertionError
     ====================== short test summary info ========================
     FAILED tests/test_more_magic.py::TestMoreMagic::test_failure - AssertionError: True is not false
-    ============================ 1 failed in X.YZs =============================
+    ========================== 1 failed in X.YZs ==========================
 
   I make the test pass
 
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
-
-the program_ works and can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically the way I want every time
-
-----
-
-*********************************************************************************
-close the project
-*********************************************************************************
-
-* I close ``test_more_magic.py`` in the :ref:`editor<2 editors>` I had open
-* I click in the terminal_ and use :kbd:`ctrl+c` on the keyboard to leave the tests
-
-* I `change directory`_ to the parent of ``more_magic``
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests, the terminal_ shows
 
   .. code-block:: shell
 
@@ -373,13 +369,17 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
+* I close ``test_more_magic.py`` in the :ref:`editor<2 editors>`
+
+:ref:`makePythonTdd.sh` works and can automatically make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want every time. What a beautiful life.
+
 ----
 
 ********************************************************************************************
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way I can make a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>`, with a :ref:`program<makePythonTdd.sh>` to do it on any Linux_, Windows_ or MacOS_ computers.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way I can make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`, with a :ref:`program<makePythonTdd.sh>` to do it on any Linux_, Windows_ or MacOS_ computers.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 

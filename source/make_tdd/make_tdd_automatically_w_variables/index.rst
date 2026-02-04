@@ -52,7 +52,7 @@ As a reminder here is what the structure looks like if the name of the project i
 what is covered?
 *********************************************************************************
 
-These chapters show how I add a variable to a program_ so it makes a Python_ :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` automatically on any computer (Linux_, Windows_, MacOS_) when I give it a name
+These chapters show how I add a variable to a program_ so it makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` automatically on any computer (Linux_, Windows_, MacOS_) when I give it a name
 
 .. toctree::
   :titlesonly:
