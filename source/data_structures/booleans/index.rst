@@ -1125,7 +1125,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # False is not true
     # False is a boolean
 
-* I make the new notes simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
+* I make the new comments simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
 
   .. code-block:: python
     :lineno-start: 22
@@ -1333,7 +1333,7 @@ The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: () is not true
 
-the empty tuple_ is not True_
+:ref:`the empty tuple is not True<is a tuple False or True?>`
 
 ----
 
@@ -1356,14 +1356,9 @@ the empty tuple_ is not True_
 * I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 8
+    :lineno-start: 11
+    :emphasize-lines: 3
 
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
-            self.assertFalse(None)
-            self.assertFalse(0)
             self.assertFalse(0.0)
             self.assertFalse(str())
             self.assertFalse(tuple())
@@ -1381,11 +1376,15 @@ the empty tuple_ is not True_
 * I add another line to :ref:`test_what_is_false` to see if a tuple_ with things is False_
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2
+    :lineno-start: 11
+    :emphasize-lines: 4
 
+            self.assertFalse(0.0)
+            self.assertFalse(str())
             self.assertFalse(tuple())
             self.assertFalse((1, 2, 3, 'n'))
+
+        def test_what_is_true(self):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1408,9 +1407,10 @@ the empty tuple_ is not True_
 * I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 11
+    :lineno-start: 12
+    :emphasize-lines: 12
 
+            self.assertFalse(str())
             self.assertFalse(tuple())
 
         def test_what_is_true(self):
@@ -1450,6 +1450,8 @@ the empty tuple_ is not True_
     # False is not true
     # False is a boolean
 
+:ref:`in Python, the empty tuple is False and a tuple with things is True<is a tuple False or True?>`
+
 ----
 
 *********************************************************************************
@@ -1467,11 +1469,22 @@ is a list False or True?
 I add a line to test if a :ref:`list<lists>` (anything in square brackets (``[]``)) is True_
 
 .. code-block:: python
-  :lineno-start: 23
-  :emphasize-lines: 2
+  :lineno-start: 15
+  :emphasize-lines: 10
 
-      self.assertTrue((1, 2, 3, 'n'))
-      self.assertTrue(list())
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+          self.assertTrue(True)
+          self.assertTrue(-1)
+          self.assertTrue(1)
+          self.assertTrue(-0.1)
+          self.assertTrue(0.1)
+          self.assertTrue('text')
+          self.assertTrue((1, 2, 3, 'n'))
+          self.assertTrue(list())
+
+
+  # NOTES
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1502,9 +1515,10 @@ the empty :ref:`list<lists>` is NOT True_
 * I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2
+    :lineno-start: 12
+    :emphasize-lines: 3
 
+            self.assertFalse(str())
             self.assertFalse(tuple())
             self.assertFalse(list())
 
@@ -1521,14 +1535,15 @@ the empty :ref:`list<lists>` is NOT True_
 * I add another line to :ref:`test_what_is_false` to see if a :ref:`list<lists>` with things is False_
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 2
+    :lineno-start: 12
+    :emphasize-lines: 4
 
+            self.assertFalse(str())
+            self.assertFalse(tuple())
             self.assertFalse(list())
             self.assertFalse([1, 2, 3, 'n'])
 
         def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1549,9 +1564,10 @@ the empty :ref:`list<lists>` is NOT True_
 * I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 12
+    :lineno-start: 13
+    :emphasize-lines: 13
 
+            self.assertFalse(tuple())
             self.assertFalse(list())
 
         def test_what_is_true(self):
@@ -1591,11 +1607,7 @@ the empty :ref:`list<lists>` is NOT True_
     # False is not true
     # False is a boolean
 
-
-    # Exceptions seen
-    # AssertionError
-
-I can see a pattern forming
+:ref:`in Python, the empty list is False and a list with things is True<is a list False or True?>`. I can see a pattern.
 
 -----
 
@@ -1614,9 +1626,11 @@ is a set False or True?
 I add a line to in :ref:`test_what_is_true` to see if a set_ is True_
 
 .. code-block:: python
-  :lineno-start: 25
-  :emphasize-lines: 2
+  :lineno-start: 23
+  :emphasize-lines: 4
 
+          self.assertTrue('text')
+          self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue(set())
 
@@ -1652,9 +1666,11 @@ the empty set_ is NOT True_
 * I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 2
+    :lineno-start: 12
+    :emphasize-lines: 4
 
+            self.assertFalse(str())
+            self.assertFalse(tuple())
             self.assertFalse(list())
             self.assertFalse(set())
 
@@ -1671,9 +1687,12 @@ the empty set_ is NOT True_
 * I add another line to :ref:`test_what_is_false` to see if a set_ with things is False_
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 2
+    :lineno-start: 12
+    :emphasize-lines: 5
 
+            self.assertFalse(str())
+            self.assertFalse(tuple())
+            self.assertFalse(list())
             self.assertFalse(set())
             self.assertFalse({1, 2, 3, 'n'})
 
@@ -1700,9 +1719,11 @@ the empty set_ is NOT True_
 * I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 13
+    :lineno-start: 13
+    :emphasize-lines: 15
 
+            self.assertFalse(tuple())
+            self.assertFalse(list())
             self.assertFalse(set())
 
         def test_what_is_true(self):
@@ -1720,7 +1741,7 @@ the empty set_ is NOT True_
 
     # NOTES
 
-* I add to the notes
+* I add to the comments
 
   .. code-block:: python
     :lineno-start: 30
@@ -1749,6 +1770,8 @@ the empty set_ is NOT True_
     # Exceptions seen
     # AssertionError
 
+:ref:`in Python, the empty set is False and a set with things is True<is a set False or True?>`
+
 ----
 
 *********************************************************************************
@@ -1766,9 +1789,19 @@ is a dictionary False or True?
 I add a line to :ref:`test_what_is_true` to test if a :ref:`dictionary <dictionaries>` is True_
 
 .. code-block:: python
-  :lineno-start: 27
-  :emphasize-lines: 2
+  :lineno-start: 17
+  :emphasize-lines: 12
 
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+          self.assertTrue(True)
+          self.assertTrue(-1)
+          self.assertTrue(1)
+          self.assertTrue(-0.1)
+          self.assertTrue(0.1)
+          self.assertTrue('text')
+          self.assertTrue((1, 2, 3, 'n'))
+          self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue({1, 2, 3, 'n'})
           self.assertTrue(dict())
 
@@ -1840,6 +1873,8 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
             self.assertFalse(dict())
             self.assertFalse({'key': 'value'})
 
+        def test_what_is_true(self):
+
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
@@ -1892,7 +1927,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
 
     # NOTES
 
-* I add the last 2 notes
+* I add the last 2 comments
 
   .. code-block:: python
     :lineno-start: 32
@@ -1923,13 +1958,15 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
     # Exceptions seen
     # AssertionError
 
+:ref:`in Python, the empty dictionary is False, and a dictionary with things is True<is a dictionary False or True?>`
+
 ----
 
 *********************************************************************************
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``booleans``
@@ -1953,11 +1990,11 @@ close the project
 review
 *********************************************************************************
 
-From the tests I can see that in Python_
+From the tests I know that in Python_
 
-* a container with things is True_
-* an empty container is False_
+* a container (strings_, tuples_, :ref:`lists<what is a list?>`, sets_, :ref:`dictionaries<what is a dictionary?>`) with things is True_
 * positive and negative numbers are True_
+* an empty container is False_
 * ``0`` is False_
 * False_ is not True_
 * True_ is not False_

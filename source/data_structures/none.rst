@@ -629,7 +629,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
   the test passes
 
-* Since this is about None_, I change the last 2 notes I added
+* Since this is about None_, I change the last 2 comments I added
 
   .. code-block:: python
     :lineno-start: 17
