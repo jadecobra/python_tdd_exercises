@@ -195,7 +195,7 @@ requirements
 
   then goes back to the command line
 
-* I remove ``main.py`` from the project
+* I remove ``main.py`` from the project because I do not use it
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -213,7 +213,7 @@ requirements
 
   the terminal shows it installed the `Python packages`_
 
-* I run the tests automatically
+* I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -486,7 +486,7 @@ the test passes
 how to test if something is an instance of a class
 *********************************************************************************
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can use to test if an :ref:`object<what is a class?>` is a child/instance of a :ref:`class<what is a class?>` or not - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can use to test if an :ref:`object<what is a class?>` is a child (instance) of a :ref:`class<what is a class?>` or not - assertIsInstance_ and assertNotIsInstance_
 
 * I add the `assertNotIsInstance method`_ to test if :ref:`False<test_what_is_false>` is a :ref:`boolean<what are booleans?>`
 
@@ -503,7 +503,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
     # NOTES
 
-  - assertNotIsInstance_ checks if the first item it is given is NOT a child/instance of the second item. It is like asking the question, ``"is False NOT a child of the bool class?"`` Okay, this is new, not something from :ref:`the AssertionError chapter<what causes AssertionError?>`
+  - assertNotIsInstance_ checks if the first item it is given is NOT a child (instance) of the second item. It is like asking the question, ``"is False NOT a child of the bool class?"`` Okay, this is new, not something from :ref:`the AssertionError chapter<what causes AssertionError?>`
   - bool_ is the :ref:`class<what is a class?>` for :ref:`booleans<what are booleans?>`
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -514,7 +514,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
   :ref:`False<test_what_is_false>` is a :ref:`boolean<what are booleans?>`
 
-* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child/instance of the second item. It is like asking the question ``"is False a child of the bool class?"``
+* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is a child (instance) of the second item. It is like asking the question ``"is False a child of the bool class?"``
 
   .. code-block:: python
     :lineno-start: 12
@@ -558,7 +558,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
   the test passes
 
-* I add assertIsInstance_ to test if None_ is a child/instance of the `bool class`_
+* I add assertIsInstance_ to test if None_ is a child (instance) of the `bool class`_
 
   .. code-block:: python
     :lineno-start: 9

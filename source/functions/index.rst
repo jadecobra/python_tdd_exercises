@@ -256,7 +256,7 @@ start the project
 
   then goes back to the command line
 
-* I remove ``main.py`` from the project
+* I remove ``main.py`` from the project because I do not use it
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -274,7 +274,7 @@ start the project
 
   the terminal shows it installed the `Python packages`_
 
-* I run the tests automatically
+* I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
     :emphasize-lines: 1

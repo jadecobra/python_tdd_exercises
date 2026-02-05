@@ -168,7 +168,7 @@ start the project
 
     Initialized project `booleans`
 
-* I remove ``main.py`` from the project
+* I remove ``main.py`` from the project because I do not use it
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -182,7 +182,7 @@ start the project
 
     uv add --requirement requirements.txt
 
-* I run the tests automatically
+* I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -250,7 +250,7 @@ test_what_is_false
 
 ----
 
-* I change ``test_failure`` to :ref:`test_what_is_false`, then use the `assertNotIsInstance method`_ from :ref:`testing None<what is None?>` to check if False_ is a child/instance of the `bool class`_, I think this will fail
+* I change ``test_failure`` to :ref:`test_what_is_false`, then use the `assertNotIsInstance method`_ I learned from :ref:`testing None<what is None?>` to check if False_ is a child (instance) of the `bool class`_. I think this will fail
 
   .. code-block:: python
     :linenos:
@@ -274,24 +274,6 @@ test_what_is_false
 
     AssertionError: False is an instance of <class 'bool'>
 
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I change assertNotIsInstance_ to assertIsInstance_
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
-
-            self.assertIsInstance(False, bool)
-
-  the test passes
-
 * I add a comment
 
   .. code-block:: python
@@ -313,6 +295,24 @@ test_what_is_false
 
   so far this is something I already know from :ref:`testing None<what is None?>`
 
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change assertNotIsInstance_ to assertIsInstance_
+
+.. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 1
+
+          self.assertIsInstance(False, bool)
+
+the test passes
+
 :ref:`False is a boolean<test_what_is_false>`
 
 ----
@@ -331,50 +331,28 @@ I do the same thing with True_
 
 ----
 
-I add another failing test
-
-.. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 4-5
-
-      def test_what_is_false(self):
-          self.assertIsInstance(False, bool)
-
-      def test_what_is_true(self):
-          self.assertNotIsInstance(True, bool)
-
-
-  # NOTES
-
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: shell
-
-    AssertionError: True is an instance of <class 'bool'>
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I change the `assert method`_
+* I add another failing test
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 2
+    :lineno-start: 6
+    :emphasize-lines: 4-5
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
 
         def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
+            self.assertNotIsInstance(True, bool)
 
 
     # NOTES
 
-  the test passes
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I add another comment
+  .. code-block:: shell
+
+      AssertionError: True is an instance of <class 'bool'>
+
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 13
@@ -386,6 +364,29 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 
     # Exceptions seen
+    # AssertionError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the `assert method`_
+
+.. code-block:: python
+  :lineno-start: 9
+  :emphasize-lines: 2
+
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+
+
+  # NOTES
+
+the test passes
 
 :ref:`True is a boolean<test_what_is_true>`
 
@@ -414,6 +415,21 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     AssertionError: False is not true
 
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 3
+
+    # NOTES
+    # True is a boolean
+    # False is not true
+    # False is a boolean
+
+
+    # Exceptions seen
+    # AssertionError
+
 * I change assertTrue_ to assertFalse_
 
   .. code-block:: python
@@ -437,14 +453,16 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     # NOTES
     # True is a boolean
+    # False is False
     # False is not true
     # False is a boolean
 
 
     # Exceptions seen
-    # AssertionError
 
 * I move the line from :ref:`test_what_is_true` to the :ref:`test_what_is_false method<test_what_is_false>`
+
+  .. TIP:: If you are using `Visual Studio Code`_ you can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
 
   .. code-block:: python
     :lineno-start: 4
@@ -461,23 +479,6 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 
     # NOTES
-
-  .. TIP:: If you are using `Visual Studio Code`_ you can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
-
-* I add a comment
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 3
-
-    # NOTES
-    # True is a boolean
-    # False is false
-    # False is not true
-    # False is a boolean
-
-
-    # Exceptions seen
 
 * I add a failing line to the :ref:`test_what_is_false method<test_what_is_false>`
 
@@ -497,6 +498,22 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
   .. code-block:: shell
 
     AssertionError: True is not false
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 2
+
+    # NOTES
+    # True is not false
+    # True is a boolean
+    # False is False
+    # False is not true
+    # False is a boolean
+
+
+    # Exceptions seen
 
 * I change assertFalse_ to assertTrue_
 
@@ -523,15 +540,18 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :lineno-start: 15
     :emphasize-lines: 2
 
+
     # NOTES
+    # True is True
     # True is not false
     # True is a boolean
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
 
     # Exceptions seen
+    # AssertionError
 
 * I move the line from :ref:`test_what_is_false` to the :ref:`test_what_is_true method<test_what_is_true>`
 
@@ -550,24 +570,6 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     # NOTES
 
-* I add another comment
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 2
-
-
-    # NOTES
-    # True is true
-    # True is not false
-    # True is a boolean
-    # False is false
-    # False is not true
-    # False is a boolean
-
-
-    # Exceptions seen
-    # AssertionError
 
 All of these are still statements from the :ref:`AssertionError<what causes AssertionError?>` and :ref:`None<what is None?>` chapters.
 
@@ -668,11 +670,11 @@ I add a comment
 
 
   # NOTES
-  # True is true
+  # True is True
   # True is not false
   # True is a boolean
   # None is false
-  # False is false
+  # False is False
   # False is not true
   # False is a boolean
 
@@ -868,12 +870,12 @@ the test passes
 
     # NOTES
     # positive and negative integers are true
-    # True is true
+    # True is True
     # True is not false
     # True is a boolean
     # 0 is false
     # None is false
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
@@ -1073,13 +1075,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # NOTES
     # positive and negative floats are true
     # positive and negative integers are true
-    # True is true
+    # True is True
     # True is not false
     # True is a boolean
     # 0.0 is false
     # 0 is false
     # None is false
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
@@ -1091,12 +1093,12 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     # NOTES
     # positive and negative numbers are true
-    # True is true
+    # True is True
     # True is not false
     # True is a boolean
     # 0 is false
     # None is false
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
@@ -1245,13 +1247,13 @@ the test passes
     # NOTES
     # a string with things is true
     # positive and negative numbers are true
-    # True is true
+    # True is True
     # True is not false
     # True is a boolean
     # the empty string is false
     # 0 is false
     # None is false
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
@@ -1407,14 +1409,14 @@ The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # a tuple with things is true
     # a string with things is true
     # positive and negative numbers are true
-    # True is true
+    # True is True
     # True is not false
     # True is a boolean
     # the empty tuple is false
     # the empty string is false
     # 0 is false
     # None is false
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
@@ -1563,7 +1565,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # a tuple with things is true
     # a string with things is true
     # positive and negative numbers are true
-    # True is true
+    # True is True
     # True is not false
     # True is a boolean
     # the empty list is false
@@ -1571,7 +1573,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty string is false
     # 0 is false
     # None is false
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
@@ -1721,7 +1723,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # a tuple with things is true
     # a string with things is true
     # positive and negative numbers are true
-    # True is true
+    # True is True
     # True is not false
     # True is a boolean
     # the empty set is false
@@ -1730,7 +1732,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty string is false
     # 0 is false
     # None is false
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
@@ -1908,7 +1910,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # a tuple with things is true
     # a string with things is true
     # positive and negative numbers are true
-    # True is true
+    # True is True
     # True is not false
     # True is a boolean
     # the empty dictionary is false
@@ -1918,7 +1920,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty string is false
     # 0 is false
     # None is false
-    # False is false
+    # False is False
     # False is not true
     # False is a boolean
 
