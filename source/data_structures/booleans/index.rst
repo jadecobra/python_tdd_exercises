@@ -4,7 +4,7 @@
 
 .. include:: ../../links.rst
 
-.. _booleans: https://docs.python.org/3/library/functions.html#bool
+.. _booleans: bool_
 
 #################################################################################
 what are booleans?
@@ -176,7 +176,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file_ for the `Python packages`_ I need in the terminal_
+* I make a requirements file_ for the `Python packages`_ I need, in the terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -240,8 +240,9 @@ start the project
   .. code-block:: python
     :emphasize-lines: 8, 10
 
+
     ================================ FAILURES ================================
-    ______________________ TestBooleans.test_failure ________________________
+    _______________________ TestBooleans.test_failure ________________________
 
     self = <tests.test_booleans.TestBooleans testMethod=test_failure>
 
@@ -250,7 +251,7 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_booleans.py:7: AssertionError
-    ========================= short test summary info ==========================
+    ======================== short test summary info =========================
     FAILED tests/test_booleans.py::TestBooleans::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
@@ -296,7 +297,7 @@ test_what_is_false
 
 ----
 
-* I change ``test_failure`` to ``test_what_is_false``, then use the `assertNotIsInstance method`_ from :ref:`testing None<what is None?>` to check if False_ is a child/instance of the bool_ :ref:`class<what is a class?>` expecting a failure
+* I change ``test_failure`` to :ref:`test_what_is_false`, then use the `assertNotIsInstance method`_ from :ref:`testing None<what is None?>` to check if False_ is a child/instance of the `bool class`_, I think this will fail
 
   .. code-block:: python
     :linenos:
@@ -309,6 +310,10 @@ test_what_is_false
 
         def test_what_is_false(self):
             self.assertNotIsInstance(False, bool)
+
+
+    # Exceptions seen
+    # AssertionError
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -324,27 +329,38 @@ test_what_is_false
 
 ----
 
-I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsInstance_ to assertIsInstance_
 
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 1
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
 
-          self.assertIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
 
-the test passes and I add a note
+  the test passes
 
-.. code-block:: python
-  :lineno-start: 10
-  :emphasize-lines: 1-2
+* I add a comment
 
-  # NOTES
-  # False is a boolean
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 7-8
+
+    class TestBooleans(unittest.TestCase):
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
 
 
-  # Exceptions seen
+    # NOTES
+    # False is a boolean
 
-so far this is going over what I already know from :ref:`testing None<what is None?>`
+
+    # Exceptions seen
+    # AssertionError
+
+  so far this is something I already know from :ref:`testing None<what is None?>`
+
+:ref:`False is a boolean<test_what_is_false>`
 
 ----
 
@@ -394,14 +410,18 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I change the `assert method`_
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 1
+    :lineno-start: 9
+    :emphasize-lines: 2
 
+        def test_what_is_true(self):
             self.assertIsInstance(True, bool)
+
+
+    # NOTES
 
   the test passes
 
-* I add another note
+* I add another comment
 
   .. code-block:: python
     :lineno-start: 13
@@ -414,13 +434,15 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     # Exceptions seen
 
+:ref:`True is a boolean<test_what_is_true>`
+
 ----
 
 *********************************************************************************
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* I add a failing line to ``test_what_is_true``
+* I add a failing line to the :ref:`test_what_is_true method<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -449,12 +471,15 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             self.assertIsInstance(True, bool)
             self.assertFalse(False)
 
+
+    # NOTES
+
   the test passes
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 14
     :emphasize-lines: 3
 
     # NOTES
@@ -466,22 +491,27 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # Exceptions seen
     # AssertionError
 
-* I move the line from ``test_what_is_true`` to the ``test_what_is_false`` :ref:`method<what is a function?>`
+* I move the line from :ref:`test_what_is_true` to the :ref:`test_what_is_false method<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 3
+    :lineno-start: 4
+    :emphasize-lines: 5
 
-      def test_what_is_false(self):
-          self.assertIsInstance(False, bool)
-          self.assertFalse(False)
+    class TestBooleans(unittest.TestCase):
 
-      def test_what_is_true(self):
-          self.assertIsInstance(True, bool)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
 
-  .. TIP:: You do not need to copy and paste to move a line. If you are using `Visual Studio Code`_ you can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
 
-* I add a note
+
+    # NOTES
+
+  .. TIP:: If you are using `Visual Studio Code`_ you can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
+
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 14
@@ -496,7 +526,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     # Exceptions seen
 
-* I add a failing line to ``test_what_is_false``
+* I add a failing line to the :ref:`test_what_is_false method<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -526,7 +556,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   the test passes
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 15
@@ -542,7 +572,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     # Exceptions seen
 
-* I move the line from ``test_what_is_false`` to the ``test_what_is_true`` :ref:`method<what is a function?>`
+* I move the line from :ref:`test_what_is_false` to the :ref:`test_what_is_true method<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -556,7 +586,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             self.assertIsInstance(True, bool)
             self.assertTrue(True)
 
-* I add another note
+* I add another comment
 
   .. code-block:: python
     :lineno-start: 15
@@ -600,7 +630,7 @@ is None False or True?
 
 ----
 
-I add a line in ``test_what_is_true`` to test if :ref:`None<what is None?>` is True_
+I add a line in :ref:`test_what_is_true` to test if :ref:`None<what is None?>` is True_
 
 .. code-block:: python
   :lineno-start: 10
@@ -643,7 +673,7 @@ the test passes
 
 ----
 
-I move the line from ``test_what_is_true`` to ``test_what_is_false``
+I move the line from :ref:`test_what_is_true` to :ref:`test_what_is_false`
 
 .. code-block:: python
   :lineno-start: 6
@@ -658,7 +688,7 @@ I move the line from ``test_what_is_true`` to ``test_what_is_false``
           self.assertIsInstance(True, bool)
           self.assertTrue(True)
 
-I add a note
+I add a comment
 
 .. code-block:: python
   :lineno-start: 16
@@ -693,7 +723,7 @@ is an integer False or True?
 
 ----
 
-I add a failing line ``test_what_is_false`` to see if an integer_ (a whole number) is False_
+I add a failing line :ref:`test_what_is_false` to see if an integer_ (a whole number) is False_
 
 .. code-block:: python
   :lineno-start: 6
@@ -739,7 +769,7 @@ the test passes
 
 ----
 
-* I move the line from ``test_what_is_false`` to ``test_what_is_true``
+* I move the line from :ref:`test_what_is_false` to :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 6
@@ -757,7 +787,7 @@ the test passes
 
   I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``. Negative integers_ are True_ in Python_
 
-* I add a new failing line to ``test_what_is_true`` to see if ``0`` is True_
+* I add a new failing line to :ref:`test_what_is_true` to see if ``0`` is True_
 
   .. code-block:: python
     :lineno-start: 14
@@ -782,7 +812,7 @@ the test passes
 
   the test passes
 
-* I move the line to ``test_what_is_false``
+* I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 7
@@ -797,7 +827,7 @@ the test passes
 
   ``0`` is False_ in Python_
 
-* I add another failing line to ``test_what_is_false`` to see if ``1`` is False
+* I add another failing line to :ref:`test_what_is_false` to see if ``1`` is False
 
   .. code-block:: python
     :lineno-start: 10
@@ -825,7 +855,7 @@ the test passes
 
   the test passes
 
-* I move the line to ``test_what_is_true``
+* I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 10
@@ -876,7 +906,7 @@ is a float False or True?
 
 ----
 
-I add a line to test if floats_ (binary floating point decimal numbers) are False_ in ``test_what_is_false``
+I add a line to test if floats_ (binary floating point decimal numbers) are False_ in :ref:`test_what_is_false`
 
 .. code-block:: python
   :lineno-start: 10
@@ -911,7 +941,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   the test passes
 
-* I move the line to ``test_what_is_true``
+* I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 14
@@ -932,7 +962,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
-* I add another failing line to ``test_what_is_true`` to see if ``0.0`` is True_
+* I add another failing line to :ref:`test_what_is_true` to see if ``0.0`` is True_
 
   .. code-block:: python
     :lineno-start: 17
@@ -957,7 +987,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   the test passes
 
-* I move the line to ``test_what_is_false``
+* I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 7
@@ -974,7 +1004,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   ``0.0`` is False_ in Python_
 
-* I add another line to ``test_what_is_false`` to see if ``0.1`` is False_ in Python_
+* I add another line to :ref:`test_what_is_false` to see if ``0.1`` is False_ in Python_
 
   .. code-block:: python
     :lineno-start: 11
@@ -1002,7 +1032,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   the test passes
 
-* I move the line to ``test_what_is_true``
+* I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 11
@@ -1076,7 +1106,7 @@ is a string False or True?
 
 ----
 
-I add a failing line to ``test_what_is_true`` to test if a string_ (anything in :ref:`quotes`) is True_
+I add a failing line to :ref:`test_what_is_true` to test if a string_ (anything in :ref:`quotes`) is True_
 
 .. code-block:: python
   :lineno-start: 13
@@ -1128,7 +1158,7 @@ the test passes
 
 ----
 
-* I move the line to ``test_what_is_false``
+* I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 11
@@ -1141,7 +1171,7 @@ the test passes
 
   the empty string_ ('') is not False_
 
-* I add a failing line to ``test_what_is_false``
+* I add a failing line to :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 11
@@ -1167,7 +1197,7 @@ the test passes
 
   the test passes
 
-* I move the line to ``test_what_is_true``
+* I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1224,7 +1254,7 @@ is a tuple False or True?
 
 ----
 
-I add a line to ``test_what_is_true`` to see if a tuple_ (anything in parentheses (``()``) separated by commas, separated by commas) is True_
+I add a line to :ref:`test_what_is_true` to see if a tuple_ (anything in parentheses (``()``) separated by commas, separated by commas) is True_
 
 .. code-block:: python
   :lineno-start: 14
@@ -1269,7 +1299,7 @@ the empty tuple_ is not True_
 
   the test passes
 
-* I move the line to ``test_what_is_false``
+* I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1294,7 +1324,7 @@ the empty tuple_ is not True_
 
 ----
 
-* I add another line to ``test_what_is_false`` to see if a tuple_ with things is False_
+* I add another line to :ref:`test_what_is_false` to see if a tuple_ with things is False_
 
   .. code-block:: python
     :lineno-start: 13
@@ -1321,7 +1351,7 @@ the empty tuple_ is not True_
 
   the test passes
 
-* I move the line to ``test_what_is_true``
+* I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1415,7 +1445,7 @@ the empty :ref:`list<lists>` is NOT True_
 
   the test passes
 
-* I move the line to ``test_what_is_false``
+* I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1434,7 +1464,7 @@ the empty :ref:`list<lists>` is NOT True_
 
 ----
 
-* I add another line to ``test_what_is_false`` to see if a :ref:`list<lists>` with things is False_
+* I add another line to :ref:`test_what_is_false` to see if a :ref:`list<lists>` with things is False_
 
   .. code-block:: python
     :lineno-start: 14
@@ -1462,7 +1492,7 @@ the empty :ref:`list<lists>` is NOT True_
 
   the test passes
 
-* I move the line to ``test_what_is_true``
+* I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 14
@@ -1527,7 +1557,7 @@ is a set False or True?
 
 ----
 
-I add a line to in ``test_what_is_true`` to see if a set_ is True_
+I add a line to in :ref:`test_what_is_true` to see if a set_ is True_
 
 .. code-block:: python
   :lineno-start: 25
@@ -1565,7 +1595,7 @@ the empty set_ is NOT True_
 
   the test passes
 
-* I move the line to ``test_what_is_false``
+* I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 14
@@ -1584,7 +1614,7 @@ the empty set_ is NOT True_
 
 ----
 
-* I add another line to ``test_what_is_false`` to see if a set_ with things is False_
+* I add another line to :ref:`test_what_is_false` to see if a set_ with things is False_
 
   .. code-block:: python
     :lineno-start: 15
@@ -1613,7 +1643,7 @@ the empty set_ is NOT True_
 
   the test passes
 
-* I move the line to ``test_what_is_true``
+* I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 15
@@ -1679,7 +1709,7 @@ is a dictionary False or True?
 
 ----
 
-I add a line to ``test_what_is_true`` to test if a :ref:`dictionary <dictionaries>` is True_
+I add a line to :ref:`test_what_is_true` to test if a :ref:`dictionary <dictionaries>` is True_
 
 .. code-block:: python
   :lineno-start: 27
@@ -1717,7 +1747,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
 
   the test passes
 
-* I move the line to the ``test_what_is_false`` :ref:`method<what is a function?>`
+* I move the line to the :ref:`test_what_is_false method<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1774,7 +1804,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
 
   the test passes
 
-* I move the line to the ``test_what_is_true`` :ref:`method<what is a function?>`
+* I move the line to the :ref:`test_what_is_true method<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 6

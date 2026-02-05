@@ -1390,7 +1390,7 @@ the terminal_ shows :ref:`TypeError`
 
   the terminal_ still shows green
 
-* I change the second input expecting a failure
+* I change the second input, I think this will fail
 
   .. code-block:: python
     :lineno-start: 111
@@ -1532,7 +1532,7 @@ the test passes
 
   the terminal_ still shows green
 
-* I change the second argument expecting a failure
+* I change the second argument, I think this will fail
 
   .. code-block:: python
     :lineno-start: 118
@@ -2240,7 +2240,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
   the test is still green
 
-* I change the second argument, expecting a failure
+* I change the second argument, I think this will fail
 
   .. code-block:: python
     :lineno-start: 155
@@ -2661,7 +2661,7 @@ the test passes
 
   the test is still green
 
-* I change the second argument expecting a failure
+* I change the second argument, I think this will fail
 
   .. code-block:: python
     :lineno-start: 178

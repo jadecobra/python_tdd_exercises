@@ -106,7 +106,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: <class 'bool'> is not an instance of <class 'int'>
 
-the bool_ :ref:`class<what is a class?>` is not a child of the int_ :ref:`class<what is a class?>`
+the `bool class`_ is not a child of the int_ :ref:`class<what is a class?>`
 
 ----
 

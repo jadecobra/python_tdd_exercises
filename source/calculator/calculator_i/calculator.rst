@@ -155,7 +155,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file_ for the `Python packages`_ I need in the terminal_
+* I make a requirements file_ for the `Python packages`_ I need, in the terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -227,7 +227,7 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_calculator.py:7: AssertionError
-    ========================= short test summary info ==========================
+    ======================== short test summary info =========================
     FAILED tests/test_calculator.py::TestCalculator::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 

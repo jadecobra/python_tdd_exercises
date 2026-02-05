@@ -137,7 +137,7 @@ the test passes
 
 ----
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 50
@@ -183,7 +183,7 @@ the test passes
 
   the test passes
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 53
@@ -228,7 +228,7 @@ the test passes
 
   the test passes
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 44
@@ -271,7 +271,7 @@ the test passes
 
   the test passes
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 45
@@ -639,7 +639,7 @@ the test passes
 
   the test passes
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 60
@@ -800,7 +800,7 @@ the test passes
 
   the test passes
 
-* I add a note
+* I add a comment
 
   .. code-block:: python
     :lineno-start: 59

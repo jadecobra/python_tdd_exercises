@@ -142,7 +142,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     E       AssertionError: True is not false
 
     tests/test_pro_magic.py:7: AssertionError
-    ========================= short test summary info ==========================
+    ======================== short test summary info =========================
     FAILED tests/test_pro_magic.py::Testpro_magic::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
@@ -258,7 +258,7 @@ Here are a few other examples
     E       AssertionError: True is not false
 
     tests/test_pro_magic_plus.py:7: AssertionError
-    ========================= short test summary info ==========================
+    ======================== short test summary info =========================
     FAILED tests/test_pro_magic_plus.py::Testpro_magic_plus::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
@@ -306,7 +306,7 @@ Here are a few other examples
     E       AssertionError: True is not false
 
     tests/test_person.py:7: AssertionError
-    =========================== short test summary info ===========================
+    ========================== short test summary info ==========================
     FAILED tests/test_person.py::Testperson::test_failure - AssertionError: True is not false
     ============================= 1 failed in X.YZs =============================
 

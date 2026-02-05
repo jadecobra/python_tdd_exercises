@@ -189,7 +189,7 @@ requirements
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file_ for the `Python packages`_ I need in the terminal_
+* I make a requirements file_ for the `Python packages`_ I need, in the terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -587,7 +587,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
   the test passes
 
-* I add assertIsInstance_ to test if None_ is a child/instance of the bool_ :ref:`class<what is a class?>`
+* I add assertIsInstance_ to test if None_ is a child/instance of the `bool class`_
 
   .. code-block:: python
     :lineno-start: 9
@@ -2252,7 +2252,7 @@ close the project
 review
 *********************************************************************************
 
-I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 that were in :ref:`AssertionError<what causes AssertionError?>`
+I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 from :ref:`the AssertionError chapter<what causes AssertionError?>`
 
 * assertIsNone_ - which tests if the thing in parentheses is None_
 * assertIsNotNone_ - which tests if the thing in parentheses is NOT None_
@@ -2268,11 +2268,11 @@ I also used :ref:`Python's basic data structures<data structures>` in the tests
 * integers_ - whole numbers, negative and positive, including ``0``
 * floats_ - floating point decimal numbers, negative and positive including ``0.0``
 * strings_ - anything inside :ref:`quotes`
-* :ref:`booleans<what are booleans?>` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
+* :ref:`booleans - True and False<what are booleans?>`
 * tuples_ - anything in parentheses (``()``) separated by commas separated by commas
-* :ref:`lists` - anything in square brackets (``[]``)
+* :ref:`lists - anything in square brackets ([])<what is a list?>`
 * sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
-* :ref:`dictionaries` - :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``)
+* :ref:`dictionaries - key-value pairs in curly braces ({})<what is a dictionary?>`
 
 :ref:`How many questions can you answer after going through this chapter?<questions about None>`
 
