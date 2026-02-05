@@ -22,7 +22,7 @@ class TestBooleans(unittest.TestCase):
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
-        self.assertTrue('text')
+        self.assertTrue("text")
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
         self.assertTrue({1, 2, 3, 'n'})
@@ -49,7 +49,6 @@ class TestBooleans(unittest.TestCase):
 # False is false
 # False is not true
 # False is a boolean
-
 
 # Exceptions seen
 # AssertionError

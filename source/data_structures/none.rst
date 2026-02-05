@@ -1418,7 +1418,7 @@ test_is_none_a_tuple
 
 ----
 
-I add a test to see if None_ is a tuple_ (anything in parentheses (``()``) separated by commas, separated by commas), pronounced ``too-pull``
+I add a test to see if None_ is a tuple_ (anything in parentheses (``()``) separated by commas), pronounced ``too-pull``
 
 .. code-block:: python
   :lineno-start: 34

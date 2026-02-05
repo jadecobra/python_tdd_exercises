@@ -513,6 +513,8 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             self.assertFalse(False)
             self.assertFalse(True)
 
+        def test_what_is_true(self):
+
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
@@ -592,7 +594,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 All of these are still statements from the :ref:`AssertionError<what causes AssertionError?>` and :ref:`None<what is None?>` chapters.
 
-Next up, I test the other :ref:`Python basic data structures<data structures>` to see which ones are False_ or True_.
+Next up, I test the other :ref:`Python basic data structures<data structures>` to see which ones are False_ or True_. What do you think?
 
 * :ref:`is None False or True?`
 * :ref:`is an integer False or True?`
@@ -617,7 +619,7 @@ is None False or True?
 
 ----
 
-I add a line in :ref:`test_what_is_true` to test if :ref:`None<what is None?>` is True_
+I add a line to :ref:`test_what_is_true` to test if :ref:`None<what is None?>` is True_
 
 .. code-block:: python
   :lineno-start: 10
@@ -627,6 +629,9 @@ I add a line in :ref:`test_what_is_true` to test if :ref:`None<what is None?>` i
           self.assertIsInstance(True, bool)
           self.assertTrue(True)
           self.assertTrue(None)
+
+
+  # NOTES
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1192,9 +1197,14 @@ the test passes
 * I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 2
+    :lineno-start: 6
+    :emphasize-lines: 7
 
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
+            self.assertFalse(0)
             self.assertFalse(0.0)
             self.assertFalse(str())
 
@@ -1210,7 +1220,7 @@ the test passes
 
             self.assertFalse(0.0)
             self.assertFalse(str())
-            self.assertFalse('text')
+            self.assertFalse("text")
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1224,7 +1234,7 @@ the test passes
     :lineno-start: 13
     :emphasize-lines: 1
 
-            self.assertTrue('text')
+            self.assertTrue("text")
 
   the test passes
 
@@ -1244,7 +1254,7 @@ the test passes
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue('text')
+            self.assertTrue("text")
 
 
     # NOTES
@@ -1284,7 +1294,7 @@ is a tuple False or True?
 
 ----
 
-I add a line to :ref:`test_what_is_true` to see if a tuple_ (anything in parentheses (``()``) separated by commas, separated by commas) is True_
+I add a line to :ref:`test_what_is_true` to see if a tuple_ (anything in parentheses (``()``) separated by commas) is True_
 
 .. code-block:: python
   :lineno-start: 14
@@ -1297,7 +1307,7 @@ I add a line to :ref:`test_what_is_true` to see if a tuple_ (anything in parenth
           self.assertTrue(1)
           self.assertTrue(-0.1)
           self.assertTrue(0.1)
-          self.assertTrue('text')
+          self.assertTrue("text")
           self.assertTrue(tuple())
 
 
@@ -1332,9 +1342,14 @@ The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3
+    :lineno-start: 6
+    :emphasize-lines: 8
 
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
+            self.assertFalse(0)
             self.assertFalse(0.0)
             self.assertFalse(str())
             self.assertFalse(tuple())
@@ -1368,7 +1383,7 @@ The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     AssertionError: (1, 2, 3, 'n') is not false
 
-  a tuple_ with things is NOT False_
+  :ref:`a tuple with things is NOT False<is a tuple False or True?>`
 
 * I change the :ref:`method<what is a function?>`
 
@@ -1396,7 +1411,7 @@ The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue('text')
+            self.assertTrue("text")
             self.assertTrue((1, 2, 3, 'n'))
 
 
@@ -1455,7 +1470,7 @@ I add a line to test if a :ref:`list<lists>` (anything in square brackets (``[]`
           self.assertTrue(1)
           self.assertTrue(-0.1)
           self.assertTrue(0.1)
-          self.assertTrue('text')
+          self.assertTrue("text")
           self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue(list())
 
@@ -1468,7 +1483,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: [] is not true
 
-the empty :ref:`list<lists>` is NOT True_
+:ref:`the empty list is NOT True<is a list False or True?>`
 
 ----
 
@@ -1553,7 +1568,7 @@ the empty :ref:`list<lists>` is NOT True_
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue('text')
+            self.assertTrue("text")
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
 
@@ -1599,13 +1614,13 @@ is a set False or True?
 
 ----
 
-I add a line to in :ref:`test_what_is_true` to see if a set_ is True_
+I add a line to :ref:`test_what_is_true` to see if a set_ is True_
 
 .. code-block:: python
   :lineno-start: 23
   :emphasize-lines: 4
 
-          self.assertTrue('text')
+          self.assertTrue("text")
           self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue(set())
@@ -1619,7 +1634,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: set() is not true
 
-the empty set_ is NOT True_
+:ref:`the empty set is NOT True<is a set False or True?>`
 
 ----
 
@@ -1680,7 +1695,7 @@ the empty set_ is NOT True_
 
     AssertionError: {1, 2, 3, 'n'} is not false
 
-  a set_ with things is NOT False_
+  :ref:`a set with things is NOT False<is a set False or True?>`
 
 * I change the :ref:`method<what is a function?>`
 
@@ -1709,7 +1724,7 @@ the empty set_ is NOT True_
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue('text')
+            self.assertTrue("text")
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
@@ -1775,7 +1790,7 @@ I add a line to :ref:`test_what_is_true` to test if a :ref:`dictionary <dictiona
           self.assertTrue(1)
           self.assertTrue(-0.1)
           self.assertTrue(0.1)
-          self.assertTrue('text')
+          self.assertTrue("text")
           self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue({1, 2, 3, 'n'})
@@ -1790,7 +1805,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: {} is not true
 
-the empty :ref:`dictionary <dictionaries>` is NOT True_
+:ref:`the empty dictionary is NOT True<is a dictionary False or True?>`
 
 ----
 
@@ -1857,7 +1872,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
 
     AssertionError: {'key': 'value'} is not false
 
-  a :ref:`dictionary<dictionaries>` with things is NOT False_
+  :ref:`a dictionary with things is NOT False<is a dictionary False or True?>`
 
 * I change assertFalse_ to assertTrue_
 
@@ -1894,7 +1909,7 @@ the empty :ref:`dictionary <dictionaries>` is NOT True_
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue('text')
+            self.assertTrue("text")
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
@@ -1968,15 +1983,16 @@ review
 
 From the tests I know that in Python_
 
-* a container (strings_, tuples_, :ref:`lists<what is a list?>`, sets_, :ref:`dictionaries<what is a dictionary?>`) with things is True_
-* positive and negative numbers are True_
-* an empty container is False_
+* an empty container (strings_, tuples_, :ref:`lists<what is a list?>`, sets_, :ref:`dictionaries<what is a dictionary?>`) is False_
 * ``0`` is False_
+* :reF:`None<what is None?>` is False_
 * False_ is not True_
+* a container with things is True_
+* positive and negative numbers are True_
 * True_ is not False_
 * True_ and False_ are booleans_
 
-these things come in handy when I write :ref:`conditions<if statements>` in programs_, because I can make decisions on whether the :ref:`data<data structures>` is empty or has something in it
+these things come in handy when I want :ref:`programs to make decisions<if statements>`, because they can choose what to do based on if the :ref:`data<data structures>` is False_ (``0``, empty or :ref:`None<what is None?>` ) or is True_ (positive and negative numbers or has something in it).
 
 :ref:`How many questions can you answer after going through this chapter?<questions about Booleans>`
 
