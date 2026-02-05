@@ -554,6 +554,12 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             self.assertFalse(False)
             self.assertTrue(True)
 
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+
+
+    # NOTES
+
   the test passes
 
 * I add a comment
@@ -586,6 +592,9 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             self.assertIsInstance(True, bool)
             self.assertTrue(True)
 
+
+    # NOTES
+
 * I add another comment
 
   .. code-block:: python
@@ -605,16 +614,18 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # Exceptions seen
     # AssertionError
 
-All of this is still a repetition of what I did with :ref:`AssertionError<what causes AssertionError?>`. Next up, I test the other Python_ basic data types_ to see which ones are False_ or True_.
+All of these are still statements from the :ref:`AssertionError<what causes AssertionError?>` and :ref:`None<what is None?>` chapters.
 
-* is :ref:`None<what is None?>` False_ or True_?
-* is an integer_ False_ or True_?
-* is a float_ False_ or True_?
-* is a string_ False_ or True_?
-* is a tuple_ False_ or True_?
-* is a :ref:`list <lists>` False_ or True_?
-* is a set_ False_ or True_?
-* is a :ref:`dictionary <dictionaries>` False_ or True_?
+Next up, I test the other :ref:`Python basic data structures<data structures>` to see which ones are False_ or True_.
+
+* :ref:`is None False or True?`
+* :ref:`is an integer False or True?`
+* :ref:`is a float False or True?`
+* :ref:`is a string False or True?`
+* :ref:`is a tuple False or True?`
+* :ref:`is a list False or True?`
+* :ref:`is a set False or True?`
+* :ref:`is a dictionary False or True?`
 
 ----
 
@@ -688,6 +699,9 @@ I move the line from :ref:`test_what_is_true` to :ref:`test_what_is_false`
           self.assertIsInstance(True, bool)
           self.assertTrue(True)
 
+
+  # NOTES
+
 I add a comment
 
 .. code-block:: python
@@ -707,7 +721,7 @@ I add a comment
 
   # Exceptions seen
 
-:ref:`None<what is None?>` is False_ though I learned in :ref:`test_assertion_error_w_false` that False_ is not :ref:`None<what is None?>`
+:ref:`None is False<is None False or True?>` and I learned from :ref:`the AssertionError chapter<what causes AssertionError?>` that :ref:`False is not None<test_assertion_error_w_false>`
 
 ----
 
@@ -723,7 +737,7 @@ is an integer False or True?
 
 ----
 
-I add a failing line :ref:`test_what_is_false` to see if an integer_ (a whole number) is False_
+I add a failing line to the :ref:`test_what_is_false method<test_what_is_false>` to see if an integer_ (a whole number) is False_
 
 .. code-block:: python
   :lineno-start: 6
@@ -785,14 +799,20 @@ the test passes
             self.assertTrue(True)
             self.assertTrue(-1)
 
-  I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``. Negative integers_ are True_ in Python_
+
+    # NOTES
+
+  I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``. :ref:`Negative integers are True in Python<is an integer False or True?>`
 
 * I add a new failing line to :ref:`test_what_is_true` to see if ``0`` is True_
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 2
+    :lineno-start: 11
+    :emphasize-lines: 5
 
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
             self.assertTrue(-1)
             self.assertTrue(0)
 
@@ -815,9 +835,10 @@ the test passes
 * I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4
+    :lineno-start: 6
+    :emphasize-lines: 5
 
+        def test_what_is_false(self):
             self.assertIsInstance(False, bool)
             self.assertFalse(False)
             self.assertFalse(None)
@@ -825,19 +846,22 @@ the test passes
 
         def test_what_is_true(self):
 
-  ``0`` is False_ in Python_
+  :ref:`0 is False in Python<is an integer False or True?>`
 
 * I add another failing line to :ref:`test_what_is_false` to see if ``1`` is False
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 2
+    :lineno-start: 6
+    :emphasize-lines: 6
 
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
             self.assertFalse(0)
             self.assertFalse(1)
 
         def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -858,9 +882,13 @@ the test passes
 * I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 7
+    :lineno-start: 6
+    :emphasize-lines: 11
 
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
             self.assertFalse(0)
 
         def test_what_is_true(self):
@@ -869,9 +897,12 @@ the test passes
             self.assertTrue(-1)
             self.assertTrue(1)
 
-  I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``. Positive and negative integers_ are True_ in Python_
 
-* I add notes
+    # NOTES
+
+  I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``
+
+* I add comments
 
   .. code-block:: python
     :lineno-start: 19
@@ -892,6 +923,8 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+:ref:`in Python 0 is False, and positive and negative integers are True<is an integer False or True?>`
+
 -----
 
 *********************************************************************************
@@ -909,9 +942,13 @@ is a float False or True?
 I add a line to test if floats_ (binary floating point decimal numbers) are False_ in :ref:`test_what_is_false`
 
 .. code-block:: python
-  :lineno-start: 10
-  :emphasize-lines: 2
+  :lineno-start: 6
+  :emphasize-lines: 6
 
+      def test_what_is_false(self):
+          self.assertIsInstance(False, bool)
+          self.assertFalse(False)
+          self.assertFalse(None)
           self.assertFalse(0)
           self.assertFalse(-0.1)
 
@@ -944,15 +981,25 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 4
+    :lineno-start: 9
+    :emphasize-lines: 9
 
+            self.assertFalse(None)
+            self.assertFalse(0)
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
             self.assertTrue(True)
             self.assertTrue(-1)
             self.assertTrue(1)
             self.assertTrue(-0.1)
 
-  I use ``-0.1`` for all the floating point numbers that are smaller than ``0.0``. Negative floats_ are True_ in Python_
+
+    # NOTES
+
+  I use ``-0.1`` for all the binary floating point numbers that are smaller than ``0.0``.
+
+:ref:`Negative floats are True in Python<is a float False or True?>`
 
 ----
 
@@ -965,9 +1012,14 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I add another failing line to :ref:`test_what_is_true` to see if ``0.0`` is True_
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 2
+    :lineno-start: 12
+    :emphasize-lines: 7
 
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.0)
 
@@ -990,7 +1042,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I move the line to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 6
     :emphasize-lines: 6
 
         def test_what_is_false(self):
@@ -1002,19 +1054,19 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
         def test_what_is_true(self):
 
-  ``0.0`` is False_ in Python_
+  :ref:`0.0 is False in Python<is a float False or True?>`
 
 * I add another line to :ref:`test_what_is_false` to see if ``0.1`` is False_ in Python_
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 2
+    :lineno-start: 10
+    :emphasize-lines: 3
 
+            self.assertFalse(0)
             self.assertFalse(0.0)
             self.assertFalse(0.1)
 
         def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1035,9 +1087,10 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 9
+    :lineno-start: 10
+    :emphasize-lines: 10
 
+            self.assertFalse(0)
             self.assertFalse(0.0)
 
         def test_what_is_true(self):
@@ -1051,9 +1104,9 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     # NOTES
 
-  I use ``0.1`` for all the floating point numbers that are bigger than ``0.0``. Positive and negative floats_ are also True_ in Python_
+  I use ``0.1`` for all the binary floating point numbers that are bigger than ``0.0``.
 
-* I add notes
+* I add comments
 
   .. code-block:: python
     :lineno-start: 22
@@ -1076,7 +1129,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :lineno-start: 22
-    :emphasize-lines: 2, 5
+    :emphasize-lines: 2, 6
 
     # NOTES
     # positive and negative numbers are true
@@ -1091,6 +1144,8 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 
     # Exceptions seen
+
+:ref:`in Python, 0.0 is False and positive and negative floats are True<is a float False or True?>`
 
 -----
 
@@ -1130,7 +1185,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: '' is not true
 
-the empty string_ ('') is not True_
+:ref:`the empty string ('') is not True<is a string False or True?>`
 
 ----
 
@@ -1200,9 +1255,10 @@ the test passes
 * I move the line to :ref:`test_what_is_true`
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 10
+    :lineno-start: 11
+    :emphasize-lines: 11
 
+            self.assertFalse(0.0)
             self.assertFalse(str())
 
         def test_what_is_true(self):
@@ -1217,7 +1273,7 @@ the test passes
 
     # NOTES
 
-* I add notes
+* I add comments
 
   .. code-block:: python
     :lineno-start: 24
@@ -1236,9 +1292,7 @@ the test passes
     # False is not true
     # False is a boolean
 
-
-    # Exceptions seen
-    # AssertionError
+:ref:`in Python, the empty string is False and a string with things is True<is a string False or True?>`
 
 ----
 
@@ -1374,7 +1428,7 @@ the empty tuple_ is not True_
 
   .. TIP:: If you are using `Visual Studio Code`_ you can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
 
-* I add notes
+* I add comments
 
   .. code-block:: python
     :lineno-start: 26
@@ -1514,7 +1568,7 @@ the empty :ref:`list<lists>` is NOT True_
 
     # NOTES
 
-* I add notes
+* I add comments
 
   .. code-block:: python
     :lineno-start: 28

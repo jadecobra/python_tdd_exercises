@@ -940,7 +940,7 @@ test_is_none_a_float
 
 ----
 
-I add a test to see if None_ is a float_ (floating point decimal number)
+I add a test to see if None_ is a float_ (binary floating point decimal number)
 
 .. code-block:: python
   :lineno-start: 16
@@ -1058,13 +1058,13 @@ the test passes
             self.assertIsNotNone(0.1)
             self.assertNotIsInstance(-0.1, float)
 
-  float_ is the :ref:`class<what is a class?>` for floating point numbers. The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  float_ is the :ref:`class<what is a class?>` for binary floating point numbers. The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
     AssertionError: -0.1 is an instance of <class 'float'>
 
-  I use ``-0.1`` for all the floating point numbers that are smaller than ``0.0``
+  I use ``-0.1`` for all the binary floating point numbers that are smaller than ``0.0``
 
 * I make the statement :ref:`True<test_what_is_true>` with assertIsInstance_
 
@@ -1095,7 +1095,7 @@ the test passes
 
     AssertionError: 0.0 is an instance of <class 'float'>
 
-  ``0.0`` is a floating point number
+  ``0.0`` is a binary floating point number
 
 * I make the statement :ref:`True<test_what_is_true>` with assertIsInstance_
 
@@ -1126,7 +1126,7 @@ the test passes
 
     AssertionError: 0.1 is an instance of <class 'float'>
 
-  I use ``0.1`` for all the floating point numbers that are bigger than ``0.0``
+  I use ``0.1`` for all the binary floating point numbers that are bigger than ``0.0``
 
 * I make the statement :ref:`True<test_what_is_true>` with assertIsInstance_
 
@@ -2266,7 +2266,7 @@ I also used :ref:`Python's basic data structures<data structures>` in the tests
 
 * None_ - the simplest
 * integers_ - whole numbers, negative and positive, including ``0``
-* floats_ - floating point decimal numbers, negative and positive including ``0.0``
+* floats_ - binary floating point decimal numbers, negative and positive including ``0.0``
 * strings_ - anything inside :ref:`quotes`
 * :ref:`booleans - True and False<what are booleans?>`
 * tuples_ - anything in parentheses (``()``) separated by commas separated by commas
