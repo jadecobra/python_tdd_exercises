@@ -16,7 +16,7 @@ what are booleans?
 
 ----
 
-There are 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a function?>` to test which of the :ref:`basic data structures<data structures>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
+There are 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a function?>` to test if any of the :ref:`Python basic data structures<data structures>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are False_ or True_.
 
 *********************************************************************************
 preview
@@ -72,29 +72,6 @@ start the project
   .. code-block:: shell
 
     .../pumping_python/booleans
-
-* I make a directory_ for the source code
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch src/booleans.py
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/booleans.py`` instead of ``touch src/booleans.py``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      New-Item src/booleans.py
 
 * I `make a directory`_ for the tests
 

@@ -92,41 +92,6 @@ start the project
 
     .../pumping_python/assertion_error
 
-* I make a directory_ for the source code
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line
-
-  .. code-block:: python
-
-    .../pumping_python/assertion_error
-
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch src/assertion_error.py
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/assertion_error.py`` not ``touch src/assertion_error.py``
-
-    .. code-block:: Powershell
-      :emphasize-lines: 1
-
-      New-Item src/assertion_error.py
-
-  the terminal_ goes back to the command line
-
-  .. code-block:: python
-
-    .../pumping_python/assertion_error
-
 * I `make a directory`_ for the tests
 
   .. code-block:: python

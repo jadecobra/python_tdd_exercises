@@ -88,33 +88,6 @@ requirements
 
     .../pumping_python/none
 
-* I make a directory_ for the source code
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line
-
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch src/none.py
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/none.py`` instead of ``touch src/none.py``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      New-Item src/none.py
-
-  the terminal_ goes back to the command line
-
 * I `make a directory`_ for the tests
 
   .. code-block:: shell
