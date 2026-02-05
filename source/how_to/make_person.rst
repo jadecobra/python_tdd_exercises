@@ -1846,7 +1846,7 @@ I want to see what happens when I try to make a person without a value for the `
 
 * I remove the commented line ``# sex=choose('F', 'M'),`` from ``test_factory_w_default_arguments`` in ``test_person.py``
 
-* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_takes_keyword_arguments`` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I can use a :ref:`variable<what is a variable?>`
+* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_w_default_arguments`` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I can use a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 42

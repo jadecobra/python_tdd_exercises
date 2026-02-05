@@ -16,7 +16,7 @@ what are booleans?
 
 ----
 
-There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a function?>` to test which of the :ref:`basic data structures<data structures>` seen so far - integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
+There are 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a function?>` to test which of the :ref:`basic data structures<data structures>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are True_ or False_ in Python_
 
 *********************************************************************************
 preview
