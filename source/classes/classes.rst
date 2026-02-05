@@ -1103,7 +1103,7 @@ I cannot update the ``year_of_birth`` :ref:`key<test_keys_of_a_dictionary>` beca
                 last_name='smith',
                 year_of_birth=1580,
             )
-            self.assertEqual(person.get('age', 0))
+            self.assertEqual(person.get('age'), 0)
 
 
     # Exceptions seen
