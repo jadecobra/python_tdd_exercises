@@ -211,7 +211,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I install the Python packages listed in the requirements file_
+* I install the Python packages I gave in the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -247,9 +247,7 @@ start the project
     FAILED tests/test_attribute_error.py::TestAttributeError::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_attribute_error.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
-
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py`` in the :ref:`editor<2 editors>`
 
   .. code-block:: python
     :lineno-start: 4

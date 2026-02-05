@@ -60,8 +60,6 @@ start the project
 
     mkdir booleans
 
-  the terminal_ goes back to the command line
-
 * I change directory_ to the project
 
   .. code-block:: shell
@@ -82,8 +80,6 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
-
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
   .. code-block:: shell
@@ -100,16 +96,12 @@ start the project
 
       New-Item src/booleans.py
 
-  the terminal_ goes back to the command line
-
 * I `make a directory`_ for the tests
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     mkdir tests
-
-  the terminal_ goes back to the command line
 
 * I make the ``tests`` directory_ a `Python package`_
 
@@ -129,8 +121,6 @@ start the project
 
       New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
-
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
   .. code-block:: shell
@@ -146,8 +136,6 @@ start the project
       :emphasize-lines: 1
 
       New-Item tests/test_booleans.py
-
-  the terminal_ goes back to the command line
 
 * I open ``test_booleans.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
@@ -183,16 +171,12 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
-
 * I add `pytest-watcher`_ to the file_
 
   .. code-block:: python
     :emphasize-lines: 1
 
     echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line
 
 * I setup the project with uv_
 
@@ -207,8 +191,6 @@ start the project
 
     Initialized project `booleans`
 
-  then goes back to the command line
-
 * I remove ``main.py`` from the project
 
   .. code-block:: python
@@ -216,16 +198,12 @@ start the project
 
     rm main.py
 
-  the terminal_ goes back to the command line
-
-* I install the Python packages listed in the requirements file_
+* I install the Python packages I gave in the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
-
-  the terminal shows it installed the `Python packages`_
 
 * I run the tests automatically
 
@@ -255,9 +233,7 @@ start the project
     FAILED tests/test_booleans.py::TestBooleans::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_booleans.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
-
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_booleans.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_booleans.py`` in the :ref:`editor<2 editors>`
 
   .. code-block:: python
     :lineno-start: 4

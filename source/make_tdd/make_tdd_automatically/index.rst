@@ -32,7 +32,7 @@ on a computer with MacOS_, Linux_ or `Windows`_ with `Windows Subsystem for Linu
 #. :ref:`I add the first failing test to the test file<test_failure>`
 #. :ref:`I make a requirements file for the Python packages I need<how to write text to a file>`
 #. :ref:`I setup the project with uv<how to setup a project with uv>`
-#. :ref:`I install the Python packages listed in the requirements file<how to install Python packages with uv>`
+#. :ref:`I install the Python packages I gave in the requirements file<how to install Python packages with uv>`
 #. :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
 #. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
 #. I make the test pass
@@ -53,7 +53,7 @@ on a Windows_ computer without `Windows Subsystem for Linux`_
 #. :ref:`I activate the virtual environment<how to activate a virtual environment on Windows without WSL>`
 #. :ref:`I upgrade the Python package manager<how to upgrade the Python package manager in a virtual environment on Windows without WSL>`
 #. :ref:`I make a requirements file for the needed Python packages<how to write text to a file on Windows without Windows Subsystem for Linux>`
-#. :ref:`I install the packages listed in the requirements file<how to install Python packages with uv on Windows without WSL>`
+#. :ref:`I install the packages I gave in the requirements file<how to install Python packages with uv on Windows without WSL>`
 #. :ref:`I run the tests automatically<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
 #. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal on Windows without WSL>`
 #. I make the test pass
