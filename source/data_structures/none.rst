@@ -1476,7 +1476,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 2
+    :emphasize-lines: 3
 
         def test_is_none_a_tuple(self):
             self.assertIsNotNone(())
@@ -2006,7 +2006,7 @@ test_is_none_a_dictionary
 
 ----
 
-One last test to see if None_ is a :ref:`dictionary<dictionaries>`
+One last test, this one is to see if None_ is a :ref:`dictionary<dictionaries>`
 
 .. code-block:: python
   :lineno-start: 55
@@ -2137,7 +2137,18 @@ the test passes
 
     ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
 
-    I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas.
+    I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas, for example
+
+    .. code-block:: python
+
+      {
+          'key': 'value',
+          'another_key': 'another value',
+          'one_more_key': 'one more value',
+          'magic_key': 'magic value',
+          ...
+          'keyN': 'valueN',
+      }
 
     sets_ do NOT have key-value pairs.
 
