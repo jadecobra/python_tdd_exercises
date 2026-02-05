@@ -58,7 +58,7 @@ class TestBooleans(unittest.TestCase):
 # a list with things is true
 # a tuple with things is true
 # a string with things is true
-# positive and negative numbers are true
+# positive and negative numbers are True
 # True is true
 # True is not false
 # True is a boolean
@@ -70,7 +70,7 @@ class TestBooleans(unittest.TestCase):
 # the empty list is false
 # the empty tuple is false
 # the empty string is false
-# 0 is false
+# 0 is False
 # None is false
 # False is false
 # False is not true

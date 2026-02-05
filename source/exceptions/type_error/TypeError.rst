@@ -397,7 +397,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
 
   the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
-* I add a failing line to ``test_type_error.py``
+* I add a line that will fail to ``test_type_error.py``
 
   .. code-block:: python
     :lineno-start: 8

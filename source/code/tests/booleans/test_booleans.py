@@ -14,6 +14,7 @@ class TestBooleans(unittest.TestCase):
         self.assertFalse(list())
         self.assertFalse(set())
         self.assertFalse(dict())
+        self.assertTrue({'key': 'value'})
 
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
@@ -26,29 +27,28 @@ class TestBooleans(unittest.TestCase):
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
         self.assertTrue({1, 2, 3, 'n'})
-        self.assertTrue({'key': 'value'})
 
 
 # NOTES
-# a dictionary with things is true
-# a set with things is true
-# a list with things is true
-# a tuple with things is true
-# a string with things is true
-# positive and negative numbers are true
-# True is true
+# a set with things is True
+# a list with things is True
+# a tuple with things is True
+# a string with things is True
+# positive and negative numbers are True
+# True is True
 # True is not false
 # True is a boolean
-# the empty dictionary is false
-# the empty set is false
-# the empty list is false
-# the empty tuple is false
-# the empty string is false
-# 0 is false
+# the empty dictionary is False
+# the empty set is False
+# the empty list is False
+# the empty tuple is False
+# the empty string is False
+# 0 is False
 # None is false
-# False is false
+# False is False
 # False is not true
 # False is a boolean
+
 
 # Exceptions seen
 # AssertionError

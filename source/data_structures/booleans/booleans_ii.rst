@@ -645,7 +645,7 @@ the test passes
     :lineno-start: 60
     :emphasize-lines: 8
 
-    # 0 is false
+    # 0 is False
     # None is false
     # False is False
     # False is not true
