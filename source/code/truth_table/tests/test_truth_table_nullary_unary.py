@@ -1,5 +1,5 @@
-import unittest
 import src.truth_table
+import unittest
 
 
 class TestNullaryOperations(unittest.TestCase):
