@@ -309,7 +309,7 @@ I change ``test_failure`` to ``test_passing_a_string``
       def test_passing_a_string(self):
           self.assertEqual(
               src.telephone.text("hello"),
-              "I received: hello"
+              "I got: hello"
           )
 
 
@@ -449,9 +449,9 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   .. code-block:: shell
 
-    AssertionError: None != 'I received: hello'
+    AssertionError: None != 'I got: hello'
 
-  the test expects ``'I received: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
+  the test expects ``'I got: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
   .. NOTE:: ``the_input`` is just the name I used for the input, I can use any name I want
 
@@ -462,7 +462,7 @@ there is no definition for ``src`` in ``test_telephone.py``
     :emphasize-lines: 2
 
     def text(the_input):
-        return 'I received: hello'
+        return 'I got: hello'
 
   the test passes!
 
@@ -474,7 +474,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
 ----
 
-The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I received: hello'`` when called. I want it to return the value it gets as part of the message.
+The problem with this solution is that the ``text`` :ref:`function<what is a function?>` does not care about what it gets, it always returns ``'I got: hello'`` when called. I want it to return the value it gets as part of the message.
 
 * I add a new :ref:`assertion<what is an assertion?>` to ``test_passing_a_string`` in ``test_telephone.py``
 
@@ -485,11 +485,11 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
         def test_passing_a_string(self):
             self.assertEqual(
                 src.telephone.text("hello"),
-                "I received: hello"
+                "I got: hello"
             )
             self.assertEqual(
                 src.telephone.text("yes"),
-                "I received: yes"
+                "I got: yes"
             )
 
 
@@ -499,9 +499,9 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
   .. code-block:: shell
 
-    AssertionError: 'I received: hello' != 'I received: yes'
+    AssertionError: 'I got: hello' != 'I got: yes'
 
-  the ``text`` :ref:`function<what is a function?>` always returns ``'I received: hello'``, the test expects ``'I received: yes'``
+  the ``text`` :ref:`function<what is a function?>` always returns ``'I got: hello'``, the test expects ``'I got: yes'``
 
 * I change the `return statement`_ in ``telephone.py`` to match
 
@@ -510,13 +510,13 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
     :emphasize-lines: 2
 
     def text(the_input):
-        return 'I received: yes'
+        return 'I got: yes'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: 'I received: yes' != 'I received: hello'
+    AssertionError: 'I got: yes' != 'I got: hello'
 
   it did not work, my change broke the test that was passing before. The `return statement`_ has to use the input
 
@@ -533,7 +533,7 @@ I use an `f-string`_ which lets me add any values I want to a string_
   :emphasize-lines: 2
 
   def text(the_input):
-      return f'I received: {the_input}'
+      return f'I got: {the_input}'
 
 the test passes.
 
@@ -569,17 +569,17 @@ I add a failing test in ``test_telephone.py`` to see what happens when I pass a 
       def test_passing_a_string(self):
           self.assertEqual(
               src.telephone.text("hello"),
-              "I received: hello"
+              "I got: hello"
           )
           self.assertEqual(
               src.telephone.text("yes"),
-              "I received: yes"
+              "I got: yes"
           )
 
       def test_passing_a_class(self):
           self.assertEqual(
               src.telephone.text(object),
-              "I received: object"
+              "I got: object"
           )
 
 
@@ -589,7 +589,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: "I received: <class 'object'>" != 'I received: object'
+  AssertionError: "I got: <class 'object'>" != 'I got: object'
 
 :ref:`object<what is a class?>` is the mother :ref:`class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from
 
@@ -610,7 +610,7 @@ I change the expectation in the test to match the result
       def test_passing_a_class(self):
           self.assertEqual(
               src.telephone.text(object),
-              "I received: <class 'object'>"
+              "I got: <class 'object'>"
           )
 
 the test passes
@@ -632,18 +632,18 @@ the test passes
         def test_passing_a_class(self):
             self.assertEqual(
                 src.telephone.text(object),
-                "I received: <class 'object'>"
+                "I got: <class 'object'>"
             )
             self.assertEqual(
                 src.telephone.text(TestTelephone),
-                "I received: <class 'object'>"
+                "I got: <class 'object'>"
             )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: "I received: <class 'tests.test_telephone.TestTelephone'>" != "I received: <class 'object'>"
+    AssertionError: "I got: <class 'tests.test_telephone.TestTelephone'>" != "I got: <class 'object'>"
 
   even though they are both :ref:`classes<what is a class?>`, :ref:`object<what is a class?>` and ``TestTelephone`` are different
 
@@ -656,11 +656,11 @@ the test passes
         def test_passing_a_class(self):
             self.assertEqual(
                 src.telephone.text(object),
-                "I received: <class 'object'>"
+                "I got: <class 'object'>"
             )
             self.assertEqual(
                 src.telephone.text(TestTelephone),
-                "I received: <class 'tests.test_telephone.TestTelephone'>"
+                "I got: <class 'tests.test_telephone.TestTelephone'>"
             )
 
   the test passes. What does ``tests.test_telephone.TestTelephone`` point to?
@@ -689,17 +689,17 @@ I add a new failing test for :ref:`None<what is None?>` (it is the simplest :ref
       def test_passing_a_class(self):
           self.assertEqual(
               src.telephone.text(object),
-              "I received: <class 'object'>"
+              "I got: <class 'object'>"
           )
           self.assertEqual(
               src.telephone.text(TestTelephone),
-              "I received: <class 'tests.test_telephone.TestTelephone'>"
+              "I got: <class 'tests.test_telephone.TestTelephone'>"
           )
 
       def test_passing_none(self):
           self.assertEqual(
               src.telephone.text(None),
-              "I received: 'None'"
+              "I got: 'None'"
           )
 
 
@@ -709,7 +709,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: 'I received: None' != "I received: 'None'"
+  AssertionError: 'I got: None' != "I got: 'None'"
 
 ----
 
@@ -728,7 +728,7 @@ I remove the :ref:`quotes` from around :ref:`None<what is None?>` in the expecta
       def test_passing_none(self):
           self.assertEqual(
               src.telephone.text(None),
-              "I received: None"
+              "I got: None"
           )
 
 
@@ -760,13 +760,13 @@ I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assert
       def test_passing_none(self):
           self.assertEqual(
               src.telephone.text(None),
-              "I received: None"
+              "I got: None"
           )
 
       def test_passing_a_boolean(self):
           self.assertEqual(
               src.telephone.text(True),
-              "I received: 'True'"
+              "I got: 'True'"
           )
 
 
@@ -776,7 +776,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: "I received: True" != "I received: 'True'"
+  AssertionError: "I got: True" != "I got: 'True'"
 
 ----
 
@@ -795,7 +795,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
         def test_passing_a_boolean(self):
             self.assertEqual(
                 src.telephone.text(True),
-                "I received: True"
+                "I got: True"
             )
 
   the test passes
@@ -810,18 +810,18 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
         def test_passing_a_boolean(self):
             self.assertEqual(
                 src.telephone.text(True),
-                "I received: True"
+                "I got: True"
             )
             self.assertEqual(
                 src.telephone.text(False),
-                "I received: 'False'"
+                "I got: 'False'"
             )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: "I received: False" != "I received: 'False'"
+    AssertionError: "I got: False" != "I got: 'False'"
 
 * I change the expectation
 
@@ -832,11 +832,11 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
         def test_passing_a_boolean(self):
             self.assertEqual(
                 src.telephone.text(True),
-                "I received: True"
+                "I got: True"
             )
             self.assertEqual(
                 src.telephone.text(False),
-                "I received: False"
+                "I got: False"
             )
 
 
@@ -868,17 +868,17 @@ I add a test for an integer_ (a whole number)
       def test_passing_a_boolean(self):
           self.assertEqual(
               src.telephone.text(True),
-              "I received: True"
+              "I got: True"
           )
           self.assertEqual(
               src.telephone.text(False),
-              "I received: False"
+              "I got: False"
           )
 
       def test_passing_an_integer(self):
           self.assertEqual(
               src.telephone.text(1234),
-              "I received: '1234'"
+              "I got: '1234'"
           )
 
 
@@ -888,7 +888,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: 'I received: 1234' != "I received: '1234'"
+  AssertionError: 'I got: 1234' != "I got: '1234'"
 
 ----
 
@@ -907,7 +907,7 @@ I remove the :ref:`quotes` from the expectation
       def test_passing_an_integer(self):
           self.assertEqual(
               src.telephone.text(1234),
-              "I received: 1234"
+              "I got: 1234"
           )
 
 
@@ -939,13 +939,13 @@ I add a test for a float_ (binary floating point decimal numbers)
       def test_passing_an_integer(self):
           self.assertEqual(
               src.telephone.text(1234),
-              "I received: 1234"
+              "I got: 1234"
           )
 
       def test_passing_a_float(self):
           self.assertEqual(
               src.telephone.text(1.234),
-              "I received: '1.234'"
+              "I got: '1.234'"
           )
 
 
@@ -955,7 +955,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: 'I received: 1.234' != "I received: '1.234'"
+  AssertionError: 'I got: 1.234' != "I got: '1.234'"
 
 ----
 
@@ -974,7 +974,7 @@ I remove the :ref:`quotes` from the number
       def test_passing_a_float(self):
           self.assertEqual(
               src.telephone.text(1.234),
-              "I received: 1.234"
+              "I got: 1.234"
           )
 
 
@@ -1006,13 +1006,13 @@ I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
       def test_passing_a_float(self):
           self.assertEqual(
               src.telephone.text(1.234),
-              "I received: 1.234"
+              "I got: 1.234"
           )
 
       def test_passing_a_tuple(self):
           self.assertEqual(
               src.telephone.text((1, 2, 3, "n")),
-              "I received: '(1, 2, 3, n)'"
+              "I got: '(1, 2, 3, n)'"
           )
 
 
@@ -1022,7 +1022,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: "I received: (1, 2, 3, 'n')" != "I received: '(1, 2, 3, n)'"
+  AssertionError: "I got: (1, 2, 3, 'n')" != "I got: '(1, 2, 3, n)'"
 
 ----
 
@@ -1042,7 +1042,7 @@ I change the expectation
       def test_passing_a_tuple(self):
           self.assertEqual(
               src.telephone.text((1, 2, 3, "n")),
-              "I received: (1, 2, 3, 'n')"
+              "I got: (1, 2, 3, 'n')"
           )
 
 the test passes.
@@ -1071,13 +1071,13 @@ I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), sepa
       def test_passing_a_tuple(self):
           self.assertEqual(
               src.telephone.text((1, 2, 3, "n")),
-              "I received: (1, 2, 3, 'n')"
+              "I got: (1, 2, 3, 'n')"
           )
 
       def test_passing_a_list(self):
           self.assertEqual(
               src.telephone.text([1, 2, 3, "n"]),
-              "I received: '[1, 2, 3, n]'"
+              "I got: '[1, 2, 3, n]'"
           )
 
 
@@ -1087,7 +1087,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: "I received: [1, 2, 3, 'n']" != "I received: '[1, 2, 3, n]'"
+  AssertionError: "I got: [1, 2, 3, 'n']" != "I got: '[1, 2, 3, n]'"
 
 ----
 
@@ -1107,7 +1107,7 @@ I change the expectation to match reality
       def test_passing_a_list(self):
           self.assertEqual(
               src.telephone.text([1, 2, 3, "n"]),
-              "I received: [1, 2, 3, 'n']"
+              "I got: [1, 2, 3, 'n']"
           )
 
 the test passes.
@@ -1136,7 +1136,7 @@ I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly br
       def test_passing_a_list(self):
           self.assertEqual(
               src.telephone.text([1, 2, 3, "n"]),
-              "I received: [1, 2, 3, 'n']"
+              "I got: [1, 2, 3, 'n']"
           )
 
       def test_passing_a_dictionary(self):
@@ -1145,7 +1145,7 @@ I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly br
                   "key1": "value1",
                   "keyN": [0, 1, 2, "n"],
               }),
-              "I received: '{key1: value1, keyN: [0, 1, 2, n]}'"
+              "I got: '{key1: value1, keyN: [0, 1, 2, n]}'"
           )
 
 
@@ -1155,7 +1155,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
-  AssertionError: "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I received: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
+  AssertionError: "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I got: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
 
 ----
 
@@ -1178,7 +1178,7 @@ I change the expectation
                   "key1": "value1",
                   "keyN": [0, 1, 2, "n"],
               }),
-              "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+              "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
           )
 
 
@@ -1270,7 +1270,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   .. code-block:: shell
 
-    AssertionError: None != 'I received: None'
+    AssertionError: None != 'I got: None'
 
 * I copy the string_ from the terminal_ and paste it in the `return statement`_ to match the expectation of the test
 
@@ -1279,13 +1279,13 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     :emphasize-lines: 2
 
     def text(value):
-        return 'I received: None'
+        return 'I got: None'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: 'I received: None' != 'I received: 1234'
+    AssertionError: 'I got: None' != 'I got: 1234'
 
 * I add a `return statement`_ to see the difference between the input and the expected output
 
@@ -1295,22 +1295,22 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     def text(value):
         return value
-        return 'I received: None'
+        return 'I got: None'
 
   the test summary info shows that every test has :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-text: I received:
+    :emphasize-text: I got:
 
-    AssertionError: True != 'I received: True'
-    AssertionError: <class 'object'> != "I received: <class 'object'>"
-    AssertionError: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']} != "I received: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
-    AssertionError: 1.234 != 'I received: 1.234'
-    AssertionError: [1, 2, 3, 'n'] != "I received: [1, 2, 3, 'n']"
-    AssertionError: "hello" != 'I received: hello'
-    AssertionError: (1, 2, 3, 'n') != "I received: (1, 2, 3, 'n')"
-    AssertionError: 1234 != 'I received: 1234'
-    AssertionError: None != 'I received: None'
+    AssertionError: True != 'I got: True'
+    AssertionError: <class 'object'> != "I got: <class 'object'>"
+    AssertionError: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']} != "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+    AssertionError: 1.234 != 'I got: 1.234'
+    AssertionError: [1, 2, 3, 'n'] != "I got: [1, 2, 3, 'n']"
+    AssertionError: "hello" != 'I got: hello'
+    AssertionError: (1, 2, 3, 'n') != "I got: (1, 2, 3, 'n')"
+    AssertionError: 1234 != 'I got: 1234'
+    AssertionError: None != 'I got: None'
 
   they all expect the input as part of the message
 
@@ -1321,7 +1321,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     :emphasize-lines: 2
 
     def text(value):
-        return f'I received: {value}'
+        return f'I got: {value}'
 
   and all the tests are passing! I am a programmer!!
 

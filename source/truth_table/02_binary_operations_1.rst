@@ -31,7 +31,7 @@ There are also Binary Operations, these take 2 inputs. Each of the inputs in thi
 preview
 *********************************************************************************
 
-These combinations give 16 binary operations each of which returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` based on the inputs it receives. Here are the 16 operations that are covered in these chapters and what they return
+These combinations give 16 binary operations, each operations returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input. Here are the 16 operations that are covered in these chapters and what they return
 
 * :ref:`Material Implication  <test_material_implication>` returns
 
