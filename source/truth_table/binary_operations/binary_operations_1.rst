@@ -515,193 +515,128 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   - ``if second_input == True:`` checks if ``second_input`` is equal to :ref:`True<test_what_is_true>`
 
     * if ``second_input`` is equal to :ref:`True<test_what_is_true>`, it goes to the next line ``return False``, it returns :ref:`False<test_what_is_false>` and leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+    * if ``second_input`` is NOT equal to :ref:`True<test_what_is_true>`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``
 
+  :ref:`logical_conjunction<test_logical_conjunction>` returns
 
-
-
-
-* I add `if statements`_ for when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input to :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2-4
-
-    def logical_conjunction(first_input, second_input):
-        if first_input == True:
-            if second_input == False:
-                return False
-        return True
-
-  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
-
+  - :ref:`False<test_what_is_false>`, if :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
   - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
   - :ref:`True<test_what_is_true>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
-  - the second input in these 2 cases
-
-
-
-----
-----
-----
-----
-
-
-
-* I add another `if statement`_ for this case to :ref:`logical_conjunction<test_logical_conjunction>` in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2-4
-
-    def logical_conjunction(first_input, second_input):
-        if first_input == False:
-            if second_input == True:
-                return False
-        if first_input == True:
-            if second_input == False:
-                return False
-        return True
-
-  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
-
-  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
 * I add the last case, which is when the two inputs are :ref:`False<test_what_is_false>`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 5
+    :emphasize-lines: 11-13
 
-        def test_logical_conjunction(self):
-            self.assertTrue(src.truth_table.logical_conjunction(True, True))
-            self.assertFalse(src.truth_table.logical_conjunction(True, False))
-            self.assertFalse(src.truth_table.logical_conjunction(False, True))
-            self.assertFalse(src.truth_table.logical_conjunction(False, False))
+    def test_logical_conjunction(self):
+            self.assertTrue(
+                src.truth_table.logical_conjunction(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(True, False)
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(False, True)
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(False, False)
+            )
 
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the test is still green.   :ref:`logical_conjunction<test_logical_conjunction>` returns
 
-  .. code-block:: shell
+  - :ref:`False<test_what_is_false>`, if :ref:`False<test_what_is_false>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`False<test_what_is_false>`, if :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`True<test_what_is_true>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - it only returns :ref:`True<test_what_is_true>` for the case where the two inputs are :ref:`True<test_what_is_true>`
 
-    AssertionError: True is not false
-
-* I add `if statements`_ for the new case to :ref:`logical_conjunction<test_logical_conjunction>` in ``truth_table.py``
+* I add an `if statement`_ for the case where :ref:`logical_conjunction<test_logical_conjunction>` returns :ref:`True<test_what_is_true>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 2-4
 
     def logical_conjunction(first_input, second_input):
-        if first_input == False:
-            if second_input == False:
-                return False
+        if first_input == True:
+            if second_input == True:
+                return True
         if first_input == False:
             if second_input == True:
                 return False
-        if first_input == True:
-            if second_input == False:
-                return False
-        return True
+        return second_input
 
-  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
+  still green
 
-  - :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+  - ``if first_input == True:`` checks if ``first_input`` is equal to :ref:`True<test_what_is_true>`
 
-* I have the same `if statement`_ twice - ``if first_input == False`` for the 3rd and 4th cases where :ref:`False<test_what_is_false>` is the first input
+    * if ``first_input`` is equal to :ref:`True<test_what_is_true>`, it goes to the next line ``if second_input == True:``
+    * if ``first_input`` is NOT equal to :ref:`True<test_what_is_true>`, it leaves this `if statement`_ and continues to ``if first_input == False:``, it will never go to ``if second_input == True:``
 
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2, 5
+  - ``if second_input == True:`` checks if ``second_input`` is equal to :ref:`True<test_what_is_true>`
 
-    def logical_conjunction(first_input, second_input):
-        if first_input == False:
-            if second_input == False:
-                return False
-        if first_input == False:
-            if second_input == True:
-                return False
-        if first_input == True:
-            if second_input == False:
-                return False
-        return True
+    * if ``second_input`` is equal to :ref:`True<test_what_is_true>`, it goes to the next line ``return True``, it returns :ref:`False<test_what_is_false>` and leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+    * if ``second_input`` is NOT equal to :ref:`True<test_what_is_true>`, it leaves this `if statement`_ and continues to ``if first_input == False:``
 
-  I remove the second one
+  Since there is only one case where the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`, I do not need any other statements
+
+* I remove the other `if statements`_
 
   .. code-block:: python
     :lineno-start: 21
 
     def logical_conjunction(first_input, second_input):
-        if first_input == False:
-            if second_input == False:
-                return False
-            if second_input == True:
-                return False
         if first_input == True:
-            if second_input == False:
-                return False
-        return True
-
-  the test is still green
-
-* I add an `if statement`_ for the first case, where the first and second inputs are both :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 10-11
-
-    def logical_conjunction(first_input, second_input):
-        if first_input == False:
-            if second_input == False:
-                return False
-            if second_input == True:
-                return False
-        if first_input == True:
-            if second_input == False:
-                return False
             if second_input == True:
                 return True
 
-  the terminal_ still shows green
+  the test is still green because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
 
-* there are only 2 results for this operation, in the first case the :ref:`function<what is a function?>` returns :ref:`True <test_what_is_true>`. In the other 3 cases it returns :ref:`False <test_what_is_false>`.
+* I add a `return statement`_ to make it clearer
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 4, 6, 9, 11
+    :emphasize-lines: 5
 
     def logical_conjunction(first_input, second_input):
-        if first_input == False:
-            if second_input == False:
-                return False
-            if second_input == True:
-                return False
         if first_input == True:
-            if second_input == False:
-                return False
             if second_input == True:
                 return True
+        return None
 
-  .. TIP:: I can put two `if statements`_ together when one is under the other. For example
+  still green because :ref:`None is False<is None False or True?>`
 
-    .. code-block:: python
+* I change the `return statement`_ to use :ref:`False<test_what_is_false>`
 
-      if something:
-          if something_else:
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5
 
-    can also be written as
+    def logical_conjunction(first_input, second_input):
+        if first_input == True:
+            if second_input == True:
+                return True
+        return False
 
-    .. code-block:: python
+  green
 
-      if something and something_else:
+* I can put two `if statements`_ together when one is indented under the other. For example
 
-* I put the two `if statements`_ for the one case where the result is :ref:`True <test_what_is_true>` together and use an `else clause`_ for the other cases where the first and second inputs are not both :ref:`True<test_what_is_true>`
+  .. code-block:: python
+
+    if something:
+        if something_else:
+
+  can also be written as
+
+  .. code-block:: python
+
+    if something and something_else:
+
+  I put the two `if statements`_ for the one case where the result is :ref:`True <test_what_is_true>` together and use an `else clause`_ for the other cases where the first and second inputs are NOT both :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -712,33 +647,54 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
             return True
         else:
             return False
-        if first_input == False:
-            if second_input == False:
-                return False
-            if second_input == True:
-                return False
         if first_input == True:
-            if second_input == False:
-                return False
             if second_input == True:
                 return True
+        return False
 
   the test is still green
 
-* I remove the other `if statements`_ then use bool_ in the first `if statement`_
+* I remove the other statements after the first ``return False``
+
+* I can use bool_ in the `if statement`_
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 2-3
 
     def logical_conjunction(first_input, second_input):
-        if bool(first_input) and bool(second_input):
         # if first_input == True and second_input == True:
+        if bool(first_input) == True and bool(second_input) == True:
             return True
         else:
             return False
 
-  still green. bool_ checks if the thing in parentheses is :ref:`True <test_what_is_true>` in the background
+  still green
+
+  .. NOTE::
+
+    ``bool(anything)`` returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the thing in parentheses like the tests in :ref:`the booleans chapter<what are booleans?>` with the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>`
+
+* I remove the commented line
+
+* Since ``bool(True)`` is the same as :ref:`True<test_what_is_true>`, ``bool(first_input) == True`` is the same thing as ``True == True``, which is a repetition. I remove ``== True`` from the `if statement`_
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-3
+
+    def logical_conjunction(first_input, second_input):
+        # if bool(first_input) == True and bool(second_input) == True:
+        if bool(first_input) and bool(second_input):
+            return True
+        else:
+            return False
+
+  green
+
+  .. NOTE::
+
+    ``if bool(anything)`` checks if ``bool(anything)`` returns :ref:`True <test_what_is_true>`
 
 * I remove the commented line then change the first line to make it simpler
 
@@ -747,24 +703,25 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
     :emphasize-lines: 2-3
 
     def logical_conjunction(first_input, second_input):
-        if first_input and second_input:
         # if bool(first_input) and bool(second_input):
+        if first_input and second_input:
             return True
         else:
             return False
 
-  the test is still green
+  still green
 
-  .. TIP:: these `if statements`_ are the same
+.. NOTE::
 
-    - ``if something == True:``
-    - ``if bool(something): == True``
-    - ``if bool(something):``
-    - ``if something:``
+  these `if statements`_ have the same result
 
-    Python_ checks if ``something`` is :ref:`True<test_what_is_true>` in the background when I type ``if something:``
+  - ``if something == True:`` - checks if ``something`` is equal to :ref:`True<test_what_is_true>`
 
-  I remove the commented line
+  these check if ``bool(something) == True:`` the same way the `assertTrue method`_ does
+
+  - ``if bool(something) == True:``
+  - ``if bool(something):``
+  - ``if something:``
 
 ----
 
@@ -785,9 +742,9 @@ conditional expressions
         else:
             return False
 
-  the terminal_ shows green
+  the test is still green
 
-* I remove the other `if statements`_ then change the `return statement`_ to a simpler form
+* I remove the other statements then change the `return statement`_ to a simpler form
 
   .. code-block:: python
     :lineno-start: 21
@@ -799,7 +756,7 @@ conditional expressions
 
   still green!
 
-* I remove the second `return statement`_
+* I remove the second `return statement`_ because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -807,14 +764,16 @@ conditional expressions
     def logical_conjunction(first_input, second_input):
         return first_input and second_input
 
-:ref:`Logical Conjunction<test_logical_conjunction>` also known as and_, returns
+:ref:`Logical Conjunction<test_logical_conjunction>` also known as and_, always returns
 
 * ``first_input and second_input``
-* :ref:`True<test_what_is_true>` when the two inputs are both :ref:`True<test_what_is_true>`
+* :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-.. TIP:: All of the statements below give the same result
+.. NOTE::
 
-  * this checks if ``something`` is :ref:`True<test_what_is_true>`
+  All of the statements below have the same result
+
+  * this checks if ``something`` is equal :ref:`True<test_what_is_true>`
 
     .. code-block:: python
 
@@ -823,7 +782,7 @@ conditional expressions
       else:
           return False
 
-  * this uses bool_ to get the :ref:`boolean<what are booleans?>` of ``something`` then checks if the result is :ref:`True<test_what_is_true>`
+  * this uses bool_ to get the :ref:`boolean<what are booleans?>` of ``something`` then checks if the result is equal to :ref:`True<test_what_is_true>`
 
     .. code-block:: python
 
@@ -832,7 +791,7 @@ conditional expressions
       else:
           return False
 
-  * this checks if ``bool(something)`` is :ref:`True<test_what_is_true>` in the background
+  * this checks if the result of ``bool(something)`` is :ref:`True<test_what_is_true>` in the background
 
     .. code-block:: python
 
@@ -841,7 +800,7 @@ conditional expressions
       else:
           return False
 
-  * this checks if ``something`` is :ref:`True<test_what_is_true>` in the background
+  * this also checks if the result of ``bool(something)`` is :ref:`True<test_what_is_true>` in the background
 
     .. code-block:: python
 
@@ -850,19 +809,19 @@ conditional expressions
       else:
           return False
 
-  * this returns :ref:`True<test_what_is_true>` if ``something`` is :ref:`True<test_what_is_true>`
+  * this returns :ref:`True<test_what_is_true>` if the result of  ``bool(something)`` is :ref:`True<test_what_is_true>`
 
     .. code-block:: python
 
       return True if something else False
 
-  * this also returns :ref:`True<test_what_is_true>` after checking if ``something`` is :ref:`True<test_what_is_true>` in the background
+  * this also returns :ref:`True<test_what_is_true>` if the result of ``bool(something)`` is :ref:`True<test_what_is_true>` in the background
 
     .. code-block:: python
 
       return something
 
-  the last one works because Python_ tests if ``something`` is :ref:`True<test_what_is_true>` in the background same as it does when I type ``if something:``
+    it works because Python_ checks if the result of ``bool(something)`` is :ref:`True<test_what_is_true>` in the background same as it does when I use ``if something:``
 
 ----
 
