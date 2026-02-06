@@ -11,7 +11,7 @@ Nullary and Unary Operations tests
 
 the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Nullary and Unary Operations`
 
-.. literalinclude:: truth_table/tests/test_binary.py
+.. literalinclude:: truth_table/tests/test_nullary_unary.py
   :language: python
   :linenos:
 

@@ -49,7 +49,11 @@ def logical_disjunction(first_input, second_input):
 def exclusive_disjunction(first_input, second_input):
     return first_input != second_input
     return not first_input == second_input
-    return (not first_input and second_input) or (first_input and not second_input)
+    return (
+        (not first_input and second_input)
+        or
+        (first_input and not second_input)
+    )
 
 
 def material_non_implication(first_input, second_input):
@@ -74,7 +78,11 @@ def logical_nor(first_input, second_input):
 
 def logical_equality(first_input, second_input):
     return first_input == second_input
-    return (first_input or not second_input) and (not first_input or second_input)
+    return (
+        (first_input or not second_input)
+        and
+        (not first_input or second_input)
+    )
 
 
 def material_implication(first_input, second_input):
