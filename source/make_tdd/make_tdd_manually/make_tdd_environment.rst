@@ -1282,7 +1282,7 @@ how to stop the automated tests
 
 ----
 
-I go to the the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the terminal_ goes back to the command line
+I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the terminal_ goes back to the command line
 
 .. code-block:: python
 

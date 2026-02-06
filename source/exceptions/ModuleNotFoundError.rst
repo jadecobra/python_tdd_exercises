@@ -249,7 +249,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     ModuleNotFoundError: No module named 'src.module_05'
 
-* I add the the file_ to the ``src`` folder_, the test passes and I close the file_
+* I add the file_ to the ``src`` folder_, the test passes and I close the file_
 
 * another `import statement`_ in ``test_module_not_found_error.py``
 

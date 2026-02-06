@@ -72,31 +72,31 @@ test_logical_true
 
 * I change the name of ``test_truth_table.py`` to ``test_nullary_unary.py``
 
-I change the names of the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_nullary_unary.py``
+* I change the names of the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_nullary_unary.py``
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 5, 7-8
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5, 7-8
 
-  import src.truth_table
-  import unittest
-
-
-  class TestNullaryOperations(unittest.TestCase):
-
-      def test_logical_true(self):
-          self.assertTrue(src.truth_table.logical_true())
+    import src.truth_table
+    import unittest
 
 
-  # Exceptions seen
+    class TestNullaryOperations(unittest.TestCase):
 
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+        def test_logical_true(self):
+            self.assertTrue(src.truth_table.logical_true())
 
-.. code-block:: shell
 
-  AttributeError: module 'src.truth_table' has no attribute 'logical_true'
+    # Exceptions seen
 
-I have not added a definition for :ref:`logical_true<test_logical_true>` to ``truth_table.py`` in the ``src`` folder_
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.truth_table' has no attribute 'logical_true'
+
+  I have not added a definition for :ref:`logical_true<test_logical_true>` to ``truth_table.py`` in the ``src`` folder_
 
 ----
 
@@ -145,8 +145,7 @@ I have not added a definition for :ref:`logical_true<test_logical_true>` to ``tr
 
   the test passes
 
-* Adding the :ref:`logical_true function<test_logical_true>` to ``truth_table.py`` fixed :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`logical_true does not take any input and always returns True<test_logical_true>`
+:ref:`logical_true does not take any input and always returns True<test_logical_true>`
 
 ----
 
@@ -225,10 +224,11 @@ I have not added a definition for :ref:`logical_false<test_logical_false>` to ``
 
   the test passes
 
-* Adding the :ref:`logical_true<test_logical_true>` and :ref:`logical_false<test_logical_false>` :ref:`functions<what is a function?>` to ``truth_table.py`` fixed :ref:`AttributeError<what causes AttributeError?>` in both cases
-* :ref:`logical_true<test_logical_true>` always returns :ref:`True<test_what_is_true>`
-* :ref:`logical_false<test_logical_false>` always returns :ref:`False<test_what_is_false>`
-* both Nullary Operations do not take input
+.. NOTE::
+
+  * :ref:`logical_true<test_logical_true>` always returns :ref:`True<test_what_is_true>`
+  * :ref:`logical_false<test_logical_false>` always returns :ref:`False<test_what_is_false>`
+  * both Nullary Operations do not take input
 
 ----
 
@@ -252,7 +252,7 @@ test_logical_identity
 
 ----
 
-I add a new TestCase_ and a test for Unary Operations to ``test_nullary_unary.py``
+I add a new TestCase_ for Unary Operations with a test to ``test_nullary_unary.py``
 
 .. code-block:: python
   :lineno-start: 5
@@ -393,7 +393,7 @@ I need to add a definition for it
 
   - if :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>`
   - if :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_false>`
-  - the result is the same as the input
+  - if input is given, the result is the input
 
 * I change the `return statement`_ of the :ref:`function<what is a function?>`
 
@@ -404,9 +404,12 @@ I need to add a definition for it
     def logical_identity(the_input):
         return the_input
 
-  the test passes.
+  the test passes. ``the_input`` is a name, I can use any name.
 
 :ref:`logical_identity returns its input as output<test_logical_identity>`
+
+* if it gets :ref:`True<test_what_is_true>` it returns :ref:`True<test_what_is_true>`
+* if it gets :ref:`False<test_what_is_false>` it returns :ref:`False<test_what_is_false>`
 
 ----
 
@@ -544,7 +547,7 @@ the test passes
 
   - if :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>`
   - if :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`
-  - the result is the opposite of the input, it is "not" the input
+  - if input is given, the result is the opposite of the input, it is "not" the input
 
 ----
 
@@ -554,7 +557,7 @@ how to return the opposite of a boolean
 
 ----
 
-* I can use the the "not_" keyword to return the opposite of the :ref:`boolean<what are booleans?>` after it. I add it to the `return statement`_
+* I can use the "not_" keyword to return the opposite of the :ref:`boolean<what are booleans?>` after it. I add it to the `return statement`_
 
   .. code-block:: python
     :lineno-start: 13
@@ -587,8 +590,8 @@ how to return the opposite of a boolean
 
 :ref:`logical_negation also known as not returns the opposite of its input<test_logical_negation>`
 
-* when it receives :ref:`True<test_what_is_true>` it returns :ref:`False<test_what_is_false>`
-* when it receives :ref:`False<test_what_is_false>` it returns :ref:`True<test_what_is_true>`
+* if it gets :ref:`True<test_what_is_true>` it returns :ref:`False<test_what_is_false>`
+* if it gets :ref:`False<test_what_is_false>` it returns :ref:`True<test_what_is_true>`
 
 ----
 
