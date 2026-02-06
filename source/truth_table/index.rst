@@ -10,7 +10,7 @@ truth table
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=7_bVE9tCltIq1uBF&amp;list=PL5lANtH-CROCjQaiFJP0-XEjHfCiwgwt1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Sometimes I want programs to choose what to do based on inputs or conditions, and can make this happen with :ref:`if statements<if statements>`. For example, If I want to know if a person can vote, the conditions could be
+Sometimes I want programs_ to choose what to do based on inputs or conditions, and can make this happen with :ref:`if statements<if statements>`. For example, If I want to know if a person can vote, the conditions could be
 
 * Is the person alive?
 * Is the person old enough?
@@ -255,8 +255,6 @@ start the project
     FAILED tests/test_truth_table.py::TestTruthTable::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_truth_table.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
-
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_truth_table.py``
 
   .. code-block:: python
@@ -287,10 +285,10 @@ start the project
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-    import unittest
     import src.truth_table
+    import unittest
 
 * :ref:`Click Here to continue to Nullary and Unary Operations<truth table: Nullary and Unary Operations>`
 

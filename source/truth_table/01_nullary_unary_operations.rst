@@ -54,7 +54,7 @@ requirements
 Nullary Operations
 *********************************************************************************
 
-There are 2 Nullary operations - :ref:`Logical True<test_logical_true>` and :ref:`Logical False<test_logical_false>`. They do NOT take input and return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+There are 2 Nullary operations - :ref:`Logical True<test_logical_true>` and :ref:`Logical False<test_logical_false>`. They do not take input and always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
 ----
 
@@ -70,7 +70,7 @@ test_logical_true
 
 ----
 
-I change the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_truth_table.py``
+I change the names of the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_truth_table.py``
 
 .. code-block:: python
   :linenos:
@@ -160,11 +160,13 @@ test_logical_false
 
 ----
 
-I add another test in ``test_truth_table.py``
+I add another test to ``test_truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 4-5
+  :lineno-start: 5
+  :emphasize-lines: 6-7
+
+  class TestNullaryOperations(unittest.TestCase):
 
       def test_logical_true(self):
           self.assertTrue(src.truth_table.logical_true())
@@ -221,7 +223,7 @@ I have not added a definition for :ref:`logical_false<test_logical_false>` to ``
 
   the test passes
 
-* Adding the :ref:`logical_true<test_logical_true>` and :ref:`logical_false<test_logical_false>` :ref:`functions<what is a function?>` to ``truth_table.py`` solved the :ref:`AttributeError<what causes AttributeError?>` in both cases
+* Adding the :ref:`logical_true<test_logical_true>` and :ref:`logical_false<test_logical_false>` :ref:`functions<what is a function?>` to ``truth_table.py`` fixed :ref:`AttributeError<what causes AttributeError?>` in both cases
 * :ref:`logical_true<test_logical_true>` always returns :ref:`True<test_what_is_true>`
 * :ref:`logical_false<test_logical_false>` always returns :ref:`False<test_what_is_false>`
 * both Nullary Operations do not take input
@@ -521,7 +523,7 @@ the test passes
 
   the test fails for the line that passed before
 
-* I make the :ref:`function<what is a function?>` return its input, remember the :ref:`identity function?<test_identity_function>`
+* I make the :ref:`function<what is a function?>` return its input again
 
   .. code-block:: python
     :lineno-start: 13
