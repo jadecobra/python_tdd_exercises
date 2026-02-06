@@ -202,7 +202,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
     AssertionError: None != ('1999/12/31 13:10', '1999/12/31 12:00')
     AssertionError: None != ('1999/12/31 16:41', '1999/12/31 12:35')
 
-  I change the `return statement`_ in ``duration_a``
+* I change the `return statement`_ in ``duration_a``
 
   .. code-block:: python
 

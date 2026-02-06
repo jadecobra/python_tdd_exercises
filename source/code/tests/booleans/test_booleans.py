@@ -14,7 +14,6 @@ class TestBooleans(unittest.TestCase):
         self.assertFalse(list())
         self.assertFalse(set())
         self.assertFalse(dict())
-        self.assertTrue({'key': 'value'})
 
     def test_what_is_true(self):
         self.assertIsInstance(True, bool)
@@ -27,6 +26,7 @@ class TestBooleans(unittest.TestCase):
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
         self.assertTrue({1, 2, 3, 'n'})
+        self.assertTrue({'key': 'value'})
 
 
 # NOTES
@@ -44,7 +44,7 @@ class TestBooleans(unittest.TestCase):
 # the empty tuple is False
 # the empty string is False
 # 0 is False
-# None is false
+# None is False
 # False is False
 # False is not true
 # False is a boolean

@@ -2465,7 +2465,7 @@ the test passes
 
     AssertionError: '1st' != ''
 
-  I change the value to match
+* I change the value to match
 
   .. code-block:: python
     :lineno-start: 140
@@ -2493,7 +2493,7 @@ the test passes
 
     AssertionError: '1st' != ''
 
-  I change the value to match
+* I change the value to match
 
   .. code-block:: python
     :lineno-start: 141
@@ -2518,7 +2518,7 @@ the test passes
 
     AssertionError: '3rd' != ''
 
-  I change the expectation to match
+* I change the expectation to match
 
   .. code-block:: python
     :lineno-start: 142
@@ -2543,7 +2543,7 @@ the test passes
 
     AssertionError: '3rd' != ''
 
-  I change the expectation
+* I change the expectation
 
   .. code-block:: python
     :lineno-start: 143
@@ -2568,7 +2568,7 @@ the test passes
 
     AssertionError: '2nd' != ''
 
-  I change the expectation
+* I change the expectation
 
   .. code-block:: python
     :lineno-start: 144
@@ -2591,7 +2591,7 @@ the test passes
 
     AssertionError: '2nd' != ''
 
-  I change the value
+* I change the value
 
   .. code-block:: python
     :lineno-start: 145
@@ -2616,7 +2616,7 @@ the test passes
 
     AssertionError: '...last' != ''
 
-  I change the value
+* I change the value
 
   .. code-block:: python
     :lineno-start: 146
@@ -2804,7 +2804,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
     AssertionError: Lists differ: ['a', 'b'] != []
 
-  I change the values to match
+* I change the values to match
 
   .. code-block:: python
     :lineno-start: 157
@@ -2879,7 +2879,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
     AssertionError: Lists differ: ['a', 'b', 'c'] != []
 
-  I change the expectation
+* I change the expectation
 
   .. code-block:: python
     :lineno-start: 160
@@ -2904,7 +2904,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
     AssertionError: Lists differ: ['b', 'c'] != []
 
-  I change the expectation
+* I change the expectation
 
   .. code-block:: python
     :lineno-start: 161

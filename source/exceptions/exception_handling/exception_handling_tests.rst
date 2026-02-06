@@ -969,7 +969,7 @@ test_catching_exceptions_in_tests
 
     AssertionError
 
-  I change the :ref:`Exception<errors>` back
+* I change the :ref:`Exception<errors>` back
 
   .. code-block:: python
     :lineno-start: 38

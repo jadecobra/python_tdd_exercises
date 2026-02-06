@@ -53,11 +53,11 @@ class TestBooleans(unittest.TestCase):
 
 
 # NOTES
-# a dictionary with things is true
-# a set with things is true
-# a list with things is true
-# a tuple with things is true
-# a string with things is true
+# a dictionary with things is True
+# a set with things is True
+# a list with things is True
+# a tuple with things is True
+# a string with things is True
 # positive and negative numbers are True
 # True is true
 # True is not false
@@ -65,13 +65,13 @@ class TestBooleans(unittest.TestCase):
 # True is an integer
 # True is not a float
 # True is 1
-# the empty dictionary is false
-# the empty set is false
-# the empty list is false
-# the empty tuple is false
-# the empty string is false
+# the empty dictionary is False
+# the empty set is False
+# the empty list is False
+# the empty tuple is False
+# the empty string is False
 # 0 is False
-# None is false
+# None is False
 # False is false
 # False is not true
 # False is a boolean

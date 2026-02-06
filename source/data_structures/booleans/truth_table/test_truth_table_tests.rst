@@ -195,7 +195,7 @@ continue the project
 
     AssertionError: True is not false
 
-  I change the `return statement`_
+* I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 5

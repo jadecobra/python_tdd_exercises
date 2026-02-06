@@ -274,7 +274,7 @@ test_what_is_false
 
     AssertionError: False is an instance of <class 'bool'>
 
-* I add a comment
+* I add comments
 
   .. code-block:: python
     :lineno-start: 4
@@ -655,7 +655,7 @@ the test passes
     # True is True
     # True is not false
     # True is a boolean
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -757,7 +757,7 @@ the test passes
     # True is True
     # True is not false
     # True is a boolean
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -826,7 +826,7 @@ the test passes
     # True is not false
     # True is a boolean
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -880,7 +880,7 @@ the test passes
 
   the test passes
 
-* I change the comment about negative integers
+* I add to the comment about negative integers
 
   .. code-block:: python
     :lineno-start: 19
@@ -892,14 +892,10 @@ the test passes
     # True is not false
     # True is a boolean
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
-
-
-    # Exceptions seen
-    # AssertionError
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
 
@@ -982,7 +978,7 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
 * I add comments
 
   .. code-block:: python
-    :lineno-start: 22
+    :lineno-start: 20
     :emphasize-lines: 2
 
     # NOTES
@@ -992,7 +988,7 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
     # True is not false
     # True is a boolean
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1049,7 +1045,7 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
 
     AssertionError: 0.0 is not true
 
-  I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 18
@@ -1063,7 +1059,7 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 2
+    :emphasize-lines: 7
 
     # NOTES
     # negative floats are True
@@ -1071,9 +1067,9 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
     # True is True
     # True is not false
     # True is a boolean
-    # 0.0 is false
+    # 0.0 is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1137,9 +1133,9 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
     # True is True
     # True is not false
     # True is a boolean
-    # 0.0 is false
+    # 0.0 is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1176,13 +1172,10 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
     # True is not false
     # True is a boolean
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
-
-
-    # Exceptions seen
 
 :ref:`in Python, 0.0 is False and positive and negative floats are True<is a float False or True?>`
 
@@ -1265,7 +1258,7 @@ the test passes
     # True is a boolean
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1302,7 +1295,7 @@ the test passes
 
     AssertionError: 'text' is not false
 
-  I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1326,7 +1319,7 @@ the test passes
     # True is a boolean
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1428,7 +1421,7 @@ The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty tuple is False
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1505,7 +1498,7 @@ The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty tuple is False
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1613,7 +1606,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty tuple is False
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1685,7 +1678,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty tuple is False
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1788,7 +1781,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty tuple is False
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1866,7 +1859,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty tuple is False
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -1981,7 +1974,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     # the empty tuple is False
     # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -2052,22 +2045,22 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :emphasize-lines: 2
 
     # NOTES
-    # a dictionary with things is true
-    # a set with things is true
-    # a list with things is true
-    # a tuple with things is true
-    # a string with things is true
+    # a dictionary with things is True
+    # a set with things is True
+    # a list with things is True
+    # a tuple with things is True
+    # a string with things is True
     # positive and negative numbers are True
     # True is True
     # True is not false
     # True is a boolean
-    # the empty dictionary is false
-    # the empty set is false
-    # the empty list is false
-    # the empty tuple is false
-    # the empty string is false
+    # the empty dictionary is False
+    # the empty set is False
+    # the empty list is False
+    # the empty tuple is False
+    # the empty string is False
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean

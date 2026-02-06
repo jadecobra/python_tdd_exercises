@@ -296,7 +296,7 @@ I need to add a definition for it
 
     AssertionError: False is not true
 
-  I change the `return statement`_
+* I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 9

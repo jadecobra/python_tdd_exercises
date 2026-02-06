@@ -1792,7 +1792,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     AssertionError: None != ('first', 'last')
 
-  I change the `return statement`_
+* I change the `return statement`_
 
   .. code-block:: python
     :lineno-start: 30
@@ -2312,7 +2312,7 @@ the test passes
 
     AssertionError: Tuples differ: ('joe', 'blow') != ()
 
-  I change the expectation to match
+* I change the expectation to match
 
   .. code-block:: python
     :lineno-start: 80

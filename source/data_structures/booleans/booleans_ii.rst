@@ -236,8 +236,8 @@ the test passes
 
     # True is a boolean
     # True is an integer
-    # the empty dictionary is false
-    # the empty set is false
+    # the empty dictionary is False
+    # the empty set is False
 
 * I add another :ref:`assertion<what is an assertion?>` to test if :ref:`True<test_what_is_true>` is a float_
 
@@ -280,7 +280,7 @@ the test passes
     # True is a boolean
     # True is an integer
     # True is not a float
-    # the empty dictionary is false
+    # the empty dictionary is False
 
   This explains why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` only allowed integers_ and floats_.
 
@@ -646,7 +646,7 @@ the test passes
     :emphasize-lines: 8
 
     # 0 is False
-    # None is false
+    # None is False
     # False is False
     # False is not true
     # False is a boolean
@@ -809,7 +809,7 @@ the test passes
     # True is an integer
     # True is not a float
     # True is 1
-    # the empty dictionary is false
+    # the empty dictionary is False
 
 ----
 

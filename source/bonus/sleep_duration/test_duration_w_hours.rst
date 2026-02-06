@@ -599,7 +599,7 @@ the test passes
 
     AssertionError: '01' != 0
 
-  I change the value in the test to ``'01'``
+* I change the value in the test to ``'01'``
 
   .. code-block:: python
 
@@ -686,7 +686,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     AssertionError: 1 != 0
 
-  I change the expectation to ``1``
+* I change the expectation to ``1``
 
   .. code-block:: python
 
@@ -706,7 +706,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     AssertionError: 23 != 1
 
-  I change the number from ``1`` to ``23``
+* I change the number from ``1`` to ``23``
 
   .. code-block:: python
 
