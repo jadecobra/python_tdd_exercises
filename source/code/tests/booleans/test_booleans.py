@@ -30,6 +30,7 @@ class TestBooleans(unittest.TestCase):
 
 
 # NOTES
+# a dictionary with things is True
 # a set with things is True
 # a list with things is True
 # a tuple with things is True
