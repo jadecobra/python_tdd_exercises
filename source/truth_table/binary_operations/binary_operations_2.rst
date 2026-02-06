@@ -144,7 +144,7 @@ the test passes. ``negate_first`` returns :ref:`False<test_what_is_false>` when 
 
 ----
 
-* I add the second case - where :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input, to ``test_negate_first`` in ``test_truth_table.py``
+* I add the second case - when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input, to ``test_negate_first`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -447,7 +447,7 @@ there is no definition for ``logical_nand`` in ``truth_table.py``
 
 ----
 
-I add a definition for the :ref:`function<what is a function?>` to ``truth_table.py``
+I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 33
@@ -472,7 +472,7 @@ the test passes.
 
 ----
 
-* I add the second case - where :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input, to ``test_logical_nand`` in ``test_truth_table.py``
+* I add the second case - when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input, to ``test_logical_nand`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 57
@@ -602,7 +602,7 @@ the test passes.
   - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
   - :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
 
-* I add the last case - where the first and second inputs are both :ref:`False<test_what_is_false>`, to ``test_logical_nand`` in ``test_truth_table.py``
+* I add the last case - when the first and second inputs are both :ref:`False<test_what_is_false>`, to ``test_logical_nand`` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 57
@@ -1061,7 +1061,7 @@ the test passes. ``logical_disjunction`` returns :ref:`True<test_what_is_true>` 
 
   so far this is the same as :ref:`Tautology<test_tautology>`
 
-* I add the next case - where :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
+* I add the next case - when :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
 
   .. code-block:: python
     :lineno-start: 69

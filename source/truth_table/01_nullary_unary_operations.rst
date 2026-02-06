@@ -457,7 +457,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a definition for the :ref:`function<what is a function?>` in ``truth_table.py``
+I add the :ref:`function<what is a function?>` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 9
