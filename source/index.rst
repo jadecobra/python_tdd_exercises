@@ -105,7 +105,7 @@ table of contents
   pass values<how_to/pass_values>
   data_structures/none
   data_structures/booleans/index
-  truth table<data_structures/booleans/truth_table/index>
+  truth table<truth_table/index>
   make a calculator<calculator/calculator_i/index>
   make TDD project 2<make_tdd/make_tdd_automatically/index>
   handling Exceptions<exceptions/exception_handling/index>

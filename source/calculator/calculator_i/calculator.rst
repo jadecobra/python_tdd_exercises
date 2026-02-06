@@ -1836,7 +1836,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AssertionError: (XYZ.ABCDEFGHIJKLMNO, -YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
-  I change it to the multiplication of the inputs to match the name of the :ref:`function<what is a function?>`
+* I change it to the multiplication of the inputs to match the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 5

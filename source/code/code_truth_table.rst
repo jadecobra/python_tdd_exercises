@@ -9,7 +9,7 @@ tests
 
 the code in ``truth_table/tests/test_truth_table.py`` from :ref:`truth table`
 
-.. literalinclude:: tests/test_truth_table.py
+.. literalinclude:: tests/truth_table/test_truth_table.py
   :language: python
   :linenos:
 

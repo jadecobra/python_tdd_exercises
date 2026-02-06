@@ -2014,7 +2014,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: ['key'] is not None : ['key']
 
-  I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to assertEqual_
 
   .. code-block:: python
     :lineno-start: 142

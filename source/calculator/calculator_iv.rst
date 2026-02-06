@@ -336,7 +336,7 @@ the test passes
 
     TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
-  I change assertEqual_ to assertRaises_
+* I change assertEqual_ to assertRaises_
 
   .. code-block:: python
     :lineno-start: 68

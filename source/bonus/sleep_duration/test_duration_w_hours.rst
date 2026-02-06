@@ -328,7 +328,7 @@ requirements
 
     AssertionError: Tuples differ: ('08:00', '07:00') != ('09:00', '07:00')
 
-  I change ``duration`` to match
+* I change ``duration`` to match
 
   .. code-block:: python
 

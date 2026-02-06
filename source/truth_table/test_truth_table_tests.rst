@@ -161,7 +161,7 @@ continue the project
 
     AssertionError: None is not true
 
-  I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
+* I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
     :linenos:
@@ -1112,7 +1112,7 @@ continue the project
 
     AssertionError: None is not true
 
-  I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
+* I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
     :lineno-start: 101

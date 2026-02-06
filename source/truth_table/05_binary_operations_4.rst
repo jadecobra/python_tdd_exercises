@@ -22,6 +22,20 @@ requirements
 
 :ref:`Binary Operations 3<truth table: Binary Operations 3>`
 
+----
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have at the end of the chapters
+
+.. literalinclude:: ../../../code/tests/test_truth_table_binary_iv.py
+  :language: python
+  :linenos:
+
+----
+
 *********************************************************************************
 continue the project
 *********************************************************************************
@@ -717,7 +731,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 
     SyntaxError: invalid syntax
 
-  I change "not_ or_" to "and_"
+* I change "not_ or_" to "and_"
 
   .. code-block:: python
     :lineno-start: 75
@@ -753,7 +767,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 
     SyntaxError: invalid syntax
 
-  I change "not_ and_" to "or_"
+* I change "not_ and_" to "or_"
 
   .. code-block:: python
     :lineno-start: 75

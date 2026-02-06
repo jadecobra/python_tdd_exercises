@@ -22,6 +22,20 @@ requirements
 
 :ref:`Binary Operations 2<truth table: Binary Operations 2>`
 
+----
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have at the end of the chapters
+
+.. literalinclude:: ../../../code/tests/test_truth_table_binary_iii.py
+  :language: python
+  :linenos:
+
+----
+
 *********************************************************************************
 continue the project
 *********************************************************************************

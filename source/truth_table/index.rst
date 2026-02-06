@@ -10,23 +10,23 @@ truth table
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=7_bVE9tCltIq1uBF&amp;list=PL5lANtH-CROCjQaiFJP0-XEjHfCiwgwt1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-----
-
-*********************************************************************************
-preview
-*********************************************************************************
-
 Sometimes I want programs to choose what to do based on inputs or conditions, and can make this happen with :ref:`if statements<if statements>`. For example, If I want to know if a person can vote, the conditions could be
 
 * Is the person alive?
 * Is the person old enough?
 * Is the person a citizen?
 
-I can add these to a program so that when it gets information about the person it returns output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote" after looking at the options.
+I can add these to a program so that when it gets information about the person it returns output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote" after it looks at the options.
 
-The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics and the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>`. These are the underlying operations that make the computer do what it does.
+The following are exercises on writing `conditional expressions`_ in Python_ with the `Truth Table`_ from Mathematics_ and the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>`.
 
-All operations from the `Truth Table`_ always result in :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+These are the underlying operations that make the computer do what it does. All operations from the `Truth Table`_ always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
+
+----
+
+*********************************************************************************
+preview
+*********************************************************************************
 
 Here are the tests I have at the end of the chapters
 

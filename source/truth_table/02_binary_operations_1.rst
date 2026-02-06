@@ -107,6 +107,12 @@ These combinations give 16 binary operations each of which returns :ref:`True<te
 
 * :ref:`Contradiction <test_contradiction>` always returns :ref:`False<test_what_is_false>`
 
+Here are the tests I have at the end of the chapters
+
+.. literalinclude:: ../../../code/tests/test_truth_table_binary_i.py
+  :language: python
+  :linenos:
+
 ----
 
 *********************************************************************************
