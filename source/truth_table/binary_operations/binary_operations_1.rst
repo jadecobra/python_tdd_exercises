@@ -1380,6 +1380,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``not first_input and second_input``
   - returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of ``first_input``, and ``second_input``
   - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which only returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
 * :ref:`Project Second <test_project_second>`
@@ -1397,14 +1398,14 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Contradiction <test_contradiction>`
 
   - always returns :ref:`False<test_what_is_false>`
-  - is the opposite or :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
 
 and
 
 * :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
 * :ref:`Logical Negation <test_logical_negation>` is "not_"
 
-All the logic statements or conditions have been written with some or all of the above 2.
+All the logic statements or conditions have been written with some or all of these 2.
 
 ----
 

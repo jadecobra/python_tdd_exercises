@@ -259,7 +259,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 * ``not second_input``
 * the :ref:`Logical Negation<test_logical_negation>` of the second input
 
-it is the opposite or :ref:`Logical Negation<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
+it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
 
 ----
 
@@ -1170,7 +1170,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Contradiction <test_contradiction>`
 
   - always returns :ref:`False<test_what_is_false>`
-  - is the opposite or :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
 
 and
 

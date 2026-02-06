@@ -1894,7 +1894,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
   * :ref:`Contradiction <test_contradiction>`
 
     - always returns :ref:`False<test_what_is_false>`
-    - is the opposite or :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
 
   * :ref:`Converse Implication <test_converse_implication>`
 
