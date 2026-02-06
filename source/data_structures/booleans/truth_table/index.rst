@@ -16,14 +16,15 @@ truth table
 preview
 *********************************************************************************
 
-Sometimes I want programs to make decisions based on inputs or conditions, and can make this happen with :ref:`if statement<if statements>`. For example, If I want to know if a person can vote, the conditions could be
+Sometimes I want programs to choose what to do based on inputs or conditions, and can make this happen with :ref:`if statements<if statements>`. For example, If I want to know if a person can vote, the conditions could be
 
 * Is the person alive?
 * Is the person old enough?
+* Is the person a citizen?
 
-I can add these to a program so that when it gets information about the person, it can make a decision or return output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote"
+I can add these to a program so that when it gets information about the person it returns output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote" after looking at the options.
 
-The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics and the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>`.
+The following are exercises on writing `conditional expressions`_ in Python_ using the `Truth Table`_ from Mathematics and the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>`. These are the underlying operations that make the computer do what it does.
 
 All operations from the `Truth Table`_ always result in :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 
@@ -40,7 +41,7 @@ questions about The Truth Table
 * :ref:`what is not?<test_logical_negation>`
 * :ref:`what is and?<test_logical_conjunction>`
 * :ref:`what is or?<test_logical_disjunction>`
-* :ref:`what is an if statement<if statements>`
+* :ref:`what is an if statement?<if statements>`
 * :ref:`what is a conditional expression?<conditional expressions>`
 * :ref:`what is a ternary operator?<conditional expressions>`
 * What are the possible combinations of two inputs?
@@ -205,7 +206,7 @@ start the project
 
   .. code-block:: shell
 
-    Initialized project `truth_table`
+    Initialized project `truth-table`
 
   then goes back to the command line
 
@@ -312,15 +313,7 @@ truth table operations
 ----
 
 *************************************************************************************
-code from the chapter
-*************************************************************************************
-
-:ref:`Do you want to see all the CODE I typed for the Truth Table?<truth table: tests and solutions>`
-
-----
-
-*************************************************************************************
 what is next?
 *************************************************************************************
 
-:ref:`Continue in Nullary and Unary Operations?<truth table: Nullary and Unary Operations>`
+:ref:`Nullary and Unary Operations<truth table: Nullary and Unary Operations>`
