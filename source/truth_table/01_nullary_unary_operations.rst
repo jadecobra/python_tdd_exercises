@@ -20,7 +20,7 @@ preview
 
 Here are the tests I have at the end of the chapters
 
-.. literalinclude:: ../code/truth_table/tests/test_truth_table_nullary_unary.py
+.. literalinclude:: ../code/truth_table/tests/test_nullary_unary.py
   :language: python
   :linenos:
 
@@ -70,14 +70,16 @@ test_logical_true
 
 ----
 
-I change the names of the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_truth_table.py``
+* I change the name of ``test_truth_table.py`` to ``test_nullary_unary.py``
+
+I change the names of the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_nullary_unary.py``
 
 .. code-block:: python
   :linenos:
   :emphasize-lines: 5, 7-8
 
-  import unittest
   import src.truth_table
+  import unittest
 
 
   class TestNullaryOperations(unittest.TestCase):
@@ -104,7 +106,7 @@ I have not added a definition for :ref:`logical_true<test_logical_true>` to ``tr
 
 ----
 
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_truth_table.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -143,7 +145,7 @@ I have not added a definition for :ref:`logical_true<test_logical_true>` to ``tr
 
   the test passes
 
-* Adding the :ref:`logical_true function<test_logical_true>` to ``truth_table.py`` solved the :ref:`AttributeError<what causes AttributeError?>`
+* Adding the :ref:`logical_true function<test_logical_true>` to ``truth_table.py`` fixed :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`logical_true does not take any input and always returns True<test_logical_true>`
 
 ----
@@ -160,7 +162,7 @@ test_logical_false
 
 ----
 
-I add another test to ``test_truth_table.py``
+I add another test to ``test_nullary_unary.py``
 
 .. code-block:: python
   :lineno-start: 5
@@ -193,7 +195,7 @@ I have not added a definition for :ref:`logical_false<test_logical_false>` to ``
 
 ----
 
-* I add a :ref:`function<what is a function?>` definition to ``truth_table.py``
+* I add a :ref:`function<what is a function?>` to ``truth_table.py``
 
   .. code-block:: python
     :linenos:
@@ -250,7 +252,7 @@ test_logical_identity
 
 ----
 
-I add a new TestCase_ and a test for Unary Operations to ``test_truth_table.py``
+I add a new TestCase_ and a test for Unary Operations to ``test_nullary_unary.py``
 
 .. code-block:: python
   :lineno-start: 5
@@ -310,7 +312,7 @@ I need to add a definition for it
 
   I need to make the :ref:`function<what is a function?>` accept input since the test sends :ref:`True<test_what_is_true>` as input
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_truth_table.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 20
@@ -356,7 +358,7 @@ I need to add a definition for it
 
 ----
 
-* I add another line to :ref:`test_logical_identity` in ``test_truth_table.py`` for the case when it gets :ref:`False<test_what_is_false>` as input
+* I add another line to :ref:`test_logical_identity` in ``test_nullary_unary.py`` for the case when it gets :ref:`False<test_what_is_false>` as input
 
   .. code-block:: python
     :lineno-start: 16
@@ -420,7 +422,7 @@ test_logical_negation
 
 ----
 
-I add a test for :ref:`logical_negation<test_logical_negation>` to ``test_truth_table.py``
+I add a test for :ref:`logical_negation<test_logical_negation>` to ``test_nullary_unary.py``
 
 .. code-block:: python
   :lineno-start: 14
@@ -490,7 +492,7 @@ the test passes
 
 ----
 
-* I add another line to :ref:`test_logical_negation` in ``test_truth_table.py``
+* I add another line to :ref:`test_logical_negation` in ``test_nullary_unary.py``
 
   .. code-block:: python
     :lineno-start: 20
@@ -594,7 +596,7 @@ how to return the opposite of a boolean
 close the project
 *********************************************************************************
 
-* I close ``test_truth_table.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
+* I close ``test_nullary_unary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``truth_table``

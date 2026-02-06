@@ -1,25 +1,5 @@
-import unittest
 import src.truth_table
-
-
-class TestNullaryOperations(unittest.TestCase):
-
-    def test_logical_true(self):
-        self.assertTrue(src.truth_table.logical_true())
-
-    def test_logical_false(self):
-        self.assertFalse(src.truth_table.logical_false())
-
-
-class TestUnaryOperations(unittest.TestCase):
-
-    def test_logical_identity(self):
-        self.assertTrue(src.truth_table.logical_identity(True))
-        self.assertFalse(src.truth_table.logical_identity(False))
-
-    def test_logical_negation_aka_not(self):
-        self.assertFalse(src.truth_table.logical_negation(True))
-        self.assertTrue(src.truth_table.logical_negation(False))
+import unittest
 
 
 class TestBinaryOperations(unittest.TestCase):
@@ -95,6 +75,30 @@ class TestBinaryOperations(unittest.TestCase):
         self.assertTrue(src.truth_table.converse_implication(True, False))
         self.assertFalse(src.truth_table.converse_implication(False, True))
         self.assertTrue(src.truth_table.converse_implication(False, False))
+
+    def test_negate_second(self):
+        self.assertFalse(src.truth_table.negate_second(True, True))
+        self.assertTrue(src.truth_table.negate_second(True, False))
+        self.assertFalse(src.truth_table.negate_second(False, True))
+        self.assertTrue(src.truth_table.negate_second(False, False))
+
+    def test_logical_nor(self):
+        self.assertFalse(src.truth_table.logical_nor(True, True))
+        self.assertFalse(src.truth_table.logical_nor(True, False))
+        self.assertFalse(src.truth_table.logical_nor(False, True))
+        self.assertTrue(src.truth_table.logical_nor(False, False))
+
+    def test_logical_equality(self):
+        self.assertTrue(src.truth_table.logical_equality(True, True))
+        self.assertFalse(src.truth_table.logical_equality(True, False))
+        self.assertFalse(src.truth_table.logical_equality(False, True))
+        self.assertTrue(src.truth_table.logical_equality(False, False))
+
+    def test_material_implication(self):
+        self.assertTrue(src.truth_table.material_implication(True, True))
+        self.assertFalse(src.truth_table.material_implication(True, False))
+        self.assertTrue(src.truth_table.material_implication(False, True))
+        self.assertTrue(src.truth_table.material_implication(False, False))
 
 
 # Exceptions seen

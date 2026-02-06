@@ -3,15 +3,31 @@
 truth table: tests and solutions
 #################################################################################
 
+----
+
 *********************************************************************************
-tests
+Nullary and Unary Operations tests
 *********************************************************************************
 
-the code in ``truth_table/tests/test_truth_table.py`` from :ref:`truth table`
+the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Nullary and Unary Operations`
 
-.. literalinclude:: truth_table/tests/test_truth_table.py
+.. literalinclude:: truth_table/tests/test_binary.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+Binary Operations tests
+*********************************************************************************
+
+the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table`
+
+.. literalinclude:: truth_table/tests/test_binary.py
+  :language: python
+  :linenos:
+
+----
 
 *********************************************************************************
 solutions

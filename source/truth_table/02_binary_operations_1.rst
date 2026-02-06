@@ -109,7 +109,7 @@ These combinations give 16 binary operations each of which returns :ref:`True<te
 
 Here are the tests I have at the end of the chapters
 
-.. literalinclude:: ../code/truth_table/tests/test_truth_table_binary_i.py
+.. literalinclude:: ../code/truth_table/tests/test_binary_i.py
   :language: python
   :linenos:
 
