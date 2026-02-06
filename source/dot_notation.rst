@@ -9,75 +9,36 @@ You have made it through the end of the book. Do you understand the following?
 ----
 
 *********************************************************************************
-AClass.attribute
+module
 *********************************************************************************
 
-in the same file_
+- a file_ in ``module.py``
 
-.. code-block:: python
-
-  class AClass(object):
-
-      attribute = None
-
-or
-
-.. code-block:: python
-
-  class AClass(object):
-
-      def __init__(self, attribute):
-          self.attribute = attribute
-
-----
-
-*********************************************************************************
-AClass.method()
-*********************************************************************************
-
-in the same file_
-
-.. code-block:: python
-
-  class AClass(object):
-
-      def method(self):
-          return None
-
-----
-
-*********************************************************************************
-AClass.method(*args, **kwargs)
-*********************************************************************************
-
-in the same file_
-
-.. code-block:: python
-
-  class AClass(object):
-
-      def method(self, *args, **kwargs):
-          return None
-
-----
-
-*********************************************************************************
-module.attribute
-*********************************************************************************
-
-- the definiton in ``module.py``
-
-  .. code-block:: python
-
-    attribute = None
-
-- how to use it in a different file_
+- used in a different file_
 
   .. code-block:: python
 
     import module
 
-    module.attribute
+----
+
+*********************************************************************************
+module.variable
+*********************************************************************************
+
+- defined in ``module.py``
+
+  .. code-block:: python
+
+    variable = None
+
+- used in a different file_
+
+  .. code-block:: python
+
+    import module
+
+    module.variable
 
 ----
 
@@ -85,14 +46,14 @@ module.attribute
 module.function()
 *********************************************************************************
 
-- the definiton in ``module.py``
+- defined in ``module.py``
 
   .. code-block::  python
 
     def function():
         return None
 
-- how to use it in a different file_
+- called in a different file_
 
   .. code-block:: python
 
@@ -106,13 +67,13 @@ module.function()
 module.function(*args, **kwargs)
 *********************************************************************************
 
-- the definiton in ``module.py``
+- defined in ``module.py``
 
   .. code-block:: python
 
-    def function(*args, **kwargs)
+    def function(*args, **kwargs):
 
-- how to use it in a different file_
+- called in a different file_
 
   .. code-block:: python
 
@@ -126,7 +87,7 @@ module.function(*args, **kwargs)
 module.AClass.attribute
 *********************************************************************************
 
-- the definiton in ``module.py``
+- defined in ``module.py``
 
   .. code-block:: python
 
@@ -134,32 +95,32 @@ module.AClass.attribute
 
         attribute = None
 
-- how to use it in a different file_
+  used in a different file_
 
   .. code-block:: python
 
     import module
 
-    instance = module.AClass()
-    instance.attribute
+    child = module.AClass()
+    child.attribute
 
-- or the name in ``module.py``
+- defined in ``module.py`` with ``__init__()`` :ref:`method<what is a function?>`
 
   .. code-block:: python
 
     class AClass(object):
 
-        def __init__(self, attribute):
+        def __init__(self, attribute=None):
             self.attribute = attribute
 
-- how to use it in a different file_
+  used in a different file_ and setting the value for ``attribute``
 
   .. code-block:: python
 
     import module
 
-    instance = module.AClass(attribute='Attribute')
-    instance.attribute
+    child = module.AClass(attribute='Attribute')
+    child.attribute
 
 ----
 
@@ -167,7 +128,7 @@ module.AClass.attribute
 module.AClass.method()
 *********************************************************************************
 
-- the definiton in ``module.py``
+- defined in ``module.py``
 
   .. code-block:: python
 
@@ -176,14 +137,14 @@ module.AClass.method()
         def method(self):
             return None
 
-- how to use it in a different file_
+- used in a different file_
 
   .. code-block:: python
 
     import module
 
-    instance = module.AClass()
-    instance.method()
+    child = module.AClass()
+    child.method()
 
 ----
 
@@ -191,7 +152,7 @@ module.AClass.method()
 module.AClass.method(*args, **kwargs)
 *********************************************************************************
 
-- the definiton in ``module.py``
+- defined in ``module.py``
 
   .. code-block:: python
 
@@ -200,14 +161,14 @@ module.AClass.method(*args, **kwargs)
         def method(self, *args, **kwargs):
             return None
 
-- how to use it in a different file_
+- used in a different file_
 
   .. code-block:: python
 
     import module
 
-    instance = module.AClass()
-    instance.method(*args, **kwargs)
+    child = module.AClass()
+    child.method(*args, **kwargs)
 
 ----
 

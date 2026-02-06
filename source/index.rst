@@ -119,7 +119,7 @@ table of contents
   questions the book answers<review>
   make TDD project 1<make_tdd/make_tdd_manually/index>
 
-  dot_notation
+  connect the dots<dot_notation>
   exceptions/index
   data_structures/index
   how_to/index
