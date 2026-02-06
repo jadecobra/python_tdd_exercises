@@ -30,7 +30,11 @@ preview
 
 Here are the tests I have at the end of the chapters
 
-.. literalinclude:: ../code/truth_table/tests/test_truth_table.py
+.. literalinclude:: ../code/truth_table/tests/test_nullary_unary.py
+  :language: python
+  :linenos:
+
+.. literalinclude:: ../code/truth_table/tests/test_binary.py
   :language: python
   :linenos:
 
@@ -302,10 +306,7 @@ truth table operations
   :titlesonly:
 
   Nullary and Unary<01_nullary_unary_operations>
-  Binary Operations 1<02_binary_operations_1>
-  Binary Operations 2<03_binary_operations_2>
-  Binary Operations 3<04_binary_operations_3>
-  Binary Operations 4<05_binary_operations_4>
+  Binary Operations<binary_operations/index>
   Truth Table Test<test_truth_table_tests>
 
 ----
