@@ -144,7 +144,7 @@ Binary Operations
 what is next?
 *************************************************************************************
 
-:ref:`Binary Operations? <binary_operations_i>`
+:ref:`are you ready to test Binary Operations?<binary_operations_i>`
 
 ----
 

@@ -16,7 +16,7 @@ join a HATCH
 
 If you’ve ever thought to yourself “I will learn the Python_ programming language one day”. Today is someday! You can learn with me. See available times below
 
-It’s 8 weeks of HARD work reading, writing and testing Python_ everyday, not for the faint of heart or weak of mind. Do not worry no math required 🤔
+It’s 8 weeks of HARD work reading, writing and testing Python_ everyday, not for the faint of heart or weak of mind. Do not worry no math needed 🤔
 
 :ref:`Sign up TODAY<sign_up>` for a Hatch that fits your schedule. The maximum number of people in each Hatch is **5** to make sure I give you one-on-one attention in a group learning environment.
 

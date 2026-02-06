@@ -19,7 +19,7 @@ Welcome to `Pumping Python`_, My name is Jacob Itegboje and these are `Test Driv
 
 I have tried different ways of learning - from books, courses, videos and exercises to working on personal projects. I find that the most effective way to learn is to build something.
 
-Of all the things I tried, the thing that helped me build and learn most effectively was `Test Driven Development`_, which is a way to write software with a focus on tests. I write tests for ideas to reach a goal or meet a requirement, and the results tell me if I am closer to the goal or not. I repeat the process until I get to the goal, which kind of feels like the scientific method.
+Of all the things I tried, the thing that helped me build and learn most effectively was `Test Driven Development`_, which is a way to write software with a focus on tests. I write tests for ideas to get what I want, and the results tell me if I am closer to what I want or not. I repeat the process until I get what I want, which kind of feels like the scientific method.
 
 I find that sometimes when I am working on a project and have an idea, I remember I have a test for that idea in another project and can go back to run it or write a new test.
 
@@ -48,7 +48,7 @@ who is this for?
 how can I use this?
 *********************************************************************************
 
-Start with :ref:`how to make a python test driven development environment <how to make a python test driven development environment>` because it is required by every other chapter, each chapter suggests the next chapter to do, or you can choose how you go through the chapters based on what you like. You can also go through the :ref:`how tos` section step by step, the other chapters cover :ref:`errors`, :ref:`data structures`, :ref:`functions<what is a function?>`, and :ref:`classes<what is a class?>`
+Start with :ref:`how to make a python test driven development environment <how to make a python test driven development environment>` because it is needed by every other chapter, each chapter suggests the next chapter to do, or you can choose how you go through the chapters based on what you like. You can also go through the :ref:`how tos` section step by step, the other chapters cover :ref:`errors`, :ref:`data structures`, :ref:`functions<what is a function?>`, and :ref:`classes<what is a class?>`
 
 Here are a few things I would do if I were in your shoes to make the process more fun
 
@@ -59,7 +59,7 @@ Here are a few things I would do if I were in your shoes to make the process mor
 * at the end of a chapter, delete the tests and try to write them from memory or use the solution as a guide - this builds your memory skills
 * close the tests at the end of a chapter, delete the solution and try to write one with the terminal_ response as a guide - this helps you build a better relationship with the terminal_ (your best friend when programming)
 * try to write solutions using the tests from the :ref:`catalog_of_tests` as a guide - this builds your problem solving skills
-* try adding tests for any ideas I get as I go through a chapter, the sooner you start writing tests the better, since it requires a different way of thinking - this builds your testing skills
+* try adding tests for any ideas I get as I go through a chapter, the sooner you start writing tests the better, since it needs a different way of thinking - this builds your testing skills
 * I would not quit until I get to the end of a chapter, especially when it gets hard, this is part of the experience when learning to solve problems, things get harder before they get easy because there is a lot of failure. I can always walk away to go do something different for a while, then come back and try again - this helps with being able to do hard things
 
 If you take one small step at a time you eventually get where you want to go

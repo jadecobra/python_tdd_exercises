@@ -55,7 +55,7 @@ continue the project
 
   `change directory`_ to the ``pumping_python`` folder
 
-* Once in the ``pumping_python`` directory_, `change directory`_ to the project
+* Once in ``pumping_python``, `change directory`_ to the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -68,29 +68,7 @@ continue the project
 
     .../pumping_python/truth_table
 
-* activate the `Virtual Environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/scripts/activate.ps1`` instead of ``source .venv/bin/activate``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  when the `Virtual Environment`_ is activated, the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/truth_table
-
-* run the tests
+* run the tests with `pytest-watcher`_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -735,8 +713,8 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 :ref:`Material NonImplication<test_material_non_implication>` returns
 
 * ``first_input and not second_input`` which is the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
-* :ref:`True<test_what_is_true>` only when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-* it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material or Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` only when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+* it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material or Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
 
 ----
 
@@ -815,9 +793,9 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
   the test is still green. ``project_first`` returns
 
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input
 
 * on to the next case
 
@@ -850,8 +828,8 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
   the test passes. ``project_first`` returns
 
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input
 
 * I change the :ref:`if statements` to one :ref:`if statement<if statements>`
 
@@ -950,10 +928,10 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
   the test is still green. ``project_first`` returns
 
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input
+  - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input
 
 * I add a `return statement`_ to show that this :ref:`function<what is a function?>` returns the same value as ``first_input`` in every case
 
@@ -981,8 +959,8 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
 :ref:`Project First<test_project_first>` returns the first input, it always returns
 
-* :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
-* :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input
+* :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input
 
 it is like :ref:`Project Second<test_project_second>` which always returns the second input
 
@@ -1368,7 +1346,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Tautology <test_tautology>`
 
   - always returns :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Contradiction<test_contradiction>` which always returns :ref:`False<test_what_is_false>`
+  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :ref:`False<test_what_is_false>`
 
 * :ref:`Logical NAND <test_logical_nand>`
 

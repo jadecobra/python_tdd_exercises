@@ -43,7 +43,7 @@ continue the project
 
   `change directory`_ to the ``pumping_python`` folder
 
-* Once in the ``pumping_python`` directory_, `change directory`_ to the project
+* Once in ``pumping_python``, `change directory`_ to the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -56,29 +56,7 @@ continue the project
 
     .../pumping_python/truth_table
 
-* activate the `Virtual Environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/scripts/activate.ps1`` instead of ``source .venv/bin/activate``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  when the `Virtual Environment`_ is activated, the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/truth_table
-
-* run the tests
+* run the tests with `pytest-watcher`_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -906,7 +884,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
-* I add a :ref:`function<what is a function?>` for ``contradiction``
+* I add a :ref:`function<what is a function?>` for :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
     :lineno-start: 81
@@ -1169,7 +1147,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 
   the test is still green
 
-* :ref:`contradiction<test_contradiction>` returns :ref:`False<test_what_is_false>` in 4 cases, with 2 inputs there are only 4 cases. I add a `return statement`_
+* :ref:`contradiction<test_contradiction>`  returns :ref:`False<test_what_is_false>` in 4 cases, with 2 inputs there are only 4 cases. I add a `return statement`_
 
   .. code-block:: python
     :lineno-start: 85
@@ -2004,7 +1982,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
   * :ref:`Tautology <test_tautology>`
 
     - always returns :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Contradiction<test_contradiction>` which always returns :ref:`False<test_what_is_false>`
+    - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :ref:`False<test_what_is_false>`
 
 and
 

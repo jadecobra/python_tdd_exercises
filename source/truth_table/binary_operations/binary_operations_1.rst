@@ -5,6 +5,7 @@
 .. include:: ../../links.rst
 .. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
 .. _if statements: `if statement`_
+.. _the Visual Studio Code Python Extension: `Python Extension`_
 
 .. _binary_operations_i:
 
@@ -17,15 +18,6 @@ truth table: Binary Operations 1
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/Q_jhE204MoE?si=m9_EvOX-4lrmSzo7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ----
-
-The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input, and :ref:`Unary Operations` which take 1 input.
-
-There are also Binary Operations, these take 2 inputs. Each of the inputs in this exercise will be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to an :ref:`operation<what is a function?>`
-
-* :ref:`True <test_what_is_true>`, :ref:`True <test_what_is_true>`
-* :ref:`True <test_what_is_true>`, :ref:`False <test_what_is_false>`
-* :ref:`False <test_what_is_false>`, :ref:`True <test_what_is_true>`
-* :ref:`False <test_what_is_false>`, :ref:`False <test_what_is_false>`
 
 *********************************************************************************
 preview
@@ -64,7 +56,7 @@ continue the project
 
   `change directory`_ to the ``pumping_python`` folder
 
-* Once in the ``pumping_python`` directory_, `change directory`_ to the project
+* Once in ``pumping_python``, `change directory`_ to the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -77,29 +69,7 @@ continue the project
 
     .../pumping_python/truth_table
 
-* activate the `Virtual Environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/scripts/activate.ps1`` instead of ``source .venv/bin/activate``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  when the `Virtual Environment`_ is activated, the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/truth_table
-
-* run the tests
+* run the tests with `pytest-watcher`_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -121,49 +91,33 @@ test_contradiction
 
 ----
 
-I add a new TestCase_ to ``test_truth_table.py``
+* I make a new file_ in the tests_ folder_ named ``test_binary.py``
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 25, 27-28
+* I add a new TestCase_ to ``test_binary.py``
 
-  import unittest
-  import src.truth_table
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2, 5, 7-10, 13
 
-
-  class TestNullaryOperations(unittest.TestCase):
-
-      def test_logical_true(self):
-          self.assertTrue(src.truth_table.logical_true())
-
-      def test_logical_false(self):
-          self.assertFalse(src.truth_table.logical_false())
+    import src.truth_table
+    import unittest
 
 
-  class TestUnaryOperations(unittest.TestCase):
+    class TestBinaryOperations(unittest.TestCase):
 
-      def test_logical_identity(self):
-          self.assertTrue(src.truth_table.logical_identity(True))
-          self.assertFalse(src.truth_table.logical_identity(False))
-
-      def test_logical_negation_aka_not(self):
-          self.assertFalse(src.truth_table.logical_negation(True))
-          self.assertTrue(src.truth_table.logical_negation(False))
+        def test_contradiction(self):
+            self.assertFalse(
+                src.truth_table.contradiction(True, True)
+            )
 
 
-  class TestBinaryOperations(unittest.TestCase):
+    # Exceptions seen
 
-      def test_contradiction(self):
-          self.assertFalse(src.truth_table.contradiction(True, True))
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
+  .. code-block:: shell
 
-  # Exceptions seen
-
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-.. code-block:: shell
-
-  AttributeError: module 'src.truth_table' has no attribute 'contradiction'
+    AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
 ----
 
@@ -173,43 +127,44 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`function<what is a function?>` definition to ``truth_table.py``
+* I open ``truth_table.py`` in the :ref:`editor<2 editors>`
 
-.. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 5-6
+* I add a :ref:`function<what is a function?>` with the `return statement`_ of :ref:`logical_negation<test_logical_negation>` to ``truth_table.py``
 
-  def logical_negation(the_input):
-      return not the_input
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5-6
+
+    def logical_negation(the_input):
+        return not the_input
 
 
-  def contradiction(the_input):
-      return not the_input
+    def contradiction(the_input):
+        return not the_input
 
-the terminal_ shows :ref:`TypeError`
+  the terminal_ shows :ref:`TypeError`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  TypeError: contradiction() takes 1 positional argument but 2 were given
+    TypeError: contradiction() takes 1 positional argument but 2 were given
 
-The definition only takes one input, but the test sent two. I add ``second_input`` as the second name in parentheses then change ``argument`` to ``first_input`` for the first input given when the :ref:`function<what is a function?>` is called by the test
+  the :ref:`function<what is a function?>` only takes one input, but the test sent two
 
-.. TIP:: In `Visual Studio Code`_ I can change all the places that a name is in the file_, by using
+* I add ``second_input`` as the second name in parentheses
 
-  * Find and Replace - ``ctrl+H`` on Windows_ or ``option+command+F`` on MacOS_ or with
-  * Rename Symbol
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 1-2
 
-    - Right click on the name you want to change, for example ``the_input`` then select ``Rename Symbol`` or
-    - Select the name you want to change then use :kbd:`F2` on your keyboard to rename it
+    def contradiction(the_input, second_input):
+        return not the_input
 
-.. code-block:: python
-  :lineno-start: 17
-  :emphasize-lines: 1-2
+  the test passes
 
-  def contradiction(first_input, second_input):
-      return not first_input
+:ref:`contradiction<test_contradiction>` returns
 
-the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as its first input and :ref:`True<test_what_is_true>` as its second input, it returns the :ref:`opposite<test_logical_negation>` of the first input, that means it returns not_ :ref:`True<test_what_is_true>` which is :ref:`False<test_what_is_false>`
+* :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and if :ref:`True<test_what_is_true>` is the second input
+* the :ref:`opposite<test_logical_negation>` of the first input, in this case, if :ref:`True<test_what_is_true>` is the first input it returns :ref:`not True<test_what_is_false>`, which is :ref:`False<test_what_is_false>`
 
 ----
 
@@ -219,19 +174,47 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 
 ----
 
-* I add the second case to ``test_contradiction`` in ``test_truth_table.py``, this is when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* I change ``the_input`` to ``first_input`` as the name for the first input given when the :ref:`function<what is a function?>` is called by the test
+
+  .. TIP:: In `Visual Studio Code`_ I can change all the places that a name is in the file_, with
+
+    * Find and Replace - :kbd:`ctrl+H` (Windows_) or :kbd:`option+command+F` (MacOS_) on the keyboard
+    * Rename Symbol - this needs `the Visual Studio Code Python Extension`_ to work
+
+      - Right click on the name you want to change, for example ``the_input`` then select ``Rename Symbol`` or
+      - Select the name you want to change then use :kbd:`F2` or :kbd:`Fn+F2` on your keyboard to rename it
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 3
+    :lineno-start: 17
+    :emphasize-lines: 1-
+    :emphasize-text: first_input
+
+    def contradiction(first_input, second_input):
+        return not first_input
+
+  the test is still green
+
+* I add the second case for :ref:`test_contradiction` to ``test_binary.py``, this is when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5-7
 
         def test_contradiction(self):
-            self.assertFalse(src.truth_table.contradiction(True, True))
-            self.assertFalse(src.truth_table.contradiction(True, False))
+            self.assertFalse(
+                src.truth_table.contradiction(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.contradiction(True, False)
+            )
 
-  the test is still green. ``contradiction`` returns :ref:`False<test_what_is_false>` in the two cases where the first input is :ref:`True<test_what_is_true>`
+  the test is still green. :ref:`contradiction<test_contradiction>` returns
 
-* I add the third case, which is when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - :ref:`False<test_what_is_false>` if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - the :ref:`opposite<test_logical_negation>` of the first input, if :ref:`True<test_what_is_true>` is the first input as in these 2 cases it returns :ref:`not True<test_what_is_false>`, which is :ref:`False<test_what_is_false>`
+
+* I add the third case, which is when :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
 
   .. code-block:: python
     :lineno-start: 27
@@ -239,9 +222,15 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 
 
         def test_contradiction(self):
-            self.assertFalse(src.truth_table.contradiction(True, True))
-            self.assertFalse(src.truth_table.contradiction(True, False))
-            self.assertFalse(src.truth_table.contradiction(False, True))
+            self.assertFalse(
+                src.truth_table.contradiction(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.contradiction(True, False)
+            )
+            self.assertFalse(
+                src.truth_table.contradiction(False, True)
+            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -249,13 +238,13 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 
     AssertionError: True is not false
 
-  so far all three cases of the test expect :ref:`False<test_what_is_false>`, which means ``contradiction`` should return :ref:`False<test_what_is_false>` when
+  so far all three cases of the test expect :ref:`False<test_what_is_false>`, which means :ref:`contradiction<test_contradiction>`  should return :ref:`False<test_what_is_false>` when
 
-  - the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
-  - the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
 
-* I change the `return statement`_ in the ``contradiction`` :ref:`function<what is a function?>` in ``truth_table.py`` to return the expectation
+* I change the `return statement`_ in the :ref:`contradiction<test_contradiction>`  :ref:`function<what is a function?>` in ``truth_table.py`` to return the expectation
 
   .. code-block:: python
     :lineno-start: 17
@@ -266,7 +255,7 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 
   the test passes
 
-* I add the fourth case to ``test_contradiction`` in ``test_truth_table.py``, this is when the two inputs are :ref:`False<test_what_is_false>`
+* I add the fourth case to :ref:`test_contradiction` in ``test_binary.py``, this is when the two inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -283,7 +272,7 @@ the test passes. When ``contradiction`` gets :ref:`True<test_what_is_true>` as i
 
   the test is still green!
 
-:ref:`Contradiction<test_contradiction>` always returns :ref:`False<test_what_is_false>` it does not care about what it gets
+:ref:`contradiction<test_contradiction>`  always returns :ref:`False<test_what_is_false>` it does not care about what it gets
 
 ----
 
@@ -299,7 +288,7 @@ test_logical_conjunction
 
 ----
 
-I add a test for ``logical_conjunction`` in ``test_truth_table.py`` with the first case where the two inputs are :ref:`True<test_what_is_true>`
+I add a test for ``logical_conjunction`` in ``test_binary.py`` with the first case where the two inputs are :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 31
@@ -350,7 +339,7 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
 
 ----
 
-* I add the next case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to ``test_logical_conjunction`` in ``test_truth_table.py``
+* I add the next case - when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input, to ``test_logical_conjunction`` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -387,7 +376,7 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
 ``logical_conjunction`` has to make a choice. It should return
 
 - :ref:`False<test_what_is_false>` when the first input and second input are both :ref:`True<test_what_is_true>`
-- :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+- :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
 
 I can make it do that with `if statements`_
 
@@ -419,7 +408,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
-* I add the case where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_logical_conjunction`` in ``test_truth_table.py``
+* I add the case where :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input to ``test_logical_conjunction`` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -457,7 +446,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
-* I add the last case, which is when the two inputs are :ref:`False<test_what_is_false>`, to ``test_logical_conjunction`` in ``test_truth_table.py``
+* I add the last case, which is when the two inputs are :ref:`False<test_what_is_false>`, to ``test_logical_conjunction`` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 33
@@ -503,7 +492,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
-* I have the same `if statement`_ twice - ``if first_input == False`` for the 3rd and 4th cases where the first input is :ref:`False<test_what_is_false>`
+* I have the same `if statement`_ twice - ``if first_input == False`` for the 3rd and 4th cases where :ref:`False<test_what_is_false>` is the first input
 
   .. code-block:: python
     :lineno-start: 21
@@ -765,7 +754,7 @@ test_project_second
 
 ----
 
-I add a test for another Binary Operation in ``test_truth_table.py``
+I add a test for another Binary Operation in ``test_binary.py``
 
 .. code-block:: python
   :lineno-start: 37
@@ -806,7 +795,7 @@ I add a definition for the :ref:`function<what is a function?>` in ``truth_table
   def project_second(first_input, second_input):
       return True
 
-the test passes. When the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, this :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
+the test passes. when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input, this :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
 
 ----
 
@@ -816,7 +805,7 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
 
 ----
 
-* I add the second case - where the first input is :ref:`True<test_what_is_true>` and the second input :ref:`False<test_what_is_false>`, to ``test_project_second`` in ``test_truth_table.py``
+* I add the second case - where :ref:`True<test_what_is_true>` is the first input and the second input :ref:`False<test_what_is_false>`, to ``test_project_second`` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -846,10 +835,10 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
 
   the test
 
-  - ``project_second`` returns :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input :ref:`False<test_what_is_false>`
+  - ``project_second`` returns :ref:`False<test_what_is_false>` when :ref:`True<test_what_is_true>` is the first input and the second input :ref:`False<test_what_is_false>`
   - it returns :ref:`True<test_what_is_true>` in every other case
 
-* I add the next case, which is when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_project_second`` in ``test_truth_table.py``
+* I add the next case, which is when :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input to ``test_project_second`` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 39
@@ -933,8 +922,8 @@ the test passes. When the first input is :ref:`True<test_what_is_true>` and the 
 
 :ref:`Project Second<test_project_second>` returns the second input, it always returns
 
-* :ref:`True<test_what_is_true>` when the second input is :ref:`True<test_what_is_true>`
-* :ref:`False<test_what_is_false>` when the second input is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the second input
+* :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the second input
 
 ----
 
@@ -950,7 +939,7 @@ test_converse_non_implication
 
 ----
 
-I add a test for ``converse_non_implication`` in ``test_truth_table.py``
+I add a test for ``converse_non_implication`` in ``test_binary.py``
 
 .. code-block:: python
   :lineno-start: 43
@@ -991,7 +980,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   def converse_non_implication(first_input, second_input):
       return False
 
-the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_false>` when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
 
 ----
 
@@ -1001,7 +990,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 
 ----
 
-* I add the next case to ``test_converse_non_implication`` in ``test_truth_table.py``, when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* I add the next case to ``test_converse_non_implication`` in ``test_binary.py``, when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
 
   .. code-block:: python
     :lineno-start: 45
@@ -1013,7 +1002,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 
   the test is still green, because it expects :ref:`False<test_what_is_false>` in both cases
 
-* I add the third case - where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+* I add the third case - where :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
 
   .. code-block:: python
     :lineno-start: 45
@@ -1044,10 +1033,10 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 
   the test passes. The ``converse_non_implication`` :ref:`function<what is a function?>` returns
 
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
   - :ref:`False<test_what_is_false>` in all other cases
 
-* I add the next case - when the first and second inputs are both :ref:`False<test_what_is_false>`, to ``test_converse_non_implication`` in ``test_truth_table.py``
+* I add the next case - when the first and second inputs are both :ref:`False<test_what_is_false>`, to ``test_converse_non_implication`` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 45
@@ -1179,7 +1168,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 
 * ``not first_input and second_input``
 * the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Negation<test_logical_negation>` of the first input and the second input
-* :ref:`True<test_what_is_true>` only when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+* :ref:`True<test_what_is_true>` only when :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
 
 ----
 
@@ -1187,7 +1176,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 close the project
 *********************************************************************************
 
-* I close ``test_truth_table.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
+* I close ``test_binary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``truth_table``
