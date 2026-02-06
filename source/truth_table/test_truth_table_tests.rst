@@ -657,7 +657,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_disjunction'?
 
-* I add a :ref:`function<what is a function?>` for ``logical_conjunction``
+* I add a :ref:`function<what is a function?>` for :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 56

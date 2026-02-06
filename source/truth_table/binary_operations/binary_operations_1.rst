@@ -119,6 +119,16 @@ test_contradiction
 
     AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AttributeError
+
 ----
 
 =================================================================================
@@ -150,6 +160,17 @@ test_contradiction
 
   the :ref:`function<what is a function?>` only takes one input, but the test sent two
 
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # AttributeError
+    # TypeError
+
 * I add ``second_input`` as the second name in parentheses
 
   .. code-block:: python
@@ -164,7 +185,7 @@ test_contradiction
 :ref:`contradiction<test_contradiction>` returns
 
 * :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and if :ref:`True<test_what_is_true>` is the second input
-* the :ref:`opposite<test_logical_negation>` of the first input, in this case, if :ref:`True<test_what_is_true>` is the first input it returns :ref:`not True<test_what_is_false>`, which is :ref:`False<test_what_is_false>`
+* :ref:`False<test_what_is_false>`, which is the :ref:`opposite<test_logical_negation>` of the first input (:ref:`True<test_what_is_true>`) in this case
 
 ----
 
@@ -194,7 +215,7 @@ test_contradiction
 
   the test is still green
 
-* I add the second case for :ref:`test_contradiction` to ``test_binary.py``, this is when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+* I add the second case in :ref:`test_contradiction` to ``test_binary.py``, this is when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
 
   .. code-block:: python
     :lineno-start: 7
@@ -210,15 +231,15 @@ test_contradiction
 
   the test is still green. :ref:`contradiction<test_contradiction>` returns
 
-  - :ref:`False<test_what_is_false>` if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
-  - :ref:`False<test_what_is_false>` if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
-  - the :ref:`opposite<test_logical_negation>` of the first input, if :ref:`True<test_what_is_true>` is the first input as in these 2 cases it returns :ref:`not True<test_what_is_false>`, which is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - :ref:`False<test_what_is_false>`, which is the :ref:`opposite<test_logical_negation>` of the first input (:ref:`True<test_what_is_true>`) in these 2 cases
 
 * I add the third case, which is when :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 4
+    :lineno-start: 7
+    :emphasize-lines: 8-10
 
 
         def test_contradiction(self):
@@ -232,19 +253,30 @@ test_contradiction
                 src.truth_table.contradiction(False, True)
             )
 
+
+    # Exceptions seen
+
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
     AssertionError: True is not false
 
-  so far all three cases of the test expect :ref:`False<test_what_is_false>`, which means :ref:`contradiction<test_contradiction>`  should return :ref:`False<test_what_is_false>` when
+  the 3 cases so far all expect :ref:`False<test_what_is_false>`
 
-  - :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
-  - :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
-  - :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen
 
-* I change the `return statement`_ in the :ref:`contradiction<test_contradiction>`  :ref:`function<what is a function?>` in ``truth_table.py`` to return the expectation
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 4
+    :emphasize-text: AssertionError
+
+    # Exceptions seen
+    # AttributeError
+    # TypeError
+    # AssertionError
+
+* I make :ref:`the contradiction function<test_contradiction>` return :ref:`False<test_what_is_false>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -253,26 +285,38 @@ test_contradiction
     def contradiction(first_input, second_input):
         return False
 
-  the test passes
+  the test passes. :ref:`contradiction<test_contradiction>` returns
 
-* I add the fourth case to :ref:`test_contradiction` in ``test_binary.py``, this is when the two inputs are :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_False>`, if :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
+
+* I add the fourth case for when the two inputs are :ref:`False<test_what_is_false>` in :ref:`test_contradiction` to ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 5
+    :lineno-start: 7
+    :emphasize-lines: 11-13
 
         def test_contradiction(self):
-            self.assertFalse(src.truth_table.contradiction(True, True))
-            self.assertFalse(src.truth_table.contradiction(True, False))
-            self.assertFalse(src.truth_table.contradiction(False, True))
-            self.assertFalse(src.truth_table.contradiction(False, False))
+            self.assertFalse(
+                src.truth_table.contradiction(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.contradiction(True, False)
+            )
+            self.assertFalse(
+                src.truth_table.contradiction(False, True)
+            )
+            self.assertFalse(
+                src.truth_table.contradiction(False, False)
+            )
 
 
     # Exceptions seen
 
   the test is still green!
 
-:ref:`contradiction<test_contradiction>`  always returns :ref:`False<test_what_is_false>` it does not care about what it gets
+:ref:`contradiction always returns False, it does not care about what it gets<test_contradiction>`
 
 ----
 
@@ -288,16 +332,30 @@ test_logical_conjunction
 
 ----
 
-I add a test for ``logical_conjunction`` in ``test_binary.py`` with the first case where the two inputs are :ref:`True<test_what_is_true>`
+I add a test for the first case where the two inputs are :ref:`True<test_what_is_true>` for :ref:`logical_conjunction<test_logical_conjunction>` to ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 31
-  :emphasize-lines: 3-4
+  :lineno-start: 7
+  :emphasize-lines: 15-18
 
-            self.assertFalse(src.truth_table.contradiction(False, False))
+      def test_contradiction(self):
+          self.assertFalse(
+              src.truth_table.contradiction(True, True)
+          )
+          self.assertFalse(
+              src.truth_table.contradiction(True, False)
+          )
+          self.assertFalse(
+              src.truth_table.contradiction(False, True)
+          )
+          self.assertFalse(
+              src.truth_table.contradiction(False, False)
+          )
 
-        def test_logical_conjunction(self):
-            self.assertTrue(src.truth_table.logical_conjunction(True, True))
+      def test_logical_conjunction(self):
+          self.assertTrue(
+              src.truth_table.logical_conjunction(True, True)
+          )
 
 
   # Exceptions seen
@@ -316,7 +374,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add the :ref:`function<what is a function?>` in ``truth_table.py``
+I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 17
@@ -329,7 +387,7 @@ I add the :ref:`function<what is a function?>` in ``truth_table.py``
   def logical_conjunction(first_input, second_input):
       return True
 
-the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when the first and second input are both :ref:`True<test_what_is_true>`
+the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :ref:`True<test_what_is_true>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
 
 ----
 
@@ -339,15 +397,19 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
 
 ----
 
-* I add the next case - when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input, to ``test_logical_conjunction`` in ``test_binary.py``
+* I add the next case - when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 3
+    :lineno-start: 21
+    :emphasize-lines: 5-7
 
         def test_logical_conjunction(self):
-            self.assertTrue(src.truth_table.logical_conjunction(True, True))
-            self.assertFalse(src.truth_table.logical_conjunction(True, False))
+            self.assertTrue(
+                src.truth_table.logical_conjunction(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(True, False)
+            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -355,7 +417,7 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
 
     AssertionError: True is not false
 
-* I make the ``logical_conjunction`` :ref:`function<what is a function?>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
+* I make :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -363,7 +425,6 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
 
     def logical_conjunction(first_input, second_input):
         return False
-        return True
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -371,27 +432,95 @@ the test . ``logical_conjunction`` returns :ref:`True<test_what_is_true>` when t
 
     AssertionError: False is not true
 
-  The line that was passing before is now failing
+  the line that was passing before is now failing. :ref:`logical_conjunction<test_logical_conjunction>` has to make a choice. It should return
 
-``logical_conjunction`` has to make a choice. It should return
+  - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`True<test_what_is_true>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - the second input in these 2 cases
 
-- :ref:`False<test_what_is_false>` when the first input and second input are both :ref:`True<test_what_is_true>`
-- :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+* I change the `return statement`_ of :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
 
-I can make it do that with `if statements`_
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
 
----------------------------------------------------------------------------------
+    def logical_conjunction(first_input, second_input):
+        return second_input
+
+  the test passes
+
+* I add the 3rd case where :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input to :ref:`test_logical_conjunction` in ``test_binary.py``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 8-10
+
+        def test_logical_conjunction(self):
+            self.assertTrue(
+                src.truth_table.logical_conjunction(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(True, False)
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(False, True)
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: True is not false
+
+  my solution does not work for this case. :ref:`logical_conjunction<test_logical_conjunction>` has to make a choice, it should return
+
+  - :ref:`False<test_what_is_false>`, if :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`True<test_what_is_true>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
+
+  I can make it do that with `if statements`_
+
+----
+
+*********************************************************************************
 if statements
----------------------------------------------------------------------------------
+*********************************************************************************
 
-An `if statement`_ is a way for a program_ to do something based on something else. I can use them to make a :ref:`function<what is a function?>` choose between 2 things, there are written as
+An `if statement`_ is a way for a program_ to choose what to do based on something else. I can use `if statements`_ to make a :ref:`function<what is a function?>` choose between 2 things, they are written this way
 
 .. code-block:: python
 
   if something:
       then do this
 
-* I add `if statements`_ to the ``logical_conjunction`` :ref:`function<what is a function?>` in ``truth_table.py``
+* I add `if statements`_ for when :ref:`False<test_what_is_false>` is the first_input and :ref:`True<test_what_is_true>` is the second input to :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-4
+
+    def logical_conjunction(first_input, second_input):
+        if first_input == False:
+            if second_input == True:
+                return False
+        return second_input
+
+  the test passes.
+
+  - ``if first_input == False:`` checks if ``first_input`` is equal to :ref:`False<test_what_is_false>`
+
+    * if ``first_input`` is equal to :ref:`False<test_what_is_false>`, it goes to the next line ``if second_input == True:``
+    * if ``first_input`` is NOT equal to :ref:`False<test_what_is_false>`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``
+
+  - ``if second_input == True:`` checks if ``second_input`` is equal to :ref:`True<test_what_is_true>`
+
+    * if ``second_input`` is equal to :ref:`True<test_what_is_true>`, it goes to the next line ``return False``, it returns :ref:`False<test_what_is_false>` and leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+
+
+
+
+
+* I add `if statements`_ for when :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input to :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -403,29 +532,22 @@ An `if statement`_ is a way for a program_ to do something based on something el
                 return False
         return True
 
-  the test passes. ``logical_conjunction`` returns
+  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
 
-  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`False<test_what_is_false>` is the second input
+  - :ref:`True<test_what_is_true>`, if :ref:`True<test_what_is_true>` is the first input and :ref:`True<test_what_is_true>` is the second input
+  - the second input in these 2 cases
 
-* I add the case where :ref:`False<test_what_is_false>` is the first input and :ref:`True<test_what_is_true>` is the second input to ``test_logical_conjunction`` in ``test_binary.py``
 
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 4
 
-        def test_logical_conjunction(self):
-            self.assertTrue(src.truth_table.logical_conjunction(True, True))
-            self.assertFalse(src.truth_table.logical_conjunction(True, False))
-            self.assertFalse(src.truth_table.logical_conjunction(False, True))
+----
+----
+----
+----
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
 
-    AssertionError: True is not false
-
-* I add another `if statement`_ for this case to ``logical_conjunction`` in ``truth_table.py``
+* I add another `if statement`_ for this case to :ref:`logical_conjunction<test_logical_conjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -440,16 +562,16 @@ An `if statement`_ is a way for a program_ to do something based on something el
                 return False
         return True
 
-  the test passes. ``logical_conjunction`` returns
+  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
 
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
 
-* I add the last case, which is when the two inputs are :ref:`False<test_what_is_false>`, to ``test_logical_conjunction`` in ``test_binary.py``
+* I add the last case, which is when the two inputs are :ref:`False<test_what_is_false>`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 21
     :emphasize-lines: 5
 
         def test_logical_conjunction(self):
@@ -467,7 +589,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
     AssertionError: True is not false
 
-* I add `if statements`_ for the new case to ``logical_conjunction`` in ``truth_table.py``
+* I add `if statements`_ for the new case to :ref:`logical_conjunction<test_logical_conjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -485,7 +607,7 @@ An `if statement`_ is a way for a program_ to do something based on something el
                 return False
         return True
 
-  the test passes. ``logical_conjunction`` returns
+  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
 
   - :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`True<test_what_is_true>`
@@ -644,9 +766,11 @@ An `if statement`_ is a way for a program_ to do something based on something el
 
   I remove the commented line
 
----------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 conditional expressions
----------------------------------------------------------------------------------
+*********************************************************************************
 
 * Python_ has `ternary operators`_ or `conditional expressions`_ which allow me to write the `if statement`_ and the `else clause`_ as one line
 
@@ -1053,7 +1177,7 @@ the test passes. ``converse_non_implication`` returns :ref:`False<test_what_is_f
 
   the test is still passing
 
-* I use ``and`` also known as ``logical_conjunction`` to put the two `if statements`_ together in ``converse_non_implication`` in ``truth_table.py``
+* I use ``and`` also known as :ref:`logical_conjunction<test_logical_conjunction>` to put the two `if statements`_ together in ``converse_non_implication`` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 29

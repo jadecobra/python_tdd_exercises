@@ -1132,7 +1132,7 @@ I like to write my functions_ this way, so that anyone can see what the :ref:`fu
 test_what_happens_after_a_function_returns
 *********************************************************************************
 
-The `return statement`_ is the last thing that runs in a :ref:`function<what is a function?>`.
+The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`.
 
 ----
 
