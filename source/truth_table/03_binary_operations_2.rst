@@ -2,7 +2,7 @@
   :description: Learn to build Binary Operations 1n Python with Test-Driven Development. This tutorial covers logical NAND, disjunction, and more. Watch the full tutorial!
   :keywords: Jacob Itegboje, python truth table binary operations, test driven development python tutorial, python logical operations for beginners, how to implement logical NAND in python, python TDD example with unittest, learn python binary logic step by step, python logical disjunction implementation, what is tautology in python programming
 
-.. include:: ../../../links.rst
+.. include:: ../links.rst
 
 .. _binary_operations_ii:
 
@@ -31,7 +31,7 @@ preview
 
 Here are the tests I have at the end of the chapters
 
-.. literalinclude:: ../../../code/tests/test_truth_table_binary_ii.py
+.. literalinclude:: ../code/truth_table/tests/test_truth_table_binary_ii.py
   :language: python
   :linenos:
 

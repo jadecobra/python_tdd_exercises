@@ -146,7 +146,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     FAILED tests/test_pro_magic.py::Testpro_magic::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
-  this program_ does not make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made but :ref:`there is a better way<BONUS: makePythonTdd.sh Plus>`
+  this program_ does not make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made but :ref:`there is a better way<BONUS: makePythonTdd.sh Pro>`
 
 * I hold :kbd:`ctrl` on the keyboard and click on ``tests/pro_magic.py`` in the terminal_ to open it in the :ref:`editor<2 editors>`
 

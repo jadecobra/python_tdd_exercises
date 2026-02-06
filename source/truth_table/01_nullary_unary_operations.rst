@@ -2,7 +2,7 @@
   :description: Stumped by Python's logic? Master nullary and unary operations with our easy-to-follow truth table tutorial. Learn the key differences and start coding.
   :keywords: Jacob Itegboje, python nullary vs unary operations, python truth table tutorial for beginners, logical identity and negation in python, test-driven development with python for truth tables, python boolean logic explained for data structures, how to implement logical operations in python from scratch, what are nullary functions in python, python logical operators and, or, not examples
 
-.. include:: ../../../links.rst
+.. include:: ../links.rst
 
 #################################################################################
 truth table: Nullary and Unary Operations
@@ -20,7 +20,7 @@ preview
 
 Here are the tests I have at the end of the chapters
 
-.. literalinclude:: ../../../code/tests/test_truth_table_nullary_unary.py
+.. literalinclude:: ../code/truth_table/tests/test_truth_table_nullary_unary.py
   :language: python
   :linenos:
 

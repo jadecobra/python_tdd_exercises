@@ -2,7 +2,7 @@
   :description: Master Python truth tables by implementing binary operations like negation, NOR, and material implication. Learn to code these logical functions step-by-step. Watch the full tutorial.
   :keywords: Jacob Itegboje, python truth table for binary operations, how to implement logical NOR in python, python material implication explained, python truth table for loop, python logical operations tutorial, truth table for negation in python, python binary operations tutorial, how to create a truth table in python with multiple inputs
 
-.. include:: ../../../links.rst
+.. include:: ../links.rst
 
 .. _binary_operations_iv:
 
@@ -30,7 +30,7 @@ preview
 
 Here are the tests I have at the end of the chapters
 
-.. literalinclude:: ../../../code/tests/test_truth_table_binary_iv.py
+.. literalinclude:: ../code/truth_table/tests/test_truth_table_binary_iv.py
   :language: python
   :linenos:
 

@@ -1,4 +1,4 @@
-.. include:: ../../../links.rst
+.. include:: ../links.rst
 
 .. _truth_table:
 
@@ -30,7 +30,7 @@ preview
 
 Here are the tests I have at the end of the chapters
 
-.. literalinclude:: ../../../code/tests/test_truth_table.py
+.. literalinclude:: ../code/truth_table/tests/test_truth_table.py
   :language: python
   :linenos:
 

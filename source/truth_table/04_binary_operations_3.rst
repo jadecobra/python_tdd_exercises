@@ -2,7 +2,7 @@
   :description: Master Python's boolean logic. This clear, step-by-step guide explains AND, OR, and NOT operators with easy-to-follow truth tables. Build your first one now.
   :keywords: Jacob Itegboje, python truth table for beginners, boolean logic and or not first_inputython tutorial, how to make a truth table in python code, practical use of truth tables in programming, python logical operators explained for new programmers, understanding boolean expressions in python, python 'and' vs 'or' truth table differences, troubleshooting boolean logic in python script
 
-.. include:: ../../../links.rst
+.. include:: ../links.rst
 
 .. _binary_operations_iii:
 
@@ -30,7 +30,7 @@ preview
 
 Here are the tests I have at the end of the chapters
 
-.. literalinclude:: ../../../code/tests/test_truth_table_binary_iii.py
+.. literalinclude:: ../code/truth_table/tests/test_truth_table_binary_iii.py
   :language: python
   :linenos:
 

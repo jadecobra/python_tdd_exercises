@@ -2,7 +2,7 @@
   :description: Master test-driven development in Python by learning to build and refactor logical functions from scratch. Watch the full tutorial to go from 20 failures to success.
   :keywords: Jacob Itegboje, python test driven development tutorial, how to write logical functions in python, python tdd practical example, python truth table tests, refactoring python code, python unittest tutorial, learn tdd with python, python binary operations tutorial
 
-.. include:: ../../../links.rst
+.. include:: ../links.rst
 
 .. _test_truth_table_tests:
 
