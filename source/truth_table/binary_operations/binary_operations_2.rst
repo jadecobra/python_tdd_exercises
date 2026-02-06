@@ -4,7 +4,7 @@
 
 .. include:: ../../links.rst
 
-.. _binary_operations_ii:
+.. _binary_operations_2:
 
 #################################################################################
 truth table: Binary Operations 2
@@ -1420,7 +1420,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like test even more binary operations? <binary_operations_iii>`
+:ref:`Would you like test even more binary operations? <binary_operations_1ii>`
 
 ----
 

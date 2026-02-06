@@ -4,7 +4,7 @@
 
 .. include:: ../../links.rst
 
-.. _binary_operations_iii:
+.. _binary_operations_3:
 
 #################################################################################
 truth table: Binary Operations 3
@@ -1405,7 +1405,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test the last binary operations?<binary_operations_iv>`
+:ref:`Would you like to test the last binary operations?<binary_operations_1v>`
 
 ----
 

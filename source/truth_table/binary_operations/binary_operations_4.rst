@@ -4,7 +4,7 @@
 
 .. include:: ../../links.rst
 
-.. _binary_operations_iv:
+.. _binary_operations_4:
 
 #################################################################################
 truth table: Binary Operations 4

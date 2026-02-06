@@ -29,7 +29,7 @@ the chapters
 
   classes
   inheritance
-  ../../data_structures/booleans/booleans_iii
+  ../../data_structures/booleans/booleans_4
   ../../calculator/calculator_viii
 
 ----
