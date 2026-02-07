@@ -30,6 +30,18 @@ the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table`
 ----
 
 *********************************************************************************
+Booleans 2 tests
+*********************************************************************************
+
+the code in ``booleans/tests/test_booleans.py`` from :ref:`booleans 2`
+
+.. literalinclude:: truth_table/tests/test_binary.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
 solutions
 *********************************************************************************
 

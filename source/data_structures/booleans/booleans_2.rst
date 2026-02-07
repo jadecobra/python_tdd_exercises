@@ -370,11 +370,348 @@ the test passes
 more bool at work
 *********************************************************************************
 
+Oh No! More of the same thing
+
 ----
 
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add an :ref:`assertion<what is an assertion?>` with bool_ to :ref:`test_what_is_true`
+
+.. code-block:: python
+  :lineno-start: 26
+  :emphasize-lines: 5
+
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+          self.assertTrue(True)
+          self.assertTrue(-1)
+          self.assertFalse(bool(-1))
+          self.assertTrue(1)
+          self.assertTrue(-0.1)
+          self.assertTrue(0.1)
+          self.assertTrue("text")
+          self.assertTrue((1, 2, 3, 'n'))
+          self.assertTrue([1, 2, 3, 'n'])
+          self.assertTrue({1, 2, 3, 'n'})
+          self.assertTrue({'key': 'value'})
 
 
+  # NOTES
 
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: True is not false
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change assertFalse_ to assertTrue_
+
+.. code-block:: python
+  :lineno-start: 30
+  :emphasize-lines: 1
+
+          self.assertTrue(bool(-1))
+
+the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* on to the next one
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 7
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(bool(-1))
+            self.assertTrue(1)
+            self.assertFalse(bool(1))
+            self.assertTrue(-0.1)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 1
+
+            self.assertTrue(bool(1))
+
+  the test passes. The result of ``bool(1)`` is :ref:`True<test_what_is_true>`
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 9
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(bool(-1))
+            self.assertTrue(1)
+            self.assertTrue(bool(1))
+            self.assertTrue(-0.1)
+            self.assertTrue(bool(-0.1))
+            self.assertFalse(0.1)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 1
+
+            self.assertTrue(bool(-0.1))
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 4
+
+            self.assertTrue(-0.1)
+            self.assertTrue(bool(-0.1))
+            self.assertTrue(0.1)
+            self.assertFalse(bool(0.1))
+            self.assertTrue("text")
+            self.assertTrue((1, 2, 3, 'n'))
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue({'key': 'value'})
+
+    # NOTES
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 1
+
+            self.assertTrue(bool(0.1))
+
+  the test passes
+
+* I add another one
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 6
+
+            self.assertTrue(-0.1)
+            self.assertTrue(bool(-0.1))
+            self.assertTrue(0.1)
+            self.assertTrue(bool(0.1))
+            self.assertTrue("text")
+            self.assertFalse(bool("text"))
+            self.assertTrue((1, 2, 3, 'n'))
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue({'key': 'value'})
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 1
+
+            self.assertTrue(bool("text"))
+
+  the tests passes
+
+* I add another :ref:`assertion<what is an assertion?>`, when is this going to end?
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 4
+
+            self.assertTrue("text")
+            self.assertTrue(bool("text"))
+            self.assertTrue((1, 2, 3, 'n'))
+            self.assertFalse(bool((1, 2, 3, 'n')))
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue({'key': 'value'})
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 1
+
+            self.assertTrue(bool((1, 2, 3, 'n')))
+
+  the test passes
+
+* another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 6
+
+            self.assertTrue("text")
+            self.assertTrue(bool("text"))
+            self.assertTrue((1, 2, 3, 'n'))
+            self.assertTrue(bool((1, 2, 3, 'n')))
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertFalse(bool([1, 2, 3, 'n']))
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue({'key': 'value'})
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 1
+
+            self.assertTrue(bool([1, 2, 3, 'n']))
+
+  the test passes
+
+* I add the next :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 4
+
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertTrue(bool([1, 2, 3, 'n']))
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertFalse(bool({1, 2, 3, 'n'}))
+            self.assertTrue({'key': 'value'})
+
+
+    # NOTES
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 1
+
+            self.assertTrue(bool({1, 2, 3, 'n'}))
+
+  the test passes
+
+* I add the last one. Finally!
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 6
+
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertTrue(bool([1, 2, 3, 'n']))
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue(bool({1, 2, 3, 'n'}))
+            self.assertTrue({'key': 'value'})
+            self.assertFalse(bool({'key': 'value'}))
+
+
+    # NOTES
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 21
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(bool(-1))
+            self.assertTrue(1)
+            self.assertTrue(bool(1))
+            self.assertTrue(-0.1)
+            self.assertTrue(bool(-0.1))
+            self.assertTrue(0.1)
+            self.assertTrue(bool(0.1))
+            self.assertTrue("text")
+            self.assertTrue(bool("text"))
+            self.assertTrue((1, 2, 3, 'n'))
+            self.assertTrue(bool((1, 2, 3, 'n')))
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertTrue(bool([1, 2, 3, 'n']))
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue(bool({1, 2, 3, 'n'}))
+            self.assertTrue({'key': 'value'})
+            self.assertTrue(bool({'key': 'value'}))
+
+
+    # NOTES
+
+  the test passes
 
 ----
 
@@ -383,24 +720,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line, the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/booleans
-
-* I deactivate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/booleans
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``booleans``
 
@@ -423,6 +743,9 @@ close the project
 review
 *********************************************************************************
 
+* ``bool(anything)`` returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+* ``assertFalse(anything)`` checks if the result of ``bool(anything)`` is :ref:`False<test_what_is_false>`, it raises :ref:`AssertionError<what causes AssertionError?>` if it is not
+* ``assertTrue(anything)`` checks if the result of ``bool(anything)`` is :ref:`True<test_what_is_true>`, it raises :ref:`AssertionError<what causes AssertionError?>` if it is not
 
 ----
 
@@ -430,7 +753,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: list comprehensions: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed for the Truth Table?<truth table: tests and solutions>`
 
 ----
 
