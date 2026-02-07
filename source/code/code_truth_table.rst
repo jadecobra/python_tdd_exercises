@@ -35,7 +35,7 @@ Booleans 2 tests
 
 the code in ``booleans/tests/test_booleans.py`` from :ref:`booleans 2`
 
-.. literalinclude:: truth_table/tests/test_binary.py
+.. literalinclude:: code/booleans/test_booleans_truth_table.py
   :language: python
   :linenos:
 
