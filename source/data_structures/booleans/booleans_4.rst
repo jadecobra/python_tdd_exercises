@@ -27,28 +27,6 @@ open the project
 
     .../pumping_python/booleans
 
-* I activate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/booleans
-
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
