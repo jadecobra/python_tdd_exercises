@@ -6,8 +6,6 @@
 
 .. _list comprehension: https://docs.python.org/3/glossary.html#term-list-comprehension
 .. _list comprehensions: https://docs.python.org/3/glossary.html#term-list-comprehension
-.. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
-.. _range object: range_
 .. _filter: https://docs.python.org/3/library/functions.html#filter
 .. _filter object: filter_
 .. _filterfalse: https://docs.python.org/3/library/itertools.html#itertools.filterfalse

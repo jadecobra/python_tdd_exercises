@@ -89,7 +89,7 @@ test_contradiction
 
 ----
 
-* I make a new file_ in the tests_ folder_ named ``test_binary.py``
+* I make a new file_ in the ``tests`` folder_ named ``test_binary.py``
 
 * I add a new TestCase_ to ``test_binary.py``
 
@@ -1403,7 +1403,7 @@ and
 * :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
 * :ref:`Logical Negation <test_logical_negation>` is "not_"
 
-All the logic statements or conditions have been written with some or all of these 2.
+All the logic statements or conditions have been written with and_ or not_ or both.
 
 ----
 
@@ -1419,7 +1419,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test more binary operations? <binary_operations_1i>`
+:ref:`Would you like to write more tests with bool?<booleans 2>`
 
 ----
 

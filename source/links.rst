@@ -135,6 +135,8 @@
 .. _raise: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement
 .. _raises: raise_
 .. _raise statement: raises_
+.. _range: https://docs.python.org/3/library/stdtypes.html?highlight=range#range
+.. _range object: range_
 .. _random: https://docs.python.org/3/library/random.html?highlight=random#module-random
 .. _random module: random_
 .. _random.triangular: https://docs.python.org/3/library/random.html#random.triangular

@@ -42,6 +42,6 @@ booleans 2: tests
 
 the tests in ``booleans/tests/test_booleans.py`` from :ref:`booleans 2`
 
-.. literalinclude:: tests/booleans/test_booleans_list_comprehensions.py
+.. literalinclude:: booleans/test_booleans_list_comprehensions.py
   :language: python
   :linenos:

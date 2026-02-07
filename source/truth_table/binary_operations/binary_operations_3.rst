@@ -1405,7 +1405,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test the last binary operations?<binary_operations_1v>`
+:ref:`Would you like to test the last binary operations?<binary_operations_4>`
 
 ----
 

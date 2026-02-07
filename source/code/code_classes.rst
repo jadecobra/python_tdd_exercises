@@ -57,7 +57,7 @@ booleans 3: tests
 
 the code in ``booleans/tests/test_booleans.py`` from :ref:`booleans 3`
 
-.. literalinclude:: tests/booleans/test_booleans_classes.py
+.. literalinclude:: booleans/test_booleans_classes.py
   :language: python
   :linenos:
 

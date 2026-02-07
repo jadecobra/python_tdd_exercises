@@ -1420,7 +1420,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like test even more binary operations? <binary_operations_1ii>`
+:ref:`Would you like test even more binary operations? <binary_operations_3>`
 
 ----
 
