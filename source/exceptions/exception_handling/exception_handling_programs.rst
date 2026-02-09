@@ -666,7 +666,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  the terminal_ shows green again! I know :ref:`how to test that an Exception is raised` and :ref:`how to handle Exceptions (Errors) in programs`. I am a master!!
+  the test is green again again! I know :ref:`how to test that an Exception is raised` and :ref:`how to handle Exceptions (Errors) in programs`. I am a master!!
 
 ----
 

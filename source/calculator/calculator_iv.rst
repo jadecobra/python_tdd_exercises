@@ -973,7 +973,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     def multiply(first_input, second_input):
         try:
 
-  the terminal_ shows green
+  the test is green again
 
 * I remove the parts that are also in the ``only_takes_numbers`` :ref:`function<what is a function?>`
 
@@ -1029,7 +1029,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):
 
-  the test is still passing
+  the test is still green
 
 * I remove the :ref:`exception handler<how to use try...except...else>` from the `else clause`_
 
@@ -1224,7 +1224,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     @only_takes_numbers_and_rejects_strings
     def add(first_input, second_input):
 
-  the terminal_ shows green
+  the test is green again
 
 * I remove ``only_takes_numbers`` from each :ref:`function<what is a function?>`
 

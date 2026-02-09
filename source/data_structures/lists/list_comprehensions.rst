@@ -638,7 +638,7 @@ I add the :ref:`iterable<what is an iterable?>`
 
           self.assertIsNone(a_list.extend(iterable))
 
-the terminal_ shows green again, the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` returns :ref:`None<what is None?>`
+the test is green again again, the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` returns :ref:`None<what is None?>`
 
 ----
 
@@ -1159,7 +1159,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if item % 3 == 0]
             )
 
-  the terminal_ shows green
+  the test is green again
 
 * I change the :ref:`condition<if statements>` in the `list comprehension`_ of the second :ref:`assertion<what is an assertion?>`
 
@@ -1218,7 +1218,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 if condition(item):
                     even_numbers.append(item)
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the commented line and use the new :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>`
 
@@ -1256,7 +1256,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if condition(item)]
             )
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the commented line
 
@@ -1443,7 +1443,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         return [number for number in numbers if not is_even(number)]
         return [number for number in numbers if number % 2 != 0]
 
-  the test is still passing
+  the test is still green
 
 * I remove the second `return statement`_
 
@@ -1726,7 +1726,7 @@ the test passes
                 [process(item) for item in self.iterable]
             )
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the commented line
 

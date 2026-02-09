@@ -306,7 +306,7 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
 
   .. NOTE::
 
-    ``==`` is 2 equal signs - :kbd:`=+=` and means ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``. The terminal_ still shows green
+    ``==`` is 2 equal signs - :kbd:`=+=` and means ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``. the test is still green
 
 * I change the statement to make it :ref:`False<test_what_is_false>`
 
@@ -316,7 +316,7 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
 
             1 + 1 == 11
 
-  the terminal_ still shows green.
+  the test is still green.
 
 * I want the test to fail when I write a statement that is not :ref:`True<test_what_is_true>`. I change it to an `assert statement`_
 

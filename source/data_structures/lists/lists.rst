@@ -534,7 +534,7 @@ I add ``0`` as input
 
           self.assertIsNone(a_list.append(0))
 
-the terminal_ shows green, the `append method`_ returns :ref:`None<what is None?>` when called
+the test is green again, the `append method`_ returns :ref:`None<what is None?>` when called
 
 ----
 
@@ -648,7 +648,7 @@ I add a test for the `clear method`_
 
   'clear',
 
-the terminal_ shows green. The `clear method`_ returns :ref:`None<what is None?>` when called
+the test is green again. The `clear method`_ returns :ref:`None<what is None?>` when called
 
 ----
 
@@ -1443,7 +1443,7 @@ the test passes
         def test_index(self):
             a_list = ['1st', '2nd', '3rd', '...last', '1st']
 
-  the terminal_ still shows green
+  the test is still green
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -1669,7 +1669,7 @@ the test passes. What did the `insert method`_ do to the list_?
             self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
             self.assertIsNone(a_list.insert(3, 1.5))
 
-  the terminal_ shows green
+  the test is green again
 
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the list
 
@@ -1961,7 +1961,7 @@ I add a value to the call
 
           self.assertIsNone(a_list.remove(0))
 
-the terminal_ shows green. The `remove method`_ returns :ref:`None<what is None?>`
+the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
 ----
 
@@ -2117,7 +2117,7 @@ test_reverse_a_list
 
     'reverse',
 
-  the terminal_ shows green. The `reverse method`_ returns :ref:`None<what is None?>`.
+  the test is green again. The `reverse method`_ returns :ref:`None<what is None?>`.
 
 * I add an :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
@@ -2295,7 +2295,7 @@ the test passes
             a_list = [0, 1, 2, 3]
             self.assertIsNone(a_list.sort())
 
-  the terminal_ still shows green, sort_ returns :ref:`None<what is None?>` when called
+  the test is still green, sort_ returns :ref:`None<what is None?>` when called
 
 * I add another :ref:`assertion<what is an assertion?>` to see what it did to the list_
 
@@ -2526,7 +2526,7 @@ the test passes
 
             self.assertEqual(a_list[2], '3rd')
 
-  the terminal_ shows green again
+  the test is green again again
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -2812,7 +2812,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
             self.assertEqual(a_list[:2], ['a', 'b'])
 
-  the terminal_ shows green again. ``[0:2]`` and ``[:2]`` are the same
+  the test is green again again. ``[0:2]`` and ``[:2]`` are the same
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -3102,7 +3102,7 @@ the test passes
             with self.assertRaises(IndexError):
                 [].pop()
 
-  the terminal_ shows green
+  the test is green again
 
 * I cannot remove the last item from a list_ that has no items, this is the same as trying to get an item from a list_ that has no items
 

@@ -189,7 +189,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     ModuleNotFoundError: No module called 'src.module_02'
 
-* I add ``module_02.py`` to the ``src`` folder and the terminal_ shows green again, I close the file
+* I add ``module_02.py`` to the ``src`` folder and the test is green again again, I close the file
 
 * I add another `import statement`_ in ``test_module_not_found_error.py``
 

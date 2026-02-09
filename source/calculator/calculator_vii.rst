@@ -1036,7 +1036,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                 self.division_result
             )
 
-  the terminal_ shows green again. Lovely!
+  the test is green again again. Lovely!
 
 * I remove the lines I commented out to replace with ``self.division_result``
 

@@ -926,7 +926,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
             first_number = 123456
             second_number = 789012
 
-  the terminal_ still shows green
+  the test is still green
 
   .. code-block:: python
     :lineno-start: 8
@@ -935,7 +935,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
             first_number = 0.1234
             second_number = -5.6789
 
-  the test is still passing. The problem with this is I lose the test for the previous number, everytime I change a number. I need a better way
+  the test is still green. The problem with this is I lose the test for the previous number, everytime I change a number. I need a better way
 
 * I want to use random numbers for ``first_input`` and ``second_input`` to make sure that the ``add`` :ref:`function<what is a function?>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the `random module`_ from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
 
@@ -1085,7 +1085,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
             # random_second_number = random.triangular(-10.0, 10.0)
             random_second_number = a_random_number()
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the commented lines
 
@@ -1105,7 +1105,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
     def a_random_number():
         return random.triangular(-10000.0, 10000.0)
 
-  and the terminal_ still shows green
+  and the test is still green
 
 * I can use any range of numbers the computer can handle, for example
 
@@ -1431,7 +1431,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
                 self.random_first_number-self.random_second_number
             )
 
-  the test is still passing. I remove the commented lines
+  the test is still green. I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 31

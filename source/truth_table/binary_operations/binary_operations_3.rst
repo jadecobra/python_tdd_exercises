@@ -197,7 +197,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             return True
         return False
 
-  the terminal_ still shows green. ``exclusive_disjunction`` returns
+  the test is still green. ``exclusive_disjunction`` returns
 
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
@@ -265,7 +265,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             return True
         return False
 
-  the terminal_ still shows green. ``exclusive_disjunction`` returns
+  the test is still green. ``exclusive_disjunction`` returns
 
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
@@ -342,7 +342,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             return True
         return False
 
-  the test is still passing
+  the test is still green
 
   .. TIP:: I can put two :ref:`if statements` together with :ref:`Logical Disjunction<test_logical_disjunction>` (or_) when they are at the same indentation level and return the same thing. For example
 
@@ -387,9 +387,9 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             return True
         return False
 
-  the test is still passing
+  the test is still green
 
-* I use a `conditional expression`_
+* I use a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -403,7 +403,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
 
   why is the grass greener on the other side?
 
-* I remove the other statements in the :ref:`function<what is a function?>` and make the `ternary operator`_ simpler
+* I remove the other statements in the :ref:`function<what is a function?>` and make the :ref:`ternary operator<conditional expressions>` simpler
 
   .. code-block:: python
     :lineno-start: 49
@@ -413,7 +413,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
         return (not first_input and second_input) or (first_input and not second_input)
         return True if (not first_input and second_input) or (first_input and not second_input) else False
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the second `return statement`_
 
@@ -438,7 +438,7 @@ the test passes. ``exclusive_disjunction`` returns :ref:`False<test_what_is_fals
             return True
         return (not first_input and second_input) or (first_input and not second_input)
 
-  the terminal_ still shows green
+  the test is still green
 
 * I change the new :ref:`if statement<if statements>` to a simple `return statement`_
 
@@ -639,7 +639,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
     # Exceptions seen
 
-  the terminal_ still shows green. ``material_non_implication`` returns
+  the test is still green. ``material_non_implication`` returns
 
   - :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
@@ -658,7 +658,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
             return True
         return False
 
-  the test is still passing
+  the test is still green
 
 * I remove the commented line and change the :ref:`if statement<if statements>` with bool_
 
@@ -688,7 +688,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
   the test is still green
 
-* I remove the commented lines then add a `conditional expression`_
+* I remove the commented lines then add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -844,7 +844,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
                 return False
         return True
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the commented line and move the `return statement`_ to the left
 
@@ -947,7 +947,7 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
             return False
         return True
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the other statements in the :ref:`function<what is a function?>`
 
@@ -1122,7 +1122,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     # Exceptions seen
 
-  the terminal_ still shows green. ``converse_implication`` returns
+  the test is still green. ``converse_implication`` returns
 
   - :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
@@ -1168,7 +1168,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
             return False
         return True
 
-  the terminal_ still shows green
+  the test is still green
 
 * I add the opposite of the :ref:`if statement<if statements>` for the second `return statement`_
 
@@ -1182,7 +1182,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
         if not (not first_input and second_input):
             return True
 
-  the test is still passing
+  the test is still green
 
 * I move the new :ref:`if statement<if statements>` to the top
 
@@ -1198,7 +1198,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   green
 
-* I add a `conditional expression`_
+* I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -1213,7 +1213,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
   the test is still green
 
-* I remove the other if statements and write a simpler `conditional expression`_
+* I remove the other if statements and write a simpler :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -1223,7 +1223,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
         return not (not first_input and second_input)
         return True if not (not first_input and second_input) else False
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the commented lines and "multiply not_" by the symbols in the parentheses
 

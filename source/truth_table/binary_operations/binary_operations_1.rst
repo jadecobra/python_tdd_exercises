@@ -4,6 +4,12 @@
 
 .. include:: ../../links.rst
 .. _the Visual Studio Code Python Extension: `Python Extension`_
+.. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
+.. _if statements: `if statement`_
+.. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
+.. _conditional expressions: `conditional expression`_
+.. _ternary operator: `conditional expression`_
+.. _ternary operators: `conditional expression`_
 
 .. _binary_operations_1:
 
@@ -447,7 +453,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :r
 
   the test passes
 
-* I add the 3rd case where :ref:`False<test_what_is_false>` is the first input and the second input is :ref:`True<test_what_is_true>` to :ref:`test_logical_conjunction` in ``test_binary.py``
+* I add the 3rd case where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to :ref:`test_logical_conjunction` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 21

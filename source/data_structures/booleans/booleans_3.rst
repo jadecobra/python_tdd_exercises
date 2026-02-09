@@ -427,7 +427,7 @@ the test passes
                 with self.subTest(i=true_item):
                     self.assertTrue(true_item)
 
-  the terminal_ still shows green
+  the test is still green
 
 * I remove the commented lines
 

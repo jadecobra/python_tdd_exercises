@@ -949,7 +949,7 @@ It also gives me a message about how to show the full difference between the two
 
     # Exceptions seen
 
-  the terminal_ still shows green
+  the test is still green
 
 ----
 
@@ -1388,7 +1388,7 @@ the terminal_ shows :ref:`TypeError`
                 {0: None, 1: None}
             )
 
-  the terminal_ still shows green
+  the test is still green
 
 * I change the second input, I think this will fail
 
@@ -1530,7 +1530,7 @@ the test passes
 
             self.assertIsNone(a_dictionary.get(0, None))
 
-  the terminal_ still shows green
+  the test is still green
 
 * I change the second argument, I think this will fail
 

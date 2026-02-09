@@ -343,7 +343,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def false():
         return False
 
-  the terminal_ shows green again
+  the test is green again again
 
 * I add a line to test the other :ref:`boolean<what are booleans?>` in ``test_type_error.py``
 
@@ -751,7 +751,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_dictionary():
         return {'key': 'value'}
 
-  the terminal_ shows green again. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test is green again again. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
 
 It is safe to say that I cannot call :ref:`data structures` because they are NOT callable_. I can call :ref:`functions<what is a function?>`, they are callable_
 

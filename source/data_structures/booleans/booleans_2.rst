@@ -8,7 +8,7 @@
 booleans 2
 #################################################################################
 
-I used bool_ the way I used the `assertFalse method`_ in :ref:`test_what_is_false` and the `assertTrue method`_ in :ref:`test_what_is_true` while I was refactoring `if statements`_ in :ref:`Truth Table: Binary Operations 1<binary_operations_1>`.
+I used bool_ the way I used the `assertFalse method`_ in :ref:`test_what_is_false` and the `assertTrue method`_ in :ref:`test_what_is_true` while I was refactoring :ref:`if statements` in :ref:`Truth Table: Binary Operations 1<binary_operations_1>`.
 
 I want to practice using bool_ in :ref:`test_what_is_true` and :ref:`test_what_is_false`.
 

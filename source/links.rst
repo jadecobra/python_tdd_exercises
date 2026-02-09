@@ -43,8 +43,6 @@
 .. _chmod: https://grokipedia.com/page/Chmod
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _computer program: https://grokipedia.com/page/Computer_program
-.. _conditional expression: https://docs.python.org/3/reference/expressions.html#conditional-expressions
-.. _conditional expressions: `conditional expression`_
 .. _directory: https://grokipedia.com/page/Directory_(computing)
 .. _directories: directory_
 .. _datetime: https://docs.python.org/3/library/datetime.html?highlight=time%20difference#module-datetime
@@ -83,8 +81,6 @@
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable
 .. _history: https://man7.org/Linux/man-pages/man3/history.3.html
 .. _history program: history_
-.. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
-.. _if statements: `if statement`_
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _import statements: `import statement`_
 .. _int: https://docs.python.org/3/library/functions.html#int
@@ -160,8 +156,6 @@
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: str_
 .. _strings: str_
-.. _ternary operator: https://docs.python.org/3/reference/expressions.html#conditional-expressions
-.. _ternary operators: `ternary operator`_
 .. _terminal: https://grokipedia.com/page/Terminal_emulator#terminal-emulator
 .. _the greatest programmer in the world: https://www.reddit.com/r/ProgrammerHumor/comments/f8duna/the_two_states_of_every_programmer/
 .. _touch: https://en.wikipedia.org/wiki/Touch_(command)

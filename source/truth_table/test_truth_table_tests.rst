@@ -109,7 +109,7 @@ continue the project
 
     TypeError: 'NoneType' object is not callable
 
-  I make ``tautology`` a :ref:`function<what is a function?>`
+  I make :ref:`tautology<test_tautology>` a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -154,7 +154,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
-* I add the :ref:`function<what is a function?>` using the solution I just used for ``tautology``
+* I add the :ref:`function<what is a function?>` using the solution I just used for :ref:`tautology<test_tautology>`
 
   .. code-block:: python
     :linenos:
@@ -535,7 +535,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_nor'?
 
-* I add a :ref:`function<what is a function?>` for ``logical_nand``
+* I add a :ref:`function<what is a function?>` for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -622,7 +622,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'
 
-* I add a :ref:`function<what is a function?>` for ``logical_disjunction``
+* I add a :ref:`function<what is a function?>` for :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -1118,7 +1118,7 @@ continue the project
     def logical_false():
         return False
 
-  the terminal_ shows green! All tests are passing and the world is a better place than when I started.
+  the test is green again! All tests are passing and the world is a better place than when I started.
 
 *********************************************************************************
 :yellow:`REFACTOR`: make it better
@@ -1211,7 +1211,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ still shows green and I remove the other lines in the :ref:`function<what is a function?>`
+  the test is still green and I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -1305,7 +1305,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ still shows green. I remove the other lines in the :ref:`function<what is a function?>`
+  the test is still green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -1333,7 +1333,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, True): return False
         return first_input, second_input
 
-  the terminal_ still shows green. I remove the other lines in the :ref:`function<what is a function?>`
+  the test is still green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 49
@@ -1434,7 +1434,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first_input, second_input) == (False, False): return False
         return first_input, second_input
 
-  the terminal_ still shows green. I remove the other statements in the :ref:`function<what is a function?>`
+  the test is still green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -1647,7 +1647,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         # return (not first_input) (not or) (not second_input)
         return not first_input and not second_input
 
-  the terminal_ still shows green. I remove the other statements in the :ref:`function<what is a function?>`
+  the test is still green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -1745,7 +1745,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         return first_input and second_input
         return (first_input, second_input) == (True, True)
 
-  the terminal_ still shows green. I remove the other `return statement`_
+  the test is still green. I remove the other `return statement`_
 
   .. code-block:: python
     :lineno-start: 45

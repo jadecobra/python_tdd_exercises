@@ -516,7 +516,7 @@ the test passes
     def function_name():
         return None
 
-  the terminal_ still shows green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the :ref:`function<what is a function?>` does not take input
+  the test is still green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the :ref:`function<what is a function?>` does not take input
 
 * when I add a parameter to the definition
 
@@ -542,7 +542,7 @@ the test passes
     def function_name():
         return None
 
-  the terminal_ shows green again
+  the test is green again again
 
 :ref:`TypeError` is raised when I call something in a way that it should NOT be called
 
@@ -588,7 +588,7 @@ test_catching_index_error_in_tests
             a_list = [1, 2, 3, 'n']
             a_list[0]
 
-  the terminal_ shows green
+  the test is green again
 
 * The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the last item is the total number of items minus ``1``, which is ``3`` in this case
 
@@ -722,7 +722,7 @@ the test passes
             with self.assertRaises(IndexError):
                 a_list[-5]
 
-  the terminal_ shows green again. I cannot use a number that is smaller than the negative of the total number of items in the :ref:`list<lists>` to :ref:`index the list<test_index_returns_first_position_of_item_in_a_list>`
+  the test is green again again. I cannot use a number that is smaller than the negative of the total number of items in the :ref:`list<lists>` to :ref:`index the list<test_index_returns_first_position_of_item_in_a_list>`
 
 * It looks like this is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
 
@@ -798,7 +798,7 @@ test_catching_key_error_in_tests
         def test_catching_key_error_in_tests(self):
             {'key': 'value'}['key']
 
-  the terminal_ shows green
+  the test is green again
 
 * when I use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in the :ref:`dictionary<dictionaries>`
 
@@ -1136,7 +1136,7 @@ one exception one exception handler
                 a_list[-5]
             # with self.assertRaises(IndexError):
 
-  the terminal_ still shows green, which is NOT the expected behavior. :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>` and still does NOT get raised. The assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does NOT run the other lines.
+  the test is still green, which is NOT the expected behavior. :ref:`Exception<errors>` is not :ref:`IndexError<test_index_error>` and still does NOT get raised. The assertRaises_ exits after the first line that causes :ref:`IndexError<test_index_error>` and does NOT run the other lines.
 
 * When I move the `raise statement`_ above the first :ref:`IndexError<test_index_error>`
 

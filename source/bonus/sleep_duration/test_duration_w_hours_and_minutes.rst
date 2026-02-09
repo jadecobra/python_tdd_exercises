@@ -372,7 +372,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(150%60, 30)
 
-  the terminal_ shows green again
+  the test is green again again
 
 ----
 

@@ -3,8 +3,6 @@
   :keywords: Jacob Itegboje, python truth table for if statements, python truth table generator from expression, python logical operators truth table, python truth table for two variables, how to make a truth table in python, python contradiction function, python logical conjunction truth table
 
 .. include:: ../../links.rst
-.. _if statement: https://docs.python.org/3/tutorial/controlflow.html#if-statements
-.. _if statements: `if statement`_
 
 .. _binary_operations:
 

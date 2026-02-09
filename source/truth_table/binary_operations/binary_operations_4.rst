@@ -185,7 +185,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
             self.assertTrue(src.truth_table.negate_second(True, False))
             self.assertFalse(src.truth_table.negate_second(False, True))
 
-  the test is still passing. ``negate_second`` returns
+  the test is still green. ``negate_second`` returns
 
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second _input`` is :ref:`False<test_what_is_false>`
@@ -336,7 +336,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when t
             self.assertFalse(src.truth_table.logical_nor(True, True))
             self.assertFalse(src.truth_table.logical_nor(True, False))
 
-  the terminal_ still shows green. ``logical_nor`` returns
+  the test is still green. ``logical_nor`` returns
 
   - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
@@ -381,7 +381,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when t
 
   this is the only case where ``logical_nor`` returns :ref:`True<test_what_is_true>`
 
-* I add a `conditional expression`_ for it in ``truth_table.py``
+* I add a :ref:`conditional expression<conditional expressions>` for it in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 71
@@ -397,7 +397,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when t
   - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>`
 
-* I remove the second `return statement`_ then use the simpler form of the `conditional expression`_
+* I remove the second `return statement`_ then use the simpler form of the :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
     :lineno-start: 71
@@ -431,7 +431,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when t
         return not bool(first_input) and not bool(second_input)
         return not first_input == True and not second_input == True
 
-  the terminal_ still shows green
+  the test is still green
 
 * I make the statement simpler again
 
@@ -673,7 +673,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
             return False
         return True
 
-  the test is still passing
+  the test is still green
 
 * I write a new `return statement`_ with not_ to replace the :ref:`if statement<if statements>`
 
@@ -969,7 +969,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 
     # Exceptions seen
 
-  the test is still passing. ``material_implication`` returns
+  the test is still green. ``material_implication`` returns
 
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
@@ -1028,7 +1028,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
         return not first_input or second_input
         return (not first_input) or (not not second_input)
 
-  the test is still passing
+  the test is still green
 
 * I remove the other statement
 
