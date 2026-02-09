@@ -213,7 +213,7 @@ test_contradiction
 
   the test is still green
 
-* I add the second case in :ref:`test_contradiction` to ``test_binary.py``, this is when :ref:`True<test_what_is_true>` is the first input and the second input is :ref:`False<test_what_is_false>`
+* I add the second case in :ref:`test_contradiction` to ``test_binary.py``, this is when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -233,7 +233,7 @@ test_contradiction
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>`, which is the :ref:`opposite<test_logical_negation>` of the first input (:ref:`True<test_what_is_true>`) in these 2 cases
 
-* I add the third case, which is when :ref:`False<test_what_is_false>` is the first input and the second input is :ref:`True<test_what_is_true>`
+* I add the third case, which is when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -395,7 +395,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :r
 
 ----
 
-* I add the next case - when :ref:`True<test_what_is_true>` is the first input and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_logical_conjunction` in ``test_binary.py``
+* I add the next case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -902,7 +902,7 @@ the test passes.
 
 ----
 
-* I add the second case - when :ref:`True<test_what_is_true>` is the first input and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_project_second` in ``test_binary.py``
+* I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_project_second` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 35
@@ -940,7 +940,7 @@ the test passes.
 
   the test passes
 
-* I add the next case, which is when :ref:`False<test_what_is_false>` is the first input and the second input is :ref:`True<test_what_is_true>` for :ref:`test_project_second` in ``test_binary.py``
+* I add the next case, which is when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` for :ref:`test_project_second` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 35
@@ -1075,7 +1075,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
 ----
 
-* I add the next case - when :ref:`True<test_what_is_true>` is the first input and the second input is :ref:`False<test_what_is_false>` to :ref:`test_converse_non_implication` in ``test_binary.py``
+* I add the next case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` to :ref:`test_converse_non_implication` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 49
@@ -1091,7 +1091,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   the test is still green because it expects :ref:`False<test_what_is_false>` in both cases
 
-* I add the third case - when :ref:`False<test_what_is_false>` is the first input and the second input is :ref:`True<test_what_is_true>`
+* I add the third case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 49

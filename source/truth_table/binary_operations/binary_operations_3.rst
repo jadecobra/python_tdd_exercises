@@ -713,8 +713,8 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 :ref:`Material NonImplication<test_material_non_implication>` returns
 
 * ``first_input and not second_input`` which is the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
-* :ref:`True<test_what_is_true>` only when :ref:`True<test_what_is_true>` is the first input and the second input is :ref:`False<test_what_is_false>`
-* it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material or Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only when :ref:`True<test_what_is_true>` is the first input and the second input is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` only when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material or Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
 ----
 
@@ -793,9 +793,9 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
   the test is still green. ``project_first`` returns
 
-  - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
 * on to the next case
 
@@ -828,8 +828,8 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
   the test passes. ``project_first`` returns
 
-  - :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
 * I change the :ref:`if statements` to one :ref:`if statement<if statements>`
 
@@ -928,10 +928,10 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
   the test is still green. ``project_first`` returns
 
-  - :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input
-  - :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
 
 * I add a `return statement`_ to show that this :ref:`function<what is a function?>` returns the same value as ``first_input`` in every case
 
@@ -959,8 +959,8 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
 :ref:`Project First<test_project_first>` returns the first input, it always returns
 
-* :ref:`True<test_what_is_true>` when :ref:`True<test_what_is_true>` is the first input
-* :ref:`False<test_what_is_false>` when :ref:`False<test_what_is_false>` is the first input
+* :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+* :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
 
 it is like :ref:`Project Second<test_project_second>` which always returns the second input
 
