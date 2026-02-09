@@ -526,7 +526,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     :emphasize-lines: 2
 
     def exclusive_disjunction(first_input, second_input):
-        return not (first_input != second_input)
+        return first_input != second_input
         return not (first_input == second_input)
         return (
             (not first_input and second_input)
@@ -542,7 +542,8 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * ``not (first_input == second_input)`` - which reads as the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Equality<test_logical_equality>` of the first input and the second input
 * ``(not first_input and second_input) or (first_input and not second_input)`` which is the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input, and the :ref:`Logical Conjunction<test_logical_conjunction>` of first input and the :ref:`Logical Negation<test_logical_negation>` of the second input. Wow! That's a lot.
 
-All of the above statements mean the same thing. :ref:`Exclusive Disjunction<test_exclusive_disjunction>` is also known as `Exclusive OR`_ or XOR_. Would "Logical Inequality" be a better name for :ref:`Exclusive Disjunction<test_exclusive_disjunction>`?
+All of the above statements mean the same thing. :ref:`Exclusive Disjunction<test_exclusive_disjunction>` is also known as `Exclusive OR`_ or XOR_.
+Would "Logical Inequality" be a better name for :ref:`Exclusive Disjunction<test_exclusive_disjunction>`?
 
 ----
 
@@ -561,9 +562,13 @@ test_material_non_implication
 I add another test to ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 79
-  :emphasize-lines: 3-4
+  :lineno-start: 96
+  :emphasize-lines: 7-8
 
+      def test_exclusive_disjunction(self):
+          self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+          self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
+          self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
           self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
       def test_material_non_implication(self):
@@ -586,22 +591,26 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`function<what is a function?>` for ``material_non_implication`` in ``truth_table.py``
+I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 51
-  :emphasize-lines: 7-8
+  :emphasize-lines: 11-12
 
   def exclusive_disjunction(first_input, second_input):
       return first_input != second_input
-      return not first_input == second_input
-      return (not first_input and second_input) or (first_input and not second_input)
+      return not (first_input == second_input)
+      return (
+          (not first_input and second_input)
+          or
+          (first_input and not second_input)
+      )
 
 
   def material_non_implication(first_input, second_input):
       return False
 
-the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
+the test passes. :ref:`material_non_implication<test_material_non_implication>` returns :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -611,10 +620,10 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
 ----
 
-* I add another case to ``test_material_non_implication`` in ``test_binary.py``
+* I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` to :ref:`test_material_non_implication` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 102
     :emphasize-lines: 3
 
         def test_material_non_implication(self):
@@ -627,10 +636,10 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
     AssertionError: False is not true
 
-* I add an :ref:`if statement<if statements>` to ``material_non_implication`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`material_non_implication<test_material_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 61
     :emphasize-lines: 2-4
 
     def material_non_implication(first_input, second_input):
@@ -644,7 +653,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 * I change the two :ref:`if statements` to one
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 61
     :emphasize-lines: 2-4
 
     def material_non_implication(first_input, second_input):
@@ -659,7 +668,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 * I remove the commented lines and move the new `return statement`_ to the left
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 61
     :emphasize-lines: 3
 
     def material_non_implication(first_input, second_input):
@@ -667,7 +676,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
             return True
         return False
 
-  the test is still green. ``material_non_implication`` returns
+  the test is still green. :ref:`material_non_implication<test_material_non_implication>` returns
 
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
@@ -675,7 +684,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 * I add the next case in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 102
     :emphasize-lines: 4
 
         def test_material_non_implication(self):
@@ -683,7 +692,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
             self.assertTrue(src.truth_table.material_non_implication(True, False))
             self.assertFalse(src.truth_table.material_non_implication(False, True))
 
-  the test is still green. ``material_non_implication`` returns
+  the test is still green. :ref:`material_non_implication<test_material_non_implication>` returns
 
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
@@ -692,7 +701,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 * I add the fourth case
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 102
     :emphasize-lines: 5
 
         def test_material_non_implication(self):
@@ -704,17 +713,17 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 
     # Exceptions seen
 
-  the test is still green. ``material_non_implication`` returns
+  the test is still green. :ref:`material_non_implication<test_material_non_implication>` returns
 
   - :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
 
-* there is only one case where ``material_non_implication`` returns :ref:`True<test_what_is_true>`. I write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
+* there is only one case where :ref:`material_non_implication<test_material_non_implication>` returns :ref:`True<test_what_is_true>`. I write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 61
     :emphasize-lines: 2-3
 
     def material_non_implication(first_input, second_input):
@@ -728,7 +737,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 * I remove the commented line and change the :ref:`if statement<if statements>` with bool_
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 61
     :emphasize-lines: 2-3
 
     def material_non_implication(first_input, second_input):
@@ -742,7 +751,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 * I remove the commented line and write a simpler :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 61
     :emphasize-lines: 2-3
 
     def material_non_implication(first_input, second_input):
@@ -756,7 +765,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 * I remove the commented lines then add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 61
     :emphasize-lines: 2
 
     def material_non_implication(first_input, second_input):
@@ -770,7 +779,7 @@ the test passes. ``material_non_implication`` returns :ref:`False<test_what_is_f
 * I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 61
 
     def material_non_implication(first_input, second_input):
         return first_input and not second_input
@@ -826,7 +835,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 I add a :ref:`function<what is a function?>` definition for ``project_first`` in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 55
+  :lineno-start: 61
   :emphasize-lines: 5-6
 
   def material_non_implication(first_input, second_input):
