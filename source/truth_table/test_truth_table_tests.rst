@@ -727,7 +727,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction'
 
-* I add a :ref:`function<what is a function?>` for ``exclusive_disjunction``
+* I add a :ref:`function<what is a function?>` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 63
