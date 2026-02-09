@@ -29,7 +29,7 @@ preview
 
 Here are the tests I have at the end of this chapter
 
-.. literalinclude:: ../../code/truth_table/tests/test_binary_i.py
+.. literalinclude:: ../../code/truth_table/tests/test_binary_1.py
   :language: python
   :linenos:
 
