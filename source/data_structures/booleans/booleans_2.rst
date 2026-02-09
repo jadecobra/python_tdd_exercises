@@ -761,23 +761,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you know
-
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
-* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
-* :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<how to pass values>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
-* :ref:`how to raise TypeError<TypeError>`
-* :ref:`what you can do with Lists<lists>`
-* :ref:`how to use list comprehensions<list comprehensions>`
-
-:ref:`Would you like to test dictionaries?<dictionaries>`
+:ref:`Would you like to continue testing binary operations?<truth table: Binary Operations 2>`
 
 -----
 
