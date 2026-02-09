@@ -76,6 +76,24 @@ continue the project
 
     uv run pytest-watcher . --now
 
+* the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 7
+
+    ======================= test session starts ========================
+    platform linux -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
+    rootdir: .../pumping_python/truth_table
+    configfile: pyproject.toml
+    collected 12 items
+
+    tests/test_binary.py ........                                 [ 66%]
+    tests/test_nullary_unary.py ....                              [100%]
+
+    ======================== 12 passed in G.HIs ========================
+
+* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard and click on ``tests/test_binary.py`` with the mouse to open it in the :ref:`editor<2 editors>`
+
 ----
 
 *********************************************************************************

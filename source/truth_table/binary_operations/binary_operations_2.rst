@@ -93,7 +93,7 @@ continue the project
     tests/test_binary.py ....                                     [ 50%]
     tests/test_nullary_unary.py ....                              [100%]
 
-    ======================== 8 passed in 0.05s =========================
+    ======================== 8 passed in G.HIs =========================
 
 * I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard and click on ``tests/test_binary.py`` with the mouse to open it in the :ref:`editor<2 editors>`
 

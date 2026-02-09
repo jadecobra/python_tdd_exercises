@@ -18,7 +18,7 @@ Sometimes I want programs_ to choose what to do based on inputs or conditions, a
 
 I can add these to a program so that when it gets information about the person it returns output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote" after it looks at the options.
 
-The following are exercises on writing `conditional expressions`_ in Python_ with the `Truth Table`_ from Mathematics_ and the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>`.
+The following are exercises on writing :ref:`conditional expressions` in Python_ with the `Truth Table`_ from Mathematics_ and the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>`.
 
 These are the underlying operations that make the computer do what it does. All operations from the `Truth Table`_ always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
 
