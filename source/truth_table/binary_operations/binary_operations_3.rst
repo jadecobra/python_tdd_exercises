@@ -1157,8 +1157,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add :ref:`if statements` to :ref:`converse_implication<test_converse_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 2-3
+    :lineno-start: 69
+    :emphasize-lines: 2-4
 
     def converse_implication(first_input, second_input):
         if first_input == False:
@@ -1166,38 +1166,10 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
                 return False
         return True
 
-  the test passes
+  the test passes. :ref:`converse_implication<test_converse_implication>` returns
 
-* I change the two :ref:`if statements` to one :ref:`if statement<if statements>`
-
-  .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 2-4
-
-    def converse_implication(first_input, second_input):
-        if first_input == False and second_input == True:
-        # if first_input == False:
-        #     if second_input == True:
-                return False
-        return True
-
-  the test is still green
-
-* I remove the commented lines and move the `return statement`_ to the left
-
-  .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 3
-
-    def converse_implication(first_input, second_input):
-        if first_input == False and second_input == True:
-            return False
-        return True
-
-  still green. :ref:`converse_implication<test_converse_implication>` returns
-
-  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
 * I add the last case to :ref:`test_converse_implication` in ``test_binary.py``
 
@@ -1216,6 +1188,55 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   the test is still green. :ref:`converse_implication<test_converse_implication>` returns
 
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<tesT_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, this is the only case where it returns :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
+
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 2-4
+
+    def converse_implication(first_input, second_input):
+        # if first_input == False:
+        #     if second_input == True:
+        if first_input == False and second_input == True:
+                return False
+        return True
+
+  still green
+
+* I use not_ to write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 2-3
+
+    def converse_implication(first_input, second_input):
+        # if first_input == False and second_input == True:
+        if not first_input == True and second_input == True:
+                return False
+        return True
+
+  green
+
+* I use bool_
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 2-3
+
+    def converse_implication(first_input, second_input):
+        # if first_input == False and second_input == True:
+        if not first_input == True and second_input == True:
+                return False
+        return True
+
+  green
+
+ :ref:`converse_implication<test_converse_implication>` returns
+
   - :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
@@ -1223,7 +1244,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I change the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
@@ -1237,7 +1258,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove the commented line and use bool_
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
@@ -1251,7 +1272,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove the commented line and make the :ref:`if statement<if statements>` simpler
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
@@ -1265,7 +1286,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add the opposite of the :ref:`if statement<if statements>` for the second `return statement`_
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 4-5
 
     def converse_implication(first_input, second_input):
@@ -1279,7 +1300,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I move the new :ref:`if statement<if statements>` to the top
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
@@ -1293,7 +1314,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
@@ -1308,7 +1329,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove the other if statements and write a simpler :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
@@ -1320,7 +1341,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove the commented lines and "multiply not_" by the symbols in the parentheses
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
@@ -1336,7 +1357,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I change "not_ and_" to "or_" to be correct
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
@@ -1348,7 +1369,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove the other `return statement`_ then remove  "not_ not_" since it cancels out - the negation of a negation is the original thing
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
     :emphasize-lines: 2
 
     def converse_implication(first_input, second_input):
@@ -1360,7 +1381,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove the other `return statement`_
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 69
 
     def converse_implication(first_input, second_input):
         return first_input or not second_input

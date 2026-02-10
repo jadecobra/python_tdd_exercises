@@ -27,21 +27,14 @@ These chapters show how I setup any computer for development
 
 they cover the following
 
-* :ref:`Windows requirements`
+* If you are using a Windows_ computer,
+
+  - :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`
+  - If you cannot :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`, do not worry, every chapter of the book has something for you, go to :ref:`Windows without Windows Subsystem Linux requirements`
+
 * :ref:`Linux/Windows Subsystem for Linux requirements`
-* :ref:`Windows without Windows Subsystem Linux requirements`
+
 * :ref:`MacOS requirements`
-
-----
-
-=================================================================================
-Windows requirements
-=================================================================================
-
-----
-
-* If you are using a Windows_ computer, :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`
-* If you cannot :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`, do not worry, every chapter of the book has something for you
 
 ----
 
