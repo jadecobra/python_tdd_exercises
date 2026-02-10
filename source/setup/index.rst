@@ -25,12 +25,10 @@ These chapters show how I setup any computer for development
   setup my computer<setup_my_ide>
   install WSL on Windows<install_wsl>
 
-they cover the following
-
 * If you are using a Windows_ computer,
 
   - :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`
-  - If you cannot :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`, do not worry, every chapter of the book has something for you, go to :ref:`Windows without Windows Subsystem Linux requirements`
+  - If you cannot :ref:`install Windows Subsystem for Linux<how to install Windows Subsystem for Linux on Windows>`, do not worry, every chapter of the book has something for you. Go to :ref:`Windows without Windows Subsystem Linux requirements`
 
 * :ref:`Linux/Windows Subsystem for Linux requirements`
 
@@ -44,7 +42,7 @@ Linux/Windows Subsystem for Linux requirements
 
 ----
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. MacOS_ users should not do this section
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. :ref:`MacOS users go here instead<MacOS requirements>`
 
 * Open a terminal_ then type this to update the `Linux package manager`_
 
@@ -116,7 +114,7 @@ Windows without Windows Subsystem Linux requirements
 
 * `download and install git`_, git_ is a program_ for keeping track of changes I make in a project
 
-* open PowerShell_ and copy and paste the text below to install the `uv Python package manager`_
+* open PowerShell_ then copy and paste the text below to install the `uv Python package manager`_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -135,7 +133,7 @@ MacOS requirements
 
 ----
 
-.. ATTENTION:: Do this only if you are using a MacOS_ computer. Windows_ users should not do this section
+.. ATTENTION:: Do this only if you are using a MacOS_ computer. Windows_ users do :ref:`Linux/Windows Subsystem for Linux requirements` or :ref:`Windows without Windows Subsystem Linux requirements`
 
 * `download and install Python`_
 

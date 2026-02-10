@@ -1228,60 +1228,40 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
-        # if first_input == False and second_input == True:
-        if not first_input == True and second_input == True:
+        # if not first_input == True and second_input == True:
+        if not bool(first_input) == True and bool(second_input) == True:
                 return False
         return True
 
-  green
+  still green
 
- :ref:`converse_implication<test_converse_implication>` returns
-
-  - :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
-
-* I change the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>` in ``truth_table.py``
+* I remove ``== True``
 
   .. code-block:: python
     :lineno-start: 69
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
-        if not first_input == True and second_input == True:
-        # if first_input == False and second_input == True:
-            return False
+        # if not bool(first_input) == True and bool(second_input) == True:
+        if not bool(first_input) and bool(second_input):
+                return False
         return True
 
   the test is still green
 
-* I remove the commented line and use bool_
+* I remove bool_
 
   .. code-block:: python
     :lineno-start: 69
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
-        if not bool(first_input) and bool(second_input):
-        # if not first_input == True and second_input == True:
-            return False
+        # if not bool(first_input) and bool(second_input):
+        if not first_input and second_input:
+                return False
         return True
 
   do you like green eggs and ham?
-
-* I remove the commented line and make the :ref:`if statement<if statements>` simpler
-
-  .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 2-3
-
-    def converse_implication(first_input, second_input):
-        if not first_input and second_input:
-        # if not bool(first_input) and bool(second_input):
-            return False
-        return True
-
-  the test is still green
 
 * I add the opposite of the :ref:`if statement<if statements>` for the second `return statement`_
 
@@ -1291,11 +1271,11 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
     def converse_implication(first_input, second_input):
         if not first_input and second_input:
-            return False
+                return False
         if not (not first_input and second_input):
             return True
 
-  the test is still green
+  still green
 
 * I move the new :ref:`if statement<if statements>` to the top
 
@@ -1307,7 +1287,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         if not (not first_input and second_input):
             return True
         if not first_input and second_input:
-            return False
+                return False
 
   green
 
@@ -1322,11 +1302,11 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         if not (not first_input and second_input):
             return True
         if not first_input and second_input:
-            return False
+                return False
 
-  the test is still green
+  still green
 
-* I remove the other if statements and write a simpler :ref:`conditional expression<conditional expressions>`
+* I remove the other statements and write a simpler :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -1366,7 +1346,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   back to green
 
-* I remove the other `return statement`_ then remove  "not_ not_" since it cancels out - the negation of a negation is the original thing
+* I remove the other `return statement`_ then remove  "not_ not_" because they cancel out - the negation of the negation of something is something
 
   .. code-block:: python
     :lineno-start: 69
@@ -1376,7 +1356,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         return first_input or not second_input
         return (not not first_input) or (not second_input)
 
-  the tests is still green
+  the test is still green
 
 * I remove the other `return statement`_
 
