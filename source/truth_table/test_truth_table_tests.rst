@@ -849,7 +849,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 
-* I add the :ref:`function<what is a function?>` for ``converse_implication``
+* I add the :ref:`function<what is a function?>` for :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
     :lineno-start: 76

@@ -1069,9 +1069,13 @@ test_converse_implication
 I add a new test to ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 91
-  :emphasize-lines: 3-4
+  :lineno-start: 116
+  :emphasize-lines: 7-8
 
+      def test_project_first(self):
+          self.assertTrue(src.truth_table.project_first(True, True))
+          self.assertTrue(src.truth_table.project_first(True, False))
+          self.assertFalse(src.truth_table.project_first(False, True))
           self.assertFalse(src.truth_table.project_first(False, False))
 
       def test_converse_implication(self):
@@ -1094,7 +1098,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`function<what is a function?>` definition for ``converse_implication`` in ``truth_table.py``
+I add a :ref:`function<what is a function?>` definition for :ref:`converse_implication<test_converse_implication>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 65
@@ -1107,7 +1111,7 @@ I add a :ref:`function<what is a function?>` definition for ``converse_implicati
   def converse_implication(first_input, second_input):
       return True
 
-the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
+the test passes. :ref:`converse_implication<test_converse_implication>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -1117,26 +1121,26 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
 ----
 
-* I add the second case to ``test_converse_implication`` in ``test_binary.py``
+* I add the second case to :ref:`test_converse_implication` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 122
     :emphasize-lines: 3
 
         def test_converse_implication(self):
             self.assertTrue(src.truth_table.converse_implication(True, True))
             self.assertTrue(src.truth_table.converse_implication(True, False))
 
-  the test is still green. ``converse_implication`` returns
+  the test is still green. :ref:`converse_implication<test_converse_implication>` returns
 
-  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
 * time for the next case
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 122
     :emphasize-lines: 4
 
         def test_converse_implication(self):
@@ -1150,7 +1154,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     AssertionError: True is not false
 
-* I add :ref:`if statements` to ``converse_implication`` in ``truth_table.py``
+* I add :ref:`if statements` to :ref:`converse_implication<test_converse_implication>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 63
@@ -1190,15 +1194,15 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
             return False
         return True
 
-  still green. ``converse_implication`` returns
+  still green. :ref:`converse_implication<test_converse_implication>` returns
 
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
 
-* I add the last case to ``test_converse_implication`` in ``test_binary.py``
+* I add the last case to :ref:`test_converse_implication` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 122
     :emphasize-lines: 5
 
         def test_converse_implication(self):
@@ -1210,7 +1214,7 @@ the test passes. ``converse_implication`` returns :ref:`True<test_what_is_true>`
 
     # Exceptions seen
 
-  the test is still green. ``converse_implication`` returns
+  the test is still green. :ref:`converse_implication<test_converse_implication>` returns
 
   - :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
