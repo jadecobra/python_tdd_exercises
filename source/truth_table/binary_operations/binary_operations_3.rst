@@ -830,29 +830,29 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   * if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, the statement is
 
     - ``True and not True`` which is
-    - ``True and not False`` which is
-    - ``False`` because of the result of the second case for :ref:`Logical Conjunction<test_logical_conjunction>` this means that
+    - ``True and False`` which is
+    - ``False`` because of the result of the second case for :ref:`Logical Conjunction<test_logical_conjunction>`, this means that
     - ``material_non_implication(True, True)`` is the same as ``logical_conjunction(True, False)``
 
   * if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, the statement is
 
     - ``True and not False`` which is
     - ``True and True`` which is
-    - ``True`` because of the result of the first case for :ref:`Logical Conjunction<test_logical_conjunction>` this means that
+    - ``True`` because of the result of the first case for :ref:`Logical Conjunction<test_logical_conjunction>`, this means that
     - ``material_non_implication(True, False)`` is the same as ``logical_conjunction(True, True)``
 
   * if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, the statement is
 
     - ``False and not True`` which is
     - ``False and False`` which is
-    - ``False`` because of the result of the last case for :ref:`Logical Conjunction<test_logical_conjunction>` this means that
+    - ``False`` because of the result of the last case for :ref:`Logical Conjunction<test_logical_conjunction>`, this means that
     - ``material_non_implication(False, True)`` is the same as ``logical_conjunction(False, False)``
 
   * if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, the statement is
 
     - ``False and not False`` which is
     - ``False and True`` which is
-    - ``False`` because of the result of the third case for :ref:`Logical Conjunction<test_logical_conjunction>` this means that
+    - ``False`` because of the result of the third case for :ref:`Logical Conjunction<test_logical_conjunction>`, this means that
     - ``material_non_implication(False, False)`` is the same as ``logical_conjunction(False, True)``
 
 ----
@@ -872,10 +872,22 @@ test_project_first
 I add a new test in ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 85
-  :emphasize-lines: 3-4
+  :lineno-start: 102
+  :emphasize-lines: 15-16
 
-          self.assertFalse(src.truth_table.material_non_implication(False, False))
+      def test_material_non_implication(self):
+          self.assertFalse(
+              src.truth_table.material_non_implication(True, True)
+          )
+          self.assertTrue(
+              src.truth_table.material_non_implication(True, False)
+          )
+          self.assertFalse(
+              src.truth_table.material_non_implication(False, True)
+          )
+          self.assertFalse(
+              src.truth_table.material_non_implication(False, False)
+          )
 
       def test_project_first(self):
           self.assertTrue(src.truth_table.project_first(True, True))
@@ -897,7 +909,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`function<what is a function?>` definition for ``project_first`` in ``truth_table.py``
+I add a :ref:`function<what is a function?>` definition for :ref:`project_first<test_project_first>` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 61
@@ -910,7 +922,7 @@ I add a :ref:`function<what is a function?>` definition for ``project_first`` in
   def project_first(first_input, second_input):
       return True
 
-the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -920,26 +932,26 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
 ----
 
-* I add the second case to ``test_project_first`` in ``test_binary.py``
+* I add the second case to :ref:`test_project_first` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 116
     :emphasize-lines: 3
 
         def test_project_first(self):
             self.assertTrue(src.truth_table.project_first(True, True))
             self.assertTrue(src.truth_table.project_first(True, False))
 
-  the test is still green. ``project_first`` returns
+  the test is still green. :ref:`project_first<test_project_first>` returns
 
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
 * on to the next case
 
   .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 116
     :emphasize-lines: 4
 
         def test_project_first(self):
@@ -953,10 +965,10 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
     AssertionError: True is not false
 
-* I add :ref:`if statements` for this case to ``project_first`` in ``truth_table.py``
+* I add :ref:`if statements` for this case to :ref:`project_first<test_project_first>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 65
     :emphasize-lines: 2-4
 
     def project_first(first_input, second_input):
@@ -965,43 +977,15 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
                 return False
         return True
 
-  the test passes. ``project_first`` returns
+  the test passes. :ref:`project_first<test_project_first>` returns
 
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
-* I change the :ref:`if statements` to one :ref:`if statement<if statements>`
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 2-4
-
-    def project_first(first_input, second_input):
-        if first_input == False and second_input == True:
-        # if first_input == False:
-        #     if second_input == True:
-                return False
-        return True
-
-  the test is still green
-
-* I remove the commented line and move the `return statement`_ to the left
+* I add the last case to :ref:`test_project_first` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 3
-
-    def project_first(first_input, second_input):
-        if first_input == False and second_input == True:
-            return False
-        return True
-
-  the test is still green
-
-* I add the last case to ``test_project_first`` in ``test_binary.py``
-
-  .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 116
     :emphasize-lines: 5
 
         def test_project_first(self):
@@ -1019,89 +1003,54 @@ the test passes. ``project_first`` returns :ref:`True<test_what_is_true>` when t
 
     AssertionError: True is not false
 
-* I add :ref:`if statements` to ``project_first`` in ``truth_table.py``
+* I add more :ref:`if statements` to :ref:`project_first<test_project_first>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 2-4
+    :lineno-start: 65
+    :emphasize-lines: 3-4
 
     def project_first(first_input, second_input):
         if first_input == False:
             if second_input == False:
                 return False
-        if first_input == False and second_input == True:
-            return False
-        return True
-
-  the test passes
-
-* I change the :ref:`if statements` to one :ref:`if statement<if statements>`
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 2-4
-
-    def project_first(first_input, second_input):
-        if first_input == False and second_input == False:
-        # if first_input == False:
-        #     if second_input == False:
+            if second_input == True:
                 return False
-        if first_input == False and second_input == True:
-            return False
         return True
 
-  the test is still green
+  the test passes. :ref:`project_first<test_project_first>` returns
 
-* I remove the commented lines, and move the `return statement`_ to the left
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
+  - the first input in every case
 
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 3
-
-    def project_first(first_input, second_input):
-        if first_input == False and second_input == False:
-            return False
-        if first_input == False and second_input == True:
-            return False
-        return True
-
-  the test is still green. ``project_first`` returns
-
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
-
-* I add a `return statement`_ to show that this :ref:`function<what is a function?>` returns the same value as ``first_input`` in every case
+* I add a `return statement`_
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 65
     :emphasize-lines: 2
 
     def project_first(first_input, second_input):
         return first_input
-        if first_input == False and second_input == False:
-            return False
-        if first_input == False and second_input == True:
-            return False
+        if first_input == False:
+            if second_input == False:
+                return False
+            if second_input == True:
+                return False
         return True
 
   the test is still green
 
-* I remove the other statements in the :ref:`function<what is a function?>`
+* I remove the other statements
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 65
 
     def project_first(first_input, second_input):
         return first_input
 
-:ref:`Project First<test_project_first>` returns the first input, it always returns
-
-* :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>`
-* :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>`
-
-it is like :ref:`Project Second<test_project_second>` which always returns the second input
+:ref:`Project First always returns the first input<test_project_first>` it is like :ref:`Project Second which always returns the second input<test_project_second>`
 
 ----
 
@@ -1148,7 +1097,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 I add a :ref:`function<what is a function?>` definition for ``converse_implication`` in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 59
+  :lineno-start: 65
   :emphasize-lines: 5-6
 
   def project_first(first_input, second_input):
