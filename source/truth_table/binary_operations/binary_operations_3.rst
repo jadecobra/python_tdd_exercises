@@ -823,8 +823,6 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * :ref:`True<test_what_is_true>`, only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 * it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material or Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
-.. NOTE::
-
   in the 4 cases with the statement ``return first_input and not second_input``
 
   * if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, the statement is
