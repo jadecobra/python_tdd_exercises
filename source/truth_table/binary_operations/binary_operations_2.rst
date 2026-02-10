@@ -114,7 +114,7 @@ test_negate_first
 I add a new test for ``negate_first`` in ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 50
+  :lineno-start: 49
   :emphasize-lines: 15-16
 
       def test_converse_non_implication(self):
