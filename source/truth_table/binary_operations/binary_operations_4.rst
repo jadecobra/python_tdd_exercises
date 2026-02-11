@@ -259,7 +259,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 * ``not second_input``
 * the :ref:`Logical Negation<test_logical_negation>` of the second input
 
-it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
+it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
 
 ----
 
@@ -1044,7 +1044,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 * the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input
 * :ref:`False<test_what_is_false>` only when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
-it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which only returns :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which only returns :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
 ----
 
@@ -1081,96 +1081,97 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Material Implication  <test_material_implication>`
 
   - returns ``not first_input or second_input``
-  - returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which returns :ref:`True<test_what_is_true>` only when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
 * :ref:`Logical Equality <test_logical_equality>`
 
   - returns ``first_input == second_input``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are equal
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Exclusive Disjunction (Exclusive OR)<test_exclusive_disjunction>` which only returns :ref:`True<test_what_is_true>` when the two inputs are NOT equal
+  - returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are equal
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Exclusive Disjunction (Exclusive OR)<test_exclusive_disjunction>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are NOT equal
 
 * :ref:`Logical NOR <test_logical_nor>`
 
   - returns ``not (first_input or second_input)``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
+  - returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
 * :ref:`Negate Second <test_negate_second>`
 
   - returns ``not second_input``
-  - returns :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Project Second<test_project_second>` which only returns :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`True<test_what_is_true>`
+  - returns :ref:`True<test_what_is_true>` if ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which only returns :ref:`True<test_what_is_true>` if ``second_input`` is :ref:`True<test_what_is_true>`
 
 * :ref:`Converse Implication <test_converse_implication>`
 
   - returns ``first_input or not second_input``
-  - returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Converse NonImplication<test_converse_non_implication>` which only returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - returns :ref:`False<test_what_is_false>` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse NonImplication<test_converse_non_implication>` which only returns :ref:`True<test_what_is_true>` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
 * :ref:`Project First <test_project_first>`
 
   - returns ``first_input``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which only returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>`
+  - returns :ref:`True<test_what_is_true>` if ``first_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which only returns :ref:`True<test_what_is_true>` if ``first_input`` is :ref:`False<test_what_is_false>`
 
 * :ref:`Material NonImplication <test_material_non_implication>`
 
   - returns ``first_input and not second_input``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material or Logical Implication<test_material_implication>` which only returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
 * :ref:`Exclusive Disjunction <test_exclusive_disjunction>`
 
   - returns ``first_input != second_input``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are NOT equal
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which only returns :ref:`True<test_what_is_true>` when the two inputs are equal
+  - returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are NOT equal
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are equal
 
 * :ref:`Logical Disjunction <test_logical_disjunction>`
 
   - returns ``first_input or second_input``
-  - returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are both :ref:`False<test_what_is_false>`
-  - is the  :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which only returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
+  - returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
 * :ref:`Tautology <test_tautology>`
 
   - always returns :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :ref:`False<test_what_is_false>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :ref:`False<test_what_is_false>`
 
 * :ref:`Logical NAND <test_logical_nand>`
 
   - returns ``not (first_input and second_input)``
-  - returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are both :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation (not)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which only returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+  - returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation) (not)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are
 
 * :ref:`Negate First<test_negate_first>`
 
   - returns ``not first_input``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Project First<test_project_first>` which only returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>`
+  - return :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_false>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project First<test_project_first>` which only returns :ref:`True<test_what_is_true>` if ``first_input`` is :ref:`True<test_what_is_true>`
 
 * :ref:`Converse NonImplication <test_converse_non_implication>`
 
   - returns ``not first_input and second_input``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which only returns :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which only returns :ref:`False<test_what_is_false>` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
 * :ref:`Project Second <test_project_second>`
 
-  - returns ``second_input``
-  - returns :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which only returns :ref:`True<test_what_is_true>` when ``second_input`` is :ref:`False<test_what_is_false>`
+  - always returns ``second_input``
+  - returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which only returns :ref:`True<test_what_is_true>` if ``second_input`` is :ref:`False<test_what_is_false>`
 
 * :ref:`Logical Conjunction <test_logical_conjunction>` returns
 
   - returns ``first_input and second_input``
-  - returns :ref:`True<test_what_is_true>` when ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
+  - returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
 * :ref:`Contradiction <test_contradiction>`
 
   - always returns :ref:`False<test_what_is_false>`
-  - is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
+  - it never returns :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
 
 and
 
