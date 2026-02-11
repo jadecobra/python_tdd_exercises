@@ -181,7 +181,7 @@ there is no definition for ``negate_first`` in ``truth_table.py``
 
 ----
 
-* I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, in ``test_binary.py``
+* I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 63
@@ -918,10 +918,10 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
 ----
 
-* I add the next case - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`, to :ref:`test_logical_disjunction` in ``test_binary.py``
+* I add the next case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_logical_disjunction` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 81
     :emphasize-lines: 5-7
 
         def test_logical_disjunction(self):
@@ -943,7 +943,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 81
     :emphasize-lines: 8-10
 
         def test_logical_disjunction(self):
@@ -959,13 +959,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   the test is still green. :ref:`logical_disjunction<test_logical_disjunction>` still looks like :ref:`Tautology<test_tautology>`, it returns
 
-  - :ref:`True<test_what_is_true>`, if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>`, if ``first_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
 * I add the fourth case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 81
     :emphasize-lines: 11-13
 
         def test_logical_disjunction(self):
@@ -1005,11 +1005,11 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns
 
-  - :ref:`False<test_what_is_false>`, if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`False<test_what_is_false>`, this is the only case where it returns :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>`, if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>`, if ``first_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>` - this is the only case where it returns :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
-* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with and_
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with :ref:`logical conjunction (and)<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -1162,6 +1162,56 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   the test is still green. A reminder that I can return the :ref:`Logical Negation (not)<test_logical_negation>` of an :ref:`if statement<if statements>` that returns :ref:`False<test_what_is_false>` like I did with :ref:`Logical NAND<test_logical_nand>`
 
+  .. NOTE::
+
+    - ``return not ((not first_input) and (not second_input))`` returns the :ref:`opposite or Logical Negation<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of ``first_input``, and the :ref:`Logical Negation<test_logical_negation>` of ``second_input`` it could also be written as
+
+    this means that in the 4 cases
+
+    - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_disjunction<test_logical_disjunction>` returns
+
+      .. code-block:: python
+        :emphasize-lines: 5
+
+        not ((not first_input) and (not second_input))
+        not ((not True)        and (not True))
+        not (False             and False)
+        not False
+        True
+
+    - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_disjunction<test_logical_disjunction>` returns
+
+      .. code-block:: python
+        :emphasize-lines: 5
+
+        not ((not first_input) and (not second_input))
+        not ((not True)        and (not False))
+        not (False             and True)
+        not False
+        True
+
+    - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_disjunction<test_logical_disjunction>` returns
+
+      .. code-block:: python
+        :emphasize-lines: 5
+
+        not ((not first_input) and (not second_input))
+        not ((not False)       and (not True))
+        not (True              and False)
+        not False
+        True
+
+    - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_disjunction<test_logical_disjunction>` returns
+
+      .. code-block:: python
+        :emphasize-lines: 5
+
+        not ((not first_input) and (not second_input))
+        not ((not False)       and (not False))
+        not (True              and True)
+        not True
+        False
+
 * "not_" appears 3 times in this statement, I want to change that. I "multiply" it by each thing inside the parentheses to try to make the statement simpler
 
   .. code-block:: python
@@ -1178,7 +1228,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
     SyntaxError: invalid syntax
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_binary.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 97
@@ -1311,9 +1361,9 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
 and
 
-* :ref:`Logical Disjunction <test_logical_disjunction>` is "or_"
-* :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
-* :ref:`Logical Negation <test_logical_negation>` is "not_"
+* :ref:`Logical Disjunction is "or"<test_logical_disjunction>`
+* :ref:`Logical Conjunction is "and"<test_logical_conjunction>`
+* :ref:`Logical Negation is "not" <test_logical_negation>`
 
 All the logic statements or conditions have been written with some or all of these 3.
 

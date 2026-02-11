@@ -1174,9 +1174,9 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
 and
 
-* :ref:`Logical Disjunction <test_logical_disjunction>` is "or_"
-* :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
-* :ref:`Logical Negation <test_logical_negation>` is "not_"
+* :ref:`Logical Disjunction is "or"<test_logical_disjunction>`
+* :ref:`Logical Conjunction is "and"<test_logical_conjunction>`
+* :ref:`Logical Negation is "not" <test_logical_negation>`
 
 All the logic statements or conditions have been written with some or all of the above 3.
 

@@ -407,6 +407,18 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :r
 
     AssertionError: True is not false
 
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 4
+    :emphasize-text: AssertionError
+
+    # Exceptions seen
+    # AttributeError
+    # TypeError
+    # AssertionError
+
 * I make :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
 
   .. code-block:: python
@@ -1412,8 +1424,8 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
 and
 
-* :ref:`Logical Conjunction <test_logical_conjunction>` is "and_"
-* :ref:`Logical Negation <test_logical_negation>` is "not_"
+* :ref:`Logical Conjunction is "and"<test_logical_conjunction>`
+* :ref:`Logical Negation is "not" <test_logical_negation>`
 
 All the logic statements or conditions have been written with and_ or not_ or both.
 
