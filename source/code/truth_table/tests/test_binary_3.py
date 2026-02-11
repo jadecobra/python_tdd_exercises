@@ -93,18 +93,10 @@ class TestBinaryOperations(unittest.TestCase):
         )
 
     def test_exclusive_disjunction(self):
-        self.assertFalse(
-            src.truth_table.exclusive_disjunction(True, True)
-        )
-        self.assertTrue(
-            src.truth_table.exclusive_disjunction(True, False)
-        )
-        self.assertTrue(
-            src.truth_table.exclusive_disjunction(False, True)
-        )
-        self.assertFalse(
-            src.truth_table.exclusive_disjunction(False, False)
-        )
+        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
+        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
+        self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
+        self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
 
     def test_material_non_implication(self):
         self.assertFalse(
@@ -121,32 +113,16 @@ class TestBinaryOperations(unittest.TestCase):
         )
 
     def test_project_first(self):
-        self.assertTrue(
-            src.truth_table.project_first(True, True)
-        )
-        self.assertTrue(
-            src.truth_table.project_first(True, False)
-        )
-        self.assertFalse(
-            src.truth_table.project_first(False, True)
-        )
-        self.assertFalse(
-            src.truth_table.project_first(False, False)
-        )
+        self.assertTrue(src.truth_table.project_first(True, True))
+        self.assertTrue(src.truth_table.project_first(True, False))
+        self.assertFalse(src.truth_table.project_first(False, True))
+        self.assertFalse(src.truth_table.project_first(False, False))
 
     def test_converse_implication(self):
-        self.assertTrue(
-            src.truth_table.converse_implication(True, True)
-        )
-        self.assertTrue(
-            src.truth_table.converse_implication(True, False)
-        )
-        self.assertFalse(
-            src.truth_table.converse_implication(False, True)
-        )
-        self.assertTrue(
-            src.truth_table.converse_implication(False, False)
-        )
+        self.assertTrue(src.truth_table.converse_implication(True, True))
+        self.assertTrue(src.truth_table.converse_implication(True, False))
+        self.assertFalse(src.truth_table.converse_implication(False, True))
+        self.assertTrue(src.truth_table.converse_implication(False, False))
 
 
 # Exceptions seen
