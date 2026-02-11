@@ -1062,7 +1062,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<tes
     def project_first(first_input, second_input):
         return first_input
 
-:ref:`Project First always returns the first input<test_project_first>` it is like :ref:`Project Second which always returns the second input<test_project_second>`
+:ref:`Project First always returns the first input<test_project_first>`, like :ref:`Project Second which always returns the second input<test_project_second>`
 
 ----
 
@@ -1136,7 +1136,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add the second case to :ref:`test_converse_implication` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 122
+    :lineno-start: 121
     :emphasize-lines: 3
 
         def test_converse_implication(self):
@@ -1152,7 +1152,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * time for the next case
 
   .. code-block:: python
-    :lineno-start: 122
+    :lineno-start: 121
     :emphasize-lines: 4
 
         def test_converse_implication(self):
@@ -1186,7 +1186,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add the last case to :ref:`test_converse_implication` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 122
+    :lineno-start: 121
     :emphasize-lines: 5
 
         def test_converse_implication(self):
@@ -1201,10 +1201,10 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   the test is still green. :ref:`converse_implication<test_converse_implication>` returns
 
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<tesT_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, this is the only case where it returns :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` - this is the only case where it returns :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
-* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` in ``truth_table.py``
+* I change the two :ref:`if statements` to one in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 69
@@ -1384,6 +1384,87 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 - :ref:`False<test_what_is_false>`, only if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 - the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 - It is the opposite of :ref:`Converse NonImplication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`True<test_what_is_true>`, only if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+
+----
+
+*********************************************************************************
+more about Exclusive Disjunction
+*********************************************************************************
+
+----
+
+``return (not first_input and second_input) or (first_input and not second_input)`` can be thought of as
+
+.. code-block:: python
+
+  return x or y
+
+- if ``x`` is ``not first_input and second_input``
+- if ``y`` is ``first_input and not second_input``
+
+:ref:`Exclusive Disjunction<test_exclusive_disjunction>` can also be thought of as
+
+.. code-block:: python
+
+  return (
+      converse_non_implication(first_input, second_input)
+      or
+      material_non_implication(first_input, second_input)
+  )
+
+because
+
+- :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
+- :ref:`material_non_implication<test_material_non_implication>` return ``first_input and not second_input``
+
+
+
+This means that in the 4 cases
+
+- if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+
+  .. code-block:: python
+    :emphasize-lines: 5
+
+    (not first_input and second_input) or (first_input and not second_input)
+    (not True        and True        ) or (True        and not True        )
+    (False           and True        ) or (True        and False           )
+      False                            or  False
+      False                            # logical_disjunction(False, False)
+
+- if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+
+  .. code-block:: python
+    :emphasize-lines: 5
+    :force:
+
+    (not first_input and second_input) or (first_input and not second_input)
+    (not True        and False       ) or (True        and not False       )
+    (False           and False       ) or (True        and True            )
+     False                             or  True
+     True                              # logical_disjunction(False, True)
+
+- if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+
+  .. code-block:: python
+    :emphasize-lines: 5
+
+    (not first_input and second_input) or (first_input and not second_input)
+    (not False       and True        ) or (False       and not True        )
+    (True            and True        ) or (False       and False           )
+     True                              or  False
+     True                              # logical_disjunction(True, False)
+
+- if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+
+  .. code-block:: python
+    :emphasize-lines: 5
+
+    (not first_input and second_input) or (first_input and not second_input)
+    (not False       and False       ) or (False       and not False       )
+    (True            and False       ) or (False       and True            )
+     False                             or  False
+     False                             # logical_disjunction(False, False)
 
 ----
 
