@@ -1124,7 +1124,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input != second_input``
   - returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are NOT equal
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are equal
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are equal
 
 * :ref:`Logical Disjunction <test_logical_disjunction>`
 
