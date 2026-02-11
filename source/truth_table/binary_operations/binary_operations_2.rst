@@ -184,7 +184,7 @@ there is no definition for ``negate_first`` in ``truth_table.py``
 * I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 63
     :emphasize-lines: 3
 
         def test_negate_first(self):
@@ -200,7 +200,7 @@ there is no definition for ``negate_first`` in ``truth_table.py``
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 63
     :emphasize-lines: 4
 
         def test_negate_first(self):
@@ -229,14 +229,12 @@ there is no definition for ``negate_first`` in ``truth_table.py``
   the test passes. ``negate_first`` returns
 
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
 * I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>` to ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 63
     :emphasize-lines: 5
 
         def test_negate_first(self):
@@ -272,14 +270,12 @@ there is no definition for ``negate_first`` in ``truth_table.py``
 
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
   oh! It returns the :ref:`logical negation<test_logical_negation>` of the first input
 
-* I add a `return statement`_ to make sure
+* I add a `return statement`_
 
   .. code-block:: python
     :lineno-start: 34
@@ -309,8 +305,8 @@ there is no definition for ``negate_first`` in ``truth_table.py``
 :ref:`Negate First<test_negate_first>` always returns
 
 * ``not first_input``
-* :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>`
-* :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>`
+* :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>`
+* :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 * the :ref:`opposite or Logical Negation<test_logical_negation>` of the first input in all cases, it does not care about the second input
 
 ----
@@ -330,7 +326,7 @@ test_logical_nand
 I add a new test to ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 64
+  :lineno-start: 63
   :emphasize-lines: 7-8
 
       def test_negate_first(self):
@@ -387,7 +383,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
 * I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 69
     :emphasize-lines: 3
 
         def test_logical_nand(self):
@@ -421,7 +417,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
 * I add another case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 69
     :emphasize-lines: 4
 
         def test_logical_nand(self):
@@ -456,10 +452,10 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-* I add the last case - when the first is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>` to :ref:`test_logical_nand` in ``test_binary.py``
+* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 69
     :emphasize-lines: 5
 
         def test_logical_nand(self):
@@ -477,11 +473,11 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
 
     AssertionError: False is not true
 
-* I add :ref:`if statements` to :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 38
-    :emphasize-lines: 2-4
+    :emphasize-lines: 3-4
 
     def logical_nand(first_input, second_input):
         if first_input == False:
@@ -499,9 +495,9 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, this is the only case when it returns :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>` - this is the only case where it returns :ref:`False<test_what_is_false>`
 
-* I add an :ref:`if statement<if statements>` for it with an else_ clause for the other 3 cases
+* I add an :ref:`if statement<if statements>` for the one case where it returns :ref:`False<test_what_is_false>` with an else_ clause for the other 3 cases
 
   .. code-block:: python
     :lineno-start: 38
@@ -687,13 +683,15 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
 * is the not_ of the and_ of the first input and second input, confusing?
 * is not_ and_
 
+----
+
 .. NOTE::
 
   When there is only one :ref:`if statement<if statements>` that returns :ref:`False<test_what_is_false>` with an `else clause`_
 
   .. code-block:: python
 
-    if condition:
+    if something:
         return False
     else:
         return True
@@ -702,7 +700,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
 
   .. code-block:: python
 
-    if not condition:
+    if not something:
         return True
     else:
         return False
@@ -711,13 +709,18 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
 
   .. code-block:: python
 
-    return True if not (condition) else False
+    return True if not (something) else False
 
   which can be made simpler as
 
   .. code-block:: python
 
-    return not (condition)
+    return not (something)
+
+  this means
+
+  - ``if something: return False`` is the same as ``return not (something)``, just like
+  - ``if something: return True`` is the same as ``return something``
 
 ----
 
@@ -733,10 +736,10 @@ test_tautology
 
 ----
 
-I add a test for the next Binary Operation in ``test_binary.py`` with the first case where the two inputs are :ref:`True<test_what_is_true>`
+I add a test for the next Binary Operation in ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 70
+  :lineno-start: 69
   :emphasize-lines: 7-8
 
       def test_logical_nand(self):
@@ -757,7 +760,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   AttributeError: module 'src.truth_table' has no attribute 'tautology'
 
-``truth_table.py`` does not have :ref:`tautology<test_tautology>` defined inside it
+``truth_table.py`` does not have :ref:`tautology<test_tautology>` in it
 
 ----
 
@@ -767,7 +770,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`function<what is a function?>` to ``truth_table.py``
+I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 38
@@ -791,10 +794,10 @@ the test passes. :ref:`tautology<test_tautology>` returns :ref:`True<test_what_i
 
 ----
 
-* I add the next case to ``test_tautology`` in ``test_binary.py`` - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+* I add the next case, where the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_tautology` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 75
     :emphasize-lines: 3
 
         def test_tautology(self):
@@ -810,7 +813,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :ref:`True<test_what_i
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 75
     :emphasize-lines: 4
 
         def test_tautology(self):
@@ -826,7 +829,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :ref:`True<test_what_i
 * I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 75
     :emphasize-lines: 5
 
         def test_tautology(self):
@@ -856,10 +859,10 @@ test_logical_disjunction
 
 ----
 
-I add another test to ``test_binary.py`` with the first case, where the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_true>`
+I add another test to ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 76
+  :lineno-start: 75
   :emphasize-lines: 7-10
 
       def test_tautology(self):
@@ -882,7 +885,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'. Did you mean: 'logical_conjunction'?
 
-there is no definition for :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py`` in the ``src`` folder_, yet
+there is no :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py`` in the ``src`` folder_, yet
 
 ----
 

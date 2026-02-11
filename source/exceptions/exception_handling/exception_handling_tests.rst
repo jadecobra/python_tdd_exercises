@@ -1018,7 +1018,7 @@ the terminal_ shows all tests are passing. The `assertRaises method`_ checks tha
 * I can use :ref:`Exception<errors>` to catch any of the :ref:`Exceptions<errors>` that inherit from it, its children
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 30
     :emphasize-lines: 2, 6
 
         def test_catching_key_error_in_tests(self):
@@ -1036,7 +1036,7 @@ the terminal_ shows all tests are passing. The `assertRaises method`_ checks tha
   It is better to be specific, from the :PEP:`Zen of Python <20>`: ``Explicit is better than implicit``
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 30
     :emphasize-lines: 2, 6
 
         def test_catching_key_error_in_tests(self):
@@ -1050,7 +1050,7 @@ the terminal_ shows all tests are passing. The `assertRaises method`_ checks tha
 * I cannot use sibling or cousin :ref:`Exceptions<errors>` to catch other :ref:`Exceptions<errors>`
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 30
     :emphasize-lines: 2
 
         def test_catching_key_error_in_tests(self):
@@ -1066,7 +1066,7 @@ the terminal_ shows all tests are passing. The `assertRaises method`_ checks tha
   because it is not :ref:`ModuleNotFoundError<what is a module?>` even though they are both :ref:`Exceptions<errors>`. I undo the change
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 30
     :emphasize-lines: 2
 
         def test_catching_key_error_in_tests(self):
