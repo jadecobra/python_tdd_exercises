@@ -1098,7 +1098,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
 * :ref:`Negate Second <test_negate_second>`
 
-  - returns ``not second_input``
+  - always returns ``not second_input``
   - returns :ref:`True<test_what_is_true>` if ``second_input`` is :ref:`True<test_what_is_true>`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which only returns :ref:`True<test_what_is_true>` if ``second_input`` is :ref:`True<test_what_is_true>`
 
@@ -1110,7 +1110,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
 * :ref:`Project First <test_project_first>`
 
-  - returns ``first_input``
+  - always returns ``first_input``
   - returns :ref:`True<test_what_is_true>` if ``first_input`` is :ref:`True<test_what_is_true>`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which only returns :ref:`True<test_what_is_true>` if ``first_input`` is :ref:`False<test_what_is_false>`
 
@@ -1145,7 +1145,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
 * :ref:`Negate First<test_negate_first>`
 
-  - returns ``not first_input``
+  - always returns ``not first_input``
   - return :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_false>`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project First<test_project_first>` which only returns :ref:`True<test_what_is_true>` if ``first_input`` is :ref:`True<test_what_is_true>`
 
