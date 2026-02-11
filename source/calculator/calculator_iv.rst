@@ -439,7 +439,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
       * ``first_input`` is NOT a string_ and ``second_input`` is a string_
       * ``first_input`` is a string_ and ``second_input`` is a string_
 
-      the statement is only :ref:`False<test_what_is_false>` if ``first_input`` is NOT a string_ and ``second_input`` is NOT a string_. This is :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`, which only returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`False<test_what_is_false>`
+      the statement is only :ref:`False<test_what_is_false>` if ``first_input`` is NOT a string_ and ``second_input`` is NOT a string_. This is :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`, which only returns :ref:`False<test_what_is_false>`, if the two inputs are :ref:`False<test_what_is_false>`
 
 * I change the name of the test to be clearer
 

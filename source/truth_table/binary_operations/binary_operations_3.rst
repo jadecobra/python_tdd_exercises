@@ -68,7 +68,7 @@ continue the project
 
     .../pumping_python/truth_table
 
-* run the tests with `pytest-watcher`_
+* I run the tests with `pytest-watcher`_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -480,7 +480,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   still green
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are the same and returns :ref:`True<test_what_is_true>` when they are NOT. I add an :ref:`if statement<if statements>` to show this with the equality symbol (2 equal signs together :kbd:`=+=`)
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :ref:`False<test_what_is_false>` when ``first_input`` and ``second_input`` are the same and returns :ref:`True<test_what_is_true>`, if they are NOT. I add an :ref:`if statement<if statements>` to show this with the equality symbol (2 equal signs together :kbd:`=+=`)
 
   .. code-block:: python
     :lineno-start: 51

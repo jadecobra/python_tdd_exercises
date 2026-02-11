@@ -499,7 +499,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: ['01:23'] != None
 
-`str.split`_ returns a :ref:`list <lists>` when called
+`str.split`_ returns a :ref:`list <lists>`, if called
 
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------

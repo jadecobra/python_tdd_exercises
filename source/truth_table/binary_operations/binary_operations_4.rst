@@ -68,7 +68,7 @@ continue the project
 
     .../pumping_python/truth_table
 
-* run the tests with `pytest-watcher`_
+* I run the tests with `pytest-watcher`_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -90,7 +90,7 @@ test_negate_second
 
 ----
 
-I add a new test for another Binary Operation to ``test_truth_table.py`` with the first case where both ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>`
+I add a new test with the first case for another Binary Operation - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, to ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 97
@@ -109,8 +109,6 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
-there is no definition for it yet
-
 ----
 
 =================================================================================
@@ -119,10 +117,10 @@ there is no definition for it yet
 
 ----
 
-I add a :ref:`function<what is a function?>` for ``negate_second`` to ``truth_table.py``
+I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 63
+  :lineno-start: 69
   :emphasize-lines: 5-6
 
   def converse_implication(first_input, second_input):
@@ -132,7 +130,7 @@ I add a :ref:`function<what is a function?>` for ``negate_second`` to ``truth_ta
   def negate_second(first_input, second_input):
       return False
 
-the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
+the test passes. :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -142,10 +140,10 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 
 ----
 
-* I add the next case - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`, to ``test_negate_second`` in ``test_truth_table.py``
+* I add the next case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_negate_second` in ``test_truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 127
     :emphasize-lines: 3
 
         def test_negate_second(self):
@@ -158,10 +156,10 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 
     AssertionError: False is not true
 
-* I add an :ref:`if statement<if statements>` to ``negate_second`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 73
     :emphasize-lines: 2-3
 
     def negate_second(first_input, second_input):
@@ -169,15 +167,16 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
             return True
         return False
 
-  the test passes. ``negate_second`` returns
+  the test passes. :ref:`negate_second<test_negate_second>` returns
 
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when the two inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - the :ref:`logical negation<test_logical_negation>` of the second input
 
-* I add the third case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, to ``test_negate_second`` in ``test_truth_table.py``
+* I add the third case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, to :ref:`test_negate_second` in ``test_truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 127
     :emphasize-lines: 4
 
         def test_negate_second(self):
@@ -185,17 +184,15 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
             self.assertTrue(src.truth_table.negate_second(True, False))
             self.assertFalse(src.truth_table.negate_second(False, True))
 
-  the test is still green. ``negate_second`` returns
+  the test is still green. :ref:`negate_second<test_negate_second>` returns
 
-  - :ref:`False<test_what_is_false>` when ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - :ref:`True<test_what_is_true>` when ``first_input`` is :ref:`True<test_what_is_true>` and ``second _input`` is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when both ``first_input`` and ``second_input`` are :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when ``second_input`` is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - the :ref:`logical negation<test_logical_negation>` of the second input in all 3 cases
 
-* I add the last case - when the two inputs are :ref:`False<test_what_is_false>`
+* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 127
     :emphasize-lines: 5
 
         def test_negate_second(self):
@@ -210,10 +207,10 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 
     AssertionError: False is not true
 
-* I add an :ref:`if statement<if statements>` for the case to ``negate_second`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for the case to :ref:`negate_second<test_negate_second>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 73
     :emphasize-lines: 2-3
 
     def negate_second(first_input, second_input):
@@ -223,17 +220,15 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
             return True
         return False
 
-  the test passes. ``negate_second`` returns
+  the test passes. :ref:`negate_second<test_negate_second>` returns
 
-  - :ref:`True<test_what_is_true>` when both the first input and second input are :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+  - the :ref:`logical negation<test_logical_negation>` of the second input in all 4 cases
 
-* I add a `return statement`_ to show that ``negate_second`` always returns the opposite of the second input
+* I add a `return statement`_ to show that :ref:`negate_second<test_negate_second>` always returns the :ref:`opposite<test_logical_negation>` of the second input
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 73
     :emphasize-lines: 2
 
     def negate_second(first_input, second_input):
@@ -249,7 +244,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 * I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 73
 
     def negate_second(first_input, second_input):
         return not second_input
@@ -259,7 +254,7 @@ the test passes. ``negate_second`` returns :ref:`False<test_what_is_false>` when
 * ``not second_input``
 * the :ref:`Logical Negation<test_logical_negation>` of the second input
 
-it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
+It is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which always returns the second input
 
 ----
 
@@ -306,7 +301,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 67
+  :lineno-start: 73
   :emphasize-lines: 5-6
 
   def negate_second(first_input, second_input):
@@ -316,7 +311,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   def logical_nor(first_input, second_input):
       return False
 
-the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
+the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>`, if the first and second inputs are both :ref:`True<test_what_is_true>`
 
 ----
 
@@ -544,7 +539,7 @@ I add a :ref:`function<what is a function?>` for it in ``truth_table.py``
   def logical_equality(first_input, second_input):
       return True
 
-the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>`, if the two inputs are :ref:`True<test_what_is_true>`
 
 ----
 
@@ -812,7 +807,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 
   still green
 
-* The 2 cases where ``logical_equality`` returns :ref:`True<test_what_is_true>` are when ``first_input`` and ``second_input`` are the same, which means I can write a much simpler `return statement`_ thanks to the equality symbol (2 equal signs together :kbd:`=+=`)
+* The 2 cases where ``logical_equality`` returns :ref:`True<test_what_is_true>` are, if ``first_input`` and ``second_input`` are the same, which means I can write a much simpler `return statement`_ thanks to the equality symbol (2 equal signs together :kbd:`=+=`)
 
   .. code-block:: python
     :lineno-start: 75
@@ -834,7 +829,7 @@ the test passes. ``logical_equality`` returns :ref:`True<test_what_is_true>` whe
 * :ref:`True<test_what_is_true>` when the two inputs are the same
 * :ref:`False<test_what_is_false>` when the two inputs are NOT the same
 * the :ref:`Logical Conjunction<test_logical_conjunction>` of the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input, and the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input and the second input
-* is the opposite of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>` when the two inputs are the same
+* is the opposite of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>`, if the two inputs are the same
 
 ----
 
@@ -896,7 +891,7 @@ I add a :ref:`method<what is a function?>` for ``material_implication`` in ``tru
   def material_implication(first_input, second_input):
       return True
 
-the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`, if the two inputs are :ref:`True<test_what_is_true>`
 
 ----
 
@@ -1044,7 +1039,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 * the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input
 * :ref:`False<test_what_is_false>` only when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
-it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which only returns :ref:`True<test_what_is_true>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which only returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
 ----
 

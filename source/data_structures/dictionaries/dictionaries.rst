@@ -2811,7 +2811,7 @@ the test passes
 
     AssertionError: 'value' != 'default'
 
-  setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key in a dictionary<test_keys_of_a_dictionary>` when the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_
+  setdefault_ returns the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key in a dictionary<test_keys_of_a_dictionary>`, if the :ref:`key<test_keys_of_a_dictionary>` is in the dictionary_
 
 * I change the expectation to match
 

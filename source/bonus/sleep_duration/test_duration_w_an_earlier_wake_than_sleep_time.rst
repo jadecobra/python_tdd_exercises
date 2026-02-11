@@ -60,7 +60,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 *********************************************************************************
 
 
-* The ``duration`` :ref:`function<what is a function?>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the assertEqual_ to assertRaisesRegex_ to catch the :ref:`Exception<errors>` when it is raised by the :ref:`function<what is a function?>`
+* The ``duration`` :ref:`function<what is a function?>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the assertEqual_ to assertRaisesRegex_ to catch the :ref:`Exception<errors>`, if it is raised by the :ref:`function<what is a function?>`
 
   .. code-block:: python
 
@@ -456,7 +456,7 @@ The challenge is to write a program_ that calculates the difference between a gi
 * :ref:`test_duration_w_hours <how to measure sleep duration: test_duration_w_hours>`
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time  <how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time>`
-* :ref:`test_duration_w_hours_and_minutes <how to measure sleep duration: test_duration_w_hours_and_minutes>` where I used a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<what is a function?>` raises ValueError_ with a message and returns the right difference between the 2 when ``wake_time`` is later than or the same as ``sleep_time``
+* :ref:`test_duration_w_hours_and_minutes <how to measure sleep duration: test_duration_w_hours_and_minutes>` where I used a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<what is a function?>` raises ValueError_ with a message and returns the right difference between the 2, if ``wake_time`` is later than or the same as ``sleep_time``
 
 
 Would you like to :ref:`test duration with timestamps that have dates? <how to measure sleep duration: test_duration_w_date_and_time>`

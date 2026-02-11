@@ -327,7 +327,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 test_the_modulo_operation
 #################################################################################
 
-The ``%`` operator returns the remainder when a number is divided by another, it should give me the minutes when I divide by ``60``
+The ``%`` operator returns the remainder when a number is divided by another, it should give me the minutes, if I divide by ``60``
 
 * I add a failing test for it
 

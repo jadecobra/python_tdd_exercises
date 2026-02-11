@@ -315,7 +315,7 @@ I copy the value from the left side of the :ref:`AssertionError<what causes Asse
 
 and it passes
 
-The `datetime.datetime.strptime`_ :ref:`method<what is a function?>` returns a `datetime.datetime`_ object when given 2 strings_ as inputs - a timestamp and a pattern that is for the timestamp. The pattern provided is
+The `datetime.datetime.strptime`_ :ref:`method<what is a function?>` returns a `datetime.datetime`_ object, if given 2 strings_ as inputs - a timestamp and a pattern that is for the timestamp. The pattern provided is
 
 - ``%d`` for days
 - ``%m`` for months
@@ -874,7 +874,7 @@ The challenge was to write a program_ that calculates the difference between a g
 * :ref:`test_duration_w_date_and_time <how to measure sleep duration: test_duration_w_date_and_time>` where I used
 
   - `random.randint`_ and an :ref:`how to test that an Exception is raised` to generate timestamps with random dates and times that are :ref:`how to pass values` in strings for ``wake_time`` and ``sleep_time``
-  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<what is a function?>` raises ValueError_ with a message and returns the right difference between the 2 when ``wake_time`` is later than or the same as ``sleep_time``
+  - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<what is a function?>` raises ValueError_ with a message and returns the right difference between the 2, if ``wake_time`` is later than or the same as ``sleep_time``
 
 I also saw the following :ref:`Exceptions<errors>`
 

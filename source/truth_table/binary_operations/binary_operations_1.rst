@@ -75,7 +75,7 @@ continue the project
 
     .../pumping_python/truth_table
 
-* run the tests with `pytest-watcher`_
+* I run the tests with `pytest-watcher`_
 
   .. code-block:: python
     :emphasize-lines: 1
