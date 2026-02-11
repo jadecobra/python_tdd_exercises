@@ -876,11 +876,11 @@ how to setup a project with uv
 
     Initialized project `magic`
 
-  and the command line has ``(main)`` on the right side of the project name
+  and the command line has ```` on the right side of the project name
 
   .. code-block:: python
 
-    .../pumping_python/magic (main)
+    .../pumping_python/magic
 
 * I run tree_ to see what uv_ did to the folder_
 
@@ -916,7 +916,7 @@ how to setup a project with uv
 
   .. code-block:: python
 
-    .../pumping_python/magic (main)
+    .../pumping_python/magic
 
 * Here is what uv_ added to the project
 
@@ -990,7 +990,7 @@ how to setup a project with uv
 
   .. code-block:: python
 
-    .../pumping_python/magic (main)
+    .../pumping_python/magic
 
   the file_ is empty
 
@@ -1108,7 +1108,7 @@ how to activate a virtual environment
 
   .. code-block:: shell
 
-    (magic) .../magic (main)
+    (magic) .../magic
 
   ``(magic)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
 
@@ -1131,7 +1131,7 @@ how to deactivate a virtual environment
 
   .. code-block:: python
 
-    .../pumping_python/magic (main)
+    .../pumping_python/magic
 
 ----
 
@@ -1286,7 +1286,7 @@ I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the te
 
 .. code-block:: python
 
-  .../pumping_python/magic (main)
+  .../pumping_python/magic
 
 ----
 

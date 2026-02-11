@@ -34,7 +34,7 @@ open the project
 
   .. code-block:: shell
 
-    .../pumping_python/functions (main)
+    .../pumping_python/functions
 
 * I use ``pytest-watcher`` to run the tests
 
