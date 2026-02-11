@@ -119,7 +119,7 @@ there is no definition for it yet
 
 ----
 
-I add a :ref:`function<what is a function?>` definition for ``negate_second`` to ``truth_table.py``
+I add a :ref:`function<what is a function?>` for ``negate_second`` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 63
@@ -531,7 +531,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`function<what is a function?>` definition for it in ``truth_table.py``
+I add a :ref:`function<what is a function?>` for it in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 71

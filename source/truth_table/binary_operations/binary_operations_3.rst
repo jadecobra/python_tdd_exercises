@@ -82,7 +82,7 @@ continue the project
     :emphasize-lines: 7
 
     ======================= test session starts ========================
-    platform linux -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
+    platform ____ -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
     rootdir: .../pumping_python/truth_table
     configfile: pyproject.toml
     collected 12 items
@@ -171,10 +171,10 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
 ----
 
-* I add the next case, where the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` to :ref:`test_exclusive_disjunction` in ``test_binary.py``
+* I add the next case - where the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_exclusive_disjunction` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 95
     :emphasize-lines: 3
 
         def test_exclusive_disjunction(self):
@@ -204,10 +204,10 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-* I add the third case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to ``test_binary.py``
+* I add the third case - where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, to ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 95
     :emphasize-lines: 4
 
         def test_exclusive_disjunction(self):
@@ -242,10 +242,10 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to :ref:`test_exclusive_disjunction` in ``test_binary.py``
+* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to :ref:`test_exclusive_disjunction`, in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 95
     :emphasize-lines: 5
 
         def test_exclusive_disjunction(self):
@@ -264,7 +264,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-* I put the first two the :ref:`if statements` together to make them simpler in :ref:`exclusive_disjunction<test_exclusive_disjunction>` in ``truth_table.py``
+* I put the first two :ref:`if statements` together to make them simpler in :ref:`exclusive_disjunction<test_exclusive_disjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 51
@@ -282,7 +282,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   the test is still green
 
-* I do the same thing with the next 2 :ref:`if statements`
+* I do the same thing with the next two :ref:`if statements`
 
   .. code-block:: python
     :lineno-start: 51
@@ -507,10 +507,10 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
     def exclusive_disjunction(first_input, second_input):
         return not (first_input == second_input)
-        # if first_input == second_input:
-        #     return False
-        # else:
-        #     return True
+        if first_input == second_input:
+            return False
+        else:
+            return True
         return (
             (not first_input and second_input)
             or
@@ -519,7 +519,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   still green
 
-* I remove the commented lines, then use a even simpler `return statement`_ with the NOT equal symbol (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
+* I remove the commented lines, then use an even simpler `return statement`_ with the NOT equal symbol (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
 
   .. code-block:: python
     :lineno-start: 51
@@ -536,14 +536,14 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
 :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns
 
-* :ref:`True<test_what_is_true>`, if the first input is NOT equal to the second input
-* :ref:`False<test_what_is_false>`, if the first input is equal to the second input
+* :ref:`True<test_what_is_true>`, if the first input is NOT EQUAL to the second input
+* :ref:`False<test_what_is_false>`, if the first input is EQUAL to the second input
 * ``first_input != second_input`` - which reads as first input is NOT equal to second input
 * ``not (first_input == second_input)`` - which reads as the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Equality<test_logical_equality>` of the first input and the second input
-* ``(not first_input and second_input) or (first_input and not second_input)`` which is the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input, and the :ref:`Logical Conjunction<test_logical_conjunction>` of first input and the :ref:`Logical Negation<test_logical_negation>` of the second input. Wow! That's a lot.
+* ``(not first_input and second_input) or (first_input and not second_input)`` which is the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input, and the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input. Wow! That's a lot.
 
 All of the above statements mean the same thing. :ref:`Exclusive Disjunction<test_exclusive_disjunction>` is also known as `Exclusive OR`_ or XOR_.
-Would "Logical Inequality" be a better name for :ref:`Exclusive Disjunction<test_exclusive_disjunction>`?
+Would "Logical Inequality" be a better name?
 
 ----
 
@@ -562,7 +562,7 @@ test_material_non_implication
 I add another test to ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 96
+  :lineno-start: 95
   :emphasize-lines: 7-10
 
       def test_exclusive_disjunction(self):
@@ -625,7 +625,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` to :ref:`test_material_non_implication` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 101
     :emphasize-lines: 5-7
 
         def test_material_non_implication(self):
@@ -662,7 +662,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add the third case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 101
     :emphasize-lines: 8-10
 
         def test_material_non_implication(self):
@@ -685,7 +685,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add the fourth case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 101
     :emphasize-lines: 11-13
 
         def test_material_non_implication(self):
@@ -821,37 +821,51 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
 * ``first_input and not second_input`` which is the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 * :ref:`True<test_what_is_true>`, only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-* it is the :ref:`opposite or Logical Negation<test_logical_negation>` of :ref:`Material or Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* it is the :ref:`Logical Negation<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
-  in the 4 cases with the statement ``return first_input and not second_input``
+.. NOTE::
 
-  * if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, the statement is
+  ``return first_input and not second_input`` returns the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of  the second input. This means that in the 4 cases
 
-    - ``True and not True`` which is
-    - ``True and False`` which is
-    - ``False`` because of the result of the second case for :ref:`Logical Conjunction<test_logical_conjunction>`, this means that
-    - ``material_non_implication(True, True)`` is the same as ``logical_conjunction(True, False)``
+  - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`material_non_implication<test_material_non_implication>` returns
 
-  * if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, the statement is
+    .. code-block:: python
+      :emphasize-lines: 4
 
-    - ``True and not False`` which is
-    - ``True and True`` which is
-    - ``True`` because of the result of the first case for :ref:`Logical Conjunction<test_logical_conjunction>`, this means that
-    - ``material_non_implication(True, False)`` is the same as ``logical_conjunction(True, True)``
+      first_input and not second_input
+      True        and not True
+      True        and False             # logical_conjunction(True, False)
+      False                             # logical_conjunction(True, False)
 
-  * if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, the statement is
+  - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`material_non_implication<test_material_non_implication>` returns
 
-    - ``False and not True`` which is
-    - ``False and False`` which is
-    - ``False`` because of the result of the last case for :ref:`Logical Conjunction<test_logical_conjunction>`, this means that
-    - ``material_non_implication(False, True)`` is the same as ``logical_conjunction(False, False)``
+    .. code-block:: python
+      :emphasize-lines: 4
 
-  * if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, the statement is
+      first_input and not second_input
+      True        and not False
+      True        and True              # logical_conjunction(True, True)
+      True                              # logical_conjunction(True, True)
 
-    - ``False and not False`` which is
-    - ``False and True`` which is
-    - ``False`` because of the result of the third case for :ref:`Logical Conjunction<test_logical_conjunction>`, this means that
-    - ``material_non_implication(False, False)`` is the same as ``logical_conjunction(False, True)``
+  - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`material_non_implication<test_material_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      first_input and not second_input
+      False       and not True
+      False       and False             # logical_conjunction(False, False)
+      False                             # logical_conjunction(False, False)
+
+  - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`material_non_implication<test_material_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      first_input and not second_input
+      False       and not False
+      False       and True              # logical_conjunction(False, True)
+      False                             # logical_conjunction(False, True)
 
 ----
 
@@ -870,7 +884,7 @@ test_project_first
 I add a new test in ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 102
+  :lineno-start: 101
   :emphasize-lines: 15-16
 
       def test_material_non_implication(self):
@@ -907,7 +921,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`function<what is a function?>` definition for :ref:`project_first<test_project_first>` in ``truth_table.py``
+I add a :ref:`function<what is a function?>` for :ref:`project_first<test_project_first>` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 61
@@ -933,7 +947,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<tes
 * I add the second case to :ref:`test_project_first` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 116
+    :lineno-start: 115
     :emphasize-lines: 3
 
         def test_project_first(self):
@@ -949,7 +963,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<tes
 * on to the next case
 
   .. code-block:: python
-    :lineno-start: 116
+    :lineno-start: 115
     :emphasize-lines: 4
 
         def test_project_first(self):
@@ -983,7 +997,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<tes
 * I add the last case to :ref:`test_project_first` in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 116
+    :lineno-start: 115
     :emphasize-lines: 5
 
         def test_project_first(self):
@@ -1067,7 +1081,7 @@ test_converse_implication
 I add a new test to ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 116
+  :lineno-start: 115
   :emphasize-lines: 7-8
 
       def test_project_first(self):
@@ -1096,7 +1110,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`function<what is a function?>` definition for :ref:`converse_implication<test_converse_implication>` to ``truth_table.py``
+I add a :ref:`function<what is a function?>` for :ref:`converse_implication<test_converse_implication>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 65

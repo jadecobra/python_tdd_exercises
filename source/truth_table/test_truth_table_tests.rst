@@ -306,7 +306,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
-* I add a :ref:`function<what is a function?>` definition for it
+* I add a :ref:`function<what is a function?>` for it
 
   .. code-block:: python
     :lineno-start: 13

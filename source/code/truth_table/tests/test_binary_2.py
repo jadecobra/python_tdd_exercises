@@ -4,7 +4,6 @@ import unittest
 
 class TestBinaryOperations(unittest.TestCase):
 
-
     def test_contradiction(self):
         self.assertFalse(
             src.truth_table.contradiction(True, True)

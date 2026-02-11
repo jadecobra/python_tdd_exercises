@@ -85,7 +85,7 @@ continue the project
     :emphasize-lines: 7
 
     ======================= test session starts ========================
-    platform linux -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
+    platform ____ -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
     rootdir: .../pumping_python/truth_table
     configfile: pyproject.toml
     collected 8 items
@@ -1164,9 +1164,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   .. NOTE::
 
-    - ``return not ((not first_input) and (not second_input))`` returns the :ref:`opposite or Logical Negation<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of ``first_input``, and the :ref:`Logical Negation<test_logical_negation>` of ``second_input`` it could also be written as
-
-    this means that in the 4 cases
+    ``return not ((not first_input) and (not second_input))`` returns the :ref:`opposite or Logical Negation<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of ``first_input``, and the :ref:`Logical Negation<test_logical_negation>` of ``second_input``. This means that in the 4 cases
 
     - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_disjunction<test_logical_disjunction>` returns
 

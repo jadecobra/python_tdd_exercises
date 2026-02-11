@@ -89,7 +89,7 @@ continue the project
     :emphasize-lines: 7
 
     ======================= test session starts ========================
-    platform linux -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
+    platform ____ -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
     rootdir: .../pumping_python/truth_table
     configfile: pyproject.toml
     collected 4 items

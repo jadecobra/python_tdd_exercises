@@ -1217,7 +1217,7 @@ how to run the tests automatically with uv and pytest-watcher
     Runner command: pytest
     Waiting for file changes in .../pumping_python/magic
     ======================= test session starts ========================
-    platform linux -- Python 3.A.B, pytest-C.D.E, pluggy-F.G.H
+    platform ____ -- Python 3.A.B, pytest-C.D.E, pluggy-F.G.H
     rootdir: .../pumping_python/magic
     configfile: pyproject.toml
     collected 1 item
