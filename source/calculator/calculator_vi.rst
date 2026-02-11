@@ -452,7 +452,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   .. code-block:: python
     :lineno-start: 84
-    :emphasize-lines: 11-15
+    :emphasize-lines: 6-17
 
                 self.assertEqual(
                     src.calculator.subtract(data, a_random_number()),
