@@ -1184,47 +1184,23 @@ close the exceptions project
 *********************************************************************************
 
 * I close ``test_exceptions.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line, the terminal_ shows
 
-  .../pumping_python
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+
+* I `change directory`_ to the parent of ``exceptions``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: PowerShell
+
+    ...\pumping_python
 
   I am back in the ``pumping_python`` directory_
-
-.. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
-
-  * the terminal_ shows
-
-    .. code-block:: PowerShell
-
-      (.venv) ...\pumping_python\type_error
-
-  * I deactivate the `virtual environment`_
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      deactivate
-
-    the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-    .. code-block:: PowerShell
-
-      ...\pumping_python\exceptions
-
-  * I `change directory`_ to the parent of ``exceptions``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      cd ..
-
-    the terminal_ shows
-
-    .. code-block:: PowerShell
-
-      ...\pumping_python
-
-    I am back in the ``pumping_python`` directory_
 
 ----
 

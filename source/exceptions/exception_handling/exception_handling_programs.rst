@@ -71,28 +71,6 @@ open the project
 
     .../pumping_python/exceptions
 
-* I activate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/exceptions
-
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
@@ -675,24 +653,7 @@ close the project
 *********************************************************************************
 
 * I close ``exceptions.py`` and ``test_exceptions.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line, the terminal_ shows
-
-  .. code-block:: shell
-
-    (.venv) .../pumping_python/exceptions
-
-* I deactivate the `virtual environment`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    deactivate
-
-  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-  .. code-block:: shell
-
-    .../pumping_python/exceptions
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``exceptions``
 

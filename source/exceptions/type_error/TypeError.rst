@@ -1166,49 +1166,23 @@ close the project
 *********************************************************************************
 
 * I close ``test_type_error.py``  and ``type_error.py`` in the :ref:`editor<2 editors>`
-* then I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ shows
+
+* then I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ goes back to the command line
+
+* I `change directory`_ to the parent of ``type_error``
 
   .. code-block:: shell
+    :emphasize-lines: 1
 
-    .../pumping_python
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: PowerShell
+
+    ...\pumping_python
 
   I am back in the ``pumping_python`` directory_
-
-.. NOTE:: on Windows_ without `Windows Subsystem for Linux`_
-
-  * the terminal_ shows
-
-    .. code-block:: PowerShell
-
-      (.venv) ...\pumping_python\type_error
-
-  * I deactivate the `virtual environment`_
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      deactivate
-
-    the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
-
-    .. code-block:: PowerShell
-
-      ...\pumping_python\type_error
-
-  * I `change directory`_ to the parent of ``type_error``
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      cd ..
-
-    the terminal_ shows
-
-    .. code-block:: PowerShell
-
-      ...\pumping_python
-
-    I am back in the ``pumping_python`` directory_
 
 ----
 

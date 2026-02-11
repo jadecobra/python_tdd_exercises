@@ -46,28 +46,6 @@ open the project
 
     .../pumping_python/person
 
-* I activate the `virtual environment`_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: Powershell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    (.venv) .../pumping_python/person
-
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: python
