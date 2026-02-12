@@ -1103,10 +1103,10 @@ This means that in the 4 cases
     :force:
 
     (first_input or not second_input) and (not first_input or second_input)
-    (True        or not True        ) and (not True        or True        )
-    (True        or False           ) and (False           or True        )
-     True                             and  True
-     True                             # logical_conjunction(True, True)
+    (True        or not False       ) and (not True        or False       )
+    (True        or True            ) and (False           or False       )
+     True                             and  False
+     False                            # logical_conjunction(True, False)
 
 * if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_equality<test_logical_equality>` returns
 
@@ -1114,10 +1114,10 @@ This means that in the 4 cases
     :emphasize-lines: 5
 
     (first_input or not second_input) and (not first_input or second_input)
-    (True        or not True        ) and (not True        or True        )
-    (True        or False           ) and (False           or True        )
-     True                             and  True
-     True                             # logical_conjunction(True, True)
+    (False       or not True        ) and (not False       or True        )
+    (False       or False           ) and (True            or True        )
+     False                            and  True
+     False                            # logical_conjunction(False, True)
 
 * if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_equality<test_logical_equality>` returns
 
@@ -1125,8 +1125,8 @@ This means that in the 4 cases
     :emphasize-lines: 5
 
     (first_input or not second_input) and (not first_input or second_input)
-    (True        or not True        ) and (not True        or True        )
-    (True        or False           ) and (False           or True        )
+    (False       or not False       ) and (not False       or False       )
+    (False       or True            ) and (True            or False       )
      True                             and  True
      True                             # logical_conjunction(True, True)
 
