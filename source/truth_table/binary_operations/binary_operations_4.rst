@@ -560,7 +560,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 * I add an :ref:`if statement<if statements>` to :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 81
     :emphasize-lines: 2-3
 
     def logical_equality(first_input, second_input):
@@ -594,7 +594,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 * I add another :ref:`if statement<if statements>` to :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 81
     :emphasize-lines: 2-3
 
     def logical_equality(first_input, second_input):
@@ -640,50 +640,50 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 * I use ":ref:`or<test_logical_disjunction>`" to put the 2 statements that return :ref:`False<test_what_is_false>` together, since they are at the same level in :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 2-3
+    :lineno-start: 81
+    :emphasize-lines: 2-11
 
     def logical_equality(first_input, second_input):
-        if (not first_input and second_input) or (first_input and not second_input):
-            return False
         # if not first_input and second_input:
         #     return False
         # if first_input and not second_input:
         #     return False
+        if (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        ):
+            return False
         return True
 
   still green
 
-* I remove the commented lines
+* since ``if something: return False`` is the same as ``return not (something)``, I remove the commented lines and use a :ref:`conditional expression<conditional expressions>` with :ref:`not<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 81
+    :emphasize-lines: 2-6
 
     def logical_equality(first_input, second_input):
-        if (not first_input and second_input) or (first_input and not second_input):
+        return not (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        )
+        if (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        ):
             return False
         return True
 
-  the test is still green
-
-* I write a new `return statement`_ with :ref:`not<test_logical_negation>` to replace the :ref:`if statement<if statements>`
-
-  .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 2
-
-    def logical_equality(first_input, second_input):
-        return not ((not first_input and second_input) or (first_input and not second_input))
-        if (not first_input and second_input) or (first_input and not second_input):
-            return False
-        return True
-
-  the test is still green
+  greennn, yellow?
 
 * I remove the other statements in the :ref:`function<what is a function?>` then "multiply :ref:`not<test_logical_negation>`" by every symbol in the parentheses
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 81
     :emphasize-lines: 2-6
 
     def logical_equality(first_input, second_input):
@@ -692,7 +692,11 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
             (not or)
             (not (first_input and not second_input))
         )
-        return not ((not first_input and second_input) or (first_input and not second_input))
+        return not (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        )
 
   the terminal_ shows SyntaxError_
 
@@ -703,7 +707,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 * I change ":ref:`not<test_logical_negation>` :ref:`or<test_logical_disjunction>`" to ":ref:`and<test_logical_conjunction>`"
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 81
     :emphasize-lines: 4
 
     def logical_equality(first_input, second_input):
@@ -712,58 +716,26 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
             and
             (not (first_input and not second_input))
         )
-        return not ((not first_input and second_input) or (first_input and not second_input))
-
-  the test is green again
-
-* I remove the other `return statement`_ then "multiply" " :ref:`not<test_logical_negation>` in the first parentheses
-
-  .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 3
-
-    def logical_equality(first_input, second_input):
-        return (
-            (not not first_input not and not second_input)
-            # (not (not first_input and second_input))
-            and
-            (not (first_input and not second_input))
-        )
-
-  the terminal_ shows SyntaxError_
-
-  .. code-block:: shell
-
-    SyntaxError: invalid syntax
-
-* I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
-
-  .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 3
-
-    def logical_equality(first_input, second_input):
-        return (
-            (not not first_input or not second_input)
-            # (not (not first_input and second_input))
-            and
-            (not (first_input and not second_input))
+        return not (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
         )
 
   green again
 
-* I remove the commented line and "multiply" :ref:`not<test_logical_negation>` in the next statement
+* I remove the other `return statement`_ then "multiply" " :ref:`not<test_logical_negation>` in the first parentheses
 
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 5
+    :lineno-start: 81
+    :emphasize-lines: 3-4
 
     def logical_equality(first_input, second_input):
         return (
-            (not not first_input or not second_input)
+            # (not (not first_input and second_input))
+            ((not not first_input) (not and) (not second_input))
             and
-            (not first_input not and not not second_input)
-            # (not (first_input and not second_input))
+            (not (first_input and not second_input))
         )
 
   the terminal_ shows SyntaxError_
@@ -775,23 +747,59 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 * I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
 
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 5
+    :lineno-start: 81
+    :emphasize-lines: 4
 
     def logical_equality(first_input, second_input):
         return (
-            (not not first_input or not second_input)
+            # (not (not first_input and second_input))
+            ((not not first_input) or (not second_input))
             and
-            (not first_input or not not second_input)
-            # (not (first_input and not second_input))
+            (not (first_input and not second_input))
         )
 
   the test is green again
 
-* I remove the commented line and the ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`" from both parentheses since they cancel out
+* I remove the commented line and "multiply" :ref:`not<test_logical_negation>` in the next statement
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 81
+    :emphasize-lines: 5-6
+
+    def logical_equality(first_input, second_input):
+        return (
+            ((not not first_input) or (not second_input))
+            and
+            # (not (first_input and not second_input))
+            ((not first_input) (not and) (not not second_input))
+        )
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: shell
+
+    SyntaxError: invalid syntax
+
+* I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 5
+
+    def logical_equality(first_input, second_input):
+        return (
+            ((not not first_input) or (not second_input))
+            and
+            # (not (first_input and not second_input))
+            ((not first_input) or (not not second_input))
+        )
+
+  green again
+
+* I remove the commented line and ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`" from both parentheses because they cancel out
+
+  .. code-block:: python
+    :lineno-start: 81
     :emphasize-lines: 3, 5
 
     def logical_equality(first_input, second_input):
@@ -801,12 +809,12 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
             (not first_input or second_input)
         )
 
-  still green
+  the test is still green
 
-* The 2 cases where :ref:`logical_equality<test_logical_equality>` returns :ref:`True<test_what_is_true>` are, if ``first_input`` and ``second_input`` are the same, which means I can write a much simpler `return statement`_ thanks to the equality symbol (2 equal signs together :kbd:`=+=`)
+* :ref:`logical_equality<test_logical_equality>` returns :ref:`True<test_what_is_true>`, if the first input and second input are the same, which means I can write a much simpler `return statement`_ thanks to the equality (``==``) symbol (2 equal signs together :kbd:`=+=`)
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 81
     :emphasize-lines: 2
 
     def logical_equality(first_input, second_input):
@@ -872,7 +880,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 I add a :ref:`method<what is a function?>` for ``material_implication`` in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 75
+  :lineno-start: 81
   :emphasize-lines: 10-11
 
   def logical_equality(first_input, second_input):

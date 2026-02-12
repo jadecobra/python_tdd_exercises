@@ -519,7 +519,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   still green
 
-* I remove the commented lines, then use an even simpler `return statement`_ with the NOT equal symbol (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
+* I remove the commented lines, then use an even simpler `return statement`_ with the NOT equal symbol (``!=``) (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
 
   .. code-block:: python
     :lineno-start: 51
