@@ -1066,6 +1066,10 @@ I can use assertions_ to test if 2 things are equal, like I did with :ref:`test_
 
 ----
 
+.. NOTE::
+
+  ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal``
+
 I add a new failing test
 
 .. code-block:: python
@@ -1088,9 +1092,7 @@ the terminal_ shows AssertionError_
 
   E    assert None != None
 
-.. NOTE::
-
-  ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal`` which makes this statement read as ``assert None is NOT equal to None`` or "CONTINUE only if None is NOT equal to None"
+because this statement can be read as ``assert None is NOT equal to None`` or "CONTINUE only if None is NOT equal to None"
 
 ----
 
@@ -1100,6 +1102,10 @@ the terminal_ shows AssertionError_
 
 ----
 
+.. NOTE::
+
+  ``==`` is :kbd:`!+=` on the keyboard and is the symbol for ``is equal``
+
 I change the assertion_ to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
@@ -1108,7 +1114,7 @@ I change the assertion_ to make it :ref:`True<test_what_is_true>`
 
           assert None == None
 
-the test passes
+the test passes because this statement can be read as ``assert None is equal to None`` or "CONTINUE only if None is equal to None"
 
 ----
 
