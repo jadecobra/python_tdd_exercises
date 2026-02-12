@@ -700,7 +700,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 
     SyntaxError: invalid syntax
 
-* I change "not_ :ref:`or<test_logical_disjunction>`" to ":ref:`and<test_logical_conjunction>`"
+* I change ":ref:`not<test_logical_negation>` :ref:`or<test_logical_disjunction>`" to ":ref:`and<test_logical_conjunction>`"
 
   .. code-block:: python
     :lineno-start: 75
@@ -736,7 +736,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 
     SyntaxError: invalid syntax
 
-* I change "not_ :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
+* I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
 
   .. code-block:: python
     :lineno-start: 75
@@ -772,7 +772,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 
     SyntaxError: invalid syntax
 
-* I change "not_ :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
+* I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
 
   .. code-block:: python
     :lineno-start: 75
@@ -788,7 +788,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 
   the test is green again
 
-* I remove the commented line and the "not_ :ref:`not<test_logical_negation>`" from both parentheses since they cancel out
+* I remove the commented line and the ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`" from both parentheses since they cancel out
 
   .. code-block:: python
     :lineno-start: 75
@@ -997,7 +997,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 
     SyntaxError: invalid syntax
 
-* I change "not_ :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
+* I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
 
   .. code-block:: python
     :lineno-start: 84
@@ -1009,7 +1009,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 
   the test is green again
 
-* I remove "not_ :ref:`not<test_logical_negation>`"
+* I remove ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`"
 
   .. code-block:: python
     :lineno-start: 84

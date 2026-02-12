@@ -1346,7 +1346,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
     SyntaxError: invalid syntax
 
-* I change "not_ :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`" to be correct
+* I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`" to be correct
 
   .. code-block:: python
     :lineno-start: 69
@@ -1358,7 +1358,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   back to green
 
-* I remove the other `return statement`_ then remove  "not_ :ref:`not<test_logical_negation>`" because they cancel out - the negation of the negation of something is something
+* I remove the other `return statement`_ then remove  ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`" because they cancel out - the negation of the negation of something is something
 
   .. code-block:: python
     :lineno-start: 69

@@ -10,8 +10,6 @@
 .. _conditional expressions: `conditional expression`_
 .. _ternary operator: `conditional expression`_
 .. _ternary operators: `conditional expression`_
-.. _variable: https://grokipedia.com/page/Variable_(computer_science)
-.. _variables: variable_
 
 .. _binary_operations_1:
 

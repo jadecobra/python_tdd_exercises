@@ -1100,7 +1100,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
         if not ((not first_input) and (not second_input)):
             return True
 
-  the test is still green, that is a lot of nots_
+  the test is still green, that is a lot of :ref:`nots<test_logical_negation>`
 
 * I move the new :ref:`if statement<if statements>` to the top
 
@@ -1239,7 +1239,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
     # AssertionError
     # SyntaxError
 
-* I fix the failing line by changing "not_ :ref:`and<test_logical_conjunction>`" to "or_" in ``truth_table.py``
+* I fix the failing line by changing ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to "or_" in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 47
@@ -1252,7 +1252,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   the test passes
 
-* I remove "not_ :ref:`not<test_logical_negation>`" from the `return statement`_ because it cancels out
+* I remove ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`" from the `return statement`_ because it cancels out
 
   .. code-block:: python
     :lineno-start: 47
@@ -1262,7 +1262,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
         return first_input or second_input
         return (not not first_input) or (not not second_input)
 
-  the test is still green. Do two nots_ make a right?
+  the test is still green. Do two :ref:`nots<test_logical_negation>` make a right?
 
 * I remove the second `return statement`_
 

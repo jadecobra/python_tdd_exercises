@@ -4,6 +4,9 @@
 
 .. include:: ../../links.rst
 
+.. _variable: https://grokipedia.com/page/Variable_(computer_science)
+.. _variables: variable_
+
 #################################################################################
 how to make a calculator 1
 #################################################################################
