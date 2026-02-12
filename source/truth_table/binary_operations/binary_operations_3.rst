@@ -1399,8 +1399,8 @@ more about Exclusive Disjunction
 
   return x or y
 
-- if ``x`` is ``not first_input and second_input``
-- if ``y`` is ``first_input and not second_input``
+* if ``x`` is ``not first_input and second_input``
+* if ``y`` is ``first_input and not second_input``
 
 :ref:`Exclusive Disjunction<test_exclusive_disjunction>` can also be thought of as
 
@@ -1414,14 +1414,12 @@ more about Exclusive Disjunction
 
 because
 
-- :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
-- :ref:`material_non_implication<test_material_non_implication>` return ``first_input and not second_input``
-
-
+* :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
+* :ref:`material_non_implication<test_material_non_implication>` return ``first_input and not second_input``
 
 This means that in the 4 cases
 
-- if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+* if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -1432,7 +1430,7 @@ This means that in the 4 cases
       False                            or  False
       False                            # logical_disjunction(False, False)
 
-- if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+* if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -1444,7 +1442,7 @@ This means that in the 4 cases
      False                             or  True
      True                              # logical_disjunction(False, True)
 
-- if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+* if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -1455,7 +1453,7 @@ This means that in the 4 cases
      True                              or  False
      True                              # logical_disjunction(True, False)
 
-- if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+* if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
   .. code-block:: python
     :emphasize-lines: 5

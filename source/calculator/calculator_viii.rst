@@ -25,7 +25,33 @@ open the project
 
     cd calculator
 
-  the terminal_ goes back to the command line
+  the terminal_ shows I am in the ``calculator`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/calculator
+
+* I activate the `virtual environment`_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    source .venv/bin/activate
+
+  .. NOTE::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
+
+    .. code-block:: Powershell
+      :emphasize-lines: 1
+
+      .venv/scripts/activate.ps1
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    (.venv) .../pumping_python/calculator
 
 * I use ``pytest-watcher`` to run the tests
 
@@ -569,24 +595,23 @@ test_calculator_w_getattribute
 * I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number` in a new `for loop`_
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 84
     :emphasize-lines: 8-14
 
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
-            for operation in self.calculator_tests:
-                self.assertEqual(
-                    self.calculator_tests[operation]['function'](
-                        data, a_random_number()
-                    ),
-                    error_message
-                )
-            for operation in self.calculator_tests_a:
-                self.assertEqual(
-                    src.calculator.__getattribute__(operation)(
-                        data, a_random_number()
-                    ),
-                    'BOOM!!!'
-                )
+                    for operation in self.calculator_tests:
+                        self.assertEqual(
+                            self.calculator_tests[operation]['function'](
+                                data, a_random_number()
+                            ),
+                            error_message
+                        )
+                    for operation in self.calculator_tests_a:
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                data, a_random_number()
+                            ),
+                            'BOOM!!!'
+                        )
 
         def test_calculator_w_list_items(self):
 
@@ -1937,7 +1962,24 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line, the terminal_ shows
+
+  .. code-block:: python
+
+    (.venv) .../pumping_python/calculator
+
+* I deactivate the `virtual environment`_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    deactivate
+
+  the terminal_ goes back to the command line, ``(.venv)`` is no longer on the left side
+
+  .. code-block:: python
+
+    .../pumping_python/calculator
 
 * I `change directory`_ to the parent of ``calculator``
 
