@@ -93,13 +93,18 @@ test_negate_second
 I add a new test with the first case for another Binary Operation - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, to ``test_truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 97
-  :emphasize-lines: 3-4
+  :lineno-start: 127
+  :emphasize-lines: 7-8
 
+      def test_converse_implication(self):
+          self.assertTrue(src.truth_table.converse_implication(True, True))
+          self.assertTrue(src.truth_table.converse_implication(True, False))
+          self.assertFalse(src.truth_table.converse_implication(False, True))
           self.assertTrue(src.truth_table.converse_implication(False, False))
 
       def test_negate_second(self):
           self.assertFalse(src.truth_table.negate_second(True, True))
+
 
   # Exceptions seen
 
@@ -270,12 +275,16 @@ test_logical_nor
 
 ----
 
-I add a test for ``logical_nor`` in ``test_truth_table.py``
+I add a test for :ref:`logical_nor<test_logical_nor>` in ``test_truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 103
-  :emphasize-lines: 3-4
+  :lineno-start: 127
+  :emphasize-lines: 7-8
 
+      def test_negate_second(self):
+          self.assertFalse(src.truth_table.negate_second(True, True))
+          self.assertTrue(src.truth_table.negate_second(True, False))
+          self.assertFalse(src.truth_table.negate_second(False, True))
           self.assertTrue(src.truth_table.negate_second(False, False))
 
       def test_logical_nor(self):
@@ -311,7 +320,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   def logical_nor(first_input, second_input):
       return False
 
-the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>`, if the first and second inputs are both :ref:`True<test_what_is_true>`
+the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_what_is_false>`, if the first and second inputs are both :ref:`True<test_what_is_true>`
 
 ----
 
@@ -321,26 +330,26 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>`, if th
 
 ----
 
-* I add the next case to ``test_logical_nor`` in ``test_truth_table.py`` - when ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
+* I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_logical_nor` in ``test_truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 105
+    :lineno-start: 133
     :emphasize-lines: 3
 
         def test_logical_nor(self):
             self.assertFalse(src.truth_table.logical_nor(True, True))
             self.assertFalse(src.truth_table.logical_nor(True, False))
 
-  the test is still green. ``logical_nor`` returns
+  the test is still green. :ref:`logical_nor<test_logical_nor>` returns
 
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when the first and second inputs are both :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
 * on to the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 105
+    :lineno-start: 133
     :emphasize-lines: 4
 
         def test_logical_nor(self):
@@ -348,15 +357,15 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>`, if th
             self.assertFalse(src.truth_table.logical_nor(True, False))
             self.assertFalse(src.truth_table.logical_nor(False, True))
 
-  the test is still green. ``logical_nor`` returns
+  the test is still green. :ref:`logical_nor<test_logical_nor>` returns
 
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
 * I add the last case - when the two inputs are :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 105
+    :lineno-start: 133
     :emphasize-lines: 5
 
         def test_logical_nor(self):
@@ -374,7 +383,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>`, if th
 
     AssertionError: False is not true
 
-  this is the only case where ``logical_nor`` returns :ref:`True<test_what_is_true>`
+  this is the only case where :ref:`logical_nor<test_logical_nor>` returns :ref:`True<test_what_is_true>`
 
 * I add a :ref:`conditional expression<conditional expressions>` for it in ``truth_table.py``
 
@@ -386,7 +395,7 @@ the test passes. ``logical_nor`` returns :ref:`False<test_what_is_false>`, if th
         return True if (first_input == False and second_input == False) else False
         return False
 
-  the test passes. ``logical_nor`` returns
+  the test passes. :ref:`logical_nor<test_logical_nor>` returns
 
   - :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`

@@ -465,7 +465,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_nor'
 
-* I add a :ref:`function<what is a function?>` for ``logical_nor``
+* I add a :ref:`function<what is a function?>` for :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
     :lineno-start: 33
