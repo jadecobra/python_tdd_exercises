@@ -569,23 +569,24 @@ test_calculator_w_getattribute
 * I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number` in a new `for loop`_
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 71
     :emphasize-lines: 8-14
 
-                    for operation in self.calculator_tests:
-                        self.assertEqual(
-                            self.calculator_tests[operation]['function'](
-                                data, a_random_number()
-                            ),
-                            error_message
-                        )
-                    for operation in self.calculator_tests_a:
-                        self.assertEqual(
-                            src.calculator.__getattribute__(operation)(
-                                data, a_random_number()
-                            ),
-                            'BOOM!!!'
-                        )
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            for operation in self.calculator_tests:
+                self.assertEqual(
+                    self.calculator_tests[operation]['function'](
+                        data, a_random_number()
+                    ),
+                    error_message
+                )
+            for operation in self.calculator_tests_a:
+                self.assertEqual(
+                    src.calculator.__getattribute__(operation)(
+                        data, a_random_number()
+                    ),
+                    'BOOM!!!'
+                )
 
         def test_calculator_w_list_items(self):
 
