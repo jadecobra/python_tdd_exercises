@@ -79,7 +79,7 @@ continue the project
 
     uv run pytest-watcher . --now
 
-* the terminal_ shows
+  the terminal_ shows
 
   .. code-block:: shell
     :emphasize-lines: 7

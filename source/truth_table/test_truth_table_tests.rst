@@ -68,7 +68,7 @@ continue the project
 
     uv run pytest-watcher . --now
 
-* the terminal_ shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -1114,9 +1114,12 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 5-6
+    :lineno-start: 76
+    :emphasize-lines: 8-9
 
+    def logical_conjunction(first, second):
+        if (first, second) == (True, False): return False
+        if (first, second) == (False, True): return False
         if (first, second) == (False, False): return False
         return first, second
 
@@ -1133,7 +1136,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 83
     :emphasize-lines: 2
 
     def exclusive_disjunction(first, second):
@@ -1149,7 +1152,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 83
     :emphasize-lines: 3
 
     def exclusive_disjunction(first, second):
@@ -1163,12 +1166,14 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'. Did you mean: 'material_non_implication'?
 
-* I add a definition for the :ref:`converse_non_implication<test_converse_non_implication>` :ref:`function<what is a function?>`
+* I add :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 5-6
+    :lineno-start: 83
+    :emphasize-lines: 7-8
 
+    def exclusive_disjunction(first, second):
+        if (first, second) == (True, True): return False
         if (first, second) == (False, False): return False
         return first, second
 
@@ -1185,7 +1190,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 89
     :emphasize-lines: 2
 
     def converse_non_implication(first, second):
@@ -1201,7 +1206,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 89
     :emphasize-lines: 3
 
     def converse_non_implication(first, second):
@@ -1218,7 +1223,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 89
     :emphasize-lines: 4
 
     def converse_non_implication(first, second):
@@ -1233,12 +1238,15 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
 
-* I add the :ref:`function<what is a function?>` for :ref:`converse_implication<test_converse_implication>`
+* I :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 5-6
+    :lineno-start: 89
+    :emphasize-lines: 8-9
 
+    def converse_non_implication(first, second):
+        if (first, second) == (True, True): return False
+        if (first, second) == (True, False): return False
         if (first, second) == (False, False): return False
         return first, second
 
@@ -1255,7 +1263,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 96
     :emphasize-lines: 2
 
     def converse_implication(first, second):
@@ -1268,12 +1276,13 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'contradiction'
 
-* I add a :ref:`function<what is a function?>` for :ref:`contradiction<test_contradiction>`
+* I add :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 5-6
+    :lineno-start: 96
+    :emphasize-lines: 6-7
 
+    def converse_implication(first, second):
         if (first, second) == (False, True): return False
         return first, second
 
@@ -1290,7 +1299,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 85
+    :lineno-start: 101
     :emphasize-lines: 2
 
     def contradiction(first, second):
@@ -1306,7 +1315,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 85
+    :lineno-start: 101
     :emphasize-lines: 3
 
     def contradiction(first, second):
@@ -1323,7 +1332,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 85
+    :lineno-start: 101
     :emphasize-lines: 4
 
     def contradiction(first, second):
@@ -1341,7 +1350,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 85
+    :lineno-start: 101
     :emphasize-lines: 5
 
     def contradiction(first, second):
@@ -1351,190 +1360,26 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_negation'. Did you mean: 'logical_conjunction'?
+    ======================== 20 passed in G.HIs ========================
 
-* I add a :ref:`function<what is a function?>` for ``logical_negation``
+All the tests are passing and the world is a better place than when I started! I am going home. Wait, there is more...
 
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 5-6
-
-        if (first, second) == (False, False): return False
-        return first, second
-
-
-    def logical_negation(first, second):
-        return first, second
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: shell
-
-    TypeError: logical_negation() missing 1 required positional argument: 'second'
-
-* I remove ``second`` from the parentheses, to make the :ref:`function<what is a function?>` take only 1 input,
-
-  .. code-block:: python
-    :lineno-start: 413
-    :emphasize-lines: 1-2
-
-    def logical_negation(first):
-        return first
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: True is not false
-
-* I add ":ref:`not<test_logical_negation>`" to the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 413
-    :emphasize-lines: 2
-
-    def logical_negation(first):
-        return not first
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.truth_table' has no attribute 'logical_identity'. Did you mean: 'logical_equality'?
-
-* I add a :ref:`function<what is a function?>` for ``logical_identity``
-
-  .. code-block:: python
-    :lineno-start: 413
-    :emphasize-lines: 5-6
-
-    def logical_negation(first):
-        return not first
-
-
-    def logical_identity(the_input):
-        return not the_input
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  I remove ":ref:`not<test_logical_negation>`" from the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 417
-    :emphasize-lines: 2
-
-    def logical_identity(the_input):
-        return the_input
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.truth_table' has no attribute 'logical_true'. Did you mean: 'logical_nand'?
-
-* I add a :ref:`function<what is a function?>` for ``logical_true``
-
-  .. code-block:: python
-    :lineno-start: 417
-    :emphasize-lines: 5-6
-
-    def logical_identity(the_input):
-        return the_input
-
-
-    def logical_true(the_input):
-        return the_input
-
-  the terminal_ shows :ref:`TypeError`
-
-  .. code-block:: shell
-
-    TypeError: logical_true() missing 1 required positional argument: 'x'
-
-  I remove ``first`` from the parentheses, this :ref:`function<what is a function?>` does not take input, I change the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 1-2
-
-    def logical_true():
-        return None
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: None is not true
-
-* I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 2
-
-    def logical_true():
-        return True
-
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_nand'?
-
-* I add a :ref:`function<what is a function?>` for ``logical_false``
-
-  .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 5-6
-
-    def logical_true():
-        return True
-
-
-    def logical_false():
-        return False
-
-  the test is green again! All tests are passing and the world is a better place than if I started.
+----
 
 *********************************************************************************
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-I can refactor the :ref:`functions<what is a function?>` I have, to make them simpler since all the tests are passing
-
-* :ref:`logical_false<test_logical_false>`, :ref:`logical_true<test_logical_true>`, :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>` are already simple
-
-* I change the name of the input in :ref:`Logical Negation<test_logical_negation>`
-
-  .. TIP:: In `Visual Studio Code`_ I can change everywhere a name is by using
-
-    * Find and Replace - ``ctrl+H`` on Windows_ or ``option+command+F`` on MacOS_
-    * Rename Symbol
-
-      - Right click on the name you want to change, for example ``first`` then select ``Rename Symbol`` or
-      - Select the name you want to change then use :kbd:`F2` on your keyboard to rename it
-
-  .. code-block:: python
-    :lineno-start: 413
-    :emphasize-lines: 1-2
-
-    def logical_negation(the_input):
-        return not the_input
-
-  the test is still green
+I can play with the :ref:`functions<what is a function?>` I have to make them simpler and understand why my solutions work, since all the tests are passing.
 
 * :ref:`contradiction<test_contradiction>`  returns :ref:`False<test_what_is_false>` in 4 cases, with 2 inputs there are only 4 cases. I add a `return statement`_
 
   .. code-block:: python
-    :lineno-start: 85
+    :lineno-start: 101
     :emphasize-lines: 2
 
     def contradiction(first, second):
@@ -1545,47 +1390,48 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green. I remove the other lines in the :ref:`function<what is a function?>` in the :ref:`function<what is a function?>`
+  the test is still green. I remove the other lines in :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
-    :lineno-start: 85
+    :lineno-start: 101
 
     def contradiction(first, second):
         return False
 
+----
 
-    def logical_negation(the_input):
-        return not the_input
-
-* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case, I return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>`, for the 3 cases that return :ref:`True<test_what_is_true>`
-
-  .. NOTE:: "``!=``" is the NOT Equal Symbol made with :kbd:`!+=`
+* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case. I add a `return statement`_ for it because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 96
     :emphasize-lines: 2
 
     def converse_implication(first, second):
-        return (first, second) != (False, True)
+        return not ((first, second) == (False, True))
         if (first, second) == (False, True): return False
         return first, second
 
-  still green. I remove the other statements in the :ref:`function<what is a function?>`
+
+  still green
+
+* I remove the other statements in :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 96
 
     def converse_implication(first, second):
-        return (first, second) != (False, True)
+        return not ((first, second) == (False, True))
 
 
     def contradiction(first, second):
         return False
+
+----
 
 * :ref:`converse_non_implication<test_converse_non_implication>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 89
     :emphasize-lines: 2
 
     def converse_non_implication(first, second):
@@ -1595,10 +1441,12 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green and I remove the other lines in the :ref:`function<what is a function?>`
+  green
+
+* I remove the other statements in :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 89
 
     def converse_non_implication(first, second):
         return (first, second) == (False, True)
@@ -1607,10 +1455,12 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
     def converse_implication(first, second):
         return (first, second) != (False, True)
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two :ref:`if statements`. I put them together to make one :ref:`if statement<if statements>`
+----
+
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two :ref:`if statements` that return the same thing. I put them together to make one :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 83
     :emphasize-lines: 2-6
 
     def exclusive_disjunction(first, second):
@@ -1623,34 +1473,49 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green. I remove the other :ref:`if statements` then return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>`
+  still green
+
+* I remove the other statements then return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>` because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 83
     :emphasize-lines: 2-6
 
     def exclusive_disjunction(first, second):
-        return (
-            (first, second) != (True, True)
-            and
-            (first, second) != (False, False)
+        return not (
+            (first, second) == (True, True)
+            or
+            (first, second) == (False, False)
+        )
+        if (
+            (first, second) == (True, True)
+            or
+            (first, second) == (False, False)
+        ): return False
+
+
+    def converse_non_implication(first, second):
+        return (first, second) == (False, True)
+
+  the test is still green
+
+* I remove the other lines in :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+
+  .. code-block:: python
+    :lineno-start: 83
+
+    def exclusive_disjunction(first, second):
+        return not (
+            (first, second) == (True, True)
+            or
+            (first, second) == (False, False)
         )
 
 
     def converse_non_implication(first, second):
         return (first, second) == (False, True)
 
-  the test is still green, I remove the other lines in the :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 67
-
-    def exclusive_disjunction(first, second):
-        return (first, second) != (True, True) and (first, second) != (False, False)
-
-
-    def converse_non_implication(first, second):
-        return (first, second) == (False, True)
+----
 
 * :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
 
@@ -1665,7 +1530,9 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  still green, I remove the other statements in the :ref:`function<what is a function?>`
+  still green
+
+* I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -1675,63 +1542,96 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 
 
     def exclusive_disjunction(first, second):
-        return (
+        return not (
+            (first, second) == (True, True)
+            or
+            (first, second) == (False, False)
+        )
 
+----
 
-* :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the opposite of it which covers the other 3 cases
+* :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the :ref:`opposite<test_logical_negation>` because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 71
     :emphasize-lines: 2
 
     def logical_disjunction(first, second):
-        return (first, second) != (False, False)
+        return not ((first, second) == (False, False))
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green. I remove the other lines in the :ref:`function<what is a function?>`
+  green
+
+* I remove the other lines in :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
     :lineno-start: 71
 
     def logical_disjunction(first, second):
-        return (first, second) != (False, False)
+        return not ((first, second) == (False, False))
 
 
     def logical_conjunction(first, second):
         return (first, second) == (True, True)
 
-* :ref:`logical_equality<test_logical_equality>` has two :ref:`if statements`.  I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>` to add a `return statement`_
+----
+
+* :ref:`logical_equality<test_logical_equality>` has two :ref:`if statements`that return the same thing. I put them together to make one :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 65
     :emphasize-lines: 2-6
 
     def logical_equality(first, second):
-        return (
-            (first, second) != (True, False)
-            and
-            (first, second) != (False, True)
-        )
+        if (
+            (first, second) == (True, False)
+            or
+            (first, second) == (False, True)
+        ): return False
         if (first, second) == (True, False): return False
         if (first, second) == (False, True): return False
         return first, second
 
-  the test is still green. I remove the other lines in the :ref:`function<what is a function?>`
+  still green
+
+* I remove the other statements and use a `return statement`_ because ``if something: return False`` is the same as ``return not (something)``
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2-6
+
+    def logical_equality(first, second):
+        return not (
+            (first, second) == (True, False)
+            or
+            (first, second) == (False, True)
+        )
+        if (
+            (first, second) == (True, False)
+            or
+            (first, second) == (False, True)
+        ): return False
+
+  the test is still green
+
+* I remove the other statements in :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
     :lineno-start: 65
 
     def logical_equality(first, second):
-        return (
-            (first, second) != (True, False)
-            and
-            (first, second) != (False, True)
+        return not (
+            (first, second) == (True, False)
+            or
+            (first, second) == (False, True)
         )
 
 
     def logical_disjunction(first, second):
-        return (first, second) != (False, False)
+        return not ((first, second) == (False, False))
+
+----
 
 * :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for its opposite which covers the other 3 cases
 
@@ -1889,7 +1789,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
     def negate_first(first, second):
         return first != True
 
-* :ref:`project_second<test_project_second>`, :ref:`project_first<test_project_first>` and :ref:`tautology<test_tautology>` are already simple
+* :ref:`project_first<test_project_first>`, :ref:`project_second<test_project_second>`, :ref:`tautology<test_tautology>`, :ref:`logical_false<test_logical_false>`, :ref:`logical_true<test_logical_true>`, :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>` are already simple
 
 * I change the `return statement`_ in :ref:`negate_second<test_negate_second>` to make it simpler
 
