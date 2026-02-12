@@ -150,9 +150,11 @@ how to make a shell script
     uv add --requirement requirements.txt
     uv run pytest-watcher . --now
 
---------------------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 how to run a shell script
---------------------------------------------------------------------------------------------
+*********************************************************************************
 
 I go back to the terminal_ to run the program_
 
@@ -182,9 +184,11 @@ I have to tell the computer where the file_ is
 
 I have to make the file executable for the computer to be be able to run the program_.
 
---------------------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 how to view the permissions of a file
---------------------------------------------------------------------------------------------
+*********************************************************************************
 
 I use ls_ to check the permissions of the file_
 
@@ -223,9 +227,11 @@ the terminal_ shows
 
 I want to add execute permissions so I can run (execute) the file_
 
---------------------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 how to make a shell script run as a command
---------------------------------------------------------------------------------------------
+*********************************************************************************
 
 * I change the mode of the file_ to add executable permissions
 
@@ -296,6 +302,12 @@ how to make a shell script run as a command
 
 * I close ``test_magic_again`` in the :ref:`editor<2 editors>`
 
+----
+
+*********************************************************************************
+how to use makePythonTdd.sh to make a different project
+*********************************************************************************
+
 * I want to use ``makePythonTdd.sh`` to make another project with a different name. I change ``magic_again`` to the name of the new project in the :ref:`editor<2 editors>`
 
   .. NOTE:: The lines that are changing in the code are highlighted
@@ -303,7 +315,7 @@ how to make a shell script run as a command
   .. code-block::
     :linenos:
     :emphasize-lines: 2, 3, 5, 12, 20
-    :emphasize-text: more_magic
+    :emphasize-text: more_magic MoreMagic
 
     #!/bin/bash
     mkdir more_magic

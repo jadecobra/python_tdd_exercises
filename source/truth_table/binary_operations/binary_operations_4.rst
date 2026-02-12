@@ -1073,62 +1073,62 @@ more about Logical Equality
 .. code-block:: python
 
   return (
-      converse_non_implication(first_input, second_input)
-      or
-      material_non_implication(first_input, second_input)
+      converse_implication(first_input, second_input)
+      and
+      material_implication(first_input, second_input)
   )
 
 because
 
-* :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
-* :ref:`material_non_implication<test_material_non_implication>` return ``first_input and not second_input``
+* :ref:`converse_implication<test_converse_implication>` returns ``first_input or not second_input``
+* :ref:`material_implication<test_material_implication>` return ``not first_input or second_input``
 
 This means that in the 4 cases
 
-* if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+* if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_equality<test_logical_equality>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
 
-    (not first_input and second_input) or (first_input and not second_input)
-    (not True        and True        ) or (True        and not True        )
-    (False           and True        ) or (True        and False           )
-      False                            or  False
-      False                            # logical_disjunction(False, False)
+    (first_input or not second_input) and (not first_input or second_input)
+    (True        or not True        ) and (not True        or True        )
+    (True        or False           ) and (False           or True        )
+     True                             and  True
+     True                             # logical_conjunction(True, True)
 
-* if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+* if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_equality<test_logical_equality>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
     :force:
 
-    (not first_input and second_input) or (first_input and not second_input)
-    (not True        and False       ) or (True        and not False       )
-    (False           and False       ) or (True        and True            )
-     False                             or  True
-     True                              # logical_disjunction(False, True)
+    (first_input or not second_input) and (not first_input or second_input)
+    (True        or not True        ) and (not True        or True        )
+    (True        or False           ) and (False           or True        )
+     True                             and  True
+     True                             # logical_conjunction(True, True)
 
-* if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-
-    (not first_input and second_input) or (first_input and not second_input)
-    (not False       and True        ) or (False       and not True        )
-    (True            and True        ) or (False       and False           )
-     True                              or  False
-     True                              # logical_disjunction(True, False)
-
-* if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+* if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_equality<test_logical_equality>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
 
-    (not first_input and second_input) or (first_input and not second_input)
-    (not False       and False       ) or (False       and not False       )
-    (True            and False       ) or (False       and True            )
-     False                             or  False
-     False                             # logical_disjunction(False, False)
+    (first_input or not second_input) and (not first_input or second_input)
+    (True        or not True        ) and (not True        or True        )
+    (True        or False           ) and (False           or True        )
+     True                             and  True
+     True                             # logical_conjunction(True, True)
+
+* if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_equality<test_logical_equality>` returns
+
+  .. code-block:: python
+    :emphasize-lines: 5
+
+    (first_input or not second_input) and (not first_input or second_input)
+    (True        or not True        ) and (not True        or True        )
+    (True        or False           ) and (False           or True        )
+     True                             and  True
+     True                             # logical_conjunction(True, True)
 
 ----
 

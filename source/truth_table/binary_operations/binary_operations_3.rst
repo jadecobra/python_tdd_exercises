@@ -1415,7 +1415,7 @@ more about Exclusive Disjunction
 because
 
 * :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
-* :ref:`material_non_implication<test_material_non_implication>` return ``first_input and not second_input``
+* :ref:`material_non_implication<test_material_non_implication>` returns ``first_input and not second_input``
 
 This means that in the 4 cases
 
