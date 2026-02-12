@@ -149,7 +149,7 @@ the test passes
 
         def test_calculator_raises_type_error_w_none(self):
             with self.assertRaises(TypeError):
-                src.calculator.add(None None)
+                src.calculator.add(None, None)
             src.calculator.divide(None, None)
 
   the terminal_ shows TypeError_

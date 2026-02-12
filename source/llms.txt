@@ -43,7 +43,7 @@
 ## Data_structures
 
 - [booleans](https://www.pumpingpython.com/data_structures/booleans/index.html)
-- [truth table: Nullary and Unary Operations](https://www.pumpingpython.com/data_structures/booleans/truth_table/01_nullary_unary_operations.html)
+- [truth table: Nullary and Unary Operations](https://www.pumpingpython.com/data_structures/booleans/truth_table/nullary_unary_operations.html)
 - [truth table: Binary Operations 1](https://www.pumpingpython.com/data_structures/booleans/truth_table/02_binary_operations_1.html)
 - [truth table: Binary Operations 2](https://www.pumpingpython.com/data_structures/booleans/truth_table/03_binary_operations_2.html)
 - [truth table: Binary Operations 3](https://www.pumpingpython.com/data_structures/booleans/truth_table/04_binary_operations_3.html)

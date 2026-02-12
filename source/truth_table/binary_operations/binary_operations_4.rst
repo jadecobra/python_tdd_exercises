@@ -362,7 +362,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
-* I add the last case - when the two inputs are :ref:`False<test_what_is_false>`
+* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 133
@@ -383,28 +383,55 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 
     AssertionError: False is not true
 
-  this is the only case where :ref:`logical_nor<test_logical_nor>` returns :ref:`True<test_what_is_true>`
-
-* I add a :ref:`conditional expression<conditional expressions>` for it in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for this case in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 2
+    :lineno-start: 77
+    :emphasize-lines: 2-3
 
     def logical_nor(first_input, second_input):
-        return True if (first_input == False and second_input == False) else False
+        if first_input == False and second_input == False:
+            return True
         return False
 
   the test passes. :ref:`logical_nor<test_logical_nor>` returns
 
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
+
+* I make the :ref:`if statement<if statements>` simpler
+
+  .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2-3
+
+    def logical_nor(first_input, second_input):
+        # if first_input == False and second_input == False:
+        if not first_input and not second_input:
+            return True
+        return False
+
+  the test is still green
+
+* since ``if something: return True`` is the same as ``return something``, I use a :ref:`conditional expression<conditional expressions>` for the :ref:`if statement<if statements>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 77
+    :emphasize-lines: 2
+
+    def logical_nor(first_input, second_input):
+        return not first_input and not second_input
+        if not first_input and not second_input:
+            return True
+        return False
+
+  the test passes
 
 * I remove the second `return statement`_ then use the simpler form of the :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 77
     :emphasize-lines: 2
 
     def logical_nor(first_input, second_input):
@@ -416,7 +443,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 * I remove the second `return statement`_ and write the first one in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 77
     :emphasize-lines: 2
 
     def logical_nor(first_input, second_input):
@@ -428,7 +455,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 * I remove the second `return statement`_ and make the first one simpler with bool_
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 77
     :emphasize-lines: 2
 
     def logical_nor(first_input, second_input):
@@ -440,7 +467,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 * I make the statement simpler again
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 77
     :emphasize-lines: 2
 
     def logical_nor(first_input, second_input):
@@ -452,7 +479,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 * I remove the second `return statement`_ then factor out "not_" since it happens 2 times in the first statement
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 77
     :emphasize-lines: 2
 
     def logical_nor(first_input, second_input):
@@ -468,7 +495,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 * I comment out the line then add the correct statement
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 77
     :emphasize-lines: 2-3
 
     def logical_nor(first_input, second_input):
@@ -481,7 +508,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 * I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 77
 
     def logical_nor(first_input, second_input):
         return not (first_input or second_input)
@@ -538,7 +565,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 I add a :ref:`function<what is a function?>` for it in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 71
+  :lineno-start: 77
   :emphasize-lines: 5-6
 
   def logical_nor(first_input, second_input):

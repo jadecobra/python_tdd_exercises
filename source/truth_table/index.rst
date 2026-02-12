@@ -305,7 +305,7 @@ truth table operations
 .. toctree::
   :titlesonly:
 
-  Nullary and Unary<01_nullary_unary_operations>
+  Nullary and Unary<nullary_unary_operations>
   Binary Operations<binary_operations/index>
   Truth Table Test<test_truth_table_tests>
 
