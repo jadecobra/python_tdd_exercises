@@ -196,7 +196,10 @@ continue the project
 
     AssertionError: False is not true
 
-  the test expects :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+  the test expects
+
+  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
 
 * I change the `return statement`_ to see the difference between the input and what the test expects
 
@@ -213,7 +216,11 @@ continue the project
 
     AssertionError: True is not false
 
-  the test expects the :ref:`opposite<test_logical_negation>` of the input
+  the test expects
+
+  - the :ref:`opposite<test_logical_negation>` of the input
+  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
 
 * I use :ref:`not<test_logical_negation>` in the `return statement`_
 
@@ -296,7 +303,10 @@ continue the project
 
     AssertionError: False is not true
 
-  the test expects :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+  the test expects
+
+  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
 
 * I change the `return statement`_ to see the difference between the input and what the test expects
 
@@ -335,7 +345,7 @@ continue the project
 * I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 25
     :emphasize-lines: 2
 
     def logical_true():
@@ -350,13 +360,13 @@ continue the project
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 25
     :emphasize-lines: 5-6
 
     def logical_false():
         return None
 
-  16 failed, 4 passed, simple. I am getting it. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  16 failed, 4 passed, simple again. I am getting it. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -365,7 +375,7 @@ continue the project
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 29
     :emphasize-lines: 5-6
 
     def logical_false():
@@ -460,7 +470,29 @@ continue the project
 
     AssertionError: False is not true
 
-  The expectation of the test changes. I want to see the difference between the inputs and the expected output
+  the test expects :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+
+* I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2
+
+    def project_second(first, second):
+        return True
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  the test expects
+
+  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+
+* I change the `return statement`_ to see the difference between the input and what the test expects
 
   .. code-block:: python
     :lineno-start: 21
@@ -475,7 +507,7 @@ continue the project
 
     AssertionError: (True, False) is not false
 
-  ``second`` is :ref:`False<test_what_is_false>`, I remove ``first`` from the `return statement`_
+* I remove ``first`` from the `return statement`_  since ``second`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -484,7 +516,7 @@ continue the project
     def project_second(first, second):
         return second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  14 failed, 6 passed. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -500,6 +532,75 @@ continue the project
         return second
 
 
+    def project_first():
+        return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: project_second() takes 0 positional arguments but 2 were given
+
+  okay, I have seen this before
+
+* I add 2 names in parentheses
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 1
+
+    def project_first(first, second):
+        return None
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None is not true
+
+* I change the `return statement`_ to give the test what it wants
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
+
+    def project_first(first, second):
+        return True
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  the test expects :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
+
+* I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
+
+    def project_first(first, second):
+        return False
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  the test expects
+
+  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
+
+* I change the `return statement`_ to see the difference between the input and what the test expects
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 2
+
     def project_first(first, second):
         return first, second
 
@@ -509,18 +610,16 @@ continue the project
 
     AssertionError: (False, True) is not false
 
-  ``first`` is :ref:`False<test_what_is_false>`
-
-* I remove ``second`` from the `return statement`_
+* I remove ``second`` from the `return statement`_ since ``first`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 25
     :emphasize-lines: 2
 
     def project_first(first, second):
         return first
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  13 failed, 7 passed. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -529,7 +628,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 25
     :emphasize-lines: 5-6
 
     def project_first(first, second):
@@ -545,10 +644,10 @@ continue the project
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>`
+* I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 29
     :emphasize-lines: 2
 
     def negate_second(first, second):
@@ -564,7 +663,7 @@ continue the project
   I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 29
     :emphasize-lines: 3
 
     def negate_second(first, second):
@@ -581,7 +680,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for it
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 29
     :emphasize-lines: 7-8
 
     def negate_second(first, second):
@@ -1267,7 +1366,7 @@ continue the project
 * I remove ``second`` from the parentheses, to make the :ref:`function<what is a function?>` take only 1 input,
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 253
     :emphasize-lines: 1-2
 
     def logical_negation(first):
@@ -1282,7 +1381,7 @@ continue the project
   I add ":ref:`not<test_logical_negation>`" to the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 253
     :emphasize-lines: 2
 
     def logical_negation(first):
@@ -1297,7 +1396,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for ``logical_identity``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 253
     :emphasize-lines: 5-6
 
     def logical_negation(first):
@@ -1316,7 +1415,7 @@ continue the project
   I remove ":ref:`not<test_logical_negation>`" from the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 97
+    :lineno-start: 257
     :emphasize-lines: 2
 
     def logical_identity(the_input):
@@ -1331,7 +1430,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for ``logical_true``
 
   .. code-block:: python
-    :lineno-start: 97
+    :lineno-start: 257
     :emphasize-lines: 5-6
 
     def logical_identity(the_input):
@@ -1411,7 +1510,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
       - Select the name you want to change then use :kbd:`F2` on your keyboard to rename it
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 253
     :emphasize-lines: 1-2
 
     def logical_negation(the_input):
@@ -1756,7 +1855,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * ``second`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 29
     :emphasize-lines: 2
 
     def negate_second(first, second):
@@ -1768,7 +1867,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   still green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 29
 
     def negate_second(first, second):
         return second != True
@@ -1782,7 +1881,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * I change the `return statement`_ in :ref:`negate_second<test_negate_second>` to make it simpler
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 29
     :emphasize-lines: 2
 
     def negate_second(first, second):
@@ -1792,7 +1891,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   if ``not second`` is :ref:`True<test_what_is_true>` it means the `return statement`_ is ``True == True`` which is a duplication. I remove the second part of the statement and the second `return statement`_
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 29
     :emphasize-lines: 2
 
     def negate_second(first, second):
