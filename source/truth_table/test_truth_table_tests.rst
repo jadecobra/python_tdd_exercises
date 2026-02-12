@@ -345,7 +345,7 @@ continue the project
 * I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def logical_true():
@@ -360,7 +360,7 @@ continue the project
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 5-6
 
     def logical_false():
@@ -402,7 +402,7 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None is not true
 
@@ -466,7 +466,7 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False is not true
 
@@ -503,7 +503,7 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, False) is not false
 
@@ -546,7 +546,7 @@ continue the project
 * I add 2 names in parentheses
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 1
 
     def project_first(first, second):
@@ -561,7 +561,7 @@ continue the project
 * I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def project_first(first, second):
@@ -578,7 +578,7 @@ continue the project
 * I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def project_first(first, second):
@@ -598,7 +598,7 @@ continue the project
 * I change the `return statement`_ to see the difference between the input and what the test expects
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def project_first(first, second):
@@ -606,14 +606,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, True) is not false
 
 * I remove ``second`` from the `return statement`_ since ``first`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def project_first(first, second):
@@ -625,10 +625,10 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
-* I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>`
+* I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` with a `return statement`_ to see the difference between the input and what the test expects
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 5-6
 
     def project_first(first, second):
@@ -640,7 +640,7 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, True) is not false
 
@@ -656,11 +656,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, True) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -677,7 +677,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
-* I add a :ref:`function<what is a function?>` for it
+* I add a :ref:`function<what is a function?>` for it with a `return statement`_ to see the difference between the input and what the test expects
 
   .. code-block:: python
     :lineno-start: 29
@@ -694,14 +694,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, True)
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 35
     :emphasize-lines: 2
 
     def negate_first(first, second):
@@ -710,14 +710,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, False) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 35
     :emphasize-lines: 3
 
     def negate_first(first, second):
@@ -731,12 +731,14 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
 
-* I add a :ref:`function<what is a function?>` for :ref:`material_non_implication<test_material_non_implication>`
+* I add a :ref:`function<what is a function?>` for :ref:`material_non_implication<test_material_non_implication>` with a `return statement`_ to see the difference between the input and what the test expects
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5-6
+    :lineno-start: 35
+    :emphasize-lines: 7-8
 
+    def negate_first(first, second):
+        if (first, second) == (True, True): return False
         if (first, second) == (True, False): return False
         return first, second
 
@@ -746,14 +748,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def material_non_implication(first, second):
@@ -762,14 +764,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, True) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 3
 
     def material_non_implication(first, second):
@@ -779,14 +781,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, False) is not false
 
-  I add an :ref:`if statement<if statements>` for it
+* I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 4
 
     def material_non_implication(first, second):
@@ -801,12 +803,15 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
-* I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>`
+* I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` with a `return statement`_ to see the difference between the input and what the test expects
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 5-6
+    :lineno-start: 41
+    :emphasize-lines: 8-9
 
+    def material_non_implication(first, second):
+        if (first, second) == (True, True): return False
+        if (first, second) == (False, True): return False
         if (first, second) == (False, False): return False
         return first, second
 
@@ -816,14 +821,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, False) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 48
     :emphasize-lines: 2
 
     def material_implication(first, second):
@@ -839,9 +844,10 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 5-6
+    :lineno-start: 48
+    :emphasize-lines: 6-7
 
+    def material_implication(first, second):
         if (first, second) == (True, False): return False
         return first, second
 
@@ -851,14 +857,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 53
     :emphasize-lines:  2
 
     def logical_nor(first, second):
@@ -867,14 +873,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, False) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 53
     :emphasize-lines: 3
 
     def logical_nor(first, second):
@@ -884,14 +890,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 53
     :emphasize-lines: 4
 
     def logical_nor(first, second):
@@ -909,9 +915,12 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 5-6
+    :lineno-start: 53
+    :emphasize-lines: 8-9
 
+    def logical_nor(first, second):
+        if (first, second) == (True, True): return False
+        if (first, second) == (True, False): return False
         if (first, second) == (False, True): return False
         return first, second
 
@@ -921,14 +930,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 76
     :emphasize-lines: 2
 
     def logical_nand(first, second):
@@ -944,9 +953,10 @@ continue the project
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 5-6
+    :lineno-start: 76
+    :emphasize-lines: 6-7
 
+    def logical_nand(first, second):
         if (first, second) == (True, True): return False
         return first, second
 
@@ -956,14 +966,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, False) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 65
     :emphasize-lines: 2
 
     def logical_equality(first, second):
@@ -972,14 +982,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, True) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 65
     :emphasize-lines: 3
 
     def logical_equality(first, second):
@@ -996,9 +1006,11 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 211
-    :emphasize-lines: 5-6
+    :lineno-start: 65
+    :emphasize-lines: 7-8
 
+    def logical_equality(first, second):
+        if (first, second) == (True, False): return False
         if (first, second) == (False, True): return False
         return first, second
 
@@ -1008,14 +1020,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, False) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 215
+    :lineno-start: 71
     :emphasize-lines: 2
 
     def logical_disjunction(first, second):
@@ -1031,9 +1043,10 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
-    :lineno-start: 216
-    :emphasize-lines: 5-6
+    :lineno-start: 71
+    :emphasize-lines: 6-7
 
+    def logical_disjunction(first, second):
         if (first, second) == (False, False): return False
         return first, second
 
@@ -1043,14 +1056,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, False) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 76
     :emphasize-lines: 2
 
     def logical_conjunction(first, second):
@@ -1059,14 +1072,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 76
     :emphasize-lines: 3
 
     def logical_conjunction(first, second):
@@ -1076,14 +1089,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, False) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 76
     :emphasize-lines: 4
 
     def logical_conjunction(first, second):
@@ -1113,11 +1126,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -1129,11 +1142,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, False) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -1165,11 +1178,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -1181,11 +1194,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, False) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -1198,11 +1211,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, False) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -1235,11 +1248,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 80
@@ -1270,11 +1283,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, True) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -1286,11 +1299,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (True, False) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -1303,11 +1316,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, True) is not false
 
-  I add another :ref:`if statement<if statements>`
+* I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -1321,11 +1334,11 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (False, False) is not false
 
-  I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 85
@@ -1366,7 +1379,7 @@ continue the project
 * I remove ``second`` from the parentheses, to make the :ref:`function<what is a function?>` take only 1 input,
 
   .. code-block:: python
-    :lineno-start: 253
+    :lineno-start: 413
     :emphasize-lines: 1-2
 
     def logical_negation(first):
@@ -1374,14 +1387,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: True is not false
 
-  I add ":ref:`not<test_logical_negation>`" to the `return statement`_
+* I add ":ref:`not<test_logical_negation>`" to the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 253
+    :lineno-start: 413
     :emphasize-lines: 2
 
     def logical_negation(first):
@@ -1396,7 +1409,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for ``logical_identity``
 
   .. code-block:: python
-    :lineno-start: 253
+    :lineno-start: 413
     :emphasize-lines: 5-6
 
     def logical_negation(first):
@@ -1408,14 +1421,14 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False is not true
 
   I remove ":ref:`not<test_logical_negation>`" from the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 257
+    :lineno-start: 417
     :emphasize-lines: 2
 
     def logical_identity(the_input):
@@ -1430,7 +1443,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for ``logical_true``
 
   .. code-block:: python
-    :lineno-start: 257
+    :lineno-start: 417
     :emphasize-lines: 5-6
 
     def logical_identity(the_input):
@@ -1457,7 +1470,7 @@ continue the project
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None is not true
 
@@ -1510,7 +1523,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
       - Select the name you want to change then use :kbd:`F2` on your keyboard to rename it
 
   .. code-block:: python
-    :lineno-start: 253
+    :lineno-start: 413
     :emphasize-lines: 1-2
 
     def logical_negation(the_input):
@@ -1642,7 +1655,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 76
     :emphasize-lines: 2
 
     def logical_conjunction(first, second):
@@ -1655,7 +1668,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   still green, I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 76
 
     def logical_conjunction(first, second):
         return (first, second) == (True, True)
@@ -1668,7 +1681,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the opposite of it which covers the other 3 cases
 
   .. code-block:: python
-    :lineno-start: 215
+    :lineno-start: 71
     :emphasize-lines: 2
 
     def logical_disjunction(first, second):
@@ -1679,7 +1692,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is still green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 215
+    :lineno-start: 71
 
     def logical_disjunction(first, second):
         return (first, second) != (False, False)
@@ -1691,7 +1704,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * :ref:`logical_equality<test_logical_equality>` has two :ref:`if statements`.  I use what I know from :ref:`exclusive_disjunction<test_exclusive_disjunction>` to add a `return statement`_
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 65
     :emphasize-lines: 2-6
 
     def logical_equality(first, second):
@@ -1707,7 +1720,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is still green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 65
 
     def logical_equality(first, second):
         return (
@@ -1723,7 +1736,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for its opposite which covers the other 3 cases
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 76
     :emphasize-lines: 2
 
     def logical_nand(first, second):
@@ -1734,7 +1747,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   still green. I remove the other lines in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 76
 
     def logical_nand(first, second):
         return (first, second) != (True, True)
@@ -1746,7 +1759,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * :ref:`logical_nor<test_logical_nor>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 53
     :emphasize-lines: 2
 
     def logical_nor(first, second):
@@ -1759,7 +1772,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   still green, I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 53
     :emphasize-lines: 2
 
     def logical_nor(first, second):
@@ -1772,7 +1785,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * :ref:`material_implication<test_material_implication>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the other 3
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 48
     :emphasize-lines: 2
 
     def material_implication(first, second):
@@ -1783,7 +1796,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is still green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 48
 
     def material_implication(first, second):
         return (first, second) != (True, False)
@@ -1795,7 +1808,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the missing case that returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def material_non_implication(first, second):
@@ -1808,7 +1821,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is still green. I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
 
     def material_non_implication(first, second):
         return (first, second) == (True, False)
@@ -1820,7 +1833,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * ``first`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an :ref:`if statement<if statements>` for them
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 35
     :emphasize-lines: 2
 
     def negate_first(first, second):
@@ -1832,7 +1845,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is still green. I remove the other :ref:`if statements`, then add a simpler `return statement`_
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 35
     :emphasize-lines: 2
 
     def negate_first(first, second):
@@ -1843,7 +1856,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is still green, I remove the other statements in the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 35
 
     def negate_first(first, second):
         return first != True
@@ -1947,7 +1960,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * I try it with :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def material_implication(first, second):
@@ -1956,14 +1969,14 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False is not true
 
   Not good! I change ":ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
     :emphasize-lines: 2
 
     def material_implication(first, second):
@@ -1973,7 +1986,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is green again. Note to self - use ":ref:`or<test_logical_disjunction>`" the next time I see ``!=`` in these tests. I remove the other `return statement`_
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 41
 
     def material_implication(first, second):
         return not first or second
@@ -2063,7 +2076,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * I add a `return statement`_ to :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 53
     :emphasize-lines: 2
 
     def logical_equality(first, second):
@@ -2077,7 +2090,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is still green, I remove the other `return statement`_
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 53
 
     def logical_equality(first, second):
         return (not first or second) and (first or not second)
@@ -2130,7 +2143,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 * I add a `return statement`_ to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 65
     :emphasize-lines: 2-6
 
     def exclusive_disjunction(first, second):
@@ -2148,7 +2161,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   still green. I remove the second `return statement`_ then factor out ":ref:`not<test_logical_negation>`" from the first part of the statement
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 65
     :emphasize-lines: 3-4
 
     def exclusive_disjunction(first, second):
@@ -2162,7 +2175,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
   the test is still green. I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 65
 
     def exclusive_disjunction(first, second):
         return (
