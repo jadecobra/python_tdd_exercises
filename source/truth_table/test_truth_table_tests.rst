@@ -1007,7 +1007,7 @@ continue the project
 
     AssertionError: True is not false
 
-  I add "not_" to the `return statement`_
+  I add ":ref:`not<test_logical_negation>`" to the `return statement`_
 
   .. code-block:: python
     :lineno-start: 93
@@ -1041,7 +1041,7 @@ continue the project
 
     AssertionError: False is not true
 
-  I remove "not_" from the `return statement`_
+  I remove ":ref:`not<test_logical_negation>`" from the `return statement`_
 
   .. code-block:: python
     :lineno-start: 97
@@ -1589,7 +1589,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 
     AssertionError: False is not true
 
-  Not good! I change "and_" to "or_"
+  Not good! I change ":ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
 
   .. code-block:: python
     :lineno-start: 25
@@ -1599,7 +1599,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         return not first_input or second_input
         return (first_input, second_input) != (True, False)
 
-  the test is green again. Note to self - use "or_" the next time I see ``!=`` in these tests. I remove the other `return statement`_
+  the test is green again. Note to self - use ":ref:`or<test_logical_disjunction>`" the next time I see ``!=`` in these tests. I remove the other `return statement`_
 
   .. code-block:: python
     :lineno-start: 25
@@ -1620,7 +1620,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         return not first_input and not second_input
         return (first_input, second_input) == (False, False)
 
-  the test is still green. I remove the second `return statement`_ and change the first `return statement`_ in terms of "not_" since it happens 2 times
+  the test is still green. I remove the second `return statement`_ and change the first `return statement`_ in terms of ":ref:`not<test_logical_negation>`" since it happens 2 times
 
   .. code-block:: python
     :lineno-start: 29
@@ -1636,7 +1636,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
 
     SyntaxError: invalid syntax
 
-  I comment the line out then factor out "not_"
+  I comment the line out then factor out ":ref:`not<test_logical_negation>`"
 
   .. code-block:: python
     :lineno-start: 29
@@ -1668,7 +1668,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
         return not first_input or not second_input
         return (first_input, second_input) != (True, True)
 
-  the test is still green, I remove the second `return statement`_ then factor out "not_" in the first
+  the test is still green, I remove the second `return statement`_ then factor out ":ref:`not<test_logical_negation>`" in the first
 
   .. code-block:: python
     :lineno-start: 33
@@ -1774,7 +1774,7 @@ I can refactor the :ref:`functions<what is a function?>` I have, to make them si
             (first_input, second_input) != (False, False)
         )
 
-  still green. I remove the second `return statement`_ then factor out "not_" from the first part of the statement
+  still green. I remove the second `return statement`_ then factor out ":ref:`not<test_logical_negation>`" from the first part of the statement
 
   .. code-block:: python
     :lineno-start: 49

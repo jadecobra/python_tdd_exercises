@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. _not: https://docs.python.org/3/reference/expressions.html#not
+
 #################################################################################
 truth table: Nullary and Unary Operations
 #################################################################################

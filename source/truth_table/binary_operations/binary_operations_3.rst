@@ -299,7 +299,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   still green
 
-* I add not_ to the first :ref:`if statement<if statements>`
+* I add :ref:`not<test_logical_negation>` to the first :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -727,7 +727,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
   green
 
-* I add not_
+* I add :ref:`not<test_logical_negation>`
 
   .. code-block:: python
     :lineno-start: 61
@@ -1219,7 +1219,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   still green
 
-* I use not_ to write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+* I use :ref:`not<test_logical_negation>` to write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -1330,7 +1330,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   the test is still green
 
-* I remove the commented lines and "multiply not_" by the symbols in the parentheses
+* I remove the commented lines and "multiply :ref:`not<test_logical_negation>`" by the symbols in the parentheses
 
   .. code-block:: python
     :lineno-start: 69
@@ -1346,7 +1346,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
     SyntaxError: invalid syntax
 
-* I change "not_ and_" to "or_" to be correct
+* I change "not_ :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`" to be correct
 
   .. code-block:: python
     :lineno-start: 69
@@ -1358,7 +1358,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   back to green
 
-* I remove the other `return statement`_ then remove  "not_ not_" because they cancel out - the negation of the negation of something is something
+* I remove the other `return statement`_ then remove  "not_ :ref:`not<test_logical_negation>`" because they cancel out - the negation of the negation of something is something
 
   .. code-block:: python
     :lineno-start: 69

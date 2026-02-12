@@ -1194,7 +1194,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   still green
 
-* I remove the comments and use not_ to write the `if statement`_ in terms of :ref:`True<test_what_is_true>`
+* I remove the comments and use :ref:`not<test_logical_negation>` to write the `if statement`_ in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -1427,7 +1427,7 @@ and
 * :ref:`Logical Conjunction is "and"<test_logical_conjunction>`
 * :ref:`Logical Negation is "not" <test_logical_negation>`
 
-All the logic statements or conditions have been written with and_ or not_ or both.
+All the logic statements or conditions have been written with and_ or :ref:`not<test_logical_negation>` or both.
 
 ----
 

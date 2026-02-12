@@ -105,8 +105,6 @@
 .. _modules: module_
 .. _mv: https://grokipedia.com/page/Mv_(Unix)
 .. _mv program: mv_
-.. _not: https://docs.python.org/3/reference/expressions.html#not
-.. _nots: not_
 .. _or: https://docs.python.org/3/reference/expressions.html#or
 .. _pass: https://docs.python.org/3/tutorial/controlflow.html#pass-statements
 .. _plain text: https://grokipedia.com/page/Plain_text

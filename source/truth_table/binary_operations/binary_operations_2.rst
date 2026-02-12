@@ -680,8 +680,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
 * returns :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the  second input is :ref:`True<test_what_is_true>`
 * returns ``not (first_input and second_input)`` which is the :ref:`opposite (Logical Negation)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
 * is the opposite of :ref:`Logical Conjunction<test_what_is_true>` which only returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and second input is :ref:`True<test_what_is_true>` or returns ``first_input and second_input``
-* is the not_ of the and_ of the first input and second input, confusing?
-* is not_ and_
+* is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
+* is :ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`
 
 ----
 
@@ -1024,7 +1024,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   the test is still green
 
-* I use not_ to write the statements in terms of :ref:`True<test_what_is_true>`
+* I use :ref:`not<test_logical_negation>` to write the statements in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -1210,7 +1210,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
         not True
         False
 
-* "not_" appears 3 times in this statement, I want to change that. I "multiply" it by each thing inside the parentheses to try to make the statement simpler
+* ":ref:`not<test_logical_negation>`" appears 3 times in this statement, I want to change that. I "multiply" it by each thing inside the parentheses to try to make the statement simpler
 
   .. code-block:: python
     :lineno-start: 47
@@ -1239,7 +1239,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
     # AssertionError
     # SyntaxError
 
-* I fix the failing line by changing "not_ and_" to "or_" in ``truth_table.py``
+* I fix the failing line by changing "not_ :ref:`and<test_logical_conjunction>`" to "or_" in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 47
@@ -1252,7 +1252,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   the test passes
 
-* I remove "not_ not_" from the `return statement`_ because it cancels out
+* I remove "not_ :ref:`not<test_logical_negation>`" from the `return statement`_ because it cancels out
 
   .. code-block:: python
     :lineno-start: 47
