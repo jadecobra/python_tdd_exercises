@@ -830,10 +830,9 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 :ref:`Logical Equality<test_logical_equality>` returns
 
 * ``first_input == second_input``
-* :ref:`True<test_what_is_true>` when the two inputs are the same
-* :ref:`False<test_what_is_false>` when the two inputs are NOT the same
-* the :ref:`Logical Conjunction<test_logical_conjunction>` of the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input, and the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input and the second input
-* is the opposite of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>`, if the two inputs are the same
+* :ref:`True<test_what_is_true>` when the first input is equal to the second input
+* the :ref:`Logical Conjunction<test_logical_conjunction>` of the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input, and the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input. Oh brother!
+* is the :ref:`opposite<test_logical_negation>` of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :ref:`True<test_what_is_false>`, only if the first input and second input are NOT equal
 
 ----
 
@@ -852,9 +851,13 @@ test_material_implication
 I add a new test for one more Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 115
-  :emphasize-lines: 3-4
+  :lineno-start: 139
+  :emphasize-lines: 7-8
 
+      def test_logical_equality(self):
+          self.assertTrue(src.truth_table.logical_equality(True, True))
+          self.assertFalse(src.truth_table.logical_equality(True, False))
+          self.assertFalse(src.truth_table.logical_equality(False, True))
           self.assertTrue(src.truth_table.logical_equality(False, False))
 
       def test_material_implication(self):
@@ -877,7 +880,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add a :ref:`method<what is a function?>` for ``material_implication`` in ``truth_table.py``
+I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 81
@@ -895,7 +898,7 @@ I add a :ref:`method<what is a function?>` for ``material_implication`` in ``tru
   def material_implication(first_input, second_input):
       return True
 
-the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`, if the two inputs are :ref:`True<test_what_is_true>`
+the test passes. :ref:`material_implication<test_material_implication>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -905,10 +908,10 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 
 ----
 
-* I add the next case to ``test_material_implication`` in ``test_truth_table.py``
+* I add the next case to :ref:`test_material_implication` in ``test_truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 145
     :emphasize-lines: 3
 
         def test_material_implication(self):
@@ -921,10 +924,10 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 
     AssertionError: True is not false
 
-* I add an :ref:`if statement<if statements>` to ``material_implication`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` to :ref:`material_implication<test_material_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 90
     :emphasize-lines: 2-3
 
     def material_implication(first_input, second_input):
@@ -932,15 +935,16 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
             return False
         return True
 
-  the test passes. ``material_implication`` returns
+  the test passes. :ref:`material_implication<test_material_implication>` returns
 
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - the second input in these 2 cases
 
-* I add the next case to ``test_material_implication`` in ``test_truth_table.py``
+* I add the next case to :ref:`test_material_implication` in ``test_truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 145
     :emphasize-lines: 4
 
         def test_material_implication(self):
@@ -948,16 +952,17 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
             self.assertFalse(src.truth_table.material_implication(True, False))
             self.assertTrue(src.truth_table.material_implication(False, True))
 
-  the test is still green. ``material_implication`` returns
+  the test is still green. :ref:`material_implication<test_material_implication>` returns
 
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - returns the second input in all 3 cases
 
 * I add the fourth case
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 145
     :emphasize-lines: 5
 
         def test_material_implication(self):
@@ -966,19 +971,20 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
             self.assertTrue(src.truth_table.material_implication(False, True))
             self.assertTrue(src.truth_table.material_implication(False, False))
 
+
     # Exceptions seen
 
-  the test is still green. ``material_implication`` returns
+  the test is still green. :ref:`material_implication<test_material_implication>` returns
 
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>` when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>` when the two inputs are :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` - this is the only case where it returns :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-* there is only one case where ``material_implication`` returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it with :ref:`Logical Negation<test_logical_negation>` since the :ref:`if statement<if statements>` returns :ref:`False<test_what_is_false>` in ``truth_table.py``
+* since ``if something: return False`` is the same as ``return not (something)``, I add a `return statement`_ for the :ref:`if statement<if statements>` in :ref:`material_implication<test_material_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 90
     :emphasize-lines: 2
 
     def material_implication(first_input, second_input):
@@ -992,7 +998,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 * I remove the other statements in the :ref:`function<what is a function?>` then "multiply :ref:`not<test_logical_negation>`" by the symbols in the parentheses
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 90
     :emphasize-lines: 2
 
     def material_implication(first_input, second_input):
@@ -1008,7 +1014,7 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 * I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 90
     :emphasize-lines: 2
 
     def material_implication(first_input, second_input):
@@ -1020,19 +1026,19 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 * I remove ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`"
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 90
     :emphasize-lines: 2
 
     def material_implication(first_input, second_input):
         return not first_input or second_input
         return (not first_input) or (not not second_input)
 
-  the test is still green
+  still green
 
 * I remove the other statement
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 90
 
     def material_implication(first_input, second_input):
         return not first_input or second_input
@@ -1041,9 +1047,9 @@ the test passes. ``material_implication`` returns :ref:`True<test_what_is_true>`
 
 * ``not first_input or second_input``
 * the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input
-* :ref:`False<test_what_is_false>` only when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* :ref:`False<test_what_is_false>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
-it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which only returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which returns :ref:`True<test_what_is_true>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 
 ----
 

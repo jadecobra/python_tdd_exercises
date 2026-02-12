@@ -430,7 +430,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
-* I add a :ref:`function<what is a function?>` for ``material_implication``
+* I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
     :lineno-start: 28
