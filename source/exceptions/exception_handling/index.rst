@@ -31,10 +31,10 @@ These tests show how to handle :ref:`Errors(Exceptions)<errors>` in :ref:`tests<
   :titlesonly:
   :maxdepth: 1
 
-  handling Exceptions in tests<exception_handling_tests>
-  ../../calculator/calculator_ii
-  handling Exceptions in programs<exception_handling_programs>
-  ../../calculator/calculator_iii
+  Exceptions in tests<exception_handling_tests>
+  make a calculator 2<../../calculator/calculator_ii>
+  Exceptions in programs<exception_handling_programs>
+  make a calculator 3<../../calculator/calculator_iii>
 
 ----
 

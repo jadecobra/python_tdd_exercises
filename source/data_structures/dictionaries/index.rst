@@ -76,7 +76,7 @@ the chapters
   :maxdepth: 1
 
   dictionaries
-  ../../calculator/calculator_vii
+  make a calculator 7<../../calculator/calculator_vii>
 
 ----
 

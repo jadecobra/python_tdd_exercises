@@ -26,8 +26,8 @@ the chapters
   :titlesonly:
   :maxdepth: 1
 
-  TypeError
-  ../../calculator/calculator_iv
+  TypeError?<TypeError>
+  make a calculator 4<../../calculator/calculator_iv>
 
 ----
 
