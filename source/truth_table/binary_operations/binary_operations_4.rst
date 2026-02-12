@@ -76,6 +76,22 @@ continue the project
 
     uv run pytest-watcher . --now
 
+* the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 7
+
+    ======================= test session starts ========================
+    platform ____ -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
+    rootdir: .../pumping_python/truth_table
+    configfile: pyproject.toml
+    collected 16 items
+
+    tests/test_binary.py ................                         [ 66%]
+    tests/test_nullary_unary.py ....                              [100%]
+
+    ======================== 16 passed in G.HIs ========================
+
 ----
 
 *********************************************************************************
@@ -1160,7 +1176,7 @@ close the project
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``first_input`` and the second one ``second_input``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if I name the first input ``first_input`` and the second one ``second_input``, the tests show that
 
 * :ref:`Material Implication<test_material_implication>`
 

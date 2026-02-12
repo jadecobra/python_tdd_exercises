@@ -259,7 +259,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
   - the ``()`` to the right of ``src.type_error.none`` makes it a call
   - the name ``none`` points to :ref:`None<what is None?>` which is NOT callable_
 
-  I cannot call :ref:`None<what is None?>` like a :ref:`function<what is a function?>`
+  :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
 * I add TypeError_ to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
 
@@ -283,7 +283,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
 
   the test passes
 
-I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what is None?>`
+I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test_type_error_w_the_uncallables>`
 
 ----
 
@@ -329,7 +329,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
 
     TypeError: 'bool' object is not callable
 
-  I cannot call a :ref:`boolean<what are booleans?>` the way I can call a :ref:`function<what is a function?>`
+  :ref:`I cannot call a boolean like a function<test_type_error_w_the_uncallables>`
 
 * I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>`
 
@@ -395,7 +395,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def true():
         return True
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a boolean or None<test_type_error_w_the_uncallables>`
 
 * I add a line that will fail to ``test_type_error.py``
 
@@ -441,7 +441,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def an_integer():
         return 1234
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call an integer_, a :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call an integer, a boolean or None<test_type_error_w_the_uncallables>`
 
 * I add a line for a float_ in ``test_type_error.py``
 
@@ -491,7 +491,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_float():
         return 1.234
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
 * I add a line for a string_ (anything in :ref:`quotes`) in ``test_type_error.py``
 
@@ -541,7 +541,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_string():
         return 'a string'
 
-  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a string_, a float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
 * I add a failing line for a tuple_ (anything in parentheses ``()``, separated by a comma) in ``test_type_error.py``
 
@@ -591,7 +591,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_tuple():
         return (1, 2, 3, 'n')
 
-  the test passes. I can call a :ref:`function<what is a function?>`. I cannot call a tuple_, string_, float_, integer_ :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`. :ref:`I cannot call a tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
 * I add another line to ``test_type_error.py``
 
@@ -641,7 +641,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_list():
         return [1, 2, 3, 'n']
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
 * I add another failing line to ``test_type_error.py``
 
@@ -691,7 +691,7 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_set():
         return {1, 2, 3, 'n'}
 
-  the test passes. I can call a :ref:`function<what is a function?>`, I cannot call a set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test passes. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
 * I add the last failing line for this test to ``test_type_error.py``
 
@@ -751,9 +751,9 @@ I can call a :ref:`function<what is a function?>`, I cannot call :ref:`None<what
     def a_dictionary():
         return {'key': 'value'}
 
-  the test is green again again. I can call a :ref:`function<what is a function?>`, I cannot call a :ref:`dictionary<dictionaries>`, set_, :ref:`list<lists>`, tuple_, string_, float_, integer_, :ref:`boolean<what are booleans?>` or :ref:`None<what is None?>`
+  the test is green again again. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a dictionary, set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
-It is safe to say that I cannot call :ref:`data structures` because they are NOT callable_. I can call :ref:`functions<what is a function?>`, they are callable_
+It is safe to say that :ref:`I cannot call data structures because they are NOT callable<test_type_error_w_uncallables>`. I can call :ref:`functions<what is a function?>`, they are callable_
 
 ----
 

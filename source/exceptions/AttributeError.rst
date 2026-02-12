@@ -1042,7 +1042,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
     TypeError: 'NoneType' object is not callable
 
-  ``method_00`` points to :ref:`None<what is None?>` and I cannot call :ref:`None<what is None?>` like a :ref:`function<what is a function?>`
+  ``method_00`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
 * I make it a :ref:`method<what is a function?>` with the def_ keyword
 

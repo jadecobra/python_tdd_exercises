@@ -464,7 +464,7 @@ test_catching_type_error_in_tests
 
     TypeError: 'NoneType' object is not callable
 
-  a reminder that I cannot call :ref:`None<what is None?>` like a :ref:`function<what is a function?>`
+  a reminder that :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_exceptions.py``
 

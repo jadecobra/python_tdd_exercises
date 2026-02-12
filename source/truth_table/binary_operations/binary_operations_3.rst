@@ -87,7 +87,7 @@ continue the project
     configfile: pyproject.toml
     collected 12 items
 
-    tests/test_binary.py ........                                 [ 66%]
+    tests/test_binary.py ............                             [ 66%]
     tests/test_nullary_unary.py ....                              [100%]
 
     ======================== 12 passed in G.HIs ========================
@@ -1494,7 +1494,7 @@ close the project
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if we name the first input ``first_input`` and the second one ``second_input``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if I name the first input ``first_input`` and the second one ``second_input``, the tests show that
 
 * :ref:`Converse Implication<test_converse_implication>`
 
