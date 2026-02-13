@@ -1606,25 +1606,110 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` has two :ref:`if statements` that return the same thing. I put them together to make one :ref:`if statement<if statements>`
+* I make the :ref:`if statements` in :ref:`exclusive_disjunction<test_exclusive_disjunction>` simpler
 
   .. code-block:: python
     :lineno-start: 83
-    :emphasize-lines: 2-6
+    :emphasize-lines: 2-7
 
     def exclusive_disjunction(first, second):
-        if (
-            (first, second) == (True, True)
-            or
-            (first, second) == (False, False)
-        ): return False
         if (first, second) == (True, True): return False
         if (first, second) == (False, False): return False
+        if first == True and second == True:
+            return False
+        if first == False and second == False:
+            return False
+        return first, second
+
+  the test is still green
+
+* I remove the first two :ref:`if statements` then change the new second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 4-5
+
+    def exclusive_disjunction(first, second):
+        if first == True and second == True:
+            return False
+        # if first == False and second == False:
+        if not first == True and not second == True:
+            return False
         return first, second
 
   still green
 
-* I remove the other statements then return the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>` because ``if something: return False`` is the same as ``return not (something)``
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 2-3, 5-6
+
+    def exclusive_disjunction(first, second):
+        # if first == True and second == True:
+        if first and second:
+            return False
+        # if not first == True and not second == True:
+        if not first and not second:
+            return False
+        return first, second
+
+  green
+
+* I write every symbol in the second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` because it happens two times in the line
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 4-5
+
+    def exclusive_disjunction(first, second):
+        if first and second:
+            return False
+        # if not first and not second:
+        if (not first) (not or) (not second):
+            return False
+        return first, second
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+* I factor out the :ref:`nots<test_logical_negation>`
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 5-6
+
+    def exclusive_disjunction(first, second):
+        if first and second:
+            return False
+        # if not first and not second:
+        # if (not first) (not or) (not second):
+        if not (first or second):
+            return False
+        return first, second
+
+  the test is green again
+
+* I put the two :ref:`if statements` together to make one
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 2-5
+
+    def exclusive_disjunction(first, second):
+        # if first and second:
+        #     return False
+        # if not (first or second):
+        if (first and second) or (not (first or second)):
+            return False
+        return first, second
+
+  the test is still green
+
+* I remove the commented lines, then add a `return statement`_ because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 83
@@ -1632,54 +1717,143 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
     def exclusive_disjunction(first, second):
         return not (
-            (first, second) == (True, True)
+            (first and second)
             or
-            (first, second) == (False, False)
+            (not (first or second))
         )
-        if (
-            (first, second) == (True, True)
+        if (first and second) or (not (first or second)):
+            return False
+        return first, second
+
+  still green
+
+* I remove the other statements then multiply :ref:`not<test_logical_negation>` by every symbol in the parentheses because it happens two times in the line
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 2-5
+
+    def exclusive_disjunction(first, second):
+        return (
+            (not (first and second))
+            (not or)
+            (not (not (first or second)))
+        )
+        return not (
+            (first and second)
             or
-            (first, second) == (False, False)
-        ): return False
+            (not (first or second))
+        )
 
+  the terminal shows SyntaxError_
 
-    def converse_non_implication(first, second):
-        return (first, second) == (False, True)
+  .. code-block:: python
 
-  the test is still green
+    SyntaxError: invalid syntax
 
-* I remove the other lines in :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+* I change ``not or`` to :ref:`and<test_logical_conjunction>`
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 4
+
+    def exclusive_disjunction(first, second):
+        return (
+            (not (first and second))
+            and
+            (not (not (first or second)))
+        )
+        return not (
+            (first and second)
+            or
+            (not (first or second))
+        )
+
+  the test is green again
+
+* I remove ``not not`` because "the negation of a negation is ..."
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 2
+
+    def exclusive_disjunction(first, second):
+        return ((not (first and second)) and (first or second))
+        return not (
+            (first and second)
+            or
+            (not (first or second))
+        )
+
+  green
+
+* I remove the other statements in :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
     :lineno-start: 83
 
     def exclusive_disjunction(first, second):
-        return not (
-            (first, second) == (True, True)
-            or
-            (first, second) == (False, False)
-        )
+        return (not (first and second)) and (first or second)
 
 
     def converse_non_implication(first, second):
-        return (first, second) == (False, True)
+        return not first and second
 
 ----
 
-* :ref:`logical_conjunction<test_logical_conjunction>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
+* :ref:`logical_conjunction<test_logical_conjunction>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
     :lineno-start: 76
     :emphasize-lines: 2
 
     def logical_conjunction(first, second):
-        return (first, second) == (True, True)
+        if (first, second) == (True, True): return True
         if (first, second) == (True, False): return False
         if (first, second) == (False, True): return False
         if (first, second) == (False, False): return False
         return first, second
 
+  the test is still green
+
+* I remove the other statements and break up the :ref:`if statement<if statements>` to make it simpler
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 2-3
+
+    def logical_conjunction(first, second):
+        # if (first, second) == (True, True): return True
+        if first == True and second == True:
+            return True
+
+  the test is still green because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 2-3
+
+    def logical_conjunction(first, second):
+        # if first == True and second == True:
+        if first and second:
+            return True
+
   still green
+
+* I use a `return statement`_ because ``if something: return True`` is the same as ``return something``
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 2
+
+    def logical_conjunction(first, second):
+        return first and second
+        if first and second:
+            return True
+
+  green
 
 * I remove the other statements in the :ref:`function<what is a function?>`
 
@@ -1687,15 +1861,11 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
     :lineno-start: 76
 
     def logical_conjunction(first, second):
-        return (first, second) == (True, True)
+        return first and second
 
 
     def exclusive_disjunction(first, second):
-        return not (
-            (first, second) == (True, True)
-            or
-            (first, second) == (False, False)
-        )
+        return (not (first and second)) and (first or second)
 
 ----
 
