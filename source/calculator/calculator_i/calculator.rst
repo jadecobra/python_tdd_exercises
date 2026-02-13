@@ -37,7 +37,7 @@ start the project
 * I open a terminal_
 * I make a directory_ for the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir calculator
@@ -46,20 +46,20 @@ start the project
 
 * I change directory_ to the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 
 * I make a directory_ for the source code
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir src
@@ -68,7 +68,7 @@ start the project
 
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch src/calculator.py
@@ -77,7 +77,7 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/calculator.py`` instead of ``touch src/calculator.py``
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       New-Item src/calculator.py
@@ -86,7 +86,7 @@ start the project
 
 * I `make a directory`_ for the tests
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir tests
@@ -97,7 +97,7 @@ start the project
 
   .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch tests/__init__.py
@@ -106,7 +106,7 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       New-Item tests/__init__.py
@@ -115,7 +115,7 @@ start the project
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch tests/test_calculator.py
@@ -124,7 +124,7 @@ start the project
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_calculator.py`` instead of ``touch tests/test_calculator.py``
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       New-Item tests/test_calculator.py
@@ -135,9 +135,9 @@ start the project
 
   .. TIP::
 
-    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_. That means when I type this in the terminal_
+    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_. That means if I type this in the terminal_
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       code tests/test_calculator.py
@@ -319,19 +319,33 @@ test_addition
             )
 
   - the `assertEqual method`_ from :ref:`AssertionError<what causes AssertionError?>` checks if the 2 things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
-  - the explanation I like from what I have seen is that one of them is
 
-    - ``reality`` - ``src.calculator.add(0, 1)``, and the other is
-    - my ``expectation`` - ``1``, because ``0 + 1`` is ``1``
-    - in other words is the result ``src.calculator.add(0, 1)`` equal to ``1``?
+  - I think of
+
+    .. code-block:: python
+
+      self.assertEqual(src.calculator.add(0, 1), 1)
+
+    as
+
+    .. code-block:: python
+
+      self.assertEqual(reality, my_expectation)
+
+    where
+
+    - ``reality`` is ``src.calculator.add(0, 1)``
+    - ``my_expectation`` is ``1`` because ``0 + 1`` is ``1``
+
+    in other words, ``self.assertEqual(src.calculator.add(0, 1), 1)`` checks if the result of calling ``src.calculator.add`` with ``0`` and ``1`` as input is equal to ``1``
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'src' is not defined
 
-  because ``src`` is not defined in ``test_calculator.py``
+  because I do not have a definition for ``src`` in ``test_calculator.py``
 
 ----
 
@@ -346,6 +360,7 @@ test_addition
   .. code-block:: python
     :lineno-start: 20
     :emphasize-lines: 3
+    :emphasize-text: NameError
 
     # Exceptions seen
     # AssertionError
@@ -365,7 +380,7 @@ test_addition
 
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
@@ -376,6 +391,7 @@ test_addition
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 4
+    :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
@@ -392,11 +408,11 @@ test_addition
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'add' is not defined
 
-  I have to tell Python_ what the name ``add`` stands for or means
+  I have to tell Python_ what the name ``add`` means
 
 * I point it to :ref:`None<what is None?>` to define it
 
@@ -408,17 +424,18 @@ test_addition
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` :ref:`variable<what is a variable?>` is now a name for :ref:`None<what is None?>` which I cannot use like a :ref:`function<what is a function?>`
+  because the ``add`` :ref:`variable<what is a variable?>` is now a name and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 21
     :emphasize-lines: 5
+    :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
@@ -437,13 +454,13 @@ test_addition
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-  the definition of ``add`` does not allow it take input, but 2 were given in the call ``src.calculator.add(0, 1)``: ``0`` and ``1``
+  the definition of ``add`` does not allow it take input, but 2 were given in the call - ``0`` and ``1``
 
-* I make the ``add`` :ref:`function<what is a function?>` take 2 inputs
+* I add names in the parentheses to make the :ref:`function<what is a function?>` take 2 inputs
 
   .. code-block:: python
     :linenos:
@@ -454,13 +471,13 @@ test_addition
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None != 1
 
   the ``add`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, the test expects ``1``
 
-* I make the `return statement`_ match the expected value
+* I make the `return statement`_ give the test what it wants
 
   .. code-block:: python
     :linenos:
@@ -479,41 +496,34 @@ test_addition
 
 ----
 
-The ``add`` :ref:`function<what is a function?>` passes the test but does not meet the actual requirement because it always returns ``1``. I want it to return the result of a calculation with the inputs
+The ``add`` :ref:`function<what is a function?>` passes the test but does not do what I actually want because it always returns ``1``. I want it to return the result of a calculation with the inputs
 
----------------------------------------------------------------------------------
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
 
-To show the problem with the :ref:`function<what is a function?>`, I add another :ref:`assertion<what is an assertion?>` in ``test_calculator.py``
+* I add another :ref:`assertion<what is an assertion?>` to show the problem with the :ref:`function<what is a function?>` in ``test_calculator.py``
 
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 6-9
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6-9
 
-        def test_addition(self):
-            self.assertEqual(
-                src.calculator.add(0, 1),
-                1
-            )
-            self.assertEqual(
-                src.calculator.add(0, 2),
-                2
-            )
+          def test_addition(self):
+              self.assertEqual(
+                  src.calculator.add(0, 1),
+                  1
+              )
+              self.assertEqual(
+                  src.calculator.add(0, 2),
+                  2
+              )
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  E    AssertionError: 1 != 2
+    E    AssertionError: 1 != 2
 
-the :ref:`function<what is a function?>` returns ``1``, the test expects ``2``
+  the :ref:`function<what is a function?>` returns ``1``, the test expects ``2``
 
----------------------------------------------------------------------------------
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
-
-* when I change the `return statement`_ in ``calculator.py`` to match the expectation
+* I change the `return statement`_ in ``calculator.py`` to match the expectation
 
   .. code-block:: python
     :linenos:
@@ -524,7 +534,7 @@ the :ref:`function<what is a function?>` returns ``1``, the test expects ``2``
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 2 != 1
 
@@ -562,7 +572,7 @@ I add another test to make sure the :ref:`function<what is a function?>` works f
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: 3 != 2
 
@@ -604,7 +614,7 @@ I add another test with a different number for the first input
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: 4 != 3
 
@@ -646,7 +656,7 @@ I add a test with bigger numbers
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: 912468 != 4
 
@@ -688,7 +698,7 @@ I add another test, this time with a negative number
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: -1 != 912468
 
@@ -730,7 +740,7 @@ I try another test with two negative numbers
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: -5 != -1
 
@@ -772,7 +782,7 @@ I add another test with floats_ (binary floating point decimal numbers)
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: -5.555499999999999 != -5
 
@@ -842,7 +852,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'first_number' is not defined
 
@@ -864,7 +874,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'second_number' is not defined
 
@@ -978,7 +988,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: -X.YZABCDEFGHIJKLM != A.BCDEFGHIJKLMNOPQ
 
@@ -1047,7 +1057,7 @@ all of these lines can be written using ``first_number`` as the name of the firs
 
   the test is still green
 
-* There is some duplication, I have to make a change in more than one place when I want to use a different range of random numbers for the test, for example
+* There is some duplication, I have to make a change in more than one place if I want to use a different range of random numbers for the test, for example
 
   .. code-block:: python
     :lineno-start: 8
@@ -1202,7 +1212,7 @@ I add a test for subtraction in ``test_calculator.py``
 
 the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AttributeError: module 'src.calculator' has no attribute 'subtract'
 
@@ -1230,7 +1240,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'subtract' is not defined
 
@@ -1244,7 +1254,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: 'NoneType' object is not callable
 
@@ -1261,7 +1271,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
@@ -1278,7 +1288,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None != XYZ.ABCDEFGHIJKLMNOP
 
@@ -1535,7 +1545,7 @@ I add a failing test for multiplication in ``test_calculator.py``
 
 the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AttributeError: module 'src.calculator' has no attribute 'multiply'
 
@@ -1618,7 +1628,7 @@ Time for division. I add a new test to ``test_calculator.py``
 
 the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AttributeError: module 'src.calculator' has no attribute 'divide'
 
@@ -1686,7 +1696,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 * I close ``test_calculator.py``
 * then delete all the text in ``calculator.py``, the terminal_ shows 4 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
@@ -1710,7 +1720,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NameError: name 'subtract' is not defined
 
@@ -1724,7 +1734,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: 'NoneType' object is not callable
 
@@ -1739,7 +1749,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
@@ -1754,7 +1764,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None != XYZ.ABCDEFGHIJKLMN
 
@@ -1769,7 +1779,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (XYZ.ABCDEFGHIJKLMN, YZA.BCDEFGHIJKLMNO) != ZAB.CDEFGHIJKLMNOP
 
@@ -1786,7 +1796,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'multiply'
 
@@ -1805,7 +1815,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`TypeError`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
@@ -1820,7 +1830,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: None != XY.ZABCDEFGHIJKLM
 
@@ -1835,7 +1845,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (XYZ.ABCDEFGHIJKLMNO, -YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
@@ -1850,7 +1860,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'divide'
 
@@ -1869,11 +1879,11 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: (-XYZ.ABCDEFGHIJKLMNO, YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
-  when I change the `return statement`_ to match the expectation
+* I change the `return statement`_ to match the expectation
 
   .. code-block:: python
     :lineno-start: 9
@@ -1884,7 +1894,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
@@ -1922,14 +1932,14 @@ close the project
 
 * I `change directory`_ to the parent of ``calculator``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
