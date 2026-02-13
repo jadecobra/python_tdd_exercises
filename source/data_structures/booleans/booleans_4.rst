@@ -126,7 +126,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: list comprehensions: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
 
 ----
 

@@ -52,10 +52,10 @@ the solutions in ``person/src/classes.py`` from :ref:`inheritance<family ties>`
 ----
 
 *********************************************************************************
-booleans 3: tests
+booleans 4: tests
 *********************************************************************************
 
-the code in ``booleans/tests/test_booleans.py`` from :ref:`booleans 3`
+the code in ``booleans/tests/test_booleans.py`` from :ref:`booleans 4`
 
 .. literalinclude:: booleans/test_booleans_classes.py
   :language: python
