@@ -1219,7 +1219,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   still green
 
-* I use :ref:`not<test_logical_negation>` to write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+* I use :ref:`not<test_logical_negation>` to write the :ref:`if statement<if statements>` with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 69
@@ -1358,7 +1358,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   back to green
 
-* I remove the other `return statement`_ then remove  ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`" because they cancel out - the negation of the negation of something is something
+* I remove the other `return statement`_ then remove  ``not not`` because they cancel out - the negation of the negation of something is something
 
   .. code-block:: python
     :lineno-start: 69

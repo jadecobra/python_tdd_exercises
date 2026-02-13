@@ -1390,7 +1390,9 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green. I remove the other lines in :ref:`contradiction<test_contradiction>`
+  the test is still green.
+
+* I remove the other lines in :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
     :lineno-start: 101
@@ -1400,48 +1402,194 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case. I add a `return statement`_ for it because ``if something: return False`` is the same as ``return not (something)``
+* :ref:`converse_implication<test_converse_implication>` returns :ref:`False<test_what_is_false>` in only one case. I write out the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 2-3
+
+    def converse_implication(first, second):
+        # if (first, second) == (False, True): return False
+        if first == False and second == True:
+            return False
+        return first, second
+
+  still green
+
+* I change the statement with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 2-3
+
+    def converse_implication(first, second):
+        # if first == False and second == True:
+        if not first == True and second == True:
+            return False
+        return first, second
+
+  green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 2-3
+
+    def converse_implication(first, second):
+        # if not first == True and second == True:
+        if not first and second:
+            return False
+        return first, second
+
+  still green
+
+* I use a `return statement`_ because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 96
     :emphasize-lines: 2
 
     def converse_implication(first, second):
-        return not ((first, second) == (False, True))
-        if (first, second) == (False, True): return False
+        return not (not first and second)
+        if not first and second:
+            return False
         return first, second
 
+  the test is still green
 
-  still green
+* I remove the other statements then "multiply :ref:`not<test_logical_negation>`" by the things in the parentheses
 
-* I remove the other statements in :ref:`converse_implication<test_converse_implication>`
+  .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 2
+
+    def converse_implication(first, second):
+        return (not not first) (not and) (not second)
+        return not (not first and second)
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+* I change ``not and`` to :ref:`or<test_logical_disjunction>`
+
+  .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 2
+
+    def converse_implication(first, second):
+        return (not not first) or (not second)
+        return not (not first and second)
+
+  the test is green again
+
+* I remove the other `return statement`_ and ``not not`` because two :ref:`nots<test_logical_negation>` make a right?
+
+  .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 2
+
+    def converse_implication(first, second):
+        return first or not second
+        return (not not first) or (not second)
+
+  the test is still green
+
+* I remove the other statement in :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
     :lineno-start: 96
 
     def converse_implication(first, second):
-        return not ((first, second) == (False, True))
+        return first or not second
 
 
     def contradiction(first, second):
         return False
 
-----
+-----
 
-* :ref:`converse_non_implication<test_converse_non_implication>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
+* I add an :ref:`if statement<if statements>` for the only case that returns :ref:`True<test_what_is_true>` in :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
     :lineno-start: 89
     :emphasize-lines: 2
 
     def converse_non_implication(first, second):
-        return (first, second) == (False, True)
+        if (first, second) == (False, True): return True
         if (first, second) == (True, True): return False
         if (first, second) == (True, False): return False
         if (first, second) == (False, False): return False
         return first, second
 
+  the test is still green
+
+* I break the statement up then add an `else clause`_ for the other 3 statements
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 2-6
+
+    def converse_non_implication(first, second):
+        # if (first, second) == (False, True): return True
+        if first == False and second == True:
+            return True
+        else:
+            return False
+        if (first, second) == (True, True): return False
+        if (first, second) == (True, False): return False
+        if (first, second) == (False, False): return False
+        return first, second
+
+  still green
+
+* I remove the commented line and other statements, then change the :ref:`if statement<if statements>` with :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 2-3
+
+    def converse_non_implication(first, second):
+        # if first == False and second == True:
+        if not first == True and second == True:
+            return True
+        else:
+            return False
+
   green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 2-3
+
+    def converse_non_implication(first, second):
+        # if not first == True and second == True:
+        if not first and second:
+            return True
+        else:
+            return False
+
+  still green
+
+* I add a `return statement`_ because ``if something: return True`` is the same as ``return something``
+
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 2
+
+    def converse_non_implication(first, second):
+        return not first and second
+        if not first and second:
+            return True
+        else:
+            return False
+
+  the test is still green
 
 * I remove the other statements in :ref:`converse_non_implication<test_converse_non_implication>`
 
@@ -1449,11 +1597,12 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
     :lineno-start: 89
 
     def converse_non_implication(first, second):
-        return (first, second) == (False, True)
+        return not first and second
 
 
     def converse_implication(first, second):
-        return (first, second) != (False, True)
+        return first or not second
+
 
 ----
 
@@ -1517,7 +1666,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`logical_conjunction<test_logical_conjunction>` only has one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
+* :ref:`logical_conjunction<test_logical_conjunction>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add a `return statement`_ for it
 
   .. code-block:: python
     :lineno-start: 76
@@ -1550,7 +1699,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`logical_disjunction<test_logical_disjunction>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the :ref:`opposite<test_logical_negation>` because ``if something: return False`` is the same as ``return not (something)``
+* :ref:`logical_disjunction<test_logical_disjunction>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the :ref:`opposite<test_logical_negation>` because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 71
@@ -1633,30 +1782,38 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`logical_nand<test_logical_nand>` only has one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for its opposite which covers the other 3 cases
+* :ref:`logical_nand<test_logical_nand>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 76
     :emphasize-lines: 2
 
     def logical_nand(first, second):
-        return (first, second) != (True, True)
+        return not ((first, second) == (True, True))
         if (first, second) == (True, True): return False
         return first, second
 
-  still green. I remove the other lines in the :ref:`function<what is a function?>`
+  still green
+
+* I remove the other lines in :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
     :lineno-start: 76
 
     def logical_nand(first, second):
-        return (first, second) != (True, True)
+        return not ((first, second) == (True, True))
 
 
     def logical_equality(first, second):
-        return (
+        return not (
+            (first, second) == (True, False)
+            or
+            (first, second) == (False, True)
+        )
 
-* :ref:`logical_nor<test_logical_nor>` only has one case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
+----
+
+* :ref:`logical_nor<test_logical_nor>` has only one case that returns :ref:`True<test_what_is_true>`, I add a `return statement`_ for it
 
   .. code-block:: python
     :lineno-start: 53
@@ -1669,31 +1826,36 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, True): return False
         return first, second
 
-  still green, I remove the other statements in the :ref:`function<what is a function?>`
+  the test is still green
+
+* I remove the other statements in :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
     :lineno-start: 53
-    :emphasize-lines: 2
 
     def logical_nor(first, second):
         return (first, second) == (False, False)
 
 
     def logical_nand(first, second):
-        return (first, second) != (True, True)
+        return not ((first, second) == (True, True))
 
-* :ref:`material_implication<test_material_implication>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the other 3
+----
+
+* :ref:`material_implication<test_material_implication>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for it because ...
 
   .. code-block:: python
     :lineno-start: 48
     :emphasize-lines: 2
 
     def material_implication(first, second):
-        return (first, second) != (True, False)
+        return not ((first, second) == (True, False))
         if (first, second) == (True, False): return False
         return first, second
 
-  the test is still green. I remove the other statements in the :ref:`function<what is a function?>`
+  still green.
+
+* I remove the other statements in :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1904,7 +2066,9 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return not first and not second
         return (first, second) == (False, False)
 
-  the test is still green. I remove the second `return statement`_ and change the first `return statement`_ in terms of ":ref:`not<test_logical_negation>`" since it happens 2 times
+  the test is still green.
+
+* I remove the second `return statement`_ and change the first `return statement`_ to use ":ref:`not<test_logical_negation>`" for every symbol because it happens 2 times
 
   .. code-block:: python
     :lineno-start: 29

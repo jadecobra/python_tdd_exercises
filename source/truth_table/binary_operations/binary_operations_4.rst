@@ -812,7 +812,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 
   green again
 
-* I remove the commented line and ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`" from both parentheses because they cancel out
+* I remove the commented line and ``not not`` from both parentheses because they cancel out
 
   .. code-block:: python
     :lineno-start: 81
@@ -1039,7 +1039,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   the test is green again
 
-* I remove ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`"
+* I remove ``not not``
 
   .. code-block:: python
     :lineno-start: 90

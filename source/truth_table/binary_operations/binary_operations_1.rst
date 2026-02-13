@@ -1192,7 +1192,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   still green
 
-* I remove the comments and use :ref:`not<test_logical_negation>` to write the `if statement`_ in terms of :ref:`True<test_what_is_true>`
+* I remove the comments and use :ref:`not<test_logical_negation>` to write the `if statement`_ with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 29

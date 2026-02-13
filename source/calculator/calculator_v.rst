@@ -452,7 +452,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
 
   the tests are still passing
 
-* ":ref:`not<test_logical_negation>`" happens twice in the :ref:`if statement<if statements>`, I write the line in terms of it
+* ":ref:`not<test_logical_negation>`" happens twice in the :ref:`if statement<if statements>`, I change the line to use it for every symbol
 
   .. code-block:: python
     :lineno-start: 6

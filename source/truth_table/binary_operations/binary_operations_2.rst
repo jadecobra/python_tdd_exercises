@@ -696,7 +696,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
     else:
         return True
 
-  I can rewrite it in terms of :ref:`True<test_what_is_true>` with its :ref:`logical negation (not)<test_logical_negation>`
+  I can change it with its :ref:`logical negation (not)<test_logical_negation>`
 
   .. code-block:: python
 
@@ -1024,7 +1024,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   the test is still green
 
-* I use :ref:`not<test_logical_negation>` to write the statements in terms of :ref:`True<test_what_is_true>`
+* I use :ref:`not<test_logical_negation>` to write the statements with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 47
@@ -1252,7 +1252,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   the test passes
 
-* I remove ":ref:`not<test_logical_negation>` :ref:`not<test_logical_negation>`" from the `return statement`_ because it cancels out
+* I remove ``not not`` from the `return statement`_ because it cancels out
 
   .. code-block:: python
     :lineno-start: 47
