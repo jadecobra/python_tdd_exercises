@@ -6,6 +6,7 @@
 
 .. _variable: https://grokipedia.com/page/Variable_(computer_science)
 .. _variables: variable_
+.. _Substitution: https://grokipedia.com/page/Substitution_(logic)#substitution-logic
 
 #################################################################################
 how to make a calculator 1
@@ -305,7 +306,7 @@ test_addition
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6-10
+    :emphasize-lines: 6-7
 
     import unittest
 
@@ -313,10 +314,7 @@ test_addition
     class TestCalculator(unittest.TestCase):
 
         def test_addition(self):
-            self.assertEqual(
-                src.calculator.add(0, 1),
-                1
-            )
+            self.assertEqual(src.calculator.add(0, 1), 1)
 
   - the `assertEqual method`_ from :ref:`AssertionError<what causes AssertionError?>` checks if the 2 things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
 
@@ -358,7 +356,7 @@ test_addition
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 17
     :emphasize-lines: 3
     :emphasize-text: NameError
 
@@ -384,12 +382,12 @@ test_addition
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
-  I think of ``src.calculator.add`` as an address, ``add`` is something (an :ref:`attribute<what causes AttributeError?>`) in the empty ``calculator.py`` file_ from the ``src`` `folder (directory)`_
+  I think of ``src.calculator.add`` as an address, ``add`` is something (:ref:`an attribute<what causes AttributeError?>`) in the empty ``calculator.py`` file_ from the ``src`` folder_
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 18
     :emphasize-lines: 4
     :emphasize-text: AttributeError
 
@@ -398,7 +396,7 @@ test_addition
     # NameError
     # AttributeError
 
-* I open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, and I type the name
+* I open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add the name
 
   .. code-block:: python
     :linenos:
@@ -428,12 +426,12 @@ test_addition
 
     TypeError: 'NoneType' object is not callable
 
-  because the ``add`` :ref:`variable<what is a variable?>` is now a name and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
+  because the ``add`` :ref:`variable<what is a variable?>` is now a name for :ref:`None<what is None?>`, and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 18
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -503,17 +501,11 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 6-9
+    :emphasize-lines: 3
 
-          def test_addition(self):
-              self.assertEqual(
-                  src.calculator.add(0, 1),
-                  1
-              )
-              self.assertEqual(
-                  src.calculator.add(0, 2),
-                  2
-              )
+        def test_addition(self):
+            self.assertEqual(src.calculator.add(0, 1), 1)
+            self.assertEqual(src.calculator.add(0, 2), 2)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -538,17 +530,15 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
     AssertionError: 2 != 1
 
-  this makes the :ref:`assertion<what is an assertion?>` that was passing before now fail.
-
-  When I send
+  this makes the :ref:`assertion<what is an assertion?>` that was passing before - ``src.calculator.add(0, 1)`` fail. If the test sends
 
   - ``0`` and ``2`` to ``src.calculator.add`` it returns ``2``
   - ``0`` and ``1`` to ``src.calculator.add`` it returns ``2``
 
   I need a solution that can make the two tests pass. The :ref:`function<what is a function?>` should return
 
-  - ``2`` when the test sends ``0`` and ``2`` to ``src.calculator.add`` because ``0 + 2 == 2``
-  - ``1`` when the test sends ``0`` and ``1`` to ``src.calculator.add`` because ``0 + 1 == 1``
+  - ``2`` if the test sends ``0`` and ``2`` to ``src.calculator.add`` because ``0 + 2 == 2``
+  - ``1`` if the test sends ``0`` and ``1`` to ``src.calculator.add`` because ``0 + 1 == 1``
 
 * I make the :ref:`function<what is a function?>` return the result of adding the two inputs
 
@@ -561,20 +551,16 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
   the two tests are passing
 
-* I add another test to make sure the :ref:`function<what is a function?>` works for other numbers
+* I add another test to make sure the :ref:`function<what is a function?>` works for other numbers in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 5-8
+    :lineno-start: 7
+    :emphasize-lines: 4
 
-            self.assertEqual(
-                src.calculator.add(0, 2),
-                2
-            )
-            self.assertEqual(
-                src.calculator.add(0, 3),
-                2
-            )
+        def test_addition(self):
+            self.assertEqual(src.calculator.add(0, 1), 1)
+            self.assertEqual(src.calculator.add(0, 2), 2)
+            self.assertEqual(src.calculator.add(0, 3), 2)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -585,30 +571,24 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 * I change the expectation in the test
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3
+    :lineno-start: 10
+    :emphasize-lines: 1
 
-            self.assertEqual(
-                src.calculator.add(0, 3),
-                3
-            )
+            self.assertEqual(src.calculator.add(0, 3), 3)
 
   the test passes
 
 * I add another test with a different number for the first input
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 5-8
+    :lineno-start: 7
+    :emphasize-lines: 5
 
-            self.assertEqual(
-                src.calculator.add(0, 3),
-                3
-            )
-            self.assertEqual(
-                src.calculator.add(1, 3),
-                3
-            )
+        def test_addition(self):
+            self.assertEqual(src.calculator.add(0, 1), 1)
+            self.assertEqual(src.calculator.add(0, 2), 2)
+            self.assertEqual(src.calculator.add(0, 3), 3)
+            self.assertEqual(src.calculator.add(1, 3), 3)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -616,33 +596,28 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
     AssertionError: 4 != 3
 
-*  I change the expectation to match reality
+* I change the expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 3
+    :lineno-start: 11
+    :emphasize-lines: 1
 
-            self.assertEqual(
-                src.calculator.add(1, 3),
-                4
-            )
+            self.assertEqual(src.calculator.add(1, 3), 4)
 
-  the test passes. The ``add`` :ref:`function<what is a function?>` looks good so far
+  the test passes. The ``add`` :ref:`function<what is a function?>` looks good so far.
 
-* I add a test with bigger numbers
+* I add an :ref:`assertion<what is an assertion?>` with bigger numbers
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 5-8
+    :lineno-start: 7
+    :emphasize-lines: 6
 
-            self.assertEqual(
-                src.calculator.add(1, 3),
-                4
-            )
-            self.assertEqual(
-                src.calculator.add(123456, 789012),
-                4
-            )
+        def test_addition(self):
+            self.assertEqual(src.calculator.add(0, 1), 1)
+            self.assertEqual(src.calculator.add(0, 2), 2)
+            self.assertEqual(src.calculator.add(0, 3), 3)
+            self.assertEqual(src.calculator.add(1, 3), 4)
+            self.assertEqual(src.calculator.add(123456, 789012), 4)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -653,30 +628,26 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 * I change the expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 3
+    :lineno-start: 12
+    :emphasize-lines: 1
 
-            self.assertEqual(
-                src.calculator.add(123456, 789012),
-                912468
-            )
+            self.assertEqual(src.calculator.add(123456, 789012), 912468)
 
   the test passes
 
-* I add another test, this time with a negative number
+* I add another :ref:`assertion<what is an assertion?>` with a negative number
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 5-8
+    :lineno-start: 7
+    :emphasize-lines: 7
 
-            self.assertEqual(
-                src.calculator.add(123456, 789012),
-                912468
-            )
-            self.assertEqual(
-                src.calculator.add(-1, 0),
-                912468
-            )
+        def test_addition(self):
+            self.assertEqual(src.calculator.add(0, 1), 1)
+            self.assertEqual(src.calculator.add(0, 2), 2)
+            self.assertEqual(src.calculator.add(0, 3), 3)
+            self.assertEqual(src.calculator.add(1, 3), 4)
+            self.assertEqual(src.calculator.add(123456, 789012), 912468)
+            self.assertEqual(src.calculator.add(-1, 0), 912468)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -687,30 +658,23 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 * I change the expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 3
+    :lineno-start: 13
+    :emphasize-lines: 1
 
-        self.assertEqual(
-            src.calculator.add(-1, 0),
-            -1
-        )
+            self.assertEqual(src.calculator.add(-1, 0), -1)
 
   the test passes
 
-* I try another test with two negative numbers
+* I try another :ref:`assertion<what is an assertion?>` with two negative numbers
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 5-8
+    :lineno-start: 11
+    :emphasize-lines: 4
 
-            self.assertEqual(
-                src.calculator.add(-1, 0),
-                -1
-            )
-            self.assertEqual(
-                src.calculator.add(-2, -3),
-                -1
-            )
+            self.assertEqual(src.calculator.add(1, 3), 4)
+            self.assertEqual(src.calculator.add(123456, 789012), 912468)
+            self.assertEqual(src.calculator.add(-1, 0), -1)
+            self.assertEqual(src.calculator.add(-2, -3), -1)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -721,30 +685,89 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 * I make the expectation match reality
 
   .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 3
+    :lineno-start: 14
+    :emphasize-lines: 1
 
-            self.assertEqual(
-                src.calculator.add(-2, -3),
-                -5
-            )
+            self.assertEqual(src.calculator.add(-2, -3), -5)
 
-  the test passes. The ``add`` :ref:`function<what is a function?>` can handle positive and negative numbers
+  the test passes. The ``add`` :ref:`function<what is a function?>` can handle positive and negative whole numbers
 
-* I add another test with floats_ (binary floating point decimal numbers)
+* I add an :ref:`assertion<what is an assertion?>` with floats_ (binary floating point decimal numbers)
 
   .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 5-8
+    :lineno-start: 12
+    :emphasize-lines: 4
 
-              self.assertEqual(
-                  src.calculator.add(-2, -3),
-                  -5
-              )
-              self.assertEqual(
-                  src.calculator.add(0.1234, -5.6789),
-                  -5
-              )
+            self.assertEqual(src.calculator.add(123456, 789012), 912468)
+            self.assertEqual(src.calculator.add(-1, 0), -1)
+            self.assertEqual(src.calculator.add(-2, -3), -5)
+            self.assertEqual(src.calculator.add(0.1, 1), -5)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 1.1 != -5
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 1
+
+            self.assertEqual(src.calculator.add(0.1, 1), 1.1)
+
+  the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 4
+
+            self.assertEqual(src.calculator.add(-1, 0), -1)
+            self.assertEqual(src.calculator.add(-2, -3), -5)
+            self.assertEqual(src.calculator.add(0.1, 1), 1.1)
+            self.assertEqual(src.calculator.add(0.1, 0.2), 1.1)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0.30000000000000004 != 1.1
+
+  whoa!
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 1-4
+
+            self.assertEqual(
+                src.calculator.add(0.1, 0.2),
+                0.30000000000000004
+            )
+
+
+  the test passes. `Why is the result "0.30000000000000004" and not "0.3"? <https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 7-10
+
+            self.assertEqual(src.calculator.add(-2, -3), -5)
+            self.assertEqual(src.calculator.add(0.1, 1), 1.1)
+            self.assertEqual(
+                src.calculator.add(0.1, 0.2),
+                0.30000000000000004
+            )
+            self.assertEqual(
+                src.calculator.add(0.1234, -5.6789),
+                0.30000000000000004
+            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -752,20 +775,36 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
     AssertionError: -5.555499999999999 != -5
 
+  whaaaaat?!
+
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 3
+    :lineno-start: 7
+    :emphasize-lines: 16
 
-              self.assertEqual(
-                  src.calculator.add(0.1234, -5.6789),
-                  -5.555499999999999
-              )
+        def test_addition(self):
+            self.assertEqual(src.calculator.add(0, 1), 1)
+            self.assertEqual(src.calculator.add(0, 2), 2)
+            self.assertEqual(src.calculator.add(0, 3), 3)
+            self.assertEqual(src.calculator.add(1, 3), 4)
+            self.assertEqual(src.calculator.add(123456, 789012), 912468)
+            self.assertEqual(src.calculator.add(-1, 0), -1)
+            self.assertEqual(src.calculator.add(-2, -3), -5)
+            self.assertEqual(src.calculator.add(0.1, 1), 1.1)
+            self.assertEqual(
+                src.calculator.add(0.1, 0.2),
+                0.30000000000000004
+            )
+            self.assertEqual(
+                src.calculator.add(0.1234, -5.6789),
+                -5.555499999999999
+            )
 
-  the test passes.
 
-`Why is the result -5.555499999999999 instead of 5.5555? <https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
+    # TODO
+
+  the test passes. `Why is the result "-5.555499999999999" not "-5.5555"? <https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
 
 ----
 
@@ -775,7 +814,7 @@ what is a variable?
 
 ----
 
-I just did the same kind of calculation 8 times in a row, there is a better way to do this with the Principle of Substitution. I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers, it is called a variable_.
+I just did the same kind of calculation a few times in a row, there is a better way to do this with Substitution_. I can use a letter or a name for the numbers, that way I can have one test which covers all possible numbers, it is called a variable_.
 
 A variable_ is a name that is used for values that change. For example, in the tests so far, I have
 
