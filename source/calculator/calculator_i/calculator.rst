@@ -523,7 +523,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
   the :ref:`function<what is a function?>` returns ``1``, the test expects ``2``
 
-* I change the `return statement`_ in ``calculator.py`` to match the expectation
+* I change the `return statement`_ in ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -538,7 +538,17 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
     AssertionError: 2 != 1
 
-  this makes the :ref:`assertion<what is an assertion?>` that was passing before now fail. I need a solution that can make the two tests pass
+  this makes the :ref:`assertion<what is an assertion?>` that was passing before now fail.
+
+  When I send
+
+  - ``0`` and ``2`` to ``src.calculator.add`` it returns ``2``
+  - ``0`` and ``1`` to ``src.calculator.add`` it returns ``2``
+
+  I need a solution that can make the two tests pass. The :ref:`function<what is a function?>` should return
+
+  - ``2`` when the test sends ``0`` and ``2`` to ``src.calculator.add`` because ``0 + 2 == 2``
+  - ``1`` when the test sends ``0`` and ``1`` to ``src.calculator.add`` because ``0 + 1 == 1``
 
 * I make the :ref:`function<what is a function?>` return the result of adding the two inputs
 
@@ -549,259 +559,213 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
     def add(first_input, second_input):
         return first_input + second_input
 
-  the test passes. The ``add`` :ref:`function<what is a function?>` passes the two tests
+  the two tests are passing
 
----------------------------------------------------------------------------------
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
+* I add another test to make sure the :ref:`function<what is a function?>` works for other numbers
 
-I add another test to make sure the :ref:`function<what is a function?>` works for other numbers
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 5-8
 
-.. code-block:: python
-  :lineno-start: 12
-  :emphasize-lines: 5-8
+            self.assertEqual(
+                src.calculator.add(0, 2),
+                2
+            )
+            self.assertEqual(
+                src.calculator.add(0, 3),
+                2
+            )
 
-          self.assertEqual(
-              src.calculator.add(0, 2),
-              2
-          )
-          self.assertEqual(
-              src.calculator.add(0, 3),
-              2
-          )
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  .. code-block:: python
 
-.. code-block:: python
+    AssertionError: 3 != 2
 
-  AssertionError: 3 != 2
+* I change the expectation in the test
 
----------------------------------------------------------------------------------
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3
 
-I change the expectation in the test
+            self.assertEqual(
+                src.calculator.add(0, 3),
+                3
+            )
 
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 3
+  the test passes
 
-          self.assertEqual(
-              src.calculator.add(0, 3),
-              3
-          )
+* I add another test with a different number for the first input
 
-the test passes
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 5-8
 
----------------------------------------------------------------------------------
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
+            self.assertEqual(
+                src.calculator.add(0, 3),
+                3
+            )
+            self.assertEqual(
+                src.calculator.add(1, 3),
+                3
+            )
 
-I add another test with a different number for the first input
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 5-8
+  .. code-block:: python
 
-          self.assertEqual(
-              src.calculator.add(0, 3),
-              3
-          )
-          self.assertEqual(
-              src.calculator.add(1, 3),
-              3
-          )
+    AssertionError: 4 != 3
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+*  I change the expectation to match reality
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 3
 
-  AssertionError: 4 != 3
+            self.assertEqual(
+                src.calculator.add(1, 3),
+                4
+            )
 
----------------------------------------------------------------------------------
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
+  the test passes. The ``add`` :ref:`function<what is a function?>` looks good so far
 
-I change the expectation to match reality
+* I add a test with bigger numbers
 
-.. code-block:: python
-  :lineno-start: 20
-  :emphasize-lines: 3
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 5-8
 
-          self.assertEqual(
-              src.calculator.add(1, 3),
-              4
-          )
+            self.assertEqual(
+                src.calculator.add(1, 3),
+                4
+            )
+            self.assertEqual(
+                src.calculator.add(123456, 789012),
+                4
+            )
 
-the test passes. The ``add`` :ref:`function<what is a function?>` looks good so far
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
----------------------------------------------------------------------------------
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
+  .. code-block:: python
 
-I add a test with bigger numbers
+    AssertionError: 912468 != 4
 
-.. code-block:: python
-  :lineno-start: 20
-  :emphasize-lines: 5-8
+* I change the expectation to match reality
 
-          self.assertEqual(
-              src.calculator.add(1, 3),
-              4
-          )
-          self.assertEqual(
-              src.calculator.add(123456, 789012),
-              4
-          )
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+            self.assertEqual(
+                src.calculator.add(123456, 789012),
+                912468
+            )
 
-.. code-block:: python
+  the test passes
 
-  AssertionError: 912468 != 4
+* I add another test, this time with a negative number
 
----------------------------------------------------------------------------------
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 5-8
 
-I change the expectation to match reality
+            self.assertEqual(
+                src.calculator.add(123456, 789012),
+                912468
+            )
+            self.assertEqual(
+                src.calculator.add(-1, 0),
+                912468
+            )
 
-.. code-block:: python
-  :lineno-start: 24
-  :emphasize-lines: 3
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-          self.assertEqual(
-              src.calculator.add(123456, 789012),
-              912468
-          )
+  .. code-block:: python
 
-the test passes
+    AssertionError: -1 != 912468
 
----------------------------------------------------------------------------------
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
+* I change the expectation to match reality
 
-I add another test, this time with a negative number
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 3
 
-.. code-block:: python
-  :lineno-start: 24
-  :emphasize-lines: 5-8
+        self.assertEqual(
+            src.calculator.add(-1, 0),
+            -1
+        )
 
-          self.assertEqual(
-              src.calculator.add(123456, 789012),
-              912468
-          )
-          self.assertEqual(
-              src.calculator.add(-1, 0),
-              912468
-          )
+  the test passes
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I try another test with two negative numbers
 
-.. code-block:: python
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 5-8
 
-  AssertionError: -1 != 912468
+            self.assertEqual(
+                src.calculator.add(-1, 0),
+                -1
+            )
+            self.assertEqual(
+                src.calculator.add(-2, -3),
+                -1
+            )
 
----------------------------------------------------------------------------------
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-I change the expectation to match reality
+  .. code-block:: python
 
-.. code-block:: python
-  :lineno-start: 28
-  :emphasize-lines: 3
+    AssertionError: -5 != -1
 
-      self.assertEqual(
-          src.calculator.add(-1, 0),
-          -1
-      )
+* I make the expectation match reality
 
-the test passes
-
----------------------------------------------------------------------------------
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
-
-I try another test with two negative numbers
-
-.. code-block:: python
-  :lineno-start: 28
-  :emphasize-lines: 5-8
-
-          self.assertEqual(
-              src.calculator.add(-1, 0),
-              -1
-          )
-          self.assertEqual(
-              src.calculator.add(-2, -3),
-              -1
-          )
-
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-
-  AssertionError: -5 != -1
-
----------------------------------------------------------------------------------
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
-
-I make the expectation match reality
-
-.. code-block:: python
-  :lineno-start: 32
-  :emphasize-lines: 3
-
-          self.assertEqual(
-              src.calculator.add(-2, -3),
-              -5
-          )
-
-the test passes. The ``add`` :ref:`function<what is a function?>` can handle positive and negative numbers
-
----------------------------------------------------------------------------------
-:red:`RED`: make it fail
----------------------------------------------------------------------------------
-
-I add another test with floats_ (binary floating point decimal numbers)
-
-.. code-block:: python
-  :lineno-start: 32
-  :emphasize-lines: 5-8
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 3
 
             self.assertEqual(
                 src.calculator.add(-2, -3),
                 -5
             )
-            self.assertEqual(
-                src.calculator.add(0.1234, -5.6789),
-                -5
-            )
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the test passes. The ``add`` :ref:`function<what is a function?>` can handle positive and negative numbers
 
-.. code-block:: python
+* I add another test with floats_ (binary floating point decimal numbers)
 
-  AssertionError: -5.555499999999999 != -5
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 5-8
 
----------------------------------------------------------------------------------
-:green:`GREEN`: make it pass
----------------------------------------------------------------------------------
+              self.assertEqual(
+                  src.calculator.add(-2, -3),
+                  -5
+              )
+              self.assertEqual(
+                  src.calculator.add(0.1234, -5.6789),
+                  -5
+              )
 
-I change the expectation
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
-  :lineno-start: 36
-  :emphasize-lines: 3
+  .. code-block:: python
 
-            self.assertEqual(
-                src.calculator.add(0.1234, -5.6789),
-                -5.555499999999999
-            )
+    AssertionError: -5.555499999999999 != -5
 
-the test passes. `Why is the result -5.555499999999999 instead of 5.5555? <https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 3
+
+              self.assertEqual(
+                  src.calculator.add(0.1234, -5.6789),
+                  -5.555499999999999
+              )
+
+  the test passes.
+
+`Why is the result -5.555499999999999 instead of 5.5555? <https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
 
 ----
 
@@ -1883,7 +1847,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AssertionError: (-XYZ.ABCDEFGHIJKLMNO, YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
-* I change the `return statement`_ to match the expectation
+* I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 9
