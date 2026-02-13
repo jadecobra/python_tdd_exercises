@@ -104,7 +104,7 @@ table of contents
   what causes AttributeError?<exceptions/AttributeError>
   pass values<how_to/pass_values>
   data_structures/none
-  data_structures/booleans/index
+  what is a boolean?<data_structures/booleans/booleans_1>
   truth table<truth_table/index>
   make a calculator<calculator/calculator_i/index>
   make TDD project 2<make_tdd/make_tdd_automatically/index>

@@ -57,7 +57,7 @@ open the project
 ----
 
 *********************************************************************************
-is a boolean an integer or a float?
+is False an integer or a float?
 *********************************************************************************
 
 ----
@@ -68,7 +68,7 @@ is a boolean an integer or a float?
 
 ----
 
-I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`` :ref:`method<what is a function?>`
+I add a new :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
 
 .. code-block:: python
   :lineno-start: 6
@@ -118,7 +118,7 @@ the test passes
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 67
     :emphasize-lines: 4
 
     # False is False
@@ -133,9 +133,10 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>` to see if :ref:`False<test_what_is_false>` is a float_
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 3
+    :lineno-start: 6
+    :emphasize-lines: 4
 
+        def test_what_is_false(self):
             self.assertIsInstance(False, bool)
             self.assertIsInstance(False, int)
             self.assertIsInstance(False, float)
@@ -164,7 +165,7 @@ the test passes
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 70
     :emphasize-lines: 3
 
     # False is a boolean
@@ -175,41 +176,109 @@ the test passes
     # Exceptions Encountered
     # AssertionError
 
-* I add an :ref:`assertion<what is an assertion?>` to the ``test_what_is_true`` :ref:`method<what is a function?>` to test if :ref:`True<test_what_is_true>` is also an integer_
+* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 3
+    :lineno-start: 6
+    :emphasize-lines: 4
 
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertNotIsInstance(True, int)
-            self.assertTrue(True)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(False, int)
+            self.assertNotIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: True is an instance of <class 'int'>
+    AssertionError: False is an instance of (<class 'bool'>, <class 'int'>)
 
-  in Python_, :ref:`True<test_what_is_true>` is a :ref:`boolean<what are booleans?>` and an integer_
-
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2
+    :lineno-start: 9
+    :emphasize-lines: 1
 
-            self.assertIsInstance(True, bool)
-            self.assertIsInstance(True, int)
-            self.assertTrue(True)
+            self.assertIsInstance(False, (bool, int))
 
   the test passes
+
+* I remove the first two :ref:`assertions<what is an assertion?>` in the test since they are covered by the new one
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+            self.assertFalse(False)
+
+----
+
+*********************************************************************************
+is True an integer or a float?
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add an :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to test if :ref:`True<test_what_is_true>` is also an integer_
+
+.. code-block:: python
+  :lineno-start: 28
+  :emphasize-lines: 3
+
+      def test_what_is_true(self):
+          self.assertIsInstance(True, bool)
+          self.assertNotIsInstance(True, int)
+          self.assertTrue(True)
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: shell
+
+  AssertionError: True is an instance of <class 'int'>
+
+in Python_, :ref:`True<test_what_is_true>` is a :ref:`boolean<what are booleans?>` and an integer_
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change assertNotIsInstance_ to assertIsInstance_
+
+.. code-block:: python
+  :lineno-start: 21
+  :emphasize-lines: 2
+
+          self.assertIsInstance(True, bool)
+          self.assertIsInstance(True, int)
+          self.assertTrue(True)
+
+the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 61
     :emphasize-lines: 2
 
     # True is a boolean
@@ -220,7 +289,7 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>` to test if :ref:`True<test_what_is_true>` is a float_
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 28
     :emphasize-lines: 4
 
         def test_what_is_true(self):
@@ -240,7 +309,7 @@ the test passes
 * I change the `assert method`_
 
   .. code-block:: python
-    :lineno-start: 22
+    :lineno-start: 30
     :emphasize-lines: 2
 
             self.assertIsInstance(True, int)
@@ -252,7 +321,7 @@ the test passes
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 62
     :emphasize-lines: 3
 
     # True is a boolean
@@ -262,27 +331,64 @@ the test passes
 
   This explains why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` only allowed integers_ and floats_.
 
-
-  The :ref:`add function<test_addition>` returned numbers in the calculation with :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` because they are integers_. I want to know what their values are
-
-* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function` in the ``only_takes_numbers`` :ref:`function` in the :ref:`calculator<how to make a calculator>`
+* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 27
     :emphasize-lines: 4
 
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertIsInstance(True, int)
-            self.assertIsInstance(True, (bool, int))
-            self.assertNotIsInstance(True, float)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(False, int)
+            self.assertNotIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
 
-  the test is still green
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False is an instance of (<class 'bool'>, <class 'int'>)
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1
+
+            self.assertIsInstance(False, (bool, int))
+
+  the test passes
+
+* I remove the first two :ref:`assertions<what is an assertion?>` in the test since they are covered by the new one
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+            self.assertFalse(False)
+
+----
+
+*********************************************************************************
+what are the values of True and False?
+*********************************************************************************
+
+The :ref:`add function<test_addition>` returned numbers in the calculation with :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` because they are integers_. I want to know what their values are
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
 
 * I remove the first two :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 28
 
         def test_what_is_true(self):
             self.assertIsInstance(True, (bool, int))
@@ -305,17 +411,7 @@ the test passes
 
   the tests are still passing
 
-* I remove the first two :ref:`assertions<what is an assertion?>` in the test
 
-  .. code-block:: python
-    :lineno-start: 6
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, (bool, int))
-            self.assertNotIsInstance(False, float)
-            self.assertFalse(False)
-
-  still green
 
 * I can use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test what is False<test_what_is_false>`
 
@@ -717,7 +813,7 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 61
     :emphasize-lines: 1
 
             self.assertEqual(True-1, 0)
@@ -727,7 +823,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 61
     :emphasize-lines: 2
 
             self.assertEqual(True-1, 0)
@@ -744,7 +840,7 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 62
     :emphasize-lines: 1
 
             self.assertEqual(True*1, 1)
@@ -754,7 +850,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`division<test_division>`
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 62
     :emphasize-lines: 2
 
             self.assertEqual(True*1, 1)
