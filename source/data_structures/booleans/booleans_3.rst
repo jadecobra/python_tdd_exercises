@@ -212,7 +212,7 @@ the test passes
             self.assertNotIsInstance(False, float)
             self.assertFalse(False)
 
-* I can use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test_what_is_false`
+* I use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 6
@@ -253,27 +253,27 @@ the test passes
 
         def test_what_is_true(self):
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all of them
 
   .. code-block:: shell
 
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
-    SUBFAILED(item=None)   ... - AssertionError: None is not true
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
-    SUBFAILED(item=0)      ... - AssertionError: 0 is not true
-    SUBFAILED(item=0.0)    ... - AssertionError: 0.0 is not true
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
-    SUBFAILED(item='')     ... - AssertionError: '' is not true
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
-    SUBFAILED(item=())     ... - AssertionError: () is not true
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
-    SUBFAILED(item=[])     ... - AssertionError: [] is not true
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
-    SUBFAILED(item=set())  ... - AssertionError: set() is not true
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
-    SUBFAILED(item={})     ... - AssertionError: {} is not true
-    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item=False) ... - AssertionError: False is not true
+    SUBFAILED(item=None) ...  - AssertionError: None is not true
+    SUBFAILED(item=False) ... - AssertionError: False is not true
+    SUBFAILED(item=0) ...     - AssertionError: 0 is not true
+    SUBFAILED(item=0.0) ...   - AssertionError: 0.0 is not true
+    SUBFAILED(item=False) ... - AssertionError: False is not true
+    SUBFAILED(item=False) ... - AssertionError: False is not true
+    SUBFAILED(item='') ...    - AssertionError: '' is not true
+    SUBFAILED(item=False)...  - AssertionError: False is not true
+    SUBFAILED(item=()) ...    - AssertionError: () is not true
+    SUBFAILED(item=False) ... - AssertionError: False is not true
+    SUBFAILED(item=[]) ...    - AssertionError: [] is not true
+    SUBFAILED(item=False) ... - AssertionError: False is not true
+    SUBFAILED(item=set()) ... - AssertionError: set() is not true
+    SUBFAILED(item=False) ... - AssertionError: False is not true
+    SUBFAILED(item={}) ...    - AssertionError: {} is not true
+    SUBFAILED(item=False) ... - AssertionError: False is not true
 
 * I change the :ref:`assertion<what is an assertion?>`
 
@@ -325,7 +325,7 @@ is True an integer or a float?
 I add an :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to test if :ref:`True<test_what_is_true>` is also an integer_
 
 .. code-block:: python
-  :lineno-start: 27
+  :lineno-start: 22
   :emphasize-lines: 3
 
       def test_what_is_true(self):
@@ -352,7 +352,7 @@ in Python_, :ref:`True<test_what_is_true>` is a :ref:`boolean<what are booleans?
 I change assertNotIsInstance_ to assertIsInstance_
 
 .. code-block:: python
-  :lineno-start: 29
+  :lineno-start: 24
   :emphasize-lines: 1
 
           self.assertIsInstance(True, int)
@@ -370,7 +370,7 @@ the test passes
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 55
     :emphasize-lines: 2
 
     # True is a boolean
@@ -381,7 +381,7 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>` to test if :ref:`True<test_what_is_true>` is a float_
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 22
     :emphasize-lines: 4
 
         def test_what_is_true(self):
@@ -401,7 +401,7 @@ the test passes
 * I change the `assert method`_
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 25
     :emphasize-lines: 1
 
             self.assertNotIsInstance(True, float)
@@ -411,7 +411,7 @@ the test passes
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 55
     :emphasize-lines: 3
 
     # True is a boolean
@@ -422,7 +422,7 @@ the test passes
 * I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 22
     :emphasize-lines: 4
 
         def test_what_is_true(self):
@@ -440,7 +440,7 @@ the test passes
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 25
     :emphasize-lines: 1
 
             self.assertIsInstance(True, (bool, int))
@@ -450,30 +450,109 @@ the test passes
 * I remove the first two :ref:`assertions<what is an assertion?>` in the test since they are covered by the new one
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 22
 
         def test_what_is_true(self):
             self.assertIsInstance(True, (bool, int))
             self.assertNotIsInstance(True, float)
             self.assertTrue(True)
-            self.assertTrue(-1)
-            self.assertTrue(bool(-1))
-            self.assertTrue(1)
-            self.assertTrue(bool(1))
-            self.assertTrue(-0.1)
-            self.assertTrue(bool(-0.1))
-            self.assertTrue(0.1)
-            self.assertTrue(bool(0.1))
-            self.assertTrue("text")
-            self.assertTrue(bool("text"))
-            self.assertTrue((1, 2, 3, 'n'))
-            self.assertTrue(bool((1, 2, 3, 'n')))
-            self.assertTrue([1, 2, 3, 'n'])
-            self.assertTrue(bool([1, 2, 3, 'n']))
-            self.assertTrue({1, 2, 3, 'n'})
-            self.assertTrue(bool({1, 2, 3, 'n'}))
-            self.assertTrue({'key': 'value'})
-            self.assertTrue(bool({'key': 'value'}))
+
+* I use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test_what_is_true`
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 4-34
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, (bool, int))
+            self.assertNotIsInstance(True, float)
+            # self.assertTrue(True)
+            # self.assertTrue(-1)
+            # self.assertTrue(bool(-1))
+            # self.assertTrue(1)
+            # self.assertTrue(bool(1))
+            # self.assertTrue(-0.1)
+            # self.assertTrue(bool(-0.1))
+            # self.assertTrue(0.1)
+            # self.assertTrue(bool(0.1))
+            # self.assertTrue("text")
+            # self.assertTrue(bool("text"))
+            # self.assertTrue((1, 2, 3, 'n'))
+            # self.assertTrue(bool((1, 2, 3, 'n')))
+            # self.assertTrue([1, 2, 3, 'n'])
+            # self.assertTrue(bool([1, 2, 3, 'n']))
+            # self.assertTrue({1, 2, 3, 'n'})
+            # self.assertTrue(bool({1, 2, 3, 'n'}))
+            # self.assertTrue({'key': 'value'})
+            # self.assertTrue(bool({'key': 'value'}))
+            for true_item in (
+                True,
+                -1, bool(-1), 1, bool(1),
+                -0.1, bool(-0.1), 0.1, bool(0.1),
+                "text", bool("text"),
+                ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
+                [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
+                {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),
+                {'key': 'value'}, bool({'key': 'value'}),
+            ):
+                with self.subTest(item=true_item):
+                    self.assertFalse(true_item)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all of them
+
+  .. code-block:: shell
+
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item=-1) ...               - AssertionError: -1 is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item=1) ...                - AssertionError: 1 is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item=-0.1) ...             - AssertionError: -0.1 is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item=0.1) ...              - AssertionError: 0.1 is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item='text') ...           - AssertionError: 'text' is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item=(1, 2, 3, 'n')) ...   - AssertionError: (1, 2, 3, 'n') is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item=[1, 2, 3, 'n']) ...   - AssertionError: [1, 2, 3, 'n'] is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item={1, 2, 3, 'n'}) ...   - AssertionError: {1, 2, 3, 'n'} is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+    SUBFAILED(item={'key': 'value'}) ... - AssertionError: {'key': 'value'} is not false
+    SUBFAILED(item=True) ...             - AssertionError: True is not false
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 1
+
+                    self.assertTrue(true_item)
+
+  the test is green again
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 22
+
+        def test_what_is_true(self):
+            self.assertIsInstance(True, (bool, int))
+            self.assertNotIsInstance(True, float)
+
+            for true_item in (
+                True,
+                -1, bool(-1), 1, bool(1),
+                -0.1, bool(-0.1), 0.1, bool(0.1),
+                "text", bool("text"),
+                ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
+                [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
+                {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),
+                {'key': 'value'}, bool({'key': 'value'}),
+            ):
+                with self.subTest(item=true_item):
+                    self.assertTrue(true_item)
 
 
     # NOTES
@@ -495,81 +574,7 @@ The :ref:`add function<test_addition>` returned numbers in the calculation with 
 ----
 
 
-* I can use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test what is False<test_what_is_false>`
 
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 4-24
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, (bool, int))
-            self.assertNotIsInstance(False, float)
-            # self.assertFalse(False)
-            # self.assertFalse(None)
-            # self.assertFalse(0)
-            # self.assertFalse(0.0)
-            # self.assertFalse(str())
-            # self.assertFalse(tuple())
-            # self.assertFalse(list())
-            # self.assertFalse(set())
-            # self.assertFalse(dict())
-            for false_item in (
-                False,
-                None,
-                0, 0.0,
-                str(),
-                tuple(),
-                list(),
-                set(),
-                dict(),
-            ):
-                with self.subTest(i=false_item):
-                    self.assertFalse(false_item)
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 6
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, (bool, int))
-            self.assertNotIsInstance(False, float)
-            for false_item in (
-                False,
-                None,
-                0, 0.0,
-                str(),
-                tuple(),
-                list(),
-                set(),
-                dict(),
-            ):
-                with self.subTest(i=false_item):
-                    self.assertFalse(false_item)
-
-  still green
-
-* I add :ref:`True<test_what_is_true>` to make sure the test works
-
-  .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 2
-
-                dict(),
-                True,
-            ):
-                with self.subTest(i=false_item):
-                    self.assertFalse(false_item)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    SUBFAILED(i=True) tests/test_booleans.py::TestBooleans::test_what_is_false - AssertionError: True is not false
-
-* I remove the failing line and the test is green again
 
 ----
 

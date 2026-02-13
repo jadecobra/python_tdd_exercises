@@ -297,8 +297,8 @@ test_calculator_w_getattribute
   .. code-block:: python
     :emphasize-text: operation add subtract
 
-    SUBFAILED(operation='add') tests/test_calculator.py::TestCalculator::test_calculator_w_getattribute - AssertionError: WXY.ZABCDEFGHIJKL != 1
-    SUBFAILED(operation='subtract') tests/test_calculator.py::TestCalculator::test_calculator_w_getattribute - AssertionError: MNO.PQRSTUVWXYZAB != 1
+    SUBFAILED(operation='add') ...      - AssertionError: WXY.ZABCDEFGHIJKL != 1
+    SUBFAILED(operation='subtract') ... - AssertionError: MNO.PQRSTUVWXYZAB != 1
 
 * I change the expectation
 
@@ -1696,8 +1696,8 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    SUBFAILED(i=True) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 404.40333818765737 != 'brmph?! Numbers on...
-    SUBFAILED(i=False) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: JKL.MNOPQRSTUVWXYZ != 'brmph?! Numbers on...
+    SUBFAILED(i=True) ...  - AssertionError: TUV.VWXYZABCDEFGHI != 'brmph?! Numbers on...
+    SUBFAILED(i=False) ... - AssertionError: JKL.MNOPQRSTUVWXYZ != 'brmph?! Numbers on...
 
   2 of the failures are for :ref:`booleans<what are booleans?>`
 

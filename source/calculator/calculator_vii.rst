@@ -494,19 +494,19 @@ the test passes
 
   .. code-block:: python
 
-    SUBFAILED(i=None) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=True) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=False) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i='') tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i='text') tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=()) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=(0, 1, 2, 'n')) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=[]) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=[0, 1, 2, 'n']) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=set()) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={0, 1, 2, 'n'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={'key': 'value'}) tests/test_calculator.py::TestCalculator::test_calculator_sends_message_when_input_is_not_a_number - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=None) ...             - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=True) ...             - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=False) ...            - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i='') ...               - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i='text') ...           - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=()) ...               - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=(0, 1, 2, 'n')) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=[]) ...               - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=[0, 1, 2, 'n']) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i=set()) ...            - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={0, 1, 2, 'n'}) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={}) ...               - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    SUBFAILED(i={'key': 'value'}) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
 
   the test works
 
@@ -638,10 +638,10 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
   .. code-block:: python
 
-    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: QRS.TUVWXYZABCDEF != 'BOOM!!!'
-    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: GHI.JKLMNOPQRSTUVWX != 'BOOM!!!'
-    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: Y.ABCDEFGHIJKLMNOP != 'BOOM!!!'
-    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: QRSTUV.WXYZABCDEFG != 'BOOM!!!'
+    SUBFAILED(operation='addition') ...       - AssertionError: QRS.TUVWXYZABCDEF != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') ...    - AssertionError: GHI.JKLMNOPQRSTUVWX != 'BOOM!!!'
+    SUBFAILED(operation='division') ...       - AssertionError: Y.ABCDEFGHIJKLMNOP != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') ... - AssertionError: QRSTUV.WXYZABCDEFG != 'BOOM!!!'
 
 ----
 
@@ -842,10 +842,10 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   .. code-block:: python
 
-    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: HIJ.KLMNOPQRSTUVW != 'BOOM!!!'
-    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: XYZA.BCDEFGHIJKLMN != 'BOOM!!!'
-    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: NO.PQRSTUVWXYZABCDE != 'BOOM!!!'
-    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_functions - AssertionError: FGHIJKLM.NOPQRSTUVW != 'BOOM!!!'
+    SUBFAILED(operation='addition') ...       - AssertionError: HIJ.KLMNOPQRSTUVW != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') ...    - AssertionError: XYZA.BCDEFGHIJKLMN != 'BOOM!!!'
+    SUBFAILED(operation='division') ...       - AssertionError: NO.PQRSTUVWXYZABCDE != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') ... - AssertionError: FGHIJKLM.NOPQRSTUVW != 'BOOM!!!'
 
 * I change the expectation
 
@@ -1218,10 +1218,10 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   .. code-block:: python
 
-    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_raises_type_error_when_given_more_than_two_inputs - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
-    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_raises_type_error_when_given_more_than_two_inputs - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
-    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_raises_type_error_when_given_more_than_two_inputs - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
-    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_raises_type_error_when_given_more_than_two_inputs - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+    SUBFAILED(operation='addition') ...       - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+    SUBFAILED(operation='subtraction') ...    - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+    SUBFAILED(operation='division') ...       - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+    SUBFAILED(operation='multiplication') ... - TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were ...
 
 * I add the `assertRaises method`_
 
@@ -1335,10 +1335,10 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   .. code-block:: python
 
-    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - AssertionError: YZA.BCDEFGHIJKLMNO != 'BOOM!!!'
-    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - AssertionError: PQR.STUVWXYZABCDE != 'BOOM!!!'
-    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - AssertionError: F.GHIJKLMNOPQRSTUV != 'BOOM!!!'
-    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - AssertionError: WXYABC.DEFGHIJKLMN != 'BOOM!!!'
+    SUBFAILED(operation='addition') ...       - AssertionError: YZA.BCDEFGHIJKLMNO != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') ...    - AssertionError: PQR.STUVWXYZABCDE != 'BOOM!!!'
+    SUBFAILED(operation='division') ...       - AssertionError: F.GHIJKLMNOPQRSTUV != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') ... - AssertionError: WXYABC.DEFGHIJKLMN != 'BOOM!!!'
 
 * I change the expectation
 
@@ -1405,10 +1405,10 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   .. code-block:: python
 
-    SUBFAILED(operation='addition') tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - AssertionError: OPQ.RSTUVWXYZABCDEF != 'BOOM!!!'
-    SUBFAILED(operation='subtraction') tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - AssertionError: GHI.JKLMNOPQRSTUVWX != 'BOOM!!!'
-    SUBFAILED(operation='division') tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - AssertionError: Y.ZABCDEFGHIJKLMNOP != 'BOOM!!!'
-    SUBFAILED(operation='multiplication') tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - AssertionError: -QRSTU.VWXYZABCDEF != 'BOOM!!!'
+    SUBFAILED(operation='addition') ...       - AssertionError: OPQ.RSTUVWXYZABCDEF != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') ...    - AssertionError: GHI.JKLMNOPQRSTUVWX != 'BOOM!!!'
+    SUBFAILED(operation='division') ...       - AssertionError: Y.ZABCDEFGHIJKLMNOP != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') ... - AssertionError: -QRSTU.VWXYZABCDEF != 'BOOM!!!'
 
 * I change the expectation
 

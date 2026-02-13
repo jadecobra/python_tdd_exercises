@@ -485,7 +485,7 @@ I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addit
       def test_calculator_raises_type_error_w_none(self):
           self.assertEqual(
               src.calculator.add(None, None),
-              'Excuse me?! Numbers only! try again...'
+              'brmph?! Numbers only. Try again...'
           )
           with self.assertRaises(TypeError):
               src.calculator.divide(None, None)
@@ -521,7 +521,7 @@ I add an :ref:`exception handler<how to use try...except...else>` to the `else c
           try:
               return first_input + second_input
           except TypeError:
-              return 'Excuse me?! Numbers only! try again...'
+              return 'brmph?! Numbers only. Try again...'
 
 the test passes
 
@@ -542,7 +542,7 @@ the test passes
         def test_calculator_raises_type_error_w_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             with self.assertRaises(TypeError):
                 src.calculator.divide('1', '1')
@@ -561,12 +561,12 @@ the test passes
 
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):
-            return 'Excuse me?! Numbers only! try again...'
+            return 'brmph?! Numbers only. Try again...'
         else:
             try:
                 return first_input + second_input
             except TypeError:
-                return 'Excuse me?! Numbers only! try again...'
+                return 'brmph?! Numbers only. Try again...'
 
   the test passes
 
@@ -579,11 +579,11 @@ the test passes
         def test_calculator_raises_type_error_w_strings(self):
             self.assertEqual(
                 src.calculator.add('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.divide('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
 
   the terminal_ shows TypeError_
@@ -604,7 +604,7 @@ the test passes
         except ZeroDivisionError:
             return 'brmph?! cannot divide by 0. Try again...'
         except TypeError:
-            return 'Excuse me?! Numbers only! try again...'
+            return 'brmph?! Numbers only. Try again...'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -623,11 +623,11 @@ the test passes
     def test_calculator_raises_type_error_w_none(self):
         self.assertEqual(
             src.calculator.add(None, None),
-            'Excuse me?! Numbers only! try again...'
+            'brmph?! Numbers only. Try again...'
         )
         self.assertEqual(
             src.calculator.divide(None, None),
-            'Excuse me?! Numbers only! try again...'
+            'brmph?! Numbers only. Try again...'
         )
 
   the test passes
@@ -641,11 +641,11 @@ the test passes
 
             self.assertEqual(
                 src.calculator.divide(None, None),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.multiply(None, None),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
 
   the terminal_ shows TypeError_
@@ -664,7 +664,7 @@ the test passes
         try:
             return first_input * second_input
         except TypeError:
-            return 'Excuse me?! Numbers only! try again...'
+            return 'brmph?! Numbers only. Try again...'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -680,11 +680,11 @@ the test passes
 
             self.assertEqual(
                 src.calculator.divide('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.multiply('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
 
   the test passes
@@ -697,11 +697,11 @@ the test passes
 
             self.assertEqual(
                 src.calculator.multiply('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.subtract('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
 
 
@@ -723,7 +723,7 @@ the test passes
         try:
             return first_input - second_input
         except TypeError:
-            return 'Excuse me?! Numbers only! try again...'
+            return 'brmph?! Numbers only. Try again...'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -739,11 +739,11 @@ the test passes
 
             self.assertEqual(
                 src.calculator.multiply(None, None),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.subtract(None, None),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
 
 
@@ -764,23 +764,23 @@ the test passes
 
             self.assertEqual(
                 src.calculator.subtract(None, None),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.add('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.divide('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.multiply('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
             self.assertEqual(
                 src.calculator.subtract('1', '1'),
-                'Excuse me?! Numbers only! try again...'
+                'brmph?! Numbers only. Try again...'
             )
 
 
@@ -804,7 +804,7 @@ the test passes
     :emphasize-lines: 2, 6, 10, 14, 18, 22, 26, 30, 34
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'Excuse me?! Numbers only! try again...'
+            error_message = 'brmph?! Numbers only. Try again...'
 
             self.assertEqual(
                 src.calculator.add(None, None),
@@ -864,7 +864,7 @@ All the :ref:`functions<what is a function?>` in the :ref:`calculator program<ho
   try:
       something
   except TypeError:
-      return 'Excuse me?! Numbers only! try again...'
+      return 'brmph?! Numbers only. Try again...'
 
 the :ref:`divide function<test_division>` is different because it has another :ref:`except clause<how to use try...except...else>`
 
@@ -903,7 +903,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
             try:
                 return function(first_input, second_input)
             except TypeError:
-                return 'Excuse me?! Numbers only! try again...'
+                return 'brmph?! Numbers only. Try again...'
         return wrapper
 
 
@@ -1018,7 +1018,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     @only_takes_numbers
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):
-            return 'Excuse me?! Numbers only! try again...'
+            return 'brmph?! Numbers only. Try again...'
         else:
             return first_input + second_input
 
@@ -1037,7 +1037,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     @only_takes_numbers
     def add(first_input, second_input):
         if is_string(first_input) or is_string(second_input):
-            return 'Excuse me?! Numbers only! try again...'
+            return 'brmph?! Numbers only. Try again...'
         else:
             return first_input + second_input
 
@@ -1065,7 +1065,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     @only_takes_numbers
     def add(first_input, second_input):
         if one_input_is_a_string(first_input, second_input):
-            return 'Excuse me?! Numbers only! try again...'
+            return 'brmph?! Numbers only. Try again...'
         else:
             return first_input + second_input
 
@@ -1084,7 +1084,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     def reject_strings(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'Excuse me?! Numbers only! try again...'
+                return 'brmph?! Numbers only. Try again...'
             else:
                 return function(first_input, second_input)
         return wrapper
@@ -1122,7 +1122,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
 
         def wrapper(first_input, second_input):
             ...
-            return 'Excuse me?! Numbers only! try again...'
+            return 'brmph?! Numbers only. Try again...'
             ...
             return function(first_input, second_input)
         return wrapper
@@ -1136,12 +1136,12 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     def only_takes_numbers_and_rejects_strings(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'Excuse me?! Numbers only! try again...'
+                return 'brmph?! Numbers only. Try again...'
             else:
                 try:
                     return function(first_input, second_input)
                 except TypeError:
-                    return 'Excuse me?! Numbers only! try again...'
+                    return 'brmph?! Numbers only. Try again...'
         return wrapper
 
 
@@ -1241,12 +1241,12 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     def only_takes_numbers_and_rejects_strings(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'Excuse me?! Numbers only! try again...'
+                return 'brmph?! Numbers only. Try again...'
             else:
                 try:
                     return function(first_input, second_input)
                 except TypeError:
-                    return 'Excuse me?! Numbers only! try again...'
+                    return 'brmph?! Numbers only. Try again...'
         return wrapper
 
 
@@ -1281,12 +1281,12 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'Excuse me?! Numbers only! try again...'
+                return 'brmph?! Numbers only. Try again...'
             else:
                 try:
                     return function(first_input, second_input)
                 except TypeError:
-                    return 'Excuse me?! Numbers only! try again...'
+                    return 'brmph?! Numbers only. Try again...'
         return wrapper
 
 
@@ -1322,7 +1322,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
 
     def only_takes_numbers(function):
         def wrapper(first_input, second_input):
-            error_message = 'Excuse me?! Numbers only! try again...'
+            error_message = 'brmph?! Numbers only. Try again...'
 
             if isinstance(first_input, str) or isinstance(second_input, str):
                 return error_message

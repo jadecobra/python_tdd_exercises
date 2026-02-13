@@ -55,7 +55,7 @@ class TestCalculator(unittest.TestCase):
             )
 
     def test_calculator_sends_message_when_input_is_not_a_number(self):
-        error_message = 'Excuse me?! Numbers only! try again...'
+        error_message = 'brmph?! Numbers only. Try again...'
 
         self.assertEqual(
             src.calculator.add(None, None),
