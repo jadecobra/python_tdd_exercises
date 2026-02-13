@@ -7,7 +7,7 @@
 .. _booleans: bool_
 
 #################################################################################
-what are booleans?
+booleans 1
 #################################################################################
 
 .. raw:: html
@@ -16,19 +16,7 @@ what are booleans?
 
 ----
 
-There are only 2 booleans_ - True_ and False_.
-
-The following chapters test booleans_
-
-.. toctree::
-  :titlesonly:
-  :maxdepth: 1
-
-  booleans_1
-  booleans_2
-  booleans_3
-  booleans_4
-  ../../truth_table/index
+I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a function?>` to test if any of the :ref:`Python basic data structures<data structures>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries`, are False_ or True_.
 
 *********************************************************************************
 preview
