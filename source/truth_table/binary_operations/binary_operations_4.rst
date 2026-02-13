@@ -1178,7 +1178,7 @@ review
 
 Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if I name the first input ``first_input`` and the second one ``second_input``, the tests show that
 
-* :ref:`Material Implication<test_material_implication>`
+* :ref:`Material/Logical Implication<test_material_implication>`
 
   - returns ``not first_input or second_input``
   - returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`

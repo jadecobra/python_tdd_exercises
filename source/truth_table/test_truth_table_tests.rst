@@ -2726,12 +2726,12 @@ review
 
 I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the operations of the `Truth Table`_ from Mathematics
 
-* there are 2 :ref:`nullary operations<Nullary Operations>`, they do not take input and always return the same thing, they are :ref:`constant<test_constant_function>`
+* there are :ref:`2 nullary operations<Nullary Operations>`, they do not take input and always return the same thing, they are :ref:`constant<test_constant_function>`
 
   - :ref:`Logical False<test_logical_false>` always returns :ref:`False<test_what_is_false>`
   - :ref:`Logical True<test_logical_true>` always returns :ref:`True<test_what_is_true>`
 
-* there are 2 :ref:`unary operations<Unary Operations>`, they take one input
+* there are :ref:`2 unary operations<Unary Operations>`, they take one input
 
   - :ref:`Logical Identity<test_logical_identity>` returns its input as output
   - :ref:`Logical Negation<test_logical_negation>` returns the negation of its input as output
@@ -2766,7 +2766,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 
     - returns ``first and second``
     - returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`:ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Logical Disjunction<test_logical_disjunction>`
 
@@ -2792,7 +2792,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
     - returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
     - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
 
-  * :ref:`Material Implication<test_material_implication>`
+  * :ref:`Material/Logical Implication<test_material_implication>`
 
     - returns ``not first or second``
     - returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
@@ -2840,6 +2840,15 @@ and
 * :ref:`Logical Negation is "not" <test_logical_negation>`
 
 All the logic statements or conditions have been written with some or all of the above 3.
+
+=====  =====  =======
+A      B      A and B
+=====  =====  =======
+False  False  False
+True   False  False
+False  True   False
+True   True   True
+=====  =====  =======
 
 ----
 
