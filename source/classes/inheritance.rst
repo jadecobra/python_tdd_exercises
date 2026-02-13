@@ -193,7 +193,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
-  E       AttributeError: module 'src.classes' has no attribute 'WParentheses'
+  AttributeError: module 'src.classes' has no attribute 'WParentheses'
 
 ----
 

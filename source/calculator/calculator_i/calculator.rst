@@ -519,7 +519,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
   .. code-block:: python
 
-    E    AssertionError: 1 != 2
+    AssertionError: 1 != 2
 
   the :ref:`function<what is a function?>` returns ``1``, the test expects ``2``
 
