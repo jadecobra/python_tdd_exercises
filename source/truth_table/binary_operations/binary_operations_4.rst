@@ -696,7 +696,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 
   greennn, yellow?
 
-* I remove the other statements in the :ref:`function<what is a function?>` then "multiply :ref:`not<test_logical_negation>`" by every symbol in the parentheses
+* I remove the other statements in the :ref:`function<what is a function?>` then "multiply :ref:`not<test_logical_negation>`" by everything in the parentheses
 
   .. code-block:: python
     :lineno-start: 81

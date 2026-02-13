@@ -1655,7 +1655,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
   green
 
-* I write every symbol in the second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` because it happens two times in the line
+* I write everything in the second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` because it happens two times in the line
 
   .. code-block:: python
     :lineno-start: 83
@@ -1726,7 +1726,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
   still green
 
-* I remove the other statements then multiply :ref:`not<test_logical_negation>` by every symbol in the parentheses because it happens two times in the line
+* I remove the other statements then multiply :ref:`not<test_logical_negation>` by everything in the parentheses because it happens two times in the line
 
   .. code-block:: python
     :lineno-start: 83
@@ -1800,7 +1800,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`logical_conjunction<test_logical_conjunction>` has only one case that returns :ref:`True<test_what_is_true>`, it is the missing case. I add an :ref:`if statement<if statements>` for it
+* :ref:`logical_conjunction<test_logical_conjunction>` has only one case that returns :ref:`True<test_what_is_true>`, it is the  case. I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
     :lineno-start: 76
@@ -2415,7 +2415,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
   green
 
-* I multiply :ref:`not<test_logical_negation>` by every symbol in the parentheses
+* I multiply :ref:`not<test_logical_negation>` by everything in the parentheses
 
   .. code-block:: python
     :lineno-start: 48
@@ -2454,6 +2454,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return (not first) or (not not second)
         return not (first and not second)
 
+  still green
 
 * I remove the other statements in :ref:`material_implication<test_material_implication>`
 
@@ -2469,7 +2470,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the missing case that returns :ref:`True<test_what_is_true>`
+* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the  case that returns :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -2482,17 +2483,45 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green. I remove the other statements in the :ref:`function<what is a function?>`
+  the test is still green
+
+* I make the `return statement`_ simpler
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 2
+
+    def material_non_implication(first, second):
+        return first == True and second == False
+        return (first, second) == (True, False)
+
+  still green
+
+* I use :ref:`not<test_logical_negation>` and remove ``== True`` and ``== False``
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 2
+
+    def material_non_implication(first, second):
+        return first and not second
+        return first == True and second == False
+
+  green
+
+* I remove the other statement in :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
     :lineno-start: 41
 
     def material_non_implication(first, second):
-        return (first, second) == (True, False)
+        return first and not second
 
 
     def material_implication(first, second):
-        return (first, second) != (True, False)
+        return not first or second
+
+----
 
 * ``first`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :ref:`False<test_what_is_false>`, I add an :ref:`if statement<if statements>` for them
 
@@ -2506,56 +2535,54 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (True, False): return False
         return first, second
 
-  the test is still green. I remove the other :ref:`if statements`, then add a simpler `return statement`_
+  the test is still green
+
+* I remove ``== True``
 
   .. code-block:: python
     :lineno-start: 35
     :emphasize-lines: 2
 
     def negate_first(first, second):
-        return first != True
-        if first == True: return False
+        # if first == True: return False
+        if first: return False
+        if (first, second) == (True, True): return False
+        if (first, second) == (True, False): return False
         return first, second
 
-  the test is still green, I remove the other statements in the :ref:`function<what is a function?>`
+  still green
+
+* I add a `return statement`_ because ...
 
   .. code-block:: python
     :lineno-start: 35
+    :emphasize-lines: 2
 
     def negate_first(first, second):
-        return first != True
+        return not first
+        if first: return False
+        if (first, second) == (True, True): return False
+        if (first, second) == (True, False): return False
+        return first, second
+
+  green
+
+* I remove the other statements from :ref:`negate_first<test_negate_first>`
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 2
+
+    def negate_first(first, second):
+        return not first
 
 
     def material_non_implication(first, second):
-        return (first, second) == (True, False)
+        return first and not second
 
-* ``second`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`. I add a `return statement`_ like the one from :ref:`negate_first<test_negate_first>`
+----
 
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2
-
-    def negate_second(first, second):
-        return second != True
-        if (first, second) == (True, True): return False
-        if (first, second) == (False, True): return False
-        return first, second
-
-  still green. I remove the other statements in the :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 29
-
-    def negate_second(first, second):
-        return second != True
-
-
-    def negate_first(first, second):
-        return first != True
-
-* :ref:`project_first<test_project_first>`, :ref:`project_second<test_project_second>`, :ref:`tautology<test_tautology>`, :ref:`logical_false<test_logical_false>`, :ref:`logical_true<test_logical_true>`, :ref:`logical_identity<test_logical_identity>` and :ref:`logical_negation<test_logical_negation>` are already simple
-
-* I change the `return statement`_ in :ref:`negate_second<test_negate_second>` to make it simpler
+* ``second`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`. I add a `return statement`_ ``if something: return False`` is the same as ...
 
   .. code-block:: python
     :lineno-start: 29
@@ -2563,9 +2590,13 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
     def negate_second(first, second):
         return not second == True
-        return second != True
+        if (first, second) == (True, True): return False
+        if (first, second) == (False, True): return False
+        return first, second
 
-  if ``not second`` is :ref:`True<test_what_is_true>` it means the `return statement`_ is ``True == True`` which is a duplication. I remove the second part of the statement and the second `return statement`_
+  the test is still green
+
+* I remove ``== True``
 
   .. code-block:: python
     :lineno-start: 29
@@ -2573,329 +2604,95 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
     def negate_second(first, second):
         return not second
+        return not second == True
 
+  green
 
-    def negate_first(first, second):
-
-  the test is still green
-
-* I do the same thing with :ref:`negate_first<test_negate_first>`
+* I remove the other statement in :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 2
+    :linenos:
+
+    def logical_negation(something):
+        return not something
+
+
+    def logical_identity(something):
+        return something
+
+
+    def logical_true():
+        return True
+
+
+    def logical_false():
+        return None
+
+
+    def tautology(first, second):
+        return True
+
+
+    def project_second(first, second):
+        return second
+
+
+    def project_first(first, second):
+        return first
+
+
+    def negate_second(first, second):
+        return not second
+
 
     def negate_first(first, second):
         return not first
-        return first != True
 
-  still green. I remove the second `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 17
-
-    def negate_first(first, second):
-        return not first
-
-
-    def material_non_implication(first, second):
-
-* I use this with :ref:`material_non_implication<test_material_non_implication>`
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2
-
-    def material_non_implication(first, second):
-        return first and not second
-        return (first, second) == (True, False)
-
-  the terminal_ shows all tests are still passing. I remove the second `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 21
 
     def material_non_implication(first, second):
         return first and not second
 
-
-    def material_implication(first, second):
-
-* I try it with :ref:`material_implication<test_material_implication>`
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
-
-    def material_implication(first, second):
-        return not first and second
-        return (first, second) != (True, False)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  Not good! I change ":ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
-
-    def material_implication(first, second):
-        return not first or second
-        return (first, second) != (True, False)
-
-  the test is green again. Note to self - use ":ref:`or<test_logical_disjunction>`" the next time I see ``!=`` in these tests. I remove the other `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 41
 
     def material_implication(first, second):
         return not first or second
 
 
     def logical_nor(first, second):
-
-* I do the same thing with :ref:`logical_nor<test_logical_nor>`
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2
-
-    def logical_nor(first, second):
-        return not first and not second
-        return (first, second) == (False, False)
-
-  the test is still green.
-
-* I remove the second `return statement`_ and change the first `return statement`_ to use ":ref:`not<test_logical_negation>`" for every symbol because it happens 2 times
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2
-
-    def logical_nor(first, second):
-        return (not first) (not or) (not second)
-        return not first and not second
-
-  the terminal_ shows SyntaxError_
-
-  .. code-block:: shell
-
-    SyntaxError: invalid syntax
-
-  I comment the line out then factor out ":ref:`not<test_logical_negation>`"
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-3
-
-    def logical_nor(first, second):
-        return not (first or second)
-        # return (not first) (not or) (not second)
-        return not first and not second
-
-  the test is still green. I remove the other statements in the :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 29
-
-    def logical_nor(first, second):
         return not (first or second)
 
-
-    def logical_nand(first, second):
-
-* I add a `return statement`_ to :ref:`logical_nand<test_logical_nand>`
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2
-
-    def logical_nand(first, second):
-        return not first or not second
-        return (first, second) != (True, True)
-
-  the test is still green, I remove the second `return statement`_ then factor out ":ref:`not<test_logical_negation>`" in the first
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2
-
-    def logical_nand(first, second):
-        return not (first and second)
-        return not first or not second
-
-  still green. I remove the other `return statements`_
-
-  .. code-block:: python
-    :lineno-start: 33
 
     def logical_nand(first, second):
         return not (first and second)
 
 
     def logical_equality(first, second):
-
-* I add a `return statement`_ to :ref:`logical_equality<test_logical_equality>`
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 2
-
-    def logical_equality(first, second):
-        return (not first or second) and (first or not second)
-        return (
-            (first, second) != (True, False)
-            and
-            (first, second) != (False, True)
-        )
-
-  the test is still green, I remove the other `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 53
-
-    def logical_equality(first, second):
         return (not first or second) and (first or not second)
 
-
-    def logical_disjunction(first, second):
-
-* I do the same thing with :ref:`logical_disjunction<test_logical_disjunction>`
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
-
-    def logical_disjunction(first, second):
-        return first or second
-        return (first, second) != (False, False)
-
-  still green. I remove the other `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 41
 
     def logical_disjunction(first, second):
         return first or second
 
 
     def logical_conjunction(first, second):
-
-* on to :ref:`logical_conjunction<test_logical_conjunction>`
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 2
-
-    def logical_conjunction(first, second):
-        return first and second
-        return (first, second) == (True, True)
-
-  the test is still green. I remove the other `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 45
-
-    def logical_conjunction(first, second):
         return first and second
 
 
     def exclusive_disjunction(first, second):
+        return (not (first and second)) and (first or second)
 
-* I add a `return statement`_ to :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-
-  .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2-6
-
-    def exclusive_disjunction(first, second):
-        return (
-            (not first or not second)
-            and
-            (first or second)
-        )
-        return (
-            (first, second) != (True, True)
-            and
-            (first, second) != (False, False)
-        )
-
-  still green. I remove the second `return statement`_ then factor out ":ref:`not<test_logical_negation>`" from the first part of the statement
-
-  .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 3-4
-
-    def exclusive_disjunction(first, second):
-        return (
-            not (first and second)
-            # (not first or not second)
-            and
-            (first or second)
-        )
-
-  the test is still green. I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 65
-
-    def exclusive_disjunction(first, second):
-        return (
-            not (first and second)
-            and
-            (first or second)
-        )
-
-
-    def converse_non_implication(first, second):
-
-* I add a simpler `return statement`_ to :ref:`converse_non_implication<test_converse_non_implication>`
-
-  .. code-block:: python
-    :lineno-start: 217
-    :emphasize-lines: 2
-
-    def converse_non_implication(first, second):
-        return not first and second
-        return (first, second) == (False, True)
-
-  still green. I remove the other line
-
-  .. code-block:: python
-    :lineno-start: 217
 
     def converse_non_implication(first, second):
         return not first and second
 
-
-    def converse_implication(first, second):
-
-* time for :ref:`converse_implication<test_converse_implication>`
-
-  .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2
-
-    def converse_implication(first, second):
-        return first or not second
-        return (first, second) != (False, True)
-
-  I remove the second `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 61
 
     def converse_implication(first, second):
         return first or not second
 
 
     def contradiction(first, second):
+        return False
 
-all the tests are still passing
+* all the other :ref:`functions<what is a function?>` are already simple
 
 ----
 
@@ -2903,7 +2700,7 @@ all the tests are still passing
 close the project
 *********************************************************************************
 
-* I close ``test_truth_table.py`` in the :ref:`editor<2 editors>`
+* I close ``truth_table.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``truth_table``
@@ -2941,97 +2738,99 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 
 * there are 16 binary operations, they each take 2 inputs, in this case I named the second input ``second`` and the first one ``first``
 
-  * :ref:`Contradiction <test_contradiction>`
+  * :ref:`Contradiction<test_contradiction>`
 
     - always returns :ref:`False<test_what_is_false>`
+    - never returns :ref:`True<test_what_is_true>`
     - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :ref:`True<test_what_is_true>`
 
-  * :ref:`Converse Implication <test_converse_implication>`
+  * :ref:`Converse Implication<test_converse_implication>`
 
     - returns ``first or not second``
-    - returns :ref:`False<test_what_is_false>`, if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse NonImplication<test_converse_non_implication>` which only returns :ref:`True<test_what_is_true>`, if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
+    - returns :ref:`False<test_what_is_false>` if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse NonImplication<test_converse_non_implication>` which returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
 
-  * :ref:`Converse NonImplication <test_converse_non_implication>`
+  * :ref:`Converse NonImplication<test_converse_non_implication>`
 
     - returns ``not first and second``
-    - returns :ref:`True<test_what_is_true>`, if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which only returns :ref:`False<test_what_is_false>`, if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
+    - returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :ref:`False<test_what_is_false>` if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
 
-  * :ref:`Exclusive Disjunction <test_exclusive_disjunction>`
+  * :ref:`Exclusive Disjunction<test_exclusive_disjunction>`
 
     - returns ``first != second``
-    - returns :ref:`True<test_what_is_true>`, if ``first`` and ``second`` are NOT equal
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which only returns :ref:`True<test_what_is_true>`, if the two inputs are equal
+    - returns :ref:`True<test_what_is_true>` only if ``first`` and ``second`` are NOT equal
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which returns :ref:`True<test_what_is_true>` only if ``first`` and ``second`` are equal
 
-  * :ref:`Logical Conjunction <test_logical_conjunction>` returns
+  * :ref:`Logical Conjunction<test_logical_conjunction>` returns
 
     - returns ``first and second``
-    - returns :ref:`True<test_what_is_true>`, if ``first`` and ``second`` are both :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which only returns :ref:`False<test_what_is_false>`, if the two inputs are :ref:`True<test_what_is_true>`
+    - returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`:ref:`True<test_what_is_true>`
 
-  * :ref:`Logical Disjunction <test_logical_disjunction>`
+  * :ref:`Logical Disjunction<test_logical_disjunction>`
 
     - returns ``first or second``
-    - returns :ref:`False<test_what_is_false>`, if ``first`` and ``second`` are both :ref:`False<test_what_is_false>`
-    - is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which only returns :ref:`True<test_what_is_true>`, if the two inputs are :ref:`False<test_what_is_false>`
+    - returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
 
-  * :ref:`Logical Equality <test_logical_equality>`
+  * :ref:`Logical Equality<test_logical_equality>`
 
     - returns ``first == second``
-    - returns :ref:`True<test_what_is_true>`, if ``first`` and ``second`` are equal
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Exclusive Disjunction (Exclusive OR)<test_exclusive_disjunction>` which only returns :ref:`True<test_what_is_true>`, if the two inputs are NOT equal
+    - returns :ref:`True<test_what_is_true>` only if ``first`` and ``second`` are equal
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Exclusive Disjunction (Exclusive OR)<test_exclusive_disjunction>` which returns :ref:`True<test_what_is_true>` only if ``first`` and ``second`` are NOT equal
 
-  * :ref:`Logical NAND <test_logical_nand>`
+  * :ref:`Logical NAND<test_logical_nand>`
 
     - returns ``not (first and second)``
-    - returns :ref:`False<test_what_is_false>`, if ``first`` and ``second`` are both :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation) (not)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which only returns :ref:`True<test_what_is_true>`, if the two inputs are :ref:`True<test_what_is_true>`
+    - returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation) (not)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
 
-  * :ref:`Logical NOR <test_logical_nor>`
+  * :ref:`Logical NOR<test_logical_nor>`
 
     - returns ``not (first or second)``
-    - returns :ref:`True<test_what_is_true>`, if ``first`` and ``second`` are both :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which only returns :ref:`False<test_what_is_false>`, if the two inputs are :ref:`False<test_what_is_false>`
+    - returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
 
-  * :ref:`Material Implication  <test_material_implication>`
+  * :ref:`Material Implication<test_material_implication>`
 
     - returns ``not first or second``
-    - returns :ref:`False<test_what_is_false>`, if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which returns :ref:`True<test_what_is_true>` only, if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
+    - returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
 
-  * :ref:`Material NonImplication <test_material_non_implication>`
+  * :ref:`Material NonImplication<test_material_non_implication>`
 
     - returns ``first and not second``
-    - returns :ref:`True<test_what_is_true>`, if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which only returns :ref:`False<test_what_is_false>`, if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
+    - returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Negate First<test_negate_first>`
 
-    - returns ``not first``
-    - returns :ref:`True<test_what_is_true>`, if ``first`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project First<test_project_first>` which only returns :ref:`True<test_what_is_true>`, if ``first`` is :ref:`True<test_what_is_true>`
+    - always returns ``not first``
+    - returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project First<test_project_first>` which returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`True<test_what_is_true>`
 
-  * :ref:`Negate Second <test_negate_second>`
+  * :ref:`Negate Second<test_negate_second>`
 
-    - returns ``not second``
-    - returns :ref:`True<test_what_is_true>`, if ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which only returns :ref:`True<test_what_is_true>`, if ``second`` is :ref:`True<test_what_is_true>`
+    - always returns ``not second``
+    - returns :ref:`True<test_what_is_true>` only if ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which returns :ref:`True<test_what_is_true>` only if ``second`` is :ref:`True<test_what_is_true>`
 
-  * :ref:`Project First <test_project_first>`
+  * :ref:`Project First<test_project_first>`
 
-    - returns ``first``
-    - returns :ref:`True<test_what_is_true>`, if ``first`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which only returns :ref:`True<test_what_is_true>`, if ``first`` is :ref:`False<test_what_is_false>`
-  * :ref:`Project Second <test_project_second>`
+    - always returns ``first``
+    - returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which returns :ref:`True<test_what_is_true>` only if ``first`` is :ref:`False<test_what_is_false>`
+  * :ref:`Project Second<test_project_second>`
 
-    - returns ``second``
-    - returns :ref:`True<test_what_is_true>`, if ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which only returns :ref:`True<test_what_is_true>`, if ``second`` is :ref:`False<test_what_is_false>`
+    - always returns ``second``
+    - returns :ref:`True<test_what_is_true>` only if ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :ref:`True<test_what_is_true>` only if ``second`` is :ref:`False<test_what_is_false>`
 
-  * :ref:`Tautology <test_tautology>`
+  * :ref:`Tautology<test_tautology>`
 
     - always returns :ref:`True<test_what_is_true>`
+    - never returns :ref:`False<test_what_is_false>`
     - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :ref:`False<test_what_is_false>`
 
 and
