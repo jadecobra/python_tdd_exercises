@@ -136,6 +136,18 @@ class TestBinaryOperations(unittest.TestCase):
         self.assertFalse(src.truth_table.logical_nor(False, True))
         self.assertTrue(src.truth_table.logical_nor(False, False))
 
+    def test_logical_equality(self):
+        self.assertTrue(src.truth_table.logical_equality(True, True))
+        self.assertFalse(src.truth_table.logical_equality(True, False))
+        self.assertFalse(src.truth_table.logical_equality(False, True))
+        self.assertTrue(src.truth_table.logical_equality(False, False))
+
+    def test_material_implication(self):
+        self.assertTrue(src.truth_table.material_implication(True, True))
+        self.assertFalse(src.truth_table.material_implication(True, False))
+        self.assertTrue(src.truth_table.material_implication(False, True))
+        self.assertTrue(src.truth_table.material_implication(False, False))
+
 
 # Exceptions seen
 # AttributeError

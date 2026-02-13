@@ -2845,15 +2845,6 @@ and
 
 All the logic statements or conditions have been written with some or all of the above 3.
 
-================================================================ =====================================================
-operation                                                         return
-================================================================ =====================================================
-:ref:`contradiction<test_contradiction>`                          return False
-:ref:`converse_implication<test_converse_implication>`            return first or not second
-:ref:`converse_non_implication<test_converse_non_implication>`    return not first and second
-:ref:`exclusive_disjunction<test_exclusive_disjunction>`          return (not (first and second)) and (first or second)
-================================================================ =====================================================
-
 ----
 
 *************************************************************************************
