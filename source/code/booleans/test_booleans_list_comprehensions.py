@@ -8,31 +8,32 @@ class TestBooleans(unittest.TestCase):
         self.assertNotIsInstance(False, float)
         for false_item in (
             False,
-            None,
-            0, 0.0,
-            str(),
-            tuple(),
-            list(),
-            set(),
-            dict(),
+            None, bool(None),
+            0, 0.0, bool(0), bool(0.0),
+            str(), bool(str()),
+            tuple(), bool(tuple()),
+            list(), bool(list()),
+            set(), bool(set()),
+            dict(), bool(dict()),
         ):
-            with self.subTest(i=false_item):
+            with self.subTest(item=false_item):
                 self.assertFalse(false_item)
 
     def test_what_is_true(self):
         self.assertIsInstance(True, (bool, int))
         self.assertNotIsInstance(True, float)
+
         for true_item in (
             True,
-            -1, 1,
-            -0.1, 0.1,
-            'text',
-            (1, 2, 3, 'n'),
-            [1, 2, 3, 'n'],
-            {1, 2, 3, 'n'},
-            {'key': 'value'},
+            -1, bool(-1), 1, bool(1),
+            -0.1, bool(-0.1), 0.1, bool(0.1),
+            "text", bool("text"),
+            ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
+            [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
+            {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),
+            {'key': 'value'}, bool({'key': 'value'}),
         ):
-            with self.subTest(i=true_item):
+            with self.subTest(item=true_item):
                 self.assertTrue(true_item)
 
     def test_the_value_of_false(self):
@@ -56,7 +57,7 @@ class TestBooleans(unittest.TestCase):
 # a tuple with things is True
 # a string with things is True
 # positive and negative numbers are True
-# True is true
+# True is True
 # True is not false
 # True is a boolean
 # True is an integer
@@ -69,7 +70,7 @@ class TestBooleans(unittest.TestCase):
 # the empty string is False
 # 0 is False
 # None is False
-# False is false
+# False is False
 # False is not true
 # False is a boolean
 # False is an integer

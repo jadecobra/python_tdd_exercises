@@ -37,10 +37,10 @@ the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calcu
 ----
 
 *********************************************************************************
-booleans 2: tests
+booleans 3: tests
 *********************************************************************************
 
-the tests in ``booleans/tests/test_booleans.py`` from :ref:`booleans 2`
+the tests in ``booleans/tests/test_booleans.py`` from :ref:`booleans 3`
 
 .. literalinclude:: booleans/test_booleans_list_comprehensions.py
   :language: python

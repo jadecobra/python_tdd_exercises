@@ -957,7 +957,7 @@ close the project
 review
 *********************************************************************************
 
-I added :ref:`assertions<what is an assertion?>` that show :ref:`booleans<what are booleans?>` are also integers_ and NOT floats_ then added the following tests
+I added :ref:`assertions<what is an assertion?>` that show :ref:`booleans<what are booleans?>` are also integers_ and NOT floats_, then I added the following tests
 
 * :ref:`test_the_value_of_false` which showed that :ref:`False<test_what_is_false>` is ``0``
 * :ref:`test_the_value_of_true` which showed that :ref:`True<test_what_is_true>` is ``1``
