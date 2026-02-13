@@ -1944,7 +1944,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
   the test is green again
 
-* I add a `return statement`_ for the :ref:`opposite<test_logical_negation>` because ``if something: return False`` is the same as ``return not (something)``
+* I add a `return statement`_ for the :ref:`opposite<test_logical_negation>` of the :ref:`if statement<if statements>` because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 71
@@ -1968,7 +1968,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return first or second
         return not (not (first or second))
 
-  green
+  the test is still green
 
 * I remove the other statement in :ref:`logical_disjunction<test_logical_disjunction>`
 
@@ -1984,7 +1984,253 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`logical_equality<test_logical_equality>` has two :ref:`if statements`that return the same thing. I put them together to make one :ref:`if statement<if statements>`
+* I break up the :ref:`if statements` in :ref:`logical_equality<test_logical_equality>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2-7
+
+    def logical_equality(first, second):
+        # if (first, second) == (True, False): return False
+        if first == True and second == False:
+            return False
+        # if (first, second) == (False, True): return False
+        if first == False and second == True:
+            return False
+        return first, second
+
+  the test is still green
+
+* I remove the comments then change the :ref:`if statements` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2-3, 5-6
+
+    def logical_equality(first, second):
+        # if first == True and second == False:
+        if first == True and not second == True:
+            return False
+        # if first == False and second == True:
+        if not first == True and second == True:
+            return False
+        return first, second
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2-3, 5-6
+
+    def logical_equality(first, second):
+        # if first == True and not second == True:
+        if first and not second:
+            return False
+        # if not first == True and second == True:
+        if not first and second:
+            return False
+        return first, second
+
+  green
+
+* I put the two :ref:`if statements` together to make one
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2-5
+
+    def logical_equality(first, second):
+        # if first and not second:
+        #     return False
+        # if not first and second:
+        if (first and not second) or (not first and second):
+            return False
+        return first, second
+
+  still green
+
+* I use a `return statement`_ because ...
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2-6
+
+    def logical_equality(first, second):
+        return not (
+            (first and not second)
+            or
+            (not first and second)
+        )
+        if (first and not second) or (not first and second):
+            return False
+        return first, second
+
+  the test is still green
+
+* I multiply :ref:`not<test_logical_negation>` by all the symbols in parentheses
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2-6
+
+    def logical_equality(first, second):
+        return (
+            (not (first and not second))
+            (not or)
+            (not (not first and second))
+        )
+        return not (
+            (first and not second)
+            or
+            (not first and second)
+        )
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+* I change ``not or`` to :ref:`and<test_logical_conjunction>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 3
+
+    def logical_equality(first, second):
+        return (
+            (not (first and not second))
+            and
+            (not (not first and second))
+        )
+        return not (
+            (first and not second)
+            or
+            (not first and second)
+        )
+
+  the test is green again
+
+* I multiply :ref:`not<test_logical_negation>` by the symbols in the first part of the statement
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 3-4
+
+    def logical_equality(first, second):
+        return (
+            # (not (first and not second))
+            ((not first) (not and) (not not second))
+            and
+            (not (not first and second))
+        )
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+* I change ``not and`` to :ref:`or<test_logical_disjunction>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 3-4
+
+    def logical_equality(first, second):
+        return (
+            # (not (first and not second))
+            ((not first) or (not not second))
+            and
+            (not (not first and second))
+        )
+
+  the test is green again
+
+* I remove ``not not``
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 3-4
+
+    def logical_equality(first, second):
+        return (
+            # ((not first) or (not not second))
+            (not first or second)
+            and
+            (not (not first and second))
+        )
+
+  still green
+
+* I multiply :ref:`not<test_logical_negation>` by the symbols in the second part of the statement
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 5-6
+
+    def logical_equality(first, second):
+        return (
+            (not first or second)
+            and
+            # (not (not first and second))
+            ((not not first) (not and) (not second))
+        )
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: python
+    :lineno-start: 65
+
+    SyntaxError: invalid syntax
+
+* I change ``not and`` to :ref:`or<test_logical_disjunction>`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 5-6
+
+    def logical_equality(first, second):
+        return (
+            (not first or second)
+            and
+            # (not (not first and second))
+            ((not not first) or (not second))
+        )
+
+  the test is still green
+
+* I remove ``not not``
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 5-6
+
+    def logical_equality(first, second):
+        return (
+            (not first or second)
+            and
+            # ((not not first) or (not second))
+            (first or not second)
+        )
+
+  still green
+
+* I remove the comment
+
+  .. code-block:: python
+    :lineno-start: 65
+
+    def logical_equality(first, second):
+        return (not first or second) and (first or not second)
+
+
+    def logical_disjunction(first, second):
+        return first or second
+
+* :ref:`logical_equality<test_logical_equality>` has two :ref:`if statements` that return the same thing. I put them together to make one
 
   .. code-block:: python
     :lineno-start: 65
