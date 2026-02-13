@@ -1855,7 +1855,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
   green
 
-* I remove the other statements in the :ref:`function<what is a function?>`
+* I remove the other statements in :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -1869,30 +1869,118 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
 ----
 
-* :ref:`logical_disjunction<test_logical_disjunction>` has only one case that returns :ref:`False<test_what_is_false>`, I add a `return statement`_ for the :ref:`opposite<test_logical_negation>` because ``if something: return False`` is the same as ``return not (something)``
+* :ref:`logical_disjunction<test_logical_disjunction>` has only one case that returns :ref:`False<test_what_is_false>`, I break up the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2-4
+
+    def logical_disjunction(first, second):
+        # if (first, second) == (False, False): return False
+        if first == False and second == False:
+            return False
+        return first, second
+
+  the test is still green
+
+* I remove the comment then change the :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2-3
+
+    def logical_disjunction(first, second):
+        # if first == False and second == False:
+        if not first == True and not second == True:
+            return False
+        return first, second
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2-3
+
+    def logical_disjunction(first, second):
+        # if not first == True and not second == True:
+        if not first and not second:
+            return False
+        return first, second
+
+  green
+
+* I change the statement with :ref:`not<test_logical_negation>` because it happens two times
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2-3
+
+    def logical_disjunction(first, second):
+        # if not first and not second:
+        if (not first) (not and) (not second):
+            return False
+        return first, second
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+* I factor out :ref:`not<test_logical_negation>`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 3-4
+
+    def logical_disjunction(first, second):
+        # if not first and not second:
+        # if (not first) (not or) (not second):
+        if not (first or second):
+            return False
+        return first, second
+
+  the test is green again
+
+* I add a `return statement`_ for the :ref:`opposite<test_logical_negation>` because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 71
     :emphasize-lines: 2
 
     def logical_disjunction(first, second):
-        return not ((first, second) == (False, False))
-        if (first, second) == (False, False): return False
+        return not (not (first or second))
+        if not (first or second):
+            return False
         return first, second
+
+  still green
+
+* I remove ``not not``
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 2
+
+    def logical_disjunction(first, second):
+        return first or second
+        return not (not (first or second))
 
   green
 
-* I remove the other lines in :ref:`logical_disjunction<test_logical_disjunction>`
+* I remove the other statement in :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
     :lineno-start: 71
 
     def logical_disjunction(first, second):
-        return not ((first, second) == (False, False))
+        return first or second
 
 
     def logical_conjunction(first, second):
-        return (first, second) == (True, True)
+        return first and second
 
 ----
 
