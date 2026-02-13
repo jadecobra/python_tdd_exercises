@@ -98,12 +98,10 @@ in Python_, False_ is a :ref:`boolean<what are booleans?>` and an integer_
 I change assertNotIsInstance_ to assertIsInstance_
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 2
+  :lineno-start: 8
+  :emphasize-lines: 1
 
-          self.assertIsInstance(False, bool)
           self.assertIsInstance(False, int)
-          self.assertFalse(False)
 
 the test passes
 
@@ -176,7 +174,7 @@ the test passes
     # Exceptions Encountered
     # AssertionError
 
-* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function>` in the :ref:`calculator<how to make a calculator>`
+* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -214,6 +212,102 @@ the test passes
             self.assertNotIsInstance(False, float)
             self.assertFalse(False)
 
+* I can use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test_what_is_false`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4-32
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+            # self.assertFalse(False)
+            # self.assertFalse(None)
+            # self.assertFalse(bool(None))
+            # self.assertFalse(0)
+            # self.assertFalse(bool(0))
+            # self.assertFalse(0.0)
+            # self.assertFalse(bool(0.0))
+            # self.assertFalse(str())
+            # self.assertFalse(bool(str()))
+            # self.assertFalse(tuple())
+            # self.assertFalse(bool(tuple()))
+            # self.assertFalse(list())
+            # self.assertFalse(bool(list()))
+            # self.assertFalse(set())
+            # self.assertFalse(bool(set()))
+            # self.assertFalse(dict())
+            # self.assertFalse(bool(dict()))
+            for false_item in (
+                False,
+                None, bool(None),
+                0, 0.0, bool(0), bool(0.0),
+                str(), bool(str()),
+                tuple(), bool(tuple()),
+                list(), bool(list()),
+                set(), bool(set()),
+                dict(), bool(dict()),
+            ):
+                with self.subTest(item=false_item):
+                    self.assertTrue(false_item)
+
+        def test_what_is_true(self):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item=None)   ... - AssertionError: None is not true
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item=0)      ... - AssertionError: 0 is not true
+    SUBFAILED(item=0.0)    ... - AssertionError: 0.0 is not true
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item='')     ... - AssertionError: '' is not true
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item=())     ... - AssertionError: () is not true
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item=[])     ... - AssertionError: [] is not true
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item=set())  ... - AssertionError: set() is not true
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+    SUBFAILED(item={})     ... - AssertionError: {} is not true
+    SUBFAILED(item=False)  ... - AssertionError: False is not true
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1
+
+                    self.assertFalse(false_item)
+
+  the test is green again
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 6
+
+        def test_what_is_false(self):
+            self.assertIsInstance(False, (bool, int))
+            self.assertNotIsInstance(False, float)
+            for false_item in (
+                False,
+                None, bool(None),
+                0, 0.0, bool(0), bool(0.0),
+                str(), bool(str()),
+                tuple(), bool(tuple()),
+                list(), bool(list()),
+                set(), bool(set()),
+                dict(), bool(dict()),
+            ):
+                with self.subTest(item=false_item):
+                    self.assertFalse(false_item)
+
+        def test_what_is_true(self):
+
 ----
 
 *********************************************************************************
@@ -231,7 +325,7 @@ is True an integer or a float?
 I add an :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to test if :ref:`True<test_what_is_true>` is also an integer_
 
 .. code-block:: python
-  :lineno-start: 28
+  :lineno-start: 27
   :emphasize-lines: 3
 
       def test_what_is_true(self):
@@ -258,12 +352,10 @@ in Python_, :ref:`True<test_what_is_true>` is a :ref:`boolean<what are booleans?
 I change assertNotIsInstance_ to assertIsInstance_
 
 .. code-block:: python
-  :lineno-start: 21
-  :emphasize-lines: 2
+  :lineno-start: 29
+  :emphasize-lines: 1
 
-          self.assertIsInstance(True, bool)
           self.assertIsInstance(True, int)
-          self.assertTrue(True)
 
 the test passes
 
@@ -278,7 +370,7 @@ the test passes
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 60
     :emphasize-lines: 2
 
     # True is a boolean
@@ -289,7 +381,7 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>` to test if :ref:`True<test_what_is_true>` is a float_
 
   .. code-block:: python
-    :lineno-start: 28
+    :lineno-start: 27
     :emphasize-lines: 4
 
         def test_what_is_true(self):
@@ -310,18 +402,16 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 30
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-            self.assertIsInstance(True, int)
             self.assertNotIsInstance(True, float)
-            self.assertTrue(True)
 
-  the test passes
+  the test passes. This is why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` allows integers_ and floats_
 
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 61
     :emphasize-lines: 3
 
     # True is a boolean
@@ -329,45 +419,64 @@ the test passes
     # True is not a float
     # the empty dictionary is False
 
-  This explains why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` only allowed integers_ and floats_.
-
-* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function>` in the :ref:`calculator<how to make a calculator>`
+* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
     :lineno-start: 27
     :emphasize-lines: 4
 
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertIsInstance(False, int)
-            self.assertNotIsInstance(False, (bool, int))
-            self.assertNotIsInstance(False, float)
+        def test_what_is_true(self):
+            self.assertIsInstance(True, bool)
+            self.assertIsInstance(True, int)
+            self.assertNotIsInstance(True, (bool, int))
+            self.assertNotIsInstance(True, float)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: False is an instance of (<class 'bool'>, <class 'int'>)
+    AssertionError: True is an instance of (<class 'bool'>, <class 'int'>)
 
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 30
     :emphasize-lines: 1
 
-            self.assertIsInstance(False, (bool, int))
+            self.assertIsInstance(True, (bool, int))
 
   the test passes
 
 * I remove the first two :ref:`assertions<what is an assertion?>` in the test since they are covered by the new one
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 27
 
-        def test_what_is_false(self):
-            self.assertIsInstance(False, (bool, int))
-            self.assertNotIsInstance(False, float)
-            self.assertFalse(False)
+        def test_what_is_true(self):
+            self.assertIsInstance(True, (bool, int))
+            self.assertNotIsInstance(True, float)
+            self.assertTrue(True)
+            self.assertTrue(-1)
+            self.assertTrue(bool(-1))
+            self.assertTrue(1)
+            self.assertTrue(bool(1))
+            self.assertTrue(-0.1)
+            self.assertTrue(bool(-0.1))
+            self.assertTrue(0.1)
+            self.assertTrue(bool(0.1))
+            self.assertTrue("text")
+            self.assertTrue(bool("text"))
+            self.assertTrue((1, 2, 3, 'n'))
+            self.assertTrue(bool((1, 2, 3, 'n')))
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertTrue(bool([1, 2, 3, 'n']))
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue(bool({1, 2, 3, 'n'}))
+            self.assertTrue({'key': 'value'})
+            self.assertTrue(bool({'key': 'value'}))
+
+
+    # NOTES
 
 ----
 
@@ -384,33 +493,6 @@ The :ref:`add function<test_addition>` returned numbers in the calculation with 
 =================================================================================
 
 ----
-
-* I remove the first two :ref:`assertions<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 28
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, (bool, int))
-            self.assertNotIsInstance(True, float)
-            self.assertTrue(True)
-
-  still green
-
-* I do the same thing in the ``test_what_is_false`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 4
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertIsInstance(False, int)
-            self.assertIsInstance(False, (bool, int))
-            self.assertNotIsInstance(False, float)
-
-  the tests are still passing
-
 
 
 * I can use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test what is False<test_what_is_false>`
