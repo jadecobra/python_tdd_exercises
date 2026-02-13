@@ -79,10 +79,8 @@ continue the project
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 7
+    :emphasize-lines: 5
 
-    ======================= test session starts ========================
-    platform ____ -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
     rootdir: .../pumping_python/truth_table
     configfile: pyproject.toml
     collected 12 items

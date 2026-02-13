@@ -6,7 +6,9 @@ booleans 4
 
 :ref:`Inheritance<family ties>` showed that a :ref:`class<what is a class?>` can have more than one parent, and the parents are not the same.
 
-Earlier on, I tested if :ref:`booleans are Integers<booleans 4>` and the tests showed that :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` are both integers_ and :ref:`booleans<what are booleans?>` which begs the question - is bool_ a child of int_ or are they both parents of :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`?
+Earlier on, I tested if :ref:`booleans are Integers<booleans 4>` and the tests showed that :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` are both integers_ and :ref:`booleans<what are booleans?>`.
+
+Is bool_ a child of int_ or are they both parents of :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`?
 
 ----
 
@@ -44,7 +46,7 @@ open the project
     configfile: pyproject.toml
     collected 4 items
 
-    tests/test_booleans.py ....                                      [100%]
+    tests/test_booleans.py ....                                   [100%]
 
     ======================== 4 passed in X.YZs =========================
 
@@ -67,16 +69,20 @@ test_if_bool_is_an_int
 I add a new test
 
 .. code-block:: python
-  :lineno-start: 49
-  :emphasize-lines: 3-4
+  :lineno-start: 46
+  :emphasize-lines: 7-8
 
-            self.assertEqual(True/1, 1)
+      def test_the_value_of_true(self):
+          self.assertEqual(True+1, 2)
+          self.assertEqual(True-1, 0)
+          self.assertEqual(True*1, 1)
+          self.assertEqual(True/1, 1)
 
-        def test_if_bool_is_an_int(self):
-            self.assertIsInstance(bool, int)
+      def test_if_bool_is_an_int(self):
+          self.assertIsInstance(bool, int)
 
 
-    # NOTES
+  # NOTES
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -84,7 +90,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: <class 'bool'> is not an instance of <class 'int'>
 
-the `bool class`_ is not a child of the int_ :ref:`class<what is a class?>`
+:ref:`the bool class is NOT a child of the int class<test_if_bool_is_an_int>`
 
 ----
 
@@ -97,10 +103,9 @@ the `bool class`_ is not a child of the int_ :ref:`class<what is a class?>`
 I change assertIsInstance_ to assertNotIsInstance_
 
 .. code-block:: python
-  :lineno-start: 51
-  :emphasize-lines: 2
+  :lineno-start: 52
+  :emphasize-lines: 1
 
-        def test_if_bool_is_an_int(self):
             self.assertNotIsInstance(bool, int)
 
 the test passes
@@ -113,7 +118,7 @@ review
 
 * :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are :ref:`booleans<what are booleans?>`
 * :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are also integers_
-* bool_ is NOT a child of the int_ :ref:`class<what is a class?>`, they are different
+* :ref:`the bool class is NOT a child of the int class<test_if_bool_is_an_int>`, they are different
 
 ----
 

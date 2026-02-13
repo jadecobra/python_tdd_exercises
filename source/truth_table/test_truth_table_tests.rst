@@ -72,8 +72,6 @@ continue the project
 
   .. code-block:: shell
 
-    ======================= test session starts ========================
-    platform ____ -- Python 3.X.Y, pytest-A.B.C, pluggy-D.E.F
     rootdir: .../pumping_python/truth_table
     configfile: pyproject.toml
     collected 20 items

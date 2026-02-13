@@ -48,7 +48,7 @@ open the project
     configfile: pyproject.toml
     collected 2 items
 
-    tests/test_booleans.py ..                                        [100%]
+    tests/test_booleans.py ..                                     [100%]
 
     ======================== 2 passed in X.YZs =========================
 
