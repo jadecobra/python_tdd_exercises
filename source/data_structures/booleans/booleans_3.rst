@@ -559,8 +559,9 @@ the test passes
 
 ----
 
+
 *********************************************************************************
-what are the values of True and False?
+test_the_value_of_false
 *********************************************************************************
 
 The :ref:`add function<test_addition>` returned numbers in the calculation with :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` because they are integers_. I want to know what their values are
@@ -573,109 +574,14 @@ The :ref:`add function<test_addition>` returned numbers in the calculation with 
 
 ----
 
-
-
-
-----
-
-* I add a `for loop`_ for all the :ref:`assertions<what is an assertion?>` that :ref:`test what is True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 4-25
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, (bool, int))
-            self.assertNotIsInstance(True, float)
-            # self.assertTrue(True)
-            # self.assertTrue(-1)
-            # self.assertTrue(1)
-            # self.assertTrue(-0.1)
-            # self.assertTrue(0.1)
-            # self.assertTrue('text')
-            # self.assertTrue((1, 2, 3, 'n'))
-            # self.assertTrue([1, 2, 3, 'n'])
-            # self.assertTrue({1, 2, 3, 'n'})
-            # self.assertTrue({'key': 'value'})
-            for true_item in (
-                True,
-                -1, 1,
-                -0.1, 0.1,
-                'text',
-                (1, 2, 3, 'n'),
-                [1, 2, 3, 'n'],
-                {1, 2, 3, 'n'},
-                {'key': 'value'},
-            ):
-                with self.subTest(i=true_item):
-                    self.assertTrue(true_item)
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 22
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, (bool, int))
-            self.assertNotIsInstance(True, float)
-            for true_item in (
-                True,
-                -1, 1,
-                -0.1, 0.1,
-                'text',
-                (1, 2, 3, 'n'),
-                [1, 2, 3, 'n'],
-                {1, 2, 3, 'n'},
-                {'key': 'value'},
-            ):
-                with self.subTest(i=true_item):
-                    self.assertTrue(true_item)
-
-  still green
-
-* I add :ref:`False<test_what_is_false>` to make sure the test still works as expected
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2
-
-                {'key': 'value'},
-                False,
-            ):
-                with self.subTest(i=true_item):
-                    self.assertTrue(true_item)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    SUBFAILED(i=False) tests/test_booleans.py::TestBooleans::test_what_is_true - AssertionError: False is not true
-
-* I remove the line I just added and the test is green again
-
-----
-
-*********************************************************************************
-test_the_value_of_false
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
 I add a new test to find out the value of :ref:`False<test_what_is_false>`
 
 .. code-block:: python
-  :lineno-start: 33
-  :emphasize-lines: 3-4
+  :lineno-start: 36
+  :emphasize-lines: 4-5
 
-          self.assertTrue({'key': 'value'})
+              with self.subTest(item=true_item):
+                  self.assertTrue(true_item)
 
       def test_the_value_of_false(self):
           self.assertEqual(False+1, None)
@@ -702,10 +608,10 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 I change the expectation to match
 
 .. code-block:: python
-  :lineno-start: 36
+  :lineno-start: 40
   :emphasize-lines: 1
 
-          self.assertEqual(False+1, 1)
+            self.assertEqual(False+1, 1)
 
 the test passes
 
@@ -720,9 +626,10 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 2
+    :lineno-start: 39
+    :emphasize-lines: 3
 
+        def test_the_value_of_false(self):
             self.assertEqual(False+1, 1)
             self.assertEqual(False-1, 1)
 
@@ -737,7 +644,7 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 41
     :emphasize-lines: 1
 
             self.assertEqual(False-1, -1)
@@ -747,9 +654,11 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 2
+    :lineno-start: 39
+    :emphasize-lines: 4
 
+        def test_the_value_of_false(self):
+            self.assertEqual(False+1, 1)
             self.assertEqual(False-1, -1)
             self.assertEqual(False*1, -1)
 
@@ -774,21 +683,21 @@ the test passes
 * what happens if I divide a number by :ref:`False?<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2
+    :lineno-start: 39
+    :emphasize-lines: 5
 
+        def test_the_value_of_false(self):
+            self.assertEqual(False+1, 1)
+            self.assertEqual(False-1, -1)
             self.assertEqual(False*1, 0)
             1 / False
-
-
-    # NOTES
 
   the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` because :ref:`False<test_what_is_false>` is ``0``
 
 * I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 39
     :emphasize-lines: 5-6
 
         def test_the_value_of_false(self):
@@ -798,12 +707,15 @@ the test passes
             with self.assertRaises(ZeroDivisionError):
                 1 / False
 
+
+    # NOTES
+
   the test passes
 
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 64
     :emphasize-lines: 8
 
     # 0 is False
@@ -815,7 +727,7 @@ the test passes
     # False is not a float
     # False is 0
 
-time to test the value of :ref:`True<test_what_is_true>`
+:ref:`False is 0 in Python<test_the_value_of_false>`
 
 ----
 
@@ -835,8 +747,12 @@ I add a new test to find out the value of :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 39
-  :emphasize-lines: 4-5
+  :emphasize-lines: 8-9
 
+      def test_the_value_of_false(self):
+          self.assertEqual(False+1, 1)
+          self.assertEqual(False-1, -1)
+          self.assertEqual(False*1, 0)
           with self.assertRaises(ZeroDivisionError):
               1 / False
 
@@ -865,7 +781,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 I change the expectation
 
 .. code-block:: python
-  :lineno-start: 43
+  :lineno-start: 47
   :emphasize-lines: 1
 
           self.assertEqual(True+1, 2)
@@ -883,9 +799,10 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 2
+    :lineno-start: 46
+    :emphasize-lines: 3
 
+        def test_the_value_of_true(self):
             self.assertEqual(True+1, 2)
             self.assertEqual(True-1, 2)
 
@@ -900,7 +817,7 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 48
     :emphasize-lines: 1
 
             self.assertEqual(True-1, 0)
@@ -910,9 +827,11 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2
+    :lineno-start: 46
+    :emphasize-lines: 4
 
+        def test_the_value_of_true(self):
+            self.assertEqual(True+1, 2)
             self.assertEqual(True-1, 0)
             self.assertEqual(True*1, 0)
 
@@ -927,7 +846,7 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 49
     :emphasize-lines: 1
 
             self.assertEqual(True*1, 1)
@@ -937,9 +856,12 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`division<test_division>`
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 2
+    :lineno-start: 46
+    :emphasize-lines: 5
 
+        def test_the_value_of_true(self):
+            self.assertEqual(True+1, 2)
+            self.assertEqual(True-1, 0)
             self.assertEqual(True*1, 1)
             self.assertEqual(True/2, 1)
 
@@ -955,22 +877,55 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 46
-    :emphasize-lines: 1
+    :emphasize-lines: 5
 
+        def test_the_value_of_true(self):
+            self.assertEqual(True+1, 2)
+            self.assertEqual(True-1, 0)
+            self.assertEqual(True*1, 1)
             self.assertEqual(True/1, 1)
+
+
+    # NOTES
 
   the test passes
 
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 3
+    :lineno-start: 53
+    :emphasize-lines: 13
 
+    # NOTES
+    # a dictionary with things is True
+    # a set with things is True
+    # a list with things is True
+    # a tuple with things is True
+    # a string with things is True
+    # positive and negative numbers are True
+    # True is True
+    # True is not false
+    # True is a boolean
     # True is an integer
     # True is not a float
     # True is 1
     # the empty dictionary is False
+    # the empty set is False
+    # the empty list is False
+    # the empty tuple is False
+    # the empty string is False
+    # 0 is False
+    # None is False
+    # False is False
+    # False is not true
+    # False is a boolean
+    # False is an integer
+    # False is not a float
+    # False is 0
+
+
+    # Exceptions seen
+    # AssertionError
 
 ----
 
