@@ -259,7 +259,7 @@ continue the project
 * I add a name in parentheses
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 5
     :emphasize-lines: 1
 
     def logical_identity(something):
@@ -274,7 +274,7 @@ continue the project
 * I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 5
     :emphasize-lines: 2
 
     def logical_identity(something):
@@ -291,7 +291,7 @@ continue the project
 * I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 5
     :emphasize-lines: 2
 
     def logical_identity(something):
@@ -311,7 +311,7 @@ continue the project
 * I change the `return statement`_ to see the difference between the input and what the test expects
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 5
     :emphasize-lines: 2
 
     def logical_identity(something):
@@ -326,7 +326,7 @@ continue the project
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 5
     :emphasize-lines: 5-6
 
     def logical_identity(something):
@@ -345,7 +345,7 @@ continue the project
 * I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 9
     :emphasize-lines: 2
 
     def logical_true():
@@ -360,8 +360,12 @@ continue the project
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 9
     :emphasize-lines: 5-6
+
+    def logical_true():
+        return True
+
 
     def logical_false():
         return None
@@ -375,7 +379,7 @@ continue the project
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 13
     :emphasize-lines: 5-6
 
     def logical_false():
@@ -394,7 +398,7 @@ continue the project
 * I add two names in parentheses for the :ref:`function<what is a function?>` to take input arguments
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 17
     :emphasize-lines: 1
 
     def tautology(first, second):
@@ -409,7 +413,7 @@ continue the project
 * I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 17
     :emphasize-lines: 2
 
     def tautology(first, second):
@@ -2841,14 +2845,14 @@ and
 
 All the logic statements or conditions have been written with some or all of the above 3.
 
-=====  =====  =======
-A      B      A and B
-=====  =====  =======
-False  False  False
-True   False  False
-False  True   False
-True   True   True
-=====  =====  =======
+================================================================ =====================================================
+operation                                                         return
+================================================================ =====================================================
+:ref:`contradiction<test_contradiction>`                          return False
+:ref:`converse_implication<test_converse_implication>`            return first or not second
+:ref:`converse_non_implication<test_converse_non_implication>`    return not first and second
+:ref:`exclusive_disjunction<test_exclusive_disjunction>`          return (not (first and second)) and (first or second)
+================================================================ =====================================================
 
 ----
 
