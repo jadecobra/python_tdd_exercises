@@ -4,7 +4,7 @@ import unittest
 
 
 def a_random_number():
-    return random.triangular(-10, 10)
+    return random.triangular(-1000.0, 1000.0)
 
 
 class TestCalculator(unittest.TestCase):
@@ -53,4 +53,4 @@ class TestCalculator(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
-# TypeError
+# TypError
