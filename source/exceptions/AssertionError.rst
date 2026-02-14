@@ -143,7 +143,7 @@ start the project
 
   .. TIP::
 
-    I can use the terminal_ to open a file_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_. That means if I type this in the terminal_
+    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program and the name of the file_. That means if I type this in the terminal_
 
     .. code-block:: python
       :emphasize-lines: 1
