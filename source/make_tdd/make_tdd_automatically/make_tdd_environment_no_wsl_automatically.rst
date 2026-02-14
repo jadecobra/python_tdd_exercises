@@ -149,7 +149,7 @@ how to run a PowerShell script
 
   Success! I just made a program_ that can make the ``magic_again`` project anytime I want and it automatically does the steps I did manually.
 
-* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 * I deactivate the `virtual environment`_

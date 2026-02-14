@@ -57,7 +57,7 @@ open the project
 
     ======================= 12 passed in X.YZs =========================
 
-* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_functions.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_functions.py`` to open it in the :ref:`editor<2 editors>`
 
 ----
 

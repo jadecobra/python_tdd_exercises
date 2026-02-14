@@ -90,7 +90,7 @@ continue the project
 
     ======================== 12 passed in G.HIs ========================
 
-* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard and click on ``tests/test_binary.py`` with the mouse to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_binary.py`` with the mouse to open it in the :ref:`editor<2 editors>`
 
 ----
 

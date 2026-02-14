@@ -459,7 +459,7 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
 
       code tests/magic.py
 
-    I can also open a file_ by using :kbd:`ctrl` on the keyboard and clicking with the mouse on the name of the file_
+    I can also open a file_ by using :kbd:`ctrl` on the keyboard, then clicking with the mouse on the name of the file_
 
 * I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
@@ -1131,7 +1131,7 @@ how to open the test file in the editor from the terminal on Windows without WSL
 
 ----
 
-* I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: PowerShell
     :lineno-start: 7
@@ -1158,7 +1158,7 @@ how to open the test file in the editor from the terminal on Windows without WSL
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     ======================= 1 failed in X.YZs ==========================
 
-  I hold :kbd:`ctrl` on the keyboard and click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+  I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: PowerShell
     :lineno-start: 7
