@@ -1686,7 +1686,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
     # AssertionError
     # NameError
     # AttributeError
-    # TypError
+    # TypeError
 
 ----
 
@@ -2005,7 +2005,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
     # AssertionError
     # NameError
     # AttributeError
-    # TypError
+    # TypeError
 
   still green
 

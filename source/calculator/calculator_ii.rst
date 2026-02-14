@@ -10,6 +10,8 @@ how to make a calculator 2
 
 I want to use assertRaises_ to make sure :ref:`test_division` from the :ref:`calculator project<how to make a calculator>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
+----
+
 *********************************************************************************
 preview
 *********************************************************************************
@@ -62,6 +64,8 @@ open the project
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
+----
+
 *********************************************************************************
 test catching ZeroDivisionError in test_calculator.py
 *********************************************************************************
@@ -74,7 +78,7 @@ test catching ZeroDivisionError in test_calculator.py
 
 ----
 
-I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<what is a function?>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in
+I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` :ref:`function<what is a function?>` raises :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` when I try to divide a number by ``0``
 
 .. code-block:: python
   :lineno-start: 42

@@ -53,4 +53,4 @@ class TestCalculator(unittest.TestCase):
 # AssertionError
 # NameError
 # AttributeError
-# TypError
+# TypeError
