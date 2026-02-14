@@ -16,7 +16,7 @@ It is useful because there is a problem that must be solved for the program_ to 
 what is covered?
 *********************************************************************************
 
-The tests in this chapter cover the following Exceptions_
+The tests in this chapter cover these Exceptions_
 
 .. toctree::
   :titlesonly:

@@ -23,13 +23,13 @@ how to use a variable in a PowerShell script
 ``makePythonTdd.ps1`` works and always makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
 
 
-I change the name of the project in 5 places every time I use the program to make a project. I want the program_ to take a project name once and use that name when making the project to make the following
+I change the name of the project in 5 places every time I use the program to make a project. I want the program_ to take a project name once and use that name when making the project to make the
 
-- the project folder_
-- the file_ for the program_ in the ``src`` folder_
-- the file_ for the test in the ``tests`` folder_
-- the :ref:`test class<what is a class?>` in the test file_
-- the `virtual environment`_ in the ``.venv`` folder_
+- project folder_
+- file_ for the program_ in the ``src`` folder_
+- file_ for the test in the ``tests`` folder_
+- :ref:`test class<what is a class?>` in the test file_
+- `virtual environment`_ in the ``.venv`` folder_
 
 The program_ should always make this structure
 

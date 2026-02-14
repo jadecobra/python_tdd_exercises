@@ -60,8 +60,6 @@ These chapters show how I add a variable to a program_ so it makes a :ref:`Pytho
   make TDD with name<make_tdd_environment_automatically_w_variables>
   make TDD no WSL with name<make_tdd_environment_no_wsl_automatically_w_variables>
 
-they cover the following
-
 ----
 
 =================================================================================

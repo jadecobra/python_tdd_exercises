@@ -28,7 +28,7 @@ Screen Layout
 *********************************************************************************
 
 
-I split my screen in the following ways depending on the use case, try different layouts to see what works best for you.
+I split my screen depending on the use case, try different layouts to see what works best.
 
 ----
 
@@ -55,7 +55,7 @@ for testing
 
 ----
 
-When working with just the `Integrated Development Environment (IDE)`_, I have the following Windows open
+When working with just the `Integrated Development Environment (IDE)`_, I have these Windows open
 
 ---------------------------------------------------------------------------------
 explorer on left

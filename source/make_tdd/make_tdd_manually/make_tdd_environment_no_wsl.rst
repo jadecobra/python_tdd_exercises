@@ -846,7 +846,7 @@ how to activate a virtual environment on Windows without WSL
 
     Set-ExecutionPolicy RemoteSigned
 
-  the terminal_ may show the following message if you have never run this command before
+  the terminal_ may show this message if you have never run this command before
 
   .. code-block:: text
     :emphasize-lines: 7

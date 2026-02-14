@@ -18,7 +18,7 @@ what are booleans?
 
 There are only 2 booleans_ - True_ and False_.
 
-The following chapters test booleans_
+These chapters test booleans_
 
 .. toctree::
   :titlesonly:

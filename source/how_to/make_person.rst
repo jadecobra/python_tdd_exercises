@@ -2738,7 +2738,7 @@ review
 
 I ran tests to make a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary <dictionaries>` as output
 
-I also saw the following :ref:`Exceptions<errors>`
+I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`

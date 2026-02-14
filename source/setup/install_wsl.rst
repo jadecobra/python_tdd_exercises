@@ -19,7 +19,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 * click ``Search`` at the bottom of your screen
 * search for ``Turn on Windows features``
 * click ``Turn on or off Windows Features`` from the results
-* Make sure the following have check marks to the left of them in the dialog box that opens up
+* Make sure there are check marks to the left of the features in the dialog box that opens up
 
   - Hyper V (this might not be in the list, you can skip it if it is not)
   - Virtual Machine Platform
@@ -76,7 +76,7 @@ you can continue with :ref:`how to make a Python Test Driven Development environ
   In some cases your `Windows Subsystem for Linux`_ installation might succeed and you will have errors with Debian_, you might have to enable virtualization from your BIOS, here is how to do that
 
   * restart your computer
-  * as soon as it restarts, press the key to enter setup mode, this varies by manufacturer but is one of the following
+  * as soon as it restarts, press the key to enter setup mode, this varies by manufacturer but is one of these options
 
     - Esc
     - F2

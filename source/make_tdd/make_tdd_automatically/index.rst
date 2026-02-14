@@ -92,8 +92,6 @@ These chapters show how I setup a :ref:`Python Test Driven Development environme
   make TDD automatically<make_tdd_environment_automatically>
   make TDD automatically no WSL<make_tdd_environment_no_wsl_automatically>
 
-they cover the following
-
 ----
 
 =================================================================================
