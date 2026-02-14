@@ -808,13 +808,11 @@ The ``add`` :ref:`function<what is a function?>` passes the test but does not do
 
 ----
 
-=================================================================================
+*********************************************************************************
 what is a variable?
-=================================================================================
+*********************************************************************************
 
-----
-
-I just did the same kind of calculation a few times in a row, there is a better way to do this with Substitution_. I can use a letter or a name for the numbers, so that I can have one test for all possible numbers, it is called a variable_.
+I just did the same kind of calculation 10 times, there is a better way to do this thanks to Substitution_. I can use a letter or a name for the numbers, so that I can have one test for all possible numbers, it is called a variable_.
 
 A variable_ is a name that is used for values that change. For example, in the tests so far, I have
 
@@ -1056,8 +1054,25 @@ all of these lines can be written using ``x`` as the name of the first number an
 
   still green
 
-* All these tests are the same, I give a value to ``first_number`` and 
-* I want to use random numbers for ``first_input`` and ``second_input`` to make sure that the ``add`` :ref:`function<what is a function?>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the `random module`_ from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
+----
+
+*********************************************************************************
+how to use random numbers
+*********************************************************************************
+
+All the :ref:`assertions<what is an assertion?>` in :ref:`test_addition` do the same thing
+
+- point ``first_number`` to a value
+- point ``second_number`` to a value
+- call ``src.calculator.add`` with ``first_number`` and ``second_number`` as input
+- check if the result of ``src.calculator.add(first_number, second_number)`` is the same as ``first_number + second_number``
+
+I want to use random numbers for ``first_number`` and ``second_number`` to make sure that the ``add`` :ref:`function<what is a function?>` always returns the result of adding the two numbers without knowing what the numbers are.
+
+I can do this with the `random module`_ from the `Python standard library`_, it is a :ref:`module<what is a module?>` from the `Python standard library`_ that is used to make fake random numbers
+
+
+* I add an `import statement`_ for the `random module`_ at the top of ``test_calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -1067,42 +1082,50 @@ all of these lines can be written using ``x`` as the name of the first number an
     import src.calculator
     import unittest
 
-  random_ is a :ref:`module<what is a module?>` from the `Python standard library`_ that is used to make fake random numbers
-
-* I use a random value for ``first_number``
+* I use a random value for ``first_number`` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 8
     :emphasize-lines: 2-3
 
         def test_addition(self):
-            # first_number = 0.1234
+            # first_number = 0
             first_number = random.triangular(-0.1, 1.0)
-            second_number = -5.6789
+            second_number = 1
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
 
-  the test is still green. `random.triangular`_ returns a random float_ that could be any number from ``-0.1`` to ``1.0`` in this case
+  green. `random.triangular`_ returns a random float_ that could be any number from ``-0.1`` to ``1.0`` in this case, I can also use `random.randint`_ if I want a random integer_
 
 * I want to see the test fail to be sure everything works as expected. I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 3
+    :lineno-start: 8
+    :emphasize-lines: 7
 
+        def test_addition(self):
+            # first_number = 0
+            first_number = random.triangular(-0.1, 1.0)
+            second_number = 1
             self.assertEqual(
                 src.calculator.add(first_number, second_number),
                 first_number+first_number
             )
 
-  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
+  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
   .. code-block:: python
 
     AssertionError: -X.YZABCDEFGHIJKLM != A.BCDEFGHIJKLMNOPQ
 
+  the letters are for random numbers
+
 * I change the expectation of the :ref:`assertion<what is an assertion?>` back to the right calculation
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 12
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -1133,7 +1156,6 @@ all of these lines can be written using ``x`` as the name of the first number an
         def test_addition(self):
             first_number = random.triangular(-0.1, 1.0)
             second_number = random.triangular(-0.1, 1.0)
-
             self.assertEqual(
                 src.calculator.add(first_number, second_number),
                 first_number+second_number
@@ -1144,7 +1166,7 @@ all of these lines can be written using ``x`` as the name of the first number an
 
   still green
 
-* I change the name of the variables to be more clear
+* I use the ``Rename Symbol`` feature to change the name of variables_ to say what they are
 
   .. code-block:: python
     :lineno-start: 8
@@ -1162,9 +1184,9 @@ all of these lines can be written using ``x`` as the name of the first number an
             random_first_number+random_second_number
         )
 
-  the test is still green
+  green
 
-* There is some duplication, I have to make a change in more than one place if I want to use a different range of random numbers for the test, for example
+* There is some duplication, If I want to use a different range of random numbers for the test, I have to make a change in more than one place. For example
 
   .. code-block:: python
     :lineno-start: 8
@@ -1174,7 +1196,7 @@ all of these lines can be written using ``x`` as the name of the first number an
             random_first_number = random.triangular(-10.0, 10.0)
             random_second_number = random.triangular(-10.0, 10.0)
 
-  the test is still green
+  still green
 
 * I add a :ref:`function<what is a function?>` to remove the repetition
 
@@ -1193,7 +1215,7 @@ all of these lines can be written using ``x`` as the name of the first number an
 
     class TestCalculator(unittest.TestCase):
 
-  then I use the new :ref:`function<what is a function?>` to get random values for the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>`
+* I use the new :ref:`function<what is a function?>` to get random values for the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1216,6 +1238,49 @@ all of these lines can be written using ``x`` as the name of the first number an
             random_first_number = a_random_number()
             random_second_number = a_random_number()
 
+* I change the expectation in the :ref:`assertion<what is an assertion?>` to make sure the test works
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6
+
+            self.assertEqual(
+                src.calculator.add(
+                    random_first_number,
+                    random_second_number
+                ),
+                random_second_number+random_second_number
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: R.STUVWXYZABCDEFG != H.IJKLMNOPQRSTUVWX
+
+* I undo the change
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 10
+
+        def test_addition(self):
+            random_first_number = a_random_number()
+            random_second_number = a_random_number()
+
+            self.assertEqual(
+                src.calculator.add(
+                    random_first_number,
+                    random_second_number
+                ),
+                random_first_number+random_second_number
+            )
+
+
+    # TODO
+
+  the test is green again
+
 * I now only need to change the range of random numbers for the test in one place
 
   .. code-block:: python
@@ -1225,7 +1290,7 @@ all of these lines can be written using ``x`` as the name of the first number an
     def a_random_number():
         return random.triangular(-10000.0, 10000.0)
 
-  and the test is still green
+  the test is still green
 
 * I can use any range of numbers the computer can handle, for example
 
@@ -1242,7 +1307,7 @@ all of these lines can be written using ``x`` as the name of the first number an
 
     OverflowError: (34, 'Numerical result out of range')
 
-  because the numbers are too big to be used
+  because the numbers are too big
 
   - ``**`` is the symbol for raise to the power (exponents)
   - ``10.0**100000`` is how to write ``10.0`` raised to the power of ``100,000``
@@ -1258,7 +1323,7 @@ all of these lines can be written using ``x`` as the name of the first number an
 
   the test is still green, though the test takes a little longer to run
 
-* then I remove ``test addition`` from the TODO list
+* I remove ``test addition`` from the TODO list
 
   .. code-block:: python
     :lineno-start: 22
@@ -1267,6 +1332,9 @@ all of these lines can be written using ``x`` as the name of the first number an
     # test subtraction
     # test multiplication
     # test division
+
+
+    # Exceptions seen
 
 :ref:`I can use a variable to remove duplication<what is a variable?>`
 
@@ -1351,7 +1419,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     NameError: name 'subtract' is not defined
 
-  I point ``subtract`` to :ref:`None<what is None?>`
+* I point ``subtract`` to :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1391,15 +1459,17 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
     def subtract(first_input, second_input):
         return None
 
-  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
-
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: None != XYZ.ABCDEFGHIJKLMNOP
 
-  ``subtract`` returns :ref:`None<what is None?>`, the test expects ``random_first_number-random_second_number`` or ``first_input-second_input`` - the difference between the 2 numbers
+  ``subtract`` returns :ref:`None<what is None?>`, the test expects
+
+  - ``random_first_number-random_second_number`` which is
+  - ``first_input-second_input``
+  - the difference between the 2 numbers
 
 * I make the ``subtract`` :ref:`function<what is a function?>` return the difference between the inputs
 
@@ -1412,11 +1482,221 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test passes. SUCCESS!
 
+* I remove ``test subtraction`` from the TODO list in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+
+    # TODO
+    # test multiplication
+    # test division
+
+
+    # Exceptions seen
+
+----
+
+*********************************************************************************
+test_multiplication
+*********************************************************************************
+
 ----
 
 =================================================================================
-:yellow:`REFACTOR`: make it better
+:red:`RED`: make it fail
 =================================================================================
+
+----
+
+I add a failing test for multiplication in ``test_calculator.py``
+
+.. code-block:: python
+  :lineno-start: 24
+  :emphasize-lines: 13-23
+
+        def test_subtraction(self):
+            random_first_number = a_random_number()
+            random_second_number = a_random_number()
+
+            self.assertEqual(
+                src.calculator.subtract(
+                    random_first_number,
+                    random_second_number
+                ),
+                random_first_number-random_second_number
+            )
+
+        def test_multiplication(self):
+            random_first_number = a_random_number()
+            random_second_number = a_random_number()
+
+            self.assertEqual(
+                src.calculator.multiply(
+                    random_first_number,
+                    random_second_number
+                ),
+                random_first_number*random_second_number
+            )
+
+
+    # TODO
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.calculator' has no attribute 'multiply'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* Using what I know so far, I add a :ref:`function<what is a function?>` to ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
+
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+  the test passes
+
+* I remove ``test_multiplication`` from the TODO list in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 49
+
+    # TODO
+    # test division
+
+
+    # Exceptions seen
+
+.. NOTE::
+
+  * ``*`` is the symbol for multiplication
+  * ``**`` is the symbol for raise to the power (exponent)
+
+----
+
+*********************************************************************************
+test_division
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+Time for division. I add a new test to ``test_calculator.py``
+
+.. code-block:: python
+  :lineno-start: 36
+  :emphasize-lines: 13-23
+
+      def test_multiplication(self):
+          random_first_number = a_random_number()
+          random_second_number = a_random_number()
+
+          self.assertEqual(
+              src.calculator.multiply(
+                  random_first_number,
+                  random_second_number
+              ),
+              random_first_number*random_second_number
+          )
+
+      def test_division(self):
+          random_first_number = a_random_number()
+          random_second_number = a_random_number()
+
+          self.assertEqual(
+              src.calculator.divide(
+                  random_first_number,
+                  random_second_number
+              ),
+              random_first_number/random_second_number
+          )
+
+
+  # TODO
+  # test division
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.calculator' has no attribute 'divide'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add the :ref:`function<what is a function?>` to ``calculator.py``
+
+.. code-block:: python
+  :lineno-start: 9
+  :emphasize-lines: 5-6
+
+  def multiply(first_input, second_input):
+      return first_input * second_input
+
+
+  def divide(first_input, second_input):
+      return first_input / second_input
+
+the test passes
+
+* I remove the TODO list from ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 48
+
+        def test_division(self):
+            random_first_number = a_random_number()
+            random_second_number = a_random_number()
+
+            self.assertEqual(
+                src.calculator.divide(
+                    random_first_number,
+                    random_second_number
+                ),
+                random_first_number/random_second_number
+            )
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypError
+
+----
+
+
+----
+
+----
+
+----
+
+----
 
 ----
 
@@ -1609,182 +1889,9 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     # Exceptions seen
 
-----
-
-*********************************************************************************
-test_multiplication
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a failing test for multiplication in ``test_calculator.py``
-
-.. code-block:: python
-  :lineno-start: 24
-  :emphasize-lines: 10-17
-
-      def test_subtraction(self):
-          self.assertEqual(
-              src.calculator.subtract(
-                  self.random_first_number,
-                  self.random_second_number
-              ),
-              self.random_first_number-self.random_second_number
-          )
-
-      def test_multiplication(self):
-          self.assertEqual(
-              src.calculator.multiply(
-                  self.random_first_number,
-                  self.random_second_number
-              ),
-              self.random_first_number*self.random_second_number
-          )
 
 
-  # TODO
 
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-.. code-block:: python
-
-  AttributeError: module 'src.calculator' has no attribute 'multiply'
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-using what I know so far, I add a :ref:`function<what is a function?>` to ``calculator.py``
-
-.. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 5-6
-
-  def subtract(first_input, second_input):
-      return first_input - second_input
-
-
-  def multiply(first_input, second_input):
-      return first_input * second_input
-
-the test passes! I remove ``test_multiplication`` from the TODO list in ``test_calculator.py``
-
-.. code-block:: python
-  :lineno-start: 43
-
-
-  # TODO
-  # test division
-
-
-  # Exceptions seen
-
-* ``*`` is the symbol for multiplication
-* ``**`` is the symbol for raise to the power (exponent)
-
-----
-
-*********************************************************************************
-test_division
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-Time for division. I add a new test to ``test_calculator.py``
-
-.. code-block:: python
-  :lineno-start: 33
-  :emphasize-lines: 10-17
-
-      def test_multiplication(self):
-          self.assertEqual(
-              src.calculator.multiply(
-                  self.random_first_number,
-                  self.random_second_number
-              ),
-              self.random_first_number*self.random_second_number
-          )
-
-      def test_division(self):
-          self.assertEqual(
-              src.calculator.divide(
-                  self.random_first_number,
-                  self.random_second_number
-              ),
-              self.random_first_number/self.random_second_number
-          )
-
-
-  # TODO
-
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-.. code-block:: python
-
-  AttributeError: module 'src.calculator' has no attribute 'divide'
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add a :ref:`function<what is a function?>` to ``calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5-6
-
-    def multiply(first_input, second_input):
-        return first_input * second_input
-
-
-    def divide(first_input, second_input):
-        return first_input / second_input
-
-  the test passes
-
-* I remove the TODO list
-
-  .. code-block:: python
-    :lineno-start: 42
-
-        def test_division(self):
-            self.assertEqual(
-                src.calculator.divide(
-                    self.random_first_number,
-                    self.random_second_number
-                ),
-                self.random_first_number/self.random_second_number
-            )
-
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # ZeroDivisionError
-
-----
 
 *********************************************************************************
 test_calculator_tests
