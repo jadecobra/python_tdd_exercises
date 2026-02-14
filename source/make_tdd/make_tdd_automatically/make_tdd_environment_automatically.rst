@@ -300,7 +300,7 @@ how to make a shell script run as a command
 
   I am back in the ``pumping_python`` directory_
 
-* I close ``test_magic_again`` in the :ref:`editor<2 editors>`
+* I close ``test_magic_again.py`` in the :ref:`editor<2 editors>`
 
 ----
 

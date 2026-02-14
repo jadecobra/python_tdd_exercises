@@ -902,8 +902,30 @@ all of these lines can be written using ``x`` as the name of the first number an
 * then the next one
 
   .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 8-13
+
+            first_number = 0
+            second_number = 3
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+            first_number = 1
+            second_number = 3
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+  still green
+
+* then the next
+
+  .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 1-6
+    :emphasize-lines: 8-13
 
             first_number = 1
             second_number = 3
@@ -911,119 +933,130 @@ all of these lines can be written using ``x`` as the name of the first number an
                 src.calculator.add(first_number, second_number),
                 first_number+second_number
             )
-            self.assertEqual(src.calculator.add(123456, 789012), 912468)
-
-  still green
-
-
-----
-
-----
-
-----
-
-----
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'first_number' is not defined
-
-  I have to tell Python_ what ``first_number`` is
-
-* I point ``first_number`` to ``0`` before the :ref:`assertions<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2
-
-        def test_addition(self):
-            first_number = 0
-
-            self.assertEqual(
-                src.calculator.add(first_number, second_number),
-                first_number+second_number
-            )
-            self.assertEqual(src.calculator.add(0, 1), 1)
-
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'second_number' is not defined
-
-  I have to tell Python_ what ``second_number`` is
-
-* I point ``second_number`` to ``1`` before the test
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 3
-
-
-        def test_addition(self):
-            first_number = 0
-            second_number = 1
-
-            self.assertEqual(
-                src.calculator.add(first_number, second_number),
-                first_number+second_number
-            )
-
-  the test passes
-
-* I remove the next test since it is now covered by this new :ref:`assertion<what is an assertion?>` that uses a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 11
-
-        self.assertEqual(
-            src.calculator.add(first_number, second_number),
-            first_number+second_number
-        )
-        self.assertEqual(
-            src.calculator.add(0, 2),
-            2
-        )
-
-* I can do the same thing for all the other tests by changing the values for ``first_input`` and ``second_input``, for example
-
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 2
-
-            first_number = 0
-            second_number = 2
-
-  the test is still green
-
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 1-2
-
-            first_number = 1
-            second_number = 3
-
-  still green
-
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 1-2
 
             first_number = 123456
             second_number = 789012
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
 
   the test is still green
 
+* on to the next :ref:`assertion<what is an assertion?>`
+
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 1-2
+    :lineno-start: 36
+    :emphasize-lines: 8-13
+
+            first_number = 123456
+            second_number = 789012
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+            first_number = -1
+            second_number = 0
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+  still green
+
+* and the next
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 8-13
+
+            first_number = -1
+            second_number = 0
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+            first_number = -2
+            second_number = -3
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+  green
+
+* more?
+
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 8-13
+
+            first_number = -2
+            second_number = -3
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+            first_number = 0.1
+            second_number = 1
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+  still green
+
+* I add variables_ to the next :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 8-9, 11-12
+
+            first_number = 0.1
+            second_number = 1
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+            first_number = 0.1
+            second_number = 0.2
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
+
+  the test is still green
+
+* ah, the last one
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 8-9, 11-12
+
+            first_number = 0.1
+            second_number = 0.2
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
 
             first_number = 0.1234
             second_number = -5.6789
+            self.assertEqual(
+                src.calculator.add(first_number, second_number),
+                first_number+second_number
+            )
 
-  the test is still green. The problem with this is I lose the test for the previous number, everytime I change a number. I need a better way
 
+    # TODO
+
+  still green
+
+* All these tests are the same, I give a value to ``first_number`` and 
 * I want to use random numbers for ``first_input`` and ``second_input`` to make sure that the ``add`` :ref:`function<what is a function?>` always returns the result of adding the two numbers without knowing what the numbers will be. I can do this with the `random module`_ from the `Python standard library`_. I add an `import statement`_ for it at the top of ``test_calculator.py``
 
   .. code-block:: python
