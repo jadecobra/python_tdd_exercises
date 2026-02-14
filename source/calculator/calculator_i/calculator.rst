@@ -2032,13 +2032,23 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 ----
 
 * I close ``test_calculator.py``
-* then delete all the text in ``calculator.py``, the terminal_ shows 4 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete all the text in ``calculator.py``, the terminal_ shows 4 failures
+
+  .. code-block:: shell
+
+    FAILED ... - AttributeError: module 'src.calculator' has no attribute 'add'
+    FAILED ... - AttributeError: module 'src.calculator' has no attribute 'divide'
+    FAILED ... - AttributeError: module 'src.calculator' has no attribute 'multiply'
+    FAILED ... - AttributeError: module 'src.calculator' has no attribute 'subtract'
+    =========================== 4 failed in X.YZs ============================
+
+* I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'subtract'
 
-  What other :ref:`Exceptions<errors>` do you think are raised as I go along?
+What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
 ----
 
@@ -2091,7 +2101,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-  I add :ref:`positional arguments<test_functions_w_positional_arguments>` to the :ref:`function<what is a function?>`
+* I add :ref:`positional arguments<test_functions_w_positional_arguments>` to the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -2138,6 +2148,8 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AttributeError: module 'src.calculator' has no attribute 'multiply'
 
+----
+
 * I add a :ref:`function<what is a function?>`
 
   .. code-block:: python
@@ -2157,7 +2169,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
-  I add 2 :ref:`variables<what is a variable?>` for the positional arguments
+  I add 2 names for the :ref:`positional arguments<test_functions_w_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -2172,7 +2184,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AssertionError: None != XY.ZABCDEFGHIJKLM
 
-* I change the `return statement`_ to see the difference between the inputs and the expected output, :ref:`identity function again<test_identity_function>`
+* I change the `return statement`_ to see the difference between the inputs and the expected output, this is the :ref:`identity function<test_identity_function>` again
 
   .. code-block:: python
     :lineno-start: 5
@@ -2201,6 +2213,8 @@ Since everything is green, I can write the program_ that makes the tests pass wi
   .. code-block:: python
 
     AttributeError: module 'src.calculator' has no attribute 'divide'
+
+----
 
 * I add another :ref:`function<what is a function?>`
 
@@ -2236,6 +2250,8 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 
     AttributeError: module 'src.calculator' has no attribute 'add'
 
+----
+
 * the `return statement`_ of the last 3 :ref:`functions<what is a function?>` matched their names, I do the same thing for the new one
 
   .. code-block:: python
@@ -2257,7 +2273,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
     def add(first_input, second_input):
         return first_input + second_input
 
-  and all the tests are passing with no random failures, or are they?
+  and all the tests are passing with no random failures, :ref:`or are they?<how to make a calculator 3>`
 
 ----
 
@@ -2265,7 +2281,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``calculator.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``calculator``
@@ -2289,20 +2305,19 @@ close the project
 review
 *********************************************************************************
 
-I wrote the following tests for a program_ that can :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` and :ref:`divide<test_division>`
+I wrote these tests for a program_ that can :ref:`add<test_addition>`, :ref:`subtract<test_subtraction>`, :ref:`multiply<test_multiplication>` and :ref:`divide<test_division>`
 
 * `test_addition`_
 * `test_subtraction`_
 * `test_multiplication`_
 * `test_division`_
 
-I also saw the following :ref:`Exceptions<errors>`
+I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`TypeError`
-* :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+* :ref:`TypeError<what causes TypeError?>`
 
 ----
 

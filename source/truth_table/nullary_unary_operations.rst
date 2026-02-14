@@ -625,7 +625,7 @@ close the project
 review
 *********************************************************************************
 
-I ran the following tests for :ref:`Nullary Operations<Nullary Operations>` which take no input
+I ran these tests for :ref:`Nullary Operations<Nullary Operations>` which take no input
 
 * :ref:`test_logical_true`
 * :ref:`test_logical_false`

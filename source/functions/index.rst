@@ -1480,7 +1480,7 @@ I sometimes use the :ref:`Identity Function<test_identity_function>` when I am t
 
 :ref:`The Identity Function returns its input as output<test_identity_function>`
 
-So far, the :ref:`functions<what is a function?>` take no input or one input, the following tests use functions_ that take more than one input.
+So far, the :ref:`functions<what is a function?>` take no input or one input, these tests use functions_ that take more than one input.
 
 ----
 

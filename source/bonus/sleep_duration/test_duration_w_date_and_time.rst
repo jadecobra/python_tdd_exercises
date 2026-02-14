@@ -770,7 +770,7 @@ and the test is still green
   ``test_duration_w_hours_and_minutes`` does not have dates in its timestamps. I remove it because it is covered by ``test_duration_w_date_and_time``
 
 * then remove ``get_difference`` because no one calls it anymore
-* I also remove the following tests because they do not test the solution directly
+* I also remove these tests because they do not test the solution directly
 
   - ``test_the_modulo_operation``
   - ``test_floor_aka_integer_division``
@@ -823,7 +823,7 @@ and the test is still green
         else:
             return result
 
-  The new ``random_timestamp`` :ref:`function<what is a function?>` does the following
+  The new ``random_timestamp`` :ref:`function<what is a function?>` does these things
 
   - generates a random timestamp by calling ``get_random_timestamp``
   - checks if the timestamp is good by calling ``src.sleep_duration.get_datetime``
@@ -859,7 +859,7 @@ and the test is still green
 review
 *********************************************************************************
 
-The challenge was to write a program_ that calculates the difference between a given wake and sleep time. I ran the following tests to get something that does it
+The challenge was to write a program_ that calculates the difference between a given wake and sleep time. I ran these tests to get something that does it
 
 * :ref:`test_string_splitting`
 * :ref:`test_converting_strings_to_numbers`
@@ -876,7 +876,7 @@ The challenge was to write a program_ that calculates the difference between a g
   - `random.randint`_ and an :ref:`how to test that an Exception is raised` to generate timestamps with random dates and times that are :ref:`how to pass values` in strings for ``wake_time`` and ``sleep_time``
   - a `while statement`_ to make sure that when ``wake_time`` is earlier than ``sleep_time`` the ``duration`` :ref:`function<what is a function?>` raises ValueError_ with a message and returns the right difference between the 2, if ``wake_time`` is later than or the same as ``sleep_time``
 
-I also saw the following :ref:`Exceptions<errors>`
+I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError`

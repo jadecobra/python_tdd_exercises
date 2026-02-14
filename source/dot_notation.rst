@@ -4,7 +4,15 @@
 dot notation
 #################################################################################
 
-You have made it through the end of the book. Do you understand the following?
+You have made it to the end of this book. Do you understand these?
+
+* :ref:`module`
+* :ref:`module.variable`
+* :ref:`module.function()`
+* :ref:`module.function(*args, **kwargs)`
+* :ref:`module.AClass.attribute`
+* :ref:`module.AClass.method()`
+* :ref:`module.AClass.method(*args, **kwargs)`
 
 ----
 

@@ -247,7 +247,7 @@ review
 I ran tests to show that
 
 * I can cause any :ref:`Exception<errors>` I want with the raise_ keyword
-* I can use the `assertRaises method`_ to catch :ref:`Exceptions<errors>` in tests and tested the following
+* I can use the `assertRaises method`_ to catch :ref:`Exceptions<errors>` in tests and tested these
 
   - :ref:`ModuleNotFoundError<what is a module?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`

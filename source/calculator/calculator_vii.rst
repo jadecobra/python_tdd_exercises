@@ -1502,7 +1502,7 @@ close the project
 review
 *********************************************************************************
 
-I added the following tests for the :ref:`calculator program<how to make a calculator 5>` with :ref:`dictionaries` which made testing the program easier
+I added these tests for the :ref:`calculator program<how to make a calculator 5>` with :ref:`dictionaries` which made testing the program easier
 
 * :ref:`test_calculator_w_dictionary_items`
 * :ref:`test_calculator_functions` which replaced

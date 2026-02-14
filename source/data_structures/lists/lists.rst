@@ -3165,7 +3165,7 @@ I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and
 review
 *********************************************************************************
 
-I ran tests to show that I can make a list_ with ``list()`` or square brackets (``[]``), then I ran the following tests for the :ref:`methods of lists<test_attributes_and_methods_of_lists>` from append_ to sort_
+I ran tests to show that I can make a list_ with ``list()`` or square brackets (``[]``), then I ran these tests for the :ref:`methods of lists<test_attributes_and_methods_of_lists>` from append_ to sort_
 
 * :ref:`test_append_adds_item_to_end_of_a_list`
 * :ref:`test_clear_empties_a_list`

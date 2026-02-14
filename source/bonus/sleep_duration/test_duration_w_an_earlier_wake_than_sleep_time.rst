@@ -446,7 +446,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 review
 *********************************************************************************
 
-The challenge is to write a program_ that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
+The challenge is to write a program_ that calculates the difference between a given wake and sleep time. I ran these tests to get something that comes close to doing it
 
 
 * :ref:`test_string_splitting`

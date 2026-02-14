@@ -8,7 +8,7 @@
 conventions
 #################################################################################
 
-The following are a few conventions to know in Python_
+Here are a few conventions to know in Python_
 
 ----
 

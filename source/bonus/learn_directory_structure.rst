@@ -148,7 +148,7 @@ continue in :ref:`how to work in directories`
 how to install tree on Windows without Windows Subsystem for Linux
 ---------------------------------------------------------------------------------
 
-tree_ comes with Windows_ you do not have to do anything. The following are things you would type in place of what I have in the chapter
+tree_ comes with Windows_ you do not have to do anything. These are things you would type in place of what I have in the chapter
 
 * `New-Item`_ instead of touch_
 * ``tree /F`` instead of tree_
@@ -1851,7 +1851,7 @@ how to remove a directory and all its contents
 review
 *************************************************************************************
 
-I ran the following commands to play with `folder (directory)`_ structure
+I ran these commands to play with `folder (directory)`_ structure
 
 * mkdir_
 * cd_

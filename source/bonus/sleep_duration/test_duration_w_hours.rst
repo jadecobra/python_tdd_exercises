@@ -843,7 +843,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 review
 *********************************************************************************
 
-The challenge is to write a program_ that calculates the difference between a given wake and sleep time. I ran the following tests to get something that comes close to doing it
+The challenge is to write a program_ that calculates the difference between a given wake and sleep time. I ran these tests to get something that comes close to doing it
 
 
 * `test_string_splitting`_ where I
@@ -858,7 +858,7 @@ The challenge is to write a program_ that calculates the difference between a gi
   - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values` them in the timestamps
   - then test that the ``duration`` :ref:`function<what is a function?>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
-I also saw the following :ref:`Exceptions<errors>`
+I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`TypeError`

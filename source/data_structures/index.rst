@@ -10,7 +10,7 @@ data structures
 
 Programming involves taking some information as input and doing something with it to give back some other information as output. The input and output are called data.
 
-The following chapters test Python_ basic data structures/types, which are a way to represent information.
+These chapters test Python_ basic data structures/types, which are a way to represent information.
 
 .. toctree::
   :titlesonly:

@@ -16,8 +16,6 @@ Thank you for choosing to spend time practicing `Test Driven Development` in Pyt
 what is covered?
 *********************************************************************************
 
-The tests in this chapter cover the following Exceptions_
-
 .. toctree::
   :titlesonly:
 

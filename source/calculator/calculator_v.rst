@@ -1022,7 +1022,7 @@ close the project
 review
 *********************************************************************************
 
-I added the following tests to the :ref:`calculator program<how to make a calculator 3>` after testing :ref:`lists<what is a list?>`
+I added these tests to the :ref:`calculator program<how to make a calculator 3>` after testing :ref:`lists<what is a list?>`
 
 * :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 * :ref:`add more instance tests to the only_takes_numbers function<how to test if something is an instance of more than one type>`
