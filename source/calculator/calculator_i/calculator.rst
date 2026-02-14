@@ -1648,20 +1648,20 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
-I add the :ref:`function<what is a function?>` to ``calculator.py``
+* I add the :ref:`function<what is a function?>` to ``calculator.py``
 
-.. code-block:: python
-  :lineno-start: 9
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-6
 
-  def multiply(first_input, second_input):
-      return first_input * second_input
+    def multiply(first_input, second_input):
+        return first_input * second_input
 
 
-  def divide(first_input, second_input):
-      return first_input / second_input
+    def divide(first_input, second_input):
+        return first_input / second_input
 
-the test passes
+  the test passes
 
 * I remove the TODO list from ``test_calculator.py``
 
@@ -1689,27 +1689,18 @@ the test passes
 
 ----
 
+*********************************************************************************
+:yellow:`REFACTOR`: make it better
+*********************************************************************************
 
-----
-
-----
-
-----
-
-----
-
-----
-
-* I have some duplication to remove, the code below happens twice in ``test_calculator.py``
+* I have some repetition to remove, the code below happens in every test, that is 4 times in ``test_calculator.py``
 
   .. code-block:: python
 
     random_first_number = a_random_number()
     random_second_number = a_random_number()
 
-  once in ``test_addition`` and again in ``test_subtraction``
-
-* I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the duplication and use the same numbers for both tests
+* I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the repetition and use the same numbers for all the tests
 
   .. code-block:: python
     :lineno-start: 10
@@ -1721,14 +1712,12 @@ the test passes
         random_second_number = a_random_number()
 
         def test_addition(self):
-            random_first_number = a_random_number()
-            random_second_number = a_random_number()
 
-* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in ``test_addition``
+* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_addition`
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 3, 5
+    :emphasize-lines: 2-5
 
         def test_addition(self):
             # random_first_number = a_random_number()
@@ -1737,13 +1726,213 @@ the test passes
             random_second_number = self.random_second_number
 
             self.assertEqual(
+
+  the test is still green
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.add`` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 3-6
+
+            self.assertEqual(
                 src.calculator.add(
-                    random_first_number,
-                    random_second_number
+                    # random_first_number,
+                    self.random_first_number,
+                    # random_second_number
+                    self.random_second_number
                 ),
                 random_first_number+random_second_number
             )
 
+  still green
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 8-9
+
+            self.assertEqual(
+                src.calculator.add(
+                    # random_first_number,
+                    self.random_first_number,
+                    # random_second_number
+                    self.random_second_number
+                ),
+                # random_first_number+random_second_number
+                self.random_first_number+self.random_second_number
+            )
+
+  green
+
+* I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_addition`
+
+  .. code-block:: python
+    :lineno-start: 15
+
+        def test_addition(self):
+            self.assertEqual(
+                src.calculator.add(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number+self.random_second_number
+            )
+
+        def test_subtraction(self):
+
+  still green
+
+----
+
+* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_subtraction`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-5
+
+        def test_subtraction(self):
+            # random_first_number = a_random_number()
+            random_first_number = self.random_first_number
+            # random_second_number = a_random_number()
+            random_second_number = self.random_second_number
+
+            self.assertEqual(
+
+  the test is still green
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.subtract`` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 3-6
+
+            self.assertEqual(
+                src.calculator.subtract(
+                    # random_first_number,
+                    self.random_first_number,
+                    # random_second_number
+                    self.random_second_number
+                ),
+                random_first_number+random_second_number
+            )
+
+  still green
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 8-9
+
+            self.assertEqual(
+                src.calculator.subtract(
+                    # random_first_number,
+                    self.random_first_number,
+                    # random_second_number
+                    self.random_second_number
+                ),
+                # random_first_number+random_second_number
+                self.random_first_number+self.random_second_number
+            )
+
+  green
+
+* I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_subtraction`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+        def test_subtraction(self):
+            self.assertEqual(
+                src.calculator.subtract(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number+self.random_second_number
+            )
+
+        def test_subtraction(self):
+
+  still green
+
+----
+
+* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_multiplication`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-5
+
+        def test_multiplication(self):
+            # random_first_number = a_random_number()
+            random_first_number = self.random_first_number
+            # random_second_number = a_random_number()
+            random_second_number = self.random_second_number
+
+            self.assertEqual(
+
+  the test is still green
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.multiply`` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 3-6
+
+            self.assertEqual(
+                src.calculator.multiply(
+                    # random_first_number,
+                    self.random_first_number,
+                    # random_second_number
+                    self.random_second_number
+                ),
+                random_first_number+random_second_number
+            )
+
+  still green
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 8-9
+
+            self.assertEqual(
+                src.calculator.multiply(
+                    # random_first_number,
+                    self.random_first_number,
+                    # random_second_number
+                    self.random_second_number
+                ),
+                # random_first_number+random_second_number
+                self.random_first_number+self.random_second_number
+            )
+
+  green
+
+* I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_multiplication`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+        def test_multiplication(self):
+            self.assertEqual(
+                src.calculator.multiply(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number+self.random_second_number
+            )
+
+        def test_multiplication(self):
+
+  still green
+
+----
+
+*
   and in ``test_subtraction``
 
   .. code-block:: python
